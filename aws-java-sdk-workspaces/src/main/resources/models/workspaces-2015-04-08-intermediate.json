@@ -51,12 +51,12 @@
         "documentation" : "<p>Your resource limits have been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateWorkspacesResult",
       "asyncReturnType" : "CreateWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateWorkspacesRequest, CreateWorkspacesResult>",
+      "authenticated" : true,
       "methodName" : "createWorkspaces"
     },
     "DescribeWorkspaceBundles" : {
@@ -81,12 +81,12 @@
         "documentation" : "<p>One or more parameter values are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeWorkspaceBundlesResult",
       "asyncReturnType" : "DescribeWorkspaceBundlesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspaceBundlesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeWorkspaceBundlesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceBundlesRequest, DescribeWorkspaceBundlesResult>",
+      "authenticated" : true,
       "methodName" : "describeWorkspaceBundles"
     },
     "DescribeWorkspaceDirectories" : {
@@ -111,12 +111,12 @@
         "documentation" : "<p>One or more parameter values are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeWorkspaceDirectoriesResult",
       "asyncReturnType" : "DescribeWorkspaceDirectoriesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspaceDirectoriesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeWorkspaceDirectoriesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceDirectoriesRequest, DescribeWorkspaceDirectoriesResult>",
+      "authenticated" : true,
       "methodName" : "describeWorkspaceDirectories"
     },
     "DescribeWorkspaces" : {
@@ -144,12 +144,12 @@
         "documentation" : "<p>The specified resource is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeWorkspacesResult",
       "asyncReturnType" : "DescribeWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeWorkspacesRequest, DescribeWorkspacesResult>",
+      "authenticated" : true,
       "methodName" : "describeWorkspaces"
     },
     "RebootWorkspaces" : {
@@ -171,12 +171,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RebootWorkspacesResult",
       "asyncReturnType" : "RebootWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<RebootWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RebootWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebootWorkspacesRequest, RebootWorkspacesResult>",
+      "authenticated" : true,
       "methodName" : "rebootWorkspaces"
     },
     "RebuildWorkspaces" : {
@@ -198,12 +198,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RebuildWorkspacesResult",
       "asyncReturnType" : "RebuildWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<RebuildWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RebuildWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebuildWorkspacesRequest, RebuildWorkspacesResult>",
+      "authenticated" : true,
       "methodName" : "rebuildWorkspaces"
     },
     "TerminateWorkspaces" : {
@@ -225,12 +225,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "TerminateWorkspacesResult",
       "asyncReturnType" : "TerminateWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<TerminateWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TerminateWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateWorkspacesRequest, TerminateWorkspacesResult>",
+      "authenticated" : true,
       "methodName" : "terminateWorkspaces"
     }
   },
@@ -245,6 +245,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.</p>",
         "name" : "DirectoryId",
@@ -910,6 +911,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of structures that represent any WorkSpaces that could not be rebooted.</p>",
         "name" : "FailedRequests",
@@ -1011,9 +1013,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "FailedWorkspaceChangeRequest",
           "simple" : false,
           "map" : false,
+          "simpleType" : "FailedWorkspaceChangeRequest",
           "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
         },
@@ -1152,9 +1154,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "FailedWorkspaceChangeRequest",
             "simple" : false,
             "map" : false,
+            "simpleType" : "FailedWorkspaceChangeRequest",
             "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
           },
@@ -1182,6 +1184,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of structures that represent any WorkSpaces that could not be terminated.</p>",
         "name" : "FailedRequests",
@@ -1283,9 +1286,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "FailedWorkspaceChangeRequest",
           "simple" : false,
           "map" : false,
+          "simpleType" : "FailedWorkspaceChangeRequest",
           "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
         },
@@ -1424,9 +1427,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "FailedWorkspaceChangeRequest",
             "simple" : false,
             "map" : false,
+            "simpleType" : "FailedWorkspaceChangeRequest",
             "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
           },
@@ -1454,6 +1457,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the WorkSpace.</p>",
         "name" : "WorkspaceId",
@@ -2854,6 +2858,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the WorkSpace to reboot.</p>",
         "name" : "WorkspaceId",
@@ -2994,6 +2999,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of structures that specify the WorkSpaces to terminate.</p>",
         "name" : "TerminateWorkspaceRequests",
@@ -3095,9 +3101,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "TerminateRequest",
           "simple" : false,
           "map" : false,
+          "simpleType" : "TerminateRequest",
           "templateType" : "java.util.List<TerminateRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>"
         },
@@ -3240,9 +3246,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "TerminateRequest",
             "simple" : false,
             "map" : false,
+            "simpleType" : "TerminateRequest",
             "templateType" : "java.util.List<TerminateRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>"
           },
@@ -3270,6 +3276,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of structures that specify the WorkSpaces to reboot.</p>",
         "name" : "RebootWorkspaceRequests",
@@ -3371,9 +3378,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "RebootRequest",
           "simple" : false,
           "map" : false,
+          "simpleType" : "RebootRequest",
           "templateType" : "java.util.List<RebootRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>"
         },
@@ -3516,9 +3523,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "RebootRequest",
             "simple" : false,
             "map" : false,
+            "simpleType" : "RebootRequest",
             "templateType" : "java.util.List<RebootRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>"
           },
@@ -3546,6 +3553,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of structures that specify the WorkSpaces to rebuild.</p>",
         "name" : "RebuildWorkspaceRequests",
@@ -3647,9 +3655,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "RebuildRequest",
           "simple" : false,
           "map" : false,
+          "simpleType" : "RebuildRequest",
           "templateType" : "java.util.List<RebuildRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>"
         },
@@ -3792,9 +3800,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "RebuildRequest",
             "simple" : false,
             "map" : false,
+            "simpleType" : "RebuildRequest",
             "templateType" : "java.util.List<RebuildRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>"
           },
@@ -3822,6 +3830,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies if the directory is enabled for Amazon WorkDocs.</p>",
         "name" : "EnableWorkDocs",
@@ -4382,6 +4391,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of structures that represent any WorkSpaces that could not be rebuilt.</p>",
         "name" : "FailedRequests",
@@ -4483,9 +4493,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "FailedWorkspaceChangeRequest",
           "simple" : false,
           "map" : false,
+          "simpleType" : "FailedWorkspaceChangeRequest",
           "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
         },
@@ -4624,9 +4634,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "FailedWorkspaceChangeRequest",
             "simple" : false,
             "map" : false,
+            "simpleType" : "FailedWorkspaceChangeRequest",
             "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
           },
@@ -4654,6 +4664,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of structures that contain information about the bundles.</p>",
         "name" : "Bundles",
@@ -4755,9 +4766,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "WorkspaceBundle",
           "simple" : false,
           "map" : false,
+          "simpleType" : "WorkspaceBundle",
           "templateType" : "java.util.List<WorkspaceBundle>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>"
         },
@@ -5001,9 +5012,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "WorkspaceBundle",
             "simple" : false,
             "map" : false,
+            "simpleType" : "WorkspaceBundle",
             "templateType" : "java.util.List<WorkspaceBundle>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>"
           },
@@ -5031,6 +5042,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "REGISTERING",
@@ -5080,6 +5092,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of structures that contain information about the directories.</p>",
         "name" : "Directories",
@@ -5181,9 +5194,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "WorkspaceDirectory",
           "simple" : false,
           "map" : false,
+          "simpleType" : "WorkspaceDirectory",
           "templateType" : "java.util.List<WorkspaceDirectory>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>"
         },
@@ -5427,9 +5440,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "WorkspaceDirectory",
             "simple" : false,
             "map" : false,
+            "simpleType" : "WorkspaceDirectory",
             "templateType" : "java.util.List<WorkspaceDirectory>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>"
           },
@@ -5457,6 +5470,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of structures that represent the WorkSpaces that could not be created.</p>",
         "name" : "FailedRequests",
@@ -5558,9 +5572,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "FailedCreateWorkspaceRequest",
           "simple" : false,
           "map" : false,
+          "simpleType" : "FailedCreateWorkspaceRequest",
           "templateType" : "java.util.List<FailedCreateWorkspaceRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>"
         },
@@ -5676,9 +5690,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Workspace",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Workspace",
           "templateType" : "java.util.List<Workspace>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
         },
@@ -5817,9 +5831,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Workspace",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Workspace",
             "templateType" : "java.util.List<Workspace>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
           },
@@ -5936,9 +5950,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "FailedCreateWorkspaceRequest",
             "simple" : false,
             "map" : false,
+            "simpleType" : "FailedCreateWorkspaceRequest",
             "templateType" : "java.util.List<FailedCreateWorkspaceRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>"
           },
@@ -5966,6 +5980,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the WorkSpace.</p>",
         "name" : "WorkspaceId",
@@ -6316,6 +6331,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The amount of user storage for the bundle.</p>",
         "name" : "Capacity",
@@ -6456,6 +6472,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A <a>WorkspaceRequest</a> object that contains the information about the WorkSpace that could not be created.</p>",
         "name" : "WorkspaceRequest",
@@ -6806,6 +6823,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p>",
         "name" : "BundleIds",
@@ -6907,9 +6925,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
@@ -7262,9 +7280,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
@@ -7292,6 +7310,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "PENDING",
@@ -7356,6 +7375,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of structures that contain the information about the WorkSpaces.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete for a newly-created WorkSpace.</p>",
         "name" : "Workspaces",
@@ -7457,9 +7477,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Workspace",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Workspace",
           "templateType" : "java.util.List<Workspace>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
         },
@@ -7703,9 +7723,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Workspace",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Workspace",
             "templateType" : "java.util.List<Workspace>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
           },
@@ -7733,6 +7753,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the resource that is not available.</p>",
         "name" : "ResourceId",
@@ -7870,6 +7891,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -7901,6 +7923,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of structures that specify the WorkSpaces to create.</p>",
         "name" : "Workspaces",
@@ -8002,9 +8025,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "WorkspaceRequest",
           "simple" : false,
           "map" : false,
+          "simpleType" : "WorkspaceRequest",
           "templateType" : "java.util.List<WorkspaceRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>"
         },
@@ -8147,9 +8170,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "WorkspaceRequest",
             "simple" : false,
             "map" : false,
+            "simpleType" : "WorkspaceRequest",
             "templateType" : "java.util.List<WorkspaceRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>"
           },
@@ -8177,6 +8200,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the WorkSpace to rebuild.</p>",
         "name" : "WorkspaceId",
@@ -8317,6 +8341,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "SIMPLE_AD",
@@ -8357,6 +8382,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -8388,6 +8414,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the compute type for the bundle.</p>",
         "name" : "Name",
@@ -8528,6 +8555,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of strings that contains the directory identifiers to retrieve information for. If this member is null, all directories are retrieved.</p>",
         "name" : "DirectoryIds",
@@ -8629,9 +8657,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
@@ -8879,9 +8907,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
@@ -8909,6 +8937,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The bundle identifier.</p>",
         "name" : "BundleId",
@@ -9574,6 +9603,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The directory identifier.</p>",
         "name" : "DirectoryId",
@@ -9883,9 +9913,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
@@ -10001,9 +10031,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
@@ -10719,9 +10749,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
@@ -10838,9 +10868,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
@@ -11133,6 +11163,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of strings that contain the identifiers of the WorkSpaces for which to retrieve information. This parameter cannot be combined with any other filter parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier returned by <a>CreateWorkspaces</a> is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information will be returned.</p>",
         "name" : "WorkspaceIds",
@@ -11234,9 +11265,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
@@ -11692,9 +11723,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
@@ -11934,6 +11965,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "VALUE",
@@ -11977,6 +12009,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the WorkSpace to terminate.</p>",
         "name" : "WorkspaceId",

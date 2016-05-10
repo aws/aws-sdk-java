@@ -21,7 +21,7 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * An exception occurred because an invalid gateway request was issued to the
- * service. See the error and message fields for more information.
+ * service. For more information, see the error and message fields.
  * </p>
  */
 public class InvalidGatewayRequestException extends AmazonServiceException {

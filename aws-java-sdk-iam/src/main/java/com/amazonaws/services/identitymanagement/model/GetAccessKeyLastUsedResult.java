@@ -31,6 +31,7 @@ public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
      * <p>
      * The name of the AWS IAM user that owns this access key.
      * </p>
+     * <p/>
      */
     private String userName;
     /**
@@ -44,9 +45,11 @@ public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
      * <p>
      * The name of the AWS IAM user that owns this access key.
      * </p>
+     * <p/>
      * 
      * @param userName
      *        The name of the AWS IAM user that owns this access key.
+     *        </p>
      */
 
     public void setUserName(String userName) {
@@ -57,8 +60,10 @@ public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
      * <p>
      * The name of the AWS IAM user that owns this access key.
      * </p>
+     * <p/>
      * 
      * @return The name of the AWS IAM user that owns this access key.
+     *         </p>
      */
 
     public String getUserName() {
@@ -69,9 +74,11 @@ public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
      * <p>
      * The name of the AWS IAM user that owns this access key.
      * </p>
+     * <p/>
      * 
      * @param userName
      *        The name of the AWS IAM user that owns this access key.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

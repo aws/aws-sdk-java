@@ -1,28 +1,23 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -35,70 +30,78 @@ import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Get Workflow Execution History Request Marshaller
+ * GetWorkflowExecutionHistoryRequest Marshaller
  */
-public class GetWorkflowExecutionHistoryRequestMarshaller implements Marshaller<Request<GetWorkflowExecutionHistoryRequest>, GetWorkflowExecutionHistoryRequest> {
+public class GetWorkflowExecutionHistoryRequestMarshaller
+        implements
+        Marshaller<Request<GetWorkflowExecutionHistoryRequest>, GetWorkflowExecutionHistoryRequest> {
 
-    public Request<GetWorkflowExecutionHistoryRequest> marshall(GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest) {
+    public Request<GetWorkflowExecutionHistoryRequest> marshall(
+            GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest) {
+
         if (getWorkflowExecutionHistoryRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<GetWorkflowExecutionHistoryRequest> request = new DefaultRequest<GetWorkflowExecutionHistoryRequest>(getWorkflowExecutionHistoryRequest, "AmazonSimpleWorkflow");
-        String target = "SimpleWorkflowService.GetWorkflowExecutionHistory";
-        request.addHeader("X-Amz-Target", target);
+        Request<GetWorkflowExecutionHistoryRequest> request = new DefaultRequest<GetWorkflowExecutionHistoryRequest>(
+                getWorkflowExecutionHistoryRequest, "AmazonSimpleWorkflow");
+        request.addHeader("X-Amz-Target",
+                "SimpleWorkflowService.GetWorkflowExecutionHistory");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
+                    .createWriter(false, "1.0");
 
-          jsonWriter.object();
-          
+            jsonGenerator.writeStartObject();
+
             if (getWorkflowExecutionHistoryRequest.getDomain() != null) {
-                jsonWriter.key("domain").value(getWorkflowExecutionHistoryRequest.getDomain());
+                jsonGenerator.writeFieldName("domain").writeValue(
+                        getWorkflowExecutionHistoryRequest.getDomain());
             }
-            WorkflowExecution execution = getWorkflowExecutionHistoryRequest.getExecution();
-            if (execution != null) {
-
-                jsonWriter.key("execution");
-                jsonWriter.object();
-
-                if (execution.getWorkflowId() != null) {
-                    jsonWriter.key("workflowId").value(execution.getWorkflowId());
-                }
-                if (execution.getRunId() != null) {
-                    jsonWriter.key("runId").value(execution.getRunId());
-                }
-                jsonWriter.endObject();
+            if (getWorkflowExecutionHistoryRequest.getExecution() != null) {
+                jsonGenerator.writeFieldName("execution");
+                WorkflowExecutionJsonMarshaller.getInstance().marshall(
+                        getWorkflowExecutionHistoryRequest.getExecution(),
+                        jsonGenerator);
             }
             if (getWorkflowExecutionHistoryRequest.getNextPageToken() != null) {
-                jsonWriter.key("nextPageToken").value(getWorkflowExecutionHistoryRequest.getNextPageToken());
+                jsonGenerator.writeFieldName("nextPageToken").writeValue(
+                        getWorkflowExecutionHistoryRequest.getNextPageToken());
             }
             if (getWorkflowExecutionHistoryRequest.getMaximumPageSize() != null) {
-                jsonWriter.key("maximumPageSize").value(getWorkflowExecutionHistoryRequest.getMaximumPageSize());
+                jsonGenerator.writeFieldName("maximumPageSize")
+                        .writeValue(
+                                getWorkflowExecutionHistoryRequest
+                                        .getMaximumPageSize());
             }
-            if (getWorkflowExecutionHistoryRequest.isReverseOrder() != null) {
-                jsonWriter.key("reverseOrder").value(getWorkflowExecutionHistoryRequest.isReverseOrder());
+            if (getWorkflowExecutionHistoryRequest.getReverseOrder() != null) {
+                jsonGenerator.writeFieldName("reverseOrder").writeValue(
+                        getWorkflowExecutionHistoryRequest.getReverseOrder());
             }
 
-          jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.0");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

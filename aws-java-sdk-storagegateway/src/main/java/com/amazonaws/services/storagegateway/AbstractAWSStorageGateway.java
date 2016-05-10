@@ -267,6 +267,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public ListTapesResult listTapes(ListTapesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListVolumeInitiatorsResult listVolumeInitiators(
             ListVolumeInitiatorsRequest request) {
         throw new java.lang.UnsupportedOperationException();

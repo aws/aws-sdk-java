@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class AddPermissionRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -28,6 +28,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The URL of the Amazon SQS queue to take action on.
+     * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
      * </p>
      */
     private String queueUrl;
@@ -84,7 +87,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @param label
      *        The unique identification of the permission you're setting (e.g.,
      *        <code>AliceSendMessage</code>). Constraints: Maximum 80
@@ -107,7 +112,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *        . For more information about these actions, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes"
      *        >Understanding Permissions</a> in the <i>Amazon SQS Developer
-     *        Guide</i>.</p>
+     *        Guide</i>.
+     *        </p>
      *        <p>
      *        Specifying <code>SendMessage</code>, <code>DeleteMessage</code>,
      *        or <code>ChangeMessageVisibility</code> for the
@@ -128,9 +134,14 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
 
     public void setQueueUrl(String queueUrl) {
@@ -141,8 +152,13 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.
+     * @return The URL of the Amazon SQS queue to take action on.</p>
+     *         <p>
+     *         Queue URLs are case-sensitive.
      */
 
     public String getQueueUrl() {
@@ -153,9 +169,14 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

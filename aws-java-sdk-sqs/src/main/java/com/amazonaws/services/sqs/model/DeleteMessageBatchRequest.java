@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DeleteMessageBatchRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -28,6 +28,9 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The URL of the Amazon SQS queue to take action on.
+     * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
      * </p>
      */
     private String queueUrl;
@@ -52,7 +55,9 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest
      * object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
     public DeleteMessageBatchRequest(String queueUrl) {
         setQueueUrl(queueUrl);
@@ -64,7 +69,9 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest
      * object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @param entries
      *        A list of receipt handles for the messages to be deleted.
      */
@@ -78,9 +85,14 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
 
     public void setQueueUrl(String queueUrl) {
@@ -91,8 +103,13 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.
+     * @return The URL of the Amazon SQS queue to take action on.</p>
+     *         <p>
+     *         Queue URLs are case-sensitive.
      */
 
     public String getQueueUrl() {
@@ -103,9 +120,14 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

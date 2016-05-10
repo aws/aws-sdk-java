@@ -24,7 +24,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing one or more of the following fields:
  * </p>
  * <ul>
- * <li><a>AddWorkingStorageInput$DiskIds</a></li>
+ * <li>
+ * <p>
+ * <a>AddWorkingStorageInput$DiskIds</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements

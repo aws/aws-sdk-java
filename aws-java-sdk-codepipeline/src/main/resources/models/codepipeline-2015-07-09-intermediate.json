@@ -839,6 +839,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The configuration data for the action.</p>",
         "name" : "Configuration",
@@ -941,9 +942,9 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "keySimple" : true,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>"
@@ -1083,9 +1084,9 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "keySimple" : true,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>"
@@ -1113,6 +1114,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stage.</p>",
         "name" : "StageName",
@@ -1318,8 +1320,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ActionState",
           "simple" : false,
+          "simpleType" : "ActionState",
           "map" : false,
           "templateType" : "java.util.List<ActionState>",
           "templateImplType" : "java.util.ArrayList<ActionState>"
@@ -1565,8 +1567,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ActionState",
             "simple" : false,
+            "simpleType" : "ActionState",
             "map" : false,
             "templateType" : "java.util.List<ActionState>",
             "templateImplType" : "java.util.ArrayList<ActionState>"
@@ -1595,6 +1597,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -1626,6 +1629,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -1657,6 +1661,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The status of the action, or for a completed action, the last status of the action.</p>",
         "name" : "Status",
@@ -2427,6 +2432,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -2458,6 +2464,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline to be updated.</p>",
         "name" : "Pipeline",
@@ -2602,6 +2609,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline. This is a user-specified value. Pipeline names must be unique across all pipeline names under an Amazon Web Services account.</p>",
         "name" : "PipelineName",
@@ -2952,6 +2960,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "ActionTypeId",
@@ -3158,9 +3167,9 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "keySimple" : true,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>"
@@ -3410,9 +3419,9 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "keySimple" : true,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>"
@@ -3440,6 +3449,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An identifier that was returned from the previous list pipelines call, which can be used to return the next set of pipelines in the list.</p>",
         "name" : "NextToken",
@@ -3584,6 +3594,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The summary of the current status of the actions.</p>",
         "name" : "Summary",
@@ -3934,6 +3945,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of the artifact store, such as S3.</p>",
         "name" : "Type",
@@ -4284,6 +4296,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The structure of the updated pipeline.</p>",
         "name" : "Pipeline",
@@ -4424,6 +4437,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.</p>",
         "name" : "Id",
@@ -4669,6 +4683,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4700,6 +4715,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4731,6 +4747,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline.</p>",
         "name" : "Name",
@@ -5186,6 +5203,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Pipeline",
@@ -5326,6 +5344,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the artifact to be worked on, for example, \"My App\".</p> <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>",
         "name" : "Name",
@@ -5466,6 +5485,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the job that successfully completed. This is the same ID returned from PollForThirdPartyJobs.</p>",
         "name" : "JobId",
@@ -6030,6 +6050,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -6061,6 +6082,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique system-generated ID of the job that succeeded. This is the same ID returned from PollForJobs.</p>",
         "name" : "JobId",
@@ -6520,6 +6542,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Id",
@@ -6725,8 +6748,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ActionConfigurationProperty",
           "simple" : false,
+          "simpleType" : "ActionConfigurationProperty",
           "map" : false,
           "templateType" : "java.util.List<ActionConfigurationProperty>",
           "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -7182,8 +7205,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ActionConfigurationProperty",
             "simple" : false,
+            "simpleType" : "ActionConfigurationProperty",
             "map" : false,
             "templateType" : "java.util.List<ActionConfigurationProperty>",
             "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -7212,6 +7235,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7243,6 +7267,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Filters the list of action types to those created by a specified entity.</p>",
         "name" : "ActionOwnerFilter",
@@ -7492,6 +7517,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Source",
@@ -7541,6 +7567,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The details of the job, including any protected values defined for the job. </p>",
         "name" : "JobDetails",
@@ -7681,6 +7708,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stage.</p>",
         "name" : "Name",
@@ -7821,6 +7849,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "S3",
@@ -7858,6 +7887,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The system-generated unique ID that identifies the revision number of the action.</p>",
         "name" : "RevisionId",
@@ -8208,6 +8238,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The URL of a sign-up page where users can sign up for an external service and perform initial configuration of the action provided by that service. </p>",
         "name" : "ThirdPartyConfigurationUrl",
@@ -8663,6 +8694,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Pipeline",
@@ -8803,6 +8835,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline to start.</p>",
         "name" : "Name",
@@ -8947,6 +8980,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Created",
@@ -9002,6 +9036,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the action within the context of a job.</p>",
         "name" : "Name",
@@ -9142,6 +9177,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Pipeline",
@@ -9286,6 +9322,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the action.</p>",
         "name" : "ActionName",
@@ -9846,6 +9883,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -9877,6 +9915,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline about which you want to get information.</p>",
         "name" : "Name",
@@ -10021,6 +10060,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10052,6 +10092,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline that will start processing the revision to the source.</p>",
         "name" : "PipelineName",
@@ -10511,6 +10552,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique system-generated ID for the job.</p>",
         "name" : "JobId",
@@ -10655,6 +10697,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of the failure.</p>",
         "name" : "Type",
@@ -11005,6 +11048,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11036,6 +11080,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique system-generated ID of the job.</p>",
         "name" : "Id",
@@ -11386,6 +11431,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The category of the custom action that you want to delete, such as source or deploy.</p>",
         "name" : "Category",
@@ -11740,6 +11786,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the jobs to take action on.</p>",
         "name" : "Jobs",
@@ -11841,8 +11888,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ThirdPartyJob",
           "simple" : false,
+          "simpleType" : "ThirdPartyJob",
           "map" : false,
           "templateType" : "java.util.List<ThirdPartyJob>",
           "templateImplType" : "java.util.ArrayList<ThirdPartyJob>"
@@ -11982,8 +12029,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ThirdPartyJob",
             "simple" : false,
+            "simpleType" : "ThirdPartyJob",
             "map" : false,
             "templateType" : "java.util.List<ThirdPartyJob>",
             "templateImplType" : "java.util.ArrayList<ThirdPartyJob>"
@@ -12012,6 +12059,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the output of an artifact, such as \"My App\". </p> <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p> <p>Output artifact names must be unique within a pipeline.</p>",
         "name" : "Name",
@@ -12152,6 +12200,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -12183,6 +12232,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the values below. </p>",
         "name" : "Category",
@@ -12638,6 +12688,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the action configuration property.</p>",
         "name" : "Name",
@@ -13408,6 +13459,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The status information for the third party job, if any.</p>",
         "name" : "Status",
@@ -13548,6 +13600,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The access key for the session.</p>",
         "name" : "AccessKeyId",
@@ -13898,6 +13951,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the action to be performed. </p>",
         "name" : "Name",
@@ -14155,8 +14209,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "StageDeclaration",
           "simple" : false,
+          "simpleType" : "StageDeclaration",
           "map" : false,
           "templateType" : "java.util.List<StageDeclaration>",
           "templateImplType" : "java.util.ArrayList<StageDeclaration>"
@@ -14401,8 +14455,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "StageDeclaration",
             "simple" : false,
+            "simpleType" : "StageDeclaration",
             "map" : false,
             "templateType" : "java.util.List<StageDeclaration>",
             "templateImplType" : "java.util.ArrayList<StageDeclaration>"
@@ -14590,6 +14644,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stage.</p>",
         "name" : "Name",
@@ -14743,8 +14798,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "BlockerDeclaration",
           "simple" : false,
+          "simpleType" : "BlockerDeclaration",
           "map" : false,
           "templateType" : "java.util.List<BlockerDeclaration>",
           "templateImplType" : "java.util.ArrayList<BlockerDeclaration>"
@@ -14861,8 +14916,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ActionDeclaration",
           "simple" : false,
+          "simpleType" : "ActionDeclaration",
           "map" : false,
           "templateType" : "java.util.List<ActionDeclaration>",
           "templateImplType" : "java.util.ArrayList<ActionDeclaration>"
@@ -15055,8 +15110,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "BlockerDeclaration",
             "simple" : false,
+            "simpleType" : "BlockerDeclaration",
             "map" : false,
             "templateType" : "java.util.List<BlockerDeclaration>",
             "templateImplType" : "java.util.ArrayList<BlockerDeclaration>"
@@ -15174,8 +15229,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ActionDeclaration",
             "simple" : false,
+            "simpleType" : "ActionDeclaration",
             "map" : false,
             "templateType" : "java.util.List<ActionDeclaration>",
             "templateImplType" : "java.util.ArrayList<ActionDeclaration>"
@@ -15204,6 +15259,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -15235,6 +15291,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique system-generated ID used for identifying the job.</p>",
         "name" : "JobId",
@@ -15484,6 +15541,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Whether the job worker has received the specified job.</p>",
         "name" : "Status",
@@ -15624,6 +15682,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -15655,6 +15714,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the Amazon S3 bucket. </p>",
         "name" : "BucketName",
@@ -15900,6 +15960,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -15931,6 +15992,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the jobs to take action on.</p>",
         "name" : "Jobs",
@@ -16032,8 +16094,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Job",
           "simple" : false,
+          "simpleType" : "Job",
           "map" : false,
           "templateType" : "java.util.List<Job>",
           "templateImplType" : "java.util.ArrayList<Job>"
@@ -16173,8 +16235,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Job",
             "simple" : false,
+            "simpleType" : "Job",
             "map" : false,
             "templateType" : "java.util.List<Job>",
             "templateImplType" : "java.util.ArrayList<Job>"
@@ -16203,6 +16265,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "ActionTypeId",
@@ -16460,8 +16523,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -16578,8 +16641,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -17140,8 +17203,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -17259,8 +17322,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -17342,6 +17405,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The system ID or error number code of the error.</p>",
         "name" : "Code",
@@ -17587,6 +17651,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline to be deleted.</p>",
         "name" : "Name",
@@ -17731,6 +17796,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -17762,6 +17828,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "ActionType",
@@ -17902,6 +17969,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -17933,6 +18001,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Reserved for future use.</p>",
         "name" : "Name",
@@ -18178,6 +18247,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique system-generated ID of the pipeline that was started.</p>",
         "name" : "PipelineExecutionId",
@@ -18318,6 +18388,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "String",
@@ -18361,6 +18432,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -18392,6 +18464,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>",
         "name" : "PipelineName",
@@ -18851,6 +18924,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The artifact's name.</p>",
         "name" : "Name",
@@ -19201,6 +19275,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique system-generated ID of the job.</p>",
         "name" : "JobId",
@@ -19555,6 +19630,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique system-generated ID of the job for which you want to confirm receipt.</p>",
         "name" : "JobId",
@@ -19804,6 +19880,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>",
         "name" : "ClientId",
@@ -20049,6 +20126,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The details of the job. </p> <note> <p>If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new credentials.</p> </note>",
         "name" : "JobDetails",
@@ -20189,6 +20267,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of artifact in the location.</p>",
         "name" : "Type",
@@ -20434,6 +20513,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The new revision number or ID for the revision after the action completes.</p>",
         "name" : "NewRevision",
@@ -20679,6 +20759,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The list of pipelines.</p>",
         "name" : "Pipelines",
@@ -20780,8 +20861,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PipelineSummary",
           "simple" : false,
+          "simpleType" : "PipelineSummary",
           "map" : false,
           "templateType" : "java.util.List<PipelineSummary>",
           "templateImplType" : "java.util.ArrayList<PipelineSummary>"
@@ -21026,8 +21107,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PipelineSummary",
             "simple" : false,
+            "simpleType" : "PipelineSummary",
             "map" : false,
             "templateType" : "java.util.List<PipelineSummary>",
             "templateImplType" : "java.util.ArrayList<PipelineSummary>"
@@ -21056,6 +21137,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "AWS",
@@ -21099,6 +21181,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "KMS",
@@ -21136,6 +21219,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "JobFailed",
@@ -21188,6 +21272,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "ActionTypeId",
@@ -21445,8 +21530,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -21563,8 +21648,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -22125,8 +22210,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -22244,8 +22329,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -22327,6 +22412,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an Amazon Web Services (AWS) user account.</p>",
         "name" : "Name",
@@ -22576,6 +22662,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Inbound",
@@ -22616,6 +22703,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The minimum number of artifacts allowed for the action type.</p>",
         "name" : "MinimumCount",
@@ -22861,6 +22949,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "InProgress",
@@ -22904,6 +22993,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -22935,6 +23025,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The action declaration's name.</p>",
         "name" : "Name",
@@ -23193,9 +23284,9 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "keySimple" : true,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>"
@@ -23311,8 +23402,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "OutputArtifact",
           "simple" : false,
+          "simpleType" : "OutputArtifact",
           "map" : false,
           "templateType" : "java.util.List<OutputArtifact>",
           "templateImplType" : "java.util.ArrayList<OutputArtifact>"
@@ -23429,8 +23520,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "InputArtifact",
           "simple" : false,
+          "simpleType" : "InputArtifact",
           "map" : false,
           "templateType" : "java.util.List<InputArtifact>",
           "templateImplType" : "java.util.ArrayList<InputArtifact>"
@@ -23728,8 +23819,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "OutputArtifact",
             "simple" : false,
+            "simpleType" : "OutputArtifact",
             "map" : false,
             "templateType" : "java.util.List<OutputArtifact>",
             "templateImplType" : "java.util.ArrayList<OutputArtifact>"
@@ -23900,8 +23991,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "InputArtifact",
             "simple" : false,
+            "simpleType" : "InputArtifact",
             "map" : false,
             "templateType" : "java.util.List<InputArtifact>",
             "templateImplType" : "java.util.ArrayList<InputArtifact>"
@@ -24020,9 +24111,9 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "keySimple" : true,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>"
@@ -24103,6 +24194,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Schedule",
@@ -24140,6 +24232,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The category of the custom action, such as a source action or a build action.</p> <note>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</note>",
         "name" : "Category",
@@ -24449,8 +24542,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ActionConfigurationProperty",
           "simple" : false,
+          "simpleType" : "ActionConfigurationProperty",
           "map" : false,
           "templateType" : "java.util.List<ActionConfigurationProperty>",
           "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -25016,8 +25109,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ActionConfigurationProperty",
             "simple" : false,
+            "simpleType" : "ActionConfigurationProperty",
             "map" : false,
             "templateType" : "java.util.List<ActionConfigurationProperty>",
             "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -25046,6 +25139,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Whether the transition between stages is enabled (true) or disabled (false).</p>",
         "name" : "Enabled",
@@ -25501,6 +25595,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "ActionTypeId",
@@ -25750,6 +25845,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The revision ID of the current version of an artifact.</p>",
         "name" : "Revision",
@@ -25995,6 +26091,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Provides details of the action types.</p>",
         "name" : "ActionTypes",
@@ -26096,8 +26193,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ActionType",
           "simple" : false,
+          "simpleType" : "ActionType",
           "map" : false,
           "templateType" : "java.util.List<ActionType>",
           "templateImplType" : "java.util.ArrayList<ActionType>"
@@ -26342,8 +26439,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ActionType",
             "simple" : false,
+            "simpleType" : "ActionType",
             "map" : false,
             "templateType" : "java.util.List<ActionType>",
             "templateImplType" : "java.util.ArrayList<ActionType>"
@@ -26372,6 +26469,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.</p>",
         "name" : "JobId",
@@ -26726,6 +26824,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique system-generated ID of the job.</p>",
         "name" : "Id",
@@ -27181,6 +27280,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.</p>",
         "name" : "JobId",
@@ -27430,6 +27530,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "S3",
@@ -27467,6 +27568,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline for which you want to get the state.</p>",
         "name" : "PipelineName",
@@ -27672,8 +27774,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "StageState",
           "simple" : false,
+          "simpleType" : "StageState",
           "map" : false,
           "templateType" : "java.util.List<StageState>",
           "templateImplType" : "java.util.ArrayList<StageState>"
@@ -27970,8 +28072,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "StageState",
             "simple" : false,
+            "simpleType" : "StageState",
             "map" : false,
             "templateType" : "java.util.List<StageState>",
             "templateImplType" : "java.util.ArrayList<StageState>"
@@ -28159,6 +28261,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>",
         "name" : "PipelineName",
@@ -28513,6 +28616,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier used to identify the job details in AWS CodePipeline.</p>",
         "name" : "Id",

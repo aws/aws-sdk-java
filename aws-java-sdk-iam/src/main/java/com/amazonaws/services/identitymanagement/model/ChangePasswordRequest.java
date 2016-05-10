@@ -36,6 +36,16 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements
      * The new password. The new password must conform to the AWS account's
      * password policy, if one exists.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of almost any printable
+     * ASCII character from the space ( ) through the end of the ASCII character
+     * range (\u00FF). You can also include the tab ( ), line feed ( ), and
+     * carriage return ( ) characters. Although any of these characters are
+     * valid in a password, note that many tools, such as the AWS Management
+     * Console, might restrict the ability to enter certain characters because
+     * they have special meaning within that tool.
+     * </p>
      */
     private String newPassword;
 
@@ -85,10 +95,30 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements
      * The new password. The new password must conform to the AWS account's
      * password policy, if one exists.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of almost any printable
+     * ASCII character from the space ( ) through the end of the ASCII character
+     * range (\u00FF). You can also include the tab ( ), line feed ( ), and
+     * carriage return ( ) characters. Although any of these characters are
+     * valid in a password, note that many tools, such as the AWS Management
+     * Console, might restrict the ability to enter certain characters because
+     * they have special meaning within that tool.
+     * </p>
      * 
      * @param newPassword
      *        The new password. The new password must conform to the AWS
-     *        account's password policy, if one exists.
+     *        account's password policy, if one exists.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of almost
+     *        any printable ASCII character from the space ( ) through the end
+     *        of the ASCII character range (\u00FF). You can also include the
+     *        tab ( ), line feed ( ), and carriage return ( ) characters.
+     *        Although any of these characters are valid in a password, note
+     *        that many tools, such as the AWS Management Console, might
+     *        restrict the ability to enter certain characters because they have
+     *        special meaning within that tool.
      */
 
     public void setNewPassword(String newPassword) {
@@ -100,9 +130,29 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements
      * The new password. The new password must conform to the AWS account's
      * password policy, if one exists.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of almost any printable
+     * ASCII character from the space ( ) through the end of the ASCII character
+     * range (\u00FF). You can also include the tab ( ), line feed ( ), and
+     * carriage return ( ) characters. Although any of these characters are
+     * valid in a password, note that many tools, such as the AWS Management
+     * Console, might restrict the ability to enter certain characters because
+     * they have special meaning within that tool.
+     * </p>
      * 
      * @return The new password. The new password must conform to the AWS
-     *         account's password policy, if one exists.
+     *         account's password policy, if one exists.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of almost
+     *         any printable ASCII character from the space ( ) through the end
+     *         of the ASCII character range (\u00FF). You can also include the
+     *         tab ( ), line feed ( ), and carriage return ( ) characters.
+     *         Although any of these characters are valid in a password, note
+     *         that many tools, such as the AWS Management Console, might
+     *         restrict the ability to enter certain characters because they
+     *         have special meaning within that tool.
      */
 
     public String getNewPassword() {
@@ -114,10 +164,30 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements
      * The new password. The new password must conform to the AWS account's
      * password policy, if one exists.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of almost any printable
+     * ASCII character from the space ( ) through the end of the ASCII character
+     * range (\u00FF). You can also include the tab ( ), line feed ( ), and
+     * carriage return ( ) characters. Although any of these characters are
+     * valid in a password, note that many tools, such as the AWS Management
+     * Console, might restrict the ability to enter certain characters because
+     * they have special meaning within that tool.
+     * </p>
      * 
      * @param newPassword
      *        The new password. The new password must conform to the AWS
-     *        account's password policy, if one exists.
+     *        account's password policy, if one exists.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of almost
+     *        any printable ASCII character from the space ( ) through the end
+     *        of the ASCII character range (\u00FF). You can also include the
+     *        tab ( ), line feed ( ), and carriage return ( ) characters.
+     *        Although any of these characters are valid in a password, note
+     *        that many tools, such as the AWS Management Console, might
+     *        restrict the ability to enter certain characters because they have
+     *        special meaning within that tool.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

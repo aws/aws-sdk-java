@@ -24,8 +24,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing one or more of the following fields:
  * </p>
  * <ul>
- * <li><a>DeleteChapCredentialsInput$InitiatorName</a></li>
- * <li><a>DeleteChapCredentialsInput$TargetARN</a></li>
+ * <li>
+ * <p>
+ * <a>DeleteChapCredentialsInput$InitiatorName</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteChapCredentialsInput$TargetARN</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest

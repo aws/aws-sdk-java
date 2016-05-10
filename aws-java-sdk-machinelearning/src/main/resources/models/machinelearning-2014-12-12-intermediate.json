@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "machinelearning",
     "signingName" : "machinelearning",
+    "xmlProtocol" : false,
     "serviceName" : "Amazon Machine Learning",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -57,12 +57,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateBatchPredictionResult",
       "asyncReturnType" : "CreateBatchPredictionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateBatchPredictionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateBatchPredictionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateBatchPredictionRequest, CreateBatchPredictionResult>",
+      "authenticated" : true,
       "methodName" : "createBatchPrediction"
     },
     "CreateDataSourceFromRDS" : {
@@ -93,12 +93,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDataSourceFromRDSResult",
       "asyncReturnType" : "CreateDataSourceFromRDSResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDataSourceFromRDSResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDataSourceFromRDSResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromRDSRequest, CreateDataSourceFromRDSResult>",
+      "authenticated" : true,
       "methodName" : "createDataSourceFromRDS"
     },
     "CreateDataSourceFromRedshift" : {
@@ -129,12 +129,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDataSourceFromRedshiftResult",
       "asyncReturnType" : "CreateDataSourceFromRedshiftResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDataSourceFromRedshiftResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDataSourceFromRedshiftResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromRedshiftRequest, CreateDataSourceFromRedshiftResult>",
+      "authenticated" : true,
       "methodName" : "createDataSourceFromRedshift"
     },
     "CreateDataSourceFromS3" : {
@@ -165,12 +165,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDataSourceFromS3Result",
       "asyncReturnType" : "CreateDataSourceFromS3Result",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDataSourceFromS3Result>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDataSourceFromS3Result>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromS3Request, CreateDataSourceFromS3Result>",
+      "authenticated" : true,
       "methodName" : "createDataSourceFromS3"
     },
     "CreateEvaluation" : {
@@ -201,12 +201,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateEvaluationResult",
       "asyncReturnType" : "CreateEvaluationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateEvaluationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateEvaluationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEvaluationRequest, CreateEvaluationResult>",
+      "authenticated" : true,
       "methodName" : "createEvaluation"
     },
     "CreateMLModel" : {
@@ -237,12 +237,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateMLModelResult",
       "asyncReturnType" : "CreateMLModelResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateMLModelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateMLModelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateMLModelRequest, CreateMLModelResult>",
+      "authenticated" : true,
       "methodName" : "createMLModel"
     },
     "CreateRealtimeEndpoint" : {
@@ -273,12 +273,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateRealtimeEndpointResult",
       "asyncReturnType" : "CreateRealtimeEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateRealtimeEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateRealtimeEndpointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateRealtimeEndpointRequest, CreateRealtimeEndpointResult>",
+      "authenticated" : true,
       "methodName" : "createRealtimeEndpoint"
     },
     "DeleteBatchPrediction" : {
@@ -309,12 +309,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteBatchPredictionResult",
       "asyncReturnType" : "DeleteBatchPredictionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteBatchPredictionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteBatchPredictionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteBatchPredictionRequest, DeleteBatchPredictionResult>",
+      "authenticated" : true,
       "methodName" : "deleteBatchPrediction"
     },
     "DeleteDataSource" : {
@@ -345,12 +345,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteDataSourceResult",
       "asyncReturnType" : "DeleteDataSourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDataSourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDataSourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult>",
+      "authenticated" : true,
       "methodName" : "deleteDataSource"
     },
     "DeleteEvaluation" : {
@@ -381,12 +381,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteEvaluationResult",
       "asyncReturnType" : "DeleteEvaluationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteEvaluationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteEvaluationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEvaluationRequest, DeleteEvaluationResult>",
+      "authenticated" : true,
       "methodName" : "deleteEvaluation"
     },
     "DeleteMLModel" : {
@@ -417,12 +417,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteMLModelResult",
       "asyncReturnType" : "DeleteMLModelResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteMLModelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteMLModelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteMLModelRequest, DeleteMLModelResult>",
+      "authenticated" : true,
       "methodName" : "deleteMLModel"
     },
     "DeleteRealtimeEndpoint" : {
@@ -453,12 +453,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteRealtimeEndpointResult",
       "asyncReturnType" : "DeleteRealtimeEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRealtimeEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteRealtimeEndpointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRealtimeEndpointRequest, DeleteRealtimeEndpointResult>",
+      "authenticated" : true,
       "methodName" : "deleteRealtimeEndpoint"
     },
     "DescribeBatchPredictions" : {
@@ -486,12 +486,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeBatchPredictionsResult",
       "asyncReturnType" : "DescribeBatchPredictionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeBatchPredictionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeBatchPredictionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeBatchPredictionsRequest, DescribeBatchPredictionsResult>",
+      "authenticated" : true,
       "methodName" : "describeBatchPredictions"
     },
     "DescribeDataSources" : {
@@ -519,12 +519,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDataSourcesResult",
       "asyncReturnType" : "DescribeDataSourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDataSourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDataSourcesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDataSourcesRequest, DescribeDataSourcesResult>",
+      "authenticated" : true,
       "methodName" : "describeDataSources"
     },
     "DescribeEvaluations" : {
@@ -552,12 +552,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeEvaluationsResult",
       "asyncReturnType" : "DescribeEvaluationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEvaluationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEvaluationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEvaluationsRequest, DescribeEvaluationsResult>",
+      "authenticated" : true,
       "methodName" : "describeEvaluations"
     },
     "DescribeMLModels" : {
@@ -585,12 +585,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeMLModelsResult",
       "asyncReturnType" : "DescribeMLModelsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMLModelsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMLModelsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMLModelsRequest, DescribeMLModelsResult>",
+      "authenticated" : true,
       "methodName" : "describeMLModels"
     },
     "GetBatchPrediction" : {
@@ -621,12 +621,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetBatchPredictionResult",
       "asyncReturnType" : "GetBatchPredictionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetBatchPredictionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetBatchPredictionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetBatchPredictionRequest, GetBatchPredictionResult>",
+      "authenticated" : true,
       "methodName" : "getBatchPrediction"
     },
     "GetDataSource" : {
@@ -657,12 +657,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDataSourceResult",
       "asyncReturnType" : "GetDataSourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDataSourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDataSourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDataSourceRequest, GetDataSourceResult>",
+      "authenticated" : true,
       "methodName" : "getDataSource"
     },
     "GetEvaluation" : {
@@ -693,12 +693,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetEvaluationResult",
       "asyncReturnType" : "GetEvaluationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetEvaluationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetEvaluationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetEvaluationRequest, GetEvaluationResult>",
+      "authenticated" : true,
       "methodName" : "getEvaluation"
     },
     "GetMLModel" : {
@@ -729,12 +729,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetMLModelResult",
       "asyncReturnType" : "GetMLModelResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetMLModelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetMLModelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetMLModelRequest, GetMLModelResult>",
+      "authenticated" : true,
       "methodName" : "getMLModel"
     },
     "Predict" : {
@@ -771,12 +771,12 @@
         "documentation" : "<p>The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PredictResult",
       "asyncReturnType" : "PredictResult",
       "asyncFutureType" : "java.util.concurrent.Future<PredictResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PredictResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PredictRequest, PredictResult>",
+      "authenticated" : true,
       "methodName" : "predict"
     },
     "UpdateBatchPrediction" : {
@@ -807,12 +807,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateBatchPredictionResult",
       "asyncReturnType" : "UpdateBatchPredictionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateBatchPredictionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateBatchPredictionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateBatchPredictionRequest, UpdateBatchPredictionResult>",
+      "authenticated" : true,
       "methodName" : "updateBatchPrediction"
     },
     "UpdateDataSource" : {
@@ -843,12 +843,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateDataSourceResult",
       "asyncReturnType" : "UpdateDataSourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDataSourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDataSourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResult>",
+      "authenticated" : true,
       "methodName" : "updateDataSource"
     },
     "UpdateEvaluation" : {
@@ -879,12 +879,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateEvaluationResult",
       "asyncReturnType" : "UpdateEvaluationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateEvaluationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateEvaluationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateEvaluationRequest, UpdateEvaluationResult>",
+      "authenticated" : true,
       "methodName" : "updateEvaluation"
     },
     "UpdateMLModel" : {
@@ -915,12 +915,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateMLModelResult",
       "asyncReturnType" : "UpdateMLModelResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateMLModelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateMLModelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateMLModelRequest, UpdateMLModelResult>",
+      "authenticated" : true,
       "methodName" : "updateMLModel"
     }
   },
@@ -935,6 +935,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Code",
@@ -1072,6 +1073,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Use one of the following variables to filter a list of <code>MLModel</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b> <code>Name</code>.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</li> <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</li> <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</li> <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</li> <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</li> <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> </ul>",
         "name" : "FilterVariable",
@@ -2266,6 +2268,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of <a>Evaluation</a> that meet the search criteria. </p>",
         "name" : "Results",
@@ -2643,6 +2646,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>",
         "name" : "BatchPredictionId",
@@ -2783,6 +2787,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of an RDS DB instance.</p>",
         "name" : "InstanceIdentifier",
@@ -3028,6 +3033,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Asc",
@@ -3068,6 +3074,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The MLModel ID which is same as the <code>MLModelId</code> in the request.</p>",
         "name" : "MLModelId",
@@ -5127,6 +5134,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of <a>MLModel</a> that meet the search criteria.</p>",
         "name" : "Results",
@@ -5504,6 +5512,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>",
         "name" : "DataSourceId",
@@ -5644,6 +5653,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request. </p>",
         "name" : "BatchPredictionId",
@@ -6834,6 +6844,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Prediction",
@@ -6974,6 +6985,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The location of the data file(s) used by a <code>DataSource</code>. The URI specifies a data file or an Amazon Simple Storage Service (Amazon S3) directory or bucket containing data files.</p>",
         "name" : "DataLocationS3",
@@ -7429,6 +7441,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>",
         "name" : "DataSourceId",
@@ -7569,6 +7582,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Use one of the following variables to filter a list of <code>DataSource</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li> <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b> <code>Name</code>.</li> <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</li> </ul>",
         "name" : "FilterVariable",
@@ -8763,6 +8777,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>",
         "name" : "BatchPredictionId",
@@ -9012,6 +9027,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID that is assigned to the <code>Evaluation</code> at creation.</p>",
         "name" : "EvaluationId",
@@ -10202,6 +10218,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>",
         "name" : "BatchPredictionId",
@@ -10346,6 +10363,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Code",
@@ -10483,6 +10501,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>MLModel</code> during creation. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>",
         "name" : "MLModelId",
@@ -10623,6 +10642,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>",
         "name" : "DataSourceId",
@@ -11187,6 +11207,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>",
         "name" : "BatchPredictionId",
@@ -11327,6 +11348,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The database details required to connect to an Amazon RDS.</p>",
         "name" : "Database",
@@ -11992,6 +12014,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>",
         "name" : "MLModelId",
@@ -12237,6 +12260,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>",
         "name" : "EvaluationId",
@@ -12696,6 +12720,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CreatedAt",
@@ -12754,6 +12779,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>",
         "name" : "BatchPredictionId",
@@ -12898,6 +12924,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>",
         "name" : "DataSourceId",
@@ -13038,6 +13065,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Code",
@@ -13175,6 +13203,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>",
         "name" : "EvaluationId",
@@ -13315,6 +13344,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Properties",
@@ -13589,6 +13619,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>",
         "name" : "MLModelId",
@@ -13834,6 +13865,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>DataSource</code> during creation.</p>",
         "name" : "DataSourceId",
@@ -14083,6 +14115,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>BatchPrediction</code> during creation. This value should be identical to the value of the <code>BatchPredictionId</code> in the request.</p>",
         "name" : "BatchPredictionId",
@@ -14223,6 +14256,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>",
         "name" : "BatchPredictionId",
@@ -14787,6 +14821,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>",
         "name" : "MLModelId",
@@ -14927,6 +14962,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "REGRESSION",
@@ -14970,6 +15006,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CreatedAt",
@@ -15022,6 +15059,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>",
         "name" : "DataSourceId",
@@ -15162,6 +15200,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Sgd",
@@ -15199,6 +15238,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>",
         "name" : "MLModelId",
@@ -16107,6 +16147,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier of the <code>MLModel</code>.</p>",
         "name" : "MLModelId",
@@ -16595,6 +16636,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>",
         "name" : "DataSourceId",
@@ -17054,6 +17096,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>",
         "name" : "DataSourceId",
@@ -17198,6 +17241,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of <a>BatchPrediction</a> objects that meet the search criteria. </p>",
         "name" : "Results",
@@ -17575,6 +17619,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code> of an an Amazon RDS database.</p>",
         "name" : "DatabaseInformation",
@@ -18897,6 +18942,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>",
         "name" : "EvaluationId",
@@ -19041,6 +19087,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>MLModel</code> during creation.</p>",
         "name" : "MLModelId",
@@ -19185,6 +19232,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>",
         "name" : "BatchPredictionId",
@@ -20480,6 +20528,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Username",
@@ -20725,6 +20774,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "The prediction label for either a BINARY or MULTICLASS <code>MLModel</code>.",
         "name" : "PredictedLabel",
@@ -21552,6 +21602,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request. </p>",
         "name" : "MLModelId",
@@ -21692,6 +21743,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</li> <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li> <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</li> <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li> </ul>",
         "name" : "FilterVariable",
@@ -22886,6 +22938,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p> The maximum processing rate for the real-time endpoint for <code>MLModel</code>, measured in incoming requests per second.</p>",
         "name" : "PeakRequestsPerSecond",
@@ -23341,6 +23394,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>",
         "name" : "DataSourceId",
@@ -23481,6 +23535,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>",
         "name" : "DatabaseInformation",
@@ -24251,6 +24306,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>MLModel</code> during creation.</p>",
         "name" : "MLModelId",
@@ -24605,6 +24661,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID that is assigned to the <code>DataSource</code> during creation.</p>",
         "name" : "DataSourceId",
@@ -26215,6 +26272,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>",
         "name" : "EvaluationId",
@@ -27510,6 +27568,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>DataSource</code> at creation.</p>",
         "name" : "DataSourceId",
@@ -27759,6 +27818,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CreatedAt",
@@ -27817,6 +27877,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>MLModel</code> at creation.</p>",
         "name" : "MLModelId",
@@ -29666,6 +29727,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>",
         "name" : "EvaluationId",
@@ -29810,6 +29872,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Username",
@@ -30055,6 +30118,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of <code>DataSource</code> that meet the search criteria. </p>",
         "name" : "Results",
@@ -30432,6 +30496,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "RedshiftDatabase",
@@ -30782,6 +30847,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>MLModel</code> at creation.</p>",
         "name" : "MLModelId",
@@ -31031,6 +31097,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "NONE",
@@ -31077,6 +31144,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code><b> </b> <code>Name</code>.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</li> <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</li> <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</li> <li> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li> </ul>",
         "name" : "FilterVariable",
@@ -32271,6 +32339,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>",
         "name" : "MLModelId",
@@ -32415,6 +32484,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "PENDING",
@@ -32464,6 +32534,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Code",
@@ -32601,6 +32672,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -32632,6 +32704,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>",
         "name" : "EvaluationId",
@@ -32772,6 +32845,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CreatedAt",
@@ -32836,6 +32910,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>MLModel</code> during creation.</p>",
         "name" : "MLModelId",
@@ -32980,6 +33055,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>",
         "name" : "EvaluationId",
@@ -33120,6 +33196,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>Evaluation</code> during creation.</p>",
         "name" : "EvaluationId",
@@ -33369,6 +33446,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "DatabaseName",
@@ -33614,6 +33692,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Code",
@@ -33751,6 +33830,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "PredictiveModelType",
@@ -33791,6 +33871,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID assigned to the <code>DataSource</code> at creation. This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>",
         "name" : "DataSourceId",
@@ -35611,6 +35692,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>",
         "name" : "DataSourceId",

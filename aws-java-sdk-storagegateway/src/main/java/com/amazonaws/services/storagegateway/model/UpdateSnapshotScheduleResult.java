@@ -25,9 +25,12 @@ import java.io.Serializable;
  */
 public class UpdateSnapshotScheduleResult implements Serializable, Cloneable {
 
+    /** <p/> */
     private String volumeARN;
 
     /**
+     * <p/>
+     * 
      * @param volumeARN
      */
 
@@ -36,6 +39,8 @@ public class UpdateSnapshotScheduleResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -44,6 +49,8 @@ public class UpdateSnapshotScheduleResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param volumeARN
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

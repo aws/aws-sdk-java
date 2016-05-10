@@ -24,7 +24,8 @@ import java.io.Serializable;
  * in a policy document.
  * </p>
  * <p>
- * This data type is used as a member of the <code><a>Statement</a></code> type.
+ * This data type is used as a member of the <code> <a>Statement</a> </code>
+ * type.
  * </p>
  */
 public class Position implements Serializable, Cloneable {

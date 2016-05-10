@@ -36,7 +36,7 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      */
     private String deviceType;
@@ -90,13 +90,13 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @param deviceType
      *        The type of medium changer you want to select.</p>
      *        <p>
-     *        <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
      */
 
     public void setDeviceType(String deviceType) {
@@ -108,12 +108,12 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @return The type of medium changer you want to select.</p>
      *         <p>
-     *         <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *         Valid Values: "STK-L700", "AWS-Gateway-VTL"
      */
 
     public String getDeviceType() {
@@ -125,13 +125,13 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @param deviceType
      *        The type of medium changer you want to select.</p>
      *        <p>
-     *        <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

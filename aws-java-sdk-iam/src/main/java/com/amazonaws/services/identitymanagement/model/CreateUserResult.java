@@ -27,18 +27,18 @@ public class CreateUserResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the user.
+     * A structure with details about the new IAM user.
      * </p>
      */
     private User user;
 
     /**
      * <p>
-     * Information about the user.
+     * A structure with details about the new IAM user.
      * </p>
      * 
      * @param user
-     *        Information about the user.
+     *        A structure with details about the new IAM user.
      */
 
     public void setUser(User user) {
@@ -47,10 +47,10 @@ public class CreateUserResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the user.
+     * A structure with details about the new IAM user.
      * </p>
      * 
-     * @return Information about the user.
+     * @return A structure with details about the new IAM user.
      */
 
     public User getUser() {
@@ -59,11 +59,11 @@ public class CreateUserResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the user.
+     * A structure with details about the new IAM user.
      * </p>
      * 
      * @param user
-     *        Information about the user.
+     *        A structure with details about the new IAM user.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

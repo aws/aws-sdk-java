@@ -29,8 +29,8 @@ public class DescribeGatewayInformationResult implements Serializable,
     private String gatewayARN;
     /**
      * <p>
-     * The unique identifier assigned to your gateway during activation. This id
-     * becomes part of the gateway Amazon Resources Name (ARN) which you use as
+     * The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
      * input for other operations.
      * </p>
      */
@@ -112,14 +112,14 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The unique identifier assigned to your gateway during activation. This id
-     * becomes part of the gateway Amazon Resources Name (ARN) which you use as
+     * The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
      * input for other operations.
      * </p>
      * 
      * @param gatewayId
      *        The unique identifier assigned to your gateway during activation.
-     *        This id becomes part of the gateway Amazon Resources Name (ARN)
+     *        This ID becomes part of the gateway Amazon Resource Name (ARN),
      *        which you use as input for other operations.
      */
 
@@ -129,13 +129,13 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The unique identifier assigned to your gateway during activation. This id
-     * becomes part of the gateway Amazon Resources Name (ARN) which you use as
+     * The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
      * input for other operations.
      * </p>
      * 
      * @return The unique identifier assigned to your gateway during activation.
-     *         This id becomes part of the gateway Amazon Resources Name (ARN)
+     *         This ID becomes part of the gateway Amazon Resource Name (ARN),
      *         which you use as input for other operations.
      */
 
@@ -145,14 +145,14 @@ public class DescribeGatewayInformationResult implements Serializable,
 
     /**
      * <p>
-     * The unique identifier assigned to your gateway during activation. This id
-     * becomes part of the gateway Amazon Resources Name (ARN) which you use as
+     * The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
      * input for other operations.
      * </p>
      * 
      * @param gatewayId
      *        The unique identifier assigned to your gateway during activation.
-     *        This id becomes part of the gateway Amazon Resources Name (ARN)
+     *        This ID becomes part of the gateway Amazon Resource Name (ARN),
      *        which you use as input for other operations.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

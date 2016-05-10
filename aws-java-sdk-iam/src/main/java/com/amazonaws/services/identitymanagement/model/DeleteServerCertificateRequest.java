@@ -29,6 +29,12 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the server certificate you want to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String serverCertificateName;
 
@@ -46,7 +52,12 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param serverCertificateName
-     *        The name of the server certificate you want to delete.
+     *        The name of the server certificate you want to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
     public DeleteServerCertificateRequest(String serverCertificateName) {
         setServerCertificateName(serverCertificateName);
@@ -56,9 +67,20 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the server certificate you want to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param serverCertificateName
-     *        The name of the server certificate you want to delete.
+     *        The name of the server certificate you want to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
 
     public void setServerCertificateName(String serverCertificateName) {
@@ -69,8 +91,19 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the server certificate you want to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the server certificate you want to delete.
+     * @return The name of the server certificate you want to delete.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
 
     public String getServerCertificateName() {
@@ -81,9 +114,20 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the server certificate you want to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param serverCertificateName
-     *        The name of the server certificate you want to delete.
+     *        The name of the server certificate you want to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

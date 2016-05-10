@@ -27,18 +27,21 @@ public class GetLoginProfileResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user name and password create date for the user.
+     * A structure containing the user name and password create date for the
+     * user.
      * </p>
      */
     private LoginProfile loginProfile;
 
     /**
      * <p>
-     * The user name and password create date for the user.
+     * A structure containing the user name and password create date for the
+     * user.
      * </p>
      * 
      * @param loginProfile
-     *        The user name and password create date for the user.
+     *        A structure containing the user name and password create date for
+     *        the user.
      */
 
     public void setLoginProfile(LoginProfile loginProfile) {
@@ -47,10 +50,12 @@ public class GetLoginProfileResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user name and password create date for the user.
+     * A structure containing the user name and password create date for the
+     * user.
      * </p>
      * 
-     * @return The user name and password create date for the user.
+     * @return A structure containing the user name and password create date for
+     *         the user.
      */
 
     public LoginProfile getLoginProfile() {
@@ -59,11 +64,13 @@ public class GetLoginProfileResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user name and password create date for the user.
+     * A structure containing the user name and password create date for the
+     * user.
      * </p>
      * 
      * @param loginProfile
-     *        The user name and password create date for the user.
+     *        A structure containing the user name and password create date for
+     *        the user.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

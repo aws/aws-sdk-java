@@ -29,10 +29,9 @@ public class ServiceModel {
 
     private String documentation;
 
-    public ServiceModel(
-            @JsonProperty(value = "metadata", required = true) ServiceMetadata metadata,
-            @JsonProperty(value = "operations", required = true) Map<String, Operation> operations,
-            @JsonProperty(value = "shapes", required = true) Map<String, Shape> shapes) {
+    public ServiceModel(@JsonProperty(value = "metadata", required = true) ServiceMetadata metadata,
+                        @JsonProperty(value = "operations", required = true) Map<String, Operation> operations,
+                        @JsonProperty(value = "shapes", required = true) Map<String, Shape> shapes) {
         this.metadata = metadata;
         this.operations = operations;
         this.shapes = shapes;
@@ -44,6 +43,16 @@ public class ServiceModel {
 
     public Map<String, Operation> getOperations() {
         return operations;
+    }
+
+    /**
+     * Convenience getter to retrieve an {@link Operation} by name.
+     *
+     * @param operationName Name of operation to retrieve.
+     * @return Operation or null if not found.
+     */
+    public Operation getOperation(String operationName) {
+        return operations.get(operationName);
     }
 
     public Map<String, Shape> getShapes() {

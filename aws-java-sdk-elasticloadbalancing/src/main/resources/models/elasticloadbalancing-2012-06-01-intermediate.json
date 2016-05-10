@@ -20,13 +20,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "elasticloadbalancing",
     "signingName" : "elasticloadbalancing",
+    "xmlProtocol" : true,
     "serviceName" : "Elastic Load Balancing",
     "cborProtocol" : false,
     "jsonProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
-    "xmlProtocol" : true
+    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "AddTags" : {
@@ -57,13 +57,13 @@
         "documentation" : "<p>A tag key was specified more than once.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "addTags",
       "authenticated" : true,
       "syncReturnType" : "AddTagsResult",
       "asyncReturnType" : "AddTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>",
+      "methodName" : "addTags"
     },
     "ApplySecurityGroupsToLoadBalancer" : {
       "documentation" : "<p>Associates one or more security groups with your load balancer in a virtual private cloud (VPC). The specified security groups override the previously associated security groups.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-groups.html#elb-vpc-security-groups\">Security Groups for Load Balancers in a VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -93,13 +93,13 @@
         "documentation" : "<p>One or more of the specified security groups do not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "applySecurityGroupsToLoadBalancer",
       "authenticated" : true,
       "syncReturnType" : "ApplySecurityGroupsToLoadBalancerResult",
       "asyncReturnType" : "ApplySecurityGroupsToLoadBalancerResult",
       "asyncFutureType" : "java.util.concurrent.Future<ApplySecurityGroupsToLoadBalancerResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ApplySecurityGroupsToLoadBalancerResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ApplySecurityGroupsToLoadBalancerRequest, ApplySecurityGroupsToLoadBalancerResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ApplySecurityGroupsToLoadBalancerRequest, ApplySecurityGroupsToLoadBalancerResult>",
+      "methodName" : "applySecurityGroupsToLoadBalancer"
     },
     "AttachLoadBalancerToSubnets" : {
       "documentation" : "<p>Adds one or more subnets to the set of configured subnets for the specified load balancer.</p> <p>The load balancer evenly distributes requests across all registered subnets. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-manage-subnets.html\">Add or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -132,13 +132,13 @@
         "documentation" : "<p>The specified VPC has no associated Internet gateway.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "attachLoadBalancerToSubnets",
       "authenticated" : true,
       "syncReturnType" : "AttachLoadBalancerToSubnetsResult",
       "asyncReturnType" : "AttachLoadBalancerToSubnetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AttachLoadBalancerToSubnetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AttachLoadBalancerToSubnetsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AttachLoadBalancerToSubnetsRequest, AttachLoadBalancerToSubnetsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AttachLoadBalancerToSubnetsRequest, AttachLoadBalancerToSubnetsResult>",
+      "methodName" : "attachLoadBalancerToSubnets"
     },
     "ConfigureHealthCheck" : {
       "documentation" : "<p>Specifies the health check settings to use when evaluating the health state of your back-end instances.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-healthchecks.html\">Configure Health Checks</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -162,13 +162,13 @@
         "documentation" : "<p>The specified load balancer does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "configureHealthCheck",
       "authenticated" : true,
       "syncReturnType" : "ConfigureHealthCheckResult",
       "asyncReturnType" : "ConfigureHealthCheckResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfigureHealthCheckResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfigureHealthCheckResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfigureHealthCheckRequest, ConfigureHealthCheckResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfigureHealthCheckRequest, ConfigureHealthCheckResult>",
+      "methodName" : "configureHealthCheck"
     },
     "CreateAppCookieStickinessPolicy" : {
       "documentation" : "<p>Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be associated only with HTTP/HTTPS listeners.</p> <p>This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>, except that the lifetime of the special Elastic Load Balancing cookie, <code>AWSELB</code>, follows the lifetime of the application-generated cookie specified in the policy configuration. The load balancer only inserts a new stickiness cookie when the application response includes a new application cookie.</p> <p>If the application cookie is explicitly removed or expires, the session stops being sticky until a new application cookie is issued.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-application\">Application-Controlled Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -201,13 +201,13 @@
         "documentation" : "<p>The requested configuration change is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createAppCookieStickinessPolicy",
       "authenticated" : true,
       "syncReturnType" : "CreateAppCookieStickinessPolicyResult",
       "asyncReturnType" : "CreateAppCookieStickinessPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAppCookieStickinessPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAppCookieStickinessPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAppCookieStickinessPolicyRequest, CreateAppCookieStickinessPolicyResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAppCookieStickinessPolicyRequest, CreateAppCookieStickinessPolicyResult>",
+      "methodName" : "createAppCookieStickinessPolicy"
     },
     "CreateLBCookieStickinessPolicy" : {
       "documentation" : "<p>Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period. This policy can be associated only with HTTP/HTTPS listeners.</p> <p>When a load balancer implements this policy, the load balancer uses a special cookie to track the back-end server instance for each request. When the load balancer receives a request, it first checks to see if this cookie is present in the request. If so, the load balancer sends the request to the application server specified in the cookie. If not, the load balancer sends the request to a server that is chosen based on the existing load-balancing algorithm.</p> <p>A cookie is inserted into the response for binding subsequent requests from the same user to that server. The validity of the cookie is based on the cookie expiration time, which is specified in the policy configuration.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-duration\">Duration-Based Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -240,13 +240,13 @@
         "documentation" : "<p>The requested configuration change is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createLBCookieStickinessPolicy",
       "authenticated" : true,
       "syncReturnType" : "CreateLBCookieStickinessPolicyResult",
       "asyncReturnType" : "CreateLBCookieStickinessPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateLBCookieStickinessPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateLBCookieStickinessPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLBCookieStickinessPolicyRequest, CreateLBCookieStickinessPolicyResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLBCookieStickinessPolicyRequest, CreateLBCookieStickinessPolicyResult>",
+      "methodName" : "createLBCookieStickinessPolicy"
     },
     "CreateLoadBalancer" : {
       "documentation" : "<p>Creates a load balancer.</p> <p>If the call completes successfully, a new load balancer is created with a unique Domain Name Service (DNS) name. The load balancer receives incoming traffic and routes it to the registered instances. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/how-elb-works.html\">How Elastic Load Balancing Works</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p> <p>You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-limits.html\">Elastic Load Balancing Limits</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -297,13 +297,13 @@
         "documentation" : "<p>A tag key was specified more than once.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createLoadBalancer",
       "authenticated" : true,
       "syncReturnType" : "CreateLoadBalancerResult",
       "asyncReturnType" : "CreateLoadBalancerResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateLoadBalancerResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateLoadBalancerResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLoadBalancerRequest, CreateLoadBalancerResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLoadBalancerRequest, CreateLoadBalancerResult>",
+      "methodName" : "createLoadBalancer"
     },
     "CreateLoadBalancerListeners" : {
       "documentation" : "<p>Creates one or more listeners for the specified load balancer. If a listener with the specified port does not already exist, it is created; otherwise, the properties of the new listener must match the properties of the existing listener.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html\">Add a Listener to Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -336,13 +336,13 @@
         "documentation" : "<p>The requested configuration change is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createLoadBalancerListeners",
       "authenticated" : true,
       "syncReturnType" : "CreateLoadBalancerListenersResult",
       "asyncReturnType" : "CreateLoadBalancerListenersResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateLoadBalancerListenersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateLoadBalancerListenersResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLoadBalancerListenersRequest, CreateLoadBalancerListenersResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLoadBalancerListenersRequest, CreateLoadBalancerListenersResult>",
+      "methodName" : "createLoadBalancerListeners"
     },
     "CreateLoadBalancerPolicy" : {
       "documentation" : "<p>Creates a policy with the specified attributes for the specified load balancer.</p> <p>Policies are settings that are saved for your load balancer and that can be applied to the front-end listener or the back-end application server, depending on the policy type.</p>",
@@ -378,13 +378,13 @@
         "documentation" : "<p>The requested configuration change is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createLoadBalancerPolicy",
       "authenticated" : true,
       "syncReturnType" : "CreateLoadBalancerPolicyResult",
       "asyncReturnType" : "CreateLoadBalancerPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateLoadBalancerPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateLoadBalancerPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLoadBalancerPolicyRequest, CreateLoadBalancerPolicyResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLoadBalancerPolicyRequest, CreateLoadBalancerPolicyResult>",
+      "methodName" : "createLoadBalancerPolicy"
     },
     "DeleteLoadBalancer" : {
       "documentation" : "<p>Deletes the specified load balancer.</p> <p>If you are attempting to recreate a load balancer, you must reconfigure all settings. The DNS name associated with a deleted load balancer are no longer usable. The name and associated DNS record of the deleted load balancer no longer exist and traffic sent to any of its IP addresses is no longer delivered to back-end instances.</p> <p>If the load balancer does not exist or has already been deleted, the call to <code>DeleteLoadBalancer</code> still succeeds.</p>",
@@ -405,13 +405,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteLoadBalancer",
       "authenticated" : true,
       "syncReturnType" : "DeleteLoadBalancerResult",
       "asyncReturnType" : "DeleteLoadBalancerResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteLoadBalancerResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteLoadBalancerResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLoadBalancerRequest, DeleteLoadBalancerResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLoadBalancerRequest, DeleteLoadBalancerResult>",
+      "methodName" : "deleteLoadBalancer"
     },
     "DeleteLoadBalancerListeners" : {
       "documentation" : "<p>Deletes the specified listeners from the specified load balancer.</p>",
@@ -435,13 +435,13 @@
         "documentation" : "<p>The specified load balancer does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteLoadBalancerListeners",
       "authenticated" : true,
       "syncReturnType" : "DeleteLoadBalancerListenersResult",
       "asyncReturnType" : "DeleteLoadBalancerListenersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteLoadBalancerListenersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteLoadBalancerListenersResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLoadBalancerListenersRequest, DeleteLoadBalancerListenersResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLoadBalancerListenersRequest, DeleteLoadBalancerListenersResult>",
+      "methodName" : "deleteLoadBalancerListeners"
     },
     "DeleteLoadBalancerPolicy" : {
       "documentation" : "<p>Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners.</p>",
@@ -468,13 +468,13 @@
         "documentation" : "<p>The requested configuration change is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteLoadBalancerPolicy",
       "authenticated" : true,
       "syncReturnType" : "DeleteLoadBalancerPolicyResult",
       "asyncReturnType" : "DeleteLoadBalancerPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteLoadBalancerPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteLoadBalancerPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLoadBalancerPolicyRequest, DeleteLoadBalancerPolicyResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLoadBalancerPolicyRequest, DeleteLoadBalancerPolicyResult>",
+      "methodName" : "deleteLoadBalancerPolicy"
     },
     "DeregisterInstancesFromLoadBalancer" : {
       "documentation" : "<p>Deregisters the specified instances from the specified load balancer. After the instance is deregistered, it no longer receives traffic from the load balancer.</p> <p>You can use <a>DescribeLoadBalancers</a> to verify that the instance is deregistered from the load balancer.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html\">Deregister and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -501,13 +501,13 @@
         "documentation" : "<p>The specified endpoint is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deregisterInstancesFromLoadBalancer",
       "authenticated" : true,
       "syncReturnType" : "DeregisterInstancesFromLoadBalancerResult",
       "asyncReturnType" : "DeregisterInstancesFromLoadBalancerResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeregisterInstancesFromLoadBalancerResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeregisterInstancesFromLoadBalancerResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeregisterInstancesFromLoadBalancerRequest, DeregisterInstancesFromLoadBalancerResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeregisterInstancesFromLoadBalancerRequest, DeregisterInstancesFromLoadBalancerResult>",
+      "methodName" : "deregisterInstancesFromLoadBalancer"
     },
     "DescribeInstanceHealth" : {
       "documentation" : "<p>Describes the state of the specified instances with respect to the specified load balancer. If no instances are specified, the call describes the state of all instances that are currently registered with the load balancer. If instances are specified, their state is returned even if they are no longer registered with the load balancer. The state of terminated instances is not returned.</p>",
@@ -534,13 +534,13 @@
         "documentation" : "<p>The specified endpoint is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeInstanceHealth",
       "authenticated" : true,
       "syncReturnType" : "DescribeInstanceHealthResult",
       "asyncReturnType" : "DescribeInstanceHealthResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeInstanceHealthResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeInstanceHealthResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>",
+      "methodName" : "describeInstanceHealth"
     },
     "DescribeLoadBalancerAttributes" : {
       "documentation" : "<p>Describes the attributes for the specified load balancer.</p>",
@@ -567,13 +567,13 @@
         "documentation" : "<p>The specified load balancer attribute does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeLoadBalancerAttributes",
       "authenticated" : true,
       "syncReturnType" : "DescribeLoadBalancerAttributesResult",
       "asyncReturnType" : "DescribeLoadBalancerAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLoadBalancerAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLoadBalancerAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerAttributesRequest, DescribeLoadBalancerAttributesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerAttributesRequest, DescribeLoadBalancerAttributesResult>",
+      "methodName" : "describeLoadBalancerAttributes"
     },
     "DescribeLoadBalancerPolicies" : {
       "documentation" : "<p>Describes the specified policies.</p> <p>If you specify a load balancer name, the action returns the descriptions of all policies created for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description of that policy. If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions of all sample policies. The names of the sample policies have the <code>ELBSample-</code> prefix.</p>",
@@ -600,13 +600,13 @@
         "documentation" : "<p>One or more of the specified policies do not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeLoadBalancerPolicies",
       "authenticated" : true,
       "syncReturnType" : "DescribeLoadBalancerPoliciesResult",
       "asyncReturnType" : "DescribeLoadBalancerPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLoadBalancerPoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLoadBalancerPoliciesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerPoliciesRequest, DescribeLoadBalancerPoliciesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerPoliciesRequest, DescribeLoadBalancerPoliciesResult>",
+      "methodName" : "describeLoadBalancerPolicies"
     },
     "DescribeLoadBalancerPolicyTypes" : {
       "documentation" : "<p>Describes the specified load balancer policy types.</p> <p>You can use these policy types with <a>CreateLoadBalancerPolicy</a> to create policy configurations for a load balancer.</p>",
@@ -630,13 +630,13 @@
         "documentation" : "<p>One or more of the specified policy types do not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeLoadBalancerPolicyTypes",
       "authenticated" : true,
       "syncReturnType" : "DescribeLoadBalancerPolicyTypesResult",
       "asyncReturnType" : "DescribeLoadBalancerPolicyTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLoadBalancerPolicyTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLoadBalancerPolicyTypesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerPolicyTypesRequest, DescribeLoadBalancerPolicyTypesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerPolicyTypesRequest, DescribeLoadBalancerPolicyTypesResult>",
+      "methodName" : "describeLoadBalancerPolicyTypes"
     },
     "DescribeLoadBalancers" : {
       "documentation" : "<p>Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.</p>",
@@ -660,13 +660,13 @@
         "documentation" : "<p>The specified load balancer does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeLoadBalancers",
       "authenticated" : true,
       "syncReturnType" : "DescribeLoadBalancersResult",
       "asyncReturnType" : "DescribeLoadBalancersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLoadBalancersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLoadBalancersResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancersRequest, DescribeLoadBalancersResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancersRequest, DescribeLoadBalancersResult>",
+      "methodName" : "describeLoadBalancers"
     },
     "DescribeTags" : {
       "documentation" : "<p>Describes the tags associated with the specified load balancers.</p>",
@@ -690,13 +690,13 @@
         "documentation" : "<p>The specified load balancer does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeTags",
       "authenticated" : true,
       "syncReturnType" : "DescribeTagsResult",
       "asyncReturnType" : "DescribeTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult>",
+      "methodName" : "describeTags"
     },
     "DetachLoadBalancerFromSubnets" : {
       "documentation" : "<p>Removes the specified subnets from the set of configured subnets for the load balancer.</p> <p>After a subnet is removed, all EC2 instances registered with the load balancer in the removed subnet go into the <code>OutOfService</code> state. Then, the load balancer balances the traffic among the remaining routable subnets.</p>",
@@ -723,13 +723,13 @@
         "documentation" : "<p>The requested configuration change is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "detachLoadBalancerFromSubnets",
       "authenticated" : true,
       "syncReturnType" : "DetachLoadBalancerFromSubnetsResult",
       "asyncReturnType" : "DetachLoadBalancerFromSubnetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DetachLoadBalancerFromSubnetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DetachLoadBalancerFromSubnetsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DetachLoadBalancerFromSubnetsRequest, DetachLoadBalancerFromSubnetsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DetachLoadBalancerFromSubnetsRequest, DetachLoadBalancerFromSubnetsResult>",
+      "methodName" : "detachLoadBalancerFromSubnets"
     },
     "DisableAvailabilityZonesForLoadBalancer" : {
       "documentation" : "<p>Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer.</p> <p>There must be at least one Availability Zone registered with a load balancer at all times. After an Availability Zone is removed, all instances registered with the load balancer that are in the removed Availability Zone go into the <code>OutOfService</code> state. Then, the load balancer attempts to equally balance the traffic among its remaining Availability Zones.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html\">Disable an Availability Zone from a Load-Balanced Application</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -756,13 +756,13 @@
         "documentation" : "<p>The requested configuration change is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "disableAvailabilityZonesForLoadBalancer",
       "authenticated" : true,
       "syncReturnType" : "DisableAvailabilityZonesForLoadBalancerResult",
       "asyncReturnType" : "DisableAvailabilityZonesForLoadBalancerResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableAvailabilityZonesForLoadBalancerResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableAvailabilityZonesForLoadBalancerResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableAvailabilityZonesForLoadBalancerRequest, DisableAvailabilityZonesForLoadBalancerResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableAvailabilityZonesForLoadBalancerRequest, DisableAvailabilityZonesForLoadBalancerResult>",
+      "methodName" : "disableAvailabilityZonesForLoadBalancer"
     },
     "EnableAvailabilityZonesForLoadBalancer" : {
       "documentation" : "<p>Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer.</p> <p>The load balancer evenly distributes requests across all its registered Availability Zones that contain instances.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html\">Add Availability Zone</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -786,13 +786,13 @@
         "documentation" : "<p>The specified load balancer does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "enableAvailabilityZonesForLoadBalancer",
       "authenticated" : true,
       "syncReturnType" : "EnableAvailabilityZonesForLoadBalancerResult",
       "asyncReturnType" : "EnableAvailabilityZonesForLoadBalancerResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableAvailabilityZonesForLoadBalancerResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableAvailabilityZonesForLoadBalancerResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableAvailabilityZonesForLoadBalancerRequest, EnableAvailabilityZonesForLoadBalancerResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableAvailabilityZonesForLoadBalancerRequest, EnableAvailabilityZonesForLoadBalancerResult>",
+      "methodName" : "enableAvailabilityZonesForLoadBalancer"
     },
     "ModifyLoadBalancerAttributes" : {
       "documentation" : "<p>Modifies the attributes of the specified load balancer.</p> <p>You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>, and <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or, you can modify the load balancer attribute <code>ConnectionSettings</code> by specifying an idle connection timeout value for your load balancer.</p> <p>For more information, see the following in the <i>Elastic Load Balancing Developer Guide</i>:</p> <ul> <li><a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing\">Cross-Zone Load Balancing</a></li> <li><a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain\">Connection Draining</a></li> <li><a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html\">Access Logs</a></li> <li><a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout\">Idle Connection Timeout</a></li> </ul>",
@@ -822,13 +822,13 @@
         "documentation" : "<p>The requested configuration change is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "modifyLoadBalancerAttributes",
       "authenticated" : true,
       "syncReturnType" : "ModifyLoadBalancerAttributesResult",
       "asyncReturnType" : "ModifyLoadBalancerAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyLoadBalancerAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyLoadBalancerAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyLoadBalancerAttributesRequest, ModifyLoadBalancerAttributesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyLoadBalancerAttributesRequest, ModifyLoadBalancerAttributesResult>",
+      "methodName" : "modifyLoadBalancerAttributes"
     },
     "RegisterInstancesWithLoadBalancer" : {
       "documentation" : "<p>Adds the specified instances to the specified load balancer.</p> <p>The instance must be a running instance in the same network as the load balancer (EC2-Classic or the same VPC). If you have EC2-Classic instances and a load balancer in a VPC with ClassicLink enabled, you can link the EC2-Classic instances to that VPC and then register the linked EC2-Classic instances with the load balancer in the VPC.</p> <p>Note that <code>RegisterInstanceWithLoadBalancer</code> completes when the request has been registered. Instance registration takes a little time to complete. To check the state of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.</p> <p>After the instance is registered, it starts receiving traffic and requests from the load balancer. Any instance that is not in one of the Availability Zones registered for the load balancer is moved to the <code>OutOfService</code> state. If an Availability Zone is added to the load balancer later, any instances registered with the load balancer move to the <code>InService</code> state.</p> <p>If you stop an instance registered with a load balancer and then start it, the IP addresses associated with the instance changes. Elastic Load Balancing cannot recognize the new IP address, which prevents it from routing traffic to the instances. We recommend that you use the following sequence: stop the instance, deregister the instance, start the instance, and then register the instance. To deregister instances from a load balancer, use <a>DeregisterInstancesFromLoadBalancer</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html\">Deregister and Register EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -855,13 +855,13 @@
         "documentation" : "<p>The specified endpoint is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "registerInstancesWithLoadBalancer",
       "authenticated" : true,
       "syncReturnType" : "RegisterInstancesWithLoadBalancerResult",
       "asyncReturnType" : "RegisterInstancesWithLoadBalancerResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterInstancesWithLoadBalancerResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RegisterInstancesWithLoadBalancerResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterInstancesWithLoadBalancerRequest, RegisterInstancesWithLoadBalancerResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterInstancesWithLoadBalancerRequest, RegisterInstancesWithLoadBalancerResult>",
+      "methodName" : "registerInstancesWithLoadBalancer"
     },
     "RemoveTags" : {
       "documentation" : "<p>Removes one or more tags from the specified load balancer.</p>",
@@ -885,13 +885,13 @@
         "documentation" : "<p>The specified load balancer does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "removeTags",
       "authenticated" : true,
       "syncReturnType" : "RemoveTagsResult",
       "asyncReturnType" : "RemoveTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>",
+      "methodName" : "removeTags"
     },
     "SetLoadBalancerListenerSSLCertificate" : {
       "documentation" : "<p>Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior certificate that was used on the same load balancer and port.</p> <p>For more information about updating your SSL certificate, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html\">Updating an SSL Certificate for a Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
@@ -924,13 +924,13 @@
         "documentation" : "<p>The requested configuration change is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "setLoadBalancerListenerSSLCertificate",
       "authenticated" : true,
       "syncReturnType" : "SetLoadBalancerListenerSSLCertificateResult",
       "asyncReturnType" : "SetLoadBalancerListenerSSLCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetLoadBalancerListenerSSLCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetLoadBalancerListenerSSLCertificateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetLoadBalancerListenerSSLCertificateRequest, SetLoadBalancerListenerSSLCertificateResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetLoadBalancerListenerSSLCertificateRequest, SetLoadBalancerListenerSSLCertificateResult>",
+      "methodName" : "setLoadBalancerListenerSSLCertificate"
     },
     "SetLoadBalancerPoliciesForBackendServer" : {
       "documentation" : "<p>Replaces the set of policies associated with the specified port on which the back-end server is listening with a new set of policies. At this time, only the back-end server authentication policy type can be applied to the back-end ports; this policy type is composed of multiple public key policies.</p> <p>Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the policies, use the <code>PolicyNames</code> parameter to list the policies that you want to enable.</p> <p>You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> to verify that the policy is associated with the back-end server.</p>",
@@ -960,13 +960,13 @@
         "documentation" : "<p>The requested configuration change is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "setLoadBalancerPoliciesForBackendServer",
       "authenticated" : true,
       "syncReturnType" : "SetLoadBalancerPoliciesForBackendServerResult",
       "asyncReturnType" : "SetLoadBalancerPoliciesForBackendServerResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetLoadBalancerPoliciesForBackendServerResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetLoadBalancerPoliciesForBackendServerResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetLoadBalancerPoliciesForBackendServerRequest, SetLoadBalancerPoliciesForBackendServerResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetLoadBalancerPoliciesForBackendServerRequest, SetLoadBalancerPoliciesForBackendServerResult>",
+      "methodName" : "setLoadBalancerPoliciesForBackendServer"
     },
     "SetLoadBalancerPoliciesOfListener" : {
       "documentation" : "<p>Associates, updates, or disables a policy with a listener for the specified load balancer. You can associate multiple policies with a listener.</p>",
@@ -999,13 +999,13 @@
         "documentation" : "<p>The requested configuration change is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "setLoadBalancerPoliciesOfListener",
       "authenticated" : true,
       "syncReturnType" : "SetLoadBalancerPoliciesOfListenerResult",
       "asyncReturnType" : "SetLoadBalancerPoliciesOfListenerResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetLoadBalancerPoliciesOfListenerResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetLoadBalancerPoliciesOfListenerResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetLoadBalancerPoliciesOfListenerRequest, SetLoadBalancerPoliciesOfListenerResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetLoadBalancerPoliciesOfListenerRequest, SetLoadBalancerPoliciesOfListenerResult>",
+      "methodName" : "setLoadBalancerPoliciesOfListener"
     }
   },
   "shapes" : {
@@ -1019,6 +1019,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the attribute.</p>",
         "name" : "AttributeName",
@@ -1579,6 +1580,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -1610,6 +1612,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The names of the load balancers.</p>",
         "name" : "LoadBalancerNames",
@@ -1711,11 +1714,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1856,11 +1859,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1886,6 +1889,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the policy types.</p>",
         "name" : "PolicyTypeDescriptions",
@@ -1987,11 +1991,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "PolicyTypeDescription",
           "templateType" : "java.util.List<PolicyTypeDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyTypeDescription>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyTypeDescription>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2128,11 +2132,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "PolicyTypeDescription",
             "templateType" : "java.util.List<PolicyTypeDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyTypeDescription>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyTypeDescription>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2158,6 +2162,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The DNS name of the load balancer.</p>",
         "name" : "DNSName",
@@ -2298,6 +2303,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -2329,6 +2335,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -2360,6 +2367,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p> <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>",
         "name" : "LoadBalancerName",
@@ -2513,11 +2521,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Listener",
           "templateType" : "java.util.List<Listener>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2631,11 +2639,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2749,11 +2757,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2867,11 +2875,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3037,11 +3045,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3182,11 +3190,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3407,11 +3415,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3526,11 +3534,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Listener",
             "templateType" : "java.util.List<Listener>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3645,11 +3653,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3764,11 +3772,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3794,6 +3802,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>This parameter is reserved.</p>",
         "name" : "Key",
@@ -4039,6 +4048,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The updated list of instances for the load balancer.</p>",
         "name" : "Instances",
@@ -4140,11 +4150,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Instance",
           "templateType" : "java.util.List<Instance>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4281,11 +4291,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Instance",
             "templateType" : "java.util.List<Instance>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4311,6 +4321,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4342,6 +4353,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The IDs of the remaining subnets for the load balancer.</p>",
         "name" : "Subnets",
@@ -4443,11 +4455,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4584,11 +4596,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4614,6 +4626,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4645,6 +4658,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -4789,6 +4803,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -4942,11 +4957,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5140,11 +5155,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5170,6 +5185,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The key of the tag.</p>",
         "name" : "Key",
@@ -5415,6 +5431,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5446,6 +5463,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5480,6 +5498,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5514,6 +5533,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>",
         "name" : "PolicyName",
@@ -5759,6 +5779,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5793,6 +5814,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -5946,11 +5968,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6087,11 +6109,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6170,6 +6192,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The stickiness policies created using <a>CreateAppCookieStickinessPolicy</a>.</p>",
         "name" : "AppCookieStickinessPolicies",
@@ -6271,11 +6294,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "AppCookieStickinessPolicy",
           "templateType" : "java.util.List<AppCookieStickinessPolicy>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AppCookieStickinessPolicy>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AppCookieStickinessPolicy>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6389,11 +6412,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "LBCookieStickinessPolicy",
           "templateType" : "java.util.List<LBCookieStickinessPolicy>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LBCookieStickinessPolicy>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LBCookieStickinessPolicy>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6507,11 +6530,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6648,11 +6671,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "AppCookieStickinessPolicy",
             "templateType" : "java.util.List<AppCookieStickinessPolicy>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AppCookieStickinessPolicy>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AppCookieStickinessPolicy>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6767,11 +6790,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "LBCookieStickinessPolicy",
             "templateType" : "java.util.List<LBCookieStickinessPolicy>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LBCookieStickinessPolicy>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LBCookieStickinessPolicy>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6886,11 +6909,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6916,6 +6939,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -6947,6 +6971,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The IDs of the security groups associated with the load balancer.</p>",
         "name" : "SecurityGroups",
@@ -7048,11 +7073,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7189,11 +7214,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7219,6 +7244,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the tags.</p>",
         "name" : "TagDescriptions",
@@ -7320,11 +7346,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "TagDescription",
           "templateType" : "java.util.List<TagDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7461,11 +7487,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "TagDescription",
             "templateType" : "java.util.List<TagDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7491,6 +7517,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the health of the instances.</p>",
         "name" : "InstanceStates",
@@ -7592,11 +7619,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "InstanceState",
           "templateType" : "java.util.List<InstanceState>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceState>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceState>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7733,11 +7760,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "InstanceState",
             "templateType" : "java.util.List<InstanceState>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceState>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceState>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7763,6 +7790,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -7916,11 +7944,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8114,11 +8142,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8144,6 +8172,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the policies.</p>",
         "name" : "PolicyDescriptions",
@@ -8245,11 +8274,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "PolicyDescription",
           "templateType" : "java.util.List<PolicyDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyDescription>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyDescription>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8386,11 +8415,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "PolicyDescription",
             "templateType" : "java.util.List<PolicyDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyDescription>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyDescription>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8416,6 +8445,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -8447,6 +8477,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The updated health check.</p>",
         "name" : "HealthCheck",
@@ -8587,6 +8618,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The names of the load balancers.</p>",
         "name" : "LoadBalancerNames",
@@ -8688,11 +8720,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8937,11 +8969,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9073,6 +9105,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -9104,6 +9137,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the policy type.</p>",
         "name" : "PolicyTypeName",
@@ -9309,11 +9343,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "PolicyAttributeTypeDescription",
           "templateType" : "java.util.List<PolicyAttributeTypeDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttributeTypeDescription>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttributeTypeDescription>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9503,11 +9537,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "PolicyAttributeTypeDescription",
             "templateType" : "java.util.List<PolicyAttributeTypeDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttributeTypeDescription>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttributeTypeDescription>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9586,6 +9620,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -9620,6 +9655,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -9773,11 +9809,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "Integer",
           "templateType" : "java.util.List<Integer>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Integer>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Integer>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9971,11 +10007,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "Integer",
             "templateType" : "java.util.List<Integer>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Integer>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Integer>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10001,6 +10037,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -10246,6 +10283,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the attribute.</p>",
         "name" : "AttributeName",
@@ -10491,6 +10529,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -10635,6 +10674,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the attribute.</p>",
         "name" : "AttributeName",
@@ -10880,6 +10920,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -11129,6 +11170,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -11334,11 +11376,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : true,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11479,11 +11521,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : true,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11615,6 +11657,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11646,6 +11689,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11677,6 +11721,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -11830,11 +11875,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12028,11 +12073,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12058,6 +12103,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The remaining instances registered with the load balancer.</p>",
         "name" : "Instances",
@@ -12159,11 +12205,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Instance",
           "templateType" : "java.util.List<Instance>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12300,11 +12346,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Instance",
             "templateType" : "java.util.List<Instance>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12330,6 +12376,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -12579,6 +12626,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -12610,6 +12658,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -12644,6 +12693,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the instance.</p>",
         "name" : "InstanceId",
@@ -12784,6 +12834,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the load balancers.</p>",
         "name" : "LoadBalancerDescriptions",
@@ -12885,11 +12936,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "LoadBalancerDescription",
           "templateType" : "java.util.List<LoadBalancerDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancerDescription>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancerDescription>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13078,11 +13129,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "LoadBalancerDescription",
             "templateType" : "java.util.List<LoadBalancerDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancerDescription>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancerDescription>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13161,6 +13212,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -13192,6 +13244,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -13223,6 +13276,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -13257,6 +13311,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the policy.</p>",
         "name" : "PolicyName",
@@ -13462,11 +13517,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "PolicyAttributeDescription",
           "templateType" : "java.util.List<PolicyAttributeDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttributeDescription>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttributeDescription>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13603,11 +13658,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "PolicyAttributeDescription",
             "templateType" : "java.util.List<PolicyAttributeDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttributeDescription>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttributeDescription>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13739,6 +13794,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The owner of the security group.</p>",
         "name" : "OwnerAlias",
@@ -13984,6 +14040,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name for the policy being created. The name must be unique within the set of policies for this load balancer.</p>",
         "name" : "PolicyName",
@@ -14229,6 +14286,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -14382,11 +14440,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14580,11 +14638,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14610,6 +14668,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14644,6 +14703,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14675,6 +14735,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14709,6 +14770,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14743,6 +14805,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -14948,11 +15011,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : true,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15093,11 +15156,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : true,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15229,6 +15292,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies whether connection draining is enabled for the load balancer.</p>",
         "name" : "Enabled",
@@ -15474,6 +15538,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -15508,6 +15573,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The updated list of Availability Zones for the load balancer.</p>",
         "name" : "AvailabilityZones",
@@ -15609,11 +15675,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15750,11 +15816,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15780,6 +15846,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -16089,11 +16156,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ListenerDescription",
           "templateType" : "java.util.List<ListenerDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ListenerDescription>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ListenerDescription>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16259,11 +16326,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "BackendServerDescription",
           "templateType" : "java.util.List<BackendServerDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<BackendServerDescription>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<BackendServerDescription>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16377,11 +16444,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16495,11 +16562,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16665,11 +16732,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Instance",
           "templateType" : "java.util.List<Instance>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16887,11 +16954,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17344,11 +17411,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ListenerDescription",
             "templateType" : "java.util.List<ListenerDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ListenerDescription>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ListenerDescription>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17463,11 +17530,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17582,11 +17649,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Instance",
             "templateType" : "java.util.List<Instance>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17701,11 +17768,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18138,11 +18205,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18257,11 +18324,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "BackendServerDescription",
             "templateType" : "java.util.List<BackendServerDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<BackendServerDescription>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<BackendServerDescription>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18287,6 +18354,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -18321,6 +18389,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -18352,6 +18421,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -18505,11 +18575,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Instance",
           "templateType" : "java.util.List<Instance>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18703,11 +18773,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Instance",
             "templateType" : "java.util.List<Instance>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18733,6 +18803,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The IDs of the subnets attached to the load balancer.</p>",
         "name" : "Subnets",
@@ -18834,11 +18905,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18975,11 +19046,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19005,6 +19076,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The port on which the back-end server is listening.</p>",
         "name" : "InstancePort",
@@ -19158,11 +19230,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19299,11 +19371,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19382,6 +19454,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -19535,11 +19608,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19680,11 +19753,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19763,6 +19836,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -19916,11 +19990,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Listener",
           "templateType" : "java.util.List<Listener>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20114,11 +20188,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Listener",
             "templateType" : "java.util.List<Listener>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20144,6 +20218,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -20175,6 +20250,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -20529,6 +20605,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -20682,11 +20759,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Instance",
           "templateType" : "java.util.List<Instance>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20880,11 +20957,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Instance",
             "templateType" : "java.util.List<Instance>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20910,6 +20987,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -21167,11 +21245,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "PolicyAttribute",
           "templateType" : "java.util.List<PolicyAttribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttribute>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttribute>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21471,11 +21549,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "PolicyAttribute",
             "templateType" : "java.util.List<PolicyAttribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttribute>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PolicyAttribute>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21501,6 +21579,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The remaining Availability Zones for the load balancer.</p>",
         "name" : "AvailabilityZones",
@@ -21602,11 +21681,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21743,11 +21822,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21773,6 +21852,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -21926,11 +22006,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Instance",
           "templateType" : "java.util.List<Instance>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22124,11 +22204,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Instance",
             "templateType" : "java.util.List<Instance>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22154,6 +22234,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> <p>TCP is the default, specified as a TCP: port pair, for example \"TCP:5000\". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example \"HTTP:80/weather/us/wa/seattle\". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than \"200 OK\" within the timeout period is considered unhealthy.</p> <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>",
         "name" : "Target",
@@ -22714,6 +22795,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -22745,6 +22827,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the load balancer attributes.</p>",
         "name" : "LoadBalancerAttributes",
@@ -22885,6 +22968,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the key.</p>",
         "name" : "Key",
@@ -23025,6 +23109,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -23274,6 +23359,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -23628,6 +23714,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>",
         "name" : "LoadBalancerNames",
@@ -23729,11 +23816,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23847,11 +23934,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "TagKeyOnly",
           "templateType" : "java.util.List<TagKeyOnly>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagKeyOnly>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagKeyOnly>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23992,11 +24079,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "TagKeyOnly",
             "templateType" : "java.util.List<TagKeyOnly>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagKeyOnly>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagKeyOnly>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24111,11 +24198,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24141,6 +24228,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>",
         "name" : "Protocol",
@@ -24701,6 +24789,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>",
         "name" : "IdleTimeout",
@@ -24841,6 +24930,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer. You can specify one load balancer only.</p>",
         "name" : "LoadBalancerNames",
@@ -24942,11 +25032,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25060,11 +25150,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25205,11 +25295,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25324,11 +25414,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25354,6 +25444,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -25388,6 +25479,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies whether access log is enabled for the load balancer.</p>",
         "name" : "Enabled",
@@ -25843,6 +25935,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>",
         "name" : "PolicyTypeNames",
@@ -25944,11 +26037,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26089,11 +26182,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26119,6 +26212,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>",
         "name" : "Enabled",
@@ -26259,6 +26353,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the instance.</p>",
         "name" : "InstanceId",
@@ -26714,6 +26809,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -27068,6 +27164,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the load balancer.</p>",
         "name" : "LoadBalancerName",
@@ -27221,11 +27318,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27419,11 +27516,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27449,6 +27546,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Listener",
@@ -27602,11 +27700,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27796,11 +27894,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27826,6 +27924,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If enabled, the load balancer routes the request traffic evenly across all back-end instances regardless of the Availability Zones.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html\">Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</p>",
         "name" : "CrossZoneLoadBalancing",
@@ -28135,11 +28234,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "AdditionalAttribute",
           "templateType" : "java.util.List<AdditionalAttribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AdditionalAttribute>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AdditionalAttribute>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28488,11 +28587,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "AdditionalAttribute",
             "templateType" : "java.util.List<AdditionalAttribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AdditionalAttribute>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AdditionalAttribute>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28518,6 +28617,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {

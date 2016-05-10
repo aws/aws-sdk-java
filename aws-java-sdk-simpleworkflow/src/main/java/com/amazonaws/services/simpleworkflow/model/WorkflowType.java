@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
@@ -24,130 +26,113 @@ import java.io.Serializable;
 public class WorkflowType implements Serializable, Cloneable {
 
     /**
-     * <b>Required.</b> The name of the workflow type. <note>The combination
-     * of workflow type name and version must be unique with in a
-     * domain.</note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Required.</b> The name of the workflow type.
+     * </p>
+     * <note>The combination of workflow type name and version must be unique
+     * with in a domain.</note>
      */
     private String name;
-
     /**
-     * <b>Required.</b> The version of the workflow type. <note>The
-     * combination of workflow type name and version must be unique with in a
-     * domain.</note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Required.</b> The version of the workflow type.
+     * </p>
+     * <note>The combination of workflow type name and version must be unique
+     * with in a domain.</note>
      */
     private String version;
 
     /**
-     * <b>Required.</b> The name of the workflow type. <note>The combination
-     * of workflow type name and version must be unique with in a
-     * domain.</note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @return <b>Required.</b> The name of the workflow type. <note>The combination
-     *         of workflow type name and version must be unique with in a
-     *         domain.</note>
+     * <b>Required.</b> The name of the workflow type.
+     * </p>
+     * <note>The combination of workflow type name and version must be unique
+     * with in a domain.</note>
+     * 
+     * @param name
+     *        Required.</b> The name of the workflow type.</p>
      */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * <b>Required.</b> The name of the workflow type. <note>The combination
-     * of workflow type name and version must be unique with in a
-     * domain.</note>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param name <b>Required.</b> The name of the workflow type. <note>The combination
-     *         of workflow type name and version must be unique with in a
-     *         domain.</note>
-     */
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
-     * <b>Required.</b> The name of the workflow type. <note>The combination
-     * of workflow type name and version must be unique with in a
-     * domain.</note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param name <b>Required.</b> The name of the workflow type. <note>The combination
-     *         of workflow type name and version must be unique with in a
-     *         domain.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * <b>Required.</b> The name of the workflow type.
+     * </p>
+     * <note>The combination of workflow type name and version must be unique
+     * with in a domain.</note>
+     * 
+     * @return Required.</b> The name of the workflow type.</p>
      */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * <b>Required.</b> The name of the workflow type.
+     * </p>
+     * <note>The combination of workflow type name and version must be unique
+     * with in a domain.</note>
+     * 
+     * @param name
+     *        Required.</b> The name of the workflow type.</p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public WorkflowType withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
-     * <b>Required.</b> The version of the workflow type. <note>The
-     * combination of workflow type name and version must be unique with in a
-     * domain.</note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     *
-     * @return <b>Required.</b> The version of the workflow type. <note>The
-     *         combination of workflow type name and version must be unique with in a
-     *         domain.</note>
+     * <b>Required.</b> The version of the workflow type.
+     * </p>
+     * <note>The combination of workflow type name and version must be unique
+     * with in a domain.</note>
+     * 
+     * @param version
+     *        Required.</b> The version of the workflow type.</p>
      */
-    public String getVersion() {
-        return version;
-    }
-    
-    /**
-     * <b>Required.</b> The version of the workflow type. <note>The
-     * combination of workflow type name and version must be unique with in a
-     * domain.</note>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     *
-     * @param version <b>Required.</b> The version of the workflow type. <note>The
-     *         combination of workflow type name and version must be unique with in a
-     *         domain.</note>
-     */
+
     public void setVersion(String version) {
         this.version = version;
     }
-    
+
     /**
-     * <b>Required.</b> The version of the workflow type. <note>The
-     * combination of workflow type name and version must be unique with in a
-     * domain.</note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     *
-     * @param version <b>Required.</b> The version of the workflow type. <note>The
-     *         combination of workflow type name and version must be unique with in a
-     *         domain.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * <b>Required.</b> The version of the workflow type.
+     * </p>
+     * <note>The combination of workflow type name and version must be unique
+     * with in a domain.</note>
+     * 
+     * @return Required.</b> The version of the workflow type.</p>
      */
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * <b>Required.</b> The version of the workflow type.
+     * </p>
+     * <note>The combination of workflow type name and version must be unique
+     * with in a domain.</note>
+     * 
+     * @param version
+     *        Required.</b> The version of the workflow type.</p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public WorkflowType withVersion(String version) {
-        this.version = version;
+        setVersion(version);
         return this;
     }
 
@@ -163,50 +148,57 @@ public class WorkflowType implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getVersion() != null) sb.append("Version: " + getVersion() );
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getVersion() != null)
+            sb.append("Version: " + getVersion());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof WorkflowType == false)
+            return false;
+        WorkflowType other = (WorkflowType) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null
+                && other.getVersion().equals(this.getVersion()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode
+                + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof WorkflowType == false) return false;
-        WorkflowType other = (WorkflowType)obj;
-        
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getVersion() == null ^ this.getVersion() == null) return false;
-        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public WorkflowType clone() {
         try {
             return (WorkflowType) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

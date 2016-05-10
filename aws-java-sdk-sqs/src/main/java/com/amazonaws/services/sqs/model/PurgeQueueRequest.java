@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class PurgeQueueRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -29,6 +29,9 @@ public class PurgeQueueRequest extends AmazonWebServiceRequest implements
      * <p>
      * The queue URL of the queue to delete the messages from when using the
      * <code>PurgeQueue</code> API.
+     * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
      * </p>
      */
     private String queueUrl;
@@ -48,7 +51,9 @@ public class PurgeQueueRequest extends AmazonWebServiceRequest implements
      * 
      * @param queueUrl
      *        The queue URL of the queue to delete the messages from when using
-     *        the <code>PurgeQueue</code> API.
+     *        the <code>PurgeQueue</code> API.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
     public PurgeQueueRequest(String queueUrl) {
         setQueueUrl(queueUrl);
@@ -59,10 +64,15 @@ public class PurgeQueueRequest extends AmazonWebServiceRequest implements
      * The queue URL of the queue to delete the messages from when using the
      * <code>PurgeQueue</code> API.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
      *        The queue URL of the queue to delete the messages from when using
-     *        the <code>PurgeQueue</code> API.
+     *        the <code>PurgeQueue</code> API.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
 
     public void setQueueUrl(String queueUrl) {
@@ -74,9 +84,14 @@ public class PurgeQueueRequest extends AmazonWebServiceRequest implements
      * The queue URL of the queue to delete the messages from when using the
      * <code>PurgeQueue</code> API.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @return The queue URL of the queue to delete the messages from when using
-     *         the <code>PurgeQueue</code> API.
+     *         the <code>PurgeQueue</code> API.</p>
+     *         <p>
+     *         Queue URLs are case-sensitive.
      */
 
     public String getQueueUrl() {
@@ -88,10 +103,15 @@ public class PurgeQueueRequest extends AmazonWebServiceRequest implements
      * The queue URL of the queue to delete the messages from when using the
      * <code>PurgeQueue</code> API.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
      *        The queue URL of the queue to delete the messages from when using
-     *        the <code>PurgeQueue</code> API.
+     *        the <code>PurgeQueue</code> API.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

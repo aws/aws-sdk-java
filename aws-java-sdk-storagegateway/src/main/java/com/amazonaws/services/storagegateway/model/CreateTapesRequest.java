@@ -39,7 +39,11 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * <p>
      * The size, in bytes, of the virtual tapes that you want to create.
      * </p>
-     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
+     * <note>
+     * <p>
+     * The size must be aligned by gigabyte (1024*1024*1024 byte).
+     * </p>
+     * </note>
      */
     private Long tapeSizeInBytes;
     /**
@@ -48,8 +52,12 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * request, use the same <code>ClientToken</code> you specified in the
      * initial request.
      * </p>
-     * <note>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</note>
+     * <note>
+     * <p>
+     * Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.
+     * </p>
+     * </note>
      */
     private String clientToken;
     /**
@@ -63,8 +71,12 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * A prefix that you append to the barcode of the virtual tape you are
      * creating. This prefix makes the barcode unique.
      * </p>
-     * <note>The prefix must be 1 to 4 characters in length and must be one of
-     * the uppercase letters from A to Z.</note>
+     * <note>
+     * <p>
+     * The prefix must be 1 to 4 characters in length and must be one of the
+     * uppercase letters from A to Z.
+     * </p>
+     * </note>
      */
     private String tapeBarcodePrefix;
 
@@ -128,12 +140,18 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * <p>
      * The size, in bytes, of the virtual tapes that you want to create.
      * </p>
-     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
+     * <note>
+     * <p>
+     * The size must be aligned by gigabyte (1024*1024*1024 byte).
+     * </p>
+     * </note>
      * 
      * @param tapeSizeInBytes
      *        The size, in bytes, of the virtual tapes that you want to
-     *        create.</p> <note>The size must be aligned by gigabyte
-     *        (1024*1024*1024 byte).
+     *        create.</p> <note>
+     *        <p>
+     *        The size must be aligned by gigabyte (1024*1024*1024 byte).
+     *        </p>
      */
 
     public void setTapeSizeInBytes(Long tapeSizeInBytes) {
@@ -144,11 +162,17 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * <p>
      * The size, in bytes, of the virtual tapes that you want to create.
      * </p>
-     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
+     * <note>
+     * <p>
+     * The size must be aligned by gigabyte (1024*1024*1024 byte).
+     * </p>
+     * </note>
      * 
      * @return The size, in bytes, of the virtual tapes that you want to
-     *         create.</p> <note>The size must be aligned by gigabyte
-     *         (1024*1024*1024 byte).
+     *         create.</p> <note>
+     *         <p>
+     *         The size must be aligned by gigabyte (1024*1024*1024 byte).
+     *         </p>
      */
 
     public Long getTapeSizeInBytes() {
@@ -159,12 +183,18 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * <p>
      * The size, in bytes, of the virtual tapes that you want to create.
      * </p>
-     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
+     * <note>
+     * <p>
+     * The size must be aligned by gigabyte (1024*1024*1024 byte).
+     * </p>
+     * </note>
      * 
      * @param tapeSizeInBytes
      *        The size, in bytes, of the virtual tapes that you want to
-     *        create.</p> <note>The size must be aligned by gigabyte
-     *        (1024*1024*1024 byte).
+     *        create.</p> <note>
+     *        <p>
+     *        The size must be aligned by gigabyte (1024*1024*1024 byte).
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -180,15 +210,21 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * request, use the same <code>ClientToken</code> you specified in the
      * initial request.
      * </p>
-     * <note>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</note>
+     * <note>
+     * <p>
+     * Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.
+     * </p>
+     * </note>
      * 
      * @param clientToken
      *        A unique identifier that you use to retry a request. If you retry
      *        a request, use the same <code>ClientToken</code> you specified in
-     *        the initial request.</p> <note>Using the same
-     *        <code>ClientToken</code> prevents creating the tape multiple
-     *        times.
+     *        the initial request.</p> <note>
+     *        <p>
+     *        Using the same <code>ClientToken</code> prevents creating the tape
+     *        multiple times.
+     *        </p>
      */
 
     public void setClientToken(String clientToken) {
@@ -201,14 +237,20 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * request, use the same <code>ClientToken</code> you specified in the
      * initial request.
      * </p>
-     * <note>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</note>
+     * <note>
+     * <p>
+     * Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.
+     * </p>
+     * </note>
      * 
      * @return A unique identifier that you use to retry a request. If you retry
      *         a request, use the same <code>ClientToken</code> you specified in
-     *         the initial request.</p> <note>Using the same
-     *         <code>ClientToken</code> prevents creating the tape multiple
-     *         times.
+     *         the initial request.</p> <note>
+     *         <p>
+     *         Using the same <code>ClientToken</code> prevents creating the
+     *         tape multiple times.
+     *         </p>
      */
 
     public String getClientToken() {
@@ -221,15 +263,21 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * request, use the same <code>ClientToken</code> you specified in the
      * initial request.
      * </p>
-     * <note>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</note>
+     * <note>
+     * <p>
+     * Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.
+     * </p>
+     * </note>
      * 
      * @param clientToken
      *        A unique identifier that you use to retry a request. If you retry
      *        a request, use the same <code>ClientToken</code> you specified in
-     *        the initial request.</p> <note>Using the same
-     *        <code>ClientToken</code> prevents creating the tape multiple
-     *        times.
+     *        the initial request.</p> <note>
+     *        <p>
+     *        Using the same <code>ClientToken</code> prevents creating the tape
+     *        multiple times.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -285,14 +333,20 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * A prefix that you append to the barcode of the virtual tape you are
      * creating. This prefix makes the barcode unique.
      * </p>
-     * <note>The prefix must be 1 to 4 characters in length and must be one of
-     * the uppercase letters from A to Z.</note>
+     * <note>
+     * <p>
+     * The prefix must be 1 to 4 characters in length and must be one of the
+     * uppercase letters from A to Z.
+     * </p>
+     * </note>
      * 
      * @param tapeBarcodePrefix
      *        A prefix that you append to the barcode of the virtual tape you
-     *        are creating. This prefix makes the barcode unique.</p> <note>The
-     *        prefix must be 1 to 4 characters in length and must be one of the
-     *        uppercase letters from A to Z.
+     *        are creating. This prefix makes the barcode unique.</p> <note>
+     *        <p>
+     *        The prefix must be 1 to 4 characters in length and must be one of
+     *        the uppercase letters from A to Z.
+     *        </p>
      */
 
     public void setTapeBarcodePrefix(String tapeBarcodePrefix) {
@@ -304,13 +358,19 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * A prefix that you append to the barcode of the virtual tape you are
      * creating. This prefix makes the barcode unique.
      * </p>
-     * <note>The prefix must be 1 to 4 characters in length and must be one of
-     * the uppercase letters from A to Z.</note>
+     * <note>
+     * <p>
+     * The prefix must be 1 to 4 characters in length and must be one of the
+     * uppercase letters from A to Z.
+     * </p>
+     * </note>
      * 
      * @return A prefix that you append to the barcode of the virtual tape you
-     *         are creating. This prefix makes the barcode unique.</p> <note>The
-     *         prefix must be 1 to 4 characters in length and must be one of the
-     *         uppercase letters from A to Z.
+     *         are creating. This prefix makes the barcode unique.</p> <note>
+     *         <p>
+     *         The prefix must be 1 to 4 characters in length and must be one of
+     *         the uppercase letters from A to Z.
+     *         </p>
      */
 
     public String getTapeBarcodePrefix() {
@@ -322,14 +382,20 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * A prefix that you append to the barcode of the virtual tape you are
      * creating. This prefix makes the barcode unique.
      * </p>
-     * <note>The prefix must be 1 to 4 characters in length and must be one of
-     * the uppercase letters from A to Z.</note>
+     * <note>
+     * <p>
+     * The prefix must be 1 to 4 characters in length and must be one of the
+     * uppercase letters from A to Z.
+     * </p>
+     * </note>
      * 
      * @param tapeBarcodePrefix
      *        A prefix that you append to the barcode of the virtual tape you
-     *        are creating. This prefix makes the barcode unique.</p> <note>The
-     *        prefix must be 1 to 4 characters in length and must be one of the
-     *        uppercase letters from A to Z.
+     *        are creating. This prefix makes the barcode unique.</p> <note>
+     *        <p>
+     *        The prefix must be 1 to 4 characters in length and must be one of
+     *        the uppercase letters from A to Z.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

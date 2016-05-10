@@ -267,7 +267,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @param retrievedTo
      *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
-     *        tape is being retrieved to. </p>
+     *        tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
@@ -286,7 +286,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the gateway-VTL that the
-     *         virtual tape is being retrieved to. </p>
+     *         virtual tape is being retrieved to.</p>
      *         <p>
      *         The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
@@ -306,7 +306,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @param retrievedTo
      *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
-     *        tape is being retrieved to. </p>
+     *        tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
      * @return Returns a reference to this object so that method calls can be

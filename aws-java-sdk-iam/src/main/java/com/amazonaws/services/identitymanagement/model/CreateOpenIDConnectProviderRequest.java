@@ -110,7 +110,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        the provider's OpenID Connect ID tokens. Per the OIDC standard,
      *        path components are allowed but query parameters are not.
      *        Typically the URL consists of only a host name, like
-     *        "https://server.example.org" or "https://example.com". </p>
+     *        "https://server.example.org" or "https://example.com".</p>
      *        <p>
      *        You cannot register the same provider multiple times in a single
      *        AWS account. If you try to submit a URL that has already been used
@@ -141,7 +141,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *         the provider's OpenID Connect ID tokens. Per the OIDC standard,
      *         path components are allowed but query parameters are not.
      *         Typically the URL consists of only a host name, like
-     *         "https://server.example.org" or "https://example.com". </p>
+     *         "https://server.example.org" or "https://example.com".</p>
      *         <p>
      *         You cannot register the same provider multiple times in a single
      *         AWS account. If you try to submit a URL that has already been
@@ -173,7 +173,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        the provider's OpenID Connect ID tokens. Per the OIDC standard,
      *        path components are allowed but query parameters are not.
      *        Typically the URL consists of only a host name, like
-     *        "https://server.example.org" or "https://example.com". </p>
+     *        "https://server.example.org" or "https://example.com".</p>
      *        <p>
      *        You cannot register the same provider multiple times in a single
      *        AWS account. If you try to submit a URL that has already been used
@@ -210,7 +210,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *         web app registers with an OpenID Connect provider, they establish
      *         a value that identifies the application. (This is the value
      *         that's sent as the <code>client_id</code> parameter on OAuth
-     *         requests.) </p>
+     *         requests.)</p>
      *         <p>
      *         You can register multiple client IDs with the same provider. For
      *         example, you might have multiple applications that use the same
@@ -252,8 +252,8 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        A list of client IDs (also known as audiences). When a mobile or
      *        web app registers with an OpenID Connect provider, they establish
      *        a value that identifies the application. (This is the value that's
-     *        sent as the <code>client_id</code> parameter on OAuth requests.)
-     *        </p>
+     *        sent as the <code>client_id</code> parameter on OAuth
+     *        requests.)</p>
      *        <p>
      *        You can register multiple client IDs with the same provider. For
      *        example, you might have multiple applications that use the same
@@ -304,8 +304,8 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        A list of client IDs (also known as audiences). When a mobile or
      *        web app registers with an OpenID Connect provider, they establish
      *        a value that identifies the application. (This is the value that's
-     *        sent as the <code>client_id</code> parameter on OAuth requests.)
-     *        </p>
+     *        sent as the <code>client_id</code> parameter on OAuth
+     *        requests.)</p>
      *        <p>
      *        You can register multiple client IDs with the same provider. For
      *        example, you might have multiple applications that use the same
@@ -354,8 +354,8 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        A list of client IDs (also known as audiences). When a mobile or
      *        web app registers with an OpenID Connect provider, they establish
      *        a value that identifies the application. (This is the value that's
-     *        sent as the <code>client_id</code> parameter on OAuth requests.)
-     *        </p>
+     *        sent as the <code>client_id</code> parameter on OAuth
+     *        requests.)</p>
      *        <p>
      *        You can register multiple client IDs with the same provider. For
      *        example, you might have multiple applications that use the same

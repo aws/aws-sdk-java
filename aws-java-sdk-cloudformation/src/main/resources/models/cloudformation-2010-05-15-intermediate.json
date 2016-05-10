@@ -46,12 +46,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "cancelUpdateStack",
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, Void>",
+      "authenticated" : true
     },
     "ContinueUpdateRollback" : {
       "documentation" : "<p>For a specified stack that is in the <code>UPDATE_ROLLBACK_FAILED</code> state, continues rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the cause of the failure, you can manually <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed\"> fix the error</a> and continue the rollback. By continuing the rollback, you can return your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code> state), and then try to update the stack again.</p> <p>A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when AWS CloudFormation cannot roll back all changes after a failed stack update. For example, you might have a stack that is rolling back to an old database instance that was deleted outside of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was deleted, it assumes that the database instance still exists and attempts to roll back to it, causing the update rollback to fail.</p> <examples></examples>",
@@ -73,12 +73,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "continueUpdateRollback",
-      "authenticated" : true,
       "syncReturnType" : "ContinueUpdateRollbackResult",
       "asyncReturnType" : "ContinueUpdateRollbackResult",
       "asyncFutureType" : "java.util.concurrent.Future<ContinueUpdateRollbackResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ContinueUpdateRollbackResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ContinueUpdateRollbackRequest, ContinueUpdateRollbackResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ContinueUpdateRollbackRequest, ContinueUpdateRollbackResult>",
+      "authenticated" : true
     },
     "CreateChangeSet" : {
       "documentation" : "<p>Creates a list of changes for a stack. AWS CloudFormation generates the change set by comparing the stack's information with the information that you submit. A change set can help you understand which resources AWS CloudFormation will change and how it will change them before you update your stack. Change sets allow you to check before you make a change so that you don't delete or replace critical resources.</p> <p>AWS CloudFormation doesn't make any changes to the stack when you create a change set. To make the specified changes, you must execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After the call successfully completes, AWS CloudFormation starts creating the change set. To check the status of the change set, use the <a>DescribeChangeSet</a> action.</p> <examples></examples>",
@@ -109,12 +109,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createChangeSet",
-      "authenticated" : true,
       "syncReturnType" : "CreateChangeSetResult",
       "asyncReturnType" : "CreateChangeSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateChangeSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateChangeSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateChangeSetRequest, CreateChangeSetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateChangeSetRequest, CreateChangeSetResult>",
+      "authenticated" : true
     },
     "CreateStack" : {
       "documentation" : "<p>Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the status of the stack via the <a>DescribeStacks</a> API.</p> <examples></examples>",
@@ -145,12 +145,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createStack",
-      "authenticated" : true,
       "syncReturnType" : "CreateStackResult",
       "asyncReturnType" : "CreateStackResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateStackResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateStackResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStackRequest, CreateStackResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStackRequest, CreateStackResult>",
+      "authenticated" : true
     },
     "DeleteChangeSet" : {
       "documentation" : "<p>Deletes the specified change set. Deleting change sets ensures that no one executes the wrong change set.</p> <p>If the call successfully completes, AWS CloudFormation successfully deleted the change set.</p> <examples></examples>",
@@ -172,12 +172,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteChangeSet",
-      "authenticated" : true,
       "syncReturnType" : "DeleteChangeSetResult",
       "asyncReturnType" : "DeleteChangeSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteChangeSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteChangeSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteChangeSetRequest, DeleteChangeSetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteChangeSetRequest, DeleteChangeSetResult>",
+      "authenticated" : true
     },
     "DeleteStack" : {
       "documentation" : "<p>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has been completed successfully.</p> <examples></examples>",
@@ -196,12 +196,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteStack",
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, Void>",
+      "authenticated" : true
     },
     "DescribeAccountLimits" : {
       "documentation" : "<p>Retrieves your account's AWS CloudFormation limits, such as the maximum number of stacks that you can create in your account.</p> <examples></examples>",
@@ -223,12 +223,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeAccountLimits",
-      "authenticated" : true,
       "syncReturnType" : "DescribeAccountLimitsResult",
       "asyncReturnType" : "DescribeAccountLimitsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAccountLimitsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAccountLimitsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult>",
+      "authenticated" : true
     },
     "DescribeChangeSet" : {
       "documentation" : "<p>Returns the inputs for the change set and a list of changes that AWS CloudFormation will make if you execute the change set. For more information, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html\">Updating Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.</p> <examples></examples>",
@@ -253,12 +253,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeChangeSet",
-      "authenticated" : true,
       "syncReturnType" : "DescribeChangeSetResult",
       "asyncReturnType" : "DescribeChangeSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeChangeSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeChangeSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeChangeSetRequest, DescribeChangeSetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeChangeSetRequest, DescribeChangeSetResult>",
+      "authenticated" : true
     },
     "DescribeStackEvents" : {
       "documentation" : "<p>Returns all stack related events for a specified stack. For more information about a stack's event history, go to <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html\">Stacks</a> in the AWS CloudFormation User Guide.</p> <note>You can list events for stacks that have failed to create or have been deleted by specifying the unique stack identifier (stack ID).</note> <examples></examples>",
@@ -280,12 +280,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeStackEvents",
-      "authenticated" : true,
       "syncReturnType" : "DescribeStackEventsResult",
       "asyncReturnType" : "DescribeStackEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStackEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStackEventsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackEventsRequest, DescribeStackEventsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackEventsRequest, DescribeStackEventsResult>",
+      "authenticated" : true
     },
     "DescribeStackResource" : {
       "documentation" : "<p>Returns a description of the specified resource in the specified stack.</p> <p>For deleted stacks, DescribeStackResource returns resource information for up to 90 days after the stack has been deleted.</p> <examples></examples>",
@@ -307,12 +307,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeStackResource",
-      "authenticated" : true,
       "syncReturnType" : "DescribeStackResourceResult",
       "asyncReturnType" : "DescribeStackResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStackResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStackResourceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackResourceRequest, DescribeStackResourceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackResourceRequest, DescribeStackResourceResult>",
+      "authenticated" : true
     },
     "DescribeStackResources" : {
       "documentation" : "<p>Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code> is specified, all the associated resources that are part of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated resources of the stack that the resource belongs to are returned.</p> <note>Only the first 100 resources will be returned. If your stack has more resources than this, you should use <code>ListStackResources</code> instead.</note> <p>For deleted stacks, <code>DescribeStackResources</code> returns resource information for up to 90 days after the stack has been deleted.</p> <p>You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>, but not both. In addition, you can specify <code>LogicalResourceId</code> to filter the returned result. For more information about resources, the <code>LogicalResourceId</code> and <code>PhysicalResourceId</code>, go to the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/\">AWS CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code> and <code>PhysicalResourceId</code> in the same request.</note> <examples></examples>",
@@ -334,12 +334,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeStackResources",
-      "authenticated" : true,
       "syncReturnType" : "DescribeStackResourcesResult",
       "asyncReturnType" : "DescribeStackResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStackResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStackResourcesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackResourcesRequest, DescribeStackResourcesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStackResourcesRequest, DescribeStackResourcesResult>",
+      "authenticated" : true
     },
     "DescribeStacks" : {
       "documentation" : "<p>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.</p> <examples></examples>",
@@ -361,12 +361,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeStacks",
-      "authenticated" : true,
       "syncReturnType" : "DescribeStacksResult",
       "asyncReturnType" : "DescribeStacksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStacksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStacksResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult>",
+      "authenticated" : true
     },
     "EstimateTemplateCost" : {
       "documentation" : "<p>Returns the estimated monthly cost of a template. The return value is an AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p> <examples></examples>",
@@ -388,12 +388,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "estimateTemplateCost",
-      "authenticated" : true,
       "syncReturnType" : "EstimateTemplateCostResult",
       "asyncReturnType" : "EstimateTemplateCostResult",
       "asyncFutureType" : "java.util.concurrent.Future<EstimateTemplateCostResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EstimateTemplateCostResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EstimateTemplateCostRequest, EstimateTemplateCostResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EstimateTemplateCostRequest, EstimateTemplateCostResult>",
+      "authenticated" : true
     },
     "ExecuteChangeSet" : {
       "documentation" : "<p>Updates a stack using the input information that was provided when the specified change set was created. After the call successfully completes, AWS CloudFormation starts updating the stack. Use the <a>DescribeStacks</a> action to view the status of the update.</p> <p>When you execute a change set, AWS CloudFormation deletes all other change sets associated with the stack because they aren't valid for the updated stack.</p> <p>If a stack policy is associated with the stack, AWS CloudFormation enforces the policy during the update. You can't specify a temporary stack policy that overrides the current policy.</p> <examples></examples>",
@@ -421,12 +421,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "executeChangeSet",
-      "authenticated" : true,
       "syncReturnType" : "ExecuteChangeSetResult",
       "asyncReturnType" : "ExecuteChangeSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<ExecuteChangeSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ExecuteChangeSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ExecuteChangeSetRequest, ExecuteChangeSetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ExecuteChangeSetRequest, ExecuteChangeSetResult>",
+      "authenticated" : true
     },
     "GetStackPolicy" : {
       "documentation" : "<p>Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.</p> <examples></examples>",
@@ -448,12 +448,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "getStackPolicy",
-      "authenticated" : true,
       "syncReturnType" : "GetStackPolicyResult",
       "asyncReturnType" : "GetStackPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetStackPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetStackPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStackPolicyRequest, GetStackPolicyResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStackPolicyRequest, GetStackPolicyResult>",
+      "authenticated" : true
     },
     "GetTemplate" : {
       "documentation" : "<p>Returns the template body for a specified stack. You can get the template for running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.</p> <note> If the template does not exist, a <code>ValidationError</code> is returned. </note> <examples></examples>",
@@ -475,12 +475,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "getTemplate",
-      "authenticated" : true,
       "syncReturnType" : "GetTemplateResult",
       "asyncReturnType" : "GetTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTemplateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTemplateRequest, GetTemplateResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTemplateRequest, GetTemplateResult>",
+      "authenticated" : true
     },
     "GetTemplateSummary" : {
       "documentation" : "<p>Returns information about a new or existing template. The <code>GetTemplateSummary</code> action is useful for viewing parameter information, such as default parameter values and parameter types, before you create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code> action when you submit a template, or you can get template information for a running or deleted stack.</p> <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template information for up to 90 days after the stack has been deleted. If the template does not exist, a <code>ValidationError</code> is returned.</p> <examples></examples>",
@@ -502,12 +502,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "getTemplateSummary",
-      "authenticated" : true,
       "syncReturnType" : "GetTemplateSummaryResult",
       "asyncReturnType" : "GetTemplateSummaryResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTemplateSummaryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTemplateSummaryResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTemplateSummaryRequest, GetTemplateSummaryResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTemplateSummaryRequest, GetTemplateSummaryResult>",
+      "authenticated" : true
     },
     "ListChangeSets" : {
       "documentation" : "<p>Returns the ID and status of each active change set for a stack. For example, AWS CloudFormation lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code> state.</p> <examples></examples>",
@@ -529,12 +529,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listChangeSets",
-      "authenticated" : true,
       "syncReturnType" : "ListChangeSetsResult",
       "asyncReturnType" : "ListChangeSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListChangeSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListChangeSetsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListChangeSetsRequest, ListChangeSetsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListChangeSetsRequest, ListChangeSetsResult>",
+      "authenticated" : true
     },
     "ListStackResources" : {
       "documentation" : "<p>Returns descriptions of all resources of the specified stack.</p> <p>For deleted stacks, ListStackResources returns resource information for up to 90 days after the stack has been deleted.</p> <examples></examples>",
@@ -556,12 +556,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listStackResources",
-      "authenticated" : true,
       "syncReturnType" : "ListStackResourcesResult",
       "asyncReturnType" : "ListStackResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStackResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStackResourcesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStackResourcesRequest, ListStackResourcesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStackResourcesRequest, ListStackResourcesResult>",
+      "authenticated" : true
     },
     "ListStacks" : {
       "documentation" : "<p>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).</p> <examples></examples>",
@@ -583,12 +583,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listStacks",
-      "authenticated" : true,
       "syncReturnType" : "ListStacksResult",
       "asyncReturnType" : "ListStacksResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStacksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStacksResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStacksRequest, ListStacksResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStacksRequest, ListStacksResult>",
+      "authenticated" : true
     },
     "SetStackPolicy" : {
       "documentation" : "<p>Sets a stack policy for a specified stack.</p> <examples></examples>",
@@ -607,12 +607,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "setStackPolicy",
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, Void>",
+      "authenticated" : true
     },
     "SignalResource" : {
       "documentation" : "<p>Sends a signal to the specified resource with a success or failure status. You can use the SignalResource API in conjunction with a creation policy or update policy. AWS CloudFormation doesn't proceed with a stack creation or update until resources receive the required number of signals or the timeout period is exceeded. The SignalResource API is useful in cases where you want to send signals from anywhere other than an Amazon EC2 instance.</p> <examples></examples>",
@@ -631,12 +631,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "signalResource",
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SignalResourceRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SignalResourceRequest, Void>",
+      "authenticated" : true
     },
     "UpdateStack" : {
       "documentation" : "<p>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status of the stack via the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an existing stack, you can use the <a>GetTemplate</a> action.</p> <p>For more information about creating an update template, updating a stack, and monitoring the progress of the update, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html\">Updating a Stack</a>.</p> <examples></examples>",
@@ -661,12 +661,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updateStack",
-      "authenticated" : true,
       "syncReturnType" : "UpdateStackResult",
       "asyncReturnType" : "UpdateStackResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateStackResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateStackResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, UpdateStackResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, UpdateStackResult>",
+      "authenticated" : true
     },
     "ValidateTemplate" : {
       "documentation" : "<p>Validates a specified template.</p> <examples></examples>",
@@ -688,12 +688,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "validateTemplate",
-      "authenticated" : true,
       "syncReturnType" : "ValidateTemplateResult",
       "asyncReturnType" : "ValidateTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<ValidateTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ValidateTemplateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidateTemplateRequest, ValidateTemplateResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidateTemplateRequest, ValidateTemplateResult>",
+      "authenticated" : true
     }
   },
   "shapes" : {
@@ -707,6 +707,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier of the stack.</p>",
         "name" : "StackId",
@@ -2872,6 +2873,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the stack with which the change set is associated.</p>",
         "name" : "StackId",
@@ -3747,6 +3749,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or the unique stack ID that is associated with the stack, which are not always interchangeable:</p> <ul> <li>Running stacks: You can specify either the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> <p>Default: There is no default value.</p> <p>Required: Conditional. If you do not specify <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>",
         "name" : "StackName",
@@ -4101,6 +4104,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique stack identifier.</p>",
         "name" : "StackId",
@@ -4976,6 +4980,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or Amazon Resource Name (ARN) of the change set that you want to describe. </p>",
         "name" : "ChangeSetName",
@@ -5330,6 +5335,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5364,6 +5370,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>",
         "name" : "Summaries",
@@ -5741,6 +5748,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The key associated with the output.</p>",
         "name" : "OutputKey",
@@ -6091,6 +6099,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Structure containing the stack policy body. (For more information, go to <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html\"> Prevent Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)</p>",
         "name" : "StackPolicyBody",
@@ -6231,6 +6240,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Resource",
@@ -6268,6 +6278,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>",
         "name" : "Attribute",
@@ -6618,6 +6629,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or unique stack ID that is associated with the stack whose policy you want to get.</p>",
         "name" : "StackName",
@@ -6762,6 +6774,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Add",
@@ -6805,6 +6818,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique ID name of the instance of the stack.</p>",
         "name" : "StackId",
@@ -7890,6 +7904,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7921,6 +7936,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, go to <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html\">Template Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</p>",
         "name" : "TemplateBody",
@@ -8170,6 +8186,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -8201,6 +8218,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier of the stack.</p>",
         "name" : "StackId",
@@ -8341,6 +8359,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CREATE_IN_PROGRESS",
@@ -8423,6 +8442,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p><i>Required</i>. A string used to identify this tag. You can specify a maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS) have the reserved prefix: <code>aws:</code>.</p>",
         "name" : "Key",
@@ -8668,6 +8688,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of stack structures.</p>",
         "name" : "Stacks",
@@ -9045,6 +9066,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An account limit structure that contain a list of AWS CloudFormation account limits and their values.</p>",
         "name" : "AccountLimits",
@@ -9422,6 +9444,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name associated with the stack.</p>",
         "name" : "StackName",
@@ -10507,6 +10530,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or the unique stack ID that is associated with the stack, which are not always interchangeable:</p> <ul> <li>Running stacks: You can specify either the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> <p>Default: There is no default value.</p>",
         "name" : "StackName",
@@ -10756,6 +10780,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Never",
@@ -10799,6 +10824,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Structure containing the template body. (For more information, go to <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html\">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p>",
         "name" : "TemplateBody",
@@ -10939,6 +10965,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An AWS Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>",
         "name" : "Url",
@@ -11079,6 +11106,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The logical name of the resource specified in the template.</p>",
         "name" : "LogicalResourceId",
@@ -11744,6 +11772,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html\">Template Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>",
         "name" : "TemplateBody",
@@ -12098,6 +12127,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>",
         "name" : "StackName",
@@ -14057,6 +14087,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name associated with the parameter.</p>",
         "name" : "ParameterKey",
@@ -14512,6 +14543,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of values that are permitted for a parameter.</p>",
         "name" : "AllowedValues",
@@ -14784,6 +14816,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or the unique stack ID that is associated with the stack, which are not always interchangeable:</p> <ul> <li>Running stacks: You can specify either the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> <p>Default: There is no default value.</p>",
         "name" : "StackName",
@@ -15033,6 +15066,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of entity that AWS CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>",
         "name" : "Type",
@@ -15278,6 +15312,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "DO_NOTHING",
@@ -15321,6 +15356,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).</p>",
         "name" : "Action",
@@ -16355,6 +16391,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>",
         "name" : "StackSummaries",
@@ -16732,6 +16769,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A string that identifies the next page of limits that you want to retrieve.</p>",
         "name" : "NextToken",
@@ -16876,6 +16914,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Properties",
@@ -16928,6 +16967,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CAPABILITY_IAM",
@@ -16965,6 +17005,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or the unique stack ID that is associated with the stack, which are not always interchangeable:</p> <ul> <li>Running stacks: You can specify either the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> <p>Default: There is no default value.</p>",
         "name" : "StackName",
@@ -17214,6 +17255,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or ARN of the change set that you want use to update the specified stack.</p>",
         "name" : "ChangeSetName",
@@ -17463,6 +17505,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or unique stack ID that you want to associate a policy with.</p>",
         "name" : "StackName",
@@ -17817,6 +17860,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Static",
@@ -17857,6 +17901,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or the unique stack ID that is associated with the stack, which are not always interchangeable:</p> <ul> <li>Running stacks: You can specify either the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> <p>Default: There is no default value.</p>",
         "name" : "StackName",
@@ -18106,6 +18151,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A string that identifies the next page of stacks that you want to retrieve.</p>",
         "name" : "NextToken",
@@ -18487,6 +18533,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or unique stack ID of the stack to update.</p>",
         "name" : "StackName",
@@ -20551,6 +20598,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "SUCCESS",
@@ -20591,6 +20639,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>",
         "name" : "StackResourceDetail",
@@ -20731,6 +20780,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or the unique ID of the stack that you want to continue rolling back.</p>",
         "name" : "StackName",
@@ -20875,6 +20925,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CREATE_PENDING",
@@ -20924,6 +20975,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A <code>ResourceTargetDefinition</code> structure that describes the field that AWS CloudFormation will change and whether the resource will be recreated.</p>",
         "name" : "Target",
@@ -21379,6 +21431,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name that is associated with the stack. The name must be unique in the region in which you are creating the stack.</p> <note>A stack name can contain only alphanumeric characters (case sensitive) and hyphens. It must start with an alphabetic character and cannot be longer than 128 characters.</note>",
         "name" : "StackName",
@@ -23443,6 +23496,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of <code>StackResource</code> structures.</p>",
         "name" : "StackResources",
@@ -23715,6 +23769,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "True",
@@ -23758,6 +23813,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of <code>StackEvents</code> structures.</p>",
         "name" : "StackEvents",
@@ -24135,6 +24191,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name that is associated with the parameter.</p>",
         "name" : "ParameterKey",
@@ -24800,6 +24857,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>",
         "name" : "ChangeSetName",
@@ -25049,6 +25107,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -25080,6 +25139,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or the unique stack ID that is associated with the stack, which are not always interchangeable:</p> <ul> <li>Running stacks: You can specify either the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> <p>Default: There is no default value.</p>",
         "name" : "StackName",
@@ -25224,6 +25284,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -25255,6 +25316,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -25286,6 +25348,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ResourceReference",
@@ -25335,6 +25398,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of <code>TemplateParameter</code> structures.</p>",
         "name" : "Parameters",
@@ -26054,6 +26118,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or the unique stack ID that is associated with the stack.</p>",
         "name" : "StackName",
@@ -26435,6 +26500,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>",
         "name" : "ParameterKey",
@@ -26785,6 +26851,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Amazon Resource Name (ARN) of the change set.</p>",
         "name" : "Id",
@@ -26925,6 +26992,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -26959,6 +27027,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the change set.</p>",
         "name" : "ChangeSetName",
@@ -29124,6 +29193,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name associated with the stack.</p>",
         "name" : "StackName",
@@ -30104,6 +30174,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>",
         "name" : "StackName",
@@ -30353,6 +30424,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of parameter declarations that describe various properties for each parameter.</p>",
         "name" : "Parameters",
@@ -31519,6 +31591,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the account limit. Currently, the only account limit is <code>StackLimit</code>.</p>",
         "name" : "Name",
@@ -31764,6 +31837,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -31798,6 +31872,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier of the stack.</p>",
         "name" : "StackId",
@@ -31938,6 +32013,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name or the unique stack ID that is associated with the stack.</p>",
         "name" : "StackName",
@@ -32082,6 +32158,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CREATE_IN_PROGRESS",
@@ -32146,6 +32223,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The stack name or unique stack ID that includes the resource that you want to signal.</p>",
         "name" : "StackName",
@@ -32605,6 +32683,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html\">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed, only <code>TemplateBody</code> is used.</p>",
         "name" : "TemplateBody",
@@ -33091,6 +33170,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of <code>StackResourceSummary</code> structures.</p>",
         "name" : "StackResourceSummaries",

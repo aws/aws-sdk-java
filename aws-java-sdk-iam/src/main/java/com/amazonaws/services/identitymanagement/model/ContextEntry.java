@@ -27,7 +27,8 @@ import java.io.Serializable;
  * </p>
  * <p>
  * This data type is used as an input parameter to
- * <code><a>SimulatePolicy</a></code>.
+ * <code> <a>SimulateCustomPolicy</a> </code> and
+ * <code> <a>SimulateCustomPolicy</a> </code>.
  * </p>
  */
 public class ContextEntry implements Serializable, Cloneable {

@@ -24,13 +24,41 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing one or more of the following fields:
  * </p>
  * <ul>
- * <li><a>ActivateGatewayInput$ActivationKey</a></li>
- * <li><a>ActivateGatewayInput$GatewayName</a></li>
- * <li><a>ActivateGatewayInput$GatewayRegion</a></li>
- * <li><a>ActivateGatewayInput$GatewayTimezone</a></li>
- * <li><a>ActivateGatewayInput$GatewayType</a></li>
- * <li><a>ActivateGatewayInput$TapeDriveType</a></li>
- * <li><a>ActivateGatewayInput$MediumChangerType</a></li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$ActivationKey</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$GatewayName</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$GatewayRegion</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$GatewayTimezone</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$GatewayType</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$TapeDriveType</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$MediumChangerType</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
@@ -74,9 +102,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
-     * "eu-central-1", "ap-northeast-1", "ap-southeast-1", "ap-southeast-2",
-     * "sa-east-1"
+     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     * "eu-central-1", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * </p>
      */
     private String gatewayRegion;
@@ -94,7 +122,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     * Valid Values: "IBM-ULT3580-TD5"
      * </p>
      */
     private String tapeDriveType;
@@ -104,7 +132,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * gateway-VTL. This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      */
     private String mediumChangerType;
@@ -300,9 +328,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
-     * "eu-central-1", "ap-northeast-1", "ap-southeast-1", "ap-southeast-2",
-     * "sa-east-1"
+     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     * "eu-central-1", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * </p>
      * 
      * @param gatewayRegion
@@ -315,9 +343,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *        >Regions and Endpoints</a> in the <i>Amazon Web Services
      *        Glossary</i>.</p>
      *        <p>
-     *        <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     *        "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
-     *        "ap-southeast-2", "sa-east-1"
+     *        Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     *        "eu-central-1", "ap-northeast-1", "ap-northeast-2",
+     *        "ap-southeast-1", "ap-southeast-2", "sa-east-1"
      */
 
     public void setGatewayRegion(String gatewayRegion) {
@@ -335,9 +363,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
-     * "eu-central-1", "ap-northeast-1", "ap-southeast-1", "ap-southeast-2",
-     * "sa-east-1"
+     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     * "eu-central-1", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * </p>
      * 
      * @return A value that indicates the region where you want to store the
@@ -349,9 +377,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *         >Regions and Endpoints</a> in the <i>Amazon Web Services
      *         Glossary</i>.</p>
      *         <p>
-     *         <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     *         "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
-     *         "ap-southeast-2", "sa-east-1"
+     *         Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     *         "eu-central-1", "ap-northeast-1", "ap-northeast-2",
+     *         "ap-southeast-1", "ap-southeast-2", "sa-east-1"
      */
 
     public String getGatewayRegion() {
@@ -369,9 +397,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
-     * "eu-central-1", "ap-northeast-1", "ap-southeast-1", "ap-southeast-2",
-     * "sa-east-1"
+     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     * "eu-central-1", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * </p>
      * 
      * @param gatewayRegion
@@ -384,9 +412,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *        >Regions and Endpoints</a> in the <i>Amazon Web Services
      *        Glossary</i>.</p>
      *        <p>
-     *        <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     *        "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
-     *        "ap-southeast-2", "sa-east-1"
+     *        Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     *        "eu-central-1", "ap-northeast-1", "ap-northeast-2",
+     *        "ap-southeast-1", "ap-southeast-2", "sa-east-1"
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -458,14 +486,14 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     * Valid Values: "IBM-ULT3580-TD5"
      * </p>
      * 
      * @param tapeDriveType
      *        The value that indicates the type of tape drive to use for
-     *        gateway-VTL. This field is optional. </p>
+     *        gateway-VTL. This field is optional.</p>
      *        <p>
-     *        <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     *        Valid Values: "IBM-ULT3580-TD5"
      */
 
     public void setTapeDriveType(String tapeDriveType) {
@@ -478,13 +506,13 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     * Valid Values: "IBM-ULT3580-TD5"
      * </p>
      * 
      * @return The value that indicates the type of tape drive to use for
-     *         gateway-VTL. This field is optional. </p>
+     *         gateway-VTL. This field is optional.</p>
      *         <p>
-     *         <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     *         Valid Values: "IBM-ULT3580-TD5"
      */
 
     public String getTapeDriveType() {
@@ -497,14 +525,14 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     * Valid Values: "IBM-ULT3580-TD5"
      * </p>
      * 
      * @param tapeDriveType
      *        The value that indicates the type of tape drive to use for
-     *        gateway-VTL. This field is optional. </p>
+     *        gateway-VTL. This field is optional.</p>
      *        <p>
-     *        <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     *        Valid Values: "IBM-ULT3580-TD5"
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -520,14 +548,14 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * gateway-VTL. This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @param mediumChangerType
      *        The value that indicates the type of medium changer to use for
      *        gateway-VTL. This field is optional.</p>
      *        <p>
-     *        <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
      */
 
     public void setMediumChangerType(String mediumChangerType) {
@@ -540,13 +568,13 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * gateway-VTL. This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @return The value that indicates the type of medium changer to use for
      *         gateway-VTL. This field is optional.</p>
      *         <p>
-     *         <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *         Valid Values: "STK-L700", "AWS-Gateway-VTL"
      */
 
     public String getMediumChangerType() {
@@ -559,14 +587,14 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * gateway-VTL. This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @param mediumChangerType
      *        The value that indicates the type of medium changer to use for
      *        gateway-VTL. This field is optional.</p>
      *        <p>
-     *        <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

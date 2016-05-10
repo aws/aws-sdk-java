@@ -177,7 +177,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param policyId
-     *        The stable and unique string identifying the policy. </p>
+     *        The stable and unique string identifying the policy.</p>
      *        <p>
      *        For more information about IDs, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
@@ -198,7 +198,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      * </p>
      * 
-     * @return The stable and unique string identifying the policy. </p>
+     * @return The stable and unique string identifying the policy.</p>
      *         <p>
      *         For more information about IDs, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
@@ -220,7 +220,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param policyId
-     *        The stable and unique string identifying the policy. </p>
+     *        The stable and unique string identifying the policy.</p>
      *        <p>
      *        For more information about IDs, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
@@ -342,7 +342,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * 
      * @param defaultVersionId
      *        The identifier for the version of the policy that is set as the
-     *        default (operative) version. </p>
+     *        default (operative) version.</p>
      *        <p>
      *        For more information about policy versions, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
@@ -366,7 +366,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @return The identifier for the version of the policy that is set as the
-     *         default (operative) version. </p>
+     *         default (operative) version.</p>
      *         <p>
      *         For more information about policy versions, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
@@ -391,7 +391,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * 
      * @param defaultVersionId
      *        The identifier for the version of the policy that is set as the
-     *        default (operative) version. </p>
+     *        default (operative) version.</p>
      *        <p>
      *        For more information about policy versions, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"

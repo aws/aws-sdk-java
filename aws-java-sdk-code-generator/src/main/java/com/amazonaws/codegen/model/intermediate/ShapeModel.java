@@ -38,6 +38,7 @@ public class ShapeModel extends DocumentationModel {
     private boolean hasHeaderMember;
     private boolean hasStatusCodeMember;
     private boolean hasStreamingMember;
+    private boolean wrapper;
 
     private List<MemberModel> members;
     // Any constructor in addition to the default no-arg
@@ -192,6 +193,14 @@ public class ShapeModel extends DocumentationModel {
 
     public void setHasStatusCodeMember(boolean hasStatusCodeMember) {
         this.hasStatusCodeMember = hasStatusCodeMember;
+    }
+
+    public boolean isWrapper() {
+        return wrapper;
+    }
+
+    public void setWrapper(boolean wrapper) {
+        this.wrapper = wrapper;
     }
 
     public ShapeModel withHasStatusCodeMember(boolean hasStatusCodeMember) {

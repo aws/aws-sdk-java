@@ -1,127 +1,123 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * Used to filter workflow execution query results by type. Each
- * parameter, if specified, defines a rule that must be satisfied by each
- * returned result.
+ * Used to filter workflow execution query results by type. Each parameter, if
+ * specified, defines a rule that must be satisfied by each returned result.
  * </p>
  */
 public class WorkflowTypeFilter implements Serializable, Cloneable {
 
     /**
-     * <b>Required.</b> Name of the workflow type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Required.</b> Name of the workflow type.
+     * </p>
      */
     private String name;
-
     /**
-     * Version of the workflow type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 64<br/>
+     * Version of the workflow type.
+     * </p>
      */
     private String version;
 
     /**
-     * <b>Required.</b> Name of the workflow type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @return <b>Required.</b> Name of the workflow type.
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
      * <b>Required.</b> Name of the workflow type.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param name <b>Required.</b> Name of the workflow type.
+     * </p>
+     * 
+     * @param name
+     *        Required.
      */
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
+     * <p>
      * <b>Required.</b> Name of the workflow type.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param name <b>Required.</b> Name of the workflow type.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return Required.
      */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * <b>Required.</b> Name of the workflow type.
+     * </p>
+     * 
+     * @param name
+     *        Required.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public WorkflowTypeFilter withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
-     * Version of the workflow type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 64<br/>
-     *
-     * @return Version of the workflow type.
-     */
-    public String getVersion() {
-        return version;
-    }
-    
-    /**
      * Version of the workflow type.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 64<br/>
-     *
-     * @param version Version of the workflow type.
+     * </p>
+     * 
+     * @param version
+     *        Version of the workflow type.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
-    
+
     /**
+     * <p>
      * Version of the workflow type.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 64<br/>
-     *
-     * @param version Version of the workflow type.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return Version of the workflow type.
      */
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * Version of the workflow type.
+     * </p>
+     * 
+     * @param version
+     *        Version of the workflow type.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public WorkflowTypeFilter withVersion(String version) {
-        this.version = version;
+        setVersion(version);
         return this;
     }
 
@@ -137,50 +133,57 @@ public class WorkflowTypeFilter implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getVersion() != null) sb.append("Version: " + getVersion() );
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getVersion() != null)
+            sb.append("Version: " + getVersion());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof WorkflowTypeFilter == false)
+            return false;
+        WorkflowTypeFilter other = (WorkflowTypeFilter) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null
+                && other.getVersion().equals(this.getVersion()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode
+                + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof WorkflowTypeFilter == false) return false;
-        WorkflowTypeFilter other = (WorkflowTypeFilter)obj;
-        
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getVersion() == null ^ this.getVersion() == null) return false;
-        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public WorkflowTypeFilter clone() {
         try {
             return (WorkflowTypeFilter) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

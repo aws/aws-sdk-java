@@ -38,6 +38,9 @@ public class AllocateConnectionOnInterconnectRequest extends
      * <p>
      * Default: None
      * </p>
+     * <p>
+     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * </p>
      */
     private String bandwidth;
     /**
@@ -100,6 +103,9 @@ public class AllocateConnectionOnInterconnectRequest extends
      * <p>
      * Default: None
      * </p>
+     * <p>
+     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * </p>
      * 
      * @param bandwidth
      *        Bandwidth of the connection.</p>
@@ -108,6 +114,9 @@ public class AllocateConnectionOnInterconnectRequest extends
      *        </p>
      *        <p>
      *        Default: None
+     *        </p>
+     *        <p>
+     *        Values: 50M, 100M, 200M, 300M, 400M, or 500M
      */
 
     public void setBandwidth(String bandwidth) {
@@ -124,6 +133,9 @@ public class AllocateConnectionOnInterconnectRequest extends
      * <p>
      * Default: None
      * </p>
+     * <p>
+     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * </p>
      * 
      * @return Bandwidth of the connection.</p>
      *         <p>
@@ -131,6 +143,9 @@ public class AllocateConnectionOnInterconnectRequest extends
      *         </p>
      *         <p>
      *         Default: None
+     *         </p>
+     *         <p>
+     *         Values: 50M, 100M, 200M, 300M, 400M, or 500M
      */
 
     public String getBandwidth() {
@@ -147,6 +162,9 @@ public class AllocateConnectionOnInterconnectRequest extends
      * <p>
      * Default: None
      * </p>
+     * <p>
+     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * </p>
      * 
      * @param bandwidth
      *        Bandwidth of the connection.</p>
@@ -155,6 +173,9 @@ public class AllocateConnectionOnInterconnectRequest extends
      *        </p>
      *        <p>
      *        Default: None
+     *        </p>
+     *        <p>
+     *        Values: 50M, 100M, 200M, 300M, 400M, or 500M
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

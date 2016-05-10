@@ -46,8 +46,8 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * When <code>OnlyAttached</code> is <code>true</code>, the returned list
-     * contains only the policies that are attached to a user, group, or role.
-     * When <code>OnlyAttached</code> is <code>false</code>, or when the
+     * contains only the policies that are attached to an IAM user, group, or
+     * role. When <code>OnlyAttached</code> is <code>false</code>, or when the
      * parameter is not included, all policies are returned.
      * </p>
      */
@@ -55,7 +55,13 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The path prefix for filtering the results. This parameter is optional. If
-     * it is not included, it defaults to a slash (/), listing all policies.
+     * it is not included, it defaults to a slash (/), listing all policies. The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      */
     private String pathPrefix;
@@ -101,7 +107,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param scope
-     *        The scope to use for filtering the results. </p>
+     *        The scope to use for filtering the results.</p>
      *        <p>
      *        To list only AWS managed policies, set <code>Scope</code> to
      *        <code>AWS</code>. To list only the customer managed policies in
@@ -131,7 +137,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * <code>All</code>, all policies are returned.
      * </p>
      * 
-     * @return The scope to use for filtering the results. </p>
+     * @return The scope to use for filtering the results.</p>
      *         <p>
      *         To list only AWS managed policies, set <code>Scope</code> to
      *         <code>AWS</code>. To list only the customer managed policies in
@@ -162,7 +168,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param scope
-     *        The scope to use for filtering the results. </p>
+     *        The scope to use for filtering the results.</p>
      *        <p>
      *        To list only AWS managed policies, set <code>Scope</code> to
      *        <code>AWS</code>. To list only the customer managed policies in
@@ -196,7 +202,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param scope
-     *        The scope to use for filtering the results. </p>
+     *        The scope to use for filtering the results.</p>
      *        <p>
      *        To list only AWS managed policies, set <code>Scope</code> to
      *        <code>AWS</code>. To list only the customer managed policies in
@@ -227,7 +233,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param scope
-     *        The scope to use for filtering the results. </p>
+     *        The scope to use for filtering the results.</p>
      *        <p>
      *        To list only AWS managed policies, set <code>Scope</code> to
      *        <code>AWS</code>. To list only the customer managed policies in
@@ -252,16 +258,16 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * When <code>OnlyAttached</code> is <code>true</code>, the returned list
-     * contains only the policies that are attached to a user, group, or role.
-     * When <code>OnlyAttached</code> is <code>false</code>, or when the
+     * contains only the policies that are attached to an IAM user, group, or
+     * role. When <code>OnlyAttached</code> is <code>false</code>, or when the
      * parameter is not included, all policies are returned.
      * </p>
      * 
      * @param onlyAttached
-     *        A flag to filter the results to only the attached policies. </p>
+     *        A flag to filter the results to only the attached policies.</p>
      *        <p>
      *        When <code>OnlyAttached</code> is <code>true</code>, the returned
-     *        list contains only the policies that are attached to a user,
+     *        list contains only the policies that are attached to an IAM user,
      *        group, or role. When <code>OnlyAttached</code> is
      *        <code>false</code>, or when the parameter is not included, all
      *        policies are returned.
@@ -277,15 +283,15 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * When <code>OnlyAttached</code> is <code>true</code>, the returned list
-     * contains only the policies that are attached to a user, group, or role.
-     * When <code>OnlyAttached</code> is <code>false</code>, or when the
+     * contains only the policies that are attached to an IAM user, group, or
+     * role. When <code>OnlyAttached</code> is <code>false</code>, or when the
      * parameter is not included, all policies are returned.
      * </p>
      * 
-     * @return A flag to filter the results to only the attached policies. </p>
+     * @return A flag to filter the results to only the attached policies.</p>
      *         <p>
      *         When <code>OnlyAttached</code> is <code>true</code>, the returned
-     *         list contains only the policies that are attached to a user,
+     *         list contains only the policies that are attached to an IAM user,
      *         group, or role. When <code>OnlyAttached</code> is
      *         <code>false</code>, or when the parameter is not included, all
      *         policies are returned.
@@ -301,16 +307,16 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * When <code>OnlyAttached</code> is <code>true</code>, the returned list
-     * contains only the policies that are attached to a user, group, or role.
-     * When <code>OnlyAttached</code> is <code>false</code>, or when the
+     * contains only the policies that are attached to an IAM user, group, or
+     * role. When <code>OnlyAttached</code> is <code>false</code>, or when the
      * parameter is not included, all policies are returned.
      * </p>
      * 
      * @param onlyAttached
-     *        A flag to filter the results to only the attached policies. </p>
+     *        A flag to filter the results to only the attached policies.</p>
      *        <p>
      *        When <code>OnlyAttached</code> is <code>true</code>, the returned
-     *        list contains only the policies that are attached to a user,
+     *        list contains only the policies that are attached to an IAM user,
      *        group, or role. When <code>OnlyAttached</code> is
      *        <code>false</code>, or when the parameter is not included, all
      *        policies are returned.
@@ -329,15 +335,15 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * When <code>OnlyAttached</code> is <code>true</code>, the returned list
-     * contains only the policies that are attached to a user, group, or role.
-     * When <code>OnlyAttached</code> is <code>false</code>, or when the
+     * contains only the policies that are attached to an IAM user, group, or
+     * role. When <code>OnlyAttached</code> is <code>false</code>, or when the
      * parameter is not included, all policies are returned.
      * </p>
      * 
-     * @return A flag to filter the results to only the attached policies. </p>
+     * @return A flag to filter the results to only the attached policies.</p>
      *         <p>
      *         When <code>OnlyAttached</code> is <code>true</code>, the returned
-     *         list contains only the policies that are attached to a user,
+     *         list contains only the policies that are attached to an IAM user,
      *         group, or role. When <code>OnlyAttached</code> is
      *         <code>false</code>, or when the parameter is not included, all
      *         policies are returned.
@@ -350,13 +356,25 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The path prefix for filtering the results. This parameter is optional. If
-     * it is not included, it defaults to a slash (/), listing all policies.
+     * it is not included, it defaults to a slash (/), listing all policies. The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @param pathPrefix
      *        The path prefix for filtering the results. This parameter is
      *        optional. If it is not included, it defaults to a slash (/),
-     *        listing all policies.
+     *        listing all policies. The <a
+     *        href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     *        parameter is a string of characters consisting of either a forward
+     *        slash (/) by itself or a string that must begin and end with
+     *        forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      */
 
     public void setPathPrefix(String pathPrefix) {
@@ -366,12 +384,24 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The path prefix for filtering the results. This parameter is optional. If
-     * it is not included, it defaults to a slash (/), listing all policies.
+     * it is not included, it defaults to a slash (/), listing all policies. The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @return The path prefix for filtering the results. This parameter is
      *         optional. If it is not included, it defaults to a slash (/),
-     *         listing all policies.
+     *         listing all policies. The <a
+     *         href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     *         parameter is a string of characters consisting of either a
+     *         forward slash (/) by itself or a string that must begin and end
+     *         with forward slashes, containing any ASCII character from the !
+     *         (\u0021) thru the DEL character (\u007F), including most
+     *         punctuation characters, digits, and upper and lowercased letters.
      */
 
     public String getPathPrefix() {
@@ -381,13 +411,25 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The path prefix for filtering the results. This parameter is optional. If
-     * it is not included, it defaults to a slash (/), listing all policies.
+     * it is not included, it defaults to a slash (/), listing all policies. The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @param pathPrefix
      *        The path prefix for filtering the results. This parameter is
      *        optional. If it is not included, it defaults to a slash (/),
-     *        listing all policies.
+     *        listing all policies. The <a
+     *        href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     *        parameter is a string of characters consisting of either a forward
+     *        slash (/) by itself or a string that must begin and end with
+     *        forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -29,17 +29,34 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose password you want to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String userName;
     /**
      * <p>
-     * The new password for the specified user.
+     * The new password for the specified IAM user.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ). However, the format can be
+     * further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
+     * <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      */
     private String password;
     /**
      * <p>
-     * Require the specified user to set a new password on next sign-in.
+     * Allows this new password to be used only once by requiring the specified
+     * IAM user to set a new password on next sign-in.
      * </p>
      */
     private Boolean passwordResetRequired;
@@ -58,7 +75,12 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
      * object members.
      * 
      * @param userName
-     *        The name of the user whose password you want to update.
+     *        The name of the user whose password you want to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
     public UpdateLoginProfileRequest(String userName) {
         setUserName(userName);
@@ -68,9 +90,20 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose password you want to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the user whose password you want to update.
+     *        The name of the user whose password you want to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
 
     public void setUserName(String userName) {
@@ -81,8 +114,19 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose password you want to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the user whose password you want to update.
+     * @return The name of the user whose password you want to update.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
 
     public String getUserName() {
@@ -93,9 +137,20 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose password you want to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the user whose password you want to update.
+     *        The name of the user whose password you want to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -107,11 +162,31 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The new password for the specified user.
+     * The new password for the specified IAM user.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ). However, the format can be
+     * further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
+     * <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      * 
      * @param password
-     *        The new password for the specified user.
+     *        The new password for the specified IAM user.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ). However, the format can be further restricted
+     *        by the account administrator by setting a password policy on the
+     *        AWS account. For more information, see
+     *        <a>UpdateAccountPasswordPolicy</a>.
      */
 
     public void setPassword(String password) {
@@ -120,10 +195,30 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The new password for the specified user.
+     * The new password for the specified IAM user.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ). However, the format can be
+     * further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
+     * <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      * 
-     * @return The new password for the specified user.
+     * @return The new password for the specified IAM user.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ). However, the format can be further
+     *         restricted by the account administrator by setting a password
+     *         policy on the AWS account. For more information, see
+     *         <a>UpdateAccountPasswordPolicy</a>.
      */
 
     public String getPassword() {
@@ -132,11 +227,31 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The new password for the specified user.
+     * The new password for the specified IAM user.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ). However, the format can be
+     * further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
+     * <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      * 
      * @param password
-     *        The new password for the specified user.
+     *        The new password for the specified IAM user.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ). However, the format can be further restricted
+     *        by the account administrator by setting a password policy on the
+     *        AWS account. For more information, see
+     *        <a>UpdateAccountPasswordPolicy</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -148,11 +263,13 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Require the specified user to set a new password on next sign-in.
+     * Allows this new password to be used only once by requiring the specified
+     * IAM user to set a new password on next sign-in.
      * </p>
      * 
      * @param passwordResetRequired
-     *        Require the specified user to set a new password on next sign-in.
+     *        Allows this new password to be used only once by requiring the
+     *        specified IAM user to set a new password on next sign-in.
      */
 
     public void setPasswordResetRequired(Boolean passwordResetRequired) {
@@ -161,10 +278,12 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Require the specified user to set a new password on next sign-in.
+     * Allows this new password to be used only once by requiring the specified
+     * IAM user to set a new password on next sign-in.
      * </p>
      * 
-     * @return Require the specified user to set a new password on next sign-in.
+     * @return Allows this new password to be used only once by requiring the
+     *         specified IAM user to set a new password on next sign-in.
      */
 
     public Boolean getPasswordResetRequired() {
@@ -173,11 +292,13 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Require the specified user to set a new password on next sign-in.
+     * Allows this new password to be used only once by requiring the specified
+     * IAM user to set a new password on next sign-in.
      * </p>
      * 
      * @param passwordResetRequired
-     *        Require the specified user to set a new password on next sign-in.
+     *        Allows this new password to be used only once by requiring the
+     *        specified IAM user to set a new password on next sign-in.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -190,10 +311,12 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Require the specified user to set a new password on next sign-in.
+     * Allows this new password to be used only once by requiring the specified
+     * IAM user to set a new password on next sign-in.
      * </p>
      * 
-     * @return Require the specified user to set a new password on next sign-in.
+     * @return Allows this new password to be used only once by requiring the
+     *         specified IAM user to set a new password on next sign-in.
      */
 
     public Boolean isPasswordResetRequired() {

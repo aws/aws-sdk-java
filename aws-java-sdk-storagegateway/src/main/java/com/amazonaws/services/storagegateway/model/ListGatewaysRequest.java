@@ -24,8 +24,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing zero or more of the following fields:
  * </p>
  * <ul>
- * <li><a>ListGatewaysInput$Limit</a></li>
- * <li><a>ListGatewaysInput$Marker</a></li>
+ * <li>
+ * <p>
+ * <a>ListGatewaysInput$Limit</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListGatewaysInput$Marker</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class ListGatewaysRequest extends AmazonWebServiceRequest implements

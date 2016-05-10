@@ -27,18 +27,18 @@ public class GetPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the policy.
+     * A structure containing details about the policy.
      * </p>
      */
     private Policy policy;
 
     /**
      * <p>
-     * Information about the policy.
+     * A structure containing details about the policy.
      * </p>
      * 
      * @param policy
-     *        Information about the policy.
+     *        A structure containing details about the policy.
      */
 
     public void setPolicy(Policy policy) {
@@ -47,10 +47,10 @@ public class GetPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the policy.
+     * A structure containing details about the policy.
      * </p>
      * 
-     * @return Information about the policy.
+     * @return A structure containing details about the policy.
      */
 
     public Policy getPolicy() {
@@ -59,11 +59,11 @@ public class GetPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the policy.
+     * A structure containing details about the policy.
      * </p>
      * 
      * @param policy
-     *        Information about the policy.
+     *        A structure containing details about the policy.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

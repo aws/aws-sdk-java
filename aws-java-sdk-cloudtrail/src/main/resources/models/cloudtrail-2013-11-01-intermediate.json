@@ -21,9 +21,9 @@
     "endpointPrefix" : "cloudtrail",
     "signingName" : "cloudtrail",
     "serviceName" : "CloudTrail",
+    "xmlProtocol" : false,
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -72,12 +72,12 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AddTagsResult",
       "asyncReturnType" : "AddTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>",
+      "authenticated" : true,
       "methodName" : "addTags"
     },
     "CreateTrail" : {
@@ -159,12 +159,12 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateTrailResult",
       "asyncReturnType" : "CreateTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTrailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrailRequest, CreateTrailResult>",
+      "authenticated" : true,
       "methodName" : "createTrail"
     },
     "DeleteTrail" : {
@@ -195,12 +195,12 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteTrailResult",
       "asyncReturnType" : "DeleteTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTrailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrailRequest, DeleteTrailResult>",
+      "authenticated" : true,
       "methodName" : "deleteTrail"
     },
     "DescribeTrails" : {
@@ -228,12 +228,12 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeTrailsResult",
       "asyncReturnType" : "DescribeTrailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTrailsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTrailsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult>",
+      "authenticated" : true,
       "methodName" : "describeTrails"
     },
     "GetTrailStatus" : {
@@ -261,12 +261,12 @@
         "documentation" : "<p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetTrailStatusResult",
       "asyncReturnType" : "GetTrailStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTrailStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTrailStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrailStatusRequest, GetTrailStatusResult>",
+      "authenticated" : true,
       "methodName" : "getTrailStatus"
     },
     "ListPublicKeys" : {
@@ -300,12 +300,12 @@
         "documentation" : "<p>Reserved for future use.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListPublicKeysResult",
       "asyncReturnType" : "ListPublicKeysResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPublicKeysResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPublicKeysResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult>",
+      "authenticated" : true,
       "methodName" : "listPublicKeys"
     },
     "ListTags" : {
@@ -348,12 +348,12 @@
         "documentation" : "<p>Reserved for future use.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTagsResult",
       "asyncReturnType" : "ListTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult>",
+      "authenticated" : true,
       "methodName" : "listTags"
     },
     "LookupEvents" : {
@@ -387,12 +387,12 @@
         "documentation" : "<p>Invalid token or token that was previously used in a request with different parameters. This exception is thrown if the token is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "LookupEventsResult",
       "asyncReturnType" : "LookupEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<LookupEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<LookupEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult>",
+      "authenticated" : true,
       "methodName" : "lookupEvents"
     },
     "RemoveTags" : {
@@ -435,12 +435,12 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RemoveTagsResult",
       "asyncReturnType" : "RemoveTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>",
+      "authenticated" : true,
       "methodName" : "removeTags"
     },
     "StartLogging" : {
@@ -471,12 +471,12 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "StartLoggingResult",
       "asyncReturnType" : "StartLoggingResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartLoggingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartLoggingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartLoggingRequest, StartLoggingResult>",
+      "authenticated" : true,
       "methodName" : "startLogging"
     },
     "StopLogging" : {
@@ -507,12 +507,12 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "StopLoggingResult",
       "asyncReturnType" : "StopLoggingResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopLoggingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopLoggingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopLoggingRequest, StopLoggingResult>",
+      "authenticated" : true,
       "methodName" : "stopLogging"
     },
     "UpdateTrail" : {
@@ -594,12 +594,12 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateTrailResult",
       "asyncReturnType" : "UpdateTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateTrailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrailRequest, UpdateTrailResult>",
+      "authenticated" : true,
       "methodName" : "updateTrail"
     }
   },
@@ -614,6 +614,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -645,6 +646,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -676,6 +678,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -707,6 +710,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>",
         "name" : "Name",
@@ -851,6 +855,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -882,6 +887,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -916,6 +922,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters. The key must be unique for the resource to which it applies.</p>",
         "name" : "Key",
@@ -1161,6 +1168,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -1192,6 +1200,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging AWS API calls. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>",
         "name" : "Name",
@@ -1336,6 +1345,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -1370,6 +1380,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -1401,6 +1412,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -1432,6 +1444,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -1463,6 +1476,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The CloudTrail ID of the event returned.</p>",
         "name" : "EventId",
@@ -1775,8 +1789,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Resource",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-          "templateType" : "java.util.List<Resource>"
+          "templateType" : "java.util.List<Resource>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2233,8 +2247,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Resource",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-            "templateType" : "java.util.List<Resource>"
+            "templateType" : "java.util.List<Resource>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2260,6 +2274,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>",
         "name" : "LookupAttributes",
@@ -2364,8 +2379,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "LookupAttribute",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>",
-          "templateType" : "java.util.List<LookupAttribute>"
+          "templateType" : "java.util.List<LookupAttribute>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2717,8 +2732,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "LookupAttribute",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>",
-            "templateType" : "java.util.List<LookupAttribute>"
+            "templateType" : "java.util.List<LookupAttribute>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2956,6 +2971,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -2987,6 +3003,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -3018,6 +3035,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Name of the trail set by calling <a>CreateTrail</a>. The maximum length is 128 characters.</p>",
         "name" : "Name",
@@ -4418,6 +4436,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4449,6 +4468,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4483,6 +4503,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4514,6 +4535,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If an empty list is specified, information for the trail in the current region is returned.</p> <ul> <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li> <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li> </ul> <note> <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p> </note>",
         "name" : "TrailNameList",
@@ -4618,8 +4640,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4868,8 +4890,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4895,6 +4917,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4926,6 +4949,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4957,6 +4981,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Whether the CloudTrail is currently logging AWS API calls.</p>",
         "name" : "IsLogging",
@@ -6777,6 +6802,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the name of the trail.</p>",
         "name" : "Name",
@@ -8072,6 +8098,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the name of the trail. The name must meet the following requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>",
         "name" : "Name",
@@ -9161,6 +9188,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -9192,6 +9220,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>",
         "name" : "ResourceIdList",
@@ -9296,8 +9325,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9546,8 +9575,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9573,6 +9602,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -9604,6 +9634,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>",
         "name" : "Name",
@@ -9748,6 +9779,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the name of the trail.</p>",
         "name" : "Name",
@@ -11043,6 +11075,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11074,6 +11107,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11108,6 +11142,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11139,6 +11174,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11170,6 +11206,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11201,6 +11238,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11232,6 +11270,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Contains an array of PublicKey objects.</p> <note> <p>The returned public keys may have validity time ranges that overlap.</p> </note>",
         "name" : "PublicKeyList",
@@ -11336,8 +11375,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "PublicKey",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>",
-          "templateType" : "java.util.List<PublicKey>"
+          "templateType" : "java.util.List<PublicKey>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11529,8 +11568,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "PublicKey",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>",
-            "templateType" : "java.util.List<PublicKey>"
+            "templateType" : "java.util.List<PublicKey>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11609,6 +11648,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11640,6 +11680,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11671,6 +11712,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11702,6 +11744,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>",
         "name" : "Events",
@@ -11806,8 +11849,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Event",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
-          "templateType" : "java.util.List<Event>"
+          "templateType" : "java.util.List<Event>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12052,8 +12095,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Event",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
-            "templateType" : "java.util.List<Event>"
+            "templateType" : "java.util.List<Event>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12079,6 +12122,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -12113,6 +12157,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul> <p>If <code>Name</code> is a trail ARN, it must be in the format:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>",
         "name" : "Name",
@@ -13202,6 +13247,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -13233,6 +13279,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of a resource referenced by the event returned. When the resource type cannot be determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2, <b>Trail</b> for CloudTrail, <b>DBInstance</b> for RDS, and <b>AccessKey</b> for IAM. For a list of resource types supported for event lookup, see <a href=\"http://docs.aws.amazon.com/awscloudtrail/latest/userguide/lookup_supported_resourcetypes.html\">Resource Types Supported for Event Lookup</a>.</p>",
         "name" : "ResourceType",
@@ -13478,6 +13525,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -13509,6 +13557,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs AWS API calls. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>",
         "name" : "Name",
@@ -13653,6 +13702,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The list of trail objects.</p>",
         "name" : "TrailList",
@@ -13757,8 +13807,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Trail",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>",
-          "templateType" : "java.util.List<Trail>"
+          "templateType" : "java.util.List<Trail>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13898,8 +13948,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Trail",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>",
-            "templateType" : "java.util.List<Trail>"
+            "templateType" : "java.util.List<Trail>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13925,6 +13975,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>",
         "name" : "StartTime",
@@ -14279,6 +14330,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14310,6 +14362,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14341,6 +14394,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "ResourceTagList",
@@ -14445,8 +14499,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ResourceTag",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
-          "templateType" : "java.util.List<ResourceTag>"
+          "templateType" : "java.util.List<ResourceTag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14691,8 +14745,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ResourceTag",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
-            "templateType" : "java.util.List<ResourceTag>"
+            "templateType" : "java.util.List<ResourceTag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14718,6 +14772,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "EventId",
@@ -14767,6 +14822,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>",
         "name" : "ResourceId",
@@ -14923,8 +14979,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15121,8 +15177,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15148,6 +15204,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The DER encoded public key value in PKCS#1 format.</p>",
         "name" : "Value",
@@ -15603,6 +15660,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -15634,6 +15692,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>",
         "name" : "ResourceId",
@@ -15790,8 +15849,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15988,8 +16047,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16015,6 +16074,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the ARN of the resource.</p>",
         "name" : "ResourceId",
@@ -16171,8 +16231,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16365,8 +16425,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16392,6 +16452,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies an attribute on which to filter the events returned.</p>",
         "name" : "AttributeKey",
@@ -16637,6 +16698,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -16668,6 +16730,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -16699,6 +16762,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {

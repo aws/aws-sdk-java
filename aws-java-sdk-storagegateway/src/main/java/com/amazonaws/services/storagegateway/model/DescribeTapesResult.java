@@ -132,7 +132,7 @@ public class DescribeTapesResult implements Serializable, Cloneable {
      * 
      * @param marker
      *        An opaque string which can be used as part of a subsequent
-     *        DescribeTapes call to retrieve the next page of results. </p>
+     *        DescribeTapes call to retrieve the next page of results.</p>
      *        <p>
      *        If a response does not contain a marker, then there are no more
      *        results to be retrieved.
@@ -153,7 +153,7 @@ public class DescribeTapesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @return An opaque string which can be used as part of a subsequent
-     *         DescribeTapes call to retrieve the next page of results. </p>
+     *         DescribeTapes call to retrieve the next page of results.</p>
      *         <p>
      *         If a response does not contain a marker, then there are no more
      *         results to be retrieved.
@@ -175,7 +175,7 @@ public class DescribeTapesResult implements Serializable, Cloneable {
      * 
      * @param marker
      *        An opaque string which can be used as part of a subsequent
-     *        DescribeTapes call to retrieve the next page of results. </p>
+     *        DescribeTapes call to retrieve the next page of results.</p>
      *        <p>
      *        If a response does not contain a marker, then there are no more
      *        results to be retrieved.

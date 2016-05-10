@@ -39,6 +39,13 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * >AssumeRole</a> APIs to restrict what a user can do while using the
      * temporary credentials.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyInputList;
     /**
@@ -69,6 +76,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * to all of the resources included in the simulation or you receive an
      * invalid input error.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceArns;
     /**
@@ -77,6 +90,13 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * string. Each resource in the simulation is treated as if it had this
      * policy attached. You can include only one resource-based policy in a
      * simulation.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String resourcePolicy;
@@ -97,8 +117,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
     private String resourceOwner;
     /**
      * <p>
-     * The ARN of the user that you want to use as the simulated caller of the
-     * APIs. <code>CallerArn</code> is required if you include a
+     * The ARN of the IAM user that you want to use as the simulated caller of
+     * the APIs. <code>CallerArn</code> is required if you include a
      * <code>ResourcePolicy</code> so that the policy's <code>Principal</code>
      * element has a value to use in evaluating the policy.
      * </p>
@@ -111,9 +131,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to
-     * use. Whenever a context key is evaluated by a <code>Condition</code>
-     * element in one of the simulated IAM permission policies, the
-     * corresponding value is supplied.
+     * use. Whenever a context key is evaluated in one of the simulated IAM
+     * permission policies, the corresponding value is supplied.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ContextEntry> contextEntries;
@@ -231,6 +250,13 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * >AssumeRole</a> APIs to restrict what a user can do while using the
      * temporary credentials.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @return A list of policy documents to include in the simulation. Each
      *         document is specified as a string containing the complete, valid
@@ -243,7 +269,14 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         >GetFederationToken</a> or one of the <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html"
      *         >AssumeRole</a> APIs to restrict what a user can do while using
-     *         the temporary credentials.
+     *         the temporary credentials.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ).
      */
 
     public java.util.List<String> getPolicyInputList() {
@@ -267,6 +300,13 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * >AssumeRole</a> APIs to restrict what a user can do while using the
      * temporary credentials.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param policyInputList
      *        A list of policy documents to include in the simulation. Each
@@ -280,7 +320,14 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        >GetFederationToken</a> or one of the <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html"
      *        >AssumeRole</a> APIs to restrict what a user can do while using
-     *        the temporary credentials.
+     *        the temporary credentials.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
 
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
@@ -308,6 +355,13 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * temporary credentials.
      * </p>
      * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPolicyInputList(java.util.Collection)} or
      * {@link #withPolicyInputList(java.util.Collection)} if you want to
@@ -326,7 +380,14 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        >GetFederationToken</a> or one of the <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html"
      *        >AssumeRole</a> APIs to restrict what a user can do while using
-     *        the temporary credentials.
+     *        the temporary credentials.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -357,6 +418,13 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * >AssumeRole</a> APIs to restrict what a user can do while using the
      * temporary credentials.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param policyInputList
      *        A list of policy documents to include in the simulation. Each
@@ -370,7 +438,14 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        >GetFederationToken</a> or one of the <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html"
      *        >AssumeRole</a> APIs to restrict what a user can do while using
-     *        the temporary credentials.
+     *        the temporary credentials.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -500,6 +575,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * to all of the resources included in the simulation or you receive an
      * invalid input error.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      * 
      * @return A list of ARNs of AWS resources to include in the simulation. If
      *         this parameter is not provided then the value defaults to
@@ -518,6 +599,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         If you include a <code>ResourcePolicy</code>, then it must be
      *         applicable to all of the resources included in the simulation or
      *         you receive an invalid input error.
+     *         </p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
 
     public java.util.List<String> getResourceArns() {
@@ -547,6 +634,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * to all of the resources included in the simulation or you receive an
      * invalid input error.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      * 
      * @param resourceArns
      *        A list of ARNs of AWS resources to include in the simulation. If
@@ -565,6 +658,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        If you include a <code>ResourcePolicy</code>, then it must be
      *        applicable to all of the resources included in the simulation or
      *        you receive an invalid input error.
+     *        </p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
 
     public void setResourceArns(java.util.Collection<String> resourceArns) {
@@ -598,6 +697,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * invalid input error.
      * </p>
      * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setResourceArns(java.util.Collection)} or
      * {@link #withResourceArns(java.util.Collection)} if you want to override
@@ -621,6 +726,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        If you include a <code>ResourcePolicy</code>, then it must be
      *        applicable to all of the resources included in the simulation or
      *        you receive an invalid input error.
+     *        </p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -656,6 +767,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * to all of the resources included in the simulation or you receive an
      * invalid input error.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      * 
      * @param resourceArns
      *        A list of ARNs of AWS resources to include in the simulation. If
@@ -674,6 +791,12 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        If you include a <code>ResourcePolicy</code>, then it must be
      *        applicable to all of the resources included in the simulation or
      *        you receive an invalid input error.
+     *        </p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -691,12 +814,26 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * policy attached. You can include only one resource-based policy in a
      * simulation.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param resourcePolicy
      *        A resource-based policy to include in the simulation provided as a
      *        string. Each resource in the simulation is treated as if it had
      *        this policy attached. You can include only one resource-based
-     *        policy in a simulation.
+     *        policy in a simulation.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
 
     public void setResourcePolicy(String resourcePolicy) {
@@ -710,11 +847,25 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * policy attached. You can include only one resource-based policy in a
      * simulation.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @return A resource-based policy to include in the simulation provided as
      *         a string. Each resource in the simulation is treated as if it had
      *         this policy attached. You can include only one resource-based
-     *         policy in a simulation.
+     *         policy in a simulation.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ).
      */
 
     public String getResourcePolicy() {
@@ -728,12 +879,26 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * policy attached. You can include only one resource-based policy in a
      * simulation.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param resourcePolicy
      *        A resource-based policy to include in the simulation provided as a
      *        string. Each resource in the simulation is treated as if it had
      *        this policy attached. You can include only one resource-based
-     *        policy in a simulation.
+     *        policy in a simulation.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -843,8 +1008,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the user that you want to use as the simulated caller of the
-     * APIs. <code>CallerArn</code> is required if you include a
+     * The ARN of the IAM user that you want to use as the simulated caller of
+     * the APIs. <code>CallerArn</code> is required if you include a
      * <code>ResourcePolicy</code> so that the policy's <code>Principal</code>
      * element has a value to use in evaluating the policy.
      * </p>
@@ -854,9 +1019,9 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param callerArn
-     *        The ARN of the user that you want to use as the simulated caller
-     *        of the APIs. <code>CallerArn</code> is required if you include a
-     *        <code>ResourcePolicy</code> so that the policy's
+     *        The ARN of the IAM user that you want to use as the simulated
+     *        caller of the APIs. <code>CallerArn</code> is required if you
+     *        include a <code>ResourcePolicy</code> so that the policy's
      *        <code>Principal</code> element has a value to use in evaluating
      *        the policy.</p>
      *        <p>
@@ -871,8 +1036,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the user that you want to use as the simulated caller of the
-     * APIs. <code>CallerArn</code> is required if you include a
+     * The ARN of the IAM user that you want to use as the simulated caller of
+     * the APIs. <code>CallerArn</code> is required if you include a
      * <code>ResourcePolicy</code> so that the policy's <code>Principal</code>
      * element has a value to use in evaluating the policy.
      * </p>
@@ -881,9 +1046,9 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * of an assumed role, federated user, or a service principal.
      * </p>
      * 
-     * @return The ARN of the user that you want to use as the simulated caller
-     *         of the APIs. <code>CallerArn</code> is required if you include a
-     *         <code>ResourcePolicy</code> so that the policy's
+     * @return The ARN of the IAM user that you want to use as the simulated
+     *         caller of the APIs. <code>CallerArn</code> is required if you
+     *         include a <code>ResourcePolicy</code> so that the policy's
      *         <code>Principal</code> element has a value to use in evaluating
      *         the policy.</p>
      *         <p>
@@ -898,8 +1063,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the user that you want to use as the simulated caller of the
-     * APIs. <code>CallerArn</code> is required if you include a
+     * The ARN of the IAM user that you want to use as the simulated caller of
+     * the APIs. <code>CallerArn</code> is required if you include a
      * <code>ResourcePolicy</code> so that the policy's <code>Principal</code>
      * element has a value to use in evaluating the policy.
      * </p>
@@ -909,9 +1074,9 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param callerArn
-     *        The ARN of the user that you want to use as the simulated caller
-     *        of the APIs. <code>CallerArn</code> is required if you include a
-     *        <code>ResourcePolicy</code> so that the policy's
+     *        The ARN of the IAM user that you want to use as the simulated
+     *        caller of the APIs. <code>CallerArn</code> is required if you
+     *        include a <code>ResourcePolicy</code> so that the policy's
      *        <code>Principal</code> element has a value to use in evaluating
      *        the policy.</p>
      *        <p>
@@ -930,15 +1095,14 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to
-     * use. Whenever a context key is evaluated by a <code>Condition</code>
-     * element in one of the simulated IAM permission policies, the
-     * corresponding value is supplied.
+     * use. Whenever a context key is evaluated in one of the simulated IAM
+     * permission policies, the corresponding value is supplied.
      * </p>
      * 
      * @return A list of context keys and corresponding values for the
-     *         simulation to use. Whenever a context key is evaluated by a
-     *         <code>Condition</code> element in one of the simulated IAM
-     *         permission policies, the corresponding value is supplied.
+     *         simulation to use. Whenever a context key is evaluated in one of
+     *         the simulated IAM permission policies, the corresponding value is
+     *         supplied.
      */
 
     public java.util.List<ContextEntry> getContextEntries() {
@@ -951,16 +1115,15 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to
-     * use. Whenever a context key is evaluated by a <code>Condition</code>
-     * element in one of the simulated IAM permission policies, the
-     * corresponding value is supplied.
+     * use. Whenever a context key is evaluated in one of the simulated IAM
+     * permission policies, the corresponding value is supplied.
      * </p>
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation
-     *        to use. Whenever a context key is evaluated by a
-     *        <code>Condition</code> element in one of the simulated IAM
-     *        permission policies, the corresponding value is supplied.
+     *        to use. Whenever a context key is evaluated in one of the
+     *        simulated IAM permission policies, the corresponding value is
+     *        supplied.
      */
 
     public void setContextEntries(
@@ -977,9 +1140,8 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to
-     * use. Whenever a context key is evaluated by a <code>Condition</code>
-     * element in one of the simulated IAM permission policies, the
-     * corresponding value is supplied.
+     * use. Whenever a context key is evaluated in one of the simulated IAM
+     * permission policies, the corresponding value is supplied.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -990,9 +1152,9 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation
-     *        to use. Whenever a context key is evaluated by a
-     *        <code>Condition</code> element in one of the simulated IAM
-     *        permission policies, the corresponding value is supplied.
+     *        to use. Whenever a context key is evaluated in one of the
+     *        simulated IAM permission policies, the corresponding value is
+     *        supplied.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1012,16 +1174,15 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to
-     * use. Whenever a context key is evaluated by a <code>Condition</code>
-     * element in one of the simulated IAM permission policies, the
-     * corresponding value is supplied.
+     * use. Whenever a context key is evaluated in one of the simulated IAM
+     * permission policies, the corresponding value is supplied.
      * </p>
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation
-     *        to use. Whenever a context key is evaluated by a
-     *        <code>Condition</code> element in one of the simulated IAM
-     *        permission policies, the corresponding value is supplied.
+     *        to use. Whenever a context key is evaluated in one of the
+     *        simulated IAM permission policies, the corresponding value is
+     *        supplied.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

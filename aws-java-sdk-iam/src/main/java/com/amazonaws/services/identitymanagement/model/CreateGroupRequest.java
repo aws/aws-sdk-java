@@ -29,17 +29,31 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The path to the group. For more information about paths, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      */
     private String path;
     /**
      * <p>
      * The name of the group to create. Do not include the path in this value.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String groupName;
@@ -59,7 +73,12 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      * 
      * @param groupName
      *        The name of the group to create. Do not include the path in this
-     *        value.
+     *        value.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
     public CreateGroupRequest(String groupName) {
         setGroupName(groupName);
@@ -69,21 +88,37 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The path to the group. For more information about paths, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @param path
      *        The path to the group. For more information about paths, see <a
      *        href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      */
 
     public void setPath(String path) {
@@ -94,20 +129,36 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The path to the group. For more information about paths, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      * 
      * @return The path to the group. For more information about paths, see <a
      *         href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *         >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to
      *         a slash (/).
+     *         </p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of either
+     *         a forward slash (/) by itself or a string that must begin and end
+     *         with forward slashes, containing any ASCII character from the !
+     *         (\u0021) thru the DEL character (\u007F), including most
+     *         punctuation characters, digits, and upper and lowercased letters.
      */
 
     public String getPath() {
@@ -118,21 +169,37 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The path to the group. For more information about paths, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @param path
      *        The path to the group. For more information about paths, see <a
      *        href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -146,10 +213,21 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the group to create. Do not include the path in this value.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param groupName
      *        The name of the group to create. Do not include the path in this
-     *        value.
+     *        value.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
 
     public void setGroupName(String groupName) {
@@ -160,9 +238,20 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the group to create. Do not include the path in this value.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @return The name of the group to create. Do not include the path in this
-     *         value.
+     *         value.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
 
     public String getGroupName() {
@@ -173,10 +262,21 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the group to create. Do not include the path in this value.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param groupName
      *        The name of the group to create. Do not include the path in this
-     *        value.
+     *        value.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -273,6 +273,11 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Allocates a VLAN number and a specified amount of bandwidth for use by a
      * hosted connection on the given interconnect.
      * </p>
+     * <note>
+     * <p>
+     * This is intended for use by AWS Direct Connect partners only.
+     * </p>
+     * </note>
      * 
      * @param allocateConnectionOnInterconnectRequest
      *        Container for the parameters to the
@@ -722,6 +727,11 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * AWS resources by creating a virtual interface on their connection, using
      * the VLAN assigned to them by the AWS Direct Connect partner.
      * </p>
+     * <note>
+     * <p>
+     * This is intended for use by AWS Direct Connect partners only.
+     * </p>
+     * </note>
      * 
      * @param createInterconnectRequest
      *        Container for the parameters to the CreateInterconnect operation.
@@ -949,6 +959,11 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * <p>
      * Deletes the specified interconnect.
      * </p>
+     * <note>
+     * <p>
+     * This is intended for use by AWS Direct Connect partners only.
+     * </p>
+     * </note>
      * 
      * @param deleteInterconnectRequest
      *        Container for the parameters to the DeleteInterconnect operation.
@@ -1122,6 +1137,11 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Return a list of connections that have been provisioned on the given
      * interconnect.
      * </p>
+     * <note>
+     * <p>
+     * This is intended for use by AWS Direct Connect partners only.
+     * </p>
+     * </note>
      * 
      * @param describeConnectionsOnInterconnectRequest
      *        Container for the parameters to the

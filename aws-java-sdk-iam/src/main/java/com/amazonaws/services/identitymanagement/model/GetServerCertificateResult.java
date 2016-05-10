@@ -27,18 +27,18 @@ public class GetServerCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the server certificate.
+     * A structure containing details about the server certificate.
      * </p>
      */
     private ServerCertificate serverCertificate;
 
     /**
      * <p>
-     * Information about the server certificate.
+     * A structure containing details about the server certificate.
      * </p>
      * 
      * @param serverCertificate
-     *        Information about the server certificate.
+     *        A structure containing details about the server certificate.
      */
 
     public void setServerCertificate(ServerCertificate serverCertificate) {
@@ -47,10 +47,10 @@ public class GetServerCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the server certificate.
+     * A structure containing details about the server certificate.
      * </p>
      * 
-     * @return Information about the server certificate.
+     * @return A structure containing details about the server certificate.
      */
 
     public ServerCertificate getServerCertificate() {
@@ -59,11 +59,11 @@ public class GetServerCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the server certificate.
+     * A structure containing details about the server certificate.
      * </p>
      * 
      * @param serverCertificate
-     *        Information about the server certificate.
+     *        A structure containing details about the server certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

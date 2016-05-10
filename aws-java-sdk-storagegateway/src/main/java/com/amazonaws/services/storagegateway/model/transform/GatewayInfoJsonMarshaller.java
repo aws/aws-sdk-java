@@ -47,6 +47,10 @@ public class GatewayInfoJsonMarshaller {
         try {
             jsonGenerator.writeStartObject();
 
+            if (gatewayInfo.getGatewayId() != null) {
+                jsonGenerator.writeFieldName("GatewayId").writeValue(
+                        gatewayInfo.getGatewayId());
+            }
             if (gatewayInfo.getGatewayARN() != null) {
                 jsonGenerator.writeFieldName("GatewayARN").writeValue(
                         gatewayInfo.getGatewayARN());

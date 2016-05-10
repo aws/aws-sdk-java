@@ -19,20 +19,114 @@ package com.amazonaws.services.storagegateway.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes a gateway object.
+ * </p>
  */
 public class GatewayInfo implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
+     * input for other operations.
+     * </p>
+     */
+    private String gatewayId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the gateway. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your
+     * account and region.
+     * </p>
+     */
     private String gatewayARN;
-
+    /**
+     * <p>
+     * The type of the gateway.
+     * </p>
+     */
     private String gatewayType;
-
+    /**
+     * <p>
+     * The state of the gateway.
+     * </p>
+     * <p>
+     * Valid Values: DISABLED or ACTIVE
+     * </p>
+     */
     private String gatewayOperationalState;
-
+    /**
+     * <p>
+     * The name of the gateway.
+     * </p>
+     */
     private String gatewayName;
 
     /**
+     * <p>
+     * The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
+     * input for other operations.
+     * </p>
+     * 
+     * @param gatewayId
+     *        The unique identifier assigned to your gateway during activation.
+     *        This ID becomes part of the gateway Amazon Resource Name (ARN),
+     *        which you use as input for other operations.
+     */
+
+    public void setGatewayId(String gatewayId) {
+        this.gatewayId = gatewayId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
+     * input for other operations.
+     * </p>
+     * 
+     * @return The unique identifier assigned to your gateway during activation.
+     *         This ID becomes part of the gateway Amazon Resource Name (ARN),
+     *         which you use as input for other operations.
+     */
+
+    public String getGatewayId() {
+        return this.gatewayId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as
+     * input for other operations.
+     * </p>
+     * 
+     * @param gatewayId
+     *        The unique identifier assigned to your gateway during activation.
+     *        This ID becomes part of the gateway Amazon Resource Name (ARN),
+     *        which you use as input for other operations.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GatewayInfo withGatewayId(String gatewayId) {
+        setGatewayId(gatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the gateway. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your
+     * account and region.
+     * </p>
+     * 
      * @param gatewayARN
+     *        The Amazon Resource Name (ARN) of the gateway. Use the
+     *        <a>ListGateways</a> operation to return a list of gateways for
+     *        your account and region.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -40,7 +134,15 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the gateway. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your
+     * account and region.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the gateway. Use the
+     *         <a>ListGateways</a> operation to return a list of gateways for
+     *         your account and region.
      */
 
     public String getGatewayARN() {
@@ -48,7 +150,16 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the gateway. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your
+     * account and region.
+     * </p>
+     * 
      * @param gatewayARN
+     *        The Amazon Resource Name (ARN) of the gateway. Use the
+     *        <a>ListGateways</a> operation to return a list of gateways for
+     *        your account and region.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -59,7 +170,12 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of the gateway.
+     * </p>
+     * 
      * @param gatewayType
+     *        The type of the gateway.
      */
 
     public void setGatewayType(String gatewayType) {
@@ -67,7 +183,11 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The type of the gateway.
+     * </p>
+     * 
+     * @return The type of the gateway.
      */
 
     public String getGatewayType() {
@@ -75,7 +195,12 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of the gateway.
+     * </p>
+     * 
      * @param gatewayType
+     *        The type of the gateway.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -86,7 +211,17 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The state of the gateway.
+     * </p>
+     * <p>
+     * Valid Values: DISABLED or ACTIVE
+     * </p>
+     * 
      * @param gatewayOperationalState
+     *        The state of the gateway.</p>
+     *        <p>
+     *        Valid Values: DISABLED or ACTIVE
      */
 
     public void setGatewayOperationalState(String gatewayOperationalState) {
@@ -94,7 +229,16 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The state of the gateway.
+     * </p>
+     * <p>
+     * Valid Values: DISABLED or ACTIVE
+     * </p>
+     * 
+     * @return The state of the gateway.</p>
+     *         <p>
+     *         Valid Values: DISABLED or ACTIVE
      */
 
     public String getGatewayOperationalState() {
@@ -102,7 +246,17 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The state of the gateway.
+     * </p>
+     * <p>
+     * Valid Values: DISABLED or ACTIVE
+     * </p>
+     * 
      * @param gatewayOperationalState
+     *        The state of the gateway.</p>
+     *        <p>
+     *        Valid Values: DISABLED or ACTIVE
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -114,7 +268,12 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the gateway.
+     * </p>
+     * 
      * @param gatewayName
+     *        The name of the gateway.
      */
 
     public void setGatewayName(String gatewayName) {
@@ -122,7 +281,11 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the gateway.
+     * </p>
+     * 
+     * @return The name of the gateway.
      */
 
     public String getGatewayName() {
@@ -130,7 +293,12 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the gateway.
+     * </p>
+     * 
      * @param gatewayName
+     *        The name of the gateway.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -152,6 +320,8 @@ public class GatewayInfo implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getGatewayId() != null)
+            sb.append("GatewayId: " + getGatewayId() + ",");
         if (getGatewayARN() != null)
             sb.append("GatewayARN: " + getGatewayARN() + ",");
         if (getGatewayType() != null)
@@ -175,6 +345,11 @@ public class GatewayInfo implements Serializable, Cloneable {
         if (obj instanceof GatewayInfo == false)
             return false;
         GatewayInfo other = (GatewayInfo) obj;
+        if (other.getGatewayId() == null ^ this.getGatewayId() == null)
+            return false;
+        if (other.getGatewayId() != null
+                && other.getGatewayId().equals(this.getGatewayId()) == false)
+            return false;
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null)
             return false;
         if (other.getGatewayARN() != null
@@ -205,6 +380,8 @@ public class GatewayInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode
+                + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
         hashCode = prime * hashCode
                 + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
         hashCode = prime

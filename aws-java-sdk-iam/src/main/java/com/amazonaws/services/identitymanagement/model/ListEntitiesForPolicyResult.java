@@ -27,19 +27,19 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of groups that the policy is attached to.
+     * A list of IAM groups that the policy is attached to.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PolicyGroup> policyGroups;
     /**
      * <p>
-     * A list of users that the policy is attached to.
+     * A list of IAM users that the policy is attached to.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PolicyUser> policyUsers;
     /**
      * <p>
-     * A list of roles that the policy is attached to.
+     * A list of IAM roles that the policy is attached to.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PolicyRole> policyRoles;
@@ -66,10 +66,10 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of groups that the policy is attached to.
+     * A list of IAM groups that the policy is attached to.
      * </p>
      * 
-     * @return A list of groups that the policy is attached to.
+     * @return A list of IAM groups that the policy is attached to.
      */
 
     public java.util.List<PolicyGroup> getPolicyGroups() {
@@ -81,11 +81,11 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of groups that the policy is attached to.
+     * A list of IAM groups that the policy is attached to.
      * </p>
      * 
      * @param policyGroups
-     *        A list of groups that the policy is attached to.
+     *        A list of IAM groups that the policy is attached to.
      */
 
     public void setPolicyGroups(java.util.Collection<PolicyGroup> policyGroups) {
@@ -100,7 +100,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of groups that the policy is attached to.
+     * A list of IAM groups that the policy is attached to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -110,7 +110,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param policyGroups
-     *        A list of groups that the policy is attached to.
+     *        A list of IAM groups that the policy is attached to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -129,11 +129,11 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of groups that the policy is attached to.
+     * A list of IAM groups that the policy is attached to.
      * </p>
      * 
      * @param policyGroups
-     *        A list of groups that the policy is attached to.
+     *        A list of IAM groups that the policy is attached to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -146,10 +146,10 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of users that the policy is attached to.
+     * A list of IAM users that the policy is attached to.
      * </p>
      * 
-     * @return A list of users that the policy is attached to.
+     * @return A list of IAM users that the policy is attached to.
      */
 
     public java.util.List<PolicyUser> getPolicyUsers() {
@@ -161,11 +161,11 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of users that the policy is attached to.
+     * A list of IAM users that the policy is attached to.
      * </p>
      * 
      * @param policyUsers
-     *        A list of users that the policy is attached to.
+     *        A list of IAM users that the policy is attached to.
      */
 
     public void setPolicyUsers(java.util.Collection<PolicyUser> policyUsers) {
@@ -180,7 +180,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of users that the policy is attached to.
+     * A list of IAM users that the policy is attached to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -190,7 +190,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param policyUsers
-     *        A list of users that the policy is attached to.
+     *        A list of IAM users that the policy is attached to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -209,11 +209,11 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of users that the policy is attached to.
+     * A list of IAM users that the policy is attached to.
      * </p>
      * 
      * @param policyUsers
-     *        A list of users that the policy is attached to.
+     *        A list of IAM users that the policy is attached to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -226,10 +226,10 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of roles that the policy is attached to.
+     * A list of IAM roles that the policy is attached to.
      * </p>
      * 
-     * @return A list of roles that the policy is attached to.
+     * @return A list of IAM roles that the policy is attached to.
      */
 
     public java.util.List<PolicyRole> getPolicyRoles() {
@@ -241,11 +241,11 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of roles that the policy is attached to.
+     * A list of IAM roles that the policy is attached to.
      * </p>
      * 
      * @param policyRoles
-     *        A list of roles that the policy is attached to.
+     *        A list of IAM roles that the policy is attached to.
      */
 
     public void setPolicyRoles(java.util.Collection<PolicyRole> policyRoles) {
@@ -260,7 +260,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of roles that the policy is attached to.
+     * A list of IAM roles that the policy is attached to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -270,7 +270,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param policyRoles
-     *        A list of roles that the policy is attached to.
+     *        A list of IAM roles that the policy is attached to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -289,11 +289,11 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of roles that the policy is attached to.
+     * A list of IAM roles that the policy is attached to.
      * </p>
      * 
      * @param policyRoles
-     *        A list of roles that the policy is attached to.
+     *        A list of IAM roles that the policy is attached to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

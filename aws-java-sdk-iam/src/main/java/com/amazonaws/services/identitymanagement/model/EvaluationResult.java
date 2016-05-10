@@ -24,7 +24,8 @@ import java.io.Serializable;
  * </p>
  * <p>
  * This data type is used by the return parameter of
- * <code><a>SimulatePolicy</a></code>.
+ * <code> <a>SimulateCustomPolicy</a> </code> and
+ * <code> <a>SimulatePrincipalPolicy</a> </code>.
  * </p>
  */
 public class EvaluationResult implements Serializable, Cloneable {
@@ -69,14 +70,6 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
-     * <caution>
-     * <p>
-     * If the response includes any keys in this list, then the reported results
-     * might be untrustworthy because the simulation could not completely
-     * evaluate all of the conditions specified in the policies that would occur
-     * in a real world request.
-     * </p>
-     * </caution>
      */
     private com.amazonaws.internal.SdkInternalList<String> missingContextValues;
     /**
@@ -387,14 +380,6 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
-     * <caution>
-     * <p>
-     * If the response includes any keys in this list, then the reported results
-     * might be untrustworthy because the simulation could not completely
-     * evaluate all of the conditions specified in the policies that would occur
-     * in a real world request.
-     * </p>
-     * </caution>
      * 
      * @return A list of context keys that are required by the included input
      *         policies but that were not provided by one of the input
@@ -405,13 +390,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         <code>ResourceSpecificResults</code> section. To discover the
      *         context keys used by a set of policies, you can call
      *         <a>GetContextKeysForCustomPolicy</a> or
-     *         <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
-     *         <p>
-     *         If the response includes any keys in this list, then the reported
-     *         results might be untrustworthy because the simulation could not
-     *         completely evaluate all of the conditions specified in the
-     *         policies that would occur in a real world request.
-     *         </p>
+     *         <a>GetContextKeysForPrincipalPolicy</a>.
      */
 
     public java.util.List<String> getMissingContextValues() {
@@ -433,14 +412,6 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
-     * <caution>
-     * <p>
-     * If the response includes any keys in this list, then the reported results
-     * might be untrustworthy because the simulation could not completely
-     * evaluate all of the conditions specified in the policies that would occur
-     * in a real world request.
-     * </p>
-     * </caution>
      * 
      * @param missingContextValues
      *        A list of context keys that are required by the included input
@@ -452,13 +423,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        <code>ResourceSpecificResults</code> section. To discover the
      *        context keys used by a set of policies, you can call
      *        <a>GetContextKeysForCustomPolicy</a> or
-     *        <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
-     *        <p>
-     *        If the response includes any keys in this list, then the reported
-     *        results might be untrustworthy because the simulation could not
-     *        completely evaluate all of the conditions specified in the
-     *        policies that would occur in a real world request.
-     *        </p>
+     *        <a>GetContextKeysForPrincipalPolicy</a>.
      */
 
     public void setMissingContextValues(
@@ -484,14 +449,6 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
-     * <caution>
-     * <p>
-     * If the response includes any keys in this list, then the reported results
-     * might be untrustworthy because the simulation could not completely
-     * evaluate all of the conditions specified in the policies that would occur
-     * in a real world request.
-     * </p>
-     * </caution>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setMissingContextValues(java.util.Collection)} or
@@ -509,13 +466,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        <code>ResourceSpecificResults</code> section. To discover the
      *        context keys used by a set of policies, you can call
      *        <a>GetContextKeysForCustomPolicy</a> or
-     *        <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
-     *        <p>
-     *        If the response includes any keys in this list, then the reported
-     *        results might be untrustworthy because the simulation could not
-     *        completely evaluate all of the conditions specified in the
-     *        policies that would occur in a real world request.
-     *        </p>
+     *        <a>GetContextKeysForPrincipalPolicy</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -544,14 +495,6 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
-     * <caution>
-     * <p>
-     * If the response includes any keys in this list, then the reported results
-     * might be untrustworthy because the simulation could not completely
-     * evaluate all of the conditions specified in the policies that would occur
-     * in a real world request.
-     * </p>
-     * </caution>
      * 
      * @param missingContextValues
      *        A list of context keys that are required by the included input
@@ -563,13 +506,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        <code>ResourceSpecificResults</code> section. To discover the
      *        context keys used by a set of policies, you can call
      *        <a>GetContextKeysForCustomPolicy</a> or
-     *        <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
-     *        <p>
-     *        If the response includes any keys in this list, then the reported
-     *        results might be untrustworthy because the simulation could not
-     *        completely evaluate all of the conditions specified in the
-     *        policies that would occur in a real world request.
-     *        </p>
+     *        <a>GetContextKeysForPrincipalPolicy</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

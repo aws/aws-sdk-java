@@ -24,9 +24,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing one or more of the following fields:
  * </p>
  * <ul>
- * <li><a>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec</a>
+ * <li>
+ * <p>
+ * <a>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec</a>
+ * </p>
  * </li>
- * <li><a>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec</a></li>
+ * <li>
+ * <p>
+ * <a>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest

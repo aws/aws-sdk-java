@@ -15,32 +15,35 @@
 
 package com.amazonaws.codegen;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.amazonaws.codegen.internal.NameUtils;
 import com.amazonaws.codegen.internal.Utils;
-import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
-import com.amazonaws.codegen.model.intermediate.Protocol;
+import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.intermediate.ShapeType;
 import com.amazonaws.codegen.model.service.ErrorMap;
 import com.amazonaws.codegen.model.service.ErrorTrait;
 import com.amazonaws.codegen.model.service.Operation;
-import com.amazonaws.codegen.model.service.ServiceModel;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Constructs the exception shapes for the intermediate model. Analyzes the operations in the
  * service model to identify the exception shapes that are to be generated.
  */
-final class AddExceptionShapes extends AddShapes {
+final class AddExceptionShapes extends AddShapes implements IntermediateModelShapeProcessor {
 
-    AddExceptionShapes(ServiceModel serviceModel, CustomizationConfig customizationConfig) {
-        super(serviceModel, customizationConfig);
+    AddExceptionShapes(IntermediateModelBuilder builder) {
+        super(builder);
     }
 
-    public final Map<String, ShapeModel> constructExceptionShapes() {
+    @Override
+    public Map<String, ShapeModel> process(Map<String, OperationModel> currentOperations,
+                                           Map<String, ShapeModel> currentShapes) {
+        return constructExceptionShapes();
+    }
+
+    private Map<String, ShapeModel> constructExceptionShapes() {
         // Java shape models, to be constructed
         final Map<String, ShapeModel> javaShapes = new HashMap<String, ShapeModel>();
 
@@ -53,10 +56,10 @@ final class AddExceptionShapes extends AddShapes {
                 for (ErrorMap error : operationErrors) {
 
                     String errorShapeName = error.getShape();
-                    String javaClassName = NameUtils
-                            .getExceptionName(errorShapeName);
+                    String javaClassName = getNamingStrategy().getExceptionName(errorShapeName);
 
-                    ShapeModel exceptionShapeModel = generateShapeModel(javaClassName, errorShapeName);
+                    ShapeModel exceptionShapeModel = generateShapeModel(javaClassName,
+                                                                        errorShapeName);
 
                     exceptionShapeModel.setType(ShapeType.Exception.getValue());
                     exceptionShapeModel.setErrorCode(getErrorCode(errorShapeName));
@@ -73,9 +76,9 @@ final class AddExceptionShapes extends AddShapes {
     }
 
     /**
-     * The error code may be overridden for query or rest protocols via the error trait on the exception
-     * shape. If the error code isn't overridden and for all other protocols other than query or rest the
-     * error code should just be the shape name
+     * The error code may be overridden for query or rest protocols via the error trait on the
+     * exception shape. If the error code isn't overridden and for all other protocols other than
+     * query or rest the error code should just be the shape name
      */
     private String getErrorCode(String errorShapeName) {
         ErrorTrait errorTrait = getServiceModel().getShapes().get(errorShapeName).getErrorTrait();

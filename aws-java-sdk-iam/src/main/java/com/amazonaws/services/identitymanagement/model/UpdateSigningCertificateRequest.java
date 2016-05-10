@@ -27,13 +27,24 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user the signing certificate belongs to.
+     * The name of the IAM user the signing certificate belongs to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String userName;
     /**
      * <p>
      * The ID of the signing certificate you want to update.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
      * </p>
      */
     private String certificateId;
@@ -60,7 +71,11 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param certificateId
-     *        The ID of the signing certificate you want to update.
+     *        The ID of the signing certificate you want to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the certificate.
      *        <code>Active</code> means the certificate can be used for API
@@ -78,7 +93,11 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param certificateId
-     *        The ID of the signing certificate you want to update.
+     *        The ID of the signing certificate you want to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the certificate.
      *        <code>Active</code> means the certificate can be used for API
@@ -93,11 +112,22 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user the signing certificate belongs to.
+     * The name of the IAM user the signing certificate belongs to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the user the signing certificate belongs to.
+     *        The name of the IAM user the signing certificate belongs to.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
 
     public void setUserName(String userName) {
@@ -106,10 +136,21 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user the signing certificate belongs to.
+     * The name of the IAM user the signing certificate belongs to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
-     * @return The name of the user the signing certificate belongs to.
+     * @return The name of the IAM user the signing certificate belongs to.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
 
     public String getUserName() {
@@ -118,11 +159,22 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user the signing certificate belongs to.
+     * The name of the IAM user the signing certificate belongs to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the user the signing certificate belongs to.
+     *        The name of the IAM user the signing certificate belongs to.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -136,9 +188,18 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The ID of the signing certificate you want to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
      * @param certificateId
-     *        The ID of the signing certificate you want to update.
+     *        The ID of the signing certificate you want to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      */
 
     public void setCertificateId(String certificateId) {
@@ -149,8 +210,17 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The ID of the signing certificate you want to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
-     * @return The ID of the signing certificate you want to update.
+     * @return The ID of the signing certificate you want to update.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters that can consist of
+     *         any upper or lowercased letter or digit.
      */
 
     public String getCertificateId() {
@@ -161,9 +231,18 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The ID of the signing certificate you want to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
      * @param certificateId
-     *        The ID of the signing certificate you want to update.
+     *        The ID of the signing certificate you want to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

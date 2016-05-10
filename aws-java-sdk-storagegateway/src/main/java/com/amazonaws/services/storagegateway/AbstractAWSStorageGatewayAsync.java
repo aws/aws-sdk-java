@@ -674,6 +674,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway
     }
 
     @Override
+    public java.util.concurrent.Future<ListTapesResult> listTapesAsync(
+            ListTapesRequest request) {
+
+        return listTapesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTapesResult> listTapesAsync(
+            ListTapesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTapesRequest, ListTapesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListVolumeInitiatorsResult> listVolumeInitiatorsAsync(
             ListVolumeInitiatorsRequest request) {
 

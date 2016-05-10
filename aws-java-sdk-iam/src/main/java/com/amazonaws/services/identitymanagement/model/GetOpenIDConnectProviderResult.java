@@ -28,30 +28,30 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URL that the IAM OpenID Connect provider is associated with. For more
-     * information, see <a>CreateOpenIDConnectProvider</a>.
+     * The URL that the IAM OIDC provider resource object is associated with.
+     * For more information, see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      */
     private String url;
     /**
      * <p>
      * A list of client IDs (also known as audiences) that are associated with
-     * the specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>.
+     * the specified IAM OIDC provider resource object. For more information,
+     * see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> clientIDList;
     /**
      * <p>
      * A list of certificate thumbprints that are associated with the specified
-     * IAM OpenID Connect provider. For more information, see
+     * IAM OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> thumbprintList;
     /**
      * <p>
-     * The date and time when the IAM OpenID Connect provider entity was created
+     * The date and time when the IAM OIDC provider resource object was created
      * in the AWS account.
      * </p>
      */
@@ -59,13 +59,14 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URL that the IAM OpenID Connect provider is associated with. For more
-     * information, see <a>CreateOpenIDConnectProvider</a>.
+     * The URL that the IAM OIDC provider resource object is associated with.
+     * For more information, see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @param url
-     *        The URL that the IAM OpenID Connect provider is associated with.
-     *        For more information, see <a>CreateOpenIDConnectProvider</a>.
+     *        The URL that the IAM OIDC provider resource object is associated
+     *        with. For more information, see
+     *        <a>CreateOpenIDConnectProvider</a>.
      */
 
     public void setUrl(String url) {
@@ -74,12 +75,13 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URL that the IAM OpenID Connect provider is associated with. For more
-     * information, see <a>CreateOpenIDConnectProvider</a>.
+     * The URL that the IAM OIDC provider resource object is associated with.
+     * For more information, see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
-     * @return The URL that the IAM OpenID Connect provider is associated with.
-     *         For more information, see <a>CreateOpenIDConnectProvider</a>.
+     * @return The URL that the IAM OIDC provider resource object is associated
+     *         with. For more information, see
+     *         <a>CreateOpenIDConnectProvider</a>.
      */
 
     public String getUrl() {
@@ -88,13 +90,14 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URL that the IAM OpenID Connect provider is associated with. For more
-     * information, see <a>CreateOpenIDConnectProvider</a>.
+     * The URL that the IAM OIDC provider resource object is associated with.
+     * For more information, see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @param url
-     *        The URL that the IAM OpenID Connect provider is associated with.
-     *        For more information, see <a>CreateOpenIDConnectProvider</a>.
+     *        The URL that the IAM OIDC provider resource object is associated
+     *        with. For more information, see
+     *        <a>CreateOpenIDConnectProvider</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -107,13 +110,13 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of client IDs (also known as audiences) that are associated with
-     * the specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>.
+     * the specified IAM OIDC provider resource object. For more information,
+     * see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @return A list of client IDs (also known as audiences) that are
-     *         associated with the specified IAM OpenID Connect provider. For
-     *         more information, see <a>CreateOpenIDConnectProvider</a>.
+     *         associated with the specified IAM OIDC provider resource object.
+     *         For more information, see <a>CreateOpenIDConnectProvider</a>.
      */
 
     public java.util.List<String> getClientIDList() {
@@ -126,13 +129,13 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of client IDs (also known as audiences) that are associated with
-     * the specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>.
+     * the specified IAM OIDC provider resource object. For more information,
+     * see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @param clientIDList
      *        A list of client IDs (also known as audiences) that are associated
-     *        with the specified IAM OpenID Connect provider. For more
+     *        with the specified IAM OIDC provider resource object. For more
      *        information, see <a>CreateOpenIDConnectProvider</a>.
      */
 
@@ -149,8 +152,8 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of client IDs (also known as audiences) that are associated with
-     * the specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>.
+     * the specified IAM OIDC provider resource object. For more information,
+     * see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -161,7 +164,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * 
      * @param clientIDList
      *        A list of client IDs (also known as audiences) that are associated
-     *        with the specified IAM OpenID Connect provider. For more
+     *        with the specified IAM OIDC provider resource object. For more
      *        information, see <a>CreateOpenIDConnectProvider</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -182,13 +185,13 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of client IDs (also known as audiences) that are associated with
-     * the specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>.
+     * the specified IAM OIDC provider resource object. For more information,
+     * see <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @param clientIDList
      *        A list of client IDs (also known as audiences) that are associated
-     *        with the specified IAM OpenID Connect provider. For more
+     *        with the specified IAM OIDC provider resource object. For more
      *        information, see <a>CreateOpenIDConnectProvider</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -203,13 +206,13 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of certificate thumbprints that are associated with the specified
-     * IAM OpenID Connect provider. For more information, see
+     * IAM OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @return A list of certificate thumbprints that are associated with the
-     *         specified IAM OpenID Connect provider. For more information, see
-     *         <a>CreateOpenIDConnectProvider</a>.
+     *         specified IAM OIDC provider resource object. For more
+     *         information, see <a>CreateOpenIDConnectProvider</a>.
      */
 
     public java.util.List<String> getThumbprintList() {
@@ -222,14 +225,14 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of certificate thumbprints that are associated with the specified
-     * IAM OpenID Connect provider. For more information, see
+     * IAM OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @param thumbprintList
      *        A list of certificate thumbprints that are associated with the
-     *        specified IAM OpenID Connect provider. For more information, see
-     *        <a>CreateOpenIDConnectProvider</a>.
+     *        specified IAM OIDC provider resource object. For more information,
+     *        see <a>CreateOpenIDConnectProvider</a>.
      */
 
     public void setThumbprintList(java.util.Collection<String> thumbprintList) {
@@ -245,7 +248,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of certificate thumbprints that are associated with the specified
-     * IAM OpenID Connect provider. For more information, see
+     * IAM OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * <p>
@@ -257,8 +260,8 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * 
      * @param thumbprintList
      *        A list of certificate thumbprints that are associated with the
-     *        specified IAM OpenID Connect provider. For more information, see
-     *        <a>CreateOpenIDConnectProvider</a>.
+     *        specified IAM OIDC provider resource object. For more information,
+     *        see <a>CreateOpenIDConnectProvider</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -278,14 +281,14 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of certificate thumbprints that are associated with the specified
-     * IAM OpenID Connect provider. For more information, see
+     * IAM OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @param thumbprintList
      *        A list of certificate thumbprints that are associated with the
-     *        specified IAM OpenID Connect provider. For more information, see
-     *        <a>CreateOpenIDConnectProvider</a>.
+     *        specified IAM OIDC provider resource object. For more information,
+     *        see <a>CreateOpenIDConnectProvider</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -298,12 +301,12 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when the IAM OpenID Connect provider entity was created
+     * The date and time when the IAM OIDC provider resource object was created
      * in the AWS account.
      * </p>
      * 
      * @param createDate
-     *        The date and time when the IAM OpenID Connect provider entity was
+     *        The date and time when the IAM OIDC provider resource object was
      *        created in the AWS account.
      */
 
@@ -313,11 +316,11 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when the IAM OpenID Connect provider entity was created
+     * The date and time when the IAM OIDC provider resource object was created
      * in the AWS account.
      * </p>
      * 
-     * @return The date and time when the IAM OpenID Connect provider entity was
+     * @return The date and time when the IAM OIDC provider resource object was
      *         created in the AWS account.
      */
 
@@ -327,12 +330,12 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when the IAM OpenID Connect provider entity was created
+     * The date and time when the IAM OIDC provider resource object was created
      * in the AWS account.
      * </p>
      * 
      * @param createDate
-     *        The date and time when the IAM OpenID Connect provider entity was
+     *        The date and time when the IAM OIDC provider resource object was
      *        created in the AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

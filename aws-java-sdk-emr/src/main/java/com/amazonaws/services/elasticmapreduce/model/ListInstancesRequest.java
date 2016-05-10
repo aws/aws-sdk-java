@@ -47,6 +47,13 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> instanceGroupTypes;
     /**
      * <p>
+     * A list of instance states that will filter the instances returned with
+     * this request.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> instanceStates;
+    /**
+     * <p>
      * The pagination token that indicates the next set of results to retrieve.
      * </p>
      */
@@ -251,6 +258,126 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
+     * A list of instance states that will filter the instances returned with
+     * this request.
+     * </p>
+     * 
+     * @return A list of instance states that will filter the instances returned
+     *         with this request.
+     * @see InstanceState
+     */
+
+    public java.util.List<String> getInstanceStates() {
+        if (instanceStates == null) {
+            instanceStates = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return instanceStates;
+    }
+
+    /**
+     * <p>
+     * A list of instance states that will filter the instances returned with
+     * this request.
+     * </p>
+     * 
+     * @param instanceStates
+     *        A list of instance states that will filter the instances returned
+     *        with this request.
+     * @see InstanceState
+     */
+
+    public void setInstanceStates(java.util.Collection<String> instanceStates) {
+        if (instanceStates == null) {
+            this.instanceStates = null;
+            return;
+        }
+
+        this.instanceStates = new com.amazonaws.internal.SdkInternalList<String>(
+                instanceStates);
+    }
+
+    /**
+     * <p>
+     * A list of instance states that will filter the instances returned with
+     * this request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setInstanceStates(java.util.Collection)} or
+     * {@link #withInstanceStates(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param instanceStates
+     *        A list of instance states that will filter the instances returned
+     *        with this request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see InstanceState
+     */
+
+    public ListInstancesRequest withInstanceStates(String... instanceStates) {
+        if (this.instanceStates == null) {
+            setInstanceStates(new com.amazonaws.internal.SdkInternalList<String>(
+                    instanceStates.length));
+        }
+        for (String ele : instanceStates) {
+            this.instanceStates.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of instance states that will filter the instances returned with
+     * this request.
+     * </p>
+     * 
+     * @param instanceStates
+     *        A list of instance states that will filter the instances returned
+     *        with this request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see InstanceState
+     */
+
+    public ListInstancesRequest withInstanceStates(
+            java.util.Collection<String> instanceStates) {
+        setInstanceStates(instanceStates);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of instance states that will filter the instances returned with
+     * this request.
+     * </p>
+     * 
+     * @param instanceStates
+     *        A list of instance states that will filter the instances returned
+     *        with this request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see InstanceState
+     */
+
+    public ListInstancesRequest withInstanceStates(
+            InstanceState... instanceStates) {
+        com.amazonaws.internal.SdkInternalList<String> instanceStatesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                instanceStates.length);
+        for (InstanceState value : instanceStates) {
+            instanceStatesCopy.add(value.toString());
+        }
+        if (getInstanceStates() == null) {
+            setInstanceStates(instanceStatesCopy);
+        } else {
+            getInstanceStates().addAll(instanceStatesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
      * The pagination token that indicates the next set of results to retrieve.
      * </p>
      * 
@@ -311,6 +438,8 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
             sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");
         if (getInstanceGroupTypes() != null)
             sb.append("InstanceGroupTypes: " + getInstanceGroupTypes() + ",");
+        if (getInstanceStates() != null)
+            sb.append("InstanceStates: " + getInstanceStates() + ",");
         if (getMarker() != null)
             sb.append("Marker: " + getMarker());
         sb.append("}");
@@ -345,6 +474,12 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
                 && other.getInstanceGroupTypes().equals(
                         this.getInstanceGroupTypes()) == false)
             return false;
+        if (other.getInstanceStates() == null
+                ^ this.getInstanceStates() == null)
+            return false;
+        if (other.getInstanceStates() != null
+                && other.getInstanceStates().equals(this.getInstanceStates()) == false)
+            return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
         if (other.getMarker() != null
@@ -368,6 +503,10 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getInstanceGroupTypes() == null) ? 0
                         : getInstanceGroupTypes().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInstanceStates() == null) ? 0 : getInstanceStates()
+                        .hashCode());
         hashCode = prime * hashCode
                 + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;

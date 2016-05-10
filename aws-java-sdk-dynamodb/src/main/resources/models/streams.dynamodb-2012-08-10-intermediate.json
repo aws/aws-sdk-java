@@ -54,12 +54,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeStreamResult",
       "asyncReturnType" : "DescribeStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult>",
+      "authenticated" : true,
       "methodName" : "describeStream"
     },
     "GetRecords" : {
@@ -96,12 +96,12 @@
         "documentation" : "<p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li>You request a shard iterator with a sequence number older than the trim point (24 hours).</li> <li>You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetRecordsResult",
       "asyncReturnType" : "GetRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRecordsRequest, GetRecordsResult>",
+      "authenticated" : true,
       "methodName" : "getRecords"
     },
     "GetShardIterator" : {
@@ -132,12 +132,12 @@
         "documentation" : "<p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li>You request a shard iterator with a sequence number older than the trim point (24 hours).</li> <li>You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetShardIteratorResult",
       "asyncReturnType" : "GetShardIteratorResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetShardIteratorResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetShardIteratorResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult>",
+      "authenticated" : true,
       "methodName" : "getShardIterator"
     },
     "ListStreams" : {
@@ -165,12 +165,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListStreamsResult",
       "asyncReturnType" : "ListStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStreamsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStreamsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult>",
+      "authenticated" : true,
       "methodName" : "listStreams"
     }
   },
@@ -185,6 +185,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
         "name" : "StreamArn",
@@ -219,10 +220,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -271,10 +272,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -323,10 +324,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -402,10 +403,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -455,10 +456,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -508,10 +509,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -539,6 +540,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The first sequence number.</p>",
         "name" : "StartingSequenceNumber",
@@ -573,10 +575,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -625,10 +627,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -700,10 +702,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -753,10 +755,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -784,6 +786,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "TRIM_HORIZON",
@@ -830,6 +833,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "NEW_IMAGE",
@@ -876,6 +880,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The system-generated identifier for this shard.</p>",
         "name" : "ShardId",
@@ -910,10 +915,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -962,10 +967,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1014,10 +1019,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1089,10 +1094,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1142,10 +1147,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1195,10 +1200,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1226,6 +1231,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -1257,6 +1263,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A String data type.</p>",
         "name" : "S",
@@ -1291,10 +1298,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1343,10 +1350,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1395,10 +1402,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1447,10 +1454,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -1492,10 +1499,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -1565,10 +1572,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -1610,10 +1617,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -1683,10 +1690,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -1728,10 +1735,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -1801,10 +1808,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1850,10 +1857,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -1920,10 +1927,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -1965,10 +1972,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -2038,10 +2045,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2090,10 +2097,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2165,10 +2172,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -2210,10 +2217,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -2284,10 +2291,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -2329,10 +2336,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -2403,10 +2410,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2456,10 +2463,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2509,10 +2516,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -2554,10 +2561,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -2628,10 +2635,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2677,10 +2684,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -2748,10 +2755,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -2793,10 +2800,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -2867,10 +2874,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2920,10 +2927,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2973,10 +2980,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3004,6 +3011,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "HASH",
@@ -3044,6 +3052,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
         "name" : "StreamArn",
@@ -3078,10 +3087,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3130,10 +3139,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3182,10 +3191,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3234,10 +3243,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3286,10 +3295,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3338,10 +3347,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3390,10 +3399,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -3435,10 +3444,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -3508,10 +3517,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -3553,10 +3562,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -3626,10 +3635,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3701,10 +3710,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3754,10 +3763,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -3799,10 +3808,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -3873,10 +3882,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3926,10 +3935,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -3971,10 +3980,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -4045,10 +4054,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4098,10 +4107,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4151,10 +4160,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4204,10 +4213,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4257,10 +4266,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4288,6 +4297,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -4319,6 +4329,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>",
         "name" : "ShardIterator",
@@ -4353,10 +4364,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4405,10 +4416,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4484,10 +4495,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4537,10 +4548,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4568,6 +4579,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The stream records from the shard, which were retrieved using the shard iterator.</p>",
         "name" : "Records",
@@ -4602,10 +4614,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -4647,10 +4659,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -4720,10 +4732,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4795,10 +4807,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4848,10 +4860,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -4893,10 +4905,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -4945,6 +4957,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>",
         "name" : "StreamDescription",
@@ -4979,10 +4992,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5054,10 +5067,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5085,6 +5098,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If this parameter is provided, then only the streams associated with this table name are returned.</p>",
         "name" : "TableName",
@@ -5119,10 +5133,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5171,10 +5185,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5223,10 +5237,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5302,10 +5316,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5355,10 +5369,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5408,10 +5422,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5439,6 +5453,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of stream descriptors associated with the current account and endpoint.</p>",
         "name" : "Streams",
@@ -5473,10 +5488,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -5518,10 +5533,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -5591,10 +5606,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5666,10 +5681,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5719,10 +5734,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -5764,10 +5779,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -5816,6 +5831,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
         "name" : "StreamArn",
@@ -5850,10 +5866,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5902,10 +5918,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5954,10 +5970,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6006,10 +6022,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6085,10 +6101,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6138,10 +6154,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6191,10 +6207,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6244,10 +6260,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6275,6 +6291,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>",
         "name" : "ShardIterator",
@@ -6309,10 +6326,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6384,10 +6401,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6415,6 +6432,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of a key attribute.</p>",
         "name" : "AttributeName",
@@ -6449,10 +6467,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6501,10 +6519,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6576,10 +6594,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6629,10 +6647,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6660,6 +6678,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A globally unique identifier for the event that was recorded in this stream record.</p>",
         "name" : "EventID",
@@ -6694,10 +6713,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6746,10 +6765,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6798,10 +6817,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6850,10 +6869,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6902,10 +6921,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6954,10 +6973,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7029,10 +7048,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7082,10 +7101,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7135,10 +7154,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7188,10 +7207,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7241,10 +7260,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7294,10 +7313,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7325,6 +7344,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
         "name" : "StreamArn",
@@ -7359,10 +7379,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7411,10 +7431,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7463,10 +7483,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7538,10 +7558,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7591,10 +7611,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7644,10 +7664,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7675,6 +7695,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -7706,6 +7727,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The primary key attribute(s) for the DynamoDB item that was modified.</p>",
         "name" : "Keys",
@@ -7740,10 +7762,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7789,10 +7811,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -7859,10 +7881,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7908,10 +7930,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -7978,10 +8000,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8027,10 +8049,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -8097,10 +8119,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8149,10 +8171,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8201,10 +8223,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8276,10 +8298,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8325,10 +8347,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -8396,10 +8418,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8449,10 +8471,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8502,10 +8524,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8555,10 +8577,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8604,10 +8626,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -8675,10 +8697,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8724,10 +8746,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -8773,6 +8795,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -8804,6 +8827,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -8835,6 +8859,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "INSERT",
@@ -8878,6 +8903,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ENABLING",

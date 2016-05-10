@@ -58,10 +58,30 @@ public class VolumeInfoJsonUnmarshaller implements
                     volumeInfo.setVolumeARN(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("VolumeId", targetDepth)) {
+                    context.nextToken();
+                    volumeInfo.setVolumeId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("GatewayARN", targetDepth)) {
+                    context.nextToken();
+                    volumeInfo.setGatewayARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("GatewayId", targetDepth)) {
+                    context.nextToken();
+                    volumeInfo.setGatewayId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("VolumeType", targetDepth)) {
                     context.nextToken();
                     volumeInfo.setVolumeType(context.getUnmarshaller(
                             String.class).unmarshall(context));
+                }
+                if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
+                    context.nextToken();
+                    volumeInfo.setVolumeSizeInBytes(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

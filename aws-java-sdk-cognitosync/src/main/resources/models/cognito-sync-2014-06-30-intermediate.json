@@ -23,10 +23,10 @@
     "serviceName" : "Amazon Cognito Sync",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "xmlProtocol" : false
   },
   "operations" : {
     "BulkPublish" : {
@@ -66,12 +66,12 @@
         "documentation" : "An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BulkPublishResult",
       "asyncReturnType" : "BulkPublishResult",
       "asyncFutureType" : "java.util.concurrent.Future<BulkPublishResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BulkPublishResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BulkPublishRequest, BulkPublishResult>",
+      "authenticated" : true,
       "methodName" : "bulkPublish"
     },
     "DeleteDataset" : {
@@ -111,12 +111,12 @@
         "documentation" : "Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteDatasetResult",
       "asyncReturnType" : "DeleteDatasetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDatasetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDatasetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDatasetRequest, DeleteDatasetResult>",
+      "authenticated" : true,
       "methodName" : "deleteDataset"
     },
     "DescribeDataset" : {
@@ -153,12 +153,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDatasetResult",
       "asyncReturnType" : "DescribeDatasetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDatasetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDatasetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDatasetRequest, DescribeDatasetResult>",
+      "authenticated" : true,
       "methodName" : "describeDataset"
     },
     "DescribeIdentityPoolUsage" : {
@@ -195,12 +195,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeIdentityPoolUsageResult",
       "asyncReturnType" : "DescribeIdentityPoolUsageResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeIdentityPoolUsageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeIdentityPoolUsageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeIdentityPoolUsageRequest, DescribeIdentityPoolUsageResult>",
+      "authenticated" : true,
       "methodName" : "describeIdentityPoolUsage"
     },
     "DescribeIdentityUsage" : {
@@ -237,12 +237,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeIdentityUsageResult",
       "asyncReturnType" : "DescribeIdentityUsageResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeIdentityUsageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeIdentityUsageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeIdentityUsageRequest, DescribeIdentityUsageResult>",
+      "authenticated" : true,
       "methodName" : "describeIdentityUsage"
     },
     "GetBulkPublishDetails" : {
@@ -276,12 +276,12 @@
         "documentation" : "Indicates an internal service error."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetBulkPublishDetailsResult",
       "asyncReturnType" : "GetBulkPublishDetailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetBulkPublishDetailsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetBulkPublishDetailsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetBulkPublishDetailsRequest, GetBulkPublishDetailsResult>",
+      "authenticated" : true,
       "methodName" : "getBulkPublishDetails"
     },
     "GetCognitoEvents" : {
@@ -318,12 +318,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetCognitoEventsResult",
       "asyncReturnType" : "GetCognitoEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCognitoEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCognitoEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCognitoEventsRequest, GetCognitoEventsResult>",
+      "authenticated" : true,
       "methodName" : "getCognitoEvents"
     },
     "GetIdentityPoolConfiguration" : {
@@ -360,12 +360,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetIdentityPoolConfigurationResult",
       "asyncReturnType" : "GetIdentityPoolConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIdentityPoolConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityPoolConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityPoolConfigurationRequest, GetIdentityPoolConfigurationResult>",
+      "authenticated" : true,
       "methodName" : "getIdentityPoolConfiguration"
     },
     "ListDatasets" : {
@@ -399,12 +399,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDatasetsResult",
       "asyncReturnType" : "ListDatasetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDatasetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDatasetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDatasetsRequest, ListDatasetsResult>",
+      "authenticated" : true,
       "methodName" : "listDatasets"
     },
     "ListIdentityPoolUsage" : {
@@ -438,12 +438,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListIdentityPoolUsageResult",
       "asyncReturnType" : "ListIdentityPoolUsageResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListIdentityPoolUsageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListIdentityPoolUsageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIdentityPoolUsageRequest, ListIdentityPoolUsageResult>",
+      "authenticated" : true,
       "methodName" : "listIdentityPoolUsage"
     },
     "ListRecords" : {
@@ -477,12 +477,12 @@
         "documentation" : "Indicates an internal service error."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListRecordsResult",
       "asyncReturnType" : "ListRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRecordsRequest, ListRecordsResult>",
+      "authenticated" : true,
       "methodName" : "listRecords"
     },
     "RegisterDevice" : {
@@ -522,12 +522,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RegisterDeviceResult",
       "asyncReturnType" : "RegisterDeviceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterDeviceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RegisterDeviceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterDeviceRequest, RegisterDeviceResult>",
+      "authenticated" : true,
       "methodName" : "registerDevice"
     },
     "SetCognitoEvents" : {
@@ -561,12 +561,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetCognitoEventsRequest, Void>",
+      "authenticated" : true,
       "methodName" : "setCognitoEvents"
     },
     "SetIdentityPoolConfiguration" : {
@@ -606,12 +606,12 @@
         "documentation" : "<p>Thrown if there are parallel requests to modify a resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "SetIdentityPoolConfigurationResult",
       "asyncReturnType" : "SetIdentityPoolConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetIdentityPoolConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityPoolConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityPoolConfigurationRequest, SetIdentityPoolConfigurationResult>",
+      "authenticated" : true,
       "methodName" : "setIdentityPoolConfiguration"
     },
     "SubscribeToDataset" : {
@@ -651,12 +651,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "SubscribeToDatasetResult",
       "asyncReturnType" : "SubscribeToDatasetResult",
       "asyncFutureType" : "java.util.concurrent.Future<SubscribeToDatasetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SubscribeToDatasetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SubscribeToDatasetRequest, SubscribeToDatasetResult>",
+      "authenticated" : true,
       "methodName" : "subscribeToDataset"
     },
     "UnsubscribeFromDataset" : {
@@ -696,12 +696,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UnsubscribeFromDatasetResult",
       "asyncReturnType" : "UnsubscribeFromDatasetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UnsubscribeFromDatasetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UnsubscribeFromDatasetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UnsubscribeFromDatasetRequest, UnsubscribeFromDatasetResult>",
+      "authenticated" : true,
       "methodName" : "unsubscribeFromDataset"
     },
     "UpdateRecords" : {
@@ -750,12 +750,12 @@
         "documentation" : "Indicates an internal service error."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateRecordsResult",
       "asyncReturnType" : "UpdateRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRecordsRequest, UpdateRecordsResult>",
+      "authenticated" : true,
       "methodName" : "updateRecords"
     }
   },
@@ -770,6 +770,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Replace",
@@ -810,6 +811,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -1164,6 +1166,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Cognito Identity Pool ID for the request</p>",
         "name" : "IdentityPoolId",
@@ -1308,6 +1311,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -2082,6 +2086,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>",
         "name" : "IdentityPoolId",
@@ -2541,6 +2546,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Cognito Identity Pool to use when configuring Cognito Events</p>",
         "name" : "IdentityPoolId",
@@ -2924,6 +2930,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -2955,6 +2962,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>",
         "name" : "IdentityPoolId",
@@ -3414,6 +3422,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -3558,6 +3567,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -3589,6 +3599,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>",
         "name" : "IdentityPoolId",
@@ -4048,6 +4059,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -4079,6 +4091,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "Information about the usage of the identity pool.",
         "name" : "IdentityPoolUsage",
@@ -4219,6 +4232,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -4250,6 +4264,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "An operation, either replace or remove.",
         "name" : "Op",
@@ -4810,6 +4825,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "Usage information for the identity.",
         "name" : "IdentityUsage",
@@ -4950,6 +4966,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.",
         "name" : "StreamName",
@@ -5300,6 +5317,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -5444,6 +5462,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "APNS",
@@ -5490,6 +5509,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -5521,6 +5541,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -5552,6 +5573,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5586,6 +5608,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -6146,6 +6169,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.",
         "name" : "Dataset",
@@ -6286,6 +6310,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Cognito Events returned from the GetCognitoEvents request</p>",
         "name" : "Events",
@@ -6560,6 +6585,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A pagination token for obtaining the next page of results.",
         "name" : "NextToken",
@@ -6809,6 +6835,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -6949,6 +6976,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>",
         "name" : "IdentityPoolId",
@@ -7093,6 +7121,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityId",
@@ -7653,6 +7682,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ENABLED",
@@ -7693,6 +7723,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A list of records that have been updated.",
         "name" : "Records",
@@ -7965,6 +7996,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>",
         "name" : "IdentityPoolId",
@@ -8319,6 +8351,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityId",
@@ -9089,6 +9122,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -9120,6 +9154,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -9575,6 +9610,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A set of datasets.",
         "name" : "Datasets",
@@ -10057,6 +10093,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.",
         "name" : "Dataset",
@@ -10197,6 +10234,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>List of SNS platform application ARNs that could be used by clients.</p>",
         "name" : "ApplicationArns",
@@ -10574,6 +10612,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -10718,6 +10757,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "NOT_STARTED",
@@ -10764,6 +10804,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -11013,6 +11054,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique ID generated for this device by Cognito.</p>",
         "name" : "DeviceId",
@@ -11153,6 +11195,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -11612,6 +11655,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -11643,6 +11687,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>",
         "name" : "IdentityPoolId",
@@ -11993,6 +12038,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "The key for the record.",
         "name" : "Key",
@@ -12658,6 +12704,7 @@
       "hasHeaderMember" : true,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -13564,6 +13611,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -13595,6 +13643,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -13629,6 +13678,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -13660,6 +13710,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
         "name" : "IdentityPoolId",
@@ -14014,6 +14065,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -14045,6 +14097,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>",
         "name" : "IdentityPoolId",
@@ -14395,6 +14448,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "Usage information for the identity pools.",
         "name" : "IdentityPoolUsages",
@@ -14982,6 +15036,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -15013,6 +15068,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A list of all records.",
         "name" : "Records",
@@ -16257,6 +16313,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {

@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -17,6 +18,8 @@ package com.amazonaws.services.simpleworkflow.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -26,11 +29,14 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Child Workflow Execution Completed Event Attributes JSON Unmarshaller
+ * ChildWorkflowExecutionCompletedEventAttributes JSON Unmarshaller
  */
-public class ChildWorkflowExecutionCompletedEventAttributesJsonUnmarshaller implements Unmarshaller<ChildWorkflowExecutionCompletedEventAttributes, JsonUnmarshallerContext> {
+public class ChildWorkflowExecutionCompletedEventAttributesJsonUnmarshaller
+        implements
+        Unmarshaller<ChildWorkflowExecutionCompletedEventAttributes, JsonUnmarshallerContext> {
 
-    public ChildWorkflowExecutionCompletedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public ChildWorkflowExecutionCompletedEventAttributes unmarshall(
+            JsonUnmarshallerContext context) throws Exception {
         ChildWorkflowExecutionCompletedEventAttributes childWorkflowExecutionCompletedEventAttributes = new ChildWorkflowExecutionCompletedEventAttributes();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,49 +44,65 @@ public class ChildWorkflowExecutionCompletedEventAttributesJsonUnmarshaller impl
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowExecution", targetDepth)) {
                     context.nextToken();
-                    childWorkflowExecutionCompletedEventAttributes.setWorkflowExecution(WorkflowExecutionJsonUnmarshaller.getInstance().unmarshall(context));
+                    childWorkflowExecutionCompletedEventAttributes
+                            .setWorkflowExecution(WorkflowExecutionJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("workflowType", targetDepth)) {
                     context.nextToken();
-                    childWorkflowExecutionCompletedEventAttributes.setWorkflowType(WorkflowTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                    childWorkflowExecutionCompletedEventAttributes
+                            .setWorkflowType(WorkflowTypeJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("result", targetDepth)) {
                     context.nextToken();
-                    childWorkflowExecutionCompletedEventAttributes.setResult(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    childWorkflowExecutionCompletedEventAttributes
+                            .setResult(context.getUnmarshaller(String.class)
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("initiatedEventId", targetDepth)) {
                     context.nextToken();
-                    childWorkflowExecutionCompletedEventAttributes.setInitiatedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                    childWorkflowExecutionCompletedEventAttributes
+                            .setInitiatedEventId(context.getUnmarshaller(
+                                    Long.class).unmarshall(context));
                 }
                 if (context.testExpression("startedEventId", targetDepth)) {
                     context.nextToken();
-                    childWorkflowExecutionCompletedEventAttributes.setStartedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                    childWorkflowExecutionCompletedEventAttributes
+                            .setStartedEventId(context.getUnmarshaller(
+                                    Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return childWorkflowExecutionCompletedEventAttributes;
     }
 
     private static ChildWorkflowExecutionCompletedEventAttributesJsonUnmarshaller instance;
+
     public static ChildWorkflowExecutionCompletedEventAttributesJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new ChildWorkflowExecutionCompletedEventAttributesJsonUnmarshaller();
+        if (instance == null)
+            instance = new ChildWorkflowExecutionCompletedEventAttributesJsonUnmarshaller();
         return instance;
     }
 }
-    

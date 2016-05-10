@@ -52,14 +52,18 @@ import com.amazonaws.services.identitymanagement.model.transform.*;
  * and Access Management (IAM)</a>. For the user guide for IAM, see <a
  * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>.
  * </p>
- * <note>AWS provides SDKs that consist of libraries and sample code for various
+ * <note>
+ * <p>
+ * AWS provides SDKs that consist of libraries and sample code for various
  * programming languages and platforms (Java, Ruby, .NET, iOS, Android, etc.).
  * The SDKs provide a convenient way to create programmatic access to IAM and
  * AWS. For example, the SDKs take care of tasks such as cryptographically
  * signing requests (see below), managing errors, and retrying requests
  * automatically. For information about the AWS SDKs, including how to download
  * and install them, see the <a href="http://aws.amazon.com/tools/">Tools for
- * Amazon Web Services</a> page. </note>
+ * Amazon Web Services</a> page.
+ * </p>
+ * </note>
  * <p>
  * We recommend that you use the AWS SDKs to make programmatic API calls to IAM.
  * However, you can also use the IAM Query API to make direct calls to the IAM
@@ -97,18 +101,30 @@ import com.amazonaws.services.identitymanagement.model.transform.*;
  * For more information, see the following:
  * </p>
  * <ul>
- * <li><a href=
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html"
  * >AWS Security Credentials</a>. This topic provides general information about
- * the types of credentials used for accessing AWS.</li>
- * <li><a href=
+ * the types of credentials used for accessing AWS.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
  * Best Practices</a>. This topic presents a list of suggestions for using the
- * IAM service to help secure your AWS resources.</li>
- * <li><a href=
+ * IAM service to help secure your AWS resources.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
  * >Signing AWS API Requests</a>. This set of topics walk you through the
- * process of signing a request using an access key ID and secret access key.</li>
+ * process of signing a request using an access key ID and secret access key.
+ * </p>
+ * </li>
  * </ul>
  */
 @ThreadSafe
@@ -342,7 +358,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Adds a new client ID (also known as audience) to the list of client IDs
-     * already registered for the specified IAM OpenID Connect provider.
+     * already registered for the specified IAM OpenID Connect (OIDC) provider
+     * resource.
      * </p>
      * <p>
      * This action is idempotent; it does not fail or return an error if you add
@@ -399,8 +416,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Adds the specified role to the specified instance profile. For more
-     * information about roles, go to <a href=
+     * Adds the specified IAM role to the specified instance profile.
+     * </p>
+     * <note>
+     * <p>
+     * The caller of this API must be granted the <code>PassRole</code>
+     * permission on the IAM role by a permission policy.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about roles, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"
      * >Working with Roles</a>. For more information about instance profiles, go
      * to <a href=
@@ -506,14 +531,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Attaches the specified managed policy to the specified group.
+     * Attaches the specified managed policy to the specified IAM group.
      * </p>
      * <p>
      * You use this API to attach a managed policy to a group. To embed an
      * inline policy in a group, use <a>PutGroupPolicy</a>.
      * </p>
      * <p>
-     * For more information about policies, refer to <a href=
+     * For more information about policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -568,19 +593,19 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Attaches the specified managed policy to the specified role.
+     * Attaches the specified managed policy to the specified IAM role.
      * </p>
      * <p>
-     * When you attach a managed policy to a role, the managed policy is used as
-     * the role's access (permissions) policy. You cannot use a managed policy
-     * as the role's trust policy. The role's trust policy is created at the
-     * same time as the role, using <a>CreateRole</a>. You can update a role's
-     * trust policy using <a>UpdateAssumeRolePolicy</a>.
+     * When you attach a managed policy to a role, the managed policy becomes
+     * part of the role's permission (access) policy. You cannot use a managed
+     * policy as the role's trust policy. The role's trust policy is created at
+     * the same time as the role, using <a>CreateRole</a>. You can update a
+     * role's trust policy using <a>UpdateAssumeRolePolicy</a>.
      * </p>
      * <p>
-     * Use this API to attach a managed policy to a role. To embed an inline
-     * policy in a role, use <a>PutRolePolicy</a>. For more information about
-     * policies, refer to <a href=
+     * Use this API to attach a <i>managed</i> policy to a role. To embed an
+     * inline policy in a role, use <a>PutRolePolicy</a>. For more information
+     * about policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -637,11 +662,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * Attaches the specified managed policy to the specified user.
      * </p>
      * <p>
-     * You use this API to attach a managed policy to a user. To embed an inline
-     * policy in a user, use <a>PutUserPolicy</a>.
+     * You use this API to attach a <i>managed</i> policy to a user. To embed an
+     * inline policy in a user, use <a>PutUserPolicy</a>.
      * </p>
      * <p>
-     * For more information about policies, refer to <a href=
+     * For more information about policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -780,11 +805,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
      * >Limitations on IAM Entities</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <important> To ensure the security of your AWS account, the secret access
-     * key is accessible only during key and user creation. You must save the
-     * key (for example, in a text file) if you want to be able to access it
-     * again. If a secret key is lost, you can delete the access keys for the
-     * associated user and then create new keys. </important>
+     * <important>
+     * <p>
+     * To ensure the security of your AWS account, the secret access key is
+     * accessible only during key and user creation. You must save the key (for
+     * example, in a text file) if you want to be able to access it again. If a
+     * secret key is lost, you can delete the access keys for the associated
+     * user and then create new keys.
+     * </p>
+     * </important>
      * 
      * @param createAccessKeyRequest
      * @return Result of the CreateAccessKey operation returned by the service.
@@ -1019,7 +1048,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * access AWS services through the AWS Management Console. For more
      * information about managing passwords, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"
-     * >Managing Passwords</a> in the <i>Using IAM</i> guide.
+     * >Managing Passwords</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createLoginProfileRequest
@@ -1095,10 +1124,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * server certificate(s) that the IdP uses. You get all of this information
      * from the OIDC IdP that you want to use for access to AWS.
      * </p>
-     * <note>Because trust for the OIDC provider is ultimately derived from the
-     * IAM provider that this action creates, it is a best practice to limit
-     * access to the <a>CreateOpenIDConnectProvider</a> action to
-     * highly-privileged users. </note>
+     * <note>
+     * <p>
+     * Because trust for the OIDC provider is ultimately derived from the IAM
+     * provider that this action creates, it is a best practice to limit access
+     * to the <a>CreateOpenIDConnectProvider</a> action to highly-privileged
+     * users.
+     * </p>
+     * </note>
      * 
      * @param createOpenIDConnectProviderRequest
      * @return Result of the CreateOpenIDConnectProvider operation returned by
@@ -1164,7 +1197,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * For more information about managed policies in general, refer to <a href=
+     * For more information about managed policies in general, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -1232,9 +1265,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * Optionally, you can set the new version as the policy's default version.
-     * The default version is the operative version; that is, the version that
-     * is in effect for the IAM users, groups, and roles that the policy is
-     * attached to.
+     * The default version is the version that is in effect for the IAM users,
+     * groups, and roles to which the policy is attached.
      * </p>
      * <p>
      * For more information about managed policy versions, see <a href=
@@ -1359,27 +1391,31 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Creates an IAM entity to describe an identity provider (IdP) that
+     * Creates an IAM resource that describes an identity provider (IdP) that
      * supports SAML 2.0.
      * </p>
      * <p>
-     * The SAML provider that you create with this operation can be used as a
-     * principal in a role's trust policy to establish a trust relationship
-     * between AWS and a SAML identity provider. You can create an IAM role that
-     * supports Web-based single sign-on (SSO) to the AWS Management Console or
-     * one that supports API access to AWS.
+     * The SAML provider resource that you create with this operation can be
+     * used as a principal in an IAM role's trust policy to enable federated
+     * users who sign-in using the SAML IdP to assume the role. You can create
+     * an IAM role that supports Web-based single sign-on (SSO) to the AWS
+     * Management Console or one that supports API access to AWS.
      * </p>
      * <p>
-     * When you create the SAML provider, you upload an a SAML metadata document
-     * that you get from your IdP and that includes the issuer's name,
+     * When you create the SAML provider resource, you upload an a SAML metadata
+     * document that you get from your IdP and that includes the issuer's name,
      * expiration information, and keys that can be used to validate the SAML
-     * authentication response (assertions) that are received from the IdP. You
-     * must generate the metadata document using the identity management
-     * software that is used as your organization's IdP.
+     * authentication response (assertions) that the IdP sends. You must
+     * generate the metadata document using the identity management software
+     * that is used as your organization's IdP.
      * </p>
-     * <note> This operation requires <a href=
+     * <note>
+     * <p>
+     * This operation requires <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"
-     * >Signature Version 4</a>. </note>
+     * >Signature Version 4</a>.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html"
@@ -1443,11 +1479,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Creates a new user for your AWS account.
+     * Creates a new IAM user for your AWS account.
      * </p>
      * <p>
-     * For information about limitations on the number of users you can create,
-     * see <a href=
+     * For information about limitations on the number of IAM users you can
+     * create, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
      * >Limitations on IAM Entities</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -1508,19 +1544,23 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * IAM user. For more information about creating and working with virtual
      * MFA devices, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"
-     * >Using a Virtual MFA Device</a> in the <i>Using IAM</i> guide.
+     * >Using a Virtual MFA Device</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * For information about limits on the number of MFA devices you can create,
      * see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
-     * >Limitations on Entities</a> in the <i>Using IAM</i> guide.
+     * >Limitations on Entities</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <important>The seed information contained in the QR code and the Base32
-     * string should be treated like any other secret access information, such
-     * as your AWS access keys or your passwords. After you provision your
-     * virtual device, you should ensure that the information is destroyed
-     * following secure procedures. </important>
+     * <important>
+     * <p>
+     * The seed information contained in the QR code and the Base32 string
+     * should be treated like any other secret access information, such as your
+     * AWS access keys or your passwords. After you provision your virtual
+     * device, you should ensure that the information is destroyed following
+     * secure procedures.
+     * </p>
+     * </important>
      * 
      * @param createVirtualMFADeviceRequest
      * @return Result of the CreateVirtualMFADevice operation returned by the
@@ -1580,7 +1620,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * For more information about creating and working with virtual MFA devices,
      * go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"
-     * >Using a Virtual MFA Device</a> in the <i>Using IAM</i> guide.
+     * >Using a Virtual MFA Device</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param deactivateMFADeviceRequest
@@ -1636,7 +1676,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes the access key associated with the specified user.
+     * Deletes the access key pair associated with the specified IAM user.
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name
@@ -1744,7 +1784,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes the password policy for the AWS account.
+     * Deletes the password policy for the AWS account. There are no parameters.
      * </p>
      * 
      * @param deleteAccountPasswordPolicyRequest
@@ -1799,8 +1839,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes the specified group. The group must not contain any users or have
-     * any attached policies.
+     * Deletes the specified IAM group. The group must not contain any users or
+     * have any attached policies.
      * </p>
      * 
      * @param deleteGroupRequest
@@ -1852,7 +1892,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes the specified inline policy that is embedded in the specified
+     * Deletes the specified inline policy that is embedded in the specified IAM
      * group.
      * </p>
      * <p>
@@ -1913,10 +1953,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * Deletes the specified instance profile. The instance profile must not
      * have an associated role.
      * </p>
-     * <important> Make sure you do not have any Amazon EC2 instances running
-     * with the instance profile you are about to delete. Deleting a role or
-     * instance profile that is associated with a running instance will break
-     * any applications running on the instance. </important>
+     * <important>
+     * <p>
+     * Make sure you do not have any Amazon EC2 instances running with the
+     * instance profile you are about to delete. Deleting a role or instance
+     * profile that is associated with a running instance will break any
+     * applications running on the instance.
+     * </p>
+     * </important>
      * <p>
      * For more information about instance profiles, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"
@@ -1974,14 +2018,18 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes the password for the specified user, which terminates the user's
-     * ability to access AWS services through the AWS Management Console.
+     * Deletes the password for the specified IAM user, which terminates the
+     * user's ability to access AWS services through the AWS Management Console.
      * </p>
-     * <important> Deleting a user's password does not prevent a user from
-     * accessing IAM through the command line interface or the API. To prevent
-     * all user access you must also either make the access key inactive or
-     * delete it. For more information about making keys inactive or deleting
-     * them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </important>
+     * <important>
+     * <p>
+     * Deleting a user's password does not prevent a user from accessing AWS
+     * through the command line interface or the API. To prevent all user access
+     * you must also either make any access keys inactive or delete them. For
+     * more information about making keys inactive or deleting them, see
+     * <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
+     * </p>
+     * </important>
      * 
      * @param deleteLoginProfileRequest
      * @throws EntityTemporarilyUnmodifiableException
@@ -2036,16 +2084,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes an IAM OpenID Connect identity provider.
+     * Deletes an OpenID Connect identity provider (IdP) resource object in IAM.
      * </p>
      * <p>
-     * Deleting an OIDC provider does not update any roles that reference the
-     * provider as a principal in their trust policies. Any attempt to assume a
-     * role that references a provider that has been deleted will fail.
+     * Deleting an IAM OIDC provider resource does not update any roles that
+     * reference the provider as a principal in their trust policies. Any
+     * attempt to assume a role that references a deleted provider fails.
      * </p>
      * <p>
      * This action is idempotent; it does not fail or return an error if you
-     * call the action for a provider that was already deleted.
+     * call the action for a provider that does not exist.
      * </p>
      * 
      * @param deleteOpenIDConnectProviderRequest
@@ -2097,27 +2145,38 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * Deletes the specified managed policy.
      * </p>
      * <p>
-     * Before you can delete a managed policy, you must detach the policy from
-     * all users, groups, and roles that it is attached to, and you must delete
-     * all of the policy's versions. The following steps describe the process
-     * for deleting a managed policy:
-     * <ol>
-     * <li>Detach the policy from all users, groups, and roles that the policy
-     * is attached to, using the <a>DetachUserPolicy</a>,
-     * <a>DetachGroupPolicy</a>, or <a>DetachRolePolicy</a> APIs. To list all
-     * the users, groups, and roles that a policy is attached to, use
-     * <a>ListEntitiesForPolicy</a>.</li>
-     * <li>Delete all versions of the policy using <a>DeletePolicyVersion</a>.
-     * To list the policy's versions, use <a>ListPolicyVersions</a>. You cannot
-     * use <a>DeletePolicyVersion</a> to delete the version that is marked as
-     * the default version. You delete the policy's default version in the next
-     * step of the process.</li>
-     * <li>Delete the policy (this automatically deletes the policy's default
-     * version) using this API.</li>
-     * </ol>
+     * Before you can delete a managed policy, you must first detach the policy
+     * from all users, groups, and roles that it is attached to, and you must
+     * delete all of the policy's versions. The following steps describe the
+     * process for deleting a managed policy:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * For information about managed policies, refer to <a href=
+     * Detach the policy from all users, groups, and roles that the policy is
+     * attached to, using the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>,
+     * or <a>DetachRolePolicy</a> APIs. To list all the users, groups, and roles
+     * that a policy is attached to, use <a>ListEntitiesForPolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delete all versions of the policy using <a>DeletePolicyVersion</a>. To
+     * list the policy's versions, use <a>ListPolicyVersions</a>. You cannot use
+     * <a>DeletePolicyVersion</a> to delete the version that is marked as the
+     * default version. You delete the policy's default version in the next step
+     * of the process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delete the policy (this automatically deletes the policy's default
+     * version) using this API.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For information about managed policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -2174,16 +2233,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes the specified version of the specified managed policy.
+     * Deletes the specified version from the specified managed policy.
      * </p>
      * <p>
-     * You cannot delete the default version of a policy using this API. To
-     * delete the default version of a policy, use <a>DeletePolicy</a>. To find
-     * out which version of a policy is marked as the default version, use
+     * You cannot delete the default version from a policy using this API. To
+     * delete the default version from a policy, use <a>DeletePolicy</a>. To
+     * find out which version of a policy is marked as the default version, use
      * <a>ListPolicyVersions</a>.
      * </p>
      * <p>
-     * For information about versions for managed policies, refer to <a href=
+     * For information about versions for managed policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
      * >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -2247,10 +2306,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"
      * >Working with Roles</a>.
      * </p>
-     * <important>Make sure you do not have any Amazon EC2 instances running
-     * with the role you are about to delete. Deleting a role or instance
-     * profile that is associated with a running instance will break any
-     * applications running on the instance. </important>
+     * <important>
+     * <p>
+     * Make sure you do not have any Amazon EC2 instances running with the role
+     * you are about to delete. Deleting a role or instance profile that is
+     * associated with a running instance will break any applications running on
+     * the instance.
+     * </p>
+     * </important>
      * 
      * @param deleteRoleRequest
      * @throws NoSuchEntityException
@@ -2301,7 +2364,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes the specified inline policy that is embedded in the specified
+     * Deletes the specified inline policy that is embedded in the specified IAM
      * role.
      * </p>
      * <p>
@@ -2358,16 +2421,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes a SAML provider.
+     * Deletes a SAML provider resource in IAM.
      * </p>
      * <p>
-     * Deleting the provider does not update any roles that reference the SAML
-     * provider as a principal in their trust policies. Any attempt to assume a
-     * role that references a SAML provider that has been deleted will fail.
+     * Deleting the provider resource from IAM does not update any roles that
+     * reference the SAML provider resource's ARN as a principal in their trust
+     * policies. Any attempt to assume a role that references a non-existent
+     * provider resource ARN fails.
      * </p>
-     * <note> This operation requires <a href=
+     * <note>
+     * <p>
+     * This operation requires <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"
-     * >Signature Version 4</a>. </note>
+     * >Signature Version 4</a>.
+     * </p>
+     * </note>
      * 
      * @param deleteSAMLProviderRequest
      * @throws InvalidInputException
@@ -2480,17 +2548,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html"
      * >Working with Server Certificates</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <important> If you are using a server certificate with Elastic Load
-     * Balancing, deleting the certificate could have implications for your
-     * application. If Elastic Load Balancing doesn't detect the deletion of
-     * bound certificates, it may continue to use the certificates. This could
-     * cause Elastic Load Balancing to stop accepting traffic. We recommend that
-     * you remove the reference to the certificate from Elastic Load Balancing
-     * before using this command to delete the certificate. For more
-     * information, go to <a href=
+     * <important>
+     * <p>
+     * If you are using a server certificate with Elastic Load Balancing,
+     * deleting the certificate could have implications for your application. If
+     * Elastic Load Balancing doesn't detect the deletion of bound certificates,
+     * it may continue to use the certificates. This could cause Elastic Load
+     * Balancing to stop accepting traffic. We recommend that you remove the
+     * reference to the certificate from Elastic Load Balancing before using
+     * this command to delete the certificate. For more information, go to <a
+     * href=
      * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html"
      * >DeleteLoadBalancerListeners</a> in the <i>Elastic Load Balancing API
-     * Reference</i>. </important>
+     * Reference</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteServerCertificateRequest
      * @throws NoSuchEntityException
@@ -2543,15 +2615,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes the specified signing certificate associated with the specified
-     * user.
+     * Deletes a signing certificate associated with the specified IAM user.
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name
      * implicitly based on the AWS access key ID signing the request. Because
      * this action works for access keys under the AWS account, you can use this
      * action to manage root credentials even if the AWS account has no
-     * associated users.
+     * associated IAM users.
      * </p>
      * 
      * @param deleteSigningCertificateRequest
@@ -2601,8 +2672,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes the specified user. The user must not belong to any groups, have
-     * any keys or signing certificates, or have any attached policies.
+     * Deletes the specified IAM user. The user must not belong to any groups or
+     * have any access keys, signing certificates, or attached policies.
      * </p>
      * 
      * @param deleteUserRequest
@@ -2654,7 +2725,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Deletes the specified inline policy that is embedded in the specified
+     * Deletes the specified inline policy that is embedded in the specified IAM
      * user.
      * </p>
      * <p>
@@ -2713,9 +2784,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * <p>
      * Deletes a virtual MFA device.
      * </p>
-     * <note> You must deactivate a user's virtual MFA device before you can
-     * delete it. For information about deactivating MFA devices, see
-     * <a>DeactivateMFADevice</a>. </note>
+     * <note>
+     * <p>
+     * You must deactivate a user's virtual MFA device before you can delete it.
+     * For information about deactivating MFA devices, see
+     * <a>DeactivateMFADevice</a>.
+     * </p>
+     * </note>
      * 
      * @param deleteVirtualMFADeviceRequest
      * @throws NoSuchEntityException
@@ -2768,12 +2843,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Removes the specified managed policy from the specified group.
+     * Removes the specified managed policy from the specified IAM group.
      * </p>
      * <p>
      * A group can also have inline policies embedded with it. To delete an
      * inline policy, use the <a>DeleteGroupPolicy</a> API. For information
-     * about policies, refer to <a href=
+     * about policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -2833,7 +2908,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * <p>
      * A role can also have inline policies embedded with it. To delete an
      * inline policy, use the <a>DeleteRolePolicy</a> API. For information about
-     * policies, refer to <a href=
+     * policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -2892,7 +2967,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * <p>
      * A user can also have inline policies embedded with it. To delete an
      * inline policy, use the <a>DeleteUserPolicy</a> API. For information about
-     * policies, refer to <a href=
+     * policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -2946,9 +3021,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Enables the specified MFA device and associates it with the specified
-     * user name. When enabled, the MFA device is required for every subsequent
-     * login by the user name associated with the device.
+     * Enables the specified MFA device and associates it with the specified IAM
+     * user. When enabled, the MFA device is required for every subsequent login
+     * by the IAM user associated with the device.
      * </p>
      * 
      * @param enableMFADeviceRequest
@@ -3118,8 +3193,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Retrieves information about all IAM users, groups, roles, and policies in
-     * your account, including their relationships to one another. Use this API
-     * to obtain a snapshot of the configuration of IAM permissions (users,
+     * your AWS account, including their relationships to one another. Use this
+     * API to obtain a snapshot of the configuration of IAM permissions (users,
      * groups, roles, and policies) in your account.
      * </p>
      * <p>
@@ -3293,18 +3368,17 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Gets a list of all of the context keys referenced in
-     * <code>Condition</code> elements in the input policies. The policies are
-     * supplied as a list of one or more strings. To get the context keys from
-     * policies associated with an IAM user, group, or role, use
-     * <a>GetContextKeysForPrincipalPolicy</a>.
+     * Gets a list of all of the context keys referenced in the input policies.
+     * The policies are supplied as a list of one or more strings. To get the
+     * context keys from policies associated with an IAM user, group, or role,
+     * use <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
      * <p>
      * Context keys are variables maintained by AWS and its services that
      * provide details about the context of an API query request, and can be
-     * evaluated by using the <code>Condition</code> element of an IAM policy.
-     * Use GetContextKeysForCustomPolicy to understand what key names and values
-     * you must supply when you call <a>SimulateCustomPolicy</a>. Note that all
+     * evaluated by testing against a value specified in an IAM policy. Use
+     * GetContextKeysForCustomPolicy to understand what key names and values you
+     * must supply when you call <a>SimulateCustomPolicy</a>. Note that all
      * parameters are shown in unencoded form here for clarity, but must be URL
      * encoded to be included as a part of a real HTML request.
      * </p>
@@ -3353,16 +3427,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Gets a list of all of the context keys referenced in
-     * <code>Condition</code> elements in all of the IAM policies attached to
-     * the specified IAM entity. The entity can be an IAM user, group, or role.
-     * If you specify a user, then the request also includes all of the policies
-     * attached to groups that the user is a member of.
+     * Gets a list of all of the context keys referenced in all of the IAM
+     * policies attached to the specified IAM entity. The entity can be an IAM
+     * user, group, or role. If you specify a user, then the request also
+     * includes all of the policies attached to groups that the user is a member
+     * of.
      * </p>
      * <p>
      * You can optionally include a list of one or more additional policies,
-     * specified as strings. If you want to include only a list of policies by
-     * string, use <a>GetContextKeysForCustomPolicy</a> instead.
+     * specified as strings. If you want to include <i>only</i> a list of
+     * policies by string, use <a>GetContextKeysForCustomPolicy</a> instead.
      * </p>
      * <p>
      * <b>Note:</b> This API discloses information about the permissions granted
@@ -3373,8 +3447,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * <p>
      * Context keys are variables maintained by AWS and its services that
      * provide details about the context of an API query request, and can be
-     * evaluated by using the <code>Condition</code> element of an IAM policy.
-     * Use GetContextKeysForPrincipalPolicy to understand what key names and
+     * evaluated by testing against a value in an IAM policy. Use
+     * <a>GetContextKeysForPrincipalPolicy</a> to understand what key names and
      * values you must supply when you call <a>SimulatePrincipalPolicy</a>.
      * </p>
      * 
@@ -3494,9 +3568,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Returns a list of users that are in the specified group. You can paginate
-     * the results using the <code>MaxItems</code> and <code>Marker</code>
-     * parameters.
+     * Returns a list of IAM users that are in the specified IAM group. You can
+     * paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
      * </p>
      * 
      * @param getGroupRequest
@@ -3544,16 +3618,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Retrieves the specified inline policy document that is embedded in the
-     * specified group.
+     * specified IAM group.
      * </p>
      * <p>
-     * A group can also have managed policies attached to it. To retrieve a
+     * An IAM group can also have managed policies attached to it. To retrieve a
      * managed policy document that is attached to a group, use <a>GetPolicy</a>
      * to determine the policy's default version, then use
      * <a>GetPolicyVersion</a> to retrieve the policy document.
      * </p>
      * <p>
-     * For more information about policies, refer to <a href=
+     * For more information about policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -3605,12 +3679,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * <p>
      * Retrieves information about the specified instance profile, including the
      * instance profile's path, GUID, ARN, and role. For more information about
-     * instance profiles, go to <a href=
+     * instance profiles, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"
-     * >About Instance Profiles</a>. For more information about ARNs, go to <a
-     * href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs"
-     * >ARNs</a>.
+     * >About Instance Profiles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getInstanceProfileRequest
@@ -3660,7 +3731,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Retrieves the user name and password-creation date for the specified
+     * Retrieves the user name and password-creation date for the specified IAM
      * user. If the user has not been assigned a password, the action returns a
      * 404 (<code>NoSuchEntity</code>) error.
      * </p>
@@ -3710,7 +3781,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Returns information about the specified OpenID Connect provider.
+     * Returns information about the specified OpenID Connect (OIDC) provider
+     * resource object in IAM.
      * </p>
      * 
      * @param getOpenIDConnectProviderRequest
@@ -3764,21 +3836,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Retrieves information about the specified managed policy, including the
-     * policy's default version and the total number of users, groups, and roles
-     * that the policy is attached to. For a list of the specific users, groups,
-     * and roles that the policy is attached to, use the
+     * policy's default version and the total number of IAM users, groups, and
+     * roles to which the policy is attached. To retrieve the list of the
+     * specific users, groups, and roles that the policy is attached to, use the
      * <a>ListEntitiesForPolicy</a> API. This API returns metadata about the
-     * policy. To retrieve the policy document for a specific version of the
-     * policy, use <a>GetPolicyVersion</a>.
+     * policy. To retrieve the actual policy document for a specific version of
+     * the policy, use <a>GetPolicyVersion</a>.
      * </p>
      * <p>
      * This API retrieves information about managed policies. To retrieve
-     * information about an inline policy that is embedded with a user, group,
-     * or role, use the <a>GetUserPolicy</a>, <a>GetGroupPolicy</a>, or
+     * information about an inline policy that is embedded with an IAM user,
+     * group, or role, use the <a>GetUserPolicy</a>, <a>GetGroupPolicy</a>, or
      * <a>GetRolePolicy</a> API.
      * </p>
      * <p>
-     * For more information about policies, refer to <a href=
+     * For more information about policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -3844,9 +3916,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * <a>GetRolePolicy</a> API.
      * </p>
      * <p>
-     * For more information about the types of policies, refer to <a href=
+     * For more information about the types of policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about managed policy versions, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
+     * >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getPolicyVersionRequest
@@ -3899,10 +3976,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Retrieves information about the specified role, including the role's
-     * path, GUID, ARN, and the policy granting permission to assume the role.
-     * For more information about ARNs, go to <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs"
-     * >ARNs</a>. For more information about roles, go to <a href=
+     * path, GUID, ARN, and the role's trust policy that grants permission to
+     * assume the role. For more information about roles, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"
      * >Working with Roles</a>.
      * </p>
@@ -3952,21 +4027,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Retrieves the specified inline policy document that is embedded with the
-     * specified role.
+     * specified IAM role.
      * </p>
      * <p>
-     * A role can also have managed policies attached to it. To retrieve a
+     * An IAM role can also have managed policies attached to it. To retrieve a
      * managed policy document that is attached to a role, use <a>GetPolicy</a>
      * to determine the policy's default version, then use
      * <a>GetPolicyVersion</a> to retrieve the policy document.
      * </p>
      * <p>
-     * For more information about policies, refer to <a href=
+     * For more information about policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * For more information about roles, go to <a href=
+     * For more information about roles, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"
      * >Using Roles to Delegate Permissions and Federate Identities</a>.
      * </p>
@@ -4016,12 +4091,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Returns the SAML provider metadocument that was uploaded when the
-     * provider was created or updated.
+     * Returns the SAML provider metadocument that was uploaded when the IAM
+     * SAML provider resource object was created or updated.
      * </p>
-     * <note>This operation requires <a href=
+     * <note>
+     * <p>
+     * This operation requires <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"
-     * >Signature Version 4</a>. </note>
+     * >Signature Version 4</a>.
+     * </p>
+     * </note>
      * 
      * @param getSAMLProviderRequest
      * @return Result of the GetSAMLProvider operation returned by the service.
@@ -4128,7 +4207,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Retrieves information about the specified server certificate.
+     * Retrieves information about the specified server certificate stored in
+     * IAM.
      * </p>
      * <p>
      * For more information about working with server certificates, including a
@@ -4185,12 +4265,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Retrieves information about the specified user, including the user's
+     * Retrieves information about the specified IAM user, including the user's
      * creation date, path, unique ID, and ARN.
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name
-     * implicitly based on the AWS access key ID used to sign the request.
+     * implicitly based on the AWS access key ID used to sign the request to
+     * this API.
      * </p>
      * 
      * @param getUserRequest
@@ -4243,16 +4324,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Retrieves the specified inline policy document that is embedded in the
-     * specified user.
+     * specified IAM user.
      * </p>
      * <p>
-     * A user can also have managed policies attached to it. To retrieve a
+     * An IAM user can also have managed policies attached to it. To retrieve a
      * managed policy document that is attached to a user, use <a>GetPolicy</a>
      * to determine the policy's default version, then use
      * <a>GetPolicyVersion</a> to retrieve the policy document.
      * </p>
      * <p>
-     * For more information about policies, refer to <a href=
+     * For more information about policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -4303,7 +4384,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Returns information about the access key IDs associated with the
-     * specified user. If there are none, the action returns an empty list.
+     * specified IAM user. If there are none, the action returns an empty list.
      * </p>
      * <p>
      * Although each user is limited to a small number of keys, you can still
@@ -4317,8 +4398,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * you can use this action to manage root credentials even if the AWS
      * account has no associated users.
      * </p>
-     * <note>To ensure the security of your AWS account, the secret access key
-     * is accessible only during key and user creation. </note>
+     * <note>
+     * <p>
+     * To ensure the security of your AWS account, the secret access key is
+     * accessible only during key and user creation.
+     * </p>
+     * </note>
      * 
      * @param listAccessKeysRequest
      * @return Result of the ListAccessKeys operation returned by the service.
@@ -4370,10 +4455,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the account alias associated with the account (Note: you can have
-     * only one). For information about using an AWS account alias, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-     * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
+     * Lists the account alias associated with the AWS account (Note: you can
+     * have only one). For information about using an AWS account alias, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">
+     * Using an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param listAccountAliasesRequest
@@ -4425,12 +4510,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists all managed policies that are attached to the specified group.
+     * Lists all managed policies that are attached to the specified IAM group.
      * </p>
      * <p>
-     * A group can also have inline policies embedded with it. To list the
+     * An IAM group can also have inline policies embedded with it. To list the
      * inline policies for a group, use the <a>ListGroupPolicies</a> API. For
-     * information about policies, refer to <a href=
+     * information about policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -4493,12 +4578,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists all managed policies that are attached to the specified role.
+     * Lists all managed policies that are attached to the specified IAM role.
      * </p>
      * <p>
-     * A role can also have inline policies embedded with it. To list the inline
-     * policies for a role, use the <a>ListRolePolicies</a> API. For information
-     * about policies, refer to <a href=
+     * An IAM role can also have inline policies embedded with it. To list the
+     * inline policies for a role, use the <a>ListRolePolicies</a> API. For
+     * information about policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -4561,12 +4646,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists all managed policies that are attached to the specified user.
+     * Lists all managed policies that are attached to the specified IAM user.
      * </p>
      * <p>
-     * A user can also have inline policies embedded with it. To list the inline
-     * policies for a user, use the <a>ListUserPolicies</a> API. For information
-     * about policies, refer to <a href=
+     * An IAM user can also have inline policies embedded with it. To list the
+     * inline policies for a user, use the <a>ListUserPolicies</a> API. For
+     * information about policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -4629,8 +4714,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists all users, groups, and roles that the specified managed policy is
-     * attached to.
+     * Lists all IAM users, groups, and roles that the specified managed policy
+     * is attached to.
      * </p>
      * <p>
      * You can use the optional <code>EntityFilter</code> parameter to limit the
@@ -4694,13 +4779,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Lists the names of the inline policies that are embedded in the specified
-     * group.
+     * IAM group.
      * </p>
      * <p>
-     * A group can also have managed policies attached to it. To list the
+     * An IAM group can also have managed policies attached to it. To list the
      * managed policies that are attached to a group, use
      * <a>ListAttachedGroupPolicies</a>. For more information about policies,
-     * refer to <a href=
+     * see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -4757,7 +4842,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the groups that have the specified path prefix.
+     * Lists the IAM groups that have the specified path prefix.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -4810,7 +4895,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the groups the specified user belongs to.
+     * Lists the IAM groups that the specified IAM user belongs to.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -4924,8 +5009,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the instance profiles that have the specified associated role. If
-     * there are none, the action returns an empty list. For more information
+     * Lists the instance profiles that have the specified associated IAM role.
+     * If there are none, the action returns an empty list. For more information
      * about instance profiles, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"
      * >About Instance Profiles</a>.
@@ -4982,10 +5067,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the MFA devices. If the request includes the user name, then this
-     * action lists all the MFA devices associated with the specified user name.
-     * If you do not specify a user name, IAM determines the user name
-     * implicitly based on the AWS access key ID signing the request.
+     * Lists the MFA devices for an IAM user. If the request includes a IAM user
+     * name, then this action lists all the MFA devices associated with the
+     * specified user. If you do not specify a user name, IAM determines the
+     * user name implicitly based on the AWS access key ID signing the request
+     * for this API.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -5042,7 +5128,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists information about the OpenID Connect providers in the AWS account.
+     * Lists information about the IAM OpenID Connect (OIDC) provider resource
+     * objects defined in the AWS account.
      * </p>
      * 
      * @param listOpenIDConnectProvidersRequest
@@ -5094,8 +5181,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists all the managed policies that are available to your account,
-     * including your own customer managed policies and all AWS managed
+     * Lists all the managed policies that are available in your AWS account,
+     * including your own customer-defined managed policies and all AWS managed
      * policies.
      * </p>
      * <p>
@@ -5111,7 +5198,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * <code>Marker</code> parameters.
      * </p>
      * <p>
-     * For more information about managed policies, refer to <a href=
+     * For more information about managed policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -5164,10 +5251,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Lists information about the versions of the specified managed policy,
-     * including the version that is set as the policy's default version.
+     * including the version that is currently set as the policy's default
+     * version.
      * </p>
      * <p>
-     * For more information about managed policies, refer to <a href=
+     * For more information about managed policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -5223,13 +5311,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Lists the names of the inline policies that are embedded in the specified
-     * role.
+     * IAM role.
      * </p>
      * <p>
-     * A role can also have managed policies attached to it. To list the managed
-     * policies that are attached to a role, use
-     * <a>ListAttachedRolePolicies</a>. For more information about policies,
-     * refer to <a href=
+     * An IAM role can also have managed policies attached to it. To list the
+     * managed policies that are attached to a role, use
+     * <a>ListAttachedRolePolicies</a>. For more information about policies, see
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -5285,9 +5373,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the roles that have the specified path prefix. If there are none,
-     * the action returns an empty list. For more information about roles, go to
-     * <a href=
+     * Lists the IAM roles that have the specified path prefix. If there are
+     * none, the action returns an empty list. For more information about roles,
+     * go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"
      * >Working with Roles</a>.
      * </p>
@@ -5342,11 +5430,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the SAML providers in the account.
+     * Lists the SAML provider resource objects defined in IAM in the account.
      * </p>
-     * <note> This operation requires <a href=
+     * <note>
+     * <p>
+     * This operation requires <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"
-     * >Signature Version 4</a>. </note>
+     * >Signature Version 4</a>.
+     * </p>
+     * </note>
      * 
      * @param listSAMLProvidersRequest
      * @return Result of the ListSAMLProviders operation returned by the
@@ -5464,8 +5556,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the server certificates that have the specified path prefix. If
-     * none exist, the action returns an empty list.
+     * Lists the server certificates stored in IAM that have the specified path
+     * prefix. If none exist, the action returns an empty list.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -5529,7 +5621,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Returns information about the signing certificates associated with the
-     * specified user. If there are none, the action returns an empty list.
+     * specified IAM user. If there are none, the action returns an empty list.
      * </p>
      * <p>
      * Although each user is limited to a small number of signing certificates,
@@ -5539,9 +5631,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * <p>
      * If the <code>UserName</code> field is not specified, the user name is
      * determined implicitly based on the AWS access key ID used to sign the
-     * request. Because this action works for access keys under the AWS account,
-     * you can use this action to manage root credentials even if the AWS
-     * account has no associated users.
+     * request for this API. Because this action works for access keys under the
+     * AWS account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
      * </p>
      * 
      * @param listSigningCertificatesRequest
@@ -5596,13 +5688,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the names of the inline policies embedded in the specified user.
+     * Lists the names of the inline policies embedded in the specified IAM
+     * user.
      * </p>
      * <p>
-     * A user can also have managed policies attached to it. To list the managed
-     * policies that are attached to a user, use
-     * <a>ListAttachedUserPolicies</a>. For more information about policies,
-     * refer to <a href=
+     * An IAM user can also have managed policies attached to it. To list the
+     * managed policies that are attached to a user, use
+     * <a>ListAttachedUserPolicies</a>. For more information about policies, see
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -5713,10 +5806,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the virtual MFA devices under the AWS account by assignment status.
-     * If you do not specify an assignment status, the action returns a list of
-     * all virtual MFA devices. Assignment status can be <code>Assigned</code>,
-     * <code>Unassigned</code>, or <code>Any</code>.
+     * Lists the virtual MFA devices defined in the AWS account by assignment
+     * status. If you do not specify an assignment status, the action returns a
+     * list of all virtual MFA devices. Assignment status can be
+     * <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -5769,14 +5862,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Adds (or updates) an inline policy document that is embedded in the
-     * specified group.
+     * Adds or updates an inline policy document that is embedded in the
+     * specified IAM group.
      * </p>
      * <p>
      * A user can also have managed policies attached to it. To attach a managed
      * policy to a group, use <a>AttachGroupPolicy</a>. To create a new managed
-     * policy, use <a>CreatePolicy</a>. For information about policies, refer to
-     * <a href=
+     * policy, use <a>CreatePolicy</a>. For information about policies, see <a
+     * href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -5786,11 +5879,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
      * >Limitations on IAM Entities</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <note>Because policy documents can be large, you should use POST rather
-     * than GET when calling <code>PutGroupPolicy</code>. For general
-     * information about using the Query API with IAM, go to <a href=
+     * <note>
+     * <p>
+     * Because policy documents can be large, you should use POST rather than
+     * GET when calling <code>PutGroupPolicy</code>. For general information
+     * about using the Query API with IAM, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
-     * >Making Query Requests</a> in the <i>Using IAM</i> guide. </note>
+     * >Making Query Requests</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param putGroupPolicyRequest
      * @throws LimitExceededException
@@ -5840,23 +5937,23 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Adds (or updates) an inline policy document that is embedded in the
-     * specified role.
+     * Adds or updates an inline policy document that is embedded in the
+     * specified IAM role.
      * </p>
      * <p>
      * When you embed an inline policy in a role, the inline policy is used as
-     * the role's access (permissions) policy. The role's trust policy is
-     * created at the same time as the role, using <a>CreateRole</a>. You can
+     * part of the role's access (permissions) policy. The role's trust policy
+     * is created at the same time as the role, using <a>CreateRole</a>. You can
      * update a role's trust policy using <a>UpdateAssumeRolePolicy</a>. For
-     * more information about roles, go to <a href=
+     * more information about IAM roles, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"
      * >Using Roles to Delegate Permissions and Federate Identities</a>.
      * </p>
      * <p>
      * A role can also have a managed policy attached to it. To attach a managed
      * policy to a role, use <a>AttachRolePolicy</a>. To create a new managed
-     * policy, use <a>CreatePolicy</a>. For information about policies, refer to
-     * <a href=
+     * policy, use <a>CreatePolicy</a>. For information about policies, see <a
+     * href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -5866,11 +5963,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
      * >Limitations on IAM Entities</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <note>Because policy documents can be large, you should use POST rather
-     * than GET when calling <code>PutRolePolicy</code>. For general information
+     * <note>
+     * <p>
+     * Because policy documents can be large, you should use POST rather than
+     * GET when calling <code>PutRolePolicy</code>. For general information
      * about using the Query API with IAM, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
-     * >Making Query Requests</a> in the <i>Using IAM</i> guide. </note>
+     * >Making Query Requests</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param putRolePolicyRequest
      * @throws LimitExceededException
@@ -5920,14 +6021,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Adds (or updates) an inline policy document that is embedded in the
-     * specified user.
+     * Adds or updates an inline policy document that is embedded in the
+     * specified IAM user.
      * </p>
      * <p>
-     * A user can also have a managed policy attached to it. To attach a managed
-     * policy to a user, use <a>AttachUserPolicy</a>. To create a new managed
-     * policy, use <a>CreatePolicy</a>. For information about policies, refer to
-     * <a href=
+     * An IAM user can also have a managed policy attached to it. To attach a
+     * managed policy to a user, use <a>AttachUserPolicy</a>. To create a new
+     * managed policy, use <a>CreatePolicy</a>. For information about policies,
+     * see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -5937,11 +6038,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
      * >Limitations on IAM Entities</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <note>Because policy documents can be large, you should use POST rather
-     * than GET when calling <code>PutUserPolicy</code>. For general information
+     * <note>
+     * <p>
+     * Because policy documents can be large, you should use POST rather than
+     * GET when calling <code>PutUserPolicy</code>. For general information
      * about using the Query API with IAM, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
-     * >Making Query Requests</a> in the <i>Using IAM</i> guide. </note>
+     * >Making Query Requests</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param putUserPolicyRequest
      * @throws LimitExceededException
@@ -5992,11 +6097,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Removes the specified client ID (also known as audience) from the list of
-     * client IDs registered for the specified IAM OpenID Connect provider.
+     * client IDs registered for the specified IAM OpenID Connect (OIDC)
+     * provider resource object.
      * </p>
      * <p>
      * This action is idempotent; it does not fail or return an error if you try
-     * to remove a client ID that was removed previously.
+     * to remove a client ID that does not exist.
      * </p>
      * 
      * @param removeClientIDFromOpenIDConnectProviderRequest
@@ -6045,15 +6151,18 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Removes the specified role from the specified instance profile.
+     * Removes the specified IAM role from the specified EC2 instance profile.
      * </p>
-     * <important> Make sure you do not have any Amazon EC2 instances running
-     * with the role you are about to remove from the instance profile. Removing
-     * a role from an instance profile that is associated with a running
-     * instance will break any applications running on the instance.
+     * <important>
+     * <p>
+     * Make sure you do not have any Amazon EC2 instances running with the role
+     * you are about to remove from the instance profile. Removing a role from
+     * an instance profile that is associated with a running instance break any
+     * applications running on the instance.
+     * </p>
      * </important>
      * <p>
-     * For more information about roles, go to <a href=
+     * For more information about IAM roles, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"
      * >Working with Roles</a>. For more information about instance profiles, go
      * to <a href=
@@ -6158,13 +6267,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Synchronizes the specified MFA device with AWS servers.
+     * Synchronizes the specified MFA device with its IAM resource object on the
+     * AWS servers.
      * </p>
      * <p>
      * For more information about creating and working with virtual MFA devices,
      * go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"
-     * >Using a Virtual MFA Device</a> in the <i>Using IAM</i> guide.
+     * >Using a Virtual MFA Device</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param resyncMFADeviceRequest
@@ -6224,7 +6334,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * attached to, use the <a>ListEntitiesForPolicy</a> API.
      * </p>
      * <p>
-     * For information about managed policies, refer to <a href=
+     * For information about managed policies, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html"
      * >Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -6569,8 +6679,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Updates the policy that grants an entity permission to assume a role. For
-     * more information about roles, go to <a href=
+     * Updates the policy that grants an IAM entity permission to assume a role.
+     * This is typically referred to as the "role trust policy". For more
+     * information about roles, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html"
      * >Using Roles to Delegate Permissions and Federate Identities</a>.
      * </p>
@@ -6625,19 +6736,26 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Updates the name and/or the path of the specified group.
+     * Updates the name and/or the path of the specified IAM group.
      * </p>
-     * <important> You should understand the implications of changing a group's
-     * path or name. For more information, see <a href=
+     * <important>
+     * <p>
+     * You should understand the implications of changing a group's path or
+     * name. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html"
-     * >Renaming Users and Groups</a> in the <i>IAM User Guide</i>. </important>
-     * <note>To change a group name the requester must have appropriate
+     * >Renaming Users and Groups</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </important> <note>
+     * <p>
+     * To change an IAM group name the requester must have appropriate
      * permissions on both the source object and the target object. For example,
-     * to change Managers to MGRs, the entity making the request must have
-     * permission on Managers and MGRs, or must have permission on all (*). For
-     * more information about permissions, see <a href=
+     * to change "Managers" to "MGRs", the entity making the request must have
+     * permission on both "Managers" and "MGRs", or must have permission on all
+     * (*). For more information about permissions, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
-     * target="blank">Permissions and Policies</a>. </note>
+     * >Permissions and Policies</a>.
+     * </p>
+     * </note>
      * 
      * @param updateGroupRequest
      * @throws NoSuchEntityException
@@ -6687,11 +6805,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Changes the password for the specified user.
+     * Changes the password for the specified IAM user.
      * </p>
      * <p>
-     * Users can change their own passwords by calling <a>ChangePassword</a>.
-     * For more information about modifying passwords, see <a href=
+     * IAM users can change their own passwords by calling
+     * <a>ChangePassword</a>. For more information about modifying passwords,
+     * see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"
      * >Managing Passwords</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -6752,8 +6871,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Replaces the existing list of server certificate thumbprints with a new
-     * list.
+     * Replaces the existing list of server certificate thumbprints associated
+     * with an OpenID Connect (OIDC) provider resource object with a new list of
+     * thumbprints.
      * </p>
      * <p>
      * The list that you pass with this action completely replaces the existing
@@ -6763,14 +6883,18 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * Typically, you need to update a thumbprint only when the identity
      * provider's certificate changes, which occurs rarely. However, if the
      * provider's certificate <i>does</i> change, any attempt to assume an IAM
-     * role that specifies the OIDC provider as a principal will fail until the
+     * role that specifies the OIDC provider as a principal fails until the
      * certificate thumbprint is updated.
      * </p>
-     * <note>Because trust for the OpenID Connect provider is ultimately derived
-     * from the provider's certificate and is validated by the thumbprint, it is
-     * a best practice to limit access to the
+     * <note>
+     * <p>
+     * Because trust for the OIDC provider is ultimately derived from the
+     * provider's certificate and is validated by the thumbprint, it is a best
+     * practice to limit access to the
      * <code>UpdateOpenIDConnectProviderThumbprint</code> action to
-     * highly-privileged users. </note>
+     * highly-privileged users.
+     * </p>
+     * </note>
      * 
      * @param updateOpenIDConnectProviderThumbprintRequest
      * @throws InvalidInputException
@@ -6818,11 +6942,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Updates the metadata document for an existing SAML provider.
+     * Updates the metadata document for an existing SAML provider resource
+     * object.
      * </p>
-     * <note>This operation requires <a href=
+     * <note>
+     * <p>
+     * This operation requires <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"
-     * >Signature Version 4</a>. </note>
+     * >Signature Version 4</a>.
+     * </p>
+     * </note>
      * 
      * @param updateSAMLProviderRequest
      * @return Result of the UpdateSAMLProvider operation returned by the
@@ -6878,7 +7007,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Sets the status of the specified SSH public key to active or inactive.
+     * Sets the status of an IAM user's SSH public key to active or inactive.
      * SSH public keys that are inactive cannot be used for authentication. This
      * action can be used to disable a user's SSH public key as part of a key
      * rotation work flow.
@@ -6933,7 +7062,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Updates the name and/or the path of the specified server certificate.
+     * Updates the name and/or the path of the specified server certificate
+     * stored in IAM.
      * </p>
      * <p>
      * For more information about working with server certificates, including a
@@ -6942,18 +7072,25 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html"
      * >Working with Server Certificates</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <important>You should understand the implications of changing a server
-     * certificate's path or name. For more information, see <a href=
+     * <important>
+     * <p>
+     * You should understand the implications of changing a server certificate's
+     * path or name. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs_manage.html#RenamingServerCerts"
-     * >Renaming a Server Certificate</a> in the <i>IAM User
-     * Guide</i>.</important> <note>To change a server certificate name the
-     * requester must have appropriate permissions on both the source object and
-     * the target object. For example, to change the name from ProductionCert to
-     * ProdCert, the entity making the request must have permission on
-     * ProductionCert and ProdCert, or must have permission on all (*). For more
-     * information about permissions, see <a
+     * >Renaming a Server Certificate</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </important> <note>
+     * <p>
+     * To change a server certificate name the requester must have appropriate
+     * permissions on both the source object and the target object. For example,
+     * to change the name from "ProductionCert" to "ProdCert", the entity making
+     * the request must have permission on "ProductionCert" and "ProdCert", or
+     * must have permission on all (*). For more information about permissions,
+     * see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-     * Management</a> in the <i>IAM User Guide</i>. </note>
+     * Management</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param updateServerCertificateRequest
      * @throws NoSuchEntityException
@@ -7005,9 +7142,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Changes the status of the specified signing certificate from active to
-     * disabled, or vice versa. This action can be used to disable a user's
-     * signing certificate as part of a certificate rotation work flow.
+     * Changes the status of the specified user signing certificate from active
+     * to disabled, or vice versa. This action can be used to disable an IAM
+     * user's signing certificate as part of a certificate rotation work flow.
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the UserName is
@@ -7064,21 +7201,28 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Updates the name and/or the path of the specified user.
+     * Updates the name and/or the path of the specified IAM user.
      * </p>
-     * <important> You should understand the implications of changing a user's
-     * path or name. For more information, see <a href=
+     * <important>
+     * <p>
+     * You should understand the implications of changing an IAM user's path or
+     * name. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_renaming"
      * >Renaming an IAM User</a> and <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html"
-     * >Renaming an IAM Group</a> in the <i>IAM User Guide</i>. </important>
-     * <note> To change a user name the requester must have appropriate
-     * permissions on both the source object and the target object. For example,
-     * to change Bob to Robert, the entity making the request must have
-     * permission on Bob and Robert, or must have permission on all (*). For
-     * more information about permissions, see <a href=
+     * >Renaming an IAM Group</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </important> <note>
+     * <p>
+     * To change a user name the requester must have appropriate permissions on
+     * both the source object and the target object. For example, to change Bob
+     * to Robert, the entity making the request must have permission on Bob and
+     * Robert, or must have permission on all (*). For more information about
+     * permissions, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
-     * target="blank">Permissions and Policies</a>. </note>
+     * >Permissions and Policies</a>.
+     * </p>
+     * </note>
      * 
      * @param updateUserRequest
      * @throws NoSuchEntityException
@@ -7221,16 +7365,20 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * >Limitations on IAM Entities and Objects</a> in the <i>IAM User
      * Guide</i>.
      * </p>
-     * <note>Because the body of the public key certificate, private key, and
-     * the certificate chain can be large, you should use POST rather than GET
-     * when calling <code>UploadServerCertificate</code>. For information about
+     * <note>
+     * <p>
+     * Because the body of the public key certificate, private key, and the
+     * certificate chain can be large, you should use POST rather than GET when
+     * calling <code>UploadServerCertificate</code>. For information about
      * setting up signatures and authorization through the API, go to <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
      * >Signing AWS API Requests</a> in the <i>AWS General Reference</i>. For
      * general information about using the Query API with IAM, go to <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html"
      * >Calling the API by Making HTTP Query Requests</a> in the <i>IAM User
-     * Guide</i>. </note>
+     * Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param uploadServerCertificateRequest
      * @return Result of the UploadServerCertificate operation returned by the
@@ -7290,26 +7438,30 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     /**
      * <p>
      * Uploads an X.509 signing certificate and associates it with the specified
-     * user. Some AWS services use X.509 signing certificates to validate
+     * IAM user. Some AWS services use X.509 signing certificates to validate
      * requests that are signed with a corresponding private key. When you
      * upload the certificate, its default status is <code>Active</code>.
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the user name is
+     * If the <code>UserName</code> field is not specified, the IAM user name is
      * determined implicitly based on the AWS access key ID used to sign the
      * request. Because this action works for access keys under the AWS account,
      * you can use this action to manage root credentials even if the AWS
      * account has no associated users.
      * </p>
-     * <note>Because the body of a X.509 certificate can be large, you should
-     * use POST rather than GET when calling
-     * <code>UploadSigningCertificate</code>. For information about setting up
-     * signatures and authorization through the API, go to <a href=
+     * <note>
+     * <p>
+     * Because the body of a X.509 certificate can be large, you should use POST
+     * rather than GET when calling <code>UploadSigningCertificate</code>. For
+     * information about setting up signatures and authorization through the
+     * API, go to <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
      * >Signing AWS API Requests</a> in the <i>AWS General Reference</i>. For
      * general information about using the Query API with IAM, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
-     * >Making Query Requests</a> in the <i>Using IAM</i>guide. </note>
+     * >Making Query Requests</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param uploadSigningCertificateRequest
      * @return Result of the UploadSigningCertificate operation returned by the

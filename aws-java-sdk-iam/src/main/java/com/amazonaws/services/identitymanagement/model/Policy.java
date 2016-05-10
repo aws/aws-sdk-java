@@ -169,7 +169,7 @@ public class Policy implements Serializable, Cloneable {
      * </p>
      * 
      * @param policyId
-     *        The stable and unique string identifying the policy. </p>
+     *        The stable and unique string identifying the policy.</p>
      *        <p>
      *        For more information about IDs, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
@@ -190,7 +190,7 @@ public class Policy implements Serializable, Cloneable {
      * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      * </p>
      * 
-     * @return The stable and unique string identifying the policy. </p>
+     * @return The stable and unique string identifying the policy.</p>
      *         <p>
      *         For more information about IDs, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
@@ -212,7 +212,7 @@ public class Policy implements Serializable, Cloneable {
      * </p>
      * 
      * @param policyId
-     *        The stable and unique string identifying the policy. </p>
+     *        The stable and unique string identifying the policy.</p>
      *        <p>
      *        For more information about IDs, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"

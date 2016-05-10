@@ -29,12 +29,25 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the IAM user to associate the SSH public key with.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String userName;
     /**
      * <p>
      * The SSH public key. The public key must be encoded in ssh-rsa format or
      * PEM format.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String sSHPublicKeyBody;
@@ -43,9 +56,20 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the IAM user to associate the SSH public key with.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the IAM user to associate the SSH public key with.
+     *        The name of the IAM user to associate the SSH public key with.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
 
     public void setUserName(String userName) {
@@ -56,8 +80,20 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the IAM user to associate the SSH public key with.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the IAM user to associate the SSH public key with.
+     * @return The name of the IAM user to associate the SSH public key
+     *         with.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
 
     public String getUserName() {
@@ -68,9 +104,20 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the IAM user to associate the SSH public key with.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the IAM user to associate the SSH public key with.
+     *        The name of the IAM user to associate the SSH public key with.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -85,10 +132,24 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * The SSH public key. The public key must be encoded in ssh-rsa format or
      * PEM format.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param sSHPublicKeyBody
      *        The SSH public key. The public key must be encoded in ssh-rsa
-     *        format or PEM format.
+     *        format or PEM format.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
 
     public void setSSHPublicKeyBody(String sSHPublicKeyBody) {
@@ -100,9 +161,23 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * The SSH public key. The public key must be encoded in ssh-rsa format or
      * PEM format.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @return The SSH public key. The public key must be encoded in ssh-rsa
-     *         format or PEM format.
+     *         format or PEM format.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ).
      */
 
     public String getSSHPublicKeyBody() {
@@ -114,10 +189,24 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * The SSH public key. The public key must be encoded in ssh-rsa format or
      * PEM format.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param sSHPublicKeyBody
      *        The SSH public key. The public key must be encoded in ssh-rsa
-     *        format or PEM format.
+     *        format or PEM format.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

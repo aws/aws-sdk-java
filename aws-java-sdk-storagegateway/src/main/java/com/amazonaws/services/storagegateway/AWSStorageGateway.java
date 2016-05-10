@@ -36,34 +36,86 @@ import com.amazonaws.services.storagegateway.model.*;
  * Service API Reference</i>:
  * </p>
  * <ul>
- * <li><a href=
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html"
  * >AWS Storage Gateway Required Request Headers</a>: Describes the required
- * headers that you must send with every POST request to AWS Storage Gateway.</li>
- * <li><a href=
+ * headers that you must send with every POST request to AWS Storage Gateway.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html"
  * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate
- * every request you send; this topic describes how sign such a request.</li>
- * <li><a href=
+ * every request you send; this topic describes how sign such a request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html"
  * >Error Responses</a>: Provides reference information about AWS Storage
- * Gateway errors.</li>
- * <li><a href=
+ * Gateway errors.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html"
  * >Operations in AWS Storage Gateway</a>: Contains detailed descriptions of all
  * AWS Storage Gateway operations, their request parameters, response elements,
- * possible errors, and examples of requests and responses.</li>
- * <li><a
- * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
- * Storage Gateway Regions and Endpoints</a>: Provides a list of each of the s
- * and endpoints available for use with AWS Storage Gateway.</li>
+ * possible errors, and examples of requests and responses.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">
+ * AWS Storage Gateway Regions and Endpoints</a>: Provides a list of each of the
+ * s and endpoints available for use with AWS Storage Gateway.
+ * </p>
+ * </li>
  * </ul>
- * <note>AWS Storage Gateway resource IDs are in uppercase. When you use these
+ * <note>
+ * <p>
+ * AWS Storage Gateway resource IDs are in uppercase. When you use these
  * resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase.
  * You must change your resource ID to lowercase to use it with the EC2 API. For
- * example, in Storage Gateway the ID for a volume might be vol-1122AABB. When
- * you use this ID with the EC2 API, you must change it to vol-1122aabb.
- * Otherwise, the EC2 API might not behave as expected.</note>
+ * example, in Storage Gateway the ID for a volume might be
+ * <code>vol-1122AABB</code>. When you use this ID with the EC2 API, you must
+ * change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API might not
+ * behave as expected.
+ * </p>
+ * </note> <important>
+ * <p>
+ * IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway
+ * volumes are changing to a longer format. Starting in December 2016, all new
+ * volumes and snapshots will be created with a 17-character string. Starting in
+ * April 2016, you will be able to use these longer IDs so you can test your
+ * systems with the new format. For more information, see <a
+ * href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2 and EBS
+ * Resource IDs</a>.
+ * </p>
+ * <p>
+ * For example, a volume ARN with the longer volume ID format will look like
+ * this:
+ * </p>
+ * <p>
+ * <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>
+ * .
+ * </p>
+ * <p>
+ * A snapshot ID with the longer ID format will look like this:
+ * <code>snap-78e226633445566ee</code>.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement:
+ * Heads-up – Longer AWS Storage Gateway volume and snapshot IDs coming in
+ * 2016</a>.
+ * </p>
+ * </important>
  */
 public interface AWSStorageGateway {
 
@@ -137,27 +189,58 @@ public interface AWSStorageGateway {
      * process also associates your gateway with your account; for more
      * information, see <a>UpdateGatewayInformation</a>.
      * </p>
-     * <note>You must turn on the gateway VM before you can activate your
-     * gateway.</note>
+     * <note>
+     * <p>
+     * You must turn on the gateway VM before you can activate your gateway.
+     * </p>
+     * </note>
      * 
      * @param activateGatewayRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>ActivateGatewayInput$ActivationKey</a></li>
-     *        <li><a>ActivateGatewayInput$GatewayName</a></li>
-     *        <li><a>ActivateGatewayInput$GatewayRegion</a></li>
-     *        <li><a>ActivateGatewayInput$GatewayTimezone</a></li>
-     *        <li><a>ActivateGatewayInput$GatewayType</a></li>
-     *        <li><a>ActivateGatewayInput$TapeDriveType</a></li>
-     *        <li><a>ActivateGatewayInput$MediumChangerType</a></li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$ActivationKey</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$GatewayName</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$GatewayRegion</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$GatewayTimezone</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$GatewayType</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$TapeDriveType</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$MediumChangerType</a>
+     *        </p>
+     *        </li>
      * @return Result of the ActivateGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ActivateGateway
      */
     ActivateGatewayResult activateGateway(
@@ -181,11 +264,11 @@ public interface AWSStorageGateway {
      * @return Result of the AddCache operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.AddCache
      */
     AddCacheResult addCache(AddCacheRequest addCacheRequest);
@@ -230,11 +313,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.AddTagsToResource
      */
     AddTagsToResourceResult addTagsToResource(
@@ -256,11 +339,11 @@ public interface AWSStorageGateway {
      * @return Result of the AddUploadBuffer operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.AddUploadBuffer
      */
     AddUploadBufferResult addUploadBuffer(
@@ -289,16 +372,20 @@ public interface AWSStorageGateway {
      * @param addWorkingStorageRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>AddWorkingStorageInput$DiskIds</a></li>
+     *        <li>
+     *        <p>
+     *        <a>AddWorkingStorageInput$DiskIds</a>
+     *        </p>
+     *        </li>
      * @return Result of the AddWorkingStorage operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.AddWorkingStorage
      */
     AddWorkingStorageResult addWorkingStorage(
@@ -315,11 +402,11 @@ public interface AWSStorageGateway {
      * @return Result of the CancelArchival operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CancelArchival
      */
     CancelArchivalResult cancelArchival(
@@ -337,11 +424,11 @@ public interface AWSStorageGateway {
      * @return Result of the CancelRetrieval operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CancelRetrieval
      */
     CancelRetrievalResult cancelRetrieval(
@@ -352,9 +439,13 @@ public interface AWSStorageGateway {
      * Creates a cached volume on a specified cached gateway. This operation is
      * supported only for the gateway-cached volume architecture.
      * </p>
-     * <note>Cache storage must be allocated to the gateway before you can
-     * create a cached volume. Use the <a>AddCache</a> operation to add cache
-     * storage to a gateway. </note>
+     * <note>
+     * <p>
+     * Cache storage must be allocated to the gateway before you can create a
+     * cached volume. Use the <a>AddCache</a> operation to add cache storage to
+     * a gateway.
+     * </p>
+     * </note>
      * <p>
      * In the request, you must specify the gateway, size of the volume in
      * bytes, the iSCSI target name, an IP address on which to expose the
@@ -369,11 +460,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CreateCachediSCSIVolume
      */
     CreateCachediSCSIVolumeResult createCachediSCSIVolume(
@@ -402,24 +493,43 @@ public interface AWSStorageGateway {
      * can use this snapshot ID to check the snapshot progress or later use it
      * when you want to create a volume from a snapshot.
      * </p>
-     * <note>To list or delete a snapshot, you must use the Amazon EC2 API. For
-     * more information, see DescribeSnapshots or DeleteSnapshot in the <a href=
+     * <note>
+     * <p>
+     * To list or delete a snapshot, you must use the Amazon EC2 API. For more
+     * information, see DescribeSnapshots or DeleteSnapshot in the <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html"
-     * >EC2 API reference</a>.</note>
+     * >EC2 API reference</a>.
+     * </p>
+     * </note> <important>
+     * <p>
+     * Volume and snapshot IDs are changing to a longer length ID format. For
+     * more information, see the important note on the <a href=
+     * "http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html"
+     * >Welcome</a> page.
+     * </p>
+     * </important>
      * 
      * @param createSnapshotRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>CreateSnapshotInput$SnapshotDescription</a></li>
-     *        <li><a>CreateSnapshotInput$VolumeARN</a></li>
+     *        <li>
+     *        <p>
+     *        <a>CreateSnapshotInput$SnapshotDescription</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateSnapshotInput$VolumeARN</a>
+     *        </p>
+     *        </li>
      * @return Result of the CreateSnapshot operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CreateSnapshot
      */
     CreateSnapshotResult createSnapshot(
@@ -458,11 +568,11 @@ public interface AWSStorageGateway {
      *         returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CreateSnapshotFromVolumeRecoveryPoint
      */
     CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(
@@ -490,20 +600,40 @@ public interface AWSStorageGateway {
      * @param createStorediSCSIVolumeRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>CreateStorediSCSIVolumeInput$DiskId</a></li>
-     *        <li><a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a></li>
-     *        <li><a>CreateStorediSCSIVolumeInput$PreserveExistingData</a></li>
-     *        <li><a>CreateStorediSCSIVolumeInput$SnapshotId</a></li>
-     *        <li><a>CreateStorediSCSIVolumeInput$TargetName</a></li>
+     *        <li>
+     *        <p>
+     *        <a>CreateStorediSCSIVolumeInput$DiskId</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateStorediSCSIVolumeInput$PreserveExistingData</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateStorediSCSIVolumeInput$SnapshotId</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateStorediSCSIVolumeInput$TargetName</a>
+     *        </p>
+     *        </li>
      * @return Result of the CreateStorediSCSIVolume operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CreateStorediSCSIVolume
      */
     CreateStorediSCSIVolumeResult createStorediSCSIVolume(
@@ -514,9 +644,13 @@ public interface AWSStorageGateway {
      * Creates a virtual tape by using your own barcode. You write data to the
      * virtual tape and then archive the tape.
      * </p>
-     * <note>Cache storage must be allocated to the gateway before you can
-     * create a virtual tape. Use the <a>AddCache</a> operation to add cache
-     * storage to a gateway.</note>
+     * <note>
+     * <p>
+     * Cache storage must be allocated to the gateway before you can create a
+     * virtual tape. Use the <a>AddCache</a> operation to add cache storage to a
+     * gateway.
+     * </p>
+     * </note>
      * 
      * @param createTapeWithBarcodeRequest
      *        CreateTapeWithBarcodeInput
@@ -524,11 +658,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CreateTapeWithBarcode
      */
     CreateTapeWithBarcodeResult createTapeWithBarcode(
@@ -539,20 +673,24 @@ public interface AWSStorageGateway {
      * Creates one or more virtual tapes. You write data to the virtual tapes
      * and then archive the tapes.
      * </p>
-     * <note>Cache storage must be allocated to the gateway before you can
-     * create virtual tapes. Use the <a>AddCache</a> operation to add cache
-     * storage to a gateway. </note>
+     * <note>
+     * <p>
+     * Cache storage must be allocated to the gateway before you can create
+     * virtual tapes. Use the <a>AddCache</a> operation to add cache storage to
+     * a gateway.
+     * </p>
+     * </note>
      * 
      * @param createTapesRequest
      *        CreateTapesInput
      * @return Result of the CreateTapes operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CreateTapes
      */
     CreateTapesResult createTapes(CreateTapesRequest createTapesRequest);
@@ -571,11 +709,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteBandwidthRateLimit
      */
     DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(
@@ -590,17 +728,25 @@ public interface AWSStorageGateway {
      * @param deleteChapCredentialsRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>DeleteChapCredentialsInput$InitiatorName</a></li>
-     *        <li><a>DeleteChapCredentialsInput$TargetARN</a></li>
+     *        <li>
+     *        <p>
+     *        <a>DeleteChapCredentialsInput$InitiatorName</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>DeleteChapCredentialsInput$TargetARN</a>
+     *        </p>
+     *        </li>
      * @return Result of the DeleteChapCredentials operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteChapCredentials
      */
     DeleteChapCredentialsResult deleteChapCredentials(
@@ -637,11 +783,11 @@ public interface AWSStorageGateway {
      * @return Result of the DeleteGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteGateway
      */
     DeleteGatewayResult deleteGateway(DeleteGatewayRequest deleteGatewayRequest);
@@ -671,11 +817,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteSnapshotSchedule
      */
     DeleteSnapshotScheduleResult deleteSnapshotSchedule(
@@ -691,11 +837,11 @@ public interface AWSStorageGateway {
      * @return Result of the DeleteTape operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteTape
      */
     DeleteTapeResult deleteTape(DeleteTapeRequest deleteTapeRequest);
@@ -711,11 +857,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteTapeArchive
      */
     DeleteTapeArchiveResult deleteTapeArchive(
@@ -750,11 +896,11 @@ public interface AWSStorageGateway {
      * @return Result of the DeleteVolume operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteVolume
      */
     DeleteVolumeResult deleteVolume(DeleteVolumeRequest deleteVolumeRequest);
@@ -778,11 +924,11 @@ public interface AWSStorageGateway {
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeBandwidthRateLimit
      */
     DescribeBandwidthRateLimitResult describeBandwidthRateLimit(
@@ -802,11 +948,11 @@ public interface AWSStorageGateway {
      * @return Result of the DescribeCache operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeCache
      */
     DescribeCacheResult describeCache(DescribeCacheRequest describeCacheRequest);
@@ -828,11 +974,11 @@ public interface AWSStorageGateway {
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeCachediSCSIVolumes
      */
     DescribeCachediSCSIVolumesResult describeCachediSCSIVolumes(
@@ -852,11 +998,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeChapCredentials
      */
     DescribeChapCredentialsResult describeChapCredentials(
@@ -876,11 +1022,11 @@ public interface AWSStorageGateway {
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeGatewayInformation
      */
     DescribeGatewayInformationResult describeGatewayInformation(
@@ -899,11 +1045,11 @@ public interface AWSStorageGateway {
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeMaintenanceStartTime
      */
     DescribeMaintenanceStartTimeResult describeMaintenanceStartTime(
@@ -923,11 +1069,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeSnapshotSchedule
      */
     DescribeSnapshotScheduleResult describeSnapshotSchedule(
@@ -948,11 +1094,11 @@ public interface AWSStorageGateway {
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeStorediSCSIVolumes
      */
     DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(
@@ -975,11 +1121,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeTapeArchives
      */
     DescribeTapeArchivesResult describeTapeArchives(
@@ -1010,11 +1156,11 @@ public interface AWSStorageGateway {
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeTapeRecoveryPoints
      */
     DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(
@@ -1032,11 +1178,11 @@ public interface AWSStorageGateway {
      * @return Result of the DescribeTapes operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeTapes
      */
     DescribeTapesResult describeTapes(DescribeTapesRequest describeTapesRequest);
@@ -1058,11 +1204,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeUploadBuffer
      */
     DescribeUploadBufferResult describeUploadBuffer(
@@ -1084,11 +1230,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeVTLDevices
      */
     DescribeVTLDevicesResult describeVTLDevices(
@@ -1119,11 +1265,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeWorkingStorage
      */
     DescribeWorkingStorageResult describeWorkingStorage(
@@ -1139,18 +1285,22 @@ public interface AWSStorageGateway {
      * Use this operation for a gateway-VTL that is not reachable or not
      * functioning.
      * </p>
-     * <important>Once a gateway is disabled it cannot be enabled.</important>
+     * <important>
+     * <p>
+     * Once a gateway is disabled it cannot be enabled.
+     * </p>
+     * </important>
      * 
      * @param disableGatewayRequest
      *        DisableGatewayInput
      * @return Result of the DisableGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DisableGateway
      */
     DisableGatewayResult disableGateway(
@@ -1177,16 +1327,24 @@ public interface AWSStorageGateway {
      * @param listGatewaysRequest
      *        A JSON object containing zero or more of the following fields:</p>
      *        <ul>
-     *        <li><a>ListGatewaysInput$Limit</a></li>
-     *        <li><a>ListGatewaysInput$Marker</a></li>
+     *        <li>
+     *        <p>
+     *        <a>ListGatewaysInput$Limit</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ListGatewaysInput$Marker</a>
+     *        </p>
+     *        </li>
      * @return Result of the ListGateways operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListGateways
      */
     ListGatewaysResult listGateways(ListGatewaysRequest listGatewaysRequest);
@@ -1219,11 +1377,11 @@ public interface AWSStorageGateway {
      * @return Result of the ListLocalDisks operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListLocalDisks
      */
     ListLocalDisksResult listLocalDisks(
@@ -1240,11 +1398,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListTagsForResource
      */
     ListTagsForResourceResult listTagsForResource(
@@ -1259,6 +1417,53 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
+     * Lists virtual tapes in your virtual tape library (VTL) and your virtual
+     * tape shelf (VTS). You specify the tapes to list by specifying one or more
+     * tape Amazon Resource Names (ARNs). If you don't specify a tape ARN, the
+     * operation lists all virtual tapes in both your VTL and VTS.
+     * </p>
+     * <p>
+     * This operation supports pagination. By default, the operation returns a
+     * maximum of up to 100 tapes. You can optionally specify the
+     * <code>Limit</code> parameter in the body to limit the number of tapes in
+     * the response. If the number of tapes returned in the response is
+     * truncated, the response includes a <code>Marker</code> element that you
+     * can use in your subsequent request to retrieve the next set of tapes.
+     * </p>
+     * 
+     * @param listTapesRequest
+     *        A JSON object that contains one or more of the following
+     *        fields:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a>ListTapesInput$Limit</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ListTapesInput$Marker</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ListTapesInput$TapeARNs</a>
+     *        </p>
+     *        </li>
+     * @return Result of the ListTapes operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was
+     *         issued to the service. For more information, see the error and
+     *         message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
+     * @sample AWSStorageGateway.ListTapes
+     */
+    ListTapesResult listTapes(ListTapesRequest listTapesRequest);
+
+    /**
+     * <p>
      * Lists iSCSI initiators that are connected to a volume. You can use this
      * operation to determine whether a volume is being used or not.
      * </p>
@@ -1269,11 +1474,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListVolumeInitiators
      */
     ListVolumeInitiatorsResult listVolumeInitiators(
@@ -1297,11 +1502,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListVolumeRecoveryPoints
      */
     ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(
@@ -1326,16 +1531,24 @@ public interface AWSStorageGateway {
      *        A JSON object that contains one or more of the following
      *        fields:</p>
      *        <ul>
-     *        <li><a>ListVolumesInput$Limit</a></li>
-     *        <li><a>ListVolumesInput$Marker</a></li>
+     *        <li>
+     *        <p>
+     *        <a>ListVolumesInput$Limit</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ListVolumesInput$Marker</a>
+     *        </p>
+     *        </li>
      * @return Result of the ListVolumes operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListVolumes
      */
     ListVolumesResult listVolumes(ListVolumesRequest listVolumesRequest);
@@ -1351,11 +1564,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.RemoveTagsFromResource
      */
     RemoveTagsFromResourceResult removeTagsFromResource(
@@ -1392,11 +1605,11 @@ public interface AWSStorageGateway {
      * @return Result of the ResetCache operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ResetCache
      */
     ResetCacheResult resetCache(ResetCacheRequest resetCacheRequest);
@@ -1420,11 +1633,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.RetrieveTapeArchive
      */
     RetrieveTapeArchiveResult retrieveTapeArchive(
@@ -1439,9 +1652,13 @@ public interface AWSStorageGateway {
      * the data on the tape is consistent. If your gateway crashes, virtual
      * tapes that have recovery points can be recovered to a new gateway.
      * </p>
-     * <note>The virtual tape can be retrieved to only one gateway. The
-     * retrieved tape is read-only. The virtual tape can be retrieved to only a
-     * gateway-VTL. There is no charge for retrieving recovery points.</note>
+     * <note>
+     * <p>
+     * The virtual tape can be retrieved to only one gateway. The retrieved tape
+     * is read-only. The virtual tape can be retrieved to only a gateway-VTL.
+     * There is no charge for retrieving recovery points.
+     * </p>
+     * </note>
      * 
      * @param retrieveTapeRecoveryPointRequest
      *        RetrieveTapeRecoveryPointInput
@@ -1449,11 +1666,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.RetrieveTapeRecoveryPoint
      */
     RetrieveTapeRecoveryPointResult retrieveTapeRecoveryPoint(
@@ -1473,11 +1690,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.SetLocalConsolePassword
      */
     SetLocalConsolePasswordResult setLocalConsolePassword(
@@ -1492,9 +1709,12 @@ public interface AWSStorageGateway {
      * The operation shuts down the gateway service component running in the
      * storage gateway's virtual machine (VM) and not the VM.
      * </p>
-     * <note>If you want to shut down the VM, it is recommended that you first
-     * shut down the gateway component in the VM to avoid unpredictable
-     * conditions.</note>
+     * <note>
+     * <p>
+     * If you want to shut down the VM, it is recommended that you first shut
+     * down the gateway component in the VM to avoid unpredictable conditions.
+     * </p>
+     * </note>
      * <p>
      * After the gateway is shutdown, you cannot call any other API except
      * <a>StartGateway</a>, <a>DescribeGatewayInformation</a>, and
@@ -1502,11 +1722,15 @@ public interface AWSStorageGateway {
      * Your applications cannot read from or write to the gateway's storage
      * volumes, and there are no snapshots taken.
      * </p>
-     * <note>When you make a shutdown request, you will get a
-     * <code>200 OK</code> success response immediately. However, it might take
-     * some time for the gateway to shut down. You can call the
-     * <a>DescribeGatewayInformation</a> API to check the status. For more
-     * information, see <a>ActivateGateway</a>.</note>
+     * <note>
+     * <p>
+     * When you make a shutdown request, you will get a <code>200 OK</code>
+     * success response immediately. However, it might take some time for the
+     * gateway to shut down. You can call the <a>DescribeGatewayInformation</a>
+     * API to check the status. For more information, see
+     * <a>ActivateGateway</a>.
+     * </p>
+     * </note>
      * <p>
      * If do not intend to use the gateway again, you must delete the gateway
      * (using <a>DeleteGateway</a>) to no longer pay software charges associated
@@ -1518,11 +1742,11 @@ public interface AWSStorageGateway {
      * @return Result of the ShutdownGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ShutdownGateway
      */
     ShutdownGatewayResult shutdownGateway(
@@ -1535,11 +1759,15 @@ public interface AWSStorageGateway {
      * other API calls, your applications can read from or write to the
      * gateway's storage volumes and you will be able to take snapshot backups.
      * </p>
-     * <note>When you make a request, you will get a 200 OK success response
+     * <note>
+     * <p>
+     * When you make a request, you will get a 200 OK success response
      * immediately. However, it might take some time for the gateway to be
      * ready. You should call <a>DescribeGatewayInformation</a> and check the
      * status before making any additional API calls. For more information, see
-     * <a>ActivateGateway</a>.</note>
+     * <a>ActivateGateway</a>.
+     * </p>
+     * </note>
      * <p>
      * To specify which gateway to start, use the Amazon Resource Name (ARN) of
      * the gateway in your request.
@@ -1550,11 +1778,11 @@ public interface AWSStorageGateway {
      * @return Result of the StartGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.StartGateway
      */
     StartGatewayResult startGateway(StartGatewayRequest startGatewayRequest);
@@ -1579,20 +1807,28 @@ public interface AWSStorageGateway {
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
      *        <li>
-     *        <a>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec
-     *        </a></li>
+     *        <p>
+     *        <a>
+     *        UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec
+     *        </a>
+     *        </p>
+     *        </li>
      *        <li>
-     *        <a>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec
-     *        </a></li>
+     *        <p>
+     *        <a>
+     *        UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec
+     *        </a>
+     *        </p>
+     *        </li>
      * @return Result of the UpdateBandwidthRateLimit operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateBandwidthRateLimit
      */
     UpdateBandwidthRateLimitResult updateBandwidthRateLimit(
@@ -1614,20 +1850,35 @@ public interface AWSStorageGateway {
      * @param updateChapCredentialsRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>UpdateChapCredentialsInput$InitiatorName</a></li>
      *        <li>
-     *        <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a></li>
-     *        <li><a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a></li>
-     *        <li><a>UpdateChapCredentialsInput$TargetARN</a></li>
+     *        <p>
+     *        <a>UpdateChapCredentialsInput$InitiatorName</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateChapCredentialsInput$TargetARN</a>
+     *        </p>
+     *        </li>
      * @return Result of the UpdateChapCredentials operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateChapCredentials
      */
     UpdateChapCredentialsResult updateChapCredentials(
@@ -1639,20 +1890,24 @@ public interface AWSStorageGateway {
      * zone. To specify which gateway to update, use the Amazon Resource Name
      * (ARN) of the gateway in your request.
      * </p>
-     * <note>For Gateways activated after September 2, 2015, the gateway's ARN
+     * <note>
+     * <p>
+     * For Gateways activated after September 2, 2015, the gateway's ARN
      * contains the gateway ID rather than the gateway name. However, changing
-     * the name of the gateway has no effect on the gateway's ARN.</note>
+     * the name of the gateway has no effect on the gateway's ARN.
+     * </p>
+     * </note>
      * 
      * @param updateGatewayInformationRequest
      * @return Result of the UpdateGatewayInformation operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateGatewayInformation
      */
     UpdateGatewayInformationResult updateGatewayInformation(
@@ -1663,18 +1918,25 @@ public interface AWSStorageGateway {
      * Updates the gateway virtual machine (VM) software. The request
      * immediately triggers the software update.
      * </p>
-     * <note>When you make this request, you get a <code>200 OK</code> success
+     * <note>
+     * <p>
+     * When you make this request, you get a <code>200 OK</code> success
      * response immediately. However, it might take some time for the update to
      * complete. You can call <a>DescribeGatewayInformation</a> to verify the
-     * gateway is in the <code>STATE_RUNNING</code> state.</note> <important>A
-     * software update forces a system restart of your gateway. You can minimize
-     * the chance of any disruption to your applications by increasing your
-     * iSCSI Initiators' timeouts. For more information about increasing iSCSI
-     * Initiator timeouts for Windows and Linux, see <a href=
+     * gateway is in the <code>STATE_RUNNING</code> state.
+     * </p>
+     * </note> <important>
+     * <p>
+     * A software update forces a system restart of your gateway. You can
+     * minimize the chance of any disruption to your applications by increasing
+     * your iSCSI Initiators' timeouts. For more information about increasing
+     * iSCSI Initiator timeouts for Windows and Linux, see <a href=
      * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings"
      * >Customizing Your Windows iSCSI Settings</a> and <a href=
      * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings"
-     * >Customizing Your Linux iSCSI Settings</a>, respectively.</important>
+     * >Customizing Your Linux iSCSI Settings</a>, respectively.
+     * </p>
+     * </important>
      * 
      * @param updateGatewaySoftwareNowRequest
      *        A JSON object containing the of the gateway to update.
@@ -1682,11 +1944,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateGatewaySoftwareNow
      */
     UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(
@@ -1702,18 +1964,30 @@ public interface AWSStorageGateway {
      * @param updateMaintenanceStartTimeRequest
      *        A JSON object containing the following fields:</p>
      *        <ul>
-     *        <li><a>UpdateMaintenanceStartTimeInput$DayOfWeek</a></li>
-     *        <li><a>UpdateMaintenanceStartTimeInput$HourOfDay</a></li>
-     *        <li><a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a></li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateMaintenanceStartTimeInput$HourOfDay</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a>
+     *        </p>
+     *        </li>
      * @return Result of the UpdateMaintenanceStartTime operation returned by
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateMaintenanceStartTime
      */
     UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(
@@ -1738,19 +2012,35 @@ public interface AWSStorageGateway {
      * @param updateSnapshotScheduleRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>UpdateSnapshotScheduleInput$Description</a></li>
-     *        <li><a>UpdateSnapshotScheduleInput$RecurrenceInHours</a></li>
-     *        <li><a>UpdateSnapshotScheduleInput$StartAt</a></li>
-     *        <li><a>UpdateSnapshotScheduleInput$VolumeARN</a></li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateSnapshotScheduleInput$Description</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateSnapshotScheduleInput$RecurrenceInHours</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateSnapshotScheduleInput$StartAt</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateSnapshotScheduleInput$VolumeARN</a>
+     *        </p>
+     *        </li>
      * @return Result of the UpdateSnapshotSchedule operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateSnapshotSchedule
      */
     UpdateSnapshotScheduleResult updateSnapshotSchedule(
@@ -1769,11 +2059,11 @@ public interface AWSStorageGateway {
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateVTLDeviceType
      */
     UpdateVTLDeviceTypeResult updateVTLDeviceType(

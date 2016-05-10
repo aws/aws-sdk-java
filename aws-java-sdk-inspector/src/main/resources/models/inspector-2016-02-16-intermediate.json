@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "inspector",
     "signingName" : "inspector",
-    "xmlProtocol" : false,
     "serviceName" : "Amazon Inspector",
     "cborProtocol" : false,
     "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -60,12 +60,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AddAttributesToFindingsResult",
       "asyncReturnType" : "AddAttributesToFindingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddAttributesToFindingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddAttributesToFindingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddAttributesToFindingsRequest, AddAttributesToFindingsResult>",
+      "authenticated" : true,
       "methodName" : "addAttributesToFindings"
     },
     "CreateAssessmentTarget" : {
@@ -102,12 +102,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateAssessmentTargetResult",
       "asyncReturnType" : "CreateAssessmentTargetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAssessmentTargetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAssessmentTargetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAssessmentTargetRequest, CreateAssessmentTargetResult>",
+      "authenticated" : true,
       "methodName" : "createAssessmentTarget"
     },
     "CreateAssessmentTemplate" : {
@@ -144,12 +144,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateAssessmentTemplateResult",
       "asyncReturnType" : "CreateAssessmentTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAssessmentTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAssessmentTemplateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAssessmentTemplateRequest, CreateAssessmentTemplateResult>",
+      "authenticated" : true,
       "methodName" : "createAssessmentTemplate"
     },
     "CreateResourceGroup" : {
@@ -183,12 +183,12 @@
         "documentation" : "<p>You do not have required permissions to access the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateResourceGroupResult",
       "asyncReturnType" : "CreateResourceGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateResourceGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateResourceGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateResourceGroupRequest, CreateResourceGroupResult>",
+      "authenticated" : true,
       "methodName" : "createResourceGroup"
     },
     "DeleteAssessmentRun" : {
@@ -222,12 +222,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRunRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteAssessmentRun"
     },
     "DeleteAssessmentTarget" : {
@@ -261,12 +261,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTargetRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteAssessmentTarget"
     },
     "DeleteAssessmentTemplate" : {
@@ -300,12 +300,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTemplateRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteAssessmentTemplate"
     },
     "DescribeAssessmentRuns" : {
@@ -333,12 +333,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeAssessmentRunsResult",
       "asyncReturnType" : "DescribeAssessmentRunsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAssessmentRunsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAssessmentRunsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAssessmentRunsRequest, DescribeAssessmentRunsResult>",
+      "authenticated" : true,
       "methodName" : "describeAssessmentRuns"
     },
     "DescribeAssessmentTargets" : {
@@ -366,12 +366,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeAssessmentTargetsResult",
       "asyncReturnType" : "DescribeAssessmentTargetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAssessmentTargetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAssessmentTargetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAssessmentTargetsRequest, DescribeAssessmentTargetsResult>",
+      "authenticated" : true,
       "methodName" : "describeAssessmentTargets"
     },
     "DescribeAssessmentTemplates" : {
@@ -399,12 +399,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeAssessmentTemplatesResult",
       "asyncReturnType" : "DescribeAssessmentTemplatesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAssessmentTemplatesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAssessmentTemplatesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAssessmentTemplatesRequest, DescribeAssessmentTemplatesResult>",
+      "authenticated" : true,
       "methodName" : "describeAssessmentTemplates"
     },
     "DescribeCrossAccountAccessRole" : {
@@ -429,12 +429,12 @@
         "documentation" : "<p>Internal server error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeCrossAccountAccessRoleResult",
       "asyncReturnType" : "DescribeCrossAccountAccessRoleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCrossAccountAccessRoleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCrossAccountAccessRoleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCrossAccountAccessRoleRequest, DescribeCrossAccountAccessRoleResult>",
+      "authenticated" : true,
       "methodName" : "describeCrossAccountAccessRole"
     },
     "DescribeFindings" : {
@@ -462,12 +462,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeFindingsResult",
       "asyncReturnType" : "DescribeFindingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFindingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeFindingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeFindingsRequest, DescribeFindingsResult>",
+      "authenticated" : true,
       "methodName" : "describeFindings"
     },
     "DescribeResourceGroups" : {
@@ -495,12 +495,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeResourceGroupsResult",
       "asyncReturnType" : "DescribeResourceGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeResourceGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeResourceGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeResourceGroupsRequest, DescribeResourceGroupsResult>",
+      "authenticated" : true,
       "methodName" : "describeResourceGroups"
     },
     "DescribeRulesPackages" : {
@@ -528,12 +528,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeRulesPackagesResult",
       "asyncReturnType" : "DescribeRulesPackagesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeRulesPackagesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeRulesPackagesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeRulesPackagesRequest, DescribeRulesPackagesResult>",
+      "authenticated" : true,
       "methodName" : "describeRulesPackages"
     },
     "GetTelemetryMetadata" : {
@@ -567,12 +567,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetTelemetryMetadataResult",
       "asyncReturnType" : "GetTelemetryMetadataResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTelemetryMetadataResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTelemetryMetadataResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTelemetryMetadataRequest, GetTelemetryMetadataResult>",
+      "authenticated" : true,
       "methodName" : "getTelemetryMetadata"
     },
     "ListAssessmentRunAgents" : {
@@ -606,12 +606,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListAssessmentRunAgentsResult",
       "asyncReturnType" : "ListAssessmentRunAgentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAssessmentRunAgentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAssessmentRunAgentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAssessmentRunAgentsRequest, ListAssessmentRunAgentsResult>",
+      "authenticated" : true,
       "methodName" : "listAssessmentRunAgents"
     },
     "ListAssessmentRuns" : {
@@ -645,12 +645,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListAssessmentRunsResult",
       "asyncReturnType" : "ListAssessmentRunsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAssessmentRunsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAssessmentRunsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAssessmentRunsRequest, ListAssessmentRunsResult>",
+      "authenticated" : true,
       "methodName" : "listAssessmentRuns"
     },
     "ListAssessmentTargets" : {
@@ -681,12 +681,12 @@
         "documentation" : "<p>You do not have required permissions to access the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListAssessmentTargetsResult",
       "asyncReturnType" : "ListAssessmentTargetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAssessmentTargetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAssessmentTargetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAssessmentTargetsRequest, ListAssessmentTargetsResult>",
+      "authenticated" : true,
       "methodName" : "listAssessmentTargets"
     },
     "ListAssessmentTemplates" : {
@@ -720,12 +720,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListAssessmentTemplatesResult",
       "asyncReturnType" : "ListAssessmentTemplatesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAssessmentTemplatesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAssessmentTemplatesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAssessmentTemplatesRequest, ListAssessmentTemplatesResult>",
+      "authenticated" : true,
       "methodName" : "listAssessmentTemplates"
     },
     "ListEventSubscriptions" : {
@@ -759,12 +759,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListEventSubscriptionsResult",
       "asyncReturnType" : "ListEventSubscriptionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListEventSubscriptionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListEventSubscriptionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListEventSubscriptionsRequest, ListEventSubscriptionsResult>",
+      "authenticated" : true,
       "methodName" : "listEventSubscriptions"
     },
     "ListFindings" : {
@@ -798,12 +798,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListFindingsResult",
       "asyncReturnType" : "ListFindingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListFindingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListFindingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListFindingsRequest, ListFindingsResult>",
+      "authenticated" : true,
       "methodName" : "listFindings"
     },
     "ListRulesPackages" : {
@@ -834,12 +834,12 @@
         "documentation" : "<p>You do not have required permissions to access the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListRulesPackagesResult",
       "asyncReturnType" : "ListRulesPackagesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRulesPackagesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRulesPackagesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRulesPackagesRequest, ListRulesPackagesResult>",
+      "authenticated" : true,
       "methodName" : "listRulesPackages"
     },
     "ListTagsForResource" : {
@@ -873,12 +873,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
+      "authenticated" : true,
       "methodName" : "listTagsForResource"
     },
     "PreviewAgents" : {
@@ -915,12 +915,12 @@
         "documentation" : "<p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PreviewAgentsResult",
       "asyncReturnType" : "PreviewAgentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PreviewAgentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PreviewAgentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PreviewAgentsRequest, PreviewAgentsResult>",
+      "authenticated" : true,
       "methodName" : "previewAgents"
     },
     "RegisterCrossAccountAccessRole" : {
@@ -951,12 +951,12 @@
         "documentation" : "<p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterCrossAccountAccessRoleRequest, Void>",
+      "authenticated" : true,
       "methodName" : "registerCrossAccountAccessRole"
     },
     "RemoveAttributesFromFindings" : {
@@ -990,12 +990,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RemoveAttributesFromFindingsResult",
       "asyncReturnType" : "RemoveAttributesFromFindingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveAttributesFromFindingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveAttributesFromFindingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveAttributesFromFindingsRequest, RemoveAttributesFromFindingsResult>",
+      "authenticated" : true,
       "methodName" : "removeAttributesFromFindings"
     },
     "SetTagsForResource" : {
@@ -1026,12 +1026,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetTagsForResourceRequest, Void>",
+      "authenticated" : true,
       "methodName" : "setTagsForResource"
     },
     "StartAssessmentRun" : {
@@ -1074,12 +1074,12 @@
         "documentation" : "<p>You started an assessment run, but one of the instances is already participating in another assessment run.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "StartAssessmentRunResult",
       "asyncReturnType" : "StartAssessmentRunResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartAssessmentRunResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartAssessmentRunResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartAssessmentRunRequest, StartAssessmentRunResult>",
+      "authenticated" : true,
       "methodName" : "startAssessmentRun"
     },
     "StopAssessmentRun" : {
@@ -1110,12 +1110,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopAssessmentRunRequest, Void>",
+      "authenticated" : true,
       "methodName" : "stopAssessmentRun"
     },
     "SubscribeToEvent" : {
@@ -1149,12 +1149,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SubscribeToEventRequest, Void>",
+      "authenticated" : true,
       "methodName" : "subscribeToEvent"
     },
     "UnsubscribeFromEvent" : {
@@ -1185,12 +1185,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UnsubscribeFromEventRequest, Void>",
+      "authenticated" : true,
       "methodName" : "unsubscribeFromEvent"
     },
     "UpdateAssessmentTarget" : {
@@ -1221,12 +1221,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAssessmentTargetRequest, Void>",
+      "authenticated" : true,
       "methodName" : "updateAssessmentTarget"
     }
   },
@@ -1241,6 +1241,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>",
         "name" : "AssessmentTemplateArns",
@@ -1832,6 +1833,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <a>AssessmentTarget</a> data type.</p>",
         "name" : "AssessmentTargetNamePattern",
@@ -1972,6 +1974,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the rules package that you want to describe.</p>",
         "name" : "RulesPackageArns",
@@ -2353,6 +2356,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The schema version of this data type.</p>",
         "name" : "SchemaVersion",
@@ -3150,6 +3154,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Ec2Instance",
@@ -3187,6 +3192,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "HEALTHY",
@@ -3227,6 +3233,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Code that indicates the type of error that is generated.</p>",
         "name" : "ErrorCode",
@@ -3469,6 +3476,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the EC2 instance where the agent is installed.</p>",
         "name" : "AgentId",
@@ -3714,6 +3722,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the assessment template that is created.</p>",
         "name" : "AssessmentTemplateArn",
@@ -3854,6 +3863,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The minimum value of the timestamp range.</p>",
         "name" : "BeginDate",
@@ -4099,6 +4109,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The date of the notification.</p>",
         "name" : "Date",
@@ -4764,6 +4775,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The resulting list of agents.</p>",
         "name" : "AgentPreviews",
@@ -5141,6 +5153,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The last time the assessment run state changed.</p>",
         "name" : "StateChangedAt",
@@ -5386,6 +5399,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "SUCCESS",
@@ -5432,6 +5446,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Code that indicates the type of error that is generated.</p>",
         "name" : "ErrorCode",
@@ -5674,6 +5689,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The attribute key.</p>",
         "name" : "Key",
@@ -5919,6 +5935,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of ARNs that specifies the assessment templates returned by the action.</p>",
         "name" : "AssessmentTemplateArns",
@@ -6296,6 +6313,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "IDLE",
@@ -6348,6 +6366,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the resource group that is created.</p>",
         "name" : "ResourceGroupArn",
@@ -6488,6 +6507,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -6526,6 +6546,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Telemetry details.</p>",
         "name" : "TelemetryMetadata",
@@ -6798,6 +6819,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Code that indicates the type of error that is generated.</p>",
         "name" : "ErrorCode",
@@ -7040,6 +7062,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>",
         "name" : "Event",
@@ -7285,6 +7308,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <a>Finding</a> data type.</p>",
         "name" : "AgentIds",
@@ -9084,6 +9108,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Attributes details that cannot be described. An error code is provided for each failed item.</p>",
         "name" : "FailedItems",
@@ -9358,6 +9383,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARNs that specify the findings that you want to assign attributes to.</p>",
         "name" : "FindingArns",
@@ -9871,6 +9897,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A collection of key and value pairs.</p>",
         "name" : "Tags",
@@ -10143,6 +10170,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the assessment template whose tags you want to list.</p>",
         "name" : "ResourceArn",
@@ -10287,6 +10315,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A specific type of behavioral data that is collected by the agent.</p>",
         "name" : "MessageType",
@@ -10637,6 +10666,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the finding.</p>",
         "name" : "Findings",
@@ -11148,6 +11178,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>",
         "name" : "AssessmentRunArns",
@@ -11525,6 +11556,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>",
         "name" : "RoleArn",
@@ -11875,6 +11907,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>You can immediately retry your request.</p>",
         "name" : "CanRetry",
@@ -12012,6 +12045,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the assessment run.</p>",
         "name" : "AssessmentRuns",
@@ -12523,6 +12557,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the rules package.</p>",
         "name" : "RulesPackages",
@@ -13034,6 +13069,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of ARNs that specifies the findings returned by the action.</p>",
         "name" : "FindingArns",
@@ -13411,6 +13447,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>",
         "name" : "ResourceArn",
@@ -13765,6 +13802,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the Amazon Inspector assessment target.</p>",
         "name" : "Arn",
@@ -14325,6 +14363,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>",
         "name" : "AgentHealths",
@@ -14834,6 +14873,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>",
         "name" : "ResourceArn",
@@ -15188,6 +15228,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment template of the assessment run that you want to start.</p>",
         "name" : "AssessmentTemplateArn",
@@ -15437,6 +15478,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The schema version of this data type.</p>",
         "name" : "SchemaVersion",
@@ -15787,6 +15829,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARNs that specifies the assessment targets that you want to describe.</p>",
         "name" : "AssessmentTargetArns",
@@ -16063,6 +16106,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The status code of a failed item.</p>",
         "name" : "FailureCode",
@@ -16308,6 +16352,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Code that indicates the type of error that is generated.</p>",
         "name" : "ErrorCode",
@@ -16550,6 +16595,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the assessment target that is created.</p>",
         "name" : "AssessmentTargetArn",
@@ -16690,6 +16736,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Attribute details that cannot be described. An error code is provided for each failed item.</p>",
         "name" : "FailedItems",
@@ -16964,6 +17011,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment template.</p>",
         "name" : "Arn",
@@ -17998,6 +18046,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the resource group.</p>",
         "name" : "Arn",
@@ -18480,6 +18529,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A tag key.</p>",
         "name" : "Key",
@@ -18725,6 +18775,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARNs that specify the findings that you want to remove attributes from.</p>",
         "name" : "FindingArns",
@@ -19238,6 +19289,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "EN_US",
@@ -19275,6 +19327,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The minimum value of the duration range. Must be greater than zero.</p>",
         "name" : "MinSeconds",
@@ -19520,6 +19573,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances during the assessment run or when you call the <a>PreviewAgents</a> action. </p>",
         "name" : "RoleArn",
@@ -19664,6 +19718,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p/>",
         "name" : "Agents",
@@ -20143,6 +20198,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ACCESS_DENIED_TO_ASSESSMENT_TARGET",
@@ -20201,6 +20257,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment template that you want to set tags to.</p>",
         "name" : "ResourceArn",
@@ -20582,6 +20639,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>",
         "name" : "AssessmentTargetArns",
@@ -21173,6 +21231,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>",
         "name" : "NextToken",
@@ -21422,6 +21481,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifiesthe assessment templates that you want to describe.</p>",
         "name" : "AssessmentTemplateArns",
@@ -21698,6 +21758,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "INVALID_ARN",
@@ -21750,6 +21811,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment target whose agents you want to preview.</p>",
         "name" : "PreviewAgentsArn",
@@ -22104,6 +22166,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The list of ARNs that specifies the rules packages returned by the action.</p>",
         "name" : "RulesPackageArns",
@@ -22481,6 +22544,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>",
         "name" : "AssessmentRunArn",
@@ -22625,6 +22689,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ASSESSMENT_RUN_STARTED",
@@ -22674,6 +22739,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Low",
@@ -22723,6 +22789,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A tag key.</p>",
         "name" : "Key",
@@ -22968,6 +23035,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account of the EC2 instance where the agent is installed.</p>",
         "name" : "AgentId",
@@ -23870,6 +23938,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARNs of the assessment runs that are currently in progress.</p>",
         "name" : "AssessmentRunArns",
@@ -24349,6 +24418,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>For a record to match a filter, an explicit value or a string containing a wildcard that is specified for this data type property must match the value of the <b>assessmentRunName</b> property of the <a>AssessmentRun</a> data type.</p>",
         "name" : "NamePattern",
@@ -25383,6 +25453,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the assessment run whose agents you want to list.</p>",
         "name" : "AssessmentRunArn",
@@ -25842,6 +25913,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of ARNs that specifies the agents returned by the action.</p>",
         "name" : "AssessmentRunAgents",
@@ -26219,6 +26291,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the assessment templates.</p>",
         "name" : "AssessmentTemplates",
@@ -26730,6 +26803,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP",
@@ -26770,6 +26844,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the rules package.</p>",
         "name" : "Arn",
@@ -27330,6 +27405,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the assessment template that you want to delete.</p>",
         "name" : "AssessmentTemplateArn",
@@ -27474,6 +27550,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Code that indicates the type of error that is generated.</p>",
         "name" : "ErrorCode",
@@ -27716,6 +27793,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>",
         "name" : "AgentId",
@@ -27961,6 +28039,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the assessment run that you want to delete.</p>",
         "name" : "AssessmentRunArn",
@@ -28105,6 +28184,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>",
         "name" : "ResourceArn",
@@ -28587,6 +28667,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CREATED",
@@ -28651,6 +28732,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the finding.</p>",
         "name" : "Arn",
@@ -30840,6 +30922,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment run.</p>",
         "name" : "Arn",
@@ -32873,6 +32956,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>",
         "name" : "AssessmentTargetArn",
@@ -33701,6 +33785,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "INVALID_ASSESSMENT_TARGET_ARN",
@@ -33897,6 +33982,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the assessment target that you want to delete.</p>",
         "name" : "AssessmentTargetArn",
@@ -34041,6 +34127,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment run that you want to stop.</p>",
         "name" : "AssessmentRunArn",
@@ -34185,6 +34272,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>",
         "name" : "AssessmentTargetName",
@@ -34434,6 +34522,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>",
         "name" : "AssessmentTargetArns",
@@ -34811,6 +34900,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>",
         "name" : "ResourceArn",
@@ -35165,6 +35255,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Details of the returned event subscriptions.</p>",
         "name" : "Subscriptions",
@@ -35542,6 +35633,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the resource group that you want to describe.</p>",
         "name" : "ResourceGroupArns",
@@ -35818,6 +35910,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the assessment run that you want to describe.</p>",
         "name" : "AssessmentRunArns",
@@ -36094,6 +36187,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment run that has been started.</p>",
         "name" : "AssessmentRunArn",
@@ -36234,6 +36328,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN that specifies the finding that you want to describe.</p>",
         "name" : "FindingArns",
@@ -36615,6 +36710,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARN of the assessment target that you want to update.</p>",
         "name" : "AssessmentTargetArn",
@@ -36969,6 +37065,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ASSESSMENT_TARGET_DOES_NOT_EXIST",
@@ -37027,6 +37124,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>You can use this parameter to specify a subset of data to be included in the action's response.</p> <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>",
         "name" : "Filter",
@@ -37381,6 +37479,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ASSESSMENT_TARGET_LIMIT_EXCEEDED",
@@ -37430,6 +37529,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the assessment targets.</p>",
         "name" : "AssessmentTargets",
@@ -37941,6 +38041,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A collection of keys and an array of possible values, '[{\"key\":\"key1\",\"values\":[\"Value1\",\"Value2\"]},{\"key\":\"Key2\",\"values\":[\"Value3\"]}]'.</p> <p>For example,'[{\"key\":\"Name\",\"values\":[\"TestEC2Instance\"]}]'.</p>",
         "name" : "ResourceGroupTags",
@@ -38217,6 +38318,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTemplateName</b> property of the <a>AssessmentTemplate</a> data type.</p>",
         "name" : "NamePattern",
@@ -38699,6 +38801,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ARNs of the assessment runs that generate the findings that you want to list.</p>",
         "name" : "AssessmentRunArns",
@@ -39290,6 +39393,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about a resource group.</p>",
         "name" : "ResourceGroups",

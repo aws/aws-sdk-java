@@ -27,7 +27,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of SSH public keys.
+     * A list of the SSH public keys assigned to IAM user.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SSHPublicKeyMetadata> sSHPublicKeys;
@@ -54,10 +54,10 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of SSH public keys.
+     * A list of the SSH public keys assigned to IAM user.
      * </p>
      * 
-     * @return A list of SSH public keys.
+     * @return A list of the SSH public keys assigned to IAM user.
      */
 
     public java.util.List<SSHPublicKeyMetadata> getSSHPublicKeys() {
@@ -69,11 +69,11 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of SSH public keys.
+     * A list of the SSH public keys assigned to IAM user.
      * </p>
      * 
      * @param sSHPublicKeys
-     *        A list of SSH public keys.
+     *        A list of the SSH public keys assigned to IAM user.
      */
 
     public void setSSHPublicKeys(
@@ -89,7 +89,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of SSH public keys.
+     * A list of the SSH public keys assigned to IAM user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -99,7 +99,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param sSHPublicKeys
-     *        A list of SSH public keys.
+     *        A list of the SSH public keys assigned to IAM user.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -118,11 +118,11 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of SSH public keys.
+     * A list of the SSH public keys assigned to IAM user.
      * </p>
      * 
      * @param sSHPublicKeys
-     *        A list of SSH public keys.
+     *        A list of the SSH public keys assigned to IAM user.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

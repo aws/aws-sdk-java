@@ -29,6 +29,9 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      */
     private String queueUrl;
     /**
@@ -61,7 +64,9 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @param receiptHandle
      *        The receipt handle associated with the message whose visibility
      *        timeout should be changed. This parameter is returned by the
@@ -81,9 +86,14 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
 
     public void setQueueUrl(String queueUrl) {
@@ -94,8 +104,13 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.
+     * @return The URL of the Amazon SQS queue to take action on.</p>
+     *         <p>
+     *         Queue URLs are case-sensitive.
      */
 
     public String getQueueUrl() {
@@ -106,9 +121,14 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

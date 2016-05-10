@@ -60,12 +60,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AddCustomAttributesResult",
       "asyncReturnType" : "AddCustomAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddCustomAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddCustomAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddCustomAttributesRequest, AddCustomAttributesResult>",
+      "authenticated" : true,
       "methodName" : "addCustomAttributes"
     },
     "AdminConfirmSignUp" : {
@@ -117,12 +117,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AdminConfirmSignUpResult",
       "asyncReturnType" : "AdminConfirmSignUpResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminConfirmSignUpResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminConfirmSignUpResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminConfirmSignUpRequest, AdminConfirmSignUpResult>",
+      "authenticated" : true,
       "methodName" : "adminConfirmSignUp"
     },
     "AdminDeleteUser" : {
@@ -153,12 +153,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminDeleteUserRequest, Void>",
+      "authenticated" : true,
       "methodName" : "adminDeleteUser"
     },
     "AdminDeleteUserAttributes" : {
@@ -192,12 +192,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AdminDeleteUserAttributesResult",
       "asyncReturnType" : "AdminDeleteUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminDeleteUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminDeleteUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminDeleteUserAttributesRequest, AdminDeleteUserAttributesResult>",
+      "authenticated" : true,
       "methodName" : "adminDeleteUserAttributes"
     },
     "AdminDisableUser" : {
@@ -231,12 +231,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AdminDisableUserResult",
       "asyncReturnType" : "AdminDisableUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminDisableUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminDisableUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminDisableUserRequest, AdminDisableUserResult>",
+      "authenticated" : true,
       "methodName" : "adminDisableUser"
     },
     "AdminEnableUser" : {
@@ -270,12 +270,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AdminEnableUserResult",
       "asyncReturnType" : "AdminEnableUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminEnableUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminEnableUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminEnableUserRequest, AdminEnableUserResult>",
+      "authenticated" : true,
       "methodName" : "adminEnableUser"
     },
     "AdminGetUser" : {
@@ -309,12 +309,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AdminGetUserResult",
       "asyncReturnType" : "AdminGetUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminGetUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminGetUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminGetUserRequest, AdminGetUserResult>",
+      "authenticated" : true,
       "methodName" : "adminGetUser"
     },
     "AdminResetUserPassword" : {
@@ -363,12 +363,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AdminResetUserPasswordResult",
       "asyncReturnType" : "AdminResetUserPasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminResetUserPasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminResetUserPasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminResetUserPasswordRequest, AdminResetUserPasswordResult>",
+      "authenticated" : true,
       "methodName" : "adminResetUserPassword"
     },
     "AdminSetUserSettings" : {
@@ -399,12 +399,12 @@
         "documentation" : "<p>This exception gets thrown when a user is not authorized.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AdminSetUserSettingsResult",
       "asyncReturnType" : "AdminSetUserSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminSetUserSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminSetUserSettingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminSetUserSettingsRequest, AdminSetUserSettingsResult>",
+      "authenticated" : true,
       "methodName" : "adminSetUserSettings"
     },
     "AdminUpdateUserAttributes" : {
@@ -450,12 +450,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AdminUpdateUserAttributesResult",
       "asyncReturnType" : "AdminUpdateUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminUpdateUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminUpdateUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminUpdateUserAttributesRequest, AdminUpdateUserAttributesResult>",
+      "authenticated" : true,
       "methodName" : "adminUpdateUserAttributes"
     },
     "ChangePassword" : {
@@ -495,12 +495,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "ChangePasswordResult",
       "asyncReturnType" : "ChangePasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<ChangePasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ChangePasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, ChangePasswordResult>",
+      "authenticated" : false,
       "methodName" : "changePassword"
     },
     "ConfirmForgotPassword" : {
@@ -561,12 +561,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "ConfirmForgotPasswordResult",
       "asyncReturnType" : "ConfirmForgotPasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmForgotPasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmForgotPasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmForgotPasswordRequest, ConfirmForgotPasswordResult>",
+      "authenticated" : false,
       "methodName" : "confirmForgotPassword"
     },
     "ConfirmSignUp" : {
@@ -627,12 +627,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "ConfirmSignUpResult",
       "asyncReturnType" : "ConfirmSignUpResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmSignUpResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmSignUpResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmSignUpRequest, ConfirmSignUpResult>",
+      "authenticated" : false,
       "methodName" : "confirmSignUp"
     },
     "CreateUserPool" : {
@@ -666,12 +666,12 @@
         "documentation" : "<p>This exception is thrown when a user exceeds the limit for a requested AWS resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateUserPoolResult",
       "asyncReturnType" : "CreateUserPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateUserPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateUserPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateUserPoolRequest, CreateUserPoolResult>",
+      "authenticated" : true,
       "methodName" : "createUserPool"
     },
     "CreateUserPoolClient" : {
@@ -708,12 +708,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateUserPoolClientResult",
       "asyncReturnType" : "CreateUserPoolClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateUserPoolClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateUserPoolClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateUserPoolClientRequest, CreateUserPoolClientResult>",
+      "authenticated" : true,
       "methodName" : "createUserPoolClient"
     },
     "DeleteUser" : {
@@ -747,12 +747,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, Void>",
+      "authenticated" : false,
       "methodName" : "deleteUser"
     },
     "DeleteUserAttributes" : {
@@ -789,12 +789,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "DeleteUserAttributesResult",
       "asyncReturnType" : "DeleteUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserAttributesRequest, DeleteUserAttributesResult>",
+      "authenticated" : false,
       "methodName" : "deleteUserAttributes"
     },
     "DeleteUserPool" : {
@@ -825,12 +825,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserPoolRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteUserPool"
     },
     "DeleteUserPoolClient" : {
@@ -861,12 +861,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserPoolClientRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteUserPoolClient"
     },
     "DescribeUserPool" : {
@@ -900,12 +900,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeUserPoolResult",
       "asyncReturnType" : "DescribeUserPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeUserPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeUserPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeUserPoolRequest, DescribeUserPoolResult>",
+      "authenticated" : true,
       "methodName" : "describeUserPool"
     },
     "DescribeUserPoolClient" : {
@@ -939,12 +939,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeUserPoolClientResult",
       "asyncReturnType" : "DescribeUserPoolClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeUserPoolClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeUserPoolClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeUserPoolClientRequest, DescribeUserPoolClientResult>",
+      "authenticated" : true,
       "methodName" : "describeUserPoolClient"
     },
     "ForgotPassword" : {
@@ -993,12 +993,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "ForgotPasswordResult",
       "asyncReturnType" : "ForgotPasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<ForgotPasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ForgotPasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ForgotPasswordRequest, ForgotPasswordResult>",
+      "authenticated" : false,
       "methodName" : "forgotPassword"
     },
     "GetUser" : {
@@ -1035,12 +1035,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "GetUserResult",
       "asyncReturnType" : "GetUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetUserRequest, GetUserResult>",
+      "authenticated" : false,
       "methodName" : "getUser"
     },
     "GetUserAttributeVerificationCode" : {
@@ -1086,12 +1086,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "GetUserAttributeVerificationCodeResult",
       "asyncReturnType" : "GetUserAttributeVerificationCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetUserAttributeVerificationCodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetUserAttributeVerificationCodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetUserAttributeVerificationCodeRequest, GetUserAttributeVerificationCodeResult>",
+      "authenticated" : false,
       "methodName" : "getUserAttributeVerificationCode"
     },
     "ListUserPoolClients" : {
@@ -1125,12 +1125,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListUserPoolClientsResult",
       "asyncReturnType" : "ListUserPoolClientsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUserPoolClientsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListUserPoolClientsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListUserPoolClientsRequest, ListUserPoolClientsResult>",
+      "authenticated" : true,
       "methodName" : "listUserPoolClients"
     },
     "ListUserPools" : {
@@ -1161,12 +1161,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListUserPoolsResult",
       "asyncReturnType" : "ListUserPoolsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUserPoolsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListUserPoolsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListUserPoolsRequest, ListUserPoolsResult>",
+      "authenticated" : true,
       "methodName" : "listUserPools"
     },
     "ListUsers" : {
@@ -1200,12 +1200,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListUsersResult",
       "asyncReturnType" : "ListUsersResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUsersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListUsersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult>",
+      "authenticated" : true,
       "methodName" : "listUsers"
     },
     "ResendConfirmationCode" : {
@@ -1254,12 +1254,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "ResendConfirmationCodeResult",
       "asyncReturnType" : "ResendConfirmationCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResendConfirmationCodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResendConfirmationCodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResendConfirmationCodeRequest, ResendConfirmationCodeResult>",
+      "authenticated" : false,
       "methodName" : "resendConfirmationCode"
     },
     "SetUserSettings" : {
@@ -1290,12 +1290,12 @@
         "documentation" : "<p>This exception gets thrown when a user is not authorized.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "SetUserSettingsResult",
       "asyncReturnType" : "SetUserSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetUserSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetUserSettingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetUserSettingsRequest, SetUserSettingsResult>",
+      "authenticated" : false,
       "methodName" : "setUserSettings"
     },
     "SignUp" : {
@@ -1347,12 +1347,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "SignUpResult",
       "asyncReturnType" : "SignUpResult",
       "asyncFutureType" : "java.util.concurrent.Future<SignUpResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SignUpResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SignUpRequest, SignUpResult>",
+      "authenticated" : false,
       "methodName" : "signUp"
     },
     "UpdateUserAttributes" : {
@@ -1407,12 +1407,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "UpdateUserAttributesResult",
       "asyncReturnType" : "UpdateUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateUserAttributesRequest, UpdateUserAttributesResult>",
+      "authenticated" : false,
       "methodName" : "updateUserAttributes"
     },
     "UpdateUserPool" : {
@@ -1449,12 +1449,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateUserPoolResult",
       "asyncReturnType" : "UpdateUserPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateUserPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateUserPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateUserPoolRequest, UpdateUserPoolResult>",
+      "authenticated" : true,
       "methodName" : "updateUserPool"
     },
     "UpdateUserPoolClient" : {
@@ -1488,12 +1488,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateUserPoolClientResult",
       "asyncReturnType" : "UpdateUserPoolClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateUserPoolClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateUserPoolClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateUserPoolClientRequest, UpdateUserPoolClientResult>",
+      "authenticated" : true,
       "methodName" : "updateUserPoolClient"
     },
     "VerifyUserAttribute" : {
@@ -1536,12 +1536,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
       "syncReturnType" : "VerifyUserAttributeResult",
       "asyncReturnType" : "VerifyUserAttributeResult",
       "asyncFutureType" : "java.util.concurrent.Future<VerifyUserAttributeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<VerifyUserAttributeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyUserAttributeRequest, VerifyUserAttributeResult>",
+      "authenticated" : false,
       "methodName" : "verifyUserAttribute"
     }
   },
@@ -1556,6 +1556,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to update the user pool client.</p>",
         "name" : "UserPoolId",
@@ -1910,6 +1911,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -1941,6 +1943,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -1975,6 +1978,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The delivery medium (email message or SMS message) to send the MFA code.</p>",
         "name" : "DeliveryMedium",
@@ -2220,6 +2224,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -2251,6 +2256,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -2285,6 +2291,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool clients in the response that lists user pool clients.</p>",
         "name" : "UserPoolClients",
@@ -2389,8 +2396,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "UserPoolClientDescription",
-          "templateImplType" : "java.util.ArrayList<UserPoolClientDescription>",
-          "templateType" : "java.util.List<UserPoolClientDescription>"
+          "templateType" : "java.util.List<UserPoolClientDescription>",
+          "templateImplType" : "java.util.ArrayList<UserPoolClientDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2635,8 +2642,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "UserPoolClientDescription",
-            "templateImplType" : "java.util.ArrayList<UserPoolClientDescription>",
-            "templateType" : "java.util.List<UserPoolClientDescription>"
+            "templateType" : "java.util.List<UserPoolClientDescription>",
+            "templateImplType" : "java.util.ArrayList<UserPoolClientDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2662,6 +2669,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool client that was just created.</p>",
         "name" : "UserPoolClient",
@@ -2802,6 +2810,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of name-value pairs representing user attributes.</p>",
         "name" : "UserAttributes",
@@ -2906,8 +2915,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AttributeType",
-          "templateImplType" : "java.util.ArrayList<AttributeType>",
-          "templateType" : "java.util.List<AttributeType>"
+          "templateType" : "java.util.List<AttributeType>",
+          "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3103,8 +3112,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AttributeType",
-            "templateImplType" : "java.util.ArrayList<AttributeType>",
-            "templateType" : "java.util.List<AttributeType>"
+            "templateType" : "java.util.List<AttributeType>",
+            "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3183,6 +3192,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -3214,6 +3224,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -3248,6 +3259,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "SMS",
@@ -3288,6 +3300,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The access token for the set user settings request.</p>",
         "name" : "AccessToken",
@@ -3444,8 +3457,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "MFAOptionType",
-          "templateImplType" : "java.util.ArrayList<MFAOptionType>",
-          "templateType" : "java.util.List<MFAOptionType>"
+          "templateType" : "java.util.List<MFAOptionType>",
+          "templateImplType" : "java.util.ArrayList<MFAOptionType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3589,8 +3602,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "MFAOptionType",
-            "templateImplType" : "java.util.ArrayList<MFAOptionType>",
-            "templateType" : "java.util.List<MFAOptionType>"
+            "templateType" : "java.util.List<MFAOptionType>",
+            "templateImplType" : "java.util.ArrayList<MFAOptionType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3669,6 +3682,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Phone_number",
@@ -3709,6 +3723,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to set the user's settings, such as MFA options.</p>",
         "name" : "UserPoolId",
@@ -3917,8 +3932,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "MFAOptionType",
-          "templateImplType" : "java.util.ArrayList<MFAOptionType>",
-          "templateType" : "java.util.List<MFAOptionType>"
+          "templateType" : "java.util.List<MFAOptionType>",
+          "templateImplType" : "java.util.ArrayList<MFAOptionType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4062,8 +4077,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "MFAOptionType",
-            "templateImplType" : "java.util.ArrayList<MFAOptionType>",
-            "templateType" : "java.util.List<MFAOptionType>"
+            "templateType" : "java.util.List<MFAOptionType>",
+            "templateImplType" : "java.util.ArrayList<MFAOptionType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4195,6 +4210,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4229,6 +4245,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The code delivery details returned by the server response to get the user attribute verification code.</p>",
         "name" : "CodeDeliveryDetails",
@@ -4369,6 +4386,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to update user attributes.</p>",
         "name" : "UserPoolId",
@@ -4577,8 +4595,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AttributeType",
-          "templateImplType" : "java.util.ArrayList<AttributeType>",
-          "templateType" : "java.util.List<AttributeType>"
+          "templateType" : "java.util.List<AttributeType>",
+          "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4722,8 +4740,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AttributeType",
-            "templateImplType" : "java.util.ArrayList<AttributeType>",
-            "templateType" : "java.util.List<AttributeType>"
+            "templateType" : "java.util.List<AttributeType>",
+            "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4855,6 +4873,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -4886,6 +4905,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -4917,6 +4937,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the attribute.</p>",
         "name" : "Name",
@@ -5162,6 +5183,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of strings representing the user attribute names you wish to delete.</p>",
         "name" : "UserAttributeNames",
@@ -5266,8 +5288,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5516,8 +5538,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5543,6 +5565,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Phone_number",
@@ -5586,6 +5609,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Represents the access token of the request to verify user attributes.</p>",
         "name" : "AccessToken",
@@ -5940,6 +5964,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID in a user pool description.</p>",
         "name" : "Id",
@@ -6605,6 +6630,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The users returned in the request to list users.</p>",
         "name" : "Users",
@@ -6709,8 +6735,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "UserType",
-          "templateImplType" : "java.util.ArrayList<UserType>",
-          "templateType" : "java.util.List<UserType>"
+          "templateType" : "java.util.List<UserType>",
+          "templateImplType" : "java.util.ArrayList<UserType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6902,8 +6928,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "UserType",
-            "templateImplType" : "java.util.ArrayList<UserType>",
-            "templateType" : "java.util.List<UserType>"
+            "templateType" : "java.util.List<UserType>",
+            "templateImplType" : "java.util.ArrayList<UserType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6982,6 +7008,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the client associated with the user pool.</p>",
         "name" : "ClientId",
@@ -7546,6 +7573,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A container with information about the user pool password policy.</p>",
         "name" : "PasswordPolicy",
@@ -7686,6 +7714,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to create a user pool client.</p>",
         "name" : "UserPoolId",
@@ -8040,6 +8069,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The minimum value of an attribute that is of the number data type.</p>",
         "name" : "MinValue",
@@ -8285,6 +8315,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -8319,6 +8350,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -8353,6 +8385,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the client associated with the user pool.</p>",
         "name" : "ClientId",
@@ -8703,6 +8736,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -8734,6 +8768,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user name of the user you wish to retrieve from the get user request.</p>",
         "name" : "Username",
@@ -8890,8 +8925,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AttributeType",
-          "templateImplType" : "java.util.ArrayList<AttributeType>",
-          "templateType" : "java.util.List<AttributeType>"
+          "templateType" : "java.util.List<AttributeType>",
+          "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9008,8 +9043,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "MFAOptionType",
-          "templateImplType" : "java.util.ArrayList<MFAOptionType>",
-          "templateType" : "java.util.List<MFAOptionType>"
+          "templateType" : "java.util.List<MFAOptionType>",
+          "templateImplType" : "java.util.ArrayList<MFAOptionType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9149,8 +9184,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "MFAOptionType",
-            "templateImplType" : "java.util.ArrayList<MFAOptionType>",
-            "templateType" : "java.util.List<MFAOptionType>"
+            "templateType" : "java.util.List<MFAOptionType>",
+            "templateImplType" : "java.util.ArrayList<MFAOptionType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9268,8 +9303,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AttributeType",
-            "templateImplType" : "java.util.ArrayList<AttributeType>",
-            "templateType" : "java.util.List<AttributeType>"
+            "templateType" : "java.util.List<AttributeType>",
+            "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9348,6 +9383,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool client value from the response from the server when an update user pool client request is made.</p>",
         "name" : "UserPoolClient",
@@ -9488,6 +9524,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user name of the user about whom you are receiving information.</p>",
         "name" : "Username",
@@ -9644,8 +9681,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AttributeType",
-          "templateImplType" : "java.util.ArrayList<AttributeType>",
-          "templateType" : "java.util.List<AttributeType>"
+          "templateType" : "java.util.List<AttributeType>",
+          "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9970,8 +10007,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "MFAOptionType",
-          "templateImplType" : "java.util.ArrayList<MFAOptionType>",
-          "templateType" : "java.util.List<MFAOptionType>"
+          "templateType" : "java.util.List<MFAOptionType>",
+          "templateImplType" : "java.util.ArrayList<MFAOptionType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10164,8 +10201,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "MFAOptionType",
-            "templateImplType" : "java.util.ArrayList<MFAOptionType>",
-            "templateType" : "java.util.List<MFAOptionType>"
+            "templateType" : "java.util.List<MFAOptionType>",
+            "templateImplType" : "java.util.ArrayList<MFAOptionType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10283,8 +10320,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AttributeType",
-            "templateImplType" : "java.util.ArrayList<AttributeType>",
-            "templateType" : "java.util.List<AttributeType>"
+            "templateType" : "java.util.List<AttributeType>",
+            "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10522,6 +10559,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool you want to delete.</p>",
         "name" : "UserPoolId",
@@ -10666,6 +10704,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to disable the user.</p>",
         "name" : "UserPoolId",
@@ -10915,6 +10954,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10949,6 +10989,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10983,6 +11024,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -11014,6 +11056,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to reset the user's password.</p>",
         "name" : "UserPoolId",
@@ -11263,6 +11306,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to add custom attributes.</p>",
         "name" : "UserPoolId",
@@ -11419,8 +11463,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "SchemaAttributeType",
-          "templateImplType" : "java.util.ArrayList<SchemaAttributeType>",
-          "templateType" : "java.util.List<SchemaAttributeType>"
+          "templateType" : "java.util.List<SchemaAttributeType>",
+          "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11617,8 +11661,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "SchemaAttributeType",
-            "templateImplType" : "java.util.ArrayList<SchemaAttributeType>",
-            "templateType" : "java.util.List<SchemaAttributeType>"
+            "templateType" : "java.util.List<SchemaAttributeType>",
+            "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11644,6 +11688,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -11675,6 +11720,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The access token returned by the server response to get the user attribute verification code.</p>",
         "name" : "AccessToken",
@@ -11924,6 +11970,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The minimum length of an attribute value of the string type.</p>",
         "name" : "MinLength",
@@ -12169,6 +12216,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Enabled",
@@ -12209,6 +12257,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to delete the user.</p>",
         "name" : "UserPoolId",
@@ -12458,6 +12507,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -12492,6 +12542,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The minimum length of the password policy that you have set. Cannot be less than 6.</p>",
         "name" : "MinimumLength",
@@ -13052,6 +13103,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the user pool.</p>",
         "name" : "Id",
@@ -13520,8 +13572,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "SchemaAttributeType",
-          "templateImplType" : "java.util.ArrayList<SchemaAttributeType>",
-          "templateType" : "java.util.List<SchemaAttributeType>"
+          "templateType" : "java.util.List<SchemaAttributeType>",
+          "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13638,8 +13690,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : "VerifiedAttributeType",
@@ -13756,8 +13808,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : "AliasAttributeType",
@@ -14580,8 +14632,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : "AliasAttributeType",
@@ -14805,8 +14857,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "SchemaAttributeType",
-            "templateImplType" : "java.util.ArrayList<SchemaAttributeType>",
-            "templateType" : "java.util.List<SchemaAttributeType>"
+            "templateType" : "java.util.List<SchemaAttributeType>",
+            "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15083,8 +15135,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : "VerifiedAttributeType",
@@ -15163,6 +15215,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -15194,6 +15247,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "CodeDeliveryDetails",
@@ -15334,6 +15388,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The access token returned by the server response to get information about the user.</p>",
         "name" : "AccessToken",
@@ -15478,6 +15533,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The access token from a request to delete a user.</p>",
         "name" : "AccessToken",
@@ -15622,6 +15678,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -15653,6 +15710,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -15687,6 +15745,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A container for the user pool details.</p>",
         "name" : "UserPool",
@@ -15827,6 +15886,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the client associated with the user pool.</p>",
         "name" : "ClientId",
@@ -16139,8 +16199,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AttributeType",
-          "templateImplType" : "java.util.ArrayList<AttributeType>",
-          "templateType" : "java.util.List<AttributeType>"
+          "templateType" : "java.util.List<AttributeType>",
+          "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16257,8 +16317,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AttributeType",
-          "templateImplType" : "java.util.ArrayList<AttributeType>",
-          "templateType" : "java.util.List<AttributeType>"
+          "templateType" : "java.util.List<AttributeType>",
+          "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16402,8 +16462,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AttributeType",
-            "templateImplType" : "java.util.ArrayList<AttributeType>",
-            "templateType" : "java.util.List<AttributeType>"
+            "templateType" : "java.util.List<AttributeType>",
+            "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16733,8 +16793,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AttributeType",
-            "templateImplType" : "java.util.ArrayList<AttributeType>",
-            "templateType" : "java.util.List<AttributeType>"
+            "templateType" : "java.util.List<AttributeType>",
+            "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16760,6 +16820,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The destination for the code delivery details.</p>",
         "name" : "Destination",
@@ -17110,6 +17171,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The old password in the change password request.</p>",
         "name" : "PreviousPassword",
@@ -17464,6 +17526,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool you want to describe.</p>",
         "name" : "UserPoolId",
@@ -17713,6 +17776,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A string used to name the user pool.</p>",
         "name" : "PoolName",
@@ -17973,8 +18037,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : "VerifiedAttributeType",
@@ -18091,8 +18155,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : "AliasAttributeType",
@@ -18496,8 +18560,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : "AliasAttributeType",
@@ -18986,8 +19050,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : "VerifiedAttributeType",
@@ -19066,6 +19130,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -19100,6 +19165,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user name of the user you wish to describe.</p>",
         "name" : "Username",
@@ -19256,8 +19322,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AttributeType",
-          "templateImplType" : "java.util.ArrayList<AttributeType>",
-          "templateType" : "java.util.List<AttributeType>"
+          "templateType" : "java.util.List<AttributeType>",
+          "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19658,8 +19724,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AttributeType",
-            "templateImplType" : "java.util.ArrayList<AttributeType>",
-            "templateType" : "java.util.List<AttributeType>"
+            "templateType" : "java.util.List<AttributeType>",
+            "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19897,6 +19963,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -19928,6 +19995,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "String",
@@ -19974,6 +20042,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A schema attribute of the name type.</p>",
         "name" : "Name",
@@ -20744,6 +20813,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the client associated with the user pool.</p>",
         "name" : "ClientId",
@@ -21308,6 +21378,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pools from the response to list users.</p>",
         "name" : "UserPools",
@@ -21412,8 +21483,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "UserPoolDescriptionType",
-          "templateImplType" : "java.util.ArrayList<UserPoolDescriptionType>",
-          "templateType" : "java.util.List<UserPoolDescriptionType>"
+          "templateType" : "java.util.List<UserPoolDescriptionType>",
+          "templateImplType" : "java.util.ArrayList<UserPoolDescriptionType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21658,8 +21729,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "UserPoolDescriptionType",
-            "templateImplType" : "java.util.ArrayList<UserPoolDescriptionType>",
-            "templateType" : "java.util.List<UserPoolDescriptionType>"
+            "templateType" : "java.util.List<UserPoolDescriptionType>",
+            "templateImplType" : "java.util.ArrayList<UserPoolDescriptionType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21685,6 +21756,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "CodeDeliveryDetails",
@@ -21825,6 +21897,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the client associated with the user pool.</p>",
         "name" : "ClientId",
@@ -22179,6 +22252,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The code delivery details list from the server for the request to update user attributes.</p>",
         "name" : "CodeDeliveryDetailsList",
@@ -22283,8 +22357,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "CodeDeliveryDetailsType",
-          "templateImplType" : "java.util.ArrayList<CodeDeliveryDetailsType>",
-          "templateType" : "java.util.List<CodeDeliveryDetailsType>"
+          "templateType" : "java.util.List<CodeDeliveryDetailsType>",
+          "templateImplType" : "java.util.ArrayList<CodeDeliveryDetailsType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22424,8 +22498,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "CodeDeliveryDetailsType",
-            "templateImplType" : "java.util.ArrayList<CodeDeliveryDetailsType>",
-            "templateType" : "java.util.List<CodeDeliveryDetailsType>"
+            "templateType" : "java.util.List<CodeDeliveryDetailsType>",
+            "templateImplType" : "java.util.ArrayList<CodeDeliveryDetailsType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22451,6 +22525,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to list user pool clients.</p>",
         "name" : "UserPoolId",
@@ -22805,6 +22880,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -22839,6 +22915,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to get information about the user.</p>",
         "name" : "UserPoolId",
@@ -23088,6 +23165,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -23122,6 +23200,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool client from a server response to describe the user pool client.</p>",
         "name" : "UserPoolClient",
@@ -23262,6 +23341,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -23293,6 +23373,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool you want to update.</p>",
         "name" : "UserPoolId",
@@ -23553,8 +23634,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : "VerifiedAttributeType",
@@ -24329,8 +24410,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : "VerifiedAttributeType",
@@ -24409,6 +24490,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A response from the server indicating that a user registration has been confirmed.</p>",
         "name" : "UserConfirmed",
@@ -24654,6 +24736,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool you want to describe.</p>",
         "name" : "UserPoolId",
@@ -24798,6 +24881,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -24829,6 +24913,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -24860,6 +24945,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the client associated with the user pool.</p>",
         "name" : "ClientId",
@@ -25214,6 +25300,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for which you want to list users.</p>",
         "name" : "UserPoolId",
@@ -25370,8 +25457,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25830,8 +25917,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25910,6 +25997,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to enable the user.</p>",
         "name" : "UserPoolId",
@@ -26159,6 +26247,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to delete the client.</p>",
         "name" : "UserPoolId",
@@ -26408,6 +26497,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool where you want to delete user attributes.</p>",
         "name" : "UserPoolId",
@@ -26616,8 +26706,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26761,8 +26851,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26894,6 +26984,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The container of metadata returned by the server to describe the pool.</p>",
         "name" : "UserPool",
@@ -27034,6 +27125,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "UNCONFIRMED",
@@ -27083,6 +27175,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for which you want to confirm user registration.</p>",
         "name" : "UserPoolId",
@@ -27332,6 +27425,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The user pool ID for the user pool client.</p>",
         "name" : "UserPoolId",
@@ -27997,6 +28091,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A pre-registration AWS Lambda trigger.</p>",
         "name" : "PreSignUp",
@@ -28557,6 +28652,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -28588,6 +28684,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "OFF",
@@ -28631,6 +28728,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -28665,6 +28763,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -28699,6 +28798,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -28730,6 +28830,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
         "name" : "NextToken",

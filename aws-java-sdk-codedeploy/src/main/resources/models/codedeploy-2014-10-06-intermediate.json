@@ -23,10 +23,10 @@
     "serviceName" : "CodeDeploy",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "xmlProtocol" : false
   },
   "operations" : {
     "AddTagsToOnPremisesInstances" : {
@@ -63,12 +63,12 @@
         "documentation" : "<p>The specified on-premises instance is not registered.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToOnPremisesInstancesRequest, Void>",
+      "authenticated" : true,
       "methodName" : "addTagsToOnPremisesInstances"
     },
     "BatchGetApplicationRevisions" : {
@@ -108,12 +108,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetApplicationRevisionsResult",
       "asyncReturnType" : "BatchGetApplicationRevisionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetApplicationRevisionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetApplicationRevisionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetApplicationRevisionsRequest, BatchGetApplicationRevisionsResult>",
+      "authenticated" : true,
       "methodName" : "batchGetApplicationRevisions"
     },
     "BatchGetApplications" : {
@@ -147,12 +147,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetApplicationsResult",
       "asyncReturnType" : "BatchGetApplicationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetApplicationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetApplicationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetApplicationsRequest, BatchGetApplicationsResult>",
+      "authenticated" : true,
       "methodName" : "batchGetApplications"
     },
     "BatchGetDeploymentGroups" : {
@@ -192,12 +192,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetDeploymentGroupsResult",
       "asyncReturnType" : "BatchGetDeploymentGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetDeploymentGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetDeploymentGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentGroupsRequest, BatchGetDeploymentGroupsResult>",
+      "authenticated" : true,
       "methodName" : "batchGetDeploymentGroups"
     },
     "BatchGetDeploymentInstances" : {
@@ -237,12 +237,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetDeploymentInstancesResult",
       "asyncReturnType" : "BatchGetDeploymentInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetDeploymentInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetDeploymentInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentInstancesRequest, BatchGetDeploymentInstancesResult>",
+      "authenticated" : true,
       "methodName" : "batchGetDeploymentInstances"
     },
     "BatchGetDeployments" : {
@@ -273,12 +273,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetDeploymentsResult",
       "asyncReturnType" : "BatchGetDeploymentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetDeploymentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetDeploymentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentsRequest, BatchGetDeploymentsResult>",
+      "authenticated" : true,
       "methodName" : "batchGetDeployments"
     },
     "BatchGetOnPremisesInstances" : {
@@ -309,12 +309,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetOnPremisesInstancesResult",
       "asyncReturnType" : "BatchGetOnPremisesInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetOnPremisesInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetOnPremisesInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetOnPremisesInstancesRequest, BatchGetOnPremisesInstancesResult>",
+      "authenticated" : true,
       "methodName" : "batchGetOnPremisesInstances"
     },
     "CreateApplication" : {
@@ -348,12 +348,12 @@
         "documentation" : "<p>More applications were attempted to be created than are allowed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateApplicationResult",
       "asyncReturnType" : "CreateApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateApplicationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult>",
+      "authenticated" : true,
       "methodName" : "createApplication"
     },
     "CreateDeployment" : {
@@ -411,12 +411,12 @@
         "documentation" : "<p>The number of allowed deployments was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDeploymentResult",
       "asyncReturnType" : "CreateDeploymentResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDeploymentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDeploymentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDeploymentRequest, CreateDeploymentResult>",
+      "authenticated" : true,
       "methodName" : "createDeployment"
     },
     "CreateDeploymentConfig" : {
@@ -453,12 +453,12 @@
         "documentation" : "<p>The deployment configurations limit was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDeploymentConfigResult",
       "asyncReturnType" : "CreateDeploymentConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDeploymentConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDeploymentConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDeploymentConfigRequest, CreateDeploymentConfigResult>",
+      "authenticated" : true,
       "methodName" : "createDeploymentConfig"
     },
     "CreateDeploymentGroup" : {
@@ -531,12 +531,12 @@
         "documentation" : "<p>The maximum allowed number of triggers was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDeploymentGroupResult",
       "asyncReturnType" : "CreateDeploymentGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDeploymentGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDeploymentGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDeploymentGroupRequest, CreateDeploymentGroupResult>",
+      "authenticated" : true,
       "methodName" : "createDeploymentGroup"
     },
     "DeleteApplication" : {
@@ -561,12 +561,12 @@
         "documentation" : "<p>The application name was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteApplication"
     },
     "DeleteDeploymentConfig" : {
@@ -597,12 +597,12 @@
         "documentation" : "<p>An invalid operation was detected.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDeploymentConfigRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteDeploymentConfig"
     },
     "DeleteDeploymentGroup" : {
@@ -639,12 +639,12 @@
         "documentation" : "<p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Auto Scaling.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteDeploymentGroupResult",
       "asyncReturnType" : "DeleteDeploymentGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDeploymentGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDeploymentGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDeploymentGroupRequest, DeleteDeploymentGroupResult>",
+      "authenticated" : true,
       "methodName" : "deleteDeploymentGroup"
     },
     "DeregisterOnPremisesInstance" : {
@@ -669,12 +669,12 @@
         "documentation" : "<p>The specified on-premises instance name was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeregisterOnPremisesInstanceRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deregisterOnPremisesInstance"
     },
     "GetApplication" : {
@@ -705,12 +705,12 @@
         "documentation" : "<p>The application does not exist with the applicable IAM user or AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetApplicationResult",
       "asyncReturnType" : "GetApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetApplicationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetApplicationRequest, GetApplicationResult>",
+      "authenticated" : true,
       "methodName" : "getApplication"
     },
     "GetApplicationRevision" : {
@@ -750,12 +750,12 @@
         "documentation" : "<p>The revision was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetApplicationRevisionResult",
       "asyncReturnType" : "GetApplicationRevisionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetApplicationRevisionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetApplicationRevisionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetApplicationRevisionRequest, GetApplicationRevisionResult>",
+      "authenticated" : true,
       "methodName" : "getApplicationRevision"
     },
     "GetDeployment" : {
@@ -786,12 +786,12 @@
         "documentation" : "<p>The deployment does not exist with the applicable IAM user or AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDeploymentResult",
       "asyncReturnType" : "GetDeploymentResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDeploymentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDeploymentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDeploymentRequest, GetDeploymentResult>",
+      "authenticated" : true,
       "methodName" : "getDeployment"
     },
     "GetDeploymentConfig" : {
@@ -822,12 +822,12 @@
         "documentation" : "<p>The deployment configuration does not exist with the applicable IAM user or AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDeploymentConfigResult",
       "asyncReturnType" : "GetDeploymentConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDeploymentConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDeploymentConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDeploymentConfigRequest, GetDeploymentConfigResult>",
+      "authenticated" : true,
       "methodName" : "getDeploymentConfig"
     },
     "GetDeploymentGroup" : {
@@ -867,12 +867,12 @@
         "documentation" : "<p>The named deployment group does not exist with the applicable IAM user or AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDeploymentGroupResult",
       "asyncReturnType" : "GetDeploymentGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDeploymentGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDeploymentGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDeploymentGroupRequest, GetDeploymentGroupResult>",
+      "authenticated" : true,
       "methodName" : "getDeploymentGroup"
     },
     "GetDeploymentInstance" : {
@@ -912,12 +912,12 @@
         "documentation" : "<p>The specified on-premises instance name was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDeploymentInstanceResult",
       "asyncReturnType" : "GetDeploymentInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDeploymentInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDeploymentInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDeploymentInstanceRequest, GetDeploymentInstanceResult>",
+      "authenticated" : true,
       "methodName" : "getDeploymentInstance"
     },
     "GetOnPremisesInstance" : {
@@ -948,12 +948,12 @@
         "documentation" : "<p>The specified on-premises instance name was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetOnPremisesInstanceResult",
       "asyncReturnType" : "GetOnPremisesInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetOnPremisesInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetOnPremisesInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetOnPremisesInstanceRequest, GetOnPremisesInstanceResult>",
+      "authenticated" : true,
       "methodName" : "getOnPremisesInstance"
     },
     "ListApplicationRevisions" : {
@@ -1005,12 +1005,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListApplicationRevisionsResult",
       "asyncReturnType" : "ListApplicationRevisionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListApplicationRevisionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListApplicationRevisionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListApplicationRevisionsRequest, ListApplicationRevisionsResult>",
+      "authenticated" : true,
       "methodName" : "listApplicationRevisions"
     },
     "ListApplications" : {
@@ -1035,12 +1035,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListApplicationsResult",
       "asyncReturnType" : "ListApplicationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListApplicationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListApplicationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult>",
+      "authenticated" : true,
       "methodName" : "listApplications"
     },
     "ListDeploymentConfigs" : {
@@ -1065,12 +1065,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDeploymentConfigsResult",
       "asyncReturnType" : "ListDeploymentConfigsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDeploymentConfigsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDeploymentConfigsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDeploymentConfigsRequest, ListDeploymentConfigsResult>",
+      "authenticated" : true,
       "methodName" : "listDeploymentConfigs"
     },
     "ListDeploymentGroups" : {
@@ -1104,12 +1104,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDeploymentGroupsResult",
       "asyncReturnType" : "ListDeploymentGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDeploymentGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDeploymentGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDeploymentGroupsRequest, ListDeploymentGroupsResult>",
+      "authenticated" : true,
       "methodName" : "listDeploymentGroups"
     },
     "ListDeploymentInstances" : {
@@ -1149,12 +1149,12 @@
         "documentation" : "<p>The specified instance status does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDeploymentInstancesResult",
       "asyncReturnType" : "ListDeploymentInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDeploymentInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDeploymentInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDeploymentInstancesRequest, ListDeploymentInstancesResult>",
+      "authenticated" : true,
       "methodName" : "listDeploymentInstances"
     },
     "ListDeployments" : {
@@ -1203,12 +1203,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDeploymentsResult",
       "asyncReturnType" : "ListDeploymentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDeploymentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDeploymentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult>",
+      "authenticated" : true,
       "methodName" : "listDeployments"
     },
     "ListOnPremisesInstances" : {
@@ -1239,12 +1239,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListOnPremisesInstancesResult",
       "asyncReturnType" : "ListOnPremisesInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListOnPremisesInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListOnPremisesInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListOnPremisesInstancesRequest, ListOnPremisesInstancesResult>",
+      "authenticated" : true,
       "methodName" : "listOnPremisesInstances"
     },
     "RegisterApplicationRevision" : {
@@ -1281,12 +1281,12 @@
         "documentation" : "<p>The revision was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterApplicationRevisionRequest, Void>",
+      "authenticated" : true,
       "methodName" : "registerApplicationRevision"
     },
     "RegisterOnPremisesInstance" : {
@@ -1323,12 +1323,12 @@
         "documentation" : "<p>The IAM user ARN was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterOnPremisesInstanceRequest, Void>",
+      "authenticated" : true,
       "methodName" : "registerOnPremisesInstance"
     },
     "RemoveTagsFromOnPremisesInstances" : {
@@ -1365,12 +1365,12 @@
         "documentation" : "<p>The specified on-premises instance is not registered.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromOnPremisesInstancesRequest, Void>",
+      "authenticated" : true,
       "methodName" : "removeTagsFromOnPremisesInstances"
     },
     "StopDeployment" : {
@@ -1404,12 +1404,12 @@
         "documentation" : "<p>At least one of the deployment IDs was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "StopDeploymentResult",
       "asyncReturnType" : "StopDeploymentResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopDeploymentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopDeploymentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopDeploymentRequest, StopDeploymentResult>",
+      "authenticated" : true,
       "methodName" : "stopDeployment"
     },
     "UpdateApplication" : {
@@ -1440,12 +1440,12 @@
         "documentation" : "<p>The application does not exist with the applicable IAM user or AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, Void>",
+      "authenticated" : true,
       "methodName" : "updateApplication"
     },
     "UpdateDeploymentGroup" : {
@@ -1515,12 +1515,12 @@
         "documentation" : "<p>The maximum allowed number of triggers was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateDeploymentGroupResult",
       "asyncReturnType" : "UpdateDeploymentGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDeploymentGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDeploymentGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDeploymentGroupRequest, UpdateDeploymentGroupResult>",
+      "authenticated" : true,
       "methodName" : "updateDeploymentGroup"
     }
   },
@@ -1535,6 +1535,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the Amazon S3 bucket where the application revision is stored.</p>",
         "name" : "Bucket",
@@ -2095,6 +2096,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the instance.</p>",
         "name" : "InstancesSummary",
@@ -2199,8 +2201,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "InstanceSummary",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceSummary>",
-          "templateType" : "java.util.List<InstanceSummary>"
+          "templateType" : "java.util.List<InstanceSummary>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2392,8 +2394,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "InstanceSummary",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceSummary>",
-            "templateType" : "java.util.List<InstanceSummary>"
+            "templateType" : "java.util.List<InstanceSummary>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2472,6 +2474,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -2503,6 +2506,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Pending",
@@ -2555,6 +2559,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -3329,6 +3334,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique application ID.</p>",
         "name" : "ApplicationId",
@@ -3469,6 +3475,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Pending",
@@ -3509,6 +3516,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -3540,6 +3548,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the deployment group.</p>",
         "name" : "DeploymentGroupInfo",
@@ -3680,6 +3689,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -3711,6 +3721,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The on-premises instance tag filter key.</p>",
         "name" : "Key",
@@ -4061,6 +4072,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The application name.</p>",
         "name" : "ApplicationName",
@@ -4217,8 +4229,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4516,8 +4528,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4543,6 +4555,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4574,6 +4587,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "RevisionLocation",
@@ -4819,6 +4833,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Registered",
@@ -4859,6 +4874,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the application that corresponds to the revision.</p>",
         "name" : "ApplicationName",
@@ -5209,6 +5225,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5240,6 +5257,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5271,6 +5289,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "User",
@@ -5311,6 +5330,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique ID of a deployment.</p>",
         "name" : "DeploymentId",
@@ -5519,8 +5539,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "InstanceStatus",
@@ -5770,8 +5790,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "InstanceStatus",
@@ -5797,6 +5817,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -6046,6 +6067,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The deployment configuration ID.</p>",
         "name" : "DeploymentConfigId",
@@ -6501,6 +6523,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of application names.</p>",
         "name" : "Applications",
@@ -6605,8 +6628,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6851,8 +6874,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6878,6 +6901,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the deployments.</p>",
         "name" : "DeploymentsInfo",
@@ -6982,8 +7006,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "DeploymentInfo",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentInfo>",
-          "templateType" : "java.util.List<DeploymentInfo>"
+          "templateType" : "java.util.List<DeploymentInfo>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7123,8 +7147,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "DeploymentInfo",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentInfo>",
-            "templateType" : "java.util.List<DeploymentInfo>"
+            "templateType" : "java.util.List<DeploymentInfo>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7150,6 +7174,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of application revision:</p> <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application revision stored in GitHub.</li> </ul>",
         "name" : "RevisionType",
@@ -7500,6 +7525,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of a deployment configuration associated with the applicable IAM user or AWS account.</p>",
         "name" : "DeploymentConfigName",
@@ -7644,6 +7670,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the application.</p>",
         "name" : "Application",
@@ -7784,6 +7811,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7815,6 +7843,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "HOST_COUNT",
@@ -7855,6 +7884,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The start time of the time range.</p> <note>Specify null to leave the start time open-ended.</note>",
         "name" : "Start",
@@ -8100,6 +8130,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The minimum healthy instance value.</p>",
         "name" : "Value",
@@ -8345,6 +8376,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>",
         "name" : "Tags",
@@ -8449,8 +8481,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8567,8 +8599,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8712,8 +8744,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8831,8 +8863,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8858,6 +8890,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of locations that contain the matching revisions.</p>",
         "name" : "Revisions",
@@ -8962,8 +8995,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RevisionLocation",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>",
-          "templateType" : "java.util.List<RevisionLocation>"
+          "templateType" : "java.util.List<RevisionLocation>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9208,8 +9241,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RevisionLocation",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>",
-            "templateType" : "java.util.List<RevisionLocation>"
+            "templateType" : "java.util.List<RevisionLocation>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9235,6 +9268,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -9391,8 +9425,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9589,8 +9623,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9616,6 +9650,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -9865,6 +9900,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Auto Scaling group name.</p>",
         "name" : "Name",
@@ -10110,6 +10146,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the application that corresponds to the revision.</p>",
         "name" : "ApplicationName",
@@ -10359,6 +10396,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The application ID.</p>",
         "name" : "ApplicationId",
@@ -10814,6 +10852,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p> <p>Specified as account/repository.</p>",
         "name" : "Repository",
@@ -11059,6 +11098,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The application name.</p>",
         "name" : "ApplicationName",
@@ -11371,8 +11411,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "EC2TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-          "templateType" : "java.util.List<EC2TagFilter>"
+          "templateType" : "java.util.List<EC2TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11489,8 +11529,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-          "templateType" : "java.util.List<TagFilter>"
+          "templateType" : "java.util.List<TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11607,8 +11647,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AutoScalingGroup",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-          "templateType" : "java.util.List<AutoScalingGroup>"
+          "templateType" : "java.util.List<AutoScalingGroup>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11829,8 +11869,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TriggerConfig",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-          "templateType" : "java.util.List<TriggerConfig>"
+          "templateType" : "java.util.List<TriggerConfig>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12076,8 +12116,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-            "templateType" : "java.util.List<TagFilter>"
+            "templateType" : "java.util.List<TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12248,8 +12288,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TriggerConfig",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-            "templateType" : "java.util.List<TriggerConfig>"
+            "templateType" : "java.util.List<TriggerConfig>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12367,8 +12407,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AutoScalingGroup",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-            "templateType" : "java.util.List<AutoScalingGroup>"
+            "templateType" : "java.util.List<AutoScalingGroup>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12486,8 +12526,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "EC2TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-            "templateType" : "java.util.List<EC2TagFilter>"
+            "templateType" : "java.util.List<EC2TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12672,6 +12712,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Include",
@@ -12715,6 +12756,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "DEPLOYMENT_GROUP_MISSING",
@@ -12788,6 +12830,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -12819,6 +12862,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of deployment IDs, separated by spaces.</p>",
         "name" : "DeploymentIds",
@@ -12923,8 +12967,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13068,8 +13112,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13095,6 +13139,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the instance.</p>",
         "name" : "InstanceSummary",
@@ -13235,6 +13280,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -13266,6 +13312,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The tag key-value pairs to remove from the on-premises instances.</p>",
         "name" : "Tags",
@@ -13370,8 +13417,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13488,8 +13535,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13633,8 +13680,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13752,8 +13799,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13779,6 +13826,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The list of matching on-premises instance names.</p>",
         "name" : "InstanceNames",
@@ -13883,8 +13931,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14129,8 +14177,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14156,6 +14204,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14187,6 +14236,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -14331,6 +14381,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14362,6 +14413,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14393,6 +14445,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14424,6 +14477,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14455,6 +14509,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -14486,6 +14541,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The registration status of the on-premises instances:</p> <ul> <li>Deregistered: Include deregistered on-premises instances in the resulting list.</li> <li>Registered: Include registered on-premises instances in the resulting list.</li> </ul>",
         "name" : "RegistrationStatus",
@@ -14642,8 +14698,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-          "templateType" : "java.util.List<TagFilter>"
+          "templateType" : "java.util.List<TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14945,8 +15001,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-            "templateType" : "java.util.List<TagFilter>"
+            "templateType" : "java.util.List<TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14972,6 +15028,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -15232,8 +15289,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "EC2TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-          "templateType" : "java.util.List<EC2TagFilter>"
+          "templateType" : "java.util.List<EC2TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15350,8 +15407,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-          "templateType" : "java.util.List<TagFilter>"
+          "templateType" : "java.util.List<TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15468,8 +15525,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15638,8 +15695,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TriggerConfig",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-          "templateType" : "java.util.List<TriggerConfig>"
+          "templateType" : "java.util.List<TriggerConfig>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15836,8 +15893,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-            "templateType" : "java.util.List<TagFilter>"
+            "templateType" : "java.util.List<TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16008,8 +16065,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TriggerConfig",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-            "templateType" : "java.util.List<TriggerConfig>"
+            "templateType" : "java.util.List<TriggerConfig>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16127,8 +16184,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16246,8 +16303,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "EC2TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-            "templateType" : "java.util.List<EC2TagFilter>"
+            "templateType" : "java.util.List<EC2TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16379,6 +16436,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -16410,6 +16468,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -16441,6 +16500,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -16472,6 +16532,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique ID of a deployment.</p>",
         "name" : "DeploymentId",
@@ -16616,6 +16677,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique deployment ID.</p>",
         "name" : "DeploymentId",
@@ -16756,6 +16818,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "DeploymentStart",
@@ -16811,6 +16874,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -16842,6 +16906,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -17196,6 +17261,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -17227,6 +17293,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The associated error code:</p> <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified script was not found in the specified location.</li> <li>ScriptNotExecutable: The specified script is not a recognized executable file type.</li> <li>ScriptTimedOut: The specified script did not finish running in the specified time period.</li> <li>ScriptFailed: The specified script failed to run as expected.</li> <li>UnknownError: The specified script did not run for an unknown reason.</li> </ul>",
         "name" : "ErrorCode",
@@ -17682,6 +17749,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation was successful.</li> </ul>",
         "name" : "Status",
@@ -17927,6 +17995,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -17958,6 +18027,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An identifier returned from the previous list deployment configurations call. It can be used to return the next set of deployment configurations in the list. </p>",
         "name" : "NextToken",
@@ -18102,6 +18172,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the applications.</p>",
         "name" : "ApplicationsInfo",
@@ -18206,8 +18277,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ApplicationInfo",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationInfo>",
-          "templateType" : "java.util.List<ApplicationInfo>"
+          "templateType" : "java.util.List<ApplicationInfo>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18347,8 +18418,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ApplicationInfo",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationInfo>",
-            "templateType" : "java.util.List<ApplicationInfo>"
+            "templateType" : "java.util.List<ApplicationInfo>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18374,6 +18445,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the on-premises instances.</p>",
         "name" : "InstanceInfos",
@@ -18478,8 +18550,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "InstanceInfo",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInfo>",
-          "templateType" : "java.util.List<InstanceInfo>"
+          "templateType" : "java.util.List<InstanceInfo>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18619,8 +18691,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "InstanceInfo",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInfo>",
-            "templateType" : "java.util.List<InstanceInfo>"
+            "templateType" : "java.util.List<InstanceInfo>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18646,6 +18718,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique deployment configuration ID.</p>",
         "name" : "DeploymentConfigId",
@@ -18786,6 +18859,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Ascending",
@@ -18826,6 +18900,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -18857,6 +18932,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of a deployment configuration associated with the applicable IAM user or AWS account.</p>",
         "name" : "DeploymentConfigName",
@@ -19001,6 +19077,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The current name of the application you want to change.</p>",
         "name" : "ApplicationName",
@@ -19250,6 +19327,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -19281,6 +19359,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -19312,6 +19391,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of deployment IDs.</p>",
         "name" : "Deployments",
@@ -19416,8 +19496,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19662,8 +19742,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19689,6 +19769,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The names of the on-premises instances about which to get information.</p>",
         "name" : "InstanceNames",
@@ -19793,8 +19874,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19938,8 +20019,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19965,6 +20046,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -19996,6 +20078,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application about which to get revision information.</p>",
         "name" : "ApplicationName",
@@ -20152,8 +20235,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RevisionLocation",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>",
-          "templateType" : "java.util.List<RevisionLocation>"
+          "templateType" : "java.util.List<RevisionLocation>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20350,8 +20433,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RevisionLocation",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>",
-            "templateType" : "java.util.List<RevisionLocation>"
+            "templateType" : "java.util.List<RevisionLocation>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20377,6 +20460,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The tag's key.</p>",
         "name" : "Key",
@@ -20622,6 +20706,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of application names separated by spaces.</p>",
         "name" : "ApplicationNames",
@@ -20726,8 +20811,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20871,8 +20956,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20898,6 +20983,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -20929,6 +21015,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -20960,6 +21047,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -20991,6 +21079,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -21135,6 +21224,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -21166,6 +21256,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -21197,6 +21288,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the on-premises instance about which to get information.</p>",
         "name" : "InstanceName",
@@ -21341,6 +21433,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -21372,6 +21465,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of instance IDs.</p>",
         "name" : "InstancesList",
@@ -21476,8 +21570,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21722,8 +21816,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21749,6 +21843,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -21998,6 +22093,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -22029,6 +22125,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -22060,6 +22157,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The deployment ID.</p>",
         "name" : "DeploymentId",
@@ -22372,8 +22470,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "LifecycleEvent",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleEvent>",
-          "templateType" : "java.util.List<LifecycleEvent>"
+          "templateType" : "java.util.List<LifecycleEvent>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleEvent>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22672,8 +22770,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "LifecycleEvent",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleEvent>",
-            "templateType" : "java.util.List<LifecycleEvent>"
+            "templateType" : "java.util.List<LifecycleEvent>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleEvent>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22752,6 +22850,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "KEY_ONLY",
@@ -22795,6 +22894,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the notification trigger.</p>",
         "name" : "TriggerName",
@@ -23003,8 +23103,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "TriggerEventType",
@@ -23144,8 +23244,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "TriggerEventType",
@@ -23277,6 +23377,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -23485,8 +23586,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "DeploymentStatus",
@@ -23734,8 +23835,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "DeploymentStatus",
@@ -23973,6 +24074,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Success",
@@ -24025,6 +24127,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the on-premises instance.</p>",
         "name" : "InstanceName",
@@ -24389,8 +24492,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24530,8 +24633,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24822,6 +24925,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the deployment configuration to create.</p>",
         "name" : "DeploymentConfigName",
@@ -25071,6 +25175,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -25102,6 +25207,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -25133,6 +25239,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the deployment groups.</p>",
         "name" : "DeploymentGroupsInfo",
@@ -25237,8 +25344,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "DeploymentGroupInfo",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>",
-          "templateType" : "java.util.List<DeploymentGroupInfo>"
+          "templateType" : "java.util.List<DeploymentGroupInfo>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25483,8 +25590,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "DeploymentGroupInfo",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>",
-            "templateType" : "java.util.List<DeploymentGroupInfo>"
+            "templateType" : "java.util.List<DeploymentGroupInfo>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25510,6 +25617,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Pending",
@@ -25562,6 +25670,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>",
         "name" : "HooksNotCleanedUp",
@@ -25666,8 +25775,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AutoScalingGroup",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-          "templateType" : "java.util.List<AutoScalingGroup>"
+          "templateType" : "java.util.List<AutoScalingGroup>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25807,8 +25916,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AutoScalingGroup",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-            "templateType" : "java.util.List<AutoScalingGroup>"
+            "templateType" : "java.util.List<AutoScalingGroup>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25834,6 +25943,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -25865,6 +25975,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique ID of a deployment.</p>",
         "name" : "DeploymentId",
@@ -26114,6 +26225,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique ID of a deployment.</p>",
         "name" : "DeploymentId",
@@ -26270,8 +26382,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26468,8 +26580,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26495,6 +26607,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -26526,6 +26639,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The error code:</p> <ul> <li>APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the application is deleted after the deployment is created but before it is started.</li> <li>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if the deployment group is deleted after the deployment is created but before it is started.</li> <li>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be successfully deployed within the instance health constraints specified.</li> <li>HEALTH_CONSTRAINTS_INVALID: The revision cannot be successfully deployed within the instance health constraints specified.</li> <li>IAM_ROLE_MISSING: The service role cannot be accessed.</li> <li>IAM_ROLE_PERMISSIONS: The service role does not have the correct permissions.</li> <li>INTERNAL_ERROR: There was an internal error.</li> <li>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.</li> <li>NO_INSTANCES: No instance were specified, or no instance can be found.</li> <li>OVER_MAX_INSTANCES: The maximum number of instance was exceeded.</li> <li>THROTTLED: The operation was throttled because the calling account exceeded the throttling limits of one or more AWS services.</li> <li>TIMEOUT: The deployment has timed out.</li> <li>REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision is deleted after the deployment is created but before it is started.</li> </ul>",
         "name" : "Code",
@@ -26771,6 +26885,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -26802,6 +26917,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.</p>",
         "name" : "DeploymentConfigsList",
@@ -26906,8 +27022,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27152,8 +27268,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27179,6 +27295,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -27210,6 +27327,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -27241,6 +27359,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The application name.</p>",
         "name" : "ApplicationName",
@@ -28746,6 +28865,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "RegisterTime",
@@ -28789,6 +28909,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -28820,6 +28941,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Tar",
@@ -28863,6 +28985,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The application name corresponding to the deployment group to update.</p>",
         "name" : "ApplicationName",
@@ -29175,8 +29298,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "EC2TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-          "templateType" : "java.util.List<EC2TagFilter>"
+          "templateType" : "java.util.List<EC2TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29293,8 +29416,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-          "templateType" : "java.util.List<TagFilter>"
+          "templateType" : "java.util.List<TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29411,8 +29534,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29581,8 +29704,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TriggerConfig",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-          "templateType" : "java.util.List<TriggerConfig>"
+          "templateType" : "java.util.List<TriggerConfig>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29779,8 +29902,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-            "templateType" : "java.util.List<TagFilter>"
+            "templateType" : "java.util.List<TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29898,8 +30021,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TriggerConfig",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-            "templateType" : "java.util.List<TriggerConfig>"
+            "templateType" : "java.util.List<TriggerConfig>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30017,8 +30140,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30189,8 +30312,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "EC2TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-            "templateType" : "java.util.List<EC2TagFilter>"
+            "templateType" : "java.util.List<EC2TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30375,6 +30498,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the on-premises instance to deregister.</p>",
         "name" : "InstanceName",
@@ -30519,6 +30643,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique deployment group ID.</p>",
         "name" : "DeploymentGroupId",
@@ -30659,6 +30784,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -30803,6 +30929,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -30834,6 +30961,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -30865,6 +30993,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -30896,6 +31025,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The number of instances in the deployment in a pending state.</p>",
         "name" : "Pending",
@@ -31456,6 +31586,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "KEY_ONLY",
@@ -31499,6 +31630,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -31530,6 +31662,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the deployment.</p>",
         "name" : "DeploymentInfo",
@@ -31670,6 +31803,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -31701,6 +31835,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -31732,6 +31867,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the on-premises instance to register.</p>",
         "name" : "InstanceName",
@@ -31981,6 +32117,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -32012,6 +32149,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the deployment configuration.</p>",
         "name" : "DeploymentConfigInfo",
@@ -32152,6 +32290,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A deployment ID associated with the applicable IAM user or AWS account.</p>",
         "name" : "DeploymentId",
@@ -32296,6 +32435,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>",
         "name" : "HooksNotCleanedUp",
@@ -32400,8 +32540,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AutoScalingGroup",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-          "templateType" : "java.util.List<AutoScalingGroup>"
+          "templateType" : "java.util.List<AutoScalingGroup>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32541,8 +32681,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AutoScalingGroup",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-            "templateType" : "java.util.List<AutoScalingGroup>"
+            "templateType" : "java.util.List<AutoScalingGroup>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32568,6 +32708,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -32599,6 +32740,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -32630,6 +32772,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Created",
@@ -32682,6 +32825,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -32713,6 +32857,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -32744,6 +32889,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -32775,6 +32921,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "S3",
@@ -32815,6 +32962,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>",
         "name" : "ApplicationName",
@@ -33484,6 +33632,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -33515,6 +33664,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A comment about the revision.</p>",
         "name" : "Description",
@@ -33671,8 +33821,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -34180,8 +34330,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34207,6 +34357,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.</p>",
         "name" : "NextToken",
@@ -34351,6 +34502,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -34382,6 +34534,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the application that corresponds to the revisions.</p>",
         "name" : "ApplicationName",
@@ -34590,8 +34743,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RevisionInfo",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionInfo>",
-          "templateType" : "java.util.List<RevisionInfo>"
+          "templateType" : "java.util.List<RevisionInfo>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -34837,8 +34990,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RevisionInfo",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionInfo>",
-            "templateType" : "java.util.List<RevisionInfo>"
+            "templateType" : "java.util.List<RevisionInfo>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34864,6 +35017,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -34895,6 +35049,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -34926,6 +35081,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -34957,6 +35113,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -34988,6 +35145,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -35019,6 +35177,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the on-premises instance.</p>",
         "name" : "InstanceInfo",
@@ -35159,6 +35318,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.</p>",
         "name" : "LifecycleEventName",
@@ -35719,6 +35879,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The tag filter key.</p>",
         "name" : "Key",
@@ -36069,6 +36230,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {

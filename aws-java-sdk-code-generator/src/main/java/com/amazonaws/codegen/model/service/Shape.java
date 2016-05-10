@@ -40,6 +40,8 @@ public class Shape {
 
     private boolean streaming;
 
+    private boolean wrapper;
+
     private Member listMember;
 
     private Member mapKeyType;
@@ -191,6 +193,14 @@ public class Shape {
 
     public void setStreaming(boolean streaming) {
         this.streaming = streaming;
+    }
+
+    public boolean isWrapper() {
+        return wrapper;
+    }
+
+    public void setWrapper(boolean wrapper) {
+        this.wrapper = wrapper;
     }
 
     public ErrorTrait getErrorTrait() {

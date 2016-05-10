@@ -20,10 +20,10 @@
     "jsonVersion" : null,
     "endpointPrefix" : "elastictranscoder",
     "signingName" : "elastictranscoder",
+    "xmlProtocol" : false,
     "serviceName" : "Amazon Elastic Transcoder",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -67,12 +67,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "cancelJob",
-      "authenticated" : true,
       "syncReturnType" : "CancelJobResult",
       "asyncReturnType" : "CancelJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult>",
+      "authenticated" : true
     },
     "CreateJob" : {
       "documentation" : "<p> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created. </p> <p>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</p>",
@@ -112,12 +112,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createJob",
-      "authenticated" : true,
       "syncReturnType" : "CreateJobResult",
       "asyncReturnType" : "CreateJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult>",
+      "authenticated" : true
     },
     "CreatePipeline" : {
       "documentation" : "<p>The CreatePipeline operation creates a pipeline with settings that you specify.</p>",
@@ -157,12 +157,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createPipeline",
-      "authenticated" : true,
       "syncReturnType" : "CreatePipelineResult",
       "asyncReturnType" : "CreatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>",
+      "authenticated" : true
     },
     "CreatePreset" : {
       "documentation" : "<p>The CreatePreset operation creates a preset with settings that you specify.</p> <important>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</important> <p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i>.</p>",
@@ -199,12 +199,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createPreset",
-      "authenticated" : true,
       "syncReturnType" : "CreatePresetResult",
       "asyncReturnType" : "CreatePresetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePresetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePresetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePresetRequest, CreatePresetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePresetRequest, CreatePresetResult>",
+      "authenticated" : true
     },
     "DeletePipeline" : {
       "documentation" : "<p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code> returns an error. </p>",
@@ -244,12 +244,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deletePipeline",
-      "authenticated" : true,
       "syncReturnType" : "DeletePipelineResult",
       "asyncReturnType" : "DeletePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeletePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeletePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult>",
+      "authenticated" : true
     },
     "DeletePreset" : {
       "documentation" : "<p>The DeletePreset operation removes a preset that you've added in an AWS region.</p> <note> <p>You can't delete the default presets that are included with Elastic Transcoder.</p> </note>",
@@ -286,12 +286,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deletePreset",
-      "authenticated" : true,
       "syncReturnType" : "DeletePresetResult",
       "asyncReturnType" : "DeletePresetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeletePresetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeletePresetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePresetRequest, DeletePresetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePresetRequest, DeletePresetResult>",
+      "authenticated" : true
     },
     "ListJobsByPipeline" : {
       "documentation" : "<p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</p>",
@@ -328,12 +328,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listJobsByPipeline",
-      "authenticated" : true,
       "syncReturnType" : "ListJobsByPipelineResult",
       "asyncReturnType" : "ListJobsByPipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListJobsByPipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListJobsByPipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByPipelineRequest, ListJobsByPipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByPipelineRequest, ListJobsByPipelineResult>",
+      "authenticated" : true
     },
     "ListJobsByStatus" : {
       "documentation" : "<p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria.</p>",
@@ -370,12 +370,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listJobsByStatus",
-      "authenticated" : true,
       "syncReturnType" : "ListJobsByStatusResult",
       "asyncReturnType" : "ListJobsByStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListJobsByStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListJobsByStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByStatusRequest, ListJobsByStatusResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByStatusRequest, ListJobsByStatusResult>",
+      "authenticated" : true
     },
     "ListPipelines" : {
       "documentation" : "<p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p>",
@@ -409,12 +409,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listPipelines",
-      "authenticated" : true,
       "syncReturnType" : "ListPipelinesResult",
       "asyncReturnType" : "ListPipelinesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPipelinesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPipelinesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>",
+      "authenticated" : true
     },
     "ListPresets" : {
       "documentation" : "<p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.</p>",
@@ -448,12 +448,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listPresets",
-      "authenticated" : true,
       "syncReturnType" : "ListPresetsResult",
       "asyncReturnType" : "ListPresetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPresetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPresetsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPresetsRequest, ListPresetsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPresetsRequest, ListPresetsResult>",
+      "authenticated" : true
     },
     "ReadJob" : {
       "documentation" : "<p>The ReadJob operation returns detailed information about a job.</p>",
@@ -490,12 +490,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "readJob",
-      "authenticated" : true,
       "syncReturnType" : "ReadJobResult",
       "asyncReturnType" : "ReadJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReadJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReadJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadJobRequest, ReadJobResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadJobRequest, ReadJobResult>",
+      "authenticated" : true
     },
     "ReadPipeline" : {
       "documentation" : "<p>The ReadPipeline operation gets detailed information about a pipeline.</p>",
@@ -532,12 +532,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "readPipeline",
-      "authenticated" : true,
       "syncReturnType" : "ReadPipelineResult",
       "asyncReturnType" : "ReadPipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReadPipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReadPipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPipelineRequest, ReadPipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPipelineRequest, ReadPipelineResult>",
+      "authenticated" : true
     },
     "ReadPreset" : {
       "documentation" : "<p>The ReadPreset operation gets detailed information about a preset.</p>",
@@ -574,12 +574,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "readPreset",
-      "authenticated" : true,
       "syncReturnType" : "ReadPresetResult",
       "asyncReturnType" : "ReadPresetResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReadPresetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReadPresetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPresetRequest, ReadPresetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPresetRequest, ReadPresetResult>",
+      "authenticated" : true
     },
     "TestRole" : {
       "documentation" : "<p>The TestRole operation tests the IAM role used to create the pipeline.</p> <p>The <code>TestRole</code> action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you specify.</p>",
@@ -616,12 +616,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "testRole",
-      "authenticated" : true,
       "syncReturnType" : "TestRoleResult",
       "asyncReturnType" : "TestRoleResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestRoleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestRoleResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestRoleRequest, TestRoleResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestRoleRequest, TestRoleResult>",
+      "authenticated" : true
     },
     "UpdatePipeline" : {
       "documentation" : "<p> Use the <code>UpdatePipeline</code> operation to update settings for a pipeline. <important>When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings. </important> </p>",
@@ -661,12 +661,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updatePipeline",
-      "authenticated" : true,
       "syncReturnType" : "UpdatePipelineResult",
       "asyncReturnType" : "UpdatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult>",
+      "authenticated" : true
     },
     "UpdatePipelineNotifications" : {
       "documentation" : "<p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>",
@@ -706,12 +706,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updatePipelineNotifications",
-      "authenticated" : true,
       "syncReturnType" : "UpdatePipelineNotificationsResult",
       "asyncReturnType" : "UpdatePipelineNotificationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineNotificationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineNotificationsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResult>",
+      "authenticated" : true
     },
     "UpdatePipelineStatus" : {
       "documentation" : "<p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.</p> <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a> request. </p>",
@@ -751,12 +751,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updatePipelineStatus",
-      "authenticated" : true,
       "syncReturnType" : "UpdatePipelineStatusResult",
       "asyncReturnType" : "UpdatePipelineStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineStatusRequest, UpdatePipelineStatusResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineStatusRequest, UpdatePipelineStatusResult>",
+      "authenticated" : true
     }
   },
   "shapes" : {
@@ -770,6 +770,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>You can only choose an audio profile when you specify AAC for the value of Audio:Codec.</p> <p>Specify the AAC profile for the output file. Elastic Transcoder supports the following profiles:</p> <ul> <li> <code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder will select the profile based on the bit rate selected for the output file.</li> <li> <code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64 kbps.</li> <li> <code>HE-AAC</code>: Not supported on some older players and devices. Use for bit rates between 40 and 80 kbps.</li> <li> <code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates less than 48 kbps.</li> </ul> <p>All outputs in a <code>Smooth</code> playlist must have the same value for <code>Profile</code>.</p> <note><p>If you created any presets before AAC profiles were added, Elastic Transcoder automatically updated your presets to use AAC-LC. You can change the value as required.</p></note>",
         "name" : "Profile",
@@ -1225,6 +1226,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the preset for which you want to get detailed information.</p>",
         "name" : "Id",
@@ -1369,6 +1371,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the pipeline to read.</p>",
         "name" : "Id",
@@ -1513,6 +1516,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A section of the response body that provides information about the preset.</p>",
         "name" : "Preset",
@@ -1653,6 +1657,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The format you specify determines whether Elastic Transcoder generates an embedded or sidecar caption for this output.</p> <ul> <li> <p><b>Valid Embedded Caption Formats:</b></p> <ul> <li><p><b>for FLAC</b>: None</p></li> <li><p><b>For MP3</b>: None</p></li> <li><p><b>For MP4</b>: mov-text</p></li> <li><p><b>For MPEG-TS</b>: None</p></li> <li><p><b>For ogg</b>: None</p></li> <li><p><b>For webm</b>: None</p></li> </ul> </li> <li> <p><b>Valid Sidecar Caption Formats:</b> Elastic Transcoder supports dfxp (first div element only), scc, srt, and webvtt. If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.</p> <ul> <li><p><b>For FMP4</b>: dfxp</p></li> <li><p><b>Non-FMP4 outputs</b>: All sidecar types</p></li> </ul> <p><code>fmp4</code> captions have an extension of <code>.ismt</code></p> </li> </ul>",
         "name" : "Format",
@@ -2003,6 +2008,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>",
         "name" : "Progressing",
@@ -2458,6 +2464,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -2489,6 +2496,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The detected width of the input file, in pixels.</p>",
         "name" : "Width",
@@ -3049,6 +3057,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p> A section of the response body that provides information about the preset that is created. </p>",
         "name" : "Preset",
@@ -3294,6 +3303,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -3325,6 +3335,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Settings that determine when a clip begins and how long it lasts.</p>",
         "name" : "TimeSpan",
@@ -3465,6 +3476,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the job for which you want to get detailed information.</p>",
         "name" : "Id",
@@ -3609,6 +3621,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A section of the response body that provides information about the pipeline.</p>",
         "name" : "Pipeline",
@@ -3749,6 +3762,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -3780,6 +3794,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the pipeline that you want to delete.</p>",
         "name" : "Id",
@@ -3924,6 +3939,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the pipeline that you want to update.</p>",
         "name" : "Id",
@@ -4803,6 +4819,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of <code>Preset</code> objects.</p>",
         "name" : "Presets",
@@ -5180,6 +5197,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>, <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.</p>",
         "name" : "Codec",
@@ -5845,6 +5863,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A policy that determines how Elastic Transcoder will handle the existence of multiple album artwork files.</p> <p> <ul> <li> <code>Replace:</code> The specified album art will replace any existing album art.</li> <li> <code>Prepend:</code> The specified album art will be placed in front of any existing album art.</li> <li> <code>Append:</code> The specified album art will be placed after any existing album art.</li> <li> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder will use that artwork for the output. If the original input does not contain artwork, Elastic Transcoder will use the specified album art file.</li> </ul> </p>",
         "name" : "MergePolicy",
@@ -6222,6 +6241,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>",
         "name" : "Ascending",
@@ -6471,6 +6491,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>",
         "name" : "Status",
@@ -6825,6 +6846,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding. The settings are in the preset specified by Preset for the current output. In that preset, the value of Watermarks Id tells Elastic Transcoder which settings to use.</p>",
         "name" : "PresetWatermarkId",
@@ -7175,6 +7197,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Pipeline",
@@ -7552,6 +7575,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>",
         "name" : "SubmitTimeMillis",
@@ -7902,6 +7926,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the job that you want to cancel. </p> <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>",
         "name" : "Id",
@@ -8046,6 +8071,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the file to be used as album art. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>PipelineId</code>; the <code>InputBucket</code> object in that pipeline identifies the bucket.</p> <p>If the file name includes a prefix, for example, <code>cooking/pie.jpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>",
         "name" : "InputKey",
@@ -8816,6 +8842,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the pipeline to update.</p>",
         "name" : "Id",
@@ -9065,6 +9092,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of <code>Job</code> objects that are in the specified pipeline.</p>",
         "name" : "Jobs",
@@ -9442,6 +9470,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The specific server-side encryption mode that you want Elastic Transcoder to use when decrypting your input files or encrypting your output files. Elastic Transcoder supports the following options:</p> <ul> <li><p><b>S3:</b> Amazon S3 creates and manages the keys used for encrypting your files.</p></li> <li><p><b>S3-AWS-KMS:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys that are used for encrypting your files. If you specify <code>S3-AWS-KMS</code> and you don't want to use the default key, you must add the AWS-KMS key that you want to use to your pipeline.</p></li> <li><p><b>AES-CBC-PKCS7:</b> A padded cipher-block mode of operation originally used for HLS files.</p></li> <li><p><b>AES-CTR:</b> AES Counter Mode.</p></li> <li><p><b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning that a file, key, or initialization vector that has been tampered with will fail the decryption process.</p></li> </ul> <p>For all three AES options, you must provide the following settings, which must be base64-encoded:</p> <ul> <li><p><b>Key</b></p></li> <li><p><b>Key MD5</b></p></li> <li><p><b>Initialization Vector</b></p></li> </ul> <important><p>For the AES modes, your private encryption keys and your unencrypted data are never stored by AWS; therefore, it is important that you safely manage your encryption keys. If you lose them, you won't be able to unencrypt your data.</p></important>",
         "name" : "Mode",
@@ -9897,6 +9926,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A section of the response body that provides information about the pipeline that is created.</p>",
         "name" : "Pipeline",
@@ -10274,6 +10304,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10308,6 +10339,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>",
         "name" : "Ascending",
@@ -10557,6 +10589,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p> The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true: <ul> <li>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</li> <li>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</li> <li>You do not want to specify the permissions that Elastic Transcoder grants to the files. </li> <li>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</li> </ul> If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>",
         "name" : "Bucket",
@@ -11039,6 +11072,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A section of the response body that provides information about the job.</p>",
         "name" : "Job",
@@ -11179,6 +11213,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name that you want Elastic Transcoder to assign to the master playlist, for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all <code>Name</code> objects must be unique.</p> <p><b>Note</b>: Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two extensions.</p>",
         "name" : "Name",
@@ -12081,6 +12116,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p> The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <code>OutputBucket</code> object in the pipeline that is specified by the pipeline ID. If a file with the specified name already exists in the output bucket, the job fails. </p>",
         "name" : "Key",
@@ -13535,6 +13571,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p> <ul> <li><p><b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded captions for that language.</p></li> <li><p><b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions into outputs. If captions for a language are embedded in the input file and also appear in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder omits all sidecar captions from the output files.</p></li> <li><p><b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you specify in <code>CaptionSources</code>.</p></li> </ul> <p><code>MergePolicy</code> cannot be null.</p>",
         "name" : "MergePolicy",
@@ -14149,6 +14186,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A sequential counter, starting with 1, that identifies an output among the outputs from the current job. In the Output syntax, this value is always 1.</p>",
         "name" : "Id",
@@ -16653,6 +16691,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of <code>Pipeline</code> objects.</p>",
         "name" : "Pipelines",
@@ -17030,6 +17069,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p> The identifier of the pipeline for which you want to change notification settings. </p>",
         "name" : "Id",
@@ -17279,6 +17319,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>",
         "name" : "Role",
@@ -17870,6 +17911,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>",
         "name" : "Id",
@@ -18850,6 +18892,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The code of the cross-regional warning.</p>",
         "name" : "Code",
@@ -19095,6 +19138,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name that you want Elastic Transcoder to assign to the master playlist, for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all <code>Name</code> objects must be unique.</p> <p><b>Note:</b> Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two extensions.</p>",
         "name" : "Name",
@@ -19787,6 +19831,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier of the preset for which you want to get detailed information.</p>",
         "name" : "Id",
@@ -19931,6 +19976,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The identifier for the pipeline. You use this value to identify the pipeline in which you want to perform a variety of operations, such as creating a job or a preset. </p>",
         "name" : "Id",
@@ -21121,6 +21167,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40 characters.</p>",
         "name" : "Name",
@@ -22000,6 +22047,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A section of the response body that provides information about the pipeline.</p>",
         "name" : "Pipeline",
@@ -22377,6 +22425,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -22411,6 +22460,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of DRM, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>",
         "name" : "Format",
@@ -23076,6 +23126,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -23107,6 +23158,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>. </p> <p>You specify whether you want Elastic Transcoder to create thumbnails when you create a job.</p>",
         "name" : "Format",
@@ -23982,6 +24034,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of value that appears in the Grantee object: <ul> <li> <code>Canonical</code>: Either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution. <important>A canonical user ID is not the same as an AWS account number.</important> </li> <li> <code>Email</code>: The registered email address of an AWS account.</li> <li> <code>Group</code>: One of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</li> </ul> </p>",
         "name" : "GranteeType",
@@ -24464,6 +24517,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -24495,6 +24549,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>",
         "name" : "Name",
@@ -25164,6 +25219,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p> The ID of the pipeline for which you want to get job information. </p>",
         "name" : "PipelineId",
@@ -25518,6 +25574,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -25552,6 +25609,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -25583,6 +25641,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p> The name of the file to transcode. Elsewhere in the body of the JSON block is the the ID of the pipeline to use for processing the job. The <code>InputBucket</code> object in that pipeline tells Elastic Transcoder which Amazon S3 bucket to get the file from. </p> <p>If the file name includes a prefix, such as <code>cooking/lasagna.mpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>",
         "name" : "Key",
@@ -26458,6 +26517,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p> A section of the response body that provides information about the job that is created. </p>",
         "name" : "Job",
@@ -26598,6 +26658,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The place in the input file where you want a clip to start. The format can be either HH:mm:ss.SSS (maximum value: 23:59:59.999; SSS is thousandths of a second) or sssss.SSS (maximum value: 86399.999). If you don't specify a value, Elastic Transcoder starts at the beginning of the input file.</p>",
         "name" : "StartTime",
@@ -26843,6 +26904,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A section of the response body that provides information about the pipeline.</p>",
         "name" : "Pipeline",
@@ -26983,6 +27045,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p> The identifier that Elastic Transcoder assigned to the job. You use this value to get settings for the job or to delete the job. </p>",
         "name" : "Id",
@@ -28571,6 +28634,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the sidecar caption file that you want Elastic Transcoder to include in the output file.</p>",
         "name" : "Key",
@@ -29131,6 +29195,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An array of <code>Job</code> objects that have the specified status.</p>",
         "name" : "Jobs",
@@ -29508,6 +29573,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -29539,6 +29605,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>, <code>mpeg2</code>, and <code>vp8</code>. You can only specify <code>vp8</code> when the container type is <code>webm</code>, <code>gif</code> when the container type is <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.</p>",
         "name" : "Codec",
@@ -31415,6 +31482,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>",
         "name" : "PipelineId",
@@ -32587,6 +32655,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>",
         "name" : "Success",
@@ -32964,6 +33033,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40 characters long.",
         "name" : "Id",
@@ -34049,6 +34119,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The content protection method for your output. The only valid value is: <code>aes-128</code>.</p> <p>This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>",
         "name" : "Method",

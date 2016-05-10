@@ -33,9 +33,13 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * An array of strings, where each string represents the Amazon Resource
      * Name (ARN) of a VTL device.
      * </p>
-     * <note>All of the specified VTL devices must be from the same gateway. If
-     * no VTL devices are specified, the result will contain all devices on the
-     * specified gateway.</note>
+     * <note>
+     * <p>
+     * All of the specified VTL devices must be from the same gateway. If no VTL
+     * devices are specified, the result will contain all devices on the
+     * specified gateway.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> vTLDeviceARNs;
     /**
@@ -85,15 +89,21 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * An array of strings, where each string represents the Amazon Resource
      * Name (ARN) of a VTL device.
      * </p>
-     * <note>All of the specified VTL devices must be from the same gateway. If
-     * no VTL devices are specified, the result will contain all devices on the
-     * specified gateway.</note>
+     * <note>
+     * <p>
+     * All of the specified VTL devices must be from the same gateway. If no VTL
+     * devices are specified, the result will contain all devices on the
+     * specified gateway.
+     * </p>
+     * </note>
      * 
      * @return An array of strings, where each string represents the Amazon
-     *         Resource Name (ARN) of a VTL device.</p> <note>All of the
-     *         specified VTL devices must be from the same gateway. If no VTL
-     *         devices are specified, the result will contain all devices on the
-     *         specified gateway.
+     *         Resource Name (ARN) of a VTL device.</p> <note>
+     *         <p>
+     *         All of the specified VTL devices must be from the same gateway.
+     *         If no VTL devices are specified, the result will contain all
+     *         devices on the specified gateway.
+     *         </p>
      */
 
     public java.util.List<String> getVTLDeviceARNs() {
@@ -108,16 +118,22 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * An array of strings, where each string represents the Amazon Resource
      * Name (ARN) of a VTL device.
      * </p>
-     * <note>All of the specified VTL devices must be from the same gateway. If
-     * no VTL devices are specified, the result will contain all devices on the
-     * specified gateway.</note>
+     * <note>
+     * <p>
+     * All of the specified VTL devices must be from the same gateway. If no VTL
+     * devices are specified, the result will contain all devices on the
+     * specified gateway.
+     * </p>
+     * </note>
      * 
      * @param vTLDeviceARNs
      *        An array of strings, where each string represents the Amazon
-     *        Resource Name (ARN) of a VTL device.</p> <note>All of the
-     *        specified VTL devices must be from the same gateway. If no VTL
-     *        devices are specified, the result will contain all devices on the
-     *        specified gateway.
+     *        Resource Name (ARN) of a VTL device.</p> <note>
+     *        <p>
+     *        All of the specified VTL devices must be from the same gateway. If
+     *        no VTL devices are specified, the result will contain all devices
+     *        on the specified gateway.
+     *        </p>
      */
 
     public void setVTLDeviceARNs(java.util.Collection<String> vTLDeviceARNs) {
@@ -135,9 +151,13 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * An array of strings, where each string represents the Amazon Resource
      * Name (ARN) of a VTL device.
      * </p>
-     * <note>All of the specified VTL devices must be from the same gateway. If
-     * no VTL devices are specified, the result will contain all devices on the
-     * specified gateway.</note>
+     * <note>
+     * <p>
+     * All of the specified VTL devices must be from the same gateway. If no VTL
+     * devices are specified, the result will contain all devices on the
+     * specified gateway.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setVTLDeviceARNs(java.util.Collection)} or
@@ -147,10 +167,12 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * 
      * @param vTLDeviceARNs
      *        An array of strings, where each string represents the Amazon
-     *        Resource Name (ARN) of a VTL device.</p> <note>All of the
-     *        specified VTL devices must be from the same gateway. If no VTL
-     *        devices are specified, the result will contain all devices on the
-     *        specified gateway.
+     *        Resource Name (ARN) of a VTL device.</p> <note>
+     *        <p>
+     *        All of the specified VTL devices must be from the same gateway. If
+     *        no VTL devices are specified, the result will contain all devices
+     *        on the specified gateway.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -171,16 +193,22 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * An array of strings, where each string represents the Amazon Resource
      * Name (ARN) of a VTL device.
      * </p>
-     * <note>All of the specified VTL devices must be from the same gateway. If
-     * no VTL devices are specified, the result will contain all devices on the
-     * specified gateway.</note>
+     * <note>
+     * <p>
+     * All of the specified VTL devices must be from the same gateway. If no VTL
+     * devices are specified, the result will contain all devices on the
+     * specified gateway.
+     * </p>
+     * </note>
      * 
      * @param vTLDeviceARNs
      *        An array of strings, where each string represents the Amazon
-     *        Resource Name (ARN) of a VTL device.</p> <note>All of the
-     *        specified VTL devices must be from the same gateway. If no VTL
-     *        devices are specified, the result will contain all devices on the
-     *        specified gateway.
+     *        Resource Name (ARN) of a VTL device.</p> <note>
+     *        <p>
+     *        All of the specified VTL devices must be from the same gateway. If
+     *        no VTL devices are specified, the result will contain all devices
+     *        on the specified gateway.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

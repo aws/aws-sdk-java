@@ -31,6 +31,7 @@ import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.S3ResponseMetadata;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Abstract HTTP response handler for Amazon S3 responses. Provides common
@@ -109,7 +110,7 @@ public abstract class AbstractS3ResponseHandler<T>
     protected void populateObjectMetadata(HttpResponse response, ObjectMetadata metadata) {
         for (Entry<String, String> header : response.getHeaders().entrySet()) {
             String key = header.getKey();
-            if (key.regionMatches(true, 0, Headers.S3_USER_METADATA_PREFIX, 0, Headers.S3_USER_METADATA_PREFIX.length())) {
+            if (StringUtils.beginsWithIgnoreCase(key, Headers.S3_USER_METADATA_PREFIX)) {
                 key = key.substring(Headers.S3_USER_METADATA_PREFIX.length());
                 metadata.addUserMetadata(key, header.getValue());
             } else if (ignoredHeaders.contains(key)) {

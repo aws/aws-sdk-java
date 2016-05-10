@@ -1,1042 +1,1121 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerWorkflowType(RegisterWorkflowTypeRequest) RegisterWorkflowType operation}.
- * <p>
- * Registers a new <i>workflow type</i> and its configuration settings in
- * the specified domain.
- * </p>
- * <p>
- * The retention period for the workflow history is set by the
- * RegisterDomain action.
- * </p>
- * <p>
- * <b>IMPORTANT:</b>If the type already exists, then a TypeAlreadyExists
- * fault is returned. You cannot change the configuration settings of a
- * workflow type once it is registered and it must be registered as a new
- * version.
- * </p>
- * <p>
- * <b>Access Control</b>
- * </p>
- * <p>
- * You can use IAM policies to control this action's access to Amazon SWF
- * resources as follows:
- * </p>
  * 
- * <ul>
- * <li>Use a <code>Resource</code> element with the domain name to limit
- * the action to only specified domains.</li>
- * <li>Use an <code>Action</code> element to allow or deny permission to
- * call this action.</li>
- * <li>Constrain the following parameters by using a
- * <code>Condition</code> element with the appropriate keys.
- * <ul>
- * <li> <code>defaultTaskList.name</code> : String constraint. The key
- * is <code>swf:defaultTaskList.name</code> .</li>
- * <li> <code>name</code> : String constraint. The key is
- * <code>swf:name</code> .</li>
- * <li> <code>version</code> : String constraint. The key is
- * <code>swf:version</code> .</li>
- * 
- * </ul>
- * </li>
- * 
- * </ul>
- * <p>
- * If the caller does not have sufficient permissions to invoke the
- * action, or the parameter values fall outside the specified
- * constraints, the action fails. The associated event attribute's
- * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
- * details and example IAM policies, see
- * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
- * .
- * </p>
- *
- * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerWorkflowType(RegisterWorkflowTypeRequest)
  */
-public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
-     * The name of the domain in which to register the workflow type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * The name of the domain in which to register the workflow type.
+     * </p>
      */
     private String domain;
-
     /**
-     * The name of the workflow type. <p>The specified string must not start
-     * or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string "arn".
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * The name of the workflow type.
+     * </p>
+     * <p>
+     * The specified string must not start or end with whitespace. It must not
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * </p>
      */
     private String name;
-
     /**
-     * The version of the workflow type. <note>The workflow type consists of
-     * the name and version, the combination of which must be unique within
-     * the domain. To get a list of all currently registered workflow types,
-     * use the <a>ListWorkflowTypes</a> action.</note> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string "arn".
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * The version of the workflow type.
+     * </p>
+     * <note>The workflow type consists of the name and version, the combination
+     * of which must be unique within the domain. To get a list of all currently
+     * registered workflow types, use the <a>ListWorkflowTypes</a>
+     * action.</note>
+     * <p>
+     * The specified string must not start or end with whitespace. It must not
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * </p>
      */
     private String version;
-
     /**
-     * Textual description of the workflow type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
+     * Textual description of the workflow type.
+     * </p>
      */
     private String description;
-
     /**
-     * If set, specifies the default maximum duration of decision tasks for
-     * this workflow type. This default can be overridden when starting a
-     * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> decision. <p>The duration
-     * is specified in seconds; an integer greater than or equal to 0. The
-     * value "NONE" can be used to specify unlimited duration.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8<br/>
+     * If set, specifies the default maximum duration of decision tasks for this
+     * workflow type. This default can be overridden when starting a workflow
+     * execution using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * <p>
+     * The duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
+     * </p>
      */
     private String defaultTaskStartToCloseTimeout;
-
     /**
-     * If set, specifies the default maximum duration for executions of this
-     * workflow type. You can override this default when starting an
-     * execution through the <a>StartWorkflowExecution</a> action or
-     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. Unlike
-     * some of the other timeout parameters in Amazon SWF, you cannot specify
-     * a value of "NONE" for
-     * <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year
-     * max limit on the time that a workflow execution can run. Exceeding
-     * this limit will always cause the workflow execution to time out.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8<br/>
+     * If set, specifies the default maximum duration for executions of this
+     * workflow type. You can override this default when starting an execution
+     * through the <a>StartWorkflowExecution</a> action or
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * <p>
+     * The duration is specified in seconds; an integer greater than or equal to
+     * 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot
+     * specify a value of "NONE" for
+     * <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max
+     * limit on the time that a workflow execution can run. Exceeding this limit
+     * will always cause the workflow execution to time out.
+     * </p>
      */
     private String defaultExecutionStartToCloseTimeout;
-
     /**
+     * <p>
      * If set, specifies the default task list to use for scheduling decision
-     * tasks for executions of this workflow type. This default is used only
-     * if a task list is not provided when starting the execution through the
+     * tasks for executions of this workflow type. This default is used only if
+     * a task list is not provided when starting the execution through the
      * <a>StartWorkflowExecution</a> action or
      * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
      */
     private TaskList defaultTaskList;
-
     /**
+     * <p>
      * The default task priority to assign to the workflow type. If not
      * assigned, then "0" will be used. Valid values are integers that range
      * from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
-     * higher priority. <p>For more information about setting task priority,
-     * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
-     * Guide</i>.
+     * higher priority.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 11<br/>
+     * For more information about setting task priority, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html"
+     * >Setting Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * </p>
      */
     private String defaultTaskPriority;
-
     /**
+     * <p>
      * If set, specifies the default policy to use for the child workflow
      * executions when a workflow execution of this type is terminated, by
-     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
-     * to an expired timeout. This default can be overridden when starting a
-     * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> decision. <p>The
-     * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
-     * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
-     * request to cancel will be attempted for each child execution by
-     * recording a <code>WorkflowExecutionCancelRequested</code> event in its
-     * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li> </ul>
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due to
+     * an expired timeout. This default can be overridden when starting a
+     * workflow execution using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TERMINATE, REQUEST_CANCEL, ABANDON
+     * The supported child policies are:
+     * </p>
+     * <ul>
+     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
+     * child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
+     * up to the decider to take appropriate actions when it receives an
+     * execution history with this event.</li>
+     * <li><b>ABANDON:</b> no action will be taken. The child executions will
+     * continue to run.</li>
+     * </ul>
      */
     private String defaultChildPolicy;
-
     /**
-     * The ARN of the default IAM role to use when a workflow execution of
-     * this type invokes AWS Lambda functions. <p>This default can be
-     * overridden when starting a workflow execution using the
-     * <a>StartWorkflowExecution</a> action or the
+     * <p>
+     * The ARN of the default IAM role to use when a workflow execution of this
+     * type invokes AWS Lambda functions.
+     * </p>
+     * <p>
+     * This default can be overridden when starting a workflow execution using
+     * the <a>StartWorkflowExecution</a> action or the
      * <code>StartChildWorkflowExecution</code> and
      * <code>ContinueAsNewWorkflowExecution</code> decision.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1224<br/>
+     * </p>
      */
     private String defaultLambdaRole;
 
     /**
-     * The name of the domain in which to register the workflow type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @return The name of the domain in which to register the workflow type.
-     */
-    public String getDomain() {
-        return domain;
-    }
-    
-    /**
      * The name of the domain in which to register the workflow type.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param domain The name of the domain in which to register the workflow type.
+     * </p>
+     * 
+     * @param domain
+     *        The name of the domain in which to register the workflow type.
      */
+
     public void setDomain(String domain) {
         this.domain = domain;
     }
-    
+
     /**
+     * <p>
      * The name of the domain in which to register the workflow type.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param domain The name of the domain in which to register the workflow type.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The name of the domain in which to register the workflow type.
      */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * The name of the domain in which to register the workflow type.
+     * </p>
+     * 
+     * @param domain
+     *        The name of the domain in which to register the workflow type.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public RegisterWorkflowTypeRequest withDomain(String domain) {
-        this.domain = domain;
+        setDomain(domain);
         return this;
     }
 
     /**
-     * The name of the workflow type. <p>The specified string must not start
-     * or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string "arn".
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @return The name of the workflow type. <p>The specified string must not start
-     *         or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     *         contain the literal string "arn".
-     */
-    public String getName() {
-        return name;
-    }
-    
-    /**
-     * The name of the workflow type. <p>The specified string must not start
-     * or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string "arn".
+     * The name of the workflow type.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param name The name of the workflow type. <p>The specified string must not start
-     *         or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     *         contain the literal string "arn".
+     * The specified string must not start or end with whitespace. It must not
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * </p>
+     * 
+     * @param name
+     *        The name of the workflow type.</p>
+     *        <p>
+     *        The specified string must not start or end with whitespace. It
+     *        must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     *        <code>|</code> (vertical bar), or any control characters
+     *        (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     *        literal string quotarnquot.
      */
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
-     * The name of the workflow type. <p>The specified string must not start
-     * or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     * contain the literal string "arn".
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * The name of the workflow type.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param name The name of the workflow type. <p>The specified string must not start
-     *         or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
-     *         contain the literal string "arn".
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The specified string must not start or end with whitespace. It must not
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * </p>
+     * 
+     * @return The name of the workflow type.</p>
+     *         <p>
+     *         The specified string must not start or end with whitespace. It
+     *         must not contain a <code>:</code> (colon), <code>/</code>
+     *         (slash), <code>|</code> (vertical bar), or any control characters
+     *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     *         literal string quotarnquot.
      */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the workflow type.
+     * </p>
+     * <p>
+     * The specified string must not start or end with whitespace. It must not
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * </p>
+     * 
+     * @param name
+     *        The name of the workflow type.</p>
+     *        <p>
+     *        The specified string must not start or end with whitespace. It
+     *        must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     *        <code>|</code> (vertical bar), or any control characters
+     *        (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     *        literal string quotarnquot.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public RegisterWorkflowTypeRequest withName(String name) {
-        this.name = name;
+        setName(name);
         return this;
     }
 
     /**
-     * The version of the workflow type. <note>The workflow type consists of
-     * the name and version, the combination of which must be unique within
-     * the domain. To get a list of all currently registered workflow types,
-     * use the <a>ListWorkflowTypes</a> action.</note> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string "arn".
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     *
-     * @return The version of the workflow type. <note>The workflow type consists of
-     *         the name and version, the combination of which must be unique within
-     *         the domain. To get a list of all currently registered workflow types,
-     *         use the <a>ListWorkflowTypes</a> action.</note> <p>The specified
-     *         string must not start or end with whitespace. It must not contain a
-     *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *         \u009f). Also, it must not contain the literal string "arn".
-     */
-    public String getVersion() {
-        return version;
-    }
-    
-    /**
-     * The version of the workflow type. <note>The workflow type consists of
-     * the name and version, the combination of which must be unique within
-     * the domain. To get a list of all currently registered workflow types,
-     * use the <a>ListWorkflowTypes</a> action.</note> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string "arn".
+     * The version of the workflow type.
+     * </p>
+     * <note>The workflow type consists of the name and version, the combination
+     * of which must be unique within the domain. To get a list of all currently
+     * registered workflow types, use the <a>ListWorkflowTypes</a>
+     * action.</note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     *
-     * @param version The version of the workflow type. <note>The workflow type consists of
-     *         the name and version, the combination of which must be unique within
-     *         the domain. To get a list of all currently registered workflow types,
-     *         use the <a>ListWorkflowTypes</a> action.</note> <p>The specified
-     *         string must not start or end with whitespace. It must not contain a
-     *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *         \u009f). Also, it must not contain the literal string "arn".
+     * The specified string must not start or end with whitespace. It must not
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * </p>
+     * 
+     * @param version
+     *        The version of the workflow type.</p> <note>The workflow type
+     *        consists of the name and version, the combination of which must be
+     *        unique within the domain. To get a list of all currently
+     *        registered workflow types, use the <a>ListWorkflowTypes</a>
+     *        action.</note>
+     *        <p>
+     *        The specified string must not start or end with whitespace. It
+     *        must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     *        <code>|</code> (vertical bar), or any control characters
+     *        (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     *        literal string quotarnquot.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
-    
+
     /**
-     * The version of the workflow type. <note>The workflow type consists of
-     * the name and version, the combination of which must be unique within
-     * the domain. To get a list of all currently registered workflow types,
-     * use the <a>ListWorkflowTypes</a> action.</note> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * <p>
+     * The version of the workflow type.
+     * </p>
+     * <note>The workflow type consists of the name and version, the combination
+     * of which must be unique within the domain. To get a list of all currently
+     * registered workflow types, use the <a>ListWorkflowTypes</a>
+     * action.</note>
+     * <p>
+     * The specified string must not start or end with whitespace. It must not
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string "arn".
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     *
-     * @param version The version of the workflow type. <note>The workflow type consists of
-     *         the name and version, the combination of which must be unique within
-     *         the domain. To get a list of all currently registered workflow types,
-     *         use the <a>ListWorkflowTypes</a> action.</note> <p>The specified
-     *         string must not start or end with whitespace. It must not contain a
-     *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
-     *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *         \u009f). Also, it must not contain the literal string "arn".
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * </p>
+     * 
+     * @return The version of the workflow type.</p> <note>The workflow type
+     *         consists of the name and version, the combination of which must
+     *         be unique within the domain. To get a list of all currently
+     *         registered workflow types, use the <a>ListWorkflowTypes</a>
+     *         action.</note>
+     *         <p>
+     *         The specified string must not start or end with whitespace. It
+     *         must not contain a <code>:</code> (colon), <code>/</code>
+     *         (slash), <code>|</code> (vertical bar), or any control characters
+     *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     *         literal string quotarnquot.
      */
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The version of the workflow type.
+     * </p>
+     * <note>The workflow type consists of the name and version, the combination
+     * of which must be unique within the domain. To get a list of all currently
+     * registered workflow types, use the <a>ListWorkflowTypes</a>
+     * action.</note>
+     * <p>
+     * The specified string must not start or end with whitespace. It must not
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (\u0000-\u001f | \u007f -
+     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * </p>
+     * 
+     * @param version
+     *        The version of the workflow type.</p> <note>The workflow type
+     *        consists of the name and version, the combination of which must be
+     *        unique within the domain. To get a list of all currently
+     *        registered workflow types, use the <a>ListWorkflowTypes</a>
+     *        action.</note>
+     *        <p>
+     *        The specified string must not start or end with whitespace. It
+     *        must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     *        <code>|</code> (vertical bar), or any control characters
+     *        (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
+     *        literal string quotarnquot.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public RegisterWorkflowTypeRequest withVersion(String version) {
-        this.version = version;
+        setVersion(version);
         return this;
     }
 
     /**
-     * Textual description of the workflow type.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     *
-     * @return Textual description of the workflow type.
-     */
-    public String getDescription() {
-        return description;
-    }
-    
-    /**
      * Textual description of the workflow type.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     *
-     * @param description Textual description of the workflow type.
+     * </p>
+     * 
+     * @param description
+     *        Textual description of the workflow type.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     /**
+     * <p>
      * Textual description of the workflow type.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 1024<br/>
-     *
-     * @param description Textual description of the workflow type.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return Textual description of the workflow type.
      */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * Textual description of the workflow type.
+     * </p>
+     * 
+     * @param description
+     *        Textual description of the workflow type.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public RegisterWorkflowTypeRequest withDescription(String description) {
-        this.description = description;
+        setDescription(description);
         return this;
     }
 
     /**
-     * If set, specifies the default maximum duration of decision tasks for
-     * this workflow type. This default can be overridden when starting a
-     * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> decision. <p>The duration
-     * is specified in seconds; an integer greater than or equal to 0. The
-     * value "NONE" can be used to specify unlimited duration.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8<br/>
-     *
-     * @return If set, specifies the default maximum duration of decision tasks for
-     *         this workflow type. This default can be overridden when starting a
-     *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> decision. <p>The duration
-     *         is specified in seconds; an integer greater than or equal to 0. The
-     *         value "NONE" can be used to specify unlimited duration.
+     * If set, specifies the default maximum duration of decision tasks for this
+     * workflow type. This default can be overridden when starting a workflow
+     * execution using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * <p>
+     * The duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
+     * </p>
+     * 
+     * @param defaultTaskStartToCloseTimeout
+     *        If set, specifies the default maximum duration of decision tasks
+     *        for this workflow type. This default can be overridden when
+     *        starting a workflow execution using the
+     *        <a>StartWorkflowExecution</a> action or the
+     *        <code>StartChildWorkflowExecution</code> decision.</p>
+     *        <p>
+     *        The duration is specified in seconds; an integer greater than or
+     *        equal to 0. The value "NONE" can be used to specify unlimited
+     *        duration.
      */
+
+    public void setDefaultTaskStartToCloseTimeout(
+            String defaultTaskStartToCloseTimeout) {
+        this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
+    }
+
+    /**
+     * <p>
+     * If set, specifies the default maximum duration of decision tasks for this
+     * workflow type. This default can be overridden when starting a workflow
+     * execution using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * <p>
+     * The duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
+     * </p>
+     * 
+     * @return If set, specifies the default maximum duration of decision tasks
+     *         for this workflow type. This default can be overridden when
+     *         starting a workflow execution using the
+     *         <a>StartWorkflowExecution</a> action or the
+     *         <code>StartChildWorkflowExecution</code> decision.</p>
+     *         <p>
+     *         The duration is specified in seconds; an integer greater than or
+     *         equal to 0. The value "NONE" can be used to specify unlimited
+     *         duration.
+     */
+
     public String getDefaultTaskStartToCloseTimeout() {
-        return defaultTaskStartToCloseTimeout;
+        return this.defaultTaskStartToCloseTimeout;
     }
-    
+
     /**
-     * If set, specifies the default maximum duration of decision tasks for
-     * this workflow type. This default can be overridden when starting a
-     * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> decision. <p>The duration
-     * is specified in seconds; an integer greater than or equal to 0. The
-     * value "NONE" can be used to specify unlimited duration.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8<br/>
-     *
-     * @param defaultTaskStartToCloseTimeout If set, specifies the default maximum duration of decision tasks for
-     *         this workflow type. This default can be overridden when starting a
-     *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> decision. <p>The duration
-     *         is specified in seconds; an integer greater than or equal to 0. The
-     *         value "NONE" can be used to specify unlimited duration.
+     * If set, specifies the default maximum duration of decision tasks for this
+     * workflow type. This default can be overridden when starting a workflow
+     * execution using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * <p>
+     * The duration is specified in seconds; an integer greater than or equal to
+     * 0. The value "NONE" can be used to specify unlimited duration.
+     * </p>
+     * 
+     * @param defaultTaskStartToCloseTimeout
+     *        If set, specifies the default maximum duration of decision tasks
+     *        for this workflow type. This default can be overridden when
+     *        starting a workflow execution using the
+     *        <a>StartWorkflowExecution</a> action or the
+     *        <code>StartChildWorkflowExecution</code> decision.</p>
+     *        <p>
+     *        The duration is specified in seconds; an integer greater than or
+     *        equal to 0. The value "NONE" can be used to specify unlimited
+     *        duration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public void setDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
-        this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
-    }
-    
-    /**
-     * If set, specifies the default maximum duration of decision tasks for
-     * this workflow type. This default can be overridden when starting a
-     * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> decision. <p>The duration
-     * is specified in seconds; an integer greater than or equal to 0. The
-     * value "NONE" can be used to specify unlimited duration.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8<br/>
-     *
-     * @param defaultTaskStartToCloseTimeout If set, specifies the default maximum duration of decision tasks for
-     *         this workflow type. This default can be overridden when starting a
-     *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> decision. <p>The duration
-     *         is specified in seconds; an integer greater than or equal to 0. The
-     *         value "NONE" can be used to specify unlimited duration.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public RegisterWorkflowTypeRequest withDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
-        this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
+
+    public RegisterWorkflowTypeRequest withDefaultTaskStartToCloseTimeout(
+            String defaultTaskStartToCloseTimeout) {
+        setDefaultTaskStartToCloseTimeout(defaultTaskStartToCloseTimeout);
         return this;
     }
 
     /**
-     * If set, specifies the default maximum duration for executions of this
-     * workflow type. You can override this default when starting an
-     * execution through the <a>StartWorkflowExecution</a> action or
-     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. Unlike
-     * some of the other timeout parameters in Amazon SWF, you cannot specify
-     * a value of "NONE" for
-     * <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year
-     * max limit on the time that a workflow execution can run. Exceeding
-     * this limit will always cause the workflow execution to time out.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8<br/>
-     *
-     * @return If set, specifies the default maximum duration for executions of this
-     *         workflow type. You can override this default when starting an
-     *         execution through the <a>StartWorkflowExecution</a> action or
-     *         <code>StartChildWorkflowExecution</code> decision. <p>The duration is
-     *         specified in seconds; an integer greater than or equal to 0. Unlike
-     *         some of the other timeout parameters in Amazon SWF, you cannot specify
-     *         a value of "NONE" for
-     *         <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year
-     *         max limit on the time that a workflow execution can run. Exceeding
-     *         this limit will always cause the workflow execution to time out.
+     * If set, specifies the default maximum duration for executions of this
+     * workflow type. You can override this default when starting an execution
+     * through the <a>StartWorkflowExecution</a> action or
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * <p>
+     * The duration is specified in seconds; an integer greater than or equal to
+     * 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot
+     * specify a value of "NONE" for
+     * <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max
+     * limit on the time that a workflow execution can run. Exceeding this limit
+     * will always cause the workflow execution to time out.
+     * </p>
+     * 
+     * @param defaultExecutionStartToCloseTimeout
+     *        If set, specifies the default maximum duration for executions of
+     *        this workflow type. You can override this default when starting an
+     *        execution through the <a>StartWorkflowExecution</a> action or
+     *        <code>StartChildWorkflowExecution</code> decision.</p>
+     *        <p>
+     *        The duration is specified in seconds; an integer greater than or
+     *        equal to 0. Unlike some of the other timeout parameters in Amazon
+     *        SWF, you cannot specify a value of "NONE" for
+     *        <code>defaultExecutionStartToCloseTimeout</code>; there is a
+     *        one-year max limit on the time that a workflow execution can run.
+     *        Exceeding this limit will always cause the workflow execution to
+     *        time out.
      */
+
+    public void setDefaultExecutionStartToCloseTimeout(
+            String defaultExecutionStartToCloseTimeout) {
+        this.defaultExecutionStartToCloseTimeout = defaultExecutionStartToCloseTimeout;
+    }
+
+    /**
+     * <p>
+     * If set, specifies the default maximum duration for executions of this
+     * workflow type. You can override this default when starting an execution
+     * through the <a>StartWorkflowExecution</a> action or
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * <p>
+     * The duration is specified in seconds; an integer greater than or equal to
+     * 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot
+     * specify a value of "NONE" for
+     * <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max
+     * limit on the time that a workflow execution can run. Exceeding this limit
+     * will always cause the workflow execution to time out.
+     * </p>
+     * 
+     * @return If set, specifies the default maximum duration for executions of
+     *         this workflow type. You can override this default when starting
+     *         an execution through the <a>StartWorkflowExecution</a> action or
+     *         <code>StartChildWorkflowExecution</code> decision.</p>
+     *         <p>
+     *         The duration is specified in seconds; an integer greater than or
+     *         equal to 0. Unlike some of the other timeout parameters in Amazon
+     *         SWF, you cannot specify a value of "NONE" for
+     *         <code>defaultExecutionStartToCloseTimeout</code>; there is a
+     *         one-year max limit on the time that a workflow execution can run.
+     *         Exceeding this limit will always cause the workflow execution to
+     *         time out.
+     */
+
     public String getDefaultExecutionStartToCloseTimeout() {
-        return defaultExecutionStartToCloseTimeout;
+        return this.defaultExecutionStartToCloseTimeout;
     }
-    
+
     /**
+     * <p>
      * If set, specifies the default maximum duration for executions of this
-     * workflow type. You can override this default when starting an
-     * execution through the <a>StartWorkflowExecution</a> action or
-     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. Unlike
-     * some of the other timeout parameters in Amazon SWF, you cannot specify
-     * a value of "NONE" for
-     * <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year
-     * max limit on the time that a workflow execution can run. Exceeding
-     * this limit will always cause the workflow execution to time out.
+     * workflow type. You can override this default when starting an execution
+     * through the <a>StartWorkflowExecution</a> action or
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8<br/>
-     *
-     * @param defaultExecutionStartToCloseTimeout If set, specifies the default maximum duration for executions of this
-     *         workflow type. You can override this default when starting an
-     *         execution through the <a>StartWorkflowExecution</a> action or
-     *         <code>StartChildWorkflowExecution</code> decision. <p>The duration is
-     *         specified in seconds; an integer greater than or equal to 0. Unlike
-     *         some of the other timeout parameters in Amazon SWF, you cannot specify
-     *         a value of "NONE" for
-     *         <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year
-     *         max limit on the time that a workflow execution can run. Exceeding
-     *         this limit will always cause the workflow execution to time out.
+     * The duration is specified in seconds; an integer greater than or equal to
+     * 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot
+     * specify a value of "NONE" for
+     * <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max
+     * limit on the time that a workflow execution can run. Exceeding this limit
+     * will always cause the workflow execution to time out.
+     * </p>
+     * 
+     * @param defaultExecutionStartToCloseTimeout
+     *        If set, specifies the default maximum duration for executions of
+     *        this workflow type. You can override this default when starting an
+     *        execution through the <a>StartWorkflowExecution</a> action or
+     *        <code>StartChildWorkflowExecution</code> decision.</p>
+     *        <p>
+     *        The duration is specified in seconds; an integer greater than or
+     *        equal to 0. Unlike some of the other timeout parameters in Amazon
+     *        SWF, you cannot specify a value of "NONE" for
+     *        <code>defaultExecutionStartToCloseTimeout</code>; there is a
+     *        one-year max limit on the time that a workflow execution can run.
+     *        Exceeding this limit will always cause the workflow execution to
+     *        time out.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public void setDefaultExecutionStartToCloseTimeout(String defaultExecutionStartToCloseTimeout) {
-        this.defaultExecutionStartToCloseTimeout = defaultExecutionStartToCloseTimeout;
-    }
-    
-    /**
-     * If set, specifies the default maximum duration for executions of this
-     * workflow type. You can override this default when starting an
-     * execution through the <a>StartWorkflowExecution</a> action or
-     * <code>StartChildWorkflowExecution</code> decision. <p>The duration is
-     * specified in seconds; an integer greater than or equal to 0. Unlike
-     * some of the other timeout parameters in Amazon SWF, you cannot specify
-     * a value of "NONE" for
-     * <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year
-     * max limit on the time that a workflow execution can run. Exceeding
-     * this limit will always cause the workflow execution to time out.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8<br/>
-     *
-     * @param defaultExecutionStartToCloseTimeout If set, specifies the default maximum duration for executions of this
-     *         workflow type. You can override this default when starting an
-     *         execution through the <a>StartWorkflowExecution</a> action or
-     *         <code>StartChildWorkflowExecution</code> decision. <p>The duration is
-     *         specified in seconds; an integer greater than or equal to 0. Unlike
-     *         some of the other timeout parameters in Amazon SWF, you cannot specify
-     *         a value of "NONE" for
-     *         <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year
-     *         max limit on the time that a workflow execution can run. Exceeding
-     *         this limit will always cause the workflow execution to time out.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public RegisterWorkflowTypeRequest withDefaultExecutionStartToCloseTimeout(String defaultExecutionStartToCloseTimeout) {
-        this.defaultExecutionStartToCloseTimeout = defaultExecutionStartToCloseTimeout;
+
+    public RegisterWorkflowTypeRequest withDefaultExecutionStartToCloseTimeout(
+            String defaultExecutionStartToCloseTimeout) {
+        setDefaultExecutionStartToCloseTimeout(defaultExecutionStartToCloseTimeout);
         return this;
     }
 
     /**
+     * <p>
      * If set, specifies the default task list to use for scheduling decision
-     * tasks for executions of this workflow type. This default is used only
-     * if a task list is not provided when starting the execution through the
+     * tasks for executions of this workflow type. This default is used only if
+     * a task list is not provided when starting the execution through the
      * <a>StartWorkflowExecution</a> action or
      * <code>StartChildWorkflowExecution</code> decision.
-     *
-     * @return If set, specifies the default task list to use for scheduling decision
-     *         tasks for executions of this workflow type. This default is used only
-     *         if a task list is not provided when starting the execution through the
-     *         <a>StartWorkflowExecution</a> action or
-     *         <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * 
+     * @param defaultTaskList
+     *        If set, specifies the default task list to use for scheduling
+     *        decision tasks for executions of this workflow type. This default
+     *        is used only if a task list is not provided when starting the
+     *        execution through the <a>StartWorkflowExecution</a> action or
+     *        <code>StartChildWorkflowExecution</code> decision.
      */
-    public TaskList getDefaultTaskList() {
-        return defaultTaskList;
-    }
-    
-    /**
-     * If set, specifies the default task list to use for scheduling decision
-     * tasks for executions of this workflow type. This default is used only
-     * if a task list is not provided when starting the execution through the
-     * <a>StartWorkflowExecution</a> action or
-     * <code>StartChildWorkflowExecution</code> decision.
-     *
-     * @param defaultTaskList If set, specifies the default task list to use for scheduling decision
-     *         tasks for executions of this workflow type. This default is used only
-     *         if a task list is not provided when starting the execution through the
-     *         <a>StartWorkflowExecution</a> action or
-     *         <code>StartChildWorkflowExecution</code> decision.
-     */
+
     public void setDefaultTaskList(TaskList defaultTaskList) {
         this.defaultTaskList = defaultTaskList;
     }
-    
+
     /**
+     * <p>
      * If set, specifies the default task list to use for scheduling decision
-     * tasks for executions of this workflow type. This default is used only
-     * if a task list is not provided when starting the execution through the
+     * tasks for executions of this workflow type. This default is used only if
+     * a task list is not provided when starting the execution through the
      * <a>StartWorkflowExecution</a> action or
      * <code>StartChildWorkflowExecution</code> decision.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param defaultTaskList If set, specifies the default task list to use for scheduling decision
-     *         tasks for executions of this workflow type. This default is used only
-     *         if a task list is not provided when starting the execution through the
-     *         <a>StartWorkflowExecution</a> action or
+     * </p>
+     * 
+     * @return If set, specifies the default task list to use for scheduling
+     *         decision tasks for executions of this workflow type. This default
+     *         is used only if a task list is not provided when starting the
+     *         execution through the <a>StartWorkflowExecution</a> action or
      *         <code>StartChildWorkflowExecution</code> decision.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public RegisterWorkflowTypeRequest withDefaultTaskList(TaskList defaultTaskList) {
-        this.defaultTaskList = defaultTaskList;
+
+    public TaskList getDefaultTaskList() {
+        return this.defaultTaskList;
+    }
+
+    /**
+     * <p>
+     * If set, specifies the default task list to use for scheduling decision
+     * tasks for executions of this workflow type. This default is used only if
+     * a task list is not provided when starting the execution through the
+     * <a>StartWorkflowExecution</a> action or
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * 
+     * @param defaultTaskList
+     *        If set, specifies the default task list to use for scheduling
+     *        decision tasks for executions of this workflow type. This default
+     *        is used only if a task list is not provided when starting the
+     *        execution through the <a>StartWorkflowExecution</a> action or
+     *        <code>StartChildWorkflowExecution</code> decision.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RegisterWorkflowTypeRequest withDefaultTaskList(
+            TaskList defaultTaskList) {
+        setDefaultTaskList(defaultTaskList);
         return this;
     }
 
     /**
+     * <p>
      * The default task priority to assign to the workflow type. If not
      * assigned, then "0" will be used. Valid values are integers that range
      * from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
-     * higher priority. <p>For more information about setting task priority,
-     * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
-     * Guide</i>.
+     * higher priority.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 11<br/>
-     *
-     * @return The default task priority to assign to the workflow type. If not
-     *         assigned, then "0" will be used. Valid values are integers that range
-     *         from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
-     *         higher priority. <p>For more information about setting task priority,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
-     *         Guide</i>.
-     */
-    public String getDefaultTaskPriority() {
-        return defaultTaskPriority;
-    }
-    
-    /**
-     * The default task priority to assign to the workflow type. If not
-     * assigned, then "0" will be used. Valid values are integers that range
-     * from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
-     * higher priority. <p>For more information about setting task priority,
-     * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * For more information about setting task priority, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html"
+     * >Setting Task Priority</a> in the <i>Amazon Simple Workflow Developer
      * Guide</i>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 11<br/>
-     *
-     * @param defaultTaskPriority The default task priority to assign to the workflow type. If not
-     *         assigned, then "0" will be used. Valid values are integers that range
-     *         from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
-     *         higher priority. <p>For more information about setting task priority,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
-     *         Guide</i>.
+     * </p>
+     * 
+     * @param defaultTaskPriority
+     *        The default task priority to assign to the workflow type. If not
+     *        assigned, then "0" will be used. Valid values are integers that
+     *        range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
+     *        indicate higher priority.</p>
+     *        <p>
+     *        For more information about setting task priority, see <a href=
+     *        "http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html"
+     *        >Setting Task Priority</a> in the <i>Amazon Simple Workflow
+     *        Developer Guide</i>.
      */
+
     public void setDefaultTaskPriority(String defaultTaskPriority) {
         this.defaultTaskPriority = defaultTaskPriority;
     }
-    
+
     /**
+     * <p>
      * The default task priority to assign to the workflow type. If not
      * assigned, then "0" will be used. Valid values are integers that range
      * from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
-     * higher priority. <p>For more information about setting task priority,
-     * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     * Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * higher priority.
+     * </p>
+     * <p>
+     * For more information about setting task priority, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html"
+     * >Setting Task Priority</a> in the <i>Amazon Simple Workflow Developer
      * Guide</i>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 11<br/>
-     *
-     * @param defaultTaskPriority The default task priority to assign to the workflow type. If not
-     *         assigned, then "0" will be used. Valid values are integers that range
-     *         from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
-     *         higher priority. <p>For more information about setting task priority,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
-     *         Task Priority</a> in the <i>Amazon Simple Workflow Developer
-     *         Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The default task priority to assign to the workflow type. If not
+     *         assigned, then "0" will be used. Valid values are integers that
+     *         range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
+     *         indicate higher priority.</p>
+     *         <p>
+     *         For more information about setting task priority, see <a href=
+     *         "http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html"
+     *         >Setting Task Priority</a> in the <i>Amazon Simple Workflow
+     *         Developer Guide</i>.
      */
-    public RegisterWorkflowTypeRequest withDefaultTaskPriority(String defaultTaskPriority) {
-        this.defaultTaskPriority = defaultTaskPriority;
+
+    public String getDefaultTaskPriority() {
+        return this.defaultTaskPriority;
+    }
+
+    /**
+     * <p>
+     * The default task priority to assign to the workflow type. If not
+     * assigned, then "0" will be used. Valid values are integers that range
+     * from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
+     * higher priority.
+     * </p>
+     * <p>
+     * For more information about setting task priority, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html"
+     * >Setting Task Priority</a> in the <i>Amazon Simple Workflow Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param defaultTaskPriority
+     *        The default task priority to assign to the workflow type. If not
+     *        assigned, then "0" will be used. Valid values are integers that
+     *        range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
+     *        indicate higher priority.</p>
+     *        <p>
+     *        For more information about setting task priority, see <a href=
+     *        "http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html"
+     *        >Setting Task Priority</a> in the <i>Amazon Simple Workflow
+     *        Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RegisterWorkflowTypeRequest withDefaultTaskPriority(
+            String defaultTaskPriority) {
+        setDefaultTaskPriority(defaultTaskPriority);
         return this;
     }
 
     /**
+     * <p>
      * If set, specifies the default policy to use for the child workflow
      * executions when a workflow execution of this type is terminated, by
-     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
-     * to an expired timeout. This default can be overridden when starting a
-     * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> decision. <p>The
-     * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
-     * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
-     * request to cancel will be attempted for each child execution by
-     * recording a <code>WorkflowExecutionCancelRequested</code> event in its
-     * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li> </ul>
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due to
+     * an expired timeout. This default can be overridden when starting a
+     * workflow execution using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TERMINATE, REQUEST_CANCEL, ABANDON
-     *
-     * @return If set, specifies the default policy to use for the child workflow
-     *         executions when a workflow execution of this type is terminated, by
-     *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
-     *         to an expired timeout. This default can be overridden when starting a
-     *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> decision. <p>The
-     *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
-     *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
-     *         request to cancel will be attempted for each child execution by
-     *         recording a <code>WorkflowExecutionCancelRequested</code> event in its
-     *         history. It is up to the decider to take appropriate actions when it
-     *         receives an execution history with this event.</li>
-     *         <li><b>ABANDON:</b> no action will be taken. The child executions will
-     *         continue to run.</li> </ul>
-     *
+     * The supported child policies are:
+     * </p>
+     * <ul>
+     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
+     * child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
+     * up to the decider to take appropriate actions when it receives an
+     * execution history with this event.</li>
+     * <li><b>ABANDON:</b> no action will be taken. The child executions will
+     * continue to run.</li>
+     * </ul>
+     * 
+     * @param defaultChildPolicy
+     *        If set, specifies the default policy to use for the child workflow
+     *        executions when a workflow execution of this type is terminated,
+     *        by calling the <a>TerminateWorkflowExecution</a> action explicitly
+     *        or due to an expired timeout. This default can be overridden when
+     *        starting a workflow execution using the
+     *        <a>StartWorkflowExecution</a> action or the
+     *        <code>StartChildWorkflowExecution</code> decision.</p>
+     *        <p>
+     *        The supported child policies are:
+     *        </p>
+     *        <ul>
+     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
+     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted
+     *        for each child execution by recording a
+     *        <code>WorkflowExecutionCancelRequested</code> event in its
+     *        history. It is up to the decider to take appropriate actions when
+     *        it receives an execution history with this event.</li>
+     *        <li><b>ABANDON:</b> no action will be taken. The child executions
+     *        will continue to run.</li>
      * @see ChildPolicy
      */
-    public String getDefaultChildPolicy() {
-        return defaultChildPolicy;
-    }
-    
-    /**
-     * If set, specifies the default policy to use for the child workflow
-     * executions when a workflow execution of this type is terminated, by
-     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
-     * to an expired timeout. This default can be overridden when starting a
-     * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> decision. <p>The
-     * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
-     * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
-     * request to cancel will be attempted for each child execution by
-     * recording a <code>WorkflowExecutionCancelRequested</code> event in its
-     * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li> </ul>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TERMINATE, REQUEST_CANCEL, ABANDON
-     *
-     * @param defaultChildPolicy If set, specifies the default policy to use for the child workflow
-     *         executions when a workflow execution of this type is terminated, by
-     *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
-     *         to an expired timeout. This default can be overridden when starting a
-     *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> decision. <p>The
-     *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
-     *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
-     *         request to cancel will be attempted for each child execution by
-     *         recording a <code>WorkflowExecutionCancelRequested</code> event in its
-     *         history. It is up to the decider to take appropriate actions when it
-     *         receives an execution history with this event.</li>
-     *         <li><b>ABANDON:</b> no action will be taken. The child executions will
-     *         continue to run.</li> </ul>
-     *
-     * @see ChildPolicy
-     */
+
     public void setDefaultChildPolicy(String defaultChildPolicy) {
         this.defaultChildPolicy = defaultChildPolicy;
     }
-    
+
     /**
+     * <p>
      * If set, specifies the default policy to use for the child workflow
      * executions when a workflow execution of this type is terminated, by
-     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
-     * to an expired timeout. This default can be overridden when starting a
-     * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> decision. <p>The
-     * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
-     * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
-     * request to cancel will be attempted for each child execution by
-     * recording a <code>WorkflowExecutionCancelRequested</code> event in its
-     * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event.</li>
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due to
+     * an expired timeout. This default can be overridden when starting a
+     * workflow execution using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * <p>
+     * The supported child policies are:
+     * </p>
+     * <ul>
+     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
+     * child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
+     * up to the decider to take appropriate actions when it receives an
+     * execution history with this event.</li>
      * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li> </ul>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TERMINATE, REQUEST_CANCEL, ABANDON
-     *
-     * @param defaultChildPolicy If set, specifies the default policy to use for the child workflow
-     *         executions when a workflow execution of this type is terminated, by
-     *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
-     *         to an expired timeout. This default can be overridden when starting a
-     *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> decision. <p>The
-     *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
-     *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
-     *         request to cancel will be attempted for each child execution by
-     *         recording a <code>WorkflowExecutionCancelRequested</code> event in its
-     *         history. It is up to the decider to take appropriate actions when it
-     *         receives an execution history with this event.</li>
-     *         <li><b>ABANDON:</b> no action will be taken. The child executions will
-     *         continue to run.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * continue to run.</li>
+     * </ul>
+     * 
+     * @return If set, specifies the default policy to use for the child
+     *         workflow executions when a workflow execution of this type is
+     *         terminated, by calling the <a>TerminateWorkflowExecution</a>
+     *         action explicitly or due to an expired timeout. This default can
+     *         be overridden when starting a workflow execution using the
+     *         <a>StartWorkflowExecution</a> action or the
+     *         <code>StartChildWorkflowExecution</code> decision.</p>
+     *         <p>
+     *         The supported child policies are:
+     *         </p>
+     *         <ul>
+     *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
+     *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted
+     *         for each child execution by recording a
+     *         <code>WorkflowExecutionCancelRequested</code> event in its
+     *         history. It is up to the decider to take appropriate actions when
+     *         it receives an execution history with this event.</li>
+     *         <li><b>ABANDON:</b> no action will be taken. The child executions
+     *         will continue to run.</li>
      * @see ChildPolicy
      */
-    public RegisterWorkflowTypeRequest withDefaultChildPolicy(String defaultChildPolicy) {
-        this.defaultChildPolicy = defaultChildPolicy;
+
+    public String getDefaultChildPolicy() {
+        return this.defaultChildPolicy;
+    }
+
+    /**
+     * <p>
+     * If set, specifies the default policy to use for the child workflow
+     * executions when a workflow execution of this type is terminated, by
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due to
+     * an expired timeout. This default can be overridden when starting a
+     * workflow execution using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * <p>
+     * The supported child policies are:
+     * </p>
+     * <ul>
+     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
+     * child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
+     * up to the decider to take appropriate actions when it receives an
+     * execution history with this event.</li>
+     * <li><b>ABANDON:</b> no action will be taken. The child executions will
+     * continue to run.</li>
+     * </ul>
+     * 
+     * @param defaultChildPolicy
+     *        If set, specifies the default policy to use for the child workflow
+     *        executions when a workflow execution of this type is terminated,
+     *        by calling the <a>TerminateWorkflowExecution</a> action explicitly
+     *        or due to an expired timeout. This default can be overridden when
+     *        starting a workflow execution using the
+     *        <a>StartWorkflowExecution</a> action or the
+     *        <code>StartChildWorkflowExecution</code> decision.</p>
+     *        <p>
+     *        The supported child policies are:
+     *        </p>
+     *        <ul>
+     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
+     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted
+     *        for each child execution by recording a
+     *        <code>WorkflowExecutionCancelRequested</code> event in its
+     *        history. It is up to the decider to take appropriate actions when
+     *        it receives an execution history with this event.</li>
+     *        <li><b>ABANDON:</b> no action will be taken. The child executions
+     *        will continue to run.</li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ChildPolicy
+     */
+
+    public RegisterWorkflowTypeRequest withDefaultChildPolicy(
+            String defaultChildPolicy) {
+        setDefaultChildPolicy(defaultChildPolicy);
         return this;
     }
 
     /**
+     * <p>
      * If set, specifies the default policy to use for the child workflow
      * executions when a workflow execution of this type is terminated, by
-     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
-     * to an expired timeout. This default can be overridden when starting a
-     * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> decision. <p>The
-     * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
-     * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
-     * request to cancel will be attempted for each child execution by
-     * recording a <code>WorkflowExecutionCancelRequested</code> event in its
-     * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li> </ul>
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due to
+     * an expired timeout. This default can be overridden when starting a
+     * workflow execution using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TERMINATE, REQUEST_CANCEL, ABANDON
-     *
-     * @param defaultChildPolicy If set, specifies the default policy to use for the child workflow
-     *         executions when a workflow execution of this type is terminated, by
-     *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
-     *         to an expired timeout. This default can be overridden when starting a
-     *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> decision. <p>The
-     *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
-     *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
-     *         request to cancel will be attempted for each child execution by
-     *         recording a <code>WorkflowExecutionCancelRequested</code> event in its
-     *         history. It is up to the decider to take appropriate actions when it
-     *         receives an execution history with this event.</li>
-     *         <li><b>ABANDON:</b> no action will be taken. The child executions will
-     *         continue to run.</li> </ul>
-     *
+     * The supported child policies are:
+     * </p>
+     * <ul>
+     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
+     * child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
+     * up to the decider to take appropriate actions when it receives an
+     * execution history with this event.</li>
+     * <li><b>ABANDON:</b> no action will be taken. The child executions will
+     * continue to run.</li>
+     * </ul>
+     * 
+     * @param defaultChildPolicy
+     *        If set, specifies the default policy to use for the child workflow
+     *        executions when a workflow execution of this type is terminated,
+     *        by calling the <a>TerminateWorkflowExecution</a> action explicitly
+     *        or due to an expired timeout. This default can be overridden when
+     *        starting a workflow execution using the
+     *        <a>StartWorkflowExecution</a> action or the
+     *        <code>StartChildWorkflowExecution</code> decision.</p>
+     *        <p>
+     *        The supported child policies are:
+     *        </p>
+     *        <ul>
+     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
+     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted
+     *        for each child execution by recording a
+     *        <code>WorkflowExecutionCancelRequested</code> event in its
+     *        history. It is up to the decider to take appropriate actions when
+     *        it receives an execution history with this event.</li>
+     *        <li><b>ABANDON:</b> no action will be taken. The child executions
+     *        will continue to run.</li>
      * @see ChildPolicy
      */
+
     public void setDefaultChildPolicy(ChildPolicy defaultChildPolicy) {
         this.defaultChildPolicy = defaultChildPolicy.toString();
     }
-    
+
     /**
+     * <p>
      * If set, specifies the default policy to use for the child workflow
      * executions when a workflow execution of this type is terminated, by
-     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due
-     * to an expired timeout. This default can be overridden when starting a
-     * workflow execution using the <a>StartWorkflowExecution</a> action or
-     * the <code>StartChildWorkflowExecution</code> decision. <p>The
-     * supported child policies are: <ul> <li><b>TERMINATE:</b> the child
-     * executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
-     * request to cancel will be attempted for each child execution by
-     * recording a <code>WorkflowExecutionCancelRequested</code> event in its
-     * history. It is up to the decider to take appropriate actions when it
-     * receives an execution history with this event.</li>
+     * calling the <a>TerminateWorkflowExecution</a> action explicitly or due to
+     * an expired timeout. This default can be overridden when starting a
+     * workflow execution using the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> decision.
+     * </p>
+     * <p>
+     * The supported child policies are:
+     * </p>
+     * <ul>
+     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
+     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each
+     * child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is
+     * up to the decider to take appropriate actions when it receives an
+     * execution history with this event.</li>
      * <li><b>ABANDON:</b> no action will be taken. The child executions will
-     * continue to run.</li> </ul>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TERMINATE, REQUEST_CANCEL, ABANDON
-     *
-     * @param defaultChildPolicy If set, specifies the default policy to use for the child workflow
-     *         executions when a workflow execution of this type is terminated, by
-     *         calling the <a>TerminateWorkflowExecution</a> action explicitly or due
-     *         to an expired timeout. This default can be overridden when starting a
-     *         workflow execution using the <a>StartWorkflowExecution</a> action or
-     *         the <code>StartChildWorkflowExecution</code> decision. <p>The
-     *         supported child policies are: <ul> <li><b>TERMINATE:</b> the child
-     *         executions will be terminated.</li> <li><b>REQUEST_CANCEL:</b> a
-     *         request to cancel will be attempted for each child execution by
-     *         recording a <code>WorkflowExecutionCancelRequested</code> event in its
-     *         history. It is up to the decider to take appropriate actions when it
-     *         receives an execution history with this event.</li>
-     *         <li><b>ABANDON:</b> no action will be taken. The child executions will
-     *         continue to run.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * continue to run.</li>
+     * </ul>
+     * 
+     * @param defaultChildPolicy
+     *        If set, specifies the default policy to use for the child workflow
+     *        executions when a workflow execution of this type is terminated,
+     *        by calling the <a>TerminateWorkflowExecution</a> action explicitly
+     *        or due to an expired timeout. This default can be overridden when
+     *        starting a workflow execution using the
+     *        <a>StartWorkflowExecution</a> action or the
+     *        <code>StartChildWorkflowExecution</code> decision.</p>
+     *        <p>
+     *        The supported child policies are:
+     *        </p>
+     *        <ul>
+     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
+     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted
+     *        for each child execution by recording a
+     *        <code>WorkflowExecutionCancelRequested</code> event in its
+     *        history. It is up to the decider to take appropriate actions when
+     *        it receives an execution history with this event.</li>
+     *        <li><b>ABANDON:</b> no action will be taken. The child executions
+     *        will continue to run.</li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ChildPolicy
      */
-    public RegisterWorkflowTypeRequest withDefaultChildPolicy(ChildPolicy defaultChildPolicy) {
-        this.defaultChildPolicy = defaultChildPolicy.toString();
+
+    public RegisterWorkflowTypeRequest withDefaultChildPolicy(
+            ChildPolicy defaultChildPolicy) {
+        setDefaultChildPolicy(defaultChildPolicy);
         return this;
     }
 
     /**
-     * The ARN of the default IAM role to use when a workflow execution of
-     * this type invokes AWS Lambda functions. <p>This default can be
-     * overridden when starting a workflow execution using the
-     * <a>StartWorkflowExecution</a> action or the
+     * <p>
+     * The ARN of the default IAM role to use when a workflow execution of this
+     * type invokes AWS Lambda functions.
+     * </p>
+     * <p>
+     * This default can be overridden when starting a workflow execution using
+     * the <a>StartWorkflowExecution</a> action or the
      * <code>StartChildWorkflowExecution</code> and
      * <code>ContinueAsNewWorkflowExecution</code> decision.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1224<br/>
-     *
-     * @return The ARN of the default IAM role to use when a workflow execution of
-     *         this type invokes AWS Lambda functions. <p>This default can be
-     *         overridden when starting a workflow execution using the
-     *         <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> and
-     *         <code>ContinueAsNewWorkflowExecution</code> decision.
+     * </p>
+     * 
+     * @param defaultLambdaRole
+     *        The ARN of the default IAM role to use when a workflow execution
+     *        of this type invokes AWS Lambda functions.</p>
+     *        <p>
+     *        This default can be overridden when starting a workflow execution
+     *        using the <a>StartWorkflowExecution</a> action or the
+     *        <code>StartChildWorkflowExecution</code> and
+     *        <code>ContinueAsNewWorkflowExecution</code> decision.
      */
-    public String getDefaultLambdaRole() {
-        return defaultLambdaRole;
-    }
-    
-    /**
-     * The ARN of the default IAM role to use when a workflow execution of
-     * this type invokes AWS Lambda functions. <p>This default can be
-     * overridden when starting a workflow execution using the
-     * <a>StartWorkflowExecution</a> action or the
-     * <code>StartChildWorkflowExecution</code> and
-     * <code>ContinueAsNewWorkflowExecution</code> decision.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1224<br/>
-     *
-     * @param defaultLambdaRole The ARN of the default IAM role to use when a workflow execution of
-     *         this type invokes AWS Lambda functions. <p>This default can be
-     *         overridden when starting a workflow execution using the
-     *         <a>StartWorkflowExecution</a> action or the
-     *         <code>StartChildWorkflowExecution</code> and
-     *         <code>ContinueAsNewWorkflowExecution</code> decision.
-     */
+
     public void setDefaultLambdaRole(String defaultLambdaRole) {
         this.defaultLambdaRole = defaultLambdaRole;
     }
-    
+
     /**
-     * The ARN of the default IAM role to use when a workflow execution of
-     * this type invokes AWS Lambda functions. <p>This default can be
-     * overridden when starting a workflow execution using the
-     * <a>StartWorkflowExecution</a> action or the
+     * <p>
+     * The ARN of the default IAM role to use when a workflow execution of this
+     * type invokes AWS Lambda functions.
+     * </p>
+     * <p>
+     * This default can be overridden when starting a workflow execution using
+     * the <a>StartWorkflowExecution</a> action or the
      * <code>StartChildWorkflowExecution</code> and
      * <code>ContinueAsNewWorkflowExecution</code> decision.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 1224<br/>
-     *
-     * @param defaultLambdaRole The ARN of the default IAM role to use when a workflow execution of
-     *         this type invokes AWS Lambda functions. <p>This default can be
-     *         overridden when starting a workflow execution using the
-     *         <a>StartWorkflowExecution</a> action or the
+     * </p>
+     * 
+     * @return The ARN of the default IAM role to use when a workflow execution
+     *         of this type invokes AWS Lambda functions.</p>
+     *         <p>
+     *         This default can be overridden when starting a workflow execution
+     *         using the <a>StartWorkflowExecution</a> action or the
      *         <code>StartChildWorkflowExecution</code> and
      *         <code>ContinueAsNewWorkflowExecution</code> decision.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public RegisterWorkflowTypeRequest withDefaultLambdaRole(String defaultLambdaRole) {
-        this.defaultLambdaRole = defaultLambdaRole;
+
+    public String getDefaultLambdaRole() {
+        return this.defaultLambdaRole;
+    }
+
+    /**
+     * <p>
+     * The ARN of the default IAM role to use when a workflow execution of this
+     * type invokes AWS Lambda functions.
+     * </p>
+     * <p>
+     * This default can be overridden when starting a workflow execution using
+     * the <a>StartWorkflowExecution</a> action or the
+     * <code>StartChildWorkflowExecution</code> and
+     * <code>ContinueAsNewWorkflowExecution</code> decision.
+     * </p>
+     * 
+     * @param defaultLambdaRole
+     *        The ARN of the default IAM role to use when a workflow execution
+     *        of this type invokes AWS Lambda functions.</p>
+     *        <p>
+     *        This default can be overridden when starting a workflow execution
+     *        using the <a>StartWorkflowExecution</a> action or the
+     *        <code>StartChildWorkflowExecution</code> and
+     *        <code>ContinueAsNewWorkflowExecution</code> decision.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RegisterWorkflowTypeRequest withDefaultLambdaRole(
+            String defaultLambdaRole) {
+        setDefaultLambdaRole(defaultLambdaRole);
         return this;
     }
 
@@ -1052,74 +1131,149 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (getVersion() != null) sb.append("Version: " + getVersion() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
-        if (getDefaultTaskStartToCloseTimeout() != null) sb.append("DefaultTaskStartToCloseTimeout: " + getDefaultTaskStartToCloseTimeout() + ",");
-        if (getDefaultExecutionStartToCloseTimeout() != null) sb.append("DefaultExecutionStartToCloseTimeout: " + getDefaultExecutionStartToCloseTimeout() + ",");
-        if (getDefaultTaskList() != null) sb.append("DefaultTaskList: " + getDefaultTaskList() + ",");
-        if (getDefaultTaskPriority() != null) sb.append("DefaultTaskPriority: " + getDefaultTaskPriority() + ",");
-        if (getDefaultChildPolicy() != null) sb.append("DefaultChildPolicy: " + getDefaultChildPolicy() + ",");
-        if (getDefaultLambdaRole() != null) sb.append("DefaultLambdaRole: " + getDefaultLambdaRole() );
+        if (getDomain() != null)
+            sb.append("Domain: " + getDomain() + ",");
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
+        if (getVersion() != null)
+            sb.append("Version: " + getVersion() + ",");
+        if (getDescription() != null)
+            sb.append("Description: " + getDescription() + ",");
+        if (getDefaultTaskStartToCloseTimeout() != null)
+            sb.append("DefaultTaskStartToCloseTimeout: "
+                    + getDefaultTaskStartToCloseTimeout() + ",");
+        if (getDefaultExecutionStartToCloseTimeout() != null)
+            sb.append("DefaultExecutionStartToCloseTimeout: "
+                    + getDefaultExecutionStartToCloseTimeout() + ",");
+        if (getDefaultTaskList() != null)
+            sb.append("DefaultTaskList: " + getDefaultTaskList() + ",");
+        if (getDefaultTaskPriority() != null)
+            sb.append("DefaultTaskPriority: " + getDefaultTaskPriority() + ",");
+        if (getDefaultChildPolicy() != null)
+            sb.append("DefaultChildPolicy: " + getDefaultChildPolicy() + ",");
+        if (getDefaultLambdaRole() != null)
+            sb.append("DefaultLambdaRole: " + getDefaultLambdaRole());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RegisterWorkflowTypeRequest == false)
+            return false;
+        RegisterWorkflowTypeRequest other = (RegisterWorkflowTypeRequest) obj;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null
+                && other.getDomain().equals(this.getDomain()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null
+                && other.getVersion().equals(this.getVersion()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null
+                && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getDefaultTaskStartToCloseTimeout() == null
+                ^ this.getDefaultTaskStartToCloseTimeout() == null)
+            return false;
+        if (other.getDefaultTaskStartToCloseTimeout() != null
+                && other.getDefaultTaskStartToCloseTimeout().equals(
+                        this.getDefaultTaskStartToCloseTimeout()) == false)
+            return false;
+        if (other.getDefaultExecutionStartToCloseTimeout() == null
+                ^ this.getDefaultExecutionStartToCloseTimeout() == null)
+            return false;
+        if (other.getDefaultExecutionStartToCloseTimeout() != null
+                && other.getDefaultExecutionStartToCloseTimeout().equals(
+                        this.getDefaultExecutionStartToCloseTimeout()) == false)
+            return false;
+        if (other.getDefaultTaskList() == null
+                ^ this.getDefaultTaskList() == null)
+            return false;
+        if (other.getDefaultTaskList() != null
+                && other.getDefaultTaskList().equals(this.getDefaultTaskList()) == false)
+            return false;
+        if (other.getDefaultTaskPriority() == null
+                ^ this.getDefaultTaskPriority() == null)
+            return false;
+        if (other.getDefaultTaskPriority() != null
+                && other.getDefaultTaskPriority().equals(
+                        this.getDefaultTaskPriority()) == false)
+            return false;
+        if (other.getDefaultChildPolicy() == null
+                ^ this.getDefaultChildPolicy() == null)
+            return false;
+        if (other.getDefaultChildPolicy() != null
+                && other.getDefaultChildPolicy().equals(
+                        this.getDefaultChildPolicy()) == false)
+            return false;
+        if (other.getDefaultLambdaRole() == null
+                ^ this.getDefaultLambdaRole() == null)
+            return false;
+        if (other.getDefaultLambdaRole() != null
+                && other.getDefaultLambdaRole().equals(
+                        this.getDefaultLambdaRole()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode()); 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode()); 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultTaskStartToCloseTimeout() == null) ? 0 : getDefaultTaskStartToCloseTimeout().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultExecutionStartToCloseTimeout() == null) ? 0 : getDefaultExecutionStartToCloseTimeout().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultTaskList() == null) ? 0 : getDefaultTaskList().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultTaskPriority() == null) ? 0 : getDefaultTaskPriority().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultChildPolicy() == null) ? 0 : getDefaultChildPolicy().hashCode()); 
-        hashCode = prime * hashCode + ((getDefaultLambdaRole() == null) ? 0 : getDefaultLambdaRole().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode
+                + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultTaskStartToCloseTimeout() == null) ? 0
+                        : getDefaultTaskStartToCloseTimeout().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultExecutionStartToCloseTimeout() == null) ? 0
+                        : getDefaultExecutionStartToCloseTimeout().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultTaskList() == null) ? 0 : getDefaultTaskList()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultTaskPriority() == null) ? 0
+                        : getDefaultTaskPriority().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultChildPolicy() == null) ? 0
+                        : getDefaultChildPolicy().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultLambdaRole() == null) ? 0
+                        : getDefaultLambdaRole().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof RegisterWorkflowTypeRequest == false) return false;
-        RegisterWorkflowTypeRequest other = (RegisterWorkflowTypeRequest)obj;
-        
-        if (other.getDomain() == null ^ this.getDomain() == null) return false;
-        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false) return false; 
-        if (other.getName() == null ^ this.getName() == null) return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.getVersion() == null ^ this.getVersion() == null) return false;
-        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false) return false; 
-        if (other.getDescription() == null ^ this.getDescription() == null) return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
-        if (other.getDefaultTaskStartToCloseTimeout() == null ^ this.getDefaultTaskStartToCloseTimeout() == null) return false;
-        if (other.getDefaultTaskStartToCloseTimeout() != null && other.getDefaultTaskStartToCloseTimeout().equals(this.getDefaultTaskStartToCloseTimeout()) == false) return false; 
-        if (other.getDefaultExecutionStartToCloseTimeout() == null ^ this.getDefaultExecutionStartToCloseTimeout() == null) return false;
-        if (other.getDefaultExecutionStartToCloseTimeout() != null && other.getDefaultExecutionStartToCloseTimeout().equals(this.getDefaultExecutionStartToCloseTimeout()) == false) return false; 
-        if (other.getDefaultTaskList() == null ^ this.getDefaultTaskList() == null) return false;
-        if (other.getDefaultTaskList() != null && other.getDefaultTaskList().equals(this.getDefaultTaskList()) == false) return false; 
-        if (other.getDefaultTaskPriority() == null ^ this.getDefaultTaskPriority() == null) return false;
-        if (other.getDefaultTaskPriority() != null && other.getDefaultTaskPriority().equals(this.getDefaultTaskPriority()) == false) return false; 
-        if (other.getDefaultChildPolicy() == null ^ this.getDefaultChildPolicy() == null) return false;
-        if (other.getDefaultChildPolicy() != null && other.getDefaultChildPolicy().equals(this.getDefaultChildPolicy()) == false) return false; 
-        if (other.getDefaultLambdaRole() == null ^ this.getDefaultLambdaRole() == null) return false;
-        if (other.getDefaultLambdaRole() != null && other.getDefaultLambdaRole().equals(this.getDefaultLambdaRole()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public RegisterWorkflowTypeRequest clone() {
-        
-            return (RegisterWorkflowTypeRequest) super.clone();
+        return (RegisterWorkflowTypeRequest) super.clone();
     }
-
 }
-    

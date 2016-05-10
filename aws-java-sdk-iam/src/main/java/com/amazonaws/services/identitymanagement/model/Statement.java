@@ -25,7 +25,7 @@ import java.io.Serializable;
  * </p>
  * <p>
  * This data type is used by the <code>MatchedStatements</code> member of the
- * <code><a>EvaluationResult</a></code> type.
+ * <code> <a>EvaluationResult</a> </code> type.
  * </p>
  */
 public class Statement implements Serializable, Cloneable {

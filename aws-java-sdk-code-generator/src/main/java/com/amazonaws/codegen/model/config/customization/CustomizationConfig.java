@@ -140,6 +140,16 @@ public class CustomizationConfig {
     private Map<String, ShapeModifier> shapeModifiers;
 
     /**
+     * Customization to use the actual shape name of output shapes (as defined in the service model)
+     * to name the corresponding Java class. Normally we derive a new name using the operation name
+     * (i.e. PutFooResult). This is currently only exercised by SWF and mainly to preserve backwards
+     * compatibility due to a bug in the previous code generator. This is similar to the 'wrapper'
+     * trait in the normalized model but unlike for Query services, this customization has no affect
+     * on how the shape is represented on the wire.
+     */
+    private boolean useModeledOutputShapeNames;
+
+    /**
      * List of 'convenience' overloads to generate for model classes. Convenience overloads expose a
      * different type that is adapted to the real type
      */
@@ -312,16 +322,20 @@ public class CustomizationConfig {
      * Customization to generate a method overload for a member setter that takes a string rather
      * than an InputStream. Currently only used by Lambda
      */
-    public void setStringOverloadForInputStreamMember(StringOverloadForInputStreamMember stringOverloadForInputStreamMember) {
-        this.convenienceTypeOverloads.add(stringOverloadForInputStreamMember.getConvenienceTypeOverload());
+    public void setStringOverloadForInputStreamMember(
+            StringOverloadForInputStreamMember stringOverloadForInputStreamMember) {
+        this.convenienceTypeOverloads
+                .add(stringOverloadForInputStreamMember.getConvenienceTypeOverload());
     }
 
     /**
      * Customization to generate a method overload for a member setter that takes a string rather
      * than an ByteBuffer. Currently only used by Lambda
      */
-    public void setStringOverloadForByteBufferMember(StringOverloadForByteBufferMember stringOverloadForByteBufferMember) {
-        this.convenienceTypeOverloads.add(stringOverloadForByteBufferMember.getConvenienceTypeOverload());
+    public void setStringOverloadForByteBufferMember(
+            StringOverloadForByteBufferMember stringOverloadForByteBufferMember) {
+        this.convenienceTypeOverloads
+                .add(stringOverloadForByteBufferMember.getConvenienceTypeOverload());
     }
 
     /**
@@ -340,4 +354,13 @@ public class CustomizationConfig {
     public void setCustomServiceMetadata(MetadataConfig metadataConfig) {
         this.customServiceMetadata = metadataConfig;
     }
+
+    public boolean useModeledOutputShapeNames() {
+        return useModeledOutputShapeNames;
+    }
+
+    public void setUseModeledOutputShapeNames(boolean useModeledOutputShapeNames) {
+        this.useModeledOutputShapeNames = useModeledOutputShapeNames;
+    }
+
 }

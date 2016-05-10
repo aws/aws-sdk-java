@@ -40,16 +40,12 @@ public class CodeGeneratorTask {
     private static final String P_OUTPUT_DIRECTORY = "outputDirectory";
     private static final String MODEL_DIR_NAME = "models";
 
-    private static final String MODEL_FILE_CLASSPATH_LOCATION = Utils.getRequiredSystemProperty(P_MODEL_FILE,
-            "No C2j Model available for code generation. "
-                    + "Use -DmodelFile={path} to specify the C2j model file.");
-
     public static void main(String[] args) throws IOException {
         final String outputDirectory = Utils.getRequiredSystemProperty(P_OUTPUT_DIRECTORY,
                 "Use -DoutputDirectory={path} to specify the output directory for the code generator.");
         final ServiceModel serviceModel = loadConfigurationModel(
                                             ServiceModel.class,
-                                            MODEL_FILE_CLASSPATH_LOCATION);
+                                            getModelFileClasspathLocation());
 
         final String fileNamePrefix = serviceModel.getMetadata()
                 .getEndpointPrefix()
@@ -68,6 +64,12 @@ public class CodeGeneratorTask {
                 fileNamePrefix, outputDirectory);
     }
 
+    private static String getModelFileClasspathLocation() {
+        return Utils.getRequiredSystemProperty(P_MODEL_FILE,
+                                               "No C2j Model available for code generation. " +
+                                               "Use -DmodelFile={path} to specify the C2j model file.");
+    }
+
     static File getModelDirectory(String outputDirectory) {
         File dir = new File(outputDirectory, MODEL_DIR_NAME);
         Utils.createDirectory(dir);
@@ -78,9 +80,8 @@ public class CodeGeneratorTask {
     private static void snapshotServiceModelFile(final String fileNamePrefix, final String outputDirectory)
             throws IOException {
 
-        try (InputStream is = Utils.getRequiredResourceAsStream(
-                CodeGeneratorTask.class, MODEL_FILE_CLASSPATH_LOCATION))
-        {
+        try (InputStream is = Utils.getRequiredResourceAsStream(CodeGeneratorTask.class,
+                                                                getModelFileClasspathLocation())) {
             byte[] buf = new byte[1024 * 2];
             final File modelDir = getModelDirectory(outputDirectory);
             try (FileOutputStream fos = new FileOutputStream(

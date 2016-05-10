@@ -30,12 +30,26 @@ public class ListAttachedGroupPoliciesRequest extends AmazonWebServiceRequest
      * The name (friendly name, not ARN) of the group to list attached policies
      * for.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String groupName;
     /**
      * <p>
      * The path prefix for filtering the results. This parameter is optional. If
      * it is not included, it defaults to a slash (/), listing all policies.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      */
     private String pathPrefix;
@@ -71,10 +85,21 @@ public class ListAttachedGroupPoliciesRequest extends AmazonWebServiceRequest
      * The name (friendly name, not ARN) of the group to list attached policies
      * for.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param groupName
      *        The name (friendly name, not ARN) of the group to list attached
-     *        policies for.
+     *        policies for.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
 
     public void setGroupName(String groupName) {
@@ -86,9 +111,20 @@ public class ListAttachedGroupPoliciesRequest extends AmazonWebServiceRequest
      * The name (friendly name, not ARN) of the group to list attached policies
      * for.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @return The name (friendly name, not ARN) of the group to list attached
-     *         policies for.
+     *         policies for.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
 
     public String getGroupName() {
@@ -100,10 +136,21 @@ public class ListAttachedGroupPoliciesRequest extends AmazonWebServiceRequest
      * The name (friendly name, not ARN) of the group to list attached policies
      * for.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param groupName
      *        The name (friendly name, not ARN) of the group to list attached
-     *        policies for.
+     *        policies for.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -118,11 +165,26 @@ public class ListAttachedGroupPoliciesRequest extends AmazonWebServiceRequest
      * The path prefix for filtering the results. This parameter is optional. If
      * it is not included, it defaults to a slash (/), listing all policies.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      * 
      * @param pathPrefix
      *        The path prefix for filtering the results. This parameter is
      *        optional. If it is not included, it defaults to a slash (/),
-     *        listing all policies.
+     *        listing all policies.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      */
 
     public void setPathPrefix(String pathPrefix) {
@@ -134,10 +196,25 @@ public class ListAttachedGroupPoliciesRequest extends AmazonWebServiceRequest
      * The path prefix for filtering the results. This parameter is optional. If
      * it is not included, it defaults to a slash (/), listing all policies.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      * 
      * @return The path prefix for filtering the results. This parameter is
      *         optional. If it is not included, it defaults to a slash (/),
-     *         listing all policies.
+     *         listing all policies.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of either
+     *         a forward slash (/) by itself or a string that must begin and end
+     *         with forward slashes, containing any ASCII character from the !
+     *         (\u0021) thru the DEL character (\u007F), including most
+     *         punctuation characters, digits, and upper and lowercased letters.
      */
 
     public String getPathPrefix() {
@@ -149,11 +226,26 @@ public class ListAttachedGroupPoliciesRequest extends AmazonWebServiceRequest
      * The path prefix for filtering the results. This parameter is optional. If
      * it is not included, it defaults to a slash (/), listing all policies.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      * 
      * @param pathPrefix
      *        The path prefix for filtering the results. This parameter is
      *        optional. If it is not included, it defaults to a slash (/),
-     *        listing all policies.
+     *        listing all policies.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

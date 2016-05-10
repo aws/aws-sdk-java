@@ -27,7 +27,7 @@ public class GetGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the group.
+     * A structure that contains details about the group.
      * </p>
      */
     private Group group;
@@ -60,11 +60,11 @@ public class GetGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the group.
+     * A structure that contains details about the group.
      * </p>
      * 
      * @param group
-     *        Information about the group.
+     *        A structure that contains details about the group.
      */
 
     public void setGroup(Group group) {
@@ -73,10 +73,10 @@ public class GetGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the group.
+     * A structure that contains details about the group.
      * </p>
      * 
-     * @return Information about the group.
+     * @return A structure that contains details about the group.
      */
 
     public Group getGroup() {
@@ -85,11 +85,11 @@ public class GetGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the group.
+     * A structure that contains details about the group.
      * </p>
      * 
      * @param group
-     *        Information about the group.
+     *        A structure that contains details about the group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

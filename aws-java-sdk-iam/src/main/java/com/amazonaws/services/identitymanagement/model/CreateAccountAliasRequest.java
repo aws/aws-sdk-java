@@ -29,6 +29,12 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest
      * <p>
      * The account alias to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of lowercase letters,
+     * digits, and dashes. You cannot start or finish with a dash, nor can you
+     * have two dashes in a row.
+     * </p>
      */
     private String accountAlias;
 
@@ -46,7 +52,12 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest
      * object members.
      * 
      * @param accountAlias
-     *        The account alias to create.
+     *        The account alias to create.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of
+     *        lowercase letters, digits, and dashes. You cannot start or finish
+     *        with a dash, nor can you have two dashes in a row.
      */
     public CreateAccountAliasRequest(String accountAlias) {
         setAccountAlias(accountAlias);
@@ -56,9 +67,20 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest
      * <p>
      * The account alias to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of lowercase letters,
+     * digits, and dashes. You cannot start or finish with a dash, nor can you
+     * have two dashes in a row.
+     * </p>
      * 
      * @param accountAlias
-     *        The account alias to create.
+     *        The account alias to create.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of
+     *        lowercase letters, digits, and dashes. You cannot start or finish
+     *        with a dash, nor can you have two dashes in a row.
      */
 
     public void setAccountAlias(String accountAlias) {
@@ -69,8 +91,19 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest
      * <p>
      * The account alias to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of lowercase letters,
+     * digits, and dashes. You cannot start or finish with a dash, nor can you
+     * have two dashes in a row.
+     * </p>
      * 
-     * @return The account alias to create.
+     * @return The account alias to create.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of
+     *         lowercase letters, digits, and dashes. You cannot start or finish
+     *         with a dash, nor can you have two dashes in a row.
      */
 
     public String getAccountAlias() {
@@ -81,9 +114,20 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest
      * <p>
      * The account alias to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of lowercase letters,
+     * digits, and dashes. You cannot start or finish with a dash, nor can you
+     * have two dashes in a row.
+     * </p>
      * 
      * @param accountAlias
-     *        The account alias to create.
+     *        The account alias to create.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of
+     *        lowercase letters, digits, and dashes. You cannot start or finish
+     *        with a dash, nor can you have two dashes in a row.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

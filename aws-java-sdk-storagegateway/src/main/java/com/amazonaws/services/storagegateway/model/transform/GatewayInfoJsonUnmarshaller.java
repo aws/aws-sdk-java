@@ -53,6 +53,11 @@ public class GatewayInfoJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("GatewayId", targetDepth)) {
+                    context.nextToken();
+                    gatewayInfo.setGatewayId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
                     gatewayInfo.setGatewayARN(context.getUnmarshaller(

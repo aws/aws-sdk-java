@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "gamelift",
     "signingName" : "gamelift",
-    "xmlProtocol" : false,
-    "serviceName" : "Amazon GameLift",
     "cborProtocol" : false,
     "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "serviceName" : "Amazon GameLift"
   },
   "operations" : {
     "CreateAlias" : {
@@ -1472,6 +1472,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a player session.</p>",
         "name" : "PlayerSessionId",
@@ -2347,6 +2348,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Amazon S3 bucket identifier.</p>",
         "name" : "Bucket",
@@ -2697,6 +2699,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -2728,6 +2731,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Type of EC2 instances used in the fleet. EC2 instance types define the CPU, memory, storage, and networking capacity of the fleetaposs hosts. Amazon GameLift supports the EC2 instance types listed below. See <a href=\"https://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instance Types</a> for detailed descriptions of each. Leave this parameter blank to retrieve limits for all types.</p>",
         "name" : "EC2InstanceType",
@@ -2872,6 +2876,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>",
         "name" : "Name",
@@ -3012,6 +3017,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet.</p>",
         "name" : "FleetId",
@@ -3362,6 +3368,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Collection of objects containing properties for each player session that matches the request.</p>",
         "name" : "PlayerSessions",
@@ -3739,6 +3746,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Collection of player session objects created for the added players.</p>",
         "name" : "PlayerSessions",
@@ -4011,6 +4019,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -4042,6 +4051,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet. Specify a fleet to retrieve information on all game sessions active on the fleet.</p>",
         "name" : "FleetId",
@@ -4711,6 +4721,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -4742,6 +4753,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Collection of objects containing game session properties and the protection policy currently in force for each session matching the request.</p>",
         "name" : "GameSessionDetails",
@@ -5119,6 +5131,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the fleet you want to update port settings for. </p>",
         "name" : "FleetId",
@@ -5737,6 +5750,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "NEW",
@@ -5798,6 +5812,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the fleet(s) you want to retrieve capacity information for. </p>",
         "name" : "FleetIds",
@@ -6284,6 +6299,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the updated fleet.</p>",
         "name" : "FleetId",
@@ -6424,6 +6440,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>",
         "name" : "Name",
@@ -6673,6 +6690,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Descriptive label associated with this fleet. Fleet names do not need to be unique.</p>",
         "name" : "Name",
@@ -7921,6 +7939,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet alias. Specify the alias you want to delete. </p>",
         "name" : "AliasId",
@@ -8065,6 +8084,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Descriptive label associated with this build. Build names do not need to be unique. A build name can be changed later using <a>UpdateBuild</a>.</p>",
         "name" : "Name",
@@ -8419,6 +8439,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Location of the requested game session logs, available for download.</p>",
         "name" : "PreSignedUrl",
@@ -8559,6 +8580,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Collection of build records that match the request. </p>",
         "name" : "Builds",
@@ -8936,6 +8958,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Object containing the updated game session metadata.</p>",
         "name" : "GameSession",
@@ -9076,6 +9099,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Object containing port settings for the requested fleet ID.</p>",
         "name" : "InboundPermissions",
@@ -9348,6 +9372,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Object containing the requested alias.</p>",
         "name" : "Alias",
@@ -9488,6 +9513,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -9519,6 +9545,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Fleet ID associated with the requested alias.</p>",
         "name" : "FleetId",
@@ -9659,6 +9686,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "GameSession",
@@ -9904,6 +9932,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Object containing the updated build record.</p>",
         "name" : "Build",
@@ -10044,6 +10073,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ACTIVE",
@@ -10099,6 +10129,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Set of properties describing the requested build.</p>",
         "name" : "Build",
@@ -10239,6 +10270,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Object containing the newly created player session record.</p>",
         "name" : "PlayerSession",
@@ -10379,6 +10411,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "NoProtection",
@@ -10419,6 +10452,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Object containing the maximum number of instances for the specified instance type.</p>",
         "name" : "EC2InstanceLimits",
@@ -10691,6 +10725,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet alias. Specify the alias you want to retrieve. </p>",
         "name" : "AliasId",
@@ -10835,6 +10870,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the fleet to get event logs for. </p>",
         "name" : "FleetId",
@@ -11399,6 +11435,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet.</p>",
         "name" : "FleetId",
@@ -11854,6 +11891,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Type of EC2 instances used in the fleet. EC2 instance types define the CPU, memory, storage, and networking capacity of the fleetaposs hosts. Amazon GameLift supports the EC2 instance types listed below. See <a href=\"https://aws.amazon.com/ec2/instance-types/\">Amazon EC2 Instance Types</a> for detailed descriptions of each.</p>",
         "name" : "EC2InstanceType",
@@ -12204,6 +12242,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "GreaterThanOrEqualToThreshold",
@@ -12250,6 +12289,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Object containing the newly created alias record.</p>",
         "name" : "Alias",
@@ -12390,6 +12430,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "GENERIC_EVENT",
@@ -12478,6 +12519,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "INITIALIZED",
@@ -12521,6 +12563,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet. Specify a fleet to retrieve information on all game sessions active on the fleet.</p>",
         "name" : "FleetId",
@@ -13190,6 +13233,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Properties for the newly created fleet.</p>",
         "name" : "FleetAttributes",
@@ -13330,6 +13374,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identity for the fleet associated with this scaling policy.</p>",
         "name" : "FleetId",
@@ -14310,6 +14355,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the build you want to retrieve properties for. </p>",
         "name" : "BuildId",
@@ -14454,6 +14500,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -14485,6 +14532,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the updated fleet.</p>",
         "name" : "FleetId",
@@ -14625,6 +14673,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a game session.</p>",
         "name" : "GameSessionId",
@@ -15947,6 +15996,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet. Specify the fleet to retrieve scaling policies for.</p>",
         "name" : "FleetId",
@@ -16406,6 +16456,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>AWS credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>",
         "name" : "UploadCredentials",
@@ -16651,6 +16702,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Type of routing to filter results on. Use this parameter to retrieve only aliases of a certain type. To retrieve all aliases, leave this parameter empty. Possible routing types include: <ul><li>SIMPLE: The alias resolves to one specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL: The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.</li></ul></p>",
         "name" : "RoutingStrategyType",
@@ -17110,6 +17162,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -17141,6 +17194,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Collection of objects containing game session properties for each session matching the request.</p>",
         "name" : "GameSessions",
@@ -17518,6 +17572,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "T2Micro",
@@ -17636,6 +17691,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Collection of objects containing attribute metadata for each requested fleet ID. </p>",
         "name" : "FleetAttributes",
@@ -18013,6 +18069,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Ideal number of active instances in the fleet.</p>",
         "name" : "DESIRED",
@@ -18783,6 +18840,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "RESERVED",
@@ -18829,6 +18887,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet.</p>",
         "name" : "FleetId",
@@ -20151,6 +20210,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Build state to filter results on. Use this parameter to retrieve builds in a certain state. To retrieve all builds, leave this parameter empty. Possible build states include: <ul><li>INITIALIZED: A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this state. When a build is successfully created, the build state is set to this value. </li><li>READY: The game build has been successfully uploaded. You can now create new fleets for this build.</li><li>FAILED: The game build upload failed. You cannot create new fleets for this build. </li></ul></p>",
         "name" : "Status",
@@ -20505,6 +20565,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a game session.</p>",
         "name" : "GameSessionId",
@@ -21174,6 +21235,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ACTIVE",
@@ -21220,6 +21282,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ACCEPT_ALL",
@@ -21260,6 +21323,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the build you want to get credentials for. </p>",
         "name" : "BuildId",
@@ -21404,6 +21468,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifiers for the fleet(s) that you want to retrieve attributes for. Leave this parameter empty to retrieve attributes for all fleets.</p>",
         "name" : "FleetIds",
@@ -21890,6 +21955,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a game session. Specify the game session you want to update. </p>",
         "name" : "GameSessionId",
@@ -22454,6 +22520,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Object containing the newly created game session record.</p>",
         "name" : "GameSession",
@@ -22594,6 +22661,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a game session. Specify the game session you want to get logs for.</p>",
         "name" : "GameSessionId",
@@ -22738,6 +22806,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a build.</p>",
         "name" : "BuildId",
@@ -23403,6 +23472,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Collection of objects containing the scaling policies matching the request.</p>",
         "name" : "ScalingPolicies",
@@ -23780,6 +23850,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -23811,6 +23882,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Set of properties for the newly created build.</p>",
         "name" : "Build",
@@ -24161,6 +24233,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -24192,6 +24265,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet event.</p>",
         "name" : "EventId",
@@ -24752,6 +24826,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Key",
@@ -24997,6 +25072,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Collection of objects containing event log entries for the specified fleet.</p>",
         "name" : "Events",
@@ -25374,6 +25450,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Collection of alias records that match the list request. </p>",
         "name" : "Aliases",
@@ -25751,6 +25828,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the fleet you want to update capacity for. </p>",
         "name" : "FleetId",
@@ -26210,6 +26288,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a game session. </p>",
         "name" : "GameSessionId",
@@ -26591,6 +26670,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the alias you want to resolve. </p>",
         "name" : "AliasId",
@@ -26735,6 +26815,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -26766,6 +26847,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -26797,6 +26879,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Collection of objects containing capacity information for each requested fleet ID. Leave this parameter empty to retrieve capacity information for all fleets.</p>",
         "name" : "FleetCapacity",
@@ -27174,6 +27257,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the fleet you want to update attribute metadata for. </p>",
         "name" : "FleetId",
@@ -27633,6 +27717,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the fleet you want to retrieve port settings for. </p>",
         "name" : "FleetId",
@@ -27777,6 +27862,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Object containing the updated alias configuration.</p>",
         "name" : "Alias",
@@ -27917,6 +28003,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Starting value for a range of allowed port numbers. </p>",
         "name" : "FromPort",
@@ -28372,6 +28459,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ChangeInCapacity",
@@ -28415,6 +28503,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the updated fleet.</p>",
         "name" : "FleetId",
@@ -28555,6 +28644,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the build you want to delete. </p>",
         "name" : "BuildId",
@@ -28699,6 +28789,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Access key for an AWS account.</p>",
         "name" : "AccessKeyId",
@@ -29049,6 +29140,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Set of fleet IDs matching the list request. You can retrieve additional information about all returned fleets by passing this result set to a call to <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, and <a>DescribeFleetUtilization</a>.</p>",
         "name" : "FleetIds",
@@ -29426,6 +29518,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "TCP",
@@ -29466,6 +29559,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ActivatingGameSessions",
@@ -29518,6 +29612,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "SIMPLE",
@@ -29558,6 +29653,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the fleet(s) you want to retrieve utilization data for. Leave this parameter empty to retrieve utilization data for all fleets.</p>",
         "name" : "FleetIds",
@@ -30044,6 +30140,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a game session. Specify the game session you want to add a player to.</p>",
         "name" : "GameSessionId",
@@ -30293,6 +30390,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier of the build to return fleets for. Use this parameter to return only fleets using the specified build. To retrieve all fleets, leave this parameter empty.</p>",
         "name" : "BuildId",
@@ -30647,6 +30745,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>",
         "name" : "Name",
@@ -31526,6 +31625,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the build you want to update. </p>",
         "name" : "BuildId",
@@ -31880,6 +31980,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Descriptive label associated with this alias. Alias names do not need to be unique.</p>",
         "name" : "Name",
@@ -32234,6 +32335,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Collection of objects containing utilization information for each requested fleet ID.</p>",
         "name" : "FleetUtilization",
@@ -32611,6 +32713,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet. Each request must reference either a fleet ID or alias ID, but not both.</p>",
         "name" : "FleetId",
@@ -33307,6 +33410,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for the fleet you want to delete.</p>",
         "name" : "FleetId",
@@ -33451,6 +33555,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet alias.</p>",
         "name" : "AliasId",
@@ -34116,6 +34221,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Unique identifier for a fleet alias. Specify the alias you want to update. </p>",
         "name" : "AliasId",
@@ -34575,6 +34681,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Type of routing strategy. Possible routing types include: <ul><li>SIMPLE: The alias resolves to one specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL: The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.</li></ul></p>",
         "name" : "Type",
@@ -34925,6 +35032,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {

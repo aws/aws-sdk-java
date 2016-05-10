@@ -27,25 +27,42 @@ public class GetOpenIDConnectProviderRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to get information for. You can get a list of OIDC provider ARNs by using
-     * the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the OIDC provider resource object in
+     * IAM to get information for. You can get a list of OIDC provider resource
+     * ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      */
     private String openIDConnectProviderArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to get information for. You can get a list of OIDC provider ARNs by using
-     * the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the OIDC provider resource object in
+     * IAM to get information for. You can get a list of OIDC provider resource
+     * ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * 
      * @param openIDConnectProviderArn
-     *        The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *        provider to get information for. You can get a list of OIDC
-     *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-     *        action.
+     *        The Amazon Resource Name (ARN) of the OIDC provider resource
+     *        object in IAM to get information for. You can get a list of OIDC
+     *        provider resource ARNs by using the
+     *        <a>ListOpenIDConnectProviders</a> action.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
 
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
@@ -54,15 +71,26 @@ public class GetOpenIDConnectProviderRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to get information for. You can get a list of OIDC provider ARNs by using
-     * the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the OIDC provider resource object in
+     * IAM to get information for. You can get a list of OIDC provider resource
+     * ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *         provider to get information for. You can get a list of OIDC
-     *         provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-     *         action.
+     * @return The Amazon Resource Name (ARN) of the OIDC provider resource
+     *         object in IAM to get information for. You can get a list of OIDC
+     *         provider resource ARNs by using the
+     *         <a>ListOpenIDConnectProviders</a> action.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
 
     public String getOpenIDConnectProviderArn() {
@@ -71,16 +99,27 @@ public class GetOpenIDConnectProviderRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to get information for. You can get a list of OIDC provider ARNs by using
-     * the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the OIDC provider resource object in
+     * IAM to get information for. You can get a list of OIDC provider resource
+     * ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * 
      * @param openIDConnectProviderArn
-     *        The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *        provider to get information for. You can get a list of OIDC
-     *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-     *        action.
+     *        The Amazon Resource Name (ARN) of the OIDC provider resource
+     *        object in IAM to get information for. You can get a list of OIDC
+     *        provider resource ARNs by using the
+     *        <a>ListOpenIDConnectProviders</a> action.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "codecommit",
     "signingName" : "codecommit",
-    "xmlProtocol" : false,
     "serviceName" : "CodeCommit",
     "cborProtocol" : false,
     "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -72,12 +72,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetRepositoriesResult",
       "asyncReturnType" : "BatchGetRepositoriesResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetRepositoriesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetRepositoriesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetRepositoriesRequest, BatchGetRepositoriesResult>",
+      "authenticated" : true,
       "methodName" : "batchGetRepositories"
     },
     "CreateBranch" : {
@@ -138,12 +138,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, Void>",
+      "authenticated" : true,
       "methodName" : "createBranch"
     },
     "CreateRepository" : {
@@ -195,12 +195,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateRepositoryResult",
       "asyncReturnType" : "CreateRepositoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateRepositoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateRepositoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResult>",
+      "authenticated" : true,
       "methodName" : "createRepository"
     },
     "DeleteRepository" : {
@@ -243,12 +243,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteRepositoryResult",
       "asyncReturnType" : "DeleteRepositoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRepositoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteRepositoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResult>",
+      "authenticated" : true,
       "methodName" : "deleteRepository"
     },
     "GetBranch" : {
@@ -303,12 +303,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetBranchResult",
       "asyncReturnType" : "GetBranchResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetBranchResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetBranchResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetBranchRequest, GetBranchResult>",
+      "authenticated" : true,
       "methodName" : "getBranch"
     },
     "GetCommit" : {
@@ -363,12 +363,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetCommitResult",
       "asyncReturnType" : "GetCommitResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCommitResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCommitResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCommitRequest, GetCommitResult>",
+      "authenticated" : true,
       "methodName" : "getCommit"
     },
     "GetRepository" : {
@@ -414,12 +414,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetRepositoryResult",
       "asyncReturnType" : "GetRepositoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRepositoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRepositoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRepositoryRequest, GetRepositoryResult>",
+      "authenticated" : true,
       "methodName" : "getRepository"
     },
     "GetRepositoryTriggers" : {
@@ -465,12 +465,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetRepositoryTriggersResult",
       "asyncReturnType" : "GetRepositoryTriggersResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRepositoryTriggersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRepositoryTriggersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRepositoryTriggersRequest, GetRepositoryTriggersResult>",
+      "authenticated" : true,
       "methodName" : "getRepositoryTriggers"
     },
     "ListBranches" : {
@@ -519,12 +519,12 @@
         "documentation" : "<p>The specified continuation token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListBranchesResult",
       "asyncReturnType" : "ListBranchesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListBranchesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListBranchesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListBranchesRequest, ListBranchesResult>",
+      "authenticated" : true,
       "methodName" : "listBranches"
     },
     "ListRepositories" : {
@@ -555,12 +555,12 @@
         "documentation" : "<p>The specified continuation token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListRepositoriesResult",
       "asyncReturnType" : "ListRepositoriesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRepositoriesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRepositoriesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResult>",
+      "authenticated" : true,
       "methodName" : "listRepositories"
     },
     "PutRepositoryTriggers" : {
@@ -645,12 +645,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutRepositoryTriggersResult",
       "asyncReturnType" : "PutRepositoryTriggersResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRepositoryTriggersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRepositoryTriggersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRepositoryTriggersRequest, PutRepositoryTriggersResult>",
+      "authenticated" : true,
       "methodName" : "putRepositoryTriggers"
     },
     "TestRepositoryTriggers" : {
@@ -735,12 +735,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "TestRepositoryTriggersResult",
       "asyncReturnType" : "TestRepositoryTriggersResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestRepositoryTriggersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestRepositoryTriggersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestRepositoryTriggersRequest, TestRepositoryTriggersResult>",
+      "authenticated" : true,
       "methodName" : "testRepositoryTriggers"
     },
     "UpdateDefaultBranch" : {
@@ -792,12 +792,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, Void>",
+      "authenticated" : true,
       "methodName" : "updateDefaultBranch"
     },
     "UpdateRepositoryDescription" : {
@@ -843,12 +843,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, Void>",
+      "authenticated" : true,
       "methodName" : "updateRepositoryDescription"
     },
     "UpdateRepositoryName" : {
@@ -879,12 +879,12 @@
         "documentation" : "<p>At least one specified repository name is not valid.</p> <note><p>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p></note>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, Void>",
+      "authenticated" : true,
       "methodName" : "updateRepositoryName"
     }
   },
@@ -899,6 +899,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The system-generated unique ID for the trigger.</p>",
         "name" : "ConfigurationId",
@@ -1276,6 +1277,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the AWS account associated with the repository.</p>",
         "name" : "AccountId",
@@ -2361,6 +2363,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "All",
@@ -2407,6 +2410,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -2438,6 +2442,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The names of the repositories to get information about.</p>",
         "name" : "RepositoryNames",
@@ -2714,6 +2719,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -2745,6 +2751,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the branch.</p>",
         "name" : "BranchName",
@@ -2990,6 +2997,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Lists the repositories called by the list repositories operation.</p>",
         "name" : "Repositories",
@@ -3367,6 +3375,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -3398,6 +3407,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -3429,6 +3439,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -3460,6 +3471,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of repositories returned by the batch get repositories operation.</p>",
         "name" : "Repositories",
@@ -3969,6 +3981,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4000,6 +4013,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the newly created repository.</p>",
         "name" : "RepositoryMetadata",
@@ -4140,6 +4154,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the repository that contains the branches.</p>",
         "name" : "RepositoryName",
@@ -4389,6 +4404,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4420,6 +4436,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the specified commit.</p>",
         "name" : "Commit",
@@ -4560,6 +4577,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>",
         "name" : "SuccessfulExecutions",
@@ -5069,6 +5087,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5100,6 +5119,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5131,6 +5151,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5162,6 +5183,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the repository in which to test the triggers.</p>",
         "name" : "RepositoryName",
@@ -5543,6 +5565,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5574,6 +5597,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Tree information for the specified commit.</p>",
         "name" : "TreeId",
@@ -6371,6 +6395,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the branch.</p>",
         "name" : "Branch",
@@ -6511,6 +6536,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The list of branch names.</p>",
         "name" : "Branches",
@@ -6888,6 +6914,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "RepositoryName",
@@ -6928,6 +6955,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -6959,6 +6987,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -6990,6 +7019,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7021,6 +7051,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7052,6 +7083,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7083,6 +7115,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the repository to set or change the default branch for.</p>",
         "name" : "RepositoryName",
@@ -7332,6 +7365,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7363,6 +7397,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7394,6 +7429,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7425,6 +7461,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7456,6 +7493,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the repository that contains the branch for which you want to retrieve information.</p>",
         "name" : "RepositoryName",
@@ -7705,6 +7743,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the trigger that did not run.</p>",
         "name" : "Trigger",
@@ -7950,6 +7989,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7981,6 +8021,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The existing name of the repository.</p>",
         "name" : "OldName",
@@ -8230,6 +8271,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the repository that was deleted.</p>",
         "name" : "RepositoryId",
@@ -8370,6 +8412,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -8401,6 +8444,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the repository in which you want to create the new branch.</p>",
         "name" : "RepositoryName",
@@ -8755,6 +8799,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the repository.</p>",
         "name" : "RepositoryMetadata",
@@ -8895,6 +8940,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -8926,6 +8972,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -8957,6 +9004,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the repository to delete.</p>",
         "name" : "RepositoryName",
@@ -9101,6 +9149,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -9132,6 +9181,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -9163,6 +9213,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -9194,6 +9245,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the repository where you want to create or update the trigger. </p>",
         "name" : "RepositoryName",
@@ -9575,6 +9627,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>",
         "name" : "NextToken",
@@ -9929,6 +9982,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Ascending",
@@ -9969,6 +10023,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10000,6 +10055,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10031,6 +10087,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10062,6 +10119,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10093,6 +10151,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10124,6 +10183,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the new repository to be created.</p> <note><p>The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide. The suffix \".git\" is prohibited.</p></note>",
         "name" : "RepositoryName",
@@ -10373,6 +10433,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the repository to get information about.</p>",
         "name" : "RepositoryName",
@@ -10517,6 +10578,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10548,6 +10610,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the trigger.</p>",
         "name" : "Name",
@@ -11372,6 +11435,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the repository to set or change the comment or description for.</p>",
         "name" : "RepositoryName",
@@ -11621,6 +11685,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11652,6 +11717,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11683,6 +11749,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name associated with the repository.</p>",
         "name" : "RepositoryName",
@@ -11928,6 +11995,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -11959,6 +12027,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the user who made the specified commit.</p>",
         "name" : "Name",
@@ -12309,6 +12378,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -12340,6 +12410,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the repository to which the commit was made.</p>",
         "name" : "RepositoryName",
@@ -12589,6 +12660,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The system-generated unique ID for the create or update operation. </p>",
         "name" : "ConfigurationId",
@@ -12729,6 +12801,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the repository for which the trigger is configured.</p>",
         "name" : "RepositoryName",

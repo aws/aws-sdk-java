@@ -30,6 +30,11 @@ public class GetAccountAuthorizationDetailsRequest extends
      * A list of entity types (user, group, role, local managed policy, or AWS
      * managed policy) for filtering the results.
      * </p>
+     * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> filter;
     /**
@@ -64,9 +69,18 @@ public class GetAccountAuthorizationDetailsRequest extends
      * A list of entity types (user, group, role, local managed policy, or AWS
      * managed policy) for filtering the results.
      * </p>
+     * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
      * 
      * @return A list of entity types (user, group, role, local managed policy,
-     *         or AWS managed policy) for filtering the results.
+     *         or AWS managed policy) for filtering the results.</p>
+     *         <p>
+     *         The format for this parameter is a comma-separated (if more than
+     *         one) list of strings. Each string value in the list must be one
+     *         of the valid values listed below.
      * @see EntityType
      */
 
@@ -82,10 +96,19 @@ public class GetAccountAuthorizationDetailsRequest extends
      * A list of entity types (user, group, role, local managed policy, or AWS
      * managed policy) for filtering the results.
      * </p>
+     * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
      * 
      * @param filter
      *        A list of entity types (user, group, role, local managed policy,
-     *        or AWS managed policy) for filtering the results.
+     *        or AWS managed policy) for filtering the results.</p>
+     *        <p>
+     *        The format for this parameter is a comma-separated (if more than
+     *        one) list of strings. Each string value in the list must be one of
+     *        the valid values listed below.
      * @see EntityType
      */
 
@@ -104,6 +127,11 @@ public class GetAccountAuthorizationDetailsRequest extends
      * managed policy) for filtering the results.
      * </p>
      * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setFilter(java.util.Collection)} or
      * {@link #withFilter(java.util.Collection)} if you want to override the
@@ -112,7 +140,11 @@ public class GetAccountAuthorizationDetailsRequest extends
      * 
      * @param filter
      *        A list of entity types (user, group, role, local managed policy,
-     *        or AWS managed policy) for filtering the results.
+     *        or AWS managed policy) for filtering the results.</p>
+     *        <p>
+     *        The format for this parameter is a comma-separated (if more than
+     *        one) list of strings. Each string value in the list must be one of
+     *        the valid values listed below.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EntityType
@@ -134,10 +166,19 @@ public class GetAccountAuthorizationDetailsRequest extends
      * A list of entity types (user, group, role, local managed policy, or AWS
      * managed policy) for filtering the results.
      * </p>
+     * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
      * 
      * @param filter
      *        A list of entity types (user, group, role, local managed policy,
-     *        or AWS managed policy) for filtering the results.
+     *        or AWS managed policy) for filtering the results.</p>
+     *        <p>
+     *        The format for this parameter is a comma-separated (if more than
+     *        one) list of strings. Each string value in the list must be one of
+     *        the valid values listed below.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EntityType
@@ -154,10 +195,19 @@ public class GetAccountAuthorizationDetailsRequest extends
      * A list of entity types (user, group, role, local managed policy, or AWS
      * managed policy) for filtering the results.
      * </p>
+     * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
      * 
      * @param filter
      *        A list of entity types (user, group, role, local managed policy,
-     *        or AWS managed policy) for filtering the results.
+     *        or AWS managed policy) for filtering the results.</p>
+     *        <p>
+     *        The format for this parameter is a comma-separated (if more than
+     *        one) list of strings. Each string value in the list must be one of
+     *        the valid values listed below.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EntityType

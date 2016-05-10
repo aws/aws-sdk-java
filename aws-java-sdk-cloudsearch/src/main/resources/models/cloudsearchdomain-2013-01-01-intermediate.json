@@ -51,12 +51,12 @@
         "documentation" : "<p>Information about any problems encountered while processing a search request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "SearchResult",
       "asyncReturnType" : "SearchResult",
       "asyncFutureType" : "java.util.concurrent.Future<SearchResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SearchResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SearchRequest, SearchResult>",
+      "authenticated" : true,
       "methodName" : "search"
     },
     "Suggest" : {
@@ -81,12 +81,12 @@
         "documentation" : "<p>Information about any problems encountered while processing a search request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "SuggestResult",
       "asyncReturnType" : "SuggestResult",
       "asyncFutureType" : "java.util.concurrent.Future<SuggestResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SuggestResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SuggestRequest, SuggestResult>",
+      "authenticated" : true,
       "methodName" : "suggest"
     },
     "UploadDocuments" : {
@@ -111,12 +111,12 @@
         "documentation" : "<p>Information about any problems encountered while processing an upload request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UploadDocumentsResult",
       "asyncReturnType" : "UploadDocumentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UploadDocumentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UploadDocumentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UploadDocumentsRequest, UploadDocumentsResult>",
+      "authenticated" : true,
       "methodName" : "uploadDocuments"
     }
   },
@@ -131,6 +131,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>",
         "name" : "Suggestion",
@@ -481,6 +482,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The document ID of a document that matches the search request.</p>",
         "name" : "Id",
@@ -1470,6 +1472,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -1501,6 +1504,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The return status of a document upload request, <code>error</code> or <code>success</code>.</p>",
         "name" : "Status",
@@ -1638,6 +1642,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The status of an <code>UploadDocumentsRequest</code>.</p>",
         "name" : "Status",
@@ -2225,6 +2230,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Retrieves a cursor value you can use to page through large result sets. Use the <code>size</code> parameter to control the number of hits to include in each response. You can specify either the <code>cursor</code> or <code>start</code> parameter in a request; they are mutually exclusive. To get the first cursor, set the cursor value to <code>initial</code>. In subsequent requests, specify the cursor value returned in the hits section of the response. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html\">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
         "name" : "Cursor",
@@ -3734,6 +3740,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The facet value being counted.</p>",
         "name" : "Value",
@@ -3979,6 +3986,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>How long it took to process the request, in milliseconds.</p>",
         "name" : "Timems",
@@ -4224,6 +4232,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The description for a warning returned by the document service.</p>",
         "name" : "Message",
@@ -4364,6 +4373,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the string for which you want to get suggestions.</p>",
         "name" : "Query",
@@ -4718,6 +4728,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The total number of documents that match the search request.</p>",
         "name" : "Found",
@@ -5305,6 +5316,7 @@
       "hasHeaderMember" : true,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : true,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A batch of documents formatted in JSON or HTML.</p>",
         "name" : "Documents",
@@ -5659,6 +5671,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The status information returned for the search request.</p>",
         "name" : "Status",
@@ -6382,6 +6395,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Simple",
@@ -6428,6 +6442,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>",
         "name" : "Status",
@@ -6673,6 +6688,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The query string specified in the suggest request.</p>",
         "name" : "Query",
@@ -7155,6 +7171,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>",
         "name" : "Min",
@@ -8030,6 +8047,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Applicationjson",
@@ -8070,6 +8088,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of the calculated facet values and counts.</p>",
         "name" : "Buckets",
@@ -8342,6 +8361,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>How long it took to process the request, in milliseconds.</p>",
         "name" : "Timems",

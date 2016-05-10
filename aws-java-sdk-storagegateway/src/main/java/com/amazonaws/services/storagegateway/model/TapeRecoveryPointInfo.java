@@ -104,7 +104,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * 
      * @param tapeRecoveryPointTime
      *        The time when the point-in-time view of the virtual tape was
-     *        replicated for later recovery. </p>
+     *        replicated for later recovery.</p>
      *        <p>
      *        The string format of the tape recovery point time is in the
      *        ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
@@ -125,7 +125,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @return The time when the point-in-time view of the virtual tape was
-     *         replicated for later recovery. </p>
+     *         replicated for later recovery.</p>
      *         <p>
      *         The string format of the tape recovery point time is in the
      *         ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
@@ -147,7 +147,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * 
      * @param tapeRecoveryPointTime
      *        The time when the point-in-time view of the virtual tape was
-     *        replicated for later recovery. </p>
+     *        replicated for later recovery.</p>
      *        <p>
      *        The string format of the tape recovery point time is in the
      *        ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.

@@ -20,10 +20,10 @@
     "jsonVersion" : null,
     "endpointPrefix" : "lambda",
     "signingName" : "lambda",
-    "xmlProtocol" : false,
     "serviceName" : "AWS Lambda",
     "cborProtocol" : false,
     "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -66,12 +66,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddPermissionResult",
       "asyncReturnType" : "AddPermissionResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddPermissionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddPermissionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult>",
-      "authenticated" : true,
       "methodName" : "addPermission"
     },
     "CreateAlias" : {
@@ -108,12 +108,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateAliasResult",
       "asyncReturnType" : "CreateAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult>",
-      "authenticated" : true,
       "methodName" : "createAlias"
     },
     "CreateEventSourceMapping" : {
@@ -150,12 +150,12 @@
         "documentation" : "<p>The resource (for example, a Lambda function or access policy statement) specified in the request does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateEventSourceMappingResult",
       "asyncReturnType" : "CreateEventSourceMappingResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateEventSourceMappingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateEventSourceMappingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEventSourceMappingRequest, CreateEventSourceMappingResult>",
-      "authenticated" : true,
       "methodName" : "createEventSourceMapping"
     },
     "CreateFunction" : {
@@ -195,12 +195,12 @@
         "documentation" : "<p>You have exceeded your maximum total code size per account. <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/limits.html\">Limits</a> </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateFunctionResult",
       "asyncReturnType" : "CreateFunctionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateFunctionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateFunctionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateFunctionRequest, CreateFunctionResult>",
-      "authenticated" : true,
       "methodName" : "createFunction"
     },
     "DeleteAlias" : {
@@ -228,12 +228,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, Void>",
-      "authenticated" : true,
       "methodName" : "deleteAlias"
     },
     "DeleteEventSourceMapping" : {
@@ -267,12 +267,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteEventSourceMappingResult",
       "asyncReturnType" : "DeleteEventSourceMappingResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteEventSourceMappingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteEventSourceMappingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEventSourceMappingRequest, DeleteEventSourceMappingResult>",
-      "authenticated" : true,
       "methodName" : "deleteEventSourceMapping"
     },
     "DeleteFunction" : {
@@ -306,12 +306,12 @@
         "documentation" : "<p>The resource already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, Void>",
-      "authenticated" : true,
       "methodName" : "deleteFunction"
     },
     "GetAlias" : {
@@ -345,12 +345,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetAliasResult",
       "asyncReturnType" : "GetAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetAliasRequest, GetAliasResult>",
-      "authenticated" : true,
       "methodName" : "getAlias"
     },
     "GetEventSourceMapping" : {
@@ -384,12 +384,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetEventSourceMappingResult",
       "asyncReturnType" : "GetEventSourceMappingResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetEventSourceMappingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetEventSourceMappingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetEventSourceMappingRequest, GetEventSourceMappingResult>",
-      "authenticated" : true,
       "methodName" : "getEventSourceMapping"
     },
     "GetFunction" : {
@@ -423,12 +423,12 @@
         "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetFunctionResult",
       "asyncReturnType" : "GetFunctionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetFunctionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetFunctionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetFunctionRequest, GetFunctionResult>",
-      "authenticated" : true,
       "methodName" : "getFunction"
     },
     "GetFunctionConfiguration" : {
@@ -462,12 +462,12 @@
         "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetFunctionConfigurationResult",
       "asyncReturnType" : "GetFunctionConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetFunctionConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetFunctionConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetFunctionConfigurationRequest, GetFunctionConfigurationResult>",
-      "authenticated" : true,
       "methodName" : "getFunctionConfiguration"
     },
     "GetPolicy" : {
@@ -501,12 +501,12 @@
         "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetPolicyResult",
       "asyncReturnType" : "GetPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult>",
-      "authenticated" : true,
       "methodName" : "getPolicy"
     },
     "Invoke" : {
@@ -570,12 +570,12 @@
         "documentation" : "<p>The Security Group ID provided in the Lambda function VPC configuration is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
+      "authenticated" : true,
       "syncReturnType" : "InvokeResult",
       "asyncReturnType" : "InvokeResult",
       "asyncFutureType" : "java.util.concurrent.Future<InvokeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<InvokeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<InvokeRequest, InvokeResult>",
-      "authenticated" : true,
       "methodName" : "invoke"
     },
     "InvokeAsync" : {
@@ -606,12 +606,12 @@
         "documentation" : "<p>The request body could not be parsed as JSON.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "InvokeAsyncResult",
       "asyncReturnType" : "InvokeAsyncResult",
       "asyncFutureType" : "java.util.concurrent.Future<InvokeAsyncResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<InvokeAsyncResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<InvokeAsyncRequest, InvokeAsyncResult>",
-      "authenticated" : true,
       "methodName" : "invokeAsync"
     },
     "ListAliases" : {
@@ -645,12 +645,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListAliasesResult",
       "asyncReturnType" : "ListAliasesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAliasesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAliasesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult>",
-      "authenticated" : true,
       "methodName" : "listAliases"
     },
     "ListEventSourceMappings" : {
@@ -684,12 +684,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListEventSourceMappingsResult",
       "asyncReturnType" : "ListEventSourceMappingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListEventSourceMappingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListEventSourceMappingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListEventSourceMappingsRequest, ListEventSourceMappingsResult>",
-      "authenticated" : true,
       "methodName" : "listEventSourceMappings"
     },
     "ListFunctions" : {
@@ -717,12 +717,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListFunctionsResult",
       "asyncReturnType" : "ListFunctionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListFunctionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListFunctionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult>",
-      "authenticated" : true,
       "methodName" : "listFunctions"
     },
     "ListVersionsByFunction" : {
@@ -756,12 +756,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListVersionsByFunctionResult",
       "asyncReturnType" : "ListVersionsByFunctionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListVersionsByFunctionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListVersionsByFunctionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListVersionsByFunctionRequest, ListVersionsByFunctionResult>",
-      "authenticated" : true,
       "methodName" : "listVersionsByFunction"
     },
     "PublishVersion" : {
@@ -798,12 +798,12 @@
         "documentation" : "<p>You have exceeded your maximum total code size per account. <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/limits.html\">Limits</a> </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PublishVersionResult",
       "asyncReturnType" : "PublishVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<PublishVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PublishVersionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PublishVersionRequest, PublishVersionResult>",
-      "authenticated" : true,
       "methodName" : "publishVersion"
     },
     "RemovePermission" : {
@@ -834,12 +834,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void>",
-      "authenticated" : true,
       "methodName" : "removePermission"
     },
     "UpdateAlias" : {
@@ -873,12 +873,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateAliasResult",
       "asyncReturnType" : "UpdateAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAliasRequest, UpdateAliasResult>",
-      "authenticated" : true,
       "methodName" : "updateAlias"
     },
     "UpdateEventSourceMapping" : {
@@ -915,12 +915,12 @@
         "documentation" : "<p>The resource already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateEventSourceMappingResult",
       "asyncReturnType" : "UpdateEventSourceMappingResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateEventSourceMappingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateEventSourceMappingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateEventSourceMappingRequest, UpdateEventSourceMappingResult>",
-      "authenticated" : true,
       "methodName" : "updateEventSourceMapping"
     },
     "UpdateFunctionCode" : {
@@ -957,12 +957,12 @@
         "documentation" : "<p>You have exceeded your maximum total code size per account. <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/limits.html\">Limits</a> </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateFunctionCodeResult",
       "asyncReturnType" : "UpdateFunctionCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateFunctionCodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateFunctionCodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateFunctionCodeRequest, UpdateFunctionCodeResult>",
-      "authenticated" : true,
       "methodName" : "updateFunctionCode"
     },
     "UpdateFunctionConfiguration" : {
@@ -996,12 +996,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateFunctionConfigurationResult",
       "asyncReturnType" : "UpdateFunctionConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateFunctionConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateFunctionConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateFunctionConfigurationRequest, UpdateFunctionConfigurationResult>",
-      "authenticated" : true,
       "methodName" : "updateFunctionConfiguration"
     }
   },
@@ -1016,6 +1016,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the function.</p>",
         "name" : "FunctionName",
@@ -2416,6 +2417,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the function.</p>",
         "name" : "FunctionName",
@@ -3816,6 +3818,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : true,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Lambda function name.</p>",
         "name" : "FunctionName",
@@ -4065,6 +4068,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>It will be 202 upon success.</p>",
         "name" : "Status",
@@ -4205,6 +4209,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The event source mapping identifier.</p>",
         "name" : "UUID",
@@ -4664,6 +4669,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name you want to assign to the function you are uploading. The function names appear in the console and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs, such as <a>Invoke</a>. </p>",
         "name" : "FunctionName",
@@ -5753,6 +5759,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -5890,6 +5897,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Lambda function whose resource policy you want to remove a permission from.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>",
         "name" : "FunctionName",
@@ -6244,6 +6252,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The event source mapping ID.</p>",
         "name" : "UUID",
@@ -6388,6 +6397,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -6525,6 +6535,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the Lambda function for which you want to retrieve the configuration information.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>",
         "name" : "FunctionName",
@@ -6774,6 +6785,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of subnet IDs associated with the Lambda function.</p>",
         "name" : "SubnetIds",
@@ -6875,11 +6887,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6993,11 +7005,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7186,11 +7198,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7305,11 +7317,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7388,6 +7400,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the function.</p>",
         "name" : "FunctionName",
@@ -8788,6 +8801,7 @@
       "hasHeaderMember" : true,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Lambda function name. </p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>",
         "name" : "FunctionName",
@@ -9457,6 +9471,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -9594,6 +9609,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the Lambda function.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>",
         "name" : "FunctionName",
@@ -10473,6 +10489,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -10610,6 +10627,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Lambda function name for which the alias is created. Deleting an alias does not delete the function version to which it is pointing. </p>",
         "name" : "FunctionName",
@@ -10859,6 +10877,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS Lambda assigned opaque identifier for the mapping.</p>",
         "name" : "UUID",
@@ -11734,6 +11753,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS Lambda assigned ID of the event source mapping.</p>",
         "name" : "UUID",
@@ -11878,6 +11898,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A string, present if there are more event source mappings.</p>",
         "name" : "NextMarker",
@@ -12031,11 +12052,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<EventSourceMappingConfiguration>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "EventSourceMappingConfiguration",
-          "templateType" : "java.util.List<EventSourceMappingConfiguration>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>"
+          "simpleType" : "EventSourceMappingConfiguration"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12172,11 +12193,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<EventSourceMappingConfiguration>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "EventSourceMappingConfiguration",
-            "templateType" : "java.util.List<EventSourceMappingConfiguration>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>"
+            "simpleType" : "EventSourceMappingConfiguration"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12255,6 +12276,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -12392,6 +12414,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Nodejs",
@@ -12438,6 +12461,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A string, present if there are more aliases.</p>",
         "name" : "NextMarker",
@@ -12591,11 +12615,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<AliasConfiguration>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasConfiguration>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "AliasConfiguration",
-          "templateType" : "java.util.List<AliasConfiguration>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasConfiguration>"
+          "simpleType" : "AliasConfiguration"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12732,11 +12756,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<AliasConfiguration>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasConfiguration>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "AliasConfiguration",
-            "templateType" : "java.util.List<AliasConfiguration>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasConfiguration>"
+            "simpleType" : "AliasConfiguration"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12815,6 +12839,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -12952,6 +12977,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Event",
@@ -12995,6 +13021,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -13132,6 +13159,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The resource policy associated with the specified function. The response returns the same as a string using a backslash (\"\\\") as an escape character in the JSON. </p>",
         "name" : "Policy",
@@ -13272,6 +13300,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS Lambda assigned opaque identifier for the mapping.</p>",
         "name" : "UUID",
@@ -14147,6 +14176,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS Lambda assigned opaque identifier for the mapping.</p>",
         "name" : "UUID",
@@ -15022,6 +15052,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The permission statement you specified in the request. The response returns the same as a string using a backslash (\"\\\") as an escape character in the JSON. </p>",
         "name" : "Statement",
@@ -15162,6 +15193,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -15299,6 +15331,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the function.</p>",
         "name" : "FunctionName",
@@ -16699,6 +16732,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The repository from which you can download the function.</p>",
         "name" : "RepositoryType",
@@ -16944,6 +16978,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of one or more subnet IDs in your VPC.</p>",
         "name" : "SubnetIds",
@@ -17045,11 +17080,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17163,11 +17198,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17304,11 +17339,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17423,11 +17458,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17453,6 +17488,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias called <code>BETA</code> that points to a helloworld function version, the ARN is <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.</p>",
         "name" : "AliasArn",
@@ -17908,6 +17944,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -18045,6 +18082,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -18182,6 +18220,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A string, present if there are more functions.</p>",
         "name" : "NextMarker",
@@ -18335,11 +18374,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<FunctionConfiguration>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "FunctionConfiguration",
-          "templateType" : "java.util.List<FunctionConfiguration>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>"
+          "simpleType" : "FunctionConfiguration"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18476,11 +18515,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<FunctionConfiguration>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "FunctionConfiguration",
-            "templateType" : "java.util.List<FunctionConfiguration>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>"
+            "simpleType" : "FunctionConfiguration"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18559,6 +18598,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Function name whose resource policy you want to retrieve. </p> <p> You can specify the function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>",
         "name" : "FunctionName",
@@ -18808,6 +18848,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -18945,6 +18986,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias called <code>BETA</code> that points to a helloworld function version, the ARN is <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.</p>",
         "name" : "AliasArn",
@@ -19400,6 +19442,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Lambda function to delete.</p> <p> You can specify the function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>",
         "name" : "FunctionName",
@@ -19649,6 +19692,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Lambda function name. </p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>",
         "name" : "FunctionName",
@@ -19898,6 +19942,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "None",
@@ -19938,6 +19983,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Function name whose versions to list. You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>",
         "name" : "FunctionName",
@@ -20292,6 +20338,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias called <code>BETA</code> that points to a helloworld function version, the ARN is <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.</p>",
         "name" : "AliasArn",
@@ -20747,6 +20794,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Name of the Lambda function whose resource policy you are updating by adding a new permission.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>",
         "name" : "FunctionName",
@@ -21626,6 +21674,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Configuration",
@@ -21871,6 +21920,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB stream that is the event source. Any record added to this stream could cause AWS Lambda to invoke your Lambda function, it depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda function as JSON.</p>",
         "name" : "EventSourceArn",
@@ -22435,6 +22485,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream.</p>",
         "name" : "EventSourceArn",
@@ -22894,6 +22945,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS Lambda assigned opaque identifier for the mapping.</p>",
         "name" : "UUID",
@@ -23769,6 +23821,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -24011,6 +24064,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -24148,6 +24202,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -24285,6 +24340,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If present, indicates where to continue the listing. </p>",
         "name" : "Marker",
@@ -24534,6 +24590,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias called <code>BETA</code> that points to a helloworld function version, the ARN is <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.</p>",
         "name" : "AliasArn",
@@ -24989,6 +25046,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The existing Lambda function name whose code you want to replace.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>",
         "name" : "FunctionName",
@@ -25658,6 +25716,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Lambda function name for which the alias is created.</p>",
         "name" : "FunctionName",
@@ -26117,6 +26176,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Lambda function name. You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>",
         "name" : "FunctionName",
@@ -26471,6 +26531,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Name of the Lambda function for which you want to create an alias. </p>",
         "name" : "FunctionName",
@@ -26930,6 +26991,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A string, present if there are more function versions.</p>",
         "name" : "NextMarker",
@@ -27083,11 +27145,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<FunctionConfiguration>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "FunctionConfiguration",
-          "templateType" : "java.util.List<FunctionConfiguration>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>"
+          "simpleType" : "FunctionConfiguration"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27224,11 +27286,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<FunctionConfiguration>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "FunctionConfiguration",
-            "templateType" : "java.util.List<FunctionConfiguration>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>"
+            "simpleType" : "FunctionConfiguration"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27307,6 +27369,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Function name for which the alias is created. An alias is a subresource that exists only in the context of an existing Lambda function so you must specify the function name.</p>",
         "name" : "FunctionName",
@@ -27556,6 +27619,7 @@
       "hasHeaderMember" : true,
       "hasStatusCodeMember" : true,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The HTTP status code will be in the 200 range for successful request. For the <code>RequestResonse</code> invocation type this status code will be 200. For the <code>Event</code> invocation type this status code will be 202. For the <code>DryRun</code> invocation type the status code will be 204. </p>",
         "name" : "StatusCode",
@@ -28011,6 +28075,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the function.</p>",
         "name" : "FunctionName",
@@ -29411,6 +29476,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A zip file containing your deployment package. If you are using the API directly, the zip file must be base64-encoded (if you are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the encoding for you). For more information about creating a .zip file, go to <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html\">Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>",
         "name" : "ZipFile",
@@ -29866,6 +29932,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -30003,6 +30070,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The function name for which the alias is created.</p>",
         "name" : "FunctionName",
@@ -30462,6 +30530,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Type",
@@ -30599,6 +30668,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS Lambda assigned opaque identifier for the mapping.</p>",
         "name" : "UUID",
@@ -31474,6 +31544,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the function.</p>",
         "name" : "FunctionName",
@@ -32874,6 +32945,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "TRIM_HORIZON",
@@ -32914,6 +32986,7 @@
       "hasHeaderMember" : true,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The number of seconds the caller should wait before retrying.</p>",
         "name" : "RetryAfterSeconds",

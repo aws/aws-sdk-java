@@ -27,9 +27,15 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to update the thumbprint for. You can get a list of OIDC provider ARNs by
-     * using the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object
+     * for which you want to update the thumbprint. You can get a list of OIDC
+     * provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      */
     private String openIDConnectProviderArn;
@@ -44,16 +50,27 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to update the thumbprint for. You can get a list of OIDC provider ARNs by
-     * using the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object
+     * for which you want to update the thumbprint. You can get a list of OIDC
+     * provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * 
      * @param openIDConnectProviderArn
-     *        The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *        provider to update the thumbprint for. You can get a list of OIDC
-     *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-     *        action.
+     *        The Amazon Resource Name (ARN) of the IAM OIDC provider resource
+     *        object for which you want to update the thumbprint. You can get a
+     *        list of OIDC provider ARNs by using the
+     *        <a>ListOpenIDConnectProviders</a> action.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
 
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
@@ -62,15 +79,26 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to update the thumbprint for. You can get a list of OIDC provider ARNs by
-     * using the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object
+     * for which you want to update the thumbprint. You can get a list of OIDC
+     * provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *         provider to update the thumbprint for. You can get a list of OIDC
-     *         provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-     *         action.
+     * @return The Amazon Resource Name (ARN) of the IAM OIDC provider resource
+     *         object for which you want to update the thumbprint. You can get a
+     *         list of OIDC provider ARNs by using the
+     *         <a>ListOpenIDConnectProviders</a> action.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
 
     public String getOpenIDConnectProviderArn() {
@@ -79,16 +107,27 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to update the thumbprint for. You can get a list of OIDC provider ARNs by
-     * using the <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource object
+     * for which you want to update the thumbprint. You can get a list of OIDC
+     * provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * 
      * @param openIDConnectProviderArn
-     *        The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *        provider to update the thumbprint for. You can get a list of OIDC
-     *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-     *        action.
+     *        The Amazon Resource Name (ARN) of the IAM OIDC provider resource
+     *        object for which you want to update the thumbprint. You can get a
+     *        list of OIDC provider ARNs by using the
+     *        <a>ListOpenIDConnectProviders</a> action.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -19,20 +19,26 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A list of your dead letter source queues.
+ * </p>
  */
 public class ListDeadLetterSourceQueuesResult implements Serializable,
         Cloneable {
 
     /**
+     * <p>
      * A list of source queue URLs that have the RedrivePolicy queue attribute
      * configured with a dead letter queue.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> queueUrls;
 
     /**
+     * <p>
      * A list of source queue URLs that have the RedrivePolicy queue attribute
      * configured with a dead letter queue.
+     * </p>
      * 
      * @return A list of source queue URLs that have the RedrivePolicy queue
      *         attribute configured with a dead letter queue.
@@ -46,8 +52,10 @@ public class ListDeadLetterSourceQueuesResult implements Serializable,
     }
 
     /**
+     * <p>
      * A list of source queue URLs that have the RedrivePolicy queue attribute
      * configured with a dead letter queue.
+     * </p>
      * 
      * @param queueUrls
      *        A list of source queue URLs that have the RedrivePolicy queue
@@ -65,8 +73,10 @@ public class ListDeadLetterSourceQueuesResult implements Serializable,
     }
 
     /**
+     * <p>
      * A list of source queue URLs that have the RedrivePolicy queue attribute
      * configured with a dead letter queue.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setQueueUrls(java.util.Collection)} or
@@ -93,8 +103,10 @@ public class ListDeadLetterSourceQueuesResult implements Serializable,
     }
 
     /**
+     * <p>
      * A list of source queue URLs that have the RedrivePolicy queue attribute
      * configured with a dead letter queue.
+     * </p>
      * 
      * @param queueUrls
      *        A list of source queue URLs that have the RedrivePolicy queue

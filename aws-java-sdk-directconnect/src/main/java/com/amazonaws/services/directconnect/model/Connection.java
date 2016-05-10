@@ -26,6 +26,11 @@ import java.io.Serializable;
  */
 public class Connection implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The AWS account that will own the new connection.
+     * </p>
+     */
     private String ownerAccount;
 
     private String connectionId;
@@ -52,11 +57,21 @@ public class Connection implements Serializable, Cloneable {
     private String bandwidth;
 
     private Integer vlan;
-
+    /**
+     * <p>
+     * The name of the AWS Direct Connect service provider associated with the
+     * connection.
+     * </p>
+     */
     private String partnerName;
 
     /**
+     * <p>
+     * The AWS account that will own the new connection.
+     * </p>
+     * 
      * @param ownerAccount
+     *        The AWS account that will own the new connection.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -64,7 +79,11 @@ public class Connection implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The AWS account that will own the new connection.
+     * </p>
+     * 
+     * @return The AWS account that will own the new connection.
      */
 
     public String getOwnerAccount() {
@@ -72,7 +91,12 @@ public class Connection implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The AWS account that will own the new connection.
+     * </p>
+     * 
      * @param ownerAccount
+     *        The AWS account that will own the new connection.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -349,7 +373,14 @@ public class Connection implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the AWS Direct Connect service provider associated with the
+     * connection.
+     * </p>
+     * 
      * @param partnerName
+     *        The name of the AWS Direct Connect service provider associated
+     *        with the connection.
      */
 
     public void setPartnerName(String partnerName) {
@@ -357,7 +388,13 @@ public class Connection implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the AWS Direct Connect service provider associated with the
+     * connection.
+     * </p>
+     * 
+     * @return The name of the AWS Direct Connect service provider associated
+     *         with the connection.
      */
 
     public String getPartnerName() {
@@ -365,7 +402,14 @@ public class Connection implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the AWS Direct Connect service provider associated with the
+     * connection.
+     * </p>
+     * 
      * @param partnerName
+     *        The name of the AWS Direct Connect service provider associated
+     *        with the connection.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

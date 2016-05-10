@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "logs",
     "signingName" : "logs",
+    "xmlProtocol" : false,
     "serviceName" : "Amazon CloudWatch Logs",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -57,12 +57,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, Void>",
+      "authenticated" : true,
       "methodName" : "cancelExportTask"
     },
     "CreateExportTask" : {
@@ -102,12 +102,12 @@
         "documentation" : "<p>Returned if the specified resource already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateExportTaskResult",
       "asyncReturnType" : "CreateExportTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateExportTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateExportTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateExportTaskRequest, CreateExportTaskResult>",
+      "authenticated" : true,
       "methodName" : "createExportTask"
     },
     "CreateLogGroup" : {
@@ -141,12 +141,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, Void>",
+      "authenticated" : true,
       "methodName" : "createLogGroup"
     },
     "CreateLogStream" : {
@@ -177,12 +177,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, Void>",
+      "authenticated" : true,
       "methodName" : "createLogStream"
     },
     "DeleteDestination" : {
@@ -213,12 +213,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteDestination"
     },
     "DeleteLogGroup" : {
@@ -249,12 +249,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteLogGroup"
     },
     "DeleteLogStream" : {
@@ -285,12 +285,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteLogStream"
     },
     "DeleteMetricFilter" : {
@@ -321,12 +321,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteMetricFilter"
     },
     "DeleteRetentionPolicy" : {
@@ -357,12 +357,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteRetentionPolicy"
     },
     "DeleteSubscriptionFilter" : {
@@ -393,12 +393,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteSubscriptionFilter"
     },
     "DescribeDestinations" : {
@@ -426,12 +426,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDestinationsResult",
       "asyncReturnType" : "DescribeDestinationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDestinationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDestinationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDestinationsRequest, DescribeDestinationsResult>",
+      "authenticated" : true,
       "methodName" : "describeDestinations"
     },
     "DescribeExportTasks" : {
@@ -459,12 +459,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeExportTasksResult",
       "asyncReturnType" : "DescribeExportTasksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeExportTasksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeExportTasksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult>",
+      "authenticated" : true,
       "methodName" : "describeExportTasks"
     },
     "DescribeLogGroups" : {
@@ -492,12 +492,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeLogGroupsResult",
       "asyncReturnType" : "DescribeLogGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLogGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLogGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLogGroupsRequest, DescribeLogGroupsResult>",
+      "authenticated" : true,
       "methodName" : "describeLogGroups"
     },
     "DescribeLogStreams" : {
@@ -528,12 +528,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeLogStreamsResult",
       "asyncReturnType" : "DescribeLogStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLogStreamsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLogStreamsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLogStreamsRequest, DescribeLogStreamsResult>",
+      "authenticated" : true,
       "methodName" : "describeLogStreams"
     },
     "DescribeMetricFilters" : {
@@ -564,12 +564,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeMetricFiltersResult",
       "asyncReturnType" : "DescribeMetricFiltersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMetricFiltersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMetricFiltersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMetricFiltersRequest, DescribeMetricFiltersResult>",
+      "authenticated" : true,
       "methodName" : "describeMetricFilters"
     },
     "DescribeSubscriptionFilters" : {
@@ -600,12 +600,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeSubscriptionFiltersResult",
       "asyncReturnType" : "DescribeSubscriptionFiltersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSubscriptionFiltersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSubscriptionFiltersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSubscriptionFiltersRequest, DescribeSubscriptionFiltersResult>",
+      "authenticated" : true,
       "methodName" : "describeSubscriptionFilters"
     },
     "FilterLogEvents" : {
@@ -636,12 +636,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "FilterLogEventsResult",
       "asyncReturnType" : "FilterLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<FilterLogEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<FilterLogEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<FilterLogEventsRequest, FilterLogEventsResult>",
+      "authenticated" : true,
       "methodName" : "filterLogEvents"
     },
     "GetLogEvents" : {
@@ -672,12 +672,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetLogEventsResult",
       "asyncReturnType" : "GetLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetLogEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetLogEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetLogEventsRequest, GetLogEventsResult>",
+      "authenticated" : true,
       "methodName" : "getLogEvents"
     },
     "PutDestination" : {
@@ -708,12 +708,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutDestinationResult",
       "asyncReturnType" : "PutDestinationResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutDestinationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutDestinationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutDestinationRequest, PutDestinationResult>",
+      "authenticated" : true,
       "methodName" : "putDestination"
     },
     "PutDestinationPolicy" : {
@@ -741,12 +741,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, Void>",
+      "authenticated" : true,
       "methodName" : "putDestinationPolicy"
     },
     "PutLogEvents" : {
@@ -786,12 +786,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutLogEventsResult",
       "asyncReturnType" : "PutLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutLogEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutLogEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutLogEventsRequest, PutLogEventsResult>",
+      "authenticated" : true,
       "methodName" : "putLogEvents"
     },
     "PutMetricFilter" : {
@@ -825,12 +825,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, Void>",
+      "authenticated" : true,
       "methodName" : "putMetricFilter"
     },
     "PutRetentionPolicy" : {
@@ -861,12 +861,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, Void>",
+      "authenticated" : true,
       "methodName" : "putRetentionPolicy"
     },
     "PutSubscriptionFilter" : {
@@ -900,12 +900,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, Void>",
+      "authenticated" : true,
       "methodName" : "putSubscriptionFilter"
     },
     "TestMetricFilter" : {
@@ -933,12 +933,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "TestMetricFilterResult",
       "asyncReturnType" : "TestMetricFilterResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestMetricFilterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestMetricFilterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult>",
+      "authenticated" : true,
       "methodName" : "testMetricFilter"
     }
   },
@@ -953,6 +953,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group to associate the subscription filter with.</p>",
         "name" : "LogGroupName",
@@ -1517,6 +1518,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of destination to delete.</p>",
         "name" : "DestinationName",
@@ -1661,6 +1663,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Destination",
@@ -1801,6 +1804,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "LogStreamName",
@@ -2676,6 +2680,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>",
         "name" : "DestinationNamePrefix",
@@ -3030,6 +3035,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group under which the log stream is to be created.</p>",
         "name" : "LogGroupName",
@@ -3279,6 +3285,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group under which the log stream to delete belongs.</p>",
         "name" : "LogGroupName",
@@ -3528,6 +3535,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "SubscriptionFilters",
@@ -3905,6 +3913,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Events",
@@ -4387,6 +4396,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Timestamp",
@@ -4632,6 +4642,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4663,6 +4674,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4694,6 +4706,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4725,6 +4738,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "LogStreams",
@@ -5102,6 +5116,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "ExpectedSequenceToken",
@@ -5239,6 +5254,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "MetricName",
@@ -5589,6 +5605,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -5620,6 +5637,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A name for the destination.</p>",
         "name" : "DestinationName",
@@ -5974,6 +5992,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Timestamp",
@@ -6324,6 +6343,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -6355,6 +6375,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "LogGroupName",
@@ -7020,6 +7041,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The log group name for which metric filters are to be listed.</p>",
         "name" : "LogGroupName",
@@ -7479,6 +7501,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "LogStreamName",
@@ -7519,6 +7542,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p> The name of the log group to query. </p>",
         "name" : "LogGroupName",
@@ -8530,6 +8554,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "TooNewLogEventStartIndex",
@@ -8880,6 +8905,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A point in time when the export task got created.</p>",
         "name" : "CreationTime",
@@ -9125,6 +9151,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group to delete.</p>",
         "name" : "LogGroupName",
@@ -9269,6 +9296,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "LogGroups",
@@ -9646,6 +9674,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Id of the export task to cancel.</p>",
         "name" : "TaskId",
@@ -9790,6 +9819,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Id of the export task.</p>",
         "name" : "TaskId",
@@ -10770,6 +10800,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Status code of the export task.</p>",
         "name" : "Code",
@@ -11015,6 +11046,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The log group name for which subscription filters are to be listed.</p>",
         "name" : "LogGroupName",
@@ -11474,6 +11506,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "FilterName",
@@ -12139,6 +12172,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Id of the export task that got created.</p>",
         "name" : "TaskId",
@@ -12279,6 +12313,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group that is associated with the subscription filter to delete.</p>",
         "name" : "LogGroupName",
@@ -12528,6 +12563,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "EventNumber",
@@ -12734,12 +12770,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "valueList" : false,
+          "entryType" : "Map.Entry<String, String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "entryType" : "Map.Entry<String, String>"
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12982,12 +13018,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "valueList" : false,
+            "entryType" : "Map.Entry<String, String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "entryType" : "Map.Entry<String, String>"
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -13012,6 +13048,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log stream this event belongs to.</p>",
         "name" : "LogStreamName",
@@ -13572,6 +13609,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group that is associated with the retention policy to delete.</p>",
         "name" : "LogGroupName",
@@ -13716,6 +13754,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "MetricFilters",
@@ -14093,6 +14132,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group to associate the retention policy with.</p>",
         "name" : "LogGroupName",
@@ -14342,6 +14382,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Matches",
@@ -14614,6 +14655,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Destinations",
@@ -14991,6 +15033,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CANCELLED",
@@ -15043,6 +15086,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -15074,6 +15118,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log stream.</p>",
         "name" : "LogStreamName",
@@ -15319,6 +15364,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "ExportTasks",
@@ -15696,6 +15742,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group to put log events to.</p>",
         "name" : "LogGroupName",
@@ -16287,6 +16334,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "FilterName",
@@ -16874,6 +16922,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "ExpectedSequenceToken",
@@ -17011,6 +17060,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A name for an existing destination.</p>",
         "name" : "DestinationName",
@@ -17260,6 +17310,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The log group name for which log streams are to be listed.</p>",
         "name" : "LogGroupName",
@@ -17929,6 +17980,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group to create.</p>",
         "name" : "LogGroupName",
@@ -18073,6 +18125,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Export task that matches the specified task Id will be returned. This can result in zero or one export task.</p>",
         "name" : "TaskId",
@@ -18532,6 +18585,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group to query.</p>",
         "name" : "LogGroupName",
@@ -19306,6 +19360,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of <code class=\"code\">FilteredLogEvent</code> objects representing the matched events from the request.</p>",
         "name" : "Events",
@@ -19920,6 +19975,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group to associate the metric filter with.</p>",
         "name" : "LogGroupName",
@@ -20511,6 +20567,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the log group that is associated with the metric filter to delete.</p>",
         "name" : "LogGroupName",
@@ -20760,6 +20817,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Will only return log groups that match the provided logGroupNamePrefix. If you don't specify a value, no prefix filter is applied.</p>",
         "name" : "LogGroupNamePrefix",
@@ -21114,6 +21172,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -21145,6 +21204,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the export task.</p>",
         "name" : "TaskName",
@@ -21919,6 +21979,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "FilterPattern",
@@ -22300,6 +22361,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Name of the destination.</p>",
         "name" : "DestinationName",
@@ -22965,6 +23027,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "NextSequenceToken",

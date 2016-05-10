@@ -51,13 +51,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "deleteRule",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, Void>",
-      "methodName" : "deleteRule"
+      "authenticated" : true
     },
     "DescribeRule" : {
       "documentation" : "<p>Describes the details of the specified rule.</p>",
@@ -84,13 +84,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeRule",
       "syncReturnType" : "DescribeRuleResult",
       "asyncReturnType" : "DescribeRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeRuleRequest, DescribeRuleResult>",
-      "methodName" : "describeRule"
+      "authenticated" : true
     },
     "DisableRule" : {
       "documentation" : "<p>Disables a rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.</p> <p> <b>Note:</b> When you disable a rule, incoming events might still continue to match to the disabled rule. Please allow a short period of time for changes to take effect. </p>",
@@ -117,13 +117,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "disableRule",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableRuleRequest, Void>",
-      "methodName" : "disableRule"
+      "authenticated" : true
     },
     "EnableRule" : {
       "documentation" : "<p>Enables a rule. If the rule does not exist, the operation fails.</p> <p> <b>Note:</b> When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Please allow a short period of time for changes to take effect. </p>",
@@ -150,13 +150,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "enableRule",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, Void>",
-      "methodName" : "enableRule"
+      "authenticated" : true
     },
     "ListRuleNamesByTarget" : {
       "documentation" : "<p>Lists the names of the rules that the given target is put to. You can see which of the rules in Amazon CloudWatch Events can invoke a specific target in your account. If you have more rules in your account than the given limit, the results will be paginated. In that case, use the next token returned in the response and repeat ListRulesByTarget until the NextToken in the response is returned as null.</p>",
@@ -180,13 +180,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "listRuleNamesByTarget",
       "syncReturnType" : "ListRuleNamesByTargetResult",
       "asyncReturnType" : "ListRuleNamesByTargetResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRuleNamesByTargetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRuleNamesByTargetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRuleNamesByTargetRequest, ListRuleNamesByTargetResult>",
-      "methodName" : "listRuleNamesByTarget"
+      "authenticated" : true
     },
     "ListRules" : {
       "documentation" : "<p>Lists the Amazon CloudWatch Events rules in your account. You can either list all the rules or you can provide a prefix to match to the rule names. If you have more rules in your account than the given limit, the results will be paginated. In that case, use the next token returned in the response and repeat ListRules until the NextToken in the response is returned as null.</p>",
@@ -210,13 +210,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "listRules",
       "syncReturnType" : "ListRulesResult",
       "asyncReturnType" : "ListRulesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRulesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRulesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult>",
-      "methodName" : "listRules"
+      "authenticated" : true
     },
     "ListTargetsByRule" : {
       "documentation" : "<p>Lists of targets assigned to the rule.</p>",
@@ -243,13 +243,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "listTargetsByRule",
       "syncReturnType" : "ListTargetsByRuleResult",
       "asyncReturnType" : "ListTargetsByRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTargetsByRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTargetsByRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTargetsByRuleRequest, ListTargetsByRuleResult>",
-      "methodName" : "listTargetsByRule"
+      "authenticated" : true
     },
     "PutEvents" : {
       "documentation" : "<p>Sends custom events to Amazon CloudWatch Events so that they can be matched to rules.</p>",
@@ -273,13 +273,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "putEvents",
       "syncReturnType" : "PutEventsResult",
       "asyncReturnType" : "PutEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutEventsRequest, PutEventsResult>",
-      "methodName" : "putEvents"
+      "authenticated" : true
     },
     "PutRule" : {
       "documentation" : "<p>Creates or updates a rule. Rules are enabled by default, or based on value of the State parameter. You can disable a rule using <a>DisableRule</a>.</p> <p> <b>Note:</b> When you create or update a rule, incoming events might not immediately start matching to new or updated rules. Please allow a short period of time for changes to take effect.</p> <p>A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a matching event is observed. Rules with ScheduleExpressions self-trigger based on the given schedule. A rule can have both an EventPattern and a ScheduleExpression, in which case the rule will trigger on matching events as well as on a schedule.</p> <p> <b>Note:</b> Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match. </p>",
@@ -312,13 +312,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "putRule",
       "syncReturnType" : "PutRuleResult",
       "asyncReturnType" : "PutRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRuleRequest, PutRuleResult>",
-      "methodName" : "putRule"
+      "authenticated" : true
     },
     "PutTargets" : {
       "documentation" : "<p>Adds target(s) to a rule. Targets are the resources that can be invoked when a rule is triggered. For example, AWS Lambda functions, Amazon Kinesis streams, and built-in targets. Updates the target(s) if they are already associated with the role. In other words, if there is already a target with the given target ID, then the target associated with that ID is updated.</p> <p>In order to be able to make API calls against the resources you own, Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For Amazon Kinesis streams, CloudWatch Events relies on IAM roles. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsTargetPermissions.html\">Permissions for Sending Events to Targets</a> in the <b><i>Amazon CloudWatch Developer Guide</i></b>.</p> <p><b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional parameters of a target. When a rule is triggered due to a matched event, if for a target:</p> <ul> <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the entire event is passed to the target in JSON form.</li> <li> <b>InputPath</b> is specified in the form of JSONPath (e.g. <b>$.detail</b>), then only the part of the event specified in the path is passed to the target (e.g. only the detail part of the event is passed). </li> <li> <b>Input</b> is specified in the form of a valid JSON, then the matched event is overridden with this constant.</li> </ul> <p> <b>Note:</b> When you add targets to a rule, when the associated rule triggers, new or updated targets might not be immediately invoked. Please allow a short period of time for changes to take effect. </p>",
@@ -351,13 +351,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "putTargets",
       "syncReturnType" : "PutTargetsResult",
       "asyncReturnType" : "PutTargetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutTargetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutTargetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutTargetsRequest, PutTargetsResult>",
-      "methodName" : "putTargets"
+      "authenticated" : true
     },
     "RemoveTargets" : {
       "documentation" : "<p>Removes target(s) from a rule so that when the rule is triggered, those targets will no longer be invoked.</p> <p> <b>Note:</b> When you remove a target, when the associated rule triggers, removed targets might still continue to be invoked. Please allow a short period of time for changes to take effect. </p>",
@@ -387,13 +387,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "removeTargets",
       "syncReturnType" : "RemoveTargetsResult",
       "asyncReturnType" : "RemoveTargetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTargetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTargetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTargetsRequest, RemoveTargetsResult>",
-      "methodName" : "removeTargets"
+      "authenticated" : true
     },
     "TestEventPattern" : {
       "documentation" : "<p>Tests whether an event pattern matches the provided event.</p> <p> <b>Note:</b> Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match. </p>",
@@ -420,13 +420,13 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "testEventPattern",
       "syncReturnType" : "TestEventPatternResult",
       "asyncReturnType" : "TestEventPatternResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestEventPatternResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestEventPatternResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestEventPatternRequest, TestEventPatternResult>",
-      "methodName" : "testEventPattern"
+      "authenticated" : true
     }
   },
   "shapes" : {
@@ -440,6 +440,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Indicates whether the event matches the event pattern.</p>",
         "name" : "Result",
@@ -474,9 +475,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -549,9 +550,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -580,6 +581,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -611,6 +613,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>",
         "name" : "Entries",
@@ -645,9 +648,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -690,9 +693,9 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "statusCode" : false,
               "header" : false,
               "uri" : false,
-              "statusCode" : false,
               "queryString" : false
             },
             "deprecated" : false,
@@ -790,9 +793,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -835,9 +838,9 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "statusCode" : false,
                 "header" : false,
                 "uri" : false,
-                "statusCode" : false,
                 "queryString" : false
               },
               "deprecated" : false,
@@ -887,6 +890,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Amazon Resource Name (ARN) of the target resource that you want to list the rules for.</p>",
         "name" : "TargetArn",
@@ -921,9 +925,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -973,9 +977,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -1025,9 +1029,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -1104,9 +1108,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -1157,9 +1161,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -1210,9 +1214,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -1241,6 +1245,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The number of failed entries.</p>",
         "name" : "FailedEntryCount",
@@ -1275,9 +1280,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -1327,9 +1332,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -1372,9 +1377,9 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "statusCode" : false,
               "header" : false,
               "uri" : false,
-              "statusCode" : false,
               "queryString" : false
             },
             "deprecated" : false,
@@ -1468,9 +1473,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -1513,9 +1518,9 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "statusCode" : false,
                 "header" : false,
                 "uri" : false,
-                "statusCode" : false,
                 "queryString" : false
               },
               "deprecated" : false,
@@ -1587,9 +1592,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -1618,6 +1623,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the rule you want to describe details for.</p>",
         "name" : "Name",
@@ -1652,9 +1658,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -1731,9 +1737,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -1762,6 +1768,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the event submitted to Amazon CloudWatch Events.</p>",
         "name" : "EventId",
@@ -1796,9 +1803,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -1848,9 +1855,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -1900,9 +1907,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -1975,9 +1982,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -2028,9 +2035,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -2081,9 +2088,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -2112,6 +2119,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Timestamp of event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no timestamp is provided, the timestamp of the <a>PutEvents</a> call will be used.</p>",
         "name" : "Time",
@@ -2146,9 +2154,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -2198,9 +2206,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -2250,9 +2258,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -2295,9 +2303,9 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "statusCode" : false,
               "header" : false,
               "uri" : false,
-              "statusCode" : false,
               "queryString" : false
             },
             "deprecated" : false,
@@ -2368,9 +2376,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -2420,9 +2428,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -2495,9 +2503,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -2548,9 +2556,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -2601,9 +2609,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -2654,9 +2662,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -2707,9 +2715,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -2752,9 +2760,9 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "statusCode" : false,
                 "header" : false,
                 "uri" : false,
-                "statusCode" : false,
                 "queryString" : false
               },
               "deprecated" : false,
@@ -2804,6 +2812,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -2835,6 +2844,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique target assignment ID.</p>",
         "name" : "Id",
@@ -2869,9 +2879,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -2921,9 +2931,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -2973,9 +2983,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -3025,9 +3035,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -3100,9 +3110,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -3153,9 +3163,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -3206,9 +3216,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -3259,9 +3269,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -3290,6 +3300,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Lists the targets assigned to the rule.</p>",
         "name" : "Targets",
@@ -3324,9 +3335,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -3369,9 +3380,9 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "statusCode" : false,
               "header" : false,
               "uri" : false,
-              "statusCode" : false,
               "queryString" : false
             },
             "deprecated" : false,
@@ -3442,9 +3453,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -3517,9 +3528,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -3570,9 +3581,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -3615,9 +3626,9 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "statusCode" : false,
                 "header" : false,
                 "uri" : false,
-                "statusCode" : false,
                 "queryString" : false
               },
               "deprecated" : false,
@@ -3667,6 +3678,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the target requested to be removed by Amazon CloudWatch Events.</p>",
         "name" : "TargetId",
@@ -3701,9 +3713,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -3753,9 +3765,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -3805,9 +3817,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -3880,9 +3892,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -3933,9 +3945,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -3986,9 +3998,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -4017,6 +4029,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the rule whose targets you want to list.</p>",
         "name" : "Rule",
@@ -4051,9 +4064,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -4103,9 +4116,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -4155,9 +4168,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -4234,9 +4247,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -4287,9 +4300,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -4340,9 +4353,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -4371,6 +4384,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>List of rules matching the specified criteria.</p>",
         "name" : "Rules",
@@ -4405,9 +4419,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -4450,9 +4464,9 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "statusCode" : false,
               "header" : false,
               "uri" : false,
-              "statusCode" : false,
               "queryString" : false
             },
             "deprecated" : false,
@@ -4523,9 +4537,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -4598,9 +4612,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -4651,9 +4665,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -4696,9 +4710,9 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "statusCode" : false,
                 "header" : false,
                 "uri" : false,
-                "statusCode" : false,
                 "queryString" : false
               },
               "deprecated" : false,
@@ -4748,6 +4762,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the target submitted to Amazon CloudWatch Events.</p>",
         "name" : "TargetId",
@@ -4782,9 +4797,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -4834,9 +4849,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -4886,9 +4901,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -4961,9 +4976,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -5014,9 +5029,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -5067,9 +5082,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -5098,6 +5113,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the rule.</p>",
         "name" : "RuleArn",
@@ -5132,9 +5148,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -5207,9 +5223,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -5238,6 +5254,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the rule you want to add targets to.</p>",
         "name" : "Rule",
@@ -5272,9 +5289,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -5324,9 +5341,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -5369,9 +5386,9 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "statusCode" : false,
               "header" : false,
               "uri" : false,
-              "statusCode" : false,
               "queryString" : false
             },
             "deprecated" : false,
@@ -5469,9 +5486,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -5522,9 +5539,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -5567,9 +5584,9 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "statusCode" : false,
                 "header" : false,
                 "uri" : false,
-                "statusCode" : false,
                 "queryString" : false
               },
               "deprecated" : false,
@@ -5619,6 +5636,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the rule that you want to enable.</p>",
         "name" : "Name",
@@ -5653,9 +5671,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -5732,9 +5750,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -5763,6 +5781,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the rule you want to remove targets from.</p>",
         "name" : "Rule",
@@ -5797,9 +5816,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -5849,9 +5868,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -5894,9 +5913,9 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "statusCode" : false,
               "header" : false,
               "uri" : false,
-              "statusCode" : false,
               "queryString" : false
             },
             "deprecated" : false,
@@ -5994,9 +6013,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -6047,9 +6066,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -6092,9 +6111,9 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "statusCode" : false,
                 "header" : false,
                 "uri" : false,
-                "statusCode" : false,
                 "queryString" : false
               },
               "deprecated" : false,
@@ -6144,6 +6163,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the rule you want to disable.</p>",
         "name" : "Name",
@@ -6178,9 +6198,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -6257,9 +6277,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -6288,6 +6308,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the rule that you are creating or updating.</p>",
         "name" : "Name",
@@ -6322,9 +6343,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -6374,9 +6395,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -6426,9 +6447,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -6478,9 +6499,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -6530,9 +6551,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -6582,9 +6603,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -6661,9 +6682,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -6714,9 +6735,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -6767,9 +6788,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -6820,9 +6841,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -6873,9 +6894,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -6926,9 +6947,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -6957,6 +6978,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The number of failed entries.</p>",
         "name" : "FailedEntryCount",
@@ -6991,9 +7013,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -7043,9 +7065,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -7088,9 +7110,9 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "statusCode" : false,
               "header" : false,
               "uri" : false,
-              "statusCode" : false,
               "queryString" : false
             },
             "deprecated" : false,
@@ -7184,9 +7206,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -7229,9 +7251,9 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "statusCode" : false,
                 "header" : false,
                 "uri" : false,
-                "statusCode" : false,
                 "queryString" : false
               },
               "deprecated" : false,
@@ -7303,9 +7325,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -7334,6 +7356,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ENABLED",
@@ -7374,6 +7397,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The rule's name.</p>",
         "name" : "Name",
@@ -7408,9 +7432,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -7460,9 +7484,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -7512,9 +7536,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -7564,9 +7588,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -7616,9 +7640,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -7668,9 +7692,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -7720,9 +7744,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -7795,9 +7819,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -7848,9 +7872,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -7901,9 +7925,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -7954,9 +7978,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -8007,9 +8031,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -8060,9 +8084,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -8113,9 +8137,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -8144,6 +8168,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The prefix matching the rule name.</p>",
         "name" : "NamePrefix",
@@ -8178,9 +8203,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -8230,9 +8255,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -8282,9 +8307,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -8361,9 +8386,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -8414,9 +8439,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -8467,9 +8492,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -8498,6 +8523,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -8529,6 +8555,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The rule's name.</p>",
         "name" : "Name",
@@ -8563,9 +8590,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -8615,9 +8642,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -8667,9 +8694,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -8719,9 +8746,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -8771,9 +8798,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -8823,9 +8850,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -8875,9 +8902,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -8950,9 +8977,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -9003,9 +9030,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -9056,9 +9083,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -9109,9 +9136,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -9162,9 +9189,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -9215,9 +9242,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -9268,9 +9295,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -9299,6 +9326,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The number of failed entries.</p>",
         "name" : "FailedEntryCount",
@@ -9333,9 +9361,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -9385,9 +9413,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -9430,9 +9458,9 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "statusCode" : false,
               "header" : false,
               "uri" : false,
-              "statusCode" : false,
               "queryString" : false
             },
             "deprecated" : false,
@@ -9526,9 +9554,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -9571,9 +9599,9 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "statusCode" : false,
                 "header" : false,
                 "uri" : false,
-                "statusCode" : false,
                 "queryString" : false
               },
               "deprecated" : false,
@@ -9645,9 +9673,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -9676,6 +9704,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>List of rules names that can invoke the given target.</p>",
         "name" : "RuleNames",
@@ -9710,9 +9739,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -9755,9 +9784,9 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "statusCode" : false,
               "header" : false,
               "uri" : false,
-              "statusCode" : false,
               "queryString" : false
             },
             "deprecated" : false,
@@ -9828,9 +9857,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -9903,9 +9932,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -9956,9 +9985,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -10001,9 +10030,9 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "statusCode" : false,
                 "header" : false,
                 "uri" : false,
-                "statusCode" : false,
                 "queryString" : false
               },
               "deprecated" : false,
@@ -10053,6 +10082,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The event pattern you want to test.</p>",
         "name" : "EventPattern",
@@ -10087,9 +10117,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -10139,9 +10169,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -10218,9 +10248,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -10271,9 +10301,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -10302,6 +10332,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10333,6 +10364,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the rule to be deleted.</p>",
         "name" : "Name",
@@ -10367,9 +10399,9 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "statusCode" : false,
           "header" : false,
           "uri" : false,
-          "statusCode" : false,
           "queryString" : false
         },
         "deprecated" : false,
@@ -10446,9 +10478,9 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "statusCode" : false,
             "header" : false,
             "uri" : false,
-            "statusCode" : false,
             "queryString" : false
           },
           "deprecated" : false,
@@ -10477,6 +10509,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {

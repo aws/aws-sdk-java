@@ -119,7 +119,6 @@ class ChildWorkflowDecisionStateMachine extends DecisionStateMachineBase {
     public void handleCompletionEvent() {
         switch (state) {
         case STARTED:
-        case COMPLETED:
         case CANCELED_AFTER_STARTED:
             stateHistory.add("handleCompletionEvent");
             state = DecisionState.COMPLETED;

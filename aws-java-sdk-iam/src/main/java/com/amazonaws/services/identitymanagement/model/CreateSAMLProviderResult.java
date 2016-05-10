@@ -27,18 +27,19 @@ public class CreateSAMLProviderResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SAML provider.
+     * The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.
      * </p>
      */
     private String sAMLProviderArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SAML provider.
+     * The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.
      * </p>
      * 
      * @param sAMLProviderArn
-     *        The Amazon Resource Name (ARN) of the SAML provider.
+     *        The Amazon Resource Name (ARN) of the new SAML provider resource
+     *        in IAM.
      */
 
     public void setSAMLProviderArn(String sAMLProviderArn) {
@@ -47,10 +48,11 @@ public class CreateSAMLProviderResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SAML provider.
+     * The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the SAML provider.
+     * @return The Amazon Resource Name (ARN) of the new SAML provider resource
+     *         in IAM.
      */
 
     public String getSAMLProviderArn() {
@@ -59,11 +61,12 @@ public class CreateSAMLProviderResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SAML provider.
+     * The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.
      * </p>
      * 
      * @param sAMLProviderArn
-     *        The Amazon Resource Name (ARN) of the SAML provider.
+     *        The Amazon Resource Name (ARN) of the new SAML provider resource
+     *        in IAM.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -665,6 +665,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of AWS account IDs that are associated with the registries for which to get authorization tokens. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryIds",
@@ -699,10 +700,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -744,10 +745,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -769,8 +770,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -844,10 +845,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -889,10 +890,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -914,8 +915,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -941,6 +942,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Repository",
@@ -975,10 +977,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1050,10 +1052,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1081,6 +1083,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -1112,6 +1115,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The pre-signed Amazon S3 download URL for the requested layer.</p>",
         "name" : "DownloadUrl",
@@ -1146,10 +1150,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1198,10 +1202,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1273,10 +1277,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1326,10 +1330,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1357,6 +1361,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The registry ID associated with the request.</p>",
         "name" : "RegistryId",
@@ -1391,10 +1396,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1443,10 +1448,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1495,10 +1500,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1547,10 +1552,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1622,10 +1627,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1675,10 +1680,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1728,10 +1733,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1781,10 +1786,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1812,6 +1817,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The registry ID associated with the exception.</p>",
         "name" : "RegistryId",
@@ -1846,10 +1852,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1898,10 +1904,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1950,10 +1956,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2002,10 +2008,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2074,10 +2080,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2127,10 +2133,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2180,10 +2186,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2233,10 +2239,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2264,6 +2270,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -2298,10 +2305,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2350,10 +2357,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2402,10 +2409,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2481,10 +2488,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2534,10 +2541,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2587,10 +2594,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2618,6 +2625,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that contains the repository policy to delete. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -2652,10 +2660,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2704,10 +2712,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2783,10 +2791,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2836,10 +2844,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2867,6 +2875,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that you intend to upload layers to. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -2901,10 +2910,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2953,10 +2962,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3032,10 +3041,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3085,10 +3094,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3116,6 +3125,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry containing the image.</p>",
         "name" : "RegistryId",
@@ -3150,10 +3160,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3202,10 +3212,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3254,10 +3264,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3306,10 +3316,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3381,10 +3391,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3434,10 +3444,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3487,10 +3497,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3540,10 +3550,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3571,6 +3581,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -3602,6 +3613,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that contains the image layers to check. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -3636,10 +3648,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3688,10 +3700,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3740,10 +3752,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -3785,10 +3797,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -3810,8 +3822,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3885,10 +3897,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3938,10 +3950,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3991,10 +4003,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -4036,10 +4048,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -4061,8 +4073,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4088,6 +4100,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The image IDs of the deleted images.</p>",
         "name" : "ImageIds",
@@ -4122,10 +4135,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -4167,10 +4180,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -4192,8 +4205,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageIdentifier",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
-          "templateType" : "java.util.List<ImageIdentifier>"
+          "templateType" : "java.util.List<ImageIdentifier>",
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4240,10 +4253,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -4285,10 +4298,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -4310,8 +4323,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageFailure",
-          "templateImplType" : "java.util.ArrayList<ImageFailure>",
-          "templateType" : "java.util.List<ImageFailure>"
+          "templateType" : "java.util.List<ImageFailure>",
+          "templateImplType" : "java.util.ArrayList<ImageFailure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4381,10 +4394,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -4426,10 +4439,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -4451,8 +4464,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageIdentifier",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
-            "templateType" : "java.util.List<ImageIdentifier>"
+            "templateType" : "java.util.List<ImageIdentifier>",
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4500,10 +4513,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -4545,10 +4558,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -4570,8 +4583,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageFailure",
-            "templateImplType" : "java.util.ArrayList<ImageFailure>",
-            "templateType" : "java.util.List<ImageFailure>"
+            "templateType" : "java.util.List<ImageFailure>",
+            "templateImplType" : "java.util.ArrayList<ImageFailure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4597,6 +4610,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>",
         "name" : "RepositoryName",
@@ -4631,10 +4645,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4710,10 +4724,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4741,6 +4755,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -4772,6 +4787,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A base64-encoded string that contains authorization data for the specified Amazon ECR registry. When the string is decoded, it is presented in the format <code>user:password</code> for private registry authentication using <code>docker login</code>.</p>",
         "name" : "AuthorizationToken",
@@ -4806,10 +4822,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4858,10 +4874,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4910,10 +4926,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4985,10 +5001,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5038,10 +5054,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5091,10 +5107,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5122,6 +5138,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -5156,10 +5173,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5208,10 +5225,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5260,10 +5277,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5312,10 +5329,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5391,10 +5408,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5444,10 +5461,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5497,10 +5514,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5550,10 +5567,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5581,6 +5598,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -5612,6 +5630,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The registry ID associated with the request.</p>",
         "name" : "RegistryId",
@@ -5646,10 +5665,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5698,10 +5717,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5750,10 +5769,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5825,10 +5844,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5878,10 +5897,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5931,10 +5950,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5962,6 +5981,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of image objects corresponding to the image references in the request.</p>",
         "name" : "Images",
@@ -5996,10 +6016,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -6041,10 +6061,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -6066,8 +6086,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Image",
-          "templateImplType" : "java.util.ArrayList<Image>",
-          "templateType" : "java.util.List<Image>"
+          "templateType" : "java.util.List<Image>",
+          "templateImplType" : "java.util.ArrayList<Image>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6114,10 +6134,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -6159,10 +6179,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -6184,8 +6204,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageFailure",
-          "templateImplType" : "java.util.ArrayList<ImageFailure>",
-          "templateType" : "java.util.List<ImageFailure>"
+          "templateType" : "java.util.List<ImageFailure>",
+          "templateImplType" : "java.util.ArrayList<ImageFailure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6255,10 +6275,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -6300,10 +6320,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -6325,8 +6345,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Image",
-            "templateImplType" : "java.util.ArrayList<Image>",
-            "templateType" : "java.util.List<Image>"
+            "templateType" : "java.util.List<Image>",
+            "templateImplType" : "java.util.ArrayList<Image>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6374,10 +6394,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -6419,10 +6439,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -6444,8 +6464,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageFailure",
-            "templateImplType" : "java.util.ArrayList<ImageFailure>",
-            "templateType" : "java.util.List<ImageFailure>"
+            "templateType" : "java.util.List<ImageFailure>",
+            "templateImplType" : "java.util.ArrayList<ImageFailure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6471,6 +6491,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The upload ID for the layer upload. This parameter is passed to further <a>UploadLayerPart</a> and <a>CompleteLayerUpload</a> operations.</p>",
         "name" : "UploadId",
@@ -6505,10 +6526,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6557,10 +6578,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6632,10 +6653,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6685,10 +6706,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6716,6 +6737,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "AVAILABLE",
@@ -6756,6 +6778,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -6790,10 +6813,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6842,10 +6865,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -6887,10 +6910,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -6912,8 +6935,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6960,10 +6983,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7012,10 +7035,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7091,10 +7114,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -7136,10 +7159,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -7161,8 +7184,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7210,10 +7233,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7263,10 +7286,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7316,10 +7339,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7347,6 +7370,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The list of image IDs for the requested repository.</p>",
         "name" : "ImageIds",
@@ -7381,10 +7405,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -7426,10 +7450,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -7451,8 +7475,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageIdentifier",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
-          "templateType" : "java.util.List<ImageIdentifier>"
+          "templateType" : "java.util.List<ImageIdentifier>",
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7499,10 +7523,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7574,10 +7598,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -7619,10 +7643,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -7644,8 +7668,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageIdentifier",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
-            "templateType" : "java.util.List<ImageIdentifier>"
+            "templateType" : "java.util.List<ImageIdentifier>",
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7693,10 +7717,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7724,6 +7748,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -7755,6 +7780,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -7789,10 +7815,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7841,10 +7867,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7893,10 +7919,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7972,10 +7998,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8025,10 +8051,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8078,10 +8104,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8109,6 +8135,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The layer digest associated with the failure.</p>",
         "name" : "LayerDigest",
@@ -8143,10 +8170,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8195,10 +8222,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8247,10 +8274,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8322,10 +8349,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8375,10 +8402,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8428,10 +8455,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8459,6 +8486,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that you are uploading layer parts to. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -8493,10 +8521,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8545,10 +8573,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8597,10 +8625,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8649,10 +8677,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8701,10 +8729,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8753,10 +8781,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8832,10 +8860,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8885,10 +8913,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8938,10 +8966,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8991,10 +9019,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9044,10 +9072,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9097,10 +9125,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9128,6 +9156,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -9159,6 +9188,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Details of the image uploaded.</p>",
         "name" : "Image",
@@ -9193,10 +9223,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9268,10 +9298,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9299,6 +9329,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The registry ID associated with the request.</p>",
         "name" : "RegistryId",
@@ -9333,10 +9364,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9385,10 +9416,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9437,10 +9468,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9512,10 +9543,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9565,10 +9596,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9618,10 +9649,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9649,6 +9680,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to put the image. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -9683,10 +9715,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9735,10 +9767,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9787,10 +9819,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9866,10 +9898,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9919,10 +9951,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9972,10 +10004,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10003,6 +10035,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "InvalidLayerDigest",
@@ -10043,6 +10076,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -10077,10 +10111,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10129,10 +10163,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10208,10 +10242,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10261,10 +10295,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10292,6 +10326,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -10326,10 +10361,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10378,10 +10413,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10430,10 +10465,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -10475,10 +10510,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -10500,8 +10535,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageIdentifier",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
-          "templateType" : "java.util.List<ImageIdentifier>"
+          "templateType" : "java.util.List<ImageIdentifier>",
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10575,10 +10610,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -10620,10 +10655,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -10645,8 +10680,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageIdentifier",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
-            "templateType" : "java.util.List<ImageIdentifier>"
+            "templateType" : "java.util.List<ImageIdentifier>",
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10694,10 +10729,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10747,10 +10782,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10778,6 +10813,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Repository",
@@ -10812,10 +10848,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10887,10 +10923,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10918,6 +10954,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry to which to upload layers. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -10952,10 +10989,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11004,10 +11041,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11056,10 +11093,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11108,10 +11145,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -11153,10 +11190,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -11178,8 +11215,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11253,10 +11290,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11306,10 +11343,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11359,10 +11396,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11412,10 +11449,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -11457,10 +11494,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -11482,8 +11519,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11509,6 +11546,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The registry ID associated with the request.</p>",
         "name" : "RegistryId",
@@ -11543,10 +11581,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11595,10 +11633,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11647,10 +11685,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11722,10 +11760,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11775,10 +11813,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11828,10 +11866,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11859,6 +11897,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -11893,10 +11932,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11945,10 +11984,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11997,10 +12036,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -12042,10 +12081,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -12067,8 +12106,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageIdentifier",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
-          "templateType" : "java.util.List<ImageIdentifier>"
+          "templateType" : "java.util.List<ImageIdentifier>",
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12142,10 +12181,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -12187,10 +12226,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -12212,8 +12251,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageIdentifier",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
-            "templateType" : "java.util.List<ImageIdentifier>"
+            "templateType" : "java.util.List<ImageIdentifier>",
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12261,10 +12300,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12314,10 +12353,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12345,6 +12384,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -12376,6 +12416,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "InvalidImageDigest",
@@ -12425,6 +12466,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -12456,6 +12498,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of repository objects corresponding to valid repositories.</p>",
         "name" : "Repositories",
@@ -12490,10 +12533,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -12535,10 +12578,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -12560,8 +12603,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Repository",
-          "templateImplType" : "java.util.ArrayList<Repository>",
-          "templateType" : "java.util.List<Repository>"
+          "templateType" : "java.util.List<Repository>",
+          "templateImplType" : "java.util.ArrayList<Repository>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12608,10 +12651,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -12683,10 +12726,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -12728,10 +12771,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -12753,8 +12796,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Repository",
-            "templateImplType" : "java.util.ArrayList<Repository>",
-            "templateType" : "java.util.List<Repository>"
+            "templateType" : "java.util.List<Repository>",
+            "templateImplType" : "java.util.ArrayList<Repository>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12802,10 +12845,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12833,6 +12876,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The registry ID associated with the request.</p>",
         "name" : "RegistryId",
@@ -12867,10 +12911,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -12919,10 +12963,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -12971,10 +13015,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13023,10 +13067,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13098,10 +13142,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13151,10 +13195,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13204,10 +13248,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13257,10 +13301,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13288,6 +13332,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -13319,6 +13364,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -13350,6 +13396,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p>",
         "name" : "AuthorizationData",
@@ -13384,10 +13431,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -13429,10 +13476,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -13454,8 +13501,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AuthorizationData",
-          "templateImplType" : "java.util.ArrayList<AuthorizationData>",
-          "templateType" : "java.util.List<AuthorizationData>"
+          "templateType" : "java.util.List<AuthorizationData>",
+          "templateImplType" : "java.util.ArrayList<AuthorizationData>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13525,10 +13572,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -13570,10 +13617,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -13595,8 +13642,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AuthorizationData",
-            "templateImplType" : "java.util.ArrayList<AuthorizationData>",
-            "templateType" : "java.util.List<AuthorizationData>"
+            "templateType" : "java.util.List<AuthorizationData>",
+            "templateImplType" : "java.util.ArrayList<AuthorizationData>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13622,6 +13669,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The AWS account ID associated with the registry that contains the repository to list images in. If you do not specify a registry, the default registry is assumed.</p>",
         "name" : "RegistryId",
@@ -13656,10 +13704,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13708,10 +13756,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13760,10 +13808,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13812,10 +13860,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13891,10 +13939,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13944,10 +13992,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13997,10 +14045,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14050,10 +14098,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14081,6 +14129,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of image layer objects corresponding to the image layer references in the request.</p>",
         "name" : "Layers",
@@ -14115,10 +14164,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -14160,10 +14209,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -14185,8 +14234,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Layer",
-          "templateImplType" : "java.util.ArrayList<Layer>",
-          "templateType" : "java.util.List<Layer>"
+          "templateType" : "java.util.List<Layer>",
+          "templateImplType" : "java.util.ArrayList<Layer>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14233,10 +14282,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -14278,10 +14327,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false
+              "queryString" : false,
+              "header" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -14303,8 +14352,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "LayerFailure",
-          "templateImplType" : "java.util.ArrayList<LayerFailure>",
-          "templateType" : "java.util.List<LayerFailure>"
+          "templateType" : "java.util.List<LayerFailure>",
+          "templateImplType" : "java.util.ArrayList<LayerFailure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14374,10 +14423,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -14419,10 +14468,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -14444,8 +14493,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Layer",
-            "templateImplType" : "java.util.ArrayList<Layer>",
-            "templateType" : "java.util.List<Layer>"
+            "templateType" : "java.util.List<Layer>",
+            "templateImplType" : "java.util.ArrayList<Layer>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14493,10 +14542,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -14538,10 +14587,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false
+                "queryString" : false,
+                "header" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -14563,8 +14612,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "LayerFailure",
-            "templateImplType" : "java.util.ArrayList<LayerFailure>",
-            "templateType" : "java.util.List<LayerFailure>"
+            "templateType" : "java.util.List<LayerFailure>",
+            "templateImplType" : "java.util.ArrayList<LayerFailure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14590,6 +14639,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>sha256</code> digest of the image layer.</p>",
         "name" : "LayerDigest",
@@ -14624,10 +14674,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -14676,10 +14726,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -14728,10 +14778,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -14803,10 +14853,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14856,10 +14906,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14909,10 +14959,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14940,6 +14990,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>sha256</code> digest of the image manifest.</p>",
         "name" : "ImageDigest",
@@ -14974,10 +15025,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15026,10 +15077,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15101,10 +15152,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -15154,10 +15205,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -15185,6 +15236,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -15216,6 +15268,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, the AWS account ID of the repository owner, the repository namespace, and then the repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>",
         "name" : "RepositoryArn",
@@ -15250,10 +15303,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15302,10 +15355,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15354,10 +15407,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15406,10 +15459,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15481,10 +15534,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -15534,10 +15587,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -15587,10 +15640,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -15640,10 +15693,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -15671,6 +15724,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -15702,6 +15756,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -15733,6 +15788,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -15764,6 +15820,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -15795,6 +15852,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The image ID associated with the failure.</p>",
         "name" : "ImageId",
@@ -15829,10 +15887,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15881,10 +15939,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15933,10 +15991,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false
+          "queryString" : false,
+          "header" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -16008,10 +16066,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -16061,10 +16119,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -16114,10 +16172,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false
+            "queryString" : false,
+            "header" : false
           },
           "deprecated" : false,
           "listModel" : null,

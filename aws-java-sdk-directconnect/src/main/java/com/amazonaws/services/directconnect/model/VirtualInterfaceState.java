@@ -17,28 +17,61 @@
 package com.amazonaws.services.directconnect.model;
 
 /**
+ * <p>
  * State of the virtual interface.
+ * </p>
  * <ul>
- * <li><b>Confirming</b>: The creation of the virtual interface is pending
+ * <li>
+ * <p>
+ * <b>Confirming</b>: The creation of the virtual interface is pending
  * confirmation from the virtual interface owner. If the owner of the virtual
  * interface is different from the owner of the connection on which it is
  * provisioned, then the virtual interface will remain in this state until it is
- * confirmed by the virtual interface owner.</li>
- * <li><b>Verifying</b>: This state only applies to public virtual interfaces.
- * Each public virtual interface needs validation before the virtual interface
- * can be created.</li>
- * <li><b>Pending</b>: A virtual interface is in this state from the time that
- * it is created until the virtual interface is ready to forward traffic.</li>
- * <li><b>Available</b>: A virtual interface that is able to forward traffic.</li>
- * <li><b>Down</b>: A virtual interface that is BGP down.</li>
- * <li><b>Deleting</b>: A virtual interface is in this state immediately after
- * calling <i>DeleteVirtualInterface</i> until it can no longer forward traffic.
+ * confirmed by the virtual interface owner.
+ * </p>
  * </li>
- * <li><b>Deleted</b>: A virtual interface that cannot forward traffic.</li>
- * <li><b>Rejected</b>: The virtual interface owner has declined creation of the
+ * <li>
+ * <p>
+ * <b>Verifying</b>: This state only applies to public virtual interfaces. Each
+ * public virtual interface needs validation before the virtual interface can be
+ * created.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Pending</b>: A virtual interface is in this state from the time that it is
+ * created until the virtual interface is ready to forward traffic.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Available</b>: A virtual interface that is able to forward traffic.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Down</b>: A virtual interface that is BGP down.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Deleting</b>: A virtual interface is in this state immediately after
+ * calling <i>DeleteVirtualInterface</i> until it can no longer forward traffic.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Deleted</b>: A virtual interface that cannot forward traffic.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Rejected</b>: The virtual interface owner has declined creation of the
  * virtual interface. If a virtual interface in the 'Confirming' state is
  * deleted by the virtual interface owner, the virtual interface will enter the
- * 'Rejected' state.</li>
+ * 'Rejected' state.
+ * </p>
+ * </li>
  * </ul>
  */
 public enum VirtualInterfaceState {

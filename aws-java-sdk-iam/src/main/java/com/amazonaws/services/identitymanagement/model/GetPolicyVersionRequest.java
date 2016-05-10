@@ -25,16 +25,52 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the managed policy that you want
+     * information about.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     */
     private String policyArn;
     /**
      * <p>
      * Identifies the policy version to retrieve.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that consists of the lowercase letter
+     * 'v' followed by one or two digits, and optionally followed by a period
+     * '.' and a string of letters and digits.
+     * </p>
      */
     private String versionId;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the managed policy that you want
+     * information about.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the managed policy that you want
+     *        information about.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -42,7 +78,24 @@ public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the managed policy that you want
+     * information about.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the managed policy that you
+     *         want information about.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
 
     public String getPolicyArn() {
@@ -50,7 +103,25 @@ public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the managed policy that you want
+     * information about.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the managed policy that you want
+     *        information about.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -64,9 +135,20 @@ public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
      * <p>
      * Identifies the policy version to retrieve.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that consists of the lowercase letter
+     * 'v' followed by one or two digits, and optionally followed by a period
+     * '.' and a string of letters and digits.
+     * </p>
      * 
      * @param versionId
-     *        Identifies the policy version to retrieve.
+     *        Identifies the policy version to retrieve.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that consists of the
+     *        lowercase letter 'v' followed by one or two digits, and optionally
+     *        followed by a period '.' and a string of letters and digits.
      */
 
     public void setVersionId(String versionId) {
@@ -77,8 +159,20 @@ public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
      * <p>
      * Identifies the policy version to retrieve.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that consists of the lowercase letter
+     * 'v' followed by one or two digits, and optionally followed by a period
+     * '.' and a string of letters and digits.
+     * </p>
      * 
-     * @return Identifies the policy version to retrieve.
+     * @return Identifies the policy version to retrieve.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters that consists of the
+     *         lowercase letter 'v' followed by one or two digits, and
+     *         optionally followed by a period '.' and a string of letters and
+     *         digits.
      */
 
     public String getVersionId() {
@@ -89,9 +183,20 @@ public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
      * <p>
      * Identifies the policy version to retrieve.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that consists of the lowercase letter
+     * 'v' followed by one or two digits, and optionally followed by a period
+     * '.' and a string of letters and digits.
+     * </p>
      * 
      * @param versionId
-     *        Identifies the policy version to retrieve.
+     *        Identifies the policy version to retrieve.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that consists of the
+     *        lowercase letter 'v' followed by one or two digits, and optionally
+     *        followed by a period '.' and a string of letters and digits.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

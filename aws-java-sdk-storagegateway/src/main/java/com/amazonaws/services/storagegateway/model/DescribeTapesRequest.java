@@ -52,8 +52,11 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      * Specifies that the number of virtual tapes described be limited to the
      * specified number.
      * </p>
-     * <note>Amazon Web Services may impose its own limit, if this field is not
-     * set.</note>
+     * <note>
+     * <p>
+     * Amazon Web Services may impose its own limit, if this field is not set.
+     * </p>
+     * </note>
      */
     private Integer limit;
 
@@ -261,13 +264,19 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      * Specifies that the number of virtual tapes described be limited to the
      * specified number.
      * </p>
-     * <note>Amazon Web Services may impose its own limit, if this field is not
-     * set.</note>
+     * <note>
+     * <p>
+     * Amazon Web Services may impose its own limit, if this field is not set.
+     * </p>
+     * </note>
      * 
      * @param limit
      *        Specifies that the number of virtual tapes described be limited to
-     *        the specified number.</p> <note>Amazon Web Services may impose its
-     *        own limit, if this field is not set.
+     *        the specified number.</p> <note>
+     *        <p>
+     *        Amazon Web Services may impose its own limit, if this field is not
+     *        set.
+     *        </p>
      */
 
     public void setLimit(Integer limit) {
@@ -279,12 +288,18 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      * Specifies that the number of virtual tapes described be limited to the
      * specified number.
      * </p>
-     * <note>Amazon Web Services may impose its own limit, if this field is not
-     * set.</note>
+     * <note>
+     * <p>
+     * Amazon Web Services may impose its own limit, if this field is not set.
+     * </p>
+     * </note>
      * 
      * @return Specifies that the number of virtual tapes described be limited
-     *         to the specified number.</p> <note>Amazon Web Services may impose
-     *         its own limit, if this field is not set.
+     *         to the specified number.</p> <note>
+     *         <p>
+     *         Amazon Web Services may impose its own limit, if this field is
+     *         not set.
+     *         </p>
      */
 
     public Integer getLimit() {
@@ -296,13 +311,19 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      * Specifies that the number of virtual tapes described be limited to the
      * specified number.
      * </p>
-     * <note>Amazon Web Services may impose its own limit, if this field is not
-     * set.</note>
+     * <note>
+     * <p>
+     * Amazon Web Services may impose its own limit, if this field is not set.
+     * </p>
+     * </note>
      * 
      * @param limit
      *        Specifies that the number of virtual tapes described be limited to
-     *        the specified number.</p> <note>Amazon Web Services may impose its
-     *        own limit, if this field is not set.
+     *        the specified number.</p> <note>
+     *        <p>
+     *        Amazon Web Services may impose its own limit, if this field is not
+     *        set.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -35,8 +35,11 @@ public class NetworkInterface implements Serializable, Cloneable {
      * <p>
      * The Media Access Control (MAC) address of the interface.
      * </p>
-     * <note>This is currently unsupported and will not be returned in
-     * output.</note>
+     * <note>
+     * <p>
+     * This is currently unsupported and will not be returned in output.
+     * </p>
+     * </note>
      */
     private String macAddress;
     /**
@@ -92,13 +95,18 @@ public class NetworkInterface implements Serializable, Cloneable {
      * <p>
      * The Media Access Control (MAC) address of the interface.
      * </p>
-     * <note>This is currently unsupported and will not be returned in
-     * output.</note>
+     * <note>
+     * <p>
+     * This is currently unsupported and will not be returned in output.
+     * </p>
+     * </note>
      * 
      * @param macAddress
      *        The Media Access Control (MAC) address of the interface.</p>
-     *        <note>This is currently unsupported and will not be returned in
-     *        output.
+     *        <note>
+     *        <p>
+     *        This is currently unsupported and will not be returned in output.
+     *        </p>
      */
 
     public void setMacAddress(String macAddress) {
@@ -109,12 +117,17 @@ public class NetworkInterface implements Serializable, Cloneable {
      * <p>
      * The Media Access Control (MAC) address of the interface.
      * </p>
-     * <note>This is currently unsupported and will not be returned in
-     * output.</note>
+     * <note>
+     * <p>
+     * This is currently unsupported and will not be returned in output.
+     * </p>
+     * </note>
      * 
      * @return The Media Access Control (MAC) address of the interface.</p>
-     *         <note>This is currently unsupported and will not be returned in
-     *         output.
+     *         <note>
+     *         <p>
+     *         This is currently unsupported and will not be returned in output.
+     *         </p>
      */
 
     public String getMacAddress() {
@@ -125,13 +138,18 @@ public class NetworkInterface implements Serializable, Cloneable {
      * <p>
      * The Media Access Control (MAC) address of the interface.
      * </p>
-     * <note>This is currently unsupported and will not be returned in
-     * output.</note>
+     * <note>
+     * <p>
+     * This is currently unsupported and will not be returned in output.
+     * </p>
+     * </note>
      * 
      * @param macAddress
      *        The Media Access Control (MAC) address of the interface.</p>
-     *        <note>This is currently unsupported and will not be returned in
-     *        output.
+     *        <note>
+     *        <p>
+     *        This is currently unsupported and will not be returned in output.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

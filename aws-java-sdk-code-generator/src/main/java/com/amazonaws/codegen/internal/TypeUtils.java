@@ -15,9 +15,11 @@
 
 package com.amazonaws.codegen.internal;
 
-import static com.amazonaws.codegen.model.service.ShapeTypes.List;
-import static com.amazonaws.codegen.model.service.ShapeTypes.Map;
-import static com.amazonaws.codegen.model.service.ShapeTypes.Structure;
+import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
+import com.amazonaws.codegen.model.service.Shape;
+import com.amazonaws.codegen.naming.NamingStrategy;
+import com.amazonaws.internal.SdkInternalList;
+import com.amazonaws.internal.SdkInternalMap;
 
 import java.io.InputStream;
 import java.math.BigDecimal;
@@ -29,10 +31,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
-import com.amazonaws.codegen.model.service.Shape;
-import com.amazonaws.internal.SdkInternalList;
-import com.amazonaws.internal.SdkInternalMap;
+import static com.amazonaws.codegen.model.service.ShapeTypes.List;
+import static com.amazonaws.codegen.model.service.ShapeTypes.Map;
+import static com.amazonaws.codegen.model.service.ShapeTypes.Structure;
 
 /**
  * Used to determine the Java types for the service model.
@@ -54,36 +55,39 @@ public class TypeUtils {
     private final static Map<String, String> dataTypeMappings = new HashMap<String, String>();
 
     static {
-        dataTypeMappings.put("string",       String.class.getSimpleName());
-        dataTypeMappings.put("boolean",      Boolean.class.getSimpleName());
-        dataTypeMappings.put("int",          Integer.class.getSimpleName());
-        dataTypeMappings.put("any",          Object.class.getSimpleName());
-        dataTypeMappings.put("integer",      Integer.class.getSimpleName());
-        dataTypeMappings.put("double",       Double.class.getSimpleName());
-        dataTypeMappings.put("short",        Short.class.getSimpleName());
-        dataTypeMappings.put("long",         Long.class.getSimpleName());
-        dataTypeMappings.put("float",        Float.class.getSimpleName());
-        dataTypeMappings.put("byte",         Byte.class.getSimpleName());
-        dataTypeMappings.put("timestamp",    Date.class.getName());
-        dataTypeMappings.put("blob",         ByteBuffer.class.getName());
-        dataTypeMappings.put("stream",       InputStream.class.getName());
-        dataTypeMappings.put("bigdecimal",   BigDecimal.class.getName());
-        dataTypeMappings.put("biginteger",   BigInteger.class.getName());
-        dataTypeMappings.put("list",         List.class.getSimpleName());
-        dataTypeMappings.put("map",          Map.class.getSimpleName());
+        dataTypeMappings.put("string", String.class.getSimpleName());
+        dataTypeMappings.put("boolean", Boolean.class.getSimpleName());
+        dataTypeMappings.put("int", Integer.class.getSimpleName());
+        dataTypeMappings.put("any", Object.class.getSimpleName());
+        dataTypeMappings.put("integer", Integer.class.getSimpleName());
+        dataTypeMappings.put("double", Double.class.getSimpleName());
+        dataTypeMappings.put("short", Short.class.getSimpleName());
+        dataTypeMappings.put("long", Long.class.getSimpleName());
+        dataTypeMappings.put("float", Float.class.getSimpleName());
+        dataTypeMappings.put("byte", Byte.class.getSimpleName());
+        dataTypeMappings.put("timestamp", Date.class.getName());
+        dataTypeMappings.put("blob", ByteBuffer.class.getName());
+        dataTypeMappings.put("stream", InputStream.class.getName());
+        dataTypeMappings.put("bigdecimal", BigDecimal.class.getName());
+        dataTypeMappings.put("biginteger", BigInteger.class.getName());
+        dataTypeMappings.put("list", List.class.getSimpleName());
+        dataTypeMappings.put("map", Map.class.getSimpleName());
         dataTypeMappings.put(LIST_INTERFACE, List.class.getName());
-        dataTypeMappings.put(LIST_DEFAULT_IMPL,      ArrayList.class.getName());
-        dataTypeMappings.put(LIST_AUTO_CONSTRUCT_IMPL,
-                                    SdkInternalList.class.getName());
-        dataTypeMappings.put(MAP_INTERFACE,  Map.class.getName());
-        dataTypeMappings.put(MAP_DEFAULT_IMPL,       HashMap.class.getName());
-        dataTypeMappings.put(MAP_AUTO_CONSTRUCT_IMPL,
-                                    SdkInternalMap.class.getName());
+        dataTypeMappings.put(LIST_DEFAULT_IMPL, ArrayList.class.getName());
+        dataTypeMappings.put(LIST_AUTO_CONSTRUCT_IMPL, SdkInternalList.class.getName());
+        dataTypeMappings.put(MAP_INTERFACE, Map.class.getName());
+        dataTypeMappings.put(MAP_DEFAULT_IMPL, HashMap.class.getName());
+        dataTypeMappings.put(MAP_AUTO_CONSTRUCT_IMPL, SdkInternalMap.class.getName());
+    }
+
+    private final NamingStrategy namingStrategy;
+
+    public TypeUtils(NamingStrategy namingStrategy) {
+        this.namingStrategy = namingStrategy;
     }
 
     public static boolean isSimple(String type) {
-        return dataTypeMappings.containsKey(type)
-                || dataTypeMappings.containsValue(type);
+        return dataTypeMappings.containsKey(type) || dataTypeMappings.containsValue(type);
     }
 
     public static String getDataTypeMapping(String type) {
@@ -93,17 +97,16 @@ public class TypeUtils {
     /**
      * Returns the default Java type of the specified shape.
      */
-    public static String getJavaDataType(Map<String, Shape> shapes,
-            String shapeName) {
+    public String getJavaDataType(Map<String, Shape> shapes, String shapeName) {
         return getJavaDataType(shapes, shapeName, null);
     }
 
     /**
-    * Returns the Java type of the specified shape with potential
-    * customization (such as auto-construct list or map).
-    */
-    public static String getJavaDataType(Map<String, Shape> shapes,
-            String shapeName, CustomizationConfig customConfig) {
+     * Returns the Java type of the specified shape with potential customization (such as
+     * auto-construct list or map).
+     */
+    public String getJavaDataType(Map<String, Shape> shapes, String shapeName,
+                                  CustomizationConfig customConfig) {
 
         if (shapeName == null || shapeName.trim().isEmpty()) {
             throw new IllegalArgumentException(
@@ -114,36 +117,26 @@ public class TypeUtils {
 
         if (shape == null) {
             throw new IllegalArgumentException(
-                    "Cannot derive shape type. No shape information available for "
-                            + shapeName);
+                    "Cannot derive shape type. No shape information available for " + shapeName);
         }
 
         final String shapeType = shape.getType();
 
         if (Structure.getName().equals(shapeType)) {
-            return NameUtils.getJavaClassName(shapeName);
+            return namingStrategy.getJavaClassName(shapeName);
         } else if (List.getName().equals(shapeType)) {
-            final String listContainerType =
-                dataTypeMappings.get(
-                    customConfig != null && customConfig.isUseAutoConstructList()
-                        ? LIST_AUTO_CONSTRUCT_IMPL
-                        : LIST_INTERFACE);
-            return listContainerType
-                + "<"
-                + getJavaDataType(shapes, shape.getListMember().getShape())
-                + ">";
+            final String listContainerType = dataTypeMappings
+                    .get(customConfig != null && customConfig.isUseAutoConstructList() ?
+                                 LIST_AUTO_CONSTRUCT_IMPL : LIST_INTERFACE);
+            return listContainerType + "<" +
+                   getJavaDataType(shapes, shape.getListMember().getShape()) + ">";
         } else if (Map.getName().equals(shapeType)) {
-            final String mapContainerType =
-                dataTypeMappings.get(
-                    customConfig != null && customConfig.isUseAutoConstructMap()
-                        ? MAP_AUTO_CONSTRUCT_IMPL
-                        : MAP_INTERFACE);
-            return mapContainerType
-                + "<"
-                + getJavaDataType(shapes, shape.getMapKeyType().getShape())
-                + ","
-                + getJavaDataType(shapes, shape.getMapValueType().getShape())
-                + ">";
+            final String mapContainerType = dataTypeMappings
+                    .get(customConfig != null && customConfig.isUseAutoConstructMap() ?
+                                 MAP_AUTO_CONSTRUCT_IMPL : MAP_INTERFACE);
+            return mapContainerType + "<" +
+                   getJavaDataType(shapes, shape.getMapKeyType().getShape()) + "," +
+                   getJavaDataType(shapes, shape.getMapValueType().getShape()) + ">";
         } else {
 
             if (shape.isStreaming()) {
@@ -154,8 +147,7 @@ public class TypeUtils {
             final String dataType = dataTypeMappings.get(shapeType);
             if (dataType == null) {
                 throw new RuntimeException(
-                        "Equivalent Java data type cannot be found for data type : "
-                                + shapeType);
+                        "Equivalent Java data type cannot be found for data type : " + shapeType);
             }
             return dataType;
         }

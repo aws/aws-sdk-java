@@ -24,9 +24,21 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing the following fields:
  * </p>
  * <ul>
- * <li><a>UpdateMaintenanceStartTimeInput$DayOfWeek</a></li>
- * <li><a>UpdateMaintenanceStartTimeInput$HourOfDay</a></li>
- * <li><a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a></li>
+ * <li>
+ * <p>
+ * <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateMaintenanceStartTimeInput$HourOfDay</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest

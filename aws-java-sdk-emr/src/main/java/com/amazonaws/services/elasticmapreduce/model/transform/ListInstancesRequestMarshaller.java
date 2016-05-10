@@ -84,6 +84,20 @@ public class ListInstancesRequestMarshaller implements
                 }
                 jsonGenerator.writeEndArray();
             }
+
+            com.amazonaws.internal.SdkInternalList<String> instanceStatesList = (com.amazonaws.internal.SdkInternalList<String>) listInstancesRequest
+                    .getInstanceStates();
+            if (!instanceStatesList.isEmpty()
+                    || !instanceStatesList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("InstanceStates");
+                jsonGenerator.writeStartArray();
+                for (String instanceStatesListValue : instanceStatesList) {
+                    if (instanceStatesListValue != null) {
+                        jsonGenerator.writeValue(instanceStatesListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
             if (listInstancesRequest.getMarker() != null) {
                 jsonGenerator.writeFieldName("Marker").writeValue(
                         listInstancesRequest.getMarker());

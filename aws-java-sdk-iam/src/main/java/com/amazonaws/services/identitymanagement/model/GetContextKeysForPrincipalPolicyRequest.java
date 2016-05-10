@@ -36,12 +36,25 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      * form here for clarity, but must be URL encoded to be included as a part
      * of a real HTML request.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      */
     private String policySourceArn;
     /**
      * <p>
-     * A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.
+     * An optional list of additional policies for which you want the list of
+     * context keys that are referenced.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyInputList;
@@ -57,6 +70,12 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      * form here for clarity, but must be URL encoded to be included as a part
      * of a real HTML request.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      * 
      * @param policySourceArn
      *        The ARN of a user, group, or role whose policies contain the
@@ -67,7 +86,12 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      *        keys that are found in policies attached to that entity. Note that
      *        all parameters are shown in unencoded form here for clarity, but
      *        must be URL encoded to be included as a part of a real HTML
-     *        request.
+     *        request.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
 
     public void setPolicySourceArn(String policySourceArn) {
@@ -85,6 +109,12 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      * form here for clarity, but must be URL encoded to be included as a part
      * of a real HTML request.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      * 
      * @return The ARN of a user, group, or role whose policies contain the
      *         context keys that you want listed. If you specify a user, the
@@ -94,7 +124,12 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      *         those context keys that are found in policies attached to that
      *         entity. Note that all parameters are shown in unencoded form here
      *         for clarity, but must be URL encoded to be included as a part of
-     *         a real HTML request.
+     *         a real HTML request.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
 
     public String getPolicySourceArn() {
@@ -112,6 +147,12 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      * form here for clarity, but must be URL encoded to be included as a part
      * of a real HTML request.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      * 
      * @param policySourceArn
      *        The ARN of a user, group, or role whose policies contain the
@@ -122,7 +163,12 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      *        keys that are found in policies attached to that entity. Note that
      *        all parameters are shown in unencoded form here for clarity, but
      *        must be URL encoded to be included as a part of a real HTML
-     *        request.
+     *        request.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -135,12 +181,26 @@ public class GetContextKeysForPrincipalPolicyRequest extends
 
     /**
      * <p>
-     * A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.
+     * An optional list of additional policies for which you want the list of
+     * context keys that are referenced.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
-     * @return A optional list of additional policies for which you want list of
-     *         context keys used in <code>Condition</code> elements.
+     * @return An optional list of additional policies for which you want the
+     *         list of context keys that are referenced.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ).
      */
 
     public java.util.List<String> getPolicyInputList() {
@@ -152,13 +212,27 @@ public class GetContextKeysForPrincipalPolicyRequest extends
 
     /**
      * <p>
-     * A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.
+     * An optional list of additional policies for which you want the list of
+     * context keys that are referenced.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param policyInputList
-     *        A optional list of additional policies for which you want list of
-     *        context keys used in <code>Condition</code> elements.
+     *        An optional list of additional policies for which you want the
+     *        list of context keys that are referenced.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
 
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
@@ -173,8 +247,15 @@ public class GetContextKeysForPrincipalPolicyRequest extends
 
     /**
      * <p>
-     * A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.
+     * An optional list of additional policies for which you want the list of
+     * context keys that are referenced.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -184,8 +265,15 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      * </p>
      * 
      * @param policyInputList
-     *        A optional list of additional policies for which you want list of
-     *        context keys used in <code>Condition</code> elements.
+     *        An optional list of additional policies for which you want the
+     *        list of context keys that are referenced.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -204,13 +292,27 @@ public class GetContextKeysForPrincipalPolicyRequest extends
 
     /**
      * <p>
-     * A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.
+     * An optional list of additional policies for which you want the list of
+     * context keys that are referenced.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param policyInputList
-     *        A optional list of additional policies for which you want list of
-     *        context keys used in <code>Condition</code> elements.
+     *        An optional list of additional policies for which you want the
+     *        list of context keys that are referenced.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

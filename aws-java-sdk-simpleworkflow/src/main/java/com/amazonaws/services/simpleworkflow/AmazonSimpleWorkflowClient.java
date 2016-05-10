@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,102 +15,121 @@
  */
 package com.amazonaws.services.simpleworkflow;
 
+import org.w3c.dom.*;
+
 import java.net.*;
 import java.util.*;
+import java.util.Map.Entry;
 
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
-import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
 import com.amazonaws.metrics.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.services.simpleworkflow.model.transform.*;
 
 /**
- * Client for accessing AmazonSimpleWorkflow.  All service calls made
- * using this client are blocking, and will not return until the service call
- * completes.
+ * Client for accessing Amazon SWF. All service calls made using this client are
+ * blocking, and will not return until the service call completes.
  * <p>
- * Amazon Simple Workflow Service <p>
+ * <fullname>Amazon Simple Workflow Service</fullname>
+ * <p>
  * The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build
- * applications that use Amazon's cloud to coordinate work across
- * distributed components. In Amazon SWF, a <i>task</i> represents a
- * logical unit of work that is performed by a component of your
- * workflow. Coordinating tasks in a workflow involves managing intertask
- * dependencies, scheduling, and concurrency in accordance with the
- * logical flow of the application.
+ * applications that use Amazon's cloud to coordinate work across distributed
+ * components. In Amazon SWF, a <i>task</i> represents a logical unit of work
+ * that is performed by a component of your workflow. Coordinating tasks in a
+ * workflow involves managing intertask dependencies, scheduling, and
+ * concurrency in accordance with the logical flow of the application.
  * </p>
  * <p>
- * Amazon SWF gives you full control over implementing tasks and
- * coordinating them without worrying about underlying complexities such
- * as tracking their progress and maintaining their state.
+ * Amazon SWF gives you full control over implementing tasks and coordinating
+ * them without worrying about underlying complexities such as tracking their
+ * progress and maintaining their state.
  * </p>
  * <p>
- * This documentation serves as reference only. For a broader overview of
- * the Amazon SWF programming model, see the
- * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/"> Amazon SWF Developer Guide </a>
- * .
+ * This documentation serves as reference only. For a broader overview of the
+ * Amazon SWF programming model, see the <a
+ * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF
+ * Developer Guide</a>.
  * </p>
  */
-public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implements AmazonSimpleWorkflow {
-
+@ThreadSafe
+public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
+        implements AmazonSimpleWorkflow {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AmazonSimpleWorkflow.class);
+    private static final Log log = LogFactory
+            .getLog(AmazonSimpleWorkflow.class);
+
+    /** Default signing name for the service. */
+    private static final String DEFAULT_SIGNING_NAME = "swf";
+
+    /** The region metadata service name for computing region endpoints. */
+    private static final String DEFAULT_ENDPOINT_PREFIX = "swf";
 
     /**
-     * List of exception unmarshallers for all AmazonSimpleWorkflow exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshaller> jsonErrorUnmarshallers;
+    protected static final com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflowClientConfigurationFactory configFactory = new com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflowClientConfigurationFactory();
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonSimpleWorkflow.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * List of exception unmarshallers for all Amazon SWF exceptions.
+     */
+    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon SWF. A
+     * credentials provider chain will be used that searches for credentials in
+     * this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
      *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleWorkflowClient() {
-        this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonSimpleWorkflow.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Constructs a new client to invoke service methods on Amazon SWF. A
+     * credentials provider chain will be used that searches for credentials in
+     * this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
      *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AmazonSimpleWorkflow
-     *                       (ex: proxy settings, retry counts, etc.).
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to Amazon SWF (ex: proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
      */
@@ -118,1657 +138,760 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonSimpleWorkflow using the specified AWS account credentials.
-     * 
-     * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Constructs a new client to invoke service methods on Amazon SWF using the
+     * specified AWS account credentials.
      *
-     * @param awsCredentials The AWS credentials (access key ID and secret key) to use
-     *                       when authenticating with AWS services.
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
      */
     public AmazonSimpleWorkflowClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, new ClientConfiguration());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonSimpleWorkflow using the specified AWS account credentials
-     * and client configuration options.
-     * 
-     * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Constructs a new client to invoke service methods on Amazon SWF using the
+     * specified AWS account credentials and client configuration options.
      *
-     * @param awsCredentials The AWS credentials (access key ID and secret key) to use
-     *                       when authenticating with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AmazonSimpleWorkflow
-     *                       (ex: proxy settings, retry counts, etc.).
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to Amazon SWF (ex: proxy settings, retry counts, etc.).
      */
-    public AmazonSimpleWorkflowClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
-        super(adjustClientConfiguration(clientConfiguration));
-        
-        this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
-        
+    public AmazonSimpleWorkflowClient(AWSCredentials awsCredentials,
+            ClientConfiguration clientConfiguration) {
+        super(clientConfiguration);
+        this.awsCredentialsProvider = new StaticCredentialsProvider(
+                awsCredentials);
         init();
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonSimpleWorkflow using the specified AWS account credentials provider.
-     * 
+     * Constructs a new client to invoke service methods on Amazon SWF using the
+     * specified AWS account credentials provider.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
      */
-    public AmazonSimpleWorkflowClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, new ClientConfiguration());
+    public AmazonSimpleWorkflowClient(
+            AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonSimpleWorkflow using the specified AWS account credentials
-     * provider and client configuration options.
-     * 
+     * Constructs a new client to invoke service methods on Amazon SWF using the
+     * specified AWS account credentials provider and client configuration
+     * options.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AmazonSimpleWorkflow
-     *                       (ex: proxy settings, retry counts, etc.).
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to Amazon SWF (ex: proxy settings, retry counts, etc.).
      */
-    public AmazonSimpleWorkflowClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+    public AmazonSimpleWorkflowClient(
+            AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AmazonSimpleWorkflow using the specified AWS account credentials
-     * provider, client configuration options and request metric collector.
-     * 
+     * Constructs a new client to invoke service methods on Amazon SWF using the
+     * specified AWS account credentials provider, client configuration options,
+     * and request metric collector.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AmazonSimpleWorkflow
-     *                       (ex: proxy settings, retry counts, etc.).
-     * @param requestMetricCollector optional request metric collector
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to Amazon SWF (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector
+     *        optional request metric collector
      */
-    public AmazonSimpleWorkflowClient(AWSCredentialsProvider awsCredentialsProvider,
+    public AmazonSimpleWorkflowClient(
+            AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(adjustClientConfiguration(clientConfiguration), requestMetricCollector);
-        
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
-        
         init();
     }
 
     private void init() {
-        jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
-        jsonErrorUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DomainAlreadyExistsExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DomainDeprecatedExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new DefaultUndefinedExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new WorkflowExecutionAlreadyStartedExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new TypeDeprecatedExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new OperationNotPermittedExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new UnknownResourceExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new TypeAlreadyExistsExceptionUnmarshaller());
-        
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
-        
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simpleworkflow.model.LimitExceededException.class,
+                        "LimitExceededFault"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simpleworkflow.model.OperationNotPermittedException.class,
+                        "OperationNotPermittedFault"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simpleworkflow.model.UnknownResourceException.class,
+                        "UnknownResourceFault"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException.class,
+                        "DomainAlreadyExistsFault"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException.class,
+                        "WorkflowExecutionAlreadyStartedFault"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException.class,
+                        "DefaultUndefinedFault"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException.class,
+                        "DomainDeprecatedFault"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException.class,
+                        "TypeAlreadyExistsFault"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException.class,
+                        "TypeDeprecatedFault"));
+        jsonErrorUnmarshallers
+                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
+
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
+        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("swf.us-east-1.amazonaws.com");
-        
+        setEndpoint("swf.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
-                "/com/amazonaws/services/simpleworkflow/request.handlers"));
-        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
-                "/com/amazonaws/services/simpleworkflow/request.handler2s"));
-    }
-
-    private static ClientConfiguration adjustClientConfiguration(ClientConfiguration orig) {
-        ClientConfiguration config = orig;
-        
-        config = new ClientConfiguration(orig);
-        if (config.getMaxConnections() == ClientConfiguration.DEFAULT_MAX_CONNECTIONS) {
-            log.debug("Overriding default max connection value to: " + 1000);
-            config.setMaxConnections(1000);
-        }
-        if (config.getSocketTimeout() == ClientConfiguration.DEFAULT_SOCKET_TIMEOUT) {
-            log.debug("Overriding default socket timeout value to: " + 90000);
-            config.setSocketTimeout(90000);
-        }
-        return config;
+        requestHandler2s
+                .addAll(chainFactory
+                        .newRequestHandlerChain("/com/amazonaws/services/simpleworkflow/request.handlers"));
+        requestHandler2s
+                .addAll(chainFactory
+                        .newRequestHandler2Chain("/com/amazonaws/services/simpleworkflow/request.handler2s"));
     }
 
     /**
      * <p>
-     * Deprecates the specified <i>workflow type</i> . After a workflow type
-     * has been deprecated, you cannot create new executions of that type.
-     * Executions that were started before the type was deprecated will
-     * continue to run. A deprecated workflow type may still be used when
-     * calling visibility actions.
+     * Returns the number of closed workflow executions within the given domain
+     * that meet the specified filtering criteria.
      * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
+     * <note>This operation is eventually consistent. The results are best
+     * effort and may not exactly reflect recent updates and changes.</note>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>Constrain the following parameters by using a
-     * <code>Condition</code> element with the appropriate keys.
+     * <li>Constrain the following parameters by using a <code>Condition</code>
+     * element with the appropriate keys.
      * <ul>
-     * <li> <code>workflowType.name</code> : String constraint. The key is
-     * <code>swf:workflowType.name</code> .</li>
-     * <li> <code>workflowType.version</code> : String constraint. The key
-     * is <code>swf:workflowType.version</code> .</li>
-     * 
+     * <li><code>tagFilter.tag</code>: String constraint. The key is
+     * <code>swf:tagFilter.tag</code>.</li>
+     * <li><code>typeFilter.name</code>: String constraint. The key is
+     * <code>swf:typeFilter.name</code>.</li>
+     * <li><code>typeFilter.version</code>: String constraint. The key is
+     * <code>swf:typeFilter.version</code>.</li>
      * </ul>
      * </li>
-     * 
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param deprecateWorkflowTypeRequest Container for the necessary
-     *           parameters to execute the DeprecateWorkflowType service method on
-     *           AmazonSimpleWorkflow.
      * 
-     * 
-     * @throws TypeDeprecatedException
-     * @throws OperationNotPermittedException
+     * @param countClosedWorkflowExecutionsRequest
+     * @return Result of the CountClosedWorkflowExecutions operation returned by
+     *         the service.
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deprecateWorkflowType(DeprecateWorkflowTypeRequest deprecateWorkflowTypeRequest) {
-        ExecutionContext executionContext = createExecutionContext(deprecateWorkflowTypeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeprecateWorkflowTypeRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeprecateWorkflowTypeRequestMarshaller().marshall(super.beforeMarshalling(deprecateWorkflowTypeRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Deprecates the specified domain. After a domain has been deprecated
-     * it cannot be used to create new workflow executions or register new
-     * types. However, you can still use visibility actions on this domain.
-     * Deprecating a domain also deprecates all activity and workflow types
-     * registered in the domain. Executions that were started before the
-     * domain was deprecated will continue to run.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param deprecateDomainRequest Container for the necessary parameters
-     *           to execute the DeprecateDomain service method on AmazonSimpleWorkflow.
-     * 
-     * 
-     * @throws DomainDeprecatedException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
      * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.CountClosedWorkflowExecutions
      */
-    public void deprecateDomain(DeprecateDomainRequest deprecateDomainRequest) {
-        ExecutionContext executionContext = createExecutionContext(deprecateDomainRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeprecateDomainRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeprecateDomainRequestMarshaller().marshall(super.beforeMarshalling(deprecateDomainRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Registers a new <i>workflow type</i> and its configuration settings
-     * in the specified domain.
-     * </p>
-     * <p>
-     * The retention period for the workflow history is set by the
-     * RegisterDomain action.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>If the type already exists, then a TypeAlreadyExists
-     * fault is returned. You cannot change the configuration settings of a
-     * workflow type once it is registered and it must be registered as a new
-     * version.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>Constrain the following parameters by using a
-     * <code>Condition</code> element with the appropriate keys.
-     * <ul>
-     * <li> <code>defaultTaskList.name</code> : String constraint. The key
-     * is <code>swf:defaultTaskList.name</code> .</li>
-     * <li> <code>name</code> : String constraint. The key is
-     * <code>swf:name</code> .</li>
-     * <li> <code>version</code> : String constraint. The key is
-     * <code>swf:version</code> .</li>
-     * 
-     * </ul>
-     * </li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param registerWorkflowTypeRequest Container for the necessary
-     *           parameters to execute the RegisterWorkflowType service method on
-     *           AmazonSimpleWorkflow.
-     * 
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     * @throws TypeAlreadyExistsException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void registerWorkflowType(RegisterWorkflowTypeRequest registerWorkflowTypeRequest) {
-        ExecutionContext executionContext = createExecutionContext(registerWorkflowTypeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RegisterWorkflowTypeRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RegisterWorkflowTypeRequestMarshaller().marshall(super.beforeMarshalling(registerWorkflowTypeRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Returns information about workflow types in the specified domain. The
-     * results may be split into multiple pages that can be retrieved by
-     * making the call repeatedly.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param listWorkflowTypesRequest Container for the necessary parameters
-     *           to execute the ListWorkflowTypes service method on
-     *           AmazonSimpleWorkflow.
-     * 
-     * @return The response from the ListWorkflowTypes service method, as
-     *         returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public WorkflowTypeInfos listWorkflowTypes(ListWorkflowTypesRequest listWorkflowTypesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listWorkflowTypesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListWorkflowTypesRequest> request = null;
-        Response<WorkflowTypeInfos> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListWorkflowTypesRequestMarshaller().marshall(super.beforeMarshalling(listWorkflowTypesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<WorkflowTypeInfos, JsonUnmarshallerContext> unmarshaller =
-                new WorkflowTypeInfosJsonUnmarshaller();
-            JsonResponseHandler<WorkflowTypeInfos> responseHandler =
-                new JsonResponseHandler<WorkflowTypeInfos>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Starts an execution of the workflow type in the specified domain
-     * using the provided <code>workflowId</code> and input data.
-     * </p>
-     * <p>
-     * This action returns the newly started workflow execution.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>Constrain the following parameters by using a
-     * <code>Condition</code> element with the appropriate keys.
-     * <ul>
-     * <li> <code>tagList.member.0</code> : The key is
-     * <code>swf:tagList.member.0</code> .</li>
-     * <li> <code>tagList.member.1</code> : The key is
-     * <code>swf:tagList.member.1</code> .</li>
-     * <li> <code>tagList.member.2</code> : The key is
-     * <code>swf:tagList.member.2</code> .</li>
-     * <li> <code>tagList.member.3</code> : The key is
-     * <code>swf:tagList.member.3</code> .</li>
-     * <li> <code>tagList.member.4</code> : The key is
-     * <code>swf:tagList.member.4</code> .</li>
-     * <li> <code>taskList</code> : String constraint. The key is
-     * <code>swf:taskList.name</code> .</li>
-     * <li> <code>workflowType.name</code> : String constraint. The key is
-     * <code>swf:workflowType.name</code> .</li>
-     * <li> <code>workflowType.version</code> : String constraint. The key
-     * is <code>swf:workflowType.version</code> .</li>
-     * 
-     * </ul>
-     * </li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param startWorkflowExecutionRequest Container for the necessary
-     *           parameters to execute the StartWorkflowExecution service method on
-     *           AmazonSimpleWorkflow.
-     * 
-     * @return The response from the StartWorkflowExecution service method,
-     *         as returned by AmazonSimpleWorkflow.
-     * 
-     * @throws TypeDeprecatedException
-     * @throws OperationNotPermittedException
-     * @throws DefaultUndefinedException
-     * @throws UnknownResourceException
-     * @throws WorkflowExecutionAlreadyStartedException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Run startWorkflowExecution(StartWorkflowExecutionRequest startWorkflowExecutionRequest) {
-        ExecutionContext executionContext = createExecutionContext(startWorkflowExecutionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<StartWorkflowExecutionRequest> request = null;
-        Response<Run> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new StartWorkflowExecutionRequestMarshaller().marshall(super.beforeMarshalling(startWorkflowExecutionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<Run, JsonUnmarshallerContext> unmarshaller =
-                new RunJsonUnmarshaller();
-            JsonResponseHandler<Run> responseHandler =
-                new JsonResponseHandler<Run>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Records a <code>WorkflowExecutionSignaled</code> event in the
-     * workflow execution history and creates a decision task for the
-     * workflow execution identified by the given domain, workflowId and
-     * runId. The event is recorded with the specified user defined
-     * signalName and input (if provided).
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If a runId is not specified, then the
-     * WorkflowExecutionSignaled event is recorded in the history of the
-     * current open workflow with the matching workflowId in the domain.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If the specified workflow execution is not open, this
-     * method fails with UnknownResource.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param signalWorkflowExecutionRequest Container for the necessary
-     *           parameters to execute the SignalWorkflowExecution service method on
-     *           AmazonSimpleWorkflow.
-     * 
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void signalWorkflowExecution(SignalWorkflowExecutionRequest signalWorkflowExecutionRequest) {
-        ExecutionContext executionContext = createExecutionContext(signalWorkflowExecutionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<SignalWorkflowExecutionRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new SignalWorkflowExecutionRequestMarshaller().marshall(super.beforeMarshalling(signalWorkflowExecutionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Returns the list of domains registered in the account. The results
-     * may be split into multiple pages. To retrieve subsequent pages, make
-     * the call again using the nextPageToken returned by the initial call.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains. The element must be set to
-     * <code>arn:aws:swf::AccountID:domain/*</code> , where <i>AccountID</i>
-     * is the account ID, with no dashes.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param listDomainsRequest Container for the necessary parameters to
-     *           execute the ListDomains service method on AmazonSimpleWorkflow.
-     * 
-     * @return The response from the ListDomains service method, as returned
-     *         by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DomainInfos listDomains(ListDomainsRequest listDomainsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listDomainsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListDomainsRequest> request = null;
-        Response<DomainInfos> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListDomainsRequestMarshaller().marshall(super.beforeMarshalling(listDomainsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DomainInfos, JsonUnmarshallerContext> unmarshaller =
-                new DomainInfosJsonUnmarshaller();
-            JsonResponseHandler<DomainInfos> responseHandler =
-                new JsonResponseHandler<DomainInfos>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Records a <code>WorkflowExecutionCancelRequested</code> event in the
-     * currently running workflow execution identified by the given domain,
-     * workflowId, and runId. This logically requests the cancellation of the
-     * workflow execution as a whole. It is up to the decider to take
-     * appropriate actions when it receives an execution history with this
-     * event.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>If the runId is not specified, the
-     * WorkflowExecutionCancelRequested event is recorded in the history of
-     * the current open workflow execution with the specified workflowId in
-     * the domain.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Because this action allows the workflow to properly clean
-     * up and gracefully close, it should be used instead of
-     * TerminateWorkflowExecution when possible.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param requestCancelWorkflowExecutionRequest Container for the
-     *           necessary parameters to execute the RequestCancelWorkflowExecution
-     *           service method on AmazonSimpleWorkflow.
-     * 
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void requestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest) {
-        ExecutionContext executionContext = createExecutionContext(requestCancelWorkflowExecutionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RequestCancelWorkflowExecutionRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RequestCancelWorkflowExecutionRequestMarshaller().marshall(super.beforeMarshalling(requestCancelWorkflowExecutionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Returns information about the specified <i>workflow type</i> . This
-     * includes configuration settings specified when the type was registered
-     * and other information such as creation date, current status, and so
-     * on.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>Constrain the following parameters by using a
-     * <code>Condition</code> element with the appropriate keys.
-     * <ul>
-     * <li> <code>workflowType.name</code> : String constraint. The key is
-     * <code>swf:workflowType.name</code> .</li>
-     * <li> <code>workflowType.version</code> : String constraint. The key
-     * is <code>swf:workflowType.version</code> .</li>
-     * 
-     * </ul>
-     * </li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param describeWorkflowTypeRequest Container for the necessary
-     *           parameters to execute the DescribeWorkflowType service method on
-     *           AmazonSimpleWorkflow.
-     * 
-     * @return The response from the DescribeWorkflowType service method, as
-     *         returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public WorkflowTypeDetail describeWorkflowType(DescribeWorkflowTypeRequest describeWorkflowTypeRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeWorkflowTypeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeWorkflowTypeRequest> request = null;
-        Response<WorkflowTypeDetail> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeWorkflowTypeRequestMarshaller().marshall(super.beforeMarshalling(describeWorkflowTypeRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<WorkflowTypeDetail, JsonUnmarshallerContext> unmarshaller =
-                new WorkflowTypeDetailJsonUnmarshaller();
-            JsonResponseHandler<WorkflowTypeDetail> responseHandler =
-                new JsonResponseHandler<WorkflowTypeDetail>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Deprecates the specified <i>activity type</i> . After an activity
-     * type has been deprecated, you cannot create new tasks of that activity
-     * type. Tasks of this type that were scheduled before the type was
-     * deprecated will continue to run.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>Constrain the following parameters by using a
-     * <code>Condition</code> element with the appropriate keys.
-     * <ul>
-     * <li> <code>activityType.name</code> : String constraint. The key is
-     * <code>swf:activityType.name</code> .</li>
-     * <li> <code>activityType.version</code> : String constraint. The key
-     * is <code>swf:activityType.version</code> .</li>
-     * 
-     * </ul>
-     * </li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param deprecateActivityTypeRequest Container for the necessary
-     *           parameters to execute the DeprecateActivityType service method on
-     *           AmazonSimpleWorkflow.
-     * 
-     * 
-     * @throws TypeDeprecatedException
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deprecateActivityType(DeprecateActivityTypeRequest deprecateActivityTypeRequest) {
-        ExecutionContext executionContext = createExecutionContext(deprecateActivityTypeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeprecateActivityTypeRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeprecateActivityTypeRequestMarshaller().marshall(super.beforeMarshalling(deprecateActivityTypeRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Returns the number of closed workflow executions within the given
-     * domain that meet the specified filtering criteria.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>Constrain the following parameters by using a
-     * <code>Condition</code> element with the appropriate keys.
-     * <ul>
-     * <li> <code>tagFilter.tag</code> : String constraint. The key is
-     * <code>swf:tagFilter.tag</code> .</li>
-     * <li> <code>typeFilter.name</code> : String constraint. The key is
-     * <code>swf:typeFilter.name</code> .</li>
-     * <li> <code>typeFilter.version</code> : String constraint. The key is
-     * <code>swf:typeFilter.version</code> .</li>
-     * 
-     * </ul>
-     * </li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param countClosedWorkflowExecutionsRequest Container for the
-     *           necessary parameters to execute the CountClosedWorkflowExecutions
-     *           service method on AmazonSimpleWorkflow.
-     * 
-     * @return The response from the CountClosedWorkflowExecutions service
-     *         method, as returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public WorkflowExecutionCount countClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest) {
+    @Override
+    public WorkflowExecutionCount countClosedWorkflowExecutions(
+            CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest) {
         ExecutionContext executionContext = createExecutionContext(countClosedWorkflowExecutionsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CountClosedWorkflowExecutionsRequest> request = null;
         Response<WorkflowExecutionCount> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CountClosedWorkflowExecutionsRequestMarshaller().marshall(super.beforeMarshalling(countClosedWorkflowExecutionsRequest));
+                request = new CountClosedWorkflowExecutionsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(countClosedWorkflowExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<WorkflowExecutionCount, JsonUnmarshallerContext> unmarshaller =
-                new WorkflowExecutionCountJsonUnmarshaller();
-            JsonResponseHandler<WorkflowExecutionCount> responseHandler =
-                new JsonResponseHandler<WorkflowExecutionCount>(unmarshaller);
-
+            JsonResponseHandler<WorkflowExecutionCount> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new WorkflowExecutionCountJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the number of open workflow executions within the given domain
+     * that meet the specified filtering criteria.
+     * </p>
+     * <note>This operation is eventually consistent. The results are best
+     * effort and may not exactly reflect recent updates and changes.</note>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>Constrain the following parameters by using a <code>Condition</code>
+     * element with the appropriate keys.
+     * <ul>
+     * <li><code>tagFilter.tag</code>: String constraint. The key is
+     * <code>swf:tagFilter.tag</code>.</li>
+     * <li><code>typeFilter.name</code>: String constraint. The key is
+     * <code>swf:typeFilter.name</code>.</li>
+     * <li><code>typeFilter.version</code>: String constraint. The key is
+     * <code>swf:typeFilter.version</code>.</li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param countOpenWorkflowExecutionsRequest
+     * @return Result of the CountOpenWorkflowExecutions operation returned by
+     *         the service.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.CountOpenWorkflowExecutions
+     */
+    @Override
+    public WorkflowExecutionCount countOpenWorkflowExecutions(
+            CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(countOpenWorkflowExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CountOpenWorkflowExecutionsRequest> request = null;
+        Response<WorkflowExecutionCount> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CountOpenWorkflowExecutionsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(countOpenWorkflowExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<WorkflowExecutionCount> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new WorkflowExecutionCountJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
      * Returns the estimated number of activity tasks in the specified task
-     * list. The count returned is an approximation and is not guaranteed to
-     * be exact. If you specify a task list that no activity task was ever
+     * list. The count returned is an approximation and is not guaranteed to be
+     * exact. If you specify a task list that no activity task was ever
      * scheduled in then 0 will be returned.
      * </p>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
      * <li>Constrain the <code>taskList.name</code> parameter by using a
-     * <b>Condition</b> element with the <code>swf:taskList.name</code> key
-     * to allow the action to access only certain task lists.</li>
-     * 
+     * <b>Condition</b> element with the <code>swf:taskList.name</code> key to
+     * allow the action to access only certain task lists.</li>
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param countPendingActivityTasksRequest Container for the necessary
-     *           parameters to execute the CountPendingActivityTasks service method on
-     *           AmazonSimpleWorkflow.
      * 
-     * @return The response from the CountPendingActivityTasks service
-     *         method, as returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param countPendingActivityTasksRequest
+     * @return Result of the CountPendingActivityTasks operation returned by the
+     *         service.
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.CountPendingActivityTasks
      */
-    public PendingTaskCount countPendingActivityTasks(CountPendingActivityTasksRequest countPendingActivityTasksRequest) {
+    @Override
+    public PendingTaskCount countPendingActivityTasks(
+            CountPendingActivityTasksRequest countPendingActivityTasksRequest) {
         ExecutionContext executionContext = createExecutionContext(countPendingActivityTasksRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CountPendingActivityTasksRequest> request = null;
         Response<PendingTaskCount> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CountPendingActivityTasksRequestMarshaller().marshall(super.beforeMarshalling(countPendingActivityTasksRequest));
+                request = new CountPendingActivityTasksRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(countPendingActivityTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<PendingTaskCount, JsonUnmarshallerContext> unmarshaller =
-                new PendingTaskCountJsonUnmarshaller();
-            JsonResponseHandler<PendingTaskCount> responseHandler =
-                new JsonResponseHandler<PendingTaskCount>(unmarshaller);
-
+            JsonResponseHandler<PendingTaskCount> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PendingTaskCountJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Used by workers to tell the service that the ActivityTask identified
-     * by the <code>taskToken</code> was successfully canceled. Additional
-     * <code>details</code> can be optionally provided using the
-     * <code>details</code> argument.
-     * </p>
-     * <p>
-     * These <code>details</code> (if provided) appear in the
-     * <code>ActivityTaskCanceled</code> event added to the workflow history.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>Only use this operation if the canceled flag of a
-     * RecordActivityTaskHeartbeat request returns true and if the activity
-     * can be safely undone or abandoned.
-     * </p>
-     * <p>
-     * A task is considered open from the time that it is scheduled until it
-     * is closed. Therefore a task is reported as open while a worker is
-     * processing it. A task is closed after it has been specified in a call
-     * to RespondActivityTaskCompleted, RespondActivityTaskCanceled,
-     * RespondActivityTaskFailed, or the task has
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types"> timed out </a>
-     * .
+     * Returns the estimated number of decision tasks in the specified task
+     * list. The count returned is an approximation and is not guaranteed to be
+     * exact. If you specify a task list that no decision task was ever
+     * scheduled in then 0 will be returned.
      * </p>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param respondActivityTaskCanceledRequest Container for the necessary
-     *           parameters to execute the RespondActivityTaskCanceled service method
-     *           on AmazonSimpleWorkflow.
-     * 
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void respondActivityTaskCanceled(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest) {
-        ExecutionContext executionContext = createExecutionContext(respondActivityTaskCanceledRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RespondActivityTaskCanceledRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RespondActivityTaskCanceledRequestMarshaller().marshall(super.beforeMarshalling(respondActivityTaskCanceledRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Used by deciders to tell the service that the DecisionTask identified
-     * by the <code>taskToken</code> has successfully completed. The
-     * <code>decisions</code> argument specifies the list of decisions made
-     * while processing the task.
-     * </p>
-     * <p>
-     * A <code>DecisionTaskCompleted</code> event is added to the workflow
-     * history. The <code>executionContext</code> specified is attached to
-     * the event in the workflow execution history.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * If an IAM policy grants permission to use
-     * <code>RespondDecisionTaskCompleted</code> , it can express permissions
-     * for the list of decisions in the <code>decisions</code> parameter.
-     * Each of the decisions has one or more parameters, much like a regular
-     * API call. To allow for policies to be as readable as possible, you can
-     * express permissions on decisions as if they were actual API calls,
-     * including applying conditions to some parameters. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param respondDecisionTaskCompletedRequest Container for the necessary
-     *           parameters to execute the RespondDecisionTaskCompleted service method
-     *           on AmazonSimpleWorkflow.
-     * 
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest) {
-        ExecutionContext executionContext = createExecutionContext(respondDecisionTaskCompletedRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RespondDecisionTaskCompletedRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RespondDecisionTaskCompletedRequestMarshaller().marshall(super.beforeMarshalling(respondDecisionTaskCompletedRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Used by workers to tell the service that the ActivityTask identified
-     * by the <code>taskToken</code> completed successfully with a
-     * <code>result</code> (if provided). The <code>result</code> appears in
-     * the <code>ActivityTaskCompleted</code> event in the workflow history.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> If the requested task does not complete
-     * successfully, use RespondActivityTaskFailed instead. If the worker
-     * finds that the task is canceled through the canceled flag returned by
-     * RecordActivityTaskHeartbeat, it should cancel the task, clean up and
-     * then call RespondActivityTaskCanceled.
-     * </p>
-     * <p>
-     * A task is considered open from the time that it is scheduled until it
-     * is closed. Therefore a task is reported as open while a worker is
-     * processing it. A task is closed after it has been specified in a call
-     * to RespondActivityTaskCompleted, RespondActivityTaskCanceled,
-     * RespondActivityTaskFailed, or the task has
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types"> timed out </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param respondActivityTaskCompletedRequest Container for the necessary
-     *           parameters to execute the RespondActivityTaskCompleted service method
-     *           on AmazonSimpleWorkflow.
-     * 
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void respondActivityTaskCompleted(RespondActivityTaskCompletedRequest respondActivityTaskCompletedRequest) {
-        ExecutionContext executionContext = createExecutionContext(respondActivityTaskCompletedRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RespondActivityTaskCompletedRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RespondActivityTaskCompletedRequestMarshaller().marshall(super.beforeMarshalling(respondActivityTaskCompletedRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Used by workers to get an ActivityTask from the specified activity
-     * <code>taskList</code> . This initiates a long poll, where the service
-     * holds the HTTP connection open and responds as soon as a task becomes
-     * available. The maximum time the service holds on to the request before
-     * responding is 60 seconds. If no task is available within 60 seconds,
-     * the poll will return an empty result. An empty result, in this
-     * context, means that an ActivityTask is returned, but that the value of
-     * taskToken is an empty string. If a task is returned, the worker should
-     * use its type to identify and process it correctly.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>Workers should set their client side socket timeout
-     * to at least 70 seconds (10 seconds higher than the maximum time
-     * service may hold the poll request).
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
      * <li>Constrain the <code>taskList.name</code> parameter by using a
-     * <b>Condition</b> element with the <code>swf:taskList.name</code> key
-     * to allow the action to access only certain task lists.</li>
-     * 
+     * <b>Condition</b> element with the <code>swf:taskList.name</code> key to
+     * allow the action to access only certain task lists.</li>
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param pollForActivityTaskRequest Container for the necessary
-     *           parameters to execute the PollForActivityTask service method on
-     *           AmazonSimpleWorkflow.
      * 
-     * @return The response from the PollForActivityTask service method, as
-     *         returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param countPendingDecisionTasksRequest
+     * @return Result of the CountPendingDecisionTasks operation returned by the
+     *         service.
      * @throws UnknownResourceException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.CountPendingDecisionTasks
      */
-    public ActivityTask pollForActivityTask(PollForActivityTaskRequest pollForActivityTaskRequest) {
-        ExecutionContext executionContext = createExecutionContext(pollForActivityTaskRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public PendingTaskCount countPendingDecisionTasks(
+            CountPendingDecisionTasksRequest countPendingDecisionTasksRequest) {
+        ExecutionContext executionContext = createExecutionContext(countPendingDecisionTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<PollForActivityTaskRequest> request = null;
-        Response<ActivityTask> response = null;
-        
+        Request<CountPendingDecisionTasksRequest> request = null;
+        Response<PendingTaskCount> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PollForActivityTaskRequestMarshaller().marshall(super.beforeMarshalling(pollForActivityTaskRequest));
+                request = new CountPendingDecisionTasksRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(countPendingDecisionTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<ActivityTask, JsonUnmarshallerContext> unmarshaller =
-                new ActivityTaskJsonUnmarshaller();
-            JsonResponseHandler<ActivityTask> responseHandler =
-                new JsonResponseHandler<ActivityTask>(unmarshaller);
-
+            JsonResponseHandler<PendingTaskCount> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PendingTaskCountJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Returns the number of open workflow executions within the given
-     * domain that meet the specified filtering criteria.
+     * Deprecates the specified <i>activity type</i>. After an activity type has
+     * been deprecated, you cannot create new tasks of that activity type. Tasks
+     * of this type that were scheduled before the type was deprecated will
+     * continue to run.
      * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
+     * <note>This operation is eventually consistent. The results are best
+     * effort and may not exactly reflect recent updates and changes.</note>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>Constrain the following parameters by using a
-     * <code>Condition</code> element with the appropriate keys.
+     * <li>Constrain the following parameters by using a <code>Condition</code>
+     * element with the appropriate keys.
      * <ul>
-     * <li> <code>tagFilter.tag</code> : String constraint. The key is
-     * <code>swf:tagFilter.tag</code> .</li>
-     * <li> <code>typeFilter.name</code> : String constraint. The key is
-     * <code>swf:typeFilter.name</code> .</li>
-     * <li> <code>typeFilter.version</code> : String constraint. The key is
-     * <code>swf:typeFilter.version</code> .</li>
-     * 
+     * <li><code>activityType.name</code>: String constraint. The key is
+     * <code>swf:activityType.name</code>.</li>
+     * <li><code>activityType.version</code>: String constraint. The key is
+     * <code>swf:activityType.version</code>.</li>
      * </ul>
      * </li>
-     * 
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param countOpenWorkflowExecutionsRequest Container for the necessary
-     *           parameters to execute the CountOpenWorkflowExecutions service method
-     *           on AmazonSimpleWorkflow.
      * 
-     * @return The response from the CountOpenWorkflowExecutions service
-     *         method, as returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param deprecateActivityTypeRequest
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws TypeDeprecatedException
+     *         Returned when the specified activity or workflow type was already
+     *         deprecated.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.DeprecateActivityType
      */
-    public WorkflowExecutionCount countOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(countOpenWorkflowExecutionsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void deprecateActivityType(
+            DeprecateActivityTypeRequest deprecateActivityTypeRequest) {
+        ExecutionContext executionContext = createExecutionContext(deprecateActivityTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CountOpenWorkflowExecutionsRequest> request = null;
-        Response<WorkflowExecutionCount> response = null;
-        
+        Request<DeprecateActivityTypeRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CountOpenWorkflowExecutionsRequestMarshaller().marshall(super.beforeMarshalling(countOpenWorkflowExecutionsRequest));
+                request = new DeprecateActivityTypeRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(deprecateActivityTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<WorkflowExecutionCount, JsonUnmarshallerContext> unmarshaller =
-                new WorkflowExecutionCountJsonUnmarshaller();
-            JsonResponseHandler<WorkflowExecutionCount> responseHandler =
-                new JsonResponseHandler<WorkflowExecutionCount>(unmarshaller);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deprecates the specified domain. After a domain has been deprecated it
+     * cannot be used to create new workflow executions or register new types.
+     * However, you can still use visibility actions on this domain. Deprecating
+     * a domain also deprecates all activity and workflow types registered in
+     * the domain. Executions that were started before the domain was deprecated
+     * will continue to run.
+     * </p>
+     * <note>This operation is eventually consistent. The results are best
+     * effort and may not exactly reflect recent updates and changes.</note>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param deprecateDomainRequest
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws DomainDeprecatedException
+     *         Returned when the specified domain has been deprecated.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.DeprecateDomain
+     */
+    @Override
+    public void deprecateDomain(DeprecateDomainRequest deprecateDomainRequest) {
+        ExecutionContext executionContext = createExecutionContext(deprecateDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeprecateDomainRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeprecateDomainRequestMarshaller().marshall(super
+                        .beforeMarshalling(deprecateDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deprecates the specified <i>workflow type</i>. After a workflow type has
+     * been deprecated, you cannot create new executions of that type.
+     * Executions that were started before the type was deprecated will continue
+     * to run. A deprecated workflow type may still be used when calling
+     * visibility actions.
+     * </p>
+     * <note>This operation is eventually consistent. The results are best
+     * effort and may not exactly reflect recent updates and changes.</note>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>Constrain the following parameters by using a <code>Condition</code>
+     * element with the appropriate keys.
+     * <ul>
+     * <li><code>workflowType.name</code>: String constraint. The key is
+     * <code>swf:workflowType.name</code>.</li>
+     * <li><code>workflowType.version</code>: String constraint. The key is
+     * <code>swf:workflowType.version</code>.</li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param deprecateWorkflowTypeRequest
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws TypeDeprecatedException
+     *         Returned when the specified activity or workflow type was already
+     *         deprecated.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.DeprecateWorkflowType
+     */
+    @Override
+    public void deprecateWorkflowType(
+            DeprecateWorkflowTypeRequest deprecateWorkflowTypeRequest) {
+        ExecutionContext executionContext = createExecutionContext(deprecateWorkflowTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeprecateWorkflowTypeRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeprecateWorkflowTypeRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(deprecateWorkflowTypeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
@@ -1782,267 +905,1227 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>Constrain the following parameters by using a
-     * <code>Condition</code> element with the appropriate keys.
+     * <li>Constrain the following parameters by using a <code>Condition</code>
+     * element with the appropriate keys.
      * <ul>
-     * <li> <code>activityType.name</code> : String constraint. The key is
-     * <code>swf:activityType.name</code> .</li>
-     * <li> <code>activityType.version</code> : String constraint. The key
-     * is <code>swf:activityType.version</code> .</li>
-     * 
+     * <li><code>activityType.name</code>: String constraint. The key is
+     * <code>swf:activityType.name</code>.</li>
+     * <li><code>activityType.version</code>: String constraint. The key is
+     * <code>swf:activityType.version</code>.</li>
      * </ul>
      * </li>
-     * 
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param describeActivityTypeRequest Container for the necessary
-     *           parameters to execute the DescribeActivityType service method on
-     *           AmazonSimpleWorkflow.
      * 
-     * @return The response from the DescribeActivityType service method, as
-     *         returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param describeActivityTypeRequest
+     * @return Result of the DescribeActivityType operation returned by the
+     *         service.
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.DescribeActivityType
      */
-    public ActivityTypeDetail describeActivityType(DescribeActivityTypeRequest describeActivityTypeRequest) {
+    @Override
+    public ActivityTypeDetail describeActivityType(
+            DescribeActivityTypeRequest describeActivityTypeRequest) {
         ExecutionContext executionContext = createExecutionContext(describeActivityTypeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeActivityTypeRequest> request = null;
         Response<ActivityTypeDetail> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeActivityTypeRequestMarshaller().marshall(super.beforeMarshalling(describeActivityTypeRequest));
+                request = new DescribeActivityTypeRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeActivityTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<ActivityTypeDetail, JsonUnmarshallerContext> unmarshaller =
-                new ActivityTypeDetailJsonUnmarshaller();
-            JsonResponseHandler<ActivityTypeDetail> responseHandler =
-                new JsonResponseHandler<ActivityTypeDetail>(unmarshaller);
-
+            JsonResponseHandler<ActivityTypeDetail> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ActivityTypeDetailJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Returns a list of open workflow executions in the specified domain
-     * that meet the filtering criteria. The results may be split into
-     * multiple pages. To retrieve subsequent pages, make the call again
-     * using the nextPageToken returned by the initial call.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
+     * Returns information about the specified domain, including description and
+     * status.
      * </p>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>Constrain the following parameters by using a
-     * <code>Condition</code> element with the appropriate keys.
-     * <ul>
-     * <li> <code>tagFilter.tag</code> : String constraint. The key is
-     * <code>swf:tagFilter.tag</code> .</li>
-     * <li> <code>typeFilter.name</code> : String constraint. The key is
-     * <code>swf:typeFilter.name</code> .</li>
-     * <li> <code>typeFilter.version</code> : String constraint. The key is
-     * <code>swf:typeFilter.version</code> .</li>
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
      * 
+     * @param describeDomainRequest
+     * @return Result of the DescribeDomain operation returned by the service.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.DescribeDomain
+     */
+    @Override
+    public DomainDetail describeDomain(
+            DescribeDomainRequest describeDomainRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDomainRequest> request = null;
+        Response<DomainDetail> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDomainRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DomainDetail> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new DomainDetailJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the specified workflow execution including its
+     * type and some statistics.
+     * </p>
+     * <note>This operation is eventually consistent. The results are best
+     * effort and may not exactly reflect recent updates and changes.</note>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param describeWorkflowExecutionRequest
+     * @return Result of the DescribeWorkflowExecution operation returned by the
+     *         service.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.DescribeWorkflowExecution
+     */
+    @Override
+    public WorkflowExecutionDetail describeWorkflowExecution(
+            DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeWorkflowExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeWorkflowExecutionRequest> request = null;
+        Response<WorkflowExecutionDetail> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeWorkflowExecutionRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeWorkflowExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<WorkflowExecutionDetail> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new WorkflowExecutionDetailJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the specified <i>workflow type</i>. This
+     * includes configuration settings specified when the type was registered
+     * and other information such as creation date, current status, and so on.
+     * </p>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>Constrain the following parameters by using a <code>Condition</code>
+     * element with the appropriate keys.
+     * <ul>
+     * <li><code>workflowType.name</code>: String constraint. The key is
+     * <code>swf:workflowType.name</code>.</li>
+     * <li><code>workflowType.version</code>: String constraint. The key is
+     * <code>swf:workflowType.version</code>.</li>
      * </ul>
      * </li>
-     * 
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param listOpenWorkflowExecutionsRequest Container for the necessary
-     *           parameters to execute the ListOpenWorkflowExecutions service method on
-     *           AmazonSimpleWorkflow.
      * 
-     * @return The response from the ListOpenWorkflowExecutions service
-     *         method, as returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param describeWorkflowTypeRequest
+     * @return Result of the DescribeWorkflowType operation returned by the
+     *         service.
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.DescribeWorkflowType
      */
-    public WorkflowExecutionInfos listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest listOpenWorkflowExecutionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listOpenWorkflowExecutionsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public WorkflowTypeDetail describeWorkflowType(
+            DescribeWorkflowTypeRequest describeWorkflowTypeRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeWorkflowTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListOpenWorkflowExecutionsRequest> request = null;
-        Response<WorkflowExecutionInfos> response = null;
-        
+        Request<DescribeWorkflowTypeRequest> request = null;
+        Response<WorkflowTypeDetail> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListOpenWorkflowExecutionsRequestMarshaller().marshall(super.beforeMarshalling(listOpenWorkflowExecutionsRequest));
+                request = new DescribeWorkflowTypeRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeWorkflowTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<WorkflowExecutionInfos, JsonUnmarshallerContext> unmarshaller =
-                new WorkflowExecutionInfosJsonUnmarshaller();
-            JsonResponseHandler<WorkflowExecutionInfos> responseHandler =
-                new JsonResponseHandler<WorkflowExecutionInfos>(unmarshaller);
-
+            JsonResponseHandler<WorkflowTypeDetail> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new WorkflowTypeDetailJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Returns the history of the specified workflow execution. The results
-     * may be split into multiple pages. To retrieve subsequent pages, make
-     * the call again using the <code>nextPageToken</code> returned by the
-     * initial call.
+     * Returns the history of the specified workflow execution. The results may
+     * be split into multiple pages. To retrieve subsequent pages, make the call
+     * again using the <code>nextPageToken</code> returned by the initial call.
      * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
+     * <note>This operation is eventually consistent. The results are best
+     * effort and may not exactly reflect recent updates and changes.</note>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param getWorkflowExecutionHistoryRequest Container for the necessary
-     *           parameters to execute the GetWorkflowExecutionHistory service method
-     *           on AmazonSimpleWorkflow.
      * 
-     * @return The response from the GetWorkflowExecutionHistory service
-     *         method, as returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param getWorkflowExecutionHistoryRequest
+     * @return Result of the GetWorkflowExecutionHistory operation returned by
+     *         the service.
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.GetWorkflowExecutionHistory
      */
-    public History getWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest) {
+    @Override
+    public History getWorkflowExecutionHistory(
+            GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest) {
         ExecutionContext executionContext = createExecutionContext(getWorkflowExecutionHistoryRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetWorkflowExecutionHistoryRequest> request = null;
         Response<History> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetWorkflowExecutionHistoryRequestMarshaller().marshall(super.beforeMarshalling(getWorkflowExecutionHistoryRequest));
+                request = new GetWorkflowExecutionHistoryRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(getWorkflowExecutionHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<History, JsonUnmarshallerContext> unmarshaller =
-                new HistoryJsonUnmarshaller();
-            JsonResponseHandler<History> responseHandler =
-                new JsonResponseHandler<History>(unmarshaller);
-
+            JsonResponseHandler<History> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new HistoryJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about all activities registered in the specified
+     * domain that match the specified name and registration status. The result
+     * includes information like creation date, current status of the activity,
+     * etc. The results may be split into multiple pages. To retrieve subsequent
+     * pages, make the call again using the <code>nextPageToken</code> returned
+     * by the initial call.
+     * </p>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param listActivityTypesRequest
+     * @return Result of the ListActivityTypes operation returned by the
+     *         service.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @sample AmazonSimpleWorkflow.ListActivityTypes
+     */
+    @Override
+    public ActivityTypeInfos listActivityTypes(
+            ListActivityTypesRequest listActivityTypesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listActivityTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListActivityTypesRequest> request = null;
+        Response<ActivityTypeInfos> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListActivityTypesRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listActivityTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ActivityTypeInfos> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ActivityTypeInfosJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of closed workflow executions in the specified domain that
+     * meet the filtering criteria. The results may be split into multiple
+     * pages. To retrieve subsequent pages, make the call again using the
+     * nextPageToken returned by the initial call.
+     * </p>
+     * <note>This operation is eventually consistent. The results are best
+     * effort and may not exactly reflect recent updates and changes.</note>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>Constrain the following parameters by using a <code>Condition</code>
+     * element with the appropriate keys.
+     * <ul>
+     * <li><code>tagFilter.tag</code>: String constraint. The key is
+     * <code>swf:tagFilter.tag</code>.</li>
+     * <li><code>typeFilter.name</code>: String constraint. The key is
+     * <code>swf:typeFilter.name</code>.</li>
+     * <li><code>typeFilter.version</code>: String constraint. The key is
+     * <code>swf:typeFilter.version</code>.</li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param listClosedWorkflowExecutionsRequest
+     * @return Result of the ListClosedWorkflowExecutions operation returned by
+     *         the service.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.ListClosedWorkflowExecutions
+     */
+    @Override
+    public WorkflowExecutionInfos listClosedWorkflowExecutions(
+            ListClosedWorkflowExecutionsRequest listClosedWorkflowExecutionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listClosedWorkflowExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListClosedWorkflowExecutionsRequest> request = null;
+        Response<WorkflowExecutionInfos> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListClosedWorkflowExecutionsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listClosedWorkflowExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<WorkflowExecutionInfos> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new WorkflowExecutionInfosJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the list of domains registered in the account. The results may be
+     * split into multiple pages. To retrieve subsequent pages, make the call
+     * again using the nextPageToken returned by the initial call.
+     * </p>
+     * <note> This operation is eventually consistent. The results are best
+     * effort and may not exactly reflect recent updates and changes.</note>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains. The element must be set to
+     * <code>arn:aws:swf::AccountID:domain/*</code>, where <i>AccountID</i> is
+     * the account ID, with no dashes.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param listDomainsRequest
+     * @return Result of the ListDomains operation returned by the service.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.ListDomains
+     */
+    @Override
+    public DomainInfos listDomains(ListDomainsRequest listDomainsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listDomainsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDomainsRequest> request = null;
+        Response<DomainInfos> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDomainsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listDomainsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DomainInfos> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new DomainInfosJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of open workflow executions in the specified domain that
+     * meet the filtering criteria. The results may be split into multiple
+     * pages. To retrieve subsequent pages, make the call again using the
+     * nextPageToken returned by the initial call.
+     * </p>
+     * <note> This operation is eventually consistent. The results are best
+     * effort and may not exactly reflect recent updates and changes.</note>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>Constrain the following parameters by using a <code>Condition</code>
+     * element with the appropriate keys.
+     * <ul>
+     * <li><code>tagFilter.tag</code>: String constraint. The key is
+     * <code>swf:tagFilter.tag</code>.</li>
+     * <li><code>typeFilter.name</code>: String constraint. The key is
+     * <code>swf:typeFilter.name</code>.</li>
+     * <li><code>typeFilter.version</code>: String constraint. The key is
+     * <code>swf:typeFilter.version</code>.</li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param listOpenWorkflowExecutionsRequest
+     * @return Result of the ListOpenWorkflowExecutions operation returned by
+     *         the service.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.ListOpenWorkflowExecutions
+     */
+    @Override
+    public WorkflowExecutionInfos listOpenWorkflowExecutions(
+            ListOpenWorkflowExecutionsRequest listOpenWorkflowExecutionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listOpenWorkflowExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOpenWorkflowExecutionsRequest> request = null;
+        Response<WorkflowExecutionInfos> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOpenWorkflowExecutionsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listOpenWorkflowExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<WorkflowExecutionInfos> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new WorkflowExecutionInfosJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about workflow types in the specified domain. The
+     * results may be split into multiple pages that can be retrieved by making
+     * the call repeatedly.
+     * </p>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param listWorkflowTypesRequest
+     * @return Result of the ListWorkflowTypes operation returned by the
+     *         service.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @sample AmazonSimpleWorkflow.ListWorkflowTypes
+     */
+    @Override
+    public WorkflowTypeInfos listWorkflowTypes(
+            ListWorkflowTypesRequest listWorkflowTypesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listWorkflowTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWorkflowTypesRequest> request = null;
+        Response<WorkflowTypeInfos> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWorkflowTypesRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listWorkflowTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<WorkflowTypeInfos> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new WorkflowTypeInfosJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Used by workers to get an <a>ActivityTask</a> from the specified activity
+     * <code>taskList</code>. This initiates a long poll, where the service
+     * holds the HTTP connection open and responds as soon as a task becomes
+     * available. The maximum time the service holds on to the request before
+     * responding is 60 seconds. If no task is available within 60 seconds, the
+     * poll will return an empty result. An empty result, in this context, means
+     * that an ActivityTask is returned, but that the value of taskToken is an
+     * empty string. If a task is returned, the worker should use its type to
+     * identify and process it correctly.
+     * </p>
+     * <important>Workers should set their client side socket timeout to at
+     * least 70 seconds (10 seconds higher than the maximum time service may
+     * hold the poll request).</important>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>Constrain the <code>taskList.name</code> parameter by using a
+     * <b>Condition</b> element with the <code>swf:taskList.name</code> key to
+     * allow the action to access only certain task lists.</li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param pollForActivityTaskRequest
+     * @return Result of the PollForActivityTask operation returned by the
+     *         service.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @throws LimitExceededException
+     *         Returned by any operation if a system imposed limitation has been
+     *         reached. To address this fault you should either clean up unused
+     *         resources or increase the limit by contacting AWS.
+     * @sample AmazonSimpleWorkflow.PollForActivityTask
+     */
+    @Override
+    public ActivityTask pollForActivityTask(
+            PollForActivityTaskRequest pollForActivityTaskRequest) {
+        ExecutionContext executionContext = createExecutionContext(pollForActivityTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PollForActivityTaskRequest> request = null;
+        Response<ActivityTask> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PollForActivityTaskRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(pollForActivityTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ActivityTask> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new ActivityTaskJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Used by deciders to get a <a>DecisionTask</a> from the specified decision
+     * <code>taskList</code>. A decision task may be returned for any open
+     * workflow execution that is using the specified task list. The task
+     * includes a paginated view of the history of the workflow execution. The
+     * decider should use the workflow type and the history to determine how to
+     * properly handle the task.
+     * </p>
+     * <p>
+     * This action initiates a long poll, where the service holds the HTTP
+     * connection open and responds as soon a task becomes available. If no
+     * decision task is available in the specified task list before the timeout
+     * of 60 seconds expires, an empty result is returned. An empty result, in
+     * this context, means that a DecisionTask is returned, but that the value
+     * of <code>taskToken</code> is an empty string.
+     * </p>
+     * <important>Deciders should set their client-side socket timeout to at
+     * least 70 seconds (10 seconds higher than the timeout).</important>
+     * <important>Because the number of workflow history events for a single
+     * workflow execution might be very large, the result returned might be
+     * split up across a number of pages. To retrieve subsequent pages, make
+     * additional calls to <code>PollForDecisionTask</code> using the
+     * <code>nextPageToken</code> returned by the initial call. Note that you do
+     * <b>not</b> call <code>GetWorkflowExecutionHistory</code> with this
+     * <code>nextPageToken</code>. Instead, call
+     * <code>PollForDecisionTask</code> again.</important>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>Constrain the <code>taskList.name</code> parameter by using a
+     * <b>Condition</b> element with the <code>swf:taskList.name</code> key to
+     * allow the action to access only certain task lists.</li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param pollForDecisionTaskRequest
+     * @return Result of the PollForDecisionTask operation returned by the
+     *         service.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @throws LimitExceededException
+     *         Returned by any operation if a system imposed limitation has been
+     *         reached. To address this fault you should either clean up unused
+     *         resources or increase the limit by contacting AWS.
+     * @sample AmazonSimpleWorkflow.PollForDecisionTask
+     */
+    @Override
+    public DecisionTask pollForDecisionTask(
+            PollForDecisionTaskRequest pollForDecisionTaskRequest) {
+        ExecutionContext executionContext = createExecutionContext(pollForDecisionTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PollForDecisionTaskRequest> request = null;
+        Response<DecisionTask> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PollForDecisionTaskRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(pollForDecisionTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DecisionTask> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new DecisionTaskJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Used by activity workers to report to the service that the
+     * <a>ActivityTask</a> represented by the specified <code>taskToken</code>
+     * is still making progress. The worker can also (optionally) specify
+     * details of the progress, for example percent complete, using the
+     * <code>details</code> parameter. This action can also be used by the
+     * worker as a mechanism to check if cancellation is being requested for the
+     * activity task. If a cancellation is being attempted for the specified
+     * task, then the boolean <code>cancelRequested</code> flag returned by the
+     * service is set to <code>true</code>.
+     * </p>
+     * <p>
+     * This action resets the <code>taskHeartbeatTimeout</code> clock. The
+     * <code>taskHeartbeatTimeout</code> is specified in
+     * <a>RegisterActivityType</a>.
+     * </p>
+     * <p>
+     * This action does not in itself create an event in the workflow execution
+     * history. However, if the task times out, the workflow execution history
+     * will contain a <code>ActivityTaskTimedOut</code> event that contains the
+     * information from the last heartbeat generated by the activity worker.
+     * </p>
+     * <note>The <code>taskStartToCloseTimeout</code> of an activity type is the
+     * maximum duration of an activity task, regardless of the number of
+     * <a>RecordActivityTaskHeartbeat</a> requests received. The
+     * <code>taskStartToCloseTimeout</code> is also specified in
+     * <a>RegisterActivityType</a>.</note> <note>This operation is only useful
+     * for long-lived activities to report liveliness of the task and to
+     * determine if a cancellation is being attempted. </note> <important>If the
+     * <code>cancelRequested</code> flag returns <code>true</code>, a
+     * cancellation is being attempted. If the worker can cancel the activity,
+     * it should respond with <a>RespondActivityTaskCanceled</a>. Otherwise, it
+     * should ignore the cancellation request.</important>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param recordActivityTaskHeartbeatRequest
+     * @return Result of the RecordActivityTaskHeartbeat operation returned by
+     *         the service.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.RecordActivityTaskHeartbeat
+     */
+    @Override
+    public ActivityTaskStatus recordActivityTaskHeartbeat(
+            RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest) {
+        ExecutionContext executionContext = createExecutionContext(recordActivityTaskHeartbeatRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RecordActivityTaskHeartbeatRequest> request = null;
+        Response<ActivityTaskStatus> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RecordActivityTaskHeartbeatRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(recordActivityTaskHeartbeatRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ActivityTaskStatus> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ActivityTaskStatusJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers a new <i>activity type</i> along with its configuration
+     * settings in the specified domain.
+     * </p>
+     * <important>A <code>TypeAlreadyExists</code> fault is returned if the type
+     * already exists in the domain. You cannot change any configuration
+     * settings of the type after its registration, and it must be registered as
+     * a new version.</important>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>Constrain the following parameters by using a <code>Condition</code>
+     * element with the appropriate keys.
+     * <ul>
+     * <li> <code>defaultTaskList.name</code>: String constraint. The key is
+     * <code>swf:defaultTaskList.name</code>.</li>
+     * <li> <code>name</code>: String constraint. The key is
+     * <code>swf:name</code>.</li>
+     * <li> <code>version</code>: String constraint. The key is
+     * <code>swf:version</code>.</li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param registerActivityTypeRequest
+     * @throws TypeAlreadyExistsException
+     *         Returned if the type already exists in the specified domain. You
+     *         will get this fault even if the existing type is in deprecated
+     *         status. You can specify another version if the intent is to
+     *         create a new distinct version of the type.
+     * @throws LimitExceededException
+     *         Returned by any operation if a system imposed limitation has been
+     *         reached. To address this fault you should either clean up unused
+     *         resources or increase the limit by contacting AWS.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.RegisterActivityType
+     */
+    @Override
+    public void registerActivityType(
+            RegisterActivityTypeRequest registerActivityTypeRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerActivityTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterActivityTypeRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterActivityTypeRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(registerActivityTypeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
@@ -2054,1048 +2137,936 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
      * <li>You cannot use an IAM policy to control domain access for this
      * action. The name of the domain being registered is available as the
      * resource of this action.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param registerDomainRequest Container for the necessary parameters to
-     *           execute the RegisterDomain service method on AmazonSimpleWorkflow.
      * 
-     * 
+     * @param registerDomainRequest
      * @throws DomainAlreadyExistsException
-     * @throws OperationNotPermittedException
+     *         Returned if the specified domain already exists. You will get
+     *         this fault even if the existing domain is in deprecated status.
      * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned by any operation if a system imposed limitation has been
+     *         reached. To address this fault you should either clean up unused
+     *         resources or increase the limit by contacting AWS.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.RegisterDomain
      */
+    @Override
     public void registerDomain(RegisterDomainRequest registerDomainRequest) {
         ExecutionContext executionContext = createExecutionContext(registerDomainRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RegisterDomainRequest> request = null;
-        
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterDomainRequestMarshaller().marshall(super.beforeMarshalling(registerDomainRequest));
+                request = new RegisterDomainRequestMarshaller().marshall(super
+                        .beforeMarshalling(registerDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Registers a new <i>activity type</i> along with its configuration
-     * settings in the specified domain.
+     * Registers a new <i>workflow type</i> and its configuration settings in
+     * the specified domain.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>A TypeAlreadyExists fault is returned if the type
-     * already exists in the domain. You cannot change any configuration
-     * settings of the type after its registration, and it must be registered
-     * as a new version.
+     * The retention period for the workflow history is set by the
+     * <a>RegisterDomain</a> action.
      * </p>
+     * <important>If the type already exists, then a
+     * <code>TypeAlreadyExists</code> fault is returned. You cannot change the
+     * configuration settings of a workflow type once it is registered and it
+     * must be registered as a new version.</important>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>Constrain the following parameters by using a
-     * <code>Condition</code> element with the appropriate keys.
+     * <li>Constrain the following parameters by using a <code>Condition</code>
+     * element with the appropriate keys.
      * <ul>
-     * <li> <code>defaultTaskList.name</code> : String constraint. The key
-     * is <code>swf:defaultTaskList.name</code> .</li>
-     * <li> <code>name</code> : String constraint. The key is
-     * <code>swf:name</code> .</li>
-     * <li> <code>version</code> : String constraint. The key is
-     * <code>swf:version</code> .</li>
-     * 
+     * <li> <code>defaultTaskList.name</code>: String constraint. The key is
+     * <code>swf:defaultTaskList.name</code>.</li>
+     * <li> <code>name</code>: String constraint. The key is
+     * <code>swf:name</code>.</li>
+     * <li> <code>version</code>: String constraint. The key is
+     * <code>swf:version</code>.</li>
      * </ul>
      * </li>
-     * 
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param registerActivityTypeRequest Container for the necessary
-     *           parameters to execute the RegisterActivityType service method on
-     *           AmazonSimpleWorkflow.
      * 
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
+     * @param registerWorkflowTypeRequest
      * @throws TypeAlreadyExistsException
+     *         Returned if the type already exists in the specified domain. You
+     *         will get this fault even if the existing type is in deprecated
+     *         status. You can specify another version if the intent is to
+     *         create a new distinct version of the type.
      * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned by any operation if a system imposed limitation has been
+     *         reached. To address this fault you should either clean up unused
+     *         resources or increase the limit by contacting AWS.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.RegisterWorkflowType
      */
-    public void registerActivityType(RegisterActivityTypeRequest registerActivityTypeRequest) {
-        ExecutionContext executionContext = createExecutionContext(registerActivityTypeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void registerWorkflowType(
+            RegisterWorkflowTypeRequest registerWorkflowTypeRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerWorkflowTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RegisterActivityTypeRequest> request = null;
-        
+        Request<RegisterWorkflowTypeRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterActivityTypeRequestMarshaller().marshall(super.beforeMarshalling(registerActivityTypeRequest));
+                request = new RegisterWorkflowTypeRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(registerWorkflowTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Returns a list of closed workflow executions in the specified domain
-     * that meet the filtering criteria. The results may be split into
-     * multiple pages. To retrieve subsequent pages, make the call again
-     * using the nextPageToken returned by the initial call.
+     * Records a <code>WorkflowExecutionCancelRequested</code> event in the
+     * currently running workflow execution identified by the given domain,
+     * workflowId, and runId. This logically requests the cancellation of the
+     * workflow execution as a whole. It is up to the decider to take
+     * appropriate actions when it receives an execution history with this
+     * event.
      * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
+     * <note>If the runId is not specified, the
+     * <code>WorkflowExecutionCancelRequested</code> event is recorded in the
+     * history of the current open workflow execution with the specified
+     * workflowId in the domain.</note> <note>Because this action allows the
+     * workflow to properly clean up and gracefully close, it should be used
+     * instead of <a>TerminateWorkflowExecution</a> when possible.</note>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>Constrain the following parameters by using a
-     * <code>Condition</code> element with the appropriate keys.
-     * <ul>
-     * <li> <code>tagFilter.tag</code> : String constraint. The key is
-     * <code>swf:tagFilter.tag</code> .</li>
-     * <li> <code>typeFilter.name</code> : String constraint. The key is
-     * <code>swf:typeFilter.name</code> .</li>
-     * <li> <code>typeFilter.version</code> : String constraint. The key is
-     * <code>swf:typeFilter.version</code> .</li>
-     * 
-     * </ul>
-     * </li>
-     * 
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param listClosedWorkflowExecutionsRequest Container for the necessary
-     *           parameters to execute the ListClosedWorkflowExecutions service method
-     *           on AmazonSimpleWorkflow.
      * 
-     * @return The response from the ListClosedWorkflowExecutions service
-     *         method, as returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param requestCancelWorkflowExecutionRequest
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.RequestCancelWorkflowExecution
      */
-    public WorkflowExecutionInfos listClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest listClosedWorkflowExecutionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listClosedWorkflowExecutionsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void requestCancelWorkflowExecution(
+            RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest) {
+        ExecutionContext executionContext = createExecutionContext(requestCancelWorkflowExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListClosedWorkflowExecutionsRequest> request = null;
-        Response<WorkflowExecutionInfos> response = null;
-        
+        Request<RequestCancelWorkflowExecutionRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListClosedWorkflowExecutionsRequestMarshaller().marshall(super.beforeMarshalling(listClosedWorkflowExecutionsRequest));
+                request = new RequestCancelWorkflowExecutionRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(requestCancelWorkflowExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<WorkflowExecutionInfos, JsonUnmarshallerContext> unmarshaller =
-                new WorkflowExecutionInfosJsonUnmarshaller();
-            JsonResponseHandler<WorkflowExecutionInfos> responseHandler =
-                new JsonResponseHandler<WorkflowExecutionInfos>(unmarshaller);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Used by activity workers to report to the service that the
-     * ActivityTask represented by the specified <code>taskToken</code> is
-     * still making progress. The worker can also (optionally) specify
-     * details of the progress, for example percent complete, using the
-     * <code>details</code> parameter. This action can also be used by the
-     * worker as a mechanism to check if cancellation is being requested for
-     * the activity task. If a cancellation is being attempted for the
-     * specified task, then the boolean <code>cancelRequested</code> flag
-     * returned by the service is set to <code>true</code> .
+     * Used by workers to tell the service that the <a>ActivityTask</a>
+     * identified by the <code>taskToken</code> was successfully canceled.
+     * Additional <code>details</code> can be optionally provided using the
+     * <code>details</code> argument.
      * </p>
      * <p>
-     * This action resets the <code>taskHeartbeatTimeout</code> clock. The
-     * <code>taskHeartbeatTimeout</code> is specified in
-     * RegisterActivityType.
+     * These <code>details</code> (if provided) appear in the
+     * <code>ActivityTaskCanceled</code> event added to the workflow history.
      * </p>
+     * <important>Only use this operation if the <code>canceled</code> flag of a
+     * <a>RecordActivityTaskHeartbeat</a> request returns <code>true</code> and
+     * if the activity can be safely undone or abandoned.</important>
      * <p>
-     * This action does not in itself create an event in the workflow
-     * execution history. However, if the task times out, the workflow
-     * execution history will contain a <code>ActivityTaskTimedOut</code>
-     * event that contains the information from the last heartbeat generated
-     * by the activity worker.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>The taskStartToCloseTimeout of an activity type is the
-     * maximum duration of an activity task, regardless of the number of
-     * RecordActivityTaskHeartbeat requests received. The
-     * taskStartToCloseTimeout is also specified in RegisterActivityType.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is only useful for long-lived activities
-     * to report liveliness of the task and to determine if a cancellation is
-     * being attempted.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>If the cancelRequested flag returns true, a
-     * cancellation is being attempted. If the worker can cancel the
-     * activity, it should respond with RespondActivityTaskCanceled.
-     * Otherwise, it should ignore the cancellation request.
+     * A task is considered open from the time that it is scheduled until it is
+     * closed. Therefore a task is reported as open while a worker is processing
+     * it. A task is closed after it has been specified in a call to
+     * <a>RespondActivityTaskCompleted</a>, RespondActivityTaskCanceled,
+     * <a>RespondActivityTaskFailed</a>, or the task has <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types"
+     * >timed out</a>.
      * </p>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param recordActivityTaskHeartbeatRequest Container for the necessary
-     *           parameters to execute the RecordActivityTaskHeartbeat service method
-     *           on AmazonSimpleWorkflow.
      * 
-     * @return The response from the RecordActivityTaskHeartbeat service
-     *         method, as returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param respondActivityTaskCanceledRequest
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.RespondActivityTaskCanceled
      */
-    public ActivityTaskStatus recordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest) {
-        ExecutionContext executionContext = createExecutionContext(recordActivityTaskHeartbeatRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void respondActivityTaskCanceled(
+            RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest) {
+        ExecutionContext executionContext = createExecutionContext(respondActivityTaskCanceledRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RecordActivityTaskHeartbeatRequest> request = null;
-        Response<ActivityTaskStatus> response = null;
-        
+        Request<RespondActivityTaskCanceledRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RecordActivityTaskHeartbeatRequestMarshaller().marshall(super.beforeMarshalling(recordActivityTaskHeartbeatRequest));
+                request = new RespondActivityTaskCanceledRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(respondActivityTaskCanceledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<ActivityTaskStatus, JsonUnmarshallerContext> unmarshaller =
-                new ActivityTaskStatusJsonUnmarshaller();
-            JsonResponseHandler<ActivityTaskStatus> responseHandler =
-                new JsonResponseHandler<ActivityTaskStatus>(unmarshaller);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Used by deciders to get a DecisionTask from the specified decision
-     * <code>taskList</code> . A decision task may be returned for any open
-     * workflow execution that is using the specified task list. The task
-     * includes a paginated view of the history of the workflow execution.
-     * The decider should use the workflow type and the history to determine
-     * how to properly handle the task.
+     * Used by workers to tell the service that the <a>ActivityTask</a>
+     * identified by the <code>taskToken</code> completed successfully with a
+     * <code>result</code> (if provided). The <code>result</code> appears in the
+     * <code>ActivityTaskCompleted</code> event in the workflow history.
      * </p>
+     * <important> If the requested task does not complete successfully, use
+     * <a>RespondActivityTaskFailed</a> instead. If the worker finds that the
+     * task is canceled through the <code>canceled</code> flag returned by
+     * <a>RecordActivityTaskHeartbeat</a>, it should cancel the task, clean up
+     * and then call <a>RespondActivityTaskCanceled</a>.</important>
      * <p>
-     * This action initiates a long poll, where the service holds the HTTP
-     * connection open and responds as soon a task becomes available. If no
-     * decision task is available in the specified task list before the
-     * timeout of 60 seconds expires, an empty result is returned. An empty
-     * result, in this context, means that a DecisionTask is returned, but
-     * that the value of <code>taskToken</code> is an empty string.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>Deciders should set their client-side socket timeout
-     * to at least 70 seconds (10 seconds higher than the timeout).
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>Because the number of workflow history events for a
-     * single workflow execution might be very large, the result returned
-     * might be split up across a number of pages. To retrieve subsequent
-     * pages, make additional calls to PollForDecisionTask using the
-     * nextPageToken returned by the initial call. Note that you do not call
-     * GetWorkflowExecutionHistory with this nextPageToken. Instead, call
-     * PollForDecisionTask again.
+     * A task is considered open from the time that it is scheduled until it is
+     * closed. Therefore a task is reported as open while a worker is processing
+     * it. A task is closed after it has been specified in a call to
+     * RespondActivityTaskCompleted, <a>RespondActivityTaskCanceled</a>,
+     * <a>RespondActivityTaskFailed</a>, or the task has <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types"
+     * >timed out</a>.
      * </p>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>Constrain the <code>taskList.name</code> parameter by using a
-     * <b>Condition</b> element with the <code>swf:taskList.name</code> key
-     * to allow the action to access only certain task lists.</li>
-     * 
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param pollForDecisionTaskRequest Container for the necessary
-     *           parameters to execute the PollForDecisionTask service method on
-     *           AmazonSimpleWorkflow.
      * 
-     * @return The response from the PollForDecisionTask service method, as
-     *         returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param respondActivityTaskCompletedRequest
      * @throws UnknownResourceException
-     * @throws LimitExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.RespondActivityTaskCompleted
      */
-    public DecisionTask pollForDecisionTask(PollForDecisionTaskRequest pollForDecisionTaskRequest) {
-        ExecutionContext executionContext = createExecutionContext(pollForDecisionTaskRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void respondActivityTaskCompleted(
+            RespondActivityTaskCompletedRequest respondActivityTaskCompletedRequest) {
+        ExecutionContext executionContext = createExecutionContext(respondActivityTaskCompletedRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<PollForDecisionTaskRequest> request = null;
-        Response<DecisionTask> response = null;
-        
+        Request<RespondActivityTaskCompletedRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PollForDecisionTaskRequestMarshaller().marshall(super.beforeMarshalling(pollForDecisionTaskRequest));
+                request = new RespondActivityTaskCompletedRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(respondActivityTaskCompletedRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<DecisionTask, JsonUnmarshallerContext> unmarshaller =
-                new DecisionTaskJsonUnmarshaller();
-            JsonResponseHandler<DecisionTask> responseHandler =
-                new JsonResponseHandler<DecisionTask>(unmarshaller);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Returns information about all activities registered in the specified
-     * domain that match the specified name and registration status. The
-     * result includes information like creation date, current status of the
-     * activity, etc. The results may be split into multiple pages. To
-     * retrieve subsequent pages, make the call again using the
-     * <code>nextPageToken</code> returned by the initial call.
+     * Used by workers to tell the service that the <a>ActivityTask</a>
+     * identified by the <code>taskToken</code> has failed with
+     * <code>reason</code> (if specified). The <code>reason</code> and
+     * <code>details</code> appear in the <code>ActivityTaskFailed</code> event
+     * added to the workflow history.
+     * </p>
+     * <p>
+     * A task is considered open from the time that it is scheduled until it is
+     * closed. Therefore a task is reported as open while a worker is processing
+     * it. A task is closed after it has been specified in a call to
+     * <a>RespondActivityTaskCompleted</a>, <a>RespondActivityTaskCanceled</a>,
+     * RespondActivityTaskFailed, or the task has <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types"
+     * >timed out</a>.
      * </p>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param listActivityTypesRequest Container for the necessary parameters
-     *           to execute the ListActivityTypes service method on
-     *           AmazonSimpleWorkflow.
      * 
-     * @return The response from the ListActivityTypes service method, as
-     *         returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param respondActivityTaskFailedRequest
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ActivityTypeInfos listActivityTypes(ListActivityTypesRequest listActivityTypesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listActivityTypesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListActivityTypesRequest> request = null;
-        Response<ActivityTypeInfos> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListActivityTypesRequestMarshaller().marshall(super.beforeMarshalling(listActivityTypesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<ActivityTypeInfos, JsonUnmarshallerContext> unmarshaller =
-                new ActivityTypeInfosJsonUnmarshaller();
-            JsonResponseHandler<ActivityTypeInfos> responseHandler =
-                new JsonResponseHandler<ActivityTypeInfos>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Returns information about the specified domain, including description
-     * and status.
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param describeDomainRequest Container for the necessary parameters to
-     *           execute the DescribeDomain service method on AmazonSimpleWorkflow.
-     * 
-     * @return The response from the DescribeDomain service method, as
-     *         returned by AmazonSimpleWorkflow.
-     * 
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
      * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.RespondActivityTaskFailed
      */
-    public DomainDetail describeDomain(DescribeDomainRequest describeDomainRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeDomainRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeDomainRequest> request = null;
-        Response<DomainDetail> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeDomainRequestMarshaller().marshall(super.beforeMarshalling(describeDomainRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<DomainDetail, JsonUnmarshallerContext> unmarshaller =
-                new DomainDetailJsonUnmarshaller();
-            JsonResponseHandler<DomainDetail> responseHandler =
-                new JsonResponseHandler<DomainDetail>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Used by workers to tell the service that the ActivityTask identified
-     * by the <code>taskToken</code> has failed with <code>reason</code> (if
-     * specified). The <code>reason</code> and <code>details</code> appear in
-     * the <code>ActivityTaskFailed</code> event added to the workflow
-     * history.
-     * </p>
-     * <p>
-     * A task is considered open from the time that it is scheduled until it
-     * is closed. Therefore a task is reported as open while a worker is
-     * processing it. A task is closed after it has been specified in a call
-     * to RespondActivityTaskCompleted, RespondActivityTaskCanceled,
-     * RespondActivityTaskFailed, or the task has
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types"> timed out </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Access Control</b>
-     * </p>
-     * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
-     * </p>
-     * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param respondActivityTaskFailedRequest Container for the necessary
-     *           parameters to execute the RespondActivityTaskFailed service method on
-     *           AmazonSimpleWorkflow.
-     * 
-     * 
-     * @throws OperationNotPermittedException
-     * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void respondActivityTaskFailed(RespondActivityTaskFailedRequest respondActivityTaskFailedRequest) {
+    @Override
+    public void respondActivityTaskFailed(
+            RespondActivityTaskFailedRequest respondActivityTaskFailedRequest) {
         ExecutionContext executionContext = createExecutionContext(respondActivityTaskFailedRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RespondActivityTaskFailedRequest> request = null;
-        
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RespondActivityTaskFailedRequestMarshaller().marshall(super.beforeMarshalling(respondActivityTaskFailedRequest));
+                request = new RespondActivityTaskFailedRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(respondActivityTaskFailedRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
-     * Returns the estimated number of decision tasks in the specified task
-     * list. The count returned is an approximation and is not guaranteed to
-     * be exact. If you specify a task list that no decision task was ever
-     * scheduled in then 0 will be returned.
+     * Used by deciders to tell the service that the <a>DecisionTask</a>
+     * identified by the <code>taskToken</code> has successfully completed. The
+     * <code>decisions</code> argument specifies the list of decisions made
+     * while processing the task.
+     * </p>
+     * <p>
+     * A <code>DecisionTaskCompleted</code> event is added to the workflow
+     * history. The <code>executionContext</code> specified is attached to the
+     * event in the workflow execution history.
      * </p>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * If an IAM policy grants permission to use
+     * <code>RespondDecisionTaskCompleted</code>, it can express permissions for
+     * the list of decisions in the <code>decisions</code> parameter. Each of
+     * the decisions has one or more parameters, much like a regular API call.
+     * To allow for policies to be as readable as possible, you can express
+     * permissions on decisions as if they were actual API calls, including
+     * applying conditions to some parameters. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
      * 
-     * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
-     * <li>Use an <code>Action</code> element to allow or deny permission to
-     * call this action.</li>
-     * <li>Constrain the <code>taskList.name</code> parameter by using a
-     * <b>Condition</b> element with the <code>swf:taskList.name</code> key
-     * to allow the action to access only certain task lists.</li>
-     * 
-     * </ul>
-     * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
-     * </p>
-     *
-     * @param countPendingDecisionTasksRequest Container for the necessary
-     *           parameters to execute the CountPendingDecisionTasks service method on
-     *           AmazonSimpleWorkflow.
-     * 
-     * @return The response from the CountPendingDecisionTasks service
-     *         method, as returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param respondDecisionTaskCompletedRequest
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.RespondDecisionTaskCompleted
      */
-    public PendingTaskCount countPendingDecisionTasks(CountPendingDecisionTasksRequest countPendingDecisionTasksRequest) {
-        ExecutionContext executionContext = createExecutionContext(countPendingDecisionTasksRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void respondDecisionTaskCompleted(
+            RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest) {
+        ExecutionContext executionContext = createExecutionContext(respondDecisionTaskCompletedRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CountPendingDecisionTasksRequest> request = null;
-        Response<PendingTaskCount> response = null;
-        
+        Request<RespondDecisionTaskCompletedRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CountPendingDecisionTasksRequestMarshaller().marshall(super.beforeMarshalling(countPendingDecisionTasksRequest));
+                request = new RespondDecisionTaskCompletedRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(respondDecisionTaskCompletedRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<PendingTaskCount, JsonUnmarshallerContext> unmarshaller =
-                new PendingTaskCountJsonUnmarshaller();
-            JsonResponseHandler<PendingTaskCount> responseHandler =
-                new JsonResponseHandler<PendingTaskCount>(unmarshaller);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Returns information about the specified workflow execution including
-     * its type and some statistics.
+     * Records a <code>WorkflowExecutionSignaled</code> event in the workflow
+     * execution history and creates a decision task for the workflow execution
+     * identified by the given domain, workflowId and runId. The event is
+     * recorded with the specified user defined signalName and input (if
+     * provided).
      * </p>
-     * <p>
-     * <b>NOTE:</b>This operation is eventually consistent. The results are
-     * best effort and may not exactly reflect recent updates and changes.
-     * </p>
+     * <note> If a runId is not specified, then the
+     * <code>WorkflowExecutionSignaled</code> event is recorded in the history
+     * of the current open workflow with the matching workflowId in the
+     * domain.</note> <note> If the specified workflow execution is not open,
+     * this method fails with <code>UnknownResource</code>.</note>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param describeWorkflowExecutionRequest Container for the necessary
-     *           parameters to execute the DescribeWorkflowExecution service method on
-     *           AmazonSimpleWorkflow.
      * 
-     * @return The response from the DescribeWorkflowExecution service
-     *         method, as returned by AmazonSimpleWorkflow.
-     * 
-     * @throws OperationNotPermittedException
+     * @param signalWorkflowExecutionRequest
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.SignalWorkflowExecution
      */
-    public WorkflowExecutionDetail describeWorkflowExecution(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeWorkflowExecutionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public void signalWorkflowExecution(
+            SignalWorkflowExecutionRequest signalWorkflowExecutionRequest) {
+        ExecutionContext executionContext = createExecutionContext(signalWorkflowExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeWorkflowExecutionRequest> request = null;
-        Response<WorkflowExecutionDetail> response = null;
-        
+        Request<SignalWorkflowExecutionRequest> request = null;
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeWorkflowExecutionRequestMarshaller().marshall(super.beforeMarshalling(describeWorkflowExecutionRequest));
+                request = new SignalWorkflowExecutionRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(signalWorkflowExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<WorkflowExecutionDetail, JsonUnmarshallerContext> unmarshaller =
-                new WorkflowExecutionDetailJsonUnmarshaller();
-            JsonResponseHandler<WorkflowExecutionDetail> responseHandler =
-                new JsonResponseHandler<WorkflowExecutionDetail>(unmarshaller);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts an execution of the workflow type in the specified domain using
+     * the provided <code>workflowId</code> and input data.
+     * </p>
+     * <p>
+     * This action returns the newly started workflow execution.
+     * </p>
+     * <p>
+     * <b>Access Control</b>
+     * </p>
+     * <p>
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
+     * </p>
+     * <ul>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
+     * <li>Use an <code>Action</code> element to allow or deny permission to
+     * call this action.</li>
+     * <li>Constrain the following parameters by using a <code>Condition</code>
+     * element with the appropriate keys.
+     * <ul>
+     * <li> <code>tagList.member.0</code>: The key is
+     * <code>swf:tagList.member.0</code>.</li>
+     * <li> <code>tagList.member.1</code>: The key is
+     * <code>swf:tagList.member.1</code>.</li>
+     * <li> <code>tagList.member.2</code>: The key is
+     * <code>swf:tagList.member.2</code>.</li>
+     * <li> <code>tagList.member.3</code>: The key is
+     * <code>swf:tagList.member.3</code>.</li>
+     * <li> <code>tagList.member.4</code>: The key is
+     * <code>swf:tagList.member.4</code>.</li>
+     * <li><code>taskList</code>: String constraint. The key is
+     * <code>swf:taskList.name</code>.</li>
+     * <li><code>workflowType.name</code>: String constraint. The key is
+     * <code>swf:workflowType.name</code>.</li>
+     * <li><code>workflowType.version</code>: String constraint. The key is
+     * <code>swf:workflowType.version</code>.</li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
+     * </p>
+     * 
+     * @param startWorkflowExecutionRequest
+     * @return Result of the StartWorkflowExecution operation returned by the
+     *         service.
+     * @throws UnknownResourceException
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws TypeDeprecatedException
+     *         Returned when the specified activity or workflow type was already
+     *         deprecated.
+     * @throws WorkflowExecutionAlreadyStartedException
+     *         Returned by <a>StartWorkflowExecution</a> when an open execution
+     *         with the same workflowId is already running in the specified
+     *         domain.
+     * @throws LimitExceededException
+     *         Returned by any operation if a system imposed limitation has been
+     *         reached. To address this fault you should either clean up unused
+     *         resources or increase the limit by contacting AWS.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @throws DefaultUndefinedException
+     * @sample AmazonSimpleWorkflow.StartWorkflowExecution
+     */
+    @Override
+    public Run startWorkflowExecution(
+            StartWorkflowExecutionRequest startWorkflowExecutionRequest) {
+        ExecutionContext executionContext = createExecutionContext(startWorkflowExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartWorkflowExecutionRequest> request = null;
+        Response<Run> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartWorkflowExecutionRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(startWorkflowExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Run> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new RunJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
      * Records a <code>WorkflowExecutionTerminated</code> event and forces
-     * closure of the workflow execution identified by the given domain,
-     * runId, and workflowId. The child policy, registered with the workflow
-     * type or specified when starting this execution, is applied to any open
-     * child workflow executions of this workflow execution.
+     * closure of the workflow execution identified by the given domain, runId,
+     * and workflowId. The child policy, registered with the workflow type or
+     * specified when starting this execution, is applied to any open child
+     * workflow executions of this workflow execution.
      * </p>
-     * <p>
-     * <b>IMPORTANT:</b> If the identified workflow execution was in
-     * progress, it is terminated immediately.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If a runId is not specified, then the
-     * WorkflowExecutionTerminated event is recorded in the history of the
-     * current open workflow with the matching workflowId in the domain.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You should consider using RequestCancelWorkflowExecution
-     * action instead because it allows the workflow to gracefully close
-     * while TerminateWorkflowExecution does not.
-     * </p>
+     * <important> If the identified workflow execution was in progress, it is
+     * terminated immediately.</important> <note> If a runId is not specified,
+     * then the <code>WorkflowExecutionTerminated</code> event is recorded in
+     * the history of the current open workflow with the matching workflowId in
+     * the domain.</note> <note> You should consider using
+     * <a>RequestCancelWorkflowExecution</a> action instead because it allows
+     * the workflow to gracefully close while <a>TerminateWorkflowExecution</a>
+     * does not.</note>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon
-     * SWF resources as follows:
+     * You can use IAM policies to control this action's access to Amazon SWF
+     * resources as follows:
      * </p>
-     * 
      * <ul>
-     * <li>Use a <code>Resource</code> element with the domain name to limit
-     * the action to only specified domains.</li>
+     * <li>Use a <code>Resource</code> element with the domain name to limit the
+     * action to only specified domains.</li>
      * <li>Use an <code>Action</code> element to allow or deny permission to
      * call this action.</li>
-     * <li>You cannot use an IAM policy to constrain this action's
-     * parameters.</li>
-     * 
+     * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
      * </ul>
      * <p>
-     * If the caller does not have sufficient permissions to invoke the
-     * action, or the parameter values fall outside the specified
-     * constraints, the action fails. The associated event attribute's
-     * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
-     * details and example IAM policies, see
-     * <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a>
-     * .
+     * If the caller does not have sufficient permissions to invoke the action,
+     * or the parameter values fall outside the specified constraints, the
+     * action fails. The associated event attribute's <b>cause</b> parameter
+     * will be set to OPERATION_NOT_PERMITTED. For details and example IAM
+     * policies, see <a href=
+     * "http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"
+     * >Using IAM to Manage Access to Amazon SWF Workflows</a>.
      * </p>
-     *
-     * @param terminateWorkflowExecutionRequest Container for the necessary
-     *           parameters to execute the TerminateWorkflowExecution service method on
-     *           AmazonSimpleWorkflow.
      * 
-     * 
-     * @throws OperationNotPermittedException
+     * @param terminateWorkflowExecutionRequest
      * @throws UnknownResourceException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleWorkflow indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         Returned when the named resource cannot be found with in the
+     *         scope of this operation (region or domain). This could happen if
+     *         the named resource was never created or is no longer available
+     *         for this operation.
+     * @throws OperationNotPermittedException
+     *         Returned when the caller does not have sufficient permissions to
+     *         invoke the action.
+     * @sample AmazonSimpleWorkflow.TerminateWorkflowExecution
      */
-    public void terminateWorkflowExecution(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest) {
+    @Override
+    public void terminateWorkflowExecution(
+            TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest) {
         ExecutionContext executionContext = createExecutionContext(terminateWorkflowExecutionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<TerminateWorkflowExecutionRequest> request = null;
-        
+        Response<Void> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TerminateWorkflowExecutionRequestMarshaller().marshall(super.beforeMarshalling(terminateWorkflowExecutionRequest));
+                request = new TerminateWorkflowExecutionRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(terminateWorkflowExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
-    @Override
-    public void setEndpoint(String endpoint) {
-        super.setEndpoint(endpoint);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        super.setEndpoint(endpoint, serviceName, regionId);
-    }
-
     /**
-     * Returns additional metadata for a previously executed successful, request, typically used for
-     * debugging issues where a service isn't acting as expected.  This data isn't considered part
-     * of the result data returned by an operation, so it's available through this separate,
-     * diagnostic interface.
+     * Returns additional metadata for a previously executed successful,
+     * request, typically used for debugging issues where a service isn't acting
+     * as expected. This data isn't considered part of the result data returned
+     * by an operation, so it's available through this separate, diagnostic
+     * interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you need to access
-     * this extra diagnostic information for an executed request, you should use this method
-     * to retrieve it as soon as possible after executing the request.
+     * Response metadata is only cached for a limited period of time, so if you
+     * need to access this extra diagnostic information for an executed request,
+     * you should use this method to retrieve it as soon as possible after
+     * executing the request.
      *
      * @param request
-     *            The originally executed request
+     *        The originally executed request
      *
      * @return The response metadata for the specified request, or null if none
      *         is available.
      */
-    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request) {
+    public ResponseMetadata getCachedResponseMetadata(
+            AmazonWebServiceRequest request) {
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
+            Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-        JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(jsonErrorUnmarshallers);
-        Response<X> result = client.execute(request, responseHandler,
-                errorResponseHandler, executionContext);
-        return result;
+        return client.execute(request, responseHandler, errorResponseHandler,
+                executionContext);
     }
+
 }
-        

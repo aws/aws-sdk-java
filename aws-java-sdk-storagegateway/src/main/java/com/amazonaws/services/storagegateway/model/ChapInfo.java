@@ -31,8 +31,8 @@ public class ChapInfo implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) of the volume.
      * </p>
      * <p>
-     * <i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods (.),
-     * and hyphens (-).
+     * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
+     * hyphens (-).
      * </p>
      */
     private String targetARN;
@@ -62,15 +62,15 @@ public class ChapInfo implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) of the volume.
      * </p>
      * <p>
-     * <i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods (.),
-     * and hyphens (-).
+     * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
+     * hyphens (-).
      * </p>
      * 
      * @param targetARN
      *        The Amazon Resource Name (ARN) of the volume.</p>
      *        <p>
-     *        <i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
-     *        (.), and hyphens (-).
+     *        Valid Values: 50 to 500 lowercase letters, numbers, periods (.),
+     *        and hyphens (-).
      */
 
     public void setTargetARN(String targetARN) {
@@ -82,14 +82,14 @@ public class ChapInfo implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) of the volume.
      * </p>
      * <p>
-     * <i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods (.),
-     * and hyphens (-).
+     * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
+     * hyphens (-).
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the volume.</p>
      *         <p>
-     *         <i>Valid Values</i>: 50 to 500 lowercase letters, numbers,
-     *         periods (.), and hyphens (-).
+     *         Valid Values: 50 to 500 lowercase letters, numbers, periods (.),
+     *         and hyphens (-).
      */
 
     public String getTargetARN() {
@@ -101,15 +101,15 @@ public class ChapInfo implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) of the volume.
      * </p>
      * <p>
-     * <i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods (.),
-     * and hyphens (-).
+     * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
+     * hyphens (-).
      * </p>
      * 
      * @param targetARN
      *        The Amazon Resource Name (ARN) of the volume.</p>
      *        <p>
-     *        <i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
-     *        (.), and hyphens (-).
+     *        Valid Values: 50 to 500 lowercase letters, numbers, periods (.),
+     *        and hyphens (-).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

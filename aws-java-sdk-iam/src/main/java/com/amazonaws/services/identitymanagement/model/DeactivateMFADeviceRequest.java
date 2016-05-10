@@ -29,12 +29,24 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose MFA device you want to deactivate.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String userName;
     /**
      * <p>
      * The serial number that uniquely identifies the MFA device. For virtual
      * MFA devices, the serial number is the device ARN.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =/:,.@-
      * </p>
      */
     private String serialNumber;
@@ -53,10 +65,21 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param userName
-     *        The name of the user whose MFA device you want to deactivate.
+     *        The name of the user whose MFA device you want to deactivate.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @param serialNumber
      *        The serial number that uniquely identifies the MFA device. For
      *        virtual MFA devices, the serial number is the device ARN.
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =/:,.@-
      */
     public DeactivateMFADeviceRequest(String userName, String serialNumber) {
         setUserName(userName);
@@ -67,9 +90,20 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose MFA device you want to deactivate.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the user whose MFA device you want to deactivate.
+     *        The name of the user whose MFA device you want to deactivate.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
 
     public void setUserName(String userName) {
@@ -80,8 +114,19 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose MFA device you want to deactivate.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the user whose MFA device you want to deactivate.
+     * @return The name of the user whose MFA device you want to deactivate.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
 
     public String getUserName() {
@@ -92,9 +137,20 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose MFA device you want to deactivate.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the user whose MFA device you want to deactivate.
+     *        The name of the user whose MFA device you want to deactivate.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -109,10 +165,21 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest
      * The serial number that uniquely identifies the MFA device. For virtual
      * MFA devices, the serial number is the device ARN.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =/:,.@-
+     * </p>
      * 
      * @param serialNumber
      *        The serial number that uniquely identifies the MFA device. For
-     *        virtual MFA devices, the serial number is the device ARN.
+     *        virtual MFA devices, the serial number is the device ARN.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =/:,.@-
      */
 
     public void setSerialNumber(String serialNumber) {
@@ -124,9 +191,20 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest
      * The serial number that uniquely identifies the MFA device. For virtual
      * MFA devices, the serial number is the device ARN.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =/:,.@-
+     * </p>
      * 
      * @return The serial number that uniquely identifies the MFA device. For
-     *         virtual MFA devices, the serial number is the device ARN.
+     *         virtual MFA devices, the serial number is the device ARN.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =/:,.@-
      */
 
     public String getSerialNumber() {
@@ -138,10 +216,21 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest
      * The serial number that uniquely identifies the MFA device. For virtual
      * MFA devices, the serial number is the device ARN.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =/:,.@-
+     * </p>
      * 
      * @param serialNumber
      *        The serial number that uniquely identifies the MFA device. For
-     *        virtual MFA devices, the serial number is the device ARN.
+     *        virtual MFA devices, the serial number is the device ARN.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =/:,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

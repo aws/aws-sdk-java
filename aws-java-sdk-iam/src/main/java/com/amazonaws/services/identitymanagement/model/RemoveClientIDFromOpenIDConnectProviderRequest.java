@@ -27,16 +27,22 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to remove the client ID from. You can get a list of OIDC provider ARNs by
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource to
+     * remove the client ID from. You can get a list of OIDC provider ARNs by
      * using the <a>ListOpenIDConnectProviders</a> action.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      */
     private String openIDConnectProviderArn;
     /**
      * <p>
-     * The client ID (also known as audience) to remove from the IAM OpenID
-     * Connect provider. For more information about client IDs, see
+     * The client ID (also known as audience) to remove from the IAM OIDC
+     * provider resource. For more information about client IDs, see
      * <a>CreateOpenIDConnectProvider</a>.
      * </p>
      */
@@ -44,16 +50,26 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to remove the client ID from. You can get a list of OIDC provider ARNs by
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource to
+     * remove the client ID from. You can get a list of OIDC provider ARNs by
      * using the <a>ListOpenIDConnectProviders</a> action.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * 
      * @param openIDConnectProviderArn
-     *        The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *        provider to remove the client ID from. You can get a list of OIDC
-     *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-     *        action.
+     *        The Amazon Resource Name (ARN) of the IAM OIDC provider resource
+     *        to remove the client ID from. You can get a list of OIDC provider
+     *        ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
 
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
@@ -62,15 +78,25 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to remove the client ID from. You can get a list of OIDC provider ARNs by
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource to
+     * remove the client ID from. You can get a list of OIDC provider ARNs by
      * using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *         provider to remove the client ID from. You can get a list of OIDC
-     *         provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-     *         action.
+     * @return The Amazon Resource Name (ARN) of the IAM OIDC provider resource
+     *         to remove the client ID from. You can get a list of OIDC provider
+     *         ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
 
     public String getOpenIDConnectProviderArn() {
@@ -79,16 +105,26 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to remove the client ID from. You can get a list of OIDC provider ARNs by
+     * The Amazon Resource Name (ARN) of the IAM OIDC provider resource to
+     * remove the client ID from. You can get a list of OIDC provider ARNs by
      * using the <a>ListOpenIDConnectProviders</a> action.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * 
      * @param openIDConnectProviderArn
-     *        The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *        provider to remove the client ID from. You can get a list of OIDC
-     *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-     *        action.
+     *        The Amazon Resource Name (ARN) of the IAM OIDC provider resource
+     *        to remove the client ID from. You can get a list of OIDC provider
+     *        ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -101,15 +137,15 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
 
     /**
      * <p>
-     * The client ID (also known as audience) to remove from the IAM OpenID
-     * Connect provider. For more information about client IDs, see
+     * The client ID (also known as audience) to remove from the IAM OIDC
+     * provider resource. For more information about client IDs, see
      * <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @param clientID
-     *        The client ID (also known as audience) to remove from the IAM
-     *        OpenID Connect provider. For more information about client IDs,
-     *        see <a>CreateOpenIDConnectProvider</a>.
+     *        The client ID (also known as audience) to remove from the IAM OIDC
+     *        provider resource. For more information about client IDs, see
+     *        <a>CreateOpenIDConnectProvider</a>.
      */
 
     public void setClientID(String clientID) {
@@ -118,13 +154,13 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
 
     /**
      * <p>
-     * The client ID (also known as audience) to remove from the IAM OpenID
-     * Connect provider. For more information about client IDs, see
+     * The client ID (also known as audience) to remove from the IAM OIDC
+     * provider resource. For more information about client IDs, see
      * <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @return The client ID (also known as audience) to remove from the IAM
-     *         OpenID Connect provider. For more information about client IDs,
+     *         OIDC provider resource. For more information about client IDs,
      *         see <a>CreateOpenIDConnectProvider</a>.
      */
 
@@ -134,15 +170,15 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
 
     /**
      * <p>
-     * The client ID (also known as audience) to remove from the IAM OpenID
-     * Connect provider. For more information about client IDs, see
+     * The client ID (also known as audience) to remove from the IAM OIDC
+     * provider resource. For more information about client IDs, see
      * <a>CreateOpenIDConnectProvider</a>.
      * </p>
      * 
      * @param clientID
-     *        The client ID (also known as audience) to remove from the IAM
-     *        OpenID Connect provider. For more information about client IDs,
-     *        see <a>CreateOpenIDConnectProvider</a>.
+     *        The client ID (also known as audience) to remove from the IAM OIDC
+     *        provider resource. For more information about client IDs, see
+     *        <a>CreateOpenIDConnectProvider</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

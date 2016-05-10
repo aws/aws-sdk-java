@@ -36,6 +36,11 @@ public class ${shape.shapeName}StaxUnmarshaller implements Unmarshaller<${shape.
 
 <#if shape.hasPayloadMember>
     <#-- Do not adjust stax context if we need to read raw payload data -->
+<#elseif shape.wrapper>
+    <#-- For query (elasticache, rds, redshift) protocol, if the return type of certain operation is wrapped, -->
+    <#-- it'll have a result wrapper. In the below operaion, the return type is CacheCluster other than CreateCacheClusterResult. -->
+    <#-- http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheCluster.html -->
+        if (context.isStartOfDocument()) targetDepth += 3;
 <#elseif !shape.unmarshaller.resultWrapper?has_content>
     <#-- For rest-xml (s3, route53, cloudfront) and ec2 protocol, the response data are wrapped by one layer of ???Response tag -->
         if (context.isStartOfDocument()) targetDepth += 1;

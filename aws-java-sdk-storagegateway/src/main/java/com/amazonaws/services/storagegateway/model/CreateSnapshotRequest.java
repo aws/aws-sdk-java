@@ -24,8 +24,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing one or more of the following fields:
  * </p>
  * <ul>
- * <li><a>CreateSnapshotInput$SnapshotDescription</a></li>
- * <li><a>CreateSnapshotInput$VolumeARN</a></li>
+ * <li>
+ * <p>
+ * <a>CreateSnapshotInput$SnapshotDescription</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateSnapshotInput$VolumeARN</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class CreateSnapshotRequest extends AmazonWebServiceRequest implements

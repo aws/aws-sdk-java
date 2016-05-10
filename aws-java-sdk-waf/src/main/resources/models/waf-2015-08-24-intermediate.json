@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "waf",
     "signingName" : "waf",
+    "xmlProtocol" : false,
     "serviceName" : "WAF",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -66,12 +66,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateByteMatchSetResult",
       "asyncReturnType" : "CreateByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateByteMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateByteMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateByteMatchSetRequest, CreateByteMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "createByteMatchSet"
     },
     "CreateIPSet" : {
@@ -111,12 +111,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateIPSetResult",
       "asyncReturnType" : "CreateIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateIPSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateIPSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateIPSetRequest, CreateIPSetResult>",
+      "authenticated" : true,
       "methodName" : "createIPSet"
     },
     "CreateRule" : {
@@ -153,12 +153,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateRuleResult",
       "asyncReturnType" : "CreateRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateRuleRequest, CreateRuleResult>",
+      "authenticated" : true,
       "methodName" : "createRule"
     },
     "CreateSizeConstraintSet" : {
@@ -198,12 +198,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateSizeConstraintSetResult",
       "asyncReturnType" : "CreateSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateSizeConstraintSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateSizeConstraintSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSizeConstraintSetRequest, CreateSizeConstraintSetResult>",
+      "authenticated" : true,
       "methodName" : "createSizeConstraintSet"
     },
     "CreateSqlInjectionMatchSet" : {
@@ -243,12 +243,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateSqlInjectionMatchSetResult",
       "asyncReturnType" : "CreateSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateSqlInjectionMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateSqlInjectionMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSqlInjectionMatchSetRequest, CreateSqlInjectionMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "createSqlInjectionMatchSet"
     },
     "CreateWebACL" : {
@@ -288,12 +288,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateWebACLResult",
       "asyncReturnType" : "CreateWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateWebACLResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateWebACLResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateWebACLRequest, CreateWebACLResult>",
+      "authenticated" : true,
       "methodName" : "createWebACL"
     },
     "CreateXssMatchSet" : {
@@ -333,12 +333,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateXssMatchSetResult",
       "asyncReturnType" : "CreateXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateXssMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateXssMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateXssMatchSetRequest, CreateXssMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "createXssMatchSet"
     },
     "DeleteByteMatchSet" : {
@@ -378,12 +378,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteByteMatchSetResult",
       "asyncReturnType" : "DeleteByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteByteMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteByteMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteByteMatchSetRequest, DeleteByteMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "deleteByteMatchSet"
     },
     "DeleteIPSet" : {
@@ -423,12 +423,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteIPSetResult",
       "asyncReturnType" : "DeleteIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteIPSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteIPSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteIPSetRequest, DeleteIPSetResult>",
+      "authenticated" : true,
       "methodName" : "deleteIPSet"
     },
     "DeleteRule" : {
@@ -468,12 +468,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteRuleResult",
       "asyncReturnType" : "DeleteRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult>",
+      "authenticated" : true,
       "methodName" : "deleteRule"
     },
     "DeleteSizeConstraintSet" : {
@@ -513,12 +513,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteSizeConstraintSetResult",
       "asyncReturnType" : "DeleteSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteSizeConstraintSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteSizeConstraintSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSizeConstraintSetRequest, DeleteSizeConstraintSetResult>",
+      "authenticated" : true,
       "methodName" : "deleteSizeConstraintSet"
     },
     "DeleteSqlInjectionMatchSet" : {
@@ -558,12 +558,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteSqlInjectionMatchSetResult",
       "asyncReturnType" : "DeleteSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteSqlInjectionMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteSqlInjectionMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSqlInjectionMatchSetRequest, DeleteSqlInjectionMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "deleteSqlInjectionMatchSet"
     },
     "DeleteWebACL" : {
@@ -603,12 +603,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteWebACLResult",
       "asyncReturnType" : "DeleteWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteWebACLResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteWebACLResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteWebACLRequest, DeleteWebACLResult>",
+      "authenticated" : true,
       "methodName" : "deleteWebACL"
     },
     "DeleteXssMatchSet" : {
@@ -648,12 +648,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteXssMatchSetResult",
       "asyncReturnType" : "DeleteXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteXssMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteXssMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteXssMatchSetRequest, DeleteXssMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "deleteXssMatchSet"
     },
     "GetByteMatchSet" : {
@@ -684,12 +684,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetByteMatchSetResult",
       "asyncReturnType" : "GetByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetByteMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetByteMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetByteMatchSetRequest, GetByteMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "getByteMatchSet"
     },
     "GetChangeToken" : {
@@ -714,12 +714,12 @@
         "documentation" : "<p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetChangeTokenResult",
       "asyncReturnType" : "GetChangeTokenResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetChangeTokenResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetChangeTokenResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetChangeTokenRequest, GetChangeTokenResult>",
+      "authenticated" : true,
       "methodName" : "getChangeToken"
     },
     "GetChangeTokenStatus" : {
@@ -747,12 +747,12 @@
         "documentation" : "<p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetChangeTokenStatusResult",
       "asyncReturnType" : "GetChangeTokenStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetChangeTokenStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetChangeTokenStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetChangeTokenStatusRequest, GetChangeTokenStatusResult>",
+      "authenticated" : true,
       "methodName" : "getChangeTokenStatus"
     },
     "GetIPSet" : {
@@ -783,12 +783,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetIPSetResult",
       "asyncReturnType" : "GetIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIPSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetIPSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIPSetRequest, GetIPSetResult>",
+      "authenticated" : true,
       "methodName" : "getIPSet"
     },
     "GetRule" : {
@@ -819,12 +819,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetRuleResult",
       "asyncReturnType" : "GetRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRuleRequest, GetRuleResult>",
+      "authenticated" : true,
       "methodName" : "getRule"
     },
     "GetSampledRequests" : {
@@ -852,12 +852,12 @@
         "documentation" : "<p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetSampledRequestsResult",
       "asyncReturnType" : "GetSampledRequestsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSampledRequestsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSampledRequestsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSampledRequestsRequest, GetSampledRequestsResult>",
+      "authenticated" : true,
       "methodName" : "getSampledRequests"
     },
     "GetSizeConstraintSet" : {
@@ -888,12 +888,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetSizeConstraintSetResult",
       "asyncReturnType" : "GetSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSizeConstraintSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSizeConstraintSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSizeConstraintSetRequest, GetSizeConstraintSetResult>",
+      "authenticated" : true,
       "methodName" : "getSizeConstraintSet"
     },
     "GetSqlInjectionMatchSet" : {
@@ -924,12 +924,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetSqlInjectionMatchSetResult",
       "asyncReturnType" : "GetSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSqlInjectionMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSqlInjectionMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSqlInjectionMatchSetRequest, GetSqlInjectionMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "getSqlInjectionMatchSet"
     },
     "GetWebACL" : {
@@ -960,12 +960,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetWebACLResult",
       "asyncReturnType" : "GetWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetWebACLResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetWebACLResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetWebACLRequest, GetWebACLResult>",
+      "authenticated" : true,
       "methodName" : "getWebACL"
     },
     "GetXssMatchSet" : {
@@ -996,12 +996,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetXssMatchSetResult",
       "asyncReturnType" : "GetXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetXssMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetXssMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetXssMatchSetRequest, GetXssMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "getXssMatchSet"
     },
     "ListByteMatchSets" : {
@@ -1029,12 +1029,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListByteMatchSetsResult",
       "asyncReturnType" : "ListByteMatchSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListByteMatchSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListByteMatchSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListByteMatchSetsRequest, ListByteMatchSetsResult>",
+      "authenticated" : true,
       "methodName" : "listByteMatchSets"
     },
     "ListIPSets" : {
@@ -1062,12 +1062,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListIPSetsResult",
       "asyncReturnType" : "ListIPSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListIPSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListIPSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIPSetsRequest, ListIPSetsResult>",
+      "authenticated" : true,
       "methodName" : "listIPSets"
     },
     "ListRules" : {
@@ -1095,12 +1095,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListRulesResult",
       "asyncReturnType" : "ListRulesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRulesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRulesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult>",
+      "authenticated" : true,
       "methodName" : "listRules"
     },
     "ListSizeConstraintSets" : {
@@ -1128,12 +1128,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListSizeConstraintSetsResult",
       "asyncReturnType" : "ListSizeConstraintSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSizeConstraintSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListSizeConstraintSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListSizeConstraintSetsRequest, ListSizeConstraintSetsResult>",
+      "authenticated" : true,
       "methodName" : "listSizeConstraintSets"
     },
     "ListSqlInjectionMatchSets" : {
@@ -1161,12 +1161,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListSqlInjectionMatchSetsResult",
       "asyncReturnType" : "ListSqlInjectionMatchSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSqlInjectionMatchSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListSqlInjectionMatchSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListSqlInjectionMatchSetsRequest, ListSqlInjectionMatchSetsResult>",
+      "authenticated" : true,
       "methodName" : "listSqlInjectionMatchSets"
     },
     "ListWebACLs" : {
@@ -1194,12 +1194,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListWebACLsResult",
       "asyncReturnType" : "ListWebACLsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListWebACLsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListWebACLsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListWebACLsRequest, ListWebACLsResult>",
+      "authenticated" : true,
       "methodName" : "listWebACLs"
     },
     "ListXssMatchSets" : {
@@ -1227,12 +1227,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListXssMatchSetsResult",
       "asyncReturnType" : "ListXssMatchSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListXssMatchSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListXssMatchSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListXssMatchSetsRequest, ListXssMatchSetsResult>",
+      "authenticated" : true,
       "methodName" : "listXssMatchSets"
     },
     "UpdateByteMatchSet" : {
@@ -1278,12 +1278,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateByteMatchSetResult",
       "asyncReturnType" : "UpdateByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateByteMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateByteMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateByteMatchSetRequest, UpdateByteMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "updateByteMatchSet"
     },
     "UpdateIPSet" : {
@@ -1332,12 +1332,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateIPSetResult",
       "asyncReturnType" : "UpdateIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateIPSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateIPSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateIPSetRequest, UpdateIPSetResult>",
+      "authenticated" : true,
       "methodName" : "updateIPSet"
     },
     "UpdateRule" : {
@@ -1386,12 +1386,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateRuleResult",
       "asyncReturnType" : "UpdateRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRuleRequest, UpdateRuleResult>",
+      "authenticated" : true,
       "methodName" : "updateRule"
     },
     "UpdateSizeConstraintSet" : {
@@ -1440,12 +1440,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateSizeConstraintSetResult",
       "asyncReturnType" : "UpdateSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateSizeConstraintSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateSizeConstraintSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateSizeConstraintSetRequest, UpdateSizeConstraintSetResult>",
+      "authenticated" : true,
       "methodName" : "updateSizeConstraintSet"
     },
     "UpdateSqlInjectionMatchSet" : {
@@ -1491,12 +1491,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateSqlInjectionMatchSetResult",
       "asyncReturnType" : "UpdateSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateSqlInjectionMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateSqlInjectionMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateSqlInjectionMatchSetRequest, UpdateSqlInjectionMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "updateSqlInjectionMatchSet"
     },
     "UpdateWebACL" : {
@@ -1545,12 +1545,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateWebACLResult",
       "asyncReturnType" : "UpdateWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateWebACLResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateWebACLResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateWebACLRequest, UpdateWebACLResult>",
+      "authenticated" : true,
       "methodName" : "updateWebACL"
     },
     "UpdateXssMatchSet" : {
@@ -1596,12 +1596,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateXssMatchSetResult",
       "asyncReturnType" : "UpdateXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateXssMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateXssMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateXssMatchSetRequest, UpdateXssMatchSetResult>",
+      "authenticated" : true,
       "methodName" : "updateXssMatchSet"
     }
   },
@@ -1616,6 +1616,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the <a>WebACL</a> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p> <ul> <li><a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code></li> <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code></li> <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li> <li><code>Action</code>: Contains <code>Type</code></li> </ul>",
         "name" : "WebACL",
@@ -1756,6 +1757,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRule</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -1896,6 +1898,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -2036,6 +2039,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>",
         "name" : "Action",
@@ -2281,6 +2285,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>",
         "name" : "WebAclId",
@@ -2740,6 +2745,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <a>GetIPSet</a>), update an <code>IPSet</code> (see <a>UpdateIPSet</a>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete an <code>IPSet</code> from AWS WAF (see <a>DeleteIPSet</a>).</p> <p><code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</p>",
         "name" : "IPSetId",
@@ -3222,6 +3228,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -3253,6 +3260,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -3284,6 +3292,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>",
         "name" : "ByteMatchSetId",
@@ -3770,6 +3779,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <a>GetXssMatchSet</a>), update an <code>XssMatchSet</code> (see <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete an <code>XssMatchSet</code> from AWS WAF (see <a>DeleteXssMatchSet</a>).</p> <p><code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>",
         "name" : "XssMatchSetId",
@@ -4015,6 +4025,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -4155,6 +4166,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to delete. <code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>",
         "name" : "SizeConstraintSetId",
@@ -4404,6 +4416,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>",
         "name" : "NextMarker",
@@ -4781,6 +4794,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CHANGE_ACTION",
@@ -4842,6 +4856,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A complex type that contains detailed information about the request.</p>",
         "name" : "Request",
@@ -5297,6 +5312,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you have more <a>XssMatchSet</a> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>",
         "name" : "NextMarker",
@@ -5674,6 +5690,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specify <code>IPV4</code>.</p>",
         "name" : "Type",
@@ -5919,6 +5936,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p> <p><code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>",
         "name" : "ByteMatchSetId",
@@ -6164,6 +6182,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>",
         "name" : "Name",
@@ -6413,6 +6432,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specify <code>INSERT</code> to add a <a>SqlInjectionMatchSetUpdate</a> to a <a>SqlInjectionMatchSet</a>. Use <code>DELETE</code> to remove a <code>SqlInjectionMatchSetUpdate</code> from a <code>SqlInjectionMatchSet</code>.</p>",
         "name" : "Action",
@@ -6658,6 +6678,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>",
         "name" : "NextMarker",
@@ -7035,6 +7056,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>",
         "name" : "ByteMatchSetId",
@@ -7179,6 +7201,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>",
         "name" : "NextMarker",
@@ -7428,6 +7451,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The status of the change token.</p>",
         "name" : "ChangeTokenStatus",
@@ -7568,6 +7592,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A friendly name or description of the <a>IPSet</a>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>",
         "name" : "Name",
@@ -7817,6 +7842,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to delete. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>",
         "name" : "XssMatchSetId",
@@ -8066,6 +8092,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to update. <code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>",
         "name" : "SizeConstraintSetId",
@@ -8552,6 +8579,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>",
         "name" : "Name",
@@ -8801,6 +8829,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -8941,6 +8970,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "IPV4",
@@ -8978,6 +9008,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -9118,6 +9149,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -9149,6 +9181,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "PROVISIONED",
@@ -9192,6 +9225,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <a>Rule</a> returned in the <code>CreateRule</code> response.</p>",
         "name" : "Rule",
@@ -9437,6 +9471,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <a>WebACL</a> returned in the <code>CreateWebACL</code> response.</p>",
         "name" : "WebACL",
@@ -9682,6 +9717,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.</p>",
         "name" : "RuleId",
@@ -9927,6 +9963,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the <a>IPSet</a> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p> <ul> <li><a>IPSet</a>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code></li> <li><code>IPSetDescriptors</code>: Contains an array of <a>IPSetDescriptor</a> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code></li> </ul>",
         "name" : "IPSet",
@@ -10067,6 +10104,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -10098,6 +10136,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -10238,6 +10277,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>",
         "name" : "NextMarker",
@@ -10487,6 +10527,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <a>GetByteMatchSet</a>), update a <code>ByteMatchSet</code> (see <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>",
         "name" : "ByteMatchSetId",
@@ -10969,6 +11010,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -11000,6 +11042,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -11140,6 +11183,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>",
         "name" : "SqlInjectionMatchSetId",
@@ -11389,6 +11433,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>IPSetId</code> for an <a>IPSet</a>. You can use <code>IPSetId</code> in a <a>GetIPSet</a> request to get detailed information about an <a>IPSet</a>.</p>",
         "name" : "IPSetId",
@@ -11634,6 +11679,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>DeleteIPSet</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -11774,6 +11820,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -11914,6 +11961,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code> objects.</p>",
         "name" : "SizeConstraintSet",
@@ -12159,6 +12207,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "EQ",
@@ -12211,6 +12260,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to get. <code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>",
         "name" : "SizeConstraintSetId",
@@ -12355,6 +12405,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you specify a value for <code>Limit</code> and you have more <code>IPSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>",
         "name" : "NextMarker",
@@ -12604,6 +12655,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>",
         "name" : "NextMarker",
@@ -12981,6 +13033,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <a>ListRules</a>.</p>",
         "name" : "RuleId",
@@ -13467,6 +13520,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -13607,6 +13661,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>), update a <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <a>DeleteSizeConstraintSet</a>).</p> <p><code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>",
         "name" : "SizeConstraintSetId",
@@ -13852,6 +13907,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>RuleId</code> of the <a>Rule</a> that you want to get. <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.</p>",
         "name" : "RuleId",
@@ -13996,6 +14052,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "INVALID_OPTION",
@@ -14036,6 +14093,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -14067,6 +14125,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -14207,6 +14266,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</p>",
         "name" : "Name",
@@ -14561,6 +14621,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the <a>ByteMatchSet</a> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p> <ul> <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code></li> <li><code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each <code>ByteMatchTuple</code> object contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul>",
         "name" : "ByteMatchSet",
@@ -14701,6 +14762,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>",
         "name" : "NextMarker",
@@ -14950,6 +15012,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "Field",
@@ -15297,6 +15360,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p> <ul> <li><code>ALLOW</code>: AWS WAF allows requests</li> <li><code>BLOCK</code>: AWS WAF blocks requests</li> <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li> </ul>",
         "name" : "Type",
@@ -15437,6 +15501,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>",
         "name" : "WebACLId",
@@ -16028,6 +16093,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code> with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the values don't need to be consecutive.</p>",
         "name" : "Priority",
@@ -16378,6 +16444,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "FieldToMatch",
@@ -16623,6 +16690,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>), update a <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <a>DeleteSqlInjectionMatchSet</a>).</p> <p><code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>",
         "name" : "SqlInjectionMatchSetId",
@@ -16868,6 +16936,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -16899,6 +16968,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>An <a>XssMatchSet</a>.</p>",
         "name" : "XssMatchSet",
@@ -17144,6 +17214,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "INSERT",
@@ -17184,6 +17255,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <a>IPSet</a> returned in the <code>CreateIPSet</code> response.</p>",
         "name" : "IPSet",
@@ -17429,6 +17501,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>. For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>",
         "name" : "NextMarker",
@@ -17678,6 +17751,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A friendly name or description for the <a>XssMatchSet</a> that you're creating. You can't change <code>Name</code> after you create the <code>XssMatchSet</code>.</p>",
         "name" : "Name",
@@ -17927,6 +18001,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -17965,6 +18040,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p> <ul> <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</li> <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul>",
         "name" : "XssMatchSet",
@@ -18105,6 +18181,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>",
         "name" : "Name",
@@ -18354,6 +18431,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</p>",
         "name" : "IPSetId",
@@ -18603,6 +18681,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "BLOCK",
@@ -18646,6 +18725,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>",
         "name" : "ChangeToken",
@@ -18790,6 +18870,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -18930,6 +19011,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -18961,6 +19043,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -18992,6 +19075,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the <a>Rule</a> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p> <ul> <li><a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code></li> <li><a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li> </ul>",
         "name" : "Rule",
@@ -19132,6 +19216,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>",
         "name" : "WebACLId",
@@ -19276,6 +19361,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <a>GetXssMatchSet</a>), update an <code>XssMatchSet</code> (see <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete an <code>XssMatchSet</code> from AWS WAF (see <a>DeleteXssMatchSet</a>).</p> <p><code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>",
         "name" : "XssMatchSetId",
@@ -19758,6 +19844,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -19789,6 +19876,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>), update a <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <a>DeleteSqlInjectionMatchSet</a>).</p> <p><code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>",
         "name" : "SqlInjectionMatchSetId",
@@ -20271,6 +20359,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The part of a web request that you want AWS WAF to search, such as a specified header or a query string. For more information, see <a>FieldToMatch</a>.</p>",
         "name" : "FieldToMatch",
@@ -20726,6 +20815,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -20866,6 +20956,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</p>",
         "name" : "IPSetId",
@@ -21352,6 +21443,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you have more <a>SqlInjectionMatchSet</a> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>",
         "name" : "NextMarker",
@@ -21729,6 +21821,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>",
         "name" : "ByteMatchSetId",
@@ -21978,6 +22071,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "FieldToMatch",
@@ -22223,6 +22317,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A <a>SqlInjectionMatchSet</a>.</p>",
         "name" : "SqlInjectionMatchSet",
@@ -22468,6 +22563,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</p>",
         "name" : "IPSetId",
@@ -22612,6 +22708,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request. </p>",
         "name" : "ChangeToken",
@@ -22752,6 +22849,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>",
         "name" : "XssMatchSetId",
@@ -22896,6 +22994,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p> <p>Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>",
         "name" : "Negated",
@@ -23246,6 +23345,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies whether to insert or delete a <a>ByteMatchTuple</a>.</p>",
         "name" : "Action",
@@ -23491,6 +23591,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>",
         "name" : "SqlInjectionMatchSetId",
@@ -23635,6 +23736,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>",
         "name" : "XssMatchSetId",
@@ -24121,6 +24223,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "NONE",
@@ -24173,6 +24276,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "URI",
@@ -24222,6 +24326,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>",
         "name" : "NextMarker",
@@ -24599,6 +24704,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A <a>ByteMatchSet</a> that contains no <code>ByteMatchTuple</code> objects.</p>",
         "name" : "ByteMatchSet",
@@ -24844,6 +24950,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specify <code>INSERT</code> to add a <a>SizeConstraintSetUpdate</a> to a <a>SizeConstraintSet</a>. Use <code>DELETE</code> to remove a <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>",
         "name" : "Action",
@@ -25089,6 +25196,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you specify a value for <code>Limit</code> and you have more <a>XssMatchSet</a> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>",
         "name" : "NextMarker",
@@ -25338,6 +25446,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the <a>SizeConstraintSet</a> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p> <ul> <li><a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code></li> <li><code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each <code>SizeConstraint</code> object contains <a>FieldToMatch</a>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul>",
         "name" : "SizeConstraintSet",
@@ -25478,6 +25587,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>",
         "name" : "WebACLId",
@@ -25727,6 +25837,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Information about the <a>SqlInjectionMatchSet</a> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p> <ul> <li><a>SqlInjectionMatchSet</a>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</li> <li><a>SqlInjectionMatchTuple</a>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul>",
         "name" : "SqlInjectionMatchSet",
@@ -25867,6 +25978,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</li> <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</li> </ul>",
         "name" : "ClientIP",
@@ -26664,6 +26776,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>), update a <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <a>DeleteSizeConstraintSet</a>).</p> <p><code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>",
         "name" : "SizeConstraintSetId",
@@ -27146,6 +27259,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your AWS resource received. You can specify any time range in the previous three hours.</p>",
         "name" : "StartTime",
@@ -27391,6 +27505,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of one of the headers in the sampled web request.</p>",
         "name" : "Name",
@@ -27636,6 +27751,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "IPMatch",
@@ -27685,6 +27801,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>ChangeToken</code> that you used to submit the <code>UpdateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>",
         "name" : "ChangeToken",
@@ -27825,6 +27942,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).</p> <p><code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>",
         "name" : "WebACLId",
@@ -28517,6 +28635,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>",
         "name" : "SqlInjectionMatchSetId",
@@ -29003,6 +29122,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code> to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>",
         "name" : "Action",
@@ -29248,6 +29368,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "EXACTLY",
@@ -29297,6 +29418,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.</p>",
         "name" : "RuleId",
@@ -29884,6 +30006,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>",
         "name" : "NextMarker",
@@ -30133,6 +30256,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p> <ul> <li><code>HEADER</code>: A specified request header, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header. If you choose <code>HEADER</code> for the type, specify the name of the header in <code>Data</code>.</li> <li><code>METHOD</code>: The HTTP method, which indicated the type of operation that the request is asking the origin to perform. Amazon CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</li> <li><code>QUERY_STRING</code>: A query string, which is the part of a URL that appears after a <code>?</code> character, if any.</li> <li><code>URI</code>: The part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</li> <li><code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <a>CreateSizeConstraintSet</a>. </li> </ul>",
         "name" : "Type",
@@ -30378,6 +30502,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).</p> <p><code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>",
         "name" : "WebACLId",
@@ -30623,6 +30748,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A complex type that contains detailed information about each of the requests in the sample.</p>",
         "name" : "SampledRequests",
@@ -31105,6 +31231,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A friendly name or description of the <a>WebACL</a>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>",
         "name" : "Name",
@@ -31564,6 +31691,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies whether to insert a <code>Rule</code> into or delete a <code>Rule</code> from a <code>WebACL</code>.</p>",
         "name" : "Action",
@@ -31809,6 +31937,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The <code>RuleId</code> of the <a>Rule</a> that you want to delete. <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.</p>",
         "name" : "RuleId",
@@ -32058,6 +32187,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies whether to insert or delete an IP address with <a>UpdateIPSet</a>.</p>",
         "name" : "Action",
@@ -32303,6 +32433,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "FieldToMatch",
@@ -32758,6 +32889,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>If you have more <code>IPSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>",
         "name" : "NextMarker",

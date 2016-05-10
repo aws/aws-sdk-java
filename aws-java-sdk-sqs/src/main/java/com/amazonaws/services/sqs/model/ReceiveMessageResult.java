@@ -19,7 +19,9 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A list of received messages.
+ * </p>
  */
 public class ReceiveMessageResult implements Serializable, Cloneable {
 

@@ -27,6 +27,11 @@ import java.io.Serializable;
 public class AllocatePrivateVirtualInterfaceResult implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * The AWS account that will own the new virtual interface.
+     * </p>
+     */
     private String ownerAccount;
 
     private String virtualInterfaceId;
@@ -62,7 +67,12 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable,
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixes;
 
     /**
+     * <p>
+     * The AWS account that will own the new virtual interface.
+     * </p>
+     * 
      * @param ownerAccount
+     *        The AWS account that will own the new virtual interface.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -70,7 +80,11 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable,
     }
 
     /**
-     * @return
+     * <p>
+     * The AWS account that will own the new virtual interface.
+     * </p>
+     * 
+     * @return The AWS account that will own the new virtual interface.
      */
 
     public String getOwnerAccount() {
@@ -78,7 +92,12 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable,
     }
 
     /**
+     * <p>
+     * The AWS account that will own the new virtual interface.
+     * </p>
+     * 
      * @param ownerAccount
+     *        The AWS account that will own the new virtual interface.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

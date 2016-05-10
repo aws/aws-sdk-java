@@ -245,7 +245,7 @@ public class StringUtils {
      * Tests a char to see if is it whitespace.
      * This method considers the same characters to be white
      * space as the Pattern class does when matching \s
-     * 
+     *
      * @param ch the character to be tested
      * @return true if the character is white  space, false otherwise.
      */
@@ -262,12 +262,12 @@ public class StringUtils {
     /**
      * This method appends a string to a string builder and collapses contiguous
      * white space is a single space.
-     * 
-     * This is equivalent to: 
+     *
+     * This is equivalent to:
      *      destination.append(source.replaceAll("\\s+", " "))
-     * but does not create a Pattern object that needs to compile the match 
+     * but does not create a Pattern object that needs to compile the match
      * string; it also prevents us from having to make a Matcher object as well.
-     * 
+     *
      */
     public static void appendCompactedString(final StringBuilder destination, final String source) {
         boolean previousIsWhiteSpace = false;
@@ -286,5 +286,13 @@ public class StringUtils {
                 previousIsWhiteSpace = false;
             }
         }
+    }
+
+    /**
+     * Performs a case insensitive comparison and returns true if the data
+     * begins with the given sequence. 
+     */
+    public static boolean beginsWithIgnoreCase(final String data, final String seq) {
+      return data.regionMatches(true, 0, seq, 0, seq.length());
     }
 }

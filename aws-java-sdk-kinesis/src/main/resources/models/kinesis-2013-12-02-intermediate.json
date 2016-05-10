@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "kinesis",
     "signingName" : "kinesis",
+    "xmlProtocol" : false,
     "serviceName" : "Kinesis",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -57,12 +57,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToStreamRequest, Void>",
+      "authenticated" : true,
       "methodName" : "addTagsToStream"
     },
     "CreateStream" : {
@@ -90,12 +90,12 @@
         "documentation" : "<p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, Void>",
+      "authenticated" : true,
       "methodName" : "createStream"
     },
     "DecreaseStreamRetentionPeriod" : {
@@ -126,12 +126,12 @@
         "documentation" : "<p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DecreaseStreamRetentionPeriodRequest, Void>",
+      "authenticated" : true,
       "methodName" : "decreaseStreamRetentionPeriod"
     },
     "DeleteStream" : {
@@ -156,12 +156,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteStream"
     },
     "DescribeStream" : {
@@ -189,12 +189,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeStreamResult",
       "asyncReturnType" : "DescribeStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult>",
+      "authenticated" : true,
       "methodName" : "describeStream"
     },
     "DisableEnhancedMonitoring" : {
@@ -228,12 +228,12 @@
         "documentation" : "<p>The requested resource could not be found. The stream might not be specified correctly, or it might not be in the <code>ACTIVE</code> state if the operation requires it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DisableEnhancedMonitoringResult",
       "asyncReturnType" : "DisableEnhancedMonitoringResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableEnhancedMonitoringResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableEnhancedMonitoringResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableEnhancedMonitoringRequest, DisableEnhancedMonitoringResult>",
+      "authenticated" : true,
       "methodName" : "disableEnhancedMonitoring"
     },
     "EnableEnhancedMonitoring" : {
@@ -267,12 +267,12 @@
         "documentation" : "<p>The requested resource could not be found. The stream might not be specified correctly, or it might not be in the <code>ACTIVE</code> state if the operation requires it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "EnableEnhancedMonitoringResult",
       "asyncReturnType" : "EnableEnhancedMonitoringResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableEnhancedMonitoringResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableEnhancedMonitoringResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableEnhancedMonitoringRequest, EnableEnhancedMonitoringResult>",
+      "authenticated" : true,
       "methodName" : "enableEnhancedMonitoring"
     },
     "GetRecords" : {
@@ -306,12 +306,12 @@
         "documentation" : "<p>The provided iterator exceeds the maximum age allowed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetRecordsResult",
       "asyncReturnType" : "GetRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRecordsRequest, GetRecordsResult>",
+      "authenticated" : true,
       "methodName" : "getRecords"
     },
     "GetShardIterator" : {
@@ -342,12 +342,12 @@
         "documentation" : "<p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html\">Streams Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>, and <a href=\"http://docs.aws.amazon.com/general/latest/gr/api-retries.html\">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetShardIteratorResult",
       "asyncReturnType" : "GetShardIteratorResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetShardIteratorResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetShardIteratorResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult>",
+      "authenticated" : true,
       "methodName" : "getShardIterator"
     },
     "IncreaseStreamRetentionPeriod" : {
@@ -378,12 +378,12 @@
         "documentation" : "<p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<IncreaseStreamRetentionPeriodRequest, Void>",
+      "authenticated" : true,
       "methodName" : "increaseStreamRetentionPeriod"
     },
     "ListStreams" : {
@@ -408,12 +408,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListStreamsResult",
       "asyncReturnType" : "ListStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStreamsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStreamsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult>",
+      "authenticated" : true,
       "methodName" : "listStreams"
     },
     "ListTagsForStream" : {
@@ -444,12 +444,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTagsForStreamResult",
       "asyncReturnType" : "ListTagsForStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForStreamRequest, ListTagsForStreamResult>",
+      "authenticated" : true,
       "methodName" : "listTagsForStream"
     },
     "MergeShards" : {
@@ -480,12 +480,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, Void>",
+      "authenticated" : true,
       "methodName" : "mergeShards"
     },
     "PutRecord" : {
@@ -516,12 +516,12 @@
         "documentation" : "<p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html\">Streams Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>, and <a href=\"http://docs.aws.amazon.com/general/latest/gr/api-retries.html\">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutRecordResult",
       "asyncReturnType" : "PutRecordResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRecordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRecordRequest, PutRecordResult>",
+      "authenticated" : true,
       "methodName" : "putRecord"
     },
     "PutRecords" : {
@@ -552,12 +552,12 @@
         "documentation" : "<p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html\">Streams Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>, and <a href=\"http://docs.aws.amazon.com/general/latest/gr/api-retries.html\">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutRecordsResult",
       "asyncReturnType" : "PutRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRecordsRequest, PutRecordsResult>",
+      "authenticated" : true,
       "methodName" : "putRecords"
     },
     "RemoveTagsFromStream" : {
@@ -588,12 +588,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromStreamRequest, Void>",
+      "authenticated" : true,
       "methodName" : "removeTagsFromStream"
     },
     "SplitShard" : {
@@ -624,12 +624,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SplitShardRequest, Void>",
+      "authenticated" : true,
       "methodName" : "splitShard"
     }
   },
@@ -644,6 +644,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream for the shard split.</p>",
         "name" : "StreamName",
@@ -998,6 +999,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -1029,6 +1031,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream to describe.</p>",
         "name" : "StreamName",
@@ -1383,6 +1386,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "IncomingBytes",
@@ -1441,6 +1445,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The starting sequence number for the range.</p>",
         "name" : "StartingSequenceNumber",
@@ -1686,6 +1691,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the Amazon Kinesis stream.</p>",
         "name" : "StreamName",
@@ -2300,6 +2306,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "AT_SEQUENCE_NUMBER",
@@ -2349,6 +2356,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -2380,6 +2388,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream.</p>",
         "name" : "StreamName",
@@ -2761,6 +2770,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique identifier of the shard within the stream.</p>",
         "name" : "ShardId",
@@ -3321,6 +3331,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream for the merge.</p>",
         "name" : "StreamName",
@@ -3675,6 +3686,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream to modify.</p>",
         "name" : "StreamName",
@@ -3924,6 +3936,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream being described.</p>",
         "name" : "StreamName",
@@ -4958,6 +4971,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account but in two different regions can have the same name.</p>",
         "name" : "StreamName",
@@ -5207,6 +5221,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -5238,6 +5253,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The records associated with the request.</p>",
         "name" : "Records",
@@ -5619,6 +5635,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>List of shard-level metrics.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" enhances every metric.</p> <ul> <li> <code>IncomingBytes</code> </li> <li> <code>IncomingRecords</code> </li> <li> <code>OutgoingBytes</code> </li> <li> <code>OutgoingRecords</code> </li> <li> <code>WriteProvisionedThroughputExceeded</code> </li> <li> <code>ReadProvisionedThroughputExceeded</code> </li> <li> <code>IteratorAgeMilliseconds</code> </li> <li> <code>ALL</code> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>",
         "name" : "ShardLevelMetrics",
@@ -5891,6 +5908,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream.</p>",
         "name" : "StreamName",
@@ -6274,6 +6292,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>",
         "name" : "Key",
@@ -6519,6 +6538,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the Amazon Kinesis stream for which to disable enhanced monitoring.</p>",
         "name" : "StreamName",
@@ -6900,6 +6920,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>",
         "name" : "ShardIterator",
@@ -7149,6 +7170,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The sequence number for an individual record result.</p>",
         "name" : "SequenceNumber",
@@ -7604,6 +7626,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The data records retrieved from the shard.</p>",
         "name" : "Records",
@@ -8086,6 +8109,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream to put the data record into.</p>",
         "name" : "StreamName",
@@ -8650,6 +8674,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream.</p>",
         "name" : "StreamName",
@@ -9004,6 +9029,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and states whether there are more shards available.</p>",
         "name" : "StreamDescription",
@@ -9144,6 +9170,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The starting hash key of the hash key range.</p>",
         "name" : "StartingHashKey",
@@ -9389,6 +9416,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream for which to enable enhanced monitoring.</p>",
         "name" : "StreamName",
@@ -9770,6 +9798,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The maximum number of streams to list.</p>",
         "name" : "Limit",
@@ -10019,6 +10048,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>",
         "name" : "Tags",
@@ -10396,6 +10426,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>",
         "name" : "StreamNames",
@@ -10773,6 +10804,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>",
         "name" : "ShardIterator",
@@ -10913,6 +10945,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the Amazon Kinesis stream.</p>",
         "name" : "StreamName",
@@ -11477,6 +11510,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream to delete.</p>",
         "name" : "StreamName",
@@ -11621,6 +11655,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>",
         "name" : "FailedRecordCount",
@@ -11998,6 +12033,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The unique identifier of the record in the stream.</p>",
         "name" : "SequenceNumber",
@@ -12453,6 +12489,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -12484,6 +12521,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the stream to modify.</p>",
         "name" : "StreamName",
@@ -12733,6 +12771,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).</p>",
         "name" : "Data",
@@ -13083,6 +13122,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -13114,6 +13154,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -13145,6 +13186,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CREATING",
@@ -13191,6 +13233,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the Amazon Kinesis stream.</p>",
         "name" : "StreamName",
@@ -13805,6 +13848,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The shard ID of the shard where the data record was placed.</p>",
         "name" : "ShardId",

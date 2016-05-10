@@ -15,14 +15,6 @@
 
 package com.amazonaws.codegen;
 
-import static com.amazonaws.codegen.internal.NameUtils.getExceptionName;
-import static com.amazonaws.codegen.internal.NameUtils.getRequestClassName;
-import static com.amazonaws.codegen.internal.NameUtils.getResponseClassName;
-import static com.amazonaws.codegen.internal.Utils.unCapitialize;
-
-import java.util.Map;
-import java.util.TreeMap;
-
 import com.amazonaws.codegen.model.intermediate.ExceptionModel;
 import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.ReturnTypeModel;
@@ -35,20 +27,32 @@ import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.Output;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Shape;
+import com.amazonaws.codegen.naming.NamingStrategy;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+import static com.amazonaws.codegen.internal.Utils.unCapitialize;
 
 /**
  * Constructs the operation model for every operation defined by the service.
  */
 final class AddOperations {
 
-    public static Map<String, OperationModel> constructOperations(
-                                                                  ServiceModel serviceModel) {
+    private final ServiceModel serviceModel;
+    private final NamingStrategy namingStrategy;
+
+    public AddOperations(IntermediateModelBuilder builder) {
+        this.serviceModel = builder.getService();
+        this.namingStrategy = builder.getNamingStrategy();
+    }
+
+    public Map<String, OperationModel> constructOperations() {
 
         Map<String, OperationModel> javaOperationModels = new TreeMap<String, OperationModel>();
         Map<String, Shape> c2jShapes = serviceModel.getShapes();
 
-        for (Map.Entry<String, Operation> entry : serviceModel.getOperations()
-                .entrySet()) {
+        for (Map.Entry<String, Operation> entry : serviceModel.getOperations().entrySet()) {
 
             final String operationName = entry.getKey();
             final Operation op = entry.getValue();
@@ -63,25 +67,25 @@ final class AddOperations {
             final Input input = op.getInput();
             if (input != null) {
                 String originalShapeName = input.getShape();
-                String inputShape = getRequestClassName(originalShapeName,
-                        operationName);
-                String documentation = input.getDocumentation() != null ? input
-                        .getDocumentation() : c2jShapes.get(originalShapeName)
-                        .getDocumentation();
+                String inputShape = namingStrategy.getRequestClassName(operationName);
+                String documentation = input.getDocumentation() != null ? input.getDocumentation() :
+                        c2jShapes.get(originalShapeName).getDocumentation();
 
-                operationModel.setInput(new VariableModel(
-                        unCapitialize(inputShape), inputShape)
-                        .withDocumentation(documentation));
+                operationModel.setInput(new VariableModel(unCapitialize(inputShape), inputShape)
+                                                .withDocumentation(documentation));
 
             }
 
             final Output output = op.getOutput();
             if (output != null) {
-                final Shape outputShape = c2jShapes.get(output.getShape());
-                final String responseClassName = getResponseClassName(output.getShape(), operationName);
+                final String outputShapeName = getResultShapeName(op, c2jShapes);
+                final Shape outputShape = c2jShapes.get(outputShapeName);
+                final String responseClassName = outputShape.isWrapper() ?
+                        outputShapeName : namingStrategy.getResponseClassName(operationName);
                 final String documentation = getOperationDocumentation(output, outputShape);
 
-                operationModel.setReturnType(new ReturnTypeModel(responseClassName).withDocumentation(documentation));
+                operationModel.setReturnType(
+                        new ReturnTypeModel(responseClassName).withDocumentation(documentation));
                 if (isBlobShape(getPayloadShape(c2jShapes, outputShape))) {
                     operationModel.setHasBlobMemberAsPayload(true);
                 }
@@ -90,13 +94,13 @@ final class AddOperations {
             if (op.getErrors() != null) {
                 for (ErrorMap error : op.getErrors()) {
 
-                    String documentation = error.getDocumentation() != null ? error
-                            .getDocumentation() : c2jShapes.get(
-                            error.getShape()).getDocumentation();
+                    String documentation =
+                            error.getDocumentation() != null ? error.getDocumentation() :
+                                    c2jShapes.get(error.getShape()).getDocumentation();
 
-                    operationModel.addException(new ExceptionModel(
-                            getExceptionName(error.getShape()))
-                            .withDocumentation(documentation));
+                    operationModel.addException(
+                            new ExceptionModel(namingStrategy.getExceptionName(error.getShape()))
+                                    .withDocumentation(documentation));
                 }
             }
 
@@ -114,7 +118,8 @@ final class AddOperations {
     }
 
     private static String getOperationDocumentation(final Output output, final Shape outputShape) {
-        return output.getDocumentation() != null ? output.getDocumentation() : outputShape.getDocumentation();
+        return output.getDocumentation() != null ? output.getDocumentation() :
+                outputShape.getDocumentation();
     }
 
     /**
@@ -128,7 +133,7 @@ final class AddOperations {
      * If there is a member in the output shape that is explicitly marked as the payload (with the
      * payload trait) this method returns the target shape of that member. Otherwise this method
      * returns null.
-     * 
+     *
      * @param c2jShapes
      *            All C2J shapes
      * @param outputShape
@@ -140,5 +145,55 @@ final class AddOperations {
         }
         Member payloadMember = outputShape.getMembers().get(outputShape.getPayload());
         return c2jShapes.get(payloadMember.getShape());
+    }
+
+    /**
+     *  In query protocol, the wrapped result is the real return type for the given operation. In the c2j model,
+     *  if the output shape has only one member, and the member shape is wrapped (wrapper is true), then the
+     *  return type is the wrapped member shape instead of the output shape. In the following example, the service API is:
+     *
+     *  public Foo operation(OperationRequest operationRequest);
+     *
+     *  And the wire log is:
+     *  <OperationResponse>
+     *    <OperationResult>
+     *      <Foo>
+     *      ...
+     *      </Foo>
+     *    </OperationResult>
+     *    <OperationMetadata>
+     *    </OperationMetadata>
+     *  </OperationResponse>
+     *
+     *  The C2j model is:
+     *  "Operation": {
+     *      "input": {"shape": "OperationRequest"},
+     *      "output": {
+     *          "shape": "OperationResult",
+     *          "resultWrapper": "OperationResult"
+     *      }
+     *  },
+     *  "OperationResult": {
+     *      ...
+     *      "members": {
+     *          "Foo": {"shape": "Foo"}
+     *      }
+     *  },
+     *  "Foo" : {
+     *      ...
+     *      "wrapper" : true
+     *  }
+     *
+     *  Return the wrapped shape name from the given operation if it conforms to the condition
+     *  described above, otherwise, simply return the direct output shape name.
+     */
+    private static String getResultShapeName(Operation operation, Map<String, Shape> shapes) {
+        Output output = operation.getOutput();
+        if (output == null) return null;
+        Shape outputShape = shapes.get(output.getShape());
+        if (outputShape.getMembers().keySet().size() != 1) return output.getShape();
+        Member wrappedMember = outputShape.getMembers().values().toArray(new Member[0])[0];
+        Shape wrappedResult = shapes.get(wrappedMember.getShape());
+        return wrappedResult.isWrapper() ? wrappedMember.getShape() : output.getShape();
     }
 }

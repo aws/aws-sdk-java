@@ -24,10 +24,26 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing one or more of the following fields:
  * </p>
  * <ul>
- * <li><a>UpdateChapCredentialsInput$InitiatorName</a></li>
- * <li><a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a></li>
- * <li><a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a></li>
- * <li><a>UpdateChapCredentialsInput$TargetARN</a></li>
+ * <li>
+ * <p>
+ * <a>UpdateChapCredentialsInput$InitiatorName</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateChapCredentialsInput$TargetARN</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
@@ -46,8 +62,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * The secret key that the initiator (for example, the Windows client) must
      * provide to participate in mutual CHAP with the target.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      */
     private String secretToAuthenticateInitiator;
     /**
@@ -64,8 +83,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * <p>
      * Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      */
     private String secretToAuthenticateTarget;
 
@@ -127,14 +149,20 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * The secret key that the initiator (for example, the Windows client) must
      * provide to participate in mutual CHAP with the target.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @param secretToAuthenticateInitiator
      *        The secret key that the initiator (for example, the Windows
      *        client) must provide to participate in mutual CHAP with the
-     *        target.</p> <note>The secret key must be between 12 and 16 bytes
-     *        when encoded in UTF-8.
+     *        target.</p> <note>
+     *        <p>
+     *        The secret key must be between 12 and 16 bytes when encoded in
+     *        UTF-8.
+     *        </p>
      */
 
     public void setSecretToAuthenticateInitiator(
@@ -147,13 +175,19 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * The secret key that the initiator (for example, the Windows client) must
      * provide to participate in mutual CHAP with the target.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @return The secret key that the initiator (for example, the Windows
      *         client) must provide to participate in mutual CHAP with the
-     *         target.</p> <note>The secret key must be between 12 and 16 bytes
-     *         when encoded in UTF-8.
+     *         target.</p> <note>
+     *         <p>
+     *         The secret key must be between 12 and 16 bytes when encoded in
+     *         UTF-8.
+     *         </p>
      */
 
     public String getSecretToAuthenticateInitiator() {
@@ -165,14 +199,20 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * The secret key that the initiator (for example, the Windows client) must
      * provide to participate in mutual CHAP with the target.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @param secretToAuthenticateInitiator
      *        The secret key that the initiator (for example, the Windows
      *        client) must provide to participate in mutual CHAP with the
-     *        target.</p> <note>The secret key must be between 12 and 16 bytes
-     *        when encoded in UTF-8.
+     *        target.</p> <note>
+     *        <p>
+     *        The secret key must be between 12 and 16 bytes when encoded in
+     *        UTF-8.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -232,8 +272,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * <p>
      * Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @param secretToAuthenticateTarget
      *        The secret key that the target must provide to participate in
@@ -241,8 +284,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *        <p>
      *        Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      *        </p>
-     *        <note>The secret key must be between 12 and 16 bytes when encoded
-     *        in UTF-8.
+     *        <note>
+     *        <p>
+     *        The secret key must be between 12 and 16 bytes when encoded in
+     *        UTF-8.
+     *        </p>
      */
 
     public void setSecretToAuthenticateTarget(String secretToAuthenticateTarget) {
@@ -257,16 +303,22 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * <p>
      * Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @return The secret key that the target must provide to participate in
      *         mutual CHAP with the initiator (e.g. Windows client).</p>
      *         <p>
      *         Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      *         </p>
-     *         <note>The secret key must be between 12 and 16 bytes when encoded
-     *         in UTF-8.
+     *         <note>
+     *         <p>
+     *         The secret key must be between 12 and 16 bytes when encoded in
+     *         UTF-8.
+     *         </p>
      */
 
     public String getSecretToAuthenticateTarget() {
@@ -281,8 +333,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * <p>
      * Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @param secretToAuthenticateTarget
      *        The secret key that the target must provide to participate in
@@ -290,8 +345,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *        <p>
      *        Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      *        </p>
-     *        <note>The secret key must be between 12 and 16 bytes when encoded
-     *        in UTF-8.
+     *        <note>
+     *        <p>
+     *        The secret key must be between 12 and 16 bytes when encoded in
+     *        UTF-8.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

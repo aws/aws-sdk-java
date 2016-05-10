@@ -27,7 +27,7 @@ public class ListAccessKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of access key metadata.
+     * A list of objects containing metadata about the access keys.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AccessKeyMetadata> accessKeyMetadata;
@@ -54,10 +54,10 @@ public class ListAccessKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of access key metadata.
+     * A list of objects containing metadata about the access keys.
      * </p>
      * 
-     * @return A list of access key metadata.
+     * @return A list of objects containing metadata about the access keys.
      */
 
     public java.util.List<AccessKeyMetadata> getAccessKeyMetadata() {
@@ -69,11 +69,11 @@ public class ListAccessKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of access key metadata.
+     * A list of objects containing metadata about the access keys.
      * </p>
      * 
      * @param accessKeyMetadata
-     *        A list of access key metadata.
+     *        A list of objects containing metadata about the access keys.
      */
 
     public void setAccessKeyMetadata(
@@ -89,7 +89,7 @@ public class ListAccessKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of access key metadata.
+     * A list of objects containing metadata about the access keys.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -99,7 +99,7 @@ public class ListAccessKeysResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param accessKeyMetadata
-     *        A list of access key metadata.
+     *        A list of objects containing metadata about the access keys.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -118,11 +118,11 @@ public class ListAccessKeysResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of access key metadata.
+     * A list of objects containing metadata about the access keys.
      * </p>
      * 
      * @param accessKeyMetadata
-     *        A list of access key metadata.
+     *        A list of objects containing metadata about the access keys.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

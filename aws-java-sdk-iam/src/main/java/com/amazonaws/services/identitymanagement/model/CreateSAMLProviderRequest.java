@@ -45,6 +45,12 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the provider to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String name;
 
@@ -70,7 +76,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      *        SAML authentication response (assertions) that are received from
      *        the IdP. You must generate the metadata document using the
      *        identity management software that is used as your organization's
-     *        IdP. </p>
+     *        IdP.</p>
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html"
@@ -102,7 +108,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      *         SAML authentication response (assertions) that are received from
      *         the IdP. You must generate the metadata document using the
      *         identity management software that is used as your organization's
-     *         IdP. </p>
+     *         IdP.</p>
      *         <p>
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html"
@@ -135,7 +141,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      *        SAML authentication response (assertions) that are received from
      *        the IdP. You must generate the metadata document using the
      *        identity management software that is used as your organization's
-     *        IdP. </p>
+     *        IdP.</p>
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html"
@@ -154,9 +160,20 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the provider to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param name
-     *        The name of the provider to create.
+     *        The name of the provider to create.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
 
     public void setName(String name) {
@@ -167,8 +184,19 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the provider to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the provider to create.
+     * @return The name of the provider to create.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
 
     public String getName() {
@@ -179,9 +207,20 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the provider to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param name
-     *        The name of the provider to create.
+     *        The name of the provider to create.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -39,7 +39,11 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      * <p>
      * The size, in bytes, of the virtual tape that you want to create.
      * </p>
-     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
+     * <note>
+     * <p>
+     * The size must be aligned by gigabyte (1024*1024*1024 byte).
+     * </p>
+     * </note>
      */
     private Long tapeSizeInBytes;
     /**
@@ -109,12 +113,18 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      * <p>
      * The size, in bytes, of the virtual tape that you want to create.
      * </p>
-     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
+     * <note>
+     * <p>
+     * The size must be aligned by gigabyte (1024*1024*1024 byte).
+     * </p>
+     * </note>
      * 
      * @param tapeSizeInBytes
      *        The size, in bytes, of the virtual tape that you want to
-     *        create.</p> <note>The size must be aligned by gigabyte
-     *        (1024*1024*1024 byte).
+     *        create.</p> <note>
+     *        <p>
+     *        The size must be aligned by gigabyte (1024*1024*1024 byte).
+     *        </p>
      */
 
     public void setTapeSizeInBytes(Long tapeSizeInBytes) {
@@ -125,11 +135,17 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      * <p>
      * The size, in bytes, of the virtual tape that you want to create.
      * </p>
-     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
+     * <note>
+     * <p>
+     * The size must be aligned by gigabyte (1024*1024*1024 byte).
+     * </p>
+     * </note>
      * 
      * @return The size, in bytes, of the virtual tape that you want to
-     *         create.</p> <note>The size must be aligned by gigabyte
-     *         (1024*1024*1024 byte).
+     *         create.</p> <note>
+     *         <p>
+     *         The size must be aligned by gigabyte (1024*1024*1024 byte).
+     *         </p>
      */
 
     public Long getTapeSizeInBytes() {
@@ -140,12 +156,18 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      * <p>
      * The size, in bytes, of the virtual tape that you want to create.
      * </p>
-     * <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
+     * <note>
+     * <p>
+     * The size must be aligned by gigabyte (1024*1024*1024 byte).
+     * </p>
+     * </note>
      * 
      * @param tapeSizeInBytes
      *        The size, in bytes, of the virtual tape that you want to
-     *        create.</p> <note>The size must be aligned by gigabyte
-     *        (1024*1024*1024 byte).
+     *        create.</p> <note>
+     *        <p>
+     *        The size must be aligned by gigabyte (1024*1024*1024 byte).
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

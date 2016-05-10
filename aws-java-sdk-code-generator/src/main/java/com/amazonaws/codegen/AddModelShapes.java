@@ -15,30 +15,35 @@
 
 package com.amazonaws.codegen;
 
-import static com.amazonaws.codegen.internal.Utils.isStructure;
+import com.amazonaws.codegen.model.intermediate.OperationModel;
+import com.amazonaws.codegen.model.intermediate.ShapeModel;
+import com.amazonaws.codegen.model.intermediate.ShapeType;
+import com.amazonaws.codegen.model.intermediate.ShapeUnmarshaller;
+import com.amazonaws.codegen.model.service.Shape;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import com.amazonaws.codegen.internal.NameUtils;
-import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
-import com.amazonaws.codegen.model.intermediate.ShapeModel;
-import com.amazonaws.codegen.model.intermediate.ShapeType;
-import com.amazonaws.codegen.model.intermediate.ShapeUnmarshaller;
-import com.amazonaws.codegen.model.service.ServiceModel;
-import com.amazonaws.codegen.model.service.Shape;
+import static com.amazonaws.codegen.internal.Utils.isStructure;
 
 /**
  * Constructs the shapes (other than request, response and exception) from the service model.
  */
-final class AddModelShapes extends AddShapes {
+final class AddModelShapes extends AddShapes implements IntermediateModelShapeProcessor {
 
-    AddModelShapes(ServiceModel serviceModel, CustomizationConfig customizationConfig) {
-        super(serviceModel, customizationConfig);
+    AddModelShapes(IntermediateModelBuilder builder) {
+        super(builder);
     }
 
-    public final Map<String, ShapeModel> constructModelShapes(Set<String> shapesToSkip) {
+    @Override
+    public Map<String, ShapeModel> process(Map<String, OperationModel> currentOperations,
+                                           Map<String, ShapeModel> currentShapes) {
+        // Only need to construct model shapes for shapes that have not been previously processed
+        return constructModelShapes(currentShapes.keySet());
+    }
+
+    private Map<String, ShapeModel> constructModelShapes(Set<String> shapesToSkip) {
         // Java output shape models, to be constructed
         final Map<String, ShapeModel> javaShapes = new HashMap<String, ShapeModel>();
 
@@ -53,9 +58,7 @@ final class AddModelShapes extends AddShapes {
             ShapeType shapeType = getModelShapeType(shape);
 
             if (shapeType != null) {
-                // For model classes the Java Class name should be following Java name
-                // convention. Use getJavaClassName to customize shapeName.
-                final String javaClassName = NameUtils.getJavaClassName(shapeName);
+                final String javaClassName = getNamingStrategy().getJavaClassName(shapeName);
 
                 ShapeModel modelShape = generateShapeModel(javaClassName, shapeName);
                 modelShape.setType(shapeType);

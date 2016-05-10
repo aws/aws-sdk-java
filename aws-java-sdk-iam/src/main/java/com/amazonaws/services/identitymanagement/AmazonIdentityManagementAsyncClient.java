@@ -33,14 +33,18 @@ import com.amazonaws.annotation.ThreadSafe;
  * and Access Management (IAM)</a>. For the user guide for IAM, see <a
  * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>.
  * </p>
- * <note>AWS provides SDKs that consist of libraries and sample code for various
+ * <note>
+ * <p>
+ * AWS provides SDKs that consist of libraries and sample code for various
  * programming languages and platforms (Java, Ruby, .NET, iOS, Android, etc.).
  * The SDKs provide a convenient way to create programmatic access to IAM and
  * AWS. For example, the SDKs take care of tasks such as cryptographically
  * signing requests (see below), managing errors, and retrying requests
  * automatically. For information about the AWS SDKs, including how to download
  * and install them, see the <a href="http://aws.amazon.com/tools/">Tools for
- * Amazon Web Services</a> page. </note>
+ * Amazon Web Services</a> page.
+ * </p>
+ * </note>
  * <p>
  * We recommend that you use the AWS SDKs to make programmatic API calls to IAM.
  * However, you can also use the IAM Query API to make direct calls to the IAM
@@ -78,18 +82,30 @@ import com.amazonaws.annotation.ThreadSafe;
  * For more information, see the following:
  * </p>
  * <ul>
- * <li><a href=
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html"
  * >AWS Security Credentials</a>. This topic provides general information about
- * the types of credentials used for accessing AWS.</li>
- * <li><a href=
+ * the types of credentials used for accessing AWS.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
  * Best Practices</a>. This topic presents a list of suggestions for using the
- * IAM service to help secure your AWS resources.</li>
- * <li><a href=
+ * IAM service to help secure your AWS resources.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
  * >Signing AWS API Requests</a>. This set of topics walk you through the
- * process of signing a request using an access key ID and secret access key.</li>
+ * process of signing a request using an access key ID and secret access key.
+ * </p>
+ * </li>
  * </ul>
  */
 @ThreadSafe

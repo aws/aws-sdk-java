@@ -15,30 +15,34 @@
 
 package com.amazonaws.codegen;
 
-import static com.amazonaws.codegen.internal.Utils.createInputShapeMarshaller;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import com.amazonaws.codegen.internal.NameUtils;
-import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
+import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.intermediate.ShapeType;
 import com.amazonaws.codegen.model.service.Input;
 import com.amazonaws.codegen.model.service.Operation;
-import com.amazonaws.codegen.model.service.ServiceModel;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.amazonaws.codegen.internal.Utils.createInputShapeMarshaller;
 
 /**
  * Constructs the request shapes for the intermediate model. Analyzes the operations in the service
  * model to identify the request shapes that are to be generated.
  */
-final class AddInputShapes extends AddShapes {
+final class AddInputShapes extends AddShapes implements IntermediateModelShapeProcessor {
 
-    AddInputShapes(ServiceModel serviceModel, CustomizationConfig customizationConfig) {
-        super(serviceModel, customizationConfig);
+    AddInputShapes(IntermediateModelBuilder builder) {
+        super(builder);
     }
 
-    public final Map<String, ShapeModel> constructInputShapes() {
+    @Override
+    public Map<String, ShapeModel> process(Map<String, OperationModel> currentOperations,
+                                           Map<String, ShapeModel> currentShapes) {
+        return constructInputShapes();
+    }
+
+    private Map<String, ShapeModel> constructInputShapes() {
         // Java input shape models, to be constructed
         final Map<String, ShapeModel> javaShapes = new HashMap<String, ShapeModel>();
 
@@ -51,8 +55,8 @@ final class AddInputShapes extends AddShapes {
 
             if (input != null) {
 
-                String javaRequestShapeName = NameUtils.getRequestClassName(
-                        input.getShape(), operationName);
+                String javaRequestShapeName = getNamingStrategy()
+                        .getRequestClassName(operationName);
 
                 ShapeModel inputShape = generateInputShapeModel(operation, javaRequestShapeName);
 
@@ -67,13 +71,15 @@ final class AddInputShapes extends AddShapes {
         return javaShapes;
     }
 
-    private ShapeModel generateInputShapeModel(Operation operation, String javaInputShapeNameOverride) {
+    private ShapeModel generateInputShapeModel(Operation operation,
+                                               String javaInputShapeNameOverride) {
         Input input = operation.getInput();
         String inputShapeName = input.getShape();
 
         ShapeModel shapeModel = generateShapeModel(javaInputShapeNameOverride, inputShapeName);
         shapeModel.setType(ShapeType.Request.getValue());
-        shapeModel.setMarshaller(createInputShapeMarshaller(getServiceModel().getMetadata(), operation));
+        shapeModel.setMarshaller(
+                createInputShapeMarshaller(getServiceModel().getMetadata(), operation));
 
         return shapeModel;
     }

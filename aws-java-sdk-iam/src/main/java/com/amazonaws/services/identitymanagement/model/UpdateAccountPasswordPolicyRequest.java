@@ -560,7 +560,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html"
      *        >Letting IAM Users Change Their Own Passwords</a> in the <i>IAM
-     *        User Guide</i>. </p>
+     *        User Guide</i>.</p>
      *        <p>
      *        Default value: false
      */
@@ -586,7 +586,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html"
      *         >Letting IAM Users Change Their Own Passwords</a> in the <i>IAM
-     *         User Guide</i>. </p>
+     *         User Guide</i>.</p>
      *         <p>
      *         Default value: false
      */
@@ -613,7 +613,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html"
      *        >Letting IAM Users Change Their Own Passwords</a> in the <i>IAM
-     *        User Guide</i>. </p>
+     *        User Guide</i>.</p>
      *        <p>
      *        Default value: false
      * @return Returns a reference to this object so that method calls can be
@@ -643,7 +643,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html"
      *         >Letting IAM Users Change Their Own Passwords</a> in the <i>IAM
-     *         User Guide</i>. </p>
+     *         User Guide</i>.</p>
      *         <p>
      *         Default value: false
      */

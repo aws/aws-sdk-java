@@ -27,18 +27,18 @@ public class CreateGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the group.
+     * A structure containing details about the new group.
      * </p>
      */
     private Group group;
 
     /**
      * <p>
-     * Information about the group.
+     * A structure containing details about the new group.
      * </p>
      * 
      * @param group
-     *        Information about the group.
+     *        A structure containing details about the new group.
      */
 
     public void setGroup(Group group) {
@@ -47,10 +47,10 @@ public class CreateGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the group.
+     * A structure containing details about the new group.
      * </p>
      * 
-     * @return Information about the group.
+     * @return A structure containing details about the new group.
      */
 
     public Group getGroup() {
@@ -59,11 +59,11 @@ public class CreateGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the group.
+     * A structure containing details about the new group.
      * </p>
      * 
      * @param group
-     *        Information about the group.
+     *        A structure containing details about the new group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

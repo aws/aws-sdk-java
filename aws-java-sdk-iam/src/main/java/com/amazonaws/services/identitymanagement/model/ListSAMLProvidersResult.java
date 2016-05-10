@@ -27,17 +27,20 @@ public class ListSAMLProvidersResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of SAML providers for this account.
+     * The list of SAML provider resource objects defined in IAM for this AWS
+     * account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SAMLProviderListEntry> sAMLProviderList;
 
     /**
      * <p>
-     * The list of SAML providers for this account.
+     * The list of SAML provider resource objects defined in IAM for this AWS
+     * account.
      * </p>
      * 
-     * @return The list of SAML providers for this account.
+     * @return The list of SAML provider resource objects defined in IAM for
+     *         this AWS account.
      */
 
     public java.util.List<SAMLProviderListEntry> getSAMLProviderList() {
@@ -49,11 +52,13 @@ public class ListSAMLProvidersResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of SAML providers for this account.
+     * The list of SAML provider resource objects defined in IAM for this AWS
+     * account.
      * </p>
      * 
      * @param sAMLProviderList
-     *        The list of SAML providers for this account.
+     *        The list of SAML provider resource objects defined in IAM for this
+     *        AWS account.
      */
 
     public void setSAMLProviderList(
@@ -69,7 +74,8 @@ public class ListSAMLProvidersResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of SAML providers for this account.
+     * The list of SAML provider resource objects defined in IAM for this AWS
+     * account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -79,7 +85,8 @@ public class ListSAMLProvidersResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param sAMLProviderList
-     *        The list of SAML providers for this account.
+     *        The list of SAML provider resource objects defined in IAM for this
+     *        AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -98,11 +105,13 @@ public class ListSAMLProvidersResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of SAML providers for this account.
+     * The list of SAML provider resource objects defined in IAM for this AWS
+     * account.
      * </p>
      * 
      * @param sAMLProviderList
-     *        The list of SAML providers for this account.
+     *        The list of SAML provider resource objects defined in IAM for this
+     *        AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

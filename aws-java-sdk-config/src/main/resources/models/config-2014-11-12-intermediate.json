@@ -21,9 +21,9 @@
     "endpointPrefix" : "config",
     "signingName" : "config",
     "serviceName" : "Config Service",
+    "xmlProtocol" : false,
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -51,12 +51,12 @@
         "documentation" : "<p>The rule is currently being deleted. Wait for a while and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConfigRuleRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteConfigRule"
     },
     "DeleteDeliveryChannel" : {
@@ -81,12 +81,12 @@
         "documentation" : "<p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDeliveryChannelRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteDeliveryChannel"
     },
     "DeliverConfigSnapshot" : {
@@ -117,12 +117,12 @@
         "documentation" : "<p>There is no configuration recorder running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeliverConfigSnapshotResult",
       "asyncReturnType" : "DeliverConfigSnapshotResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeliverConfigSnapshotResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeliverConfigSnapshotResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeliverConfigSnapshotRequest, DeliverConfigSnapshotResult>",
+      "authenticated" : true,
       "methodName" : "deliverConfigSnapshot"
     },
     "DescribeComplianceByConfigRule" : {
@@ -150,12 +150,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeComplianceByConfigRuleResult",
       "asyncReturnType" : "DescribeComplianceByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeComplianceByConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeComplianceByConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeComplianceByConfigRuleRequest, DescribeComplianceByConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "describeComplianceByConfigRule"
     },
     "DescribeComplianceByResource" : {
@@ -183,12 +183,12 @@
         "documentation" : "<p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeComplianceByResourceResult",
       "asyncReturnType" : "DescribeComplianceByResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeComplianceByResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeComplianceByResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeComplianceByResourceRequest, DescribeComplianceByResourceResult>",
+      "authenticated" : true,
       "methodName" : "describeComplianceByResource"
     },
     "DescribeConfigRuleEvaluationStatus" : {
@@ -213,12 +213,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigRuleEvaluationStatusResult",
       "asyncReturnType" : "DescribeConfigRuleEvaluationStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigRuleEvaluationStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigRuleEvaluationStatusRequest, DescribeConfigRuleEvaluationStatusResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigRuleEvaluationStatus"
     },
     "DescribeConfigRules" : {
@@ -243,12 +243,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigRulesResult",
       "asyncReturnType" : "DescribeConfigRulesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigRulesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigRulesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigRulesRequest, DescribeConfigRulesResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigRules"
     },
     "DescribeConfigurationRecorderStatus" : {
@@ -273,12 +273,12 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationRecorderStatusResult",
       "asyncReturnType" : "DescribeConfigurationRecorderStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationRecorderStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecorderStatusRequest, DescribeConfigurationRecorderStatusResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigurationRecorderStatus"
     },
     "DescribeConfigurationRecorders" : {
@@ -303,12 +303,12 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationRecordersResult",
       "asyncReturnType" : "DescribeConfigurationRecordersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationRecordersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationRecordersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecordersRequest, DescribeConfigurationRecordersResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigurationRecorders"
     },
     "DescribeDeliveryChannelStatus" : {
@@ -333,12 +333,12 @@
         "documentation" : "<p>You have specified a delivery channel that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDeliveryChannelStatusResult",
       "asyncReturnType" : "DescribeDeliveryChannelStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryChannelStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDeliveryChannelStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelStatusRequest, DescribeDeliveryChannelStatusResult>",
+      "authenticated" : true,
       "methodName" : "describeDeliveryChannelStatus"
     },
     "DescribeDeliveryChannels" : {
@@ -363,12 +363,12 @@
         "documentation" : "<p>You have specified a delivery channel that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDeliveryChannelsResult",
       "asyncReturnType" : "DescribeDeliveryChannelsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryChannelsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDeliveryChannelsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelsRequest, DescribeDeliveryChannelsResult>",
+      "authenticated" : true,
       "methodName" : "describeDeliveryChannels"
     },
     "GetComplianceDetailsByConfigRule" : {
@@ -399,12 +399,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceDetailsByConfigRuleResult",
       "asyncReturnType" : "GetComplianceDetailsByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceDetailsByConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceDetailsByConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceDetailsByConfigRuleRequest, GetComplianceDetailsByConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceDetailsByConfigRule"
     },
     "GetComplianceDetailsByResource" : {
@@ -429,12 +429,12 @@
         "documentation" : "<p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceDetailsByResourceResult",
       "asyncReturnType" : "GetComplianceDetailsByResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceDetailsByResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceDetailsByResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceDetailsByResourceRequest, GetComplianceDetailsByResourceResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceDetailsByResource"
     },
     "GetComplianceSummaryByConfigRule" : {
@@ -456,12 +456,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceSummaryByConfigRuleResult",
       "asyncReturnType" : "GetComplianceSummaryByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceSummaryByConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByConfigRuleRequest, GetComplianceSummaryByConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceSummaryByConfigRule"
     },
     "GetComplianceSummaryByResourceType" : {
@@ -486,12 +486,12 @@
         "documentation" : "<p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceSummaryByResourceTypeResult",
       "asyncReturnType" : "GetComplianceSummaryByResourceTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceSummaryByResourceTypeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByResourceTypeRequest, GetComplianceSummaryByResourceTypeResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceSummaryByResourceType"
     },
     "GetResourceConfigHistory" : {
@@ -531,12 +531,12 @@
         "documentation" : "<p>You have specified a resource that is either unknown or has not been discovered.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetResourceConfigHistoryResult",
       "asyncReturnType" : "GetResourceConfigHistoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetResourceConfigHistoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetResourceConfigHistoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetResourceConfigHistoryRequest, GetResourceConfigHistoryResult>",
+      "authenticated" : true,
       "methodName" : "getResourceConfigHistory"
     },
     "ListDiscoveredResources" : {
@@ -570,12 +570,12 @@
         "documentation" : "<p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDiscoveredResourcesResult",
       "asyncReturnType" : "ListDiscoveredResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDiscoveredResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDiscoveredResourcesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult>",
+      "authenticated" : true,
       "methodName" : "listDiscoveredResources"
     },
     "PutConfigRule" : {
@@ -606,12 +606,12 @@
         "documentation" : "<p>Indicates one of the following errors:</p> <ul> <li>The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the config:Put* action.</li> <li>The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutConfigRuleRequest, Void>",
+      "authenticated" : true,
       "methodName" : "putConfigRule"
     },
     "PutConfigurationRecorder" : {
@@ -642,12 +642,12 @@
         "documentation" : "<p>AWS Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values could also be incorrectly formatted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutConfigurationRecorderRequest, Void>",
+      "authenticated" : true,
       "methodName" : "putConfigurationRecorder"
     },
     "PutDeliveryChannel" : {
@@ -687,12 +687,12 @@
         "documentation" : "<p>Your Amazon S3 bucket policy does not permit AWS Config to write to it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutDeliveryChannelRequest, Void>",
+      "authenticated" : true,
       "methodName" : "putDeliveryChannel"
     },
     "PutEvaluations" : {
@@ -723,12 +723,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutEvaluationsResult",
       "asyncReturnType" : "PutEvaluationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutEvaluationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutEvaluationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult>",
+      "authenticated" : true,
       "methodName" : "putEvaluations"
     },
     "StartConfigurationRecorder" : {
@@ -753,12 +753,12 @@
         "documentation" : "<p>There is no delivery channel available to record configurations.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartConfigurationRecorderRequest, Void>",
+      "authenticated" : true,
       "methodName" : "startConfigurationRecorder"
     },
     "StopConfigurationRecorder" : {
@@ -780,12 +780,12 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopConfigurationRecorderRequest, Void>",
+      "authenticated" : true,
       "methodName" : "stopConfigurationRecorder"
     }
   },
@@ -800,6 +800,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The number of AWS Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>",
         "name" : "ComplianceSummary",
@@ -940,6 +941,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the delivery channel to delete.</p>",
         "name" : "DeliveryChannelName",
@@ -1084,6 +1086,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of delivery channel names.</p>",
         "name" : "DeliveryChannelNames",
@@ -1360,6 +1363,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -1391,6 +1395,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list that contains the status of a specified delivery channel.</p>",
         "name" : "DeliveryChannelsStatus",
@@ -1663,6 +1668,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "AwsConfig",
@@ -1700,6 +1706,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Indicates whether the specified AWS resource complies with all of the AWS Config rules that evaluate it.</p>",
         "name" : "ComplianceByResources",
@@ -2077,6 +2084,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p> <p>For this request, you can specify an AWS resource type such as <code>AWS::EC2::Instance</code>, and you can specify that the resource type is an AWS account by specifying <code>AWS::::Account</code>.</p>",
         "name" : "ResourceTypes",
@@ -2353,6 +2361,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -2384,6 +2393,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Indicates whether the AWS resource complies with the specified AWS Config rule.</p>",
         "name" : "EvaluationResults",
@@ -2761,6 +2771,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the AWS Config rule.</p>",
         "name" : "ConfigRuleName",
@@ -3951,6 +3962,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of resource.</p>",
         "name" : "ResourceType",
@@ -4406,6 +4418,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -4437,6 +4450,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The version number of the resource configuration.</p>",
         "name" : "Version",
@@ -6655,6 +6669,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the recorder object that records each configuration change made to the resources.</p>",
         "name" : "ConfigurationRecorderName",
@@ -6799,6 +6814,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Pending",
@@ -6842,6 +6858,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The number of AWS resources or AWS Config rules responsible for the current compliance of the item.</p>",
         "name" : "CappedCount",
@@ -7087,6 +7104,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ACTIVE",
@@ -7127,6 +7145,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -7158,6 +7177,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The configuration recorder object that records each configuration change made to the resources.</p>",
         "name" : "ConfigurationRecorder",
@@ -7302,6 +7322,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Status information about your AWS managed Config rules.</p>",
         "name" : "ConfigRulesEvaluationStatus",
@@ -7574,6 +7595,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The assessments that the AWS Lambda function performs. Each evaluation identifies an AWS resource and indicates whether it complies with the AWS Config rule that invokes the AWS Lambda function.</p>",
         "name" : "Evaluations",
@@ -7955,6 +7977,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the AWS Config rule that you want to delete.</p>",
         "name" : "ConfigRuleName",
@@ -8099,6 +8122,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the AWS Config rule that was used in the evaluation.</p>",
         "name" : "ConfigRuleName",
@@ -8449,6 +8473,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Success",
@@ -8492,6 +8517,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -8523,6 +8549,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specify one or more AWS Config rule names to filter the results by rule.</p>",
         "name" : "ConfigRuleNames",
@@ -9141,6 +9168,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "ConfigurationItemChangeNotification",
@@ -9181,6 +9209,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The names of the AWS Config rules for which you want details. If you do not specify any names, AWS Config returns details for all your rules.</p>",
         "name" : "ConfigRuleNames",
@@ -9562,6 +9591,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the configuration recorder. You cannot change the assigned name.</p>",
         "name" : "Name",
@@ -9912,6 +9942,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -9943,6 +9974,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The resource type.</p>",
         "name" : "ResourceType",
@@ -10717,6 +10749,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -10748,6 +10781,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name that you assign to the AWS Config rule. The name is required if you are adding a new rule.</p>",
         "name" : "ConfigRuleName",
@@ -11728,6 +11762,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of the AWS resource for which you want compliance information.</p>",
         "name" : "ResourceType",
@@ -12319,6 +12354,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the AWS Config rule for which you want compliance information.</p>",
         "name" : "ConfigRuleName",
@@ -12910,6 +12946,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p> A list that contains status of the specified recorders. </p>",
         "name" : "ConfigurationRecordersStatus",
@@ -13182,6 +13219,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The types of AWS resources for which you want compliance information; for example, <code>AWS::EC2::Instance</code>. For this action, you can specify that the resource type is an AWS account by specifying <code>AWS::::Account</code>.</p>",
         "name" : "ResourceType",
@@ -13878,6 +13916,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Indicates whether an AWS resource or AWS Config rule is compliant.</p> <p>A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is noncompliant if it does not comply with one or more of these rules.</p> <p>A rule is compliant if all of the resources that the rule evaluates comply with it, and it is noncompliant if any of these resources do not comply.</p> <p>AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for the AWS resource or Config rule.</p> <p>For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code> values. AWS Config does not support the <code>NOT_APPLICABLE</code> value for the <code>Compliance</code> data type.</p>",
         "name" : "ComplianceType",
@@ -14123,6 +14162,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Status of the last attempted delivery.</p>",
         "name" : "LastStatus",
@@ -14788,6 +14828,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list that contains the descriptions of the specified delivery channel.</p>",
         "name" : "DeliveryChannels",
@@ -15060,6 +15101,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "AWSEC2CustomerGateway",
@@ -15151,6 +15193,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -15182,6 +15225,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>",
         "name" : "ComplianceSummariesByResourceType",
@@ -15454,6 +15498,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>",
         "name" : "DeliveryFrequency",
@@ -15594,6 +15639,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -15632,6 +15678,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Identifies an AWS Config rule used to evaluate an AWS resource, and provides the type and ID of the evaluated resource.</p>",
         "name" : "EvaluationResultQualifier",
@@ -15877,6 +15924,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The resource types of only those AWS resources that you want to trigger an evaluation for the rule. You can only specify one type if you also specify a resource ID for <code>ComplianceResourceId</code>.</p>",
         "name" : "ComplianceResourceTypes",
@@ -16464,6 +16512,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Status of the last attempted delivery.</p> <p><b>Note</b> Providing an SNS topic on a <a href=\"http://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html\">DeliveryChannel</a> for AWS Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>",
         "name" : "LastStatus",
@@ -16919,6 +16968,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The details that identify a resource that is discovered by AWS Config, including the resource type, ID, and (if available) the custom resource name.</p>",
         "name" : "ResourceIdentifiers",
@@ -17296,6 +17346,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -17327,6 +17378,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the delivery channel.</p>",
         "name" : "Name",
@@ -17782,6 +17834,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list that contains the descriptions of the specified configuration recorders.</p>",
         "name" : "ConfigurationRecorders",
@@ -18054,6 +18107,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of delivery channel names.</p>",
         "name" : "DeliveryChannelNames",
@@ -18330,6 +18384,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Requests that failed because of a client or server error.</p>",
         "name" : "FailedEvaluations",
@@ -18602,6 +18657,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the AWS managed Config rules for which you want status information. If you do not specify any names, AWS Config returns status information for all AWS managed Config rules that you use. </p>",
         "name" : "ConfigRuleNames",
@@ -18878,6 +18934,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Indicates whether each of the specified AWS Config rules is compliant.</p>",
         "name" : "ComplianceByConfigRules",
@@ -19255,6 +19312,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket, and to an Amazon SNS topic.</p>",
         "name" : "DeliveryChannel",
@@ -19399,6 +19457,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -19430,6 +19489,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "One_Hour",
@@ -19479,6 +19539,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of AWS resource.</p>",
         "name" : "ResourceType",
@@ -19724,6 +19785,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of AWS resource that was evaluated.</p>",
         "name" : "ComplianceResourceType",
@@ -20284,6 +20346,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -20315,6 +20378,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The ID of the snapshot that is being created.</p>",
         "name" : "ConfigSnapshotId",
@@ -20455,6 +20519,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>",
         "name" : "Name",
@@ -21015,6 +21080,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -21046,6 +21112,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The number of AWS Config rules or AWS resources that are compliant, up to a maximum of 25 for rules and 100 for resources.</p>",
         "name" : "CompliantResourceCount",
@@ -21396,6 +21463,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -21427,6 +21495,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the recorder object that records each configuration change made to the resources.</p>",
         "name" : "ConfigurationRecorderName",
@@ -21571,6 +21640,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The details about your AWS Config rules.</p>",
         "name" : "ConfigRules",
@@ -21948,6 +22018,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -21979,6 +22050,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Indicates whether AWS or the customer owns and manages the AWS Config rule.</p>",
         "name" : "Owner",
@@ -22461,6 +22533,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of the AWS resource that was evaluated.</p>",
         "name" : "ResourceType",
@@ -22811,6 +22884,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list that contains the configuration history of one or more resources.</p>",
         "name" : "ConfigurationItems",
@@ -23188,6 +23262,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -23219,6 +23294,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the delivery channel through which the snapshot is delivered.</p>",
         "name" : "DeliveryChannelName",
@@ -23363,6 +23439,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The resource type of the related resource.</p>",
         "name" : "ResourceType",
@@ -23818,6 +23895,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.</p>",
         "name" : "EventSource",
@@ -24063,6 +24141,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -24094,6 +24173,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -24125,6 +24205,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "COMPLIANT",
@@ -24171,6 +24252,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -24202,6 +24284,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "",
         "name" : "ConfigRule",
@@ -24346,6 +24429,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -24377,6 +24461,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Indicates whether the specified AWS resource complies each AWS Config rule.</p>",
         "name" : "EvaluationResults",
@@ -24754,6 +24839,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -24785,6 +24871,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account. </p>",
         "name" : "ConfigurationRecorderNames",
@@ -25061,6 +25148,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Reverse",
@@ -25101,6 +25189,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the AWS Config rule.</p>",
         "name" : "ConfigRuleName",
@@ -25346,6 +25435,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -25377,6 +25467,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -25408,6 +25499,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Specifies whether AWS Config records configuration changes for every supported type of regional resource.</p> <p>If you set this option to <code>true</code>, when AWS Config adds support for a new type of regional resource, it automatically starts recording resources of that type.</p> <p>If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.</p>",
         "name" : "AllSupported",
@@ -25890,6 +25982,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>Uniquely identifies the evaluation result.</p>",
         "name" : "EvaluationResultIdentifier",
@@ -26555,6 +26648,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -26586,6 +26680,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -26617,6 +26712,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>A list of configuration recorder names.</p>",
         "name" : "ConfigurationRecorderNames",
@@ -26893,6 +26989,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "Ok",
@@ -26939,6 +27036,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : [ {
         "name" : "CUSTOM_LAMBDA",
@@ -26979,6 +27077,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -27010,6 +27109,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -27041,6 +27141,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the configuration recorder.</p>",
         "name" : "Name",
@@ -27916,6 +28017,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : null,
       "enums" : null,
       "variable" : {
@@ -27947,6 +28049,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The type of resources that you want AWS Config to list in the response.</p>",
         "name" : "ResourceType",

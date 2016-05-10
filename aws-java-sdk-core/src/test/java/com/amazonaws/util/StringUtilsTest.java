@@ -142,25 +142,35 @@ public class StringUtilsTest {
         String str2 = null;
         int result = StringUtils.compare(str1, str2);
     }
-    
+
     @Test
     public void testAppendAndCompact() {
         String[] pieces = { " ", "\t", "\n", "\u000b", "\r", "\f", "word", "foo", "bar", "baq"};
         int ITERATIONS = 10000;
         Random rng = new Random();
-        
+
         for(int i=0; i<ITERATIONS; i++) {
             int parts = rng.nextInt(10);
             String s = "";
             for(int j=0; j<parts; j++ ) {
                s = s + pieces[rng.nextInt(pieces.length)];
             }
-            
+
             StringBuilder sb = new StringBuilder();
             StringUtils.appendCompactedString(sb, s);
             String compacted = s.replaceAll("\\s+",  " ");
             assertEquals('['+compacted+']', sb.toString(), compacted);
         }
+    }
+
+    @Test
+    public void begins_with_ignore_case() {
+        Assert.assertTrue(StringUtils.beginsWithIgnoreCase("foobar", "FoO"));
+    }
+
+    @Test
+    public void begins_with_ignore_case_returns_false_when_seq_doesnot_match() {
+        Assert.assertFalse(StringUtils.beginsWithIgnoreCase("foobar", "baz"));
     }
 
 }

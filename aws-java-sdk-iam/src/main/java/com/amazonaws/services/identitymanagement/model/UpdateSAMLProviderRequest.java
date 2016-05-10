@@ -40,6 +40,12 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the SAML provider to update.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      */
     private String sAMLProviderArn;
 
@@ -122,9 +128,20 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the SAML provider to update.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      * 
      * @param sAMLProviderArn
-     *        The Amazon Resource Name (ARN) of the SAML provider to update.
+     *        The Amazon Resource Name (ARN) of the SAML provider to update.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
 
     public void setSAMLProviderArn(String sAMLProviderArn) {
@@ -135,8 +152,20 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the SAML provider to update.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the SAML provider to update.
+     * @return The Amazon Resource Name (ARN) of the SAML provider to
+     *         update.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
 
     public String getSAMLProviderArn() {
@@ -147,9 +176,20 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the SAML provider to update.
      * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
      * 
      * @param sAMLProviderArn
-     *        The Amazon Resource Name (ARN) of the SAML provider to update.
+     *        The Amazon Resource Name (ARN) of the SAML provider to update.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -26,9 +26,21 @@ import java.io.Serializable;
  * This data type is used as a response element in the following actions:
  * </p>
  * <ul>
- * <li><a>CreateGroup</a></li>
- * <li><a>GetGroup</a></li>
- * <li><a>ListGroups</a></li>
+ * <li>
+ * <p>
+ * <a>CreateGroup</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetGroup</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListGroups</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class Group implements Serializable, Cloneable {

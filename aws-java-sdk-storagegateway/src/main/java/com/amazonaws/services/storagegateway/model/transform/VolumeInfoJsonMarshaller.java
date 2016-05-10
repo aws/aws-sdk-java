@@ -51,9 +51,25 @@ public class VolumeInfoJsonMarshaller {
                 jsonGenerator.writeFieldName("VolumeARN").writeValue(
                         volumeInfo.getVolumeARN());
             }
+            if (volumeInfo.getVolumeId() != null) {
+                jsonGenerator.writeFieldName("VolumeId").writeValue(
+                        volumeInfo.getVolumeId());
+            }
+            if (volumeInfo.getGatewayARN() != null) {
+                jsonGenerator.writeFieldName("GatewayARN").writeValue(
+                        volumeInfo.getGatewayARN());
+            }
+            if (volumeInfo.getGatewayId() != null) {
+                jsonGenerator.writeFieldName("GatewayId").writeValue(
+                        volumeInfo.getGatewayId());
+            }
             if (volumeInfo.getVolumeType() != null) {
                 jsonGenerator.writeFieldName("VolumeType").writeValue(
                         volumeInfo.getVolumeType());
+            }
+            if (volumeInfo.getVolumeSizeInBytes() != null) {
+                jsonGenerator.writeFieldName("VolumeSizeInBytes").writeValue(
+                        volumeInfo.getVolumeSizeInBytes());
             }
 
             jsonGenerator.writeEndObject();

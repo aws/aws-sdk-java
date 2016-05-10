@@ -66,8 +66,10 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. In addition, you can append your own custom labels. For more
-     * information, see <a href=
+     * Binary. For the Number data type, you must use StringValue.
+     * </p>
+     * <p>
+     * You can also append custom labels. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      * >Message Attribute Data Types</a>.
      * </p>
@@ -371,16 +373,21 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. In addition, you can append your own custom labels. For more
-     * information, see <a href=
+     * Binary. For the Number data type, you must use StringValue.
+     * </p>
+     * <p>
+     * You can also append custom labels. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      * >Message Attribute Data Types</a>.
      * </p>
      * 
      * @param dataType
      *        Amazon SQS supports the following logical data types: String,
-     *        Number, and Binary. In addition, you can append your own custom
-     *        labels. For more information, see <a href=
+     *        Number, and Binary. For the Number data type, you must use
+     *        StringValue.</p>
+     *        <p>
+     *        You can also append custom labels. For more information, see <a
+     *        href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      *        >Message Attribute Data Types</a>.
      */
@@ -392,15 +399,20 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. In addition, you can append your own custom labels. For more
-     * information, see <a href=
+     * Binary. For the Number data type, you must use StringValue.
+     * </p>
+     * <p>
+     * You can also append custom labels. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      * >Message Attribute Data Types</a>.
      * </p>
      * 
      * @return Amazon SQS supports the following logical data types: String,
-     *         Number, and Binary. In addition, you can append your own custom
-     *         labels. For more information, see <a href=
+     *         Number, and Binary. For the Number data type, you must use
+     *         StringValue.</p>
+     *         <p>
+     *         You can also append custom labels. For more information, see <a
+     *         href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      *         >Message Attribute Data Types</a>.
      */
@@ -412,16 +424,21 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. In addition, you can append your own custom labels. For more
-     * information, see <a href=
+     * Binary. For the Number data type, you must use StringValue.
+     * </p>
+     * <p>
+     * You can also append custom labels. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      * >Message Attribute Data Types</a>.
      * </p>
      * 
      * @param dataType
      *        Amazon SQS supports the following logical data types: String,
-     *        Number, and Binary. In addition, you can append your own custom
-     *        labels. For more information, see <a href=
+     *        Number, and Binary. For the Number data type, you must use
+     *        StringValue.</p>
+     *        <p>
+     *        You can also append custom labels. For more information, see <a
+     *        href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      *        >Message Attribute Data Types</a>.
      * @return Returns a reference to this object so that method calls can be
