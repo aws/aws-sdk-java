@@ -50,7 +50,7 @@ class MetricUploaderThread extends Thread {
 			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider());
 		} else if (config.getClientConfiguration() != null && config.getCredentialsProvider() == null) {
 			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getClientConfiguration());
-		} else if (config.getClientConfiguration() != null && config.getCredentialsProvider() == null) {
+		} else if (config.getClientConfiguration() != null && config.getCredentialsProvider() != null) {
 			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider(),
 					config.getClientConfiguration());
 		}
