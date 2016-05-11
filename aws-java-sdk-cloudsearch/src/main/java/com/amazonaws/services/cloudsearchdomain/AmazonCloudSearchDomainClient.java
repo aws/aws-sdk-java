@@ -323,8 +323,12 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchRequestMarshaller().marshall(super
-                        .beforeMarshalling(searchRequest));
+                // Check if user wants to perform a large request using HTTP POST. Use HTTP GET otherwise.
+                if (searchRequest.getHttpMethod() == HttpMethodName.POST) {
+                    request = new LargeSearchRequestMarshaller().marshall(super.beforeMarshalling(searchRequest));
+                } else {
+                    request = new SearchRequestMarshaller().marshall(super.beforeMarshalling(searchRequest));
+                }
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
