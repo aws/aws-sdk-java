@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetDomainNamesRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class GetDomainNamesRequestMarshaller implements
         Marshaller<Request<GetDomainNamesRequest>, GetDomainNamesRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetDomainNamesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetDomainNamesRequest> marshall(
             GetDomainNamesRequest getDomainNamesRequest) {

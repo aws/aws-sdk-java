@@ -16,7 +16,7 @@ package com.amazonaws.regions;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.RuntimeHttpUtils;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -43,7 +43,7 @@ public class LegacyRegionXmlLoadUtils {
             IOException {
 
         return RegionMetadataParser.parse(
-                HttpUtils.fetchFile(uri, config));
+                RuntimeHttpUtils.fetchFile(uri, config));
     }
 
     /**

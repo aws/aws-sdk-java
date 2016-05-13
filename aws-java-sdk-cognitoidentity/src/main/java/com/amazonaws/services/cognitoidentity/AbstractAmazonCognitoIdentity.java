@@ -51,7 +51,8 @@ public class AbstractAmazonCognitoIdentity implements AmazonCognitoIdentity {
     }
 
     @Override
-    public void deleteIdentityPool(DeleteIdentityPoolRequest request) {
+    public DeleteIdentityPoolResult deleteIdentityPool(
+            DeleteIdentityPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,17 +120,19 @@ public class AbstractAmazonCognitoIdentity implements AmazonCognitoIdentity {
     }
 
     @Override
-    public void setIdentityPoolRoles(SetIdentityPoolRolesRequest request) {
+    public SetIdentityPoolRolesResult setIdentityPoolRoles(
+            SetIdentityPoolRolesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void unlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request) {
+    public UnlinkDeveloperIdentityResult unlinkDeveloperIdentity(
+            UnlinkDeveloperIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void unlinkIdentity(UnlinkIdentityRequest request) {
+    public UnlinkIdentityResult unlinkIdentity(UnlinkIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeWorkingStorageRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DescribeWorkingStorageRequestMarshaller
         implements
         Marshaller<Request<DescribeWorkingStorageRequest>, DescribeWorkingStorageRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeWorkingStorageRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeWorkingStorageRequest> marshall(
             DescribeWorkingStorageRequest describeWorkingStorageRequest) {
@@ -59,8 +66,8 @@ public class DescribeWorkingStorageRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

@@ -19,10 +19,12 @@ package com.amazonaws.http;
 import java.io.IOException;
 import java.util.Map;
 
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.ValidationUtils;
-import com.amazonaws.util.json.SdkJsonProtocolFactory;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 
@@ -36,62 +38,45 @@ import com.amazonaws.transform.VoidJsonUnmarshaller;
 import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
 
 /**
- * Default implementation of HttpResponseHandler that handles a successful
- * response from an AWS service and unmarshalls the result using a JSON
- * unmarshaller.
+ * Default implementation of HttpResponseHandler that handles a successful response from an AWS
+ * service and unmarshalls the result using a JSON unmarshaller.
  *
- * @param <T>
- *            Indicates the type being unmarshalled by this response handler.
+ * @param <T> Indicates the type being unmarshalled by this response handler.
  */
+@SdkInternalApi
 public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServiceResponse<T>> {
 
-    /** The JSON unmarshaller to use when handling the response */
+    /**
+     * The JSON unmarshaller to use when handling the response
+     */
     private Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller;
 
-    /** Shared logger for profiling information */
+    /**
+     * Shared logger for profiling information
+     */
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
 
     private final JsonFactory jsonFactory;
 
-    public boolean needsConnectionLeftOpen = false;
+    private final boolean needsConnectionLeftOpen;
 
-    private boolean isPayloadJson = true;
+    private final boolean isPayloadJson;
 
-    private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>
-            simpleTypeUnmarshallers;
-
-    /**
-     * Constructs a new response handler that will use the specified JSON
-     * unmarshaller to unmarshall the service response and uses the specified
-     * response element path to find the root of the business data in the
-     * service's response.
-     *
-     * @param responseUnmarshaller
-     *            The JSON unmarshaller to use on the response.
-     */
-    @Deprecated
-    public JsonResponseHandler(Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller) {
-        this(responseUnmarshaller,
-                SdkJsonProtocolFactory.DEFAULT_SCALAR_UNMARSHALLERS,
-                SdkJsonProtocolFactory.DEFAULT_FACTORY);
-    }
+    private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers;
 
     /**
-     * Constructs a new response handler that will use the specified JSON
-     * unmarshaller to unmarshall the service response and uses the specified
-     * response element path to find the root of the business data in the
-     * service's response.
+     * Constructs a new response handler that will use the specified JSON unmarshaller to unmarshall
+     * the service response and uses the specified response element path to find the root of the
+     * business data in the service's response.
      *
-     * @param responseUnmarshaller
-     *            The JSON unmarshaller to use on the response.
-     * @param simpleTypeUnmarshallers
-     *              List of unmarshallers to be used for scalar types.
-     * @param jsonFactory the json factory to be used for parsing the response.
-     *
+     * @param responseUnmarshaller    The JSON unmarshaller to use on the response.
+     * @param simpleTypeUnmarshallers List of unmarshallers to be used for scalar types.
+     * @param jsonFactory             the json factory to be used for parsing the response.
      */
-    public JsonResponseHandler(Unmarshaller<T, JsonUnmarshallerContext>
-                                       responseUnmarshaller, Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>
-            simpleTypeUnmarshallers, JsonFactory jsonFactory) {
+    public JsonResponseHandler(Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller,
+                               Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers,
+                               JsonFactory jsonFactory, boolean needsConnectionLeftOpen,
+                               boolean isPayloadJson) {
         /*
          * Even if the invoked operation just returns null, we still need an
          * unmarshaller to run so we can pull out response metadata.
@@ -99,13 +84,15 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
          * We might want to pass this in through the client class so that we
          * don't have to do this check here.
          */
-        this.responseUnmarshaller = responseUnmarshaller != null ?
-                responseUnmarshaller : new VoidJsonUnmarshaller<T>();
+        this.responseUnmarshaller =
+                responseUnmarshaller != null ? responseUnmarshaller : new VoidJsonUnmarshaller<T>();
 
-        this.simpleTypeUnmarshallers = ValidationUtils.assertNotNull
-                (simpleTypeUnmarshallers, "simple type unmarshallers");
-        this.jsonFactory = ValidationUtils.assertNotNull(jsonFactory,
-                "JSONFactory");
+        this.needsConnectionLeftOpen = needsConnectionLeftOpen;
+        this.isPayloadJson = isPayloadJson;
+
+        this.simpleTypeUnmarshallers = ValidationUtils
+                .assertNotNull(simpleTypeUnmarshallers, "simple type unmarshallers");
+        this.jsonFactory = ValidationUtils.assertNotNull(jsonFactory, "JSONFactory");
     }
 
 
@@ -122,7 +109,8 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
 
         if (shouldParsePayloadAsJson()) {
             if (CRC32Checksum != null) {
-                crc32ChecksumInputStream = new CRC32ChecksumCalculatingInputStream(response.getContent());
+                crc32ChecksumInputStream = new CRC32ChecksumCalculatingInputStream(
+                        response.getContent());
                 jsonParser = jsonFactory.createParser(crc32ChecksumInputStream);
             } else {
                 jsonParser = jsonFactory.createParser(response.getContent());
@@ -141,14 +129,16 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
                 long serverSideCRC = Long.parseLong(CRC32Checksum);
                 long clientSideCRC = crc32ChecksumInputStream.getCRC32Checksum();
                 if (clientSideCRC != serverSideCRC) {
-                    throw new CRC32MismatchException("Client calculated crc32 checksum didn't match that calculated by server side");
+                    throw new CRC32MismatchException(
+                            "Client calculated crc32 checksum didn't match that calculated by server side");
                 }
             }
 
             awsResponse.setResult(result);
 
             Map<String, String> metadata = unmarshallerContext.getMetadata();
-            metadata.put(ResponseMetadata.AWS_REQUEST_ID, response.getHeaders().get(X_AMZN_REQUEST_ID_HEADER));
+            metadata.put(ResponseMetadata.AWS_REQUEST_ID,
+                         response.getHeaders().get(X_AMZN_REQUEST_ID_HEADER));
             awsResponse.setResponseMetadata(new ResponseMetadata(metadata));
 
             log.trace("Done parsing service response");
@@ -165,28 +155,19 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     }
 
     /**
-     * Hook for subclasses to override in order to collect additional metadata
-     * from service responses.
+     * Hook for subclasses to override in order to collect additional metadata from service
+     * responses.
      *
      * @param unmarshallerContext
-     *            The unmarshaller context used to process a service's response
+     *            The unmarshaller context used to configure a service's response
      *            data.
      */
-    protected void registerAdditionalMetadataExpressions(JsonUnmarshallerContext unmarshallerContext) {}
+    protected void registerAdditionalMetadataExpressions(
+            JsonUnmarshallerContext unmarshallerContext) {
+    }
 
     public boolean needsConnectionLeftOpen() {
         return needsConnectionLeftOpen;
-    }
-
-    public void setNeedsConnectionLeftOpen(boolean needsConnectionLeftOpen) {
-        this.needsConnectionLeftOpen = needsConnectionLeftOpen;
-    }
-
-    /**
-     * Sets whether the payload contains JSON.
-     */
-    public void setIsPayloadJson(boolean parsePayloadAsJson) {
-        this.isPayloadJson = parsePayloadAsJson;
     }
 
     /**

@@ -20,9 +20,9 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "codepipeline",
     "signingName" : "codepipeline",
+    "jsonProtocol" : true,
     "serviceName" : "CodePipeline",
     "cborProtocol" : false,
-    "jsonProtocol" : true,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
@@ -198,18 +198,21 @@
         "variableSetterType" : "DeleteCustomActionTypeRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteCustomActionTypeResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, Void>",
+      "syncReturnType" : "DeleteCustomActionTypeResult",
+      "asyncReturnType" : "DeleteCustomActionTypeResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteCustomActionTypeResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteCustomActionTypeResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, DeleteCustomActionTypeResult>",
       "methodName" : "deleteCustomActionType"
     },
     "DeletePipeline" : {
@@ -225,18 +228,21 @@
         "variableSetterType" : "DeletePipelineRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeletePipelineResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void>",
+      "syncReturnType" : "DeletePipelineResult",
+      "asyncReturnType" : "DeletePipelineResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeletePipelineResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeletePipelineResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult>",
       "methodName" : "deletePipeline"
     },
     "DisableStageTransition" : {
@@ -252,7 +258,10 @@
         "variableSetterType" : "DisableStageTransitionRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DisableStageTransitionResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
@@ -265,11 +274,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, Void>",
+      "syncReturnType" : "DisableStageTransitionResult",
+      "asyncReturnType" : "DisableStageTransitionResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DisableStageTransitionResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DisableStageTransitionResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, DisableStageTransitionResult>",
       "methodName" : "disableStageTransition"
     },
     "EnableStageTransition" : {
@@ -285,7 +294,10 @@
         "variableSetterType" : "EnableStageTransitionRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "EnableStageTransitionResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
@@ -298,11 +310,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, Void>",
+      "syncReturnType" : "EnableStageTransitionResult",
+      "asyncReturnType" : "EnableStageTransitionResult",
+      "asyncFutureType" : "java.util.concurrent.Future<EnableStageTransitionResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<EnableStageTransitionResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, EnableStageTransitionResult>",
       "methodName" : "enableStageTransition"
     },
     "GetJobDetails" : {
@@ -627,7 +639,10 @@
         "variableSetterType" : "PutJobFailureResultRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "PutJobFailureResultResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
@@ -640,11 +655,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, Void>",
+      "syncReturnType" : "PutJobFailureResultResult",
+      "asyncReturnType" : "PutJobFailureResultResult",
+      "asyncFutureType" : "java.util.concurrent.Future<PutJobFailureResultResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<PutJobFailureResultResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, PutJobFailureResultResult>",
       "methodName" : "putJobFailureResult"
     },
     "PutJobSuccessResult" : {
@@ -660,7 +675,10 @@
         "variableSetterType" : "PutJobSuccessResultRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "PutJobSuccessResultResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
@@ -673,11 +691,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, Void>",
+      "syncReturnType" : "PutJobSuccessResultResult",
+      "asyncReturnType" : "PutJobSuccessResultResult",
+      "asyncFutureType" : "java.util.concurrent.Future<PutJobSuccessResultResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<PutJobSuccessResultResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, PutJobSuccessResultResult>",
       "methodName" : "putJobSuccessResult"
     },
     "PutThirdPartyJobFailureResult" : {
@@ -693,7 +711,10 @@
         "variableSetterType" : "PutThirdPartyJobFailureResultRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "PutThirdPartyJobFailureResultResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
@@ -709,11 +730,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, Void>",
+      "syncReturnType" : "PutThirdPartyJobFailureResultResult",
+      "asyncReturnType" : "PutThirdPartyJobFailureResultResult",
+      "asyncFutureType" : "java.util.concurrent.Future<PutThirdPartyJobFailureResultResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<PutThirdPartyJobFailureResultResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, PutThirdPartyJobFailureResultResult>",
       "methodName" : "putThirdPartyJobFailureResult"
     },
     "PutThirdPartyJobSuccessResult" : {
@@ -729,7 +750,10 @@
         "variableSetterType" : "PutThirdPartyJobSuccessResultRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "PutThirdPartyJobSuccessResultResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
@@ -745,11 +769,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, Void>",
+      "syncReturnType" : "PutThirdPartyJobSuccessResultResult",
+      "asyncReturnType" : "PutThirdPartyJobSuccessResultResult",
+      "asyncFutureType" : "java.util.concurrent.Future<PutThirdPartyJobSuccessResultResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<PutThirdPartyJobSuccessResultResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, PutThirdPartyJobSuccessResultResult>",
       "methodName" : "putThirdPartyJobSuccessResult"
     },
     "StartPipelineExecution" : {
@@ -6040,6 +6064,41 @@
         }
       }
     },
+    "DeleteCustomActionTypeResult" : {
+      "c2jName" : "DeleteCustomActionTypeResult",
+      "documentation" : null,
+      "shapeName" : "DeleteCustomActionTypeResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteCustomActionTypeResult",
+        "variableType" : "DeleteCustomActionTypeResult",
+        "variableDeclarationType" : "DeleteCustomActionTypeResult",
+        "documentation" : null,
+        "simpleType" : "DeleteCustomActionTypeResult",
+        "variableSetterType" : "DeleteCustomActionTypeResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "InvalidStructureException" : {
       "c2jName" : "InvalidStructureException",
       "documentation" : "<p>The specified structure was specified in an invalid format.</p>",
@@ -7542,6 +7601,41 @@
         "documentation" : null,
         "simpleType" : "ActionCategory",
         "variableSetterType" : "ActionCategory"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "PutJobSuccessResultResult" : {
+      "c2jName" : "PutJobSuccessResultResult",
+      "documentation" : null,
+      "shapeName" : "PutJobSuccessResultResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "putJobSuccessResultResult",
+        "variableType" : "PutJobSuccessResultResult",
+        "variableDeclarationType" : "PutJobSuccessResultResult",
+        "documentation" : null,
+        "simpleType" : "PutJobSuccessResultResult",
+        "variableSetterType" : "PutJobSuccessResultResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -13941,6 +14035,41 @@
         }
       }
     },
+    "PutThirdPartyJobFailureResultResult" : {
+      "c2jName" : "PutThirdPartyJobFailureResultResult",
+      "documentation" : null,
+      "shapeName" : "PutThirdPartyJobFailureResultResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "putThirdPartyJobFailureResultResult",
+        "variableType" : "PutThirdPartyJobFailureResultResult",
+        "variableDeclarationType" : "PutThirdPartyJobFailureResultResult",
+        "documentation" : null,
+        "simpleType" : "PutThirdPartyJobFailureResultResult",
+        "variableSetterType" : "PutThirdPartyJobFailureResultResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "PipelineDeclaration" : {
       "c2jName" : "PipelineDeclaration",
       "documentation" : "<p>Represents the structure of actions and stages to be performed in the pipeline. </p>",
@@ -17818,6 +17947,41 @@
       },
       "membersAsMap" : { }
     },
+    "EnableStageTransitionResult" : {
+      "c2jName" : "EnableStageTransitionResult",
+      "documentation" : null,
+      "shapeName" : "EnableStageTransitionResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "enableStageTransitionResult",
+        "variableType" : "EnableStageTransitionResult",
+        "variableDeclarationType" : "EnableStageTransitionResult",
+        "documentation" : null,
+        "simpleType" : "EnableStageTransitionResult",
+        "variableSetterType" : "EnableStageTransitionResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "CreateCustomActionTypeResult" : {
       "c2jName" : "CreateCustomActionTypeOutput",
       "documentation" : "<p>Represents the output of a create custom action operation.</p>",
@@ -17983,6 +18147,41 @@
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidJobException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "DisableStageTransitionResult" : {
+      "c2jName" : "DisableStageTransitionResult",
+      "documentation" : null,
+      "shapeName" : "DisableStageTransitionResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "disableStageTransitionResult",
+        "variableType" : "DisableStageTransitionResult",
+        "variableDeclarationType" : "DisableStageTransitionResult",
+        "documentation" : null,
+        "simpleType" : "DisableStageTransitionResult",
+        "variableSetterType" : "DisableStageTransitionResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
       "customization" : {
         "artificialResultWrapper" : null,
         "skipGeneratingModelClass" : false,
@@ -18446,6 +18645,41 @@
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidJobStateException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "DeletePipelineResult" : {
+      "c2jName" : "DeletePipelineResult",
+      "documentation" : null,
+      "shapeName" : "DeletePipelineResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deletePipelineResult",
+        "variableType" : "DeletePipelineResult",
+        "variableDeclarationType" : "DeletePipelineResult",
+        "documentation" : null,
+        "simpleType" : "DeletePipelineResult",
+        "variableSetterType" : "DeletePipelineResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
       "customization" : {
         "artificialResultWrapper" : null,
         "skipGeneratingModelClass" : false,
@@ -22693,6 +22927,41 @@
       },
       "membersAsMap" : { }
     },
+    "PutThirdPartyJobSuccessResultResult" : {
+      "c2jName" : "PutThirdPartyJobSuccessResultResult",
+      "documentation" : null,
+      "shapeName" : "PutThirdPartyJobSuccessResultResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "putThirdPartyJobSuccessResultResult",
+        "variableType" : "PutThirdPartyJobSuccessResultResult",
+        "variableDeclarationType" : "PutThirdPartyJobSuccessResultResult",
+        "documentation" : null,
+        "simpleType" : "PutThirdPartyJobSuccessResultResult",
+        "variableSetterType" : "PutThirdPartyJobSuccessResultResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "ArtifactDetails" : {
       "c2jName" : "ArtifactDetails",
       "documentation" : "<p>Returns information about the details of an artifact.</p>",
@@ -25584,6 +25853,41 @@
           "varargSetterDocumentation" : "/**<p>The timestamp when the transition state was last changed.</p>\n@param lastChangedAt The timestamp when the transition state was last changed.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "PutJobFailureResultResult" : {
+      "c2jName" : "PutJobFailureResultResult",
+      "documentation" : null,
+      "shapeName" : "PutJobFailureResultResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "putJobFailureResultResult",
+        "variableType" : "PutJobFailureResultResult",
+        "variableDeclarationType" : "PutJobFailureResultResult",
+        "documentation" : null,
+        "simpleType" : "PutJobFailureResultResult",
+        "variableSetterType" : "PutJobFailureResultResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "PollForThirdPartyJobsRequest" : {
       "c2jName" : "PollForThirdPartyJobsInput",
@@ -28980,6 +29284,7 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
+    "customErrorCodeFieldName" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {

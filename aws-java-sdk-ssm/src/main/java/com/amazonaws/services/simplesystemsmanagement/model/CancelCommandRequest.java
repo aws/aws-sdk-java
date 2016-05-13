@@ -20,12 +20,16 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class CancelCommandRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
-    /** The ID of the command you want to cancel. */
+    /**
+     * <p>
+     * The ID of the command you want to cancel.
+     * </p>
+     */
     private String commandId;
     /**
      * <p>
@@ -37,7 +41,9 @@ public class CancelCommandRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
 
     /**
+     * <p>
      * The ID of the command you want to cancel.
+     * </p>
      * 
      * @param commandId
      *        The ID of the command you want to cancel.
@@ -48,7 +54,9 @@ public class CancelCommandRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The ID of the command you want to cancel.
+     * </p>
      * 
      * @return The ID of the command you want to cancel.
      */
@@ -58,7 +66,9 @@ public class CancelCommandRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The ID of the command you want to cancel.
+     * </p>
      * 
      * @param commandId
      *        The ID of the command you want to cancel.

@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -85,10 +85,56 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
      */
     protected static final com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflowClientConfigurationFactory configFactory = new com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflowClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all Amazon SWF exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.0")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simpleworkflow.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("OperationNotPermittedFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simpleworkflow.model.OperationNotPermittedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UnknownResourceFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simpleworkflow.model.UnknownResourceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DomainAlreadyExistsFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "WorkflowExecutionAlreadyStartedFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DefaultUndefinedFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DomainDeprecatedFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TypeAlreadyExistsFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TypeDeprecatedFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SWF. A
@@ -243,45 +289,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simpleworkflow.model.LimitExceededException.class,
-                        "LimitExceededFault"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simpleworkflow.model.OperationNotPermittedException.class,
-                        "OperationNotPermittedFault"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simpleworkflow.model.UnknownResourceException.class,
-                        "UnknownResourceFault"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException.class,
-                        "DomainAlreadyExistsFault"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException.class,
-                        "WorkflowExecutionAlreadyStartedFault"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException.class,
-                        "DefaultUndefinedFault"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException.class,
-                        "DomainDeprecatedFault"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException.class,
-                        "TypeAlreadyExistsFault"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException.class,
-                        "TypeDeprecatedFault"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -362,7 +369,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CountClosedWorkflowExecutionsRequestMarshaller()
+                request = new CountClosedWorkflowExecutionsRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(countClosedWorkflowExecutionsRequest));
                 // Binds the request metrics to the current request.
@@ -371,10 +379,11 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<WorkflowExecutionCount> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new WorkflowExecutionCountJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<WorkflowExecutionCount>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new WorkflowExecutionCountJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -452,19 +461,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CountOpenWorkflowExecutionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(countOpenWorkflowExecutionsRequest));
+                request = new CountOpenWorkflowExecutionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(countOpenWorkflowExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<WorkflowExecutionCount> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new WorkflowExecutionCountJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<WorkflowExecutionCount>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new WorkflowExecutionCountJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -534,19 +544,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CountPendingActivityTasksRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(countPendingActivityTasksRequest));
+                request = new CountPendingActivityTasksRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(countPendingActivityTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PendingTaskCount> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new PendingTaskCountJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PendingTaskCount>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PendingTaskCountJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -616,19 +627,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CountPendingDecisionTasksRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(countPendingDecisionTasksRequest));
+                request = new CountPendingDecisionTasksRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(countPendingDecisionTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PendingTaskCount> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new PendingTaskCountJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PendingTaskCount>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PendingTaskCountJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -707,18 +719,19 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeprecateActivityTypeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deprecateActivityTypeRequest));
+                request = new DeprecateActivityTypeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deprecateActivityTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -787,17 +800,19 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeprecateDomainRequestMarshaller().marshall(super
-                        .beforeMarshalling(deprecateDomainRequest));
+                request = new DeprecateDomainRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deprecateDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -875,18 +890,19 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeprecateWorkflowTypeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deprecateWorkflowTypeRequest));
+                request = new DeprecateWorkflowTypeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deprecateWorkflowTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -959,19 +975,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeActivityTypeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeActivityTypeRequest));
+                request = new DescribeActivityTypeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeActivityTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ActivityTypeDetail> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ActivityTypeDetailJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ActivityTypeDetail>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ActivityTypeDetailJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1036,18 +1053,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDomainRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeDomainRequest));
+                request = new DescribeDomainRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DomainDetail> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new DomainDetailJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DomainDetail>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DomainDetailJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1115,20 +1134,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeWorkflowExecutionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeWorkflowExecutionRequest));
+                request = new DescribeWorkflowExecutionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeWorkflowExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<WorkflowExecutionDetail> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new WorkflowExecutionDetailJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<WorkflowExecutionDetail>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new WorkflowExecutionDetailJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1203,19 +1222,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeWorkflowTypeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeWorkflowTypeRequest));
+                request = new DescribeWorkflowTypeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeWorkflowTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<WorkflowTypeDetail> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new WorkflowTypeDetailJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<WorkflowTypeDetail>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new WorkflowTypeDetailJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1284,18 +1304,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetWorkflowExecutionHistoryRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getWorkflowExecutionHistoryRequest));
+                request = new GetWorkflowExecutionHistoryRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getWorkflowExecutionHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<History> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new HistoryJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<History>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new HistoryJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1365,19 +1387,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListActivityTypesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listActivityTypesRequest));
+                request = new ListActivityTypesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listActivityTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ActivityTypeInfos> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ActivityTypeInfosJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ActivityTypeInfos>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ActivityTypeInfosJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1457,7 +1480,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListClosedWorkflowExecutionsRequestMarshaller()
+                request = new ListClosedWorkflowExecutionsRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(listClosedWorkflowExecutionsRequest));
                 // Binds the request metrics to the current request.
@@ -1466,10 +1490,11 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<WorkflowExecutionInfos> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new WorkflowExecutionInfosJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<WorkflowExecutionInfos>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new WorkflowExecutionInfosJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1533,18 +1558,19 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDomainsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listDomainsRequest));
+                request = new ListDomainsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DomainInfos> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new DomainInfosJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DomainInfos>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DomainInfosJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1624,19 +1650,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListOpenWorkflowExecutionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listOpenWorkflowExecutionsRequest));
+                request = new ListOpenWorkflowExecutionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listOpenWorkflowExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<WorkflowExecutionInfos> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new WorkflowExecutionInfosJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<WorkflowExecutionInfos>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new WorkflowExecutionInfosJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1703,19 +1730,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListWorkflowTypesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listWorkflowTypesRequest));
+                request = new ListWorkflowTypesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listWorkflowTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<WorkflowTypeInfos> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new WorkflowTypeInfosJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<WorkflowTypeInfos>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new WorkflowTypeInfosJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1797,19 +1825,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PollForActivityTaskRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(pollForActivityTaskRequest));
+                request = new PollForActivityTaskRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(pollForActivityTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ActivityTask> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new ActivityTaskJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ActivityTask>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ActivityTaskJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1903,19 +1932,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PollForDecisionTaskRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(pollForDecisionTaskRequest));
+                request = new PollForDecisionTaskRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(pollForDecisionTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DecisionTask> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new DecisionTaskJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DecisionTask>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DecisionTaskJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2010,19 +2040,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RecordActivityTaskHeartbeatRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(recordActivityTaskHeartbeatRequest));
+                request = new RecordActivityTaskHeartbeatRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(recordActivityTaskHeartbeatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ActivityTaskStatus> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ActivityTaskStatusJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ActivityTaskStatus>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ActivityTaskStatusJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2109,18 +2140,19 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterActivityTypeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(registerActivityTypeRequest));
+                request = new RegisterActivityTypeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(registerActivityTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -2183,17 +2215,19 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterDomainRequestMarshaller().marshall(super
-                        .beforeMarshalling(registerDomainRequest));
+                request = new RegisterDomainRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(registerDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -2282,18 +2316,19 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterWorkflowTypeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(registerWorkflowTypeRequest));
+                request = new RegisterWorkflowTypeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(registerWorkflowTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -2365,7 +2400,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RequestCancelWorkflowExecutionRequestMarshaller()
+                request = new RequestCancelWorkflowExecutionRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(requestCancelWorkflowExecutionRequest));
                 // Binds the request metrics to the current request.
@@ -2374,9 +2410,10 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -2456,18 +2493,19 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RespondActivityTaskCanceledRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(respondActivityTaskCanceledRequest));
+                request = new RespondActivityTaskCanceledRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(respondActivityTaskCanceledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -2545,7 +2583,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RespondActivityTaskCompletedRequestMarshaller()
+                request = new RespondActivityTaskCompletedRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(respondActivityTaskCompletedRequest));
                 // Binds the request metrics to the current request.
@@ -2554,9 +2593,10 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -2630,18 +2670,19 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RespondActivityTaskFailedRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(respondActivityTaskFailedRequest));
+                request = new RespondActivityTaskFailedRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(respondActivityTaskFailedRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -2702,7 +2743,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RespondDecisionTaskCompletedRequestMarshaller()
+                request = new RespondDecisionTaskCompletedRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(respondDecisionTaskCompletedRequest));
                 // Binds the request metrics to the current request.
@@ -2711,9 +2753,10 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -2783,18 +2826,19 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SignalWorkflowExecutionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(signalWorkflowExecutionRequest));
+                request = new SignalWorkflowExecutionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(signalWorkflowExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -2893,18 +2937,20 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartWorkflowExecutionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(startWorkflowExecutionRequest));
+                request = new StartWorkflowExecutionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(startWorkflowExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Run> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new RunJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Run>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RunJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2979,18 +3025,19 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TerminateWorkflowExecutionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(terminateWorkflowExecutionRequest));
+                request = new TerminateWorkflowExecutionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(terminateWorkflowExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<Void>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false), null);
             invoke(request, responseHandler, executionContext);
 
         } finally {
@@ -3062,8 +3109,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

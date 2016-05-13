@@ -27,57 +27,16 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the error.
-     * </p>
-     */
-    private UnsuccessfulItemError error;
-    /**
-     * <p>
      * The ID of the resource.
      * </p>
      */
     private String resourceId;
-
     /**
      * <p>
      * Information about the error.
      * </p>
-     * 
-     * @param error
-     *        Information about the error.
      */
-
-    public void setError(UnsuccessfulItemError error) {
-        this.error = error;
-    }
-
-    /**
-     * <p>
-     * Information about the error.
-     * </p>
-     * 
-     * @return Information about the error.
-     */
-
-    public UnsuccessfulItemError getError() {
-        return this.error;
-    }
-
-    /**
-     * <p>
-     * Information about the error.
-     * </p>
-     * 
-     * @param error
-     *        Information about the error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public UnsuccessfulItem withError(UnsuccessfulItemError error) {
-        setError(error);
-        return this;
-    }
+    private UnsuccessfulItemError error;
 
     /**
      * <p>
@@ -121,6 +80,47 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the error.
+     * </p>
+     * 
+     * @param error
+     *        Information about the error.
+     */
+
+    public void setError(UnsuccessfulItemError error) {
+        this.error = error;
+    }
+
+    /**
+     * <p>
+     * Information about the error.
+     * </p>
+     * 
+     * @return Information about the error.
+     */
+
+    public UnsuccessfulItemError getError() {
+        return this.error;
+    }
+
+    /**
+     * <p>
+     * Information about the error.
+     * </p>
+     * 
+     * @param error
+     *        Information about the error.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UnsuccessfulItem withError(UnsuccessfulItemError error) {
+        setError(error);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -132,10 +132,10 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getError() != null)
-            sb.append("Error: " + getError() + ",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId());
+            sb.append("ResourceId: " + getResourceId() + ",");
+        if (getError() != null)
+            sb.append("Error: " + getError());
         sb.append("}");
         return sb.toString();
     }
@@ -150,15 +150,15 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
         if (obj instanceof UnsuccessfulItem == false)
             return false;
         UnsuccessfulItem other = (UnsuccessfulItem) obj;
-        if (other.getError() == null ^ this.getError() == null)
-            return false;
-        if (other.getError() != null
-                && other.getError().equals(this.getError()) == false)
-            return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
         if (other.getResourceId() != null
                 && other.getResourceId().equals(this.getResourceId()) == false)
+            return false;
+        if (other.getError() == null ^ this.getError() == null)
+            return false;
+        if (other.getError() != null
+                && other.getError().equals(this.getError()) == false)
             return false;
         return true;
     }
@@ -169,9 +169,9 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode
-                + ((getError() == null) ? 0 : getError().hashCode());
-        hashCode = prime * hashCode
                 + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode
+                + ((getError() == null) ? 0 : getError().hashCode());
         return hashCode;
     }
 

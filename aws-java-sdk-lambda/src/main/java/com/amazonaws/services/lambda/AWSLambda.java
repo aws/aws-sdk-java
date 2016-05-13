@@ -293,6 +293,7 @@ public interface AWSLambda {
      * </p>
      * 
      * @param deleteAliasRequest
+     * @return Result of the DeleteAlias operation returned by the service.
      * @throws ServiceException
      *         The AWS Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
@@ -304,7 +305,7 @@ public interface AWSLambda {
      * @throws TooManyRequestsException
      * @sample AWSLambda.DeleteAlias
      */
-    void deleteAlias(DeleteAliasRequest deleteAliasRequest);
+    DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest);
 
     /**
      * <p>
@@ -360,6 +361,7 @@ public interface AWSLambda {
      * </p>
      * 
      * @param deleteFunctionRequest
+     * @return Result of the DeleteFunction operation returned by the service.
      * @throws ServiceException
      *         The AWS Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
@@ -376,7 +378,8 @@ public interface AWSLambda {
      *         The resource already exists.
      * @sample AWSLambda.DeleteFunction
      */
-    void deleteFunction(DeleteFunctionRequest deleteFunctionRequest);
+    DeleteFunctionResult deleteFunction(
+            DeleteFunctionRequest deleteFunctionRequest);
 
     /**
      * <p>
@@ -856,6 +859,7 @@ public interface AWSLambda {
      * </p>
      * 
      * @param removePermissionRequest
+     * @return Result of the RemovePermission operation returned by the service.
      * @throws ServiceException
      *         The AWS Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
@@ -870,7 +874,8 @@ public interface AWSLambda {
      * @throws TooManyRequestsException
      * @sample AWSLambda.RemovePermission
      */
-    void removePermission(RemovePermissionRequest removePermissionRequest);
+    RemovePermissionResult removePermission(
+            RemovePermissionRequest removePermissionRequest);
 
     /**
      * <p>

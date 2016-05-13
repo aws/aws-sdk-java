@@ -20,9 +20,9 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "acm",
     "signingName" : "acm",
+    "jsonProtocol" : true,
     "serviceName" : "ACM",
     "cborProtocol" : false,
-    "jsonProtocol" : true,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
@@ -42,7 +42,10 @@
         "variableSetterType" : "AddTagsToCertificateRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "AddTagsToCertificateResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p> The specified certificate cannot be found in the caller's account, or the caller's account cannot be found. </p>"
@@ -57,12 +60,12 @@
         "documentation" : "<p>The request contains too many tags. Try the request again with fewer tags.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "AddTagsToCertificateResult",
+      "asyncReturnType" : "AddTagsToCertificateResult",
+      "asyncFutureType" : "java.util.concurrent.Future<AddTagsToCertificateResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToCertificateResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, AddTagsToCertificateResult>",
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, Void>",
       "methodName" : "addTagsToCertificate"
     },
     "DeleteCertificate" : {
@@ -78,7 +81,10 @@
         "variableSetterType" : "DeleteCertificateRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteCertificateResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p> The specified certificate cannot be found in the caller's account, or the caller's account cannot be found. </p>"
@@ -90,12 +96,12 @@
         "documentation" : "<p> The requested Amazon Resource Name (ARN) does not refer to an existing resource. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "DeleteCertificateResult",
+      "asyncReturnType" : "DeleteCertificateResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteCertificateResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteCertificateResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult>",
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, Void>",
       "methodName" : "deleteCertificate"
     },
     "DescribeCertificate" : {
@@ -123,12 +129,12 @@
         "documentation" : "<p> The requested Amazon Resource Name (ARN) does not refer to an existing resource. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeCertificateResult",
       "asyncReturnType" : "DescribeCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult>",
+      "authenticated" : true,
       "methodName" : "describeCertificate"
     },
     "GetCertificate" : {
@@ -159,12 +165,12 @@
         "documentation" : "<p> The requested Amazon Resource Name (ARN) does not refer to an existing resource. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetCertificateResult",
       "asyncReturnType" : "GetCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCertificateRequest, GetCertificateResult>",
+      "authenticated" : true,
       "methodName" : "getCertificate"
     },
     "ListCertificates" : {
@@ -186,12 +192,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListCertificatesResult",
       "asyncReturnType" : "ListCertificatesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCertificatesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCertificatesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult>",
+      "authenticated" : true,
       "methodName" : "listCertificates"
     },
     "ListTagsForCertificate" : {
@@ -219,12 +225,12 @@
         "documentation" : "<p> The requested Amazon Resource Name (ARN) does not refer to an existing resource. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTagsForCertificateResult",
       "asyncReturnType" : "ListTagsForCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForCertificateRequest, ListTagsForCertificateResult>",
+      "authenticated" : true,
       "methodName" : "listTagsForCertificate"
     },
     "RemoveTagsFromCertificate" : {
@@ -240,7 +246,10 @@
         "variableSetterType" : "RemoveTagsFromCertificateRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "RemoveTagsFromCertificateResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p> The specified certificate cannot be found in the caller's account, or the caller's account cannot be found. </p>"
@@ -252,12 +261,12 @@
         "documentation" : "<p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "RemoveTagsFromCertificateResult",
+      "asyncReturnType" : "RemoveTagsFromCertificateResult",
+      "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromCertificateResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromCertificateResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, RemoveTagsFromCertificateResult>",
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, Void>",
       "methodName" : "removeTagsFromCertificate"
     },
     "RequestCertificate" : {
@@ -285,12 +294,12 @@
         "documentation" : "<p> One or more values in the <a>DomainValidationOption</a> structure is incorrect. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RequestCertificateResult",
       "asyncReturnType" : "RequestCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<RequestCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RequestCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RequestCertificateRequest, RequestCertificateResult>",
+      "authenticated" : true,
       "methodName" : "requestCertificate"
     },
     "ResendValidationEmail" : {
@@ -306,7 +315,10 @@
         "variableSetterType" : "ResendValidationEmailRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "ResendValidationEmailResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p> The specified certificate cannot be found in the caller's account, or the caller's account cannot be found. </p>"
@@ -321,12 +333,12 @@
         "documentation" : "<p> One or more values in the <a>DomainValidationOption</a> structure is incorrect. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "ResendValidationEmailResult",
+      "asyncReturnType" : "ResendValidationEmailResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ResendValidationEmailResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<ResendValidationEmailResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, ResendValidationEmailResult>",
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, Void>",
       "methodName" : "resendValidationEmail"
     }
   },
@@ -387,6 +399,41 @@
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "TooManyTagsException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "DeleteCertificateResult" : {
+      "c2jName" : "DeleteCertificateResult",
+      "documentation" : null,
+      "shapeName" : "DeleteCertificateResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteCertificateResult",
+        "variableType" : "DeleteCertificateResult",
+        "variableDeclarationType" : "DeleteCertificateResult",
+        "documentation" : null,
+        "simpleType" : "DeleteCertificateResult",
+        "variableSetterType" : "DeleteCertificateResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
       "customization" : {
         "artificialResultWrapper" : null,
         "skipGeneratingModelClass" : false,
@@ -1714,6 +1761,41 @@
         }
       }
     },
+    "AddTagsToCertificateResult" : {
+      "c2jName" : "AddTagsToCertificateResult",
+      "documentation" : null,
+      "shapeName" : "AddTagsToCertificateResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "addTagsToCertificateResult",
+        "variableType" : "AddTagsToCertificateResult",
+        "variableDeclarationType" : "AddTagsToCertificateResult",
+        "documentation" : null,
+        "simpleType" : "AddTagsToCertificateResult",
+        "variableSetterType" : "AddTagsToCertificateResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "CertificateSummary" : {
       "c2jName" : "CertificateSummary",
       "documentation" : "<p> This structure is returned in the response object of <a>ListCertificates</a> action. </p>",
@@ -1984,6 +2066,41 @@
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "ResourceInUseException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "RemoveTagsFromCertificateResult" : {
+      "c2jName" : "RemoveTagsFromCertificateResult",
+      "documentation" : null,
+      "shapeName" : "RemoveTagsFromCertificateResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "removeTagsFromCertificateResult",
+        "variableType" : "RemoveTagsFromCertificateResult",
+        "variableDeclarationType" : "RemoveTagsFromCertificateResult",
+        "documentation" : null,
+        "simpleType" : "RemoveTagsFromCertificateResult",
+        "variableSetterType" : "RemoveTagsFromCertificateResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
       "customization" : {
         "artificialResultWrapper" : null,
         "skipGeneratingModelClass" : false,
@@ -6032,6 +6149,41 @@
       },
       "membersAsMap" : { }
     },
+    "ResendValidationEmailResult" : {
+      "c2jName" : "ResendValidationEmailResult",
+      "documentation" : null,
+      "shapeName" : "ResendValidationEmailResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "resendValidationEmailResult",
+        "variableType" : "ResendValidationEmailResult",
+        "variableDeclarationType" : "ResendValidationEmailResult",
+        "documentation" : null,
+        "simpleType" : "ResendValidationEmailResult",
+        "variableSetterType" : "ResendValidationEmailResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "DomainValidationOption" : {
       "c2jName" : "DomainValidationOption",
       "documentation" : "<p> This structure is used in the request object of the <a>RequestCertificate</a> action. </p>",
@@ -8335,6 +8487,7 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
+    "customErrorCodeFieldName" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {

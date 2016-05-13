@@ -121,9 +121,12 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param addClientIDToOpenIDConnectProviderRequest
+     * @return A Java Future containing the result of the
+     *         AddClientIDToOpenIDConnectProvider operation returned by the
+     *         service.
      * @sample AmazonIdentityManagementAsync.AddClientIDToOpenIDConnectProvider
      */
-    java.util.concurrent.Future<Void> addClientIDToOpenIDConnectProviderAsync(
+    java.util.concurrent.Future<AddClientIDToOpenIDConnectProviderResult> addClientIDToOpenIDConnectProviderAsync(
             AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest);
 
     /**
@@ -143,12 +146,15 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         AddClientIDToOpenIDConnectProvider operation returned by the
+     *         service.
      * @sample 
      *         AmazonIdentityManagementAsyncHandler.AddClientIDToOpenIDConnectProvider
      */
-    java.util.concurrent.Future<Void> addClientIDToOpenIDConnectProviderAsync(
+    java.util.concurrent.Future<AddClientIDToOpenIDConnectProviderResult> addClientIDToOpenIDConnectProviderAsync(
             AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest,
-            com.amazonaws.handlers.AsyncHandler<AddClientIDToOpenIDConnectProviderRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AddClientIDToOpenIDConnectProviderRequest, AddClientIDToOpenIDConnectProviderResult> asyncHandler);
 
     /**
      * <p>
@@ -170,9 +176,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param addRoleToInstanceProfileRequest
+     * @return A Java Future containing the result of the
+     *         AddRoleToInstanceProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsync.AddRoleToInstanceProfile
      */
-    java.util.concurrent.Future<Void> addRoleToInstanceProfileAsync(
+    java.util.concurrent.Future<AddRoleToInstanceProfileResult> addRoleToInstanceProfileAsync(
             AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest);
 
     /**
@@ -200,11 +208,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         AddRoleToInstanceProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.AddRoleToInstanceProfile
      */
-    java.util.concurrent.Future<Void> addRoleToInstanceProfileAsync(
+    java.util.concurrent.Future<AddRoleToInstanceProfileResult> addRoleToInstanceProfileAsync(
             AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest,
-            com.amazonaws.handlers.AsyncHandler<AddRoleToInstanceProfileRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AddRoleToInstanceProfileRequest, AddRoleToInstanceProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -212,9 +222,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param addUserToGroupRequest
+     * @return A Java Future containing the result of the AddUserToGroup
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.AddUserToGroup
      */
-    java.util.concurrent.Future<Void> addUserToGroupAsync(
+    java.util.concurrent.Future<AddUserToGroupResult> addUserToGroupAsync(
             AddUserToGroupRequest addUserToGroupRequest);
 
     /**
@@ -228,11 +240,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddUserToGroup
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.AddUserToGroup
      */
-    java.util.concurrent.Future<Void> addUserToGroupAsync(
+    java.util.concurrent.Future<AddUserToGroupResult> addUserToGroupAsync(
             AddUserToGroupRequest addUserToGroupRequest,
-            com.amazonaws.handlers.AsyncHandler<AddUserToGroupRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AddUserToGroupRequest, AddUserToGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -249,9 +263,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param attachGroupPolicyRequest
+     * @return A Java Future containing the result of the AttachGroupPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.AttachGroupPolicy
      */
-    java.util.concurrent.Future<Void> attachGroupPolicyAsync(
+    java.util.concurrent.Future<AttachGroupPolicyResult> attachGroupPolicyAsync(
             AttachGroupPolicyRequest attachGroupPolicyRequest);
 
     /**
@@ -274,11 +290,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachGroupPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.AttachGroupPolicy
      */
-    java.util.concurrent.Future<Void> attachGroupPolicyAsync(
+    java.util.concurrent.Future<AttachGroupPolicyResult> attachGroupPolicyAsync(
             AttachGroupPolicyRequest attachGroupPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<AttachGroupPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AttachGroupPolicyRequest, AttachGroupPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -300,9 +318,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param attachRolePolicyRequest
+     * @return A Java Future containing the result of the AttachRolePolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.AttachRolePolicy
      */
-    java.util.concurrent.Future<Void> attachRolePolicyAsync(
+    java.util.concurrent.Future<AttachRolePolicyResult> attachRolePolicyAsync(
             AttachRolePolicyRequest attachRolePolicyRequest);
 
     /**
@@ -330,11 +350,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachRolePolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.AttachRolePolicy
      */
-    java.util.concurrent.Future<Void> attachRolePolicyAsync(
+    java.util.concurrent.Future<AttachRolePolicyResult> attachRolePolicyAsync(
             AttachRolePolicyRequest attachRolePolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<AttachRolePolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AttachRolePolicyRequest, AttachRolePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -351,9 +373,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param attachUserPolicyRequest
+     * @return A Java Future containing the result of the AttachUserPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.AttachUserPolicy
      */
-    java.util.concurrent.Future<Void> attachUserPolicyAsync(
+    java.util.concurrent.Future<AttachUserPolicyResult> attachUserPolicyAsync(
             AttachUserPolicyRequest attachUserPolicyRequest);
 
     /**
@@ -376,11 +400,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachUserPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.AttachUserPolicy
      */
-    java.util.concurrent.Future<Void> attachUserPolicyAsync(
+    java.util.concurrent.Future<AttachUserPolicyResult> attachUserPolicyAsync(
             AttachUserPolicyRequest attachUserPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<AttachUserPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AttachUserPolicyRequest, AttachUserPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -396,9 +422,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param changePasswordRequest
+     * @return A Java Future containing the result of the ChangePassword
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ChangePassword
      */
-    java.util.concurrent.Future<Void> changePasswordAsync(
+    java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(
             ChangePasswordRequest changePasswordRequest);
 
     /**
@@ -420,11 +448,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ChangePassword
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ChangePassword
      */
-    java.util.concurrent.Future<Void> changePasswordAsync(
+    java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(
             ChangePasswordRequest changePasswordRequest,
-            com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, ChangePasswordResult> asyncHandler);
 
     /**
      * <p>
@@ -532,9 +562,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param createAccountAliasRequest
+     * @return A Java Future containing the result of the CreateAccountAlias
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.CreateAccountAlias
      */
-    java.util.concurrent.Future<Void> createAccountAliasAsync(
+    java.util.concurrent.Future<CreateAccountAliasResult> createAccountAliasAsync(
             CreateAccountAliasRequest createAccountAliasRequest);
 
     /**
@@ -551,11 +583,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccountAlias
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.CreateAccountAlias
      */
-    java.util.concurrent.Future<Void> createAccountAliasAsync(
+    java.util.concurrent.Future<CreateAccountAliasResult> createAccountAliasAsync(
             CreateAccountAliasRequest createAccountAliasRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateAccountAliasRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateAccountAliasRequest, CreateAccountAliasResult> asyncHandler);
 
     /**
      * <p>
@@ -1148,9 +1182,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deactivateMFADeviceRequest
+     * @return A Java Future containing the result of the DeactivateMFADevice
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeactivateMFADevice
      */
-    java.util.concurrent.Future<Void> deactivateMFADeviceAsync(
+    java.util.concurrent.Future<DeactivateMFADeviceResult> deactivateMFADeviceAsync(
             DeactivateMFADeviceRequest deactivateMFADeviceRequest);
 
     /**
@@ -1171,11 +1207,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeactivateMFADevice
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeactivateMFADevice
      */
-    java.util.concurrent.Future<Void> deactivateMFADeviceAsync(
+    java.util.concurrent.Future<DeactivateMFADeviceResult> deactivateMFADeviceAsync(
             DeactivateMFADeviceRequest deactivateMFADeviceRequest,
-            com.amazonaws.handlers.AsyncHandler<DeactivateMFADeviceRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeactivateMFADeviceRequest, DeactivateMFADeviceResult> asyncHandler);
 
     /**
      * <p>
@@ -1190,9 +1228,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteAccessKeyRequest
+     * @return A Java Future containing the result of the DeleteAccessKey
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteAccessKey
      */
-    java.util.concurrent.Future<Void> deleteAccessKeyAsync(
+    java.util.concurrent.Future<DeleteAccessKeyResult> deleteAccessKeyAsync(
             DeleteAccessKeyRequest deleteAccessKeyRequest);
 
     /**
@@ -1213,11 +1253,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessKey
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteAccessKey
      */
-    java.util.concurrent.Future<Void> deleteAccessKeyAsync(
+    java.util.concurrent.Future<DeleteAccessKeyResult> deleteAccessKeyAsync(
             DeleteAccessKeyRequest deleteAccessKeyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteAccessKeyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessKeyRequest, DeleteAccessKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -1228,9 +1270,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteAccountAliasRequest
+     * @return A Java Future containing the result of the DeleteAccountAlias
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteAccountAlias
      */
-    java.util.concurrent.Future<Void> deleteAccountAliasAsync(
+    java.util.concurrent.Future<DeleteAccountAliasResult> deleteAccountAliasAsync(
             DeleteAccountAliasRequest deleteAccountAliasRequest);
 
     /**
@@ -1247,11 +1291,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccountAlias
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteAccountAlias
      */
-    java.util.concurrent.Future<Void> deleteAccountAliasAsync(
+    java.util.concurrent.Future<DeleteAccountAliasResult> deleteAccountAliasAsync(
             DeleteAccountAliasRequest deleteAccountAliasRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteAccountAliasRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountAliasRequest, DeleteAccountAliasResult> asyncHandler);
 
     /**
      * <p>
@@ -1259,9 +1305,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteAccountPasswordPolicyRequest
+     * @return A Java Future containing the result of the
+     *         DeleteAccountPasswordPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteAccountPasswordPolicy
      */
-    java.util.concurrent.Future<Void> deleteAccountPasswordPolicyAsync(
+    java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync(
             DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest);
 
     /**
@@ -1275,11 +1323,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteAccountPasswordPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteAccountPasswordPolicy
      */
-    java.util.concurrent.Future<Void> deleteAccountPasswordPolicyAsync(
+    java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync(
             DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteAccountPasswordPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the DeleteAccountPasswordPolicy
@@ -1287,7 +1337,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *
      * @see #deleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest)
      */
-    java.util.concurrent.Future<Void> deleteAccountPasswordPolicyAsync();
+    java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync();
 
     /**
      * Simplified method form for invoking the DeleteAccountPasswordPolicy
@@ -1296,8 +1346,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * @see #deleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> deleteAccountPasswordPolicyAsync(
-            com.amazonaws.handlers.AsyncHandler<DeleteAccountPasswordPolicyRequest, Void> asyncHandler);
+    java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync(
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1306,9 +1356,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteGroupRequest
+     * @return A Java Future containing the result of the DeleteGroup operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteGroup
      */
-    java.util.concurrent.Future<Void> deleteGroupAsync(
+    java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(
             DeleteGroupRequest deleteGroupRequest);
 
     /**
@@ -1323,11 +1375,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGroup operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteGroup
      */
-    java.util.concurrent.Future<Void> deleteGroupAsync(
+    java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(
             DeleteGroupRequest deleteGroupRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -1343,9 +1397,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteGroupPolicyRequest
+     * @return A Java Future containing the result of the DeleteGroupPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteGroupPolicy
      */
-    java.util.concurrent.Future<Void> deleteGroupPolicyAsync(
+    java.util.concurrent.Future<DeleteGroupPolicyResult> deleteGroupPolicyAsync(
             DeleteGroupPolicyRequest deleteGroupPolicyRequest);
 
     /**
@@ -1367,11 +1423,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGroupPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteGroupPolicy
      */
-    java.util.concurrent.Future<Void> deleteGroupPolicyAsync(
+    java.util.concurrent.Future<DeleteGroupPolicyResult> deleteGroupPolicyAsync(
             DeleteGroupPolicyRequest deleteGroupPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteGroupPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteGroupPolicyRequest, DeleteGroupPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1393,9 +1451,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteInstanceProfileRequest
+     * @return A Java Future containing the result of the DeleteInstanceProfile
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteInstanceProfile
      */
-    java.util.concurrent.Future<Void> deleteInstanceProfileAsync(
+    java.util.concurrent.Future<DeleteInstanceProfileResult> deleteInstanceProfileAsync(
             DeleteInstanceProfileRequest deleteInstanceProfileRequest);
 
     /**
@@ -1423,11 +1483,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInstanceProfile
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteInstanceProfile
      */
-    java.util.concurrent.Future<Void> deleteInstanceProfileAsync(
+    java.util.concurrent.Future<DeleteInstanceProfileResult> deleteInstanceProfileAsync(
             DeleteInstanceProfileRequest deleteInstanceProfileRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteInstanceProfileRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteInstanceProfileRequest, DeleteInstanceProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -1445,9 +1507,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </important>
      * 
      * @param deleteLoginProfileRequest
+     * @return A Java Future containing the result of the DeleteLoginProfile
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteLoginProfile
      */
-    java.util.concurrent.Future<Void> deleteLoginProfileAsync(
+    java.util.concurrent.Future<DeleteLoginProfileResult> deleteLoginProfileAsync(
             DeleteLoginProfileRequest deleteLoginProfileRequest);
 
     /**
@@ -1471,11 +1535,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLoginProfile
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteLoginProfile
      */
-    java.util.concurrent.Future<Void> deleteLoginProfileAsync(
+    java.util.concurrent.Future<DeleteLoginProfileResult> deleteLoginProfileAsync(
             DeleteLoginProfileRequest deleteLoginProfileRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteLoginProfileRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteLoginProfileRequest, DeleteLoginProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -1492,9 +1558,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteOpenIDConnectProviderRequest
+     * @return A Java Future containing the result of the
+     *         DeleteOpenIDConnectProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteOpenIDConnectProvider
      */
-    java.util.concurrent.Future<Void> deleteOpenIDConnectProviderAsync(
+    java.util.concurrent.Future<DeleteOpenIDConnectProviderResult> deleteOpenIDConnectProviderAsync(
             DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest);
 
     /**
@@ -1517,11 +1585,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteOpenIDConnectProvider operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteOpenIDConnectProvider
      */
-    java.util.concurrent.Future<Void> deleteOpenIDConnectProviderAsync(
+    java.util.concurrent.Future<DeleteOpenIDConnectProviderResult> deleteOpenIDConnectProviderAsync(
             DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteOpenIDConnectProviderRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteOpenIDConnectProviderRequest, DeleteOpenIDConnectProviderResult> asyncHandler);
 
     /**
      * <p>
@@ -1565,9 +1635,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deletePolicyRequest
+     * @return A Java Future containing the result of the DeletePolicy operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsync.DeletePolicy
      */
-    java.util.concurrent.Future<Void> deletePolicyAsync(
+    java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest deletePolicyRequest);
 
     /**
@@ -1617,11 +1689,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePolicy operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeletePolicy
      */
-    java.util.concurrent.Future<Void> deletePolicyAsync(
+    java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest deletePolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1640,9 +1714,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deletePolicyVersionRequest
+     * @return A Java Future containing the result of the DeletePolicyVersion
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeletePolicyVersion
      */
-    java.util.concurrent.Future<Void> deletePolicyVersionAsync(
+    java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(
             DeletePolicyVersionRequest deletePolicyVersionRequest);
 
     /**
@@ -1667,11 +1743,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePolicyVersion
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeletePolicyVersion
      */
-    java.util.concurrent.Future<Void> deletePolicyVersionAsync(
+    java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(
             DeletePolicyVersionRequest deletePolicyVersionRequest,
-            com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, DeletePolicyVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1690,9 +1768,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </important>
      * 
      * @param deleteRoleRequest
+     * @return A Java Future containing the result of the DeleteRole operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteRole
      */
-    java.util.concurrent.Future<Void> deleteRoleAsync(
+    java.util.concurrent.Future<DeleteRoleResult> deleteRoleAsync(
             DeleteRoleRequest deleteRoleRequest);
 
     /**
@@ -1717,11 +1797,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRole operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteRole
      */
-    java.util.concurrent.Future<Void> deleteRoleAsync(
+    java.util.concurrent.Future<DeleteRoleResult> deleteRoleAsync(
             DeleteRoleRequest deleteRoleRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteRoleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteRoleRequest, DeleteRoleResult> asyncHandler);
 
     /**
      * <p>
@@ -1737,9 +1819,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteRolePolicyRequest
+     * @return A Java Future containing the result of the DeleteRolePolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteRolePolicy
      */
-    java.util.concurrent.Future<Void> deleteRolePolicyAsync(
+    java.util.concurrent.Future<DeleteRolePolicyResult> deleteRolePolicyAsync(
             DeleteRolePolicyRequest deleteRolePolicyRequest);
 
     /**
@@ -1761,11 +1845,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRolePolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteRolePolicy
      */
-    java.util.concurrent.Future<Void> deleteRolePolicyAsync(
+    java.util.concurrent.Future<DeleteRolePolicyResult> deleteRolePolicyAsync(
             DeleteRolePolicyRequest deleteRolePolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteRolePolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteRolePolicyRequest, DeleteRolePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1786,9 +1872,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </note>
      * 
      * @param deleteSAMLProviderRequest
+     * @return A Java Future containing the result of the DeleteSAMLProvider
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteSAMLProvider
      */
-    java.util.concurrent.Future<Void> deleteSAMLProviderAsync(
+    java.util.concurrent.Future<DeleteSAMLProviderResult> deleteSAMLProviderAsync(
             DeleteSAMLProviderRequest deleteSAMLProviderRequest);
 
     /**
@@ -1815,11 +1903,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSAMLProvider
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteSAMLProvider
      */
-    java.util.concurrent.Future<Void> deleteSAMLProviderAsync(
+    java.util.concurrent.Future<DeleteSAMLProviderResult> deleteSAMLProviderAsync(
             DeleteSAMLProviderRequest deleteSAMLProviderRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteSAMLProviderRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteSAMLProviderRequest, DeleteSAMLProviderResult> asyncHandler);
 
     /**
      * <p>
@@ -1836,9 +1926,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteSSHPublicKeyRequest
+     * @return A Java Future containing the result of the DeleteSSHPublicKey
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteSSHPublicKey
      */
-    java.util.concurrent.Future<Void> deleteSSHPublicKeyAsync(
+    java.util.concurrent.Future<DeleteSSHPublicKeyResult> deleteSSHPublicKeyAsync(
             DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest);
 
     /**
@@ -1861,11 +1953,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSSHPublicKey
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteSSHPublicKey
      */
-    java.util.concurrent.Future<Void> deleteSSHPublicKeyAsync(
+    java.util.concurrent.Future<DeleteSSHPublicKeyResult> deleteSSHPublicKeyAsync(
             DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteSSHPublicKeyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteSSHPublicKeyRequest, DeleteSSHPublicKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -1895,9 +1989,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </important>
      * 
      * @param deleteServerCertificateRequest
+     * @return A Java Future containing the result of the
+     *         DeleteServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteServerCertificate
      */
-    java.util.concurrent.Future<Void> deleteServerCertificateAsync(
+    java.util.concurrent.Future<DeleteServerCertificateResult> deleteServerCertificateAsync(
             DeleteServerCertificateRequest deleteServerCertificateRequest);
 
     /**
@@ -1933,11 +2029,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteServerCertificate
      */
-    java.util.concurrent.Future<Void> deleteServerCertificateAsync(
+    java.util.concurrent.Future<DeleteServerCertificateResult> deleteServerCertificateAsync(
             DeleteServerCertificateRequest deleteServerCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteServerCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteServerCertificateRequest, DeleteServerCertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -1952,9 +2050,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteSigningCertificateRequest
+     * @return A Java Future containing the result of the
+     *         DeleteSigningCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteSigningCertificate
      */
-    java.util.concurrent.Future<Void> deleteSigningCertificateAsync(
+    java.util.concurrent.Future<DeleteSigningCertificateResult> deleteSigningCertificateAsync(
             DeleteSigningCertificateRequest deleteSigningCertificateRequest);
 
     /**
@@ -1975,11 +2075,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteSigningCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteSigningCertificate
      */
-    java.util.concurrent.Future<Void> deleteSigningCertificateAsync(
+    java.util.concurrent.Future<DeleteSigningCertificateResult> deleteSigningCertificateAsync(
             DeleteSigningCertificateRequest deleteSigningCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteSigningCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteSigningCertificateRequest, DeleteSigningCertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -1988,9 +2090,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteUserRequest
+     * @return A Java Future containing the result of the DeleteUser operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteUser
      */
-    java.util.concurrent.Future<Void> deleteUserAsync(
+    java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(
             DeleteUserRequest deleteUserRequest);
 
     /**
@@ -2005,11 +2109,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUser operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteUser
      */
-    java.util.concurrent.Future<Void> deleteUserAsync(
+    java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(
             DeleteUserRequest deleteUserRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler);
 
     /**
      * <p>
@@ -2025,9 +2131,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param deleteUserPolicyRequest
+     * @return A Java Future containing the result of the DeleteUserPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteUserPolicy
      */
-    java.util.concurrent.Future<Void> deleteUserPolicyAsync(
+    java.util.concurrent.Future<DeleteUserPolicyResult> deleteUserPolicyAsync(
             DeleteUserPolicyRequest deleteUserPolicyRequest);
 
     /**
@@ -2049,11 +2157,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUserPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteUserPolicy
      */
-    java.util.concurrent.Future<Void> deleteUserPolicyAsync(
+    java.util.concurrent.Future<DeleteUserPolicyResult> deleteUserPolicyAsync(
             DeleteUserPolicyRequest deleteUserPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteUserPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteUserPolicyRequest, DeleteUserPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -2068,9 +2178,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </note>
      * 
      * @param deleteVirtualMFADeviceRequest
+     * @return A Java Future containing the result of the DeleteVirtualMFADevice
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DeleteVirtualMFADevice
      */
-    java.util.concurrent.Future<Void> deleteVirtualMFADeviceAsync(
+    java.util.concurrent.Future<DeleteVirtualMFADeviceResult> deleteVirtualMFADeviceAsync(
             DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest);
 
     /**
@@ -2091,11 +2203,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVirtualMFADevice
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DeleteVirtualMFADevice
      */
-    java.util.concurrent.Future<Void> deleteVirtualMFADeviceAsync(
+    java.util.concurrent.Future<DeleteVirtualMFADeviceResult> deleteVirtualMFADeviceAsync(
             DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteVirtualMFADeviceRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteVirtualMFADeviceRequest, DeleteVirtualMFADeviceResult> asyncHandler);
 
     /**
      * <p>
@@ -2110,9 +2224,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param detachGroupPolicyRequest
+     * @return A Java Future containing the result of the DetachGroupPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DetachGroupPolicy
      */
-    java.util.concurrent.Future<Void> detachGroupPolicyAsync(
+    java.util.concurrent.Future<DetachGroupPolicyResult> detachGroupPolicyAsync(
             DetachGroupPolicyRequest detachGroupPolicyRequest);
 
     /**
@@ -2133,11 +2249,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachGroupPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DetachGroupPolicy
      */
-    java.util.concurrent.Future<Void> detachGroupPolicyAsync(
+    java.util.concurrent.Future<DetachGroupPolicyResult> detachGroupPolicyAsync(
             DetachGroupPolicyRequest detachGroupPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DetachGroupPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DetachGroupPolicyRequest, DetachGroupPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -2152,9 +2270,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param detachRolePolicyRequest
+     * @return A Java Future containing the result of the DetachRolePolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DetachRolePolicy
      */
-    java.util.concurrent.Future<Void> detachRolePolicyAsync(
+    java.util.concurrent.Future<DetachRolePolicyResult> detachRolePolicyAsync(
             DetachRolePolicyRequest detachRolePolicyRequest);
 
     /**
@@ -2175,11 +2295,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachRolePolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DetachRolePolicy
      */
-    java.util.concurrent.Future<Void> detachRolePolicyAsync(
+    java.util.concurrent.Future<DetachRolePolicyResult> detachRolePolicyAsync(
             DetachRolePolicyRequest detachRolePolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DetachRolePolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DetachRolePolicyRequest, DetachRolePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -2194,9 +2316,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param detachUserPolicyRequest
+     * @return A Java Future containing the result of the DetachUserPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.DetachUserPolicy
      */
-    java.util.concurrent.Future<Void> detachUserPolicyAsync(
+    java.util.concurrent.Future<DetachUserPolicyResult> detachUserPolicyAsync(
             DetachUserPolicyRequest detachUserPolicyRequest);
 
     /**
@@ -2217,11 +2341,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachUserPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.DetachUserPolicy
      */
-    java.util.concurrent.Future<Void> detachUserPolicyAsync(
+    java.util.concurrent.Future<DetachUserPolicyResult> detachUserPolicyAsync(
             DetachUserPolicyRequest detachUserPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DetachUserPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DetachUserPolicyRequest, DetachUserPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -2231,9 +2357,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param enableMFADeviceRequest
+     * @return A Java Future containing the result of the EnableMFADevice
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.EnableMFADevice
      */
-    java.util.concurrent.Future<Void> enableMFADeviceAsync(
+    java.util.concurrent.Future<EnableMFADeviceResult> enableMFADeviceAsync(
             EnableMFADeviceRequest enableMFADeviceRequest);
 
     /**
@@ -2249,11 +2377,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableMFADevice
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.EnableMFADevice
      */
-    java.util.concurrent.Future<Void> enableMFADeviceAsync(
+    java.util.concurrent.Future<EnableMFADeviceResult> enableMFADeviceAsync(
             EnableMFADeviceRequest enableMFADeviceRequest,
-            com.amazonaws.handlers.AsyncHandler<EnableMFADeviceRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<EnableMFADeviceRequest, EnableMFADeviceResult> asyncHandler);
 
     /**
      * <p>
@@ -4966,9 +5096,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </note>
      * 
      * @param putGroupPolicyRequest
+     * @return A Java Future containing the result of the PutGroupPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.PutGroupPolicy
      */
-    java.util.concurrent.Future<Void> putGroupPolicyAsync(
+    java.util.concurrent.Future<PutGroupPolicyResult> putGroupPolicyAsync(
             PutGroupPolicyRequest putGroupPolicyRequest);
 
     /**
@@ -5006,11 +5138,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutGroupPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.PutGroupPolicy
      */
-    java.util.concurrent.Future<Void> putGroupPolicyAsync(
+    java.util.concurrent.Future<PutGroupPolicyResult> putGroupPolicyAsync(
             PutGroupPolicyRequest putGroupPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<PutGroupPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutGroupPolicyRequest, PutGroupPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -5051,9 +5185,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </note>
      * 
      * @param putRolePolicyRequest
+     * @return A Java Future containing the result of the PutRolePolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.PutRolePolicy
      */
-    java.util.concurrent.Future<Void> putRolePolicyAsync(
+    java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(
             PutRolePolicyRequest putRolePolicyRequest);
 
     /**
@@ -5100,11 +5236,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRolePolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.PutRolePolicy
      */
-    java.util.concurrent.Future<Void> putRolePolicyAsync(
+    java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(
             PutRolePolicyRequest putRolePolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<PutRolePolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutRolePolicyRequest, PutRolePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -5136,9 +5274,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </note>
      * 
      * @param putUserPolicyRequest
+     * @return A Java Future containing the result of the PutUserPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.PutUserPolicy
      */
-    java.util.concurrent.Future<Void> putUserPolicyAsync(
+    java.util.concurrent.Future<PutUserPolicyResult> putUserPolicyAsync(
             PutUserPolicyRequest putUserPolicyRequest);
 
     /**
@@ -5176,11 +5316,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutUserPolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.PutUserPolicy
      */
-    java.util.concurrent.Future<Void> putUserPolicyAsync(
+    java.util.concurrent.Future<PutUserPolicyResult> putUserPolicyAsync(
             PutUserPolicyRequest putUserPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<PutUserPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutUserPolicyRequest, PutUserPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -5194,10 +5336,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param removeClientIDFromOpenIDConnectProviderRequest
+     * @return A Java Future containing the result of the
+     *         RemoveClientIDFromOpenIDConnectProvider operation returned by the
+     *         service.
      * @sample 
      *         AmazonIdentityManagementAsync.RemoveClientIDFromOpenIDConnectProvider
      */
-    java.util.concurrent.Future<Void> removeClientIDFromOpenIDConnectProviderAsync(
+    java.util.concurrent.Future<RemoveClientIDFromOpenIDConnectProviderResult> removeClientIDFromOpenIDConnectProviderAsync(
             RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest);
 
     /**
@@ -5217,12 +5362,15 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RemoveClientIDFromOpenIDConnectProvider operation returned by the
+     *         service.
      * @sample AmazonIdentityManagementAsyncHandler.
      *         RemoveClientIDFromOpenIDConnectProvider
      */
-    java.util.concurrent.Future<Void> removeClientIDFromOpenIDConnectProviderAsync(
+    java.util.concurrent.Future<RemoveClientIDFromOpenIDConnectProviderResult> removeClientIDFromOpenIDConnectProviderAsync(
             RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest,
-            com.amazonaws.handlers.AsyncHandler<RemoveClientIDFromOpenIDConnectProviderRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemoveClientIDFromOpenIDConnectProviderRequest, RemoveClientIDFromOpenIDConnectProviderResult> asyncHandler);
 
     /**
      * <p>
@@ -5246,9 +5394,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param removeRoleFromInstanceProfileRequest
+     * @return A Java Future containing the result of the
+     *         RemoveRoleFromInstanceProfile operation returned by the service.
      * @sample AmazonIdentityManagementAsync.RemoveRoleFromInstanceProfile
      */
-    java.util.concurrent.Future<Void> removeRoleFromInstanceProfileAsync(
+    java.util.concurrent.Future<RemoveRoleFromInstanceProfileResult> removeRoleFromInstanceProfileAsync(
             RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest);
 
     /**
@@ -5278,12 +5428,14 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RemoveRoleFromInstanceProfile operation returned by the service.
      * @sample 
      *         AmazonIdentityManagementAsyncHandler.RemoveRoleFromInstanceProfile
      */
-    java.util.concurrent.Future<Void> removeRoleFromInstanceProfileAsync(
+    java.util.concurrent.Future<RemoveRoleFromInstanceProfileResult> removeRoleFromInstanceProfileAsync(
             RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest,
-            com.amazonaws.handlers.AsyncHandler<RemoveRoleFromInstanceProfileRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemoveRoleFromInstanceProfileRequest, RemoveRoleFromInstanceProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -5291,9 +5443,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param removeUserFromGroupRequest
+     * @return A Java Future containing the result of the RemoveUserFromGroup
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.RemoveUserFromGroup
      */
-    java.util.concurrent.Future<Void> removeUserFromGroupAsync(
+    java.util.concurrent.Future<RemoveUserFromGroupResult> removeUserFromGroupAsync(
             RemoveUserFromGroupRequest removeUserFromGroupRequest);
 
     /**
@@ -5307,11 +5461,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveUserFromGroup
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.RemoveUserFromGroup
      */
-    java.util.concurrent.Future<Void> removeUserFromGroupAsync(
+    java.util.concurrent.Future<RemoveUserFromGroupResult> removeUserFromGroupAsync(
             RemoveUserFromGroupRequest removeUserFromGroupRequest,
-            com.amazonaws.handlers.AsyncHandler<RemoveUserFromGroupRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemoveUserFromGroupRequest, RemoveUserFromGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -5326,9 +5482,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param resyncMFADeviceRequest
+     * @return A Java Future containing the result of the ResyncMFADevice
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.ResyncMFADevice
      */
-    java.util.concurrent.Future<Void> resyncMFADeviceAsync(
+    java.util.concurrent.Future<ResyncMFADeviceResult> resyncMFADeviceAsync(
             ResyncMFADeviceRequest resyncMFADeviceRequest);
 
     /**
@@ -5349,11 +5507,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResyncMFADevice
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.ResyncMFADevice
      */
-    java.util.concurrent.Future<Void> resyncMFADeviceAsync(
+    java.util.concurrent.Future<ResyncMFADeviceResult> resyncMFADeviceAsync(
             ResyncMFADeviceRequest resyncMFADeviceRequest,
-            com.amazonaws.handlers.AsyncHandler<ResyncMFADeviceRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ResyncMFADeviceRequest, ResyncMFADeviceResult> asyncHandler);
 
     /**
      * <p>
@@ -5372,9 +5532,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param setDefaultPolicyVersionRequest
+     * @return A Java Future containing the result of the
+     *         SetDefaultPolicyVersion operation returned by the service.
      * @sample AmazonIdentityManagementAsync.SetDefaultPolicyVersion
      */
-    java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
+    java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest);
 
     /**
@@ -5399,11 +5561,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         SetDefaultPolicyVersion operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.SetDefaultPolicyVersion
      */
-    java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
+    java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest,
-            com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -5603,9 +5767,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param updateAccessKeyRequest
+     * @return A Java Future containing the result of the UpdateAccessKey
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateAccessKey
      */
-    java.util.concurrent.Future<Void> updateAccessKeyAsync(
+    java.util.concurrent.Future<UpdateAccessKeyResult> updateAccessKeyAsync(
             UpdateAccessKeyRequest updateAccessKeyRequest);
 
     /**
@@ -5633,11 +5799,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAccessKey
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateAccessKey
      */
-    java.util.concurrent.Future<Void> updateAccessKeyAsync(
+    java.util.concurrent.Future<UpdateAccessKeyResult> updateAccessKeyAsync(
             UpdateAccessKeyRequest updateAccessKeyRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateAccessKeyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateAccessKeyRequest, UpdateAccessKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -5658,9 +5826,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param updateAccountPasswordPolicyRequest
+     * @return A Java Future containing the result of the
+     *         UpdateAccountPasswordPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateAccountPasswordPolicy
      */
-    java.util.concurrent.Future<Void> updateAccountPasswordPolicyAsync(
+    java.util.concurrent.Future<UpdateAccountPasswordPolicyResult> updateAccountPasswordPolicyAsync(
             UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest);
 
     /**
@@ -5687,11 +5857,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateAccountPasswordPolicy operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateAccountPasswordPolicy
      */
-    java.util.concurrent.Future<Void> updateAccountPasswordPolicyAsync(
+    java.util.concurrent.Future<UpdateAccountPasswordPolicyResult> updateAccountPasswordPolicyAsync(
             UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateAccountPasswordPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateAccountPasswordPolicyRequest, UpdateAccountPasswordPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -5703,9 +5875,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param updateAssumeRolePolicyRequest
+     * @return A Java Future containing the result of the UpdateAssumeRolePolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateAssumeRolePolicy
      */
-    java.util.concurrent.Future<Void> updateAssumeRolePolicyAsync(
+    java.util.concurrent.Future<UpdateAssumeRolePolicyResult> updateAssumeRolePolicyAsync(
             UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest);
 
     /**
@@ -5723,11 +5897,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAssumeRolePolicy
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateAssumeRolePolicy
      */
-    java.util.concurrent.Future<Void> updateAssumeRolePolicyAsync(
+    java.util.concurrent.Future<UpdateAssumeRolePolicyResult> updateAssumeRolePolicyAsync(
             UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateAssumeRolePolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateAssumeRolePolicyRequest, UpdateAssumeRolePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -5753,9 +5929,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </note>
      * 
      * @param updateGroupRequest
+     * @return A Java Future containing the result of the UpdateGroup operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateGroup
      */
-    java.util.concurrent.Future<Void> updateGroupAsync(
+    java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(
             UpdateGroupRequest updateGroupRequest);
 
     /**
@@ -5787,11 +5965,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGroup operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateGroup
      */
-    java.util.concurrent.Future<Void> updateGroupAsync(
+    java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(
             UpdateGroupRequest updateGroupRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -5806,9 +5986,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param updateLoginProfileRequest
+     * @return A Java Future containing the result of the UpdateLoginProfile
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateLoginProfile
      */
-    java.util.concurrent.Future<Void> updateLoginProfileAsync(
+    java.util.concurrent.Future<UpdateLoginProfileResult> updateLoginProfileAsync(
             UpdateLoginProfileRequest updateLoginProfileRequest);
 
     /**
@@ -5829,11 +6011,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLoginProfile
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateLoginProfile
      */
-    java.util.concurrent.Future<Void> updateLoginProfileAsync(
+    java.util.concurrent.Future<UpdateLoginProfileResult> updateLoginProfileAsync(
             UpdateLoginProfileRequest updateLoginProfileRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateLoginProfileRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateLoginProfileRequest, UpdateLoginProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -5863,10 +6047,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </note>
      * 
      * @param updateOpenIDConnectProviderThumbprintRequest
+     * @return A Java Future containing the result of the
+     *         UpdateOpenIDConnectProviderThumbprint operation returned by the
+     *         service.
      * @sample 
      *         AmazonIdentityManagementAsync.UpdateOpenIDConnectProviderThumbprint
      */
-    java.util.concurrent.Future<Void> updateOpenIDConnectProviderThumbprintAsync(
+    java.util.concurrent.Future<UpdateOpenIDConnectProviderThumbprintResult> updateOpenIDConnectProviderThumbprintAsync(
             UpdateOpenIDConnectProviderThumbprintRequest updateOpenIDConnectProviderThumbprintRequest);
 
     /**
@@ -5902,12 +6089,15 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateOpenIDConnectProviderThumbprint operation returned by the
+     *         service.
      * @sample AmazonIdentityManagementAsyncHandler.
      *         UpdateOpenIDConnectProviderThumbprint
      */
-    java.util.concurrent.Future<Void> updateOpenIDConnectProviderThumbprintAsync(
+    java.util.concurrent.Future<UpdateOpenIDConnectProviderThumbprintResult> updateOpenIDConnectProviderThumbprintAsync(
             UpdateOpenIDConnectProviderThumbprintRequest updateOpenIDConnectProviderThumbprintRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateOpenIDConnectProviderThumbprintRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateOpenIDConnectProviderThumbprintRequest, UpdateOpenIDConnectProviderThumbprintResult> asyncHandler);
 
     /**
      * <p>
@@ -5975,9 +6165,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param updateSSHPublicKeyRequest
+     * @return A Java Future containing the result of the UpdateSSHPublicKey
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateSSHPublicKey
      */
-    java.util.concurrent.Future<Void> updateSSHPublicKeyAsync(
+    java.util.concurrent.Future<UpdateSSHPublicKeyResult> updateSSHPublicKeyAsync(
             UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest);
 
     /**
@@ -6003,11 +6195,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSSHPublicKey
+     *         operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateSSHPublicKey
      */
-    java.util.concurrent.Future<Void> updateSSHPublicKeyAsync(
+    java.util.concurrent.Future<UpdateSSHPublicKeyResult> updateSSHPublicKeyAsync(
             UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateSSHPublicKeyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateSSHPublicKeyRequest, UpdateSSHPublicKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -6042,9 +6236,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </note>
      * 
      * @param updateServerCertificateRequest
+     * @return A Java Future containing the result of the
+     *         UpdateServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateServerCertificate
      */
-    java.util.concurrent.Future<Void> updateServerCertificateAsync(
+    java.util.concurrent.Future<UpdateServerCertificateResult> updateServerCertificateAsync(
             UpdateServerCertificateRequest updateServerCertificateRequest);
 
     /**
@@ -6085,11 +6281,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateServerCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateServerCertificate
      */
-    java.util.concurrent.Future<Void> updateServerCertificateAsync(
+    java.util.concurrent.Future<UpdateServerCertificateResult> updateServerCertificateAsync(
             UpdateServerCertificateRequest updateServerCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateServerCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateServerCertificateRequest, UpdateServerCertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -6106,9 +6304,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </p>
      * 
      * @param updateSigningCertificateRequest
+     * @return A Java Future containing the result of the
+     *         UpdateSigningCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateSigningCertificate
      */
-    java.util.concurrent.Future<Void> updateSigningCertificateAsync(
+    java.util.concurrent.Future<UpdateSigningCertificateResult> updateSigningCertificateAsync(
             UpdateSigningCertificateRequest updateSigningCertificateRequest);
 
     /**
@@ -6131,11 +6331,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateSigningCertificate operation returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateSigningCertificate
      */
-    java.util.concurrent.Future<Void> updateSigningCertificateAsync(
+    java.util.concurrent.Future<UpdateSigningCertificateResult> updateSigningCertificateAsync(
             UpdateSigningCertificateRequest updateSigningCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateSigningCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateSigningCertificateRequest, UpdateSigningCertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -6163,9 +6365,11 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </note>
      * 
      * @param updateUserRequest
+     * @return A Java Future containing the result of the UpdateUser operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsync.UpdateUser
      */
-    java.util.concurrent.Future<Void> updateUserAsync(
+    java.util.concurrent.Future<UpdateUserResult> updateUserAsync(
             UpdateUserRequest updateUserRequest);
 
     /**
@@ -6199,11 +6403,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateUser operation
+     *         returned by the service.
      * @sample AmazonIdentityManagementAsyncHandler.UpdateUser
      */
-    java.util.concurrent.Future<Void> updateUserAsync(
+    java.util.concurrent.Future<UpdateUserResult> updateUserAsync(
             UpdateUserRequest updateUserRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler);
 
     /**
      * <p>

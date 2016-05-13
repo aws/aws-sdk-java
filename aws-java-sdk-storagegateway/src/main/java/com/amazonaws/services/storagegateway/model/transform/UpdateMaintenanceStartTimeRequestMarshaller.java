@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateMaintenanceStartTimeRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class UpdateMaintenanceStartTimeRequestMarshaller
         implements
         Marshaller<Request<UpdateMaintenanceStartTimeRequest>, UpdateMaintenanceStartTimeRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateMaintenanceStartTimeRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateMaintenanceStartTimeRequest> marshall(
             UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest) {
@@ -59,8 +66,8 @@ public class UpdateMaintenanceStartTimeRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

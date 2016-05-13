@@ -110,13 +110,14 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
-    public void modifyInstanceGroups(ModifyInstanceGroupsRequest request) {
+    public ModifyInstanceGroupsResult modifyInstanceGroups(
+            ModifyInstanceGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void modifyInstanceGroups() {
-        modifyInstanceGroups(new ModifyInstanceGroupsRequest());
+    public ModifyInstanceGroupsResult modifyInstanceGroups() {
+        return modifyInstanceGroups(new ModifyInstanceGroupsRequest());
     }
 
     @Override
@@ -130,17 +131,20 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
-    public void setTerminationProtection(SetTerminationProtectionRequest request) {
+    public SetTerminationProtectionResult setTerminationProtection(
+            SetTerminationProtectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setVisibleToAllUsers(SetVisibleToAllUsersRequest request) {
+    public SetVisibleToAllUsersResult setVisibleToAllUsers(
+            SetVisibleToAllUsersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void terminateJobFlows(TerminateJobFlowsRequest request) {
+    public TerminateJobFlowsResult terminateJobFlows(
+            TerminateJobFlowsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -95,4 +95,39 @@ public class SdkHttpUtilsTest {
                             expected,
                             SdkHttpUtils.urlEncode(test, false));
     }
+
+    @Test
+    public void testAppendUriNoPath() {
+        String host = "foo.com/";
+        String resourcePath = "";
+        Assert.assertEquals(SdkHttpUtils.appendUri(host, resourcePath, true), "foo.com/");
+    }
+
+    @Test
+    public void testAppendUriNoPathTrailingSlashAdded() {
+        String host = "foo.com";
+        String resourcePath = "";
+        Assert.assertEquals(SdkHttpUtils.appendUri(host, resourcePath, true), "foo.com/");
+    }
+
+    @Test
+    public void testAppendUriTrimExtraHostTrailingSlash() {
+        String host = "foo.com/";
+        String resourcePath = "bar";
+        Assert.assertEquals(SdkHttpUtils.appendUri(host, resourcePath, true), "foo.com/bar");
+    }
+
+    @Test
+    public void testAppendUriEscapeDoubleSlash() {
+        String host = "foo.com";
+        String resourcePath = "aws//java/sdk";
+        Assert.assertEquals(SdkHttpUtils.appendUri(host, resourcePath, true), "foo.com/aws/%2Fjava/sdk");
+    }
+
+    @Test
+    public void testAppendUriNoEscapeDoubleSlash() {
+        String host = "foo.com";
+        String resourcePath = "aws//java/sdk";
+        Assert.assertEquals(SdkHttpUtils.appendUri(host, resourcePath, false), "foo.com/aws//java/sdk");
+    }
 }

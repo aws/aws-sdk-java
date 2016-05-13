@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteElasticsearchDomainRequest Marshaller
@@ -48,7 +49,14 @@ public class DeleteElasticsearchDomainRequestMarshaller
         implements
         Marshaller<Request<DeleteElasticsearchDomainRequest>, DeleteElasticsearchDomainRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteElasticsearchDomainRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteElasticsearchDomainRequest> marshall(
             DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest) {
@@ -68,9 +76,11 @@ public class DeleteElasticsearchDomainRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{DomainName}",
-                        (deleteElasticsearchDomainRequest.getDomainName() != null) ? StringUtils
-                                .fromString(deleteElasticsearchDomainRequest
-                                        .getDomainName()) : "");
+                        (deleteElasticsearchDomainRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteElasticsearchDomainRequest
+                                                .getDomainName()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

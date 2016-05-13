@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RemoveTagsRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class RemoveTagsRequestMarshaller implements
         Marshaller<Request<RemoveTagsRequest>, RemoveTagsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RemoveTagsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RemoveTagsRequest> marshall(
             RemoveTagsRequest removeTagsRequest) {
@@ -67,8 +74,8 @@ public class RemoveTagsRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (removeTagsRequest.getARN() != null) {

@@ -52,7 +52,6 @@ public interface SignableRequest<T> {
      */
     Map<String, String> getHeaders();
 
-
     /**
      * Returns the path to the resource being requested.
      *

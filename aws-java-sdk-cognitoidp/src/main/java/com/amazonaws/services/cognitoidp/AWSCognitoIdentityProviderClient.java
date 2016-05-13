@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -75,11 +75,94 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all Amazon Cognito Identity Provider
-     * exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UsernameExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.UsernameExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UnexpectedLambdaException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidPasswordException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.InvalidPasswordException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ConcurrentModificationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.ConcurrentModificationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("CodeMismatchException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.CodeMismatchException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TooManyRequestsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.TooManyRequestsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NotAuthorizedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.NotAuthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidLambdaResponseException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidParameterException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "TooManyFailedAttemptsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AliasExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.AliasExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ExpiredCodeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.ExpiredCodeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UserLambdaValidationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.UserLambdaValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalErrorException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.InternalErrorException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito
@@ -240,73 +323,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.UsernameExistsException.class,
-                        "UsernameExistsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException.class,
-                        "UnexpectedLambdaException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.LimitExceededException.class,
-                        "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.InvalidPasswordException.class,
-                        "InvalidPasswordException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.ConcurrentModificationException.class,
-                        "ConcurrentModificationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.CodeMismatchException.class,
-                        "CodeMismatchException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.TooManyRequestsException.class,
-                        "TooManyRequestsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.NotAuthorizedException.class,
-                        "NotAuthorizedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException.class,
-                        "InvalidLambdaResponseException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.InvalidParameterException.class,
-                        "InvalidParameterException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException.class,
-                        "TooManyFailedAttemptsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.AliasExistsException.class,
-                        "AliasExistsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.ExpiredCodeException.class,
-                        "ExpiredCodeException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.UserLambdaValidationException.class,
-                        "UserLambdaValidationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidp.model.InternalErrorException.class,
-                        "InternalErrorException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -356,20 +372,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddCustomAttributesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(addCustomAttributesRequest));
+                request = new AddCustomAttributesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(addCustomAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddCustomAttributesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new AddCustomAttributesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddCustomAttributesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddCustomAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -435,20 +451,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminConfirmSignUpRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(adminConfirmSignUpRequest));
+                request = new AdminConfirmSignUpRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(adminConfirmSignUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AdminConfirmSignUpResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new AdminConfirmSignUpResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AdminConfirmSignUpResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminConfirmSignUpResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -466,6 +482,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * 
      * @param adminDeleteUserRequest
      *        Represents the request to delete a user as an administrator.
+     * @return Result of the AdminDeleteUser operation returned by the service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot
      *         find the requested resource.
@@ -481,29 +498,35 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @sample AWSCognitoIdentityProvider.AdminDeleteUser
      */
     @Override
-    public void adminDeleteUser(AdminDeleteUserRequest adminDeleteUserRequest) {
+    public AdminDeleteUserResult adminDeleteUser(
+            AdminDeleteUserRequest adminDeleteUserRequest) {
         ExecutionContext executionContext = createExecutionContext(adminDeleteUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AdminDeleteUserRequest> request = null;
-        Response<Void> response = null;
+        Response<AdminDeleteUserResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminDeleteUserRequestMarshaller().marshall(super
-                        .beforeMarshalling(adminDeleteUserRequest));
+                request = new AdminDeleteUserRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(adminDeleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<AdminDeleteUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminDeleteUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -549,20 +572,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminDeleteUserAttributesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(adminDeleteUserAttributesRequest));
+                request = new AdminDeleteUserAttributesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(adminDeleteUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AdminDeleteUserAttributesResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<AdminDeleteUserAttributesResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new AdminDeleteUserAttributesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new AdminDeleteUserAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -608,7 +631,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminDisableUserRequestMarshaller()
+                request = new AdminDisableUserRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(adminDisableUserRequest));
                 // Binds the request metrics to the current request.
@@ -617,10 +640,11 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AdminDisableUserResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new AdminDisableUserResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AdminDisableUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminDisableUserResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -666,18 +690,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminEnableUserRequestMarshaller().marshall(super
-                        .beforeMarshalling(adminEnableUserRequest));
+                request = new AdminEnableUserRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(adminEnableUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AdminEnableUserResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new AdminEnableUserResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AdminEnableUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminEnableUserResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -725,18 +751,19 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminGetUserRequestMarshaller().marshall(super
-                        .beforeMarshalling(adminGetUserRequest));
+                request = new AdminGetUserRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(adminGetUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AdminGetUserResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new AdminGetUserResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AdminGetUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminGetUserResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -800,20 +827,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminResetUserPasswordRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(adminResetUserPasswordRequest));
+                request = new AdminResetUserPasswordRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(adminResetUserPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AdminResetUserPasswordResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new AdminResetUserPasswordResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AdminResetUserPasswordResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminResetUserPasswordResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -856,20 +883,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminSetUserSettingsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(adminSetUserSettingsRequest));
+                request = new AdminSetUserSettingsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(adminSetUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AdminSetUserSettingsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new AdminSetUserSettingsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AdminSetUserSettingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminSetUserSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -933,20 +960,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AdminUpdateUserAttributesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(adminUpdateUserAttributesRequest));
+                request = new AdminUpdateUserAttributesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(adminUpdateUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AdminUpdateUserAttributesResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<AdminUpdateUserAttributesResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new AdminUpdateUserAttributesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new AdminUpdateUserAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -997,18 +1024,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ChangePasswordRequestMarshaller().marshall(super
-                        .beforeMarshalling(changePasswordRequest));
+                request = new ChangePasswordRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(changePasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ChangePasswordResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ChangePasswordResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ChangePasswordResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ChangePasswordResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -1083,20 +1112,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ConfirmForgotPasswordRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(confirmForgotPasswordRequest));
+                request = new ConfirmForgotPasswordRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(confirmForgotPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ConfirmForgotPasswordResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ConfirmForgotPasswordResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ConfirmForgotPasswordResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ConfirmForgotPasswordResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -1172,18 +1201,19 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ConfirmSignUpRequestMarshaller().marshall(super
-                        .beforeMarshalling(confirmSignUpRequest));
+                request = new ConfirmSignUpRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(confirmSignUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ConfirmSignUpResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ConfirmSignUpResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ConfirmSignUpResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ConfirmSignUpResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -1231,18 +1261,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUserPoolRequestMarshaller().marshall(super
-                        .beforeMarshalling(createUserPoolRequest));
+                request = new CreateUserPoolRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateUserPoolResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateUserPoolResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUserPoolResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateUserPoolResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1292,20 +1324,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUserPoolClientRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createUserPoolClientRequest));
+                request = new CreateUserPoolClientRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateUserPoolClientResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateUserPoolClientResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUserPoolClientResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateUserPoolClientResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1323,6 +1355,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * 
      * @param deleteUserRequest
      *        Represents the request to delete a user.
+     * @return Result of the DeleteUser operation returned by the service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot
      *         find the requested resource.
@@ -1340,29 +1373,34 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @sample AWSCognitoIdentityProvider.DeleteUser
      */
     @Override
-    public void deleteUser(DeleteUserRequest deleteUserRequest) {
+    public DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteUserRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteUserResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteUserRequest));
+                request = new DeleteUserRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            anonymousInvoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteUserResultJsonUnmarshaller());
+            response = anonymousInvoke(request, responseHandler,
+                    executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1408,20 +1446,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserAttributesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteUserAttributesRequest));
+                request = new DeleteUserAttributesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteUserAttributesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DeleteUserAttributesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUserAttributesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteUserAttributesResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -1440,6 +1478,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * 
      * @param deleteUserPoolRequest
      *        Represents the request to delete a user pool.
+     * @return Result of the DeleteUserPool operation returned by the service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot
      *         find the requested resource.
@@ -1455,29 +1494,35 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @sample AWSCognitoIdentityProvider.DeleteUserPool
      */
     @Override
-    public void deleteUserPool(DeleteUserPoolRequest deleteUserPoolRequest) {
+    public DeleteUserPoolResult deleteUserPool(
+            DeleteUserPoolRequest deleteUserPoolRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteUserPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteUserPoolRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteUserPoolResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserPoolRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteUserPoolRequest));
+                request = new DeleteUserPoolRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUserPoolResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteUserPoolResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1492,6 +1537,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * 
      * @param deleteUserPoolClientRequest
      *        Represents the request to delete a user pool client.
+     * @return Result of the DeleteUserPoolClient operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot
      *         find the requested resource.
@@ -1507,31 +1554,35 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @sample AWSCognitoIdentityProvider.DeleteUserPoolClient
      */
     @Override
-    public void deleteUserPoolClient(
+    public DeleteUserPoolClientResult deleteUserPoolClient(
             DeleteUserPoolClientRequest deleteUserPoolClientRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteUserPoolClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteUserPoolClientRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteUserPoolClientResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserPoolClientRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteUserPoolClientRequest));
+                request = new DeleteUserPoolClientRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUserPoolClientResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteUserPoolClientResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1575,7 +1626,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUserPoolRequestMarshaller()
+                request = new DescribeUserPoolRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeUserPoolRequest));
                 // Binds the request metrics to the current request.
@@ -1584,10 +1635,11 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeUserPoolResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeUserPoolResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeUserPoolResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeUserPoolResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1635,20 +1687,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUserPoolClientRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeUserPoolClientRequest));
+                request = new DescribeUserPoolClientRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeUserPoolClientResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeUserPoolClientResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeUserPoolClientResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeUserPoolClientResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1709,18 +1761,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ForgotPasswordRequestMarshaller().marshall(super
-                        .beforeMarshalling(forgotPasswordRequest));
+                request = new ForgotPasswordRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(forgotPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ForgotPasswordResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ForgotPasswordResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ForgotPasswordResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ForgotPasswordResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -1768,18 +1822,19 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUserRequestMarshaller().marshall(super
-                        .beforeMarshalling(getUserRequest));
+                request = new GetUserRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetUserResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new GetUserResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetUserResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -1840,7 +1895,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetUserAttributeVerificationCodeRequestMarshaller()
+                request = new GetUserAttributeVerificationCodeRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(getUserAttributeVerificationCodeRequest));
                 // Binds the request metrics to the current request.
@@ -1849,11 +1905,11 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetUserAttributeVerificationCodeResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<GetUserAttributeVerificationCodeResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new GetUserAttributeVerificationCodeResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GetUserAttributeVerificationCodeResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -1901,20 +1957,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListUserPoolClientsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listUserPoolClientsRequest));
+                request = new ListUserPoolClientsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listUserPoolClientsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListUserPoolClientsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListUserPoolClientsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListUserPoolClientsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListUserPoolClientsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1957,18 +2013,19 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListUserPoolsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listUserPoolsRequest));
+                request = new ListUserPoolsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listUserPoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListUserPoolsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListUserPoolsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListUserPoolsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListUserPoolsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2013,18 +2070,19 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListUsersRequestMarshaller().marshall(super
-                        .beforeMarshalling(listUsersRequest));
+                request = new ListUsersRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListUsersResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListUsersResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListUsersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListUsersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2087,20 +2145,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResendConfirmationCodeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(resendConfirmationCodeRequest));
+                request = new ResendConfirmationCodeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(resendConfirmationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ResendConfirmationCodeResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ResendConfirmationCodeResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ResendConfirmationCodeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ResendConfirmationCodeResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -2145,18 +2203,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetUserSettingsRequestMarshaller().marshall(super
-                        .beforeMarshalling(setUserSettingsRequest));
+                request = new SetUserSettingsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(setUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SetUserSettingsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new SetUserSettingsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<SetUserSettingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SetUserSettingsResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -2221,18 +2281,19 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SignUpRequestMarshaller().marshall(super
-                        .beforeMarshalling(signUpRequest));
+                request = new SignUpRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(signUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SignUpResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new SignUpResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<SignUpResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SignUpResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -2302,20 +2363,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateUserAttributesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateUserAttributesRequest));
+                request = new UpdateUserAttributesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateUserAttributesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateUserAttributesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateUserAttributesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateUserAttributesResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -2365,18 +2426,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateUserPoolRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateUserPoolRequest));
+                request = new UpdateUserPoolRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(updateUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateUserPoolResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateUserPoolResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateUserPoolResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateUserPoolResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2424,20 +2487,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateUserPoolClientRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateUserPoolClientRequest));
+                request = new UpdateUserPoolClientRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateUserPoolClientResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateUserPoolClientResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateUserPoolClientResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateUserPoolClientResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2491,20 +2554,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new VerifyUserAttributeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(verifyUserAttributeRequest));
+                request = new VerifyUserAttributeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(verifyUserAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<VerifyUserAttributeResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new VerifyUserAttributeResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<VerifyUserAttributeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new VerifyUserAttributeResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
 
@@ -2579,8 +2642,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

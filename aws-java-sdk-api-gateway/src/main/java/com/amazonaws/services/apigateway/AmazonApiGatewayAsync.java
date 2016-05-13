@@ -363,9 +363,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteApiKeyRequest
      *        A request to delete the <a>ApiKey</a> resource.
+     * @return A Java Future containing the result of the DeleteApiKey operation
+     *         returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteApiKey
      */
-    java.util.concurrent.Future<Void> deleteApiKeyAsync(
+    java.util.concurrent.Future<DeleteApiKeyResult> deleteApiKeyAsync(
             DeleteApiKeyRequest deleteApiKeyRequest);
 
     /**
@@ -380,11 +382,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApiKey operation
+     *         returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteApiKey
      */
-    java.util.concurrent.Future<Void> deleteApiKeyAsync(
+    java.util.concurrent.Future<DeleteApiKeyResult> deleteApiKeyAsync(
             DeleteApiKeyRequest deleteApiKeyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteApiKeyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteApiKeyRequest, DeleteApiKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -393,9 +397,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteAuthorizerRequest
      *        Request to delete an existing <a>Authorizer</a> resource.
+     * @return A Java Future containing the result of the DeleteAuthorizer
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteAuthorizer
      */
-    java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+    java.util.concurrent.Future<DeleteAuthorizerResult> deleteAuthorizerAsync(
             DeleteAuthorizerRequest deleteAuthorizerRequest);
 
     /**
@@ -410,11 +416,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAuthorizer
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteAuthorizer
      */
-    java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+    java.util.concurrent.Future<DeleteAuthorizerResult> deleteAuthorizerAsync(
             DeleteAuthorizerRequest deleteAuthorizerRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, DeleteAuthorizerResult> asyncHandler);
 
     /**
      * <p>
@@ -423,9 +431,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteBasePathMappingRequest
      *        A request to delete the <a>BasePathMapping</a> resource.
+     * @return A Java Future containing the result of the DeleteBasePathMapping
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteBasePathMapping
      */
-    java.util.concurrent.Future<Void> deleteBasePathMappingAsync(
+    java.util.concurrent.Future<DeleteBasePathMappingResult> deleteBasePathMappingAsync(
             DeleteBasePathMappingRequest deleteBasePathMappingRequest);
 
     /**
@@ -440,11 +450,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBasePathMapping
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteBasePathMapping
      */
-    java.util.concurrent.Future<Void> deleteBasePathMappingAsync(
+    java.util.concurrent.Future<DeleteBasePathMappingResult> deleteBasePathMappingAsync(
             DeleteBasePathMappingRequest deleteBasePathMappingRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteBasePathMappingRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteBasePathMappingRequest, DeleteBasePathMappingResult> asyncHandler);
 
     /**
      * <p>
@@ -453,9 +465,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteClientCertificateRequest
      *        A request to delete the <a>ClientCertificate</a> resource.
+     * @return A Java Future containing the result of the
+     *         DeleteClientCertificate operation returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteClientCertificate
      */
-    java.util.concurrent.Future<Void> deleteClientCertificateAsync(
+    java.util.concurrent.Future<DeleteClientCertificateResult> deleteClientCertificateAsync(
             DeleteClientCertificateRequest deleteClientCertificateRequest);
 
     /**
@@ -470,11 +484,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteClientCertificate operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteClientCertificate
      */
-    java.util.concurrent.Future<Void> deleteClientCertificateAsync(
+    java.util.concurrent.Future<DeleteClientCertificateResult> deleteClientCertificateAsync(
             DeleteClientCertificateRequest deleteClientCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteClientCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteClientCertificateRequest, DeleteClientCertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -485,9 +501,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * @param deleteDeploymentRequest
      *        Requests Amazon API Gateway to delete a <a>Deployment</a>
      *        resource.
+     * @return A Java Future containing the result of the DeleteDeployment
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteDeployment
      */
-    java.util.concurrent.Future<Void> deleteDeploymentAsync(
+    java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(
             DeleteDeploymentRequest deleteDeploymentRequest);
 
     /**
@@ -504,11 +522,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDeployment
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteDeployment
      */
-    java.util.concurrent.Future<Void> deleteDeploymentAsync(
+    java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(
             DeleteDeploymentRequest deleteDeploymentRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, DeleteDeploymentResult> asyncHandler);
 
     /**
      * <p>
@@ -517,9 +537,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteDomainNameRequest
      *        A request to delete the <a>DomainName</a> resource.
+     * @return A Java Future containing the result of the DeleteDomainName
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteDomainName
      */
-    java.util.concurrent.Future<Void> deleteDomainNameAsync(
+    java.util.concurrent.Future<DeleteDomainNameResult> deleteDomainNameAsync(
             DeleteDomainNameRequest deleteDomainNameRequest);
 
     /**
@@ -534,11 +556,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDomainName
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteDomainName
      */
-    java.util.concurrent.Future<Void> deleteDomainNameAsync(
+    java.util.concurrent.Future<DeleteDomainNameResult> deleteDomainNameAsync(
             DeleteDomainNameRequest deleteDomainNameRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteDomainNameRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteDomainNameRequest, DeleteDomainNameResult> asyncHandler);
 
     /**
      * <p>
@@ -547,9 +571,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteIntegrationRequest
      *        Represents a delete integration request.
+     * @return A Java Future containing the result of the DeleteIntegration
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteIntegration
      */
-    java.util.concurrent.Future<Void> deleteIntegrationAsync(
+    java.util.concurrent.Future<DeleteIntegrationResult> deleteIntegrationAsync(
             DeleteIntegrationRequest deleteIntegrationRequest);
 
     /**
@@ -564,11 +590,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteIntegration
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteIntegration
      */
-    java.util.concurrent.Future<Void> deleteIntegrationAsync(
+    java.util.concurrent.Future<DeleteIntegrationResult> deleteIntegrationAsync(
             DeleteIntegrationRequest deleteIntegrationRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteIntegrationRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteIntegrationRequest, DeleteIntegrationResult> asyncHandler);
 
     /**
      * <p>
@@ -577,9 +605,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteIntegrationResponseRequest
      *        Represents a delete integration response request.
+     * @return A Java Future containing the result of the
+     *         DeleteIntegrationResponse operation returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteIntegrationResponse
      */
-    java.util.concurrent.Future<Void> deleteIntegrationResponseAsync(
+    java.util.concurrent.Future<DeleteIntegrationResponseResult> deleteIntegrationResponseAsync(
             DeleteIntegrationResponseRequest deleteIntegrationResponseRequest);
 
     /**
@@ -594,11 +624,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteIntegrationResponse operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteIntegrationResponse
      */
-    java.util.concurrent.Future<Void> deleteIntegrationResponseAsync(
+    java.util.concurrent.Future<DeleteIntegrationResponseResult> deleteIntegrationResponseAsync(
             DeleteIntegrationResponseRequest deleteIntegrationResponseRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteIntegrationResponseRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteIntegrationResponseRequest, DeleteIntegrationResponseResult> asyncHandler);
 
     /**
      * <p>
@@ -607,9 +639,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteMethodRequest
      *        Request to delete an existing <a>Method</a> resource.
+     * @return A Java Future containing the result of the DeleteMethod operation
+     *         returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteMethod
      */
-    java.util.concurrent.Future<Void> deleteMethodAsync(
+    java.util.concurrent.Future<DeleteMethodResult> deleteMethodAsync(
             DeleteMethodRequest deleteMethodRequest);
 
     /**
@@ -624,11 +658,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMethod operation
+     *         returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteMethod
      */
-    java.util.concurrent.Future<Void> deleteMethodAsync(
+    java.util.concurrent.Future<DeleteMethodResult> deleteMethodAsync(
             DeleteMethodRequest deleteMethodRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteMethodRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteMethodRequest, DeleteMethodResult> asyncHandler);
 
     /**
      * <p>
@@ -637,9 +673,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteMethodResponseRequest
      *        A request to delete an existing <a>MethodResponse</a> resource.
+     * @return A Java Future containing the result of the DeleteMethodResponse
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteMethodResponse
      */
-    java.util.concurrent.Future<Void> deleteMethodResponseAsync(
+    java.util.concurrent.Future<DeleteMethodResponseResult> deleteMethodResponseAsync(
             DeleteMethodResponseRequest deleteMethodResponseRequest);
 
     /**
@@ -654,11 +692,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMethodResponse
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteMethodResponse
      */
-    java.util.concurrent.Future<Void> deleteMethodResponseAsync(
+    java.util.concurrent.Future<DeleteMethodResponseResult> deleteMethodResponseAsync(
             DeleteMethodResponseRequest deleteMethodResponseRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteMethodResponseRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteMethodResponseRequest, DeleteMethodResponseResult> asyncHandler);
 
     /**
      * <p>
@@ -668,9 +708,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * @param deleteModelRequest
      *        Request to delete an existing model in an existing <a>RestApi</a>
      *        resource.
+     * @return A Java Future containing the result of the DeleteModel operation
+     *         returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteModel
      */
-    java.util.concurrent.Future<Void> deleteModelAsync(
+    java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(
             DeleteModelRequest deleteModelRequest);
 
     /**
@@ -686,11 +728,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteModel operation
+     *         returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteModel
      */
-    java.util.concurrent.Future<Void> deleteModelAsync(
+    java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(
             DeleteModelRequest deleteModelRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteModelRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteModelRequest, DeleteModelResult> asyncHandler);
 
     /**
      * <p>
@@ -699,9 +743,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteResourceRequest
      *        Request to delete a <a>Resource</a>.
+     * @return A Java Future containing the result of the DeleteResource
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteResource
      */
-    java.util.concurrent.Future<Void> deleteResourceAsync(
+    java.util.concurrent.Future<DeleteResourceResult> deleteResourceAsync(
             DeleteResourceRequest deleteResourceRequest);
 
     /**
@@ -716,11 +762,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResource
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteResource
      */
-    java.util.concurrent.Future<Void> deleteResourceAsync(
+    java.util.concurrent.Future<DeleteResourceResult> deleteResourceAsync(
             DeleteResourceRequest deleteResourceRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteResourceRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteResourceRequest, DeleteResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -729,9 +777,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteRestApiRequest
      *        Request to delete the specified API from your collection.
+     * @return A Java Future containing the result of the DeleteRestApi
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteRestApi
      */
-    java.util.concurrent.Future<Void> deleteRestApiAsync(
+    java.util.concurrent.Future<DeleteRestApiResult> deleteRestApiAsync(
             DeleteRestApiRequest deleteRestApiRequest);
 
     /**
@@ -746,11 +796,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRestApi
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteRestApi
      */
-    java.util.concurrent.Future<Void> deleteRestApiAsync(
+    java.util.concurrent.Future<DeleteRestApiResult> deleteRestApiAsync(
             DeleteRestApiRequest deleteRestApiRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteRestApiRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteRestApiRequest, DeleteRestApiResult> asyncHandler);
 
     /**
      * <p>
@@ -759,9 +811,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param deleteStageRequest
      *        Requests Amazon API Gateway to delete a <a>Stage</a> resource.
+     * @return A Java Future containing the result of the DeleteStage operation
+     *         returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteStage
      */
-    java.util.concurrent.Future<Void> deleteStageAsync(
+    java.util.concurrent.Future<DeleteStageResult> deleteStageAsync(
             DeleteStageRequest deleteStageRequest);
 
     /**
@@ -776,11 +830,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStage operation
+     *         returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.DeleteStage
      */
-    java.util.concurrent.Future<Void> deleteStageAsync(
+    java.util.concurrent.Future<DeleteStageResult> deleteStageAsync(
             DeleteStageRequest deleteStageRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteStageRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteStageRequest, DeleteStageResult> asyncHandler);
 
     /**
      * <p>
@@ -789,9 +845,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param flushStageAuthorizersCacheRequest
      *        Request to flush authorizer cache entries on a specified stage.
+     * @return A Java Future containing the result of the
+     *         FlushStageAuthorizersCache operation returned by the service.
      * @sample AmazonApiGatewayAsync.FlushStageAuthorizersCache
      */
-    java.util.concurrent.Future<Void> flushStageAuthorizersCacheAsync(
+    java.util.concurrent.Future<FlushStageAuthorizersCacheResult> flushStageAuthorizersCacheAsync(
             FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest);
 
     /**
@@ -806,11 +864,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         FlushStageAuthorizersCache operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.FlushStageAuthorizersCache
      */
-    java.util.concurrent.Future<Void> flushStageAuthorizersCacheAsync(
+    java.util.concurrent.Future<FlushStageAuthorizersCacheResult> flushStageAuthorizersCacheAsync(
             FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest,
-            com.amazonaws.handlers.AsyncHandler<FlushStageAuthorizersCacheRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<FlushStageAuthorizersCacheRequest, FlushStageAuthorizersCacheResult> asyncHandler);
 
     /**
      * <p>
@@ -819,9 +879,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * 
      * @param flushStageCacheRequest
      *        Requests Amazon API Gateway to flush a stage's cache.
+     * @return A Java Future containing the result of the FlushStageCache
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsync.FlushStageCache
      */
-    java.util.concurrent.Future<Void> flushStageCacheAsync(
+    java.util.concurrent.Future<FlushStageCacheResult> flushStageCacheAsync(
             FlushStageCacheRequest flushStageCacheRequest);
 
     /**
@@ -836,11 +898,13 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the FlushStageCache
+     *         operation returned by the service.
      * @sample AmazonApiGatewayAsyncHandler.FlushStageCache
      */
-    java.util.concurrent.Future<Void> flushStageCacheAsync(
+    java.util.concurrent.Future<FlushStageCacheResult> flushStageCacheAsync(
             FlushStageCacheRequest flushStageCacheRequest,
-            com.amazonaws.handlers.AsyncHandler<FlushStageCacheRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<FlushStageCacheRequest, FlushStageCacheResult> asyncHandler);
 
     /**
      * <p>

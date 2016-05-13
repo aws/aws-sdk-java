@@ -349,26 +349,25 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createBranchAsync(
+    public java.util.concurrent.Future<CreateBranchResult> createBranchAsync(
             CreateBranchRequest request) {
 
         return createBranchAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createBranchAsync(
+    public java.util.concurrent.Future<CreateBranchResult> createBranchAsync(
             final CreateBranchRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, CreateBranchResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreateBranchResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreateBranchResult call() throws Exception {
+                        CreateBranchResult result;
 
                         try {
-                            createBranch(request);
-                            result = null;
+                            result = createBranch(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -735,26 +734,25 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateDefaultBranchAsync(
+    public java.util.concurrent.Future<UpdateDefaultBranchResult> updateDefaultBranchAsync(
             UpdateDefaultBranchRequest request) {
 
         return updateDefaultBranchAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateDefaultBranchAsync(
+    public java.util.concurrent.Future<UpdateDefaultBranchResult> updateDefaultBranchAsync(
             final UpdateDefaultBranchRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, UpdateDefaultBranchResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateDefaultBranchResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateDefaultBranchResult call() throws Exception {
+                        UpdateDefaultBranchResult result;
 
                         try {
-                            updateDefaultBranch(request);
-                            result = null;
+                            result = updateDefaultBranch(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -771,26 +769,26 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
+    public java.util.concurrent.Future<UpdateRepositoryDescriptionResult> updateRepositoryDescriptionAsync(
             UpdateRepositoryDescriptionRequest request) {
 
         return updateRepositoryDescriptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
+    public java.util.concurrent.Future<UpdateRepositoryDescriptionResult> updateRepositoryDescriptionAsync(
             final UpdateRepositoryDescriptionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, UpdateRepositoryDescriptionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateRepositoryDescriptionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateRepositoryDescriptionResult call()
+                            throws Exception {
+                        UpdateRepositoryDescriptionResult result;
 
                         try {
-                            updateRepositoryDescription(request);
-                            result = null;
+                            result = updateRepositoryDescription(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -807,26 +805,25 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRepositoryNameAsync(
+    public java.util.concurrent.Future<UpdateRepositoryNameResult> updateRepositoryNameAsync(
             UpdateRepositoryNameRequest request) {
 
         return updateRepositoryNameAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRepositoryNameAsync(
+    public java.util.concurrent.Future<UpdateRepositoryNameResult> updateRepositoryNameAsync(
             final UpdateRepositoryNameRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, UpdateRepositoryNameResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateRepositoryNameResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateRepositoryNameResult call() throws Exception {
+                        UpdateRepositoryNameResult result;
 
                         try {
-                            updateRepositoryName(request);
-                            result = null;
+                            result = updateRepositoryName(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

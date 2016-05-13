@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ActivateGatewayRequest Marshaller
  */
 public class ActivateGatewayRequestMarshaller implements
         Marshaller<Request<ActivateGatewayRequest>, ActivateGatewayRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ActivateGatewayRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ActivateGatewayRequest> marshall(
             ActivateGatewayRequest activateGatewayRequest) {
@@ -58,8 +65,8 @@ public class ActivateGatewayRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

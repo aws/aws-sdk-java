@@ -33,11 +33,15 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
     private String name;
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      */
     private String instanceId;
-    /** The parameters for the documents runtime configuration. */
+    /**
+     * <p>
+     * The parameters for the documents runtime configuration.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> parameters;
 
     /**
@@ -83,11 +87,11 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The Windows Server instance ID.
+     *        The instance ID.
      */
 
     public void setInstanceId(String instanceId) {
@@ -96,10 +100,10 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      * 
-     * @return The Windows Server instance ID.
+     * @return The instance ID.
      */
 
     public String getInstanceId() {
@@ -108,11 +112,11 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The Windows Server instance ID.
+     *        The instance ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -123,7 +127,9 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The parameters for the documents runtime configuration.
+     * </p>
      * 
      * @return The parameters for the documents runtime configuration.
      */
@@ -133,7 +139,9 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The parameters for the documents runtime configuration.
+     * </p>
      * 
      * @param parameters
      *        The parameters for the documents runtime configuration.
@@ -145,7 +153,9 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The parameters for the documents runtime configuration.
+     * </p>
      * 
      * @param parameters
      *        The parameters for the documents runtime configuration.

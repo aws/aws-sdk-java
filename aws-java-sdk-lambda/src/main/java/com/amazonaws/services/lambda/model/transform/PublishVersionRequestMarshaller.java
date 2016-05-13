@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PublishVersionRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class PublishVersionRequestMarshaller implements
         Marshaller<Request<PublishVersionRequest>, PublishVersionRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PublishVersionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PublishVersionRequest> marshall(
             PublishVersionRequest publishVersionRequest) {
@@ -64,16 +72,19 @@ public class PublishVersionRequestMarshaller implements
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}/versions";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{FunctionName}",
-                (publishVersionRequest.getFunctionName() != null) ? StringUtils
-                        .fromString(publishVersionRequest.getFunctionName())
-                        : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{FunctionName}",
+                        (publishVersionRequest.getFunctionName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(publishVersionRequest
+                                                .getFunctionName()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (publishVersionRequest.getCodeSha256() != null) {

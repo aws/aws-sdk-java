@@ -15,16 +15,15 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
-import static com.amazonaws.codegen.internal.Constants.LINE_SEPARATOR;
-import static com.amazonaws.codegen.internal.DocumentationUtils.stripHTMLTags;
+import com.amazonaws.codegen.internal.DocumentationUtils;
+import com.amazonaws.codegen.internal.Utils;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.amazonaws.codegen.internal.DocumentationUtils;
-import com.amazonaws.codegen.internal.Utils;
-import com.amazonaws.codegen.model.service.AuthType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import static com.amazonaws.codegen.internal.Constants.LINE_SEPARATOR;
+import static com.amazonaws.codegen.internal.DocumentationUtils.stripHTMLTags;
 
 public class OperationModel extends DocumentationModel {
 
@@ -45,6 +44,12 @@ public class OperationModel extends DocumentationModel {
     private boolean hasBlobMemberAsPayload;
 
     private boolean isAuthenticated = true;
+
+    @JsonIgnore
+    private ShapeModel inputShape;
+
+    @JsonIgnore
+    private ShapeModel outputShape;
 
     public String getOperationName() {
         return operationName;
@@ -86,6 +91,22 @@ public class OperationModel extends DocumentationModel {
         this.isAuthenticated = isAuthenticated;
     }
 
+    public ShapeModel getInputShape() {
+        return inputShape;
+    }
+
+    public void setInputShape(ShapeModel inputShape) {
+        this.inputShape = inputShape;
+    }
+
+    public ShapeModel getOutputShape() {
+        return outputShape;
+    }
+
+    public void setOutputShape(ShapeModel outputShape) {
+        this.outputShape = outputShape;
+    }
+
     private static enum MethodType {
 
         SYNC(false),
@@ -101,7 +122,7 @@ public class OperationModel extends DocumentationModel {
         public boolean isAsync() {
             return async;
         }
-    };
+    }
 
     private String getDocumentation(final MethodType methodType, final Metadata md) {
         StringBuilder docBuilder = new StringBuilder("/**");
@@ -109,9 +130,7 @@ public class OperationModel extends DocumentationModel {
         if (documentation != null) {
             docBuilder.append(documentation);
         } else {
-            docBuilder.append("Invokes the ")
-                .append(operationName)
-                .append(" operation");
+            docBuilder.append("Invokes the ").append(operationName).append(" operation");
 
             if (methodType.isAsync()) {
                 docBuilder.append(" asynchronously");
@@ -121,43 +140,36 @@ public class OperationModel extends DocumentationModel {
         }
 
         if (input != null) {
-            docBuilder.append(LINE_SEPARATOR)
-                    .append("@param ")
-                    .append(input.getVariableName())
-                    .append(" ")
-                    .append(stripHTMLTags(input.getDocumentation()));
+            docBuilder.append(LINE_SEPARATOR).append("@param ").append(input.getVariableName())
+                    .append(" ").append(stripHTMLTags(input.getDocumentation()));
         }
 
         if (methodType == MethodType.ASYNC_WITH_HANDLER) {
             docBuilder.append(LINE_SEPARATOR)
-                    .append("@param asyncHandler Asynchronous callback handler "
-                            + "for events in the lifecycle of the request. "
-                            + "Users can provide an implementation of the "
-                            + "callback methods in this interface to receive "
-                            + "notification of successful or unsuccessful "
-                            + "completion of the operation.");
+                    .append("@param asyncHandler Asynchronous callback handler " +
+                            "for events in the lifecycle of the request. " +
+                            "Users can provide an implementation of the " +
+                            "callback methods in this interface to receive " +
+                            "notification of successful or unsuccessful " +
+                            "completion of the operation.");
         }
 
         if (returnType != null) {
             docBuilder.append(LINE_SEPARATOR).append("@return ");
             if (methodType.isAsync()) {
                 docBuilder.append(DocumentationUtils.DEFAULT_ASYNC_RETURN
-                        .replace("%s", operationName));
+                                          .replace("%s", operationName));
             } else {
                 docBuilder.append(DocumentationUtils.DEFAULT_SYNC_RETURN
-                        .replace("%s", operationName));
+                                          .replace("%s", operationName));
             }
         }
 
-        if (!methodType.isAsync()
-                && exceptions != null
-                && !(exceptions.isEmpty())) {
+        if (!methodType.isAsync() && exceptions != null && !(exceptions.isEmpty())) {
 
             for (ExceptionModel exception : exceptions) {
-                docBuilder.append(LINE_SEPARATOR)
-                        .append("@throws ")
-                        .append(exception.getExceptionName())
-                        .append(" ")
+                docBuilder.append(LINE_SEPARATOR).append("@throws ")
+                        .append(exception.getExceptionName()).append(" ")
                         .append(stripHTMLTags(exception.getDocumentation()));
             }
         }
@@ -229,23 +241,16 @@ public class OperationModel extends DocumentationModel {
     }
 
     public String getAsyncFutureType() {
-        return "java.util.concurrent.Future<"
-                + getAsyncReturnType()
-                + ">";
+        return "java.util.concurrent.Future<" + getAsyncReturnType() + ">";
     }
 
     public String getAsyncCallableType() {
-        return "java.util.concurrent.Callable<"
-                + getAsyncReturnType()
-                + ">";
+        return "java.util.concurrent.Callable<" + getAsyncReturnType() + ">";
     }
 
     public String getAsyncHandlerType() {
-        return "com.amazonaws.handlers.AsyncHandler<"
-                + input.getVariableType()
-                + ", "
-                + getAsyncReturnType()
-                + ">";
+        return "com.amazonaws.handlers.AsyncHandler<" + input.getVariableType() + ", " +
+               getAsyncReturnType() + ">";
     }
 
     public List<ExceptionModel> getExceptions() {

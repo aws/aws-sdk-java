@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListDistributionsByWebACLIdRequest Marshaller
@@ -62,9 +63,11 @@ public class ListDistributionsByWebACLIdRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{WebACLId}",
-                        (listDistributionsByWebACLIdRequest.getWebACLId() != null) ? StringUtils
-                                .fromString(listDistributionsByWebACLIdRequest
-                                        .getWebACLId()) : "");
+                        (listDistributionsByWebACLIdRequest.getWebACLId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(listDistributionsByWebACLIdRequest
+                                                .getWebACLId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         if (listDistributionsByWebACLIdRequest.getMarker() != null) {

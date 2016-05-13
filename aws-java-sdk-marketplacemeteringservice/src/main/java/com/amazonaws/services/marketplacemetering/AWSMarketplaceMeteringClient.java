@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -85,11 +85,50 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all AWSMarketplace Metering
-     * exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "TimestampOutOfBoundsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InternalServiceErrorException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.marketplacemetering.model.InternalServiceErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidUsageDimensionException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.marketplacemetering.model.InvalidUsageDimensionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ThrottlingException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.marketplacemetering.model.ThrottlingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DuplicateRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.marketplacemetering.model.DuplicateRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidEndpointRegionException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidProductCodeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.marketplacemetering.model.InvalidProductCodeException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWSMarketplace
@@ -249,37 +288,6 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException.class,
-                        "TimestampOutOfBoundsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.marketplacemetering.model.InternalServiceErrorException.class,
-                        "InternalServiceErrorException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.marketplacemetering.model.InvalidUsageDimensionException.class,
-                        "InvalidUsageDimensionException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.marketplacemetering.model.ThrottlingException.class,
-                        "ThrottlingException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.marketplacemetering.model.DuplicateRequestException.class,
-                        "DuplicateRequestException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException.class,
-                        "InvalidEndpointRegionException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.marketplacemetering.model.InvalidProductCodeException.class,
-                        "InvalidProductCodeException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -337,18 +345,19 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new MeterUsageRequestMarshaller().marshall(super
-                        .beforeMarshalling(meterUsageRequest));
+                request = new MeterUsageRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(meterUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<MeterUsageResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new MeterUsageResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<MeterUsageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new MeterUsageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -422,8 +431,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

@@ -111,11 +111,12 @@ public interface AmazonCloudWatch {
      * </p>
      * 
      * @param deleteAlarmsRequest
+     * @return Result of the DeleteAlarms operation returned by the service.
      * @throws ResourceNotFoundException
      *         The named resource does not exist.
      * @sample AmazonCloudWatch.DeleteAlarms
      */
-    void deleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest);
+    DeleteAlarmsResult deleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest);
 
     /**
      * <p>
@@ -188,9 +189,11 @@ public interface AmazonCloudWatch {
      * </p>
      * 
      * @param disableAlarmActionsRequest
+     * @return Result of the DisableAlarmActions operation returned by the
+     *         service.
      * @sample AmazonCloudWatch.DisableAlarmActions
      */
-    void disableAlarmActions(
+    DisableAlarmActionsResult disableAlarmActions(
             DisableAlarmActionsRequest disableAlarmActionsRequest);
 
     /**
@@ -199,9 +202,12 @@ public interface AmazonCloudWatch {
      * </p>
      * 
      * @param enableAlarmActionsRequest
+     * @return Result of the EnableAlarmActions operation returned by the
+     *         service.
      * @sample AmazonCloudWatch.EnableAlarmActions
      */
-    void enableAlarmActions(EnableAlarmActionsRequest enableAlarmActionsRequest);
+    EnableAlarmActionsResult enableAlarmActions(
+            EnableAlarmActionsRequest enableAlarmActionsRequest);
 
     /**
      * <p>
@@ -345,11 +351,13 @@ public interface AmazonCloudWatch {
      * </note>
      * 
      * @param putMetricAlarmRequest
+     * @return Result of the PutMetricAlarm operation returned by the service.
      * @throws LimitExceededException
      *         The quota for alarms for this customer has already been reached.
      * @sample AmazonCloudWatch.PutMetricAlarm
      */
-    void putMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest);
+    PutMetricAlarmResult putMetricAlarm(
+            PutMetricAlarmRequest putMetricAlarmRequest);
 
     /**
      * <p>
@@ -376,6 +384,7 @@ public interface AmazonCloudWatch {
      * </p>
      * 
      * @param putMetricDataRequest
+     * @return Result of the PutMetricData operation returned by the service.
      * @throws InvalidParameterValueException
      *         Bad or out-of-range value was supplied for the input parameter.
      * @throws MissingRequiredParameterException
@@ -388,7 +397,7 @@ public interface AmazonCloudWatch {
      *         unknown error, exception, or failure.
      * @sample AmazonCloudWatch.PutMetricData
      */
-    void putMetricData(PutMetricDataRequest putMetricDataRequest);
+    PutMetricDataResult putMetricData(PutMetricDataRequest putMetricDataRequest);
 
     /**
      * <p>
@@ -405,13 +414,14 @@ public interface AmazonCloudWatch {
      * </p>
      * 
      * @param setAlarmStateRequest
+     * @return Result of the SetAlarmState operation returned by the service.
      * @throws ResourceNotFoundException
      *         The named resource does not exist.
      * @throws InvalidFormatException
      *         Data was not syntactically valid JSON.
      * @sample AmazonCloudWatch.SetAlarmState
      */
-    void setAlarmState(SetAlarmStateRequest setAlarmStateRequest);
+    SetAlarmStateResult setAlarmState(SetAlarmStateRequest setAlarmStateRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held

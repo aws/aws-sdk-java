@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetResourceRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetResourceRequestMarshaller implements
         Marshaller<Request<GetResourceRequest>, GetResourceRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetResourceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetResourceRequest> marshall(
             GetResourceRequest getResourceRequest) {
@@ -66,12 +73,14 @@ public class GetResourceRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getResourceRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(getResourceRequest.getRestApiId()) : "");
+                (getResourceRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getResourceRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{resource_id}",
-                (getResourceRequest.getResourceId() != null) ? StringUtils
-                        .fromString(getResourceRequest.getResourceId()) : "");
+                (getResourceRequest.getResourceId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getResourceRequest
+                                .getResourceId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

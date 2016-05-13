@@ -52,6 +52,17 @@ public class ChangeSetSummary implements Serializable, Cloneable {
     private String changeSetName;
     /**
      * <p>
+     * If the change set execution status is <code>AVAILABLE</code>, you can
+     * execute the change set. If you can’t execute the change set, the status
+     * indicates why. For example, a change set might be in an
+     * <code>UNAVAILABLE</code> state because AWS CloudFormation is still
+     * creating it or in an <code>OBSOLETE</code> state because the stack was
+     * already updated.
+     * </p>
+     */
+    private String executionStatus;
+    /**
+     * <p>
      * The state of the change set, such as <code>CREATE_IN_PROGRESS</code>,
      * <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.
      * </p>
@@ -239,6 +250,131 @@ public class ChangeSetSummary implements Serializable, Cloneable {
 
     public ChangeSetSummary withChangeSetName(String changeSetName) {
         setChangeSetName(changeSetName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the change set execution status is <code>AVAILABLE</code>, you can
+     * execute the change set. If you can’t execute the change set, the status
+     * indicates why. For example, a change set might be in an
+     * <code>UNAVAILABLE</code> state because AWS CloudFormation is still
+     * creating it or in an <code>OBSOLETE</code> state because the stack was
+     * already updated.
+     * </p>
+     * 
+     * @param executionStatus
+     *        If the change set execution status is <code>AVAILABLE</code>, you
+     *        can execute the change set. If you can’t execute the change set,
+     *        the status indicates why. For example, a change set might be in an
+     *        <code>UNAVAILABLE</code> state because AWS CloudFormation is still
+     *        creating it or in an <code>OBSOLETE</code> state because the stack
+     *        was already updated.
+     * @see ExecutionStatus
+     */
+
+    public void setExecutionStatus(String executionStatus) {
+        this.executionStatus = executionStatus;
+    }
+
+    /**
+     * <p>
+     * If the change set execution status is <code>AVAILABLE</code>, you can
+     * execute the change set. If you can’t execute the change set, the status
+     * indicates why. For example, a change set might be in an
+     * <code>UNAVAILABLE</code> state because AWS CloudFormation is still
+     * creating it or in an <code>OBSOLETE</code> state because the stack was
+     * already updated.
+     * </p>
+     * 
+     * @return If the change set execution status is <code>AVAILABLE</code>, you
+     *         can execute the change set. If you can’t execute the change set,
+     *         the status indicates why. For example, a change set might be in
+     *         an <code>UNAVAILABLE</code> state because AWS CloudFormation is
+     *         still creating it or in an <code>OBSOLETE</code> state because
+     *         the stack was already updated.
+     * @see ExecutionStatus
+     */
+
+    public String getExecutionStatus() {
+        return this.executionStatus;
+    }
+
+    /**
+     * <p>
+     * If the change set execution status is <code>AVAILABLE</code>, you can
+     * execute the change set. If you can’t execute the change set, the status
+     * indicates why. For example, a change set might be in an
+     * <code>UNAVAILABLE</code> state because AWS CloudFormation is still
+     * creating it or in an <code>OBSOLETE</code> state because the stack was
+     * already updated.
+     * </p>
+     * 
+     * @param executionStatus
+     *        If the change set execution status is <code>AVAILABLE</code>, you
+     *        can execute the change set. If you can’t execute the change set,
+     *        the status indicates why. For example, a change set might be in an
+     *        <code>UNAVAILABLE</code> state because AWS CloudFormation is still
+     *        creating it or in an <code>OBSOLETE</code> state because the stack
+     *        was already updated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ExecutionStatus
+     */
+
+    public ChangeSetSummary withExecutionStatus(String executionStatus) {
+        setExecutionStatus(executionStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the change set execution status is <code>AVAILABLE</code>, you can
+     * execute the change set. If you can’t execute the change set, the status
+     * indicates why. For example, a change set might be in an
+     * <code>UNAVAILABLE</code> state because AWS CloudFormation is still
+     * creating it or in an <code>OBSOLETE</code> state because the stack was
+     * already updated.
+     * </p>
+     * 
+     * @param executionStatus
+     *        If the change set execution status is <code>AVAILABLE</code>, you
+     *        can execute the change set. If you can’t execute the change set,
+     *        the status indicates why. For example, a change set might be in an
+     *        <code>UNAVAILABLE</code> state because AWS CloudFormation is still
+     *        creating it or in an <code>OBSOLETE</code> state because the stack
+     *        was already updated.
+     * @see ExecutionStatus
+     */
+
+    public void setExecutionStatus(ExecutionStatus executionStatus) {
+        this.executionStatus = executionStatus.toString();
+    }
+
+    /**
+     * <p>
+     * If the change set execution status is <code>AVAILABLE</code>, you can
+     * execute the change set. If you can’t execute the change set, the status
+     * indicates why. For example, a change set might be in an
+     * <code>UNAVAILABLE</code> state because AWS CloudFormation is still
+     * creating it or in an <code>OBSOLETE</code> state because the stack was
+     * already updated.
+     * </p>
+     * 
+     * @param executionStatus
+     *        If the change set execution status is <code>AVAILABLE</code>, you
+     *        can execute the change set. If you can’t execute the change set,
+     *        the status indicates why. For example, a change set might be in an
+     *        <code>UNAVAILABLE</code> state because AWS CloudFormation is still
+     *        creating it or in an <code>OBSOLETE</code> state because the stack
+     *        was already updated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ExecutionStatus
+     */
+
+    public ChangeSetSummary withExecutionStatus(ExecutionStatus executionStatus) {
+        setExecutionStatus(executionStatus);
         return this;
     }
 
@@ -487,6 +623,8 @@ public class ChangeSetSummary implements Serializable, Cloneable {
             sb.append("ChangeSetId: " + getChangeSetId() + ",");
         if (getChangeSetName() != null)
             sb.append("ChangeSetName: " + getChangeSetName() + ",");
+        if (getExecutionStatus() != null)
+            sb.append("ExecutionStatus: " + getExecutionStatus() + ",");
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
         if (getStatusReason() != null)
@@ -529,6 +667,12 @@ public class ChangeSetSummary implements Serializable, Cloneable {
         if (other.getChangeSetName() != null
                 && other.getChangeSetName().equals(this.getChangeSetName()) == false)
             return false;
+        if (other.getExecutionStatus() == null
+                ^ this.getExecutionStatus() == null)
+            return false;
+        if (other.getExecutionStatus() != null
+                && other.getExecutionStatus().equals(this.getExecutionStatus()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null
@@ -567,6 +711,10 @@ public class ChangeSetSummary implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getChangeSetName() == null) ? 0 : getChangeSetName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getExecutionStatus() == null) ? 0 : getExecutionStatus()
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getStatus() == null) ? 0 : getStatus().hashCode());

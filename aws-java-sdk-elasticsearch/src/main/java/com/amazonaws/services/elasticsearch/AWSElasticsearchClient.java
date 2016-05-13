@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -77,11 +77,51 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all Amazon Elasticsearch Service
-     * exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ResourceAlreadyExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticsearch.model.ResourceAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticsearch.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DisabledOperationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticsearch.model.DisabledOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ValidationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticsearch.model.ValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("BaseException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticsearch.model.BaseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticsearch.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidTypeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticsearch.model.InvalidTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticsearch.model.InternalException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Elasticsearch
@@ -240,40 +280,6 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticsearch.model.ResourceAlreadyExistsException.class,
-                        "ResourceAlreadyExistsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticsearch.model.LimitExceededException.class,
-                        "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticsearch.model.DisabledOperationException.class,
-                        "DisabledOperationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticsearch.model.ValidationException.class,
-                        "ValidationException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.elasticsearch.model.BaseException.class,
-                "BaseException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticsearch.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticsearch.model.InvalidTypeException.class,
-                        "InvalidTypeException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticsearch.model.InternalException.class,
-                        "InternalException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -301,6 +307,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      *        Container for the parameters to the <code><a>AddTags</a></code>
      *        operation. Specify the tags that you want to attach to the
      *        Elasticsearch domain.
+     * @return Result of the AddTags operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws LimitExceededException
@@ -316,29 +323,33 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      * @sample AWSElasticsearch.AddTags
      */
     @Override
-    public void addTags(AddTagsRequest addTagsRequest) {
+    public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
         ExecutionContext executionContext = createExecutionContext(addTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddTagsRequest> request = null;
-        Response<Void> response = null;
+        Response<AddTagsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(addTagsRequest));
+                request = new AddTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<AddTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -393,20 +404,20 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateElasticsearchDomainRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createElasticsearchDomainRequest));
+                request = new CreateElasticsearchDomainRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createElasticsearchDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateElasticsearchDomainResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<CreateElasticsearchDomainResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new CreateElasticsearchDomainResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CreateElasticsearchDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -456,20 +467,20 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteElasticsearchDomainRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteElasticsearchDomainRequest));
+                request = new DeleteElasticsearchDomainRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteElasticsearchDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteElasticsearchDomainResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteElasticsearchDomainResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DeleteElasticsearchDomainResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteElasticsearchDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -519,20 +530,20 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticsearchDomainRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeElasticsearchDomainRequest));
+                request = new DescribeElasticsearchDomainRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeElasticsearchDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeElasticsearchDomainResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeElasticsearchDomainResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeElasticsearchDomainResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeElasticsearchDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -584,7 +595,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticsearchDomainConfigRequestMarshaller()
+                request = new DescribeElasticsearchDomainConfigRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeElasticsearchDomainConfigRequest));
                 // Binds the request metrics to the current request.
@@ -593,11 +605,11 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeElasticsearchDomainConfigResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeElasticsearchDomainConfigResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeElasticsearchDomainConfigResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeElasticsearchDomainConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -645,7 +657,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticsearchDomainsRequestMarshaller()
+                request = new DescribeElasticsearchDomainsRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeElasticsearchDomainsRequest));
                 // Binds the request metrics to the current request.
@@ -654,11 +667,11 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeElasticsearchDomainsResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeElasticsearchDomainsResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeElasticsearchDomainsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeElasticsearchDomainsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -697,18 +710,20 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDomainNamesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listDomainNamesRequest));
+                request = new ListDomainNamesRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(listDomainNamesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDomainNamesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListDomainNamesResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListDomainNamesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListDomainNamesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -756,18 +771,19 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listTagsRequest));
+                request = new ListTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListTagsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -789,6 +805,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      *        operation. Specify the <code>ARN</code> for the Elasticsearch
      *        domain from which you want to remove the specified
      *        <code>TagKey</code>.
+     * @return Result of the RemoveTags operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws ValidationException
@@ -801,29 +818,33 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
      * @sample AWSElasticsearch.RemoveTags
      */
     @Override
-    public void removeTags(RemoveTagsRequest removeTagsRequest) {
+    public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
         ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RemoveTagsRequest> request = null;
-        Response<Void> response = null;
+        Response<RemoveTagsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(removeTagsRequest));
+                request = new RemoveTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemoveTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -876,7 +897,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateElasticsearchDomainConfigRequestMarshaller()
+                request = new UpdateElasticsearchDomainConfigRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(updateElasticsearchDomainConfigRequest));
                 // Binds the request metrics to the current request.
@@ -885,11 +907,11 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateElasticsearchDomainConfigResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateElasticsearchDomainConfigResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new UpdateElasticsearchDomainConfigResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateElasticsearchDomainConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -963,8 +985,8 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

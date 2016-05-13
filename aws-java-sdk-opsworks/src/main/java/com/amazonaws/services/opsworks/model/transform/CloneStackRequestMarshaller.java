@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CloneStackRequest Marshaller
  */
 public class CloneStackRequestMarshaller implements
         Marshaller<Request<CloneStackRequest>, CloneStackRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CloneStackRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CloneStackRequest> marshall(
             CloneStackRequest cloneStackRequest) {
@@ -57,8 +63,8 @@ public class CloneStackRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

@@ -89,16 +89,16 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAliasAsync(
+    public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             DeleteAliasRequest request) {
 
         return deleteAliasAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAliasAsync(
+    public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             DeleteAliasRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,16 +119,16 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteFunctionAsync(
+    public java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(
             DeleteFunctionRequest request) {
 
         return deleteFunctionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteFunctionAsync(
+    public java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(
             DeleteFunctionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -366,16 +366,16 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             RemovePermissionRequest request) {
 
         return removePermissionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             RemovePermissionRequest request,
-            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

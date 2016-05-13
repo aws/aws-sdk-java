@@ -1,1237 +1,1736 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#modifyReplicationGroup(ModifyReplicationGroupRequest) ModifyReplicationGroup operation}.
  * <p>
- * The <i>ModifyReplicationGroup</i> action modifies the settings for a
- * replication group.
+ * Represents the input of a <i>ModifyReplicationGroups</i> action.
  * </p>
- *
- * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyReplicationGroup(ModifyReplicationGroupRequest)
  */
-public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The identifier of the replication group to modify.
+     * </p>
      */
     private String replicationGroupId;
-
     /**
+     * <p>
      * A description for the replication group. Maximum length is 255
      * characters.
+     * </p>
      */
     private String replicationGroupDescription;
-
     /**
+     * <p>
      * If this parameter is specified, ElastiCache will promote the specified
-     * cluster in the specified replication group to the primary role. The
-     * nodes of all other clusters in the replication group will be read
-     * replicas.
+     * cluster in the specified replication group to the primary role. The nodes
+     * of all other clusters in the replication group will be read replicas.
+     * </p>
      */
     private String primaryClusterId;
-
     /**
-     * The cache cluster ID that will be used as the daily snapshot source
-     * for the replication group.
+     * <p>
+     * The cache cluster ID that will be used as the daily snapshot source for
+     * the replication group.
+     * </p>
      */
     private String snapshottingClusterId;
-
     /**
+     * <p>
      * Whether a read replica will be automatically promoted to read/write
-     * primary if the existing primary encounters a failure. <p>Valid values:
-     * <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     * replication groups are not supported on: <ul> <li>Redis versions
-     * earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     * primary if the existing primary encounters a failure.
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li>
+     * </ul>
      * </note>
      */
     private Boolean automaticFailoverEnabled;
-
     /**
+     * <p>
      * A list of cache security group names to authorize for the clusters in
-     * this replication group. This change is asynchronously applied as soon
-     * as possible. <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private
-     * Cloud (VPC). <p>Constraints: Must contain no more than 255
-     * alphanumeric characters. Must not be "Default".
+     * this replication group. This change is asynchronously applied as soon as
+     * possible.
+     * </p>
+     * <p>
+     * This parameter can be used only with replication group containing cache
+     * clusters running outside of an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters. Must
+     * not be &quot;Default".
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheSecurityGroupNames;
-
+    private com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNames;
     /**
-     * Specifies the VPC Security Groups associated with the cache clusters
-     * in the replication group. <p>This parameter can be used only with
-     * replication group containing cache clusters running in an Amazon
-     * Virtual Private Cloud (VPC).
+     * <p>
+     * Specifies the VPC Security Groups associated with the cache clusters in
+     * the replication group.
+     * </p>
+     * <p>
+     * This parameter can be used only with replication group containing cache
+     * clusters running in an Amazon Virtual Private Cloud (VPC).
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIds;
-
+    private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
+     * <p>
      * Specifies the weekly time range during which maintenance on the cache
      * cluster is performed. It is specified as a range in the format
-     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period. Valid values for <code>ddd</code> are:
-     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
-     * <li><code>tue</code></li> <li><code>wed</code></li>
-     * <li><code>thu</code></li> <li><code>fri</code></li>
-     * <li><code>sat</code></li> </ul> <p>Example:
-     * <code>sun:05:00-sun:09:00</code>
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
+     * is a 60 minute period. Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li><code>sun</code></li>
+     * <li><code>mon</code></li>
+     * <li><code>tue</code></li>
+     * <li><code>wed</code></li>
+     * <li><code>thu</code></li>
+     * <li><code>fri</code></li>
+     * <li><code>sat</code></li>
+     * </ul>
+     * <p>
+     * Example: <code>sun:05:00-sun:09:00</code>
+     * </p>
      */
     private String preferredMaintenanceWindow;
-
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-     * notifications will be sent. <note>The Amazon SNS topic owner must be
-     * same as the replication group owner. </note>
+     * notifications will be sent.
+     * </p>
+     * <note>The Amazon SNS topic owner must be same as the replication group
+     * owner. </note>
      */
     private String notificationTopicArn;
-
     /**
-     * The name of the cache parameter group to apply to all of the clusters
-     * in this replication group. This change is asynchronously applied as
-     * soon as possible for parameters when the <i>ApplyImmediately</i>
-     * parameter is specified as <i>true</i> for this request.
+     * <p>
+     * The name of the cache parameter group to apply to all of the clusters in
+     * this replication group. This change is asynchronously applied as soon as
+     * possible for parameters when the <i>ApplyImmediately</i> parameter is
+     * specified as <i>true</i> for this request.
+     * </p>
      */
     private String cacheParameterGroupName;
-
     /**
+     * <p>
      * The status of the Amazon SNS notification topic for the replication
      * group. Notifications are sent only if the status is <i>active</i>.
-     * <p>Valid values: <code>active</code> | <code>inactive</code>
+     * </p>
+     * <p>
+     * Valid values: <code>active</code> | <code>inactive</code>
+     * </p>
      */
     private String notificationTopicStatus;
-
     /**
+     * <p>
      * If <code>true</code>, this parameter causes the modifications in this
-     * request and any pending modifications to be applied, asynchronously
-     * and as soon as possible, regardless of the
-     * <i>PreferredMaintenanceWindow</i> setting for the replication group.
-     * <p>If <code>false</code>, then changes to the nodes in the replication
-     * group are applied on the next maintenance reboot, or the next failure
-     * reboot, whichever occurs first. <p>Valid values: <code>true</code> |
-     * <code>false</code> <p>Default: <code>false</code>
+     * request and any pending modifications to be applied, asynchronously and
+     * as soon as possible, regardless of the <i>PreferredMaintenanceWindow</i>
+     * setting for the replication group.
+     * </p>
+     * <p>
+     * If <code>false</code>, then changes to the nodes in the replication group
+     * are applied on the next maintenance reboot, or the next failure reboot,
+     * whichever occurs first.
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
      */
     private Boolean applyImmediately;
-
     /**
-     * The upgraded version of the cache engine to be run on the cache
-     * clusters in the replication group. <p><b>Important:</b> You can
-     * upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
-     * a Cache Engine and Version</a>), but you cannot downgrade to an
-     * earlier engine version. If you want to use an earlier engine version,
+     * <p>
+     * The upgraded version of the cache engine to be run on the cache clusters
+     * in the replication group.
+     * </p>
+     * <p>
+     * <b>Important:</b> You can upgrade to a newer engine version (see <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to
+     * an earlier engine version. If you want to use an earlier engine version,
      * you must delete the existing replication group and create it anew with
      * the earlier engine version.
+     * </p>
      */
     private String engineVersion;
-
     /**
+     * <p>
      * This parameter is currently disabled.
+     * </p>
      */
     private Boolean autoMinorVersionUpgrade;
-
     /**
-     * The number of days for which ElastiCache will retain automatic node
-     * group snapshots before deleting them. For example, if you set
-     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
-     * today will be retained for 5 days before being deleted.
-     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
-     * to zero (0), backups are turned off.
+     * <p>
+     * The number of days for which ElastiCache will retain automatic node group
+     * snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
+     * will be retained for 5 days before being deleted.
+     * </p>
+     * <p>
+     * <b>Important</b><br/>
+     * If the value of SnapshotRetentionLimit is set to zero (0), backups are
+     * turned off.
+     * </p>
      */
     private Integer snapshotRetentionLimit;
-
     /**
-     * The daily time range (in UTC) during which ElastiCache will begin
-     * taking a daily snapshot of the node group specified by
-     * <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
-     * <p>If you do not specify this parameter, then ElastiCache will
-     * automatically choose an appropriate time range.
+     * <p>
+     * The daily time range (in UTC) during which ElastiCache will begin taking
+     * a daily snapshot of the node group specified by
+     * <i>SnapshottingClusterId</i>.
+     * </p>
+     * <p>
+     * Example: <code>05:00-09:00</code>
+     * </p>
+     * <p>
+     * If you do not specify this parameter, then ElastiCache will automatically
+     * choose an appropriate time range.
+     * </p>
      */
     private String snapshotWindow;
-
     /**
-     * A valid cache node type that you want to scale this replication group
-     * to. The value of this parameter must be one of the
+     * <p>
+     * A valid cache node type that you want to scale this replication group to.
+     * The value of this parameter must be one of the
      * <i>ScaleUpModifications</i> values returned by the
      * <code>ListAllowedCacheNodeTypeModification</code> action.
+     * </p>
      */
     private String cacheNodeType;
 
     /**
+     * <p>
      * The identifier of the replication group to modify.
-     *
-     * @return The identifier of the replication group to modify.
+     * </p>
+     * 
+     * @param replicationGroupId
+     *        The identifier of the replication group to modify.
      */
-    public String getReplicationGroupId() {
-        return replicationGroupId;
-    }
-    
-    /**
-     * The identifier of the replication group to modify.
-     *
-     * @param replicationGroupId The identifier of the replication group to modify.
-     */
+
     public void setReplicationGroupId(String replicationGroupId) {
         this.replicationGroupId = replicationGroupId;
     }
-    
+
     /**
-     * The identifier of the replication group to modify.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param replicationGroupId The identifier of the replication group to modify.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier of the replication group to modify.
+     * </p>
+     * 
+     * @return The identifier of the replication group to modify.
      */
-    public ModifyReplicationGroupRequest withReplicationGroupId(String replicationGroupId) {
-        this.replicationGroupId = replicationGroupId;
+
+    public String getReplicationGroupId() {
+        return this.replicationGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the replication group to modify.
+     * </p>
+     * 
+     * @param replicationGroupId
+     *        The identifier of the replication group to modify.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withReplicationGroupId(
+            String replicationGroupId) {
+        setReplicationGroupId(replicationGroupId);
         return this;
     }
 
     /**
+     * <p>
      * A description for the replication group. Maximum length is 255
      * characters.
-     *
+     * </p>
+     * 
+     * @param replicationGroupDescription
+     *        A description for the replication group. Maximum length is 255
+     *        characters.
+     */
+
+    public void setReplicationGroupDescription(
+            String replicationGroupDescription) {
+        this.replicationGroupDescription = replicationGroupDescription;
+    }
+
+    /**
+     * <p>
+     * A description for the replication group. Maximum length is 255
+     * characters.
+     * </p>
+     * 
      * @return A description for the replication group. Maximum length is 255
      *         characters.
      */
+
     public String getReplicationGroupDescription() {
-        return replicationGroupDescription;
+        return this.replicationGroupDescription;
     }
-    
+
     /**
-     * A description for the replication group. Maximum length is 255
-     * characters.
-     *
-     * @param replicationGroupDescription A description for the replication group. Maximum length is 255
-     *         characters.
-     */
-    public void setReplicationGroupDescription(String replicationGroupDescription) {
-        this.replicationGroupDescription = replicationGroupDescription;
-    }
-    
-    /**
-     * A description for the replication group. Maximum length is 255
-     * characters.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param replicationGroupDescription A description for the replication group. Maximum length is 255
-     *         characters.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A description for the replication group. Maximum length is 255
+     * characters.
+     * </p>
+     * 
+     * @param replicationGroupDescription
+     *        A description for the replication group. Maximum length is 255
+     *        characters.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ModifyReplicationGroupRequest withReplicationGroupDescription(String replicationGroupDescription) {
-        this.replicationGroupDescription = replicationGroupDescription;
+
+    public ModifyReplicationGroupRequest withReplicationGroupDescription(
+            String replicationGroupDescription) {
+        setReplicationGroupDescription(replicationGroupDescription);
         return this;
     }
 
     /**
+     * <p>
      * If this parameter is specified, ElastiCache will promote the specified
-     * cluster in the specified replication group to the primary role. The
-     * nodes of all other clusters in the replication group will be read
-     * replicas.
-     *
-     * @return If this parameter is specified, ElastiCache will promote the specified
-     *         cluster in the specified replication group to the primary role. The
-     *         nodes of all other clusters in the replication group will be read
-     *         replicas.
+     * cluster in the specified replication group to the primary role. The nodes
+     * of all other clusters in the replication group will be read replicas.
+     * </p>
+     * 
+     * @param primaryClusterId
+     *        If this parameter is specified, ElastiCache will promote the
+     *        specified cluster in the specified replication group to the
+     *        primary role. The nodes of all other clusters in the replication
+     *        group will be read replicas.
      */
-    public String getPrimaryClusterId() {
-        return primaryClusterId;
-    }
-    
-    /**
-     * If this parameter is specified, ElastiCache will promote the specified
-     * cluster in the specified replication group to the primary role. The
-     * nodes of all other clusters in the replication group will be read
-     * replicas.
-     *
-     * @param primaryClusterId If this parameter is specified, ElastiCache will promote the specified
-     *         cluster in the specified replication group to the primary role. The
-     *         nodes of all other clusters in the replication group will be read
-     *         replicas.
-     */
+
     public void setPrimaryClusterId(String primaryClusterId) {
         this.primaryClusterId = primaryClusterId;
     }
-    
+
     /**
-     * If this parameter is specified, ElastiCache will promote the specified
-     * cluster in the specified replication group to the primary role. The
-     * nodes of all other clusters in the replication group will be read
-     * replicas.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param primaryClusterId If this parameter is specified, ElastiCache will promote the specified
-     *         cluster in the specified replication group to the primary role. The
-     *         nodes of all other clusters in the replication group will be read
-     *         replicas.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The nodes
+     * of all other clusters in the replication group will be read replicas.
+     * </p>
+     * 
+     * @return If this parameter is specified, ElastiCache will promote the
+     *         specified cluster in the specified replication group to the
+     *         primary role. The nodes of all other clusters in the replication
+     *         group will be read replicas.
      */
-    public ModifyReplicationGroupRequest withPrimaryClusterId(String primaryClusterId) {
-        this.primaryClusterId = primaryClusterId;
+
+    public String getPrimaryClusterId() {
+        return this.primaryClusterId;
+    }
+
+    /**
+     * <p>
+     * If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The nodes
+     * of all other clusters in the replication group will be read replicas.
+     * </p>
+     * 
+     * @param primaryClusterId
+     *        If this parameter is specified, ElastiCache will promote the
+     *        specified cluster in the specified replication group to the
+     *        primary role. The nodes of all other clusters in the replication
+     *        group will be read replicas.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withPrimaryClusterId(
+            String primaryClusterId) {
+        setPrimaryClusterId(primaryClusterId);
         return this;
     }
 
     /**
-     * The cache cluster ID that will be used as the daily snapshot source
-     * for the replication group.
-     *
-     * @return The cache cluster ID that will be used as the daily snapshot source
-     *         for the replication group.
+     * <p>
+     * The cache cluster ID that will be used as the daily snapshot source for
+     * the replication group.
+     * </p>
+     * 
+     * @param snapshottingClusterId
+     *        The cache cluster ID that will be used as the daily snapshot
+     *        source for the replication group.
      */
-    public String getSnapshottingClusterId() {
-        return snapshottingClusterId;
-    }
-    
-    /**
-     * The cache cluster ID that will be used as the daily snapshot source
-     * for the replication group.
-     *
-     * @param snapshottingClusterId The cache cluster ID that will be used as the daily snapshot source
-     *         for the replication group.
-     */
+
     public void setSnapshottingClusterId(String snapshottingClusterId) {
         this.snapshottingClusterId = snapshottingClusterId;
     }
-    
+
     /**
-     * The cache cluster ID that will be used as the daily snapshot source
-     * for the replication group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param snapshottingClusterId The cache cluster ID that will be used as the daily snapshot source
-     *         for the replication group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The cache cluster ID that will be used as the daily snapshot source for
+     * the replication group.
+     * </p>
+     * 
+     * @return The cache cluster ID that will be used as the daily snapshot
+     *         source for the replication group.
      */
-    public ModifyReplicationGroupRequest withSnapshottingClusterId(String snapshottingClusterId) {
-        this.snapshottingClusterId = snapshottingClusterId;
+
+    public String getSnapshottingClusterId() {
+        return this.snapshottingClusterId;
+    }
+
+    /**
+     * <p>
+     * The cache cluster ID that will be used as the daily snapshot source for
+     * the replication group.
+     * </p>
+     * 
+     * @param snapshottingClusterId
+     *        The cache cluster ID that will be used as the daily snapshot
+     *        source for the replication group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withSnapshottingClusterId(
+            String snapshottingClusterId) {
+        setSnapshottingClusterId(snapshottingClusterId);
         return this;
     }
 
     /**
+     * <p>
      * Whether a read replica will be automatically promoted to read/write
-     * primary if the existing primary encounters a failure. <p>Valid values:
-     * <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     * replication groups are not supported on: <ul> <li>Redis versions
-     * earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     * primary if the existing primary encounters a failure.
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li>
+     * </ul>
      * </note>
-     *
-     * @return Whether a read replica will be automatically promoted to read/write
-     *         primary if the existing primary encounters a failure. <p>Valid values:
-     *         <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     *         replication groups are not supported on: <ul> <li>Redis versions
-     *         earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
-     *         </note>
+     * 
+     * @param automaticFailoverEnabled
+     *        Whether a read replica will be automatically promoted to
+     *        read/write primary if the existing primary encounters a
+     *        failure.</p>
+     *        <p>
+     *        Valid values: <code>true</code> | <code>false</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        </p>
+     *        <ul>
+     *        <li>Redis versions earlier than 2.8.6.</li>
+     *        <li>T1 and T2 cache node types.</li>
+     *        </ul>
      */
-    public Boolean isAutomaticFailoverEnabled() {
-        return automaticFailoverEnabled;
-    }
-    
-    /**
-     * Whether a read replica will be automatically promoted to read/write
-     * primary if the existing primary encounters a failure. <p>Valid values:
-     * <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     * replication groups are not supported on: <ul> <li>Redis versions
-     * earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
-     * </note>
-     *
-     * @param automaticFailoverEnabled Whether a read replica will be automatically promoted to read/write
-     *         primary if the existing primary encounters a failure. <p>Valid values:
-     *         <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     *         replication groups are not supported on: <ul> <li>Redis versions
-     *         earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
-     *         </note>
-     */
+
     public void setAutomaticFailoverEnabled(Boolean automaticFailoverEnabled) {
         this.automaticFailoverEnabled = automaticFailoverEnabled;
     }
-    
+
     /**
-     * Whether a read replica will be automatically promoted to read/write
-     * primary if the existing primary encounters a failure. <p>Valid values:
-     * <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     * replication groups are not supported on: <ul> <li>Redis versions
-     * earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
-     * </note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param automaticFailoverEnabled Whether a read replica will be automatically promoted to read/write
-     *         primary if the existing primary encounters a failure. <p>Valid values:
-     *         <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     *         replication groups are not supported on: <ul> <li>Redis versions
-     *         earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
-     *         </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Whether a read replica will be automatically promoted to read/write
+     * primary if the existing primary encounters a failure.
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li>
+     * </ul>
+     * </note>
+     * 
+     * @return Whether a read replica will be automatically promoted to
+     *         read/write primary if the existing primary encounters a
+     *         failure.</p>
+     *         <p>
+     *         Valid values: <code>true</code> | <code>false</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         ElastiCache Multi-AZ replication groups are not supported on:
+     *         </p>
+     *         <ul>
+     *         <li>Redis versions earlier than 2.8.6.</li>
+     *         <li>T1 and T2 cache node types.</li>
+     *         </ul>
      */
-    public ModifyReplicationGroupRequest withAutomaticFailoverEnabled(Boolean automaticFailoverEnabled) {
-        this.automaticFailoverEnabled = automaticFailoverEnabled;
+
+    public Boolean getAutomaticFailoverEnabled() {
+        return this.automaticFailoverEnabled;
+    }
+
+    /**
+     * <p>
+     * Whether a read replica will be automatically promoted to read/write
+     * primary if the existing primary encounters a failure.
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li>
+     * </ul>
+     * </note>
+     * 
+     * @param automaticFailoverEnabled
+     *        Whether a read replica will be automatically promoted to
+     *        read/write primary if the existing primary encounters a
+     *        failure.</p>
+     *        <p>
+     *        Valid values: <code>true</code> | <code>false</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        </p>
+     *        <ul>
+     *        <li>Redis versions earlier than 2.8.6.</li>
+     *        <li>T1 and T2 cache node types.</li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withAutomaticFailoverEnabled(
+            Boolean automaticFailoverEnabled) {
+        setAutomaticFailoverEnabled(automaticFailoverEnabled);
         return this;
     }
 
     /**
+     * <p>
      * Whether a read replica will be automatically promoted to read/write
-     * primary if the existing primary encounters a failure. <p>Valid values:
-     * <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     * replication groups are not supported on: <ul> <li>Redis versions
-     * earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
+     * primary if the existing primary encounters a failure.
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li>
+     * </ul>
      * </note>
-     *
-     * @return Whether a read replica will be automatically promoted to read/write
-     *         primary if the existing primary encounters a failure. <p>Valid values:
-     *         <code>true</code> | <code>false</code> <note><p>ElastiCache Multi-AZ
-     *         replication groups are not supported on: <ul> <li>Redis versions
-     *         earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul>
-     *         </note>
+     * 
+     * @return Whether a read replica will be automatically promoted to
+     *         read/write primary if the existing primary encounters a
+     *         failure.</p>
+     *         <p>
+     *         Valid values: <code>true</code> | <code>false</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         ElastiCache Multi-AZ replication groups are not supported on:
+     *         </p>
+     *         <ul>
+     *         <li>Redis versions earlier than 2.8.6.</li>
+     *         <li>T1 and T2 cache node types.</li>
+     *         </ul>
      */
-    public Boolean getAutomaticFailoverEnabled() {
-        return automaticFailoverEnabled;
+
+    public Boolean isAutomaticFailoverEnabled() {
+        return this.automaticFailoverEnabled;
     }
 
     /**
+     * <p>
      * A list of cache security group names to authorize for the clusters in
-     * this replication group. This change is asynchronously applied as soon
-     * as possible. <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private
-     * Cloud (VPC). <p>Constraints: Must contain no more than 255
-     * alphanumeric characters. Must not be "Default".
-     *
-     * @return A list of cache security group names to authorize for the clusters in
-     *         this replication group. This change is asynchronously applied as soon
-     *         as possible. <p>This parameter can be used only with replication group
-     *         containing cache clusters running outside of an Amazon Virtual Private
-     *         Cloud (VPC). <p>Constraints: Must contain no more than 255
-     *         alphanumeric characters. Must not be "Default".
+     * this replication group. This change is asynchronously applied as soon as
+     * possible.
+     * </p>
+     * <p>
+     * This parameter can be used only with replication group containing cache
+     * clusters running outside of an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters. Must
+     * not be &quot;Default".
+     * </p>
+     * 
+     * @return A list of cache security group names to authorize for the
+     *         clusters in this replication group. This change is asynchronously
+     *         applied as soon as possible.</p>
+     *         <p>
+     *         This parameter can be used only with replication group containing
+     *         cache clusters running outside of an Amazon Virtual Private Cloud
+     *         (VPC).
+     *         </p>
+     *         <p>
+     *         Constraints: Must contain no more than 255 alphanumeric
+     *         characters. Must not be &quot;Default".
      */
+
     public java.util.List<String> getCacheSecurityGroupNames() {
         if (cacheSecurityGroupNames == null) {
-              cacheSecurityGroupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              cacheSecurityGroupNames.setAutoConstruct(true);
+            cacheSecurityGroupNames = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return cacheSecurityGroupNames;
     }
-    
+
     /**
+     * <p>
      * A list of cache security group names to authorize for the clusters in
-     * this replication group. This change is asynchronously applied as soon
-     * as possible. <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private
-     * Cloud (VPC). <p>Constraints: Must contain no more than 255
-     * alphanumeric characters. Must not be "Default".
-     *
-     * @param cacheSecurityGroupNames A list of cache security group names to authorize for the clusters in
-     *         this replication group. This change is asynchronously applied as soon
-     *         as possible. <p>This parameter can be used only with replication group
-     *         containing cache clusters running outside of an Amazon Virtual Private
-     *         Cloud (VPC). <p>Constraints: Must contain no more than 255
-     *         alphanumeric characters. Must not be "Default".
+     * this replication group. This change is asynchronously applied as soon as
+     * possible.
+     * </p>
+     * <p>
+     * This parameter can be used only with replication group containing cache
+     * clusters running outside of an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters. Must
+     * not be &quot;Default".
+     * </p>
+     * 
+     * @param cacheSecurityGroupNames
+     *        A list of cache security group names to authorize for the clusters
+     *        in this replication group. This change is asynchronously applied
+     *        as soon as possible.</p>
+     *        <p>
+     *        This parameter can be used only with replication group containing
+     *        cache clusters running outside of an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain no more than 255 alphanumeric
+     *        characters. Must not be &quot;Default".
      */
-    public void setCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
+
+    public void setCacheSecurityGroupNames(
+            java.util.Collection<String> cacheSecurityGroupNames) {
         if (cacheSecurityGroupNames == null) {
             this.cacheSecurityGroupNames = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheSecurityGroupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cacheSecurityGroupNames.size());
-        cacheSecurityGroupNamesCopy.addAll(cacheSecurityGroupNames);
-        this.cacheSecurityGroupNames = cacheSecurityGroupNamesCopy;
+
+        this.cacheSecurityGroupNames = new com.amazonaws.internal.SdkInternalList<String>(
+                cacheSecurityGroupNames);
     }
-    
+
     /**
+     * <p>
      * A list of cache security group names to authorize for the clusters in
-     * this replication group. This change is asynchronously applied as soon
-     * as possible. <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private
-     * Cloud (VPC). <p>Constraints: Must contain no more than 255
-     * alphanumeric characters. Must not be "Default".
+     * this replication group. This change is asynchronously applied as soon as
+     * possible.
+     * </p>
+     * <p>
+     * This parameter can be used only with replication group containing cache
+     * clusters running outside of an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters. Must
+     * not be &quot;Default".
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setCacheSecurityGroupNames(java.util.Collection)} or
-     * {@link #withCacheSecurityGroupNames(java.util.Collection)} if you want
-     * to override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cacheSecurityGroupNames A list of cache security group names to authorize for the clusters in
-     *         this replication group. This change is asynchronously applied as soon
-     *         as possible. <p>This parameter can be used only with replication group
-     *         containing cache clusters running outside of an Amazon Virtual Private
-     *         Cloud (VPC). <p>Constraints: Must contain no more than 255
-     *         alphanumeric characters. Must not be "Default".
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * {@link #withCacheSecurityGroupNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param cacheSecurityGroupNames
+     *        A list of cache security group names to authorize for the clusters
+     *        in this replication group. This change is asynchronously applied
+     *        as soon as possible.</p>
+     *        <p>
+     *        This parameter can be used only with replication group containing
+     *        cache clusters running outside of an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain no more than 255 alphanumeric
+     *        characters. Must not be &quot;Default".
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ModifyReplicationGroupRequest withCacheSecurityGroupNames(String... cacheSecurityGroupNames) {
-        if (getCacheSecurityGroupNames() == null) setCacheSecurityGroupNames(new java.util.ArrayList<String>(cacheSecurityGroupNames.length));
-        for (String value : cacheSecurityGroupNames) {
-            getCacheSecurityGroupNames().add(value);
+
+    public ModifyReplicationGroupRequest withCacheSecurityGroupNames(
+            String... cacheSecurityGroupNames) {
+        if (this.cacheSecurityGroupNames == null) {
+            setCacheSecurityGroupNames(new com.amazonaws.internal.SdkInternalList<String>(
+                    cacheSecurityGroupNames.length));
+        }
+        for (String ele : cacheSecurityGroupNames) {
+            this.cacheSecurityGroupNames.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * A list of cache security group names to authorize for the clusters in
-     * this replication group. This change is asynchronously applied as soon
-     * as possible. <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private
-     * Cloud (VPC). <p>Constraints: Must contain no more than 255
-     * alphanumeric characters. Must not be "Default".
+     * this replication group. This change is asynchronously applied as soon as
+     * possible.
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cacheSecurityGroupNames A list of cache security group names to authorize for the clusters in
-     *         this replication group. This change is asynchronously applied as soon
-     *         as possible. <p>This parameter can be used only with replication group
-     *         containing cache clusters running outside of an Amazon Virtual Private
-     *         Cloud (VPC). <p>Constraints: Must contain no more than 255
-     *         alphanumeric characters. Must not be "Default".
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * This parameter can be used only with replication group containing cache
+     * clusters running outside of an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters. Must
+     * not be &quot;Default".
+     * </p>
+     * 
+     * @param cacheSecurityGroupNames
+     *        A list of cache security group names to authorize for the clusters
+     *        in this replication group. This change is asynchronously applied
+     *        as soon as possible.</p>
+     *        <p>
+     *        This parameter can be used only with replication group containing
+     *        cache clusters running outside of an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain no more than 255 alphanumeric
+     *        characters. Must not be &quot;Default".
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ModifyReplicationGroupRequest withCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
-        if (cacheSecurityGroupNames == null) {
-            this.cacheSecurityGroupNames = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheSecurityGroupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cacheSecurityGroupNames.size());
-            cacheSecurityGroupNamesCopy.addAll(cacheSecurityGroupNames);
-            this.cacheSecurityGroupNames = cacheSecurityGroupNamesCopy;
-        }
 
+    public ModifyReplicationGroupRequest withCacheSecurityGroupNames(
+            java.util.Collection<String> cacheSecurityGroupNames) {
+        setCacheSecurityGroupNames(cacheSecurityGroupNames);
         return this;
     }
 
     /**
-     * Specifies the VPC Security Groups associated with the cache clusters
-     * in the replication group. <p>This parameter can be used only with
-     * replication group containing cache clusters running in an Amazon
-     * Virtual Private Cloud (VPC).
-     *
-     * @return Specifies the VPC Security Groups associated with the cache clusters
-     *         in the replication group. <p>This parameter can be used only with
-     *         replication group containing cache clusters running in an Amazon
-     *         Virtual Private Cloud (VPC).
+     * <p>
+     * Specifies the VPC Security Groups associated with the cache clusters in
+     * the replication group.
+     * </p>
+     * <p>
+     * This parameter can be used only with replication group containing cache
+     * clusters running in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * 
+     * @return Specifies the VPC Security Groups associated with the cache
+     *         clusters in the replication group.</p>
+     *         <p>
+     *         This parameter can be used only with replication group containing
+     *         cache clusters running in an Amazon Virtual Private Cloud (VPC).
      */
+
     public java.util.List<String> getSecurityGroupIds() {
         if (securityGroupIds == null) {
-              securityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              securityGroupIds.setAutoConstruct(true);
+            securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return securityGroupIds;
     }
-    
+
     /**
-     * Specifies the VPC Security Groups associated with the cache clusters
-     * in the replication group. <p>This parameter can be used only with
-     * replication group containing cache clusters running in an Amazon
-     * Virtual Private Cloud (VPC).
-     *
-     * @param securityGroupIds Specifies the VPC Security Groups associated with the cache clusters
-     *         in the replication group. <p>This parameter can be used only with
-     *         replication group containing cache clusters running in an Amazon
-     *         Virtual Private Cloud (VPC).
+     * <p>
+     * Specifies the VPC Security Groups associated with the cache clusters in
+     * the replication group.
+     * </p>
+     * <p>
+     * This parameter can be used only with replication group containing cache
+     * clusters running in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        Specifies the VPC Security Groups associated with the cache
+     *        clusters in the replication group.</p>
+     *        <p>
+     *        This parameter can be used only with replication group containing
+     *        cache clusters running in an Amazon Virtual Private Cloud (VPC).
      */
-    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+
+    public void setSecurityGroupIds(
+            java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
             this.securityGroupIds = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroupIds.size());
-        securityGroupIdsCopy.addAll(securityGroupIds);
-        this.securityGroupIds = securityGroupIdsCopy;
+
+        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(
+                securityGroupIds);
     }
-    
+
     /**
-     * Specifies the VPC Security Groups associated with the cache clusters
-     * in the replication group. <p>This parameter can be used only with
-     * replication group containing cache clusters running in an Amazon
-     * Virtual Private Cloud (VPC).
+     * <p>
+     * Specifies the VPC Security Groups associated with the cache clusters in
+     * the replication group.
+     * </p>
+     * <p>
+     * This parameter can be used only with replication group containing cache
+     * clusters running in an Amazon Virtual Private Cloud (VPC).
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link
-     * #withSecurityGroupIds(java.util.Collection)} if you want to override
-     * the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param securityGroupIds Specifies the VPC Security Groups associated with the cache clusters
-     *         in the replication group. <p>This parameter can be used only with
-     *         replication group containing cache clusters running in an Amazon
-     *         Virtual Private Cloud (VPC).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or
+     * {@link #withSecurityGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        Specifies the VPC Security Groups associated with the cache
+     *        clusters in the replication group.</p>
+     *        <p>
+     *        This parameter can be used only with replication group containing
+     *        cache clusters running in an Amazon Virtual Private Cloud (VPC).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ModifyReplicationGroupRequest withSecurityGroupIds(String... securityGroupIds) {
-        if (getSecurityGroupIds() == null) setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
-        for (String value : securityGroupIds) {
-            getSecurityGroupIds().add(value);
-        }
-        return this;
-    }
-    
-    /**
-     * Specifies the VPC Security Groups associated with the cache clusters
-     * in the replication group. <p>This parameter can be used only with
-     * replication group containing cache clusters running in an Amazon
-     * Virtual Private Cloud (VPC).
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param securityGroupIds Specifies the VPC Security Groups associated with the cache clusters
-     *         in the replication group. <p>This parameter can be used only with
-     *         replication group containing cache clusters running in an Amazon
-     *         Virtual Private Cloud (VPC).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ModifyReplicationGroupRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
-        if (securityGroupIds == null) {
-            this.securityGroupIds = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroupIds.size());
-            securityGroupIdsCopy.addAll(securityGroupIds);
-            this.securityGroupIds = securityGroupIdsCopy;
-        }
 
+    public ModifyReplicationGroupRequest withSecurityGroupIds(
+            String... securityGroupIds) {
+        if (this.securityGroupIds == null) {
+            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
+                    securityGroupIds.length));
+        }
+        for (String ele : securityGroupIds) {
+            this.securityGroupIds.add(ele);
+        }
         return this;
     }
 
     /**
-     * Specifies the weekly time range during which maintenance on the cache
-     * cluster is performed. It is specified as a range in the format
-     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period. Valid values for <code>ddd</code> are:
-     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
-     * <li><code>tue</code></li> <li><code>wed</code></li>
-     * <li><code>thu</code></li> <li><code>fri</code></li>
-     * <li><code>sat</code></li> </ul> <p>Example:
-     * <code>sun:05:00-sun:09:00</code>
-     *
-     * @return Specifies the weekly time range during which maintenance on the cache
-     *         cluster is performed. It is specified as a range in the format
-     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
-     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
-     *         <li><code>tue</code></li> <li><code>wed</code></li>
-     *         <li><code>thu</code></li> <li><code>fri</code></li>
-     *         <li><code>sat</code></li> </ul> <p>Example:
-     *         <code>sun:05:00-sun:09:00</code>
+     * <p>
+     * Specifies the VPC Security Groups associated with the cache clusters in
+     * the replication group.
+     * </p>
+     * <p>
+     * This parameter can be used only with replication group containing cache
+     * clusters running in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        Specifies the VPC Security Groups associated with the cache
+     *        clusters in the replication group.</p>
+     *        <p>
+     *        This parameter can be used only with replication group containing
+     *        cache clusters running in an Amazon Virtual Private Cloud (VPC).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public String getPreferredMaintenanceWindow() {
-        return preferredMaintenanceWindow;
+
+    public ModifyReplicationGroupRequest withSecurityGroupIds(
+            java.util.Collection<String> securityGroupIds) {
+        setSecurityGroupIds(securityGroupIds);
+        return this;
     }
-    
+
     /**
+     * <p>
      * Specifies the weekly time range during which maintenance on the cache
      * cluster is performed. It is specified as a range in the format
-     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period. Valid values for <code>ddd</code> are:
-     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
-     * <li><code>tue</code></li> <li><code>wed</code></li>
-     * <li><code>thu</code></li> <li><code>fri</code></li>
-     * <li><code>sat</code></li> </ul> <p>Example:
-     * <code>sun:05:00-sun:09:00</code>
-     *
-     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
-     *         cluster is performed. It is specified as a range in the format
-     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
-     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
-     *         <li><code>tue</code></li> <li><code>wed</code></li>
-     *         <li><code>thu</code></li> <li><code>fri</code></li>
-     *         <li><code>sat</code></li> </ul> <p>Example:
-     *         <code>sun:05:00-sun:09:00</code>
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
+     * is a 60 minute period. Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li><code>sun</code></li>
+     * <li><code>mon</code></li>
+     * <li><code>tue</code></li>
+     * <li><code>wed</code></li>
+     * <li><code>thu</code></li>
+     * <li><code>fri</code></li>
+     * <li><code>sat</code></li>
+     * </ul>
+     * <p>
+     * Example: <code>sun:05:00-sun:09:00</code>
+     * </p>
+     * 
+     * @param preferredMaintenanceWindow
+     *        Specifies the weekly time range during which maintenance on the
+     *        cache cluster is performed. It is specified as a range in the
+     *        format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+     *        maintenance window is a 60 minute period. Valid values for
+     *        <code>ddd</code> are:</p>
+     *        <ul>
+     *        <li><code>sun</code></li>
+     *        <li><code>mon</code></li>
+     *        <li><code>tue</code></li>
+     *        <li><code>wed</code></li>
+     *        <li><code>thu</code></li>
+     *        <li><code>fri</code></li>
+     *        <li><code>sat</code></li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>sun:05:00-sun:09:00</code>
      */
+
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
     }
-    
+
     /**
+     * <p>
      * Specifies the weekly time range during which maintenance on the cache
      * cluster is performed. It is specified as a range in the format
-     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-     * window is a 60 minute period. Valid values for <code>ddd</code> are:
-     * <ul> <li><code>sun</code></li> <li><code>mon</code></li>
-     * <li><code>tue</code></li> <li><code>wed</code></li>
-     * <li><code>thu</code></li> <li><code>fri</code></li>
-     * <li><code>sat</code></li> </ul> <p>Example:
-     * <code>sun:05:00-sun:09:00</code>
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
+     * is a 60 minute period. Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li><code>sun</code></li>
+     * <li><code>mon</code></li>
+     * <li><code>tue</code></li>
+     * <li><code>wed</code></li>
+     * <li><code>thu</code></li>
+     * <li><code>fri</code></li>
+     * <li><code>sat</code></li>
+     * </ul>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param preferredMaintenanceWindow Specifies the weekly time range during which maintenance on the cache
-     *         cluster is performed. It is specified as a range in the format
-     *         ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-     *         window is a 60 minute period. Valid values for <code>ddd</code> are:
-     *         <ul> <li><code>sun</code></li> <li><code>mon</code></li>
-     *         <li><code>tue</code></li> <li><code>wed</code></li>
-     *         <li><code>thu</code></li> <li><code>fri</code></li>
-     *         <li><code>sat</code></li> </ul> <p>Example:
-     *         <code>sun:05:00-sun:09:00</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Example: <code>sun:05:00-sun:09:00</code>
+     * </p>
+     * 
+     * @return Specifies the weekly time range during which maintenance on the
+     *         cache cluster is performed. It is specified as a range in the
+     *         format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+     *         maintenance window is a 60 minute period. Valid values for
+     *         <code>ddd</code> are:</p>
+     *         <ul>
+     *         <li><code>sun</code></li>
+     *         <li><code>mon</code></li>
+     *         <li><code>tue</code></li>
+     *         <li><code>wed</code></li>
+     *         <li><code>thu</code></li>
+     *         <li><code>fri</code></li>
+     *         <li><code>sat</code></li>
+     *         </ul>
+     *         <p>
+     *         Example: <code>sun:05:00-sun:09:00</code>
      */
-    public ModifyReplicationGroupRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
-        this.preferredMaintenanceWindow = preferredMaintenanceWindow;
+
+    public String getPreferredMaintenanceWindow() {
+        return this.preferredMaintenanceWindow;
+    }
+
+    /**
+     * <p>
+     * Specifies the weekly time range during which maintenance on the cache
+     * cluster is performed. It is specified as a range in the format
+     * ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
+     * is a 60 minute period. Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li><code>sun</code></li>
+     * <li><code>mon</code></li>
+     * <li><code>tue</code></li>
+     * <li><code>wed</code></li>
+     * <li><code>thu</code></li>
+     * <li><code>fri</code></li>
+     * <li><code>sat</code></li>
+     * </ul>
+     * <p>
+     * Example: <code>sun:05:00-sun:09:00</code>
+     * </p>
+     * 
+     * @param preferredMaintenanceWindow
+     *        Specifies the weekly time range during which maintenance on the
+     *        cache cluster is performed. It is specified as a range in the
+     *        format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+     *        maintenance window is a 60 minute period. Valid values for
+     *        <code>ddd</code> are:</p>
+     *        <ul>
+     *        <li><code>sun</code></li>
+     *        <li><code>mon</code></li>
+     *        <li><code>tue</code></li>
+     *        <li><code>wed</code></li>
+     *        <li><code>thu</code></li>
+     *        <li><code>fri</code></li>
+     *        <li><code>sat</code></li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>sun:05:00-sun:09:00</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withPreferredMaintenanceWindow(
+            String preferredMaintenanceWindow) {
+        setPreferredMaintenanceWindow(preferredMaintenanceWindow);
         return this;
     }
 
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-     * notifications will be sent. <note>The Amazon SNS topic owner must be
-     * same as the replication group owner. </note>
-     *
-     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-     *         notifications will be sent. <note>The Amazon SNS topic owner must be
-     *         same as the replication group owner. </note>
+     * notifications will be sent.
+     * </p>
+     * <note>The Amazon SNS topic owner must be same as the replication group
+     * owner. </note>
+     * 
+     * @param notificationTopicArn
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     *        notifications will be sent.</p> <note>The Amazon SNS topic owner
+     *        must be same as the replication group owner.
      */
-    public String getNotificationTopicArn() {
-        return notificationTopicArn;
-    }
-    
-    /**
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-     * notifications will be sent. <note>The Amazon SNS topic owner must be
-     * same as the replication group owner. </note>
-     *
-     * @param notificationTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-     *         notifications will be sent. <note>The Amazon SNS topic owner must be
-     *         same as the replication group owner. </note>
-     */
+
     public void setNotificationTopicArn(String notificationTopicArn) {
         this.notificationTopicArn = notificationTopicArn;
     }
-    
+
     /**
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-     * notifications will be sent. <note>The Amazon SNS topic owner must be
-     * same as the replication group owner. </note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param notificationTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-     *         notifications will be sent. <note>The Amazon SNS topic owner must be
-     *         same as the replication group owner. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     * notifications will be sent.
+     * </p>
+     * <note>The Amazon SNS topic owner must be same as the replication group
+     * owner. </note>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     *         notifications will be sent.</p> <note>The Amazon SNS topic owner
+     *         must be same as the replication group owner.
      */
-    public ModifyReplicationGroupRequest withNotificationTopicArn(String notificationTopicArn) {
-        this.notificationTopicArn = notificationTopicArn;
+
+    public String getNotificationTopicArn() {
+        return this.notificationTopicArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     * notifications will be sent.
+     * </p>
+     * <note>The Amazon SNS topic owner must be same as the replication group
+     * owner. </note>
+     * 
+     * @param notificationTopicArn
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     *        notifications will be sent.</p> <note>The Amazon SNS topic owner
+     *        must be same as the replication group owner.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withNotificationTopicArn(
+            String notificationTopicArn) {
+        setNotificationTopicArn(notificationTopicArn);
         return this;
     }
 
     /**
-     * The name of the cache parameter group to apply to all of the clusters
-     * in this replication group. This change is asynchronously applied as
-     * soon as possible for parameters when the <i>ApplyImmediately</i>
-     * parameter is specified as <i>true</i> for this request.
-     *
-     * @return The name of the cache parameter group to apply to all of the clusters
-     *         in this replication group. This change is asynchronously applied as
-     *         soon as possible for parameters when the <i>ApplyImmediately</i>
-     *         parameter is specified as <i>true</i> for this request.
+     * <p>
+     * The name of the cache parameter group to apply to all of the clusters in
+     * this replication group. This change is asynchronously applied as soon as
+     * possible for parameters when the <i>ApplyImmediately</i> parameter is
+     * specified as <i>true</i> for this request.
+     * </p>
+     * 
+     * @param cacheParameterGroupName
+     *        The name of the cache parameter group to apply to all of the
+     *        clusters in this replication group. This change is asynchronously
+     *        applied as soon as possible for parameters when the
+     *        <i>ApplyImmediately</i> parameter is specified as <i>true</i> for
+     *        this request.
      */
-    public String getCacheParameterGroupName() {
-        return cacheParameterGroupName;
-    }
-    
-    /**
-     * The name of the cache parameter group to apply to all of the clusters
-     * in this replication group. This change is asynchronously applied as
-     * soon as possible for parameters when the <i>ApplyImmediately</i>
-     * parameter is specified as <i>true</i> for this request.
-     *
-     * @param cacheParameterGroupName The name of the cache parameter group to apply to all of the clusters
-     *         in this replication group. This change is asynchronously applied as
-     *         soon as possible for parameters when the <i>ApplyImmediately</i>
-     *         parameter is specified as <i>true</i> for this request.
-     */
+
     public void setCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
     }
-    
+
     /**
-     * The name of the cache parameter group to apply to all of the clusters
-     * in this replication group. This change is asynchronously applied as
-     * soon as possible for parameters when the <i>ApplyImmediately</i>
-     * parameter is specified as <i>true</i> for this request.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cacheParameterGroupName The name of the cache parameter group to apply to all of the clusters
-     *         in this replication group. This change is asynchronously applied as
-     *         soon as possible for parameters when the <i>ApplyImmediately</i>
-     *         parameter is specified as <i>true</i> for this request.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the cache parameter group to apply to all of the clusters in
+     * this replication group. This change is asynchronously applied as soon as
+     * possible for parameters when the <i>ApplyImmediately</i> parameter is
+     * specified as <i>true</i> for this request.
+     * </p>
+     * 
+     * @return The name of the cache parameter group to apply to all of the
+     *         clusters in this replication group. This change is asynchronously
+     *         applied as soon as possible for parameters when the
+     *         <i>ApplyImmediately</i> parameter is specified as <i>true</i> for
+     *         this request.
      */
-    public ModifyReplicationGroupRequest withCacheParameterGroupName(String cacheParameterGroupName) {
-        this.cacheParameterGroupName = cacheParameterGroupName;
+
+    public String getCacheParameterGroupName() {
+        return this.cacheParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the cache parameter group to apply to all of the clusters in
+     * this replication group. This change is asynchronously applied as soon as
+     * possible for parameters when the <i>ApplyImmediately</i> parameter is
+     * specified as <i>true</i> for this request.
+     * </p>
+     * 
+     * @param cacheParameterGroupName
+     *        The name of the cache parameter group to apply to all of the
+     *        clusters in this replication group. This change is asynchronously
+     *        applied as soon as possible for parameters when the
+     *        <i>ApplyImmediately</i> parameter is specified as <i>true</i> for
+     *        this request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withCacheParameterGroupName(
+            String cacheParameterGroupName) {
+        setCacheParameterGroupName(cacheParameterGroupName);
         return this;
     }
 
     /**
+     * <p>
      * The status of the Amazon SNS notification topic for the replication
      * group. Notifications are sent only if the status is <i>active</i>.
-     * <p>Valid values: <code>active</code> | <code>inactive</code>
-     *
-     * @return The status of the Amazon SNS notification topic for the replication
-     *         group. Notifications are sent only if the status is <i>active</i>.
-     *         <p>Valid values: <code>active</code> | <code>inactive</code>
+     * </p>
+     * <p>
+     * Valid values: <code>active</code> | <code>inactive</code>
+     * </p>
+     * 
+     * @param notificationTopicStatus
+     *        The status of the Amazon SNS notification topic for the
+     *        replication group. Notifications are sent only if the status is
+     *        <i>active</i>.</p>
+     *        <p>
+     *        Valid values: <code>active</code> | <code>inactive</code>
      */
-    public String getNotificationTopicStatus() {
-        return notificationTopicStatus;
-    }
-    
-    /**
-     * The status of the Amazon SNS notification topic for the replication
-     * group. Notifications are sent only if the status is <i>active</i>.
-     * <p>Valid values: <code>active</code> | <code>inactive</code>
-     *
-     * @param notificationTopicStatus The status of the Amazon SNS notification topic for the replication
-     *         group. Notifications are sent only if the status is <i>active</i>.
-     *         <p>Valid values: <code>active</code> | <code>inactive</code>
-     */
+
     public void setNotificationTopicStatus(String notificationTopicStatus) {
         this.notificationTopicStatus = notificationTopicStatus;
     }
-    
+
     /**
+     * <p>
      * The status of the Amazon SNS notification topic for the replication
      * group. Notifications are sent only if the status is <i>active</i>.
-     * <p>Valid values: <code>active</code> | <code>inactive</code>
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param notificationTopicStatus The status of the Amazon SNS notification topic for the replication
-     *         group. Notifications are sent only if the status is <i>active</i>.
-     *         <p>Valid values: <code>active</code> | <code>inactive</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Valid values: <code>active</code> | <code>inactive</code>
+     * </p>
+     * 
+     * @return The status of the Amazon SNS notification topic for the
+     *         replication group. Notifications are sent only if the status is
+     *         <i>active</i>.</p>
+     *         <p>
+     *         Valid values: <code>active</code> | <code>inactive</code>
      */
-    public ModifyReplicationGroupRequest withNotificationTopicStatus(String notificationTopicStatus) {
-        this.notificationTopicStatus = notificationTopicStatus;
+
+    public String getNotificationTopicStatus() {
+        return this.notificationTopicStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the Amazon SNS notification topic for the replication
+     * group. Notifications are sent only if the status is <i>active</i>.
+     * </p>
+     * <p>
+     * Valid values: <code>active</code> | <code>inactive</code>
+     * </p>
+     * 
+     * @param notificationTopicStatus
+     *        The status of the Amazon SNS notification topic for the
+     *        replication group. Notifications are sent only if the status is
+     *        <i>active</i>.</p>
+     *        <p>
+     *        Valid values: <code>active</code> | <code>inactive</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withNotificationTopicStatus(
+            String notificationTopicStatus) {
+        setNotificationTopicStatus(notificationTopicStatus);
         return this;
     }
 
     /**
+     * <p>
      * If <code>true</code>, this parameter causes the modifications in this
-     * request and any pending modifications to be applied, asynchronously
-     * and as soon as possible, regardless of the
-     * <i>PreferredMaintenanceWindow</i> setting for the replication group.
-     * <p>If <code>false</code>, then changes to the nodes in the replication
-     * group are applied on the next maintenance reboot, or the next failure
-     * reboot, whichever occurs first. <p>Valid values: <code>true</code> |
-     * <code>false</code> <p>Default: <code>false</code>
-     *
-     * @return If <code>true</code>, this parameter causes the modifications in this
-     *         request and any pending modifications to be applied, asynchronously
-     *         and as soon as possible, regardless of the
-     *         <i>PreferredMaintenanceWindow</i> setting for the replication group.
-     *         <p>If <code>false</code>, then changes to the nodes in the replication
-     *         group are applied on the next maintenance reboot, or the next failure
-     *         reboot, whichever occurs first. <p>Valid values: <code>true</code> |
-     *         <code>false</code> <p>Default: <code>false</code>
+     * request and any pending modifications to be applied, asynchronously and
+     * as soon as possible, regardless of the <i>PreferredMaintenanceWindow</i>
+     * setting for the replication group.
+     * </p>
+     * <p>
+     * If <code>false</code>, then changes to the nodes in the replication group
+     * are applied on the next maintenance reboot, or the next failure reboot,
+     * whichever occurs first.
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param applyImmediately
+     *        If <code>true</code>, this parameter causes the modifications in
+     *        this request and any pending modifications to be applied,
+     *        asynchronously and as soon as possible, regardless of the
+     *        <i>PreferredMaintenanceWindow</i> setting for the replication
+     *        group.</p>
+     *        <p>
+     *        If <code>false</code>, then changes to the nodes in the
+     *        replication group are applied on the next maintenance reboot, or
+     *        the next failure reboot, whichever occurs first.
+     *        </p>
+     *        <p>
+     *        Valid values: <code>true</code> | <code>false</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>false</code>
      */
-    public Boolean isApplyImmediately() {
-        return applyImmediately;
-    }
-    
-    /**
-     * If <code>true</code>, this parameter causes the modifications in this
-     * request and any pending modifications to be applied, asynchronously
-     * and as soon as possible, regardless of the
-     * <i>PreferredMaintenanceWindow</i> setting for the replication group.
-     * <p>If <code>false</code>, then changes to the nodes in the replication
-     * group are applied on the next maintenance reboot, or the next failure
-     * reboot, whichever occurs first. <p>Valid values: <code>true</code> |
-     * <code>false</code> <p>Default: <code>false</code>
-     *
-     * @param applyImmediately If <code>true</code>, this parameter causes the modifications in this
-     *         request and any pending modifications to be applied, asynchronously
-     *         and as soon as possible, regardless of the
-     *         <i>PreferredMaintenanceWindow</i> setting for the replication group.
-     *         <p>If <code>false</code>, then changes to the nodes in the replication
-     *         group are applied on the next maintenance reboot, or the next failure
-     *         reboot, whichever occurs first. <p>Valid values: <code>true</code> |
-     *         <code>false</code> <p>Default: <code>false</code>
-     */
+
     public void setApplyImmediately(Boolean applyImmediately) {
         this.applyImmediately = applyImmediately;
     }
-    
+
     /**
-     * If <code>true</code>, this parameter causes the modifications in this
-     * request and any pending modifications to be applied, asynchronously
-     * and as soon as possible, regardless of the
-     * <i>PreferredMaintenanceWindow</i> setting for the replication group.
-     * <p>If <code>false</code>, then changes to the nodes in the replication
-     * group are applied on the next maintenance reboot, or the next failure
-     * reboot, whichever occurs first. <p>Valid values: <code>true</code> |
-     * <code>false</code> <p>Default: <code>false</code>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param applyImmediately If <code>true</code>, this parameter causes the modifications in this
-     *         request and any pending modifications to be applied, asynchronously
-     *         and as soon as possible, regardless of the
-     *         <i>PreferredMaintenanceWindow</i> setting for the replication group.
-     *         <p>If <code>false</code>, then changes to the nodes in the replication
-     *         group are applied on the next maintenance reboot, or the next failure
-     *         reboot, whichever occurs first. <p>Valid values: <code>true</code> |
-     *         <code>false</code> <p>Default: <code>false</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * If <code>true</code>, this parameter causes the modifications in this
+     * request and any pending modifications to be applied, asynchronously and
+     * as soon as possible, regardless of the <i>PreferredMaintenanceWindow</i>
+     * setting for the replication group.
+     * </p>
+     * <p>
+     * If <code>false</code>, then changes to the nodes in the replication group
+     * are applied on the next maintenance reboot, or the next failure reboot,
+     * whichever occurs first.
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return If <code>true</code>, this parameter causes the modifications in
+     *         this request and any pending modifications to be applied,
+     *         asynchronously and as soon as possible, regardless of the
+     *         <i>PreferredMaintenanceWindow</i> setting for the replication
+     *         group.</p>
+     *         <p>
+     *         If <code>false</code>, then changes to the nodes in the
+     *         replication group are applied on the next maintenance reboot, or
+     *         the next failure reboot, whichever occurs first.
+     *         </p>
+     *         <p>
+     *         Valid values: <code>true</code> | <code>false</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>false</code>
      */
-    public ModifyReplicationGroupRequest withApplyImmediately(Boolean applyImmediately) {
-        this.applyImmediately = applyImmediately;
+
+    public Boolean getApplyImmediately() {
+        return this.applyImmediately;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, this parameter causes the modifications in this
+     * request and any pending modifications to be applied, asynchronously and
+     * as soon as possible, regardless of the <i>PreferredMaintenanceWindow</i>
+     * setting for the replication group.
+     * </p>
+     * <p>
+     * If <code>false</code>, then changes to the nodes in the replication group
+     * are applied on the next maintenance reboot, or the next failure reboot,
+     * whichever occurs first.
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param applyImmediately
+     *        If <code>true</code>, this parameter causes the modifications in
+     *        this request and any pending modifications to be applied,
+     *        asynchronously and as soon as possible, regardless of the
+     *        <i>PreferredMaintenanceWindow</i> setting for the replication
+     *        group.</p>
+     *        <p>
+     *        If <code>false</code>, then changes to the nodes in the
+     *        replication group are applied on the next maintenance reboot, or
+     *        the next failure reboot, whichever occurs first.
+     *        </p>
+     *        <p>
+     *        Valid values: <code>true</code> | <code>false</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>false</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withApplyImmediately(
+            Boolean applyImmediately) {
+        setApplyImmediately(applyImmediately);
         return this;
     }
 
     /**
+     * <p>
      * If <code>true</code>, this parameter causes the modifications in this
-     * request and any pending modifications to be applied, asynchronously
-     * and as soon as possible, regardless of the
-     * <i>PreferredMaintenanceWindow</i> setting for the replication group.
-     * <p>If <code>false</code>, then changes to the nodes in the replication
-     * group are applied on the next maintenance reboot, or the next failure
-     * reboot, whichever occurs first. <p>Valid values: <code>true</code> |
-     * <code>false</code> <p>Default: <code>false</code>
-     *
-     * @return If <code>true</code>, this parameter causes the modifications in this
-     *         request and any pending modifications to be applied, asynchronously
-     *         and as soon as possible, regardless of the
-     *         <i>PreferredMaintenanceWindow</i> setting for the replication group.
-     *         <p>If <code>false</code>, then changes to the nodes in the replication
-     *         group are applied on the next maintenance reboot, or the next failure
-     *         reboot, whichever occurs first. <p>Valid values: <code>true</code> |
-     *         <code>false</code> <p>Default: <code>false</code>
+     * request and any pending modifications to be applied, asynchronously and
+     * as soon as possible, regardless of the <i>PreferredMaintenanceWindow</i>
+     * setting for the replication group.
+     * </p>
+     * <p>
+     * If <code>false</code>, then changes to the nodes in the replication group
+     * are applied on the next maintenance reboot, or the next failure reboot,
+     * whichever occurs first.
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return If <code>true</code>, this parameter causes the modifications in
+     *         this request and any pending modifications to be applied,
+     *         asynchronously and as soon as possible, regardless of the
+     *         <i>PreferredMaintenanceWindow</i> setting for the replication
+     *         group.</p>
+     *         <p>
+     *         If <code>false</code>, then changes to the nodes in the
+     *         replication group are applied on the next maintenance reboot, or
+     *         the next failure reboot, whichever occurs first.
+     *         </p>
+     *         <p>
+     *         Valid values: <code>true</code> | <code>false</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>false</code>
      */
-    public Boolean getApplyImmediately() {
-        return applyImmediately;
+
+    public Boolean isApplyImmediately() {
+        return this.applyImmediately;
     }
 
     /**
-     * The upgraded version of the cache engine to be run on the cache
-     * clusters in the replication group. <p><b>Important:</b> You can
-     * upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
-     * a Cache Engine and Version</a>), but you cannot downgrade to an
-     * earlier engine version. If you want to use an earlier engine version,
+     * <p>
+     * The upgraded version of the cache engine to be run on the cache clusters
+     * in the replication group.
+     * </p>
+     * <p>
+     * <b>Important:</b> You can upgrade to a newer engine version (see <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to
+     * an earlier engine version. If you want to use an earlier engine version,
      * you must delete the existing replication group and create it anew with
      * the earlier engine version.
-     *
-     * @return The upgraded version of the cache engine to be run on the cache
-     *         clusters in the replication group. <p><b>Important:</b> You can
-     *         upgrade to a newer engine version (see <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
-     *         a Cache Engine and Version</a>), but you cannot downgrade to an
-     *         earlier engine version. If you want to use an earlier engine version,
-     *         you must delete the existing replication group and create it anew with
-     *         the earlier engine version.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The upgraded version of the cache engine to be run on the cache
+     *        clusters in the replication group.</p>
+     *        <p>
+     *        <b>Important:</b> You can upgrade to a newer engine version (see
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     *        >Selecting a Cache Engine and Version</a>), but you cannot
+     *        downgrade to an earlier engine version. If you want to use an
+     *        earlier engine version, you must delete the existing replication
+     *        group and create it anew with the earlier engine version.
      */
-    public String getEngineVersion() {
-        return engineVersion;
-    }
-    
-    /**
-     * The upgraded version of the cache engine to be run on the cache
-     * clusters in the replication group. <p><b>Important:</b> You can
-     * upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
-     * a Cache Engine and Version</a>), but you cannot downgrade to an
-     * earlier engine version. If you want to use an earlier engine version,
-     * you must delete the existing replication group and create it anew with
-     * the earlier engine version.
-     *
-     * @param engineVersion The upgraded version of the cache engine to be run on the cache
-     *         clusters in the replication group. <p><b>Important:</b> You can
-     *         upgrade to a newer engine version (see <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
-     *         a Cache Engine and Version</a>), but you cannot downgrade to an
-     *         earlier engine version. If you want to use an earlier engine version,
-     *         you must delete the existing replication group and create it anew with
-     *         the earlier engine version.
-     */
+
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
-    
+
     /**
-     * The upgraded version of the cache engine to be run on the cache
-     * clusters in the replication group. <p><b>Important:</b> You can
-     * upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
-     * a Cache Engine and Version</a>), but you cannot downgrade to an
-     * earlier engine version. If you want to use an earlier engine version,
+     * <p>
+     * The upgraded version of the cache engine to be run on the cache clusters
+     * in the replication group.
+     * </p>
+     * <p>
+     * <b>Important:</b> You can upgrade to a newer engine version (see <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to
+     * an earlier engine version. If you want to use an earlier engine version,
      * you must delete the existing replication group and create it anew with
      * the earlier engine version.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param engineVersion The upgraded version of the cache engine to be run on the cache
-     *         clusters in the replication group. <p><b>Important:</b> You can
-     *         upgrade to a newer engine version (see <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
-     *         a Cache Engine and Version</a>), but you cannot downgrade to an
-     *         earlier engine version. If you want to use an earlier engine version,
-     *         you must delete the existing replication group and create it anew with
-     *         the earlier engine version.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The upgraded version of the cache engine to be run on the cache
+     *         clusters in the replication group.</p>
+     *         <p>
+     *         <b>Important:</b> You can upgrade to a newer engine version (see
+     *         <a href=
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     *         >Selecting a Cache Engine and Version</a>), but you cannot
+     *         downgrade to an earlier engine version. If you want to use an
+     *         earlier engine version, you must delete the existing replication
+     *         group and create it anew with the earlier engine version.
      */
+
+    public String getEngineVersion() {
+        return this.engineVersion;
+    }
+
+    /**
+     * <p>
+     * The upgraded version of the cache engine to be run on the cache clusters
+     * in the replication group.
+     * </p>
+     * <p>
+     * <b>Important:</b> You can upgrade to a newer engine version (see <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to
+     * an earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing replication group and create it anew with
+     * the earlier engine version.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The upgraded version of the cache engine to be run on the cache
+     *        clusters in the replication group.</p>
+     *        <p>
+     *        <b>Important:</b> You can upgrade to a newer engine version (see
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     *        >Selecting a Cache Engine and Version</a>), but you cannot
+     *        downgrade to an earlier engine version. If you want to use an
+     *        earlier engine version, you must delete the existing replication
+     *        group and create it anew with the earlier engine version.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ModifyReplicationGroupRequest withEngineVersion(String engineVersion) {
-        this.engineVersion = engineVersion;
+        setEngineVersion(engineVersion);
         return this;
     }
 
     /**
+     * <p>
      * This parameter is currently disabled.
-     *
-     * @return This parameter is currently disabled.
+     * </p>
+     * 
+     * @param autoMinorVersionUpgrade
+     *        This parameter is currently disabled.
      */
-    public Boolean isAutoMinorVersionUpgrade() {
-        return autoMinorVersionUpgrade;
-    }
-    
-    /**
-     * This parameter is currently disabled.
-     *
-     * @param autoMinorVersionUpgrade This parameter is currently disabled.
-     */
+
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
     }
-    
+
     /**
-     * This parameter is currently disabled.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param autoMinorVersionUpgrade This parameter is currently disabled.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * This parameter is currently disabled.
+     * </p>
+     * 
+     * @return This parameter is currently disabled.
      */
-    public ModifyReplicationGroupRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
-        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+
+    public Boolean getAutoMinorVersionUpgrade() {
+        return this.autoMinorVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * This parameter is currently disabled.
+     * </p>
+     * 
+     * @param autoMinorVersionUpgrade
+     *        This parameter is currently disabled.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withAutoMinorVersionUpgrade(
+            Boolean autoMinorVersionUpgrade) {
+        setAutoMinorVersionUpgrade(autoMinorVersionUpgrade);
         return this;
     }
 
     /**
+     * <p>
      * This parameter is currently disabled.
-     *
+     * </p>
+     * 
      * @return This parameter is currently disabled.
      */
-    public Boolean getAutoMinorVersionUpgrade() {
-        return autoMinorVersionUpgrade;
+
+    public Boolean isAutoMinorVersionUpgrade() {
+        return this.autoMinorVersionUpgrade;
     }
 
     /**
-     * The number of days for which ElastiCache will retain automatic node
-     * group snapshots before deleting them. For example, if you set
-     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
-     * today will be retained for 5 days before being deleted.
-     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
-     * to zero (0), backups are turned off.
-     *
-     * @return The number of days for which ElastiCache will retain automatic node
-     *         group snapshots before deleting them. For example, if you set
-     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
-     *         today will be retained for 5 days before being deleted.
-     *         <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
-     *         to zero (0), backups are turned off.
+     * <p>
+     * The number of days for which ElastiCache will retain automatic node group
+     * snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
+     * will be retained for 5 days before being deleted.
+     * </p>
+     * <p>
+     * <b>Important</b><br/>
+     * If the value of SnapshotRetentionLimit is set to zero (0), backups are
+     * turned off.
+     * </p>
+     * 
+     * @param snapshotRetentionLimit
+     *        The number of days for which ElastiCache will retain automatic
+     *        node group snapshots before deleting them. For example, if you set
+     *        <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     *        today will be retained for 5 days before being deleted.</p>
+     *        <p>
+     *        <b>Important</b><br/>
+     *        If the value of SnapshotRetentionLimit is set to zero (0), backups
+     *        are turned off.
      */
-    public Integer getSnapshotRetentionLimit() {
-        return snapshotRetentionLimit;
-    }
-    
-    /**
-     * The number of days for which ElastiCache will retain automatic node
-     * group snapshots before deleting them. For example, if you set
-     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
-     * today will be retained for 5 days before being deleted.
-     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
-     * to zero (0), backups are turned off.
-     *
-     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic node
-     *         group snapshots before deleting them. For example, if you set
-     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
-     *         today will be retained for 5 days before being deleted.
-     *         <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
-     *         to zero (0), backups are turned off.
-     */
+
     public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
         this.snapshotRetentionLimit = snapshotRetentionLimit;
     }
-    
+
     /**
-     * The number of days for which ElastiCache will retain automatic node
-     * group snapshots before deleting them. For example, if you set
-     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
-     * today will be retained for 5 days before being deleted.
-     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
-     * to zero (0), backups are turned off.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic node
-     *         group snapshots before deleting them. For example, if you set
-     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
-     *         today will be retained for 5 days before being deleted.
-     *         <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
-     *         to zero (0), backups are turned off.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The number of days for which ElastiCache will retain automatic node group
+     * snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
+     * will be retained for 5 days before being deleted.
+     * </p>
+     * <p>
+     * <b>Important</b><br/>
+     * If the value of SnapshotRetentionLimit is set to zero (0), backups are
+     * turned off.
+     * </p>
+     * 
+     * @return The number of days for which ElastiCache will retain automatic
+     *         node group snapshots before deleting them. For example, if you
+     *         set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was
+     *         taken today will be retained for 5 days before being deleted.</p>
+     *         <p>
+     *         <b>Important</b><br/>
+     *         If the value of SnapshotRetentionLimit is set to zero (0),
+     *         backups are turned off.
      */
-    public ModifyReplicationGroupRequest withSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
-        this.snapshotRetentionLimit = snapshotRetentionLimit;
+
+    public Integer getSnapshotRetentionLimit() {
+        return this.snapshotRetentionLimit;
+    }
+
+    /**
+     * <p>
+     * The number of days for which ElastiCache will retain automatic node group
+     * snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
+     * will be retained for 5 days before being deleted.
+     * </p>
+     * <p>
+     * <b>Important</b><br/>
+     * If the value of SnapshotRetentionLimit is set to zero (0), backups are
+     * turned off.
+     * </p>
+     * 
+     * @param snapshotRetentionLimit
+     *        The number of days for which ElastiCache will retain automatic
+     *        node group snapshots before deleting them. For example, if you set
+     *        <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     *        today will be retained for 5 days before being deleted.</p>
+     *        <p>
+     *        <b>Important</b><br/>
+     *        If the value of SnapshotRetentionLimit is set to zero (0), backups
+     *        are turned off.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withSnapshotRetentionLimit(
+            Integer snapshotRetentionLimit) {
+        setSnapshotRetentionLimit(snapshotRetentionLimit);
         return this;
     }
 
     /**
-     * The daily time range (in UTC) during which ElastiCache will begin
-     * taking a daily snapshot of the node group specified by
-     * <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
-     * <p>If you do not specify this parameter, then ElastiCache will
-     * automatically choose an appropriate time range.
-     *
-     * @return The daily time range (in UTC) during which ElastiCache will begin
-     *         taking a daily snapshot of the node group specified by
-     *         <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
-     *         <p>If you do not specify this parameter, then ElastiCache will
-     *         automatically choose an appropriate time range.
+     * <p>
+     * The daily time range (in UTC) during which ElastiCache will begin taking
+     * a daily snapshot of the node group specified by
+     * <i>SnapshottingClusterId</i>.
+     * </p>
+     * <p>
+     * Example: <code>05:00-09:00</code>
+     * </p>
+     * <p>
+     * If you do not specify this parameter, then ElastiCache will automatically
+     * choose an appropriate time range.
+     * </p>
+     * 
+     * @param snapshotWindow
+     *        The daily time range (in UTC) during which ElastiCache will begin
+     *        taking a daily snapshot of the node group specified by
+     *        <i>SnapshottingClusterId</i>.</p>
+     *        <p>
+     *        Example: <code>05:00-09:00</code>
+     *        </p>
+     *        <p>
+     *        If you do not specify this parameter, then ElastiCache will
+     *        automatically choose an appropriate time range.
      */
-    public String getSnapshotWindow() {
-        return snapshotWindow;
-    }
-    
-    /**
-     * The daily time range (in UTC) during which ElastiCache will begin
-     * taking a daily snapshot of the node group specified by
-     * <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
-     * <p>If you do not specify this parameter, then ElastiCache will
-     * automatically choose an appropriate time range.
-     *
-     * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
-     *         taking a daily snapshot of the node group specified by
-     *         <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
-     *         <p>If you do not specify this parameter, then ElastiCache will
-     *         automatically choose an appropriate time range.
-     */
+
     public void setSnapshotWindow(String snapshotWindow) {
         this.snapshotWindow = snapshotWindow;
     }
-    
+
     /**
-     * The daily time range (in UTC) during which ElastiCache will begin
-     * taking a daily snapshot of the node group specified by
-     * <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
-     * <p>If you do not specify this parameter, then ElastiCache will
-     * automatically choose an appropriate time range.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
+     * The daily time range (in UTC) during which ElastiCache will begin taking
+     * a daily snapshot of the node group specified by
+     * <i>SnapshottingClusterId</i>.
+     * </p>
+     * <p>
+     * Example: <code>05:00-09:00</code>
+     * </p>
+     * <p>
+     * If you do not specify this parameter, then ElastiCache will automatically
+     * choose an appropriate time range.
+     * </p>
+     * 
+     * @return The daily time range (in UTC) during which ElastiCache will begin
      *         taking a daily snapshot of the node group specified by
-     *         <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
-     *         <p>If you do not specify this parameter, then ElastiCache will
+     *         <i>SnapshottingClusterId</i>.</p>
+     *         <p>
+     *         Example: <code>05:00-09:00</code>
+     *         </p>
+     *         <p>
+     *         If you do not specify this parameter, then ElastiCache will
      *         automatically choose an appropriate time range.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public ModifyReplicationGroupRequest withSnapshotWindow(String snapshotWindow) {
-        this.snapshotWindow = snapshotWindow;
+
+    public String getSnapshotWindow() {
+        return this.snapshotWindow;
+    }
+
+    /**
+     * <p>
+     * The daily time range (in UTC) during which ElastiCache will begin taking
+     * a daily snapshot of the node group specified by
+     * <i>SnapshottingClusterId</i>.
+     * </p>
+     * <p>
+     * Example: <code>05:00-09:00</code>
+     * </p>
+     * <p>
+     * If you do not specify this parameter, then ElastiCache will automatically
+     * choose an appropriate time range.
+     * </p>
+     * 
+     * @param snapshotWindow
+     *        The daily time range (in UTC) during which ElastiCache will begin
+     *        taking a daily snapshot of the node group specified by
+     *        <i>SnapshottingClusterId</i>.</p>
+     *        <p>
+     *        Example: <code>05:00-09:00</code>
+     *        </p>
+     *        <p>
+     *        If you do not specify this parameter, then ElastiCache will
+     *        automatically choose an appropriate time range.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationGroupRequest withSnapshotWindow(
+            String snapshotWindow) {
+        setSnapshotWindow(snapshotWindow);
         return this;
     }
 
     /**
-     * A valid cache node type that you want to scale this replication group
-     * to. The value of this parameter must be one of the
+     * <p>
+     * A valid cache node type that you want to scale this replication group to.
+     * The value of this parameter must be one of the
      * <i>ScaleUpModifications</i> values returned by the
      * <code>ListAllowedCacheNodeTypeModification</code> action.
-     *
-     * @return A valid cache node type that you want to scale this replication group
-     *         to. The value of this parameter must be one of the
-     *         <i>ScaleUpModifications</i> values returned by the
-     *         <code>ListAllowedCacheNodeTypeModification</code> action.
+     * </p>
+     * 
+     * @param cacheNodeType
+     *        A valid cache node type that you want to scale this replication
+     *        group to. The value of this parameter must be one of the
+     *        <i>ScaleUpModifications</i> values returned by the
+     *        <code>ListAllowedCacheNodeTypeModification</code> action.
      */
-    public String getCacheNodeType() {
-        return cacheNodeType;
-    }
-    
-    /**
-     * A valid cache node type that you want to scale this replication group
-     * to. The value of this parameter must be one of the
-     * <i>ScaleUpModifications</i> values returned by the
-     * <code>ListAllowedCacheNodeTypeModification</code> action.
-     *
-     * @param cacheNodeType A valid cache node type that you want to scale this replication group
-     *         to. The value of this parameter must be one of the
-     *         <i>ScaleUpModifications</i> values returned by the
-     *         <code>ListAllowedCacheNodeTypeModification</code> action.
-     */
+
     public void setCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
     }
-    
+
     /**
-     * A valid cache node type that you want to scale this replication group
-     * to. The value of this parameter must be one of the
+     * <p>
+     * A valid cache node type that you want to scale this replication group to.
+     * The value of this parameter must be one of the
      * <i>ScaleUpModifications</i> values returned by the
      * <code>ListAllowedCacheNodeTypeModification</code> action.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cacheNodeType A valid cache node type that you want to scale this replication group
-     *         to. The value of this parameter must be one of the
+     * </p>
+     * 
+     * @return A valid cache node type that you want to scale this replication
+     *         group to. The value of this parameter must be one of the
      *         <i>ScaleUpModifications</i> values returned by the
      *         <code>ListAllowedCacheNodeTypeModification</code> action.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
+
+    public String getCacheNodeType() {
+        return this.cacheNodeType;
+    }
+
+    /**
+     * <p>
+     * A valid cache node type that you want to scale this replication group to.
+     * The value of this parameter must be one of the
+     * <i>ScaleUpModifications</i> values returned by the
+     * <code>ListAllowedCacheNodeTypeModification</code> action.
+     * </p>
+     * 
+     * @param cacheNodeType
+     *        A valid cache node type that you want to scale this replication
+     *        group to. The value of this parameter must be one of the
+     *        <i>ScaleUpModifications</i> values returned by the
+     *        <code>ListAllowedCacheNodeTypeModification</code> action.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ModifyReplicationGroupRequest withCacheNodeType(String cacheNodeType) {
-        this.cacheNodeType = cacheNodeType;
+        setCacheNodeType(cacheNodeType);
         return this;
     }
 
@@ -1247,102 +1746,259 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReplicationGroupId() != null) sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
-        if (getReplicationGroupDescription() != null) sb.append("ReplicationGroupDescription: " + getReplicationGroupDescription() + ",");
-        if (getPrimaryClusterId() != null) sb.append("PrimaryClusterId: " + getPrimaryClusterId() + ",");
-        if (getSnapshottingClusterId() != null) sb.append("SnapshottingClusterId: " + getSnapshottingClusterId() + ",");
-        if (isAutomaticFailoverEnabled() != null) sb.append("AutomaticFailoverEnabled: " + isAutomaticFailoverEnabled() + ",");
-        if (getCacheSecurityGroupNames() != null) sb.append("CacheSecurityGroupNames: " + getCacheSecurityGroupNames() + ",");
-        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
-        if (getNotificationTopicArn() != null) sb.append("NotificationTopicArn: " + getNotificationTopicArn() + ",");
-        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
-        if (getNotificationTopicStatus() != null) sb.append("NotificationTopicStatus: " + getNotificationTopicStatus() + ",");
-        if (isApplyImmediately() != null) sb.append("ApplyImmediately: " + isApplyImmediately() + ",");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
-        if (getSnapshotRetentionLimit() != null) sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
-        if (getSnapshotWindow() != null) sb.append("SnapshotWindow: " + getSnapshotWindow() + ",");
-        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() );
+        if (getReplicationGroupId() != null)
+            sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
+        if (getReplicationGroupDescription() != null)
+            sb.append("ReplicationGroupDescription: "
+                    + getReplicationGroupDescription() + ",");
+        if (getPrimaryClusterId() != null)
+            sb.append("PrimaryClusterId: " + getPrimaryClusterId() + ",");
+        if (getSnapshottingClusterId() != null)
+            sb.append("SnapshottingClusterId: " + getSnapshottingClusterId()
+                    + ",");
+        if (getAutomaticFailoverEnabled() != null)
+            sb.append("AutomaticFailoverEnabled: "
+                    + getAutomaticFailoverEnabled() + ",");
+        if (getCacheSecurityGroupNames() != null)
+            sb.append("CacheSecurityGroupNames: "
+                    + getCacheSecurityGroupNames() + ",");
+        if (getSecurityGroupIds() != null)
+            sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+        if (getPreferredMaintenanceWindow() != null)
+            sb.append("PreferredMaintenanceWindow: "
+                    + getPreferredMaintenanceWindow() + ",");
+        if (getNotificationTopicArn() != null)
+            sb.append("NotificationTopicArn: " + getNotificationTopicArn()
+                    + ",");
+        if (getCacheParameterGroupName() != null)
+            sb.append("CacheParameterGroupName: "
+                    + getCacheParameterGroupName() + ",");
+        if (getNotificationTopicStatus() != null)
+            sb.append("NotificationTopicStatus: "
+                    + getNotificationTopicStatus() + ",");
+        if (getApplyImmediately() != null)
+            sb.append("ApplyImmediately: " + getApplyImmediately() + ",");
+        if (getEngineVersion() != null)
+            sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (getAutoMinorVersionUpgrade() != null)
+            sb.append("AutoMinorVersionUpgrade: "
+                    + getAutoMinorVersionUpgrade() + ",");
+        if (getSnapshotRetentionLimit() != null)
+            sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit()
+                    + ",");
+        if (getSnapshotWindow() != null)
+            sb.append("SnapshotWindow: " + getSnapshotWindow() + ",");
+        if (getCacheNodeType() != null)
+            sb.append("CacheNodeType: " + getCacheNodeType());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ModifyReplicationGroupRequest == false)
+            return false;
+        ModifyReplicationGroupRequest other = (ModifyReplicationGroupRequest) obj;
+        if (other.getReplicationGroupId() == null
+                ^ this.getReplicationGroupId() == null)
+            return false;
+        if (other.getReplicationGroupId() != null
+                && other.getReplicationGroupId().equals(
+                        this.getReplicationGroupId()) == false)
+            return false;
+        if (other.getReplicationGroupDescription() == null
+                ^ this.getReplicationGroupDescription() == null)
+            return false;
+        if (other.getReplicationGroupDescription() != null
+                && other.getReplicationGroupDescription().equals(
+                        this.getReplicationGroupDescription()) == false)
+            return false;
+        if (other.getPrimaryClusterId() == null
+                ^ this.getPrimaryClusterId() == null)
+            return false;
+        if (other.getPrimaryClusterId() != null
+                && other.getPrimaryClusterId().equals(
+                        this.getPrimaryClusterId()) == false)
+            return false;
+        if (other.getSnapshottingClusterId() == null
+                ^ this.getSnapshottingClusterId() == null)
+            return false;
+        if (other.getSnapshottingClusterId() != null
+                && other.getSnapshottingClusterId().equals(
+                        this.getSnapshottingClusterId()) == false)
+            return false;
+        if (other.getAutomaticFailoverEnabled() == null
+                ^ this.getAutomaticFailoverEnabled() == null)
+            return false;
+        if (other.getAutomaticFailoverEnabled() != null
+                && other.getAutomaticFailoverEnabled().equals(
+                        this.getAutomaticFailoverEnabled()) == false)
+            return false;
+        if (other.getCacheSecurityGroupNames() == null
+                ^ this.getCacheSecurityGroupNames() == null)
+            return false;
+        if (other.getCacheSecurityGroupNames() != null
+                && other.getCacheSecurityGroupNames().equals(
+                        this.getCacheSecurityGroupNames()) == false)
+            return false;
+        if (other.getSecurityGroupIds() == null
+                ^ this.getSecurityGroupIds() == null)
+            return false;
+        if (other.getSecurityGroupIds() != null
+                && other.getSecurityGroupIds().equals(
+                        this.getSecurityGroupIds()) == false)
+            return false;
+        if (other.getPreferredMaintenanceWindow() == null
+                ^ this.getPreferredMaintenanceWindow() == null)
+            return false;
+        if (other.getPreferredMaintenanceWindow() != null
+                && other.getPreferredMaintenanceWindow().equals(
+                        this.getPreferredMaintenanceWindow()) == false)
+            return false;
+        if (other.getNotificationTopicArn() == null
+                ^ this.getNotificationTopicArn() == null)
+            return false;
+        if (other.getNotificationTopicArn() != null
+                && other.getNotificationTopicArn().equals(
+                        this.getNotificationTopicArn()) == false)
+            return false;
+        if (other.getCacheParameterGroupName() == null
+                ^ this.getCacheParameterGroupName() == null)
+            return false;
+        if (other.getCacheParameterGroupName() != null
+                && other.getCacheParameterGroupName().equals(
+                        this.getCacheParameterGroupName()) == false)
+            return false;
+        if (other.getNotificationTopicStatus() == null
+                ^ this.getNotificationTopicStatus() == null)
+            return false;
+        if (other.getNotificationTopicStatus() != null
+                && other.getNotificationTopicStatus().equals(
+                        this.getNotificationTopicStatus()) == false)
+            return false;
+        if (other.getApplyImmediately() == null
+                ^ this.getApplyImmediately() == null)
+            return false;
+        if (other.getApplyImmediately() != null
+                && other.getApplyImmediately().equals(
+                        this.getApplyImmediately()) == false)
+            return false;
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
+            return false;
+        if (other.getEngineVersion() != null
+                && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+            return false;
+        if (other.getAutoMinorVersionUpgrade() == null
+                ^ this.getAutoMinorVersionUpgrade() == null)
+            return false;
+        if (other.getAutoMinorVersionUpgrade() != null
+                && other.getAutoMinorVersionUpgrade().equals(
+                        this.getAutoMinorVersionUpgrade()) == false)
+            return false;
+        if (other.getSnapshotRetentionLimit() == null
+                ^ this.getSnapshotRetentionLimit() == null)
+            return false;
+        if (other.getSnapshotRetentionLimit() != null
+                && other.getSnapshotRetentionLimit().equals(
+                        this.getSnapshotRetentionLimit()) == false)
+            return false;
+        if (other.getSnapshotWindow() == null
+                ^ this.getSnapshotWindow() == null)
+            return false;
+        if (other.getSnapshotWindow() != null
+                && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false)
+            return false;
+        if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null)
+            return false;
+        if (other.getCacheNodeType() != null
+                && other.getCacheNodeType().equals(this.getCacheNodeType()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode()); 
-        hashCode = prime * hashCode + ((getReplicationGroupDescription() == null) ? 0 : getReplicationGroupDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getPrimaryClusterId() == null) ? 0 : getPrimaryClusterId().hashCode()); 
-        hashCode = prime * hashCode + ((getSnapshottingClusterId() == null) ? 0 : getSnapshottingClusterId().hashCode()); 
-        hashCode = prime * hashCode + ((isAutomaticFailoverEnabled() == null) ? 0 : isAutomaticFailoverEnabled().hashCode()); 
-        hashCode = prime * hashCode + ((getCacheSecurityGroupNames() == null) ? 0 : getCacheSecurityGroupNames().hashCode()); 
-        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode()); 
-        hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
-        hashCode = prime * hashCode + ((getNotificationTopicArn() == null) ? 0 : getNotificationTopicArn().hashCode()); 
-        hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode()); 
-        hashCode = prime * hashCode + ((getNotificationTopicStatus() == null) ? 0 : getNotificationTopicStatus().hashCode()); 
-        hashCode = prime * hashCode + ((isApplyImmediately() == null) ? 0 : isApplyImmediately().hashCode()); 
-        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
-        hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
-        hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode()); 
-        hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode()); 
-        hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getReplicationGroupId() == null) ? 0
+                        : getReplicationGroupId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReplicationGroupDescription() == null) ? 0
+                        : getReplicationGroupDescription().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPrimaryClusterId() == null) ? 0 : getPrimaryClusterId()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSnapshottingClusterId() == null) ? 0
+                        : getSnapshottingClusterId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAutomaticFailoverEnabled() == null) ? 0
+                        : getAutomaticFailoverEnabled().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCacheSecurityGroupNames() == null) ? 0
+                        : getCacheSecurityGroupNames().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPreferredMaintenanceWindow() == null) ? 0
+                        : getPreferredMaintenanceWindow().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNotificationTopicArn() == null) ? 0
+                        : getNotificationTopicArn().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCacheParameterGroupName() == null) ? 0
+                        : getCacheParameterGroupName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNotificationTopicStatus() == null) ? 0
+                        : getNotificationTopicStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getApplyImmediately() == null) ? 0 : getApplyImmediately()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEngineVersion() == null) ? 0 : getEngineVersion()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAutoMinorVersionUpgrade() == null) ? 0
+                        : getAutoMinorVersionUpgrade().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSnapshotRetentionLimit() == null) ? 0
+                        : getSnapshotRetentionLimit().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCacheNodeType() == null) ? 0 : getCacheNodeType()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ModifyReplicationGroupRequest == false) return false;
-        ModifyReplicationGroupRequest other = (ModifyReplicationGroupRequest)obj;
-        
-        if (other.getReplicationGroupId() == null ^ this.getReplicationGroupId() == null) return false;
-        if (other.getReplicationGroupId() != null && other.getReplicationGroupId().equals(this.getReplicationGroupId()) == false) return false; 
-        if (other.getReplicationGroupDescription() == null ^ this.getReplicationGroupDescription() == null) return false;
-        if (other.getReplicationGroupDescription() != null && other.getReplicationGroupDescription().equals(this.getReplicationGroupDescription()) == false) return false; 
-        if (other.getPrimaryClusterId() == null ^ this.getPrimaryClusterId() == null) return false;
-        if (other.getPrimaryClusterId() != null && other.getPrimaryClusterId().equals(this.getPrimaryClusterId()) == false) return false; 
-        if (other.getSnapshottingClusterId() == null ^ this.getSnapshottingClusterId() == null) return false;
-        if (other.getSnapshottingClusterId() != null && other.getSnapshottingClusterId().equals(this.getSnapshottingClusterId()) == false) return false; 
-        if (other.isAutomaticFailoverEnabled() == null ^ this.isAutomaticFailoverEnabled() == null) return false;
-        if (other.isAutomaticFailoverEnabled() != null && other.isAutomaticFailoverEnabled().equals(this.isAutomaticFailoverEnabled()) == false) return false; 
-        if (other.getCacheSecurityGroupNames() == null ^ this.getCacheSecurityGroupNames() == null) return false;
-        if (other.getCacheSecurityGroupNames() != null && other.getCacheSecurityGroupNames().equals(this.getCacheSecurityGroupNames()) == false) return false; 
-        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null) return false;
-        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false) return false; 
-        if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null) return false;
-        if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false) return false; 
-        if (other.getNotificationTopicArn() == null ^ this.getNotificationTopicArn() == null) return false;
-        if (other.getNotificationTopicArn() != null && other.getNotificationTopicArn().equals(this.getNotificationTopicArn()) == false) return false; 
-        if (other.getCacheParameterGroupName() == null ^ this.getCacheParameterGroupName() == null) return false;
-        if (other.getCacheParameterGroupName() != null && other.getCacheParameterGroupName().equals(this.getCacheParameterGroupName()) == false) return false; 
-        if (other.getNotificationTopicStatus() == null ^ this.getNotificationTopicStatus() == null) return false;
-        if (other.getNotificationTopicStatus() != null && other.getNotificationTopicStatus().equals(this.getNotificationTopicStatus()) == false) return false; 
-        if (other.isApplyImmediately() == null ^ this.isApplyImmediately() == null) return false;
-        if (other.isApplyImmediately() != null && other.isApplyImmediately().equals(this.isApplyImmediately()) == false) return false; 
-        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null) return false;
-        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
-        if (other.isAutoMinorVersionUpgrade() == null ^ this.isAutoMinorVersionUpgrade() == null) return false;
-        if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
-        if (other.getSnapshotRetentionLimit() == null ^ this.getSnapshotRetentionLimit() == null) return false;
-        if (other.getSnapshotRetentionLimit() != null && other.getSnapshotRetentionLimit().equals(this.getSnapshotRetentionLimit()) == false) return false; 
-        if (other.getSnapshotWindow() == null ^ this.getSnapshotWindow() == null) return false;
-        if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false) return false; 
-        if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null) return false;
-        if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ModifyReplicationGroupRequest clone() {
-        
-            return (ModifyReplicationGroupRequest) super.clone();
+        return (ModifyReplicationGroupRequest) super.clone();
     }
-
 }
-    

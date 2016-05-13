@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CancelCommandRequest Marshaller
  */
 public class CancelCommandRequestMarshaller implements
         Marshaller<Request<CancelCommandRequest>, CancelCommandRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CancelCommandRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CancelCommandRequest> marshall(
             CancelCommandRequest cancelCommandRequest) {
@@ -57,8 +63,8 @@ public class CancelCommandRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

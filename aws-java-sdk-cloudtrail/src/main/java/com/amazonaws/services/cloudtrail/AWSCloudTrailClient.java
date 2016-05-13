@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -92,10 +92,188 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all CloudTrail exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNextTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KmsKeyNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.KmsKeyNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TrailNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.TrailNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KmsKeyDisabledException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.KmsKeyDisabledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "TrailAlreadyExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "OperationNotPermittedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.OperationNotPermittedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidS3PrefixException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CloudTrailARNInvalidException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidTimeRangeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidTimeRangeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "S3BucketDoesNotExistException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ResourceTypeNotSupportedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.ResourceTypeNotSupportedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedOperationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.UnsupportedOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InsufficientEncryptionPolicyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidLookupAttributesException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidLookupAttributesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidHomeRegionException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MaximumNumberOfTrailsExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidMaxResultsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidMaxResultsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidCloudWatchLogsRoleArnException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InsufficientSnsTopicPolicyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidSnsTopicNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidCloudWatchLogsLogGroupArnException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsLogGroupArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CloudWatchLogsDeliveryUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InsufficientS3BucketPolicyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidS3BucketNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TrailNotProvidedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.TrailNotProvidedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidKmsKeyIdException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidKmsKeyIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidTagParameterException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidTagParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TagsLimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.TagsLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidParameterCombinationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidParameterCombinationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidTrailNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidTrailNameException.class)));
 
     /**
      * Constructs a new client to invoke service methods on CloudTrail. A
@@ -247,137 +425,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidNextTokenException.class,
-                        "InvalidNextTokenException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.KmsKeyNotFoundException.class,
-                        "KmsKeyNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.TrailNotFoundException.class,
-                        "TrailNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.KmsKeyDisabledException.class,
-                        "KmsKeyDisabledException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException.class,
-                        "TrailAlreadyExistsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.OperationNotPermittedException.class,
-                        "OperationNotPermittedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException.class,
-                        "InvalidS3PrefixException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException.class,
-                        "CloudTrailARNInvalidException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidTimeRangeException.class,
-                        "InvalidTimeRangeException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException.class,
-                        "S3BucketDoesNotExistException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.ResourceTypeNotSupportedException.class,
-                        "ResourceTypeNotSupportedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.UnsupportedOperationException.class,
-                        "UnsupportedOperationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException.class,
-                        "InsufficientEncryptionPolicyException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidLookupAttributesException.class,
-                        "InvalidLookupAttributesException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException.class,
-                        "InvalidHomeRegionException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException.class,
-                        "MaximumNumberOfTrailsExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidMaxResultsException.class,
-                        "InvalidMaxResultsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException.class,
-                        "InvalidCloudWatchLogsRoleArnException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException.class,
-                        "InsufficientSnsTopicPolicyException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException.class,
-                        "InvalidSnsTopicNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsLogGroupArnException.class,
-                        "InvalidCloudWatchLogsLogGroupArnException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidTokenException.class,
-                        "InvalidTokenException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException.class,
-                        "CloudWatchLogsDeliveryUnavailableException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException.class,
-                        "InsufficientS3BucketPolicyException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException.class,
-                        "InvalidS3BucketNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.TrailNotProvidedException.class,
-                        "TrailNotProvidedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidKmsKeyIdException.class,
-                        "InvalidKmsKeyIdException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidTagParameterException.class,
-                        "InvalidTagParameterException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.TagsLimitExceededException.class,
-                        "TagsLimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidParameterCombinationException.class,
-                        "InvalidParameterCombinationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidTrailNameException.class,
-                        "InvalidTrailNameException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -475,18 +522,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(addTagsRequest));
+                request = new AddTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddTagsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new AddTagsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -604,18 +652,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTrailRequestMarshaller().marshall(super
-                        .beforeMarshalling(createTrailRequest));
+                request = new CreateTrailRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createTrailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateTrailResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateTrailResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTrailResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateTrailResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -690,18 +739,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTrailRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteTrailRequest));
+                request = new DeleteTrailRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteTrailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTrailResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DeleteTrailResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTrailResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteTrailResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -742,18 +792,20 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrailsRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeTrailsRequest));
+                request = new DescribeTrailsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeTrailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTrailsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeTrailsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTrailsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeTrailsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -831,18 +883,20 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTrailStatusRequestMarshaller().marshall(super
-                        .beforeMarshalling(getTrailStatusRequest));
+                request = new GetTrailStatusRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getTrailStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetTrailStatusResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetTrailStatusResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetTrailStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetTrailStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -899,18 +953,20 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPublicKeysRequestMarshaller().marshall(super
-                        .beforeMarshalling(listPublicKeysRequest));
+                request = new ListPublicKeysRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(listPublicKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPublicKeysResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListPublicKeysResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListPublicKeysResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListPublicKeysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1000,18 +1056,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listTagsRequest));
+                request = new ListTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListTagsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1078,18 +1135,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new LookupEventsRequestMarshaller().marshall(super
-                        .beforeMarshalling(lookupEventsRequest));
+                request = new LookupEventsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(lookupEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<LookupEventsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new LookupEventsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<LookupEventsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new LookupEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1181,18 +1239,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(removeTagsRequest));
+                request = new RemoveTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RemoveTagsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new RemoveTagsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemoveTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1270,18 +1329,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartLoggingRequestMarshaller().marshall(super
-                        .beforeMarshalling(startLoggingRequest));
+                request = new StartLoggingRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(startLoggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StartLoggingResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new StartLoggingResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<StartLoggingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StartLoggingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1361,18 +1421,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopLoggingRequestMarshaller().marshall(super
-                        .beforeMarshalling(stopLoggingRequest));
+                request = new StopLoggingRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(stopLoggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StopLoggingResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new StopLoggingResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<StopLoggingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StopLoggingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1496,18 +1557,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateTrailRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateTrailRequest));
+                request = new UpdateTrailRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateTrailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateTrailResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateTrailResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTrailResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateTrailResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1581,8 +1643,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

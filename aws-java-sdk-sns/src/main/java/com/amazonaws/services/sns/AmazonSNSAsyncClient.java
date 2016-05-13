@@ -274,26 +274,25 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addPermissionAsync(
+    public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             AddPermissionRequest request) {
 
         return addPermissionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addPermissionAsync(
+    public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             final AddPermissionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AddPermissionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AddPermissionResult call() throws Exception {
+                        AddPermissionResult result;
 
                         try {
-                            addPermission(request);
-                            result = null;
+                            result = addPermission(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -315,7 +314,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #addPermissionAsync(AddPermissionRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> addPermissionAsync(
+    public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             String topicArn, String label,
             java.util.List<String> aWSAccountIds,
             java.util.List<String> actionNames) {
@@ -332,12 +331,12 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #addPermissionAsync(AddPermissionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> addPermissionAsync(
+    public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             String topicArn,
             String label,
             java.util.List<String> aWSAccountIds,
             java.util.List<String> actionNames,
-            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler) {
 
         return addPermissionAsync(
                 new AddPermissionRequest().withTopicArn(topicArn)
@@ -576,26 +575,25 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteEndpointAsync(
+    public java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(
             DeleteEndpointRequest request) {
 
         return deleteEndpointAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteEndpointAsync(
+    public java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(
             final DeleteEndpointRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteEndpointResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteEndpointResult call() throws Exception {
+                        DeleteEndpointResult result;
 
                         try {
-                            deleteEndpoint(request);
-                            result = null;
+                            result = deleteEndpoint(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -612,26 +610,26 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePlatformApplicationAsync(
+    public java.util.concurrent.Future<DeletePlatformApplicationResult> deletePlatformApplicationAsync(
             DeletePlatformApplicationRequest request) {
 
         return deletePlatformApplicationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePlatformApplicationAsync(
+    public java.util.concurrent.Future<DeletePlatformApplicationResult> deletePlatformApplicationAsync(
             final DeletePlatformApplicationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeletePlatformApplicationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeletePlatformApplicationRequest, DeletePlatformApplicationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeletePlatformApplicationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeletePlatformApplicationResult call()
+                            throws Exception {
+                        DeletePlatformApplicationResult result;
 
                         try {
-                            deletePlatformApplication(request);
-                            result = null;
+                            result = deletePlatformApplication(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -648,26 +646,25 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTopicAsync(
+    public java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(
             DeleteTopicRequest request) {
 
         return deleteTopicAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTopicAsync(
+    public java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(
             final DeleteTopicRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, DeleteTopicResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteTopicResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteTopicResult call() throws Exception {
+                        DeleteTopicResult result;
 
                         try {
-                            deleteTopic(request);
-                            result = null;
+                            result = deleteTopic(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -689,7 +686,8 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #deleteTopicAsync(DeleteTopicRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> deleteTopicAsync(String topicArn) {
+    public java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(
+            String topicArn) {
 
         return deleteTopicAsync(new DeleteTopicRequest().withTopicArn(topicArn));
     }
@@ -701,9 +699,9 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #deleteTopicAsync(DeleteTopicRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> deleteTopicAsync(
+    public java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(
             String topicArn,
-            com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, DeleteTopicResult> asyncHandler) {
 
         return deleteTopicAsync(
                 new DeleteTopicRequest().withTopicArn(topicArn), asyncHandler);
@@ -1374,26 +1372,25 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             RemovePermissionRequest request) {
 
         return removePermissionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             final RemovePermissionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RemovePermissionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RemovePermissionResult call() throws Exception {
+                        RemovePermissionResult result;
 
                         try {
-                            removePermission(request);
-                            result = null;
+                            result = removePermission(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1415,7 +1412,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #removePermissionAsync(RemovePermissionRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             String topicArn, String label) {
 
         return removePermissionAsync(new RemovePermissionRequest()
@@ -1429,36 +1426,35 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #removePermissionAsync(RemovePermissionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             String topicArn,
             String label,
-            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
         return removePermissionAsync(new RemovePermissionRequest()
                 .withTopicArn(topicArn).withLabel(label), asyncHandler);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setEndpointAttributesAsync(
+    public java.util.concurrent.Future<SetEndpointAttributesResult> setEndpointAttributesAsync(
             SetEndpointAttributesRequest request) {
 
         return setEndpointAttributesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setEndpointAttributesAsync(
+    public java.util.concurrent.Future<SetEndpointAttributesResult> setEndpointAttributesAsync(
             final SetEndpointAttributesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetEndpointAttributesRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetEndpointAttributesRequest, SetEndpointAttributesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetEndpointAttributesResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetEndpointAttributesResult call() throws Exception {
+                        SetEndpointAttributesResult result;
 
                         try {
-                            setEndpointAttributes(request);
-                            result = null;
+                            result = setEndpointAttributes(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1475,26 +1471,26 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setPlatformApplicationAttributesAsync(
+    public java.util.concurrent.Future<SetPlatformApplicationAttributesResult> setPlatformApplicationAttributesAsync(
             SetPlatformApplicationAttributesRequest request) {
 
         return setPlatformApplicationAttributesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setPlatformApplicationAttributesAsync(
+    public java.util.concurrent.Future<SetPlatformApplicationAttributesResult> setPlatformApplicationAttributesAsync(
             final SetPlatformApplicationAttributesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetPlatformApplicationAttributesRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetPlatformApplicationAttributesResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetPlatformApplicationAttributesResult call()
+                            throws Exception {
+                        SetPlatformApplicationAttributesResult result;
 
                         try {
-                            setPlatformApplicationAttributes(request);
-                            result = null;
+                            result = setPlatformApplicationAttributes(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1511,26 +1507,26 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+    public java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(
             SetSubscriptionAttributesRequest request) {
 
         return setSubscriptionAttributesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+    public java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(
             final SetSubscriptionAttributesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetSubscriptionAttributesResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetSubscriptionAttributesResult call()
+                            throws Exception {
+                        SetSubscriptionAttributesResult result;
 
                         try {
-                            setSubscriptionAttributes(request);
-                            result = null;
+                            result = setSubscriptionAttributes(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1553,7 +1549,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #setSubscriptionAttributesAsync(SetSubscriptionAttributesRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+    public java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(
             String subscriptionArn, String attributeName, String attributeValue) {
 
         return setSubscriptionAttributesAsync(new SetSubscriptionAttributesRequest()
@@ -1569,11 +1565,11 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #setSubscriptionAttributesAsync(SetSubscriptionAttributesRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+    public java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(
             String subscriptionArn,
             String attributeName,
             String attributeValue,
-            com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResult> asyncHandler) {
 
         return setSubscriptionAttributesAsync(
                 new SetSubscriptionAttributesRequest()
@@ -1583,26 +1579,25 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setTopicAttributesAsync(
+    public java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(
             SetTopicAttributesRequest request) {
 
         return setTopicAttributesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setTopicAttributesAsync(
+    public java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(
             final SetTopicAttributesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, SetTopicAttributesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetTopicAttributesResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetTopicAttributesResult call() throws Exception {
+                        SetTopicAttributesResult result;
 
                         try {
-                            setTopicAttributes(request);
-                            result = null;
+                            result = setTopicAttributes(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1624,7 +1619,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #setTopicAttributesAsync(SetTopicAttributesRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> setTopicAttributesAsync(
+    public java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(
             String topicArn, String attributeName, String attributeValue) {
 
         return setTopicAttributesAsync(new SetTopicAttributesRequest()
@@ -1639,11 +1634,11 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #setTopicAttributesAsync(SetTopicAttributesRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> setTopicAttributesAsync(
+    public java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(
             String topicArn,
             String attributeName,
             String attributeValue,
-            com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, SetTopicAttributesResult> asyncHandler) {
 
         return setTopicAttributesAsync(new SetTopicAttributesRequest()
                 .withTopicArn(topicArn).withAttributeName(attributeName)
@@ -1716,26 +1711,25 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unsubscribeAsync(
+    public java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(
             UnsubscribeRequest request) {
 
         return unsubscribeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unsubscribeAsync(
+    public java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(
             final UnsubscribeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, UnsubscribeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UnsubscribeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UnsubscribeResult call() throws Exception {
+                        UnsubscribeResult result;
 
                         try {
-                            unsubscribe(request);
-                            result = null;
+                            result = unsubscribe(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1757,7 +1751,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #unsubscribeAsync(UnsubscribeRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> unsubscribeAsync(
+    public java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(
             String subscriptionArn) {
 
         return unsubscribeAsync(new UnsubscribeRequest()
@@ -1771,9 +1765,9 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @see #unsubscribeAsync(UnsubscribeRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> unsubscribeAsync(
+    public java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(
             String subscriptionArn,
-            com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, UnsubscribeResult> asyncHandler) {
 
         return unsubscribeAsync(
                 new UnsubscribeRequest().withSubscriptionArn(subscriptionArn),

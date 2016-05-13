@@ -37,18 +37,6 @@ import org.apache.commons.logging.LogFactory;
 public class SDKProgressPublisher {
 
     /**
-     * TODO This should be remove in 1.11
-     */
-    @Deprecated
-    protected static final boolean SYNC = false;
-
-    /**
-     * TODO This should be remove in 1.11
-     */
-    @Deprecated
-    protected static final boolean ASYNC = false;
-
-    /**
      * Used for testing purposes only.
      */
     private static volatile Future<?> latestFutureTask;

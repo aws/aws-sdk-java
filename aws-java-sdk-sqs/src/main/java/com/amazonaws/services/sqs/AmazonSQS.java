@@ -203,6 +203,7 @@ public interface AmazonSQS {
      * </p>
      * 
      * @param addPermissionRequest
+     * @return Result of the AddPermission operation returned by the service.
      * @throws OverLimitException
      *         The action that you requested would violate a limit. For example,
      *         ReceiveMessage returns this error if the maximum number of
@@ -211,14 +212,14 @@ public interface AmazonSQS {
      *         queue has already been reached.
      * @sample AmazonSQS.AddPermission
      */
-    void addPermission(AddPermissionRequest addPermissionRequest);
+    AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest);
 
     /**
      * Simplified method form for invoking the AddPermission operation.
      *
      * @see #addPermission(AddPermissionRequest)
      */
-    void addPermission(String queueUrl, String label,
+    AddPermissionResult addPermission(String queueUrl, String label,
             java.util.List<String> aWSAccountIds, java.util.List<String> actions);
 
     /**
@@ -271,13 +272,15 @@ public interface AmazonSQS {
      * </important>
      * 
      * @param changeMessageVisibilityRequest
+     * @return Result of the ChangeMessageVisibility operation returned by the
+     *         service.
      * @throws MessageNotInflightException
      *         The message referred to is not in flight.
      * @throws ReceiptHandleIsInvalidException
      *         The receipt handle provided is not valid.
      * @sample AmazonSQS.ChangeMessageVisibility
      */
-    void changeMessageVisibility(
+    ChangeMessageVisibilityResult changeMessageVisibility(
             ChangeMessageVisibilityRequest changeMessageVisibilityRequest);
 
     /**
@@ -286,8 +289,8 @@ public interface AmazonSQS {
      *
      * @see #changeMessageVisibility(ChangeMessageVisibilityRequest)
      */
-    void changeMessageVisibility(String queueUrl, String receiptHandle,
-            Integer visibilityTimeout);
+    ChangeMessageVisibilityResult changeMessageVisibility(String queueUrl,
+            String receiptHandle, Integer visibilityTimeout);
 
     /**
      * <p>
@@ -444,20 +447,21 @@ public interface AmazonSQS {
      * </important>
      * 
      * @param deleteMessageRequest
+     * @return Result of the DeleteMessage operation returned by the service.
      * @throws InvalidIdFormatException
      *         The receipt handle is not valid for the current version.
      * @throws ReceiptHandleIsInvalidException
      *         The receipt handle provided is not valid.
      * @sample AmazonSQS.DeleteMessage
      */
-    void deleteMessage(DeleteMessageRequest deleteMessageRequest);
+    DeleteMessageResult deleteMessage(DeleteMessageRequest deleteMessageRequest);
 
     /**
      * Simplified method form for invoking the DeleteMessage operation.
      *
      * @see #deleteMessage(DeleteMessageRequest)
      */
-    void deleteMessage(String queueUrl, String receiptHandle);
+    DeleteMessageResult deleteMessage(String queueUrl, String receiptHandle);
 
     /**
      * <p>
@@ -540,16 +544,17 @@ public interface AmazonSQS {
      * </p>
      * 
      * @param deleteQueueRequest
+     * @return Result of the DeleteQueue operation returned by the service.
      * @sample AmazonSQS.DeleteQueue
      */
-    void deleteQueue(DeleteQueueRequest deleteQueueRequest);
+    DeleteQueueResult deleteQueue(DeleteQueueRequest deleteQueueRequest);
 
     /**
      * Simplified method form for invoking the DeleteQueue operation.
      *
      * @see #deleteQueue(DeleteQueueRequest)
      */
-    void deleteQueue(String queueUrl);
+    DeleteQueueResult deleteQueue(String queueUrl);
 
     /**
      * <p>
@@ -687,6 +692,7 @@ public interface AmazonSQS {
      * </p>
      * 
      * @param purgeQueueRequest
+     * @return Result of the PurgeQueue operation returned by the service.
      * @throws QueueDoesNotExistException
      *         The queue referred to does not exist.
      * @throws PurgeQueueInProgressException
@@ -695,7 +701,7 @@ public interface AmazonSQS {
      *         time it can take to delete the messages in the queue.
      * @sample AmazonSQS.PurgeQueue
      */
-    void purgeQueue(PurgeQueueRequest purgeQueueRequest);
+    PurgeQueueResult purgeQueue(PurgeQueueRequest purgeQueueRequest);
 
     /**
      * <p>
@@ -806,16 +812,18 @@ public interface AmazonSQS {
      * </p>
      * 
      * @param removePermissionRequest
+     * @return Result of the RemovePermission operation returned by the service.
      * @sample AmazonSQS.RemovePermission
      */
-    void removePermission(RemovePermissionRequest removePermissionRequest);
+    RemovePermissionResult removePermission(
+            RemovePermissionRequest removePermissionRequest);
 
     /**
      * Simplified method form for invoking the RemovePermission operation.
      *
      * @see #removePermission(RemovePermissionRequest)
      */
-    void removePermission(String queueUrl, String label);
+    RemovePermissionResult removePermission(String queueUrl, String label);
 
     /**
      * <p>
@@ -952,18 +960,21 @@ public interface AmazonSQS {
      * </note>
      * 
      * @param setQueueAttributesRequest
+     * @return Result of the SetQueueAttributes operation returned by the
+     *         service.
      * @throws InvalidAttributeNameException
      *         The attribute referred to does not exist.
      * @sample AmazonSQS.SetQueueAttributes
      */
-    void setQueueAttributes(SetQueueAttributesRequest setQueueAttributesRequest);
+    SetQueueAttributesResult setQueueAttributes(
+            SetQueueAttributesRequest setQueueAttributesRequest);
 
     /**
      * Simplified method form for invoking the SetQueueAttributes operation.
      *
      * @see #setQueueAttributes(SetQueueAttributesRequest)
      */
-    void setQueueAttributes(String queueUrl,
+    SetQueueAttributesResult setQueueAttributes(String queueUrl,
             java.util.Map<String, String> attributes);
 
     /**

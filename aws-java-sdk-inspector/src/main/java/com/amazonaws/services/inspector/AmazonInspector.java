@@ -214,6 +214,8 @@ public interface AmazonInspector {
      * </p>
      * 
      * @param deleteAssessmentRunRequest
+     * @return Result of the DeleteAssessmentRun operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -230,7 +232,7 @@ public interface AmazonInspector {
      *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.DeleteAssessmentRun
      */
-    void deleteAssessmentRun(
+    DeleteAssessmentRunResult deleteAssessmentRun(
             DeleteAssessmentRunRequest deleteAssessmentRunRequest);
 
     /**
@@ -240,6 +242,8 @@ public interface AmazonInspector {
      * </p>
      * 
      * @param deleteAssessmentTargetRequest
+     * @return Result of the DeleteAssessmentTarget operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -256,7 +260,7 @@ public interface AmazonInspector {
      *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.DeleteAssessmentTarget
      */
-    void deleteAssessmentTarget(
+    DeleteAssessmentTargetResult deleteAssessmentTarget(
             DeleteAssessmentTargetRequest deleteAssessmentTargetRequest);
 
     /**
@@ -266,6 +270,8 @@ public interface AmazonInspector {
      * </p>
      * 
      * @param deleteAssessmentTemplateRequest
+     * @return Result of the DeleteAssessmentTemplate operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -282,7 +288,7 @@ public interface AmazonInspector {
      *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.DeleteAssessmentTemplate
      */
-    void deleteAssessmentTemplate(
+    DeleteAssessmentTemplateResult deleteAssessmentTemplate(
             DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest);
 
     /**
@@ -665,6 +671,8 @@ public interface AmazonInspector {
      * </p>
      * 
      * @param registerCrossAccountAccessRoleRequest
+     * @return Result of the RegisterCrossAccountAccessRole operation returned
+     *         by the service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -678,7 +686,7 @@ public interface AmazonInspector {
      *         needs to list your EC2 instances during the assessment run.
      * @sample AmazonInspector.RegisterCrossAccountAccessRole
      */
-    void registerCrossAccountAccessRole(
+    RegisterCrossAccountAccessRoleResult registerCrossAccountAccessRole(
             RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest);
 
     /**
@@ -714,6 +722,8 @@ public interface AmazonInspector {
      * </p>
      * 
      * @param setTagsForResourceRequest
+     * @return Result of the SetTagsForResource operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -727,7 +737,8 @@ public interface AmazonInspector {
      *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.SetTagsForResource
      */
-    void setTagsForResource(SetTagsForResourceRequest setTagsForResourceRequest);
+    SetTagsForResourceResult setTagsForResource(
+            SetTagsForResourceRequest setTagsForResourceRequest);
 
     /**
      * <p>
@@ -772,6 +783,8 @@ public interface AmazonInspector {
      * </p>
      * 
      * @param stopAssessmentRunRequest
+     * @return Result of the StopAssessmentRun operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -785,7 +798,8 @@ public interface AmazonInspector {
      *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.StopAssessmentRun
      */
-    void stopAssessmentRun(StopAssessmentRunRequest stopAssessmentRunRequest);
+    StopAssessmentRunResult stopAssessmentRun(
+            StopAssessmentRunRequest stopAssessmentRunRequest);
 
     /**
      * <p>
@@ -794,6 +808,7 @@ public interface AmazonInspector {
      * </p>
      * 
      * @param subscribeToEventRequest
+     * @return Result of the SubscribeToEvent operation returned by the service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -811,7 +826,8 @@ public interface AmazonInspector {
      *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.SubscribeToEvent
      */
-    void subscribeToEvent(SubscribeToEventRequest subscribeToEventRequest);
+    SubscribeToEventResult subscribeToEvent(
+            SubscribeToEventRequest subscribeToEventRequest);
 
     /**
      * <p>
@@ -820,6 +836,8 @@ public interface AmazonInspector {
      * </p>
      * 
      * @param unsubscribeFromEventRequest
+     * @return Result of the UnsubscribeFromEvent operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -833,7 +851,7 @@ public interface AmazonInspector {
      *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.UnsubscribeFromEvent
      */
-    void unsubscribeFromEvent(
+    UnsubscribeFromEventResult unsubscribeFromEvent(
             UnsubscribeFromEventRequest unsubscribeFromEventRequest);
 
     /**
@@ -843,6 +861,8 @@ public interface AmazonInspector {
      * </p>
      * 
      * @param updateAssessmentTargetRequest
+     * @return Result of the UpdateAssessmentTarget operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -856,7 +876,7 @@ public interface AmazonInspector {
      *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.UpdateAssessmentTarget
      */
-    void updateAssessmentTarget(
+    UpdateAssessmentTargetResult updateAssessmentTarget(
             UpdateAssessmentTargetRequest updateAssessmentTargetRequest);
 
     /**

@@ -45,7 +45,7 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public void createAlias(CreateAliasRequest request) {
+    public CreateAliasResult createAlias(CreateAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,7 +70,7 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public void deleteAlias(DeleteAliasRequest request) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,22 +80,24 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public void disableKey(DisableKeyRequest request) {
+    public DisableKeyResult disableKey(DisableKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void disableKeyRotation(DisableKeyRotationRequest request) {
+    public DisableKeyRotationResult disableKeyRotation(
+            DisableKeyRotationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void enableKey(EnableKeyRequest request) {
+    public EnableKeyResult enableKey(EnableKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void enableKeyRotation(EnableKeyRotationRequest request) {
+    public EnableKeyRotationResult enableKeyRotation(
+            EnableKeyRotationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -173,7 +175,7 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public void putKeyPolicy(PutKeyPolicyRequest request) {
+    public PutKeyPolicyResult putKeyPolicy(PutKeyPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -183,17 +185,17 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public void retireGrant(RetireGrantRequest request) {
+    public RetireGrantResult retireGrant(RetireGrantRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void retireGrant() {
-        retireGrant(new RetireGrantRequest());
+    public RetireGrantResult retireGrant() {
+        return retireGrant(new RetireGrantRequest());
     }
 
     @Override
-    public void revokeGrant(RevokeGrantRequest request) {
+    public RevokeGrantResult revokeGrant(RevokeGrantRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -204,12 +206,13 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
-    public void updateAlias(UpdateAliasRequest request) {
+    public UpdateAliasResult updateAlias(UpdateAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateKeyDescription(UpdateKeyDescriptionRequest request) {
+    public UpdateKeyDescriptionResult updateKeyDescription(
+            UpdateKeyDescriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

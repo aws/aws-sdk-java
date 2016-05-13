@@ -61,22 +61,25 @@ public class AbstractAWSCodePipeline implements AWSCodePipeline {
     }
 
     @Override
-    public void deleteCustomActionType(DeleteCustomActionTypeRequest request) {
+    public DeleteCustomActionTypeResult deleteCustomActionType(
+            DeleteCustomActionTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deletePipeline(DeletePipelineRequest request) {
+    public DeletePipelineResult deletePipeline(DeletePipelineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void disableStageTransition(DisableStageTransitionRequest request) {
+    public DisableStageTransitionResult disableStageTransition(
+            DisableStageTransitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void enableStageTransition(EnableStageTransitionRequest request) {
+    public EnableStageTransitionResult enableStageTransition(
+            EnableStageTransitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -130,23 +133,25 @@ public class AbstractAWSCodePipeline implements AWSCodePipeline {
     }
 
     @Override
-    public void putJobFailureResult(PutJobFailureResultRequest request) {
+    public PutJobFailureResultResult putJobFailureResult(
+            PutJobFailureResultRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void putJobSuccessResult(PutJobSuccessResultRequest request) {
+    public PutJobSuccessResultResult putJobSuccessResult(
+            PutJobSuccessResultRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void putThirdPartyJobFailureResult(
+    public PutThirdPartyJobFailureResultResult putThirdPartyJobFailureResult(
             PutThirdPartyJobFailureResultRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void putThirdPartyJobSuccessResult(
+    public PutThirdPartyJobSuccessResultResult putThirdPartyJobSuccessResult(
             PutThirdPartyJobSuccessResultRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

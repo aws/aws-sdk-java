@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * GetCloudFrontOriginAccessIdentityConfigRequest Marshaller
@@ -63,9 +64,10 @@ public class GetCloudFrontOriginAccessIdentityConfigRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (getCloudFrontOriginAccessIdentityConfigRequest.getId() != null) ? StringUtils
-                                .fromString(getCloudFrontOriginAccessIdentityConfigRequest
-                                        .getId())
+                        (getCloudFrontOriginAccessIdentityConfigRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(getCloudFrontOriginAccessIdentityConfigRequest
+                                                .getId()), false)
                                 : "");
         request.setResourcePath(uriResourcePath);
 

@@ -22,6 +22,7 @@ import java.net.URL;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
 import com.amazonaws.services.s3.model.AccessControlList;
@@ -33,6 +34,7 @@ import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
+import com.amazonaws.services.s3.model.SetObjectAclRequest;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -152,7 +154,7 @@ public class S3Link {
         return new S3Link(s3cc, id);
     }
 
-    public AmazonS3Client getAmazonS3Client() {
+    public AmazonS3 getAmazonS3Client() {
         return s3cc.getClient(getS3Region());
     }
 
@@ -242,8 +244,9 @@ public class S3Link {
     }
 
     private void setAcl0(CannedAccessControlList acl, RequestMetricCollector col) {
-        getAmazonS3Client()
-            .setObjectAcl(getBucketName(), getKey(), null, acl, col);
+        SetObjectAclRequest setObjectAclRequest = new SetObjectAclRequest(getBucketName(), getKey(), acl)
+                .withRequestMetricCollector(col);
+        getAmazonS3Client().setObjectAcl(setObjectAclRequest);
     }
 
     /**
@@ -269,10 +272,10 @@ public class S3Link {
         setAcl0(acl, requestMetricCollector);
     }
 
-    private void setAcl0(AccessControlList acl,
-            RequestMetricCollector requestMetricCollector) {
-        getAmazonS3Client().setObjectAcl(getBucketName(), getKey(), null, acl,
-                requestMetricCollector);
+    private void setAcl0(AccessControlList acl, RequestMetricCollector requestMetricCollector) {
+        SetObjectAclRequest setObjectAclRequest = new SetObjectAclRequest(getBucketName(), getKey(), acl)
+                .withRequestMetricCollector(requestMetricCollector);
+        getAmazonS3Client().setObjectAcl(setObjectAclRequest);
     }
 
     /**

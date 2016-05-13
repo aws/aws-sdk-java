@@ -105,7 +105,8 @@ public class AbstractAmazonCognitoSync implements AmazonCognitoSync {
     }
 
     @Override
-    public void setCognitoEvents(SetCognitoEventsRequest request) {
+    public SetCognitoEventsResult setCognitoEvents(
+            SetCognitoEventsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

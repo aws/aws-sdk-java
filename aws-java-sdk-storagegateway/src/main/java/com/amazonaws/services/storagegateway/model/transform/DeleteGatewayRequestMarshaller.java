@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteGatewayRequest Marshaller
  */
 public class DeleteGatewayRequestMarshaller implements
         Marshaller<Request<DeleteGatewayRequest>, DeleteGatewayRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteGatewayRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteGatewayRequest> marshall(
             DeleteGatewayRequest deleteGatewayRequest) {
@@ -58,8 +64,8 @@ public class DeleteGatewayRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

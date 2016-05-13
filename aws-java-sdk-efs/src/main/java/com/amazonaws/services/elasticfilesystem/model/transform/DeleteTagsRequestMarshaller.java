@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteTagsRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class DeleteTagsRequestMarshaller implements
         Marshaller<Request<DeleteTagsRequest>, DeleteTagsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteTagsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteTagsRequest> marshall(
             DeleteTagsRequest deleteTagsRequest) {
@@ -66,13 +73,14 @@ public class DeleteTagsRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{FileSystemId}",
-                (deleteTagsRequest.getFileSystemId() != null) ? StringUtils
-                        .fromString(deleteTagsRequest.getFileSystemId()) : "");
+                (deleteTagsRequest.getFileSystemId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteTagsRequest
+                                .getFileSystemId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) deleteTagsRequest

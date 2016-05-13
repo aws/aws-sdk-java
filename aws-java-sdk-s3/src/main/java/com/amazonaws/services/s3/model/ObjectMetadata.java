@@ -22,6 +22,8 @@ import java.util.Date;
 import java.util.TreeMap;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
@@ -896,5 +898,51 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
         if (isRequesterCharged) {
             metadata.put(Headers.REQUESTER_CHARGED_HEADER, Constants.REQUESTER_PAYS);
         }
+    }
+
+    /**
+     * <p>
+     * Returns the value of x-amz-mp-parts-count header.
+     * </p>
+     * <p>
+     * The x-amz-mp-parts-count header is returned in the response only when
+     * a valid partNumber is specified in the request and the object has more than 1 part.
+     * </p>
+     * <p>
+     * To find the part count of an object, set the partNumber to 1 in GetObjectRequest.
+     * If the object has more than 1 part then part count will be returned,
+     * otherwise null is returned.
+     * </p>
+     */
+    public Integer getPartCount() {
+        return (Integer) metadata.get(Headers.S3_PARTS_COUNT);
+    }
+
+    /**
+     * <p>
+     * Returns the content range of the object if response contains the Content-Range header.
+     * </p>
+     * <p>
+     * If the request specifies a range or part number, then response returns the Content-Range range header.
+     * Otherwise, the response does not return Content-Range header.
+     * </p>
+     * @return
+     * 		Returns content range if the object is requested with specific range or part number,
+     * 		null otherwise.
+     */
+    public Long[] getContentRange() {
+        String contentRange = (String) metadata.get(Headers.CONTENT_RANGE);
+        Long[] range = null;
+        if (contentRange != null) {
+            String[] tokens = contentRange.split("[ -/]+");
+            try {
+                range = new Long[] { Long.parseLong(tokens[1]), Long.parseLong(tokens[2]) };
+            } catch (NumberFormatException nfe) {
+                throw new AmazonClientException(
+                        "Unable to parse content range. Header 'Content-Range' has corrupted data" + nfe.getMessage(),
+                        nfe);
+            }
+        }
+        return range;
     }
 }

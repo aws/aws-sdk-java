@@ -16,14 +16,14 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Elasticsearch Service",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : null,
-    "jsonVersion" : null,
+    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "jsonVersion" : "1.1",
     "endpointPrefix" : "es",
     "signingName" : "es",
     "xmlProtocol" : false,
+    "jsonProtocol" : true,
     "serviceName" : "Amazon Elasticsearch Service",
     "cborProtocol" : false,
-    "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -42,7 +42,10 @@
         "variableSetterType" : "AddTagsRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "AddTagsResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>"
@@ -57,11 +60,11 @@
         "documentation" : "<p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, Void>",
+      "syncReturnType" : "AddTagsResult",
+      "asyncReturnType" : "AddTagsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<AddTagsResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<AddTagsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>",
       "authenticated" : true,
       "methodName" : "addTags"
     },
@@ -351,7 +354,10 @@
         "variableSetterType" : "RemoveTagsRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "RemoveTagsResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>"
@@ -363,11 +369,11 @@
         "documentation" : "<p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, Void>",
+      "syncReturnType" : "RemoveTagsResult",
+      "asyncReturnType" : "RemoveTagsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>",
       "authenticated" : true,
       "methodName" : "removeTags"
     },
@@ -463,8 +469,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -515,8 +521,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -590,8 +596,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -643,8 +649,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -709,8 +715,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -761,8 +767,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -813,8 +819,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -865,8 +871,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -917,8 +923,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -969,8 +975,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -1018,8 +1024,8 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "uri" : false,
               "header" : false,
+              "uri" : false,
               "statusCode" : false,
               "queryString" : false
             },
@@ -1037,12 +1043,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -1115,8 +1121,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -1164,8 +1170,8 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "uri" : false,
                 "header" : false,
+                "uri" : false,
                 "statusCode" : false,
                 "queryString" : false
               },
@@ -1183,12 +1189,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -1235,8 +1241,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -1288,8 +1294,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -1341,8 +1347,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -1394,8 +1400,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -1447,8 +1453,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -1513,8 +1519,8 @@
           "isStreaming" : false,
           "location" : "uri",
           "flattened" : false,
-          "uri" : true,
           "header" : false,
+          "uri" : true,
           "statusCode" : false,
           "queryString" : false
         },
@@ -1592,8 +1598,8 @@
             "isStreaming" : false,
             "location" : "uri",
             "flattened" : false,
-            "uri" : true,
             "header" : false,
+            "uri" : true,
             "statusCode" : false,
             "queryString" : false
           },
@@ -1658,8 +1664,8 @@
           "isStreaming" : false,
           "location" : "querystring",
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : true
         },
@@ -1737,8 +1743,8 @@
             "isStreaming" : false,
             "location" : "querystring",
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : true
           },
@@ -1803,8 +1809,8 @@
           "isStreaming" : false,
           "location" : "uri",
           "flattened" : false,
-          "uri" : true,
           "header" : false,
+          "uri" : true,
           "statusCode" : false,
           "queryString" : false
         },
@@ -1882,8 +1888,8 @@
             "isStreaming" : false,
             "location" : "uri",
             "flattened" : false,
-            "uri" : true,
             "header" : false,
+            "uri" : true,
             "statusCode" : false,
             "queryString" : false
           },
@@ -1948,8 +1954,8 @@
           "isStreaming" : false,
           "location" : "uri",
           "flattened" : false,
-          "uri" : true,
           "header" : false,
+          "uri" : true,
           "statusCode" : false,
           "queryString" : false
         },
@@ -2000,8 +2006,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -2052,8 +2058,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -2104,8 +2110,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -2156,8 +2162,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -2205,8 +2211,8 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "uri" : false,
               "header" : false,
+              "uri" : false,
               "statusCode" : false,
               "queryString" : false
             },
@@ -2224,12 +2230,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -2275,8 +2281,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -2354,8 +2360,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -2403,8 +2409,8 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "uri" : false,
                 "header" : false,
+                "uri" : false,
                 "statusCode" : false,
                 "queryString" : false
               },
@@ -2422,12 +2428,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -2474,8 +2480,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -2527,8 +2533,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -2580,8 +2586,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -2633,8 +2639,8 @@
             "isStreaming" : false,
             "location" : "uri",
             "flattened" : false,
-            "uri" : true,
             "header" : false,
+            "uri" : true,
             "statusCode" : false,
             "queryString" : false
           },
@@ -2686,8 +2692,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -2706,6 +2712,41 @@
           "varargSetterDocumentation" : "/**<p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>\n@param snapshotOptions Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "AddTagsResult" : {
+      "c2jName" : "AddTagsResult",
+      "documentation" : null,
+      "shapeName" : "AddTagsResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "addTagsResult",
+        "variableType" : "AddTagsResult",
+        "variableDeclarationType" : "AddTagsResult",
+        "documentation" : null,
+        "simpleType" : "AddTagsResult",
+        "variableSetterType" : "AddTagsResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "ListDomainNamesResult" : {
       "c2jName" : "ListDomainNamesResponse",
@@ -2752,8 +2793,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -2797,8 +2838,8 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "uri" : false,
               "header" : false,
+              "uri" : false,
               "statusCode" : false,
               "queryString" : false
             },
@@ -2893,8 +2934,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -2938,8 +2979,8 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "uri" : false,
                 "header" : false,
+                "uri" : false,
                 "statusCode" : false,
                 "queryString" : false
               },
@@ -3025,8 +3066,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -3077,8 +3118,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -3152,8 +3193,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -3205,8 +3246,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -3271,8 +3312,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -3346,8 +3387,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -3412,8 +3453,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -3487,8 +3528,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -3585,8 +3626,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -3660,8 +3701,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -3726,8 +3767,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -3801,8 +3842,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -3899,8 +3940,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -3951,8 +3992,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4003,8 +4044,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4055,8 +4096,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4107,8 +4148,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4182,8 +4223,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -4235,8 +4276,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -4288,8 +4329,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -4341,8 +4382,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -4394,8 +4435,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -4460,8 +4501,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4512,8 +4553,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4564,8 +4605,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4616,8 +4657,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4668,8 +4709,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4720,8 +4761,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4772,8 +4813,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4824,8 +4865,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4876,8 +4917,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4928,8 +4969,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -4980,8 +5021,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -5032,8 +5073,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -5081,8 +5122,8 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "uri" : false,
               "header" : false,
+              "uri" : false,
               "statusCode" : false,
               "queryString" : false
             },
@@ -5100,12 +5141,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5174,8 +5215,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5223,8 +5264,8 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "uri" : false,
                 "header" : false,
+                "uri" : false,
                 "statusCode" : false,
                 "queryString" : false
               },
@@ -5242,12 +5283,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -5294,8 +5335,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5347,8 +5388,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5400,8 +5441,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5453,8 +5494,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5506,8 +5547,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5559,8 +5600,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5612,8 +5653,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5665,8 +5706,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5718,8 +5759,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5771,8 +5812,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5824,8 +5865,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -5934,8 +5975,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -5986,8 +6027,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -6061,8 +6102,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -6114,8 +6155,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -6180,8 +6221,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -6255,8 +6296,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -6437,8 +6478,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -6482,8 +6523,8 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "uri" : false,
               "header" : false,
+              "uri" : false,
               "statusCode" : false,
               "queryString" : false
             },
@@ -6578,8 +6619,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -6623,8 +6664,8 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "uri" : false,
                 "header" : false,
+                "uri" : false,
                 "statusCode" : false,
                 "queryString" : false
               },
@@ -6664,6 +6705,41 @@
           "varargSetterDocumentation" : "/**<p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainStatusList(java.util.Collection)} or {@link #withDomainStatusList(java.util.Collection)} if you want to override the existing values.</p>\n@param domainStatusList The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "RemoveTagsResult" : {
+      "c2jName" : "RemoveTagsResult",
+      "documentation" : null,
+      "shapeName" : "RemoveTagsResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "removeTagsResult",
+        "variableType" : "RemoveTagsResult",
+        "variableDeclarationType" : "RemoveTagsResult",
+        "documentation" : null,
+        "simpleType" : "RemoveTagsResult",
+        "variableSetterType" : "RemoveTagsResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "DisabledOperationException" : {
       "c2jName" : "DisabledOperationException",
@@ -6774,8 +6850,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -6849,8 +6925,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -6915,8 +6991,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -6960,8 +7036,8 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "uri" : false,
               "header" : false,
+              "uri" : false,
               "statusCode" : false,
               "queryString" : false
             },
@@ -7060,8 +7136,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -7105,8 +7181,8 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "uri" : false,
                 "header" : false,
+                "uri" : false,
                 "statusCode" : false,
                 "queryString" : false
               },
@@ -7192,8 +7268,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -7244,8 +7320,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -7296,8 +7372,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -7348,8 +7424,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -7400,8 +7476,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -7475,8 +7551,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -7528,8 +7604,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -7581,8 +7657,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -7634,8 +7710,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -7687,8 +7763,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -7753,8 +7829,8 @@
           "isStreaming" : false,
           "location" : "uri",
           "flattened" : false,
-          "uri" : true,
           "header" : false,
+          "uri" : true,
           "statusCode" : false,
           "queryString" : false
         },
@@ -7832,8 +7908,8 @@
             "isStreaming" : false,
             "location" : "uri",
             "flattened" : false,
-            "uri" : true,
             "header" : false,
+            "uri" : true,
             "statusCode" : false,
             "queryString" : false
           },
@@ -7942,8 +8018,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -7987,8 +8063,8 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "uri" : false,
               "header" : false,
+              "uri" : false,
               "statusCode" : false,
               "queryString" : false
             },
@@ -8083,8 +8159,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -8128,8 +8204,8 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "uri" : false,
                 "header" : false,
+                "uri" : false,
                 "statusCode" : false,
                 "queryString" : false
               },
@@ -8215,8 +8291,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -8267,8 +8343,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -8312,8 +8388,8 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "uri" : false,
               "header" : false,
+              "uri" : false,
               "statusCode" : false,
               "queryString" : false
             },
@@ -8412,8 +8488,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -8457,8 +8533,8 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "uri" : false,
                 "header" : false,
+                "uri" : false,
                 "statusCode" : false,
                 "queryString" : false
               },
@@ -8531,8 +8607,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -8597,8 +8673,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -8649,8 +8725,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -8724,8 +8800,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -8777,8 +8853,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -8843,8 +8919,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -8895,8 +8971,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -8970,8 +9046,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -9023,8 +9099,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -9121,8 +9197,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -9173,8 +9249,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -9225,8 +9301,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -9277,8 +9353,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -9329,8 +9405,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -9381,8 +9457,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -9456,8 +9532,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -9509,8 +9585,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -9562,8 +9638,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -9615,8 +9691,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -9668,8 +9744,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -9721,8 +9797,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -9787,8 +9863,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -9839,8 +9915,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -9884,8 +9960,8 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "uri" : false,
               "header" : false,
+              "uri" : false,
               "statusCode" : false,
               "queryString" : false
             },
@@ -9984,8 +10060,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -10029,8 +10105,8 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "uri" : false,
                 "header" : false,
+                "uri" : false,
                 "statusCode" : false,
                 "queryString" : false
               },
@@ -10103,8 +10179,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -10201,8 +10277,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -10253,8 +10329,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -10305,8 +10381,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -10357,8 +10433,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -10432,8 +10508,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -10485,8 +10561,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -10538,8 +10614,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -10591,8 +10667,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -10636,6 +10712,38 @@
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidTypeException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "InternalException" : {
+      "c2jName" : "InternalException",
+      "documentation" : "<p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>",
+      "shapeName" : "InternalException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "internalException",
+        "variableType" : "InternalException",
+        "variableDeclarationType" : "InternalException",
+        "documentation" : null,
+        "simpleType" : "InternalException",
+        "variableSetterType" : "InternalException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "InternalException",
       "customization" : {
         "artificialResultWrapper" : null,
         "skipGeneratingModelClass" : false,
@@ -10689,8 +10797,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -10764,8 +10872,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -10784,38 +10892,6 @@
           "varargSetterDocumentation" : "/**<p>Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.</p>\n@param automatedSnapshotStartHour Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
-    },
-    "InternalException" : {
-      "c2jName" : "InternalException",
-      "documentation" : "<p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>",
-      "shapeName" : "InternalException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : null,
-      "enums" : null,
-      "variable" : {
-        "variableName" : "internalException",
-        "variableType" : "InternalException",
-        "variableDeclarationType" : "InternalException",
-        "documentation" : null,
-        "simpleType" : "InternalException",
-        "variableSetterType" : "InternalException"
-      },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "InternalException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
     },
     "AdvancedOptionsStatus" : {
       "c2jName" : "AdvancedOptionsStatus",
@@ -10862,8 +10938,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -10911,8 +10987,8 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
-              "uri" : false,
               "header" : false,
+              "uri" : false,
               "statusCode" : false,
               "queryString" : false
             },
@@ -10930,12 +11006,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10981,8 +11057,8 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
-          "uri" : false,
           "header" : false,
+          "uri" : false,
           "statusCode" : false,
           "queryString" : false
         },
@@ -11056,8 +11132,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -11109,8 +11185,8 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
-            "uri" : false,
             "header" : false,
+            "uri" : false,
             "statusCode" : false,
             "queryString" : false
           },
@@ -11158,8 +11234,8 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
-                "uri" : false,
                 "header" : false,
+                "uri" : false,
                 "statusCode" : false,
                 "queryString" : false
               },
@@ -11177,12 +11253,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -11224,6 +11300,7 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
+    "customErrorCodeFieldName" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {

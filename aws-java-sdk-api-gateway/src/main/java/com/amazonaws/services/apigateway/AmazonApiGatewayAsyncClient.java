@@ -579,26 +579,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApiKeyAsync(
+    public java.util.concurrent.Future<DeleteApiKeyResult> deleteApiKeyAsync(
             DeleteApiKeyRequest request) {
 
         return deleteApiKeyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApiKeyAsync(
+    public java.util.concurrent.Future<DeleteApiKeyResult> deleteApiKeyAsync(
             final DeleteApiKeyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteApiKeyRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteApiKeyRequest, DeleteApiKeyResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteApiKeyResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteApiKeyResult call() throws Exception {
+                        DeleteApiKeyResult result;
 
                         try {
-                            deleteApiKey(request);
-                            result = null;
+                            result = deleteApiKey(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -615,26 +614,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+    public java.util.concurrent.Future<DeleteAuthorizerResult> deleteAuthorizerAsync(
             DeleteAuthorizerRequest request) {
 
         return deleteAuthorizerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+    public java.util.concurrent.Future<DeleteAuthorizerResult> deleteAuthorizerAsync(
             final DeleteAuthorizerRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, DeleteAuthorizerResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteAuthorizerResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteAuthorizerResult call() throws Exception {
+                        DeleteAuthorizerResult result;
 
                         try {
-                            deleteAuthorizer(request);
-                            result = null;
+                            result = deleteAuthorizer(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -651,26 +649,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteBasePathMappingAsync(
+    public java.util.concurrent.Future<DeleteBasePathMappingResult> deleteBasePathMappingAsync(
             DeleteBasePathMappingRequest request) {
 
         return deleteBasePathMappingAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteBasePathMappingAsync(
+    public java.util.concurrent.Future<DeleteBasePathMappingResult> deleteBasePathMappingAsync(
             final DeleteBasePathMappingRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteBasePathMappingRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteBasePathMappingRequest, DeleteBasePathMappingResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteBasePathMappingResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteBasePathMappingResult call() throws Exception {
+                        DeleteBasePathMappingResult result;
 
                         try {
-                            deleteBasePathMapping(request);
-                            result = null;
+                            result = deleteBasePathMapping(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -687,26 +684,26 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteClientCertificateAsync(
+    public java.util.concurrent.Future<DeleteClientCertificateResult> deleteClientCertificateAsync(
             DeleteClientCertificateRequest request) {
 
         return deleteClientCertificateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteClientCertificateAsync(
+    public java.util.concurrent.Future<DeleteClientCertificateResult> deleteClientCertificateAsync(
             final DeleteClientCertificateRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteClientCertificateRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteClientCertificateRequest, DeleteClientCertificateResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteClientCertificateResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteClientCertificateResult call()
+                            throws Exception {
+                        DeleteClientCertificateResult result;
 
                         try {
-                            deleteClientCertificate(request);
-                            result = null;
+                            result = deleteClientCertificate(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -723,26 +720,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDeploymentAsync(
+    public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(
             DeleteDeploymentRequest request) {
 
         return deleteDeploymentAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDeploymentAsync(
+    public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(
             final DeleteDeploymentRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, DeleteDeploymentResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteDeploymentResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteDeploymentResult call() throws Exception {
+                        DeleteDeploymentResult result;
 
                         try {
-                            deleteDeployment(request);
-                            result = null;
+                            result = deleteDeployment(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -759,26 +755,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDomainNameAsync(
+    public java.util.concurrent.Future<DeleteDomainNameResult> deleteDomainNameAsync(
             DeleteDomainNameRequest request) {
 
         return deleteDomainNameAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDomainNameAsync(
+    public java.util.concurrent.Future<DeleteDomainNameResult> deleteDomainNameAsync(
             final DeleteDomainNameRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteDomainNameRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteDomainNameRequest, DeleteDomainNameResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteDomainNameResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteDomainNameResult call() throws Exception {
+                        DeleteDomainNameResult result;
 
                         try {
-                            deleteDomainName(request);
-                            result = null;
+                            result = deleteDomainName(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -795,26 +790,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteIntegrationAsync(
+    public java.util.concurrent.Future<DeleteIntegrationResult> deleteIntegrationAsync(
             DeleteIntegrationRequest request) {
 
         return deleteIntegrationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteIntegrationAsync(
+    public java.util.concurrent.Future<DeleteIntegrationResult> deleteIntegrationAsync(
             final DeleteIntegrationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteIntegrationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteIntegrationRequest, DeleteIntegrationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteIntegrationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteIntegrationResult call() throws Exception {
+                        DeleteIntegrationResult result;
 
                         try {
-                            deleteIntegration(request);
-                            result = null;
+                            result = deleteIntegration(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -831,26 +825,26 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteIntegrationResponseAsync(
+    public java.util.concurrent.Future<DeleteIntegrationResponseResult> deleteIntegrationResponseAsync(
             DeleteIntegrationResponseRequest request) {
 
         return deleteIntegrationResponseAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteIntegrationResponseAsync(
+    public java.util.concurrent.Future<DeleteIntegrationResponseResult> deleteIntegrationResponseAsync(
             final DeleteIntegrationResponseRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteIntegrationResponseRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteIntegrationResponseRequest, DeleteIntegrationResponseResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteIntegrationResponseResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteIntegrationResponseResult call()
+                            throws Exception {
+                        DeleteIntegrationResponseResult result;
 
                         try {
-                            deleteIntegrationResponse(request);
-                            result = null;
+                            result = deleteIntegrationResponse(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -867,26 +861,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMethodAsync(
+    public java.util.concurrent.Future<DeleteMethodResult> deleteMethodAsync(
             DeleteMethodRequest request) {
 
         return deleteMethodAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMethodAsync(
+    public java.util.concurrent.Future<DeleteMethodResult> deleteMethodAsync(
             final DeleteMethodRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteMethodRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteMethodRequest, DeleteMethodResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteMethodResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteMethodResult call() throws Exception {
+                        DeleteMethodResult result;
 
                         try {
-                            deleteMethod(request);
-                            result = null;
+                            result = deleteMethod(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -903,26 +896,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMethodResponseAsync(
+    public java.util.concurrent.Future<DeleteMethodResponseResult> deleteMethodResponseAsync(
             DeleteMethodResponseRequest request) {
 
         return deleteMethodResponseAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMethodResponseAsync(
+    public java.util.concurrent.Future<DeleteMethodResponseResult> deleteMethodResponseAsync(
             final DeleteMethodResponseRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteMethodResponseRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteMethodResponseRequest, DeleteMethodResponseResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteMethodResponseResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteMethodResponseResult call() throws Exception {
+                        DeleteMethodResponseResult result;
 
                         try {
-                            deleteMethodResponse(request);
-                            result = null;
+                            result = deleteMethodResponse(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -939,26 +931,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteModelAsync(
+    public java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(
             DeleteModelRequest request) {
 
         return deleteModelAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteModelAsync(
+    public java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(
             final DeleteModelRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteModelRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteModelRequest, DeleteModelResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteModelResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteModelResult call() throws Exception {
+                        DeleteModelResult result;
 
                         try {
-                            deleteModel(request);
-                            result = null;
+                            result = deleteModel(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -975,26 +966,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteResourceAsync(
+    public java.util.concurrent.Future<DeleteResourceResult> deleteResourceAsync(
             DeleteResourceRequest request) {
 
         return deleteResourceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteResourceAsync(
+    public java.util.concurrent.Future<DeleteResourceResult> deleteResourceAsync(
             final DeleteResourceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteResourceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourceRequest, DeleteResourceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteResourceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteResourceResult call() throws Exception {
+                        DeleteResourceResult result;
 
                         try {
-                            deleteResource(request);
-                            result = null;
+                            result = deleteResource(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1011,26 +1001,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRestApiAsync(
+    public java.util.concurrent.Future<DeleteRestApiResult> deleteRestApiAsync(
             DeleteRestApiRequest request) {
 
         return deleteRestApiAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRestApiAsync(
+    public java.util.concurrent.Future<DeleteRestApiResult> deleteRestApiAsync(
             final DeleteRestApiRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteRestApiRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteRestApiRequest, DeleteRestApiResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteRestApiResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteRestApiResult call() throws Exception {
+                        DeleteRestApiResult result;
 
                         try {
-                            deleteRestApi(request);
-                            result = null;
+                            result = deleteRestApi(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1047,26 +1036,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStageAsync(
+    public java.util.concurrent.Future<DeleteStageResult> deleteStageAsync(
             DeleteStageRequest request) {
 
         return deleteStageAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStageAsync(
+    public java.util.concurrent.Future<DeleteStageResult> deleteStageAsync(
             final DeleteStageRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteStageRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteStageRequest, DeleteStageResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteStageResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteStageResult call() throws Exception {
+                        DeleteStageResult result;
 
                         try {
-                            deleteStage(request);
-                            result = null;
+                            result = deleteStage(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1083,26 +1071,26 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> flushStageAuthorizersCacheAsync(
+    public java.util.concurrent.Future<FlushStageAuthorizersCacheResult> flushStageAuthorizersCacheAsync(
             FlushStageAuthorizersCacheRequest request) {
 
         return flushStageAuthorizersCacheAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> flushStageAuthorizersCacheAsync(
+    public java.util.concurrent.Future<FlushStageAuthorizersCacheResult> flushStageAuthorizersCacheAsync(
             final FlushStageAuthorizersCacheRequest request,
-            final com.amazonaws.handlers.AsyncHandler<FlushStageAuthorizersCacheRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<FlushStageAuthorizersCacheRequest, FlushStageAuthorizersCacheResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<FlushStageAuthorizersCacheResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public FlushStageAuthorizersCacheResult call()
+                            throws Exception {
+                        FlushStageAuthorizersCacheResult result;
 
                         try {
-                            flushStageAuthorizersCache(request);
-                            result = null;
+                            result = flushStageAuthorizersCache(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1119,26 +1107,25 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> flushStageCacheAsync(
+    public java.util.concurrent.Future<FlushStageCacheResult> flushStageCacheAsync(
             FlushStageCacheRequest request) {
 
         return flushStageCacheAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> flushStageCacheAsync(
+    public java.util.concurrent.Future<FlushStageCacheResult> flushStageCacheAsync(
             final FlushStageCacheRequest request,
-            final com.amazonaws.handlers.AsyncHandler<FlushStageCacheRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<FlushStageCacheRequest, FlushStageCacheResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<FlushStageCacheResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public FlushStageCacheResult call() throws Exception {
+                        FlushStageCacheResult result;
 
                         try {
-                            flushStageCache(request);
-                            result = null;
+                            result = flushStageCache(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreatePolicyVersionRequest Marshaller
@@ -48,7 +49,14 @@ public class CreatePolicyVersionRequestMarshaller
         implements
         Marshaller<Request<CreatePolicyVersionRequest>, CreatePolicyVersionRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreatePolicyVersionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreatePolicyVersionRequest> marshall(
             CreatePolicyVersionRequest createPolicyVersionRequest) {
@@ -68,9 +76,10 @@ public class CreatePolicyVersionRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{policyName}",
-                        (createPolicyVersionRequest.getPolicyName() != null) ? StringUtils
-                                .fromString(createPolicyVersionRequest
-                                        .getPolicyName()) : "");
+                        (createPolicyVersionRequest.getPolicyName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(createPolicyVersionRequest
+                                                .getPolicyName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (createPolicyVersionRequest.getSetAsDefault() != null) {
@@ -79,8 +88,8 @@ public class CreatePolicyVersionRequestMarshaller
         }
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (createPolicyVersionRequest.getPolicyDocument() != null) {

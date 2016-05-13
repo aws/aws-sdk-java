@@ -15,7 +15,7 @@
             <#if member.idempotencyToken>
                 uriResourcePath = uriResourcePath.replace("{${member.http.marshallLocationName}}", <@IdempotencyTokenMacro.content getMember member.variable.simpleType/>);
             <#else>
-                uriResourcePath = uriResourcePath.replace("{${member.http.marshallLocationName}}", (${getMember}() != null ) ? StringUtils.from${member.variable.simpleType}(${getMember}()) : "");
+                uriResourcePath = uriResourcePath.replace("{${member.http.marshallLocationName}}", (${getMember}() != null ) ? SdkHttpUtils.urlEncode(StringUtils.from${member.variable.simpleType}(${getMember}()), false) : "");
             </#if>
         </#if>
         </#list>

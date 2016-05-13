@@ -20,9 +20,9 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "devicefarm",
     "signingName" : "devicefarm",
+    "jsonProtocol" : true,
     "serviceName" : "AWS Device Farm",
     "cborProtocol" : false,
-    "jsonProtocol" : true,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
@@ -39575,6 +39575,7 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
+    "customErrorCodeFieldName" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {

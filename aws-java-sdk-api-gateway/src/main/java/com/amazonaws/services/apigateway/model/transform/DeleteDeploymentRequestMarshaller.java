@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteDeploymentRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class DeleteDeploymentRequestMarshaller implements
         Marshaller<Request<DeleteDeploymentRequest>, DeleteDeploymentRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteDeploymentRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteDeploymentRequest> marshall(
             DeleteDeploymentRequest deleteDeploymentRequest) {
@@ -66,15 +74,18 @@ public class DeleteDeploymentRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (deleteDeploymentRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(deleteDeploymentRequest.getRestApiId())
-                        : "");
+                (deleteDeploymentRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(deleteDeploymentRequest
+                                        .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{deployment_id}",
-                        (deleteDeploymentRequest.getDeploymentId() != null) ? StringUtils
-                                .fromString(deleteDeploymentRequest
-                                        .getDeploymentId()) : "");
+                        (deleteDeploymentRequest.getDeploymentId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(deleteDeploymentRequest
+                                                .getDeploymentId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -190,9 +190,11 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * </p>
      * 
      * @param deleteAssessmentRunRequest
+     * @return A Java Future containing the result of the DeleteAssessmentRun
+     *         operation returned by the service.
      * @sample AmazonInspectorAsync.DeleteAssessmentRun
      */
-    java.util.concurrent.Future<Void> deleteAssessmentRunAsync(
+    java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(
             DeleteAssessmentRunRequest deleteAssessmentRunRequest);
 
     /**
@@ -207,11 +209,13 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAssessmentRun
+     *         operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DeleteAssessmentRun
      */
-    java.util.concurrent.Future<Void> deleteAssessmentRunAsync(
+    java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(
             DeleteAssessmentRunRequest deleteAssessmentRunRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRunRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRunRequest, DeleteAssessmentRunResult> asyncHandler);
 
     /**
      * <p>
@@ -220,9 +224,11 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * </p>
      * 
      * @param deleteAssessmentTargetRequest
+     * @return A Java Future containing the result of the DeleteAssessmentTarget
+     *         operation returned by the service.
      * @sample AmazonInspectorAsync.DeleteAssessmentTarget
      */
-    java.util.concurrent.Future<Void> deleteAssessmentTargetAsync(
+    java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(
             DeleteAssessmentTargetRequest deleteAssessmentTargetRequest);
 
     /**
@@ -237,11 +243,13 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAssessmentTarget
+     *         operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DeleteAssessmentTarget
      */
-    java.util.concurrent.Future<Void> deleteAssessmentTargetAsync(
+    java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(
             DeleteAssessmentTargetRequest deleteAssessmentTargetRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTargetRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTargetRequest, DeleteAssessmentTargetResult> asyncHandler);
 
     /**
      * <p>
@@ -250,9 +258,11 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * </p>
      * 
      * @param deleteAssessmentTemplateRequest
+     * @return A Java Future containing the result of the
+     *         DeleteAssessmentTemplate operation returned by the service.
      * @sample AmazonInspectorAsync.DeleteAssessmentTemplate
      */
-    java.util.concurrent.Future<Void> deleteAssessmentTemplateAsync(
+    java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(
             DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest);
 
     /**
@@ -267,11 +277,13 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteAssessmentTemplate operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.DeleteAssessmentTemplate
      */
-    java.util.concurrent.Future<Void> deleteAssessmentTemplateAsync(
+    java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(
             DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTemplateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTemplateRequest, DeleteAssessmentTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -859,9 +871,11 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * </p>
      * 
      * @param registerCrossAccountAccessRoleRequest
+     * @return A Java Future containing the result of the
+     *         RegisterCrossAccountAccessRole operation returned by the service.
      * @sample AmazonInspectorAsync.RegisterCrossAccountAccessRole
      */
-    java.util.concurrent.Future<Void> registerCrossAccountAccessRoleAsync(
+    java.util.concurrent.Future<RegisterCrossAccountAccessRoleResult> registerCrossAccountAccessRoleAsync(
             RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest);
 
     /**
@@ -877,11 +891,13 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RegisterCrossAccountAccessRole operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.RegisterCrossAccountAccessRole
      */
-    java.util.concurrent.Future<Void> registerCrossAccountAccessRoleAsync(
+    java.util.concurrent.Future<RegisterCrossAccountAccessRoleResult> registerCrossAccountAccessRoleAsync(
             RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest,
-            com.amazonaws.handlers.AsyncHandler<RegisterCrossAccountAccessRoleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RegisterCrossAccountAccessRoleRequest, RegisterCrossAccountAccessRoleResult> asyncHandler);
 
     /**
      * <p>
@@ -926,9 +942,11 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * </p>
      * 
      * @param setTagsForResourceRequest
+     * @return A Java Future containing the result of the SetTagsForResource
+     *         operation returned by the service.
      * @sample AmazonInspectorAsync.SetTagsForResource
      */
-    java.util.concurrent.Future<Void> setTagsForResourceAsync(
+    java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(
             SetTagsForResourceRequest setTagsForResourceRequest);
 
     /**
@@ -943,11 +961,13 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetTagsForResource
+     *         operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.SetTagsForResource
      */
-    java.util.concurrent.Future<Void> setTagsForResourceAsync(
+    java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(
             SetTagsForResourceRequest setTagsForResourceRequest,
-            com.amazonaws.handlers.AsyncHandler<SetTagsForResourceRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetTagsForResourceRequest, SetTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -992,9 +1012,11 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * </p>
      * 
      * @param stopAssessmentRunRequest
+     * @return A Java Future containing the result of the StopAssessmentRun
+     *         operation returned by the service.
      * @sample AmazonInspectorAsync.StopAssessmentRun
      */
-    java.util.concurrent.Future<Void> stopAssessmentRunAsync(
+    java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(
             StopAssessmentRunRequest stopAssessmentRunRequest);
 
     /**
@@ -1009,11 +1031,13 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopAssessmentRun
+     *         operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.StopAssessmentRun
      */
-    java.util.concurrent.Future<Void> stopAssessmentRunAsync(
+    java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(
             StopAssessmentRunRequest stopAssessmentRunRequest,
-            com.amazonaws.handlers.AsyncHandler<StopAssessmentRunRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<StopAssessmentRunRequest, StopAssessmentRunResult> asyncHandler);
 
     /**
      * <p>
@@ -1022,9 +1046,11 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * </p>
      * 
      * @param subscribeToEventRequest
+     * @return A Java Future containing the result of the SubscribeToEvent
+     *         operation returned by the service.
      * @sample AmazonInspectorAsync.SubscribeToEvent
      */
-    java.util.concurrent.Future<Void> subscribeToEventAsync(
+    java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(
             SubscribeToEventRequest subscribeToEventRequest);
 
     /**
@@ -1039,11 +1065,13 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SubscribeToEvent
+     *         operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.SubscribeToEvent
      */
-    java.util.concurrent.Future<Void> subscribeToEventAsync(
+    java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(
             SubscribeToEventRequest subscribeToEventRequest,
-            com.amazonaws.handlers.AsyncHandler<SubscribeToEventRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SubscribeToEventRequest, SubscribeToEventResult> asyncHandler);
 
     /**
      * <p>
@@ -1052,9 +1080,11 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * </p>
      * 
      * @param unsubscribeFromEventRequest
+     * @return A Java Future containing the result of the UnsubscribeFromEvent
+     *         operation returned by the service.
      * @sample AmazonInspectorAsync.UnsubscribeFromEvent
      */
-    java.util.concurrent.Future<Void> unsubscribeFromEventAsync(
+    java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(
             UnsubscribeFromEventRequest unsubscribeFromEventRequest);
 
     /**
@@ -1069,11 +1099,13 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UnsubscribeFromEvent
+     *         operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.UnsubscribeFromEvent
      */
-    java.util.concurrent.Future<Void> unsubscribeFromEventAsync(
+    java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(
             UnsubscribeFromEventRequest unsubscribeFromEventRequest,
-            com.amazonaws.handlers.AsyncHandler<UnsubscribeFromEventRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UnsubscribeFromEventRequest, UnsubscribeFromEventResult> asyncHandler);
 
     /**
      * <p>
@@ -1082,9 +1114,11 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      * </p>
      * 
      * @param updateAssessmentTargetRequest
+     * @return A Java Future containing the result of the UpdateAssessmentTarget
+     *         operation returned by the service.
      * @sample AmazonInspectorAsync.UpdateAssessmentTarget
      */
-    java.util.concurrent.Future<Void> updateAssessmentTargetAsync(
+    java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(
             UpdateAssessmentTargetRequest updateAssessmentTargetRequest);
 
     /**
@@ -1099,10 +1133,12 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAssessmentTarget
+     *         operation returned by the service.
      * @sample AmazonInspectorAsyncHandler.UpdateAssessmentTarget
      */
-    java.util.concurrent.Future<Void> updateAssessmentTargetAsync(
+    java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(
             UpdateAssessmentTargetRequest updateAssessmentTargetRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateAssessmentTargetRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateAssessmentTargetRequest, UpdateAssessmentTargetResult> asyncHandler);
 
 }

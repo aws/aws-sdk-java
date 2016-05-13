@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateThingRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class CreateThingRequestMarshaller implements
         Marshaller<Request<CreateThingRequest>, CreateThingRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateThingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateThingRequest> marshall(
             CreateThingRequest createThingRequest) {
@@ -66,13 +73,14 @@ public class CreateThingRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
-                (createThingRequest.getThingName() != null) ? StringUtils
-                        .fromString(createThingRequest.getThingName()) : "");
+                (createThingRequest.getThingName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(createThingRequest
+                                .getThingName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (createThingRequest.getAttributePayload() != null) {

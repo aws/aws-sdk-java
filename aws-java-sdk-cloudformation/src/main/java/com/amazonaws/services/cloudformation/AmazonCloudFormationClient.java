@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -66,8 +66,7 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * Amazon CloudFormation makes use of other AWS products. If you need additional
  * technical information about a specific AWS product, you can find the
  * product's technical documentation at <a
- * href="http://docs.aws.amazon.com/documentation/"
- * >http://docs.aws.amazon.com/documentation/</a>.
+ * href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
  * </p>
  */
 @ThreadSafe
@@ -92,7 +91,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
     /**
-     * List of exception unmarshallers for all AWS CloudFormation exceptions.
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -283,22 +282,27 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * successfully, the stack rolls back the update and reverts to the previous
      * stack configuration.
      * </p>
-     * <note>You can cancel only stacks that are in the UPDATE_IN_PROGRESS
-     * state.</note> <examples></examples>
+     * <note>
+     * <p>
+     * You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.
+     * </p>
+     * </note>
      * 
      * @param cancelUpdateStackRequest
      *        The input for the <a>CancelUpdateStack</a> action.
+     * @return Result of the CancelUpdateStack operation returned by the
+     *         service.
      * @sample AmazonCloudFormation.CancelUpdateStack
      */
     @Override
-    public void cancelUpdateStack(
+    public CancelUpdateStackResult cancelUpdateStack(
             CancelUpdateStackRequest cancelUpdateStackRequest) {
         ExecutionContext executionContext = createExecutionContext(cancelUpdateStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CancelUpdateStackRequest> request = null;
-        Response<Void> response = null;
+        Response<CancelUpdateStackResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -312,9 +316,11 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<CancelUpdateStackResult> responseHandler = new StaxResponseHandler<CancelUpdateStackResult>(
+                    new CancelUpdateStackResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -343,7 +349,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * the database instance still exists and attempts to roll back to it,
      * causing the update rollback to fail.
      * </p>
-     * <examples></examples>
      * 
      * @param continueUpdateRollbackRequest
      *        The input for the <a>ContinueUpdateRollback</a> action.
@@ -404,7 +409,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * the change set. To check the status of the change set, use the
      * <a>DescribeChangeSet</a> action.
      * </p>
-     * <examples></examples>
      * 
      * @param createChangeSetRequest
      *        The input for the <a>CreateChangeSet</a> action.
@@ -457,7 +461,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * successfully, the stack creation starts. You can check the status of the
      * stack via the <a>DescribeStacks</a> API.
      * </p>
-     * <examples></examples>
      * 
      * @param createStackRequest
      *        The input for <a>CreateStack</a> action.
@@ -512,11 +515,15 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * If the call successfully completes, AWS CloudFormation successfully
      * deleted the change set.
      * </p>
-     * <examples></examples>
      * 
      * @param deleteChangeSetRequest
      *        The input for the <a>DeleteChangeSet</a> action.
      * @return Result of the DeleteChangeSet operation returned by the service.
+     * @throws InvalidChangeSetStatusException
+     *         The specified change set cannot be used to update the stack. For
+     *         example, the change set status might be
+     *         <code>CREATE_IN_PROGRESS</code> or the stack status might be
+     *         <code>UPDATE_IN_PROGRESS</code>.
      * @sample AmazonCloudFormation.DeleteChangeSet
      */
     @Override
@@ -559,20 +566,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * <a>DescribeStacks</a> API if the deletion has been completed
      * successfully.
      * </p>
-     * <examples></examples>
      * 
      * @param deleteStackRequest
      *        The input for <a>DeleteStack</a> action.
+     * @return Result of the DeleteStack operation returned by the service.
      * @sample AmazonCloudFormation.DeleteStack
      */
     @Override
-    public void deleteStack(DeleteStackRequest deleteStackRequest) {
+    public DeleteStackResult deleteStack(DeleteStackRequest deleteStackRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteStackRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteStackResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -585,9 +592,11 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteStackResult> responseHandler = new StaxResponseHandler<DeleteStackResult>(
+                    new DeleteStackResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -600,7 +609,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * Retrieves your account's AWS CloudFormation limits, such as the maximum
      * number of stacks that you can create in your account.
      * </p>
-     * <examples></examples>
      * 
      * @param describeAccountLimitsRequest
      *        The input for the <a>DescribeAccountLimits</a> action.
@@ -651,7 +659,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * >Updating Stacks Using Change Sets</a> in the AWS CloudFormation User
      * Guide.
      * </p>
-     * <examples></examples>
      * 
      * @param describeChangeSetRequest
      *        The input for the <a>DescribeChangeSet</a> action.
@@ -699,14 +706,18 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Returns all stack related events for a specified stack. For more
-     * information about a stack's event history, go to <a href=
+     * Returns all stack related events for a specified stack in reverse
+     * chronological order. For more information about a stack's event history,
+     * go to <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html"
      * >Stacks</a> in the AWS CloudFormation User Guide.
      * </p>
-     * <note>You can list events for stacks that have failed to create or have
-     * been deleted by specifying the unique stack identifier (stack ID).</note>
-     * <examples></examples>
+     * <note>
+     * <p>
+     * You can list events for stacks that have failed to create or have been
+     * deleted by specifying the unique stack identifier (stack ID).
+     * </p>
+     * </note>
      * 
      * @param describeStackEventsRequest
      *        The input for <a>DescribeStackEvents</a> action.
@@ -756,7 +767,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * For deleted stacks, DescribeStackResource returns resource information
      * for up to 90 days after the stack has been deleted.
      * </p>
-     * <examples></examples>
      * 
      * @param describeStackResourceRequest
      *        The input for <a>DescribeStackResource</a> action.
@@ -806,9 +816,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * specified, the associated resources of the stack that the resource
      * belongs to are returned.
      * </p>
-     * <note>Only the first 100 resources will be returned. If your stack has
-     * more resources than this, you should use <code>ListStackResources</code>
-     * instead.</note>
+     * <note>
+     * <p>
+     * Only the first 100 resources will be returned. If your stack has more
+     * resources than this, you should use <code>ListStackResources</code>
+     * instead.
+     * </p>
+     * </note>
      * <p>
      * For deleted stacks, <code>DescribeStackResources</code> returns resource
      * information for up to 90 days after the stack has been deleted.
@@ -822,9 +836,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.
      * </p>
-     * <note>A <code>ValidationError</code> is returned if you specify both
+     * <note>
+     * <p>
+     * A <code>ValidationError</code> is returned if you specify both
      * <code>StackName</code> and <code>PhysicalResourceId</code> in the same
-     * request.</note> <examples></examples>
+     * request.
+     * </p>
+     * </note>
      * 
      * @param describeStackResourcesRequest
      *        The input for <a>DescribeStackResources</a> action.
@@ -871,7 +889,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * Returns the description for the specified stack; if no stack name was
      * specified, then it returns the description for all the stacks created.
      * </p>
-     * <examples></examples>
      * 
      * @param describeStacksRequest
      *        The input for <a>DescribeStacks</a> action.
@@ -922,9 +939,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * AWS Simple Monthly Calculator URL with a query string that describes the
      * resources required to run the template.
      * </p>
-     * <examples></examples>
      * 
      * @param estimateTemplateCostRequest
+     *        The input for an <a>EstimateTemplateCost</a> action.
      * @return Result of the EstimateTemplateCost operation returned by the
      *         service.
      * @sample AmazonCloudFormation.EstimateTemplateCost
@@ -985,7 +1002,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * enforces the policy during the update. You can't specify a temporary
      * stack policy that overrides the current policy.
      * </p>
-     * <examples></examples>
      * 
      * @param executeChangeSetRequest
      *        The input for the <a>ExecuteChangeSet</a> action.
@@ -1040,7 +1056,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * Returns the stack policy for a specified stack. If a stack doesn't have a
      * policy, a null value is returned.
      * </p>
-     * <examples></examples>
      * 
      * @param getStackPolicyRequest
      *        The input for the <a>GetStackPolicy</a> action.
@@ -1089,8 +1104,12 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * For deleted stacks, GetTemplate returns the template for up to 90 days
      * after the stack has been deleted.
      * </p>
-     * <note> If the template does not exist, a <code>ValidationError</code> is
-     * returned. </note> <examples></examples>
+     * <note>
+     * <p>
+     * If the template does not exist, a <code>ValidationError</code> is
+     * returned.
+     * </p>
+     * </note>
      * 
      * @param getTemplateRequest
      *        The input for a <a>GetTemplate</a> action.
@@ -1146,7 +1165,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * information for up to 90 days after the stack has been deleted. If the
      * template does not exist, a <code>ValidationError</code> is returned.
      * </p>
-     * <examples></examples>
      * 
      * @param getTemplateSummaryRequest
      *        The input for the <a>GetTemplateSummary</a> action.
@@ -1199,7 +1217,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * example, AWS CloudFormation lists change sets that are in the
      * <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code> state.
      * </p>
-     * <examples></examples>
      * 
      * @param listChangeSetsRequest
      *        The input for the <a>ListChangeSets</a> action.
@@ -1247,7 +1264,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * For deleted stacks, ListStackResources returns resource information for
      * up to 90 days after the stack has been deleted.
      * </p>
-     * <examples></examples>
      * 
      * @param listStackResourcesRequest
      *        The input for the <a>ListStackResource</a> action.
@@ -1297,7 +1313,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * StackStatusFilter is specified, summary information for all stacks is
      * returned (including existing stacks and stacks that have been deleted).
      * </p>
-     * <examples></examples>
      * 
      * @param listStacksRequest
      *        The input for <a>ListStacks</a> action.
@@ -1345,20 +1360,21 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * <p>
      * Sets a stack policy for a specified stack.
      * </p>
-     * <examples></examples>
      * 
      * @param setStackPolicyRequest
      *        The input for the <a>SetStackPolicy</a> action.
+     * @return Result of the SetStackPolicy operation returned by the service.
      * @sample AmazonCloudFormation.SetStackPolicy
      */
     @Override
-    public void setStackPolicy(SetStackPolicyRequest setStackPolicyRequest) {
+    public SetStackPolicyResult setStackPolicy(
+            SetStackPolicyRequest setStackPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(setStackPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetStackPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<SetStackPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1371,9 +1387,11 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetStackPolicyResult> responseHandler = new StaxResponseHandler<SetStackPolicyResult>(
+                    new SetStackPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1391,20 +1409,21 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * cases where you want to send signals from anywhere other than an Amazon
      * EC2 instance.
      * </p>
-     * <examples></examples>
      * 
      * @param signalResourceRequest
      *        The input for the <a>SignalResource</a> action.
+     * @return Result of the SignalResource operation returned by the service.
      * @sample AmazonCloudFormation.SignalResource
      */
     @Override
-    public void signalResource(SignalResourceRequest signalResourceRequest) {
+    public SignalResourceResult signalResource(
+            SignalResourceRequest signalResourceRequest) {
         ExecutionContext executionContext = createExecutionContext(signalResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SignalResourceRequest> request = null;
-        Response<Void> response = null;
+        Response<SignalResourceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1417,9 +1436,11 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SignalResourceResult> responseHandler = new StaxResponseHandler<SignalResourceResult>(
+                    new SignalResourceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1443,10 +1464,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html"
      * >Updating a Stack</a>.
      * </p>
-     * <examples></examples>
      * 
      * @param updateStackRequest
-     *        The input for <a>UpdateStack</a> action.
+     *        The input for an <a>UpdateStack</a> action.
      * @return Result of the UpdateStack operation returned by the service.
      * @throws InsufficientCapabilitiesException
      *         The template contains resources with capabilities that were not
@@ -1489,7 +1509,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * <p>
      * Validates a specified template.
      * </p>
-     * <examples></examples>
      * 
      * @param validateTemplateRequest
      *        The input for <a>ValidateTemplate</a> action.

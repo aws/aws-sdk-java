@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -85,7 +85,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
     /**
-     * List of exception unmarshallers for all Amazon SNS exceptions.
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -275,6 +275,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param addPermissionRequest
+     * @return Result of the AddPermission operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -288,13 +289,14 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * @sample AmazonSNS.AddPermission
      */
     @Override
-    public void addPermission(AddPermissionRequest addPermissionRequest) {
+    public AddPermissionResult addPermission(
+            AddPermissionRequest addPermissionRequest) {
         ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddPermissionRequest> request = null;
-        Response<Void> response = null;
+        Response<AddPermissionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -307,9 +309,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AddPermissionResult> responseHandler = new StaxResponseHandler<AddPermissionResult>(
+                    new AddPermissionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -318,10 +322,10 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void addPermission(String topicArn, String label,
+    public AddPermissionResult addPermission(String topicArn, String label,
             java.util.List<String> aWSAccountIds,
             java.util.List<String> actionNames) {
-        addPermission(new AddPermissionRequest().withTopicArn(topicArn)
+        return addPermission(new AddPermissionRequest().withTopicArn(topicArn)
                 .withLabel(label).withAWSAccountIds(aWSAccountIds)
                 .withActionNames(actionNames));
     }
@@ -619,6 +623,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * 
      * @param deleteEndpointRequest
      *        Input for DeleteEndpoint action.
+     * @return Result of the DeleteEndpoint operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -630,13 +635,14 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * @sample AmazonSNS.DeleteEndpoint
      */
     @Override
-    public void deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest) {
+    public DeleteEndpointResult deleteEndpoint(
+            DeleteEndpointRequest deleteEndpointRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteEndpointRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteEndpointResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -649,9 +655,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteEndpointResult> responseHandler = new StaxResponseHandler<DeleteEndpointResult>(
+                    new DeleteEndpointResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -669,6 +677,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * 
      * @param deletePlatformApplicationRequest
      *        Input for DeletePlatformApplication action.
+     * @return Result of the DeletePlatformApplication operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -680,14 +690,14 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * @sample AmazonSNS.DeletePlatformApplication
      */
     @Override
-    public void deletePlatformApplication(
+    public DeletePlatformApplicationResult deletePlatformApplication(
             DeletePlatformApplicationRequest deletePlatformApplicationRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePlatformApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeletePlatformApplicationRequest> request = null;
-        Response<Void> response = null;
+        Response<DeletePlatformApplicationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -701,9 +711,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeletePlatformApplicationResult> responseHandler = new StaxResponseHandler<DeletePlatformApplicationResult>(
+                    new DeletePlatformApplicationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -720,6 +732,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteTopicRequest
+     * @return Result of the DeleteTopic operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -733,13 +746,13 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * @sample AmazonSNS.DeleteTopic
      */
     @Override
-    public void deleteTopic(DeleteTopicRequest deleteTopicRequest) {
+    public DeleteTopicResult deleteTopic(DeleteTopicRequest deleteTopicRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteTopicRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteTopicRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteTopicResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -752,9 +765,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteTopicResult> responseHandler = new StaxResponseHandler<DeleteTopicResult>(
+                    new DeleteTopicResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -763,8 +778,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void deleteTopic(String topicArn) {
-        deleteTopic(new DeleteTopicRequest().withTopicArn(topicArn));
+    public DeleteTopicResult deleteTopic(String topicArn) {
+        return deleteTopic(new DeleteTopicRequest().withTopicArn(topicArn));
     }
 
     /**
@@ -1434,6 +1449,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * 
      * @param removePermissionRequest
      *        Input for RemovePermission action.
+     * @return Result of the RemovePermission operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -1447,13 +1463,14 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * @sample AmazonSNS.RemovePermission
      */
     @Override
-    public void removePermission(RemovePermissionRequest removePermissionRequest) {
+    public RemovePermissionResult removePermission(
+            RemovePermissionRequest removePermissionRequest) {
         ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RemovePermissionRequest> request = null;
-        Response<Void> response = null;
+        Response<RemovePermissionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1467,9 +1484,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RemovePermissionResult> responseHandler = new StaxResponseHandler<RemovePermissionResult>(
+                    new RemovePermissionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1478,9 +1497,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void removePermission(String topicArn, String label) {
-        removePermission(new RemovePermissionRequest().withTopicArn(topicArn)
-                .withLabel(label));
+    public RemovePermissionResult removePermission(String topicArn, String label) {
+        return removePermission(new RemovePermissionRequest().withTopicArn(
+                topicArn).withLabel(label));
     }
 
     /**
@@ -1494,6 +1513,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * 
      * @param setEndpointAttributesRequest
      *        Input for SetEndpointAttributes action.
+     * @return Result of the SetEndpointAttributes operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -1507,14 +1528,14 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * @sample AmazonSNS.SetEndpointAttributes
      */
     @Override
-    public void setEndpointAttributes(
+    public SetEndpointAttributesResult setEndpointAttributes(
             SetEndpointAttributesRequest setEndpointAttributesRequest) {
         ExecutionContext executionContext = createExecutionContext(setEndpointAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetEndpointAttributesRequest> request = null;
-        Response<Void> response = null;
+        Response<SetEndpointAttributesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1528,9 +1549,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetEndpointAttributesResult> responseHandler = new StaxResponseHandler<SetEndpointAttributesResult>(
+                    new SetEndpointAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1549,6 +1572,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * 
      * @param setPlatformApplicationAttributesRequest
      *        Input for SetPlatformApplicationAttributes action.
+     * @return Result of the SetPlatformApplicationAttributes operation returned
+     *         by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -1562,14 +1587,14 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * @sample AmazonSNS.SetPlatformApplicationAttributes
      */
     @Override
-    public void setPlatformApplicationAttributes(
+    public SetPlatformApplicationAttributesResult setPlatformApplicationAttributes(
             SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) {
         ExecutionContext executionContext = createExecutionContext(setPlatformApplicationAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetPlatformApplicationAttributesRequest> request = null;
-        Response<Void> response = null;
+        Response<SetPlatformApplicationAttributesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1583,9 +1608,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetPlatformApplicationAttributesResult> responseHandler = new StaxResponseHandler<SetPlatformApplicationAttributesResult>(
+                    new SetPlatformApplicationAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1601,6 +1628,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * 
      * @param setSubscriptionAttributesRequest
      *        Input for SetSubscriptionAttributes action.
+     * @return Result of the SetSubscriptionAttributes operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -1614,14 +1643,14 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * @sample AmazonSNS.SetSubscriptionAttributes
      */
     @Override
-    public void setSubscriptionAttributes(
+    public SetSubscriptionAttributesResult setSubscriptionAttributes(
             SetSubscriptionAttributesRequest setSubscriptionAttributesRequest) {
         ExecutionContext executionContext = createExecutionContext(setSubscriptionAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetSubscriptionAttributesRequest> request = null;
-        Response<Void> response = null;
+        Response<SetSubscriptionAttributesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1635,9 +1664,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetSubscriptionAttributesResult> responseHandler = new StaxResponseHandler<SetSubscriptionAttributesResult>(
+                    new SetSubscriptionAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1646,9 +1677,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void setSubscriptionAttributes(String subscriptionArn,
-            String attributeName, String attributeValue) {
-        setSubscriptionAttributes(new SetSubscriptionAttributesRequest()
+    public SetSubscriptionAttributesResult setSubscriptionAttributes(
+            String subscriptionArn, String attributeName, String attributeValue) {
+        return setSubscriptionAttributes(new SetSubscriptionAttributesRequest()
                 .withSubscriptionArn(subscriptionArn)
                 .withAttributeName(attributeName)
                 .withAttributeValue(attributeValue));
@@ -1661,6 +1692,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * 
      * @param setTopicAttributesRequest
      *        Input for SetTopicAttributes action.
+     * @return Result of the SetTopicAttributes operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -1674,14 +1707,14 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * @sample AmazonSNS.SetTopicAttributes
      */
     @Override
-    public void setTopicAttributes(
+    public SetTopicAttributesResult setTopicAttributes(
             SetTopicAttributesRequest setTopicAttributesRequest) {
         ExecutionContext executionContext = createExecutionContext(setTopicAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetTopicAttributesRequest> request = null;
-        Response<Void> response = null;
+        Response<SetTopicAttributesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1695,9 +1728,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetTopicAttributesResult> responseHandler = new StaxResponseHandler<SetTopicAttributesResult>(
+                    new SetTopicAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1706,9 +1741,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void setTopicAttributes(String topicArn, String attributeName,
-            String attributeValue) {
-        setTopicAttributes(new SetTopicAttributesRequest()
+    public SetTopicAttributesResult setTopicAttributes(String topicArn,
+            String attributeName, String attributeValue) {
+        return setTopicAttributes(new SetTopicAttributesRequest()
                 .withTopicArn(topicArn).withAttributeName(attributeName)
                 .withAttributeValue(attributeValue));
     }
@@ -1792,6 +1827,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * 
      * @param unsubscribeRequest
      *        Input for Unsubscribe action.
+     * @return Result of the Unsubscribe operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -1805,13 +1841,13 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
      * @sample AmazonSNS.Unsubscribe
      */
     @Override
-    public void unsubscribe(UnsubscribeRequest unsubscribeRequest) {
+    public UnsubscribeResult unsubscribe(UnsubscribeRequest unsubscribeRequest) {
         ExecutionContext executionContext = createExecutionContext(unsubscribeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UnsubscribeRequest> request = null;
-        Response<Void> response = null;
+        Response<UnsubscribeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1824,9 +1860,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UnsubscribeResult> responseHandler = new StaxResponseHandler<UnsubscribeResult>(
+                    new UnsubscribeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1835,8 +1873,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void unsubscribe(String subscriptionArn) {
-        unsubscribe(new UnsubscribeRequest()
+    public UnsubscribeResult unsubscribe(String subscriptionArn) {
+        return unsubscribe(new UnsubscribeRequest()
                 .withSubscriptionArn(subscriptionArn));
     }
 

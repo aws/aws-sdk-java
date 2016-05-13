@@ -336,26 +336,25 @@ public class AWSCognitoIdentityProviderAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> adminDeleteUserAsync(
+    public java.util.concurrent.Future<AdminDeleteUserResult> adminDeleteUserAsync(
             AdminDeleteUserRequest request) {
 
         return adminDeleteUserAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> adminDeleteUserAsync(
+    public java.util.concurrent.Future<AdminDeleteUserResult> adminDeleteUserAsync(
             final AdminDeleteUserRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AdminDeleteUserRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AdminDeleteUserRequest, AdminDeleteUserResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AdminDeleteUserResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AdminDeleteUserResult call() throws Exception {
+                        AdminDeleteUserResult result;
 
                         try {
-                            adminDeleteUser(request);
-                            result = null;
+                            result = adminDeleteUser(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -794,26 +793,25 @@ public class AWSCognitoIdentityProviderAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserAsync(
+    public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(
             DeleteUserRequest request) {
 
         return deleteUserAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserAsync(
+    public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(
             final DeleteUserRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteUserResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteUserResult call() throws Exception {
+                        DeleteUserResult result;
 
                         try {
-                            deleteUser(request);
-                            result = null;
+                            result = deleteUser(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -865,26 +863,25 @@ public class AWSCognitoIdentityProviderAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserPoolAsync(
+    public java.util.concurrent.Future<DeleteUserPoolResult> deleteUserPoolAsync(
             DeleteUserPoolRequest request) {
 
         return deleteUserPoolAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserPoolAsync(
+    public java.util.concurrent.Future<DeleteUserPoolResult> deleteUserPoolAsync(
             final DeleteUserPoolRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteUserPoolRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteUserPoolRequest, DeleteUserPoolResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteUserPoolResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteUserPoolResult call() throws Exception {
+                        DeleteUserPoolResult result;
 
                         try {
-                            deleteUserPool(request);
-                            result = null;
+                            result = deleteUserPool(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -901,26 +898,25 @@ public class AWSCognitoIdentityProviderAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserPoolClientAsync(
+    public java.util.concurrent.Future<DeleteUserPoolClientResult> deleteUserPoolClientAsync(
             DeleteUserPoolClientRequest request) {
 
         return deleteUserPoolClientAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserPoolClientAsync(
+    public java.util.concurrent.Future<DeleteUserPoolClientResult> deleteUserPoolClientAsync(
             final DeleteUserPoolClientRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteUserPoolClientRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteUserPoolClientRequest, DeleteUserPoolClientResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteUserPoolClientResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteUserPoolClientResult call() throws Exception {
+                        DeleteUserPoolClientResult result;
 
                         try {
-                            deleteUserPoolClient(request);
-                            result = null;
+                            result = deleteUserPoolClient(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

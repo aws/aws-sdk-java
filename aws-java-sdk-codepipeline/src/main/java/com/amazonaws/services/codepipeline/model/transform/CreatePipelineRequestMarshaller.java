@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreatePipelineRequest Marshaller
  */
 public class CreatePipelineRequestMarshaller implements
         Marshaller<Request<CreatePipelineRequest>, CreatePipelineRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreatePipelineRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreatePipelineRequest> marshall(
             CreatePipelineRequest createPipelineRequest) {
@@ -58,8 +65,8 @@ public class CreatePipelineRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

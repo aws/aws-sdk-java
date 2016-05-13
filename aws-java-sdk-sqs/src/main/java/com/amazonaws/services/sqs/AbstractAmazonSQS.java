@@ -39,27 +39,28 @@ public class AbstractAmazonSQS implements AmazonSQS {
     }
 
     @Override
-    public void addPermission(AddPermissionRequest request) {
+    public AddPermissionResult addPermission(AddPermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void addPermission(String queueUrl, String label,
+    public AddPermissionResult addPermission(String queueUrl, String label,
             java.util.List<String> aWSAccountIds, java.util.List<String> actions) {
-        addPermission(new AddPermissionRequest().withQueueUrl(queueUrl)
+        return addPermission(new AddPermissionRequest().withQueueUrl(queueUrl)
                 .withLabel(label).withAWSAccountIds(aWSAccountIds)
                 .withActions(actions));
     }
 
     @Override
-    public void changeMessageVisibility(ChangeMessageVisibilityRequest request) {
+    public ChangeMessageVisibilityResult changeMessageVisibility(
+            ChangeMessageVisibilityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void changeMessageVisibility(String queueUrl, String receiptHandle,
-            Integer visibilityTimeout) {
-        changeMessageVisibility(new ChangeMessageVisibilityRequest()
+    public ChangeMessageVisibilityResult changeMessageVisibility(
+            String queueUrl, String receiptHandle, Integer visibilityTimeout) {
+        return changeMessageVisibility(new ChangeMessageVisibilityRequest()
                 .withQueueUrl(queueUrl).withReceiptHandle(receiptHandle)
                 .withVisibilityTimeout(visibilityTimeout));
     }
@@ -89,13 +90,14 @@ public class AbstractAmazonSQS implements AmazonSQS {
     }
 
     @Override
-    public void deleteMessage(DeleteMessageRequest request) {
+    public DeleteMessageResult deleteMessage(DeleteMessageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteMessage(String queueUrl, String receiptHandle) {
-        deleteMessage(new DeleteMessageRequest().withQueueUrl(queueUrl)
+    public DeleteMessageResult deleteMessage(String queueUrl,
+            String receiptHandle) {
+        return deleteMessage(new DeleteMessageRequest().withQueueUrl(queueUrl)
                 .withReceiptHandle(receiptHandle));
     }
 
@@ -113,13 +115,13 @@ public class AbstractAmazonSQS implements AmazonSQS {
     }
 
     @Override
-    public void deleteQueue(DeleteQueueRequest request) {
+    public DeleteQueueResult deleteQueue(DeleteQueueRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteQueue(String queueUrl) {
-        deleteQueue(new DeleteQueueRequest().withQueueUrl(queueUrl));
+    public DeleteQueueResult deleteQueue(String queueUrl) {
+        return deleteQueue(new DeleteQueueRequest().withQueueUrl(queueUrl));
     }
 
     @Override
@@ -168,7 +170,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
     }
 
     @Override
-    public void purgeQueue(PurgeQueueRequest request) {
+    public PurgeQueueResult purgeQueue(PurgeQueueRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,14 +186,15 @@ public class AbstractAmazonSQS implements AmazonSQS {
     }
 
     @Override
-    public void removePermission(RemovePermissionRequest request) {
+    public RemovePermissionResult removePermission(
+            RemovePermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void removePermission(String queueUrl, String label) {
-        removePermission(new RemovePermissionRequest().withQueueUrl(queueUrl)
-                .withLabel(label));
+    public RemovePermissionResult removePermission(String queueUrl, String label) {
+        return removePermission(new RemovePermissionRequest().withQueueUrl(
+                queueUrl).withLabel(label));
     }
 
     @Override
@@ -219,14 +222,15 @@ public class AbstractAmazonSQS implements AmazonSQS {
     }
 
     @Override
-    public void setQueueAttributes(SetQueueAttributesRequest request) {
+    public SetQueueAttributesResult setQueueAttributes(
+            SetQueueAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setQueueAttributes(String queueUrl,
+    public SetQueueAttributesResult setQueueAttributes(String queueUrl,
             java.util.Map<String, String> attributes) {
-        setQueueAttributes(new SetQueueAttributesRequest().withQueueUrl(
+        return setQueueAttributes(new SetQueueAttributesRequest().withQueueUrl(
                 queueUrl).withAttributes(attributes));
     }
 

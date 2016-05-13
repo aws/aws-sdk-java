@@ -217,9 +217,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param assignPrivateIpAddressesRequest
      *        Contains the parameters for AssignPrivateIpAddresses.
+     * @return A Java Future containing the result of the
+     *         AssignPrivateIpAddresses operation returned by the service.
      * @sample AmazonEC2Async.AssignPrivateIpAddresses
      */
-    java.util.concurrent.Future<Void> assignPrivateIpAddressesAsync(
+    java.util.concurrent.Future<AssignPrivateIpAddressesResult> assignPrivateIpAddressesAsync(
             AssignPrivateIpAddressesRequest assignPrivateIpAddressesRequest);
 
     /**
@@ -248,11 +250,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         AssignPrivateIpAddresses operation returned by the service.
      * @sample AmazonEC2AsyncHandler.AssignPrivateIpAddresses
      */
-    java.util.concurrent.Future<Void> assignPrivateIpAddressesAsync(
+    java.util.concurrent.Future<AssignPrivateIpAddressesResult> assignPrivateIpAddressesAsync(
             AssignPrivateIpAddressesRequest assignPrivateIpAddressesRequest,
-            com.amazonaws.handlers.AsyncHandler<AssignPrivateIpAddressesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AssignPrivateIpAddressesRequest, AssignPrivateIpAddressesResult> asyncHandler);
 
     /**
      * <p>
@@ -356,9 +360,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param associateDhcpOptionsRequest
      *        Contains the parameters for AssociateDhcpOptions.
+     * @return A Java Future containing the result of the AssociateDhcpOptions
+     *         operation returned by the service.
      * @sample AmazonEC2Async.AssociateDhcpOptions
      */
-    java.util.concurrent.Future<Void> associateDhcpOptionsAsync(
+    java.util.concurrent.Future<AssociateDhcpOptionsResult> associateDhcpOptionsAsync(
             AssociateDhcpOptionsRequest associateDhcpOptionsRequest);
 
     /**
@@ -388,11 +394,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateDhcpOptions
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.AssociateDhcpOptions
      */
-    java.util.concurrent.Future<Void> associateDhcpOptionsAsync(
+    java.util.concurrent.Future<AssociateDhcpOptionsResult> associateDhcpOptionsAsync(
             AssociateDhcpOptionsRequest associateDhcpOptionsRequest,
-            com.amazonaws.handlers.AsyncHandler<AssociateDhcpOptionsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AssociateDhcpOptionsRequest, AssociateDhcpOptionsResult> asyncHandler);
 
     /**
      * <p>
@@ -521,9 +529,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param attachInternetGatewayRequest
      *        Contains the parameters for AttachInternetGateway.
+     * @return A Java Future containing the result of the AttachInternetGateway
+     *         operation returned by the service.
      * @sample AmazonEC2Async.AttachInternetGateway
      */
-    java.util.concurrent.Future<Void> attachInternetGatewayAsync(
+    java.util.concurrent.Future<AttachInternetGatewayResult> attachInternetGatewayAsync(
             AttachInternetGatewayRequest attachInternetGatewayRequest);
 
     /**
@@ -542,11 +552,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachInternetGateway
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.AttachInternetGateway
      */
-    java.util.concurrent.Future<Void> attachInternetGatewayAsync(
+    java.util.concurrent.Future<AttachInternetGatewayResult> attachInternetGatewayAsync(
             AttachInternetGatewayRequest attachInternetGatewayRequest,
-            com.amazonaws.handlers.AsyncHandler<AttachInternetGatewayRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AttachInternetGatewayRequest, AttachInternetGatewayResult> asyncHandler);
 
     /**
      * <p>
@@ -802,9 +814,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param authorizeSecurityGroupEgressRequest
      *        Contains the parameters for AuthorizeSecurityGroupEgress.
+     * @return A Java Future containing the result of the
+     *         AuthorizeSecurityGroupEgress operation returned by the service.
      * @sample AmazonEC2Async.AuthorizeSecurityGroupEgress
      */
-    java.util.concurrent.Future<Void> authorizeSecurityGroupEgressAsync(
+    java.util.concurrent.Future<AuthorizeSecurityGroupEgressResult> authorizeSecurityGroupEgressAsync(
             AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest);
 
     /**
@@ -844,11 +858,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         AuthorizeSecurityGroupEgress operation returned by the service.
      * @sample AmazonEC2AsyncHandler.AuthorizeSecurityGroupEgress
      */
-    java.util.concurrent.Future<Void> authorizeSecurityGroupEgressAsync(
+    java.util.concurrent.Future<AuthorizeSecurityGroupEgressResult> authorizeSecurityGroupEgressAsync(
             AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest,
-            com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupEgressRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupEgressRequest, AuthorizeSecurityGroupEgressResult> asyncHandler);
 
     /**
      * <p>
@@ -884,9 +900,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param authorizeSecurityGroupIngressRequest
      *        Contains the parameters for AuthorizeSecurityGroupIngress.
+     * @return A Java Future containing the result of the
+     *         AuthorizeSecurityGroupIngress operation returned by the service.
      * @sample AmazonEC2Async.AuthorizeSecurityGroupIngress
      */
-    java.util.concurrent.Future<Void> authorizeSecurityGroupIngressAsync(
+    java.util.concurrent.Future<AuthorizeSecurityGroupIngressResult> authorizeSecurityGroupIngressAsync(
             AuthorizeSecurityGroupIngressRequest authorizeSecurityGroupIngressRequest);
 
     /**
@@ -928,11 +946,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         AuthorizeSecurityGroupIngress operation returned by the service.
      * @sample AmazonEC2AsyncHandler.AuthorizeSecurityGroupIngress
      */
-    java.util.concurrent.Future<Void> authorizeSecurityGroupIngressAsync(
+    java.util.concurrent.Future<AuthorizeSecurityGroupIngressResult> authorizeSecurityGroupIngressAsync(
             AuthorizeSecurityGroupIngressRequest authorizeSecurityGroupIngressRequest,
-            com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupIngressRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupIngressRequest, AuthorizeSecurityGroupIngressResult> asyncHandler);
 
     /**
      * <p>
@@ -1051,9 +1071,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param cancelConversionTaskRequest
      *        Contains the parameters for CancelConversionTask.
+     * @return A Java Future containing the result of the CancelConversionTask
+     *         operation returned by the service.
      * @sample AmazonEC2Async.CancelConversionTask
      */
-    java.util.concurrent.Future<Void> cancelConversionTaskAsync(
+    java.util.concurrent.Future<CancelConversionTaskResult> cancelConversionTaskAsync(
             CancelConversionTaskRequest cancelConversionTaskRequest);
 
     /**
@@ -1078,11 +1100,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelConversionTask
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.CancelConversionTask
      */
-    java.util.concurrent.Future<Void> cancelConversionTaskAsync(
+    java.util.concurrent.Future<CancelConversionTaskResult> cancelConversionTaskAsync(
             CancelConversionTaskRequest cancelConversionTaskRequest,
-            com.amazonaws.handlers.AsyncHandler<CancelConversionTaskRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CancelConversionTaskRequest, CancelConversionTaskResult> asyncHandler);
 
     /**
      * <p>
@@ -1094,9 +1118,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param cancelExportTaskRequest
      *        Contains the parameters for CancelExportTask.
+     * @return A Java Future containing the result of the CancelExportTask
+     *         operation returned by the service.
      * @sample AmazonEC2Async.CancelExportTask
      */
-    java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             CancelExportTaskRequest cancelExportTaskRequest);
 
     /**
@@ -1114,11 +1140,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelExportTask
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.CancelExportTask
      */
-    java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             CancelExportTaskRequest cancelExportTaskRequest,
-            com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult> asyncHandler);
 
     /**
      * <p>
@@ -2164,9 +2192,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param createNetworkAclEntryRequest
      *        Contains the parameters for CreateNetworkAclEntry.
+     * @return A Java Future containing the result of the CreateNetworkAclEntry
+     *         operation returned by the service.
      * @sample AmazonEC2Async.CreateNetworkAclEntry
      */
-    java.util.concurrent.Future<Void> createNetworkAclEntryAsync(
+    java.util.concurrent.Future<CreateNetworkAclEntryResult> createNetworkAclEntryAsync(
             CreateNetworkAclEntryRequest createNetworkAclEntryRequest);
 
     /**
@@ -2202,11 +2232,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNetworkAclEntry
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.CreateNetworkAclEntry
      */
-    java.util.concurrent.Future<Void> createNetworkAclEntryAsync(
+    java.util.concurrent.Future<CreateNetworkAclEntryResult> createNetworkAclEntryAsync(
             CreateNetworkAclEntryRequest createNetworkAclEntryRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateNetworkAclEntryRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkAclEntryRequest, CreateNetworkAclEntryResult> asyncHandler);
 
     /**
      * <p>
@@ -2270,9 +2302,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param createPlacementGroupRequest
      *        Contains the parameters for CreatePlacementGroup.
+     * @return A Java Future containing the result of the CreatePlacementGroup
+     *         operation returned by the service.
      * @sample AmazonEC2Async.CreatePlacementGroup
      */
-    java.util.concurrent.Future<Void> createPlacementGroupAsync(
+    java.util.concurrent.Future<CreatePlacementGroupResult> createPlacementGroupAsync(
             CreatePlacementGroupRequest createPlacementGroupRequest);
 
     /**
@@ -2296,11 +2330,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePlacementGroup
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.CreatePlacementGroup
      */
-    java.util.concurrent.Future<Void> createPlacementGroupAsync(
+    java.util.concurrent.Future<CreatePlacementGroupResult> createPlacementGroupAsync(
             CreatePlacementGroupRequest createPlacementGroupRequest,
-            com.amazonaws.handlers.AsyncHandler<CreatePlacementGroupRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreatePlacementGroupRequest, CreatePlacementGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -2916,9 +2952,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param createTagsRequest
      *        Contains the parameters for CreateTags.
+     * @return A Java Future containing the result of the CreateTags operation
+     *         returned by the service.
      * @sample AmazonEC2Async.CreateTags
      */
-    java.util.concurrent.Future<Void> createTagsAsync(
+    java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
             CreateTagsRequest createTagsRequest);
 
     /**
@@ -2946,11 +2984,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTags operation
+     *         returned by the service.
      * @sample AmazonEC2AsyncHandler.CreateTags
      */
-    java.util.concurrent.Future<Void> createTagsAsync(
+    java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
             CreateTagsRequest createTagsRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler);
 
     /**
      * <p>
@@ -3352,9 +3392,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param createVpnConnectionRouteRequest
      *        Contains the parameters for CreateVpnConnectionRoute.
+     * @return A Java Future containing the result of the
+     *         CreateVpnConnectionRoute operation returned by the service.
      * @sample AmazonEC2Async.CreateVpnConnectionRoute
      */
-    java.util.concurrent.Future<Void> createVpnConnectionRouteAsync(
+    java.util.concurrent.Future<CreateVpnConnectionRouteResult> createVpnConnectionRouteAsync(
             CreateVpnConnectionRouteRequest createVpnConnectionRouteRequest);
 
     /**
@@ -3378,11 +3420,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CreateVpnConnectionRoute operation returned by the service.
      * @sample AmazonEC2AsyncHandler.CreateVpnConnectionRoute
      */
-    java.util.concurrent.Future<Void> createVpnConnectionRouteAsync(
+    java.util.concurrent.Future<CreateVpnConnectionRouteResult> createVpnConnectionRouteAsync(
             CreateVpnConnectionRouteRequest createVpnConnectionRouteRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateVpnConnectionRouteRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateVpnConnectionRouteRequest, CreateVpnConnectionRouteResult> asyncHandler);
 
     /**
      * <p>
@@ -3442,9 +3486,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteCustomerGatewayRequest
      *        Contains the parameters for DeleteCustomerGateway.
+     * @return A Java Future containing the result of the DeleteCustomerGateway
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteCustomerGateway
      */
-    java.util.concurrent.Future<Void> deleteCustomerGatewayAsync(
+    java.util.concurrent.Future<DeleteCustomerGatewayResult> deleteCustomerGatewayAsync(
             DeleteCustomerGatewayRequest deleteCustomerGatewayRequest);
 
     /**
@@ -3460,11 +3506,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCustomerGateway
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteCustomerGateway
      */
-    java.util.concurrent.Future<Void> deleteCustomerGatewayAsync(
+    java.util.concurrent.Future<DeleteCustomerGatewayResult> deleteCustomerGatewayAsync(
             DeleteCustomerGatewayRequest deleteCustomerGatewayRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteCustomerGatewayRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomerGatewayRequest, DeleteCustomerGatewayResult> asyncHandler);
 
     /**
      * <p>
@@ -3476,9 +3524,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteDhcpOptionsRequest
      *        Contains the parameters for DeleteDhcpOptions.
+     * @return A Java Future containing the result of the DeleteDhcpOptions
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteDhcpOptions
      */
-    java.util.concurrent.Future<Void> deleteDhcpOptionsAsync(
+    java.util.concurrent.Future<DeleteDhcpOptionsResult> deleteDhcpOptionsAsync(
             DeleteDhcpOptionsRequest deleteDhcpOptionsRequest);
 
     /**
@@ -3496,11 +3546,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDhcpOptions
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteDhcpOptions
      */
-    java.util.concurrent.Future<Void> deleteDhcpOptionsAsync(
+    java.util.concurrent.Future<DeleteDhcpOptionsResult> deleteDhcpOptionsAsync(
             DeleteDhcpOptionsRequest deleteDhcpOptionsRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteDhcpOptionsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteDhcpOptionsRequest, DeleteDhcpOptionsResult> asyncHandler);
 
     /**
      * <p>
@@ -3544,9 +3596,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteInternetGatewayRequest
      *        Contains the parameters for DeleteInternetGateway.
+     * @return A Java Future containing the result of the DeleteInternetGateway
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteInternetGateway
      */
-    java.util.concurrent.Future<Void> deleteInternetGatewayAsync(
+    java.util.concurrent.Future<DeleteInternetGatewayResult> deleteInternetGatewayAsync(
             DeleteInternetGatewayRequest deleteInternetGatewayRequest);
 
     /**
@@ -3562,11 +3616,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInternetGateway
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteInternetGateway
      */
-    java.util.concurrent.Future<Void> deleteInternetGatewayAsync(
+    java.util.concurrent.Future<DeleteInternetGatewayResult> deleteInternetGatewayAsync(
             DeleteInternetGatewayRequest deleteInternetGatewayRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteInternetGatewayRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteInternetGatewayRequest, DeleteInternetGatewayResult> asyncHandler);
 
     /**
      * <p>
@@ -3576,9 +3632,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteKeyPairRequest
      *        Contains the parameters for DeleteKeyPair.
+     * @return A Java Future containing the result of the DeleteKeyPair
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteKeyPair
      */
-    java.util.concurrent.Future<Void> deleteKeyPairAsync(
+    java.util.concurrent.Future<DeleteKeyPairResult> deleteKeyPairAsync(
             DeleteKeyPairRequest deleteKeyPairRequest);
 
     /**
@@ -3594,11 +3652,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteKeyPair
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteKeyPair
      */
-    java.util.concurrent.Future<Void> deleteKeyPairAsync(
+    java.util.concurrent.Future<DeleteKeyPairResult> deleteKeyPairAsync(
             DeleteKeyPairRequest deleteKeyPairRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteKeyPairRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteKeyPairRequest, DeleteKeyPairResult> asyncHandler);
 
     /**
      * <p>
@@ -3648,9 +3708,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteNetworkAclRequest
      *        Contains the parameters for DeleteNetworkAcl.
+     * @return A Java Future containing the result of the DeleteNetworkAcl
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteNetworkAcl
      */
-    java.util.concurrent.Future<Void> deleteNetworkAclAsync(
+    java.util.concurrent.Future<DeleteNetworkAclResult> deleteNetworkAclAsync(
             DeleteNetworkAclRequest deleteNetworkAclRequest);
 
     /**
@@ -3666,11 +3728,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNetworkAcl
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteNetworkAcl
      */
-    java.util.concurrent.Future<Void> deleteNetworkAclAsync(
+    java.util.concurrent.Future<DeleteNetworkAclResult> deleteNetworkAclAsync(
             DeleteNetworkAclRequest deleteNetworkAclRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclRequest, DeleteNetworkAclResult> asyncHandler);
 
     /**
      * <p>
@@ -3680,9 +3744,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteNetworkAclEntryRequest
      *        Contains the parameters for DeleteNetworkAclEntry.
+     * @return A Java Future containing the result of the DeleteNetworkAclEntry
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteNetworkAclEntry
      */
-    java.util.concurrent.Future<Void> deleteNetworkAclEntryAsync(
+    java.util.concurrent.Future<DeleteNetworkAclEntryResult> deleteNetworkAclEntryAsync(
             DeleteNetworkAclEntryRequest deleteNetworkAclEntryRequest);
 
     /**
@@ -3698,11 +3764,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNetworkAclEntry
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteNetworkAclEntry
      */
-    java.util.concurrent.Future<Void> deleteNetworkAclEntryAsync(
+    java.util.concurrent.Future<DeleteNetworkAclEntryResult> deleteNetworkAclEntryAsync(
             DeleteNetworkAclEntryRequest deleteNetworkAclEntryRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclEntryRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclEntryRequest, DeleteNetworkAclEntryResult> asyncHandler);
 
     /**
      * <p>
@@ -3712,9 +3780,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteNetworkInterfaceRequest
      *        Contains the parameters for DeleteNetworkInterface.
+     * @return A Java Future containing the result of the DeleteNetworkInterface
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteNetworkInterface
      */
-    java.util.concurrent.Future<Void> deleteNetworkInterfaceAsync(
+    java.util.concurrent.Future<DeleteNetworkInterfaceResult> deleteNetworkInterfaceAsync(
             DeleteNetworkInterfaceRequest deleteNetworkInterfaceRequest);
 
     /**
@@ -3730,11 +3800,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNetworkInterface
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteNetworkInterface
      */
-    java.util.concurrent.Future<Void> deleteNetworkInterfaceAsync(
+    java.util.concurrent.Future<DeleteNetworkInterfaceResult> deleteNetworkInterfaceAsync(
             DeleteNetworkInterfaceRequest deleteNetworkInterfaceRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteNetworkInterfaceRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkInterfaceRequest, DeleteNetworkInterfaceResult> asyncHandler);
 
     /**
      * <p>
@@ -3749,9 +3821,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deletePlacementGroupRequest
      *        Contains the parameters for DeletePlacementGroup.
+     * @return A Java Future containing the result of the DeletePlacementGroup
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeletePlacementGroup
      */
-    java.util.concurrent.Future<Void> deletePlacementGroupAsync(
+    java.util.concurrent.Future<DeletePlacementGroupResult> deletePlacementGroupAsync(
             DeletePlacementGroupRequest deletePlacementGroupRequest);
 
     /**
@@ -3772,11 +3846,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePlacementGroup
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeletePlacementGroup
      */
-    java.util.concurrent.Future<Void> deletePlacementGroupAsync(
+    java.util.concurrent.Future<DeletePlacementGroupResult> deletePlacementGroupAsync(
             DeletePlacementGroupRequest deletePlacementGroupRequest,
-            com.amazonaws.handlers.AsyncHandler<DeletePlacementGroupRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeletePlacementGroupRequest, DeletePlacementGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -3785,9 +3861,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteRouteRequest
      *        Contains the parameters for DeleteRoute.
+     * @return A Java Future containing the result of the DeleteRoute operation
+     *         returned by the service.
      * @sample AmazonEC2Async.DeleteRoute
      */
-    java.util.concurrent.Future<Void> deleteRouteAsync(
+    java.util.concurrent.Future<DeleteRouteResult> deleteRouteAsync(
             DeleteRouteRequest deleteRouteRequest);
 
     /**
@@ -3802,11 +3880,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRoute operation
+     *         returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteRoute
      */
-    java.util.concurrent.Future<Void> deleteRouteAsync(
+    java.util.concurrent.Future<DeleteRouteResult> deleteRouteAsync(
             DeleteRouteRequest deleteRouteRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteRouteRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteRouteRequest, DeleteRouteResult> asyncHandler);
 
     /**
      * <p>
@@ -3817,9 +3897,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteRouteTableRequest
      *        Contains the parameters for DeleteRouteTable.
+     * @return A Java Future containing the result of the DeleteRouteTable
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteRouteTable
      */
-    java.util.concurrent.Future<Void> deleteRouteTableAsync(
+    java.util.concurrent.Future<DeleteRouteTableResult> deleteRouteTableAsync(
             DeleteRouteTableRequest deleteRouteTableRequest);
 
     /**
@@ -3836,11 +3918,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRouteTable
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteRouteTable
      */
-    java.util.concurrent.Future<Void> deleteRouteTableAsync(
+    java.util.concurrent.Future<DeleteRouteTableResult> deleteRouteTableAsync(
             DeleteRouteTableRequest deleteRouteTableRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteRouteTableRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteRouteTableRequest, DeleteRouteTableResult> asyncHandler);
 
     /**
      * <p>
@@ -3855,9 +3939,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteSecurityGroupRequest
      *        Contains the parameters for DeleteSecurityGroup.
+     * @return A Java Future containing the result of the DeleteSecurityGroup
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteSecurityGroup
      */
-    java.util.concurrent.Future<Void> deleteSecurityGroupAsync(
+    java.util.concurrent.Future<DeleteSecurityGroupResult> deleteSecurityGroupAsync(
             DeleteSecurityGroupRequest deleteSecurityGroupRequest);
 
     /**
@@ -3878,11 +3964,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSecurityGroup
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteSecurityGroup
      */
-    java.util.concurrent.Future<Void> deleteSecurityGroupAsync(
+    java.util.concurrent.Future<DeleteSecurityGroupResult> deleteSecurityGroupAsync(
             DeleteSecurityGroupRequest deleteSecurityGroupRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteSecurityGroupRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteSecurityGroupRequest, DeleteSecurityGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -3911,9 +3999,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteSnapshotRequest
      *        Contains the parameters for DeleteSnapshot.
+     * @return A Java Future containing the result of the DeleteSnapshot
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteSnapshot
      */
-    java.util.concurrent.Future<Void> deleteSnapshotAsync(
+    java.util.concurrent.Future<DeleteSnapshotResult> deleteSnapshotAsync(
             DeleteSnapshotRequest deleteSnapshotRequest);
 
     /**
@@ -3948,11 +4038,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSnapshot
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteSnapshot
      */
-    java.util.concurrent.Future<Void> deleteSnapshotAsync(
+    java.util.concurrent.Future<DeleteSnapshotResult> deleteSnapshotAsync(
             DeleteSnapshotRequest deleteSnapshotRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, DeleteSnapshotResult> asyncHandler);
 
     /**
      * <p>
@@ -3961,9 +4053,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteSpotDatafeedSubscriptionRequest
      *        Contains the parameters for DeleteSpotDatafeedSubscription.
+     * @return A Java Future containing the result of the
+     *         DeleteSpotDatafeedSubscription operation returned by the service.
      * @sample AmazonEC2Async.DeleteSpotDatafeedSubscription
      */
-    java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync(
+    java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync(
             DeleteSpotDatafeedSubscriptionRequest deleteSpotDatafeedSubscriptionRequest);
 
     /**
@@ -3978,11 +4072,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteSpotDatafeedSubscription operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteSpotDatafeedSubscription
      */
-    java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync(
+    java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync(
             DeleteSpotDatafeedSubscriptionRequest deleteSpotDatafeedSubscriptionRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, DeleteSpotDatafeedSubscriptionResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the DeleteSpotDatafeedSubscription
@@ -3990,7 +4086,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *
      * @see #deleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest)
      */
-    java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync();
+    java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync();
 
     /**
      * Simplified method form for invoking the DeleteSpotDatafeedSubscription
@@ -3999,8 +4095,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * @see #deleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync(
-            com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, Void> asyncHandler);
+    java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync(
+            com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, DeleteSpotDatafeedSubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -4010,9 +4106,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteSubnetRequest
      *        Contains the parameters for DeleteSubnet.
+     * @return A Java Future containing the result of the DeleteSubnet operation
+     *         returned by the service.
      * @sample AmazonEC2Async.DeleteSubnet
      */
-    java.util.concurrent.Future<Void> deleteSubnetAsync(
+    java.util.concurrent.Future<DeleteSubnetResult> deleteSubnetAsync(
             DeleteSubnetRequest deleteSubnetRequest);
 
     /**
@@ -4028,11 +4126,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSubnet operation
+     *         returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteSubnet
      */
-    java.util.concurrent.Future<Void> deleteSubnetAsync(
+    java.util.concurrent.Future<DeleteSubnetResult> deleteSubnetAsync(
             DeleteSubnetRequest deleteSubnetRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteSubnetRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteSubnetRequest, DeleteSubnetResult> asyncHandler);
 
     /**
      * <p>
@@ -4048,9 +4148,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteTagsRequest
      *        Contains the parameters for DeleteTags.
+     * @return A Java Future containing the result of the DeleteTags operation
+     *         returned by the service.
      * @sample AmazonEC2Async.DeleteTags
      */
-    java.util.concurrent.Future<Void> deleteTagsAsync(
+    java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             DeleteTagsRequest deleteTagsRequest);
 
     /**
@@ -4072,11 +4174,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTags operation
+     *         returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteTags
      */
-    java.util.concurrent.Future<Void> deleteTagsAsync(
+    java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             DeleteTagsRequest deleteTagsRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
 
     /**
      * <p>
@@ -4098,9 +4202,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteVolumeRequest
      *        Contains the parameters for DeleteVolume.
+     * @return A Java Future containing the result of the DeleteVolume operation
+     *         returned by the service.
      * @sample AmazonEC2Async.DeleteVolume
      */
-    java.util.concurrent.Future<Void> deleteVolumeAsync(
+    java.util.concurrent.Future<DeleteVolumeResult> deleteVolumeAsync(
             DeleteVolumeRequest deleteVolumeRequest);
 
     /**
@@ -4128,11 +4234,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVolume operation
+     *         returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteVolume
      */
-    java.util.concurrent.Future<Void> deleteVolumeAsync(
+    java.util.concurrent.Future<DeleteVolumeResult> deleteVolumeAsync(
             DeleteVolumeRequest deleteVolumeRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteVolumeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteVolumeRequest, DeleteVolumeResult> asyncHandler);
 
     /**
      * <p>
@@ -4146,9 +4254,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteVpcRequest
      *        Contains the parameters for DeleteVpc.
+     * @return A Java Future containing the result of the DeleteVpc operation
+     *         returned by the service.
      * @sample AmazonEC2Async.DeleteVpc
      */
-    java.util.concurrent.Future<Void> deleteVpcAsync(
+    java.util.concurrent.Future<DeleteVpcResult> deleteVpcAsync(
             DeleteVpcRequest deleteVpcRequest);
 
     /**
@@ -4168,11 +4278,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVpc operation
+     *         returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteVpc
      */
-    java.util.concurrent.Future<Void> deleteVpcAsync(
+    java.util.concurrent.Future<DeleteVpcResult> deleteVpcAsync(
             DeleteVpcRequest deleteVpcRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteVpcRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteVpcRequest, DeleteVpcResult> asyncHandler);
 
     /**
      * <p>
@@ -4271,9 +4383,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteVpnConnectionRequest
      *        Contains the parameters for DeleteVpnConnection.
+     * @return A Java Future containing the result of the DeleteVpnConnection
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteVpnConnection
      */
-    java.util.concurrent.Future<Void> deleteVpnConnectionAsync(
+    java.util.concurrent.Future<DeleteVpnConnectionResult> deleteVpnConnectionAsync(
             DeleteVpnConnectionRequest deleteVpnConnectionRequest);
 
     /**
@@ -4298,11 +4412,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVpnConnection
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteVpnConnection
      */
-    java.util.concurrent.Future<Void> deleteVpnConnectionAsync(
+    java.util.concurrent.Future<DeleteVpnConnectionResult> deleteVpnConnectionAsync(
             DeleteVpnConnectionRequest deleteVpnConnectionRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRequest, DeleteVpnConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -4314,9 +4430,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteVpnConnectionRouteRequest
      *        Contains the parameters for DeleteVpnConnectionRoute.
+     * @return A Java Future containing the result of the
+     *         DeleteVpnConnectionRoute operation returned by the service.
      * @sample AmazonEC2Async.DeleteVpnConnectionRoute
      */
-    java.util.concurrent.Future<Void> deleteVpnConnectionRouteAsync(
+    java.util.concurrent.Future<DeleteVpnConnectionRouteResult> deleteVpnConnectionRouteAsync(
             DeleteVpnConnectionRouteRequest deleteVpnConnectionRouteRequest);
 
     /**
@@ -4334,11 +4452,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteVpnConnectionRoute operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteVpnConnectionRoute
      */
-    java.util.concurrent.Future<Void> deleteVpnConnectionRouteAsync(
+    java.util.concurrent.Future<DeleteVpnConnectionRouteResult> deleteVpnConnectionRouteAsync(
             DeleteVpnConnectionRouteRequest deleteVpnConnectionRouteRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRouteRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRouteRequest, DeleteVpnConnectionRouteResult> asyncHandler);
 
     /**
      * <p>
@@ -4351,9 +4471,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deleteVpnGatewayRequest
      *        Contains the parameters for DeleteVpnGateway.
+     * @return A Java Future containing the result of the DeleteVpnGateway
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteVpnGateway
      */
-    java.util.concurrent.Future<Void> deleteVpnGatewayAsync(
+    java.util.concurrent.Future<DeleteVpnGatewayResult> deleteVpnGatewayAsync(
             DeleteVpnGatewayRequest deleteVpnGatewayRequest);
 
     /**
@@ -4372,11 +4494,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVpnGateway
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeleteVpnGateway
      */
-    java.util.concurrent.Future<Void> deleteVpnGatewayAsync(
+    java.util.concurrent.Future<DeleteVpnGatewayResult> deleteVpnGatewayAsync(
             DeleteVpnGatewayRequest deleteVpnGatewayRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteVpnGatewayRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteVpnGatewayRequest, DeleteVpnGatewayResult> asyncHandler);
 
     /**
      * <p>
@@ -4389,9 +4513,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param deregisterImageRequest
      *        Contains the parameters for DeregisterImage.
+     * @return A Java Future containing the result of the DeregisterImage
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DeregisterImage
      */
-    java.util.concurrent.Future<Void> deregisterImageAsync(
+    java.util.concurrent.Future<DeregisterImageResult> deregisterImageAsync(
             DeregisterImageRequest deregisterImageRequest);
 
     /**
@@ -4410,11 +4536,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterImage
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DeregisterImage
      */
-    java.util.concurrent.Future<Void> deregisterImageAsync(
+    java.util.concurrent.Future<DeregisterImageResult> deregisterImageAsync(
             DeregisterImageRequest deregisterImageRequest,
-            com.amazonaws.handlers.AsyncHandler<DeregisterImageRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeregisterImageRequest, DeregisterImageResult> asyncHandler);
 
     /**
      * <p>
@@ -6759,6 +6887,44 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * [EC2-VPC only] Describes the VPCs on the other side of a VPC peering
+     * connection that are referencing the security groups you've specified in
+     * this request.
+     * </p>
+     * 
+     * @param describeSecurityGroupReferencesRequest
+     * @return A Java Future containing the result of the
+     *         DescribeSecurityGroupReferences operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeSecurityGroupReferences
+     */
+    java.util.concurrent.Future<DescribeSecurityGroupReferencesResult> describeSecurityGroupReferencesAsync(
+            DescribeSecurityGroupReferencesRequest describeSecurityGroupReferencesRequest);
+
+    /**
+     * <p>
+     * [EC2-VPC only] Describes the VPCs on the other side of a VPC peering
+     * connection that are referencing the security groups you've specified in
+     * this request.
+     * </p>
+     * 
+     * @param describeSecurityGroupReferencesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeSecurityGroupReferences operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeSecurityGroupReferences
+     */
+    java.util.concurrent.Future<DescribeSecurityGroupReferencesResult> describeSecurityGroupReferencesAsync(
+            DescribeSecurityGroupReferencesRequest describeSecurityGroupReferencesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSecurityGroupReferencesRequest, DescribeSecurityGroupReferencesResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes one or more of your security groups.
      * </p>
      * <p>
@@ -7414,6 +7580,44 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeSpotPriceHistoryResult> describeSpotPriceHistoryAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSpotPriceHistoryRequest, DescribeSpotPriceHistoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * [EC2-VPC only] Describes the stale security group rules for security
+     * groups in a specified VPC. Rules are stale when they reference a deleted
+     * security group in a peer VPC, or a security group in a peer VPC for which
+     * the VPC peering connection has been deleted.
+     * </p>
+     * 
+     * @param describeStaleSecurityGroupsRequest
+     * @return A Java Future containing the result of the
+     *         DescribeStaleSecurityGroups operation returned by the service.
+     * @sample AmazonEC2Async.DescribeStaleSecurityGroups
+     */
+    java.util.concurrent.Future<DescribeStaleSecurityGroupsResult> describeStaleSecurityGroupsAsync(
+            DescribeStaleSecurityGroupsRequest describeStaleSecurityGroupsRequest);
+
+    /**
+     * <p>
+     * [EC2-VPC only] Describes the stale security group rules for security
+     * groups in a specified VPC. Rules are stale when they reference a deleted
+     * security group in a peer VPC, or a security group in a peer VPC for which
+     * the VPC peering connection has been deleted.
+     * </p>
+     * 
+     * @param describeStaleSecurityGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeStaleSecurityGroups operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeStaleSecurityGroups
+     */
+    java.util.concurrent.Future<DescribeStaleSecurityGroupsResult> describeStaleSecurityGroupsAsync(
+            DescribeStaleSecurityGroupsRequest describeStaleSecurityGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStaleSecurityGroupsRequest, DescribeStaleSecurityGroupsResult> asyncHandler);
 
     /**
      * <p>
@@ -8335,9 +8539,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param detachInternetGatewayRequest
      *        Contains the parameters for DetachInternetGateway.
+     * @return A Java Future containing the result of the DetachInternetGateway
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DetachInternetGateway
      */
-    java.util.concurrent.Future<Void> detachInternetGatewayAsync(
+    java.util.concurrent.Future<DetachInternetGatewayResult> detachInternetGatewayAsync(
             DetachInternetGatewayRequest detachInternetGatewayRequest);
 
     /**
@@ -8354,11 +8560,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachInternetGateway
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DetachInternetGateway
      */
-    java.util.concurrent.Future<Void> detachInternetGatewayAsync(
+    java.util.concurrent.Future<DetachInternetGatewayResult> detachInternetGatewayAsync(
             DetachInternetGatewayRequest detachInternetGatewayRequest,
-            com.amazonaws.handlers.AsyncHandler<DetachInternetGatewayRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DetachInternetGatewayRequest, DetachInternetGatewayResult> asyncHandler);
 
     /**
      * <p>
@@ -8367,9 +8575,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param detachNetworkInterfaceRequest
      *        Contains the parameters for DetachNetworkInterface.
+     * @return A Java Future containing the result of the DetachNetworkInterface
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DetachNetworkInterface
      */
-    java.util.concurrent.Future<Void> detachNetworkInterfaceAsync(
+    java.util.concurrent.Future<DetachNetworkInterfaceResult> detachNetworkInterfaceAsync(
             DetachNetworkInterfaceRequest detachNetworkInterfaceRequest);
 
     /**
@@ -8384,11 +8594,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachNetworkInterface
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DetachNetworkInterface
      */
-    java.util.concurrent.Future<Void> detachNetworkInterfaceAsync(
+    java.util.concurrent.Future<DetachNetworkInterfaceResult> detachNetworkInterfaceAsync(
             DetachNetworkInterfaceRequest detachNetworkInterfaceRequest,
-            com.amazonaws.handlers.AsyncHandler<DetachNetworkInterfaceRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DetachNetworkInterfaceRequest, DetachNetworkInterfaceResult> asyncHandler);
 
     /**
      * <p>
@@ -8476,9 +8688,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param detachVpnGatewayRequest
      *        Contains the parameters for DetachVpnGateway.
+     * @return A Java Future containing the result of the DetachVpnGateway
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DetachVpnGateway
      */
-    java.util.concurrent.Future<Void> detachVpnGatewayAsync(
+    java.util.concurrent.Future<DetachVpnGatewayResult> detachVpnGatewayAsync(
             DetachVpnGatewayRequest detachVpnGatewayRequest);
 
     /**
@@ -8502,11 +8716,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachVpnGateway
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DetachVpnGateway
      */
-    java.util.concurrent.Future<Void> detachVpnGatewayAsync(
+    java.util.concurrent.Future<DetachVpnGatewayResult> detachVpnGatewayAsync(
             DetachVpnGatewayRequest detachVpnGatewayRequest,
-            com.amazonaws.handlers.AsyncHandler<DetachVpnGatewayRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DetachVpnGatewayRequest, DetachVpnGatewayResult> asyncHandler);
 
     /**
      * <p>
@@ -8516,9 +8732,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param disableVgwRoutePropagationRequest
      *        Contains the parameters for DisableVgwRoutePropagation.
+     * @return A Java Future containing the result of the
+     *         DisableVgwRoutePropagation operation returned by the service.
      * @sample AmazonEC2Async.DisableVgwRoutePropagation
      */
-    java.util.concurrent.Future<Void> disableVgwRoutePropagationAsync(
+    java.util.concurrent.Future<DisableVgwRoutePropagationResult> disableVgwRoutePropagationAsync(
             DisableVgwRoutePropagationRequest disableVgwRoutePropagationRequest);
 
     /**
@@ -8534,11 +8752,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DisableVgwRoutePropagation operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DisableVgwRoutePropagation
      */
-    java.util.concurrent.Future<Void> disableVgwRoutePropagationAsync(
+    java.util.concurrent.Future<DisableVgwRoutePropagationResult> disableVgwRoutePropagationAsync(
             DisableVgwRoutePropagationRequest disableVgwRoutePropagationRequest,
-            com.amazonaws.handlers.AsyncHandler<DisableVgwRoutePropagationRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DisableVgwRoutePropagationRequest, DisableVgwRoutePropagationResult> asyncHandler);
 
     /**
      * <p>
@@ -8641,9 +8861,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param disassociateAddressRequest
      *        Contains the parameters for DisassociateAddress.
+     * @return A Java Future containing the result of the DisassociateAddress
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DisassociateAddress
      */
-    java.util.concurrent.Future<Void> disassociateAddressAsync(
+    java.util.concurrent.Future<DisassociateAddressResult> disassociateAddressAsync(
             DisassociateAddressRequest disassociateAddressRequest);
 
     /**
@@ -8670,11 +8892,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateAddress
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DisassociateAddress
      */
-    java.util.concurrent.Future<Void> disassociateAddressAsync(
+    java.util.concurrent.Future<DisassociateAddressResult> disassociateAddressAsync(
             DisassociateAddressRequest disassociateAddressRequest,
-            com.amazonaws.handlers.AsyncHandler<DisassociateAddressRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DisassociateAddressRequest, DisassociateAddressResult> asyncHandler);
 
     /**
      * <p>
@@ -8690,9 +8914,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param disassociateRouteTableRequest
      *        Contains the parameters for DisassociateRouteTable.
+     * @return A Java Future containing the result of the DisassociateRouteTable
+     *         operation returned by the service.
      * @sample AmazonEC2Async.DisassociateRouteTable
      */
-    java.util.concurrent.Future<Void> disassociateRouteTableAsync(
+    java.util.concurrent.Future<DisassociateRouteTableResult> disassociateRouteTableAsync(
             DisassociateRouteTableRequest disassociateRouteTableRequest);
 
     /**
@@ -8714,11 +8940,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateRouteTable
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.DisassociateRouteTable
      */
-    java.util.concurrent.Future<Void> disassociateRouteTableAsync(
+    java.util.concurrent.Future<DisassociateRouteTableResult> disassociateRouteTableAsync(
             DisassociateRouteTableRequest disassociateRouteTableRequest,
-            com.amazonaws.handlers.AsyncHandler<DisassociateRouteTableRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DisassociateRouteTableRequest, DisassociateRouteTableResult> asyncHandler);
 
     /**
      * <p>
@@ -8728,9 +8956,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param enableVgwRoutePropagationRequest
      *        Contains the parameters for EnableVgwRoutePropagation.
+     * @return A Java Future containing the result of the
+     *         EnableVgwRoutePropagation operation returned by the service.
      * @sample AmazonEC2Async.EnableVgwRoutePropagation
      */
-    java.util.concurrent.Future<Void> enableVgwRoutePropagationAsync(
+    java.util.concurrent.Future<EnableVgwRoutePropagationResult> enableVgwRoutePropagationAsync(
             EnableVgwRoutePropagationRequest enableVgwRoutePropagationRequest);
 
     /**
@@ -8746,11 +8976,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         EnableVgwRoutePropagation operation returned by the service.
      * @sample AmazonEC2AsyncHandler.EnableVgwRoutePropagation
      */
-    java.util.concurrent.Future<Void> enableVgwRoutePropagationAsync(
+    java.util.concurrent.Future<EnableVgwRoutePropagationResult> enableVgwRoutePropagationAsync(
             EnableVgwRoutePropagationRequest enableVgwRoutePropagationRequest,
-            com.amazonaws.handlers.AsyncHandler<EnableVgwRoutePropagationRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<EnableVgwRoutePropagationRequest, EnableVgwRoutePropagationResult> asyncHandler);
 
     /**
      * <p>
@@ -8760,9 +8992,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param enableVolumeIORequest
      *        Contains the parameters for EnableVolumeIO.
+     * @return A Java Future containing the result of the EnableVolumeIO
+     *         operation returned by the service.
      * @sample AmazonEC2Async.EnableVolumeIO
      */
-    java.util.concurrent.Future<Void> enableVolumeIOAsync(
+    java.util.concurrent.Future<EnableVolumeIOResult> enableVolumeIOAsync(
             EnableVolumeIORequest enableVolumeIORequest);
 
     /**
@@ -8778,11 +9012,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableVolumeIO
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.EnableVolumeIO
      */
-    java.util.concurrent.Future<Void> enableVolumeIOAsync(
+    java.util.concurrent.Future<EnableVolumeIOResult> enableVolumeIOAsync(
             EnableVolumeIORequest enableVolumeIORequest,
-            com.amazonaws.handlers.AsyncHandler<EnableVolumeIORequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<EnableVolumeIORequest, EnableVolumeIOResult> asyncHandler);
 
     /**
      * <p>
@@ -9386,9 +9622,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param modifyIdFormatRequest
      *        Contains the parameters of ModifyIdFormat.
+     * @return A Java Future containing the result of the ModifyIdFormat
+     *         operation returned by the service.
      * @sample AmazonEC2Async.ModifyIdFormat
      */
-    java.util.concurrent.Future<Void> modifyIdFormatAsync(
+    java.util.concurrent.Future<ModifyIdFormatResult> modifyIdFormatAsync(
             ModifyIdFormatRequest modifyIdFormatRequest);
 
     /**
@@ -9424,11 +9662,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyIdFormat
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ModifyIdFormat
      */
-    java.util.concurrent.Future<Void> modifyIdFormatAsync(
+    java.util.concurrent.Future<ModifyIdFormatResult> modifyIdFormatAsync(
             ModifyIdFormatRequest modifyIdFormatRequest,
-            com.amazonaws.handlers.AsyncHandler<ModifyIdFormatRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ModifyIdFormatRequest, ModifyIdFormatResult> asyncHandler);
 
     /**
      * <p>
@@ -9444,9 +9684,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param modifyImageAttributeRequest
      *        Contains the parameters for ModifyImageAttribute.
+     * @return A Java Future containing the result of the ModifyImageAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2Async.ModifyImageAttribute
      */
-    java.util.concurrent.Future<Void> modifyImageAttributeAsync(
+    java.util.concurrent.Future<ModifyImageAttributeResult> modifyImageAttributeAsync(
             ModifyImageAttributeRequest modifyImageAttributeRequest);
 
     /**
@@ -9468,11 +9710,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyImageAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ModifyImageAttribute
      */
-    java.util.concurrent.Future<Void> modifyImageAttributeAsync(
+    java.util.concurrent.Future<ModifyImageAttributeResult> modifyImageAttributeAsync(
             ModifyImageAttributeRequest modifyImageAttributeRequest,
-            com.amazonaws.handlers.AsyncHandler<ModifyImageAttributeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ModifyImageAttributeRequest, ModifyImageAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -9489,9 +9733,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param modifyInstanceAttributeRequest
      *        Contains the parameters for ModifyInstanceAttribute.
+     * @return A Java Future containing the result of the
+     *         ModifyInstanceAttribute operation returned by the service.
      * @sample AmazonEC2Async.ModifyInstanceAttribute
      */
-    java.util.concurrent.Future<Void> modifyInstanceAttributeAsync(
+    java.util.concurrent.Future<ModifyInstanceAttributeResult> modifyInstanceAttributeAsync(
             ModifyInstanceAttributeRequest modifyInstanceAttributeRequest);
 
     /**
@@ -9514,11 +9760,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ModifyInstanceAttribute operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ModifyInstanceAttribute
      */
-    java.util.concurrent.Future<Void> modifyInstanceAttributeAsync(
+    java.util.concurrent.Future<ModifyInstanceAttributeResult> modifyInstanceAttributeAsync(
             ModifyInstanceAttributeRequest modifyInstanceAttributeRequest,
-            com.amazonaws.handlers.AsyncHandler<ModifyInstanceAttributeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceAttributeRequest, ModifyInstanceAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -9608,9 +9856,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param modifyNetworkInterfaceAttributeRequest
      *        Contains the parameters for ModifyNetworkInterfaceAttribute.
+     * @return A Java Future containing the result of the
+     *         ModifyNetworkInterfaceAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2Async.ModifyNetworkInterfaceAttribute
      */
-    java.util.concurrent.Future<Void> modifyNetworkInterfaceAttributeAsync(
+    java.util.concurrent.Future<ModifyNetworkInterfaceAttributeResult> modifyNetworkInterfaceAttributeAsync(
             ModifyNetworkInterfaceAttributeRequest modifyNetworkInterfaceAttributeRequest);
 
     /**
@@ -9626,11 +9877,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ModifyNetworkInterfaceAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2AsyncHandler.ModifyNetworkInterfaceAttribute
      */
-    java.util.concurrent.Future<Void> modifyNetworkInterfaceAttributeAsync(
+    java.util.concurrent.Future<ModifyNetworkInterfaceAttributeResult> modifyNetworkInterfaceAttributeAsync(
             ModifyNetworkInterfaceAttributeRequest modifyNetworkInterfaceAttributeRequest,
-            com.amazonaws.handlers.AsyncHandler<ModifyNetworkInterfaceAttributeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ModifyNetworkInterfaceAttributeRequest, ModifyNetworkInterfaceAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -9706,9 +9960,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param modifySnapshotAttributeRequest
      *        Contains the parameters for ModifySnapshotAttribute.
+     * @return A Java Future containing the result of the
+     *         ModifySnapshotAttribute operation returned by the service.
      * @sample AmazonEC2Async.ModifySnapshotAttribute
      */
-    java.util.concurrent.Future<Void> modifySnapshotAttributeAsync(
+    java.util.concurrent.Future<ModifySnapshotAttributeResult> modifySnapshotAttributeAsync(
             ModifySnapshotAttributeRequest modifySnapshotAttributeRequest);
 
     /**
@@ -9738,11 +9994,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ModifySnapshotAttribute operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ModifySnapshotAttribute
      */
-    java.util.concurrent.Future<Void> modifySnapshotAttributeAsync(
+    java.util.concurrent.Future<ModifySnapshotAttributeResult> modifySnapshotAttributeAsync(
             ModifySnapshotAttributeRequest modifySnapshotAttributeRequest,
-            com.amazonaws.handlers.AsyncHandler<ModifySnapshotAttributeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ModifySnapshotAttributeRequest, ModifySnapshotAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -9835,9 +10093,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param modifySubnetAttributeRequest
      *        Contains the parameters for ModifySubnetAttribute.
+     * @return A Java Future containing the result of the ModifySubnetAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2Async.ModifySubnetAttribute
      */
-    java.util.concurrent.Future<Void> modifySubnetAttributeAsync(
+    java.util.concurrent.Future<ModifySubnetAttributeResult> modifySubnetAttributeAsync(
             ModifySubnetAttributeRequest modifySubnetAttributeRequest);
 
     /**
@@ -9852,11 +10112,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifySubnetAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ModifySubnetAttribute
      */
-    java.util.concurrent.Future<Void> modifySubnetAttributeAsync(
+    java.util.concurrent.Future<ModifySubnetAttributeResult> modifySubnetAttributeAsync(
             ModifySubnetAttributeRequest modifySubnetAttributeRequest,
-            com.amazonaws.handlers.AsyncHandler<ModifySubnetAttributeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ModifySubnetAttributeRequest, ModifySubnetAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -9877,9 +10139,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param modifyVolumeAttributeRequest
      *        Contains the parameters for ModifyVolumeAttribute.
+     * @return A Java Future containing the result of the ModifyVolumeAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2Async.ModifyVolumeAttribute
      */
-    java.util.concurrent.Future<Void> modifyVolumeAttributeAsync(
+    java.util.concurrent.Future<ModifyVolumeAttributeResult> modifyVolumeAttributeAsync(
             ModifyVolumeAttributeRequest modifyVolumeAttributeRequest);
 
     /**
@@ -9906,11 +10170,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVolumeAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ModifyVolumeAttribute
      */
-    java.util.concurrent.Future<Void> modifyVolumeAttributeAsync(
+    java.util.concurrent.Future<ModifyVolumeAttributeResult> modifyVolumeAttributeAsync(
             ModifyVolumeAttributeRequest modifyVolumeAttributeRequest,
-            com.amazonaws.handlers.AsyncHandler<ModifyVolumeAttributeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ModifyVolumeAttributeRequest, ModifyVolumeAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -9919,9 +10185,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param modifyVpcAttributeRequest
      *        Contains the parameters for ModifyVpcAttribute.
+     * @return A Java Future containing the result of the ModifyVpcAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2Async.ModifyVpcAttribute
      */
-    java.util.concurrent.Future<Void> modifyVpcAttributeAsync(
+    java.util.concurrent.Future<ModifyVpcAttributeResult> modifyVpcAttributeAsync(
             ModifyVpcAttributeRequest modifyVpcAttributeRequest);
 
     /**
@@ -9936,11 +10204,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVpcAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ModifyVpcAttribute
      */
-    java.util.concurrent.Future<Void> modifyVpcAttributeAsync(
+    java.util.concurrent.Future<ModifyVpcAttributeResult> modifyVpcAttributeAsync(
             ModifyVpcAttributeRequest modifyVpcAttributeRequest,
-            com.amazonaws.handlers.AsyncHandler<ModifyVpcAttributeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ModifyVpcAttributeRequest, ModifyVpcAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -10308,9 +10578,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param rebootInstancesRequest
      *        Contains the parameters for RebootInstances.
+     * @return A Java Future containing the result of the RebootInstances
+     *         operation returned by the service.
      * @sample AmazonEC2Async.RebootInstances
      */
-    java.util.concurrent.Future<Void> rebootInstancesAsync(
+    java.util.concurrent.Future<RebootInstancesResult> rebootInstancesAsync(
             RebootInstancesRequest rebootInstancesRequest);
 
     /**
@@ -10338,11 +10610,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RebootInstances
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.RebootInstances
      */
-    java.util.concurrent.Future<Void> rebootInstancesAsync(
+    java.util.concurrent.Future<RebootInstancesResult> rebootInstancesAsync(
             RebootInstancesRequest rebootInstancesRequest,
-            com.amazonaws.handlers.AsyncHandler<RebootInstancesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RebootInstancesRequest, RebootInstancesResult> asyncHandler);
 
     /**
      * <p>
@@ -10550,9 +10824,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param releaseAddressRequest
      *        Contains the parameters for ReleaseAddress.
+     * @return A Java Future containing the result of the ReleaseAddress
+     *         operation returned by the service.
      * @sample AmazonEC2Async.ReleaseAddress
      */
-    java.util.concurrent.Future<Void> releaseAddressAsync(
+    java.util.concurrent.Future<ReleaseAddressResult> releaseAddressAsync(
             ReleaseAddressRequest releaseAddressRequest);
 
     /**
@@ -10586,11 +10862,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReleaseAddress
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ReleaseAddress
      */
-    java.util.concurrent.Future<Void> releaseAddressAsync(
+    java.util.concurrent.Future<ReleaseAddressResult> releaseAddressAsync(
             ReleaseAddressRequest releaseAddressRequest,
-            com.amazonaws.handlers.AsyncHandler<ReleaseAddressRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ReleaseAddressRequest, ReleaseAddressResult> asyncHandler);
 
     /**
      * <p>
@@ -10704,9 +10982,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param replaceNetworkAclEntryRequest
      *        Contains the parameters for ReplaceNetworkAclEntry.
+     * @return A Java Future containing the result of the ReplaceNetworkAclEntry
+     *         operation returned by the service.
      * @sample AmazonEC2Async.ReplaceNetworkAclEntry
      */
-    java.util.concurrent.Future<Void> replaceNetworkAclEntryAsync(
+    java.util.concurrent.Future<ReplaceNetworkAclEntryResult> replaceNetworkAclEntryAsync(
             ReplaceNetworkAclEntryRequest replaceNetworkAclEntryRequest);
 
     /**
@@ -10724,11 +11004,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReplaceNetworkAclEntry
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ReplaceNetworkAclEntry
      */
-    java.util.concurrent.Future<Void> replaceNetworkAclEntryAsync(
+    java.util.concurrent.Future<ReplaceNetworkAclEntryResult> replaceNetworkAclEntryAsync(
             ReplaceNetworkAclEntryRequest replaceNetworkAclEntryRequest,
-            com.amazonaws.handlers.AsyncHandler<ReplaceNetworkAclEntryRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ReplaceNetworkAclEntryRequest, ReplaceNetworkAclEntryResult> asyncHandler);
 
     /**
      * <p>
@@ -10745,9 +11027,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param replaceRouteRequest
      *        Contains the parameters for ReplaceRoute.
+     * @return A Java Future containing the result of the ReplaceRoute operation
+     *         returned by the service.
      * @sample AmazonEC2Async.ReplaceRoute
      */
-    java.util.concurrent.Future<Void> replaceRouteAsync(
+    java.util.concurrent.Future<ReplaceRouteResult> replaceRouteAsync(
             ReplaceRouteRequest replaceRouteRequest);
 
     /**
@@ -10770,11 +11054,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReplaceRoute operation
+     *         returned by the service.
      * @sample AmazonEC2AsyncHandler.ReplaceRoute
      */
-    java.util.concurrent.Future<Void> replaceRouteAsync(
+    java.util.concurrent.Future<ReplaceRouteResult> replaceRouteAsync(
             ReplaceRouteRequest replaceRouteRequest,
-            com.amazonaws.handlers.AsyncHandler<ReplaceRouteRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ReplaceRouteRequest, ReplaceRouteResult> asyncHandler);
 
     /**
      * <p>
@@ -10846,9 +11132,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param reportInstanceStatusRequest
      *        Contains the parameters for ReportInstanceStatus.
+     * @return A Java Future containing the result of the ReportInstanceStatus
+     *         operation returned by the service.
      * @sample AmazonEC2Async.ReportInstanceStatus
      */
-    java.util.concurrent.Future<Void> reportInstanceStatusAsync(
+    java.util.concurrent.Future<ReportInstanceStatusResult> reportInstanceStatusAsync(
             ReportInstanceStatusRequest reportInstanceStatusRequest);
 
     /**
@@ -10872,11 +11160,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReportInstanceStatus
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ReportInstanceStatus
      */
-    java.util.concurrent.Future<Void> reportInstanceStatusAsync(
+    java.util.concurrent.Future<ReportInstanceStatusResult> reportInstanceStatusAsync(
             ReportInstanceStatusRequest reportInstanceStatusRequest,
-            com.amazonaws.handlers.AsyncHandler<ReportInstanceStatusRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ReportInstanceStatusRequest, ReportInstanceStatusResult> asyncHandler);
 
     /**
      * <p>
@@ -11018,9 +11308,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param resetImageAttributeRequest
      *        Contains the parameters for ResetImageAttribute.
+     * @return A Java Future containing the result of the ResetImageAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2Async.ResetImageAttribute
      */
-    java.util.concurrent.Future<Void> resetImageAttributeAsync(
+    java.util.concurrent.Future<ResetImageAttributeResult> resetImageAttributeAsync(
             ResetImageAttributeRequest resetImageAttributeRequest);
 
     /**
@@ -11040,21 +11332,23 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetImageAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ResetImageAttribute
      */
-    java.util.concurrent.Future<Void> resetImageAttributeAsync(
+    java.util.concurrent.Future<ResetImageAttributeResult> resetImageAttributeAsync(
             ResetImageAttributeRequest resetImageAttributeRequest,
-            com.amazonaws.handlers.AsyncHandler<ResetImageAttributeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ResetImageAttributeRequest, ResetImageAttributeResult> asyncHandler);
 
     /**
      * <p>
      * Resets an attribute of an instance to its default value. To reset the
      * <code>kernel</code> or <code>ramdisk</code>, the instance must be in a
-     * stopped state. To reset the <code>SourceDestCheck</code>, the instance
+     * stopped state. To reset the <code>sourceDestCheck</code>, the instance
      * can be either running or stopped.
      * </p>
      * <p>
-     * The <code>SourceDestCheck</code> attribute controls whether
+     * The <code>sourceDestCheck</code> attribute controls whether
      * source/destination checking is enabled. The default value is
      * <code>true</code>, which means checking is enabled. This value must be
      * <code>false</code> for a NAT instance to perform NAT. For more
@@ -11065,20 +11359,22 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param resetInstanceAttributeRequest
      *        Contains the parameters for ResetInstanceAttribute.
+     * @return A Java Future containing the result of the ResetInstanceAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2Async.ResetInstanceAttribute
      */
-    java.util.concurrent.Future<Void> resetInstanceAttributeAsync(
+    java.util.concurrent.Future<ResetInstanceAttributeResult> resetInstanceAttributeAsync(
             ResetInstanceAttributeRequest resetInstanceAttributeRequest);
 
     /**
      * <p>
      * Resets an attribute of an instance to its default value. To reset the
      * <code>kernel</code> or <code>ramdisk</code>, the instance must be in a
-     * stopped state. To reset the <code>SourceDestCheck</code>, the instance
+     * stopped state. To reset the <code>sourceDestCheck</code>, the instance
      * can be either running or stopped.
      * </p>
      * <p>
-     * The <code>SourceDestCheck</code> attribute controls whether
+     * The <code>sourceDestCheck</code> attribute controls whether
      * source/destination checking is enabled. The default value is
      * <code>true</code>, which means checking is enabled. This value must be
      * <code>false</code> for a NAT instance to perform NAT. For more
@@ -11094,11 +11390,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetInstanceAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ResetInstanceAttribute
      */
-    java.util.concurrent.Future<Void> resetInstanceAttributeAsync(
+    java.util.concurrent.Future<ResetInstanceAttributeResult> resetInstanceAttributeAsync(
             ResetInstanceAttributeRequest resetInstanceAttributeRequest,
-            com.amazonaws.handlers.AsyncHandler<ResetInstanceAttributeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ResetInstanceAttributeRequest, ResetInstanceAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -11108,9 +11406,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param resetNetworkInterfaceAttributeRequest
      *        Contains the parameters for ResetNetworkInterfaceAttribute.
+     * @return A Java Future containing the result of the
+     *         ResetNetworkInterfaceAttribute operation returned by the service.
      * @sample AmazonEC2Async.ResetNetworkInterfaceAttribute
      */
-    java.util.concurrent.Future<Void> resetNetworkInterfaceAttributeAsync(
+    java.util.concurrent.Future<ResetNetworkInterfaceAttributeResult> resetNetworkInterfaceAttributeAsync(
             ResetNetworkInterfaceAttributeRequest resetNetworkInterfaceAttributeRequest);
 
     /**
@@ -11126,11 +11426,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ResetNetworkInterfaceAttribute operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ResetNetworkInterfaceAttribute
      */
-    java.util.concurrent.Future<Void> resetNetworkInterfaceAttributeAsync(
+    java.util.concurrent.Future<ResetNetworkInterfaceAttributeResult> resetNetworkInterfaceAttributeAsync(
             ResetNetworkInterfaceAttributeRequest resetNetworkInterfaceAttributeRequest,
-            com.amazonaws.handlers.AsyncHandler<ResetNetworkInterfaceAttributeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ResetNetworkInterfaceAttributeRequest, ResetNetworkInterfaceAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -11145,9 +11447,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param resetSnapshotAttributeRequest
      *        Contains the parameters for ResetSnapshotAttribute.
+     * @return A Java Future containing the result of the ResetSnapshotAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2Async.ResetSnapshotAttribute
      */
-    java.util.concurrent.Future<Void> resetSnapshotAttributeAsync(
+    java.util.concurrent.Future<ResetSnapshotAttributeResult> resetSnapshotAttributeAsync(
             ResetSnapshotAttributeRequest resetSnapshotAttributeRequest);
 
     /**
@@ -11168,11 +11472,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetSnapshotAttribute
+     *         operation returned by the service.
      * @sample AmazonEC2AsyncHandler.ResetSnapshotAttribute
      */
-    java.util.concurrent.Future<Void> resetSnapshotAttributeAsync(
+    java.util.concurrent.Future<ResetSnapshotAttributeResult> resetSnapshotAttributeAsync(
             ResetSnapshotAttributeRequest resetSnapshotAttributeRequest,
-            com.amazonaws.handlers.AsyncHandler<ResetSnapshotAttributeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ResetSnapshotAttributeRequest, ResetSnapshotAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -11241,9 +11547,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param revokeSecurityGroupEgressRequest
      *        Contains the parameters for RevokeSecurityGroupEgress.
+     * @return A Java Future containing the result of the
+     *         RevokeSecurityGroupEgress operation returned by the service.
      * @sample AmazonEC2Async.RevokeSecurityGroupEgress
      */
-    java.util.concurrent.Future<Void> revokeSecurityGroupEgressAsync(
+    java.util.concurrent.Future<RevokeSecurityGroupEgressResult> revokeSecurityGroupEgressAsync(
             RevokeSecurityGroupEgressRequest revokeSecurityGroupEgressRequest);
 
     /**
@@ -11272,11 +11580,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RevokeSecurityGroupEgress operation returned by the service.
      * @sample AmazonEC2AsyncHandler.RevokeSecurityGroupEgress
      */
-    java.util.concurrent.Future<Void> revokeSecurityGroupEgressAsync(
+    java.util.concurrent.Future<RevokeSecurityGroupEgressResult> revokeSecurityGroupEgressAsync(
             RevokeSecurityGroupEgressRequest revokeSecurityGroupEgressRequest,
-            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupEgressRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupEgressRequest, RevokeSecurityGroupEgressResult> asyncHandler);
 
     /**
      * <p>
@@ -11297,9 +11607,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param revokeSecurityGroupIngressRequest
      *        Contains the parameters for RevokeSecurityGroupIngress.
+     * @return A Java Future containing the result of the
+     *         RevokeSecurityGroupIngress operation returned by the service.
      * @sample AmazonEC2Async.RevokeSecurityGroupIngress
      */
-    java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync(
+    java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync(
             RevokeSecurityGroupIngressRequest revokeSecurityGroupIngressRequest);
 
     /**
@@ -11326,11 +11638,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RevokeSecurityGroupIngress operation returned by the service.
      * @sample AmazonEC2AsyncHandler.RevokeSecurityGroupIngress
      */
-    java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync(
+    java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync(
             RevokeSecurityGroupIngressRequest revokeSecurityGroupIngressRequest,
-            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the RevokeSecurityGroupIngress
@@ -11338,7 +11652,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *
      * @see #revokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest)
      */
-    java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync();
+    java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync();
 
     /**
      * Simplified method form for invoking the RevokeSecurityGroupIngress
@@ -11347,8 +11661,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * @see #revokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync(
-            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, Void> asyncHandler);
+    java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync(
+            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResult> asyncHandler);
 
     /**
      * <p>
@@ -11684,7 +11998,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Guide</i>.
      * </p>
      * <p>
-     * For more information about troubleshooting, see <a href=
+     * When you stop an instance, we attempt to shut it down forcibly after a
+     * short while. If your instance appears stuck in the stopping state after a
+     * period of time, there may be an issue with the underlying host computer.
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html"
      * >Troubleshooting Stopping Your Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.
@@ -11733,7 +12050,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Guide</i>.
      * </p>
      * <p>
-     * For more information about troubleshooting, see <a href=
+     * When you stop an instance, we attempt to shut it down forcibly after a
+     * short while. If your instance appears stuck in the stopping state after a
+     * period of time, there may be an issue with the underlying host computer.
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html"
      * >Troubleshooting Stopping Your Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.
@@ -11856,9 +12176,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 
      * @param unassignPrivateIpAddressesRequest
      *        Contains the parameters for UnassignPrivateIpAddresses.
+     * @return A Java Future containing the result of the
+     *         UnassignPrivateIpAddresses operation returned by the service.
      * @sample AmazonEC2Async.UnassignPrivateIpAddresses
      */
-    java.util.concurrent.Future<Void> unassignPrivateIpAddressesAsync(
+    java.util.concurrent.Future<UnassignPrivateIpAddressesResult> unassignPrivateIpAddressesAsync(
             UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest);
 
     /**
@@ -11874,11 +12196,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UnassignPrivateIpAddresses operation returned by the service.
      * @sample AmazonEC2AsyncHandler.UnassignPrivateIpAddresses
      */
-    java.util.concurrent.Future<Void> unassignPrivateIpAddressesAsync(
+    java.util.concurrent.Future<UnassignPrivateIpAddressesResult> unassignPrivateIpAddressesAsync(
             UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest,
-            com.amazonaws.handlers.AsyncHandler<UnassignPrivateIpAddressesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UnassignPrivateIpAddressesRequest, UnassignPrivateIpAddressesResult> asyncHandler);
 
     /**
      * <p>

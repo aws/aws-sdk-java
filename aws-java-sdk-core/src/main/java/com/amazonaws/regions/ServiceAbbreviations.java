@@ -14,10 +14,17 @@
  */
 package com.amazonaws.regions;
 
+import com.amazonaws.AmazonWebServiceClient;
+
 /**
  * Abbreviations for looking up information about a specific service. Used in
  * {@link Region#getServiceEndpoint(String)} and related methods.
+ *
+ * @deprecated use {@link AmazonWebServiceClient#getEndpointPrefix()} instead for retrieving
+ *             the specific service abbreviation.
  */
+
+@Deprecated
 public final class ServiceAbbreviations {
     public static final String Autoscaling = "autoscaling";
     public static final String CloudFormation = "cloudformation";

@@ -24,7 +24,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 
 
@@ -32,6 +32,12 @@ import com.amazonaws.util.json.*;
  * ${shapeName} Marshaller
  */
 public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>, ${shapeName}> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ${shapeName}Marshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     <#assign shape = shapes[shapeName]/>
     public Request<${shapeName}> marshall(${shape.variable.variableType} ${shape.variable.variableName}) {
@@ -53,8 +59,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
         request.setResourcePath("");
 
         try {
-          final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-          .createWriter(${metadata.cborProtocol?c}, "${metadata.jsonVersion}");
+          final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
           jsonGenerator.writeStartObject();
 

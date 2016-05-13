@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetGameSessionLogUrlRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class GetGameSessionLogUrlRequestMarshaller
         implements
         Marshaller<Request<GetGameSessionLogUrlRequest>, GetGameSessionLogUrlRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetGameSessionLogUrlRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetGameSessionLogUrlRequest> marshall(
             GetGameSessionLogUrlRequest getGameSessionLogUrlRequest) {
@@ -58,8 +65,8 @@ public class GetGameSessionLogUrlRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

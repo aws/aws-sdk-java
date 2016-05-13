@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateAliasRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class UpdateAliasRequestMarshaller implements
         Marshaller<Request<UpdateAliasRequest>, UpdateAliasRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateAliasRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateAliasRequest> marshall(
             UpdateAliasRequest updateAliasRequest) {
@@ -66,17 +73,19 @@ public class UpdateAliasRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{FunctionName}",
-                (updateAliasRequest.getFunctionName() != null) ? StringUtils
-                        .fromString(updateAliasRequest.getFunctionName()) : "");
+                (updateAliasRequest.getFunctionName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateAliasRequest
+                                .getFunctionName()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{Name}",
-                (updateAliasRequest.getName() != null) ? StringUtils
-                        .fromString(updateAliasRequest.getName()) : "");
+                (updateAliasRequest.getName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateAliasRequest
+                                .getName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (updateAliasRequest.getFunctionVersion() != null) {

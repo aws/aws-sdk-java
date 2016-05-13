@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListVersionsByFunctionRequest Marshaller
@@ -48,7 +49,14 @@ public class ListVersionsByFunctionRequestMarshaller
         implements
         Marshaller<Request<ListVersionsByFunctionRequest>, ListVersionsByFunctionRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListVersionsByFunctionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListVersionsByFunctionRequest> marshall(
             ListVersionsByFunctionRequest listVersionsByFunctionRequest) {
@@ -68,9 +76,11 @@ public class ListVersionsByFunctionRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{FunctionName}",
-                        (listVersionsByFunctionRequest.getFunctionName() != null) ? StringUtils
-                                .fromString(listVersionsByFunctionRequest
-                                        .getFunctionName()) : "");
+                        (listVersionsByFunctionRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(listVersionsByFunctionRequest
+                                                .getFunctionName()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         if (listVersionsByFunctionRequest.getMarker() != null) {

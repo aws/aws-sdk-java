@@ -22,7 +22,9 @@ public class S3ClientOptions {
     /** The default setting for use of path-style access */
     public static final boolean DEFAULT_PATH_STYLE_ACCESS = false;
     /** The default setting for use of chunked encoding */
-    public static final boolean DEFAULT_CHUNKED_ENCODING_DISABLED = false;
+    public static final boolean DEFAULT_CHUNKED_ENCODING_DISABLED = true;
+    /** The default setting for use of payload signing */
+    public static final boolean DEFAULT_PAYLOAD_SIGNING_ENABLED = false;
     /** S3 accelerate is by default not enabled */
     public static final boolean DEFAULT_ACCELERATE_MODE_ENABLED = false;
 
@@ -32,6 +34,7 @@ public class S3ClientOptions {
     private boolean pathStyleAccess;
     private boolean chunkedEncodingDisabled;
     private final boolean accelerateModeEnabled;
+    private final boolean payloadSigningEnabled;
 
     /**
      * @return a new S3ClientOptions builder.
@@ -46,12 +49,13 @@ public class S3ClientOptions {
         /** Flag for user of chunked encoding */
         private boolean chunkedEncodingDisabled = DEFAULT_CHUNKED_ENCODING_DISABLED;
         private boolean accelerateModeEnabled = DEFAULT_ACCELERATE_MODE_ENABLED;
+        private boolean payloadSigningEnabled = DEFAULT_PAYLOAD_SIGNING_ENABLED;
 
         private Builder() {}
 
         public S3ClientOptions build() {
             return new S3ClientOptions(pathStyleAccess, chunkedEncodingDisabled,
-                    accelerateModeEnabled);
+                    accelerateModeEnabled, payloadSigningEnabled);
         }
         /**
          * <p>
@@ -98,6 +102,30 @@ public class S3ClientOptions {
 
         /**
          * <p>
+         * Configures the client to sign payloads in all situations.
+         * </p>
+         * <p>
+         * Payload signing is optional when chunked encoding is not used and requests are made
+         * against an HTTPS endpoint.  Under these conditions the client will by default
+         * opt to not sign payloads to optimize performance.  If this flag is set to true the
+         * client will instead always sign payloads.
+         * </p>
+         * <p>
+         * <b>Note:</b> Payload signing can be expensive, particularly if transferring
+         * large payloads in a single chunk.  Enabling this option will result in a performance
+         * penalty.
+         * </p>
+         *
+         * @param payloadSigningEnabled
+         *            True to explicitly enable payload signing in all situations
+         */
+        public Builder setPayloadSigningEnabled(boolean payloadSigningEnabled) {
+            this.payloadSigningEnabled = payloadSigningEnabled;
+            return this;
+        }
+
+        /**
+         * <p>
          * Configures the client to disable chunked encoding for all requests.
          * </p>
          * <p>
@@ -129,6 +157,7 @@ public class S3ClientOptions {
         this.pathStyleAccess = DEFAULT_PATH_STYLE_ACCESS;
         this.chunkedEncodingDisabled = DEFAULT_CHUNKED_ENCODING_DISABLED;
         this.accelerateModeEnabled = DEFAULT_ACCELERATE_MODE_ENABLED;
+        this.payloadSigningEnabled = DEFAULT_PAYLOAD_SIGNING_ENABLED;
     }
 
     /**
@@ -140,12 +169,15 @@ public class S3ClientOptions {
         this.pathStyleAccess = other.pathStyleAccess;
         this.chunkedEncodingDisabled = other.chunkedEncodingDisabled;
         this.accelerateModeEnabled = other.accelerateModeEnabled;
+        this.payloadSigningEnabled = other.payloadSigningEnabled;
     }
 
-    private S3ClientOptions(boolean pathStyleAccess, boolean chunkedEncodingDisabled, boolean accelerateModeEnabled) {
+    private S3ClientOptions(boolean pathStyleAccess, boolean chunkedEncodingDisabled, boolean accelerateModeEnabled,
+                            boolean payloadSigningEnabled) {
         this.pathStyleAccess = pathStyleAccess;
         this.chunkedEncodingDisabled = chunkedEncodingDisabled;
         this.accelerateModeEnabled = accelerateModeEnabled;
+        this.payloadSigningEnabled = payloadSigningEnabled;
     }
 
     /**
@@ -209,12 +241,34 @@ public class S3ClientOptions {
     }
 
     /**
+     * <p>
+     * Returns whether the client is configured to sign payloads in all situations.
+     * </p>
+     * <p>
+     * Payload signing is optional when chunked encoding is not used and requests are made
+     * against an HTTPS endpoint.  Under these conditions the client will by default
+     * opt to not sign payloads to optimize performance.  If this flag is set to true the
+     * client will instead always sign payloads.
+     * </p>
+     * <p>
+     * <b>Note:</b> Payload signing can be expensive, particularly if transferring
+     * large payloads in a single chunk.  Enabling this option will result in a performance
+     * penalty.
+     * </p>
+     *
+     * @return True if body signing is explicitly enabled for all requests
+     */
+    public boolean isPayloadSigningEnabled() {
+        return payloadSigningEnabled;
+    }
+
+    /**
      * @deprecated Use {@link S3ClientOptions#builder()} to build new
      *             S3ClientOptions instead.
      */
     @Deprecated
     public void setPathStyleAccess(boolean pathStyleAccess) {
-      this.pathStyleAccess = pathStyleAccess;
+        this.pathStyleAccess = pathStyleAccess;
     }
 
     /**
@@ -223,8 +277,8 @@ public class S3ClientOptions {
      */
     @Deprecated
     public S3ClientOptions withPathStyleAccess(boolean pathStyleAccess) {
-      setPathStyleAccess(pathStyleAccess);
-      return this;
+        setPathStyleAccess(pathStyleAccess);
+        return this;
     }
 
     /**

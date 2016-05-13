@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CancelKeyDeletionRequest Marshaller
  */
 public class CancelKeyDeletionRequestMarshaller implements
         Marshaller<Request<CancelKeyDeletionRequest>, CancelKeyDeletionRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CancelKeyDeletionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CancelKeyDeletionRequest> marshall(
             CancelKeyDeletionRequest cancelKeyDeletionRequest) {
@@ -57,8 +64,8 @@ public class CancelKeyDeletionRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

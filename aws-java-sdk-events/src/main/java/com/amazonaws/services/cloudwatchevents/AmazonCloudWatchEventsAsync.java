@@ -61,9 +61,11 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * 
      * @param deleteRuleRequest
      *        Container for the parameters to the <a>DeleteRule</a> operation.
+     * @return A Java Future containing the result of the DeleteRule operation
+     *         returned by the service.
      * @sample AmazonCloudWatchEventsAsync.DeleteRule
      */
-    java.util.concurrent.Future<Void> deleteRuleAsync(
+    java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
             DeleteRuleRequest deleteRuleRequest);
 
     /**
@@ -84,11 +86,13 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRule operation
+     *         returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.DeleteRule
      */
-    java.util.concurrent.Future<Void> deleteRuleAsync(
+    java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
             DeleteRuleRequest deleteRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -137,9 +141,11 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * 
      * @param disableRuleRequest
      *        Container for the parameters to the <a>DisableRule</a> operation.
+     * @return A Java Future containing the result of the DisableRule operation
+     *         returned by the service.
      * @sample AmazonCloudWatchEventsAsync.DisableRule
      */
-    java.util.concurrent.Future<Void> disableRuleAsync(
+    java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(
             DisableRuleRequest disableRuleRequest);
 
     /**
@@ -160,11 +166,13 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableRule operation
+     *         returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.DisableRule
      */
-    java.util.concurrent.Future<Void> disableRuleAsync(
+    java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(
             DisableRuleRequest disableRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<DisableRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DisableRuleRequest, DisableRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -178,9 +186,11 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * 
      * @param enableRuleRequest
      *        Container for the parameters to the <a>EnableRule</a> operation.
+     * @return A Java Future containing the result of the EnableRule operation
+     *         returned by the service.
      * @sample AmazonCloudWatchEventsAsync.EnableRule
      */
-    java.util.concurrent.Future<Void> enableRuleAsync(
+    java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(
             EnableRuleRequest enableRuleRequest);
 
     /**
@@ -200,11 +210,13 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableRule operation
+     *         returned by the service.
      * @sample AmazonCloudWatchEventsAsyncHandler.EnableRule
      */
-    java.util.concurrent.Future<Void> enableRuleAsync(
+    java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(
             EnableRuleRequest enableRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, EnableRuleResult> asyncHandler);
 
     /**
      * <p>

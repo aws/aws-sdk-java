@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -78,10 +78,112 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all AWS IoT exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UnauthorizedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.UnauthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ResourceAlreadyExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.ResourceAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("SqlParseException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.SqlParseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.InternalException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("MalformedPolicyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.MalformedPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CertificateConflictException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.CertificateConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "TransferAlreadyCompletedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.TransferAlreadyCompletedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("CertificateStateException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.CertificateStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ServiceUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CertificateValidationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.CertificateValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RegistrationCodeValidationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.RegistrationCodeValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "VersionsLimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.VersionsLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DeleteConflictException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.DeleteConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalFailureException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.InternalFailureException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TransferConflictException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.TransferConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ThrottlingException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.ThrottlingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.InvalidRequestException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS IoT. A
@@ -233,78 +335,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     }
 
     private void init() {
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.iot.model.UnauthorizedException.class,
-                "UnauthorizedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.ResourceAlreadyExistsException.class,
-                        "ResourceAlreadyExistsException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.iot.model.SqlParseException.class,
-                "SqlParseException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.iot.model.LimitExceededException.class,
-                "LimitExceededException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.iot.model.InternalException.class,
-                "InternalException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.MalformedPolicyException.class,
-                        "MalformedPolicyException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.CertificateConflictException.class,
-                        "CertificateConflictException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.TransferAlreadyCompletedException.class,
-                        "TransferAlreadyCompletedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.CertificateStateException.class,
-                        "CertificateStateException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.ServiceUnavailableException.class,
-                        "ServiceUnavailableException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.CertificateValidationException.class,
-                        "CertificateValidationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.RegistrationCodeValidationException.class,
-                        "RegistrationCodeValidationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.VersionsLimitExceededException.class,
-                        "VersionsLimitExceededException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.iot.model.DeleteConflictException.class,
-                "DeleteConflictException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.InternalFailureException.class,
-                        "InternalFailureException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iot.model.TransferConflictException.class,
-                        "TransferConflictException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.iot.model.ThrottlingException.class,
-                "ThrottlingException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.iot.model.InvalidRequestException.class,
-                "InvalidRequestException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -330,6 +360,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param acceptCertificateTransferRequest
      *        The input for the AcceptCertificateTransfer operation.
+     * @return Result of the AcceptCertificateTransfer operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
@@ -348,31 +380,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.AcceptCertificateTransfer
      */
     @Override
-    public void acceptCertificateTransfer(
+    public AcceptCertificateTransferResult acceptCertificateTransfer(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest) {
         ExecutionContext executionContext = createExecutionContext(acceptCertificateTransferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AcceptCertificateTransferRequest> request = null;
-        Response<Void> response = null;
+        Response<AcceptCertificateTransferResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AcceptCertificateTransferRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(acceptCertificateTransferRequest));
+                request = new AcceptCertificateTransferRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(acceptCertificateTransferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptCertificateTransferResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new AcceptCertificateTransferResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -388,6 +424,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param attachPrincipalPolicyRequest
      *        The input for the AttachPrincipalPolicy operation.
+     * @return Result of the AttachPrincipalPolicy operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException
@@ -405,31 +443,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.AttachPrincipalPolicy
      */
     @Override
-    public void attachPrincipalPolicy(
+    public AttachPrincipalPolicyResult attachPrincipalPolicy(
             AttachPrincipalPolicyRequest attachPrincipalPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(attachPrincipalPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AttachPrincipalPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<AttachPrincipalPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachPrincipalPolicyRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(attachPrincipalPolicyRequest));
+                request = new AttachPrincipalPolicyRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(attachPrincipalPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<AttachPrincipalPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AttachPrincipalPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -473,20 +515,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachThingPrincipalRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(attachThingPrincipalRequest));
+                request = new AttachThingPrincipalRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(attachThingPrincipalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AttachThingPrincipalResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new AttachThingPrincipalResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AttachThingPrincipalResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AttachThingPrincipalResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -516,6 +558,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param cancelCertificateTransferRequest
      *        The input for the CancelCertificateTransfer operation.
+     * @return Result of the CancelCertificateTransfer operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
@@ -534,31 +578,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.CancelCertificateTransfer
      */
     @Override
-    public void cancelCertificateTransfer(
+    public CancelCertificateTransferResult cancelCertificateTransfer(
             CancelCertificateTransferRequest cancelCertificateTransferRequest) {
         ExecutionContext executionContext = createExecutionContext(cancelCertificateTransferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CancelCertificateTransferRequest> request = null;
-        Response<Void> response = null;
+        Response<CancelCertificateTransferResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelCertificateTransferRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(cancelCertificateTransferRequest));
+                request = new CancelCertificateTransferRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(cancelCertificateTransferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<CancelCertificateTransferResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CancelCertificateTransferResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -653,20 +701,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCertificateFromCsrRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createCertificateFromCsrRequest));
+                request = new CreateCertificateFromCsrRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createCertificateFromCsrRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateCertificateFromCsrResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCertificateFromCsrResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new CreateCertificateFromCsrResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CreateCertificateFromCsrResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -716,20 +764,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateKeysAndCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createKeysAndCertificateRequest));
+                request = new CreateKeysAndCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createKeysAndCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateKeysAndCertificateResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<CreateKeysAndCertificateResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new CreateKeysAndCertificateResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CreateKeysAndCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -782,18 +830,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePolicyRequestMarshaller().marshall(super
-                        .beforeMarshalling(createPolicyRequest));
+                request = new CreatePolicyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePolicyResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreatePolicyResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreatePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -853,20 +902,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePolicyVersionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createPolicyVersionRequest));
+                request = new CreatePolicyVersionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createPolicyVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePolicyVersionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreatePolicyVersionResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePolicyVersionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreatePolicyVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -911,18 +960,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateThingRequestMarshaller().marshall(super
-                        .beforeMarshalling(createThingRequest));
+                request = new CreateThingRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createThingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateThingResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateThingResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateThingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateThingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -942,6 +992,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param createTopicRuleRequest
      *        The input for the CreateTopicRule operation.
+     * @return Result of the CreateTopicRule operation returned by the service.
      * @throws SqlParseException
      *         The Rule-SQL expression can't be parsed correctly.
      * @throws InternalException
@@ -955,29 +1006,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.CreateTopicRule
      */
     @Override
-    public void createTopicRule(CreateTopicRuleRequest createTopicRuleRequest) {
+    public CreateTopicRuleResult createTopicRule(
+            CreateTopicRuleRequest createTopicRuleRequest) {
         ExecutionContext executionContext = createExecutionContext(createTopicRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateTopicRuleRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateTopicRuleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTopicRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(createTopicRuleRequest));
+                request = new CreateTopicRuleRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createTopicRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTopicRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1023,20 +1080,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCACertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteCACertificateRequest));
+                request = new DeleteCACertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCACertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteCACertificateResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DeleteCACertificateResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCACertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteCACertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1061,6 +1118,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param deleteCertificateRequest
      *        The input for the DeleteCertificate operation.
+     * @return Result of the DeleteCertificate operation returned by the
+     *         service.
      * @throws CertificateStateException
      *         The certificate operation is not allowed.
      * @throws DeleteConflictException
@@ -1081,31 +1140,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.DeleteCertificate
      */
     @Override
-    public void deleteCertificate(
+    public DeleteCertificateResult deleteCertificate(
             DeleteCertificateRequest deleteCertificateRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteCertificateRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteCertificateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteCertificateRequest));
+                request = new DeleteCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1134,6 +1197,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param deletePolicyRequest
      *        The input for the DeletePolicy operation.
+     * @return Result of the DeletePolicy operation returned by the service.
      * @throws DeleteConflictException
      *         You can't delete the resource because it is attached to one or
      *         more resources.
@@ -1152,29 +1216,34 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.DeletePolicy
      */
     @Override
-    public void deletePolicy(DeletePolicyRequest deletePolicyRequest) {
+    public DeletePolicyResult deletePolicy(
+            DeletePolicyRequest deletePolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeletePolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeletePolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePolicyRequestMarshaller().marshall(super
-                        .beforeMarshalling(deletePolicyRequest));
+                request = new DeletePolicyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deletePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeletePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1192,6 +1261,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param deletePolicyVersionRequest
      *        The input for the DeletePolicyVersion operation.
+     * @return Result of the DeletePolicyVersion operation returned by the
+     *         service.
      * @throws DeleteConflictException
      *         You can't delete the resource because it is attached to one or
      *         more resources.
@@ -1210,31 +1281,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.DeletePolicyVersion
      */
     @Override
-    public void deletePolicyVersion(
+    public DeletePolicyVersionResult deletePolicyVersion(
             DeletePolicyVersionRequest deletePolicyVersionRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeletePolicyVersionRequest> request = null;
-        Response<Void> response = null;
+        Response<DeletePolicyVersionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePolicyVersionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deletePolicyVersionRequest));
+                request = new DeletePolicyVersionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deletePolicyVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePolicyVersionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeletePolicyVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1276,20 +1351,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRegistrationCodeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteRegistrationCodeRequest));
+                request = new DeleteRegistrationCodeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteRegistrationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteRegistrationCodeResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DeleteRegistrationCodeResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRegistrationCodeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteRegistrationCodeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1334,18 +1409,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteThingRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteThingRequest));
+                request = new DeleteThingRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteThingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteThingResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DeleteThingResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteThingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteThingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1363,6 +1439,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param deleteTopicRuleRequest
      *        The input for the DeleteTopicRule operation.
+     * @return Result of the DeleteTopicRule operation returned by the service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -1374,29 +1451,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.DeleteTopicRule
      */
     @Override
-    public void deleteTopicRule(DeleteTopicRuleRequest deleteTopicRuleRequest) {
+    public DeleteTopicRuleResult deleteTopicRule(
+            DeleteTopicRuleRequest deleteTopicRuleRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteTopicRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteTopicRuleRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteTopicRuleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTopicRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteTopicRuleRequest));
+                request = new DeleteTopicRuleRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteTopicRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTopicRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1440,20 +1523,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCACertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeCACertificateRequest));
+                request = new DescribeCACertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeCACertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCACertificateResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeCACertificateResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCACertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeCACertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1500,20 +1583,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeCertificateRequest));
+                request = new DescribeCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCertificateResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeCertificateResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1555,7 +1638,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEndpointRequestMarshaller()
+                request = new DescribeEndpointRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeEndpointRequest));
                 // Binds the request metrics to the current request.
@@ -1564,10 +1647,11 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeEndpointResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeEndpointResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEndpointResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeEndpointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1613,18 +1697,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeThingRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeThingRequest));
+                request = new DescribeThingRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeThingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeThingResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeThingResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeThingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1642,6 +1727,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param detachPrincipalPolicyRequest
      *        The input for the DetachPrincipalPolicy operation.
+     * @return Result of the DetachPrincipalPolicy operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException
@@ -1657,31 +1744,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.DetachPrincipalPolicy
      */
     @Override
-    public void detachPrincipalPolicy(
+    public DetachPrincipalPolicyResult detachPrincipalPolicy(
             DetachPrincipalPolicyRequest detachPrincipalPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(detachPrincipalPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DetachPrincipalPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DetachPrincipalPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachPrincipalPolicyRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(detachPrincipalPolicyRequest));
+                request = new DetachPrincipalPolicyRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(detachPrincipalPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DetachPrincipalPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DetachPrincipalPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1725,20 +1816,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachThingPrincipalRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(detachThingPrincipalRequest));
+                request = new DetachThingPrincipalRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(detachThingPrincipalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DetachThingPrincipalResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DetachThingPrincipalResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DetachThingPrincipalResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DetachThingPrincipalResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1756,6 +1847,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param disableTopicRuleRequest
      *        The input for the DisableTopicRuleRequest operation.
+     * @return Result of the DisableTopicRule operation returned by the service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -1767,18 +1859,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.DisableTopicRule
      */
     @Override
-    public void disableTopicRule(DisableTopicRuleRequest disableTopicRuleRequest) {
+    public DisableTopicRuleResult disableTopicRule(
+            DisableTopicRuleRequest disableTopicRuleRequest) {
         ExecutionContext executionContext = createExecutionContext(disableTopicRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableTopicRuleRequest> request = null;
-        Response<Void> response = null;
+        Response<DisableTopicRuleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableTopicRuleRequestMarshaller()
+                request = new DisableTopicRuleRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(disableTopicRuleRequest));
                 // Binds the request metrics to the current request.
@@ -1787,10 +1880,14 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableTopicRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisableTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1805,6 +1902,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param enableTopicRuleRequest
      *        The input for the EnableTopicRuleRequest operation.
+     * @return Result of the EnableTopicRule operation returned by the service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -1816,29 +1914,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.EnableTopicRule
      */
     @Override
-    public void enableTopicRule(EnableTopicRuleRequest enableTopicRuleRequest) {
+    public EnableTopicRuleResult enableTopicRule(
+            EnableTopicRuleRequest enableTopicRuleRequest) {
         ExecutionContext executionContext = createExecutionContext(enableTopicRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableTopicRuleRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableTopicRuleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableTopicRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(enableTopicRuleRequest));
+                request = new EnableTopicRuleRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(enableTopicRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<EnableTopicRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EnableTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1876,20 +1980,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetLoggingOptionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getLoggingOptionsRequest));
+                request = new GetLoggingOptionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getLoggingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetLoggingOptionsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetLoggingOptionsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetLoggingOptionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetLoggingOptionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1935,18 +2039,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPolicyRequestMarshaller().marshall(super
-                        .beforeMarshalling(getPolicyRequest));
+                request = new GetPolicyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetPolicyResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetPolicyResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1992,7 +2097,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPolicyVersionRequestMarshaller()
+                request = new GetPolicyVersionRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(getPolicyVersionRequest));
                 // Binds the request metrics to the current request.
@@ -2001,10 +2106,11 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetPolicyVersionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetPolicyVersionResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetPolicyVersionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetPolicyVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2047,20 +2153,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRegistrationCodeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getRegistrationCodeRequest));
+                request = new GetRegistrationCodeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getRegistrationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRegistrationCodeResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetRegistrationCodeResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetRegistrationCodeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetRegistrationCodeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2102,18 +2208,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTopicRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(getTopicRuleRequest));
+                request = new GetTopicRuleRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getTopicRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetTopicRuleResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetTopicRuleResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetTopicRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetTopicRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2162,20 +2269,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCACertificatesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listCACertificatesRequest));
+                request = new ListCACertificatesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listCACertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListCACertificatesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListCACertificatesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListCACertificatesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListCACertificatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2223,7 +2330,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCertificatesRequestMarshaller()
+                request = new ListCertificatesRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(listCertificatesRequest));
                 // Binds the request metrics to the current request.
@@ -2232,10 +2339,11 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListCertificatesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListCertificatesResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListCertificatesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListCertificatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2280,20 +2388,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCertificatesByCARequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listCertificatesByCARequest));
+                request = new ListCertificatesByCARequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listCertificatesByCARequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListCertificatesByCAResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListCertificatesByCAResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListCertificatesByCAResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListCertificatesByCAResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2337,18 +2445,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPoliciesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listPoliciesRequest));
+                request = new ListPoliciesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPoliciesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListPoliciesResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListPoliciesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListPoliciesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2396,20 +2505,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPolicyVersionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listPolicyVersionsRequest));
+                request = new ListPolicyVersionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listPolicyVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPolicyVersionsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListPolicyVersionsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListPolicyVersionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListPolicyVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2459,20 +2568,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPrincipalPoliciesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listPrincipalPoliciesRequest));
+                request = new ListPrincipalPoliciesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listPrincipalPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPrincipalPoliciesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListPrincipalPoliciesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListPrincipalPoliciesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListPrincipalPoliciesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2517,20 +2626,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPrincipalThingsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listPrincipalThingsRequest));
+                request = new ListPrincipalThingsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listPrincipalThingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPrincipalThingsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListPrincipalThingsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListPrincipalThingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListPrincipalThingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2575,20 +2684,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListThingPrincipalsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listThingPrincipalsRequest));
+                request = new ListThingPrincipalsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listThingPrincipalsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListThingPrincipalsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListThingPrincipalsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListThingPrincipalsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListThingPrincipalsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2633,18 +2742,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListThingsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listThingsRequest));
+                request = new ListThingsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listThingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListThingsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListThingsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListThingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListThingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2684,18 +2794,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTopicRulesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listTopicRulesRequest));
+                request = new ListTopicRulesRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(listTopicRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTopicRulesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListTopicRulesResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTopicRulesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTopicRulesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2755,20 +2867,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterCACertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(registerCACertificateRequest));
+                request = new RegisterCACertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(registerCACertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterCACertificateResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new RegisterCACertificateResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterCACertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RegisterCACertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2827,20 +2939,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(registerCertificateRequest));
+                request = new RegisterCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(registerCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterCertificateResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new RegisterCertificateResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RegisterCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2869,6 +2981,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param rejectCertificateTransferRequest
      *        The input for the RejectCertificateTransfer operation.
+     * @return Result of the RejectCertificateTransfer operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
@@ -2887,31 +3001,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.RejectCertificateTransfer
      */
     @Override
-    public void rejectCertificateTransfer(
+    public RejectCertificateTransferResult rejectCertificateTransfer(
             RejectCertificateTransferRequest rejectCertificateTransferRequest) {
         ExecutionContext executionContext = createExecutionContext(rejectCertificateTransferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RejectCertificateTransferRequest> request = null;
-        Response<Void> response = null;
+        Response<RejectCertificateTransferResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RejectCertificateTransferRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(rejectCertificateTransferRequest));
+                request = new RejectCertificateTransferRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(rejectCertificateTransferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<RejectCertificateTransferResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new RejectCertificateTransferResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2929,6 +3047,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param replaceTopicRuleRequest
      *        The input for the ReplaceTopicRule operation.
+     * @return Result of the ReplaceTopicRule operation returned by the service.
      * @throws SqlParseException
      *         The Rule-SQL expression can't be parsed correctly.
      * @throws InternalException
@@ -2942,18 +3061,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.ReplaceTopicRule
      */
     @Override
-    public void replaceTopicRule(ReplaceTopicRuleRequest replaceTopicRuleRequest) {
+    public ReplaceTopicRuleResult replaceTopicRule(
+            ReplaceTopicRuleRequest replaceTopicRuleRequest) {
         ExecutionContext executionContext = createExecutionContext(replaceTopicRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ReplaceTopicRuleRequest> request = null;
-        Response<Void> response = null;
+        Response<ReplaceTopicRuleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReplaceTopicRuleRequestMarshaller()
+                request = new ReplaceTopicRuleRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(replaceTopicRuleRequest));
                 // Binds the request metrics to the current request.
@@ -2962,10 +3082,14 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<ReplaceTopicRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ReplaceTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2983,6 +3107,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param setDefaultPolicyVersionRequest
      *        The input for the SetDefaultPolicyVersion operation.
+     * @return Result of the SetDefaultPolicyVersion operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException
@@ -2998,31 +3124,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.SetDefaultPolicyVersion
      */
     @Override
-    public void setDefaultPolicyVersion(
+    public SetDefaultPolicyVersionResult setDefaultPolicyVersion(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest) {
         ExecutionContext executionContext = createExecutionContext(setDefaultPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetDefaultPolicyVersionRequest> request = null;
-        Response<Void> response = null;
+        Response<SetDefaultPolicyVersionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetDefaultPolicyVersionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(setDefaultPolicyVersionRequest));
+                request = new SetDefaultPolicyVersionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(setDefaultPolicyVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<SetDefaultPolicyVersionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SetDefaultPolicyVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3037,6 +3167,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param setLoggingOptionsRequest
      *        The input for the SetLoggingOptions operation.
+     * @return Result of the SetLoggingOptions operation returned by the
+     *         service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -3046,31 +3178,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.SetLoggingOptions
      */
     @Override
-    public void setLoggingOptions(
+    public SetLoggingOptionsResult setLoggingOptions(
             SetLoggingOptionsRequest setLoggingOptionsRequest) {
         ExecutionContext executionContext = createExecutionContext(setLoggingOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetLoggingOptionsRequest> request = null;
-        Response<Void> response = null;
+        Response<SetLoggingOptionsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetLoggingOptionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(setLoggingOptionsRequest));
+                request = new SetLoggingOptionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(setLoggingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<SetLoggingOptionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SetLoggingOptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3134,20 +3270,20 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TransferCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(transferCertificateRequest));
+                request = new TransferCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(transferCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TransferCertificateResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new TransferCertificateResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<TransferCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new TransferCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3165,6 +3301,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param updateCACertificateRequest
      *        The input to the UpdateCACertificate operation.
+     * @return Result of the UpdateCACertificate operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException
@@ -3180,31 +3318,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.UpdateCACertificate
      */
     @Override
-    public void updateCACertificate(
+    public UpdateCACertificateResult updateCACertificate(
             UpdateCACertificateRequest updateCACertificateRequest) {
         ExecutionContext executionContext = createExecutionContext(updateCACertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateCACertificateRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateCACertificateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateCACertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateCACertificateRequest));
+                request = new UpdateCACertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateCACertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCACertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateCACertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3229,6 +3371,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param updateCertificateRequest
      *        The input for the UpdateCertificate operation.
+     * @return Result of the UpdateCertificate operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws CertificateStateException
@@ -3246,31 +3390,35 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.UpdateCertificate
      */
     @Override
-    public void updateCertificate(
+    public UpdateCertificateResult updateCertificate(
             UpdateCertificateRequest updateCertificateRequest) {
         ExecutionContext executionContext = createExecutionContext(updateCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateCertificateRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateCertificateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateCertificateRequest));
+                request = new UpdateCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3312,18 +3460,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateThingRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateThingRequest));
+                request = new UpdateThingRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateThingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateThingResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateThingResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateThingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3397,8 +3546,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -72,7 +72,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
     /**
-     * List of exception unmarshallers for all Amazon EC2 exceptions.
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -416,17 +416,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param assignPrivateIpAddressesRequest
      *        Contains the parameters for AssignPrivateIpAddresses.
+     * @return Result of the AssignPrivateIpAddresses operation returned by the
+     *         service.
      * @sample AmazonEC2.AssignPrivateIpAddresses
      */
     @Override
-    public void assignPrivateIpAddresses(
+    public AssignPrivateIpAddressesResult assignPrivateIpAddresses(
             AssignPrivateIpAddressesRequest assignPrivateIpAddressesRequest) {
         ExecutionContext executionContext = createExecutionContext(assignPrivateIpAddressesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AssignPrivateIpAddressesRequest> request = null;
-        Response<Void> response = null;
+        Response<AssignPrivateIpAddressesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -440,9 +442,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AssignPrivateIpAddressesResult> responseHandler = new StaxResponseHandler<AssignPrivateIpAddressesResult>(
+                    new AssignPrivateIpAddressesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -539,17 +543,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param associateDhcpOptionsRequest
      *        Contains the parameters for AssociateDhcpOptions.
+     * @return Result of the AssociateDhcpOptions operation returned by the
+     *         service.
      * @sample AmazonEC2.AssociateDhcpOptions
      */
     @Override
-    public void associateDhcpOptions(
+    public AssociateDhcpOptionsResult associateDhcpOptions(
             AssociateDhcpOptionsRequest associateDhcpOptionsRequest) {
         ExecutionContext executionContext = createExecutionContext(associateDhcpOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AssociateDhcpOptionsRequest> request = null;
-        Response<Void> response = null;
+        Response<AssociateDhcpOptionsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -563,9 +569,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AssociateDhcpOptionsResult> responseHandler = new StaxResponseHandler<AssociateDhcpOptionsResult>(
+                    new AssociateDhcpOptionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -698,17 +706,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param attachInternetGatewayRequest
      *        Contains the parameters for AttachInternetGateway.
+     * @return Result of the AttachInternetGateway operation returned by the
+     *         service.
      * @sample AmazonEC2.AttachInternetGateway
      */
     @Override
-    public void attachInternetGateway(
+    public AttachInternetGatewayResult attachInternetGateway(
             AttachInternetGatewayRequest attachInternetGatewayRequest) {
         ExecutionContext executionContext = createExecutionContext(attachInternetGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AttachInternetGatewayRequest> request = null;
-        Response<Void> response = null;
+        Response<AttachInternetGatewayResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -722,9 +732,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AttachInternetGatewayResult> responseHandler = new StaxResponseHandler<AttachInternetGatewayResult>(
+                    new AttachInternetGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -956,17 +968,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param authorizeSecurityGroupEgressRequest
      *        Contains the parameters for AuthorizeSecurityGroupEgress.
+     * @return Result of the AuthorizeSecurityGroupEgress operation returned by
+     *         the service.
      * @sample AmazonEC2.AuthorizeSecurityGroupEgress
      */
     @Override
-    public void authorizeSecurityGroupEgress(
+    public AuthorizeSecurityGroupEgressResult authorizeSecurityGroupEgress(
             AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest) {
         ExecutionContext executionContext = createExecutionContext(authorizeSecurityGroupEgressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AuthorizeSecurityGroupEgressRequest> request = null;
-        Response<Void> response = null;
+        Response<AuthorizeSecurityGroupEgressResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -980,9 +994,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AuthorizeSecurityGroupEgressResult> responseHandler = new StaxResponseHandler<AuthorizeSecurityGroupEgressResult>(
+                    new AuthorizeSecurityGroupEgressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1024,17 +1040,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param authorizeSecurityGroupIngressRequest
      *        Contains the parameters for AuthorizeSecurityGroupIngress.
+     * @return Result of the AuthorizeSecurityGroupIngress operation returned by
+     *         the service.
      * @sample AmazonEC2.AuthorizeSecurityGroupIngress
      */
     @Override
-    public void authorizeSecurityGroupIngress(
+    public AuthorizeSecurityGroupIngressResult authorizeSecurityGroupIngress(
             AuthorizeSecurityGroupIngressRequest authorizeSecurityGroupIngressRequest) {
         ExecutionContext executionContext = createExecutionContext(authorizeSecurityGroupIngressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AuthorizeSecurityGroupIngressRequest> request = null;
-        Response<Void> response = null;
+        Response<AuthorizeSecurityGroupIngressResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1048,9 +1066,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AuthorizeSecurityGroupIngressResult> responseHandler = new StaxResponseHandler<AuthorizeSecurityGroupIngressResult>(
+                    new AuthorizeSecurityGroupIngressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1178,17 +1198,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param cancelConversionTaskRequest
      *        Contains the parameters for CancelConversionTask.
+     * @return Result of the CancelConversionTask operation returned by the
+     *         service.
      * @sample AmazonEC2.CancelConversionTask
      */
     @Override
-    public void cancelConversionTask(
+    public CancelConversionTaskResult cancelConversionTask(
             CancelConversionTaskRequest cancelConversionTaskRequest) {
         ExecutionContext executionContext = createExecutionContext(cancelConversionTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CancelConversionTaskRequest> request = null;
-        Response<Void> response = null;
+        Response<CancelConversionTaskResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1202,9 +1224,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<CancelConversionTaskResult> responseHandler = new StaxResponseHandler<CancelConversionTaskResult>(
+                    new CancelConversionTaskResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1222,16 +1246,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param cancelExportTaskRequest
      *        Contains the parameters for CancelExportTask.
+     * @return Result of the CancelExportTask operation returned by the service.
      * @sample AmazonEC2.CancelExportTask
      */
     @Override
-    public void cancelExportTask(CancelExportTaskRequest cancelExportTaskRequest) {
+    public CancelExportTaskResult cancelExportTask(
+            CancelExportTaskRequest cancelExportTaskRequest) {
         ExecutionContext executionContext = createExecutionContext(cancelExportTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CancelExportTaskRequest> request = null;
-        Response<Void> response = null;
+        Response<CancelExportTaskResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1245,9 +1271,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<CancelExportTaskResult> responseHandler = new StaxResponseHandler<CancelExportTaskResult>(
+                    new CancelExportTaskResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2217,17 +2245,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param createNetworkAclEntryRequest
      *        Contains the parameters for CreateNetworkAclEntry.
+     * @return Result of the CreateNetworkAclEntry operation returned by the
+     *         service.
      * @sample AmazonEC2.CreateNetworkAclEntry
      */
     @Override
-    public void createNetworkAclEntry(
+    public CreateNetworkAclEntryResult createNetworkAclEntry(
             CreateNetworkAclEntryRequest createNetworkAclEntryRequest) {
         ExecutionContext executionContext = createExecutionContext(createNetworkAclEntryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateNetworkAclEntryRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateNetworkAclEntryResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2241,9 +2271,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<CreateNetworkAclEntryResult> responseHandler = new StaxResponseHandler<CreateNetworkAclEntryResult>(
+                    new CreateNetworkAclEntryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2318,17 +2350,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param createPlacementGroupRequest
      *        Contains the parameters for CreatePlacementGroup.
+     * @return Result of the CreatePlacementGroup operation returned by the
+     *         service.
      * @sample AmazonEC2.CreatePlacementGroup
      */
     @Override
-    public void createPlacementGroup(
+    public CreatePlacementGroupResult createPlacementGroup(
             CreatePlacementGroupRequest createPlacementGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(createPlacementGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreatePlacementGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<CreatePlacementGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2342,9 +2376,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<CreatePlacementGroupResult> responseHandler = new StaxResponseHandler<CreatePlacementGroupResult>(
+                    new CreatePlacementGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2857,16 +2893,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param createTagsRequest
      *        Contains the parameters for CreateTags.
+     * @return Result of the CreateTags operation returned by the service.
      * @sample AmazonEC2.CreateTags
      */
     @Override
-    public void createTags(CreateTagsRequest createTagsRequest) {
+    public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
         ExecutionContext executionContext = createExecutionContext(createTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateTagsRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateTagsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2879,9 +2916,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<CreateTagsResult> responseHandler = new StaxResponseHandler<CreateTagsResult>(
+                    new CreateTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3228,17 +3267,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param createVpnConnectionRouteRequest
      *        Contains the parameters for CreateVpnConnectionRoute.
+     * @return Result of the CreateVpnConnectionRoute operation returned by the
+     *         service.
      * @sample AmazonEC2.CreateVpnConnectionRoute
      */
     @Override
-    public void createVpnConnectionRoute(
+    public CreateVpnConnectionRouteResult createVpnConnectionRoute(
             CreateVpnConnectionRouteRequest createVpnConnectionRouteRequest) {
         ExecutionContext executionContext = createExecutionContext(createVpnConnectionRouteRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateVpnConnectionRouteRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateVpnConnectionRouteResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3252,9 +3293,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<CreateVpnConnectionRouteResult> responseHandler = new StaxResponseHandler<CreateVpnConnectionRouteResult>(
+                    new CreateVpnConnectionRouteResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3322,17 +3365,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteCustomerGatewayRequest
      *        Contains the parameters for DeleteCustomerGateway.
+     * @return Result of the DeleteCustomerGateway operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteCustomerGateway
      */
     @Override
-    public void deleteCustomerGateway(
+    public DeleteCustomerGatewayResult deleteCustomerGateway(
             DeleteCustomerGatewayRequest deleteCustomerGatewayRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteCustomerGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteCustomerGatewayRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteCustomerGatewayResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3346,9 +3391,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteCustomerGatewayResult> responseHandler = new StaxResponseHandler<DeleteCustomerGatewayResult>(
+                    new DeleteCustomerGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3366,17 +3413,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteDhcpOptionsRequest
      *        Contains the parameters for DeleteDhcpOptions.
+     * @return Result of the DeleteDhcpOptions operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteDhcpOptions
      */
     @Override
-    public void deleteDhcpOptions(
+    public DeleteDhcpOptionsResult deleteDhcpOptions(
             DeleteDhcpOptionsRequest deleteDhcpOptionsRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteDhcpOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteDhcpOptionsRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteDhcpOptionsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3390,9 +3439,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteDhcpOptionsResult> responseHandler = new StaxResponseHandler<DeleteDhcpOptionsResult>(
+                    new DeleteDhcpOptionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3451,17 +3502,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteInternetGatewayRequest
      *        Contains the parameters for DeleteInternetGateway.
+     * @return Result of the DeleteInternetGateway operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteInternetGateway
      */
     @Override
-    public void deleteInternetGateway(
+    public DeleteInternetGatewayResult deleteInternetGateway(
             DeleteInternetGatewayRequest deleteInternetGatewayRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteInternetGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteInternetGatewayRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteInternetGatewayResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3475,9 +3528,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteInternetGatewayResult> responseHandler = new StaxResponseHandler<DeleteInternetGatewayResult>(
+                    new DeleteInternetGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3493,16 +3548,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteKeyPairRequest
      *        Contains the parameters for DeleteKeyPair.
+     * @return Result of the DeleteKeyPair operation returned by the service.
      * @sample AmazonEC2.DeleteKeyPair
      */
     @Override
-    public void deleteKeyPair(DeleteKeyPairRequest deleteKeyPairRequest) {
+    public DeleteKeyPairResult deleteKeyPair(
+            DeleteKeyPairRequest deleteKeyPairRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteKeyPairRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteKeyPairResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3515,9 +3572,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteKeyPairResult> responseHandler = new StaxResponseHandler<DeleteKeyPairResult>(
+                    new DeleteKeyPairResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3580,16 +3639,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteNetworkAclRequest
      *        Contains the parameters for DeleteNetworkAcl.
+     * @return Result of the DeleteNetworkAcl operation returned by the service.
      * @sample AmazonEC2.DeleteNetworkAcl
      */
     @Override
-    public void deleteNetworkAcl(DeleteNetworkAclRequest deleteNetworkAclRequest) {
+    public DeleteNetworkAclResult deleteNetworkAcl(
+            DeleteNetworkAclRequest deleteNetworkAclRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteNetworkAclRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteNetworkAclRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteNetworkAclResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3603,9 +3664,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteNetworkAclResult> responseHandler = new StaxResponseHandler<DeleteNetworkAclResult>(
+                    new DeleteNetworkAclResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3621,17 +3684,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteNetworkAclEntryRequest
      *        Contains the parameters for DeleteNetworkAclEntry.
+     * @return Result of the DeleteNetworkAclEntry operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteNetworkAclEntry
      */
     @Override
-    public void deleteNetworkAclEntry(
+    public DeleteNetworkAclEntryResult deleteNetworkAclEntry(
             DeleteNetworkAclEntryRequest deleteNetworkAclEntryRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteNetworkAclEntryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteNetworkAclEntryRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteNetworkAclEntryResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3645,9 +3710,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteNetworkAclEntryResult> responseHandler = new StaxResponseHandler<DeleteNetworkAclEntryResult>(
+                    new DeleteNetworkAclEntryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3663,17 +3730,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteNetworkInterfaceRequest
      *        Contains the parameters for DeleteNetworkInterface.
+     * @return Result of the DeleteNetworkInterface operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteNetworkInterface
      */
     @Override
-    public void deleteNetworkInterface(
+    public DeleteNetworkInterfaceResult deleteNetworkInterface(
             DeleteNetworkInterfaceRequest deleteNetworkInterfaceRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteNetworkInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteNetworkInterfaceRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteNetworkInterfaceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3687,9 +3756,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteNetworkInterfaceResult> responseHandler = new StaxResponseHandler<DeleteNetworkInterfaceResult>(
+                    new DeleteNetworkInterfaceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3710,17 +3781,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deletePlacementGroupRequest
      *        Contains the parameters for DeletePlacementGroup.
+     * @return Result of the DeletePlacementGroup operation returned by the
+     *         service.
      * @sample AmazonEC2.DeletePlacementGroup
      */
     @Override
-    public void deletePlacementGroup(
+    public DeletePlacementGroupResult deletePlacementGroup(
             DeletePlacementGroupRequest deletePlacementGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePlacementGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeletePlacementGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<DeletePlacementGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3734,9 +3807,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeletePlacementGroupResult> responseHandler = new StaxResponseHandler<DeletePlacementGroupResult>(
+                    new DeletePlacementGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3751,16 +3826,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteRouteRequest
      *        Contains the parameters for DeleteRoute.
+     * @return Result of the DeleteRoute operation returned by the service.
      * @sample AmazonEC2.DeleteRoute
      */
     @Override
-    public void deleteRoute(DeleteRouteRequest deleteRouteRequest) {
+    public DeleteRouteResult deleteRoute(DeleteRouteRequest deleteRouteRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteRouteRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteRouteRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteRouteResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3773,9 +3849,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteRouteResult> responseHandler = new StaxResponseHandler<DeleteRouteResult>(
+                    new DeleteRouteResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3792,16 +3870,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteRouteTableRequest
      *        Contains the parameters for DeleteRouteTable.
+     * @return Result of the DeleteRouteTable operation returned by the service.
      * @sample AmazonEC2.DeleteRouteTable
      */
     @Override
-    public void deleteRouteTable(DeleteRouteTableRequest deleteRouteTableRequest) {
+    public DeleteRouteTableResult deleteRouteTable(
+            DeleteRouteTableRequest deleteRouteTableRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteRouteTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteRouteTableRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteRouteTableResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3815,9 +3895,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteRouteTableResult> responseHandler = new StaxResponseHandler<DeleteRouteTableResult>(
+                    new DeleteRouteTableResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3838,17 +3920,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteSecurityGroupRequest
      *        Contains the parameters for DeleteSecurityGroup.
+     * @return Result of the DeleteSecurityGroup operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteSecurityGroup
      */
     @Override
-    public void deleteSecurityGroup(
+    public DeleteSecurityGroupResult deleteSecurityGroup(
             DeleteSecurityGroupRequest deleteSecurityGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteSecurityGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteSecurityGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteSecurityGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3862,9 +3946,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteSecurityGroupResult> responseHandler = new StaxResponseHandler<DeleteSecurityGroupResult>(
+                    new DeleteSecurityGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3899,16 +3985,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteSnapshotRequest
      *        Contains the parameters for DeleteSnapshot.
+     * @return Result of the DeleteSnapshot operation returned by the service.
      * @sample AmazonEC2.DeleteSnapshot
      */
     @Override
-    public void deleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest) {
+    public DeleteSnapshotResult deleteSnapshot(
+            DeleteSnapshotRequest deleteSnapshotRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteSnapshotRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteSnapshotResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3921,9 +4009,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteSnapshotResult> responseHandler = new StaxResponseHandler<DeleteSnapshotResult>(
+                    new DeleteSnapshotResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3938,17 +4028,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteSpotDatafeedSubscriptionRequest
      *        Contains the parameters for DeleteSpotDatafeedSubscription.
+     * @return Result of the DeleteSpotDatafeedSubscription operation returned
+     *         by the service.
      * @sample AmazonEC2.DeleteSpotDatafeedSubscription
      */
     @Override
-    public void deleteSpotDatafeedSubscription(
+    public DeleteSpotDatafeedSubscriptionResult deleteSpotDatafeedSubscription(
             DeleteSpotDatafeedSubscriptionRequest deleteSpotDatafeedSubscriptionRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteSpotDatafeedSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteSpotDatafeedSubscriptionRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteSpotDatafeedSubscriptionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3962,9 +4054,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteSpotDatafeedSubscriptionResult> responseHandler = new StaxResponseHandler<DeleteSpotDatafeedSubscriptionResult>(
+                    new DeleteSpotDatafeedSubscriptionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3973,8 +4067,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void deleteSpotDatafeedSubscription() {
-        deleteSpotDatafeedSubscription(new DeleteSpotDatafeedSubscriptionRequest());
+    public DeleteSpotDatafeedSubscriptionResult deleteSpotDatafeedSubscription() {
+        return deleteSpotDatafeedSubscription(new DeleteSpotDatafeedSubscriptionRequest());
     }
 
     /**
@@ -3985,16 +4079,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteSubnetRequest
      *        Contains the parameters for DeleteSubnet.
+     * @return Result of the DeleteSubnet operation returned by the service.
      * @sample AmazonEC2.DeleteSubnet
      */
     @Override
-    public void deleteSubnet(DeleteSubnetRequest deleteSubnetRequest) {
+    public DeleteSubnetResult deleteSubnet(
+            DeleteSubnetRequest deleteSubnetRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteSubnetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteSubnetRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteSubnetResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -4007,9 +4103,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteSubnetResult> responseHandler = new StaxResponseHandler<DeleteSubnetResult>(
+                    new DeleteSubnetResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4031,16 +4129,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteTagsRequest
      *        Contains the parameters for DeleteTags.
+     * @return Result of the DeleteTags operation returned by the service.
      * @sample AmazonEC2.DeleteTags
      */
     @Override
-    public void deleteTags(DeleteTagsRequest deleteTagsRequest) {
+    public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteTagsRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteTagsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -4053,9 +4152,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(
+                    new DeleteTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4083,16 +4184,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteVolumeRequest
      *        Contains the parameters for DeleteVolume.
+     * @return Result of the DeleteVolume operation returned by the service.
      * @sample AmazonEC2.DeleteVolume
      */
     @Override
-    public void deleteVolume(DeleteVolumeRequest deleteVolumeRequest) {
+    public DeleteVolumeResult deleteVolume(
+            DeleteVolumeRequest deleteVolumeRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteVolumeRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteVolumeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -4105,9 +4208,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteVolumeResult> responseHandler = new StaxResponseHandler<DeleteVolumeResult>(
+                    new DeleteVolumeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4127,16 +4232,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteVpcRequest
      *        Contains the parameters for DeleteVpc.
+     * @return Result of the DeleteVpc operation returned by the service.
      * @sample AmazonEC2.DeleteVpc
      */
     @Override
-    public void deleteVpc(DeleteVpcRequest deleteVpcRequest) {
+    public DeleteVpcResult deleteVpc(DeleteVpcRequest deleteVpcRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteVpcRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteVpcRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteVpcResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -4149,9 +4255,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteVpcResult> responseHandler = new StaxResponseHandler<DeleteVpcResult>(
+                    new DeleteVpcResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4272,17 +4380,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteVpnConnectionRequest
      *        Contains the parameters for DeleteVpnConnection.
+     * @return Result of the DeleteVpnConnection operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteVpnConnection
      */
     @Override
-    public void deleteVpnConnection(
+    public DeleteVpnConnectionResult deleteVpnConnection(
             DeleteVpnConnectionRequest deleteVpnConnectionRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteVpnConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteVpnConnectionRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteVpnConnectionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -4296,9 +4406,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteVpnConnectionResult> responseHandler = new StaxResponseHandler<DeleteVpnConnectionResult>(
+                    new DeleteVpnConnectionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4316,17 +4428,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteVpnConnectionRouteRequest
      *        Contains the parameters for DeleteVpnConnectionRoute.
+     * @return Result of the DeleteVpnConnectionRoute operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteVpnConnectionRoute
      */
     @Override
-    public void deleteVpnConnectionRoute(
+    public DeleteVpnConnectionRouteResult deleteVpnConnectionRoute(
             DeleteVpnConnectionRouteRequest deleteVpnConnectionRouteRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteVpnConnectionRouteRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteVpnConnectionRouteRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteVpnConnectionRouteResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -4340,9 +4454,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteVpnConnectionRouteResult> responseHandler = new StaxResponseHandler<DeleteVpnConnectionRouteResult>(
+                    new DeleteVpnConnectionRouteResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4361,16 +4477,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deleteVpnGatewayRequest
      *        Contains the parameters for DeleteVpnGateway.
+     * @return Result of the DeleteVpnGateway operation returned by the service.
      * @sample AmazonEC2.DeleteVpnGateway
      */
     @Override
-    public void deleteVpnGateway(DeleteVpnGatewayRequest deleteVpnGatewayRequest) {
+    public DeleteVpnGatewayResult deleteVpnGateway(
+            DeleteVpnGatewayRequest deleteVpnGatewayRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteVpnGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteVpnGatewayRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteVpnGatewayResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -4384,9 +4502,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteVpnGatewayResult> responseHandler = new StaxResponseHandler<DeleteVpnGatewayResult>(
+                    new DeleteVpnGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4405,16 +4525,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param deregisterImageRequest
      *        Contains the parameters for DeregisterImage.
+     * @return Result of the DeregisterImage operation returned by the service.
      * @sample AmazonEC2.DeregisterImage
      */
     @Override
-    public void deregisterImage(DeregisterImageRequest deregisterImageRequest) {
+    public DeregisterImageResult deregisterImage(
+            DeregisterImageRequest deregisterImageRequest) {
         ExecutionContext executionContext = createExecutionContext(deregisterImageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeregisterImageRequest> request = null;
-        Response<Void> response = null;
+        Response<DeregisterImageResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -4427,9 +4549,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeregisterImageResult> responseHandler = new StaxResponseHandler<DeregisterImageResult>(
+                    new DeregisterImageResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6491,6 +6615,52 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * [EC2-VPC only] Describes the VPCs on the other side of a VPC peering
+     * connection that are referencing the security groups you've specified in
+     * this request.
+     * </p>
+     * 
+     * @param describeSecurityGroupReferencesRequest
+     * @return Result of the DescribeSecurityGroupReferences operation returned
+     *         by the service.
+     * @sample AmazonEC2.DescribeSecurityGroupReferences
+     */
+    @Override
+    public DescribeSecurityGroupReferencesResult describeSecurityGroupReferences(
+            DescribeSecurityGroupReferencesRequest describeSecurityGroupReferencesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeSecurityGroupReferencesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSecurityGroupReferencesRequest> request = null;
+        Response<DescribeSecurityGroupReferencesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSecurityGroupReferencesRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeSecurityGroupReferencesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeSecurityGroupReferencesResult> responseHandler = new StaxResponseHandler<DescribeSecurityGroupReferencesResult>(
+                    new DescribeSecurityGroupReferencesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes one or more of your security groups.
      * </p>
      * <p>
@@ -7043,6 +7213,53 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
     @Override
     public DescribeSpotPriceHistoryResult describeSpotPriceHistory() {
         return describeSpotPriceHistory(new DescribeSpotPriceHistoryRequest());
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC only] Describes the stale security group rules for security
+     * groups in a specified VPC. Rules are stale when they reference a deleted
+     * security group in a peer VPC, or a security group in a peer VPC for which
+     * the VPC peering connection has been deleted.
+     * </p>
+     * 
+     * @param describeStaleSecurityGroupsRequest
+     * @return Result of the DescribeStaleSecurityGroups operation returned by
+     *         the service.
+     * @sample AmazonEC2.DescribeStaleSecurityGroups
+     */
+    @Override
+    public DescribeStaleSecurityGroupsResult describeStaleSecurityGroups(
+            DescribeStaleSecurityGroupsRequest describeStaleSecurityGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeStaleSecurityGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStaleSecurityGroupsRequest> request = null;
+        Response<DescribeStaleSecurityGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStaleSecurityGroupsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeStaleSecurityGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeStaleSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeStaleSecurityGroupsResult>(
+                    new DescribeStaleSecurityGroupsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -7881,17 +8098,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param detachInternetGatewayRequest
      *        Contains the parameters for DetachInternetGateway.
+     * @return Result of the DetachInternetGateway operation returned by the
+     *         service.
      * @sample AmazonEC2.DetachInternetGateway
      */
     @Override
-    public void detachInternetGateway(
+    public DetachInternetGatewayResult detachInternetGateway(
             DetachInternetGatewayRequest detachInternetGatewayRequest) {
         ExecutionContext executionContext = createExecutionContext(detachInternetGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DetachInternetGatewayRequest> request = null;
-        Response<Void> response = null;
+        Response<DetachInternetGatewayResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -7905,9 +8124,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DetachInternetGatewayResult> responseHandler = new StaxResponseHandler<DetachInternetGatewayResult>(
+                    new DetachInternetGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -7922,17 +8143,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param detachNetworkInterfaceRequest
      *        Contains the parameters for DetachNetworkInterface.
+     * @return Result of the DetachNetworkInterface operation returned by the
+     *         service.
      * @sample AmazonEC2.DetachNetworkInterface
      */
     @Override
-    public void detachNetworkInterface(
+    public DetachNetworkInterfaceResult detachNetworkInterface(
             DetachNetworkInterfaceRequest detachNetworkInterfaceRequest) {
         ExecutionContext executionContext = createExecutionContext(detachNetworkInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DetachNetworkInterfaceRequest> request = null;
-        Response<Void> response = null;
+        Response<DetachNetworkInterfaceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -7946,9 +8169,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DetachNetworkInterfaceResult> responseHandler = new StaxResponseHandler<DetachNetworkInterfaceResult>(
+                    new DetachNetworkInterfaceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -8033,16 +8258,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param detachVpnGatewayRequest
      *        Contains the parameters for DetachVpnGateway.
+     * @return Result of the DetachVpnGateway operation returned by the service.
      * @sample AmazonEC2.DetachVpnGateway
      */
     @Override
-    public void detachVpnGateway(DetachVpnGatewayRequest detachVpnGatewayRequest) {
+    public DetachVpnGatewayResult detachVpnGateway(
+            DetachVpnGatewayRequest detachVpnGatewayRequest) {
         ExecutionContext executionContext = createExecutionContext(detachVpnGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DetachVpnGatewayRequest> request = null;
-        Response<Void> response = null;
+        Response<DetachVpnGatewayResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -8056,9 +8283,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DetachVpnGatewayResult> responseHandler = new StaxResponseHandler<DetachVpnGatewayResult>(
+                    new DetachVpnGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -8074,17 +8303,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param disableVgwRoutePropagationRequest
      *        Contains the parameters for DisableVgwRoutePropagation.
+     * @return Result of the DisableVgwRoutePropagation operation returned by
+     *         the service.
      * @sample AmazonEC2.DisableVgwRoutePropagation
      */
     @Override
-    public void disableVgwRoutePropagation(
+    public DisableVgwRoutePropagationResult disableVgwRoutePropagation(
             DisableVgwRoutePropagationRequest disableVgwRoutePropagationRequest) {
         ExecutionContext executionContext = createExecutionContext(disableVgwRoutePropagationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableVgwRoutePropagationRequest> request = null;
-        Response<Void> response = null;
+        Response<DisableVgwRoutePropagationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -8098,9 +8329,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DisableVgwRoutePropagationResult> responseHandler = new StaxResponseHandler<DisableVgwRoutePropagationResult>(
+                    new DisableVgwRoutePropagationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -8223,17 +8456,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param disassociateAddressRequest
      *        Contains the parameters for DisassociateAddress.
+     * @return Result of the DisassociateAddress operation returned by the
+     *         service.
      * @sample AmazonEC2.DisassociateAddress
      */
     @Override
-    public void disassociateAddress(
+    public DisassociateAddressResult disassociateAddress(
             DisassociateAddressRequest disassociateAddressRequest) {
         ExecutionContext executionContext = createExecutionContext(disassociateAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisassociateAddressRequest> request = null;
-        Response<Void> response = null;
+        Response<DisassociateAddressResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -8247,9 +8482,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DisassociateAddressResult> responseHandler = new StaxResponseHandler<DisassociateAddressResult>(
+                    new DisassociateAddressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -8271,17 +8508,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param disassociateRouteTableRequest
      *        Contains the parameters for DisassociateRouteTable.
+     * @return Result of the DisassociateRouteTable operation returned by the
+     *         service.
      * @sample AmazonEC2.DisassociateRouteTable
      */
     @Override
-    public void disassociateRouteTable(
+    public DisassociateRouteTableResult disassociateRouteTable(
             DisassociateRouteTableRequest disassociateRouteTableRequest) {
         ExecutionContext executionContext = createExecutionContext(disassociateRouteTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisassociateRouteTableRequest> request = null;
-        Response<Void> response = null;
+        Response<DisassociateRouteTableResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -8295,9 +8534,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DisassociateRouteTableResult> responseHandler = new StaxResponseHandler<DisassociateRouteTableResult>(
+                    new DisassociateRouteTableResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -8313,17 +8554,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param enableVgwRoutePropagationRequest
      *        Contains the parameters for EnableVgwRoutePropagation.
+     * @return Result of the EnableVgwRoutePropagation operation returned by the
+     *         service.
      * @sample AmazonEC2.EnableVgwRoutePropagation
      */
     @Override
-    public void enableVgwRoutePropagation(
+    public EnableVgwRoutePropagationResult enableVgwRoutePropagation(
             EnableVgwRoutePropagationRequest enableVgwRoutePropagationRequest) {
         ExecutionContext executionContext = createExecutionContext(enableVgwRoutePropagationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableVgwRoutePropagationRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableVgwRoutePropagationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -8337,9 +8580,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<EnableVgwRoutePropagationResult> responseHandler = new StaxResponseHandler<EnableVgwRoutePropagationResult>(
+                    new EnableVgwRoutePropagationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -8355,16 +8600,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param enableVolumeIORequest
      *        Contains the parameters for EnableVolumeIO.
+     * @return Result of the EnableVolumeIO operation returned by the service.
      * @sample AmazonEC2.EnableVolumeIO
      */
     @Override
-    public void enableVolumeIO(EnableVolumeIORequest enableVolumeIORequest) {
+    public EnableVolumeIOResult enableVolumeIO(
+            EnableVolumeIORequest enableVolumeIORequest) {
         ExecutionContext executionContext = createExecutionContext(enableVolumeIORequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableVolumeIORequest> request = null;
-        Response<Void> response = null;
+        Response<EnableVolumeIOResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -8377,9 +8624,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<EnableVolumeIOResult> responseHandler = new StaxResponseHandler<EnableVolumeIOResult>(
+                    new EnableVolumeIOResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -8958,16 +9207,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param modifyIdFormatRequest
      *        Contains the parameters of ModifyIdFormat.
+     * @return Result of the ModifyIdFormat operation returned by the service.
      * @sample AmazonEC2.ModifyIdFormat
      */
     @Override
-    public void modifyIdFormat(ModifyIdFormatRequest modifyIdFormatRequest) {
+    public ModifyIdFormatResult modifyIdFormat(
+            ModifyIdFormatRequest modifyIdFormatRequest) {
         ExecutionContext executionContext = createExecutionContext(modifyIdFormatRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ModifyIdFormatRequest> request = null;
-        Response<Void> response = null;
+        Response<ModifyIdFormatResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -8980,9 +9231,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ModifyIdFormatResult> responseHandler = new StaxResponseHandler<ModifyIdFormatResult>(
+                    new ModifyIdFormatResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -9004,17 +9257,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param modifyImageAttributeRequest
      *        Contains the parameters for ModifyImageAttribute.
+     * @return Result of the ModifyImageAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifyImageAttribute
      */
     @Override
-    public void modifyImageAttribute(
+    public ModifyImageAttributeResult modifyImageAttribute(
             ModifyImageAttributeRequest modifyImageAttributeRequest) {
         ExecutionContext executionContext = createExecutionContext(modifyImageAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ModifyImageAttributeRequest> request = null;
-        Response<Void> response = null;
+        Response<ModifyImageAttributeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -9028,9 +9283,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ModifyImageAttributeResult> responseHandler = new StaxResponseHandler<ModifyImageAttributeResult>(
+                    new ModifyImageAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -9053,17 +9310,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param modifyInstanceAttributeRequest
      *        Contains the parameters for ModifyInstanceAttribute.
+     * @return Result of the ModifyInstanceAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifyInstanceAttribute
      */
     @Override
-    public void modifyInstanceAttribute(
+    public ModifyInstanceAttributeResult modifyInstanceAttribute(
             ModifyInstanceAttributeRequest modifyInstanceAttributeRequest) {
         ExecutionContext executionContext = createExecutionContext(modifyInstanceAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ModifyInstanceAttributeRequest> request = null;
-        Response<Void> response = null;
+        Response<ModifyInstanceAttributeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -9077,9 +9336,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ModifyInstanceAttributeResult> responseHandler = new StaxResponseHandler<ModifyInstanceAttributeResult>(
+                    new ModifyInstanceAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -9163,17 +9424,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param modifyNetworkInterfaceAttributeRequest
      *        Contains the parameters for ModifyNetworkInterfaceAttribute.
+     * @return Result of the ModifyNetworkInterfaceAttribute operation returned
+     *         by the service.
      * @sample AmazonEC2.ModifyNetworkInterfaceAttribute
      */
     @Override
-    public void modifyNetworkInterfaceAttribute(
+    public ModifyNetworkInterfaceAttributeResult modifyNetworkInterfaceAttribute(
             ModifyNetworkInterfaceAttributeRequest modifyNetworkInterfaceAttributeRequest) {
         ExecutionContext executionContext = createExecutionContext(modifyNetworkInterfaceAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ModifyNetworkInterfaceAttributeRequest> request = null;
-        Response<Void> response = null;
+        Response<ModifyNetworkInterfaceAttributeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -9187,9 +9450,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ModifyNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<ModifyNetworkInterfaceAttributeResult>(
+                    new ModifyNetworkInterfaceAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -9273,17 +9538,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param modifySnapshotAttributeRequest
      *        Contains the parameters for ModifySnapshotAttribute.
+     * @return Result of the ModifySnapshotAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifySnapshotAttribute
      */
     @Override
-    public void modifySnapshotAttribute(
+    public ModifySnapshotAttributeResult modifySnapshotAttribute(
             ModifySnapshotAttributeRequest modifySnapshotAttributeRequest) {
         ExecutionContext executionContext = createExecutionContext(modifySnapshotAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ModifySnapshotAttributeRequest> request = null;
-        Response<Void> response = null;
+        Response<ModifySnapshotAttributeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -9297,9 +9564,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ModifySnapshotAttributeResult> responseHandler = new StaxResponseHandler<ModifySnapshotAttributeResult>(
+                    new ModifySnapshotAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -9384,17 +9653,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param modifySubnetAttributeRequest
      *        Contains the parameters for ModifySubnetAttribute.
+     * @return Result of the ModifySubnetAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifySubnetAttribute
      */
     @Override
-    public void modifySubnetAttribute(
+    public ModifySubnetAttributeResult modifySubnetAttribute(
             ModifySubnetAttributeRequest modifySubnetAttributeRequest) {
         ExecutionContext executionContext = createExecutionContext(modifySubnetAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ModifySubnetAttributeRequest> request = null;
-        Response<Void> response = null;
+        Response<ModifySubnetAttributeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -9408,9 +9679,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ModifySubnetAttributeResult> responseHandler = new StaxResponseHandler<ModifySubnetAttributeResult>(
+                    new ModifySubnetAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -9437,17 +9710,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param modifyVolumeAttributeRequest
      *        Contains the parameters for ModifyVolumeAttribute.
+     * @return Result of the ModifyVolumeAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifyVolumeAttribute
      */
     @Override
-    public void modifyVolumeAttribute(
+    public ModifyVolumeAttributeResult modifyVolumeAttribute(
             ModifyVolumeAttributeRequest modifyVolumeAttributeRequest) {
         ExecutionContext executionContext = createExecutionContext(modifyVolumeAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ModifyVolumeAttributeRequest> request = null;
-        Response<Void> response = null;
+        Response<ModifyVolumeAttributeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -9461,9 +9736,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ModifyVolumeAttributeResult> responseHandler = new StaxResponseHandler<ModifyVolumeAttributeResult>(
+                    new ModifyVolumeAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -9478,17 +9755,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param modifyVpcAttributeRequest
      *        Contains the parameters for ModifyVpcAttribute.
+     * @return Result of the ModifyVpcAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifyVpcAttribute
      */
     @Override
-    public void modifyVpcAttribute(
+    public ModifyVpcAttributeResult modifyVpcAttribute(
             ModifyVpcAttributeRequest modifyVpcAttributeRequest) {
         ExecutionContext executionContext = createExecutionContext(modifyVpcAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ModifyVpcAttributeRequest> request = null;
-        Response<Void> response = null;
+        Response<ModifyVpcAttributeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -9502,9 +9781,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ModifyVpcAttributeResult> responseHandler = new StaxResponseHandler<ModifyVpcAttributeResult>(
+                    new ModifyVpcAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -9869,16 +10150,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param rebootInstancesRequest
      *        Contains the parameters for RebootInstances.
+     * @return Result of the RebootInstances operation returned by the service.
      * @sample AmazonEC2.RebootInstances
      */
     @Override
-    public void rebootInstances(RebootInstancesRequest rebootInstancesRequest) {
+    public RebootInstancesResult rebootInstances(
+            RebootInstancesRequest rebootInstancesRequest) {
         ExecutionContext executionContext = createExecutionContext(rebootInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RebootInstancesRequest> request = null;
-        Response<Void> response = null;
+        Response<RebootInstancesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -9891,9 +10174,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RebootInstancesResult> responseHandler = new StaxResponseHandler<RebootInstancesResult>(
+                    new RebootInstancesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -10071,16 +10356,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param releaseAddressRequest
      *        Contains the parameters for ReleaseAddress.
+     * @return Result of the ReleaseAddress operation returned by the service.
      * @sample AmazonEC2.ReleaseAddress
      */
     @Override
-    public void releaseAddress(ReleaseAddressRequest releaseAddressRequest) {
+    public ReleaseAddressResult releaseAddress(
+            ReleaseAddressRequest releaseAddressRequest) {
         ExecutionContext executionContext = createExecutionContext(releaseAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ReleaseAddressRequest> request = null;
-        Response<Void> response = null;
+        Response<ReleaseAddressResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -10093,9 +10380,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ReleaseAddressResult> responseHandler = new StaxResponseHandler<ReleaseAddressResult>(
+                    new ReleaseAddressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -10218,17 +10507,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param replaceNetworkAclEntryRequest
      *        Contains the parameters for ReplaceNetworkAclEntry.
+     * @return Result of the ReplaceNetworkAclEntry operation returned by the
+     *         service.
      * @sample AmazonEC2.ReplaceNetworkAclEntry
      */
     @Override
-    public void replaceNetworkAclEntry(
+    public ReplaceNetworkAclEntryResult replaceNetworkAclEntry(
             ReplaceNetworkAclEntryRequest replaceNetworkAclEntryRequest) {
         ExecutionContext executionContext = createExecutionContext(replaceNetworkAclEntryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ReplaceNetworkAclEntryRequest> request = null;
-        Response<Void> response = null;
+        Response<ReplaceNetworkAclEntryResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -10242,9 +10533,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ReplaceNetworkAclEntryResult> responseHandler = new StaxResponseHandler<ReplaceNetworkAclEntryResult>(
+                    new ReplaceNetworkAclEntryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -10267,16 +10560,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param replaceRouteRequest
      *        Contains the parameters for ReplaceRoute.
+     * @return Result of the ReplaceRoute operation returned by the service.
      * @sample AmazonEC2.ReplaceRoute
      */
     @Override
-    public void replaceRoute(ReplaceRouteRequest replaceRouteRequest) {
+    public ReplaceRouteResult replaceRoute(
+            ReplaceRouteRequest replaceRouteRequest) {
         ExecutionContext executionContext = createExecutionContext(replaceRouteRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ReplaceRouteRequest> request = null;
-        Response<Void> response = null;
+        Response<ReplaceRouteResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -10289,9 +10584,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ReplaceRouteResult> responseHandler = new StaxResponseHandler<ReplaceRouteResult>(
+                    new ReplaceRouteResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -10370,17 +10667,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param reportInstanceStatusRequest
      *        Contains the parameters for ReportInstanceStatus.
+     * @return Result of the ReportInstanceStatus operation returned by the
+     *         service.
      * @sample AmazonEC2.ReportInstanceStatus
      */
     @Override
-    public void reportInstanceStatus(
+    public ReportInstanceStatusResult reportInstanceStatus(
             ReportInstanceStatusRequest reportInstanceStatusRequest) {
         ExecutionContext executionContext = createExecutionContext(reportInstanceStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ReportInstanceStatusRequest> request = null;
-        Response<Void> response = null;
+        Response<ReportInstanceStatusResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -10394,9 +10693,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ReportInstanceStatusResult> responseHandler = new StaxResponseHandler<ReportInstanceStatusResult>(
+                    new ReportInstanceStatusResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -10535,17 +10836,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param resetImageAttributeRequest
      *        Contains the parameters for ResetImageAttribute.
+     * @return Result of the ResetImageAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ResetImageAttribute
      */
     @Override
-    public void resetImageAttribute(
+    public ResetImageAttributeResult resetImageAttribute(
             ResetImageAttributeRequest resetImageAttributeRequest) {
         ExecutionContext executionContext = createExecutionContext(resetImageAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ResetImageAttributeRequest> request = null;
-        Response<Void> response = null;
+        Response<ResetImageAttributeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -10559,9 +10862,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ResetImageAttributeResult> responseHandler = new StaxResponseHandler<ResetImageAttributeResult>(
+                    new ResetImageAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -10573,11 +10878,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * <p>
      * Resets an attribute of an instance to its default value. To reset the
      * <code>kernel</code> or <code>ramdisk</code>, the instance must be in a
-     * stopped state. To reset the <code>SourceDestCheck</code>, the instance
+     * stopped state. To reset the <code>sourceDestCheck</code>, the instance
      * can be either running or stopped.
      * </p>
      * <p>
-     * The <code>SourceDestCheck</code> attribute controls whether
+     * The <code>sourceDestCheck</code> attribute controls whether
      * source/destination checking is enabled. The default value is
      * <code>true</code>, which means checking is enabled. This value must be
      * <code>false</code> for a NAT instance to perform NAT. For more
@@ -10588,17 +10893,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param resetInstanceAttributeRequest
      *        Contains the parameters for ResetInstanceAttribute.
+     * @return Result of the ResetInstanceAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ResetInstanceAttribute
      */
     @Override
-    public void resetInstanceAttribute(
+    public ResetInstanceAttributeResult resetInstanceAttribute(
             ResetInstanceAttributeRequest resetInstanceAttributeRequest) {
         ExecutionContext executionContext = createExecutionContext(resetInstanceAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ResetInstanceAttributeRequest> request = null;
-        Response<Void> response = null;
+        Response<ResetInstanceAttributeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -10612,9 +10919,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ResetInstanceAttributeResult> responseHandler = new StaxResponseHandler<ResetInstanceAttributeResult>(
+                    new ResetInstanceAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -10630,17 +10939,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param resetNetworkInterfaceAttributeRequest
      *        Contains the parameters for ResetNetworkInterfaceAttribute.
+     * @return Result of the ResetNetworkInterfaceAttribute operation returned
+     *         by the service.
      * @sample AmazonEC2.ResetNetworkInterfaceAttribute
      */
     @Override
-    public void resetNetworkInterfaceAttribute(
+    public ResetNetworkInterfaceAttributeResult resetNetworkInterfaceAttribute(
             ResetNetworkInterfaceAttributeRequest resetNetworkInterfaceAttributeRequest) {
         ExecutionContext executionContext = createExecutionContext(resetNetworkInterfaceAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ResetNetworkInterfaceAttributeRequest> request = null;
-        Response<Void> response = null;
+        Response<ResetNetworkInterfaceAttributeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -10654,9 +10965,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ResetNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<ResetNetworkInterfaceAttributeResult>(
+                    new ResetNetworkInterfaceAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -10677,17 +10990,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param resetSnapshotAttributeRequest
      *        Contains the parameters for ResetSnapshotAttribute.
+     * @return Result of the ResetSnapshotAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ResetSnapshotAttribute
      */
     @Override
-    public void resetSnapshotAttribute(
+    public ResetSnapshotAttributeResult resetSnapshotAttribute(
             ResetSnapshotAttributeRequest resetSnapshotAttributeRequest) {
         ExecutionContext executionContext = createExecutionContext(resetSnapshotAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ResetSnapshotAttributeRequest> request = null;
-        Response<Void> response = null;
+        Response<ResetSnapshotAttributeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -10701,9 +11016,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ResetSnapshotAttributeResult> responseHandler = new StaxResponseHandler<ResetSnapshotAttributeResult>(
+                    new ResetSnapshotAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -10783,17 +11100,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param revokeSecurityGroupEgressRequest
      *        Contains the parameters for RevokeSecurityGroupEgress.
+     * @return Result of the RevokeSecurityGroupEgress operation returned by the
+     *         service.
      * @sample AmazonEC2.RevokeSecurityGroupEgress
      */
     @Override
-    public void revokeSecurityGroupEgress(
+    public RevokeSecurityGroupEgressResult revokeSecurityGroupEgress(
             RevokeSecurityGroupEgressRequest revokeSecurityGroupEgressRequest) {
         ExecutionContext executionContext = createExecutionContext(revokeSecurityGroupEgressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RevokeSecurityGroupEgressRequest> request = null;
-        Response<Void> response = null;
+        Response<RevokeSecurityGroupEgressResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -10807,9 +11126,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RevokeSecurityGroupEgressResult> responseHandler = new StaxResponseHandler<RevokeSecurityGroupEgressResult>(
+                    new RevokeSecurityGroupEgressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -10836,17 +11157,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param revokeSecurityGroupIngressRequest
      *        Contains the parameters for RevokeSecurityGroupIngress.
+     * @return Result of the RevokeSecurityGroupIngress operation returned by
+     *         the service.
      * @sample AmazonEC2.RevokeSecurityGroupIngress
      */
     @Override
-    public void revokeSecurityGroupIngress(
+    public RevokeSecurityGroupIngressResult revokeSecurityGroupIngress(
             RevokeSecurityGroupIngressRequest revokeSecurityGroupIngressRequest) {
         ExecutionContext executionContext = createExecutionContext(revokeSecurityGroupIngressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RevokeSecurityGroupIngressRequest> request = null;
-        Response<Void> response = null;
+        Response<RevokeSecurityGroupIngressResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -10860,9 +11183,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RevokeSecurityGroupIngressResult> responseHandler = new StaxResponseHandler<RevokeSecurityGroupIngressResult>(
+                    new RevokeSecurityGroupIngressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -10871,8 +11196,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void revokeSecurityGroupIngress() {
-        revokeSecurityGroupIngress(new RevokeSecurityGroupIngressRequest());
+    public RevokeSecurityGroupIngressResult revokeSecurityGroupIngress() {
+        return revokeSecurityGroupIngress(new RevokeSecurityGroupIngressRequest());
     }
 
     /**
@@ -11139,7 +11464,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * Guide</i>.
      * </p>
      * <p>
-     * For more information about troubleshooting, see <a href=
+     * When you stop an instance, we attempt to shut it down forcibly after a
+     * short while. If your instance appears stuck in the stopping state after a
+     * period of time, there may be an issue with the underlying host computer.
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html"
      * >Troubleshooting Stopping Your Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.
@@ -11266,17 +11594,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 
      * @param unassignPrivateIpAddressesRequest
      *        Contains the parameters for UnassignPrivateIpAddresses.
+     * @return Result of the UnassignPrivateIpAddresses operation returned by
+     *         the service.
      * @sample AmazonEC2.UnassignPrivateIpAddresses
      */
     @Override
-    public void unassignPrivateIpAddresses(
+    public UnassignPrivateIpAddressesResult unassignPrivateIpAddresses(
             UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest) {
         ExecutionContext executionContext = createExecutionContext(unassignPrivateIpAddressesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UnassignPrivateIpAddressesRequest> request = null;
-        Response<Void> response = null;
+        Response<UnassignPrivateIpAddressesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -11290,9 +11620,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UnassignPrivateIpAddressesResult> responseHandler = new StaxResponseHandler<UnassignPrivateIpAddressesResult>(
+                    new UnassignPrivateIpAddressesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 

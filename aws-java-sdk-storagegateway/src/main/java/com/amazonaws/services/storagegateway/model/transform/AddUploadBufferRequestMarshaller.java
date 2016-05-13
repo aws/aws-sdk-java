@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AddUploadBufferRequest Marshaller
  */
 public class AddUploadBufferRequestMarshaller implements
         Marshaller<Request<AddUploadBufferRequest>, AddUploadBufferRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public AddUploadBufferRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<AddUploadBufferRequest> marshall(
             AddUploadBufferRequest addUploadBufferRequest) {
@@ -58,8 +65,8 @@ public class AddUploadBufferRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

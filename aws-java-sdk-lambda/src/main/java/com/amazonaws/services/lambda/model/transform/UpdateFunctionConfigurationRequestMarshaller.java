@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateFunctionConfigurationRequest Marshaller
@@ -48,7 +49,14 @@ public class UpdateFunctionConfigurationRequestMarshaller
         implements
         Marshaller<Request<UpdateFunctionConfigurationRequest>, UpdateFunctionConfigurationRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateFunctionConfigurationRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateFunctionConfigurationRequest> marshall(
             UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest) {
@@ -68,14 +76,16 @@ public class UpdateFunctionConfigurationRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{FunctionName}",
-                        (updateFunctionConfigurationRequest.getFunctionName() != null) ? StringUtils
-                                .fromString(updateFunctionConfigurationRequest
-                                        .getFunctionName()) : "");
+                        (updateFunctionConfigurationRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(updateFunctionConfigurationRequest
+                                                .getFunctionName()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (updateFunctionConfigurationRequest.getRole() != null) {

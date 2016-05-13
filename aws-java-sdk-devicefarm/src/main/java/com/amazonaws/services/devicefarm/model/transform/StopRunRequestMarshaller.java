@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * StopRunRequest Marshaller
  */
 public class StopRunRequestMarshaller implements
         Marshaller<Request<StopRunRequest>, StopRunRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public StopRunRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<StopRunRequest> marshall(StopRunRequest stopRunRequest) {
 
@@ -56,8 +62,8 @@ public class StopRunRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

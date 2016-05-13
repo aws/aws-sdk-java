@@ -37,7 +37,6 @@ import java.util.List;
 public class ExecutionContext {
     private final AWSRequestMetrics awsRequestMetrics;
     private final List<RequestHandler2> requestHandler2s;
-    private String contextUserAgent;
     private final AmazonWebServiceClient awsClient;
 
     private boolean retryCapacityConsumed;
@@ -71,14 +70,6 @@ public class ExecutionContext {
         this.requestHandler2s = requestHandler2s;
         awsRequestMetrics = isMetricEnabled ? new AWSRequestMetricsFullSupport() : new AWSRequestMetrics();
         this.awsClient = awsClient;
-    }
-
-    public String getContextUserAgent() {
-        return contextUserAgent;
-    }
-
-    public void setContextUserAgent(String contextUserAgent) {
-        this.contextUserAgent = contextUserAgent;
     }
 
     public List<RequestHandler2> getRequestHandler2s() {
@@ -127,43 +118,6 @@ public class ExecutionContext {
     }
 
     /**
-     * <p>
-     * Returns the credentials used to sign the associated request.
-     * </p>
-     * <p>
-     * This method is deprecated as the provider needs to be used every time we fetch the
-     * credentials.
-     * </p>
-     * 
-     * @return The credentials used to sign the associated request.
-     * @deprecated in favor of {@link #getCredentialsProvider}
-     */
-    @Deprecated
-    public AWSCredentials getCredentials() {
-        return credentialsProvider != null ? credentialsProvider.getCredentials() : null;
-    }
-
-    /**
-     * <p>
-     * Sets the credentials used to sign the associated request. If no credentials are specified as
-     * part of a request's ExecutionContext, then the runtime layer will not attempt to sign (or
-     * resign on retries) requests.
-     * </p>
-     * <p>
-     * This method is deprecated as the provider needs to be used every time we fetch the
-     * credentials.
-     * </p>
-     * 
-     * @param credentials
-     *            The optional credentials used to sign the associated request.
-     * @deprecated in favor of {@link #setCredentialsProvider(AWSCredentialsProvider)}
-     */
-    @Deprecated
-    public void setCredentials(AWSCredentials credentials) {
-        this.credentialsProvider = new StaticCredentialsProvider(credentials);
-    }
-
-    /**
      * Sets the credentials provider used for fetching the credentials. The credentials fetched is
      * used for signing the request. If there is no credential provider, then the runtime will not
      * attempt to sign (or resign on retries) requests.
@@ -201,7 +155,7 @@ public class ExecutionContext {
 
     /**
      * Sets the optional auth error retry strategy for this request execution.
-     * 
+     *
      * @see #getAuthErrorRetryStrategy()
      */
     public void setAuthErrorRetryStrategy(AuthErrorRetryStrategy authErrorRetryStrategy) {

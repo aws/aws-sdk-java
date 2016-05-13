@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetPolicyRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetPolicyRequestMarshaller implements
         Marshaller<Request<GetPolicyRequest>, GetPolicyRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetPolicyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetPolicyRequest> marshall(GetPolicyRequest getPolicyRequest) {
 
@@ -65,8 +72,9 @@ public class GetPolicyRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
-                (getPolicyRequest.getPolicyName() != null) ? StringUtils
-                        .fromString(getPolicyRequest.getPolicyName()) : "");
+                (getPolicyRequest.getPolicyName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getPolicyRequest
+                                .getPolicyName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -119,6 +119,7 @@ public interface AmazonCloudWatchEvents {
      * 
      * @param deleteRuleRequest
      *        Container for the parameters to the <a>DeleteRule</a> operation.
+     * @return Result of the DeleteRule operation returned by the service.
      * @throws ConcurrentModificationException
      *         This exception occurs if there is concurrent modification on rule
      *         or target.
@@ -126,7 +127,7 @@ public interface AmazonCloudWatchEvents {
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DeleteRule
      */
-    void deleteRule(DeleteRuleRequest deleteRuleRequest);
+    DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest);
 
     /**
      * <p>
@@ -157,6 +158,7 @@ public interface AmazonCloudWatchEvents {
      * 
      * @param disableRuleRequest
      *        Container for the parameters to the <a>DisableRule</a> operation.
+     * @return Result of the DisableRule operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
      * @throws ConcurrentModificationException
@@ -166,7 +168,7 @@ public interface AmazonCloudWatchEvents {
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DisableRule
      */
-    void disableRule(DisableRuleRequest disableRuleRequest);
+    DisableRuleResult disableRule(DisableRuleRequest disableRuleRequest);
 
     /**
      * <p>
@@ -180,6 +182,7 @@ public interface AmazonCloudWatchEvents {
      * 
      * @param enableRuleRequest
      *        Container for the parameters to the <a>EnableRule</a> operation.
+     * @return Result of the EnableRule operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
      * @throws ConcurrentModificationException
@@ -189,7 +192,7 @@ public interface AmazonCloudWatchEvents {
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.EnableRule
      */
-    void enableRule(EnableRuleRequest enableRuleRequest);
+    EnableRuleResult enableRule(EnableRuleRequest enableRuleRequest);
 
     /**
      * <p>

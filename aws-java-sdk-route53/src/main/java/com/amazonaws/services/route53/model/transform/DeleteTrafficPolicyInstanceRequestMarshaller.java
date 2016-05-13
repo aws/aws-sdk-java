@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * DeleteTrafficPolicyInstanceRequest Marshaller
@@ -62,9 +63,11 @@ public class DeleteTrafficPolicyInstanceRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (deleteTrafficPolicyInstanceRequest.getId() != null) ? StringUtils
-                                .fromString(deleteTrafficPolicyInstanceRequest
-                                        .getId()) : "");
+                        (deleteTrafficPolicyInstanceRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteTrafficPolicyInstanceRequest
+                                                .getId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

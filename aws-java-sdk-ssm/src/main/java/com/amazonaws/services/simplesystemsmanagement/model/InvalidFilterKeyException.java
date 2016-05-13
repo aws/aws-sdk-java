@@ -19,7 +19,9 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
+ * <p>
  * The specified key is not valid.
+ * </p>
  */
 public class InvalidFilterKeyException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

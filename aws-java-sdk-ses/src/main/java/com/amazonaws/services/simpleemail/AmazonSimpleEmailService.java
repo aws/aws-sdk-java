@@ -364,9 +364,11 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param deleteVerifiedEmailAddressRequest
+     * @return Result of the DeleteVerifiedEmailAddress operation returned by
+     *         the service.
      * @sample AmazonSimpleEmailService.DeleteVerifiedEmailAddress
      */
-    void deleteVerifiedEmailAddress(
+    DeleteVerifiedEmailAddressResult deleteVerifiedEmailAddress(
             DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest);
 
     /**
@@ -1222,9 +1224,12 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param verifyEmailAddressRequest
+     * @return Result of the VerifyEmailAddress operation returned by the
+     *         service.
      * @sample AmazonSimpleEmailService.VerifyEmailAddress
      */
-    void verifyEmailAddress(VerifyEmailAddressRequest verifyEmailAddressRequest);
+    VerifyEmailAddressResult verifyEmailAddress(
+            VerifyEmailAddressRequest verifyEmailAddressRequest);
 
     /**
      * <p>

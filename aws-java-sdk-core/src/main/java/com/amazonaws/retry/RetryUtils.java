@@ -14,18 +14,19 @@
  */
 package com.amazonaws.retry;
 
+import com.amazonaws.annotation.SdkInternalApi;
 import org.apache.http.HttpStatus;
 
 import com.amazonaws.AmazonServiceException;
 
-import java.util.Collections;
+import java.util.Random;
 import java.util.HashSet;
 import java.util.Set;
 
 public class RetryUtils {
 
-    private static final Set<String> THROTTLING_ERROR_CODES = new HashSet<String>(6);
-    private static final Set<String> CLOCK_SKEW_ERROR_CODES = new HashSet<String>(5);
+    private static final Set<String> THROTTLING_ERROR_CODES = new HashSet<String>(9);
+    private static final Set<String> CLOCK_SKEW_ERROR_CODES = new HashSet<String>(6);
 
     static {
         THROTTLING_ERROR_CODES.add("Throttling");
@@ -34,12 +35,16 @@ public class RetryUtils {
         THROTTLING_ERROR_CODES.add("SlowDown");
         THROTTLING_ERROR_CODES.add("TooManyRequestsException");
         THROTTLING_ERROR_CODES.add("LimitExceededException");
+        THROTTLING_ERROR_CODES.add("RequestLimitExceeded");
+        THROTTLING_ERROR_CODES.add("BandwidthLimitExceeded");
+        THROTTLING_ERROR_CODES.add("RequestThrottled");
 
         CLOCK_SKEW_ERROR_CODES.add("RequestTimeTooSkewed");
         CLOCK_SKEW_ERROR_CODES.add("RequestExpired");
         CLOCK_SKEW_ERROR_CODES.add("InvalidSignatureException");
         CLOCK_SKEW_ERROR_CODES.add("SignatureDoesNotMatch");
         CLOCK_SKEW_ERROR_CODES.add("AuthFailure");
+        CLOCK_SKEW_ERROR_CODES.add("RequestInTheFuture");
     }
 
     /**
@@ -70,7 +75,6 @@ public class RetryUtils {
         if (ase == null) {
             return false;
         }
-
         return THROTTLING_ERROR_CODES.contains(ase.getErrorCode());
     }
 
@@ -96,7 +100,15 @@ public class RetryUtils {
         if (ase == null) {
             return false;
         }
-
         return CLOCK_SKEW_ERROR_CODES.contains(ase.getErrorCode());
+    }
+
+    @SdkInternalApi
+    static int calculateFullJitterBackoff(int retriesAttempted,
+                                          int baseDelay,
+                                          int maxBackoffTime,
+                                          Random random) {
+        int delayUpperBound = Math.min(baseDelay * (1 << retriesAttempted), maxBackoffTime);
+        return random.nextInt(delayUpperBound + 1);
     }
 }

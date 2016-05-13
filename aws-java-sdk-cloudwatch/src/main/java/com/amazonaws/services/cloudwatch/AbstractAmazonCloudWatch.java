@@ -39,7 +39,7 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
-    public void deleteAlarms(DeleteAlarmsRequest request) {
+    public DeleteAlarmsResult deleteAlarms(DeleteAlarmsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,12 +71,14 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
-    public void disableAlarmActions(DisableAlarmActionsRequest request) {
+    public DisableAlarmActionsResult disableAlarmActions(
+            DisableAlarmActionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void enableAlarmActions(EnableAlarmActionsRequest request) {
+    public EnableAlarmActionsResult enableAlarmActions(
+            EnableAlarmActionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -97,17 +99,17 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
-    public void putMetricAlarm(PutMetricAlarmRequest request) {
+    public PutMetricAlarmResult putMetricAlarm(PutMetricAlarmRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void putMetricData(PutMetricDataRequest request) {
+    public PutMetricDataResult putMetricData(PutMetricDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setAlarmState(SetAlarmStateRequest request) {
+    public SetAlarmStateResult setAlarmState(SetAlarmStateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

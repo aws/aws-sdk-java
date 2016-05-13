@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UnassignVolumeRequest Marshaller
  */
 public class UnassignVolumeRequestMarshaller implements
         Marshaller<Request<UnassignVolumeRequest>, UnassignVolumeRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UnassignVolumeRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UnassignVolumeRequest> marshall(
             UnassignVolumeRequest unassignVolumeRequest) {
@@ -57,8 +64,8 @@ public class UnassignVolumeRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

@@ -578,26 +578,25 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAliasAsync(
+    public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             DeleteAliasRequest request) {
 
         return deleteAliasAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAliasAsync(
+    public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             final DeleteAliasRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteAliasResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteAliasResult call() throws Exception {
+                        DeleteAliasResult result;
 
                         try {
-                            deleteAlias(request);
-                            result = null;
+                            result = deleteAlias(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -614,26 +613,25 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteBuildAsync(
+    public java.util.concurrent.Future<DeleteBuildResult> deleteBuildAsync(
             DeleteBuildRequest request) {
 
         return deleteBuildAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteBuildAsync(
+    public java.util.concurrent.Future<DeleteBuildResult> deleteBuildAsync(
             final DeleteBuildRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteBuildRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteBuildRequest, DeleteBuildResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteBuildResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteBuildResult call() throws Exception {
+                        DeleteBuildResult result;
 
                         try {
-                            deleteBuild(request);
-                            result = null;
+                            result = deleteBuild(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -650,26 +648,25 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteFleetAsync(
+    public java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(
             DeleteFleetRequest request) {
 
         return deleteFleetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteFleetAsync(
+    public java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(
             final DeleteFleetRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteFleetResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteFleetResult call() throws Exception {
+                        DeleteFleetResult result;
 
                         try {
-                            deleteFleet(request);
-                            result = null;
+                            result = deleteFleet(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -686,26 +683,25 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteScalingPolicyAsync(
+    public java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(
             DeleteScalingPolicyRequest request) {
 
         return deleteScalingPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteScalingPolicyAsync(
+    public java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(
             final DeleteScalingPolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, DeleteScalingPolicyResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteScalingPolicyResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteScalingPolicyResult call() throws Exception {
+                        DeleteScalingPolicyResult result;
 
                         try {
-                            deleteScalingPolicy(request);
-                            result = null;
+                            result = deleteScalingPolicy(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -187,10 +187,97 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all KMS exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DependencyTimeoutException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.DependencyTimeoutException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidGrantIdException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidGrantIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidAliasNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidAliasNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MalformedPolicyDocumentException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.MalformedPolicyDocumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedOperationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.UnsupportedOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidGrantTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidGrantTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidMarkerException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidMarkerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidArnException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DisabledException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.DisabledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidCiphertextException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidCiphertextException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AlreadyExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.AlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KMSInternalException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.KMSInternalException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidKeyUsageException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidKeyUsageException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KeyUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.KeyUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KMSInvalidStateException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.KMSInvalidStateException.class)));
 
     /**
      * Constructs a new client to invoke service methods on KMS. A credentials
@@ -340,68 +427,6 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.DependencyTimeoutException.class,
-                        "DependencyTimeoutException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.InvalidGrantIdException.class,
-                "InvalidGrantIdException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.LimitExceededException.class,
-                "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.InvalidAliasNameException.class,
-                        "InvalidAliasNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.MalformedPolicyDocumentException.class,
-                        "MalformedPolicyDocumentException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.UnsupportedOperationException.class,
-                        "UnsupportedOperationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.InvalidGrantTokenException.class,
-                        "InvalidGrantTokenException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.InvalidMarkerException.class,
-                "InvalidMarkerException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.InvalidArnException.class,
-                "InvalidArnException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.DisabledException.class,
-                "DisabledException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.InvalidCiphertextException.class,
-                        "InvalidCiphertextException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.AlreadyExistsException.class,
-                "AlreadyExistsException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.KMSInternalException.class,
-                "KMSInternalException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.NotFoundException.class,
-                "NotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.InvalidKeyUsageException.class,
-                        "InvalidKeyUsageException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.KeyUnavailableException.class,
-                "KeyUnavailableException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.KMSInvalidStateException.class,
-                        "KMSInvalidStateException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -467,20 +492,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelKeyDeletionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(cancelKeyDeletionRequest));
+                request = new CancelKeyDeletionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(cancelKeyDeletionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CancelKeyDeletionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CancelKeyDeletionResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CancelKeyDeletionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CancelKeyDeletionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -510,6 +535,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param createAliasRequest
+     * @return Result of the CreateAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -543,29 +569,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @sample AWSKMS.CreateAlias
      */
     @Override
-    public void createAlias(CreateAliasRequest createAliasRequest) {
+    public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
         ExecutionContext executionContext = createExecutionContext(createAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateAliasRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateAliasResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(createAliasRequest));
+                request = new CreateAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -632,18 +662,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateGrantRequestMarshaller().marshall(super
-                        .beforeMarshalling(createGrantRequest));
+                request = new CreateGrantRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateGrantResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateGrantResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGrantResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateGrantResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -716,18 +747,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(createKeyRequest));
+                request = new CreateKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateKeyResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateKeyResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -823,18 +855,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DecryptRequestMarshaller().marshall(super
-                        .beforeMarshalling(decryptRequest));
+                request = new DecryptRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(decryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DecryptResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new DecryptResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DecryptResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DecryptResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -852,6 +885,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param deleteAliasRequest
+     * @return Result of the DeleteAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -873,29 +907,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @sample AWSKMS.DeleteAlias
      */
     @Override
-    public void deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAliasRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAliasResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteAliasRequest));
+                request = new DeleteAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -935,18 +973,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeKeyRequest));
+                request = new DescribeKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeKeyResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeKeyResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -968,6 +1007,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param disableKeyRequest
+     * @return Result of the DisableKey operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -991,29 +1031,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @sample AWSKMS.DisableKey
      */
     @Override
-    public void disableKey(DisableKeyRequest disableKeyRequest) {
+    public DisableKeyResult disableKey(DisableKeyRequest disableKeyRequest) {
         ExecutionContext executionContext = createExecutionContext(disableKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableKeyRequest> request = null;
-        Response<Void> response = null;
+        Response<DisableKeyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(disableKeyRequest));
+                request = new DisableKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(disableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisableKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1027,6 +1071,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param disableKeyRotationRequest
+     * @return Result of the DisableKeyRotation operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1053,31 +1099,35 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @sample AWSKMS.DisableKeyRotation
      */
     @Override
-    public void disableKeyRotation(
+    public DisableKeyRotationResult disableKeyRotation(
             DisableKeyRotationRequest disableKeyRotationRequest) {
         ExecutionContext executionContext = createExecutionContext(disableKeyRotationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableKeyRotationRequest> request = null;
-        Response<Void> response = null;
+        Response<DisableKeyRotationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableKeyRotationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(disableKeyRotationRequest));
+                request = new DisableKeyRotationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(disableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableKeyRotationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisableKeyRotationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1091,6 +1141,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param enableKeyRequest
+     * @return Result of the EnableKey operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1120,29 +1171,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @sample AWSKMS.EnableKey
      */
     @Override
-    public void enableKey(EnableKeyRequest enableKeyRequest) {
+    public EnableKeyResult enableKey(EnableKeyRequest enableKeyRequest) {
         ExecutionContext executionContext = createExecutionContext(enableKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableKeyRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableKeyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(enableKeyRequest));
+                request = new EnableKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(enableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<EnableKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EnableKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1156,6 +1211,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param enableKeyRotationRequest
+     * @return Result of the EnableKeyRotation operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1182,31 +1239,35 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @sample AWSKMS.EnableKeyRotation
      */
     @Override
-    public void enableKeyRotation(
+    public EnableKeyRotationResult enableKeyRotation(
             EnableKeyRotationRequest enableKeyRotationRequest) {
         ExecutionContext executionContext = createExecutionContext(enableKeyRotationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableKeyRotationRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableKeyRotationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableKeyRotationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(enableKeyRotationRequest));
+                request = new EnableKeyRotationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(enableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<EnableKeyRotationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EnableKeyRotationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1297,18 +1358,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EncryptRequestMarshaller().marshall(super
-                        .beforeMarshalling(encryptRequest));
+                request = new EncryptRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(encryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EncryptResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new EncryptResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<EncryptResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EncryptResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1412,18 +1474,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(generateDataKeyRequest));
+                request = new GenerateDataKeyRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(generateDataKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateDataKeyResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GenerateDataKeyResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GenerateDataKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GenerateDataKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1491,7 +1555,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataKeyWithoutPlaintextRequestMarshaller()
+                request = new GenerateDataKeyWithoutPlaintextRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(generateDataKeyWithoutPlaintextRequest));
                 // Binds the request metrics to the current request.
@@ -1500,11 +1565,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateDataKeyWithoutPlaintextResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<GenerateDataKeyWithoutPlaintextResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new GenerateDataKeyWithoutPlaintextResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GenerateDataKeyWithoutPlaintextResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1543,18 +1608,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateRandomRequestMarshaller().marshall(super
-                        .beforeMarshalling(generateRandomRequest));
+                request = new GenerateRandomRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(generateRandomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateRandomResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GenerateRandomResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GenerateRandomResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GenerateRandomResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1612,18 +1679,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyPolicyRequestMarshaller().marshall(super
-                        .beforeMarshalling(getKeyPolicyRequest));
+                request = new GetKeyPolicyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetKeyPolicyResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetKeyPolicyResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetKeyPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetKeyPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1678,20 +1746,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyRotationStatusRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getKeyRotationStatusRequest));
+                request = new GetKeyRotationStatusRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getKeyRotationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetKeyRotationStatusResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetKeyRotationStatusResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetKeyRotationStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetKeyRotationStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1732,18 +1800,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAliasesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listAliasesRequest));
+                request = new ListAliasesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAliasesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListAliasesResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListAliasesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListAliasesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1803,18 +1872,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGrantsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listGrantsRequest));
+                request = new ListGrantsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listGrantsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListGrantsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListGrantsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListGrantsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListGrantsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1867,18 +1937,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListKeyPoliciesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listKeyPoliciesRequest));
+                request = new ListKeyPoliciesRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(listKeyPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListKeyPoliciesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListKeyPoliciesResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListKeyPoliciesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListKeyPoliciesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1916,18 +1988,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListKeysRequestMarshaller().marshall(super
-                        .beforeMarshalling(listKeysRequest));
+                request = new ListKeysRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListKeysResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListKeysResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListKeysResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListKeysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1985,20 +2058,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRetirableGrantsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listRetirableGrantsRequest));
+                request = new ListRetirableGrantsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listRetirableGrantsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRetirableGrantsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListRetirableGrantsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListRetirableGrantsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListRetirableGrantsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2021,6 +2094,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param putKeyPolicyRequest
+     * @return Result of the PutKeyPolicy operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -2056,29 +2130,34 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @sample AWSKMS.PutKeyPolicy
      */
     @Override
-    public void putKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest) {
+    public PutKeyPolicyResult putKeyPolicy(
+            PutKeyPolicyRequest putKeyPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(putKeyPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutKeyPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<PutKeyPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutKeyPolicyRequestMarshaller().marshall(super
-                        .beforeMarshalling(putKeyPolicyRequest));
+                request = new PutKeyPolicyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(putKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutKeyPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutKeyPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2153,18 +2232,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReEncryptRequestMarshaller().marshall(super
-                        .beforeMarshalling(reEncryptRequest));
+                request = new ReEncryptRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(reEncryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ReEncryptResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ReEncryptResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ReEncryptResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ReEncryptResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2209,6 +2289,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param retireGrantRequest
+     * @return Result of the RetireGrant operation returned by the service.
      * @throws InvalidGrantTokenException
      *         The request was rejected because a grant token provided as part
      *         of the request is invalid.
@@ -2236,29 +2317,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @sample AWSKMS.RetireGrant
      */
     @Override
-    public void retireGrant(RetireGrantRequest retireGrantRequest) {
+    public RetireGrantResult retireGrant(RetireGrantRequest retireGrantRequest) {
         ExecutionContext executionContext = createExecutionContext(retireGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RetireGrantRequest> request = null;
-        Response<Void> response = null;
+        Response<RetireGrantResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetireGrantRequestMarshaller().marshall(super
-                        .beforeMarshalling(retireGrantRequest));
+                request = new RetireGrantRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(retireGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<RetireGrantResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RetireGrantResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2267,8 +2352,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     }
 
     @Override
-    public void retireGrant() {
-        retireGrant(new RetireGrantRequest());
+    public RetireGrantResult retireGrant() {
+        return retireGrant(new RetireGrantRequest());
     }
 
     /**
@@ -2278,6 +2363,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param revokeGrantRequest
+     * @return Result of the RevokeGrant operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -2304,29 +2390,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @sample AWSKMS.RevokeGrant
      */
     @Override
-    public void revokeGrant(RevokeGrantRequest revokeGrantRequest) {
+    public RevokeGrantResult revokeGrant(RevokeGrantRequest revokeGrantRequest) {
         ExecutionContext executionContext = createExecutionContext(revokeGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RevokeGrantRequest> request = null;
-        Response<Void> response = null;
+        Response<RevokeGrantResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RevokeGrantRequestMarshaller().marshall(super
-                        .beforeMarshalling(revokeGrantRequest));
+                request = new RevokeGrantRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(revokeGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<RevokeGrantResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RevokeGrantResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2398,20 +2488,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ScheduleKeyDeletionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(scheduleKeyDeletionRequest));
+                request = new ScheduleKeyDeletionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(scheduleKeyDeletionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ScheduleKeyDeletionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ScheduleKeyDeletionResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ScheduleKeyDeletionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ScheduleKeyDeletionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2444,6 +2534,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param updateAliasRequest
+     * @return Result of the UpdateAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -2465,29 +2556,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @sample AWSKMS.UpdateAlias
      */
     @Override
-    public void updateAlias(UpdateAliasRequest updateAliasRequest) {
+    public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
         ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateAliasRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateAliasResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateAliasRequest));
+                request = new UpdateAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2501,6 +2596,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param updateKeyDescriptionRequest
+     * @return Result of the UpdateKeyDescription operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -2524,31 +2621,35 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @sample AWSKMS.UpdateKeyDescription
      */
     @Override
-    public void updateKeyDescription(
+    public UpdateKeyDescriptionResult updateKeyDescription(
             UpdateKeyDescriptionRequest updateKeyDescriptionRequest) {
         ExecutionContext executionContext = createExecutionContext(updateKeyDescriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateKeyDescriptionRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateKeyDescriptionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateKeyDescriptionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateKeyDescriptionRequest));
+                request = new UpdateKeyDescriptionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateKeyDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateKeyDescriptionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateKeyDescriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2619,8 +2720,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

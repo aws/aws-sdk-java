@@ -120,61 +120,61 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAliasAsync(
+    public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             DeleteAliasRequest request) {
 
         return deleteAliasAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAliasAsync(
+    public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             DeleteAliasRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteBuildAsync(
+    public java.util.concurrent.Future<DeleteBuildResult> deleteBuildAsync(
             DeleteBuildRequest request) {
 
         return deleteBuildAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteBuildAsync(
+    public java.util.concurrent.Future<DeleteBuildResult> deleteBuildAsync(
             DeleteBuildRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteBuildRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteBuildRequest, DeleteBuildResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteFleetAsync(
+    public java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(
             DeleteFleetRequest request) {
 
         return deleteFleetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteFleetAsync(
+    public java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(
             DeleteFleetRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteScalingPolicyAsync(
+    public java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(
             DeleteScalingPolicyRequest request) {
 
         return deleteScalingPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteScalingPolicyAsync(
+    public java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(
             DeleteScalingPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, DeleteScalingPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

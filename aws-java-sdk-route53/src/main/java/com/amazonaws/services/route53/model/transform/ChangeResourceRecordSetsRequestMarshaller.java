@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ChangeResourceRecordSetsRequest Marshaller
@@ -62,9 +63,11 @@ public class ChangeResourceRecordSetsRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (changeResourceRecordSetsRequest.getHostedZoneId() != null) ? StringUtils
-                                .fromString(changeResourceRecordSetsRequest
-                                        .getHostedZoneId()) : "");
+                        (changeResourceRecordSetsRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(changeResourceRecordSetsRequest
+                                                .getHostedZoneId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

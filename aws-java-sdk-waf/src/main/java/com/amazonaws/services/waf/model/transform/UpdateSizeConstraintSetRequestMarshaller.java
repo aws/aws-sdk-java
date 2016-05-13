@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateSizeConstraintSetRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class UpdateSizeConstraintSetRequestMarshaller
         implements
         Marshaller<Request<UpdateSizeConstraintSetRequest>, UpdateSizeConstraintSetRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateSizeConstraintSetRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateSizeConstraintSetRequest> marshall(
             UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest) {
@@ -59,8 +66,8 @@ public class UpdateSizeConstraintSetRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

@@ -152,9 +152,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * 
      * @param deleteCloudFrontOriginAccessIdentityRequest
      *        The request to delete a origin access identity.
+     * @return A Java Future containing the result of the
+     *         DeleteCloudFrontOriginAccessIdentity operation returned by the
+     *         service.
      * @sample AmazonCloudFrontAsync.DeleteCloudFrontOriginAccessIdentity
      */
-    java.util.concurrent.Future<Void> deleteCloudFrontOriginAccessIdentityAsync(
+    java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest);
 
     /**
@@ -167,20 +170,25 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteCloudFrontOriginAccessIdentity operation returned by the
+     *         service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteCloudFrontOriginAccessIdentity
      */
-    java.util.concurrent.Future<Void> deleteCloudFrontOriginAccessIdentityAsync(
+    java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResult> asyncHandler);
 
     /**
      * Delete a distribution.
      * 
      * @param deleteDistributionRequest
      *        The request to delete a distribution.
+     * @return A Java Future containing the result of the DeleteDistribution
+     *         operation returned by the service.
      * @sample AmazonCloudFrontAsync.DeleteDistribution
      */
-    java.util.concurrent.Future<Void> deleteDistributionAsync(
+    java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(
             DeleteDistributionRequest deleteDistributionRequest);
 
     /**
@@ -193,20 +201,24 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDistribution
+     *         operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteDistribution
      */
-    java.util.concurrent.Future<Void> deleteDistributionAsync(
+    java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(
             DeleteDistributionRequest deleteDistributionRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, DeleteDistributionResult> asyncHandler);
 
     /**
      * Delete a streaming distribution.
      * 
      * @param deleteStreamingDistributionRequest
      *        The request to delete a streaming distribution.
+     * @return A Java Future containing the result of the
+     *         DeleteStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.DeleteStreamingDistribution
      */
-    java.util.concurrent.Future<Void> deleteStreamingDistributionAsync(
+    java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
             DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
 
     /**
@@ -219,11 +231,13 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteStreamingDistribution
      */
-    java.util.concurrent.Future<Void> deleteStreamingDistributionAsync(
+    java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
             DeleteStreamingDistributionRequest deleteStreamingDistributionRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult> asyncHandler);
 
     /**
      * Get the information about an origin access identity.

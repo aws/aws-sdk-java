@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,6 +17,8 @@
 package com.amazonaws.services.elasticache.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -27,110 +30,178 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Cache Cluster StAX Unmarshaller
+ * CacheCluster StAX Unmarshaller
  */
-public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, StaxUnmarshallerContext> {
+public class CacheClusterStaxUnmarshaller implements
+        Unmarshaller<CacheCluster, StaxUnmarshallerContext> {
 
-    public CacheCluster unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public CacheCluster unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         CacheCluster cacheCluster = new CacheCluster();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
-
-        if (context.isStartOfDocument()) targetDepth++;
+        if (context.isStartOfDocument())
+            targetDepth += 3;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return cacheCluster;
+            if (xmlEvent.isEndDocument())
+                return cacheCluster;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("CacheClusterId", targetDepth)) {
-                    cacheCluster.setCacheClusterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheCluster.setCacheClusterId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("ConfigurationEndpoint", targetDepth)) {
-                    cacheCluster.setConfigurationEndpoint(EndpointStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context
+                        .testExpression("ConfigurationEndpoint", targetDepth)) {
+                    cacheCluster
+                            .setConfigurationEndpoint(EndpointStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("ClientDownloadLandingPage", targetDepth)) {
-                    cacheCluster.setClientDownloadLandingPage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("ClientDownloadLandingPage",
+                        targetDepth)) {
+                    cacheCluster
+                            .setClientDownloadLandingPage(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("CacheNodeType", targetDepth)) {
-                    cacheCluster.setCacheNodeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheCluster.setCacheNodeType(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Engine", targetDepth)) {
-                    cacheCluster.setEngine(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheCluster.setEngine(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("EngineVersion", targetDepth)) {
-                    cacheCluster.setEngineVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheCluster.setEngineVersion(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("CacheClusterStatus", targetDepth)) {
-                    cacheCluster.setCacheClusterStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheCluster.setCacheClusterStatus(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("NumCacheNodes", targetDepth)) {
-                    cacheCluster.setNumCacheNodes(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheCluster.setNumCacheNodes(IntegerStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("PreferredAvailabilityZone", targetDepth)) {
-                    cacheCluster.setPreferredAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("PreferredAvailabilityZone",
+                        targetDepth)) {
+                    cacheCluster
+                            .setPreferredAvailabilityZone(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("CacheClusterCreateTime", targetDepth)) {
-                    cacheCluster.setCacheClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("CacheClusterCreateTime",
+                        targetDepth)) {
+                    cacheCluster.setCacheClusterCreateTime(DateStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("PreferredMaintenanceWindow", targetDepth)) {
-                    cacheCluster.setPreferredMaintenanceWindow(StringStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("PreferredMaintenanceWindow",
+                        targetDepth)) {
+                    cacheCluster
+                            .setPreferredMaintenanceWindow(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("PendingModifiedValues", targetDepth)) {
-                    cacheCluster.setPendingModifiedValues(PendingModifiedValuesStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context
+                        .testExpression("PendingModifiedValues", targetDepth)) {
+                    cacheCluster
+                            .setPendingModifiedValues(PendingModifiedValuesStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("NotificationConfiguration", targetDepth)) {
-                    cacheCluster.setNotificationConfiguration(NotificationConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("NotificationConfiguration",
+                        targetDepth)) {
+                    cacheCluster
+                            .setNotificationConfiguration(NotificationConfigurationStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("CacheSecurityGroups/CacheSecurityGroup", targetDepth)) {
-                    cacheCluster.getCacheSecurityGroups().add(CacheSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression(
+                        "CacheSecurityGroups/CacheSecurityGroup", targetDepth)) {
+                    cacheCluster
+                            .withCacheSecurityGroups(CacheSecurityGroupMembershipStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("CacheParameterGroup", targetDepth)) {
-                    cacheCluster.setCacheParameterGroup(CacheParameterGroupStatusStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheCluster
+                            .setCacheParameterGroup(CacheParameterGroupStatusStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("CacheSubnetGroupName", targetDepth)) {
-                    cacheCluster.setCacheSubnetGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheCluster.setCacheSubnetGroupName(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("CacheNodes/CacheNode", targetDepth)) {
-                    cacheCluster.getCacheNodes().add(CacheNodeStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheCluster.withCacheNodes(CacheNodeStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("AutoMinorVersionUpgrade", targetDepth)) {
-                    cacheCluster.setAutoMinorVersionUpgrade(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("AutoMinorVersionUpgrade",
+                        targetDepth)) {
+                    cacheCluster
+                            .setAutoMinorVersionUpgrade(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("SecurityGroups/member", targetDepth)) {
-                    cacheCluster.getSecurityGroups().add(SecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context
+                        .testExpression("SecurityGroups/member", targetDepth)) {
+                    cacheCluster
+                            .withSecurityGroups(SecurityGroupMembershipStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ReplicationGroupId", targetDepth)) {
-                    cacheCluster.setReplicationGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheCluster.setReplicationGroupId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("SnapshotRetentionLimit", targetDepth)) {
-                    cacheCluster.setSnapshotRetentionLimit(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("SnapshotRetentionLimit",
+                        targetDepth)) {
+                    cacheCluster
+                            .setSnapshotRetentionLimit(IntegerStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("SnapshotWindow", targetDepth)) {
-                    cacheCluster.setSnapshotWindow(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheCluster.setSnapshotWindow(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -142,9 +213,10 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
     }
 
     private static CacheClusterStaxUnmarshaller instance;
+
     public static CacheClusterStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new CacheClusterStaxUnmarshaller();
+        if (instance == null)
+            instance = new CacheClusterStaxUnmarshaller();
         return instance;
     }
 }
-    

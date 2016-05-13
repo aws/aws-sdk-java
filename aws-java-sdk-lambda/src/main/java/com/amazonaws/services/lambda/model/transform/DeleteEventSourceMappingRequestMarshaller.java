@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteEventSourceMappingRequest Marshaller
@@ -48,7 +49,14 @@ public class DeleteEventSourceMappingRequestMarshaller
         implements
         Marshaller<Request<DeleteEventSourceMappingRequest>, DeleteEventSourceMappingRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteEventSourceMappingRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteEventSourceMappingRequest> marshall(
             DeleteEventSourceMappingRequest deleteEventSourceMappingRequest) {
@@ -68,9 +76,11 @@ public class DeleteEventSourceMappingRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{UUID}",
-                        (deleteEventSourceMappingRequest.getUUID() != null) ? StringUtils
-                                .fromString(deleteEventSourceMappingRequest
-                                        .getUUID()) : "");
+                        (deleteEventSourceMappingRequest.getUUID() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteEventSourceMappingRequest
+                                                .getUUID()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

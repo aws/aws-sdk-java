@@ -278,26 +278,25 @@ public class AmazonCloudWatchEventsAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRuleAsync(
+    public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
             DeleteRuleRequest request) {
 
         return deleteRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRuleAsync(
+    public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
             final DeleteRuleRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteRuleResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteRuleResult call() throws Exception {
+                        DeleteRuleResult result;
 
                         try {
-                            deleteRule(request);
-                            result = null;
+                            result = deleteRule(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -349,26 +348,25 @@ public class AmazonCloudWatchEventsAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableRuleAsync(
+    public java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(
             DisableRuleRequest request) {
 
         return disableRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableRuleAsync(
+    public java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(
             final DisableRuleRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DisableRuleRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DisableRuleRequest, DisableRuleResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DisableRuleResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DisableRuleResult call() throws Exception {
+                        DisableRuleResult result;
 
                         try {
-                            disableRule(request);
-                            result = null;
+                            result = disableRule(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -385,26 +383,25 @@ public class AmazonCloudWatchEventsAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableRuleAsync(
+    public java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(
             EnableRuleRequest request) {
 
         return enableRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableRuleAsync(
+    public java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(
             final EnableRuleRequest request,
-            final com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, EnableRuleResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<EnableRuleResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public EnableRuleResult call() throws Exception {
+                        EnableRuleResult result;
 
                         try {
-                            enableRule(request);
-                            result = null;
+                            result = enableRule(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

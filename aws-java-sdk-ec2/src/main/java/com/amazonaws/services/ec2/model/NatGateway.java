@@ -66,6 +66,40 @@ public class NatGateway implements Serializable, Cloneable {
      * <p>
      * The state of the NAT gateway.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pending</code>: The NAT gateway is being created and is not ready
+     * to process traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: The NAT gateway could not be created. Check the
+     * <code>failureCode</code> and <code>failureMessage</code> fields for the
+     * reason.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The NAT gateway is able to process traffic. This
+     * status remains until you delete the NAT gateway, and does not indicate
+     * the health of the NAT gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being
+     * terminated and may still be processing traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The NAT gateway has been terminated and is no
+     * longer processing traffic.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String state;
     /**
@@ -423,9 +457,76 @@ public class NatGateway implements Serializable, Cloneable {
      * <p>
      * The state of the NAT gateway.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pending</code>: The NAT gateway is being created and is not ready
+     * to process traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: The NAT gateway could not be created. Check the
+     * <code>failureCode</code> and <code>failureMessage</code> fields for the
+     * reason.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The NAT gateway is able to process traffic. This
+     * status remains until you delete the NAT gateway, and does not indicate
+     * the health of the NAT gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being
+     * terminated and may still be processing traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The NAT gateway has been terminated and is no
+     * longer processing traffic.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the NAT gateway.
+     *        The state of the NAT gateway.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: The NAT gateway is being created and is not
+     *        ready to process traffic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code>: The NAT gateway could not be created. Check
+     *        the <code>failureCode</code> and <code>failureMessage</code>
+     *        fields for the reason.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available</code>: The NAT gateway is able to process
+     *        traffic. This status remains until you delete the NAT gateway, and
+     *        does not indicate the health of the NAT gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>: The NAT gateway is in the process of being
+     *        terminated and may still be processing traffic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>: The NAT gateway has been terminated and is
+     *        no longer processing traffic.
+     *        </p>
+     *        </li>
      * @see NatGatewayState
      */
 
@@ -437,8 +538,75 @@ public class NatGateway implements Serializable, Cloneable {
      * <p>
      * The state of the NAT gateway.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pending</code>: The NAT gateway is being created and is not ready
+     * to process traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: The NAT gateway could not be created. Check the
+     * <code>failureCode</code> and <code>failureMessage</code> fields for the
+     * reason.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The NAT gateway is able to process traffic. This
+     * status remains until you delete the NAT gateway, and does not indicate
+     * the health of the NAT gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being
+     * terminated and may still be processing traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The NAT gateway has been terminated and is no
+     * longer processing traffic.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The state of the NAT gateway.
+     * @return The state of the NAT gateway.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>pending</code>: The NAT gateway is being created and is not
+     *         ready to process traffic.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>failed</code>: The NAT gateway could not be created. Check
+     *         the <code>failureCode</code> and <code>failureMessage</code>
+     *         fields for the reason.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>available</code>: The NAT gateway is able to process
+     *         traffic. This status remains until you delete the NAT gateway,
+     *         and does not indicate the health of the NAT gateway.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deleting</code>: The NAT gateway is in the process of being
+     *         terminated and may still be processing traffic.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deleted</code>: The NAT gateway has been terminated and is
+     *         no longer processing traffic.
+     *         </p>
+     *         </li>
      * @see NatGatewayState
      */
 
@@ -450,9 +618,76 @@ public class NatGateway implements Serializable, Cloneable {
      * <p>
      * The state of the NAT gateway.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pending</code>: The NAT gateway is being created and is not ready
+     * to process traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: The NAT gateway could not be created. Check the
+     * <code>failureCode</code> and <code>failureMessage</code> fields for the
+     * reason.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The NAT gateway is able to process traffic. This
+     * status remains until you delete the NAT gateway, and does not indicate
+     * the health of the NAT gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being
+     * terminated and may still be processing traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The NAT gateway has been terminated and is no
+     * longer processing traffic.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the NAT gateway.
+     *        The state of the NAT gateway.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: The NAT gateway is being created and is not
+     *        ready to process traffic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code>: The NAT gateway could not be created. Check
+     *        the <code>failureCode</code> and <code>failureMessage</code>
+     *        fields for the reason.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available</code>: The NAT gateway is able to process
+     *        traffic. This status remains until you delete the NAT gateway, and
+     *        does not indicate the health of the NAT gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>: The NAT gateway is in the process of being
+     *        terminated and may still be processing traffic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>: The NAT gateway has been terminated and is
+     *        no longer processing traffic.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see NatGatewayState
@@ -467,9 +702,76 @@ public class NatGateway implements Serializable, Cloneable {
      * <p>
      * The state of the NAT gateway.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pending</code>: The NAT gateway is being created and is not ready
+     * to process traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: The NAT gateway could not be created. Check the
+     * <code>failureCode</code> and <code>failureMessage</code> fields for the
+     * reason.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The NAT gateway is able to process traffic. This
+     * status remains until you delete the NAT gateway, and does not indicate
+     * the health of the NAT gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being
+     * terminated and may still be processing traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The NAT gateway has been terminated and is no
+     * longer processing traffic.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the NAT gateway.
+     *        The state of the NAT gateway.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: The NAT gateway is being created and is not
+     *        ready to process traffic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code>: The NAT gateway could not be created. Check
+     *        the <code>failureCode</code> and <code>failureMessage</code>
+     *        fields for the reason.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available</code>: The NAT gateway is able to process
+     *        traffic. This status remains until you delete the NAT gateway, and
+     *        does not indicate the health of the NAT gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>: The NAT gateway is in the process of being
+     *        terminated and may still be processing traffic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>: The NAT gateway has been terminated and is
+     *        no longer processing traffic.
+     *        </p>
+     *        </li>
      * @see NatGatewayState
      */
 
@@ -481,9 +783,76 @@ public class NatGateway implements Serializable, Cloneable {
      * <p>
      * The state of the NAT gateway.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pending</code>: The NAT gateway is being created and is not ready
+     * to process traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: The NAT gateway could not be created. Check the
+     * <code>failureCode</code> and <code>failureMessage</code> fields for the
+     * reason.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The NAT gateway is able to process traffic. This
+     * status remains until you delete the NAT gateway, and does not indicate
+     * the health of the NAT gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being
+     * terminated and may still be processing traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The NAT gateway has been terminated and is no
+     * longer processing traffic.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the NAT gateway.
+     *        The state of the NAT gateway.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: The NAT gateway is being created and is not
+     *        ready to process traffic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code>: The NAT gateway could not be created. Check
+     *        the <code>failureCode</code> and <code>failureMessage</code>
+     *        fields for the reason.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available</code>: The NAT gateway is able to process
+     *        traffic. This status remains until you delete the NAT gateway, and
+     *        does not indicate the health of the NAT gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>: The NAT gateway is in the process of being
+     *        terminated and may still be processing traffic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>: The NAT gateway has been terminated and is
+     *        no longer processing traffic.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see NatGatewayState

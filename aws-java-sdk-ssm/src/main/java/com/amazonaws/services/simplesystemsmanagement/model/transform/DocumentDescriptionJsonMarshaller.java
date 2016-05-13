@@ -26,7 +26,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DocumentDescriptionMarshaller
@@ -51,9 +51,21 @@ public class DocumentDescriptionJsonMarshaller {
                 jsonGenerator.writeFieldName("Sha1").writeValue(
                         documentDescription.getSha1());
             }
+            if (documentDescription.getHash() != null) {
+                jsonGenerator.writeFieldName("Hash").writeValue(
+                        documentDescription.getHash());
+            }
+            if (documentDescription.getHashType() != null) {
+                jsonGenerator.writeFieldName("HashType").writeValue(
+                        documentDescription.getHashType());
+            }
             if (documentDescription.getName() != null) {
                 jsonGenerator.writeFieldName("Name").writeValue(
                         documentDescription.getName());
+            }
+            if (documentDescription.getOwner() != null) {
+                jsonGenerator.writeFieldName("Owner").writeValue(
+                        documentDescription.getOwner());
             }
             if (documentDescription.getCreatedDate() != null) {
                 jsonGenerator.writeFieldName("CreatedDate").writeValue(

@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * GetReusableDelegationSetRequest Marshaller
@@ -59,11 +60,14 @@ public class GetReusableDelegationSetRequestMarshaller
 
         String uriResourcePath = "/2013-04-01/delegationset/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (getReusableDelegationSetRequest.getId() != null) ? StringUtils
-                        .fromString(getReusableDelegationSetRequest.getId())
-                        : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Id}",
+                        (getReusableDelegationSetRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(getReusableDelegationSetRequest
+                                                .getId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

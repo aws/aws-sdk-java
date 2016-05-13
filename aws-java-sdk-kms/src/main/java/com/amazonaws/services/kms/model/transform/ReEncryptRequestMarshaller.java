@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ReEncryptRequest Marshaller
  */
 public class ReEncryptRequestMarshaller implements
         Marshaller<Request<ReEncryptRequest>, ReEncryptRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ReEncryptRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ReEncryptRequest> marshall(ReEncryptRequest reEncryptRequest) {
 
@@ -56,8 +62,8 @@ public class ReEncryptRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

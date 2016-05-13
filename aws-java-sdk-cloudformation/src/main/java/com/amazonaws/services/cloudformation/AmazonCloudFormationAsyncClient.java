@@ -47,8 +47,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * Amazon CloudFormation makes use of other AWS products. If you need additional
  * technical information about a specific AWS product, you can find the
  * product's technical documentation at <a
- * href="http://docs.aws.amazon.com/documentation/"
- * >http://docs.aws.amazon.com/documentation/</a>.
+ * href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
  * </p>
  */
 @ThreadSafe
@@ -282,26 +281,25 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelUpdateStackAsync(
+    public java.util.concurrent.Future<CancelUpdateStackResult> cancelUpdateStackAsync(
             CancelUpdateStackRequest request) {
 
         return cancelUpdateStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelUpdateStackAsync(
+    public java.util.concurrent.Future<CancelUpdateStackResult> cancelUpdateStackAsync(
             final CancelUpdateStackRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, CancelUpdateStackResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CancelUpdateStackResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CancelUpdateStackResult call() throws Exception {
+                        CancelUpdateStackResult result;
 
                         try {
-                            cancelUpdateStack(request);
-                            result = null;
+                            result = cancelUpdateStack(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -458,26 +456,25 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStackAsync(
+    public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(
             DeleteStackRequest request) {
 
         return deleteStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStackAsync(
+    public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(
             final DeleteStackRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteStackResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteStackResult call() throws Exception {
+                        DeleteStackResult result;
 
                         try {
-                            deleteStack(request);
-                            result = null;
+                            result = deleteStack(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1082,26 +1079,25 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setStackPolicyAsync(
+    public java.util.concurrent.Future<SetStackPolicyResult> setStackPolicyAsync(
             SetStackPolicyRequest request) {
 
         return setStackPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setStackPolicyAsync(
+    public java.util.concurrent.Future<SetStackPolicyResult> setStackPolicyAsync(
             final SetStackPolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, SetStackPolicyResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetStackPolicyResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetStackPolicyResult call() throws Exception {
+                        SetStackPolicyResult result;
 
                         try {
-                            setStackPolicy(request);
-                            result = null;
+                            result = setStackPolicy(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1118,26 +1114,25 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> signalResourceAsync(
+    public java.util.concurrent.Future<SignalResourceResult> signalResourceAsync(
             SignalResourceRequest request) {
 
         return signalResourceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> signalResourceAsync(
+    public java.util.concurrent.Future<SignalResourceResult> signalResourceAsync(
             final SignalResourceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SignalResourceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SignalResourceRequest, SignalResourceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SignalResourceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SignalResourceResult call() throws Exception {
+                        SignalResourceResult result;
 
                         try {
-                            signalResource(request);
-                            result = null;
+                            result = signalResource(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

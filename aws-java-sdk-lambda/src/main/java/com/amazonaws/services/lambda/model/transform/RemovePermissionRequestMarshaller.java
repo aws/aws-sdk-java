@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RemovePermissionRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class RemovePermissionRequestMarshaller implements
         Marshaller<Request<RemovePermissionRequest>, RemovePermissionRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RemovePermissionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RemovePermissionRequest> marshall(
             RemovePermissionRequest removePermissionRequest) {
@@ -67,15 +75,18 @@ public class RemovePermissionRequestMarshaller implements
         uriResourcePath = uriResourcePath
                 .replace(
                         "{FunctionName}",
-                        (removePermissionRequest.getFunctionName() != null) ? StringUtils
-                                .fromString(removePermissionRequest
-                                        .getFunctionName()) : "");
+                        (removePermissionRequest.getFunctionName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(removePermissionRequest
+                                                .getFunctionName()), false)
+                                : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{StatementId}",
-                        (removePermissionRequest.getStatementId() != null) ? StringUtils
-                                .fromString(removePermissionRequest
-                                        .getStatementId()) : "");
+                        (removePermissionRequest.getStatementId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(removePermissionRequest
+                                                .getStatementId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (removePermissionRequest.getQualifier() != null) {

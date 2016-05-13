@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -76,10 +76,102 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all AWS Lambda exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceConflictException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.ResourceConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CodeStorageExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.CodeStorageExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ServiceException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.ServiceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("RequestTooLargeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.RequestTooLargeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidSecurityGroupIDException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidParameterValueException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.InvalidParameterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("EC2AccessDeniedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.EC2AccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "PolicyLengthExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.PolicyLengthExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidSubnetIDException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.InvalidSubnetIDException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ENILimitReachedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.ENILimitReachedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("EC2ThrottledException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.EC2ThrottledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("EC2UnexpectedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.EC2UnexpectedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "SubnetIPAddressLimitReachedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedMediaTypeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.UnsupportedMediaTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRequestContentException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.InvalidRequestContentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TooManyRequestsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.TooManyRequestsException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS Lambda. A
@@ -231,76 +323,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.ResourceConflictException.class,
-                        "ResourceConflictException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.CodeStorageExceededException.class,
-                        "CodeStorageExceededException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.lambda.model.ServiceException.class,
-                "ServiceException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.RequestTooLargeException.class,
-                        "RequestTooLargeException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException.class,
-                        "InvalidSecurityGroupIDException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.InvalidParameterValueException.class,
-                        "InvalidParameterValueException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.EC2AccessDeniedException.class,
-                        "EC2AccessDeniedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.PolicyLengthExceededException.class,
-                        "PolicyLengthExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.InvalidSubnetIDException.class,
-                        "InvalidSubnetIDException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.ENILimitReachedException.class,
-                        "ENILimitReachedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.EC2ThrottledException.class,
-                        "EC2ThrottledException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.EC2UnexpectedException.class,
-                        "EC2UnexpectedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException.class,
-                        "SubnetIPAddressLimitReachedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.UnsupportedMediaTypeException.class,
-                        "UnsupportedMediaTypeException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.InvalidRequestContentException.class,
-                        "InvalidRequestContentException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.lambda.model.TooManyRequestsException.class,
-                        "TooManyRequestsException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -374,18 +396,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddPermissionRequestMarshaller().marshall(super
-                        .beforeMarshalling(addPermissionRequest));
+                request = new AddPermissionRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(addPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddPermissionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new AddPermissionResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddPermissionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddPermissionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -438,18 +461,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(createAliasRequest));
+                request = new CreateAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAliasResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateAliasResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -531,20 +555,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateEventSourceMappingRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createEventSourceMappingRequest));
+                request = new CreateEventSourceMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateEventSourceMappingResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<CreateEventSourceMappingResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new CreateEventSourceMappingResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CreateEventSourceMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -609,18 +633,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateFunctionRequestMarshaller().marshall(super
-                        .beforeMarshalling(createFunctionRequest));
+                request = new CreateFunctionRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateFunctionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateFunctionResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFunctionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateFunctionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -642,6 +668,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteAliasRequest
+     * @return Result of the DeleteAlias operation returned by the service.
      * @throws ServiceException
      *         The AWS Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
@@ -654,29 +681,33 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * @sample AWSLambda.DeleteAlias
      */
     @Override
-    public void deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAliasRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAliasResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteAliasRequest));
+                request = new DeleteAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -724,20 +755,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteEventSourceMappingRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteEventSourceMappingRequest));
+                request = new DeleteEventSourceMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteEventSourceMappingResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEventSourceMappingResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DeleteEventSourceMappingResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteEventSourceMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -772,6 +803,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteFunctionRequest
+     * @return Result of the DeleteFunction operation returned by the service.
      * @throws ServiceException
      *         The AWS Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
@@ -789,29 +821,35 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * @sample AWSLambda.DeleteFunction
      */
     @Override
-    public void deleteFunction(DeleteFunctionRequest deleteFunctionRequest) {
+    public DeleteFunctionResult deleteFunction(
+            DeleteFunctionRequest deleteFunctionRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteFunctionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteFunctionRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteFunctionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFunctionRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteFunctionRequest));
+                request = new DeleteFunctionRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFunctionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -859,18 +897,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(getAliasRequest));
+                request = new GetAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetAliasResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetAliasResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -921,20 +960,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetEventSourceMappingRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getEventSourceMappingRequest));
+                request = new GetEventSourceMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetEventSourceMappingResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetEventSourceMappingResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetEventSourceMappingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetEventSourceMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -995,18 +1034,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetFunctionRequestMarshaller().marshall(super
-                        .beforeMarshalling(getFunctionRequest));
+                request = new GetFunctionRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetFunctionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetFunctionResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetFunctionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetFunctionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1068,20 +1108,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetFunctionConfigurationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getFunctionConfigurationRequest));
+                request = new GetFunctionConfigurationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getFunctionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetFunctionConfigurationResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<GetFunctionConfigurationResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new GetFunctionConfigurationResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GetFunctionConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1140,18 +1180,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPolicyRequestMarshaller().marshall(super
-                        .beforeMarshalling(getPolicyRequest));
+                request = new GetPolicyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetPolicyResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetPolicyResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1242,18 +1283,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new InvokeRequestMarshaller().marshall(super
-                        .beforeMarshalling(invokeRequest));
+                request = new InvokeRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(invokeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<InvokeResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(new InvokeResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(false);
+            HttpResponseHandler<AmazonWebServiceResponse<InvokeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(false)
+                            .withHasStreamingSuccessResponse(false),
+                            new InvokeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1302,18 +1344,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new InvokeAsyncRequestMarshaller().marshall(super
-                        .beforeMarshalling(invokeAsyncRequest));
+                request = new InvokeAsyncRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(invokeAsyncRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<InvokeAsyncResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new InvokeAsyncResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<InvokeAsyncResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new InvokeAsyncResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1365,18 +1408,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAliasesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listAliasesRequest));
+                request = new ListAliasesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAliasesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListAliasesResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListAliasesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListAliasesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1440,20 +1484,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListEventSourceMappingsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listEventSourceMappingsRequest));
+                request = new ListEventSourceMappingsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listEventSourceMappingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListEventSourceMappingsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListEventSourceMappingsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListEventSourceMappingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListEventSourceMappingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1507,18 +1551,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFunctionsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listFunctionsRequest));
+                request = new ListFunctionsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listFunctionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListFunctionsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListFunctionsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListFunctionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListFunctionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1572,20 +1617,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVersionsByFunctionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listVersionsByFunctionRequest));
+                request = new ListVersionsByFunctionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listVersionsByFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListVersionsByFunctionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListVersionsByFunctionResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListVersionsByFunctionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListVersionsByFunctionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1640,18 +1685,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PublishVersionRequestMarshaller().marshall(super
-                        .beforeMarshalling(publishVersionRequest));
+                request = new PublishVersionRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(publishVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PublishVersionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new PublishVersionResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PublishVersionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PublishVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1685,6 +1732,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param removePermissionRequest
+     * @return Result of the RemovePermission operation returned by the service.
      * @throws ServiceException
      *         The AWS Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
@@ -1700,18 +1748,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * @sample AWSLambda.RemovePermission
      */
     @Override
-    public void removePermission(RemovePermissionRequest removePermissionRequest) {
+    public RemovePermissionResult removePermission(
+            RemovePermissionRequest removePermissionRequest) {
         ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RemovePermissionRequest> request = null;
-        Response<Void> response = null;
+        Response<RemovePermissionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemovePermissionRequestMarshaller()
+                request = new RemovePermissionRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
@@ -1720,10 +1769,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<RemovePermissionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemovePermissionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1770,18 +1823,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateAliasRequest));
+                request = new UpdateAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateAliasResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateAliasResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1851,20 +1905,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateEventSourceMappingRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateEventSourceMappingRequest));
+                request = new UpdateEventSourceMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateEventSourceMappingResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEventSourceMappingResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new UpdateEventSourceMappingResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateEventSourceMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1927,20 +1981,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFunctionCodeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateFunctionCodeRequest));
+                request = new UpdateFunctionCodeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateFunctionCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateFunctionCodeResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateFunctionCodeResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFunctionCodeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateFunctionCodeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2000,20 +2054,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFunctionConfigurationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateFunctionConfigurationRequest));
+                request = new UpdateFunctionConfigurationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateFunctionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateFunctionConfigurationResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFunctionConfigurationResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new UpdateFunctionConfigurationResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateFunctionConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2087,8 +2141,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

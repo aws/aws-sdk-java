@@ -269,12 +269,13 @@ public interface AmazonApiGateway {
      * 
      * @param deleteApiKeyRequest
      *        A request to delete the <a>ApiKey</a> resource.
+     * @return Result of the DeleteApiKey operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteApiKey
      */
-    void deleteApiKey(DeleteApiKeyRequest deleteApiKeyRequest);
+    DeleteApiKeyResult deleteApiKey(DeleteApiKeyRequest deleteApiKeyRequest);
 
     /**
      * <p>
@@ -283,6 +284,7 @@ public interface AmazonApiGateway {
      * 
      * @param deleteAuthorizerRequest
      *        Request to delete an existing <a>Authorizer</a> resource.
+     * @return Result of the DeleteAuthorizer operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
@@ -290,7 +292,8 @@ public interface AmazonApiGateway {
      * @throws ConflictException
      * @sample AmazonApiGateway.DeleteAuthorizer
      */
-    void deleteAuthorizer(DeleteAuthorizerRequest deleteAuthorizerRequest);
+    DeleteAuthorizerResult deleteAuthorizer(
+            DeleteAuthorizerRequest deleteAuthorizerRequest);
 
     /**
      * <p>
@@ -299,12 +302,14 @@ public interface AmazonApiGateway {
      * 
      * @param deleteBasePathMappingRequest
      *        A request to delete the <a>BasePathMapping</a> resource.
+     * @return Result of the DeleteBasePathMapping operation returned by the
+     *         service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteBasePathMapping
      */
-    void deleteBasePathMapping(
+    DeleteBasePathMappingResult deleteBasePathMapping(
             DeleteBasePathMappingRequest deleteBasePathMappingRequest);
 
     /**
@@ -314,13 +319,15 @@ public interface AmazonApiGateway {
      * 
      * @param deleteClientCertificateRequest
      *        A request to delete the <a>ClientCertificate</a> resource.
+     * @return Result of the DeleteClientCertificate operation returned by the
+     *         service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws BadRequestException
      * @throws NotFoundException
      * @sample AmazonApiGateway.DeleteClientCertificate
      */
-    void deleteClientCertificate(
+    DeleteClientCertificateResult deleteClientCertificate(
             DeleteClientCertificateRequest deleteClientCertificateRequest);
 
     /**
@@ -332,13 +339,15 @@ public interface AmazonApiGateway {
      * @param deleteDeploymentRequest
      *        Requests Amazon API Gateway to delete a <a>Deployment</a>
      *        resource.
+     * @return Result of the DeleteDeployment operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteDeployment
      */
-    void deleteDeployment(DeleteDeploymentRequest deleteDeploymentRequest);
+    DeleteDeploymentResult deleteDeployment(
+            DeleteDeploymentRequest deleteDeploymentRequest);
 
     /**
      * <p>
@@ -347,12 +356,14 @@ public interface AmazonApiGateway {
      * 
      * @param deleteDomainNameRequest
      *        A request to delete the <a>DomainName</a> resource.
+     * @return Result of the DeleteDomainName operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteDomainName
      */
-    void deleteDomainName(DeleteDomainNameRequest deleteDomainNameRequest);
+    DeleteDomainNameResult deleteDomainName(
+            DeleteDomainNameRequest deleteDomainNameRequest);
 
     /**
      * <p>
@@ -361,12 +372,15 @@ public interface AmazonApiGateway {
      * 
      * @param deleteIntegrationRequest
      *        Represents a delete integration request.
+     * @return Result of the DeleteIntegration operation returned by the
+     *         service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteIntegration
      */
-    void deleteIntegration(DeleteIntegrationRequest deleteIntegrationRequest);
+    DeleteIntegrationResult deleteIntegration(
+            DeleteIntegrationRequest deleteIntegrationRequest);
 
     /**
      * <p>
@@ -375,12 +389,14 @@ public interface AmazonApiGateway {
      * 
      * @param deleteIntegrationResponseRequest
      *        Represents a delete integration response request.
+     * @return Result of the DeleteIntegrationResponse operation returned by the
+     *         service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteIntegrationResponse
      */
-    void deleteIntegrationResponse(
+    DeleteIntegrationResponseResult deleteIntegrationResponse(
             DeleteIntegrationResponseRequest deleteIntegrationResponseRequest);
 
     /**
@@ -390,12 +406,13 @@ public interface AmazonApiGateway {
      * 
      * @param deleteMethodRequest
      *        Request to delete an existing <a>Method</a> resource.
+     * @return Result of the DeleteMethod operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteMethod
      */
-    void deleteMethod(DeleteMethodRequest deleteMethodRequest);
+    DeleteMethodResult deleteMethod(DeleteMethodRequest deleteMethodRequest);
 
     /**
      * <p>
@@ -404,12 +421,14 @@ public interface AmazonApiGateway {
      * 
      * @param deleteMethodResponseRequest
      *        A request to delete an existing <a>MethodResponse</a> resource.
+     * @return Result of the DeleteMethodResponse operation returned by the
+     *         service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteMethodResponse
      */
-    void deleteMethodResponse(
+    DeleteMethodResponseResult deleteMethodResponse(
             DeleteMethodResponseRequest deleteMethodResponseRequest);
 
     /**
@@ -420,6 +439,7 @@ public interface AmazonApiGateway {
      * @param deleteModelRequest
      *        Request to delete an existing model in an existing <a>RestApi</a>
      *        resource.
+     * @return Result of the DeleteModel operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
@@ -427,7 +447,7 @@ public interface AmazonApiGateway {
      * @throws ConflictException
      * @sample AmazonApiGateway.DeleteModel
      */
-    void deleteModel(DeleteModelRequest deleteModelRequest);
+    DeleteModelResult deleteModel(DeleteModelRequest deleteModelRequest);
 
     /**
      * <p>
@@ -436,6 +456,7 @@ public interface AmazonApiGateway {
      * 
      * @param deleteResourceRequest
      *        Request to delete a <a>Resource</a>.
+     * @return Result of the DeleteResource operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
@@ -443,7 +464,8 @@ public interface AmazonApiGateway {
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteResource
      */
-    void deleteResource(DeleteResourceRequest deleteResourceRequest);
+    DeleteResourceResult deleteResource(
+            DeleteResourceRequest deleteResourceRequest);
 
     /**
      * <p>
@@ -452,13 +474,14 @@ public interface AmazonApiGateway {
      * 
      * @param deleteRestApiRequest
      *        Request to delete the specified API from your collection.
+     * @return Result of the DeleteRestApi operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteRestApi
      */
-    void deleteRestApi(DeleteRestApiRequest deleteRestApiRequest);
+    DeleteRestApiResult deleteRestApi(DeleteRestApiRequest deleteRestApiRequest);
 
     /**
      * <p>
@@ -467,13 +490,14 @@ public interface AmazonApiGateway {
      * 
      * @param deleteStageRequest
      *        Requests Amazon API Gateway to delete a <a>Stage</a> resource.
+     * @return Result of the DeleteStage operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteStage
      */
-    void deleteStage(DeleteStageRequest deleteStageRequest);
+    DeleteStageResult deleteStage(DeleteStageRequest deleteStageRequest);
 
     /**
      * <p>
@@ -482,13 +506,15 @@ public interface AmazonApiGateway {
      * 
      * @param flushStageAuthorizersCacheRequest
      *        Request to flush authorizer cache entries on a specified stage.
+     * @return Result of the FlushStageAuthorizersCache operation returned by
+     *         the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.FlushStageAuthorizersCache
      */
-    void flushStageAuthorizersCache(
+    FlushStageAuthorizersCacheResult flushStageAuthorizersCache(
             FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest);
 
     /**
@@ -498,13 +524,15 @@ public interface AmazonApiGateway {
      * 
      * @param flushStageCacheRequest
      *        Requests Amazon API Gateway to flush a stage's cache.
+     * @return Result of the FlushStageCache operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.FlushStageCache
      */
-    void flushStageCache(FlushStageCacheRequest flushStageCacheRequest);
+    FlushStageCacheResult flushStageCache(
+            FlushStageCacheRequest flushStageCacheRequest);
 
     /**
      * <p>

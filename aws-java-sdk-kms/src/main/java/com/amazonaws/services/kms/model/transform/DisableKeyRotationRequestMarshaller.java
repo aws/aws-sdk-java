@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DisableKeyRotationRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DisableKeyRotationRequestMarshaller
         implements
         Marshaller<Request<DisableKeyRotationRequest>, DisableKeyRotationRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DisableKeyRotationRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DisableKeyRotationRequest> marshall(
             DisableKeyRotationRequest disableKeyRotationRequest) {
@@ -58,8 +65,8 @@ public class DisableKeyRotationRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

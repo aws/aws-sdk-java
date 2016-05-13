@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * CreateInvalidationRequest Marshaller
@@ -62,9 +63,11 @@ public class CreateInvalidationRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{DistributionId}",
-                        (createInvalidationRequest.getDistributionId() != null) ? StringUtils
-                                .fromString(createInvalidationRequest
-                                        .getDistributionId()) : "");
+                        (createInvalidationRequest.getDistributionId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(createInvalidationRequest
+                                                .getDistributionId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

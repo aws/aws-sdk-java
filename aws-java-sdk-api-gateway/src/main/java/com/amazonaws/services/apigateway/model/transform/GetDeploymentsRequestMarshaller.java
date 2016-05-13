@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetDeploymentsRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class GetDeploymentsRequestMarshaller implements
         Marshaller<Request<GetDeploymentsRequest>, GetDeploymentsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetDeploymentsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetDeploymentsRequest> marshall(
             GetDeploymentsRequest getDeploymentsRequest) {
@@ -66,8 +74,9 @@ public class GetDeploymentsRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getDeploymentsRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(getDeploymentsRequest.getRestApiId()) : "");
+                (getDeploymentsRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getDeploymentsRequest
+                                .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (getDeploymentsRequest.getPosition() != null) {

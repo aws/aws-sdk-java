@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetBasePathMappingsRequest Marshaller
@@ -48,7 +49,14 @@ public class GetBasePathMappingsRequestMarshaller
         implements
         Marshaller<Request<GetBasePathMappingsRequest>, GetBasePathMappingsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetBasePathMappingsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetBasePathMappingsRequest> marshall(
             GetBasePathMappingsRequest getBasePathMappingsRequest) {
@@ -68,9 +76,10 @@ public class GetBasePathMappingsRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{domain_name}",
-                        (getBasePathMappingsRequest.getDomainName() != null) ? StringUtils
-                                .fromString(getBasePathMappingsRequest
-                                        .getDomainName()) : "");
+                        (getBasePathMappingsRequest.getDomainName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(getBasePathMappingsRequest
+                                                .getDomainName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (getBasePathMappingsRequest.getPosition() != null) {

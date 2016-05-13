@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetAuthorizersRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class GetAuthorizersRequestMarshaller implements
         Marshaller<Request<GetAuthorizersRequest>, GetAuthorizersRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetAuthorizersRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetAuthorizersRequest> marshall(
             GetAuthorizersRequest getAuthorizersRequest) {
@@ -66,8 +74,9 @@ public class GetAuthorizersRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getAuthorizersRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(getAuthorizersRequest.getRestApiId()) : "");
+                (getAuthorizersRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getAuthorizersRequest
+                                .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (getAuthorizersRequest.getPosition() != null) {

@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetExportRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetExportRequestMarshaller implements
         Marshaller<Request<GetExportRequest>, GetExportRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetExportRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetExportRequest> marshall(GetExportRequest getExportRequest) {
 
@@ -70,16 +77,19 @@ public class GetExportRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getExportRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(getExportRequest.getRestApiId()) : "");
+                (getExportRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getExportRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{stage_name}",
-                (getExportRequest.getStageName() != null) ? StringUtils
-                        .fromString(getExportRequest.getStageName()) : "");
+                (getExportRequest.getStageName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getExportRequest
+                                .getStageName()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{export_type}",
-                (getExportRequest.getExportType() != null) ? StringUtils
-                        .fromString(getExportRequest.getExportType()) : "");
+                (getExportRequest.getExportType() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getExportRequest
+                                .getExportType()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         java.util.Map<String, String> parameters = getExportRequest

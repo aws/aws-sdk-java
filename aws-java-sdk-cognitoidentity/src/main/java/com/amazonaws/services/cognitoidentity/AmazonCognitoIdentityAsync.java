@@ -179,9 +179,11 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * 
      * @param deleteIdentityPoolRequest
      *        Input to the DeleteIdentityPool action.
+     * @return A Java Future containing the result of the DeleteIdentityPool
+     *         operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.DeleteIdentityPool
      */
-    java.util.concurrent.Future<Void> deleteIdentityPoolAsync(
+    java.util.concurrent.Future<DeleteIdentityPoolResult> deleteIdentityPoolAsync(
             DeleteIdentityPoolRequest deleteIdentityPoolRequest);
 
     /**
@@ -200,11 +202,13 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteIdentityPool
+     *         operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.DeleteIdentityPool
      */
-    java.util.concurrent.Future<Void> deleteIdentityPoolAsync(
+    java.util.concurrent.Future<DeleteIdentityPoolResult> deleteIdentityPoolAsync(
             DeleteIdentityPoolRequest deleteIdentityPoolRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteIdentityPoolRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteIdentityPoolRequest, DeleteIdentityPoolResult> asyncHandler);
 
     /**
      * <p>
@@ -752,9 +756,11 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * 
      * @param setIdentityPoolRolesRequest
      *        Input to the <code>SetIdentityPoolRoles</code> action.
+     * @return A Java Future containing the result of the SetIdentityPoolRoles
+     *         operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.SetIdentityPoolRoles
      */
-    java.util.concurrent.Future<Void> setIdentityPoolRolesAsync(
+    java.util.concurrent.Future<SetIdentityPoolRolesResult> setIdentityPoolRolesAsync(
             SetIdentityPoolRolesRequest setIdentityPoolRolesRequest);
 
     /**
@@ -773,11 +779,13 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetIdentityPoolRoles
+     *         operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.SetIdentityPoolRoles
      */
-    java.util.concurrent.Future<Void> setIdentityPoolRolesAsync(
+    java.util.concurrent.Future<SetIdentityPoolRolesResult> setIdentityPoolRolesAsync(
             SetIdentityPoolRolesRequest setIdentityPoolRolesRequest,
-            com.amazonaws.handlers.AsyncHandler<SetIdentityPoolRolesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetIdentityPoolRolesRequest, SetIdentityPoolRolesResult> asyncHandler);
 
     /**
      * <p>
@@ -793,9 +801,11 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * 
      * @param unlinkDeveloperIdentityRequest
      *        Input to the <code>UnlinkDeveloperIdentity</code> action.
+     * @return A Java Future containing the result of the
+     *         UnlinkDeveloperIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.UnlinkDeveloperIdentity
      */
-    java.util.concurrent.Future<Void> unlinkDeveloperIdentityAsync(
+    java.util.concurrent.Future<UnlinkDeveloperIdentityResult> unlinkDeveloperIdentityAsync(
             UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest);
 
     /**
@@ -817,11 +827,13 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UnlinkDeveloperIdentity operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.UnlinkDeveloperIdentity
      */
-    java.util.concurrent.Future<Void> unlinkDeveloperIdentityAsync(
+    java.util.concurrent.Future<UnlinkDeveloperIdentityResult> unlinkDeveloperIdentityAsync(
             UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest,
-            com.amazonaws.handlers.AsyncHandler<UnlinkDeveloperIdentityRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UnlinkDeveloperIdentityRequest, UnlinkDeveloperIdentityResult> asyncHandler);
 
     /**
      * <p>
@@ -835,9 +847,11 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * 
      * @param unlinkIdentityRequest
      *        Input to the UnlinkIdentity action.
+     * @return A Java Future containing the result of the UnlinkIdentity
+     *         operation returned by the service.
      * @sample AmazonCognitoIdentityAsync.UnlinkIdentity
      */
-    java.util.concurrent.Future<Void> unlinkIdentityAsync(
+    java.util.concurrent.Future<UnlinkIdentityResult> unlinkIdentityAsync(
             UnlinkIdentityRequest unlinkIdentityRequest);
 
     /**
@@ -857,11 +871,13 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UnlinkIdentity
+     *         operation returned by the service.
      * @sample AmazonCognitoIdentityAsyncHandler.UnlinkIdentity
      */
-    java.util.concurrent.Future<Void> unlinkIdentityAsync(
+    java.util.concurrent.Future<UnlinkIdentityResult> unlinkIdentityAsync(
             UnlinkIdentityRequest unlinkIdentityRequest,
-            com.amazonaws.handlers.AsyncHandler<UnlinkIdentityRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UnlinkIdentityRequest, UnlinkIdentityResult> asyncHandler);
 
     /**
      * <p>

@@ -565,9 +565,11 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * 
      * @param deleteAliasRequest
      *        Represents the input for a request action.
+     * @return A Java Future containing the result of the DeleteAlias operation
+     *         returned by the service.
      * @sample AmazonGameLiftAsync.DeleteAlias
      */
-    java.util.concurrent.Future<Void> deleteAliasAsync(
+    java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             DeleteAliasRequest deleteAliasRequest);
 
     /**
@@ -584,11 +586,13 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAlias operation
+     *         returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DeleteAlias
      */
-    java.util.concurrent.Future<Void> deleteAliasAsync(
+    java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             DeleteAliasRequest deleteAliasRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler);
 
     /**
      * <p>
@@ -603,9 +607,11 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * 
      * @param deleteBuildRequest
      *        Represents the input for a request action.
+     * @return A Java Future containing the result of the DeleteBuild operation
+     *         returned by the service.
      * @sample AmazonGameLiftAsync.DeleteBuild
      */
-    java.util.concurrent.Future<Void> deleteBuildAsync(
+    java.util.concurrent.Future<DeleteBuildResult> deleteBuildAsync(
             DeleteBuildRequest deleteBuildRequest);
 
     /**
@@ -626,11 +632,13 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBuild operation
+     *         returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DeleteBuild
      */
-    java.util.concurrent.Future<Void> deleteBuildAsync(
+    java.util.concurrent.Future<DeleteBuildResult> deleteBuildAsync(
             DeleteBuildRequest deleteBuildRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteBuildRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteBuildRequest, DeleteBuildResult> asyncHandler);
 
     /**
      * <p>
@@ -644,9 +652,11 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * 
      * @param deleteFleetRequest
      *        Represents the input for a request action.
+     * @return A Java Future containing the result of the DeleteFleet operation
+     *         returned by the service.
      * @sample AmazonGameLiftAsync.DeleteFleet
      */
-    java.util.concurrent.Future<Void> deleteFleetAsync(
+    java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(
             DeleteFleetRequest deleteFleetRequest);
 
     /**
@@ -666,11 +676,13 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFleet operation
+     *         returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DeleteFleet
      */
-    java.util.concurrent.Future<Void> deleteFleetAsync(
+    java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(
             DeleteFleetRequest deleteFleetRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult> asyncHandler);
 
     /**
      * <p>
@@ -682,9 +694,11 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * 
      * @param deleteScalingPolicyRequest
      *        Represents the input for a request action.
+     * @return A Java Future containing the result of the DeleteScalingPolicy
+     *         operation returned by the service.
      * @sample AmazonGameLiftAsync.DeleteScalingPolicy
      */
-    java.util.concurrent.Future<Void> deleteScalingPolicyAsync(
+    java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(
             DeleteScalingPolicyRequest deleteScalingPolicyRequest);
 
     /**
@@ -702,11 +716,13 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteScalingPolicy
+     *         operation returned by the service.
      * @sample AmazonGameLiftAsyncHandler.DeleteScalingPolicy
      */
-    java.util.concurrent.Future<Void> deleteScalingPolicyAsync(
+    java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(
             DeleteScalingPolicyRequest deleteScalingPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, DeleteScalingPolicyResult> asyncHandler);
 
     /**
      * <p>

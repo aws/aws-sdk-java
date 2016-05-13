@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ScheduleKeyDeletionRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class ScheduleKeyDeletionRequestMarshaller
         implements
         Marshaller<Request<ScheduleKeyDeletionRequest>, ScheduleKeyDeletionRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ScheduleKeyDeletionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ScheduleKeyDeletionRequest> marshall(
             ScheduleKeyDeletionRequest scheduleKeyDeletionRequest) {
@@ -58,8 +65,8 @@ public class ScheduleKeyDeletionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

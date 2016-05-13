@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteStackRequest Marshaller
  */
 public class DeleteStackRequestMarshaller implements
         Marshaller<Request<DeleteStackRequest>, DeleteStackRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteStackRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteStackRequest> marshall(
             DeleteStackRequest deleteStackRequest) {
@@ -57,8 +63,8 @@ public class DeleteStackRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * UpdateHostedZoneCommentRequest Marshaller
@@ -61,9 +62,10 @@ public class UpdateHostedZoneCommentRequestMarshaller
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (updateHostedZoneCommentRequest.getId() != null) ? StringUtils
-                        .fromString(updateHostedZoneCommentRequest.getId())
-                        : "");
+                (updateHostedZoneCommentRequest.getId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(updateHostedZoneCommentRequest
+                                        .getId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

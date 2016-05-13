@@ -19,37 +19,67 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * An invocation is copy of a command sent to a specific instance. A command can
  * apply to one or more instances. A command invocation applies to one instance.
  * For example, if a user executes SendCommand against three instances, then a
  * command invocation is created for each requested instance ID. A command
  * invocation returns status and detail information about a command you
  * executed.
+ * </p>
  */
 public class CommandInvocation implements Serializable, Cloneable {
 
-    /** The command against which this invocation was requested. */
+    /**
+     * <p>
+     * The command against which this invocation was requested.
+     * </p>
+     */
     private String commandId;
-    /** The instance ID in which this invocation was requested. */
+    /**
+     * <p>
+     * The instance ID in which this invocation was requested.
+     * </p>
+     */
     private String instanceId;
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      */
     private String comment;
-    /** The document name that was requested for execution. */
+    /**
+     * <p>
+     * The document name that was requested for execution.
+     * </p>
+     */
     private String documentName;
-    /** The time and date the request was sent to this instance. */
+    /**
+     * <p>
+     * The time and date the request was sent to this instance.
+     * </p>
+     */
     private java.util.Date requestedDateTime;
-    /** Whether or not the invocation succeeded, failed, or is pending. */
+    /**
+     * <p>
+     * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
+     */
     private String status;
-    /** Gets the trace output sent by the agent. */
+    /**
+     * <p>
+     * Gets the trace output sent by the agent.
+     * </p>
+     */
     private String traceOutput;
 
     private com.amazonaws.internal.SdkInternalList<CommandPlugin> commandPlugins;
 
     /**
+     * <p>
      * The command against which this invocation was requested.
+     * </p>
      * 
      * @param commandId
      *        The command against which this invocation was requested.
@@ -60,7 +90,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The command against which this invocation was requested.
+     * </p>
      * 
      * @return The command against which this invocation was requested.
      */
@@ -70,7 +102,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The command against which this invocation was requested.
+     * </p>
      * 
      * @param commandId
      *        The command against which this invocation was requested.
@@ -84,7 +118,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance ID in which this invocation was requested.
+     * </p>
      * 
      * @param instanceId
      *        The instance ID in which this invocation was requested.
@@ -95,7 +131,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance ID in which this invocation was requested.
+     * </p>
      * 
      * @return The instance ID in which this invocation was requested.
      */
@@ -105,7 +143,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance ID in which this invocation was requested.
+     * </p>
      * 
      * @param instanceId
      *        The instance ID in which this invocation was requested.
@@ -119,8 +159,10 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @param comment
      *        User-specified information about the command, such as a brief
@@ -132,8 +174,10 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @return User-specified information about the command, such as a brief
      *         description of what the command should do.
@@ -144,8 +188,10 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @param comment
      *        User-specified information about the command, such as a brief
@@ -160,7 +206,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The document name that was requested for execution.
+     * </p>
      * 
      * @param documentName
      *        The document name that was requested for execution.
@@ -171,7 +219,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The document name that was requested for execution.
+     * </p>
      * 
      * @return The document name that was requested for execution.
      */
@@ -181,7 +231,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The document name that was requested for execution.
+     * </p>
      * 
      * @param documentName
      *        The document name that was requested for execution.
@@ -195,7 +247,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The time and date the request was sent to this instance.
+     * </p>
      * 
      * @param requestedDateTime
      *        The time and date the request was sent to this instance.
@@ -206,7 +260,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The time and date the request was sent to this instance.
+     * </p>
      * 
      * @return The time and date the request was sent to this instance.
      */
@@ -216,7 +272,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The time and date the request was sent to this instance.
+     * </p>
      * 
      * @param requestedDateTime
      *        The time and date the request was sent to this instance.
@@ -231,7 +289,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
      * 
      * @param status
      *        Whether or not the invocation succeeded, failed, or is pending.
@@ -243,7 +303,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
      * 
      * @return Whether or not the invocation succeeded, failed, or is pending.
      * @see CommandInvocationStatus
@@ -254,7 +316,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
      * 
      * @param status
      *        Whether or not the invocation succeeded, failed, or is pending.
@@ -269,7 +333,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
      * 
      * @param status
      *        Whether or not the invocation succeeded, failed, or is pending.
@@ -281,7 +347,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
      * 
      * @param status
      *        Whether or not the invocation succeeded, failed, or is pending.
@@ -296,7 +364,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Gets the trace output sent by the agent.
+     * </p>
      * 
      * @param traceOutput
      *        Gets the trace output sent by the agent.
@@ -307,7 +377,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Gets the trace output sent by the agent.
+     * </p>
      * 
      * @return Gets the trace output sent by the agent.
      */
@@ -317,7 +389,9 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Gets the trace output sent by the agent.
+     * </p>
      * 
      * @param traceOutput
      *        Gets the trace output sent by the agent.

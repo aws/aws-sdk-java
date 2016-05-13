@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetFunctionConfigurationRequest Marshaller
@@ -48,7 +49,14 @@ public class GetFunctionConfigurationRequestMarshaller
         implements
         Marshaller<Request<GetFunctionConfigurationRequest>, GetFunctionConfigurationRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetFunctionConfigurationRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetFunctionConfigurationRequest> marshall(
             GetFunctionConfigurationRequest getFunctionConfigurationRequest) {
@@ -68,9 +76,11 @@ public class GetFunctionConfigurationRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{FunctionName}",
-                        (getFunctionConfigurationRequest.getFunctionName() != null) ? StringUtils
-                                .fromString(getFunctionConfigurationRequest
-                                        .getFunctionName()) : "");
+                        (getFunctionConfigurationRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(getFunctionConfigurationRequest
+                                                .getFunctionName()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         if (getFunctionConfigurationRequest.getQualifier() != null) {

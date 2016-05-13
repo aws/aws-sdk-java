@@ -58,9 +58,24 @@ public class DocumentDescriptionJsonUnmarshaller implements
                     documentDescription.setSha1(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("Hash", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setHash(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("HashType", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setHashType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     documentDescription.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("Owner", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setOwner(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {

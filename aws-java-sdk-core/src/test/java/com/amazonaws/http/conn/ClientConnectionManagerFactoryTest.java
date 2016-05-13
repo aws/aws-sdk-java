@@ -14,31 +14,45 @@
  */
 package com.amazonaws.http.conn;
 
-import static org.junit.Assert.assertTrue;
-
-import java.util.concurrent.TimeUnit;
-
-import org.apache.http.conn.ClientConnectionManager;
-import org.apache.http.conn.ClientConnectionRequest;
-import org.apache.http.conn.ManagedClientConnection;
+import org.apache.http.HttpClientConnection;
+import org.apache.http.conn.ConnectionRequest;
+import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.conn.routing.HttpRoute;
-import org.apache.http.conn.scheme.SchemeRegistry;
+import org.apache.http.protocol.HttpContext;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 public class ClientConnectionManagerFactoryTest {
-    ClientConnectionManager noop = new ClientConnectionManager() {
+    HttpClientConnectionManager noop = new HttpClientConnectionManager() {
         @Override
-        public SchemeRegistry getSchemeRegistry() {
+        public void connect(HttpClientConnection conn, HttpRoute route, int connectTimeout, HttpContext context) throws IOException {
+
+        }
+
+        @Override
+        public void upgrade(HttpClientConnection conn, HttpRoute route, HttpContext context) throws IOException {
+
+        }
+
+        @Override
+        public void routeComplete(HttpClientConnection conn, HttpRoute route, HttpContext context) throws IOException {
+
+        }
+
+        @Override
+        public ConnectionRequest requestConnection(HttpRoute route,
+                                                   Object state) {
             return null;
         }
+
         @Override
-        public ClientConnectionRequest requestConnection(HttpRoute route,
-                Object state) {
-            return null;
-        }
-        @Override
-        public void releaseConnection(ManagedClientConnection conn,
-                long validDuration, TimeUnit timeUnit) {
+        public void releaseConnection(HttpClientConnection conn,
+                                      Object newState,
+                                      long validDuration,
+                                      TimeUnit timeUnit) {
         }
 
         @Override
@@ -56,13 +70,13 @@ public class ClientConnectionManagerFactoryTest {
 
     @Test
     public void wrapOnce() {
-        ClientConnectionManager wrapped = ClientConnectionManagerFactory.wrap(noop);
+        HttpClientConnectionManager wrapped = ClientConnectionManagerFactory.wrap(noop);
         assertTrue(wrapped instanceof Wrapped);
     }
 
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void wrapTwice() {
-        ClientConnectionManager wrapped = ClientConnectionManagerFactory.wrap(noop);
+        HttpClientConnectionManager wrapped = ClientConnectionManagerFactory.wrap(noop);
         ClientConnectionManagerFactory.wrap(wrapped);
     }
 }

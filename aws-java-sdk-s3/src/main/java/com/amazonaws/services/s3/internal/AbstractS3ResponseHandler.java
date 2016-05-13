@@ -23,6 +23,7 @@ import java.util.Set;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.http.HttpResponse;
@@ -125,7 +126,8 @@ public abstract class AbstractS3ResponseHandler<T>
                 try {
                     metadata.setHeader(key, Long.parseLong(header.getValue()));
                 } catch (NumberFormatException nfe) {
-                    log.warn("Unable to parse content length: " + header.getValue(), nfe);
+                    throw new AmazonClientException(
+                            "Unable to parse content length. Header 'Content-Length' has corrupted data" + nfe.getMessage(), nfe);
                 }
             } else if (key.equalsIgnoreCase(Headers.ETAG)) {
                 metadata.setHeader(key, ServiceUtils.removeQuotes(header.getValue()));
@@ -141,6 +143,13 @@ public abstract class AbstractS3ResponseHandler<T>
                 new ObjectRestoreHeaderHandler<ObjectRestoreResult>().handle(metadata, response);
             } else if (key.equalsIgnoreCase(Headers.REQUESTER_CHARGED_HEADER)) {
                 new S3RequesterChargedHeaderHandler<S3RequesterChargedResult>().handle(metadata, response);
+            } else if (key.equalsIgnoreCase(Headers.S3_PARTS_COUNT)) {
+                try {
+                    metadata.setHeader(key, Integer.parseInt(header.getValue()));
+                } catch (NumberFormatException nfe) {
+                    throw new AmazonClientException(
+                            "Unable to parse part count. Header x-amz-mp-parts-count has corrupted data" + nfe.getMessage(), nfe);
+                }
             } else {
                 metadata.setHeader(key, header.getValue());
             }

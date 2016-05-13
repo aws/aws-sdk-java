@@ -19,20 +19,36 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes the association of an SSM document and an instance.
+ * </p>
  */
 public class CreateAssociationBatchRequestEntry implements Serializable,
         Cloneable {
 
-    /** The name of the configuration document. */
+    /**
+     * <p>
+     * The name of the configuration document.
+     * </p>
+     */
     private String name;
-    /** The ID of the instance. */
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     */
     private String instanceId;
-    /** A description of the parameters for a document. */
+    /**
+     * <p>
+     * A description of the parameters for a document.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> parameters;
 
     /**
+     * <p>
      * The name of the configuration document.
+     * </p>
      * 
      * @param name
      *        The name of the configuration document.
@@ -43,7 +59,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
+     * <p>
      * The name of the configuration document.
+     * </p>
      * 
      * @return The name of the configuration document.
      */
@@ -53,7 +71,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
+     * <p>
      * The name of the configuration document.
+     * </p>
      * 
      * @param name
      *        The name of the configuration document.
@@ -67,7 +87,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
+     * <p>
      * The ID of the instance.
+     * </p>
      * 
      * @param instanceId
      *        The ID of the instance.
@@ -78,7 +100,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
+     * <p>
      * The ID of the instance.
+     * </p>
      * 
      * @return The ID of the instance.
      */
@@ -88,7 +112,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
+     * <p>
      * The ID of the instance.
+     * </p>
      * 
      * @param instanceId
      *        The ID of the instance.
@@ -102,7 +128,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
+     * <p>
      * A description of the parameters for a document.
+     * </p>
      * 
      * @return A description of the parameters for a document.
      */
@@ -112,7 +140,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
+     * <p>
      * A description of the parameters for a document.
+     * </p>
      * 
      * @param parameters
      *        A description of the parameters for a document.
@@ -124,7 +154,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
     }
 
     /**
+     * <p>
      * A description of the parameters for a document.
+     * </p>
      * 
      * @param parameters
      *        A description of the parameters for a document.

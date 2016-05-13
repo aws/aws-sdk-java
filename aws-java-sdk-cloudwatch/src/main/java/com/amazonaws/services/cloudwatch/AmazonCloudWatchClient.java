@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -85,7 +85,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
     /**
-     * List of exception unmarshallers for all CloudWatch exceptions.
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -274,18 +274,20 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteAlarmsRequest
+     * @return Result of the DeleteAlarms operation returned by the service.
      * @throws ResourceNotFoundException
      *         The named resource does not exist.
      * @sample AmazonCloudWatch.DeleteAlarms
      */
     @Override
-    public void deleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest) {
+    public DeleteAlarmsResult deleteAlarms(
+            DeleteAlarmsRequest deleteAlarmsRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAlarmsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAlarmsRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAlarmsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -298,9 +300,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteAlarmsResult> responseHandler = new StaxResponseHandler<DeleteAlarmsResult>(
+                    new DeleteAlarmsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -467,17 +471,19 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param disableAlarmActionsRequest
+     * @return Result of the DisableAlarmActions operation returned by the
+     *         service.
      * @sample AmazonCloudWatch.DisableAlarmActions
      */
     @Override
-    public void disableAlarmActions(
+    public DisableAlarmActionsResult disableAlarmActions(
             DisableAlarmActionsRequest disableAlarmActionsRequest) {
         ExecutionContext executionContext = createExecutionContext(disableAlarmActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableAlarmActionsRequest> request = null;
-        Response<Void> response = null;
+        Response<DisableAlarmActionsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -491,9 +497,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DisableAlarmActionsResult> responseHandler = new StaxResponseHandler<DisableAlarmActionsResult>(
+                    new DisableAlarmActionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -507,17 +515,19 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param enableAlarmActionsRequest
+     * @return Result of the EnableAlarmActions operation returned by the
+     *         service.
      * @sample AmazonCloudWatch.EnableAlarmActions
      */
     @Override
-    public void enableAlarmActions(
+    public EnableAlarmActionsResult enableAlarmActions(
             EnableAlarmActionsRequest enableAlarmActionsRequest) {
         ExecutionContext executionContext = createExecutionContext(enableAlarmActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableAlarmActionsRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableAlarmActionsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -531,9 +541,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<EnableAlarmActionsResult> responseHandler = new StaxResponseHandler<EnableAlarmActionsResult>(
+                    new EnableAlarmActionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -742,18 +754,20 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * </note>
      * 
      * @param putMetricAlarmRequest
+     * @return Result of the PutMetricAlarm operation returned by the service.
      * @throws LimitExceededException
      *         The quota for alarms for this customer has already been reached.
      * @sample AmazonCloudWatch.PutMetricAlarm
      */
     @Override
-    public void putMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest) {
+    public PutMetricAlarmResult putMetricAlarm(
+            PutMetricAlarmRequest putMetricAlarmRequest) {
         ExecutionContext executionContext = createExecutionContext(putMetricAlarmRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutMetricAlarmRequest> request = null;
-        Response<Void> response = null;
+        Response<PutMetricAlarmResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -766,9 +780,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<PutMetricAlarmResult> responseHandler = new StaxResponseHandler<PutMetricAlarmResult>(
+                    new PutMetricAlarmResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -801,6 +817,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param putMetricDataRequest
+     * @return Result of the PutMetricData operation returned by the service.
      * @throws InvalidParameterValueException
      *         Bad or out-of-range value was supplied for the input parameter.
      * @throws MissingRequiredParameterException
@@ -814,13 +831,14 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * @sample AmazonCloudWatch.PutMetricData
      */
     @Override
-    public void putMetricData(PutMetricDataRequest putMetricDataRequest) {
+    public PutMetricDataResult putMetricData(
+            PutMetricDataRequest putMetricDataRequest) {
         ExecutionContext executionContext = createExecutionContext(putMetricDataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutMetricDataRequest> request = null;
-        Response<Void> response = null;
+        Response<PutMetricDataResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -833,9 +851,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<PutMetricDataResult> responseHandler = new StaxResponseHandler<PutMetricDataResult>(
+                    new PutMetricDataResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -858,6 +878,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param setAlarmStateRequest
+     * @return Result of the SetAlarmState operation returned by the service.
      * @throws ResourceNotFoundException
      *         The named resource does not exist.
      * @throws InvalidFormatException
@@ -865,13 +886,14 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * @sample AmazonCloudWatch.SetAlarmState
      */
     @Override
-    public void setAlarmState(SetAlarmStateRequest setAlarmStateRequest) {
+    public SetAlarmStateResult setAlarmState(
+            SetAlarmStateRequest setAlarmStateRequest) {
         ExecutionContext executionContext = createExecutionContext(setAlarmStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetAlarmStateRequest> request = null;
-        Response<Void> response = null;
+        Response<SetAlarmStateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -884,9 +906,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetAlarmStateResult> responseHandler = new StaxResponseHandler<SetAlarmStateResult>(
+                    new SetAlarmStateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 

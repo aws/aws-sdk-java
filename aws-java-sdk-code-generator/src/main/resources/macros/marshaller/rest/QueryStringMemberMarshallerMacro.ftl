@@ -13,10 +13,7 @@
                 for (Map.Entry<${mapModel.keyType},${mapModel.valueType}> entry : ${variable.variableName}.entrySet()) {
                     if (entry.getValue() != null) {
                         <#if mapModel.valueModel.list>
-                            for(String member : entry.getValue()) {
-                                request.addParameter(StringUtils.from${mapModel.keyType}(entry.getKey()),
-                                  StringUtils.from${mapModel.valueModel.listModel.memberType}(member));
-                            }
+                            request.addParameters(StringUtils.from${mapModel.keyType}(entry.getKey()), entry.getValue());
                         <#else>
                             request.addParameter(StringUtils.from${mapModel.keyType}(entry.getKey()), StringUtils.from${mapModel.valueType}(entry.getValue()));
                         </#if>

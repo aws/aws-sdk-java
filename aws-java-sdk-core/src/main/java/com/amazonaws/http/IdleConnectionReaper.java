@@ -14,26 +14,26 @@
  */
 package com.amazonaws.http;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.conn.HttpClientConnectionManager;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.conn.ClientConnectionManager;
-
 /**
  * Daemon thread to periodically check connection pools for idle connections.
- * <p>
+ * <p/>
  * Connections sitting around idle in the HTTP connection pool for too long will
  * eventually be terminated by the AWS end of the connection, and will go into
  * CLOSE_WAIT. If this happens, sockets will sit around in CLOSE_WAIT, still
  * using resources on the client side to manage that socket. Many sockets stuck
  * in CLOSE_WAIT can prevent the OS from creating new connections.
- * <p>
+ * <p/>
  * This class closes idle connections before they can move into the CLOSE_WAIT
  * state.
- * <p>
+ * <p/>
  * This thread is important because by default, we disable Apache HttpClient's
  * stale connection checking, so without this thread running in the background,
  * cleaning up old/inactive HTTP connections, we'd see more IO exceptions when
@@ -42,27 +42,33 @@ import org.apache.http.conn.ClientConnectionManager;
  */
 public final class IdleConnectionReaper extends Thread {
 
-    /** The period between invocations of the idle connection reaper. */
+    /**
+     * Shared log for any errors during connection reaping.
+     */
+    static final Log log = LogFactory.getLog(IdleConnectionReaper.class);
+    /**
+     * The period between invocations of the idle connection reaper.
+     */
     private static final int PERIOD_MILLISECONDS = 1000 * 60 * 1;
-
     /**
      * The list of registered connection managers, whose connections
      * will be periodically checked and idle connections closed.
      */
-    private static final ArrayList<ClientConnectionManager> connectionManagers = new ArrayList<ClientConnectionManager>();
+    private static final ArrayList<HttpClientConnectionManager>
+            connectionManagers = new ArrayList<HttpClientConnectionManager>();
+    /**
+     * Singleton instance of the connection reaper.
+     */
+    private static IdleConnectionReaper instance;
     /**
      * Set to true when shutting down the reaper;  Once set to true, this
      * flag is never set back to false.
      */
     private volatile boolean shuttingDown;
 
-    /** Singleton instance of the connection reaper. */
-    private static IdleConnectionReaper instance;
-
-    /** Shared log for any errors during connection reaping. */
-    static final Log log = LogFactory.getLog(IdleConnectionReaper.class);
-
-    /** Private constructor - singleton pattern. */
+    /**
+     * Private constructor - singleton pattern.
+     */
     private IdleConnectionReaper() {
         super("java-sdk-http-connection-reaper");
         setDaemon(true);
@@ -70,11 +76,11 @@ public final class IdleConnectionReaper extends Thread {
 
     /**
      * Registers the given connection manager with this reaper;
-     * 
+     *
      * @return true if the connection manager has been successfully registered;
      * false otherwise.
      */
-    public static synchronized boolean registerConnectionManager(ClientConnectionManager connectionManager) {
+    public static synchronized boolean registerConnectionManager(HttpClientConnectionManager connectionManager) {
         if (instance == null) {
             instance = new IdleConnectionReaper();
             instance.start();
@@ -83,19 +89,50 @@ public final class IdleConnectionReaper extends Thread {
     }
 
     /**
-     * Removes the given connection manager from this reaper, 
+     * Removes the given connection manager from this reaper,
      * and shutting down the reaper if there is zero connection manager left.
-     * 
+     *
      * @return true if the connection manager has been successfully removed;
      * false otherwise.
      */
-    public static synchronized boolean removeConnectionManager(ClientConnectionManager connectionManager) {
+    public static synchronized boolean removeConnectionManager(HttpClientConnectionManager connectionManager) {
         boolean b = connectionManagers.remove(connectionManager);
         if (connectionManagers.isEmpty())
             shutdown();
         return b;
     }
-    
+
+    /**
+     * Shuts down the thread, allowing the class and instance to be collected.
+     * <p/>
+     * Since this is a daemon thread, its running will not prevent JVM shutdown.
+     * It will, however, prevent this class from being unloaded or garbage
+     * collected, in the context of a long-running application, until it is
+     * interrupted. This method will stop the thread's execution and clear its
+     * state. Any use of a service client will cause the thread to be restarted.
+     *
+     * @return true if an actual shutdown has been made; false otherwise.
+     */
+    public static synchronized boolean shutdown() {
+        if (instance != null) {
+            instance.markShuttingDown();
+            instance.interrupt();
+            connectionManagers.clear();
+            instance = null;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * For testing purposes.
+     * Returns the number of connection managers currently monitored by this
+     * reaper.
+     */
+    static synchronized int size() {
+        return connectionManagers.size();
+    }
+
     private void markShuttingDown() {
         shuttingDown = true;
     }
@@ -115,11 +152,11 @@ public final class IdleConnectionReaper extends Thread {
                 // ConcurrentModificationExceptions if registerConnectionManager or
                 // removeConnectionManager are called while we're iterating (rather
                 // than block/lock while this loop executes).
-                List<ClientConnectionManager> connectionManagers = null;
+                List<HttpClientConnectionManager> connectionManagers = null;
                 synchronized (IdleConnectionReaper.class) {
-                    connectionManagers = (List<ClientConnectionManager>)IdleConnectionReaper.connectionManagers.clone();
+                    connectionManagers = (List<HttpClientConnectionManager>) IdleConnectionReaper.connectionManagers.clone();
                 }
-                for (ClientConnectionManager connectionManager : connectionManagers) {
+                for (HttpClientConnectionManager connectionManager : connectionManagers) {
                     // When we release connections, the connection manager leaves them
                     // open so they can be reused.  We want to close out any idle
                     // connections so that they don't sit around in CLOSE_WAIT.
@@ -130,37 +167,8 @@ public final class IdleConnectionReaper extends Thread {
                     }
                 }
             } catch (Throwable t) {
-                log.debug("Reaper thread: ",  t);
+                log.debug("Reaper thread: ", t);
             }
         }
     }
-
-    /**
-     * Shuts down the thread, allowing the class and instance to be collected.
-     * <p>
-     * Since this is a daemon thread, its running will not prevent JVM shutdown.
-     * It will, however, prevent this class from being unloaded or garbage
-     * collected, in the context of a long-running application, until it is
-     * interrupted. This method will stop the thread's execution and clear its
-     * state. Any use of a service client will cause the thread to be restarted.
-     * 
-     * @return true if an actual shutdown has been made; false otherwise.
-     */
-    public static synchronized boolean shutdown() {
-        if ( instance != null ) {
-            instance.markShuttingDown();
-            instance.interrupt();
-            connectionManagers.clear();
-            instance = null;
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * For testing purposes.
-     * Returns the number of connection managers currently monitored by this
-     * reaper.
-     */
-    static synchronized int size() { return connectionManagers.size(); }
 }

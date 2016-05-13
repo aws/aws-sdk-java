@@ -204,6 +204,8 @@ public interface AmazonCognitoIdentity {
      * 
      * @param deleteIdentityPoolRequest
      *        Input to the DeleteIdentityPool action.
+     * @return Result of the DeleteIdentityPool operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Thrown for missing or bad input parameter(s).
      * @throws ResourceNotFoundException
@@ -219,7 +221,8 @@ public interface AmazonCognitoIdentity {
      *         request.
      * @sample AmazonCognitoIdentity.DeleteIdentityPool
      */
-    void deleteIdentityPool(DeleteIdentityPoolRequest deleteIdentityPoolRequest);
+    DeleteIdentityPoolResult deleteIdentityPool(
+            DeleteIdentityPoolRequest deleteIdentityPoolRequest);
 
     /**
      * <p>
@@ -639,6 +642,8 @@ public interface AmazonCognitoIdentity {
      * 
      * @param setIdentityPoolRolesRequest
      *        Input to the <code>SetIdentityPoolRoles</code> action.
+     * @return Result of the SetIdentityPoolRoles operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Thrown for missing or bad input parameter(s).
      * @throws ResourceNotFoundException
@@ -659,7 +664,7 @@ public interface AmazonCognitoIdentity {
      *         Thrown if there are parallel requests to modify a resource.
      * @sample AmazonCognitoIdentity.SetIdentityPoolRoles
      */
-    void setIdentityPoolRoles(
+    SetIdentityPoolRolesResult setIdentityPoolRoles(
             SetIdentityPoolRolesRequest setIdentityPoolRolesRequest);
 
     /**
@@ -676,6 +681,8 @@ public interface AmazonCognitoIdentity {
      * 
      * @param unlinkDeveloperIdentityRequest
      *        Input to the <code>UnlinkDeveloperIdentity</code> action.
+     * @return Result of the UnlinkDeveloperIdentity operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Thrown for missing or bad input parameter(s).
      * @throws ResourceNotFoundException
@@ -694,7 +701,7 @@ public interface AmazonCognitoIdentity {
      *         request.
      * @sample AmazonCognitoIdentity.UnlinkDeveloperIdentity
      */
-    void unlinkDeveloperIdentity(
+    UnlinkDeveloperIdentityResult unlinkDeveloperIdentity(
             UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest);
 
     /**
@@ -709,6 +716,7 @@ public interface AmazonCognitoIdentity {
      * 
      * @param unlinkIdentityRequest
      *        Input to the UnlinkIdentity action.
+     * @return Result of the UnlinkIdentity operation returned by the service.
      * @throws InvalidParameterException
      *         Thrown for missing or bad input parameter(s).
      * @throws ResourceNotFoundException
@@ -730,7 +738,8 @@ public interface AmazonCognitoIdentity {
      *         Twitter is not responding
      * @sample AmazonCognitoIdentity.UnlinkIdentity
      */
-    void unlinkIdentity(UnlinkIdentityRequest unlinkIdentityRequest);
+    UnlinkIdentityResult unlinkIdentity(
+            UnlinkIdentityRequest unlinkIdentityRequest);
 
     /**
      * <p>

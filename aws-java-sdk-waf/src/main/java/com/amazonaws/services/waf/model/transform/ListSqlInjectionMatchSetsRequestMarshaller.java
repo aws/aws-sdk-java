@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListSqlInjectionMatchSetsRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class ListSqlInjectionMatchSetsRequestMarshaller
         implements
         Marshaller<Request<ListSqlInjectionMatchSetsRequest>, ListSqlInjectionMatchSetsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListSqlInjectionMatchSetsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListSqlInjectionMatchSetsRequest> marshall(
             ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest) {
@@ -59,8 +66,8 @@ public class ListSqlInjectionMatchSetsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

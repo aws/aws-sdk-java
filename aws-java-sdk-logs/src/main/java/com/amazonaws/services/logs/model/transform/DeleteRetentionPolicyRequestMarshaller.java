@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteRetentionPolicyRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DeleteRetentionPolicyRequestMarshaller
         implements
         Marshaller<Request<DeleteRetentionPolicyRequest>, DeleteRetentionPolicyRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteRetentionPolicyRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteRetentionPolicyRequest> marshall(
             DeleteRetentionPolicyRequest deleteRetentionPolicyRequest) {
@@ -58,8 +65,8 @@ public class DeleteRetentionPolicyRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

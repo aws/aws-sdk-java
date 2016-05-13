@@ -65,7 +65,8 @@ final class AddMetadata {
             metadata.setExceptionUnmarshallerImpl(customizationConfig.getCustomExceptionUnmarshallerImpl());
         }
 
-        final String jsonVersion = serviceMetadata.getJsonVersion();
+        final String jsonVersion = getJsonVersion(metadata, serviceMetadata);
+        metadata.setJsonVersion(jsonVersion);
         if (jsonVersion != null) {
             metadata.setJsonContentVersion("application/x-amz-json-"
                     + jsonVersion);
@@ -75,5 +76,14 @@ final class AddMetadata {
         // them accept stream input
         metadata.setHasApiWithStreamInput(false);
         return metadata;
+    }
+
+    private static String getJsonVersion(Metadata metadata, ServiceMetadata serviceMetadata) {
+        // TODO this should be defaulted in the C2J build tool
+        if (serviceMetadata.getJsonVersion() == null && metadata.isJsonProtocol()) {
+            return "1.1";
+        } else {
+            return serviceMetadata.getJsonVersion();
+        }
     }
 }

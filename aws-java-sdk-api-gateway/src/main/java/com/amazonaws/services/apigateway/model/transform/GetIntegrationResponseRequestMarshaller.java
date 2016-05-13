@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetIntegrationResponseRequest Marshaller
@@ -48,7 +49,14 @@ public class GetIntegrationResponseRequestMarshaller
         implements
         Marshaller<Request<GetIntegrationResponseRequest>, GetIntegrationResponseRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetIntegrationResponseRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetIntegrationResponseRequest> marshall(
             GetIntegrationResponseRequest getIntegrationResponseRequest) {
@@ -68,27 +76,35 @@ public class GetIntegrationResponseRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{restapi_id}",
-                        (getIntegrationResponseRequest.getRestApiId() != null) ? StringUtils
-                                .fromString(getIntegrationResponseRequest
-                                        .getRestApiId()) : "");
+                        (getIntegrationResponseRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(getIntegrationResponseRequest
+                                                .getRestApiId()), false)
+                                : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{resource_id}",
-                        (getIntegrationResponseRequest.getResourceId() != null) ? StringUtils
-                                .fromString(getIntegrationResponseRequest
-                                        .getResourceId()) : "");
+                        (getIntegrationResponseRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(getIntegrationResponseRequest
+                                                .getResourceId()), false)
+                                : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{http_method}",
-                        (getIntegrationResponseRequest.getHttpMethod() != null) ? StringUtils
-                                .fromString(getIntegrationResponseRequest
-                                        .getHttpMethod()) : "");
+                        (getIntegrationResponseRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(getIntegrationResponseRequest
+                                                .getHttpMethod()), false)
+                                : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{status_code}",
-                        (getIntegrationResponseRequest.getStatusCode() != null) ? StringUtils
-                                .fromString(getIntegrationResponseRequest
-                                        .getStatusCode()) : "");
+                        (getIntegrationResponseRequest.getStatusCode() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(getIntegrationResponseRequest
+                                                .getStatusCode()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

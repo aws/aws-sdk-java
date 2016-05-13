@@ -24,16 +24,24 @@ import java.io.Serializable;
 public class DescribeInstanceInformationResult implements Serializable,
         Cloneable {
 
-    /** The instance information list. */
+    /**
+     * <p>
+     * The instance information list.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<InstanceInformation> instanceInformationList;
     /**
+     * <p>
      * The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * The instance information list.
+     * </p>
      * 
      * @return The instance information list.
      */
@@ -46,7 +54,9 @@ public class DescribeInstanceInformationResult implements Serializable,
     }
 
     /**
+     * <p>
      * The instance information list.
+     * </p>
      * 
      * @param instanceInformationList
      *        The instance information list.
@@ -64,7 +74,9 @@ public class DescribeInstanceInformationResult implements Serializable,
     }
 
     /**
+     * <p>
      * The instance information list.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInstanceInformationList(java.util.Collection)} or
@@ -91,7 +103,9 @@ public class DescribeInstanceInformationResult implements Serializable,
     }
 
     /**
+     * <p>
      * The instance information list.
+     * </p>
      * 
      * @param instanceInformationList
      *        The instance information list.
@@ -106,8 +120,10 @@ public class DescribeInstanceInformationResult implements Serializable,
     }
 
     /**
+     * <p>
      * The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.
+     * </p>
      * 
      * @param nextToken
      *        The token to use when requesting the next set of items. If there
@@ -119,8 +135,10 @@ public class DescribeInstanceInformationResult implements Serializable,
     }
 
     /**
+     * <p>
      * The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.
+     * </p>
      * 
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
@@ -131,8 +149,10 @@ public class DescribeInstanceInformationResult implements Serializable,
     }
 
     /**
+     * <p>
      * The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.
+     * </p>
      * 
      * @param nextToken
      *        The token to use when requesting the next set of items. If there

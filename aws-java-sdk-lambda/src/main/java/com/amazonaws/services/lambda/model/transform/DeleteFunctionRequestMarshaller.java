@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteFunctionRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class DeleteFunctionRequestMarshaller implements
         Marshaller<Request<DeleteFunctionRequest>, DeleteFunctionRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteFunctionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteFunctionRequest> marshall(
             DeleteFunctionRequest deleteFunctionRequest) {
@@ -64,11 +72,14 @@ public class DeleteFunctionRequestMarshaller implements
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{FunctionName}",
-                (deleteFunctionRequest.getFunctionName() != null) ? StringUtils
-                        .fromString(deleteFunctionRequest.getFunctionName())
-                        : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{FunctionName}",
+                        (deleteFunctionRequest.getFunctionName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(deleteFunctionRequest
+                                                .getFunctionName()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         if (deleteFunctionRequest.getQualifier() != null) {

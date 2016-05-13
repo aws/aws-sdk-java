@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetCognitoEventsRequest Marshaller
@@ -48,6 +49,13 @@ public class GetCognitoEventsRequestMarshaller implements
         Marshaller<Request<GetCognitoEventsRequest>, GetCognitoEventsRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetCognitoEventsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetCognitoEventsRequest> marshall(
             GetCognitoEventsRequest getCognitoEventsRequest) {
@@ -67,9 +75,11 @@ public class GetCognitoEventsRequestMarshaller implements
         uriResourcePath = uriResourcePath
                 .replace(
                         "{IdentityPoolId}",
-                        (getCognitoEventsRequest.getIdentityPoolId() != null) ? StringUtils
-                                .fromString(getCognitoEventsRequest
-                                        .getIdentityPoolId()) : "");
+                        (getCognitoEventsRequest.getIdentityPoolId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(getCognitoEventsRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

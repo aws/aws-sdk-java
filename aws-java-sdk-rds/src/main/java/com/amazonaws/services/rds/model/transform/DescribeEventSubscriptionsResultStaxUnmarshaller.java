@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,6 +17,8 @@
 package com.amazonaws.services.rds.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -27,30 +30,44 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Describe Event Subscriptions Result StAX Unmarshaller
+ * DescribeEventSubscriptionsResult StAX Unmarshaller
  */
-public class DescribeEventSubscriptionsResultStaxUnmarshaller implements Unmarshaller<DescribeEventSubscriptionsResult, StaxUnmarshallerContext> {
+public class DescribeEventSubscriptionsResultStaxUnmarshaller implements
+        Unmarshaller<DescribeEventSubscriptionsResult, StaxUnmarshallerContext> {
 
-    public DescribeEventSubscriptionsResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public DescribeEventSubscriptionsResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         DescribeEventSubscriptionsResult describeEventSubscriptionsResult = new DescribeEventSubscriptionsResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return describeEventSubscriptionsResult;
+            if (xmlEvent.isEndDocument())
+                return describeEventSubscriptionsResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("Marker", targetDepth)) {
-                    describeEventSubscriptionsResult.setMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeEventSubscriptionsResult
+                            .setMarker(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("EventSubscriptionsList/EventSubscription", targetDepth)) {
-                    describeEventSubscriptionsResult.getEventSubscriptionsList().add(EventSubscriptionStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context
+                        .testExpression(
+                                "EventSubscriptionsList/EventSubscription",
+                                targetDepth)) {
+                    describeEventSubscriptionsResult
+                            .withEventSubscriptionsList(EventSubscriptionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeEventSubscriptionsResult;
@@ -60,9 +77,10 @@ public class DescribeEventSubscriptionsResultStaxUnmarshaller implements Unmarsh
     }
 
     private static DescribeEventSubscriptionsResultStaxUnmarshaller instance;
+
     public static DescribeEventSubscriptionsResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new DescribeEventSubscriptionsResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new DescribeEventSubscriptionsResultStaxUnmarshaller();
         return instance;
     }
 }
-    

@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListRecordsRequest Marshaller
@@ -48,6 +49,12 @@ public class ListRecordsRequestMarshaller implements
         Marshaller<Request<ListRecordsRequest>, ListRecordsRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListRecordsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListRecordsRequest> marshall(
             ListRecordsRequest listRecordsRequest) {
@@ -66,17 +73,19 @@ public class ListRecordsRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{IdentityPoolId}",
-                (listRecordsRequest.getIdentityPoolId() != null) ? StringUtils
-                        .fromString(listRecordsRequest.getIdentityPoolId())
-                        : "");
+                (listRecordsRequest.getIdentityPoolId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(listRecordsRequest
+                                .getIdentityPoolId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{IdentityId}",
-                (listRecordsRequest.getIdentityId() != null) ? StringUtils
-                        .fromString(listRecordsRequest.getIdentityId()) : "");
+                (listRecordsRequest.getIdentityId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(listRecordsRequest
+                                .getIdentityId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{DatasetName}",
-                (listRecordsRequest.getDatasetName() != null) ? StringUtils
-                        .fromString(listRecordsRequest.getDatasetName()) : "");
+                (listRecordsRequest.getDatasetName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(listRecordsRequest
+                                .getDatasetName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (listRecordsRequest.getLastSyncCount() != null) {

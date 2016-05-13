@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateMicrosoftADRequest Marshaller
  */
 public class CreateMicrosoftADRequestMarshaller implements
         Marshaller<Request<CreateMicrosoftADRequest>, CreateMicrosoftADRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateMicrosoftADRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateMicrosoftADRequest> marshall(
             CreateMicrosoftADRequest createMicrosoftADRequest) {
@@ -58,8 +65,8 @@ public class CreateMicrosoftADRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

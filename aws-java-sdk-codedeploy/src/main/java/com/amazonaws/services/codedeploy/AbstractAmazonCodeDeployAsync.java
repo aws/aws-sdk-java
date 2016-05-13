@@ -30,16 +30,16 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addTagsToOnPremisesInstancesAsync(
+    public java.util.concurrent.Future<AddTagsToOnPremisesInstancesResult> addTagsToOnPremisesInstancesAsync(
             AddTagsToOnPremisesInstancesRequest request) {
 
         return addTagsToOnPremisesInstancesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addTagsToOnPremisesInstancesAsync(
+    public java.util.concurrent.Future<AddTagsToOnPremisesInstancesResult> addTagsToOnPremisesInstancesAsync(
             AddTagsToOnPremisesInstancesRequest request,
-            com.amazonaws.handlers.AsyncHandler<AddTagsToOnPremisesInstancesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AddTagsToOnPremisesInstancesRequest, AddTagsToOnPremisesInstancesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -271,31 +271,31 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApplicationAsync(
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
             DeleteApplicationRequest request) {
 
         return deleteApplicationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApplicationAsync(
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
             DeleteApplicationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDeploymentConfigAsync(
+    public java.util.concurrent.Future<DeleteDeploymentConfigResult> deleteDeploymentConfigAsync(
             DeleteDeploymentConfigRequest request) {
 
         return deleteDeploymentConfigAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDeploymentConfigAsync(
+    public java.util.concurrent.Future<DeleteDeploymentConfigResult> deleteDeploymentConfigAsync(
             DeleteDeploymentConfigRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentConfigRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentConfigRequest, DeleteDeploymentConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -316,16 +316,16 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterOnPremisesInstanceAsync(
+    public java.util.concurrent.Future<DeregisterOnPremisesInstanceResult> deregisterOnPremisesInstanceAsync(
             DeregisterOnPremisesInstanceRequest request) {
 
         return deregisterOnPremisesInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterOnPremisesInstanceAsync(
+    public java.util.concurrent.Future<DeregisterOnPremisesInstanceResult> deregisterOnPremisesInstanceAsync(
             DeregisterOnPremisesInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeregisterOnPremisesInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeregisterOnPremisesInstanceRequest, DeregisterOnPremisesInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -641,46 +641,46 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy
     }
 
     @Override
-    public java.util.concurrent.Future<Void> registerApplicationRevisionAsync(
+    public java.util.concurrent.Future<RegisterApplicationRevisionResult> registerApplicationRevisionAsync(
             RegisterApplicationRevisionRequest request) {
 
         return registerApplicationRevisionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> registerApplicationRevisionAsync(
+    public java.util.concurrent.Future<RegisterApplicationRevisionResult> registerApplicationRevisionAsync(
             RegisterApplicationRevisionRequest request,
-            com.amazonaws.handlers.AsyncHandler<RegisterApplicationRevisionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RegisterApplicationRevisionRequest, RegisterApplicationRevisionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> registerOnPremisesInstanceAsync(
+    public java.util.concurrent.Future<RegisterOnPremisesInstanceResult> registerOnPremisesInstanceAsync(
             RegisterOnPremisesInstanceRequest request) {
 
         return registerOnPremisesInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> registerOnPremisesInstanceAsync(
+    public java.util.concurrent.Future<RegisterOnPremisesInstanceResult> registerOnPremisesInstanceAsync(
             RegisterOnPremisesInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<RegisterOnPremisesInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RegisterOnPremisesInstanceRequest, RegisterOnPremisesInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeTagsFromOnPremisesInstancesAsync(
+    public java.util.concurrent.Future<RemoveTagsFromOnPremisesInstancesResult> removeTagsFromOnPremisesInstancesAsync(
             RemoveTagsFromOnPremisesInstancesRequest request) {
 
         return removeTagsFromOnPremisesInstancesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeTagsFromOnPremisesInstancesAsync(
+    public java.util.concurrent.Future<RemoveTagsFromOnPremisesInstancesResult> removeTagsFromOnPremisesInstancesAsync(
             RemoveTagsFromOnPremisesInstancesRequest request,
-            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromOnPremisesInstancesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromOnPremisesInstancesRequest, RemoveTagsFromOnPremisesInstancesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -701,16 +701,16 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateApplicationAsync(
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
             UpdateApplicationRequest request) {
 
         return updateApplicationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateApplicationAsync(
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
             UpdateApplicationRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -721,7 +721,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy
      * @see #updateApplicationAsync(UpdateApplicationRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> updateApplicationAsync() {
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync() {
 
         return updateApplicationAsync(new UpdateApplicationRequest());
     }
@@ -733,8 +733,8 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy
      * @see #updateApplicationAsync(UpdateApplicationRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> updateApplicationAsync(
-            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
 
         return updateApplicationAsync(new UpdateApplicationRequest(),
                 asyncHandler);

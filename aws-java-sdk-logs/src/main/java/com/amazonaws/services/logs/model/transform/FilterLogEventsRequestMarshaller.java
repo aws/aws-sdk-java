@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * FilterLogEventsRequest Marshaller
  */
 public class FilterLogEventsRequestMarshaller implements
         Marshaller<Request<FilterLogEventsRequest>, FilterLogEventsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public FilterLogEventsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<FilterLogEventsRequest> marshall(
             FilterLogEventsRequest filterLogEventsRequest) {
@@ -57,8 +64,8 @@ public class FilterLogEventsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

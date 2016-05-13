@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteVolumeRequest Marshaller
  */
 public class DeleteVolumeRequestMarshaller implements
         Marshaller<Request<DeleteVolumeRequest>, DeleteVolumeRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteVolumeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteVolumeRequest> marshall(
             DeleteVolumeRequest deleteVolumeRequest) {
@@ -58,8 +64,8 @@ public class DeleteVolumeRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

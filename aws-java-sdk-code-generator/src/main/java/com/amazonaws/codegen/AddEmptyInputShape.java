@@ -15,6 +15,7 @@
 
 package com.amazonaws.codegen;
 
+import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.intermediate.ShapeType;
@@ -39,16 +40,22 @@ final class AddEmptyInputShape implements IntermediateModelShapeProcessor {
 
     private final ServiceModel serviceModel;
     private final NamingStrategy namingStrategy;
+    private final CustomizationConfig customizationConfig;
 
     public AddEmptyInputShape(IntermediateModelBuilder builder) {
         this.serviceModel = builder.getService();
         this.namingStrategy = builder.getNamingStrategy();
+        this.customizationConfig = builder.getCustomConfig();
     }
 
     @Override
     public Map<String, ShapeModel> process(Map<String, OperationModel> currentOperations,
                                            Map<String, ShapeModel> currentShapes) {
-        return addEmptyInputShapes(currentOperations);
+        if (customizationConfig.useModeledOutputShapeNames()) {
+            return currentShapes;
+        } else {
+            return addEmptyInputShapes(currentOperations);
+        }
     }
 
     private Map<String, ShapeModel> addEmptyInputShapes(

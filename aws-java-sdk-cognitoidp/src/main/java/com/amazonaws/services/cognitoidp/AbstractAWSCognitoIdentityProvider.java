@@ -52,7 +52,7 @@ public class AbstractAWSCognitoIdentityProvider implements
     }
 
     @Override
-    public void adminDeleteUser(AdminDeleteUserRequest request) {
+    public AdminDeleteUserResult adminDeleteUser(AdminDeleteUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,7 +124,7 @@ public class AbstractAWSCognitoIdentityProvider implements
     }
 
     @Override
-    public void deleteUser(DeleteUserRequest request) {
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -135,12 +135,13 @@ public class AbstractAWSCognitoIdentityProvider implements
     }
 
     @Override
-    public void deleteUserPool(DeleteUserPoolRequest request) {
+    public DeleteUserPoolResult deleteUserPool(DeleteUserPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteUserPoolClient(DeleteUserPoolClientRequest request) {
+    public DeleteUserPoolClientResult deleteUserPoolClient(
+            DeleteUserPoolClientRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

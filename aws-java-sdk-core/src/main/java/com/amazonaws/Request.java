@@ -71,6 +71,16 @@ public interface Request<T> extends SignableRequest<T> {
     void setParameters(Map<String, List<String>> parameters);
 
     /**
+     * Adds the specified request parameter and list of values to this request.
+     *
+     * @param name
+     *            The name of the request parameter.
+     * @param values
+     *            The value of the request parameter.
+     */
+    void addParameters(String name, List<String> values);
+
+    /**
      * Sets the service endpoint (ex: "https://ec2.amazonaws.com") to which this
      * request should be sent.
      *

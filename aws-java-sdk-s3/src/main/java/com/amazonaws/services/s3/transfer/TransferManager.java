@@ -48,6 +48,7 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.internal.FileLocks;
 import com.amazonaws.services.s3.internal.Mimetypes;
+import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
@@ -793,7 +794,7 @@ public class TransferManager {
     public Download download(final GetObjectRequest getObjectRequest,
                              final File file, long timeoutMillis) {
         return doDownload(getObjectRequest, file, null, null, OVERWRITE_MODE,
-                timeoutMillis);
+                timeoutMillis, null, 0L);
     }
 
     /**
@@ -835,7 +836,7 @@ public class TransferManager {
     public Download download(final GetObjectRequest getObjectRequest,
             final File file, final S3ProgressListener progressListener) {
         return doDownload(getObjectRequest, file, null, progressListener,
-                OVERWRITE_MODE, 0);
+                OVERWRITE_MODE, 0, null, 0L);
     }
 
     /**
@@ -884,7 +885,7 @@ public class TransferManager {
                              final File file, final S3ProgressListener progressListener,
                              final long timeoutMillis) {
         return doDownload(getObjectRequest, file, null, progressListener,
-                OVERWRITE_MODE, timeoutMillis);
+                OVERWRITE_MODE, timeoutMillis, null, 0L);
     }
 
     /**
@@ -897,7 +898,9 @@ public class TransferManager {
             final File file, final TransferStateChangeListener stateListener,
             final S3ProgressListener s3progressListener,
             final boolean resumeExistingDownload,
-            final long timeoutMillis)
+            final long timeoutMillis,
+            final Integer lastFullyDownloadedPart,
+            final long lastModifiedTimeRecordedDuringPause)
     {
         assertParameterNotNull(getObjectRequest,
                 "A valid GetObjectRequest must be provided to initiate download");
@@ -910,69 +913,76 @@ public class TransferManager {
         TransferProgress transferProgress = new TransferProgress();
         // S3 progress listener to capture the persistable transfer when available
         S3ProgressListenerChain listenerChain = new S3ProgressListenerChain(
-            // The listener for updating transfer progress
-            new TransferProgressUpdatingListener(transferProgress),
-            getObjectRequest.getGeneralProgressListener(),
-            s3progressListener);           // Listeners included in the original request
+                // The listener for updating transfer progress
+                new TransferProgressUpdatingListener(transferProgress),
+                getObjectRequest.getGeneralProgressListener(),
+                s3progressListener); // Listeners included in the original request
         // The listener chain used by the low-level GetObject request.
         // This listener chain ignores any COMPLETE event, so that we could
         // delay firing the signal until the high-level download fully finishes.
-        getObjectRequest.setGeneralProgressListener(
-            new ProgressListenerChain(
-                new TransferCompletionFilter(), listenerChain));
+        getObjectRequest
+                .setGeneralProgressListener(new ProgressListenerChain(new TransferCompletionFilter(), listenerChain));
+
+        GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
+                getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest.getVersionId());
+        if (getObjectRequest.getSSECustomerKey() != null) {
+            getObjectMetadataRequest.setSSECustomerKey(getObjectRequest.getSSECustomerKey());
+        }
+        final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
+
+        // Used to check if the object is modified between pause and resume
+        long lastModifiedTime = objectMetadata.getLastModified().getTime();
 
         long startingByte = 0;
         long lastByte;
 
         long[] range = getObjectRequest.getRange();
-        if (range != null
-                && range.length == 2) {
+        if (range != null && range.length == 2) {
             startingByte = range[0];
             lastByte = range[1];
         } else {
-            GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
-                    getObjectRequest.getBucketName(), getObjectRequest.getKey());
-            if (getObjectRequest.getSSECustomerKey() != null)
-                getObjectMetadataRequest.setSSECustomerKey(getObjectRequest.getSSECustomerKey());
-            if (getObjectRequest.getVersionId() != null)
-                getObjectMetadataRequest.setVersionId(getObjectRequest.getVersionId());
-            final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
-
             lastByte = objectMetadata.getContentLength() - 1;
         }
+
         final long origStartingByte = startingByte;
+        final boolean isDownloadParallel = TransferManagerUtils.isDownloadParallelizable(s3, getObjectRequest,
+                ServiceUtils.getPartCount(getObjectRequest, s3));
         // We still pass the unfiltered listener chain into DownloadImpl
-        final DownloadImpl download = new DownloadImpl(description,
-                transferProgress, listenerChain, null, stateListener,
-                getObjectRequest, file);
+        final DownloadImpl download = new DownloadImpl(description, transferProgress, listenerChain, null,
+                stateListener, getObjectRequest, file, objectMetadata, isDownloadParallel);
 
         long totalBytesToDownload = lastByte - startingByte + 1;
         transferProgress.setTotalBytesToTransfer(totalBytesToDownload);
 
         long fileLength = -1;
+
         if (resumeExistingDownload) {
-            if (!FileLocks.lock(file)) {
-                throw new FileLockException("Fail to lock " + file
-                        + " for resume download");
+            if (isS3ObjectModifiedSincePause(lastModifiedTime, lastModifiedTimeRecordedDuringPause)) {
+                throw new AmazonClientException("The requested object in bucket " + getObjectRequest.getBucketName()
+                        + " with key " + getObjectRequest.getKey() + " is modified on Amazon S3 since the last pause.");
             }
-            try {
-                if (file.exists()) {
-                    fileLength = file.length();
-                    startingByte = startingByte + fileLength;
-                    getObjectRequest.setRange(startingByte, lastByte);
-                    transferProgress.updateProgress(Math.min(fileLength,
-                            totalBytesToDownload));
-                    totalBytesToDownload = lastByte - startingByte + 1;
-                    if (log.isDebugEnabled()) {
-                        log.debug("Resume download: totalBytesToDownload=" + totalBytesToDownload
-                            + ", origStartingByte=" + origStartingByte
-                            + ", startingByte=" + startingByte + ", lastByte="
-                            + lastByte + ", numberOfBytesRead=" + fileLength
-                            + ", file: " + file);
-                    }
+
+            if (!isDownloadParallel) {
+                if (!FileLocks.lock(file)) {
+                    throw new FileLockException("Fail to lock " + file + " for resume download");
                 }
-            } finally {
-                FileLocks.unlock(file);
+                try {
+                    if (file.exists()) {
+                        fileLength = file.length();
+                        startingByte = startingByte + fileLength;
+                        getObjectRequest.setRange(startingByte, lastByte);
+                        transferProgress.updateProgress(Math.min(fileLength, totalBytesToDownload));
+                        totalBytesToDownload = lastByte - startingByte + 1;
+                        if (log.isDebugEnabled()) {
+                            log.debug("Resume download: totalBytesToDownload=" + totalBytesToDownload
+                                    + ", origStartingByte=" + origStartingByte + ", startingByte=" + startingByte
+                                    + ", lastByte=" + lastByte + ", numberOfBytesRead=" + fileLength + ", file: "
+                                    + file);
+                        }
+                    }
+                } finally {
+                    FileLocks.unlock(file);
+                }
             }
         }
 
@@ -985,10 +995,16 @@ public class TransferManager {
         Future<?> future = executorService.submit(
             new DownloadCallable(s3, latch,
                 getObjectRequest, resumeExistingDownload, download, file,
-                origStartingByte, fileLength, timeoutMillis, timedThreadPool));
+                origStartingByte, fileLength, timeoutMillis, timedThreadPool,
+                lastFullyDownloadedPart, isDownloadParallel));
         download.setMonitor(new DownloadMonitor(download, future));
         latch.countDown();
         return download;
+    }
+
+    private boolean isS3ObjectModifiedSincePause(final long lastModifiedTimeRecordedDuringResume,
+            long lastModifiedTimeRecordedDuringPause) {
+        return lastModifiedTimeRecordedDuringResume != lastModifiedTimeRecordedDuringPause;
     }
 
     /**
@@ -1095,7 +1111,8 @@ public class TransferManager {
                                     .<GetObjectRequest>withGeneralProgressListener(
                                             listener),
                             f,
-                            transferListener, null, false, 0));
+                            transferListener, null, false, 0,
+                            null, 0L));
         }
 
         if ( downloads.isEmpty() ) {
@@ -1706,7 +1723,9 @@ public class TransferManager {
         request.setResponseHeaders(persistableDownload.getResponseHeaders());
 
         return doDownload(request, new File(persistableDownload.getFile()), null, null,
-                APPEND_MODE, 0);
+                APPEND_MODE, 0,
+                persistableDownload.getLastFullyDownloadedPartNumber(),
+                persistableDownload.getlastModifiedTime());
     }
 
     /**

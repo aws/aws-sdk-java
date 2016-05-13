@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListWorkflowTypesRequest Marshaller
  */
 public class ListWorkflowTypesRequestMarshaller implements
         Marshaller<Request<ListWorkflowTypesRequest>, ListWorkflowTypesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListWorkflowTypesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListWorkflowTypesRequest> marshall(
             ListWorkflowTypesRequest listWorkflowTypesRequest) {
@@ -58,8 +65,8 @@ public class ListWorkflowTypesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.0");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

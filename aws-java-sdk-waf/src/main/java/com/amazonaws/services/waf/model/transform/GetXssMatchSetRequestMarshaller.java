@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetXssMatchSetRequest Marshaller
  */
 public class GetXssMatchSetRequestMarshaller implements
         Marshaller<Request<GetXssMatchSetRequest>, GetXssMatchSetRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetXssMatchSetRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetXssMatchSetRequest> marshall(
             GetXssMatchSetRequest getXssMatchSetRequest) {
@@ -57,8 +64,8 @@ public class GetXssMatchSetRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

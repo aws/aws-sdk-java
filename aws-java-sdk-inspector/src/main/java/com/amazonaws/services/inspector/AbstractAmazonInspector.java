@@ -63,17 +63,20 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
-    public void deleteAssessmentRun(DeleteAssessmentRunRequest request) {
+    public DeleteAssessmentRunResult deleteAssessmentRun(
+            DeleteAssessmentRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteAssessmentTarget(DeleteAssessmentTargetRequest request) {
+    public DeleteAssessmentTargetResult deleteAssessmentTarget(
+            DeleteAssessmentTargetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteAssessmentTemplate(DeleteAssessmentTemplateRequest request) {
+    public DeleteAssessmentTemplateResult deleteAssessmentTemplate(
+            DeleteAssessmentTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -178,7 +181,7 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
-    public void registerCrossAccountAccessRole(
+    public RegisterCrossAccountAccessRoleResult registerCrossAccountAccessRole(
             RegisterCrossAccountAccessRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -190,7 +193,8 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
-    public void setTagsForResource(SetTagsForResourceRequest request) {
+    public SetTagsForResourceResult setTagsForResource(
+            SetTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -201,22 +205,26 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
-    public void stopAssessmentRun(StopAssessmentRunRequest request) {
+    public StopAssessmentRunResult stopAssessmentRun(
+            StopAssessmentRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void subscribeToEvent(SubscribeToEventRequest request) {
+    public SubscribeToEventResult subscribeToEvent(
+            SubscribeToEventRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void unsubscribeFromEvent(UnsubscribeFromEventRequest request) {
+    public UnsubscribeFromEventResult unsubscribeFromEvent(
+            UnsubscribeFromEventRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateAssessmentTarget(UpdateAssessmentTargetRequest request) {
+    public UpdateAssessmentTargetResult updateAssessmentTarget(
+            UpdateAssessmentTargetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

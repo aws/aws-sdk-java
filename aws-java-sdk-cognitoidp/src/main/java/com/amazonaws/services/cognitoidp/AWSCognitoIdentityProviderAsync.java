@@ -113,9 +113,11 @@ public interface AWSCognitoIdentityProviderAsync extends
      * 
      * @param adminDeleteUserRequest
      *        Represents the request to delete a user as an administrator.
+     * @return A Java Future containing the result of the AdminDeleteUser
+     *         operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminDeleteUser
      */
-    java.util.concurrent.Future<Void> adminDeleteUserAsync(
+    java.util.concurrent.Future<AdminDeleteUserResult> adminDeleteUserAsync(
             AdminDeleteUserRequest adminDeleteUserRequest);
 
     /**
@@ -130,11 +132,13 @@ public interface AWSCognitoIdentityProviderAsync extends
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminDeleteUser
+     *         operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.AdminDeleteUser
      */
-    java.util.concurrent.Future<Void> adminDeleteUserAsync(
+    java.util.concurrent.Future<AdminDeleteUserResult> adminDeleteUserAsync(
             AdminDeleteUserRequest adminDeleteUserRequest,
-            com.amazonaws.handlers.AsyncHandler<AdminDeleteUserRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AdminDeleteUserRequest, AdminDeleteUserResult> asyncHandler);
 
     /**
      * <p>
@@ -573,9 +577,11 @@ public interface AWSCognitoIdentityProviderAsync extends
      * 
      * @param deleteUserRequest
      *        Represents the request to delete a user.
+     * @return A Java Future containing the result of the DeleteUser operation
+     *         returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.DeleteUser
      */
-    java.util.concurrent.Future<Void> deleteUserAsync(
+    java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(
             DeleteUserRequest deleteUserRequest);
 
     /**
@@ -590,11 +596,13 @@ public interface AWSCognitoIdentityProviderAsync extends
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUser operation
+     *         returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteUser
      */
-    java.util.concurrent.Future<Void> deleteUserAsync(
+    java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(
             DeleteUserRequest deleteUserRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler);
 
     /**
      * <p>
@@ -637,9 +645,11 @@ public interface AWSCognitoIdentityProviderAsync extends
      * 
      * @param deleteUserPoolRequest
      *        Represents the request to delete a user pool.
+     * @return A Java Future containing the result of the DeleteUserPool
+     *         operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.DeleteUserPool
      */
-    java.util.concurrent.Future<Void> deleteUserPoolAsync(
+    java.util.concurrent.Future<DeleteUserPoolResult> deleteUserPoolAsync(
             DeleteUserPoolRequest deleteUserPoolRequest);
 
     /**
@@ -654,11 +664,13 @@ public interface AWSCognitoIdentityProviderAsync extends
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUserPool
+     *         operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteUserPool
      */
-    java.util.concurrent.Future<Void> deleteUserPoolAsync(
+    java.util.concurrent.Future<DeleteUserPoolResult> deleteUserPoolAsync(
             DeleteUserPoolRequest deleteUserPoolRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteUserPoolRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteUserPoolRequest, DeleteUserPoolResult> asyncHandler);
 
     /**
      * <p>
@@ -667,9 +679,11 @@ public interface AWSCognitoIdentityProviderAsync extends
      * 
      * @param deleteUserPoolClientRequest
      *        Represents the request to delete a user pool client.
+     * @return A Java Future containing the result of the DeleteUserPoolClient
+     *         operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.DeleteUserPoolClient
      */
-    java.util.concurrent.Future<Void> deleteUserPoolClientAsync(
+    java.util.concurrent.Future<DeleteUserPoolClientResult> deleteUserPoolClientAsync(
             DeleteUserPoolClientRequest deleteUserPoolClientRequest);
 
     /**
@@ -684,11 +698,13 @@ public interface AWSCognitoIdentityProviderAsync extends
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUserPoolClient
+     *         operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteUserPoolClient
      */
-    java.util.concurrent.Future<Void> deleteUserPoolClientAsync(
+    java.util.concurrent.Future<DeleteUserPoolClientResult> deleteUserPoolClientAsync(
             DeleteUserPoolClientRequest deleteUserPoolClientRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteUserPoolClientRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteUserPoolClientRequest, DeleteUserPoolClientResult> asyncHandler);
 
     /**
      * <p>

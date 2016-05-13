@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeletePolicyRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class DeletePolicyRequestMarshaller implements
         Marshaller<Request<DeletePolicyRequest>, DeletePolicyRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeletePolicyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeletePolicyRequest> marshall(
             DeletePolicyRequest deletePolicyRequest) {
@@ -66,8 +73,9 @@ public class DeletePolicyRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
-                (deletePolicyRequest.getPolicyName() != null) ? StringUtils
-                        .fromString(deletePolicyRequest.getPolicyName()) : "");
+                (deletePolicyRequest.getPolicyName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deletePolicyRequest
+                                .getPolicyName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

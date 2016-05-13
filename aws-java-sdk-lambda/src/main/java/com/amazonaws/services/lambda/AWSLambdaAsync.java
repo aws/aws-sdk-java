@@ -331,9 +331,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </p>
      * 
      * @param deleteAliasRequest
+     * @return A Java Future containing the result of the DeleteAlias operation
+     *         returned by the service.
      * @sample AWSLambdaAsync.DeleteAlias
      */
-    java.util.concurrent.Future<Void> deleteAliasAsync(
+    java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             DeleteAliasRequest deleteAliasRequest);
 
     /**
@@ -352,11 +354,13 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAlias operation
+     *         returned by the service.
      * @sample AWSLambdaAsyncHandler.DeleteAlias
      */
-    java.util.concurrent.Future<Void> deleteAliasAsync(
+    java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             DeleteAliasRequest deleteAliasRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler);
 
     /**
      * <p>
@@ -424,9 +428,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </p>
      * 
      * @param deleteFunctionRequest
+     * @return A Java Future containing the result of the DeleteFunction
+     *         operation returned by the service.
      * @sample AWSLambdaAsync.DeleteFunction
      */
-    java.util.concurrent.Future<Void> deleteFunctionAsync(
+    java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(
             DeleteFunctionRequest deleteFunctionRequest);
 
     /**
@@ -458,11 +464,13 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFunction
+     *         operation returned by the service.
      * @sample AWSLambdaAsyncHandler.DeleteFunction
      */
-    java.util.concurrent.Future<Void> deleteFunctionAsync(
+    java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(
             DeleteFunctionRequest deleteFunctionRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResult> asyncHandler);
 
     /**
      * <p>
@@ -1170,9 +1178,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </p>
      * 
      * @param removePermissionRequest
+     * @return A Java Future containing the result of the RemovePermission
+     *         operation returned by the service.
      * @sample AWSLambdaAsync.RemovePermission
      */
-    java.util.concurrent.Future<Void> removePermissionAsync(
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             RemovePermissionRequest removePermissionRequest);
 
     /**
@@ -1203,11 +1213,13 @@ public interface AWSLambdaAsync extends AWSLambda {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemovePermission
+     *         operation returned by the service.
      * @sample AWSLambdaAsyncHandler.RemovePermission
      */
-    java.util.concurrent.Future<Void> removePermissionAsync(
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             RemovePermissionRequest removePermissionRequest,
-            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler);
 
     /**
      * <p>

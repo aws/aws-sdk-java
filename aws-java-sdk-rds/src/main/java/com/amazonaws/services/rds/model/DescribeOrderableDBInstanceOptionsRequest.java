@@ -1,463 +1,577 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest) DescribeOrderableDBInstanceOptions operation}.
- * <p>
- * Returns a list of orderable DB instance options for the specified
- * engine.
- * </p>
- *
- * @see com.amazonaws.services.rds.AmazonRDS#describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest)
+ * <p/>
  */
-public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeOrderableDBInstanceOptionsRequest extends
+        AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the engine to retrieve DB instance options for.
+     * </p>
      */
     private String engine;
-
     /**
-     * The engine version filter value. Specify this parameter to show only
-     * the available offerings matching the specified engine version.
+     * <p>
+     * The engine version filter value. Specify this parameter to show only the
+     * available offerings matching the specified engine version.
+     * </p>
      */
     private String engineVersion;
-
     /**
-     * The DB instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB instance class.
+     * <p>
+     * The DB instance class filter value. Specify this parameter to show only
+     * the available offerings matching the specified DB instance class.
+     * </p>
      */
     private String dBInstanceClass;
-
     /**
-     * The license model filter value. Specify this parameter to show only
-     * the available offerings matching the specified license model.
+     * <p>
+     * The license model filter value. Specify this parameter to show only the
+     * available offerings matching the specified license model.
+     * </p>
      */
     private String licenseModel;
-
     /**
-     * The VPC filter value. Specify this parameter to show only the
-     * available VPC or non-VPC offerings.
+     * <p>
+     * The VPC filter value. Specify this parameter to show only the available
+     * VPC or non-VPC offerings.
+     * </p>
      */
     private Boolean vpc;
-
     /**
+     * <p>
      * This parameter is not currently supported.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
-
+    private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * pagination token called a marker is included in the response so that
-     * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: Minimum 20, maximum 100.
+     * <p>
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination
+     * token called a marker is included in the response so that the remaining
+     * results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
      */
     private Integer maxRecords;
-
     /**
+     * <p>
      * An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <code>MaxRecords</code> .
+     * </p>
      */
     private String marker;
 
     /**
+     * <p>
      * The name of the engine to retrieve DB instance options for.
-     *
-     * @return The name of the engine to retrieve DB instance options for.
+     * </p>
+     * 
+     * @param engine
+     *        The name of the engine to retrieve DB instance options for.
      */
-    public String getEngine() {
-        return engine;
-    }
-    
-    /**
-     * The name of the engine to retrieve DB instance options for.
-     *
-     * @param engine The name of the engine to retrieve DB instance options for.
-     */
+
     public void setEngine(String engine) {
         this.engine = engine;
     }
-    
+
     /**
-     * The name of the engine to retrieve DB instance options for.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param engine The name of the engine to retrieve DB instance options for.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the engine to retrieve DB instance options for.
+     * </p>
+     * 
+     * @return The name of the engine to retrieve DB instance options for.
      */
+
+    public String getEngine() {
+        return this.engine;
+    }
+
+    /**
+     * <p>
+     * The name of the engine to retrieve DB instance options for.
+     * </p>
+     * 
+     * @param engine
+     *        The name of the engine to retrieve DB instance options for.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeOrderableDBInstanceOptionsRequest withEngine(String engine) {
-        this.engine = engine;
+        setEngine(engine);
         return this;
     }
 
     /**
-     * The engine version filter value. Specify this parameter to show only
-     * the available offerings matching the specified engine version.
-     *
-     * @return The engine version filter value. Specify this parameter to show only
-     *         the available offerings matching the specified engine version.
+     * <p>
+     * The engine version filter value. Specify this parameter to show only the
+     * available offerings matching the specified engine version.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The engine version filter value. Specify this parameter to show
+     *        only the available offerings matching the specified engine
+     *        version.
      */
-    public String getEngineVersion() {
-        return engineVersion;
-    }
-    
-    /**
-     * The engine version filter value. Specify this parameter to show only
-     * the available offerings matching the specified engine version.
-     *
-     * @param engineVersion The engine version filter value. Specify this parameter to show only
-     *         the available offerings matching the specified engine version.
-     */
+
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
-    
+
     /**
-     * The engine version filter value. Specify this parameter to show only
-     * the available offerings matching the specified engine version.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param engineVersion The engine version filter value. Specify this parameter to show only
-     *         the available offerings matching the specified engine version.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The engine version filter value. Specify this parameter to show only the
+     * available offerings matching the specified engine version.
+     * </p>
+     * 
+     * @return The engine version filter value. Specify this parameter to show
+     *         only the available offerings matching the specified engine
+     *         version.
      */
-    public DescribeOrderableDBInstanceOptionsRequest withEngineVersion(String engineVersion) {
-        this.engineVersion = engineVersion;
+
+    public String getEngineVersion() {
+        return this.engineVersion;
+    }
+
+    /**
+     * <p>
+     * The engine version filter value. Specify this parameter to show only the
+     * available offerings matching the specified engine version.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The engine version filter value. Specify this parameter to show
+     *        only the available offerings matching the specified engine
+     *        version.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeOrderableDBInstanceOptionsRequest withEngineVersion(
+            String engineVersion) {
+        setEngineVersion(engineVersion);
         return this;
     }
 
     /**
-     * The DB instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB instance class.
-     *
-     * @return The DB instance class filter value. Specify this parameter to show
-     *         only the available offerings matching the specified DB instance class.
+     * <p>
+     * The DB instance class filter value. Specify this parameter to show only
+     * the available offerings matching the specified DB instance class.
+     * </p>
+     * 
+     * @param dBInstanceClass
+     *        The DB instance class filter value. Specify this parameter to show
+     *        only the available offerings matching the specified DB instance
+     *        class.
      */
-    public String getDBInstanceClass() {
-        return dBInstanceClass;
-    }
-    
-    /**
-     * The DB instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB instance class.
-     *
-     * @param dBInstanceClass The DB instance class filter value. Specify this parameter to show
-     *         only the available offerings matching the specified DB instance class.
-     */
+
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
-    
+
     /**
-     * The DB instance class filter value. Specify this parameter to show
-     * only the available offerings matching the specified DB instance class.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param dBInstanceClass The DB instance class filter value. Specify this parameter to show
-     *         only the available offerings matching the specified DB instance class.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The DB instance class filter value. Specify this parameter to show only
+     * the available offerings matching the specified DB instance class.
+     * </p>
+     * 
+     * @return The DB instance class filter value. Specify this parameter to
+     *         show only the available offerings matching the specified DB
+     *         instance class.
      */
-    public DescribeOrderableDBInstanceOptionsRequest withDBInstanceClass(String dBInstanceClass) {
-        this.dBInstanceClass = dBInstanceClass;
+
+    public String getDBInstanceClass() {
+        return this.dBInstanceClass;
+    }
+
+    /**
+     * <p>
+     * The DB instance class filter value. Specify this parameter to show only
+     * the available offerings matching the specified DB instance class.
+     * </p>
+     * 
+     * @param dBInstanceClass
+     *        The DB instance class filter value. Specify this parameter to show
+     *        only the available offerings matching the specified DB instance
+     *        class.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeOrderableDBInstanceOptionsRequest withDBInstanceClass(
+            String dBInstanceClass) {
+        setDBInstanceClass(dBInstanceClass);
         return this;
     }
 
     /**
-     * The license model filter value. Specify this parameter to show only
-     * the available offerings matching the specified license model.
-     *
-     * @return The license model filter value. Specify this parameter to show only
-     *         the available offerings matching the specified license model.
+     * <p>
+     * The license model filter value. Specify this parameter to show only the
+     * available offerings matching the specified license model.
+     * </p>
+     * 
+     * @param licenseModel
+     *        The license model filter value. Specify this parameter to show
+     *        only the available offerings matching the specified license model.
      */
-    public String getLicenseModel() {
-        return licenseModel;
-    }
-    
-    /**
-     * The license model filter value. Specify this parameter to show only
-     * the available offerings matching the specified license model.
-     *
-     * @param licenseModel The license model filter value. Specify this parameter to show only
-     *         the available offerings matching the specified license model.
-     */
+
     public void setLicenseModel(String licenseModel) {
         this.licenseModel = licenseModel;
     }
-    
+
     /**
-     * The license model filter value. Specify this parameter to show only
-     * the available offerings matching the specified license model.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param licenseModel The license model filter value. Specify this parameter to show only
-     *         the available offerings matching the specified license model.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The license model filter value. Specify this parameter to show only the
+     * available offerings matching the specified license model.
+     * </p>
+     * 
+     * @return The license model filter value. Specify this parameter to show
+     *         only the available offerings matching the specified license
+     *         model.
      */
-    public DescribeOrderableDBInstanceOptionsRequest withLicenseModel(String licenseModel) {
-        this.licenseModel = licenseModel;
+
+    public String getLicenseModel() {
+        return this.licenseModel;
+    }
+
+    /**
+     * <p>
+     * The license model filter value. Specify this parameter to show only the
+     * available offerings matching the specified license model.
+     * </p>
+     * 
+     * @param licenseModel
+     *        The license model filter value. Specify this parameter to show
+     *        only the available offerings matching the specified license model.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeOrderableDBInstanceOptionsRequest withLicenseModel(
+            String licenseModel) {
+        setLicenseModel(licenseModel);
         return this;
     }
 
     /**
-     * The VPC filter value. Specify this parameter to show only the
-     * available VPC or non-VPC offerings.
-     *
-     * @return The VPC filter value. Specify this parameter to show only the
-     *         available VPC or non-VPC offerings.
+     * <p>
+     * The VPC filter value. Specify this parameter to show only the available
+     * VPC or non-VPC offerings.
+     * </p>
+     * 
+     * @param vpc
+     *        The VPC filter value. Specify this parameter to show only the
+     *        available VPC or non-VPC offerings.
      */
-    public Boolean isVpc() {
-        return vpc;
-    }
-    
-    /**
-     * The VPC filter value. Specify this parameter to show only the
-     * available VPC or non-VPC offerings.
-     *
-     * @param vpc The VPC filter value. Specify this parameter to show only the
-     *         available VPC or non-VPC offerings.
-     */
+
     public void setVpc(Boolean vpc) {
         this.vpc = vpc;
     }
-    
+
     /**
-     * The VPC filter value. Specify this parameter to show only the
-     * available VPC or non-VPC offerings.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param vpc The VPC filter value. Specify this parameter to show only the
+     * The VPC filter value. Specify this parameter to show only the available
+     * VPC or non-VPC offerings.
+     * </p>
+     * 
+     * @return The VPC filter value. Specify this parameter to show only the
      *         available VPC or non-VPC offerings.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
+
+    public Boolean getVpc() {
+        return this.vpc;
+    }
+
+    /**
+     * <p>
+     * The VPC filter value. Specify this parameter to show only the available
+     * VPC or non-VPC offerings.
+     * </p>
+     * 
+     * @param vpc
+     *        The VPC filter value. Specify this parameter to show only the
+     *        available VPC or non-VPC offerings.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeOrderableDBInstanceOptionsRequest withVpc(Boolean vpc) {
-        this.vpc = vpc;
+        setVpc(vpc);
         return this;
     }
 
     /**
-     * The VPC filter value. Specify this parameter to show only the
-     * available VPC or non-VPC offerings.
-     *
+     * <p>
+     * The VPC filter value. Specify this parameter to show only the available
+     * VPC or non-VPC offerings.
+     * </p>
+     * 
      * @return The VPC filter value. Specify this parameter to show only the
      *         available VPC or non-VPC offerings.
      */
-    public Boolean getVpc() {
-        return vpc;
+
+    public Boolean isVpc() {
+        return this.vpc;
     }
 
     /**
+     * <p>
      * This parameter is not currently supported.
-     *
+     * </p>
+     * 
      * @return This parameter is not currently supported.
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
-              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
-              filters.setAutoConstruct(true);
+            filters = new com.amazonaws.internal.SdkInternalList<Filter>();
         }
         return filters;
     }
-    
+
     /**
+     * <p>
      * This parameter is not currently supported.
-     *
-     * @param filters This parameter is not currently supported.
+     * </p>
+     * 
+     * @param filters
+     *        This parameter is not currently supported.
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
-        filtersCopy.addAll(filters);
-        this.filters = filtersCopy;
+
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
+                filters);
     }
-    
+
     /**
+     * <p>
      * This parameter is not currently supported.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or {@link
-     * #withFilters(java.util.Collection)} if you want to override the
+     * any). Use {@link #setFilters(java.util.Collection)} or
+     * {@link #withFilters(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param filters This parameter is not currently supported.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param filters
+     *        This parameter is not currently supported.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeOrderableDBInstanceOptionsRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
-        for (Filter value : filters) {
-            getFilters().add(value);
+
+    public DescribeOrderableDBInstanceOptionsRequest withFilters(
+            Filter... filters) {
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
+                    filters.length));
+        }
+        for (Filter ele : filters) {
+            this.filters.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * This parameter is not currently supported.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param filters This parameter is not currently supported.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param filters
+     *        This parameter is not currently supported.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeOrderableDBInstanceOptionsRequest withFilters(java.util.Collection<Filter> filters) {
-        if (filters == null) {
-            this.filters = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
-            filtersCopy.addAll(filters);
-            this.filters = filtersCopy;
-        }
 
+    public DescribeOrderableDBInstanceOptionsRequest withFilters(
+            java.util.Collection<Filter> filters) {
+        setFilters(filters);
         return this;
     }
 
     /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * pagination token called a marker is included in the response so that
-     * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: Minimum 20, maximum 100.
-     *
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         pagination token called a marker is included in the response so that
-     *         the remaining results can be retrieved. <p>Default: 100
-     *         <p>Constraints: Minimum 20, maximum 100.
+     * <p>
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination
+     * token called a marker is included in the response so that the remaining
+     * results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of records to include in the response. If more
+     *        records exist than the specified <code>MaxRecords</code> value, a
+     *        pagination token called a marker is included in the response so
+     *        that the remaining results can be retrieved. </p>
+     *        <p>
+     *        Default: 100
+     *        </p>
+     *        <p>
+     *        Constraints: Minimum 20, maximum 100.
      */
-    public Integer getMaxRecords() {
-        return maxRecords;
-    }
-    
-    /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * pagination token called a marker is included in the response so that
-     * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: Minimum 20, maximum 100.
-     *
-     * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         pagination token called a marker is included in the response so that
-     *         the remaining results can be retrieved. <p>Default: 100
-     *         <p>Constraints: Minimum 20, maximum 100.
-     */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
-    
+
     /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * pagination token called a marker is included in the response so that
-     * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: Minimum 20, maximum 100.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param maxRecords The maximum number of records to include in the response. If more
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination
+     * token called a marker is included in the response so that the remaining
+     * results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
+     * 
+     * @return The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
-     *         pagination token called a marker is included in the response so that
-     *         the remaining results can be retrieved. <p>Default: 100
-     *         <p>Constraints: Minimum 20, maximum 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         pagination token called a marker is included in the response so
+     *         that the remaining results can be retrieved. </p>
+     *         <p>
+     *         Default: 100
+     *         </p>
+     *         <p>
+     *         Constraints: Minimum 20, maximum 100.
      */
-    public DescribeOrderableDBInstanceOptionsRequest withMaxRecords(Integer maxRecords) {
-        this.maxRecords = maxRecords;
+
+    public Integer getMaxRecords() {
+        return this.maxRecords;
+    }
+
+    /**
+     * <p>
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination
+     * token called a marker is included in the response so that the remaining
+     * results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of records to include in the response. If more
+     *        records exist than the specified <code>MaxRecords</code> value, a
+     *        pagination token called a marker is included in the response so
+     *        that the remaining results can be retrieved. </p>
+     *        <p>
+     *        Default: 100
+     *        </p>
+     *        <p>
+     *        Constraints: Minimum 20, maximum 100.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeOrderableDBInstanceOptionsRequest withMaxRecords(
+            Integer maxRecords) {
+        setMaxRecords(maxRecords);
         return this;
     }
 
     /**
+     * <p>
      * An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <code>MaxRecords</code> .
-     *
-     * @return An optional pagination token provided by a previous
-     *         DescribeOrderableDBInstanceOptions request. If this parameter is
-     *         specified, the response includes only records beyond the marker, up to
-     *         the value specified by <code>MaxRecords</code> .
+     * </p>
+     * 
+     * @param marker
+     *        An optional pagination token provided by a previous
+     *        DescribeOrderableDBInstanceOptions request. If this parameter is
+     *        specified, the response includes only records beyond the marker,
+     *        up to the value specified by <code>MaxRecords</code> .
      */
-    public String getMarker() {
-        return marker;
-    }
-    
-    /**
-     * An optional pagination token provided by a previous
-     * DescribeOrderableDBInstanceOptions request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to
-     * the value specified by <code>MaxRecords</code> .
-     *
-     * @param marker An optional pagination token provided by a previous
-     *         DescribeOrderableDBInstanceOptions request. If this parameter is
-     *         specified, the response includes only records beyond the marker, up to
-     *         the value specified by <code>MaxRecords</code> .
-     */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
-    
+
     /**
+     * <p>
      * An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is
      * specified, the response includes only records beyond the marker, up to
      * the value specified by <code>MaxRecords</code> .
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param marker An optional pagination token provided by a previous
+     * </p>
+     * 
+     * @return An optional pagination token provided by a previous
      *         DescribeOrderableDBInstanceOptions request. If this parameter is
-     *         specified, the response includes only records beyond the marker, up to
-     *         the value specified by <code>MaxRecords</code> .
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         specified, the response includes only records beyond the marker,
+     *         up to the value specified by <code>MaxRecords</code> .
      */
+
+    public String getMarker() {
+        return this.marker;
+    }
+
+    /**
+     * <p>
+     * An optional pagination token provided by a previous
+     * DescribeOrderableDBInstanceOptions request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code> .
+     * </p>
+     * 
+     * @param marker
+     *        An optional pagination token provided by a previous
+     *        DescribeOrderableDBInstanceOptions request. If this parameter is
+     *        specified, the response includes only records beyond the marker,
+     *        up to the value specified by <code>MaxRecords</code> .
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeOrderableDBInstanceOptionsRequest withMarker(String marker) {
-        this.marker = marker;
+        setMarker(marker);
         return this;
     }
 
@@ -473,66 +587,112 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
-        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");
-        if (isVpc() != null) sb.append("Vpc: " + isVpc() + ",");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() );
+        if (getEngine() != null)
+            sb.append("Engine: " + getEngine() + ",");
+        if (getEngineVersion() != null)
+            sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (getDBInstanceClass() != null)
+            sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+        if (getLicenseModel() != null)
+            sb.append("LicenseModel: " + getLicenseModel() + ",");
+        if (getVpc() != null)
+            sb.append("Vpc: " + getVpc() + ",");
+        if (getFilters() != null)
+            sb.append("Filters: " + getFilters() + ",");
+        if (getMaxRecords() != null)
+            sb.append("MaxRecords: " + getMaxRecords() + ",");
+        if (getMarker() != null)
+            sb.append("Marker: " + getMarker());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeOrderableDBInstanceOptionsRequest == false)
+            return false;
+        DescribeOrderableDBInstanceOptionsRequest other = (DescribeOrderableDBInstanceOptionsRequest) obj;
+        if (other.getEngine() == null ^ this.getEngine() == null)
+            return false;
+        if (other.getEngine() != null
+                && other.getEngine().equals(this.getEngine()) == false)
+            return false;
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
+            return false;
+        if (other.getEngineVersion() != null
+                && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+            return false;
+        if (other.getDBInstanceClass() == null
+                ^ this.getDBInstanceClass() == null)
+            return false;
+        if (other.getDBInstanceClass() != null
+                && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false)
+            return false;
+        if (other.getLicenseModel() == null ^ this.getLicenseModel() == null)
+            return false;
+        if (other.getLicenseModel() != null
+                && other.getLicenseModel().equals(this.getLicenseModel()) == false)
+            return false;
+        if (other.getVpc() == null ^ this.getVpc() == null)
+            return false;
+        if (other.getVpc() != null
+                && other.getVpc().equals(this.getVpc()) == false)
+            return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null
+                && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
+            return false;
+        if (other.getMaxRecords() != null
+                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+            return false;
+        if (other.getMarker() == null ^ this.getMarker() == null)
+            return false;
+        if (other.getMarker() != null
+                && other.getMarker().equals(this.getMarker()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode()); 
-        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
-        hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode()); 
-        hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
-        hashCode = prime * hashCode + ((isVpc() == null) ? 0 : isVpc().hashCode()); 
-        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
-        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getEngine() == null) ? 0 : getEngine().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEngineVersion() == null) ? 0 : getEngineVersion()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLicenseModel() == null) ? 0 : getLicenseModel()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getVpc() == null) ? 0 : getVpc().hashCode());
+        hashCode = prime * hashCode
+                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode
+                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode
+                + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeOrderableDBInstanceOptionsRequest == false) return false;
-        DescribeOrderableDBInstanceOptionsRequest other = (DescribeOrderableDBInstanceOptionsRequest)obj;
-        
-        if (other.getEngine() == null ^ this.getEngine() == null) return false;
-        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false) return false; 
-        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null) return false;
-        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
-        if (other.getDBInstanceClass() == null ^ this.getDBInstanceClass() == null) return false;
-        if (other.getDBInstanceClass() != null && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false) return false; 
-        if (other.getLicenseModel() == null ^ this.getLicenseModel() == null) return false;
-        if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false) return false; 
-        if (other.isVpc() == null ^ this.isVpc() == null) return false;
-        if (other.isVpc() != null && other.isVpc().equals(this.isVpc()) == false) return false; 
-        if (other.getFilters() == null ^ this.getFilters() == null) return false;
-        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
-        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
-        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
-        if (other.getMarker() == null ^ this.getMarker() == null) return false;
-        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeOrderableDBInstanceOptionsRequest clone() {
-        
-            return (DescribeOrderableDBInstanceOptionsRequest) super.clone();
+        return (DescribeOrderableDBInstanceOptionsRequest) super.clone();
     }
-
 }
-    

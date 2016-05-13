@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -123,10 +123,226 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all CodeCommit exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MaximumBranchesExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.MaximumBranchesExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "EncryptionKeyNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.EncryptionKeyNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRepositoryNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidSortByException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidSortByException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRepositoryTriggerDestinationArnException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerDestinationArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "EncryptionKeyDisabledException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRepositoryDescriptionException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryDescriptionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRepositoryTriggerNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRepositoryTriggerRegionException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerRegionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "BranchNameRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.BranchNameRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "EncryptionKeyAccessDeniedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRepositoryTriggerBranchNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerBranchNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryNameExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryNameExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryTriggerDestinationArnRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryTriggerDestinationArnRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryLimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidOrderException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidOrderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidCommitIdException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidCommitIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryNameRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryNameRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "EncryptionKeyUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.EncryptionKeyUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryTriggerNameRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "BranchDoesNotExistException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.BranchDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryTriggersListRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryTriggersListRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRepositoryTriggerEventsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerEventsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryDoesNotExistException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("BranchNameExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.BranchNameExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryTriggerEventsListRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryTriggerEventsListRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidContinuationTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidContinuationTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "EncryptionIntegrityChecksFailedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MaximumRepositoryTriggersExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.MaximumRepositoryTriggersExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CommitIdDoesNotExistException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.CommitIdDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryNamesRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryNamesRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CommitDoesNotExistException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.CommitDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRepositoryTriggerCustomDataException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerCustomDataException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MaximumRepositoryNamesExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.MaximumRepositoryNamesExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("CommitIdRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.CommitIdRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidBranchNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidBranchNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryTriggerBranchNameListRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException.class)));
 
     /**
      * Constructs a new client to invoke service methods on CodeCommit. A
@@ -278,157 +494,6 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.MaximumBranchesExceededException.class,
-                        "MaximumBranchesExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.EncryptionKeyNotFoundException.class,
-                        "EncryptionKeyNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidRepositoryNameException.class,
-                        "InvalidRepositoryNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidSortByException.class,
-                        "InvalidSortByException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerDestinationArnException.class,
-                        "InvalidRepositoryTriggerDestinationArnException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException.class,
-                        "EncryptionKeyDisabledException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidRepositoryDescriptionException.class,
-                        "InvalidRepositoryDescriptionException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerNameException.class,
-                        "InvalidRepositoryTriggerNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerRegionException.class,
-                        "InvalidRepositoryTriggerRegionException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.BranchNameRequiredException.class,
-                        "BranchNameRequiredException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException.class,
-                        "EncryptionKeyAccessDeniedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerBranchNameException.class,
-                        "InvalidRepositoryTriggerBranchNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.RepositoryNameExistsException.class,
-                        "RepositoryNameExistsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.RepositoryTriggerDestinationArnRequiredException.class,
-                        "RepositoryTriggerDestinationArnRequiredException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.RepositoryLimitExceededException.class,
-                        "RepositoryLimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidOrderException.class,
-                        "InvalidOrderException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidCommitIdException.class,
-                        "InvalidCommitIdException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.RepositoryNameRequiredException.class,
-                        "RepositoryNameRequiredException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.EncryptionKeyUnavailableException.class,
-                        "EncryptionKeyUnavailableException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException.class,
-                        "RepositoryTriggerNameRequiredException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.BranchDoesNotExistException.class,
-                        "BranchDoesNotExistException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.RepositoryTriggersListRequiredException.class,
-                        "RepositoryTriggersListRequiredException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerEventsException.class,
-                        "InvalidRepositoryTriggerEventsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.RepositoryDoesNotExistException.class,
-                        "RepositoryDoesNotExistException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.BranchNameExistsException.class,
-                        "BranchNameExistsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.RepositoryTriggerEventsListRequiredException.class,
-                        "RepositoryTriggerEventsListRequiredException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidContinuationTokenException.class,
-                        "InvalidContinuationTokenException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException.class,
-                        "EncryptionIntegrityChecksFailedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.MaximumRepositoryTriggersExceededException.class,
-                        "MaximumRepositoryTriggersExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.CommitIdDoesNotExistException.class,
-                        "CommitIdDoesNotExistException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.RepositoryNamesRequiredException.class,
-                        "RepositoryNamesRequiredException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.CommitDoesNotExistException.class,
-                        "CommitDoesNotExistException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerCustomDataException.class,
-                        "InvalidRepositoryTriggerCustomDataException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.MaximumRepositoryNamesExceededException.class,
-                        "MaximumRepositoryNamesExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.CommitIdRequiredException.class,
-                        "CommitIdRequiredException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.InvalidBranchNameException.class,
-                        "InvalidBranchNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException.class,
-                        "RepositoryTriggerBranchNameListRequiredException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -499,20 +564,20 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchGetRepositoriesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(batchGetRepositoriesRequest));
+                request = new BatchGetRepositoriesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchGetRepositoriesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new BatchGetRepositoriesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetRepositoriesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new BatchGetRepositoriesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -536,6 +601,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      * 
      * @param createBranchRequest
      *        Represents the input of a create branch operation.
+     * @return Result of the CreateBranch operation returned by the service.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws InvalidRepositoryNameException
@@ -574,29 +640,34 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      * @sample AWSCodeCommit.CreateBranch
      */
     @Override
-    public void createBranch(CreateBranchRequest createBranchRequest) {
+    public CreateBranchResult createBranch(
+            CreateBranchRequest createBranchRequest) {
         ExecutionContext executionContext = createExecutionContext(createBranchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateBranchRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateBranchResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBranchRequestMarshaller().marshall(super
-                        .beforeMarshalling(createBranchRequest));
+                request = new CreateBranchRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBranchResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateBranchResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -653,7 +724,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateRepositoryRequestMarshaller()
+                request = new CreateRepositoryRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(createRepositoryRequest));
                 // Binds the request metrics to the current request.
@@ -662,10 +733,11 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateRepositoryResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateRepositoryResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRepositoryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateRepositoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -723,7 +795,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRepositoryRequestMarshaller()
+                request = new DeleteRepositoryRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(deleteRepositoryRequest));
                 // Binds the request metrics to the current request.
@@ -732,10 +804,11 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteRepositoryResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DeleteRepositoryResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRepositoryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteRepositoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -797,18 +870,19 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBranchRequestMarshaller().marshall(super
-                        .beforeMarshalling(getBranchRequest));
+                request = new GetBranchRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetBranchResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetBranchResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetBranchResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetBranchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -870,18 +944,19 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCommitRequestMarshaller().marshall(super
-                        .beforeMarshalling(getCommitRequest));
+                request = new GetCommitRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getCommitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetCommitResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetCommitResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetCommitResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetCommitResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -947,18 +1022,19 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRepositoryRequestMarshaller().marshall(super
-                        .beforeMarshalling(getRepositoryRequest));
+                request = new GetRepositoryRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRepositoryResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetRepositoryResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetRepositoryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetRepositoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1015,20 +1091,20 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRepositoryTriggersRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getRepositoryTriggersRequest));
+                request = new GetRepositoryTriggersRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRepositoryTriggersResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetRepositoryTriggersResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetRepositoryTriggersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetRepositoryTriggersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1086,18 +1162,19 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListBranchesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listBranchesRequest));
+                request = new ListBranchesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listBranchesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListBranchesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListBranchesResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListBranchesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListBranchesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1137,7 +1214,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRepositoriesRequestMarshaller()
+                request = new ListRepositoriesRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(listRepositoriesRequest));
                 // Binds the request metrics to the current request.
@@ -1146,10 +1223,11 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRepositoriesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListRepositoriesResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListRepositoriesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListRepositoriesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1244,20 +1322,20 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRepositoryTriggersRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putRepositoryTriggersRequest));
+                request = new PutRepositoryTriggersRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutRepositoryTriggersResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new PutRepositoryTriggersResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutRepositoryTriggersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutRepositoryTriggersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1354,20 +1432,20 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestRepositoryTriggersRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(testRepositoryTriggersRequest));
+                request = new TestRepositoryTriggersRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(testRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TestRepositoryTriggersResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new TestRepositoryTriggersResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<TestRepositoryTriggersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new TestRepositoryTriggersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1392,6 +1470,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      * 
      * @param updateDefaultBranchRequest
      *        Represents the input of an update default branch operation.
+     * @return Result of the UpdateDefaultBranch operation returned by the
+     *         service.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws RepositoryDoesNotExistException
@@ -1423,31 +1503,35 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      * @sample AWSCodeCommit.UpdateDefaultBranch
      */
     @Override
-    public void updateDefaultBranch(
+    public UpdateDefaultBranchResult updateDefaultBranch(
             UpdateDefaultBranchRequest updateDefaultBranchRequest) {
         ExecutionContext executionContext = createExecutionContext(updateDefaultBranchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateDefaultBranchRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateDefaultBranchResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDefaultBranchRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateDefaultBranchRequest));
+                request = new UpdateDefaultBranchRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateDefaultBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDefaultBranchResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateDefaultBranchResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1473,6 +1557,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      * @param updateRepositoryDescriptionRequest
      *        Represents the input of an update repository description
      *        operation.
+     * @return Result of the UpdateRepositoryDescription operation returned by
+     *         the service.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws RepositoryDoesNotExistException
@@ -1500,31 +1586,35 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      * @sample AWSCodeCommit.UpdateRepositoryDescription
      */
     @Override
-    public void updateRepositoryDescription(
+    public UpdateRepositoryDescriptionResult updateRepositoryDescription(
             UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest) {
         ExecutionContext executionContext = createExecutionContext(updateRepositoryDescriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateRepositoryDescriptionRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateRepositoryDescriptionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRepositoryDescriptionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateRepositoryDescriptionRequest));
+                request = new UpdateRepositoryDescriptionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateRepositoryDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRepositoryDescriptionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateRepositoryDescriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1546,6 +1636,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      * @param updateRepositoryNameRequest
      *        Represents the input of an update repository description
      *        operation.
+     * @return Result of the UpdateRepositoryName operation returned by the
+     *         service.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws RepositoryNameExistsException
@@ -1563,31 +1655,35 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
      * @sample AWSCodeCommit.UpdateRepositoryName
      */
     @Override
-    public void updateRepositoryName(
+    public UpdateRepositoryNameResult updateRepositoryName(
             UpdateRepositoryNameRequest updateRepositoryNameRequest) {
         ExecutionContext executionContext = createExecutionContext(updateRepositoryNameRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateRepositoryNameRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateRepositoryNameResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRepositoryNameRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateRepositoryNameRequest));
+                request = new UpdateRepositoryNameRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateRepositoryNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRepositoryNameResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateRepositoryNameResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1658,8 +1754,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

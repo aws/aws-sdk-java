@@ -32,9 +32,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * The name that is associated with the stack. The name must be unique in
      * the region in which you are creating the stack.
      * </p>
-     * <note>A stack name can contain only alphanumeric characters (case
-     * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 128 characters.</note>
+     * <note>
+     * <p>
+     * A stack name can contain only alphanumeric characters (case sensitive)
+     * and hyphens. It must start with an alphabetic character and cannot be
+     * longer than 128 characters.
+     * </p>
+     * </note>
      */
     private String stackName;
     /**
@@ -97,7 +101,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command
      * Line Interface (CLI).
      * </p>
      */
@@ -143,10 +147,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use
      * the following syntax to describe template resource types:
      * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for
-     * all custom resources), <code>Custom::<i>logical_ID</i></code> (for a
+     * all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a
      * specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for
      * all resources of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
      * specific AWS resource).
      * </p>
      * <p>
@@ -205,16 +209,23 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * The name that is associated with the stack. The name must be unique in
      * the region in which you are creating the stack.
      * </p>
-     * <note>A stack name can contain only alphanumeric characters (case
-     * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 128 characters.</note>
+     * <note>
+     * <p>
+     * A stack name can contain only alphanumeric characters (case sensitive)
+     * and hyphens. It must start with an alphabetic character and cannot be
+     * longer than 128 characters.
+     * </p>
+     * </note>
      * 
      * @param stackName
      *        The name that is associated with the stack. The name must be
      *        unique in the region in which you are creating the stack.</p>
-     *        <note>A stack name can contain only alphanumeric characters (case
+     *        <note>
+     *        <p>
+     *        A stack name can contain only alphanumeric characters (case
      *        sensitive) and hyphens. It must start with an alphabetic character
      *        and cannot be longer than 128 characters.
+     *        </p>
      */
 
     public void setStackName(String stackName) {
@@ -226,15 +237,22 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * The name that is associated with the stack. The name must be unique in
      * the region in which you are creating the stack.
      * </p>
-     * <note>A stack name can contain only alphanumeric characters (case
-     * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 128 characters.</note>
+     * <note>
+     * <p>
+     * A stack name can contain only alphanumeric characters (case sensitive)
+     * and hyphens. It must start with an alphabetic character and cannot be
+     * longer than 128 characters.
+     * </p>
+     * </note>
      * 
      * @return The name that is associated with the stack. The name must be
      *         unique in the region in which you are creating the stack.</p>
-     *         <note>A stack name can contain only alphanumeric characters (case
+     *         <note>
+     *         <p>
+     *         A stack name can contain only alphanumeric characters (case
      *         sensitive) and hyphens. It must start with an alphabetic
      *         character and cannot be longer than 128 characters.
+     *         </p>
      */
 
     public String getStackName() {
@@ -246,16 +264,23 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * The name that is associated with the stack. The name must be unique in
      * the region in which you are creating the stack.
      * </p>
-     * <note>A stack name can contain only alphanumeric characters (case
-     * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 128 characters.</note>
+     * <note>
+     * <p>
+     * A stack name can contain only alphanumeric characters (case sensitive)
+     * and hyphens. It must start with an alphabetic character and cannot be
+     * longer than 128 characters.
+     * </p>
+     * </note>
      * 
      * @param stackName
      *        The name that is associated with the stack. The name must be
      *        unique in the region in which you are creating the stack.</p>
-     *        <note>A stack name can contain only alphanumeric characters (case
+     *        <note>
+     *        <p>
+     *        A stack name can contain only alphanumeric characters (case
      *        sensitive) and hyphens. It must start with an alphabetic character
      *        and cannot be longer than 128 characters.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -692,13 +717,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command
      * Line Interface (CLI).
      * </p>
      * 
      * @return The Simple Notification Service (SNS) topic ARNs to publish stack
      *         related events. You can find your SNS topic ARNs using the <a
-     *         href="http://console.aws.amazon.com/sns">SNS console</a> or your
+     *         href="https://console.aws.amazon.com/sns">SNS console</a> or your
      *         Command Line Interface (CLI).
      */
 
@@ -713,14 +738,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command
      * Line Interface (CLI).
      * </p>
      * 
      * @param notificationARNs
      *        The Simple Notification Service (SNS) topic ARNs to publish stack
      *        related events. You can find your SNS topic ARNs using the <a
-     *        href="http://console.aws.amazon.com/sns">SNS console</a> or your
+     *        href="https://console.aws.amazon.com/sns">SNS console</a> or your
      *        Command Line Interface (CLI).
      */
 
@@ -739,7 +764,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command
      * Line Interface (CLI).
      * </p>
      * <p>
@@ -752,7 +777,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @param notificationARNs
      *        The Simple Notification Service (SNS) topic ARNs to publish stack
      *        related events. You can find your SNS topic ARNs using the <a
-     *        href="http://console.aws.amazon.com/sns">SNS console</a> or your
+     *        href="https://console.aws.amazon.com/sns">SNS console</a> or your
      *        Command Line Interface (CLI).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -773,14 +798,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command
      * Line Interface (CLI).
      * </p>
      * 
      * @param notificationARNs
      *        The Simple Notification Service (SNS) topic ARNs to publish stack
      *        related events. You can find your SNS topic ARNs using the <a
-     *        href="http://console.aws.amazon.com/sns">SNS console</a> or your
+     *        href="https://console.aws.amazon.com/sns">SNS console</a> or your
      *        Command Line Interface (CLI).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -1183,10 +1208,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use
      * the following syntax to describe template resource types:
      * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for
-     * all custom resources), <code>Custom::<i>logical_ID</i></code> (for a
+     * all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a
      * specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for
      * all resources of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
      * specific AWS resource).
      * </p>
      * <p>
@@ -1205,10 +1230,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <code>Custom::MyCustomInstance</code>. Use the following syntax
      *         to describe template resource types: <code>AWS::*</code> (for all
      *         AWS resource), <code>Custom::*</code> (for all custom resources),
-     *         <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *         <code>Custom::<i>logical_ID</i> </code> (for a specific custom
      *         resource), <code>AWS::<i>service_name</i>::*</code> (for all
      *         resources of a particular AWS service), and
-     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      *         (for a specific AWS resource).</p>
      *         <p>
      *         If the list of resource types doesn't include a resource that
@@ -1235,10 +1260,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use
      * the following syntax to describe template resource types:
      * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for
-     * all custom resources), <code>Custom::<i>logical_ID</i></code> (for a
+     * all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a
      * specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for
      * all resources of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
      * specific AWS resource).
      * </p>
      * <p>
@@ -1258,10 +1283,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <code>Custom::MyCustomInstance</code>. Use the following syntax to
      *        describe template resource types: <code>AWS::*</code> (for all AWS
      *        resource), <code>Custom::*</code> (for all custom resources),
-     *        <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *        <code>Custom::<i>logical_ID</i> </code> (for a specific custom
      *        resource), <code>AWS::<i>service_name</i>::*</code> (for all
      *        resources of a particular AWS service), and
-     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      *        (for a specific AWS resource).</p>
      *        <p>
      *        If the list of resource types doesn't include a resource that
@@ -1291,10 +1316,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use
      * the following syntax to describe template resource types:
      * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for
-     * all custom resources), <code>Custom::<i>logical_ID</i></code> (for a
+     * all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a
      * specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for
      * all resources of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
      * specific AWS resource).
      * </p>
      * <p>
@@ -1320,10 +1345,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <code>Custom::MyCustomInstance</code>. Use the following syntax to
      *        describe template resource types: <code>AWS::*</code> (for all AWS
      *        resource), <code>Custom::*</code> (for all custom resources),
-     *        <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *        <code>Custom::<i>logical_ID</i> </code> (for a specific custom
      *        resource), <code>AWS::<i>service_name</i>::*</code> (for all
      *        resources of a particular AWS service), and
-     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      *        (for a specific AWS resource).</p>
      *        <p>
      *        If the list of resource types doesn't include a resource that
@@ -1356,10 +1381,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use
      * the following syntax to describe template resource types:
      * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for
-     * all custom resources), <code>Custom::<i>logical_ID</i></code> (for a
+     * all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a
      * specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for
      * all resources of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
      * specific AWS resource).
      * </p>
      * <p>
@@ -1379,10 +1404,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <code>Custom::MyCustomInstance</code>. Use the following syntax to
      *        describe template resource types: <code>AWS::*</code> (for all AWS
      *        resource), <code>Custom::*</code> (for all custom resources),
-     *        <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *        <code>Custom::<i>logical_ID</i> </code> (for a specific custom
      *        resource), <code>AWS::<i>service_name</i>::*</code> (for all
      *        resources of a particular AWS service), and
-     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      *        (for a specific AWS resource).</p>
      *        <p>
      *        If the list of resource types doesn't include a resource that

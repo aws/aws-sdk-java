@@ -19,17 +19,29 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes a command filter.
+ * </p>
  */
 public class CommandFilter implements Serializable, Cloneable {
 
-    /** The name of the filter. For example, requested date and time. */
+    /**
+     * <p>
+     * The name of the filter. For example, requested date and time.
+     * </p>
+     */
     private String key;
-    /** The filter value. For example: June 30, 2015. */
+    /**
+     * <p>
+     * The filter value. For example: June 30, 2015.
+     * </p>
+     */
     private String value;
 
     /**
+     * <p>
      * The name of the filter. For example, requested date and time.
+     * </p>
      * 
      * @param key
      *        The name of the filter. For example, requested date and time.
@@ -41,7 +53,9 @@ public class CommandFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the filter. For example, requested date and time.
+     * </p>
      * 
      * @return The name of the filter. For example, requested date and time.
      * @see CommandFilterKey
@@ -52,7 +66,9 @@ public class CommandFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the filter. For example, requested date and time.
+     * </p>
      * 
      * @param key
      *        The name of the filter. For example, requested date and time.
@@ -67,7 +83,9 @@ public class CommandFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the filter. For example, requested date and time.
+     * </p>
      * 
      * @param key
      *        The name of the filter. For example, requested date and time.
@@ -79,7 +97,9 @@ public class CommandFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the filter. For example, requested date and time.
+     * </p>
      * 
      * @param key
      *        The name of the filter. For example, requested date and time.
@@ -94,7 +114,9 @@ public class CommandFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The filter value. For example: June 30, 2015.
+     * </p>
      * 
      * @param value
      *        The filter value. For example: June 30, 2015.
@@ -105,7 +127,9 @@ public class CommandFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The filter value. For example: June 30, 2015.
+     * </p>
      * 
      * @return The filter value. For example: June 30, 2015.
      */
@@ -115,7 +139,9 @@ public class CommandFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The filter value. For example: June 30, 2015.
+     * </p>
      * 
      * @param value
      *        The filter value. For example: June 30, 2015.

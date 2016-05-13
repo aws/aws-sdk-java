@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * The input for an <a>EstimateTemplateCost</a> action.
+ * </p>
  */
 public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

@@ -16,14 +16,11 @@ package com.amazonaws.internal.http;
 
 import java.util.Map;
 
+import com.amazonaws.annotation.SdkInternalApi;
 import com.fasterxml.jackson.databind.JsonNode;
 
+@SdkInternalApi
 public class JsonErrorCodeParser {
-
-    /**
-     * Standard Error Code Parser for JSON based services.
-     */
-    public static final JsonErrorCodeParser DEFAULT_ERROR_CODE_PARSER = new JsonErrorCodeParser("__type");
 
     /**
      * Services using AWS JSON 1.1 protocol with HTTP binding send the error code information in the
@@ -33,8 +30,12 @@ public class JsonErrorCodeParser {
 
     private final String errorCodeFieldName;
 
+    public JsonErrorCodeParser() {
+        this(null);
+    }
+
     public JsonErrorCodeParser(String errorCodeFieldName) {
-        this.errorCodeFieldName = errorCodeFieldName;
+        this.errorCodeFieldName = errorCodeFieldName == null ? "__type" : errorCodeFieldName;
     }
 
     /**
@@ -69,8 +70,7 @@ public class JsonErrorCodeParser {
     /**
      * Attempt to parse the error code from the response content. Returns null if information is not
      * present in the content. Codes are expected to be in the form <b>"typeName"</b> or
-     * <b>"prefix#typeName"</b> Examples : "AccessDeniedException",
-     * "com.amazonaws.dynamodb.v20111205#ProvisionedThroughputExceededException"
+     * <b>"prefix#typeName"</b> Examples : "AccessDeniedException", "com.amazonaws.dynamodb.v20111205#ProvisionedThroughputExceededException"
      */
     private String parseErrorCodeFromContents(JsonNode jsonContents) {
         if (jsonContents == null || !jsonContents.has(errorCodeFieldName)) {

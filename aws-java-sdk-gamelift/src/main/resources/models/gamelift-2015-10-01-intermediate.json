@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "gamelift",
     "signingName" : "gamelift",
-    "cborProtocol" : false,
-    "jsonProtocol" : true,
     "xmlProtocol" : false,
+    "jsonProtocol" : true,
+    "serviceName" : "Amazon GameLift",
+    "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "serviceName" : "Amazon GameLift"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "CreateAlias" : {
@@ -315,7 +315,10 @@
         "variableSetterType" : "DeleteAliasRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteAliasResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedException",
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
@@ -331,11 +334,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, Void>",
+      "syncReturnType" : "DeleteAliasResult",
+      "asyncReturnType" : "DeleteAliasResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteAliasResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteAliasResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult>",
       "methodName" : "deleteAlias"
     },
     "DeleteBuild" : {
@@ -351,7 +354,10 @@
         "variableSetterType" : "DeleteBuildRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteBuildResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedException",
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
@@ -367,11 +373,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteBuildRequest, Void>",
+      "syncReturnType" : "DeleteBuildResult",
+      "asyncReturnType" : "DeleteBuildResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteBuildResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteBuildResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteBuildRequest, DeleteBuildResult>",
       "methodName" : "deleteBuild"
     },
     "DeleteFleet" : {
@@ -387,7 +393,10 @@
         "variableSetterType" : "DeleteFleetRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteFleetResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>A service resource associated with the request could not be found. Such requests should not be retried by clients.</p>"
@@ -409,11 +418,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, Void>",
+      "syncReturnType" : "DeleteFleetResult",
+      "asyncReturnType" : "DeleteFleetResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteFleetResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteFleetResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult>",
       "methodName" : "deleteFleet"
     },
     "DeleteScalingPolicy" : {
@@ -429,7 +438,10 @@
         "variableSetterType" : "DeleteScalingPolicyRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteScalingPolicyResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InternalServiceException",
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
@@ -445,11 +457,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, Void>",
+      "syncReturnType" : "DeleteScalingPolicyResult",
+      "asyncReturnType" : "DeleteScalingPolicyResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteScalingPolicyResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteScalingPolicyResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, DeleteScalingPolicyResult>",
       "methodName" : "deleteScalingPolicy"
     },
     "DescribeAlias" : {
@@ -6430,256 +6442,6 @@
         }
       }
     },
-    "DeleteScalingPolicyRequest" : {
-      "c2jName" : "DeleteScalingPolicyInput",
-      "documentation" : "<p>Represents the input for a request action.</p>",
-      "shapeName" : "DeleteScalingPolicyRequest",
-      "deprecated" : false,
-      "required" : [ "Name", "FleetId" ],
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ {
-        "documentation" : "<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>",
-        "name" : "Name",
-        "c2jName" : "Name",
-        "c2jShape" : "NonZeroAndMaxString",
-        "variable" : {
-          "variableName" : "name",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "name",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "Name",
-          "marshallLocationName" : "Name",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.*/",
-        "getterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@return Descriptive label associated with this scaling policy. Policy names do not need to be unique.*/",
-        "fluentSetterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>Unique identifier for a fleet.</p>",
-        "name" : "FleetId",
-        "c2jName" : "FleetId",
-        "c2jShape" : "FleetId",
-        "variable" : {
-          "variableName" : "fleetId",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>Unique identifier for a fleet.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "fleetId",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "FleetId",
-          "marshallLocationName" : "FleetId",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.*/",
-        "getterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@return Unique identifier for a fleet.*/",
-        "fluentSetterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "deleteScalingPolicyRequest",
-        "variableType" : "DeleteScalingPolicyRequest",
-        "variableDeclarationType" : "DeleteScalingPolicyRequest",
-        "documentation" : null,
-        "simpleType" : "DeleteScalingPolicyRequest",
-        "variableSetterType" : "DeleteScalingPolicyRequest"
-      },
-      "marshaller" : {
-        "action" : "DeleteScalingPolicy",
-        "verb" : "POST",
-        "target" : "GameLift.DeleteScalingPolicy",
-        "requestUri" : "/",
-        "locationName" : null,
-        "xmlNameSpaceUri" : null
-      },
-      "unmarshaller" : null,
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "Name" : {
-          "documentation" : "<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>",
-          "name" : "Name",
-          "c2jName" : "Name",
-          "c2jShape" : "NonZeroAndMaxString",
-          "variable" : {
-            "variableName" : "name",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "name",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "Name",
-            "marshallLocationName" : "Name",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.*/",
-          "getterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@return Descriptive label associated with this scaling policy. Policy names do not need to be unique.*/",
-          "fluentSetterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "FleetId" : {
-          "documentation" : "<p>Unique identifier for a fleet.</p>",
-          "name" : "FleetId",
-          "c2jName" : "FleetId",
-          "c2jShape" : "FleetId",
-          "variable" : {
-            "variableName" : "fleetId",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>Unique identifier for a fleet.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "fleetId",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "FleetId",
-            "marshallLocationName" : "FleetId",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.*/",
-          "getterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@return Unique identifier for a fleet.*/",
-          "fluentSetterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
     "CreateFleetRequest" : {
       "c2jName" : "CreateFleetInput",
       "documentation" : "<p>Represents the input for a request action.</p>",
@@ -7926,6 +7688,256 @@
           "getterDocumentation" : "/**<p>Access limits for incoming traffic. Setting these values limits game server access to incoming traffic using specified IP ranges and port numbers. Some ports in a range may be restricted. You can provide one or more sets of permissions for the fleet.</p>\n@return Access limits for incoming traffic. Setting these values limits game server access to incoming traffic using specified IP ranges and port numbers. Some ports in a range may be restricted. You can provide one or more sets of permissions for the fleet.*/",
           "fluentSetterDocumentation" : "/**<p>Access limits for incoming traffic. Setting these values limits game server access to incoming traffic using specified IP ranges and port numbers. Some ports in a range may be restricted. You can provide one or more sets of permissions for the fleet.</p>\n@param eC2InboundPermissions Access limits for incoming traffic. Setting these values limits game server access to incoming traffic using specified IP ranges and port numbers. Some ports in a range may be restricted. You can provide one or more sets of permissions for the fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>Access limits for incoming traffic. Setting these values limits game server access to incoming traffic using specified IP ranges and port numbers. Some ports in a range may be restricted. You can provide one or more sets of permissions for the fleet.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEC2InboundPermissions(java.util.Collection)} or {@link #withEC2InboundPermissions(java.util.Collection)} if you want to override the existing values.</p>\n@param eC2InboundPermissions Access limits for incoming traffic. Setting these values limits game server access to incoming traffic using specified IP ranges and port numbers. Some ports in a range may be restricted. You can provide one or more sets of permissions for the fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "DeleteScalingPolicyRequest" : {
+      "c2jName" : "DeleteScalingPolicyInput",
+      "documentation" : "<p>Represents the input for a request action.</p>",
+      "shapeName" : "DeleteScalingPolicyRequest",
+      "deprecated" : false,
+      "required" : [ "Name", "FleetId" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>",
+        "name" : "Name",
+        "c2jName" : "Name",
+        "c2jShape" : "NonZeroAndMaxString",
+        "variable" : {
+          "variableName" : "name",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "name",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Name",
+          "marshallLocationName" : "Name",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.*/",
+        "getterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@return Descriptive label associated with this scaling policy. Policy names do not need to be unique.*/",
+        "fluentSetterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>Unique identifier for a fleet.</p>",
+        "name" : "FleetId",
+        "c2jName" : "FleetId",
+        "c2jShape" : "FleetId",
+        "variable" : {
+          "variableName" : "fleetId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>Unique identifier for a fleet.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "fleetId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "FleetId",
+          "marshallLocationName" : "FleetId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.*/",
+        "getterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@return Unique identifier for a fleet.*/",
+        "fluentSetterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteScalingPolicyRequest",
+        "variableType" : "DeleteScalingPolicyRequest",
+        "variableDeclarationType" : "DeleteScalingPolicyRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteScalingPolicyRequest",
+        "variableSetterType" : "DeleteScalingPolicyRequest"
+      },
+      "marshaller" : {
+        "action" : "DeleteScalingPolicy",
+        "verb" : "POST",
+        "target" : "GameLift.DeleteScalingPolicy",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Name" : {
+          "documentation" : "<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>",
+          "name" : "Name",
+          "c2jName" : "Name",
+          "c2jShape" : "NonZeroAndMaxString",
+          "variable" : {
+            "variableName" : "name",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "name",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Name",
+            "marshallLocationName" : "Name",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.*/",
+          "getterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@return Descriptive label associated with this scaling policy. Policy names do not need to be unique.*/",
+          "fluentSetterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</p>\n@param name Descriptive label associated with this scaling policy. Policy names do not need to be unique.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "FleetId" : {
+          "documentation" : "<p>Unique identifier for a fleet.</p>",
+          "name" : "FleetId",
+          "c2jName" : "FleetId",
+          "c2jShape" : "FleetId",
+          "variable" : {
+            "variableName" : "fleetId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>Unique identifier for a fleet.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "fleetId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "FleetId",
+            "marshallLocationName" : "FleetId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.*/",
+          "getterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@return Unique identifier for a fleet.*/",
+          "fluentSetterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Unique identifier for a fleet.</p>\n@param fleetId Unique identifier for a fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -9362,179 +9374,6 @@
         }
       }
     },
-    "DescribeAliasResult" : {
-      "c2jName" : "DescribeAliasOutput",
-      "documentation" : "<p>Represents the returned data in response to a request action.</p>",
-      "shapeName" : "DescribeAliasResult",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ {
-        "documentation" : "<p>Object containing the requested alias.</p>",
-        "name" : "Alias",
-        "c2jName" : "Alias",
-        "c2jShape" : "Alias",
-        "variable" : {
-          "variableName" : "alias",
-          "variableType" : "Alias",
-          "variableDeclarationType" : "Alias",
-          "documentation" : "<p>Object containing the requested alias.</p>",
-          "simpleType" : "Alias",
-          "variableSetterType" : "Alias"
-        },
-        "setterModel" : {
-          "variableName" : "alias",
-          "variableType" : "Alias",
-          "variableDeclarationType" : "Alias",
-          "documentation" : "",
-          "simpleType" : "Alias",
-          "variableSetterType" : "Alias"
-        },
-        "getterModel" : {
-          "returnType" : "Alias",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "Alias",
-          "marshallLocationName" : "Alias",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "simple" : false,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.*/",
-        "getterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@return Object containing the requested alias.*/",
-        "fluentSetterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "describeAliasResult",
-        "variableType" : "DescribeAliasResult",
-        "variableDeclarationType" : "DescribeAliasResult",
-        "documentation" : null,
-        "simpleType" : "DescribeAliasResult",
-        "variableSetterType" : "DescribeAliasResult"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "Alias" : {
-          "documentation" : "<p>Object containing the requested alias.</p>",
-          "name" : "Alias",
-          "c2jName" : "Alias",
-          "c2jShape" : "Alias",
-          "variable" : {
-            "variableName" : "alias",
-            "variableType" : "Alias",
-            "variableDeclarationType" : "Alias",
-            "documentation" : "<p>Object containing the requested alias.</p>",
-            "simpleType" : "Alias",
-            "variableSetterType" : "Alias"
-          },
-          "setterModel" : {
-            "variableName" : "alias",
-            "variableType" : "Alias",
-            "variableDeclarationType" : "Alias",
-            "documentation" : "",
-            "simpleType" : "Alias",
-            "variableSetterType" : "Alias"
-          },
-          "getterModel" : {
-            "returnType" : "Alias",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "Alias",
-            "marshallLocationName" : "Alias",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : false,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.*/",
-          "getterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@return Object containing the requested alias.*/",
-          "fluentSetterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
-    "ConflictException" : {
-      "c2jName" : "ConflictException",
-      "documentation" : "<p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Please resolve the conflict before retrying this request.</p>",
-      "shapeName" : "ConflictException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "conflictException",
-        "variableType" : "ConflictException",
-        "variableDeclarationType" : "ConflictException",
-        "documentation" : null,
-        "simpleType" : "ConflictException",
-        "variableSetterType" : "ConflictException"
-      },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "ConflictException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
     "ResolveAliasResult" : {
       "c2jName" : "ResolveAliasOutput",
       "documentation" : "<p>Represents the returned data in response to a request action.</p>",
@@ -9673,6 +9512,179 @@
           "getterDocumentation" : "/**<p>Fleet ID associated with the requested alias.</p>\n@return Fleet ID associated with the requested alias.*/",
           "fluentSetterDocumentation" : "/**<p>Fleet ID associated with the requested alias.</p>\n@param fleetId Fleet ID associated with the requested alias.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>Fleet ID associated with the requested alias.</p>\n@param fleetId Fleet ID associated with the requested alias.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "ConflictException" : {
+      "c2jName" : "ConflictException",
+      "documentation" : "<p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Please resolve the conflict before retrying this request.</p>",
+      "shapeName" : "ConflictException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "conflictException",
+        "variableType" : "ConflictException",
+        "variableDeclarationType" : "ConflictException",
+        "documentation" : null,
+        "simpleType" : "ConflictException",
+        "variableSetterType" : "ConflictException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "ConflictException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "DescribeAliasResult" : {
+      "c2jName" : "DescribeAliasOutput",
+      "documentation" : "<p>Represents the returned data in response to a request action.</p>",
+      "shapeName" : "DescribeAliasResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>Object containing the requested alias.</p>",
+        "name" : "Alias",
+        "c2jName" : "Alias",
+        "c2jShape" : "Alias",
+        "variable" : {
+          "variableName" : "alias",
+          "variableType" : "Alias",
+          "variableDeclarationType" : "Alias",
+          "documentation" : "<p>Object containing the requested alias.</p>",
+          "simpleType" : "Alias",
+          "variableSetterType" : "Alias"
+        },
+        "setterModel" : {
+          "variableName" : "alias",
+          "variableType" : "Alias",
+          "variableDeclarationType" : "Alias",
+          "documentation" : "",
+          "simpleType" : "Alias",
+          "variableSetterType" : "Alias"
+        },
+        "getterModel" : {
+          "returnType" : "Alias",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Alias",
+          "marshallLocationName" : "Alias",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : false,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.*/",
+        "getterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@return Object containing the requested alias.*/",
+        "fluentSetterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "describeAliasResult",
+        "variableType" : "DescribeAliasResult",
+        "variableDeclarationType" : "DescribeAliasResult",
+        "documentation" : null,
+        "simpleType" : "DescribeAliasResult",
+        "variableSetterType" : "DescribeAliasResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Alias" : {
+          "documentation" : "<p>Object containing the requested alias.</p>",
+          "name" : "Alias",
+          "c2jName" : "Alias",
+          "c2jShape" : "Alias",
+          "variable" : {
+            "variableName" : "alias",
+            "variableType" : "Alias",
+            "variableDeclarationType" : "Alias",
+            "documentation" : "<p>Object containing the requested alias.</p>",
+            "simpleType" : "Alias",
+            "variableSetterType" : "Alias"
+          },
+          "setterModel" : {
+            "variableName" : "alias",
+            "variableType" : "Alias",
+            "variableDeclarationType" : "Alias",
+            "documentation" : "",
+            "simpleType" : "Alias",
+            "variableSetterType" : "Alias"
+          },
+          "getterModel" : {
+            "returnType" : "Alias",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Alias",
+            "marshallLocationName" : "Alias",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : false,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.*/",
+          "getterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@return Object containing the requested alias.*/",
+          "fluentSetterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Object containing the requested alias.</p>\n@param alias Object containing the requested alias.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -14662,6 +14674,41 @@
           "varargSetterDocumentation" : "/**<p>Unique identifier for the updated fleet.</p>\n@param fleetId Unique identifier for the updated fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "DeleteAliasResult" : {
+      "c2jName" : "DeleteAliasResult",
+      "documentation" : null,
+      "shapeName" : "DeleteAliasResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteAliasResult",
+        "variableType" : "DeleteAliasResult",
+        "variableDeclarationType" : "DeleteAliasResult",
+        "documentation" : null,
+        "simpleType" : "DeleteAliasResult",
+        "variableSetterType" : "DeleteAliasResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "GameSession" : {
       "c2jName" : "GameSession",
@@ -26805,6 +26852,41 @@
         }
       }
     },
+    "DeleteScalingPolicyResult" : {
+      "c2jName" : "DeleteScalingPolicyResult",
+      "documentation" : null,
+      "shapeName" : "DeleteScalingPolicyResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteScalingPolicyResult",
+        "variableType" : "DeleteScalingPolicyResult",
+        "variableDeclarationType" : "DeleteScalingPolicyResult",
+        "documentation" : null,
+        "simpleType" : "DeleteScalingPolicyResult",
+        "variableSetterType" : "DeleteScalingPolicyResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "GameSessionFullException" : {
       "c2jName" : "GameSessionFullException",
       "documentation" : "<p>The game instance is currently full and cannot allow the requested player(s) to join. This exception occurs in response to a <a>CreatePlayerSession</a> request. </p>",
@@ -28493,6 +28575,41 @@
       },
       "membersAsMap" : { }
     },
+    "DeleteBuildResult" : {
+      "c2jName" : "DeleteBuildResult",
+      "documentation" : null,
+      "shapeName" : "DeleteBuildResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteBuildResult",
+        "variableType" : "DeleteBuildResult",
+        "variableDeclarationType" : "DeleteBuildResult",
+        "documentation" : null,
+        "simpleType" : "DeleteBuildResult",
+        "variableSetterType" : "DeleteBuildResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "UpdateFleetAttributesResult" : {
       "c2jName" : "UpdateFleetAttributesOutput",
       "documentation" : "<p>Represents the returned data in response to a request action.</p>",
@@ -30129,6 +30246,41 @@
           "varargSetterDocumentation" : "/**<p>Maximum number of results to return. You can use this parameter with <i>NextToken</i> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>\n@param limit Maximum number of results to return. You can use this parameter with <i>NextToken</i> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "DeleteFleetResult" : {
+      "c2jName" : "DeleteFleetResult",
+      "documentation" : null,
+      "shapeName" : "DeleteFleetResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteFleetResult",
+        "variableType" : "DeleteFleetResult",
+        "variableDeclarationType" : "DeleteFleetResult",
+        "documentation" : null,
+        "simpleType" : "DeleteFleetResult",
+        "variableSetterType" : "DeleteFleetResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "CreatePlayerSessionRequest" : {
       "c2jName" : "CreatePlayerSessionInput",
@@ -35079,6 +35231,7 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
+    "customErrorCodeFieldName" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {

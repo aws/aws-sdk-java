@@ -63,18 +63,19 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
-    public void deleteCloudFrontOriginAccessIdentity(
+    public DeleteCloudFrontOriginAccessIdentityResult deleteCloudFrontOriginAccessIdentity(
             DeleteCloudFrontOriginAccessIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteDistribution(DeleteDistributionRequest request) {
+    public DeleteDistributionResult deleteDistribution(
+            DeleteDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteStreamingDistribution(
+    public DeleteStreamingDistributionResult deleteStreamingDistribution(
             DeleteStreamingDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

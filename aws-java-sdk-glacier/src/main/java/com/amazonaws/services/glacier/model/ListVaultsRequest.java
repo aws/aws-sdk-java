@@ -1,122 +1,106 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#listVaults(ListVaultsRequest) ListVaults operation}.
  * <p>
- * This operation lists all vaults owned by the calling user's account.
- * The list returned in the response is ASCII-sorted by vault name.
+ * Provides options to retrieve the vault list owned by the calling user's
+ * account. The list provides metadata information for each vault.
  * </p>
- * <p>
- * By default, this operation returns up to 1,000 items. If there are
- * more vaults to list, the response <code>marker</code> field contains
- * the vault Amazon Resource Name (ARN) at which to continue the list
- * with a new List Vaults request; otherwise, the <code>marker</code>
- * field is <code>null</code> . To return a list of vaults that begins at
- * a specific vault, set the <code>marker</code> request parameter to the
- * vault ARN you obtained from a previous List Vaults request. You can
- * also limit the number of vaults returned in the response by specifying
- * the <code>limit</code> parameter in the request.
- * </p>
- * <p>
- * An AWS account has full permission to perform all operations
- * (actions). However, AWS Identity and Access Management (IAM) users
- * don't have any permissions by default. You must grant them explicit
- * permission to perform specific actions. For more information, see
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
- * .
- * </p>
- * <p>
- * For conceptual information and underlying REST API, go to
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html"> List Vaults </a>
- * in the <i>Amazon Glacier Developer Guide</i> .
- * 
- * </p>
- *
- * @see com.amazonaws.services.glacier.AmazonGlacier#listVaults(ListVaultsRequest)
  */
-public class ListVaultsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class ListVaultsRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The <code>AccountId</code> value is the AWS account ID. This value
-     * must match the AWS account ID associated with the credentials used to
-     * sign the request. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your account ID, do not include
-     * any hyphens ('-') in the ID.
+     * <p>
+     * The <code>AccountId</code> value is the AWS account ID. This value must
+     * match the AWS account ID associated with the credentials used to sign the
+     * request. You can either specify an AWS account ID or optionally a single
+     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request.
+     * If you specify your account ID, do not include any hyphens (apos-apos) in
+     * the ID.
+     * </p>
      */
     private String accountId;
-
     /**
+     * <p>
      * A string used for pagination. The marker specifies the vault ARN after
      * which the listing of vaults should begin.
+     * </p>
      */
     private String marker;
-
     /**
+     * <p>
      * The maximum number of items returned in the response. If you don't
      * specify a value, the List Vaults operation returns up to 1,000 items.
+     * </p>
      */
     private String limit;
 
     /**
-     * Default constructor for a new ListVaultsRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for ListVaultsRequest object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize the object after
+     * creating it.
      */
-    public ListVaultsRequest() {}
-    
+    public ListVaultsRequest() {
+    }
+
     /**
-     * Constructs a new ListVaultsRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new ListVaultsRequest object. Callers should use the setter
+     * or fluent setter (with...) methods to initialize any additional object
+     * members.
      * 
-     * @param accountId The <code>AccountId</code> value is the AWS account
-     * ID. This value must match the AWS account ID associated with the
-     * credentials used to sign the request. You can either specify an AWS
-     * account ID or optionally a single '<code>-</code>' (hyphen), in which
-     * case Amazon Glacier uses the AWS account ID associated with the
-     * credentials used to sign the request. If you specify your account ID,
-     * do not include any hyphens ('-') in the ID.
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID. This value
+     *        must match the AWS account ID associated with the credentials used
+     *        to sign the request. You can either specify an AWS account ID or
+     *        optionally a single apos<code>-</code>apos (hyphen), in which case
+     *        Amazon Glacier uses the AWS account ID associated with the
+     *        credentials used to sign the request. If you specify your account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
      */
     public ListVaultsRequest(String accountId) {
         setAccountId(accountId);
     }
 
     /**
-     * Constructs a new ListVaultsRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new ListVaultsRequest object. Callers should use the setter
+     * or fluent setter (with...) methods to initialize any additional object
+     * members.
      * 
-     * @param accountId The <code>AccountId</code> value is the AWS account
-     * ID. This value must match the AWS account ID associated with the
-     * credentials used to sign the request. You can either specify an AWS
-     * account ID or optionally a single '<code>-</code>' (hyphen), in which
-     * case Amazon Glacier uses the AWS account ID associated with the
-     * credentials used to sign the request. If you specify your account ID,
-     * do not include any hyphens ('-') in the ID.
-     * @param marker A string used for pagination. The marker specifies the
-     * vault ARN after which the listing of vaults should begin.
-     * @param limit The maximum number of items returned in the response. If
-     * you don't specify a value, the List Vaults operation returns up to
-     * 1,000 items.
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID. This value
+     *        must match the AWS account ID associated with the credentials used
+     *        to sign the request. You can either specify an AWS account ID or
+     *        optionally a single apos<code>-</code>apos (hyphen), in which case
+     *        Amazon Glacier uses the AWS account ID associated with the
+     *        credentials used to sign the request. If you specify your account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
+     * @param marker
+     *        A string used for pagination. The marker specifies the vault ARN
+     *        after which the listing of vaults should begin.
+     * @param limit
+     *        The maximum number of items returned in the response. If you don't
+     *        specify a value, the List Vaults operation returns up to 1,000
+     *        items.
      */
     public ListVaultsRequest(String accountId, String marker, String limit) {
         setAccountId(accountId);
@@ -125,149 +109,177 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * The <code>AccountId</code> value is the AWS account ID. This value
-     * must match the AWS account ID associated with the credentials used to
-     * sign the request. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your account ID, do not include
-     * any hyphens ('-') in the ID.
-     *
-     * @return The <code>AccountId</code> value is the AWS account ID. This value
-     *         must match the AWS account ID associated with the credentials used to
-     *         sign the request. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your account ID, do not include
-     *         any hyphens ('-') in the ID.
+     * <p>
+     * The <code>AccountId</code> value is the AWS account ID. This value must
+     * match the AWS account ID associated with the credentials used to sign the
+     * request. You can either specify an AWS account ID or optionally a single
+     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request.
+     * If you specify your account ID, do not include any hyphens (apos-apos) in
+     * the ID.
+     * </p>
+     * 
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID. This value
+     *        must match the AWS account ID associated with the credentials used
+     *        to sign the request. You can either specify an AWS account ID or
+     *        optionally a single apos<code>-</code>apos (hyphen), in which case
+     *        Amazon Glacier uses the AWS account ID associated with the
+     *        credentials used to sign the request. If you specify your account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
      */
-    public String getAccountId() {
-        return accountId;
-    }
-    
-    /**
-     * The <code>AccountId</code> value is the AWS account ID. This value
-     * must match the AWS account ID associated with the credentials used to
-     * sign the request. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your account ID, do not include
-     * any hyphens ('-') in the ID.
-     *
-     * @param accountId The <code>AccountId</code> value is the AWS account ID. This value
-     *         must match the AWS account ID associated with the credentials used to
-     *         sign the request. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your account ID, do not include
-     *         any hyphens ('-') in the ID.
-     */
+
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
-    
+
     /**
-     * The <code>AccountId</code> value is the AWS account ID. This value
-     * must match the AWS account ID associated with the credentials used to
-     * sign the request. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your account ID, do not include
-     * any hyphens ('-') in the ID.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param accountId The <code>AccountId</code> value is the AWS account ID. This value
-     *         must match the AWS account ID associated with the credentials used to
-     *         sign the request. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your account ID, do not include
-     *         any hyphens ('-') in the ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The <code>AccountId</code> value is the AWS account ID. This value must
+     * match the AWS account ID associated with the credentials used to sign the
+     * request. You can either specify an AWS account ID or optionally a single
+     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request.
+     * If you specify your account ID, do not include any hyphens (apos-apos) in
+     * the ID.
+     * </p>
+     * 
+     * @return The <code>AccountId</code> value is the AWS account ID. This
+     *         value must match the AWS account ID associated with the
+     *         credentials used to sign the request. You can either specify an
+     *         AWS account ID or optionally a single apos<code>-</code>apos
+     *         (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *         associated with the credentials used to sign the request. If you
+     *         specify your account ID, do not include any hyphens (apos-apos)
+     *         in the ID.
      */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The <code>AccountId</code> value is the AWS account ID. This value must
+     * match the AWS account ID associated with the credentials used to sign the
+     * request. You can either specify an AWS account ID or optionally a single
+     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request.
+     * If you specify your account ID, do not include any hyphens (apos-apos) in
+     * the ID.
+     * </p>
+     * 
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID. This value
+     *        must match the AWS account ID associated with the credentials used
+     *        to sign the request. You can either specify an AWS account ID or
+     *        optionally a single apos<code>-</code>apos (hyphen), in which case
+     *        Amazon Glacier uses the AWS account ID associated with the
+     *        credentials used to sign the request. If you specify your account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ListVaultsRequest withAccountId(String accountId) {
-        this.accountId = accountId;
+        setAccountId(accountId);
         return this;
     }
 
     /**
+     * <p>
      * A string used for pagination. The marker specifies the vault ARN after
      * which the listing of vaults should begin.
-     *
-     * @return A string used for pagination. The marker specifies the vault ARN after
-     *         which the listing of vaults should begin.
+     * </p>
+     * 
+     * @param marker
+     *        A string used for pagination. The marker specifies the vault ARN
+     *        after which the listing of vaults should begin.
      */
-    public String getMarker() {
-        return marker;
-    }
-    
-    /**
-     * A string used for pagination. The marker specifies the vault ARN after
-     * which the listing of vaults should begin.
-     *
-     * @param marker A string used for pagination. The marker specifies the vault ARN after
-     *         which the listing of vaults should begin.
-     */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
-    
+
     /**
+     * <p>
      * A string used for pagination. The marker specifies the vault ARN after
      * which the listing of vaults should begin.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param marker A string used for pagination. The marker specifies the vault ARN after
-     *         which the listing of vaults should begin.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return A string used for pagination. The marker specifies the vault ARN
+     *         after which the listing of vaults should begin.
      */
+
+    public String getMarker() {
+        return this.marker;
+    }
+
+    /**
+     * <p>
+     * A string used for pagination. The marker specifies the vault ARN after
+     * which the listing of vaults should begin.
+     * </p>
+     * 
+     * @param marker
+     *        A string used for pagination. The marker specifies the vault ARN
+     *        after which the listing of vaults should begin.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ListVaultsRequest withMarker(String marker) {
-        this.marker = marker;
+        setMarker(marker);
         return this;
     }
 
     /**
+     * <p>
      * The maximum number of items returned in the response. If you don't
      * specify a value, the List Vaults operation returns up to 1,000 items.
-     *
-     * @return The maximum number of items returned in the response. If you don't
-     *         specify a value, the List Vaults operation returns up to 1,000 items.
+     * </p>
+     * 
+     * @param limit
+     *        The maximum number of items returned in the response. If you don't
+     *        specify a value, the List Vaults operation returns up to 1,000
+     *        items.
      */
-    public String getLimit() {
-        return limit;
-    }
-    
-    /**
-     * The maximum number of items returned in the response. If you don't
-     * specify a value, the List Vaults operation returns up to 1,000 items.
-     *
-     * @param limit The maximum number of items returned in the response. If you don't
-     *         specify a value, the List Vaults operation returns up to 1,000 items.
-     */
+
     public void setLimit(String limit) {
         this.limit = limit;
     }
-    
+
     /**
+     * <p>
      * The maximum number of items returned in the response. If you don't
      * specify a value, the List Vaults operation returns up to 1,000 items.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param limit The maximum number of items returned in the response. If you don't
-     *         specify a value, the List Vaults operation returns up to 1,000 items.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The maximum number of items returned in the response. If you
+     *         don't specify a value, the List Vaults operation returns up to
+     *         1,000 items.
      */
+
+    public String getLimit() {
+        return this.limit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items returned in the response. If you don't
+     * specify a value, the List Vaults operation returns up to 1,000 items.
+     * </p>
+     * 
+     * @param limit
+     *        The maximum number of items returned in the response. If you don't
+     *        specify a value, the List Vaults operation returns up to 1,000
+     *        items.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ListVaultsRequest withLimit(String limit) {
-        this.limit = limit;
+        setLimit(limit);
         return this;
     }
 
@@ -283,46 +295,60 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
-        if (getLimit() != null) sb.append("Limit: " + getLimit() );
+        if (getAccountId() != null)
+            sb.append("AccountId: " + getAccountId() + ",");
+        if (getMarker() != null)
+            sb.append("Marker: " + getMarker() + ",");
+        if (getLimit() != null)
+            sb.append("Limit: " + getLimit());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListVaultsRequest == false)
+            return false;
+        ListVaultsRequest other = (ListVaultsRequest) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null
+                && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
+        if (other.getMarker() == null ^ this.getMarker() == null)
+            return false;
+        if (other.getMarker() != null
+                && other.getMarker().equals(this.getMarker()) == false)
+            return false;
+        if (other.getLimit() == null ^ this.getLimit() == null)
+            return false;
+        if (other.getLimit() != null
+                && other.getLimit().equals(this.getLimit()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode()); 
-        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
-        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode
+                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode
+                + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ListVaultsRequest == false) return false;
-        ListVaultsRequest other = (ListVaultsRequest)obj;
-        
-        if (other.getAccountId() == null ^ this.getAccountId() == null) return false;
-        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false) return false; 
-        if (other.getMarker() == null ^ this.getMarker() == null) return false;
-        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
-        if (other.getLimit() == null ^ this.getLimit() == null) return false;
-        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ListVaultsRequest clone() {
-        
-            return (ListVaultsRequest) super.clone();
+        return (ListVaultsRequest) super.clone();
     }
-
 }
-    

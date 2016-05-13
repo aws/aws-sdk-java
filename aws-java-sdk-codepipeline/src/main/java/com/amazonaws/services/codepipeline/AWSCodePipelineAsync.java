@@ -307,9 +307,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * @param deleteCustomActionTypeRequest
      *        Represents the input of a delete custom action operation. The
      *        custom action will be marked as deleted.
+     * @return A Java Future containing the result of the DeleteCustomActionType
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.DeleteCustomActionType
      */
-    java.util.concurrent.Future<Void> deleteCustomActionTypeAsync(
+    java.util.concurrent.Future<DeleteCustomActionTypeResult> deleteCustomActionTypeAsync(
             DeleteCustomActionTypeRequest deleteCustomActionTypeRequest);
 
     /**
@@ -333,11 +335,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCustomActionType
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.DeleteCustomActionType
      */
-    java.util.concurrent.Future<Void> deleteCustomActionTypeAsync(
+    java.util.concurrent.Future<DeleteCustomActionTypeResult> deleteCustomActionTypeAsync(
             DeleteCustomActionTypeRequest deleteCustomActionTypeRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, DeleteCustomActionTypeResult> asyncHandler);
 
     /**
      * <p>
@@ -347,9 +351,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param deletePipelineRequest
      *        Represents the input of a delete pipeline action.
+     * @return A Java Future containing the result of the DeletePipeline
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.DeletePipeline
      */
-    java.util.concurrent.Future<Void> deletePipelineAsync(
+    java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest deletePipelineRequest);
 
     /**
@@ -365,11 +371,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePipeline
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.DeletePipeline
      */
-    java.util.concurrent.Future<Void> deletePipelineAsync(
+    java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest deletePipelineRequest,
-            com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler);
 
     /**
      * <p>
@@ -380,9 +388,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param disableStageTransitionRequest
      *        Represents the input of a disable stage transition input action.
+     * @return A Java Future containing the result of the DisableStageTransition
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.DisableStageTransition
      */
-    java.util.concurrent.Future<Void> disableStageTransitionAsync(
+    java.util.concurrent.Future<DisableStageTransitionResult> disableStageTransitionAsync(
             DisableStageTransitionRequest disableStageTransitionRequest);
 
     /**
@@ -399,11 +409,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableStageTransition
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.DisableStageTransition
      */
-    java.util.concurrent.Future<Void> disableStageTransitionAsync(
+    java.util.concurrent.Future<DisableStageTransitionResult> disableStageTransitionAsync(
             DisableStageTransitionRequest disableStageTransitionRequest,
-            com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, DisableStageTransitionResult> asyncHandler);
 
     /**
      * <p>
@@ -413,9 +425,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param enableStageTransitionRequest
      *        Represents the input of an enable stage transition action.
+     * @return A Java Future containing the result of the EnableStageTransition
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.EnableStageTransition
      */
-    java.util.concurrent.Future<Void> enableStageTransitionAsync(
+    java.util.concurrent.Future<EnableStageTransitionResult> enableStageTransitionAsync(
             EnableStageTransitionRequest enableStageTransitionRequest);
 
     /**
@@ -431,11 +445,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableStageTransition
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.EnableStageTransition
      */
-    java.util.concurrent.Future<Void> enableStageTransitionAsync(
+    java.util.concurrent.Future<EnableStageTransitionResult> enableStageTransitionAsync(
             EnableStageTransitionRequest enableStageTransitionRequest,
-            com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, EnableStageTransitionResult> asyncHandler);
 
     /**
      * <p>
@@ -841,9 +857,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param putJobFailureResultRequest
      *        Represents the input of a put job failure result action.
+     * @return A Java Future containing the result of the PutJobFailureResult
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.PutJobFailureResult
      */
-    java.util.concurrent.Future<Void> putJobFailureResultAsync(
+    java.util.concurrent.Future<PutJobFailureResultResult> putJobFailureResultAsync(
             PutJobFailureResultRequest putJobFailureResultRequest);
 
     /**
@@ -859,11 +877,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutJobFailureResult
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.PutJobFailureResult
      */
-    java.util.concurrent.Future<Void> putJobFailureResultAsync(
+    java.util.concurrent.Future<PutJobFailureResultResult> putJobFailureResultAsync(
             PutJobFailureResultRequest putJobFailureResultRequest,
-            com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, PutJobFailureResultResult> asyncHandler);
 
     /**
      * <p>
@@ -873,9 +893,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param putJobSuccessResultRequest
      *        Represents the input of a put job success result action.
+     * @return A Java Future containing the result of the PutJobSuccessResult
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.PutJobSuccessResult
      */
-    java.util.concurrent.Future<Void> putJobSuccessResultAsync(
+    java.util.concurrent.Future<PutJobSuccessResultResult> putJobSuccessResultAsync(
             PutJobSuccessResultRequest putJobSuccessResultRequest);
 
     /**
@@ -891,11 +913,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutJobSuccessResult
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.PutJobSuccessResult
      */
-    java.util.concurrent.Future<Void> putJobSuccessResultAsync(
+    java.util.concurrent.Future<PutJobSuccessResultResult> putJobSuccessResultAsync(
             PutJobSuccessResultRequest putJobSuccessResultRequest,
-            com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, PutJobSuccessResultResult> asyncHandler);
 
     /**
      * <p>
@@ -905,9 +929,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param putThirdPartyJobFailureResultRequest
      *        Represents the input of a third party job failure result action.
+     * @return A Java Future containing the result of the
+     *         PutThirdPartyJobFailureResult operation returned by the service.
      * @sample AWSCodePipelineAsync.PutThirdPartyJobFailureResult
      */
-    java.util.concurrent.Future<Void> putThirdPartyJobFailureResultAsync(
+    java.util.concurrent.Future<PutThirdPartyJobFailureResultResult> putThirdPartyJobFailureResultAsync(
             PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest);
 
     /**
@@ -923,11 +949,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         PutThirdPartyJobFailureResult operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.PutThirdPartyJobFailureResult
      */
-    java.util.concurrent.Future<Void> putThirdPartyJobFailureResultAsync(
+    java.util.concurrent.Future<PutThirdPartyJobFailureResultResult> putThirdPartyJobFailureResultAsync(
             PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest,
-            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, PutThirdPartyJobFailureResultResult> asyncHandler);
 
     /**
      * <p>
@@ -938,9 +966,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * @param putThirdPartyJobSuccessResultRequest
      *        Represents the input of a put third party job success result
      *        action.
+     * @return A Java Future containing the result of the
+     *         PutThirdPartyJobSuccessResult operation returned by the service.
      * @sample AWSCodePipelineAsync.PutThirdPartyJobSuccessResult
      */
-    java.util.concurrent.Future<Void> putThirdPartyJobSuccessResultAsync(
+    java.util.concurrent.Future<PutThirdPartyJobSuccessResultResult> putThirdPartyJobSuccessResultAsync(
             PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest);
 
     /**
@@ -957,11 +987,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         PutThirdPartyJobSuccessResult operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.PutThirdPartyJobSuccessResult
      */
-    java.util.concurrent.Future<Void> putThirdPartyJobSuccessResultAsync(
+    java.util.concurrent.Future<PutThirdPartyJobSuccessResultResult> putThirdPartyJobSuccessResultAsync(
             PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest,
-            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, PutThirdPartyJobSuccessResultResult> asyncHandler);
 
     /**
      * <p>

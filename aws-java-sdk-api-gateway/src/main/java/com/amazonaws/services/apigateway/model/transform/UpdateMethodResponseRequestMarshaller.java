@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateMethodResponseRequest Marshaller
@@ -48,7 +49,14 @@ public class UpdateMethodResponseRequestMarshaller
         implements
         Marshaller<Request<UpdateMethodResponseRequest>, UpdateMethodResponseRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateMethodResponseRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateMethodResponseRequest> marshall(
             UpdateMethodResponseRequest updateMethodResponseRequest) {
@@ -68,32 +76,36 @@ public class UpdateMethodResponseRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{restapi_id}",
-                        (updateMethodResponseRequest.getRestApiId() != null) ? StringUtils
-                                .fromString(updateMethodResponseRequest
-                                        .getRestApiId()) : "");
+                        (updateMethodResponseRequest.getRestApiId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateMethodResponseRequest
+                                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{resource_id}",
-                        (updateMethodResponseRequest.getResourceId() != null) ? StringUtils
-                                .fromString(updateMethodResponseRequest
-                                        .getResourceId()) : "");
+                        (updateMethodResponseRequest.getResourceId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateMethodResponseRequest
+                                                .getResourceId()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{http_method}",
-                        (updateMethodResponseRequest.getHttpMethod() != null) ? StringUtils
-                                .fromString(updateMethodResponseRequest
-                                        .getHttpMethod()) : "");
+                        (updateMethodResponseRequest.getHttpMethod() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateMethodResponseRequest
+                                                .getHttpMethod()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{status_code}",
-                        (updateMethodResponseRequest.getStatusCode() != null) ? StringUtils
-                                .fromString(updateMethodResponseRequest
-                                        .getStatusCode()) : "");
+                        (updateMethodResponseRequest.getStatusCode() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateMethodResponseRequest
+                                                .getStatusCode()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             java.util.List<PatchOperation> patchOperationsList = updateMethodResponseRequest

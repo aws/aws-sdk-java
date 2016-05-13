@@ -17,6 +17,7 @@ package com.amazonaws.codegen.model.intermediate;
 
 import java.util.Map;
 
+import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -60,6 +61,10 @@ public class IntermediateModel {
 
     public Map<String, ShapeModel> getShapes() {
         return shapes;
+    }
+
+    public ShapeModel getShapeByC2jName(String c2jName) {
+        return Utils.findShapeModelByC2jName(this, c2jName);
     }
 
     public CustomizationConfig getCustomizationConfig() {

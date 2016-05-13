@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeChapCredentialsRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DescribeChapCredentialsRequestMarshaller
         implements
         Marshaller<Request<DescribeChapCredentialsRequest>, DescribeChapCredentialsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeChapCredentialsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeChapCredentialsRequest> marshall(
             DescribeChapCredentialsRequest describeChapCredentialsRequest) {
@@ -59,8 +66,8 @@ public class DescribeChapCredentialsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

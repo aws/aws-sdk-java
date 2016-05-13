@@ -14,14 +14,6 @@
  */
 package com.amazonaws.services.glacier.transfer;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -46,14 +38,26 @@ import com.amazonaws.services.sqs.model.Message;
 import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
 import com.amazonaws.services.sqs.model.SetQueueAttributesRequest;
 import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.json.JSONException;
-import com.amazonaws.util.json.JSONObject;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * Utility for monitoring the status of an Amazon Glacier job, through Amazon
  * SNS/SQS.
  */
 public class JobStatusMonitor {
+
+    private static final ObjectMapper MAPPER = new ObjectMapper();
+
     private AmazonSQSClient sqs;
     private AmazonSNSClient sns;
     private String queueUrl;
@@ -113,12 +117,13 @@ public class JobStatusMonitor {
                 }
 
                 try {
-                    JSONObject json = new JSONObject(messageBody);
-                    String jsonMessage = json.getString("Message").replace("\\\"", "\"");
+                    JsonNode json = MAPPER.readTree(messageBody);
 
-                    json = new JSONObject(jsonMessage);
-                    String messageJobId = json.getString("JobId");
-                    String messageStatus = json.getString("StatusMessage");
+                    String jsonMessage = json.get("Message").asText().replace("\\\"", "\"");
+
+                    json = MAPPER.readTree(jsonMessage);
+                    String messageJobId = json.get("JobId").asText();
+                    String messageStatus = json.get("StatusMessage").asText();
 
                     // Don't process this message if it wasn't the job we were looking for
                     if (!jobId.equals(messageJobId)) continue;
@@ -131,7 +136,7 @@ public class JobStatusMonitor {
                     } finally {
                         deleteMessage(message);
                     }
-                } catch (JSONException e) {
+                } catch (IOException e) {
                     throw new AmazonClientException("Unable to parse status message: " + messageBody, e);
                 }
             }

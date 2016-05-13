@@ -14,8 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -30,7 +28,7 @@ import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAnnotationRegistry.AnnotationMap;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAutoGeneratorRegistry.Generator;;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAutoGeneratorRegistry.Generator;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBReflectionRegistry.BeanProperty;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.BooleanToBooleanMarshaller;

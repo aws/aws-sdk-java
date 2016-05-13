@@ -118,12 +118,14 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param abortEnvironmentUpdateRequest
+     * @return Result of the AbortEnvironmentUpdate operation returned by the
+     *         service.
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
      * @sample AWSElasticBeanstalk.AbortEnvironmentUpdate
      */
-    void abortEnvironmentUpdate(
+    AbortEnvironmentUpdateResult abortEnvironmentUpdate(
             AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest);
 
     /**
@@ -131,7 +133,7 @@ public interface AWSElasticBeanstalk {
      *
      * @see #abortEnvironmentUpdate(AbortEnvironmentUpdateRequest)
      */
-    void abortEnvironmentUpdate();
+    AbortEnvironmentUpdateResult abortEnvironmentUpdate();
 
     /**
      * <p>
@@ -331,13 +333,16 @@ public interface AWSElasticBeanstalk {
      * 
      * @param deleteApplicationRequest
      *        Request to delete an application.
+     * @return Result of the DeleteApplication operation returned by the
+     *         service.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another
      *         operation that effects an element in this activity is already in
      *         progress.
      * @sample AWSElasticBeanstalk.DeleteApplication
      */
-    void deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
+    DeleteApplicationResult deleteApplication(
+            DeleteApplicationRequest deleteApplicationRequest);
 
     /**
      * <p>
@@ -348,6 +353,8 @@ public interface AWSElasticBeanstalk {
      * 
      * @param deleteApplicationVersionRequest
      *        Request to delete an application version.
+     * @return Result of the DeleteApplicationVersion operation returned by the
+     *         service.
      * @throws SourceBundleDeletionException
      *         Unable to delete the Amazon S3 source bundle associated with the
      *         application version. The application version was deleted
@@ -364,7 +371,7 @@ public interface AWSElasticBeanstalk {
      *         the service is running.
      * @sample AWSElasticBeanstalk.DeleteApplicationVersion
      */
-    void deleteApplicationVersion(
+    DeleteApplicationVersionResult deleteApplicationVersion(
             DeleteApplicationVersionRequest deleteApplicationVersionRequest);
 
     /**
@@ -378,13 +385,15 @@ public interface AWSElasticBeanstalk {
      * 
      * @param deleteConfigurationTemplateRequest
      *        Request to delete a configuration template.
+     * @return Result of the DeleteConfigurationTemplate operation returned by
+     *         the service.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another
      *         operation that effects an element in this activity is already in
      *         progress.
      * @sample AWSElasticBeanstalk.DeleteConfigurationTemplate
      */
-    void deleteConfigurationTemplate(
+    DeleteConfigurationTemplateResult deleteConfigurationTemplate(
             DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest);
 
     /**
@@ -403,9 +412,11 @@ public interface AWSElasticBeanstalk {
      * 
      * @param deleteEnvironmentConfigurationRequest
      *        Request to delete a draft environment configuration.
+     * @return Result of the DeleteEnvironmentConfiguration operation returned
+     *         by the service.
      * @sample AWSElasticBeanstalk.DeleteEnvironmentConfiguration
      */
-    void deleteEnvironmentConfiguration(
+    DeleteEnvironmentConfigurationResult deleteEnvironmentConfiguration(
             DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest);
 
     /**
@@ -671,12 +682,15 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param rebuildEnvironmentRequest
+     * @return Result of the RebuildEnvironment operation returned by the
+     *         service.
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
      * @sample AWSElasticBeanstalk.RebuildEnvironment
      */
-    void rebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest);
+    RebuildEnvironmentResult rebuildEnvironment(
+            RebuildEnvironmentRequest rebuildEnvironmentRequest);
 
     /**
      * <p>
@@ -707,9 +721,11 @@ public interface AWSElasticBeanstalk {
      * @param requestEnvironmentInfoRequest
      *        Request to retrieve logs from an environment and store them in
      *        your Elastic Beanstalk storage bucket.
+     * @return Result of the RequestEnvironmentInfo operation returned by the
+     *         service.
      * @sample AWSElasticBeanstalk.RequestEnvironmentInfo
      */
-    void requestEnvironmentInfo(
+    RequestEnvironmentInfoResult requestEnvironmentInfo(
             RequestEnvironmentInfoRequest requestEnvironmentInfoRequest);
 
     /**
@@ -719,9 +735,11 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param restartAppServerRequest
+     * @return Result of the RestartAppServer operation returned by the service.
      * @sample AWSElasticBeanstalk.RestartAppServer
      */
-    void restartAppServer(RestartAppServerRequest restartAppServerRequest);
+    RestartAppServerResult restartAppServer(
+            RestartAppServerRequest restartAppServerRequest);
 
     /**
      * <p>
@@ -752,9 +770,11 @@ public interface AWSElasticBeanstalk {
      * 
      * @param swapEnvironmentCNAMEsRequest
      *        Swaps the CNAMEs of two environments.
+     * @return Result of the SwapEnvironmentCNAMEs operation returned by the
+     *         service.
      * @sample AWSElasticBeanstalk.SwapEnvironmentCNAMEs
      */
-    void swapEnvironmentCNAMEs(
+    SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs(
             SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest);
 
     /**
@@ -762,7 +782,7 @@ public interface AWSElasticBeanstalk {
      *
      * @see #swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest)
      */
-    void swapEnvironmentCNAMEs();
+    SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs();
 
     /**
      * <p>

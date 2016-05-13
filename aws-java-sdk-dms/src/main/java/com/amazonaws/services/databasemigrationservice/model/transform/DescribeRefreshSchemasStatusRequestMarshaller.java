@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeRefreshSchemasStatusRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DescribeRefreshSchemasStatusRequestMarshaller
         implements
         Marshaller<Request<DescribeRefreshSchemasStatusRequest>, DescribeRefreshSchemasStatusRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeRefreshSchemasStatusRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeRefreshSchemasStatusRequest> marshall(
             DescribeRefreshSchemasStatusRequest describeRefreshSchemasStatusRequest) {
@@ -60,8 +67,8 @@ public class DescribeRefreshSchemasStatusRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

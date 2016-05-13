@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetShardIteratorRequest Marshaller
  */
 public class GetShardIteratorRequestMarshaller implements
         Marshaller<Request<GetShardIteratorRequest>, GetShardIteratorRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetShardIteratorRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetShardIteratorRequest> marshall(
             GetShardIteratorRequest getShardIteratorRequest) {
@@ -57,8 +64,8 @@ public class GetShardIteratorRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

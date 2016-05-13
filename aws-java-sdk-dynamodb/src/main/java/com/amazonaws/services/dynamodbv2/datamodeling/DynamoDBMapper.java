@@ -1,16 +1,16 @@
-/*   
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.   
- *   
- * Licensed under the Apache License, Version 2.0 (the "License");   
- * you may not use this file except in compliance with the License.   
- * You may obtain a copy of the License at:   
- *   
- *    http://aws.amazon.com/apache2.0   
- *   
- * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES   
- * OR CONDITIONS OF ANY KIND, either express or implied. See the   
- * License for the specific language governing permissions and   
- * limitations under the License.   
+/*
+ * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at:
+ *
+ *    http://aws.amazon.com/apache2.0
+ *
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+ * OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
@@ -1267,11 +1267,6 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public List<FailedBatch> batchDelete(List<? extends Object> objectsToDelete) {
-        return batchDelete((Iterable<?>) objectsToDelete);
-    }
-
-    @Override
     public List<FailedBatch> batchDelete(Iterable<? extends Object> objectsToDelete) {
         return batchWrite(Collections.emptyList(), objectsToDelete, this.config);
     }
@@ -1279,11 +1274,6 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     @Override
     public List<FailedBatch> batchDelete(Object... objectsToDelete) {
         return batchWrite(Collections.emptyList(), Arrays.asList(objectsToDelete), this.config);
-    }
-
-    @Override
-    public List<FailedBatch> batchSave(List<? extends Object> objectsToSave) {
-        return batchSave((Iterable<?>) objectsToSave);
     }
 
     @Override
@@ -1297,21 +1287,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite, List<? extends Object> objectsToDelete) {
-        return batchWrite((Iterable<?>) objectsToWrite, (Iterable<?>) objectsToDelete);
-    }
-
-    @Override
     public List<FailedBatch> batchWrite(Iterable<? extends Object> objectsToWrite,
                                         Iterable<? extends Object> objectsToDelete) {
         return batchWrite(objectsToWrite, objectsToDelete, this.config);
-    }
-
-    @Override
-    public List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite,
-                                        List<? extends Object> objectsToDelete,
-                                        DynamoDBMapperConfig config) {
-        return batchWrite((Iterable<?>) objectsToWrite, (Iterable<?>) objectsToDelete, config);
     }
 
     @Override
@@ -1574,18 +1552,8 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public Map<String, List<Object>> batchLoad(List<Object> itemsToGet) {
-        return batchLoad((Iterable<Object>) itemsToGet);
-    }
-
-    @Override
     public Map<String, List<Object>> batchLoad(Iterable<? extends Object> itemsToGet) {
         return batchLoad(itemsToGet, this.config);
-    }
-
-    @Override
-    public Map<String, List<Object>> batchLoad(List<Object> itemsToGet, DynamoDBMapperConfig config) {
-        return batchLoad((Iterable<Object>) itemsToGet, config);
     }
 
     @Override
@@ -2487,12 +2455,16 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             AttributeValueUpdate update = updateValues.get(entry.getKey());
             if (update != null) {
                 update.getValue()
-                    .withB( entry.getValue().getB() )
+                    .withB(entry.getValue().getB())
                     .withBS(entry.getValue().getBS())
-                    .withN( entry.getValue().getN() )
+                    .withN(entry.getValue().getN())
                     .withNS(entry.getValue().getNS())
-                    .withS( entry.getValue().getS() )
-                    .withSS(entry.getValue().getSS());
+                    .withS(entry.getValue().getS())
+                    .withSS(entry.getValue().getSS())
+                    .withM(entry.getValue().getM())
+                    .withL(entry.getValue().getL())
+                    .withNULL(entry.getValue().getNULL())
+                    .withBOOL(entry.getValue().getBOOL());
             } else {
                 updateValues.put(entry.getKey(),
                                  new AttributeValueUpdate(entry.getValue(),

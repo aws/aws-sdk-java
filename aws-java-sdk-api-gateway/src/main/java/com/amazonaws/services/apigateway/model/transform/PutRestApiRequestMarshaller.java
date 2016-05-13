@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PutRestApiRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class PutRestApiRequestMarshaller implements
         Marshaller<Request<PutRestApiRequest>, PutRestApiRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PutRestApiRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PutRestApiRequest> marshall(
             PutRestApiRequest putRestApiRequest) {
@@ -66,8 +73,9 @@ public class PutRestApiRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (putRestApiRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(putRestApiRequest.getRestApiId()) : "");
+                (putRestApiRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(putRestApiRequest
+                                .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (putRestApiRequest.getMode() != null) {

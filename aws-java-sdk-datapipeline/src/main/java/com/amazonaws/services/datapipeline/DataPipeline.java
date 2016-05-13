@@ -238,6 +238,7 @@ public interface DataPipeline {
      * 
      * @param deletePipelineRequest
      *        Contains the parameters for DeletePipeline.
+     * @return Result of the DeletePipeline operation returned by the service.
      * @throws PipelineNotFoundException
      *         The specified pipeline was not found. Verify that you used the
      *         correct user and account identifiers.
@@ -250,7 +251,8 @@ public interface DataPipeline {
      *         limits for your account.
      * @sample DataPipeline.DeletePipeline
      */
-    void deletePipeline(DeletePipelineRequest deletePipelineRequest);
+    DeletePipelineResult deletePipeline(
+            DeletePipelineRequest deletePipelineRequest);
 
     /**
      * <p>
@@ -608,6 +610,7 @@ public interface DataPipeline {
      * 
      * @param setStatusRequest
      *        Contains the parameters for SetStatus.
+     * @return Result of the SetStatus operation returned by the service.
      * @throws PipelineNotFoundException
      *         The specified pipeline was not found. Verify that you used the
      *         correct user and account identifiers.
@@ -622,7 +625,7 @@ public interface DataPipeline {
      *         limits for your account.
      * @sample DataPipeline.SetStatus
      */
-    void setStatus(SetStatusRequest setStatusRequest);
+    SetStatusResult setStatus(SetStatusRequest setStatusRequest);
 
     /**
      * <p>

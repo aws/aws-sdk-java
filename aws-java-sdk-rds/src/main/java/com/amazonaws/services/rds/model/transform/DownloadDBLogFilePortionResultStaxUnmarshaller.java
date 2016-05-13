@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,6 +17,8 @@
 package com.amazonaws.services.rds.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -27,32 +30,46 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Download D B Log File Portion Result StAX Unmarshaller
+ * DownloadDBLogFilePortionResult StAX Unmarshaller
  */
-public class DownloadDBLogFilePortionResultStaxUnmarshaller implements Unmarshaller<DownloadDBLogFilePortionResult, StaxUnmarshallerContext> {
+public class DownloadDBLogFilePortionResultStaxUnmarshaller implements
+        Unmarshaller<DownloadDBLogFilePortionResult, StaxUnmarshallerContext> {
 
-    public DownloadDBLogFilePortionResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public DownloadDBLogFilePortionResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         DownloadDBLogFilePortionResult downloadDBLogFilePortionResult = new DownloadDBLogFilePortionResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 2;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return downloadDBLogFilePortionResult;
+            if (xmlEvent.isEndDocument())
+                return downloadDBLogFilePortionResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("LogFileData", targetDepth)) {
-                    downloadDBLogFilePortionResult.setLogFileData(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    downloadDBLogFilePortionResult
+                            .setLogFileData(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Marker", targetDepth)) {
-                    downloadDBLogFilePortionResult.setMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    downloadDBLogFilePortionResult
+                            .setMarker(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("AdditionalDataPending", targetDepth)) {
-                    downloadDBLogFilePortionResult.setAdditionalDataPending(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context
+                        .testExpression("AdditionalDataPending", targetDepth)) {
+                    downloadDBLogFilePortionResult
+                            .setAdditionalDataPending(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -64,9 +81,10 @@ public class DownloadDBLogFilePortionResultStaxUnmarshaller implements Unmarshal
     }
 
     private static DownloadDBLogFilePortionResultStaxUnmarshaller instance;
+
     public static DownloadDBLogFilePortionResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new DownloadDBLogFilePortionResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new DownloadDBLogFilePortionResultStaxUnmarshaller();
         return instance;
     }
 }
-    

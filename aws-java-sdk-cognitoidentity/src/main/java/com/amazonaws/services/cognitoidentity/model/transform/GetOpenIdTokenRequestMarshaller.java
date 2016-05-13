@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetOpenIdTokenRequest Marshaller
  */
 public class GetOpenIdTokenRequestMarshaller implements
         Marshaller<Request<GetOpenIdTokenRequest>, GetOpenIdTokenRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetOpenIdTokenRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetOpenIdTokenRequest> marshall(
             GetOpenIdTokenRequest getOpenIdTokenRequest) {
@@ -58,8 +65,8 @@ public class GetOpenIdTokenRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

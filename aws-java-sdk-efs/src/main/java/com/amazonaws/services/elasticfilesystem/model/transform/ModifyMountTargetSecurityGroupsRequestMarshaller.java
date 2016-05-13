@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ModifyMountTargetSecurityGroupsRequest Marshaller
@@ -48,7 +49,14 @@ public class ModifyMountTargetSecurityGroupsRequestMarshaller
         implements
         Marshaller<Request<ModifyMountTargetSecurityGroupsRequest>, ModifyMountTargetSecurityGroupsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ModifyMountTargetSecurityGroupsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ModifyMountTargetSecurityGroupsRequest> marshall(
             ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest) {
@@ -70,15 +78,16 @@ public class ModifyMountTargetSecurityGroupsRequestMarshaller
                 .replace(
                         "{MountTargetId}",
                         (modifyMountTargetSecurityGroupsRequest
-                                .getMountTargetId() != null) ? StringUtils
-                                .fromString(modifyMountTargetSecurityGroupsRequest
-                                        .getMountTargetId())
+                                .getMountTargetId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(modifyMountTargetSecurityGroupsRequest
+                                                .getMountTargetId()), false)
                                 : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> securityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyMountTargetSecurityGroupsRequest

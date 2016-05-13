@@ -33,9 +33,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -83,9 +91,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -99,9 +115,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      *        The name or the unique stack ID that is associated with the stack,
      *        which are not always interchangeable:</p>
      *        <ul>
-     *        <li>Running stacks: You can specify either the stack's name or its
-     *        unique stack ID.</li>
-     *        <li>Deleted stacks: You must specify the unique stack ID.</li>
+     *        <li>
+     *        <p>
+     *        Running stacks: You can specify either the stack's name or its
+     *        unique stack ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Deleted stacks: You must specify the unique stack ID.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: There is no default value.
@@ -122,9 +146,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -137,9 +169,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * @return The name or the unique stack ID that is associated with the
      *         stack, which are not always interchangeable:</p>
      *         <ul>
-     *         <li>Running stacks: You can specify either the stack's name or
-     *         its unique stack ID.</li>
-     *         <li>Deleted stacks: You must specify the unique stack ID.</li>
+     *         <li>
+     *         <p>
+     *         Running stacks: You can specify either the stack's name or its
+     *         unique stack ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Deleted stacks: You must specify the unique stack ID.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Default: There is no default value.
@@ -160,9 +200,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -176,9 +224,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      *        The name or the unique stack ID that is associated with the stack,
      *        which are not always interchangeable:</p>
      *        <ul>
-     *        <li>Running stacks: You can specify either the stack's name or its
-     *        unique stack ID.</li>
-     *        <li>Deleted stacks: You must specify the unique stack ID.</li>
+     *        <li>
+     *        <p>
+     *        Running stacks: You can specify either the stack's name or its
+     *        unique stack ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Deleted stacks: You must specify the unique stack ID.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: There is no default value.

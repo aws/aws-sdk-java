@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListDatasetsRequest Marshaller
@@ -48,6 +49,12 @@ public class ListDatasetsRequestMarshaller implements
         Marshaller<Request<ListDatasetsRequest>, ListDatasetsRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListDatasetsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListDatasetsRequest> marshall(
             ListDatasetsRequest listDatasetsRequest) {
@@ -64,15 +71,19 @@ public class ListDatasetsRequestMarshaller implements
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (listDatasetsRequest.getIdentityPoolId() != null) ? StringUtils
-                        .fromString(listDatasetsRequest.getIdentityPoolId())
-                        : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityPoolId}",
+                        (listDatasetsRequest.getIdentityPoolId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(listDatasetsRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
         uriResourcePath = uriResourcePath.replace(
                 "{IdentityId}",
-                (listDatasetsRequest.getIdentityId() != null) ? StringUtils
-                        .fromString(listDatasetsRequest.getIdentityId()) : "");
+                (listDatasetsRequest.getIdentityId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(listDatasetsRequest
+                                .getIdentityId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (listDatasetsRequest.getNextToken() != null) {

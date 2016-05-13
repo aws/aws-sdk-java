@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PutIntegrationRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class PutIntegrationRequestMarshaller implements
         Marshaller<Request<PutIntegrationRequest>, PutIntegrationRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PutIntegrationRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PutIntegrationRequest> marshall(
             PutIntegrationRequest putIntegrationRequest) {
@@ -66,25 +74,24 @@ public class PutIntegrationRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (putIntegrationRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(putIntegrationRequest.getRestApiId()) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{resource_id}",
-                        (putIntegrationRequest.getResourceId() != null) ? StringUtils
-                                .fromString(putIntegrationRequest
-                                        .getResourceId()) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{http_method}",
-                        (putIntegrationRequest.getHttpMethod() != null) ? StringUtils
-                                .fromString(putIntegrationRequest
-                                        .getHttpMethod()) : "");
+                (putIntegrationRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(putIntegrationRequest
+                                .getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{resource_id}",
+                (putIntegrationRequest.getResourceId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(putIntegrationRequest
+                                .getResourceId()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{http_method}",
+                (putIntegrationRequest.getHttpMethod() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(putIntegrationRequest
+                                .getHttpMethod()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (putIntegrationRequest.getType() != null) {

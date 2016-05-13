@@ -1,79 +1,103 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest) DeleteCacheSubnetGroup operation}.
  * <p>
- * The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.
+ * Represents the input of a <i>DeleteCacheSubnetGroup</i> action.
  * </p>
- * <p>
- * <b>NOTE:</b>You cannot delete a cache subnet group if it is associated
- * with any cache clusters.
- * </p>
- *
- * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest)
  */
-public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
-     * The name of the cache subnet group to delete. <p>Constraints: Must
-     * contain no more than 255 alphanumeric characters or hyphens.
+     * <p>
+     * The name of the cache subnet group to delete.
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters or
+     * hyphens.
+     * </p>
      */
     private String cacheSubnetGroupName;
 
     /**
-     * The name of the cache subnet group to delete. <p>Constraints: Must
-     * contain no more than 255 alphanumeric characters or hyphens.
-     *
-     * @return The name of the cache subnet group to delete. <p>Constraints: Must
-     *         contain no more than 255 alphanumeric characters or hyphens.
+     * <p>
+     * The name of the cache subnet group to delete.
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters or
+     * hyphens.
+     * </p>
+     * 
+     * @param cacheSubnetGroupName
+     *        The name of the cache subnet group to delete.</p>
+     *        <p>
+     *        Constraints: Must contain no more than 255 alphanumeric characters
+     *        or hyphens.
      */
-    public String getCacheSubnetGroupName() {
-        return cacheSubnetGroupName;
-    }
-    
-    /**
-     * The name of the cache subnet group to delete. <p>Constraints: Must
-     * contain no more than 255 alphanumeric characters or hyphens.
-     *
-     * @param cacheSubnetGroupName The name of the cache subnet group to delete. <p>Constraints: Must
-     *         contain no more than 255 alphanumeric characters or hyphens.
-     */
+
     public void setCacheSubnetGroupName(String cacheSubnetGroupName) {
         this.cacheSubnetGroupName = cacheSubnetGroupName;
     }
-    
+
     /**
-     * The name of the cache subnet group to delete. <p>Constraints: Must
-     * contain no more than 255 alphanumeric characters or hyphens.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cacheSubnetGroupName The name of the cache subnet group to delete. <p>Constraints: Must
-     *         contain no more than 255 alphanumeric characters or hyphens.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the cache subnet group to delete.
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters or
+     * hyphens.
+     * </p>
+     * 
+     * @return The name of the cache subnet group to delete.</p>
+     *         <p>
+     *         Constraints: Must contain no more than 255 alphanumeric
+     *         characters or hyphens.
      */
-    public DeleteCacheSubnetGroupRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
-        this.cacheSubnetGroupName = cacheSubnetGroupName;
+
+    public String getCacheSubnetGroupName() {
+        return this.cacheSubnetGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the cache subnet group to delete.
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters or
+     * hyphens.
+     * </p>
+     * 
+     * @param cacheSubnetGroupName
+     *        The name of the cache subnet group to delete.</p>
+     *        <p>
+     *        Constraints: Must contain no more than 255 alphanumeric characters
+     *        or hyphens.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeleteCacheSubnetGroupRequest withCacheSubnetGroupName(
+            String cacheSubnetGroupName) {
+        setCacheSubnetGroupName(cacheSubnetGroupName);
         return this;
     }
 
@@ -89,38 +113,46 @@ public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() );
+        if (getCacheSubnetGroupName() != null)
+            sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DeleteCacheSubnetGroupRequest == false)
+            return false;
+        DeleteCacheSubnetGroupRequest other = (DeleteCacheSubnetGroupRequest) obj;
+        if (other.getCacheSubnetGroupName() == null
+                ^ this.getCacheSubnetGroupName() == null)
+            return false;
+        if (other.getCacheSubnetGroupName() != null
+                && other.getCacheSubnetGroupName().equals(
+                        this.getCacheSubnetGroupName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getCacheSubnetGroupName() == null) ? 0 : getCacheSubnetGroupName().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getCacheSubnetGroupName() == null) ? 0
+                        : getCacheSubnetGroupName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DeleteCacheSubnetGroupRequest == false) return false;
-        DeleteCacheSubnetGroupRequest other = (DeleteCacheSubnetGroupRequest)obj;
-        
-        if (other.getCacheSubnetGroupName() == null ^ this.getCacheSubnetGroupName() == null) return false;
-        if (other.getCacheSubnetGroupName() != null && other.getCacheSubnetGroupName().equals(this.getCacheSubnetGroupName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DeleteCacheSubnetGroupRequest clone() {
-        
-            return (DeleteCacheSubnetGroupRequest) super.clone();
+        return (DeleteCacheSubnetGroupRequest) super.clone();
     }
-
 }
-    

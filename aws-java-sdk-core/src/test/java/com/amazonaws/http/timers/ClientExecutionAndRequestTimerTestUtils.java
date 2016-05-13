@@ -31,6 +31,9 @@ import java.io.IOException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import com.amazonaws.http.apache.client.impl.ApacheHttpClientFactory;
+import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
+import com.amazonaws.http.settings.HttpClientSettings;
 import org.apache.http.HttpEntity;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.client.HttpClient;
@@ -45,7 +48,7 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.http.HttpClientFactory;
+import com.amazonaws.http.client.HttpClientFactory;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.request.EmptyHttpRequest;
 import com.amazonaws.http.response.HttpResponseProxy;
@@ -166,9 +169,9 @@ public class ClientExecutionAndRequestTimerTestUtils {
      * @return Real implementation of {@link HttpClient} with ability to verify method calls or
      *         partially mock
      */
-    public static HttpClient createRawHttpClientSpy(ClientConfiguration config) {
-        HttpClientFactory httpClientFactory = new HttpClientFactory();
-        return spy(httpClientFactory.createHttpClient(config));
+    public static ConnectionManagerAwareHttpClient createRawHttpClientSpy(ClientConfiguration config) {
+        HttpClientFactory<ConnectionManagerAwareHttpClient> httpClientFactory = new ApacheHttpClientFactory();
+        return spy(httpClientFactory.create(HttpClientSettings.adapt(config, false)));
     }
 
     /**

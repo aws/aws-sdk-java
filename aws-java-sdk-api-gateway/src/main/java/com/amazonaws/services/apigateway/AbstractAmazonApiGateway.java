@@ -88,84 +88,91 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public void deleteApiKey(DeleteApiKeyRequest request) {
+    public DeleteApiKeyResult deleteApiKey(DeleteApiKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteAuthorizer(DeleteAuthorizerRequest request) {
+    public DeleteAuthorizerResult deleteAuthorizer(
+            DeleteAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteBasePathMapping(DeleteBasePathMappingRequest request) {
+    public DeleteBasePathMappingResult deleteBasePathMapping(
+            DeleteBasePathMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteClientCertificate(DeleteClientCertificateRequest request) {
+    public DeleteClientCertificateResult deleteClientCertificate(
+            DeleteClientCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteDeployment(DeleteDeploymentRequest request) {
+    public DeleteDeploymentResult deleteDeployment(
+            DeleteDeploymentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteDomainName(DeleteDomainNameRequest request) {
+    public DeleteDomainNameResult deleteDomainName(
+            DeleteDomainNameRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteIntegration(DeleteIntegrationRequest request) {
+    public DeleteIntegrationResult deleteIntegration(
+            DeleteIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteIntegrationResponse(
+    public DeleteIntegrationResponseResult deleteIntegrationResponse(
             DeleteIntegrationResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteMethod(DeleteMethodRequest request) {
+    public DeleteMethodResult deleteMethod(DeleteMethodRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteMethodResponse(DeleteMethodResponseRequest request) {
+    public DeleteMethodResponseResult deleteMethodResponse(
+            DeleteMethodResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteModel(DeleteModelRequest request) {
+    public DeleteModelResult deleteModel(DeleteModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteResource(DeleteResourceRequest request) {
+    public DeleteResourceResult deleteResource(DeleteResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteRestApi(DeleteRestApiRequest request) {
+    public DeleteRestApiResult deleteRestApi(DeleteRestApiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteStage(DeleteStageRequest request) {
+    public DeleteStageResult deleteStage(DeleteStageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void flushStageAuthorizersCache(
+    public FlushStageAuthorizersCacheResult flushStageAuthorizersCache(
             FlushStageAuthorizersCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void flushStageCache(FlushStageCacheRequest request) {
+    public FlushStageCacheResult flushStageCache(FlushStageCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

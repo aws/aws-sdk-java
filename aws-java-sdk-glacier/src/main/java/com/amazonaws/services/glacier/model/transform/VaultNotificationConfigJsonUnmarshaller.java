@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -17,6 +18,8 @@ package com.amazonaws.services.glacier.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.glacier.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -26,11 +29,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Vault Notification Config JSON Unmarshaller
+ * VaultNotificationConfig JSON Unmarshaller
  */
-public class VaultNotificationConfigJsonUnmarshaller implements Unmarshaller<VaultNotificationConfig, JsonUnmarshallerContext> {
+public class VaultNotificationConfigJsonUnmarshaller implements
+        Unmarshaller<VaultNotificationConfig, JsonUnmarshallerContext> {
 
-    public VaultNotificationConfig unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public VaultNotificationConfig unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         VaultNotificationConfig vaultNotificationConfig = new VaultNotificationConfig();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,37 +43,47 @@ public class VaultNotificationConfigJsonUnmarshaller implements Unmarshaller<Vau
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SNSTopic", targetDepth)) {
                     context.nextToken();
-                    vaultNotificationConfig.setSNSTopic(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    vaultNotificationConfig.setSNSTopic(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Events", targetDepth)) {
                     context.nextToken();
-                    vaultNotificationConfig.setEvents(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    vaultNotificationConfig
+                            .setEvents(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
+                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return vaultNotificationConfig;
     }
 
     private static VaultNotificationConfigJsonUnmarshaller instance;
+
     public static VaultNotificationConfigJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new VaultNotificationConfigJsonUnmarshaller();
+        if (instance == null)
+            instance = new VaultNotificationConfigJsonUnmarshaller();
         return instance;
     }
 }
-    

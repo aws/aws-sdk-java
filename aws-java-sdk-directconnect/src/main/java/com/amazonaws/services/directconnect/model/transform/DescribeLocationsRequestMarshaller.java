@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeLocationsRequest Marshaller
  */
 public class DescribeLocationsRequestMarshaller implements
         Marshaller<Request<DescribeLocationsRequest>, DescribeLocationsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeLocationsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeLocationsRequest> marshall(
             DescribeLocationsRequest describeLocationsRequest) {
@@ -57,8 +64,8 @@ public class DescribeLocationsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

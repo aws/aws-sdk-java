@@ -124,16 +124,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignPrivateIpAddressesAsync(
+    public java.util.concurrent.Future<AssignPrivateIpAddressesResult> assignPrivateIpAddressesAsync(
             AssignPrivateIpAddressesRequest request) {
 
         return assignPrivateIpAddressesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignPrivateIpAddressesAsync(
+    public java.util.concurrent.Future<AssignPrivateIpAddressesResult> assignPrivateIpAddressesAsync(
             AssignPrivateIpAddressesRequest request,
-            com.amazonaws.handlers.AsyncHandler<AssignPrivateIpAddressesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AssignPrivateIpAddressesRequest, AssignPrivateIpAddressesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,16 +154,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> associateDhcpOptionsAsync(
+    public java.util.concurrent.Future<AssociateDhcpOptionsResult> associateDhcpOptionsAsync(
             AssociateDhcpOptionsRequest request) {
 
         return associateDhcpOptionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> associateDhcpOptionsAsync(
+    public java.util.concurrent.Future<AssociateDhcpOptionsResult> associateDhcpOptionsAsync(
             AssociateDhcpOptionsRequest request,
-            com.amazonaws.handlers.AsyncHandler<AssociateDhcpOptionsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AssociateDhcpOptionsRequest, AssociateDhcpOptionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -199,16 +199,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachInternetGatewayAsync(
+    public java.util.concurrent.Future<AttachInternetGatewayResult> attachInternetGatewayAsync(
             AttachInternetGatewayRequest request) {
 
         return attachInternetGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachInternetGatewayAsync(
+    public java.util.concurrent.Future<AttachInternetGatewayResult> attachInternetGatewayAsync(
             AttachInternetGatewayRequest request,
-            com.amazonaws.handlers.AsyncHandler<AttachInternetGatewayRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AttachInternetGatewayRequest, AttachInternetGatewayResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -259,31 +259,31 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> authorizeSecurityGroupEgressAsync(
+    public java.util.concurrent.Future<AuthorizeSecurityGroupEgressResult> authorizeSecurityGroupEgressAsync(
             AuthorizeSecurityGroupEgressRequest request) {
 
         return authorizeSecurityGroupEgressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> authorizeSecurityGroupEgressAsync(
+    public java.util.concurrent.Future<AuthorizeSecurityGroupEgressResult> authorizeSecurityGroupEgressAsync(
             AuthorizeSecurityGroupEgressRequest request,
-            com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupEgressRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupEgressRequest, AuthorizeSecurityGroupEgressResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> authorizeSecurityGroupIngressAsync(
+    public java.util.concurrent.Future<AuthorizeSecurityGroupIngressResult> authorizeSecurityGroupIngressAsync(
             AuthorizeSecurityGroupIngressRequest request) {
 
         return authorizeSecurityGroupIngressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> authorizeSecurityGroupIngressAsync(
+    public java.util.concurrent.Future<AuthorizeSecurityGroupIngressResult> authorizeSecurityGroupIngressAsync(
             AuthorizeSecurityGroupIngressRequest request,
-            com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupIngressRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupIngressRequest, AuthorizeSecurityGroupIngressResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -319,31 +319,31 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelConversionTaskAsync(
+    public java.util.concurrent.Future<CancelConversionTaskResult> cancelConversionTaskAsync(
             CancelConversionTaskRequest request) {
 
         return cancelConversionTaskAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelConversionTaskAsync(
+    public java.util.concurrent.Future<CancelConversionTaskResult> cancelConversionTaskAsync(
             CancelConversionTaskRequest request,
-            com.amazonaws.handlers.AsyncHandler<CancelConversionTaskRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CancelConversionTaskRequest, CancelConversionTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             CancelExportTaskRequest request) {
 
         return cancelExportTaskAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             CancelExportTaskRequest request,
-            com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -639,16 +639,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createNetworkAclEntryAsync(
+    public java.util.concurrent.Future<CreateNetworkAclEntryResult> createNetworkAclEntryAsync(
             CreateNetworkAclEntryRequest request) {
 
         return createNetworkAclEntryAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createNetworkAclEntryAsync(
+    public java.util.concurrent.Future<CreateNetworkAclEntryResult> createNetworkAclEntryAsync(
             CreateNetworkAclEntryRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateNetworkAclEntryRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkAclEntryRequest, CreateNetworkAclEntryResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -669,16 +669,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createPlacementGroupAsync(
+    public java.util.concurrent.Future<CreatePlacementGroupResult> createPlacementGroupAsync(
             CreatePlacementGroupRequest request) {
 
         return createPlacementGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createPlacementGroupAsync(
+    public java.util.concurrent.Future<CreatePlacementGroupResult> createPlacementGroupAsync(
             CreatePlacementGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreatePlacementGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreatePlacementGroupRequest, CreatePlacementGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -789,16 +789,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createTagsAsync(
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
             CreateTagsRequest request) {
 
         return createTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createTagsAsync(
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
             CreateTagsRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -905,16 +905,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createVpnConnectionRouteAsync(
+    public java.util.concurrent.Future<CreateVpnConnectionRouteResult> createVpnConnectionRouteAsync(
             CreateVpnConnectionRouteRequest request) {
 
         return createVpnConnectionRouteAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createVpnConnectionRouteAsync(
+    public java.util.concurrent.Future<CreateVpnConnectionRouteResult> createVpnConnectionRouteAsync(
             CreateVpnConnectionRouteRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateVpnConnectionRouteRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateVpnConnectionRouteRequest, CreateVpnConnectionRouteResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -935,31 +935,31 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCustomerGatewayAsync(
+    public java.util.concurrent.Future<DeleteCustomerGatewayResult> deleteCustomerGatewayAsync(
             DeleteCustomerGatewayRequest request) {
 
         return deleteCustomerGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCustomerGatewayAsync(
+    public java.util.concurrent.Future<DeleteCustomerGatewayResult> deleteCustomerGatewayAsync(
             DeleteCustomerGatewayRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteCustomerGatewayRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomerGatewayRequest, DeleteCustomerGatewayResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDhcpOptionsAsync(
+    public java.util.concurrent.Future<DeleteDhcpOptionsResult> deleteDhcpOptionsAsync(
             DeleteDhcpOptionsRequest request) {
 
         return deleteDhcpOptionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDhcpOptionsAsync(
+    public java.util.concurrent.Future<DeleteDhcpOptionsResult> deleteDhcpOptionsAsync(
             DeleteDhcpOptionsRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteDhcpOptionsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteDhcpOptionsRequest, DeleteDhcpOptionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -980,31 +980,31 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteInternetGatewayAsync(
+    public java.util.concurrent.Future<DeleteInternetGatewayResult> deleteInternetGatewayAsync(
             DeleteInternetGatewayRequest request) {
 
         return deleteInternetGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteInternetGatewayAsync(
+    public java.util.concurrent.Future<DeleteInternetGatewayResult> deleteInternetGatewayAsync(
             DeleteInternetGatewayRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteInternetGatewayRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteInternetGatewayRequest, DeleteInternetGatewayResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteKeyPairAsync(
+    public java.util.concurrent.Future<DeleteKeyPairResult> deleteKeyPairAsync(
             DeleteKeyPairRequest request) {
 
         return deleteKeyPairAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteKeyPairAsync(
+    public java.util.concurrent.Future<DeleteKeyPairResult> deleteKeyPairAsync(
             DeleteKeyPairRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteKeyPairRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteKeyPairRequest, DeleteKeyPairResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1025,136 +1025,136 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkAclAsync(
+    public java.util.concurrent.Future<DeleteNetworkAclResult> deleteNetworkAclAsync(
             DeleteNetworkAclRequest request) {
 
         return deleteNetworkAclAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkAclAsync(
+    public java.util.concurrent.Future<DeleteNetworkAclResult> deleteNetworkAclAsync(
             DeleteNetworkAclRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclRequest, DeleteNetworkAclResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkAclEntryAsync(
+    public java.util.concurrent.Future<DeleteNetworkAclEntryResult> deleteNetworkAclEntryAsync(
             DeleteNetworkAclEntryRequest request) {
 
         return deleteNetworkAclEntryAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkAclEntryAsync(
+    public java.util.concurrent.Future<DeleteNetworkAclEntryResult> deleteNetworkAclEntryAsync(
             DeleteNetworkAclEntryRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclEntryRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclEntryRequest, DeleteNetworkAclEntryResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkInterfaceAsync(
+    public java.util.concurrent.Future<DeleteNetworkInterfaceResult> deleteNetworkInterfaceAsync(
             DeleteNetworkInterfaceRequest request) {
 
         return deleteNetworkInterfaceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkInterfaceAsync(
+    public java.util.concurrent.Future<DeleteNetworkInterfaceResult> deleteNetworkInterfaceAsync(
             DeleteNetworkInterfaceRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteNetworkInterfaceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkInterfaceRequest, DeleteNetworkInterfaceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePlacementGroupAsync(
+    public java.util.concurrent.Future<DeletePlacementGroupResult> deletePlacementGroupAsync(
             DeletePlacementGroupRequest request) {
 
         return deletePlacementGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePlacementGroupAsync(
+    public java.util.concurrent.Future<DeletePlacementGroupResult> deletePlacementGroupAsync(
             DeletePlacementGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeletePlacementGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeletePlacementGroupRequest, DeletePlacementGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRouteAsync(
+    public java.util.concurrent.Future<DeleteRouteResult> deleteRouteAsync(
             DeleteRouteRequest request) {
 
         return deleteRouteAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRouteAsync(
+    public java.util.concurrent.Future<DeleteRouteResult> deleteRouteAsync(
             DeleteRouteRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteRouteRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteRouteRequest, DeleteRouteResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRouteTableAsync(
+    public java.util.concurrent.Future<DeleteRouteTableResult> deleteRouteTableAsync(
             DeleteRouteTableRequest request) {
 
         return deleteRouteTableAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRouteTableAsync(
+    public java.util.concurrent.Future<DeleteRouteTableResult> deleteRouteTableAsync(
             DeleteRouteTableRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteRouteTableRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteRouteTableRequest, DeleteRouteTableResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSecurityGroupAsync(
+    public java.util.concurrent.Future<DeleteSecurityGroupResult> deleteSecurityGroupAsync(
             DeleteSecurityGroupRequest request) {
 
         return deleteSecurityGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSecurityGroupAsync(
+    public java.util.concurrent.Future<DeleteSecurityGroupResult> deleteSecurityGroupAsync(
             DeleteSecurityGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteSecurityGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteSecurityGroupRequest, DeleteSecurityGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSnapshotAsync(
+    public java.util.concurrent.Future<DeleteSnapshotResult> deleteSnapshotAsync(
             DeleteSnapshotRequest request) {
 
         return deleteSnapshotAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSnapshotAsync(
+    public java.util.concurrent.Future<DeleteSnapshotResult> deleteSnapshotAsync(
             DeleteSnapshotRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, DeleteSnapshotResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync(
+    public java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync(
             DeleteSpotDatafeedSubscriptionRequest request) {
 
         return deleteSpotDatafeedSubscriptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync(
+    public java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync(
             DeleteSpotDatafeedSubscriptionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, DeleteSpotDatafeedSubscriptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1166,7 +1166,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
      * @see #deleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync() {
+    public java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync() {
 
         return deleteSpotDatafeedSubscriptionAsync(new DeleteSpotDatafeedSubscriptionRequest());
     }
@@ -1178,69 +1178,69 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
      * @see #deleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync(
-            com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync(
+            com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, DeleteSpotDatafeedSubscriptionResult> asyncHandler) {
 
         return deleteSpotDatafeedSubscriptionAsync(
                 new DeleteSpotDatafeedSubscriptionRequest(), asyncHandler);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSubnetAsync(
+    public java.util.concurrent.Future<DeleteSubnetResult> deleteSubnetAsync(
             DeleteSubnetRequest request) {
 
         return deleteSubnetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSubnetAsync(
+    public java.util.concurrent.Future<DeleteSubnetResult> deleteSubnetAsync(
             DeleteSubnetRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteSubnetRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteSubnetRequest, DeleteSubnetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTagsAsync(
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             DeleteTagsRequest request) {
 
         return deleteTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTagsAsync(
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             DeleteTagsRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVolumeAsync(
+    public java.util.concurrent.Future<DeleteVolumeResult> deleteVolumeAsync(
             DeleteVolumeRequest request) {
 
         return deleteVolumeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVolumeAsync(
+    public java.util.concurrent.Future<DeleteVolumeResult> deleteVolumeAsync(
             DeleteVolumeRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteVolumeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteVolumeRequest, DeleteVolumeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpcAsync(
+    public java.util.concurrent.Future<DeleteVpcResult> deleteVpcAsync(
             DeleteVpcRequest request) {
 
         return deleteVpcAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpcAsync(
+    public java.util.concurrent.Future<DeleteVpcResult> deleteVpcAsync(
             DeleteVpcRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteVpcRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteVpcRequest, DeleteVpcResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1276,61 +1276,61 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnConnectionAsync(
+    public java.util.concurrent.Future<DeleteVpnConnectionResult> deleteVpnConnectionAsync(
             DeleteVpnConnectionRequest request) {
 
         return deleteVpnConnectionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnConnectionAsync(
+    public java.util.concurrent.Future<DeleteVpnConnectionResult> deleteVpnConnectionAsync(
             DeleteVpnConnectionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRequest, DeleteVpnConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnConnectionRouteAsync(
+    public java.util.concurrent.Future<DeleteVpnConnectionRouteResult> deleteVpnConnectionRouteAsync(
             DeleteVpnConnectionRouteRequest request) {
 
         return deleteVpnConnectionRouteAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnConnectionRouteAsync(
+    public java.util.concurrent.Future<DeleteVpnConnectionRouteResult> deleteVpnConnectionRouteAsync(
             DeleteVpnConnectionRouteRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRouteRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRouteRequest, DeleteVpnConnectionRouteResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnGatewayAsync(
+    public java.util.concurrent.Future<DeleteVpnGatewayResult> deleteVpnGatewayAsync(
             DeleteVpnGatewayRequest request) {
 
         return deleteVpnGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnGatewayAsync(
+    public java.util.concurrent.Future<DeleteVpnGatewayResult> deleteVpnGatewayAsync(
             DeleteVpnGatewayRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteVpnGatewayRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteVpnGatewayRequest, DeleteVpnGatewayResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterImageAsync(
+    public java.util.concurrent.Future<DeregisterImageResult> deregisterImageAsync(
             DeregisterImageRequest request) {
 
         return deregisterImageAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterImageAsync(
+    public java.util.concurrent.Future<DeregisterImageResult> deregisterImageAsync(
             DeregisterImageRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeregisterImageRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeregisterImageRequest, DeregisterImageResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2639,6 +2639,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSecurityGroupReferencesResult> describeSecurityGroupReferencesAsync(
+            DescribeSecurityGroupReferencesRequest request) {
+
+        return describeSecurityGroupReferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityGroupReferencesResult> describeSecurityGroupReferencesAsync(
+            DescribeSecurityGroupReferencesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeSecurityGroupReferencesRequest, DescribeSecurityGroupReferencesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSecurityGroupsResult> describeSecurityGroupsAsync(
             DescribeSecurityGroupsRequest request) {
 
@@ -2925,6 +2940,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
 
         return describeSpotPriceHistoryAsync(
                 new DescribeSpotPriceHistoryRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStaleSecurityGroupsResult> describeStaleSecurityGroupsAsync(
+            DescribeStaleSecurityGroupsRequest request) {
+
+        return describeStaleSecurityGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStaleSecurityGroupsResult> describeStaleSecurityGroupsAsync(
+            DescribeStaleSecurityGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStaleSecurityGroupsRequest, DescribeStaleSecurityGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -3426,31 +3456,31 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachInternetGatewayAsync(
+    public java.util.concurrent.Future<DetachInternetGatewayResult> detachInternetGatewayAsync(
             DetachInternetGatewayRequest request) {
 
         return detachInternetGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachInternetGatewayAsync(
+    public java.util.concurrent.Future<DetachInternetGatewayResult> detachInternetGatewayAsync(
             DetachInternetGatewayRequest request,
-            com.amazonaws.handlers.AsyncHandler<DetachInternetGatewayRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DetachInternetGatewayRequest, DetachInternetGatewayResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachNetworkInterfaceAsync(
+    public java.util.concurrent.Future<DetachNetworkInterfaceResult> detachNetworkInterfaceAsync(
             DetachNetworkInterfaceRequest request) {
 
         return detachNetworkInterfaceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachNetworkInterfaceAsync(
+    public java.util.concurrent.Future<DetachNetworkInterfaceResult> detachNetworkInterfaceAsync(
             DetachNetworkInterfaceRequest request,
-            com.amazonaws.handlers.AsyncHandler<DetachNetworkInterfaceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DetachNetworkInterfaceRequest, DetachNetworkInterfaceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3471,31 +3501,31 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachVpnGatewayAsync(
+    public java.util.concurrent.Future<DetachVpnGatewayResult> detachVpnGatewayAsync(
             DetachVpnGatewayRequest request) {
 
         return detachVpnGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachVpnGatewayAsync(
+    public java.util.concurrent.Future<DetachVpnGatewayResult> detachVpnGatewayAsync(
             DetachVpnGatewayRequest request,
-            com.amazonaws.handlers.AsyncHandler<DetachVpnGatewayRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DetachVpnGatewayRequest, DetachVpnGatewayResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableVgwRoutePropagationAsync(
+    public java.util.concurrent.Future<DisableVgwRoutePropagationResult> disableVgwRoutePropagationAsync(
             DisableVgwRoutePropagationRequest request) {
 
         return disableVgwRoutePropagationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableVgwRoutePropagationAsync(
+    public java.util.concurrent.Future<DisableVgwRoutePropagationResult> disableVgwRoutePropagationAsync(
             DisableVgwRoutePropagationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DisableVgwRoutePropagationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DisableVgwRoutePropagationRequest, DisableVgwRoutePropagationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3531,61 +3561,61 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateAddressAsync(
+    public java.util.concurrent.Future<DisassociateAddressResult> disassociateAddressAsync(
             DisassociateAddressRequest request) {
 
         return disassociateAddressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateAddressAsync(
+    public java.util.concurrent.Future<DisassociateAddressResult> disassociateAddressAsync(
             DisassociateAddressRequest request,
-            com.amazonaws.handlers.AsyncHandler<DisassociateAddressRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DisassociateAddressRequest, DisassociateAddressResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateRouteTableAsync(
+    public java.util.concurrent.Future<DisassociateRouteTableResult> disassociateRouteTableAsync(
             DisassociateRouteTableRequest request) {
 
         return disassociateRouteTableAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateRouteTableAsync(
+    public java.util.concurrent.Future<DisassociateRouteTableResult> disassociateRouteTableAsync(
             DisassociateRouteTableRequest request,
-            com.amazonaws.handlers.AsyncHandler<DisassociateRouteTableRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DisassociateRouteTableRequest, DisassociateRouteTableResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableVgwRoutePropagationAsync(
+    public java.util.concurrent.Future<EnableVgwRoutePropagationResult> enableVgwRoutePropagationAsync(
             EnableVgwRoutePropagationRequest request) {
 
         return enableVgwRoutePropagationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableVgwRoutePropagationAsync(
+    public java.util.concurrent.Future<EnableVgwRoutePropagationResult> enableVgwRoutePropagationAsync(
             EnableVgwRoutePropagationRequest request,
-            com.amazonaws.handlers.AsyncHandler<EnableVgwRoutePropagationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<EnableVgwRoutePropagationRequest, EnableVgwRoutePropagationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableVolumeIOAsync(
+    public java.util.concurrent.Future<EnableVolumeIOResult> enableVolumeIOAsync(
             EnableVolumeIORequest request) {
 
         return enableVolumeIOAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableVolumeIOAsync(
+    public java.util.concurrent.Future<EnableVolumeIOResult> enableVolumeIOAsync(
             EnableVolumeIORequest request,
-            com.amazonaws.handlers.AsyncHandler<EnableVolumeIORequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<EnableVolumeIORequest, EnableVolumeIOResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3789,46 +3819,46 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyIdFormatAsync(
+    public java.util.concurrent.Future<ModifyIdFormatResult> modifyIdFormatAsync(
             ModifyIdFormatRequest request) {
 
         return modifyIdFormatAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyIdFormatAsync(
+    public java.util.concurrent.Future<ModifyIdFormatResult> modifyIdFormatAsync(
             ModifyIdFormatRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifyIdFormatRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ModifyIdFormatRequest, ModifyIdFormatResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyImageAttributeAsync(
+    public java.util.concurrent.Future<ModifyImageAttributeResult> modifyImageAttributeAsync(
             ModifyImageAttributeRequest request) {
 
         return modifyImageAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyImageAttributeAsync(
+    public java.util.concurrent.Future<ModifyImageAttributeResult> modifyImageAttributeAsync(
             ModifyImageAttributeRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifyImageAttributeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ModifyImageAttributeRequest, ModifyImageAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyInstanceAttributeAsync(
+    public java.util.concurrent.Future<ModifyInstanceAttributeResult> modifyInstanceAttributeAsync(
             ModifyInstanceAttributeRequest request) {
 
         return modifyInstanceAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyInstanceAttributeAsync(
+    public java.util.concurrent.Future<ModifyInstanceAttributeResult> modifyInstanceAttributeAsync(
             ModifyInstanceAttributeRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifyInstanceAttributeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceAttributeRequest, ModifyInstanceAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3849,16 +3879,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyNetworkInterfaceAttributeAsync(
+    public java.util.concurrent.Future<ModifyNetworkInterfaceAttributeResult> modifyNetworkInterfaceAttributeAsync(
             ModifyNetworkInterfaceAttributeRequest request) {
 
         return modifyNetworkInterfaceAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyNetworkInterfaceAttributeAsync(
+    public java.util.concurrent.Future<ModifyNetworkInterfaceAttributeResult> modifyNetworkInterfaceAttributeAsync(
             ModifyNetworkInterfaceAttributeRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifyNetworkInterfaceAttributeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ModifyNetworkInterfaceAttributeRequest, ModifyNetworkInterfaceAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3879,16 +3909,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifySnapshotAttributeAsync(
+    public java.util.concurrent.Future<ModifySnapshotAttributeResult> modifySnapshotAttributeAsync(
             ModifySnapshotAttributeRequest request) {
 
         return modifySnapshotAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifySnapshotAttributeAsync(
+    public java.util.concurrent.Future<ModifySnapshotAttributeResult> modifySnapshotAttributeAsync(
             ModifySnapshotAttributeRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifySnapshotAttributeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ModifySnapshotAttributeRequest, ModifySnapshotAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3909,46 +3939,46 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifySubnetAttributeAsync(
+    public java.util.concurrent.Future<ModifySubnetAttributeResult> modifySubnetAttributeAsync(
             ModifySubnetAttributeRequest request) {
 
         return modifySubnetAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifySubnetAttributeAsync(
+    public java.util.concurrent.Future<ModifySubnetAttributeResult> modifySubnetAttributeAsync(
             ModifySubnetAttributeRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifySubnetAttributeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ModifySubnetAttributeRequest, ModifySubnetAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyVolumeAttributeAsync(
+    public java.util.concurrent.Future<ModifyVolumeAttributeResult> modifyVolumeAttributeAsync(
             ModifyVolumeAttributeRequest request) {
 
         return modifyVolumeAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyVolumeAttributeAsync(
+    public java.util.concurrent.Future<ModifyVolumeAttributeResult> modifyVolumeAttributeAsync(
             ModifyVolumeAttributeRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifyVolumeAttributeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ModifyVolumeAttributeRequest, ModifyVolumeAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyVpcAttributeAsync(
+    public java.util.concurrent.Future<ModifyVpcAttributeResult> modifyVpcAttributeAsync(
             ModifyVpcAttributeRequest request) {
 
         return modifyVpcAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyVpcAttributeAsync(
+    public java.util.concurrent.Future<ModifyVpcAttributeResult> modifyVpcAttributeAsync(
             ModifyVpcAttributeRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifyVpcAttributeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ModifyVpcAttributeRequest, ModifyVpcAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -4044,16 +4074,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebootInstancesAsync(
+    public java.util.concurrent.Future<RebootInstancesResult> rebootInstancesAsync(
             RebootInstancesRequest request) {
 
         return rebootInstancesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebootInstancesAsync(
+    public java.util.concurrent.Future<RebootInstancesResult> rebootInstancesAsync(
             RebootInstancesRequest request,
-            com.amazonaws.handlers.AsyncHandler<RebootInstancesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RebootInstancesRequest, RebootInstancesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -4089,16 +4119,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> releaseAddressAsync(
+    public java.util.concurrent.Future<ReleaseAddressResult> releaseAddressAsync(
             ReleaseAddressRequest request) {
 
         return releaseAddressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> releaseAddressAsync(
+    public java.util.concurrent.Future<ReleaseAddressResult> releaseAddressAsync(
             ReleaseAddressRequest request,
-            com.amazonaws.handlers.AsyncHandler<ReleaseAddressRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ReleaseAddressRequest, ReleaseAddressResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -4134,31 +4164,31 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> replaceNetworkAclEntryAsync(
+    public java.util.concurrent.Future<ReplaceNetworkAclEntryResult> replaceNetworkAclEntryAsync(
             ReplaceNetworkAclEntryRequest request) {
 
         return replaceNetworkAclEntryAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> replaceNetworkAclEntryAsync(
+    public java.util.concurrent.Future<ReplaceNetworkAclEntryResult> replaceNetworkAclEntryAsync(
             ReplaceNetworkAclEntryRequest request,
-            com.amazonaws.handlers.AsyncHandler<ReplaceNetworkAclEntryRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ReplaceNetworkAclEntryRequest, ReplaceNetworkAclEntryResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> replaceRouteAsync(
+    public java.util.concurrent.Future<ReplaceRouteResult> replaceRouteAsync(
             ReplaceRouteRequest request) {
 
         return replaceRouteAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> replaceRouteAsync(
+    public java.util.concurrent.Future<ReplaceRouteResult> replaceRouteAsync(
             ReplaceRouteRequest request,
-            com.amazonaws.handlers.AsyncHandler<ReplaceRouteRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ReplaceRouteRequest, ReplaceRouteResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -4179,16 +4209,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> reportInstanceStatusAsync(
+    public java.util.concurrent.Future<ReportInstanceStatusResult> reportInstanceStatusAsync(
             ReportInstanceStatusRequest request) {
 
         return reportInstanceStatusAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> reportInstanceStatusAsync(
+    public java.util.concurrent.Future<ReportInstanceStatusResult> reportInstanceStatusAsync(
             ReportInstanceStatusRequest request,
-            com.amazonaws.handlers.AsyncHandler<ReportInstanceStatusRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ReportInstanceStatusRequest, ReportInstanceStatusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -4224,61 +4254,61 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetImageAttributeAsync(
+    public java.util.concurrent.Future<ResetImageAttributeResult> resetImageAttributeAsync(
             ResetImageAttributeRequest request) {
 
         return resetImageAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetImageAttributeAsync(
+    public java.util.concurrent.Future<ResetImageAttributeResult> resetImageAttributeAsync(
             ResetImageAttributeRequest request,
-            com.amazonaws.handlers.AsyncHandler<ResetImageAttributeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ResetImageAttributeRequest, ResetImageAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetInstanceAttributeAsync(
+    public java.util.concurrent.Future<ResetInstanceAttributeResult> resetInstanceAttributeAsync(
             ResetInstanceAttributeRequest request) {
 
         return resetInstanceAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetInstanceAttributeAsync(
+    public java.util.concurrent.Future<ResetInstanceAttributeResult> resetInstanceAttributeAsync(
             ResetInstanceAttributeRequest request,
-            com.amazonaws.handlers.AsyncHandler<ResetInstanceAttributeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ResetInstanceAttributeRequest, ResetInstanceAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetNetworkInterfaceAttributeAsync(
+    public java.util.concurrent.Future<ResetNetworkInterfaceAttributeResult> resetNetworkInterfaceAttributeAsync(
             ResetNetworkInterfaceAttributeRequest request) {
 
         return resetNetworkInterfaceAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetNetworkInterfaceAttributeAsync(
+    public java.util.concurrent.Future<ResetNetworkInterfaceAttributeResult> resetNetworkInterfaceAttributeAsync(
             ResetNetworkInterfaceAttributeRequest request,
-            com.amazonaws.handlers.AsyncHandler<ResetNetworkInterfaceAttributeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ResetNetworkInterfaceAttributeRequest, ResetNetworkInterfaceAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetSnapshotAttributeAsync(
+    public java.util.concurrent.Future<ResetSnapshotAttributeResult> resetSnapshotAttributeAsync(
             ResetSnapshotAttributeRequest request) {
 
         return resetSnapshotAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetSnapshotAttributeAsync(
+    public java.util.concurrent.Future<ResetSnapshotAttributeResult> resetSnapshotAttributeAsync(
             ResetSnapshotAttributeRequest request,
-            com.amazonaws.handlers.AsyncHandler<ResetSnapshotAttributeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ResetSnapshotAttributeRequest, ResetSnapshotAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -4299,31 +4329,31 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> revokeSecurityGroupEgressAsync(
+    public java.util.concurrent.Future<RevokeSecurityGroupEgressResult> revokeSecurityGroupEgressAsync(
             RevokeSecurityGroupEgressRequest request) {
 
         return revokeSecurityGroupEgressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> revokeSecurityGroupEgressAsync(
+    public java.util.concurrent.Future<RevokeSecurityGroupEgressResult> revokeSecurityGroupEgressAsync(
             RevokeSecurityGroupEgressRequest request,
-            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupEgressRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupEgressRequest, RevokeSecurityGroupEgressResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync(
+    public java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync(
             RevokeSecurityGroupIngressRequest request) {
 
         return revokeSecurityGroupIngressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync(
+    public java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync(
             RevokeSecurityGroupIngressRequest request,
-            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -4335,7 +4365,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
      * @see #revokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync() {
+    public java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync() {
 
         return revokeSecurityGroupIngressAsync(new RevokeSecurityGroupIngressRequest());
     }
@@ -4347,8 +4377,8 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
      * @see #revokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync(
-            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync(
+            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResult> asyncHandler) {
 
         return revokeSecurityGroupIngressAsync(
                 new RevokeSecurityGroupIngressRequest(), asyncHandler);
@@ -4430,16 +4460,16 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignPrivateIpAddressesAsync(
+    public java.util.concurrent.Future<UnassignPrivateIpAddressesResult> unassignPrivateIpAddressesAsync(
             UnassignPrivateIpAddressesRequest request) {
 
         return unassignPrivateIpAddressesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignPrivateIpAddressesAsync(
+    public java.util.concurrent.Future<UnassignPrivateIpAddressesResult> unassignPrivateIpAddressesAsync(
             UnassignPrivateIpAddressesRequest request,
-            com.amazonaws.handlers.AsyncHandler<UnassignPrivateIpAddressesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UnassignPrivateIpAddressesRequest, UnassignPrivateIpAddressesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

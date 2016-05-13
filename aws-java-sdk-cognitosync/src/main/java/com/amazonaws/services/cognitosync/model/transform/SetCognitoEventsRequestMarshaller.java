@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SetCognitoEventsRequest Marshaller
@@ -48,6 +49,13 @@ public class SetCognitoEventsRequestMarshaller implements
         Marshaller<Request<SetCognitoEventsRequest>, SetCognitoEventsRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public SetCognitoEventsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<SetCognitoEventsRequest> marshall(
             SetCognitoEventsRequest setCognitoEventsRequest) {
@@ -67,14 +75,16 @@ public class SetCognitoEventsRequestMarshaller implements
         uriResourcePath = uriResourcePath
                 .replace(
                         "{IdentityPoolId}",
-                        (setCognitoEventsRequest.getIdentityPoolId() != null) ? StringUtils
-                                .fromString(setCognitoEventsRequest
-                                        .getIdentityPoolId()) : "");
+                        (setCognitoEventsRequest.getIdentityPoolId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(setCognitoEventsRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalMap<String, String> eventsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) setCognitoEventsRequest

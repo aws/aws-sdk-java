@@ -40,6 +40,13 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The attribute to reset.
      * </p>
+     * <important>
+     * <p>
+     * You can only reset the following attributes: <code>kernel</code> |
+     * <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     * instance attribute, use <a>ModifyInstanceAttribute</a>.
+     * </p>
+     * </important>
      */
     private String attribute;
 
@@ -59,7 +66,12 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance.
      * @param attribute
-     *        The attribute to reset.
+     *        The attribute to reset.</p> <important>
+     *        <p>
+     *        You can only reset the following attributes: <code>kernel</code> |
+     *        <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     *        instance attribute, use <a>ModifyInstanceAttribute</a>.
+     *        </p>
      */
     public ResetInstanceAttributeRequest(String instanceId, String attribute) {
         setInstanceId(instanceId);
@@ -74,7 +86,12 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance.
      * @param attribute
-     *        The attribute to reset.
+     *        The attribute to reset.</p> <important>
+     *        <p>
+     *        You can only reset the following attributes: <code>kernel</code> |
+     *        <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     *        instance attribute, use <a>ModifyInstanceAttribute</a>.
+     *        </p>
      */
     public ResetInstanceAttributeRequest(String instanceId,
             InstanceAttributeName attribute) {
@@ -127,9 +144,21 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The attribute to reset.
      * </p>
+     * <important>
+     * <p>
+     * You can only reset the following attributes: <code>kernel</code> |
+     * <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     * instance attribute, use <a>ModifyInstanceAttribute</a>.
+     * </p>
+     * </important>
      * 
      * @param attribute
-     *        The attribute to reset.
+     *        The attribute to reset.</p> <important>
+     *        <p>
+     *        You can only reset the following attributes: <code>kernel</code> |
+     *        <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     *        instance attribute, use <a>ModifyInstanceAttribute</a>.
+     *        </p>
      * @see InstanceAttributeName
      */
 
@@ -141,8 +170,20 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The attribute to reset.
      * </p>
+     * <important>
+     * <p>
+     * You can only reset the following attributes: <code>kernel</code> |
+     * <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     * instance attribute, use <a>ModifyInstanceAttribute</a>.
+     * </p>
+     * </important>
      * 
-     * @return The attribute to reset.
+     * @return The attribute to reset.</p> <important>
+     *         <p>
+     *         You can only reset the following attributes: <code>kernel</code>
+     *         | <code>ramdisk</code> | <code>sourceDestCheck</code>. To change
+     *         an instance attribute, use <a>ModifyInstanceAttribute</a>.
+     *         </p>
      * @see InstanceAttributeName
      */
 
@@ -154,9 +195,21 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The attribute to reset.
      * </p>
+     * <important>
+     * <p>
+     * You can only reset the following attributes: <code>kernel</code> |
+     * <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     * instance attribute, use <a>ModifyInstanceAttribute</a>.
+     * </p>
+     * </important>
      * 
      * @param attribute
-     *        The attribute to reset.
+     *        The attribute to reset.</p> <important>
+     *        <p>
+     *        You can only reset the following attributes: <code>kernel</code> |
+     *        <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     *        instance attribute, use <a>ModifyInstanceAttribute</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceAttributeName
@@ -171,9 +224,21 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The attribute to reset.
      * </p>
+     * <important>
+     * <p>
+     * You can only reset the following attributes: <code>kernel</code> |
+     * <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     * instance attribute, use <a>ModifyInstanceAttribute</a>.
+     * </p>
+     * </important>
      * 
      * @param attribute
-     *        The attribute to reset.
+     *        The attribute to reset.</p> <important>
+     *        <p>
+     *        You can only reset the following attributes: <code>kernel</code> |
+     *        <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     *        instance attribute, use <a>ModifyInstanceAttribute</a>.
+     *        </p>
      * @see InstanceAttributeName
      */
 
@@ -185,9 +250,21 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The attribute to reset.
      * </p>
+     * <important>
+     * <p>
+     * You can only reset the following attributes: <code>kernel</code> |
+     * <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     * instance attribute, use <a>ModifyInstanceAttribute</a>.
+     * </p>
+     * </important>
      * 
      * @param attribute
-     *        The attribute to reset.
+     *        The attribute to reset.</p> <important>
+     *        <p>
+     *        You can only reset the following attributes: <code>kernel</code> |
+     *        <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an
+     *        instance attribute, use <a>ModifyInstanceAttribute</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceAttributeName

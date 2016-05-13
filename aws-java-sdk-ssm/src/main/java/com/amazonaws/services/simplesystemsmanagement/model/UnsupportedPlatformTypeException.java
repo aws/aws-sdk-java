@@ -19,7 +19,11 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
+ * <p>
  * The document does not support the platform type of the given instance ID(s).
+ * For example, you sent an SSM document for a Windows instance to a Linux
+ * instance.
+ * </p>
  */
 public class UnsupportedPlatformTypeException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

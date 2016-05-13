@@ -238,9 +238,11 @@ public interface DataPipelineAsync extends DataPipeline {
      * 
      * @param deletePipelineRequest
      *        Contains the parameters for DeletePipeline.
+     * @return A Java Future containing the result of the DeletePipeline
+     *         operation returned by the service.
      * @sample DataPipelineAsync.DeletePipeline
      */
-    java.util.concurrent.Future<Void> deletePipelineAsync(
+    java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest deletePipelineRequest);
 
     /**
@@ -264,11 +266,13 @@ public interface DataPipelineAsync extends DataPipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePipeline
+     *         operation returned by the service.
      * @sample DataPipelineAsyncHandler.DeletePipeline
      */
-    java.util.concurrent.Future<Void> deletePipelineAsync(
+    java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest deletePipelineRequest,
-            com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler);
 
     /**
      * <p>
@@ -811,9 +815,11 @@ public interface DataPipelineAsync extends DataPipeline {
      * 
      * @param setStatusRequest
      *        Contains the parameters for SetStatus.
+     * @return A Java Future containing the result of the SetStatus operation
+     *         returned by the service.
      * @sample DataPipelineAsync.SetStatus
      */
-    java.util.concurrent.Future<Void> setStatusAsync(
+    java.util.concurrent.Future<SetStatusResult> setStatusAsync(
             SetStatusRequest setStatusRequest);
 
     /**
@@ -833,11 +839,13 @@ public interface DataPipelineAsync extends DataPipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetStatus operation
+     *         returned by the service.
      * @sample DataPipelineAsyncHandler.SetStatus
      */
-    java.util.concurrent.Future<Void> setStatusAsync(
+    java.util.concurrent.Future<SetStatusResult> setStatusAsync(
             SetStatusRequest setStatusRequest,
-            com.amazonaws.handlers.AsyncHandler<SetStatusRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetStatusRequest, SetStatusResult> asyncHandler);
 
     /**
      * <p>

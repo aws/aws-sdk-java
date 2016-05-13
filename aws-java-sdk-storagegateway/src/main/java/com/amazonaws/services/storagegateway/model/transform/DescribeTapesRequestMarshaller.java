@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeTapesRequest Marshaller
  */
 public class DescribeTapesRequestMarshaller implements
         Marshaller<Request<DescribeTapesRequest>, DescribeTapesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeTapesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeTapesRequest> marshall(
             DescribeTapesRequest describeTapesRequest) {
@@ -58,8 +64,8 @@ public class DescribeTapesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

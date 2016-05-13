@@ -315,11 +315,13 @@ public interface AWSCodePipeline {
      * @param deleteCustomActionTypeRequest
      *        Represents the input of a delete custom action operation. The
      *        custom action will be marked as deleted.
+     * @return Result of the DeleteCustomActionType operation returned by the
+     *         service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @sample AWSCodePipeline.DeleteCustomActionType
      */
-    void deleteCustomActionType(
+    DeleteCustomActionTypeResult deleteCustomActionType(
             DeleteCustomActionTypeRequest deleteCustomActionTypeRequest);
 
     /**
@@ -330,11 +332,13 @@ public interface AWSCodePipeline {
      * 
      * @param deletePipelineRequest
      *        Represents the input of a delete pipeline action.
+     * @return Result of the DeletePipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @sample AWSCodePipeline.DeletePipeline
      */
-    void deletePipeline(DeletePipelineRequest deletePipelineRequest);
+    DeletePipelineResult deletePipeline(
+            DeletePipelineRequest deletePipelineRequest);
 
     /**
      * <p>
@@ -345,6 +349,8 @@ public interface AWSCodePipeline {
      * 
      * @param disableStageTransitionRequest
      *        Represents the input of a disable stage transition input action.
+     * @return Result of the DisableStageTransition operation returned by the
+     *         service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws PipelineNotFoundException
@@ -355,7 +361,7 @@ public interface AWSCodePipeline {
      *         be found.
      * @sample AWSCodePipeline.DisableStageTransition
      */
-    void disableStageTransition(
+    DisableStageTransitionResult disableStageTransition(
             DisableStageTransitionRequest disableStageTransitionRequest);
 
     /**
@@ -366,6 +372,8 @@ public interface AWSCodePipeline {
      * 
      * @param enableStageTransitionRequest
      *        Represents the input of an enable stage transition action.
+     * @return Result of the EnableStageTransition operation returned by the
+     *         service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws PipelineNotFoundException
@@ -376,7 +384,7 @@ public interface AWSCodePipeline {
      *         be found.
      * @sample AWSCodePipeline.EnableStageTransition
      */
-    void enableStageTransition(
+    EnableStageTransitionResult enableStageTransition(
             EnableStageTransitionRequest enableStageTransitionRequest);
 
     /**
@@ -604,6 +612,8 @@ public interface AWSCodePipeline {
      * 
      * @param putJobFailureResultRequest
      *        Represents the input of a put job failure result action.
+     * @return Result of the PutJobFailureResult operation returned by the
+     *         service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws JobNotFoundException
@@ -613,7 +623,7 @@ public interface AWSCodePipeline {
      *         The specified job state was specified in an invalid format.
      * @sample AWSCodePipeline.PutJobFailureResult
      */
-    void putJobFailureResult(
+    PutJobFailureResultResult putJobFailureResult(
             PutJobFailureResultRequest putJobFailureResultRequest);
 
     /**
@@ -624,6 +634,8 @@ public interface AWSCodePipeline {
      * 
      * @param putJobSuccessResultRequest
      *        Represents the input of a put job success result action.
+     * @return Result of the PutJobSuccessResult operation returned by the
+     *         service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws JobNotFoundException
@@ -633,7 +645,7 @@ public interface AWSCodePipeline {
      *         The specified job state was specified in an invalid format.
      * @sample AWSCodePipeline.PutJobSuccessResult
      */
-    void putJobSuccessResult(
+    PutJobSuccessResultResult putJobSuccessResult(
             PutJobSuccessResultRequest putJobSuccessResultRequest);
 
     /**
@@ -644,6 +656,8 @@ public interface AWSCodePipeline {
      * 
      * @param putThirdPartyJobFailureResultRequest
      *        Represents the input of a third party job failure result action.
+     * @return Result of the PutThirdPartyJobFailureResult operation returned by
+     *         the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws JobNotFoundException
@@ -655,7 +669,7 @@ public interface AWSCodePipeline {
      *         The client token was specified in an invalid format
      * @sample AWSCodePipeline.PutThirdPartyJobFailureResult
      */
-    void putThirdPartyJobFailureResult(
+    PutThirdPartyJobFailureResultResult putThirdPartyJobFailureResult(
             PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest);
 
     /**
@@ -667,6 +681,8 @@ public interface AWSCodePipeline {
      * @param putThirdPartyJobSuccessResultRequest
      *        Represents the input of a put third party job success result
      *        action.
+     * @return Result of the PutThirdPartyJobSuccessResult operation returned by
+     *         the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws JobNotFoundException
@@ -678,7 +694,7 @@ public interface AWSCodePipeline {
      *         The client token was specified in an invalid format
      * @sample AWSCodePipeline.PutThirdPartyJobSuccessResult
      */
-    void putThirdPartyJobSuccessResult(
+    PutThirdPartyJobSuccessResultResult putThirdPartyJobSuccessResult(
             PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest);
 
     /**

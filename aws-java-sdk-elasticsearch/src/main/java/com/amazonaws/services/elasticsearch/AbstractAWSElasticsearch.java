@@ -39,7 +39,7 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
     }
 
     @Override
-    public void addTags(AddTagsRequest request) {
+    public AddTagsResult addTags(AddTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,7 +84,7 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
     }
 
     @Override
-    public void removeTags(RemoveTagsRequest request) {
+    public RemoveTagsResult removeTags(RemoveTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

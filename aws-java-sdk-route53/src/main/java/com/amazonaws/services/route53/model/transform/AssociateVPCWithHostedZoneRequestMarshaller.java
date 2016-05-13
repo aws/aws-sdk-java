@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * AssociateVPCWithHostedZoneRequest Marshaller
@@ -62,9 +63,11 @@ public class AssociateVPCWithHostedZoneRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (associateVPCWithHostedZoneRequest.getHostedZoneId() != null) ? StringUtils
-                                .fromString(associateVPCWithHostedZoneRequest
-                                        .getHostedZoneId()) : "");
+                        (associateVPCWithHostedZoneRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(associateVPCWithHostedZoneRequest
+                                                .getHostedZoneId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

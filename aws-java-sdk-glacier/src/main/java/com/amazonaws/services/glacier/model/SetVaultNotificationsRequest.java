@@ -1,262 +1,258 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#setVaultNotifications(SetVaultNotificationsRequest) SetVaultNotifications operation}.
  * <p>
- * This operation configures notifications that will be sent when
- * specific events happen to a vault. By default, you don't get any
- * notifications.
+ * Provides options to configure notifications that will be sent when specific
+ * events happen to a vault.
  * </p>
- * <p>
- * To configure vault notifications, send a PUT request to the
- * <code>notification-configuration</code> subresource of the vault. The
- * request should include a JSON document that provides an Amazon SNS
- * topic and specific events for which you want Amazon Glacier to send
- * notifications to the topic.
- * </p>
- * <p>
- * Amazon SNS topics must grant permission to the vault to be allowed to
- * publish notifications to the topic. You can configure a vault to
- * publish a notification for the following vault events:
- * </p>
- * 
- * <ul>
- * <li> <b>ArchiveRetrievalCompleted</b> This event occurs when a job
- * that was initiated for an archive retrieval is completed
- * (InitiateJob). The status of the completed job can be "Succeeded" or
- * "Failed". The notification sent to the SNS topic is the same output as
- * returned from DescribeJob. </li>
- * <li> <b>InventoryRetrievalCompleted</b> This event occurs when a job
- * that was initiated for an inventory retrieval is completed
- * (InitiateJob). The status of the completed job can be "Succeeded" or
- * "Failed". The notification sent to the SNS topic is the same output as
- * returned from DescribeJob. </li>
- * 
- * </ul>
- * <p>
- * An AWS account has full permission to perform all operations
- * (actions). However, AWS Identity and Access Management (IAM) users
- * don't have any permissions by default. You must grant them explicit
- * permission to perform specific actions. For more information, see
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
- * .
- * </p>
- * <p>
- * For conceptual information and underlying REST API, go to
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html"> Set Vault Notification Configuration </a>
- * in the <i>Amazon Glacier Developer Guide</i> .
- * 
- * </p>
- *
- * @see com.amazonaws.services.glacier.AmazonGlacier#setVaultNotifications(SetVaultNotificationsRequest)
  */
-public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class SetVaultNotificationsRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account
      * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you use an account ID, do not include any
-     * hyphens ('-') in the ID.
+     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, do not include any hyphens
+     * (apos-apos) in the ID.
+     * </p>
      */
     private String accountId;
-
     /**
+     * <p>
      * The name of the vault.
+     * </p>
      */
     private String vaultName;
-
     /**
+     * <p>
      * Provides options for specifying notification configuration.
+     * </p>
      */
     private VaultNotificationConfig vaultNotificationConfig;
 
     /**
-     * Default constructor for a new SetVaultNotificationsRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for SetVaultNotificationsRequest object. Callers
+     * should use the setter or fluent setter (with...) methods to initialize
+     * the object after creating it.
      */
-    public SetVaultNotificationsRequest() {}
-    
+    public SetVaultNotificationsRequest() {
+    }
+
     /**
-     * Constructs a new SetVaultNotificationsRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new SetVaultNotificationsRequest object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param vaultName The name of the vault.
-     * @param vaultNotificationConfig Provides options for specifying
-     * notification configuration.
+     * @param vaultName
+     *        The name of the vault.
+     * @param vaultNotificationConfig
+     *        Provides options for specifying notification configuration.
      */
-    public SetVaultNotificationsRequest(String vaultName, VaultNotificationConfig vaultNotificationConfig) {
+    public SetVaultNotificationsRequest(String vaultName,
+            VaultNotificationConfig vaultNotificationConfig) {
         setVaultName(vaultName);
         setVaultNotificationConfig(vaultNotificationConfig);
     }
 
     /**
-     * Constructs a new SetVaultNotificationsRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new SetVaultNotificationsRequest object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize any
+     * additional object members.
      * 
-     * @param accountId The <code>AccountId</code> value is the AWS account
-     * ID of the account that owns the vault. You can either specify an AWS
-     * account ID or optionally a single '<code>-</code>' (hyphen), in which
-     * case Amazon Glacier uses the AWS account ID associated with the
-     * credentials used to sign the request. If you use an account ID, do not
-     * include any hyphens ('-') in the ID.
-     * @param vaultName The name of the vault.
-     * @param vaultNotificationConfig Provides options for specifying
-     * notification configuration.
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID of the
+     *        account that owns the vault. You can either specify an AWS account
+     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
+     *        which case Amazon Glacier uses the AWS account ID associated with
+     *        the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
+     * @param vaultName
+     *        The name of the vault.
+     * @param vaultNotificationConfig
+     *        Provides options for specifying notification configuration.
      */
-    public SetVaultNotificationsRequest(String accountId, String vaultName, VaultNotificationConfig vaultNotificationConfig) {
+    public SetVaultNotificationsRequest(String accountId, String vaultName,
+            VaultNotificationConfig vaultNotificationConfig) {
         setAccountId(accountId);
         setVaultName(vaultName);
         setVaultNotificationConfig(vaultNotificationConfig);
     }
 
     /**
+     * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account
      * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you use an account ID, do not include any
-     * hyphens ('-') in the ID.
-     *
-     * @return The <code>AccountId</code> value is the AWS account ID of the account
-     *         that owns the vault. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you use an account ID, do not include any
-     *         hyphens ('-') in the ID.
+     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, do not include any hyphens
+     * (apos-apos) in the ID.
+     * </p>
+     * 
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID of the
+     *        account that owns the vault. You can either specify an AWS account
+     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
+     *        which case Amazon Glacier uses the AWS account ID associated with
+     *        the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
      */
-    public String getAccountId() {
-        return accountId;
-    }
-    
-    /**
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you use an account ID, do not include any
-     * hyphens ('-') in the ID.
-     *
-     * @param accountId The <code>AccountId</code> value is the AWS account ID of the account
-     *         that owns the vault. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you use an account ID, do not include any
-     *         hyphens ('-') in the ID.
-     */
+
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
-    
+
     /**
+     * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account
      * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you use an account ID, do not include any
-     * hyphens ('-') in the ID.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param accountId The <code>AccountId</code> value is the AWS account ID of the account
-     *         that owns the vault. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you use an account ID, do not include any
-     *         hyphens ('-') in the ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, do not include any hyphens
+     * (apos-apos) in the ID.
+     * </p>
+     * 
+     * @return The <code>AccountId</code> value is the AWS account ID of the
+     *         account that owns the vault. You can either specify an AWS
+     *         account ID or optionally a single apos<code>-</code>apos
+     *         (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *         associated with the credentials used to sign the request. If you
+     *         use an account ID, do not include any hyphens (apos-apos) in the
+     *         ID.
      */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The <code>AccountId</code> value is the AWS account ID of the account
+     * that owns the vault. You can either specify an AWS account ID or
+     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, do not include any hyphens
+     * (apos-apos) in the ID.
+     * </p>
+     * 
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID of the
+     *        account that owns the vault. You can either specify an AWS account
+     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
+     *        which case Amazon Glacier uses the AWS account ID associated with
+     *        the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public SetVaultNotificationsRequest withAccountId(String accountId) {
-        this.accountId = accountId;
+        setAccountId(accountId);
         return this;
     }
 
     /**
+     * <p>
      * The name of the vault.
-     *
-     * @return The name of the vault.
+     * </p>
+     * 
+     * @param vaultName
+     *        The name of the vault.
      */
-    public String getVaultName() {
-        return vaultName;
-    }
-    
-    /**
-     * The name of the vault.
-     *
-     * @param vaultName The name of the vault.
-     */
+
     public void setVaultName(String vaultName) {
         this.vaultName = vaultName;
     }
-    
+
     /**
-     * The name of the vault.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param vaultName The name of the vault.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the vault.
+     * </p>
+     * 
+     * @return The name of the vault.
      */
+
+    public String getVaultName() {
+        return this.vaultName;
+    }
+
+    /**
+     * <p>
+     * The name of the vault.
+     * </p>
+     * 
+     * @param vaultName
+     *        The name of the vault.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public SetVaultNotificationsRequest withVaultName(String vaultName) {
-        this.vaultName = vaultName;
+        setVaultName(vaultName);
         return this;
     }
 
     /**
+     * <p>
      * Provides options for specifying notification configuration.
-     *
+     * </p>
+     * 
+     * @param vaultNotificationConfig
+     *        Provides options for specifying notification configuration.
+     */
+
+    public void setVaultNotificationConfig(
+            VaultNotificationConfig vaultNotificationConfig) {
+        this.vaultNotificationConfig = vaultNotificationConfig;
+    }
+
+    /**
+     * <p>
+     * Provides options for specifying notification configuration.
+     * </p>
+     * 
      * @return Provides options for specifying notification configuration.
      */
+
     public VaultNotificationConfig getVaultNotificationConfig() {
-        return vaultNotificationConfig;
+        return this.vaultNotificationConfig;
     }
-    
+
     /**
-     * Provides options for specifying notification configuration.
-     *
-     * @param vaultNotificationConfig Provides options for specifying notification configuration.
-     */
-    public void setVaultNotificationConfig(VaultNotificationConfig vaultNotificationConfig) {
-        this.vaultNotificationConfig = vaultNotificationConfig;
-    }
-    
-    /**
-     * Provides options for specifying notification configuration.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param vaultNotificationConfig Provides options for specifying notification configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Provides options for specifying notification configuration.
+     * </p>
+     * 
+     * @param vaultNotificationConfig
+     *        Provides options for specifying notification configuration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public SetVaultNotificationsRequest withVaultNotificationConfig(VaultNotificationConfig vaultNotificationConfig) {
-        this.vaultNotificationConfig = vaultNotificationConfig;
+
+    public SetVaultNotificationsRequest withVaultNotificationConfig(
+            VaultNotificationConfig vaultNotificationConfig) {
+        setVaultNotificationConfig(vaultNotificationConfig);
         return this;
     }
 
@@ -272,46 +268,65 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
-        if (getVaultNotificationConfig() != null) sb.append("VaultNotificationConfig: " + getVaultNotificationConfig() );
+        if (getAccountId() != null)
+            sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null)
+            sb.append("VaultName: " + getVaultName() + ",");
+        if (getVaultNotificationConfig() != null)
+            sb.append("VaultNotificationConfig: "
+                    + getVaultNotificationConfig());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof SetVaultNotificationsRequest == false)
+            return false;
+        SetVaultNotificationsRequest other = (SetVaultNotificationsRequest) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null
+                && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
+        if (other.getVaultName() == null ^ this.getVaultName() == null)
+            return false;
+        if (other.getVaultName() != null
+                && other.getVaultName().equals(this.getVaultName()) == false)
+            return false;
+        if (other.getVaultNotificationConfig() == null
+                ^ this.getVaultNotificationConfig() == null)
+            return false;
+        if (other.getVaultNotificationConfig() != null
+                && other.getVaultNotificationConfig().equals(
+                        this.getVaultNotificationConfig()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode()); 
-        hashCode = prime * hashCode + ((getVaultName() == null) ? 0 : getVaultName().hashCode()); 
-        hashCode = prime * hashCode + ((getVaultNotificationConfig() == null) ? 0 : getVaultNotificationConfig().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode
+                + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVaultNotificationConfig() == null) ? 0
+                        : getVaultNotificationConfig().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof SetVaultNotificationsRequest == false) return false;
-        SetVaultNotificationsRequest other = (SetVaultNotificationsRequest)obj;
-        
-        if (other.getAccountId() == null ^ this.getAccountId() == null) return false;
-        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false) return false; 
-        if (other.getVaultName() == null ^ this.getVaultName() == null) return false;
-        if (other.getVaultName() != null && other.getVaultName().equals(this.getVaultName()) == false) return false; 
-        if (other.getVaultNotificationConfig() == null ^ this.getVaultNotificationConfig() == null) return false;
-        if (other.getVaultNotificationConfig() != null && other.getVaultNotificationConfig().equals(this.getVaultNotificationConfig()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public SetVaultNotificationsRequest clone() {
-        
-            return (SetVaultNotificationsRequest) super.clone();
+        return (SetVaultNotificationsRequest) super.clone();
     }
-
 }
-    

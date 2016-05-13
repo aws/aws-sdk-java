@@ -93,7 +93,7 @@ public class AbstractAmazonSimpleEmailService implements
     }
 
     @Override
-    public void deleteVerifiedEmailAddress(
+    public DeleteVerifiedEmailAddressResult deleteVerifiedEmailAddress(
             DeleteVerifiedEmailAddressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -288,7 +288,8 @@ public class AbstractAmazonSimpleEmailService implements
     }
 
     @Override
-    public void verifyEmailAddress(VerifyEmailAddressRequest request) {
+    public VerifyEmailAddressResult verifyEmailAddress(
+            VerifyEmailAddressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

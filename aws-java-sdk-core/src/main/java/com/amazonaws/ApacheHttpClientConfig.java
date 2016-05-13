@@ -15,15 +15,15 @@
 package com.amazonaws;
 
 import org.apache.http.annotation.NotThreadSafe;
+import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 
 /**
  * Used for Apache HTTP client specific custom configurations.
  */
-@SuppressWarnings("deprecation")
 @NotThreadSafe
 public final class ApacheHttpClientConfig {
-    private SSLSocketFactory sslSocketFactory;
+    private ConnectionSocketFactory sslSocketFactory;
 
     ApacheHttpClientConfig() {}
 
@@ -35,7 +35,7 @@ public final class ApacheHttpClientConfig {
      * Returns a custom Apache HTTP client specific SSL socket factory; 
      * or null if there is none.
      */
-    public SSLSocketFactory getSslSocketFactory() {
+    public ConnectionSocketFactory getSslSocketFactory() {
         return sslSocketFactory;
     }
 
@@ -45,7 +45,7 @@ public final class ApacheHttpClientConfig {
      * @param sslSocketFactory a custom Apache HTTP client specific SSL socket 
      * factory; or null if there is none.
      */
-    public void setSslSocketFactory(SSLSocketFactory sslSocketFactory) {
+    public void setSslSocketFactory(ConnectionSocketFactory sslSocketFactory) {
         this.sslSocketFactory = sslSocketFactory;
     }
 
@@ -57,7 +57,7 @@ public final class ApacheHttpClientConfig {
      * factory; or null if there is none.
      */
     public ApacheHttpClientConfig withSslSocketFactory(
-            SSLSocketFactory sslSocketFactory) {
+            ConnectionSocketFactory sslSocketFactory) {
         this.sslSocketFactory = sslSocketFactory;
         return this;
     }

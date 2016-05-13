@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateDefaultBranchRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class UpdateDefaultBranchRequestMarshaller
         implements
         Marshaller<Request<UpdateDefaultBranchRequest>, UpdateDefaultBranchRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateDefaultBranchRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateDefaultBranchRequest> marshall(
             UpdateDefaultBranchRequest updateDefaultBranchRequest) {
@@ -59,8 +66,8 @@ public class UpdateDefaultBranchRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

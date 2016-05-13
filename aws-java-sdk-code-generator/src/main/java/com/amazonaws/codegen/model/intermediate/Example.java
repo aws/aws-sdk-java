@@ -19,26 +19,26 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class Example {
-	
+
 	private final String description;
 	private final String title;
 	private final String id;
-	
+
 	private final JsonNode input;
 	private final JsonNode output;
 	private final ExampleComments comments;
-	
+
     public Example(
             @JsonProperty(value = "description", required = true) String description,
             @JsonProperty(value = "id", required = true) String id,
             @JsonProperty(value = "title", required = true) String title,
             @JsonProperty(value = "input", required = true) JsonNode input,
-            @JsonProperty(value = "output", required = true) JsonNode output,
+            @JsonProperty(value = "output") JsonNode output,
             @JsonProperty(value = "comments", required = true) ExampleComments comments) {
         this.description = description;
         this.title = title;
         this.id = id;
-        
+
         this.input = input;
         this.output = output;
         this.comments = comments;
@@ -47,23 +47,23 @@ public class Example {
     public String getDescription() {
     	return description;
     }
-    
+
     public String getId() {
     	return id;
     }
-    
+
     public String getTitle() {
     	return title;
     }
-    
+
     public JsonNode getInput() {
     	return input;
     }
-    
+
     public JsonNode getOutput() {
     	return output;
     }
-    
+
     public ExampleComments getComments() {
     	return comments;
     }

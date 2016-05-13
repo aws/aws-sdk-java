@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteDeliveryChannelRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DeleteDeliveryChannelRequestMarshaller
         implements
         Marshaller<Request<DeleteDeliveryChannelRequest>, DeleteDeliveryChannelRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteDeliveryChannelRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteDeliveryChannelRequest> marshall(
             DeleteDeliveryChannelRequest deleteDeliveryChannelRequest) {
@@ -59,8 +66,8 @@ public class DeleteDeliveryChannelRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

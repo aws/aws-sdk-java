@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RemoveTargetsRequest Marshaller
  */
 public class RemoveTargetsRequestMarshaller implements
         Marshaller<Request<RemoveTargetsRequest>, RemoveTargetsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RemoveTargetsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RemoveTargetsRequest> marshall(
             RemoveTargetsRequest removeTargetsRequest) {
@@ -57,8 +63,8 @@ public class RemoveTargetsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

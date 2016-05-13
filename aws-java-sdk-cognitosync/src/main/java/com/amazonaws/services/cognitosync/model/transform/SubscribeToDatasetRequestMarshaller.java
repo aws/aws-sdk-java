@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SubscribeToDatasetRequest Marshaller
@@ -49,6 +50,13 @@ public class SubscribeToDatasetRequestMarshaller
         Marshaller<Request<SubscribeToDatasetRequest>, SubscribeToDatasetRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public SubscribeToDatasetRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<SubscribeToDatasetRequest> marshall(
             SubscribeToDatasetRequest subscribeToDatasetRequest) {
@@ -68,26 +76,32 @@ public class SubscribeToDatasetRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{IdentityPoolId}",
-                        (subscribeToDatasetRequest.getIdentityPoolId() != null) ? StringUtils
-                                .fromString(subscribeToDatasetRequest
-                                        .getIdentityPoolId()) : "");
+                        (subscribeToDatasetRequest.getIdentityPoolId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(subscribeToDatasetRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{IdentityId}",
-                        (subscribeToDatasetRequest.getIdentityId() != null) ? StringUtils
-                                .fromString(subscribeToDatasetRequest
-                                        .getIdentityId()) : "");
+                        (subscribeToDatasetRequest.getIdentityId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(subscribeToDatasetRequest
+                                                .getIdentityId()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{DatasetName}",
-                        (subscribeToDatasetRequest.getDatasetName() != null) ? StringUtils
-                                .fromString(subscribeToDatasetRequest
-                                        .getDatasetName()) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{DeviceId}",
-                (subscribeToDatasetRequest.getDeviceId() != null) ? StringUtils
-                        .fromString(subscribeToDatasetRequest.getDeviceId())
-                        : "");
+                        (subscribeToDatasetRequest.getDatasetName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(subscribeToDatasetRequest
+                                                .getDatasetName()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{DeviceId}",
+                        (subscribeToDatasetRequest.getDeviceId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(subscribeToDatasetRequest
+                                                .getDeviceId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

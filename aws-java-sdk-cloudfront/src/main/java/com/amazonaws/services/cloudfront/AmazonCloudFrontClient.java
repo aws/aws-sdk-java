@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -66,7 +66,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
     /**
-     * List of exception unmarshallers for all CloudFront exceptions.
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -629,6 +629,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
      * 
      * @param deleteCloudFrontOriginAccessIdentityRequest
      *        The request to delete a origin access identity.
+     * @return Result of the DeleteCloudFrontOriginAccessIdentity operation
+     *         returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidIfMatchVersionException
@@ -643,14 +645,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
      */
     @Override
-    public void deleteCloudFrontOriginAccessIdentity(
+    public DeleteCloudFrontOriginAccessIdentityResult deleteCloudFrontOriginAccessIdentity(
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteCloudFrontOriginAccessIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteCloudFrontOriginAccessIdentityRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteCloudFrontOriginAccessIdentityResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -664,9 +666,11 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteCloudFrontOriginAccessIdentityResult> responseHandler = new StaxResponseHandler<DeleteCloudFrontOriginAccessIdentityResult>(
+                    new DeleteCloudFrontOriginAccessIdentityResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -679,6 +683,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
      * 
      * @param deleteDistributionRequest
      *        The request to delete a distribution.
+     * @return Result of the DeleteDistribution operation returned by the
+     *         service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws DistributionNotDisabledException
@@ -693,14 +699,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
      * @sample AmazonCloudFront.DeleteDistribution
      */
     @Override
-    public void deleteDistribution(
+    public DeleteDistributionResult deleteDistribution(
             DeleteDistributionRequest deleteDistributionRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteDistributionRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteDistributionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -714,9 +720,11 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteDistributionResult> responseHandler = new StaxResponseHandler<DeleteDistributionResult>(
+                    new DeleteDistributionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -729,6 +737,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
      * 
      * @param deleteStreamingDistributionRequest
      *        The request to delete a streaming distribution.
+     * @return Result of the DeleteStreamingDistribution operation returned by
+     *         the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws StreamingDistributionNotDisabledException
@@ -743,14 +753,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
      * @sample AmazonCloudFront.DeleteStreamingDistribution
      */
     @Override
-    public void deleteStreamingDistribution(
+    public DeleteStreamingDistributionResult deleteStreamingDistribution(
             DeleteStreamingDistributionRequest deleteStreamingDistributionRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteStreamingDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteStreamingDistributionRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteStreamingDistributionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -764,9 +774,11 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteStreamingDistributionResult> responseHandler = new StaxResponseHandler<DeleteStreamingDistributionResult>(
+                    new DeleteStreamingDistributionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 

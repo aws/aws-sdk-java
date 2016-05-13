@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RejectCertificateTransferRequest Marshaller
@@ -48,7 +49,14 @@ public class RejectCertificateTransferRequestMarshaller
         implements
         Marshaller<Request<RejectCertificateTransferRequest>, RejectCertificateTransferRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RejectCertificateTransferRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RejectCertificateTransferRequest> marshall(
             RejectCertificateTransferRequest rejectCertificateTransferRequest) {
@@ -68,14 +76,16 @@ public class RejectCertificateTransferRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{certificateId}",
-                        (rejectCertificateTransferRequest.getCertificateId() != null) ? StringUtils
-                                .fromString(rejectCertificateTransferRequest
-                                        .getCertificateId()) : "");
+                        (rejectCertificateTransferRequest.getCertificateId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(rejectCertificateTransferRequest
+                                                .getCertificateId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (rejectCertificateTransferRequest.getRejectReason() != null) {

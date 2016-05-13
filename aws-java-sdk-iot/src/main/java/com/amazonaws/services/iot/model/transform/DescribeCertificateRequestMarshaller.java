@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeCertificateRequest Marshaller
@@ -48,7 +49,14 @@ public class DescribeCertificateRequestMarshaller
         implements
         Marshaller<Request<DescribeCertificateRequest>, DescribeCertificateRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeCertificateRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeCertificateRequest> marshall(
             DescribeCertificateRequest describeCertificateRequest) {
@@ -68,9 +76,11 @@ public class DescribeCertificateRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{certificateId}",
-                        (describeCertificateRequest.getCertificateId() != null) ? StringUtils
-                                .fromString(describeCertificateRequest
-                                        .getCertificateId()) : "");
+                        (describeCertificateRequest.getCertificateId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(describeCertificateRequest
+                                                .getCertificateId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

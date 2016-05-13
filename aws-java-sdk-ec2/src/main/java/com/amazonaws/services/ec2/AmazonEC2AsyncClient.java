@@ -417,26 +417,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignPrivateIpAddressesAsync(
+    public java.util.concurrent.Future<AssignPrivateIpAddressesResult> assignPrivateIpAddressesAsync(
             AssignPrivateIpAddressesRequest request) {
 
         return assignPrivateIpAddressesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignPrivateIpAddressesAsync(
+    public java.util.concurrent.Future<AssignPrivateIpAddressesResult> assignPrivateIpAddressesAsync(
             final AssignPrivateIpAddressesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AssignPrivateIpAddressesRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AssignPrivateIpAddressesRequest, AssignPrivateIpAddressesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AssignPrivateIpAddressesResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AssignPrivateIpAddressesResult call()
+                            throws Exception {
+                        AssignPrivateIpAddressesResult result;
 
                         try {
-                            assignPrivateIpAddresses(request);
-                            result = null;
+                            result = assignPrivateIpAddresses(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -488,26 +488,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> associateDhcpOptionsAsync(
+    public java.util.concurrent.Future<AssociateDhcpOptionsResult> associateDhcpOptionsAsync(
             AssociateDhcpOptionsRequest request) {
 
         return associateDhcpOptionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> associateDhcpOptionsAsync(
+    public java.util.concurrent.Future<AssociateDhcpOptionsResult> associateDhcpOptionsAsync(
             final AssociateDhcpOptionsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AssociateDhcpOptionsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AssociateDhcpOptionsRequest, AssociateDhcpOptionsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AssociateDhcpOptionsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AssociateDhcpOptionsResult call() throws Exception {
+                        AssociateDhcpOptionsResult result;
 
                         try {
-                            associateDhcpOptions(request);
-                            result = null;
+                            result = associateDhcpOptions(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -594,26 +593,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachInternetGatewayAsync(
+    public java.util.concurrent.Future<AttachInternetGatewayResult> attachInternetGatewayAsync(
             AttachInternetGatewayRequest request) {
 
         return attachInternetGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachInternetGatewayAsync(
+    public java.util.concurrent.Future<AttachInternetGatewayResult> attachInternetGatewayAsync(
             final AttachInternetGatewayRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AttachInternetGatewayRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AttachInternetGatewayRequest, AttachInternetGatewayResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AttachInternetGatewayResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AttachInternetGatewayResult call() throws Exception {
+                        AttachInternetGatewayResult result;
 
                         try {
-                            attachInternetGateway(request);
-                            result = null;
+                            result = attachInternetGateway(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -735,26 +733,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> authorizeSecurityGroupEgressAsync(
+    public java.util.concurrent.Future<AuthorizeSecurityGroupEgressResult> authorizeSecurityGroupEgressAsync(
             AuthorizeSecurityGroupEgressRequest request) {
 
         return authorizeSecurityGroupEgressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> authorizeSecurityGroupEgressAsync(
+    public java.util.concurrent.Future<AuthorizeSecurityGroupEgressResult> authorizeSecurityGroupEgressAsync(
             final AuthorizeSecurityGroupEgressRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupEgressRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupEgressRequest, AuthorizeSecurityGroupEgressResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AuthorizeSecurityGroupEgressResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AuthorizeSecurityGroupEgressResult call()
+                            throws Exception {
+                        AuthorizeSecurityGroupEgressResult result;
 
                         try {
-                            authorizeSecurityGroupEgress(request);
-                            result = null;
+                            result = authorizeSecurityGroupEgress(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -771,26 +769,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> authorizeSecurityGroupIngressAsync(
+    public java.util.concurrent.Future<AuthorizeSecurityGroupIngressResult> authorizeSecurityGroupIngressAsync(
             AuthorizeSecurityGroupIngressRequest request) {
 
         return authorizeSecurityGroupIngressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> authorizeSecurityGroupIngressAsync(
+    public java.util.concurrent.Future<AuthorizeSecurityGroupIngressResult> authorizeSecurityGroupIngressAsync(
             final AuthorizeSecurityGroupIngressRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupIngressRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AuthorizeSecurityGroupIngressRequest, AuthorizeSecurityGroupIngressResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AuthorizeSecurityGroupIngressResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AuthorizeSecurityGroupIngressResult call()
+                            throws Exception {
+                        AuthorizeSecurityGroupIngressResult result;
 
                         try {
-                            authorizeSecurityGroupIngress(request);
-                            result = null;
+                            result = authorizeSecurityGroupIngress(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -877,26 +875,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelConversionTaskAsync(
+    public java.util.concurrent.Future<CancelConversionTaskResult> cancelConversionTaskAsync(
             CancelConversionTaskRequest request) {
 
         return cancelConversionTaskAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelConversionTaskAsync(
+    public java.util.concurrent.Future<CancelConversionTaskResult> cancelConversionTaskAsync(
             final CancelConversionTaskRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CancelConversionTaskRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CancelConversionTaskRequest, CancelConversionTaskResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CancelConversionTaskResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CancelConversionTaskResult call() throws Exception {
+                        CancelConversionTaskResult result;
 
                         try {
-                            cancelConversionTask(request);
-                            result = null;
+                            result = cancelConversionTask(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -913,26 +910,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             CancelExportTaskRequest request) {
 
         return cancelExportTaskAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             final CancelExportTaskRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CancelExportTaskResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CancelExportTaskResult call() throws Exception {
+                        CancelExportTaskResult result;
 
                         try {
-                            cancelExportTask(request);
-                            result = null;
+                            result = cancelExportTask(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1563,26 +1559,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createNetworkAclEntryAsync(
+    public java.util.concurrent.Future<CreateNetworkAclEntryResult> createNetworkAclEntryAsync(
             CreateNetworkAclEntryRequest request) {
 
         return createNetworkAclEntryAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createNetworkAclEntryAsync(
+    public java.util.concurrent.Future<CreateNetworkAclEntryResult> createNetworkAclEntryAsync(
             final CreateNetworkAclEntryRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateNetworkAclEntryRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreateNetworkAclEntryRequest, CreateNetworkAclEntryResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreateNetworkAclEntryResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreateNetworkAclEntryResult call() throws Exception {
+                        CreateNetworkAclEntryResult result;
 
                         try {
-                            createNetworkAclEntry(request);
-                            result = null;
+                            result = createNetworkAclEntry(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1634,26 +1629,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createPlacementGroupAsync(
+    public java.util.concurrent.Future<CreatePlacementGroupResult> createPlacementGroupAsync(
             CreatePlacementGroupRequest request) {
 
         return createPlacementGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createPlacementGroupAsync(
+    public java.util.concurrent.Future<CreatePlacementGroupResult> createPlacementGroupAsync(
             final CreatePlacementGroupRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreatePlacementGroupRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreatePlacementGroupRequest, CreatePlacementGroupResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreatePlacementGroupResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreatePlacementGroupResult call() throws Exception {
+                        CreatePlacementGroupResult result;
 
                         try {
-                            createPlacementGroup(request);
-                            result = null;
+                            result = createPlacementGroup(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1917,26 +1911,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createTagsAsync(
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
             CreateTagsRequest request) {
 
         return createTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createTagsAsync(
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
             final CreateTagsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreateTagsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreateTagsResult call() throws Exception {
+                        CreateTagsResult result;
 
                         try {
-                            createTags(request);
-                            result = null;
+                            result = createTags(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2155,26 +2148,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createVpnConnectionRouteAsync(
+    public java.util.concurrent.Future<CreateVpnConnectionRouteResult> createVpnConnectionRouteAsync(
             CreateVpnConnectionRouteRequest request) {
 
         return createVpnConnectionRouteAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createVpnConnectionRouteAsync(
+    public java.util.concurrent.Future<CreateVpnConnectionRouteResult> createVpnConnectionRouteAsync(
             final CreateVpnConnectionRouteRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateVpnConnectionRouteRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreateVpnConnectionRouteRequest, CreateVpnConnectionRouteResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreateVpnConnectionRouteResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreateVpnConnectionRouteResult call()
+                            throws Exception {
+                        CreateVpnConnectionRouteResult result;
 
                         try {
-                            createVpnConnectionRoute(request);
-                            result = null;
+                            result = createVpnConnectionRoute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2226,26 +2219,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCustomerGatewayAsync(
+    public java.util.concurrent.Future<DeleteCustomerGatewayResult> deleteCustomerGatewayAsync(
             DeleteCustomerGatewayRequest request) {
 
         return deleteCustomerGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCustomerGatewayAsync(
+    public java.util.concurrent.Future<DeleteCustomerGatewayResult> deleteCustomerGatewayAsync(
             final DeleteCustomerGatewayRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteCustomerGatewayRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteCustomerGatewayRequest, DeleteCustomerGatewayResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteCustomerGatewayResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteCustomerGatewayResult call() throws Exception {
+                        DeleteCustomerGatewayResult result;
 
                         try {
-                            deleteCustomerGateway(request);
-                            result = null;
+                            result = deleteCustomerGateway(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2262,26 +2254,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDhcpOptionsAsync(
+    public java.util.concurrent.Future<DeleteDhcpOptionsResult> deleteDhcpOptionsAsync(
             DeleteDhcpOptionsRequest request) {
 
         return deleteDhcpOptionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDhcpOptionsAsync(
+    public java.util.concurrent.Future<DeleteDhcpOptionsResult> deleteDhcpOptionsAsync(
             final DeleteDhcpOptionsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteDhcpOptionsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteDhcpOptionsRequest, DeleteDhcpOptionsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteDhcpOptionsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteDhcpOptionsResult call() throws Exception {
+                        DeleteDhcpOptionsResult result;
 
                         try {
-                            deleteDhcpOptions(request);
-                            result = null;
+                            result = deleteDhcpOptions(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2333,26 +2324,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteInternetGatewayAsync(
+    public java.util.concurrent.Future<DeleteInternetGatewayResult> deleteInternetGatewayAsync(
             DeleteInternetGatewayRequest request) {
 
         return deleteInternetGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteInternetGatewayAsync(
+    public java.util.concurrent.Future<DeleteInternetGatewayResult> deleteInternetGatewayAsync(
             final DeleteInternetGatewayRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteInternetGatewayRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteInternetGatewayRequest, DeleteInternetGatewayResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteInternetGatewayResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteInternetGatewayResult call() throws Exception {
+                        DeleteInternetGatewayResult result;
 
                         try {
-                            deleteInternetGateway(request);
-                            result = null;
+                            result = deleteInternetGateway(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2369,26 +2359,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteKeyPairAsync(
+    public java.util.concurrent.Future<DeleteKeyPairResult> deleteKeyPairAsync(
             DeleteKeyPairRequest request) {
 
         return deleteKeyPairAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteKeyPairAsync(
+    public java.util.concurrent.Future<DeleteKeyPairResult> deleteKeyPairAsync(
             final DeleteKeyPairRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteKeyPairRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteKeyPairRequest, DeleteKeyPairResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteKeyPairResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteKeyPairResult call() throws Exception {
+                        DeleteKeyPairResult result;
 
                         try {
-                            deleteKeyPair(request);
-                            result = null;
+                            result = deleteKeyPair(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2440,26 +2429,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkAclAsync(
+    public java.util.concurrent.Future<DeleteNetworkAclResult> deleteNetworkAclAsync(
             DeleteNetworkAclRequest request) {
 
         return deleteNetworkAclAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkAclAsync(
+    public java.util.concurrent.Future<DeleteNetworkAclResult> deleteNetworkAclAsync(
             final DeleteNetworkAclRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclRequest, DeleteNetworkAclResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteNetworkAclResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteNetworkAclResult call() throws Exception {
+                        DeleteNetworkAclResult result;
 
                         try {
-                            deleteNetworkAcl(request);
-                            result = null;
+                            result = deleteNetworkAcl(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2476,26 +2464,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkAclEntryAsync(
+    public java.util.concurrent.Future<DeleteNetworkAclEntryResult> deleteNetworkAclEntryAsync(
             DeleteNetworkAclEntryRequest request) {
 
         return deleteNetworkAclEntryAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkAclEntryAsync(
+    public java.util.concurrent.Future<DeleteNetworkAclEntryResult> deleteNetworkAclEntryAsync(
             final DeleteNetworkAclEntryRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclEntryRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteNetworkAclEntryRequest, DeleteNetworkAclEntryResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteNetworkAclEntryResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteNetworkAclEntryResult call() throws Exception {
+                        DeleteNetworkAclEntryResult result;
 
                         try {
-                            deleteNetworkAclEntry(request);
-                            result = null;
+                            result = deleteNetworkAclEntry(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2512,26 +2499,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkInterfaceAsync(
+    public java.util.concurrent.Future<DeleteNetworkInterfaceResult> deleteNetworkInterfaceAsync(
             DeleteNetworkInterfaceRequest request) {
 
         return deleteNetworkInterfaceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNetworkInterfaceAsync(
+    public java.util.concurrent.Future<DeleteNetworkInterfaceResult> deleteNetworkInterfaceAsync(
             final DeleteNetworkInterfaceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteNetworkInterfaceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteNetworkInterfaceRequest, DeleteNetworkInterfaceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteNetworkInterfaceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteNetworkInterfaceResult call() throws Exception {
+                        DeleteNetworkInterfaceResult result;
 
                         try {
-                            deleteNetworkInterface(request);
-                            result = null;
+                            result = deleteNetworkInterface(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2548,26 +2534,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePlacementGroupAsync(
+    public java.util.concurrent.Future<DeletePlacementGroupResult> deletePlacementGroupAsync(
             DeletePlacementGroupRequest request) {
 
         return deletePlacementGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePlacementGroupAsync(
+    public java.util.concurrent.Future<DeletePlacementGroupResult> deletePlacementGroupAsync(
             final DeletePlacementGroupRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeletePlacementGroupRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeletePlacementGroupRequest, DeletePlacementGroupResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeletePlacementGroupResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeletePlacementGroupResult call() throws Exception {
+                        DeletePlacementGroupResult result;
 
                         try {
-                            deletePlacementGroup(request);
-                            result = null;
+                            result = deletePlacementGroup(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2584,26 +2569,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRouteAsync(
+    public java.util.concurrent.Future<DeleteRouteResult> deleteRouteAsync(
             DeleteRouteRequest request) {
 
         return deleteRouteAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRouteAsync(
+    public java.util.concurrent.Future<DeleteRouteResult> deleteRouteAsync(
             final DeleteRouteRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteRouteRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteRouteRequest, DeleteRouteResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteRouteResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteRouteResult call() throws Exception {
+                        DeleteRouteResult result;
 
                         try {
-                            deleteRoute(request);
-                            result = null;
+                            result = deleteRoute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2620,26 +2604,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRouteTableAsync(
+    public java.util.concurrent.Future<DeleteRouteTableResult> deleteRouteTableAsync(
             DeleteRouteTableRequest request) {
 
         return deleteRouteTableAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRouteTableAsync(
+    public java.util.concurrent.Future<DeleteRouteTableResult> deleteRouteTableAsync(
             final DeleteRouteTableRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteRouteTableRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteRouteTableRequest, DeleteRouteTableResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteRouteTableResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteRouteTableResult call() throws Exception {
+                        DeleteRouteTableResult result;
 
                         try {
-                            deleteRouteTable(request);
-                            result = null;
+                            result = deleteRouteTable(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2656,26 +2639,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSecurityGroupAsync(
+    public java.util.concurrent.Future<DeleteSecurityGroupResult> deleteSecurityGroupAsync(
             DeleteSecurityGroupRequest request) {
 
         return deleteSecurityGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSecurityGroupAsync(
+    public java.util.concurrent.Future<DeleteSecurityGroupResult> deleteSecurityGroupAsync(
             final DeleteSecurityGroupRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteSecurityGroupRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteSecurityGroupRequest, DeleteSecurityGroupResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteSecurityGroupResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteSecurityGroupResult call() throws Exception {
+                        DeleteSecurityGroupResult result;
 
                         try {
-                            deleteSecurityGroup(request);
-                            result = null;
+                            result = deleteSecurityGroup(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2692,26 +2674,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSnapshotAsync(
+    public java.util.concurrent.Future<DeleteSnapshotResult> deleteSnapshotAsync(
             DeleteSnapshotRequest request) {
 
         return deleteSnapshotAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSnapshotAsync(
+    public java.util.concurrent.Future<DeleteSnapshotResult> deleteSnapshotAsync(
             final DeleteSnapshotRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, DeleteSnapshotResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteSnapshotResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteSnapshotResult call() throws Exception {
+                        DeleteSnapshotResult result;
 
                         try {
-                            deleteSnapshot(request);
-                            result = null;
+                            result = deleteSnapshot(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2728,26 +2709,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync(
+    public java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync(
             DeleteSpotDatafeedSubscriptionRequest request) {
 
         return deleteSpotDatafeedSubscriptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync(
+    public java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync(
             final DeleteSpotDatafeedSubscriptionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, DeleteSpotDatafeedSubscriptionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteSpotDatafeedSubscriptionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteSpotDatafeedSubscriptionResult call()
+                            throws Exception {
+                        DeleteSpotDatafeedSubscriptionResult result;
 
                         try {
-                            deleteSpotDatafeedSubscription(request);
-                            result = null;
+                            result = deleteSpotDatafeedSubscription(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2770,7 +2751,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
      * @see #deleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync() {
+    public java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync() {
 
         return deleteSpotDatafeedSubscriptionAsync(new DeleteSpotDatafeedSubscriptionRequest());
     }
@@ -2782,34 +2763,33 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
      * @see #deleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> deleteSpotDatafeedSubscriptionAsync(
-            com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync(
+            com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, DeleteSpotDatafeedSubscriptionResult> asyncHandler) {
 
         return deleteSpotDatafeedSubscriptionAsync(
                 new DeleteSpotDatafeedSubscriptionRequest(), asyncHandler);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSubnetAsync(
+    public java.util.concurrent.Future<DeleteSubnetResult> deleteSubnetAsync(
             DeleteSubnetRequest request) {
 
         return deleteSubnetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSubnetAsync(
+    public java.util.concurrent.Future<DeleteSubnetResult> deleteSubnetAsync(
             final DeleteSubnetRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteSubnetRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteSubnetRequest, DeleteSubnetResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteSubnetResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteSubnetResult call() throws Exception {
+                        DeleteSubnetResult result;
 
                         try {
-                            deleteSubnet(request);
-                            result = null;
+                            result = deleteSubnet(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2826,26 +2806,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTagsAsync(
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             DeleteTagsRequest request) {
 
         return deleteTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTagsAsync(
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             final DeleteTagsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteTagsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteTagsResult call() throws Exception {
+                        DeleteTagsResult result;
 
                         try {
-                            deleteTags(request);
-                            result = null;
+                            result = deleteTags(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2862,26 +2841,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVolumeAsync(
+    public java.util.concurrent.Future<DeleteVolumeResult> deleteVolumeAsync(
             DeleteVolumeRequest request) {
 
         return deleteVolumeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVolumeAsync(
+    public java.util.concurrent.Future<DeleteVolumeResult> deleteVolumeAsync(
             final DeleteVolumeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteVolumeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteVolumeRequest, DeleteVolumeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteVolumeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteVolumeResult call() throws Exception {
+                        DeleteVolumeResult result;
 
                         try {
-                            deleteVolume(request);
-                            result = null;
+                            result = deleteVolume(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2898,26 +2876,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpcAsync(
+    public java.util.concurrent.Future<DeleteVpcResult> deleteVpcAsync(
             DeleteVpcRequest request) {
 
         return deleteVpcAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpcAsync(
+    public java.util.concurrent.Future<DeleteVpcResult> deleteVpcAsync(
             final DeleteVpcRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteVpcRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteVpcRequest, DeleteVpcResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteVpcResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteVpcResult call() throws Exception {
+                        DeleteVpcResult result;
 
                         try {
-                            deleteVpc(request);
-                            result = null;
+                            result = deleteVpc(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -3005,26 +2982,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnConnectionAsync(
+    public java.util.concurrent.Future<DeleteVpnConnectionResult> deleteVpnConnectionAsync(
             DeleteVpnConnectionRequest request) {
 
         return deleteVpnConnectionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnConnectionAsync(
+    public java.util.concurrent.Future<DeleteVpnConnectionResult> deleteVpnConnectionAsync(
             final DeleteVpnConnectionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRequest, DeleteVpnConnectionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteVpnConnectionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteVpnConnectionResult call() throws Exception {
+                        DeleteVpnConnectionResult result;
 
                         try {
-                            deleteVpnConnection(request);
-                            result = null;
+                            result = deleteVpnConnection(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -3041,26 +3017,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnConnectionRouteAsync(
+    public java.util.concurrent.Future<DeleteVpnConnectionRouteResult> deleteVpnConnectionRouteAsync(
             DeleteVpnConnectionRouteRequest request) {
 
         return deleteVpnConnectionRouteAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnConnectionRouteAsync(
+    public java.util.concurrent.Future<DeleteVpnConnectionRouteResult> deleteVpnConnectionRouteAsync(
             final DeleteVpnConnectionRouteRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRouteRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteVpnConnectionRouteRequest, DeleteVpnConnectionRouteResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteVpnConnectionRouteResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteVpnConnectionRouteResult call()
+                            throws Exception {
+                        DeleteVpnConnectionRouteResult result;
 
                         try {
-                            deleteVpnConnectionRoute(request);
-                            result = null;
+                            result = deleteVpnConnectionRoute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -3077,26 +3053,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnGatewayAsync(
+    public java.util.concurrent.Future<DeleteVpnGatewayResult> deleteVpnGatewayAsync(
             DeleteVpnGatewayRequest request) {
 
         return deleteVpnGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVpnGatewayAsync(
+    public java.util.concurrent.Future<DeleteVpnGatewayResult> deleteVpnGatewayAsync(
             final DeleteVpnGatewayRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteVpnGatewayRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteVpnGatewayRequest, DeleteVpnGatewayResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteVpnGatewayResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteVpnGatewayResult call() throws Exception {
+                        DeleteVpnGatewayResult result;
 
                         try {
-                            deleteVpnGateway(request);
-                            result = null;
+                            result = deleteVpnGateway(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -3113,26 +3088,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterImageAsync(
+    public java.util.concurrent.Future<DeregisterImageResult> deregisterImageAsync(
             DeregisterImageRequest request) {
 
         return deregisterImageAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterImageAsync(
+    public java.util.concurrent.Future<DeregisterImageResult> deregisterImageAsync(
             final DeregisterImageRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeregisterImageRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeregisterImageRequest, DeregisterImageResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeregisterImageResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeregisterImageResult call() throws Exception {
+                        DeregisterImageResult result;
 
                         try {
-                            deregisterImage(request);
-                            result = null;
+                            result = deregisterImage(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -5191,6 +5165,42 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSecurityGroupReferencesResult> describeSecurityGroupReferencesAsync(
+            DescribeSecurityGroupReferencesRequest request) {
+
+        return describeSecurityGroupReferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityGroupReferencesResult> describeSecurityGroupReferencesAsync(
+            final DescribeSecurityGroupReferencesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSecurityGroupReferencesRequest, DescribeSecurityGroupReferencesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeSecurityGroupReferencesResult>() {
+                    @Override
+                    public DescribeSecurityGroupReferencesResult call()
+                            throws Exception {
+                        DescribeSecurityGroupReferencesResult result;
+
+                        try {
+                            result = describeSecurityGroupReferences(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSecurityGroupsResult> describeSecurityGroupsAsync(
             DescribeSecurityGroupsRequest request) {
 
@@ -5664,6 +5674,42 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
 
         return describeSpotPriceHistoryAsync(
                 new DescribeSpotPriceHistoryRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStaleSecurityGroupsResult> describeStaleSecurityGroupsAsync(
+            DescribeStaleSecurityGroupsRequest request) {
+
+        return describeStaleSecurityGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStaleSecurityGroupsResult> describeStaleSecurityGroupsAsync(
+            final DescribeStaleSecurityGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStaleSecurityGroupsRequest, DescribeStaleSecurityGroupsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeStaleSecurityGroupsResult>() {
+                    @Override
+                    public DescribeStaleSecurityGroupsResult call()
+                            throws Exception {
+                        DescribeStaleSecurityGroupsResult result;
+
+                        try {
+                            result = describeStaleSecurityGroups(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override
@@ -6469,26 +6515,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachInternetGatewayAsync(
+    public java.util.concurrent.Future<DetachInternetGatewayResult> detachInternetGatewayAsync(
             DetachInternetGatewayRequest request) {
 
         return detachInternetGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachInternetGatewayAsync(
+    public java.util.concurrent.Future<DetachInternetGatewayResult> detachInternetGatewayAsync(
             final DetachInternetGatewayRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DetachInternetGatewayRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DetachInternetGatewayRequest, DetachInternetGatewayResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DetachInternetGatewayResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DetachInternetGatewayResult call() throws Exception {
+                        DetachInternetGatewayResult result;
 
                         try {
-                            detachInternetGateway(request);
-                            result = null;
+                            result = detachInternetGateway(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -6505,26 +6550,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachNetworkInterfaceAsync(
+    public java.util.concurrent.Future<DetachNetworkInterfaceResult> detachNetworkInterfaceAsync(
             DetachNetworkInterfaceRequest request) {
 
         return detachNetworkInterfaceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachNetworkInterfaceAsync(
+    public java.util.concurrent.Future<DetachNetworkInterfaceResult> detachNetworkInterfaceAsync(
             final DetachNetworkInterfaceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DetachNetworkInterfaceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DetachNetworkInterfaceRequest, DetachNetworkInterfaceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DetachNetworkInterfaceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DetachNetworkInterfaceResult call() throws Exception {
+                        DetachNetworkInterfaceResult result;
 
                         try {
-                            detachNetworkInterface(request);
-                            result = null;
+                            result = detachNetworkInterface(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -6576,26 +6620,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachVpnGatewayAsync(
+    public java.util.concurrent.Future<DetachVpnGatewayResult> detachVpnGatewayAsync(
             DetachVpnGatewayRequest request) {
 
         return detachVpnGatewayAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachVpnGatewayAsync(
+    public java.util.concurrent.Future<DetachVpnGatewayResult> detachVpnGatewayAsync(
             final DetachVpnGatewayRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DetachVpnGatewayRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DetachVpnGatewayRequest, DetachVpnGatewayResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DetachVpnGatewayResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DetachVpnGatewayResult call() throws Exception {
+                        DetachVpnGatewayResult result;
 
                         try {
-                            detachVpnGateway(request);
-                            result = null;
+                            result = detachVpnGateway(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -6612,26 +6655,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableVgwRoutePropagationAsync(
+    public java.util.concurrent.Future<DisableVgwRoutePropagationResult> disableVgwRoutePropagationAsync(
             DisableVgwRoutePropagationRequest request) {
 
         return disableVgwRoutePropagationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableVgwRoutePropagationAsync(
+    public java.util.concurrent.Future<DisableVgwRoutePropagationResult> disableVgwRoutePropagationAsync(
             final DisableVgwRoutePropagationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DisableVgwRoutePropagationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DisableVgwRoutePropagationRequest, DisableVgwRoutePropagationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DisableVgwRoutePropagationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DisableVgwRoutePropagationResult call()
+                            throws Exception {
+                        DisableVgwRoutePropagationResult result;
 
                         try {
-                            disableVgwRoutePropagation(request);
-                            result = null;
+                            result = disableVgwRoutePropagation(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -6719,26 +6762,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateAddressAsync(
+    public java.util.concurrent.Future<DisassociateAddressResult> disassociateAddressAsync(
             DisassociateAddressRequest request) {
 
         return disassociateAddressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateAddressAsync(
+    public java.util.concurrent.Future<DisassociateAddressResult> disassociateAddressAsync(
             final DisassociateAddressRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DisassociateAddressRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DisassociateAddressRequest, DisassociateAddressResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DisassociateAddressResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DisassociateAddressResult call() throws Exception {
+                        DisassociateAddressResult result;
 
                         try {
-                            disassociateAddress(request);
-                            result = null;
+                            result = disassociateAddress(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -6755,26 +6797,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateRouteTableAsync(
+    public java.util.concurrent.Future<DisassociateRouteTableResult> disassociateRouteTableAsync(
             DisassociateRouteTableRequest request) {
 
         return disassociateRouteTableAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateRouteTableAsync(
+    public java.util.concurrent.Future<DisassociateRouteTableResult> disassociateRouteTableAsync(
             final DisassociateRouteTableRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DisassociateRouteTableRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DisassociateRouteTableRequest, DisassociateRouteTableResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DisassociateRouteTableResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DisassociateRouteTableResult call() throws Exception {
+                        DisassociateRouteTableResult result;
 
                         try {
-                            disassociateRouteTable(request);
-                            result = null;
+                            result = disassociateRouteTable(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -6791,26 +6832,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableVgwRoutePropagationAsync(
+    public java.util.concurrent.Future<EnableVgwRoutePropagationResult> enableVgwRoutePropagationAsync(
             EnableVgwRoutePropagationRequest request) {
 
         return enableVgwRoutePropagationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableVgwRoutePropagationAsync(
+    public java.util.concurrent.Future<EnableVgwRoutePropagationResult> enableVgwRoutePropagationAsync(
             final EnableVgwRoutePropagationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<EnableVgwRoutePropagationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<EnableVgwRoutePropagationRequest, EnableVgwRoutePropagationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<EnableVgwRoutePropagationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public EnableVgwRoutePropagationResult call()
+                            throws Exception {
+                        EnableVgwRoutePropagationResult result;
 
                         try {
-                            enableVgwRoutePropagation(request);
-                            result = null;
+                            result = enableVgwRoutePropagation(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -6827,26 +6868,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableVolumeIOAsync(
+    public java.util.concurrent.Future<EnableVolumeIOResult> enableVolumeIOAsync(
             EnableVolumeIORequest request) {
 
         return enableVolumeIOAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableVolumeIOAsync(
+    public java.util.concurrent.Future<EnableVolumeIOResult> enableVolumeIOAsync(
             final EnableVolumeIORequest request,
-            final com.amazonaws.handlers.AsyncHandler<EnableVolumeIORequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<EnableVolumeIORequest, EnableVolumeIOResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<EnableVolumeIOResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public EnableVolumeIOResult call() throws Exception {
+                        EnableVolumeIOResult result;
 
                         try {
-                            enableVolumeIO(request);
-                            result = null;
+                            result = enableVolumeIO(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -7262,26 +7302,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyIdFormatAsync(
+    public java.util.concurrent.Future<ModifyIdFormatResult> modifyIdFormatAsync(
             ModifyIdFormatRequest request) {
 
         return modifyIdFormatAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyIdFormatAsync(
+    public java.util.concurrent.Future<ModifyIdFormatResult> modifyIdFormatAsync(
             final ModifyIdFormatRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ModifyIdFormatRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ModifyIdFormatRequest, ModifyIdFormatResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ModifyIdFormatResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ModifyIdFormatResult call() throws Exception {
+                        ModifyIdFormatResult result;
 
                         try {
-                            modifyIdFormat(request);
-                            result = null;
+                            result = modifyIdFormat(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -7298,26 +7337,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyImageAttributeAsync(
+    public java.util.concurrent.Future<ModifyImageAttributeResult> modifyImageAttributeAsync(
             ModifyImageAttributeRequest request) {
 
         return modifyImageAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyImageAttributeAsync(
+    public java.util.concurrent.Future<ModifyImageAttributeResult> modifyImageAttributeAsync(
             final ModifyImageAttributeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ModifyImageAttributeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ModifyImageAttributeRequest, ModifyImageAttributeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ModifyImageAttributeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ModifyImageAttributeResult call() throws Exception {
+                        ModifyImageAttributeResult result;
 
                         try {
-                            modifyImageAttribute(request);
-                            result = null;
+                            result = modifyImageAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -7334,26 +7372,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyInstanceAttributeAsync(
+    public java.util.concurrent.Future<ModifyInstanceAttributeResult> modifyInstanceAttributeAsync(
             ModifyInstanceAttributeRequest request) {
 
         return modifyInstanceAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyInstanceAttributeAsync(
+    public java.util.concurrent.Future<ModifyInstanceAttributeResult> modifyInstanceAttributeAsync(
             final ModifyInstanceAttributeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ModifyInstanceAttributeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ModifyInstanceAttributeRequest, ModifyInstanceAttributeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ModifyInstanceAttributeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ModifyInstanceAttributeResult call()
+                            throws Exception {
+                        ModifyInstanceAttributeResult result;
 
                         try {
-                            modifyInstanceAttribute(request);
-                            result = null;
+                            result = modifyInstanceAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -7406,26 +7444,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyNetworkInterfaceAttributeAsync(
+    public java.util.concurrent.Future<ModifyNetworkInterfaceAttributeResult> modifyNetworkInterfaceAttributeAsync(
             ModifyNetworkInterfaceAttributeRequest request) {
 
         return modifyNetworkInterfaceAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyNetworkInterfaceAttributeAsync(
+    public java.util.concurrent.Future<ModifyNetworkInterfaceAttributeResult> modifyNetworkInterfaceAttributeAsync(
             final ModifyNetworkInterfaceAttributeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ModifyNetworkInterfaceAttributeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ModifyNetworkInterfaceAttributeRequest, ModifyNetworkInterfaceAttributeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ModifyNetworkInterfaceAttributeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ModifyNetworkInterfaceAttributeResult call()
+                            throws Exception {
+                        ModifyNetworkInterfaceAttributeResult result;
 
                         try {
-                            modifyNetworkInterfaceAttribute(request);
-                            result = null;
+                            result = modifyNetworkInterfaceAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -7478,26 +7516,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifySnapshotAttributeAsync(
+    public java.util.concurrent.Future<ModifySnapshotAttributeResult> modifySnapshotAttributeAsync(
             ModifySnapshotAttributeRequest request) {
 
         return modifySnapshotAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifySnapshotAttributeAsync(
+    public java.util.concurrent.Future<ModifySnapshotAttributeResult> modifySnapshotAttributeAsync(
             final ModifySnapshotAttributeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ModifySnapshotAttributeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ModifySnapshotAttributeRequest, ModifySnapshotAttributeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ModifySnapshotAttributeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ModifySnapshotAttributeResult call()
+                            throws Exception {
+                        ModifySnapshotAttributeResult result;
 
                         try {
-                            modifySnapshotAttribute(request);
-                            result = null;
+                            result = modifySnapshotAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -7549,26 +7587,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifySubnetAttributeAsync(
+    public java.util.concurrent.Future<ModifySubnetAttributeResult> modifySubnetAttributeAsync(
             ModifySubnetAttributeRequest request) {
 
         return modifySubnetAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifySubnetAttributeAsync(
+    public java.util.concurrent.Future<ModifySubnetAttributeResult> modifySubnetAttributeAsync(
             final ModifySubnetAttributeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ModifySubnetAttributeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ModifySubnetAttributeRequest, ModifySubnetAttributeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ModifySubnetAttributeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ModifySubnetAttributeResult call() throws Exception {
+                        ModifySubnetAttributeResult result;
 
                         try {
-                            modifySubnetAttribute(request);
-                            result = null;
+                            result = modifySubnetAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -7585,26 +7622,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyVolumeAttributeAsync(
+    public java.util.concurrent.Future<ModifyVolumeAttributeResult> modifyVolumeAttributeAsync(
             ModifyVolumeAttributeRequest request) {
 
         return modifyVolumeAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyVolumeAttributeAsync(
+    public java.util.concurrent.Future<ModifyVolumeAttributeResult> modifyVolumeAttributeAsync(
             final ModifyVolumeAttributeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ModifyVolumeAttributeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ModifyVolumeAttributeRequest, ModifyVolumeAttributeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ModifyVolumeAttributeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ModifyVolumeAttributeResult call() throws Exception {
+                        ModifyVolumeAttributeResult result;
 
                         try {
-                            modifyVolumeAttribute(request);
-                            result = null;
+                            result = modifyVolumeAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -7621,26 +7657,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyVpcAttributeAsync(
+    public java.util.concurrent.Future<ModifyVpcAttributeResult> modifyVpcAttributeAsync(
             ModifyVpcAttributeRequest request) {
 
         return modifyVpcAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyVpcAttributeAsync(
+    public java.util.concurrent.Future<ModifyVpcAttributeResult> modifyVpcAttributeAsync(
             final ModifyVpcAttributeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ModifyVpcAttributeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ModifyVpcAttributeRequest, ModifyVpcAttributeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ModifyVpcAttributeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ModifyVpcAttributeResult call() throws Exception {
+                        ModifyVpcAttributeResult result;
 
                         try {
-                            modifyVpcAttribute(request);
-                            result = null;
+                            result = modifyVpcAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -7870,26 +7905,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebootInstancesAsync(
+    public java.util.concurrent.Future<RebootInstancesResult> rebootInstancesAsync(
             RebootInstancesRequest request) {
 
         return rebootInstancesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebootInstancesAsync(
+    public java.util.concurrent.Future<RebootInstancesResult> rebootInstancesAsync(
             final RebootInstancesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RebootInstancesRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RebootInstancesRequest, RebootInstancesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RebootInstancesResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RebootInstancesResult call() throws Exception {
+                        RebootInstancesResult result;
 
                         try {
-                            rebootInstances(request);
-                            result = null;
+                            result = rebootInstances(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -7977,26 +8011,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> releaseAddressAsync(
+    public java.util.concurrent.Future<ReleaseAddressResult> releaseAddressAsync(
             ReleaseAddressRequest request) {
 
         return releaseAddressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> releaseAddressAsync(
+    public java.util.concurrent.Future<ReleaseAddressResult> releaseAddressAsync(
             final ReleaseAddressRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ReleaseAddressRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ReleaseAddressRequest, ReleaseAddressResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ReleaseAddressResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ReleaseAddressResult call() throws Exception {
+                        ReleaseAddressResult result;
 
                         try {
-                            releaseAddress(request);
-                            result = null;
+                            result = releaseAddress(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -8084,26 +8117,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> replaceNetworkAclEntryAsync(
+    public java.util.concurrent.Future<ReplaceNetworkAclEntryResult> replaceNetworkAclEntryAsync(
             ReplaceNetworkAclEntryRequest request) {
 
         return replaceNetworkAclEntryAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> replaceNetworkAclEntryAsync(
+    public java.util.concurrent.Future<ReplaceNetworkAclEntryResult> replaceNetworkAclEntryAsync(
             final ReplaceNetworkAclEntryRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ReplaceNetworkAclEntryRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ReplaceNetworkAclEntryRequest, ReplaceNetworkAclEntryResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ReplaceNetworkAclEntryResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ReplaceNetworkAclEntryResult call() throws Exception {
+                        ReplaceNetworkAclEntryResult result;
 
                         try {
-                            replaceNetworkAclEntry(request);
-                            result = null;
+                            result = replaceNetworkAclEntry(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -8120,26 +8152,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> replaceRouteAsync(
+    public java.util.concurrent.Future<ReplaceRouteResult> replaceRouteAsync(
             ReplaceRouteRequest request) {
 
         return replaceRouteAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> replaceRouteAsync(
+    public java.util.concurrent.Future<ReplaceRouteResult> replaceRouteAsync(
             final ReplaceRouteRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ReplaceRouteRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ReplaceRouteRequest, ReplaceRouteResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ReplaceRouteResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ReplaceRouteResult call() throws Exception {
+                        ReplaceRouteResult result;
 
                         try {
-                            replaceRoute(request);
-                            result = null;
+                            result = replaceRoute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -8192,26 +8223,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> reportInstanceStatusAsync(
+    public java.util.concurrent.Future<ReportInstanceStatusResult> reportInstanceStatusAsync(
             ReportInstanceStatusRequest request) {
 
         return reportInstanceStatusAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> reportInstanceStatusAsync(
+    public java.util.concurrent.Future<ReportInstanceStatusResult> reportInstanceStatusAsync(
             final ReportInstanceStatusRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ReportInstanceStatusRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ReportInstanceStatusRequest, ReportInstanceStatusResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ReportInstanceStatusResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ReportInstanceStatusResult call() throws Exception {
+                        ReportInstanceStatusResult result;
 
                         try {
-                            reportInstanceStatus(request);
-                            result = null;
+                            result = reportInstanceStatus(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -8298,26 +8328,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetImageAttributeAsync(
+    public java.util.concurrent.Future<ResetImageAttributeResult> resetImageAttributeAsync(
             ResetImageAttributeRequest request) {
 
         return resetImageAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetImageAttributeAsync(
+    public java.util.concurrent.Future<ResetImageAttributeResult> resetImageAttributeAsync(
             final ResetImageAttributeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ResetImageAttributeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ResetImageAttributeRequest, ResetImageAttributeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ResetImageAttributeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ResetImageAttributeResult call() throws Exception {
+                        ResetImageAttributeResult result;
 
                         try {
-                            resetImageAttribute(request);
-                            result = null;
+                            result = resetImageAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -8334,26 +8363,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetInstanceAttributeAsync(
+    public java.util.concurrent.Future<ResetInstanceAttributeResult> resetInstanceAttributeAsync(
             ResetInstanceAttributeRequest request) {
 
         return resetInstanceAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetInstanceAttributeAsync(
+    public java.util.concurrent.Future<ResetInstanceAttributeResult> resetInstanceAttributeAsync(
             final ResetInstanceAttributeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ResetInstanceAttributeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ResetInstanceAttributeRequest, ResetInstanceAttributeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ResetInstanceAttributeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ResetInstanceAttributeResult call() throws Exception {
+                        ResetInstanceAttributeResult result;
 
                         try {
-                            resetInstanceAttribute(request);
-                            result = null;
+                            result = resetInstanceAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -8370,26 +8398,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetNetworkInterfaceAttributeAsync(
+    public java.util.concurrent.Future<ResetNetworkInterfaceAttributeResult> resetNetworkInterfaceAttributeAsync(
             ResetNetworkInterfaceAttributeRequest request) {
 
         return resetNetworkInterfaceAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetNetworkInterfaceAttributeAsync(
+    public java.util.concurrent.Future<ResetNetworkInterfaceAttributeResult> resetNetworkInterfaceAttributeAsync(
             final ResetNetworkInterfaceAttributeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ResetNetworkInterfaceAttributeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ResetNetworkInterfaceAttributeRequest, ResetNetworkInterfaceAttributeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ResetNetworkInterfaceAttributeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ResetNetworkInterfaceAttributeResult call()
+                            throws Exception {
+                        ResetNetworkInterfaceAttributeResult result;
 
                         try {
-                            resetNetworkInterfaceAttribute(request);
-                            result = null;
+                            result = resetNetworkInterfaceAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -8406,26 +8434,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetSnapshotAttributeAsync(
+    public java.util.concurrent.Future<ResetSnapshotAttributeResult> resetSnapshotAttributeAsync(
             ResetSnapshotAttributeRequest request) {
 
         return resetSnapshotAttributeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resetSnapshotAttributeAsync(
+    public java.util.concurrent.Future<ResetSnapshotAttributeResult> resetSnapshotAttributeAsync(
             final ResetSnapshotAttributeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ResetSnapshotAttributeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ResetSnapshotAttributeRequest, ResetSnapshotAttributeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ResetSnapshotAttributeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ResetSnapshotAttributeResult call() throws Exception {
+                        ResetSnapshotAttributeResult result;
 
                         try {
-                            resetSnapshotAttribute(request);
-                            result = null;
+                            result = resetSnapshotAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -8478,26 +8505,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> revokeSecurityGroupEgressAsync(
+    public java.util.concurrent.Future<RevokeSecurityGroupEgressResult> revokeSecurityGroupEgressAsync(
             RevokeSecurityGroupEgressRequest request) {
 
         return revokeSecurityGroupEgressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> revokeSecurityGroupEgressAsync(
+    public java.util.concurrent.Future<RevokeSecurityGroupEgressResult> revokeSecurityGroupEgressAsync(
             final RevokeSecurityGroupEgressRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupEgressRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupEgressRequest, RevokeSecurityGroupEgressResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RevokeSecurityGroupEgressResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RevokeSecurityGroupEgressResult call()
+                            throws Exception {
+                        RevokeSecurityGroupEgressResult result;
 
                         try {
-                            revokeSecurityGroupEgress(request);
-                            result = null;
+                            result = revokeSecurityGroupEgress(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -8514,26 +8541,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync(
+    public java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync(
             RevokeSecurityGroupIngressRequest request) {
 
         return revokeSecurityGroupIngressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync(
+    public java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync(
             final RevokeSecurityGroupIngressRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RevokeSecurityGroupIngressResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RevokeSecurityGroupIngressResult call()
+                            throws Exception {
+                        RevokeSecurityGroupIngressResult result;
 
                         try {
-                            revokeSecurityGroupIngress(request);
-                            result = null;
+                            result = revokeSecurityGroupIngress(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -8556,7 +8583,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
      * @see #revokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync() {
+    public java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync() {
 
         return revokeSecurityGroupIngressAsync(new RevokeSecurityGroupIngressRequest());
     }
@@ -8568,8 +8595,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
      * @see #revokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync(
-            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync(
+            com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResult> asyncHandler) {
 
         return revokeSecurityGroupIngressAsync(
                 new RevokeSecurityGroupIngressRequest(), asyncHandler);
@@ -8751,26 +8778,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignPrivateIpAddressesAsync(
+    public java.util.concurrent.Future<UnassignPrivateIpAddressesResult> unassignPrivateIpAddressesAsync(
             UnassignPrivateIpAddressesRequest request) {
 
         return unassignPrivateIpAddressesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignPrivateIpAddressesAsync(
+    public java.util.concurrent.Future<UnassignPrivateIpAddressesResult> unassignPrivateIpAddressesAsync(
             final UnassignPrivateIpAddressesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UnassignPrivateIpAddressesRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UnassignPrivateIpAddressesRequest, UnassignPrivateIpAddressesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UnassignPrivateIpAddressesResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UnassignPrivateIpAddressesResult call()
+                            throws Exception {
+                        UnassignPrivateIpAddressesResult result;
 
                         try {
-                            unassignPrivateIpAddresses(request);
-                            result = null;
+                            result = unassignPrivateIpAddresses(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

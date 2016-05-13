@@ -166,16 +166,16 @@ public class AbstractAmazonSimpleEmailServiceAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVerifiedEmailAddressAsync(
+    public java.util.concurrent.Future<DeleteVerifiedEmailAddressResult> deleteVerifiedEmailAddressAsync(
             DeleteVerifiedEmailAddressRequest request) {
 
         return deleteVerifiedEmailAddressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVerifiedEmailAddressAsync(
+    public java.util.concurrent.Future<DeleteVerifiedEmailAddressResult> deleteVerifiedEmailAddressAsync(
             DeleteVerifiedEmailAddressRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, DeleteVerifiedEmailAddressResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -715,16 +715,16 @@ public class AbstractAmazonSimpleEmailServiceAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> verifyEmailAddressAsync(
+    public java.util.concurrent.Future<VerifyEmailAddressResult> verifyEmailAddressAsync(
             VerifyEmailAddressRequest request) {
 
         return verifyEmailAddressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> verifyEmailAddressAsync(
+    public java.util.concurrent.Future<VerifyEmailAddressResult> verifyEmailAddressAsync(
             VerifyEmailAddressRequest request,
-            com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, VerifyEmailAddressResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

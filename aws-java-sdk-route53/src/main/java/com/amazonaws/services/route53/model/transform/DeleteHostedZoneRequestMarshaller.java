@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * DeleteHostedZoneRequest Marshaller
@@ -60,8 +61,10 @@ public class DeleteHostedZoneRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (deleteHostedZoneRequest.getId() != null) ? StringUtils
-                        .fromString(deleteHostedZoneRequest.getId()) : "");
+                (deleteHostedZoneRequest.getId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(deleteHostedZoneRequest.getId()),
+                                false) : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

@@ -19,32 +19,66 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes a filter for a specific list of instances.
+ * </p>
  */
 public class InstanceInformation implements Serializable, Cloneable {
 
-    /** The instance ID. */
+    /**
+     * <p>
+     * The instance ID.
+     * </p>
+     */
     private String instanceId;
-    /** Connection status of the SSM agent. */
+    /**
+     * <p>
+     * Connection status of the SSM agent.
+     * </p>
+     */
     private String pingStatus;
-    /** The date and time when agent last pinged SSM service. */
+    /**
+     * <p>
+     * The date and time when agent last pinged SSM service.
+     * </p>
+     */
     private java.util.Date lastPingDateTime;
-    /** The version of the SSM agent running on your instance. */
+    /**
+     * <p>
+     * The version of the SSM agent running on your instance.
+     * </p>
+     */
     private String agentVersion;
     /**
+     * <p>
      * Indicates whether latest version of the SSM agent is running on your
      * instance.
+     * </p>
      */
     private Boolean isLatestVersion;
-    /** The operating system platform type. */
+    /**
+     * <p>
+     * The operating system platform type.
+     * </p>
+     */
     private String platformType;
-    /** The name of the operating system platform running on your instance. */
+    /**
+     * <p>
+     * The name of the operating system platform running on your instance.
+     * </p>
+     */
     private String platformName;
-    /** The version of the OS platform running on your instance. */
+    /**
+     * <p>
+     * The version of the OS platform running on your instance.
+     * </p>
+     */
     private String platformVersion;
 
     /**
+     * <p>
      * The instance ID.
+     * </p>
      * 
      * @param instanceId
      *        The instance ID.
@@ -55,7 +89,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance ID.
+     * </p>
      * 
      * @return The instance ID.
      */
@@ -65,7 +101,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance ID.
+     * </p>
      * 
      * @param instanceId
      *        The instance ID.
@@ -79,7 +117,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Connection status of the SSM agent.
+     * </p>
      * 
      * @param pingStatus
      *        Connection status of the SSM agent.
@@ -91,7 +131,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Connection status of the SSM agent.
+     * </p>
      * 
      * @return Connection status of the SSM agent.
      * @see PingStatus
@@ -102,7 +144,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Connection status of the SSM agent.
+     * </p>
      * 
      * @param pingStatus
      *        Connection status of the SSM agent.
@@ -117,7 +161,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Connection status of the SSM agent.
+     * </p>
      * 
      * @param pingStatus
      *        Connection status of the SSM agent.
@@ -129,7 +175,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Connection status of the SSM agent.
+     * </p>
      * 
      * @param pingStatus
      *        Connection status of the SSM agent.
@@ -144,7 +192,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time when agent last pinged SSM service.
+     * </p>
      * 
      * @param lastPingDateTime
      *        The date and time when agent last pinged SSM service.
@@ -155,7 +205,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time when agent last pinged SSM service.
+     * </p>
      * 
      * @return The date and time when agent last pinged SSM service.
      */
@@ -165,7 +217,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time when agent last pinged SSM service.
+     * </p>
      * 
      * @param lastPingDateTime
      *        The date and time when agent last pinged SSM service.
@@ -180,7 +234,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The version of the SSM agent running on your instance.
+     * </p>
      * 
      * @param agentVersion
      *        The version of the SSM agent running on your instance.
@@ -191,7 +247,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The version of the SSM agent running on your instance.
+     * </p>
      * 
      * @return The version of the SSM agent running on your instance.
      */
@@ -201,7 +259,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The version of the SSM agent running on your instance.
+     * </p>
      * 
      * @param agentVersion
      *        The version of the SSM agent running on your instance.
@@ -215,8 +275,10 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Indicates whether latest version of the SSM agent is running on your
      * instance.
+     * </p>
      * 
      * @param isLatestVersion
      *        Indicates whether latest version of the SSM agent is running on
@@ -228,8 +290,10 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Indicates whether latest version of the SSM agent is running on your
      * instance.
+     * </p>
      * 
      * @return Indicates whether latest version of the SSM agent is running on
      *         your instance.
@@ -240,8 +304,10 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Indicates whether latest version of the SSM agent is running on your
      * instance.
+     * </p>
      * 
      * @param isLatestVersion
      *        Indicates whether latest version of the SSM agent is running on
@@ -256,8 +322,10 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Indicates whether latest version of the SSM agent is running on your
      * instance.
+     * </p>
      * 
      * @return Indicates whether latest version of the SSM agent is running on
      *         your instance.
@@ -268,7 +336,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The operating system platform type.
+     * </p>
      * 
      * @param platformType
      *        The operating system platform type.
@@ -280,7 +350,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The operating system platform type.
+     * </p>
      * 
      * @return The operating system platform type.
      * @see PlatformType
@@ -291,7 +363,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The operating system platform type.
+     * </p>
      * 
      * @param platformType
      *        The operating system platform type.
@@ -306,7 +380,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The operating system platform type.
+     * </p>
      * 
      * @param platformType
      *        The operating system platform type.
@@ -318,7 +394,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The operating system platform type.
+     * </p>
      * 
      * @param platformType
      *        The operating system platform type.
@@ -333,7 +411,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the operating system platform running on your instance.
+     * </p>
      * 
      * @param platformName
      *        The name of the operating system platform running on your
@@ -345,7 +425,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the operating system platform running on your instance.
+     * </p>
      * 
      * @return The name of the operating system platform running on your
      *         instance.
@@ -356,7 +438,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the operating system platform running on your instance.
+     * </p>
      * 
      * @param platformName
      *        The name of the operating system platform running on your
@@ -371,7 +455,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The version of the OS platform running on your instance.
+     * </p>
      * 
      * @param platformVersion
      *        The version of the OS platform running on your instance.
@@ -382,7 +468,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The version of the OS platform running on your instance.
+     * </p>
      * 
      * @return The version of the OS platform running on your instance.
      */
@@ -392,7 +480,9 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The version of the OS platform running on your instance.
+     * </p>
      * 
      * @param platformVersion
      *        The version of the OS platform running on your instance.

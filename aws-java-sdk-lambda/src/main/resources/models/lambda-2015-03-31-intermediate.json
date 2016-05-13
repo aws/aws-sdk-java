@@ -16,13 +16,13 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Lambda",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : null,
-    "jsonVersion" : null,
+    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "jsonVersion" : "1.1",
     "endpointPrefix" : "lambda",
     "signingName" : "lambda",
+    "jsonProtocol" : true,
     "serviceName" : "AWS Lambda",
     "cborProtocol" : false,
-    "jsonProtocol" : true,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
@@ -216,7 +216,10 @@
         "variableSetterType" : "DeleteAliasRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteAliasResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ServiceException",
         "documentation" : "<p>The AWS Lambda service encountered an internal error.</p>"
@@ -229,11 +232,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, Void>",
+      "syncReturnType" : "DeleteAliasResult",
+      "asyncReturnType" : "DeleteAliasResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteAliasResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteAliasResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult>",
       "methodName" : "deleteAlias"
     },
     "DeleteEventSourceMapping" : {
@@ -288,7 +291,10 @@
         "variableSetterType" : "DeleteFunctionRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteFunctionResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ServiceException",
         "documentation" : "<p>The AWS Lambda service encountered an internal error.</p>"
@@ -307,11 +313,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, Void>",
+      "syncReturnType" : "DeleteFunctionResult",
+      "asyncReturnType" : "DeleteFunctionResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteFunctionResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteFunctionResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResult>",
       "methodName" : "deleteFunction"
     },
     "GetAlias" : {
@@ -819,7 +825,10 @@
         "variableSetterType" : "RemovePermissionRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "RemovePermissionResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "ServiceException",
         "documentation" : "<p>The AWS Lambda service encountered an internal error.</p>"
@@ -835,11 +844,11 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void>",
+      "syncReturnType" : "RemovePermissionResult",
+      "asyncReturnType" : "RemovePermissionResult",
+      "asyncFutureType" : "java.util.concurrent.Future<RemovePermissionResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<RemovePermissionResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult>",
       "methodName" : "removePermission"
     },
     "UpdateAlias" : {
@@ -4057,6 +4066,41 @@
           "varargSetterDocumentation" : "/**<p>The Lambda function name.</p>\n@param functionName The Lambda function name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "DeleteFunctionResult" : {
+      "c2jName" : "DeleteFunctionResult",
+      "documentation" : null,
+      "shapeName" : "DeleteFunctionResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteFunctionResult",
+        "variableType" : "DeleteFunctionResult",
+        "variableDeclarationType" : "DeleteFunctionResult",
+        "documentation" : null,
+        "simpleType" : "DeleteFunctionResult",
+        "variableSetterType" : "DeleteFunctionResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "InvokeAsyncResult" : {
       "c2jName" : "InvokeAsyncResponse",
@@ -18588,6 +18632,144 @@
         }
       }
     },
+    "EC2ThrottledException" : {
+      "c2jName" : "EC2ThrottledException",
+      "documentation" : "<p>AWS Lambda was throttled by Amazon EC2 during Lambda function initiatization using the execution role provided for the Lambda function. </p>",
+      "shapeName" : "EC2ThrottledException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "",
+        "name" : "Type",
+        "c2jName" : "Type",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "type",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "type",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Type",
+          "marshallLocationName" : "Type",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param type */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "eC2ThrottledException",
+        "variableType" : "EC2ThrottledException",
+        "variableDeclarationType" : "EC2ThrottledException",
+        "documentation" : null,
+        "simpleType" : "EC2ThrottledException",
+        "variableSetterType" : "EC2ThrottledException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "EC2ThrottledException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Type" : {
+          "documentation" : "",
+          "name" : "Type",
+          "c2jName" : "Type",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "type",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "type",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Type",
+            "marshallLocationName" : "Type",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param type */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "GetPolicyRequest" : {
       "c2jName" : "GetPolicyRequest",
       "documentation" : "",
@@ -18835,144 +19017,6 @@
           "getterDocumentation" : "/**<p>Function name whose resource policy you want to retrieve. </p> <p> You can specify the function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>\n@return Function name whose resource policy you want to retrieve. </p> <p> You can specify the function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.*/",
           "fluentSetterDocumentation" : "/**<p>Function name whose resource policy you want to retrieve. </p> <p> You can specify the function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>\n@param functionName Function name whose resource policy you want to retrieve. </p> <p> You can specify the function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>Function name whose resource policy you want to retrieve. </p> <p> You can specify the function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </p>\n@param functionName Function name whose resource policy you want to retrieve. </p> <p> You can specify the function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
-    "EC2ThrottledException" : {
-      "c2jName" : "EC2ThrottledException",
-      "documentation" : "<p>AWS Lambda was throttled by Amazon EC2 during Lambda function initiatization using the execution role provided for the Lambda function. </p>",
-      "shapeName" : "EC2ThrottledException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ {
-        "documentation" : "",
-        "name" : "Type",
-        "c2jName" : "Type",
-        "c2jShape" : "String",
-        "variable" : {
-          "variableName" : "type",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "type",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "Type",
-          "marshallLocationName" : "Type",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**\n@param type */",
-        "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "eC2ThrottledException",
-        "variableType" : "EC2ThrottledException",
-        "variableDeclarationType" : "EC2ThrottledException",
-        "documentation" : null,
-        "simpleType" : "EC2ThrottledException",
-        "variableSetterType" : "EC2ThrottledException"
-      },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "EC2ThrottledException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "Type" : {
-          "documentation" : "",
-          "name" : "Type",
-          "c2jName" : "Type",
-          "c2jShape" : "String",
-          "variable" : {
-            "variableName" : "type",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "type",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "Type",
-            "marshallLocationName" : "Type",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**\n@param type */",
-          "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -24580,6 +24624,41 @@
         }
       }
     },
+    "DeleteAliasResult" : {
+      "c2jName" : "DeleteAliasResult",
+      "documentation" : null,
+      "shapeName" : "DeleteAliasResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteAliasResult",
+        "variableType" : "DeleteAliasResult",
+        "variableDeclarationType" : "DeleteAliasResult",
+        "documentation" : null,
+        "simpleType" : "DeleteAliasResult",
+        "variableSetterType" : "DeleteAliasResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "GetAliasResult" : {
       "c2jName" : "AliasConfiguration",
       "documentation" : "<p>Provides configuration information about a Lambda function version alias.</p>",
@@ -30060,6 +30139,41 @@
         }
       }
     },
+    "RemovePermissionResult" : {
+      "c2jName" : "RemovePermissionResult",
+      "documentation" : null,
+      "shapeName" : "RemovePermissionResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "removePermissionResult",
+        "variableType" : "RemovePermissionResult",
+        "variableDeclarationType" : "RemovePermissionResult",
+        "documentation" : null,
+        "simpleType" : "RemovePermissionResult",
+        "variableSetterType" : "RemovePermissionResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "UpdateAliasRequest" : {
       "c2jName" : "UpdateAliasRequest",
       "documentation" : "",
@@ -33253,6 +33367,7 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
+    "customErrorCodeFieldName" : null,
     "convenienceTypeOverloads" : [ {
       "shapeName" : "InvokeAsyncRequest",
       "memberName" : "InvokeArgs",

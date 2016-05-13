@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteClientCertificateRequest Marshaller
@@ -48,7 +49,14 @@ public class DeleteClientCertificateRequestMarshaller
         implements
         Marshaller<Request<DeleteClientCertificateRequest>, DeleteClientCertificateRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteClientCertificateRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteClientCertificateRequest> marshall(
             DeleteClientCertificateRequest deleteClientCertificateRequest) {
@@ -69,9 +77,12 @@ public class DeleteClientCertificateRequestMarshaller
                 .replace(
                         "{clientcertificate_id}",
                         (deleteClientCertificateRequest
-                                .getClientCertificateId() != null) ? StringUtils
-                                .fromString(deleteClientCertificateRequest
-                                        .getClientCertificateId()) : "");
+                                .getClientCertificateId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteClientCertificateRequest
+                                                .getClientCertificateId()),
+                                false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

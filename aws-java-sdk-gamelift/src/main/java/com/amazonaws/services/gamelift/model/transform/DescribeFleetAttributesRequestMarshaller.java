@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeFleetAttributesRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DescribeFleetAttributesRequestMarshaller
         implements
         Marshaller<Request<DescribeFleetAttributesRequest>, DescribeFleetAttributesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeFleetAttributesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeFleetAttributesRequest> marshall(
             DescribeFleetAttributesRequest describeFleetAttributesRequest) {
@@ -58,8 +65,8 @@ public class DescribeFleetAttributesRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

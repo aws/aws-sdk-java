@@ -14,9 +14,13 @@
  */
 package com.amazonaws.util.json;
 
+import com.amazonaws.protocol.json.SdkJsonGenerator;
+import com.amazonaws.protocol.json.StructuredJsonGenerator;
 import com.amazonaws.util.Base64;
+import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -40,7 +44,7 @@ public class SdkJsonGeneratorTest {
 
     @Before
     public void setup() {
-        jsonGenerator = new SdkJsonGenerator();
+        jsonGenerator = new SdkJsonGenerator(new JsonFactory(), "application/json");
     }
 
     @Test
@@ -70,7 +74,7 @@ public class SdkJsonGeneratorTest {
 
     @Test
     public void simpleObject_WithBinaryData_WritesAsBase64() throws IOException {
-        byte[] data = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        byte[] data = new byte[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         jsonGenerator.writeStartObject();
         jsonGenerator.writeFieldName("binaryProp").writeValue(ByteBuffer.wrap(data));
         jsonGenerator.writeEndObject();

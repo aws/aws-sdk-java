@@ -98,6 +98,13 @@ public class DescribeChangeSetResultStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("ExecutionStatus", targetDepth)) {
+                    describeChangeSetResult
+                            .setExecutionStatus(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Status", targetDepth)) {
                     describeChangeSetResult.setStatus(StringStaxUnmarshaller
                             .getInstance().unmarshall(context));

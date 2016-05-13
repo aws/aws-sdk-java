@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input for <a>UpdateStack</a> action.
+ * The input for an <a>UpdateStack</a> action.
  * </p>
  */
 public class UpdateStackRequest extends AmazonWebServiceRequest implements

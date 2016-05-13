@@ -23,7 +23,9 @@ import java.util.Map;
 import org.apache.http.annotation.NotThreadSafe;
 
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.event.ProgressListener;
+import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
 
 /**
@@ -57,7 +59,7 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
      * The optional credentials to use for this request - overrides the default credentials set at
      * the client level.
      */
-    private AWSCredentials credentials;
+    private AWSCredentialsProvider credentialsProvider;
 
     /**
      * A map of custom header names to header values.
@@ -85,9 +87,12 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
      * @param credentials
      *            The optional AWS security credentials to use for this request, overriding the
      *            default credentials set at the client level.
+     *
+     * @deprecated by {@link #setRequestCredentialsProvider(AWSCredentialsProvider)}
      */
+    @Deprecated
     public void setRequestCredentials(AWSCredentials credentials) {
-        this.credentials = credentials;
+        this.credentialsProvider = new StaticCredentialsProvider(credentials);
     }
 
     /**
@@ -96,9 +101,35 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
      *
      * @return The optional credentials to use to sign this request, overriding the default
      *         credentials set at the client level.
+     *
+     * @deprecated by {@link #getRequestCredentialsProvider()}
      */
+    @Deprecated
     public AWSCredentials getRequestCredentials() {
-        return credentials;
+        return credentialsProvider == null ? null : credentialsProvider.getCredentials();
+    }
+
+    /**
+     * Sets the optional credentials provider to use for this request, overriding the default credentials
+     * provider at the client level.
+     *
+     * @param credentialsProvider
+     *            The optional AWS security credentials provider to use for this request, overriding the
+     *            default credentials provider at the client level.
+     */
+    public void setRequestCredentialsProvider(AWSCredentialsProvider credentialsProvider) {
+        this.credentialsProvider = credentialsProvider;
+    }
+
+    /**
+     * Returns the optional credentials provider to use to sign this request, overriding the default
+     * credentials provider at the client level.
+     *
+     * @return The optional credentials provider to use to sign this request, overriding the default
+     *         credentials provider at the client level.
+     */
+    public AWSCredentialsProvider getRequestCredentialsProvider() {
+        return credentialsProvider;
     }
 
     /**
@@ -261,7 +292,8 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
                 }
             }
         }
-        target.setRequestCredentials(credentials);
+
+        target.setRequestCredentialsProvider(credentialsProvider);
         target.setGeneralProgressListener(progressListener);
         target.setRequestMetricCollector(requestMetricCollector);
         requestClientOptions.copyTo(target.getRequestClientOptions());

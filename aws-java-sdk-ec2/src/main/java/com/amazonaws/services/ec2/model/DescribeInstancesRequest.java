@@ -567,8 +567,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned
      * <code>NextToken</code> value. This value can be between 5 and 1000. You
-     * cannot specify this parameter and the instance IDs parameter in the same
-     * call.
+     * cannot specify this parameter and the instance IDs parameter or tag
+     * filters in the same call.
      * </p>
      */
     private Integer maxResults;
@@ -4975,8 +4975,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned
      * <code>NextToken</code> value. This value can be between 5 and 1000. You
-     * cannot specify this parameter and the instance IDs parameter in the same
-     * call.
+     * cannot specify this parameter and the instance IDs parameter or tag
+     * filters in the same call.
      * </p>
      * 
      * @param maxResults
@@ -4984,7 +4984,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        retrieve the remaining results, make another call with the
      *        returned <code>NextToken</code> value. This value can be between 5
      *        and 1000. You cannot specify this parameter and the instance IDs
-     *        parameter in the same call.
+     *        parameter or tag filters in the same call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -4996,15 +4996,15 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned
      * <code>NextToken</code> value. This value can be between 5 and 1000. You
-     * cannot specify this parameter and the instance IDs parameter in the same
-     * call.
+     * cannot specify this parameter and the instance IDs parameter or tag
+     * filters in the same call.
      * </p>
      * 
      * @return The maximum number of results to return in a single call. To
      *         retrieve the remaining results, make another call with the
      *         returned <code>NextToken</code> value. This value can be between
      *         5 and 1000. You cannot specify this parameter and the instance
-     *         IDs parameter in the same call.
+     *         IDs parameter or tag filters in the same call.
      */
 
     public Integer getMaxResults() {
@@ -5016,8 +5016,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned
      * <code>NextToken</code> value. This value can be between 5 and 1000. You
-     * cannot specify this parameter and the instance IDs parameter in the same
-     * call.
+     * cannot specify this parameter and the instance IDs parameter or tag
+     * filters in the same call.
      * </p>
      * 
      * @param maxResults
@@ -5025,7 +5025,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        retrieve the remaining results, make another call with the
      *        returned <code>NextToken</code> value. This value can be between 5
      *        and 1000. You cannot specify this parameter and the instance IDs
-     *        parameter in the same call.
+     *        parameter or tag filters in the same call.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

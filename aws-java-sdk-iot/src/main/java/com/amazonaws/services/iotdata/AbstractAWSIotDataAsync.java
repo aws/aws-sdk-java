@@ -59,15 +59,16 @@ public class AbstractAWSIotDataAsync extends AbstractAWSIotData implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> publishAsync(PublishRequest request) {
+    public java.util.concurrent.Future<PublishResult> publishAsync(
+            PublishRequest request) {
 
         return publishAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> publishAsync(
+    public java.util.concurrent.Future<PublishResult> publishAsync(
             PublishRequest request,
-            com.amazonaws.handlers.AsyncHandler<PublishRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

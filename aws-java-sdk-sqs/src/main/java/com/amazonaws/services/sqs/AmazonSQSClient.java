@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -145,7 +145,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     protected static final com.amazonaws.services.sqs.AmazonSQSClientConfigurationFactory configFactory = new com.amazonaws.services.sqs.AmazonSQSClientConfigurationFactory();
 
     /**
-     * List of exception unmarshallers for all Amazon SQS exceptions.
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -313,9 +313,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 .add(new TooManyEntriesInBatchRequestExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new QueueDoesNotExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new QueueNameExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidMessageContentsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new QueueNameExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new QueueDeletedRecentlyExceptionUnmarshaller());
         exceptionUnmarshallers
@@ -382,6 +382,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param addPermissionRequest
+     * @return Result of the AddPermission operation returned by the service.
      * @throws OverLimitException
      *         The action that you requested would violate a limit. For example,
      *         ReceiveMessage returns this error if the maximum number of
@@ -391,13 +392,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * @sample AmazonSQS.AddPermission
      */
     @Override
-    public void addPermission(AddPermissionRequest addPermissionRequest) {
+    public AddPermissionResult addPermission(
+            AddPermissionRequest addPermissionRequest) {
         ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddPermissionRequest> request = null;
-        Response<Void> response = null;
+        Response<AddPermissionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -410,9 +412,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AddPermissionResult> responseHandler = new StaxResponseHandler<AddPermissionResult>(
+                    new AddPermissionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -421,9 +425,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void addPermission(String queueUrl, String label,
+    public AddPermissionResult addPermission(String queueUrl, String label,
             java.util.List<String> aWSAccountIds, java.util.List<String> actions) {
-        addPermission(new AddPermissionRequest().withQueueUrl(queueUrl)
+        return addPermission(new AddPermissionRequest().withQueueUrl(queueUrl)
                 .withLabel(label).withAWSAccountIds(aWSAccountIds)
                 .withActions(actions));
     }
@@ -478,6 +482,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </important>
      * 
      * @param changeMessageVisibilityRequest
+     * @return Result of the ChangeMessageVisibility operation returned by the
+     *         service.
      * @throws MessageNotInflightException
      *         The message referred to is not in flight.
      * @throws ReceiptHandleIsInvalidException
@@ -485,14 +491,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * @sample AmazonSQS.ChangeMessageVisibility
      */
     @Override
-    public void changeMessageVisibility(
+    public ChangeMessageVisibilityResult changeMessageVisibility(
             ChangeMessageVisibilityRequest changeMessageVisibilityRequest) {
         ExecutionContext executionContext = createExecutionContext(changeMessageVisibilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ChangeMessageVisibilityRequest> request = null;
-        Response<Void> response = null;
+        Response<ChangeMessageVisibilityResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -506,9 +512,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ChangeMessageVisibilityResult> responseHandler = new StaxResponseHandler<ChangeMessageVisibilityResult>(
+                    new ChangeMessageVisibilityResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -517,9 +525,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void changeMessageVisibility(String queueUrl, String receiptHandle,
-            Integer visibilityTimeout) {
-        changeMessageVisibility(new ChangeMessageVisibilityRequest()
+    public ChangeMessageVisibilityResult changeMessageVisibility(
+            String queueUrl, String receiptHandle, Integer visibilityTimeout) {
+        return changeMessageVisibility(new ChangeMessageVisibilityRequest()
                 .withQueueUrl(queueUrl).withReceiptHandle(receiptHandle)
                 .withVisibilityTimeout(visibilityTimeout));
     }
@@ -736,6 +744,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </important>
      * 
      * @param deleteMessageRequest
+     * @return Result of the DeleteMessage operation returned by the service.
      * @throws InvalidIdFormatException
      *         The receipt handle is not valid for the current version.
      * @throws ReceiptHandleIsInvalidException
@@ -743,13 +752,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * @sample AmazonSQS.DeleteMessage
      */
     @Override
-    public void deleteMessage(DeleteMessageRequest deleteMessageRequest) {
+    public DeleteMessageResult deleteMessage(
+            DeleteMessageRequest deleteMessageRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteMessageRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteMessageResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -762,9 +772,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteMessageResult> responseHandler = new StaxResponseHandler<DeleteMessageResult>(
+                    new DeleteMessageResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -773,8 +785,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void deleteMessage(String queueUrl, String receiptHandle) {
-        deleteMessage(new DeleteMessageRequest().withQueueUrl(queueUrl)
+    public DeleteMessageResult deleteMessage(String queueUrl,
+            String receiptHandle) {
+        return deleteMessage(new DeleteMessageRequest().withQueueUrl(queueUrl)
                 .withReceiptHandle(receiptHandle));
     }
 
@@ -889,16 +902,17 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteQueueRequest
+     * @return Result of the DeleteQueue operation returned by the service.
      * @sample AmazonSQS.DeleteQueue
      */
     @Override
-    public void deleteQueue(DeleteQueueRequest deleteQueueRequest) {
+    public DeleteQueueResult deleteQueue(DeleteQueueRequest deleteQueueRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteQueueRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteQueueResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -911,9 +925,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteQueueResult> responseHandler = new StaxResponseHandler<DeleteQueueResult>(
+                    new DeleteQueueResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -922,8 +938,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void deleteQueue(String queueUrl) {
-        deleteQueue(new DeleteQueueRequest().withQueueUrl(queueUrl));
+    public DeleteQueueResult deleteQueue(String queueUrl) {
+        return deleteQueue(new DeleteQueueRequest().withQueueUrl(queueUrl));
     }
 
     /**
@@ -1178,6 +1194,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param purgeQueueRequest
+     * @return Result of the PurgeQueue operation returned by the service.
      * @throws QueueDoesNotExistException
      *         The queue referred to does not exist.
      * @throws PurgeQueueInProgressException
@@ -1187,13 +1204,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * @sample AmazonSQS.PurgeQueue
      */
     @Override
-    public void purgeQueue(PurgeQueueRequest purgeQueueRequest) {
+    public PurgeQueueResult purgeQueue(PurgeQueueRequest purgeQueueRequest) {
         ExecutionContext executionContext = createExecutionContext(purgeQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PurgeQueueRequest> request = null;
-        Response<Void> response = null;
+        Response<PurgeQueueResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1206,9 +1223,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<PurgeQueueResult> responseHandler = new StaxResponseHandler<PurgeQueueResult>(
+                    new PurgeQueueResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1354,16 +1373,18 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param removePermissionRequest
+     * @return Result of the RemovePermission operation returned by the service.
      * @sample AmazonSQS.RemovePermission
      */
     @Override
-    public void removePermission(RemovePermissionRequest removePermissionRequest) {
+    public RemovePermissionResult removePermission(
+            RemovePermissionRequest removePermissionRequest) {
         ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RemovePermissionRequest> request = null;
-        Response<Void> response = null;
+        Response<RemovePermissionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1377,9 +1398,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RemovePermissionResult> responseHandler = new StaxResponseHandler<RemovePermissionResult>(
+                    new RemovePermissionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1388,9 +1411,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void removePermission(String queueUrl, String label) {
-        removePermission(new RemovePermissionRequest().withQueueUrl(queueUrl)
-                .withLabel(label));
+    public RemovePermissionResult removePermission(String queueUrl, String label) {
+        return removePermission(new RemovePermissionRequest().withQueueUrl(
+                queueUrl).withLabel(label));
     }
 
     /**
@@ -1587,19 +1610,21 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </note>
      * 
      * @param setQueueAttributesRequest
+     * @return Result of the SetQueueAttributes operation returned by the
+     *         service.
      * @throws InvalidAttributeNameException
      *         The attribute referred to does not exist.
      * @sample AmazonSQS.SetQueueAttributes
      */
     @Override
-    public void setQueueAttributes(
+    public SetQueueAttributesResult setQueueAttributes(
             SetQueueAttributesRequest setQueueAttributesRequest) {
         ExecutionContext executionContext = createExecutionContext(setQueueAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetQueueAttributesRequest> request = null;
-        Response<Void> response = null;
+        Response<SetQueueAttributesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1613,9 +1638,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetQueueAttributesResult> responseHandler = new StaxResponseHandler<SetQueueAttributesResult>(
+                    new SetQueueAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1624,9 +1651,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void setQueueAttributes(String queueUrl,
+    public SetQueueAttributesResult setQueueAttributes(String queueUrl,
             java.util.Map<String, String> attributes) {
-        setQueueAttributes(new SetQueueAttributesRequest().withQueueUrl(
+        return setQueueAttributes(new SetQueueAttributesRequest().withQueueUrl(
                 queueUrl).withAttributes(attributes));
     }
 

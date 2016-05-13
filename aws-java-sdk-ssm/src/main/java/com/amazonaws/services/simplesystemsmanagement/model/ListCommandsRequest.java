@@ -25,29 +25,45 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListCommandsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
-    /** (Optional) If provided, lists only the specified command. */
+    /**
+     * <p>
+     * (Optional) If provided, lists only the specified command.
+     * </p>
+     */
     private String commandId;
-    /** (Optional) Lists commands issued against this instance ID. */
+    /**
+     * <p>
+     * (Optional) Lists commands issued against this instance ID.
+     * </p>
+     */
     private String instanceId;
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      */
     private String nextToken;
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CommandFilter> filters;
 
     /**
+     * <p>
      * (Optional) If provided, lists only the specified command.
+     * </p>
      * 
      * @param commandId
      *        (Optional) If provided, lists only the specified command.
@@ -58,7 +74,9 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) If provided, lists only the specified command.
+     * </p>
      * 
      * @return (Optional) If provided, lists only the specified command.
      */
@@ -68,7 +86,9 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) If provided, lists only the specified command.
+     * </p>
      * 
      * @param commandId
      *        (Optional) If provided, lists only the specified command.
@@ -82,7 +102,9 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) Lists commands issued against this instance ID.
+     * </p>
      * 
      * @param instanceId
      *        (Optional) Lists commands issued against this instance ID.
@@ -93,7 +115,9 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) Lists commands issued against this instance ID.
+     * </p>
      * 
      * @return (Optional) Lists commands issued against this instance ID.
      */
@@ -103,7 +127,9 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) Lists commands issued against this instance ID.
+     * </p>
      * 
      * @param instanceId
      *        (Optional) Lists commands issued against this instance ID.
@@ -117,9 +143,11 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      * 
      * @param maxResults
      *        (Optional) The maximum number of items to return for this call.
@@ -132,9 +160,11 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      * 
      * @return (Optional) The maximum number of items to return for this call.
      *         The call also returns a token that you can specify in a
@@ -146,9 +176,11 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      * 
      * @param maxResults
      *        (Optional) The maximum number of items to return for this call.
@@ -164,8 +196,10 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        (Optional) The token for the next set of items to return. (You
@@ -177,8 +211,10 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @return (Optional) The token for the next set of items to return. (You
      *         received this token from a previous call.)
@@ -189,8 +225,10 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        (Optional) The token for the next set of items to return. (You
@@ -205,8 +243,10 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * 
      * @return (Optional) One or more filters. Use a filter to return a more
      *         specific list of results.
@@ -220,8 +260,10 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * 
      * @param filters
      *        (Optional) One or more filters. Use a filter to return a more
@@ -239,8 +281,10 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setFilters(java.util.Collection)} or
@@ -267,8 +311,10 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * 
      * @param filters
      *        (Optional) One or more filters. Use a filter to return a more

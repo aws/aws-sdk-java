@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteConfigRuleRequest Marshaller
  */
 public class DeleteConfigRuleRequestMarshaller implements
         Marshaller<Request<DeleteConfigRuleRequest>, DeleteConfigRuleRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteConfigRuleRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteConfigRuleRequest> marshall(
             DeleteConfigRuleRequest deleteConfigRuleRequest) {
@@ -58,8 +65,8 @@ public class DeleteConfigRuleRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

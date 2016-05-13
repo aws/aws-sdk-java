@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteHsmRequest Marshaller
  */
 public class DeleteHsmRequestMarshaller implements
         Marshaller<Request<DeleteHsmRequest>, DeleteHsmRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteHsmRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteHsmRequest> marshall(DeleteHsmRequest deleteHsmRequest) {
 
@@ -56,8 +62,8 @@ public class DeleteHsmRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

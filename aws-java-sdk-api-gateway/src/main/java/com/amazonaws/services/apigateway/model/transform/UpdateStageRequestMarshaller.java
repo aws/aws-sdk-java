@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateStageRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class UpdateStageRequestMarshaller implements
         Marshaller<Request<UpdateStageRequest>, UpdateStageRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateStageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateStageRequest> marshall(
             UpdateStageRequest updateStageRequest) {
@@ -66,17 +73,19 @@ public class UpdateStageRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (updateStageRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(updateStageRequest.getRestApiId()) : "");
+                (updateStageRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateStageRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{stage_name}",
-                (updateStageRequest.getStageName() != null) ? StringUtils
-                        .fromString(updateStageRequest.getStageName()) : "");
+                (updateStageRequest.getStageName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateStageRequest
+                                .getStageName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             java.util.List<PatchOperation> patchOperationsList = updateStageRequest

@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateApiKeyRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class UpdateApiKeyRequestMarshaller implements
         Marshaller<Request<UpdateApiKeyRequest>, UpdateApiKeyRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateApiKeyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateApiKeyRequest> marshall(
             UpdateApiKeyRequest updateApiKeyRequest) {
@@ -66,13 +73,14 @@ public class UpdateApiKeyRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{api_Key}",
-                (updateApiKeyRequest.getApiKey() != null) ? StringUtils
-                        .fromString(updateApiKeyRequest.getApiKey()) : "");
+                (updateApiKeyRequest.getApiKey() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateApiKeyRequest
+                                .getApiKey()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             java.util.List<PatchOperation> patchOperationsList = updateApiKeyRequest

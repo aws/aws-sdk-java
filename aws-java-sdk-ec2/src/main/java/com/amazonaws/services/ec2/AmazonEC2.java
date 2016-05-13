@@ -179,9 +179,11 @@ public interface AmazonEC2 {
      * 
      * @param assignPrivateIpAddressesRequest
      *        Contains the parameters for AssignPrivateIpAddresses.
+     * @return Result of the AssignPrivateIpAddresses operation returned by the
+     *         service.
      * @sample AmazonEC2.AssignPrivateIpAddresses
      */
-    void assignPrivateIpAddresses(
+    AssignPrivateIpAddressesResult assignPrivateIpAddresses(
             AssignPrivateIpAddressesRequest assignPrivateIpAddressesRequest);
 
     /**
@@ -242,9 +244,11 @@ public interface AmazonEC2 {
      * 
      * @param associateDhcpOptionsRequest
      *        Contains the parameters for AssociateDhcpOptions.
+     * @return Result of the AssociateDhcpOptions operation returned by the
+     *         service.
      * @sample AmazonEC2.AssociateDhcpOptions
      */
-    void associateDhcpOptions(
+    AssociateDhcpOptionsResult associateDhcpOptions(
             AssociateDhcpOptionsRequest associateDhcpOptionsRequest);
 
     /**
@@ -310,9 +314,11 @@ public interface AmazonEC2 {
      * 
      * @param attachInternetGatewayRequest
      *        Contains the parameters for AttachInternetGateway.
+     * @return Result of the AttachInternetGateway operation returned by the
+     *         service.
      * @sample AmazonEC2.AttachInternetGateway
      */
-    void attachInternetGateway(
+    AttachInternetGatewayResult attachInternetGateway(
             AttachInternetGatewayRequest attachInternetGatewayRequest);
 
     /**
@@ -446,9 +452,11 @@ public interface AmazonEC2 {
      * 
      * @param authorizeSecurityGroupEgressRequest
      *        Contains the parameters for AuthorizeSecurityGroupEgress.
+     * @return Result of the AuthorizeSecurityGroupEgress operation returned by
+     *         the service.
      * @sample AmazonEC2.AuthorizeSecurityGroupEgress
      */
-    void authorizeSecurityGroupEgress(
+    AuthorizeSecurityGroupEgressResult authorizeSecurityGroupEgress(
             AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest);
 
     /**
@@ -485,9 +493,11 @@ public interface AmazonEC2 {
      * 
      * @param authorizeSecurityGroupIngressRequest
      *        Contains the parameters for AuthorizeSecurityGroupIngress.
+     * @return Result of the AuthorizeSecurityGroupIngress operation returned by
+     *         the service.
      * @sample AmazonEC2.AuthorizeSecurityGroupIngress
      */
-    void authorizeSecurityGroupIngress(
+    AuthorizeSecurityGroupIngressResult authorizeSecurityGroupIngress(
             AuthorizeSecurityGroupIngressRequest authorizeSecurityGroupIngressRequest);
 
     /**
@@ -549,9 +559,11 @@ public interface AmazonEC2 {
      * 
      * @param cancelConversionTaskRequest
      *        Contains the parameters for CancelConversionTask.
+     * @return Result of the CancelConversionTask operation returned by the
+     *         service.
      * @sample AmazonEC2.CancelConversionTask
      */
-    void cancelConversionTask(
+    CancelConversionTaskResult cancelConversionTask(
             CancelConversionTaskRequest cancelConversionTaskRequest);
 
     /**
@@ -564,9 +576,11 @@ public interface AmazonEC2 {
      * 
      * @param cancelExportTaskRequest
      *        Contains the parameters for CancelExportTask.
+     * @return Result of the CancelExportTask operation returned by the service.
      * @sample AmazonEC2.CancelExportTask
      */
-    void cancelExportTask(CancelExportTaskRequest cancelExportTaskRequest);
+    CancelExportTaskResult cancelExportTask(
+            CancelExportTaskRequest cancelExportTaskRequest);
 
     /**
      * <p>
@@ -1041,9 +1055,11 @@ public interface AmazonEC2 {
      * 
      * @param createNetworkAclEntryRequest
      *        Contains the parameters for CreateNetworkAclEntry.
+     * @return Result of the CreateNetworkAclEntry operation returned by the
+     *         service.
      * @sample AmazonEC2.CreateNetworkAclEntry
      */
-    void createNetworkAclEntry(
+    CreateNetworkAclEntryResult createNetworkAclEntry(
             CreateNetworkAclEntryRequest createNetworkAclEntryRequest);
 
     /**
@@ -1082,9 +1098,11 @@ public interface AmazonEC2 {
      * 
      * @param createPlacementGroupRequest
      *        Contains the parameters for CreatePlacementGroup.
+     * @return Result of the CreatePlacementGroup operation returned by the
+     *         service.
      * @sample AmazonEC2.CreatePlacementGroup
      */
-    void createPlacementGroup(
+    CreatePlacementGroupResult createPlacementGroup(
             CreatePlacementGroupRequest createPlacementGroupRequest);
 
     /**
@@ -1377,9 +1395,10 @@ public interface AmazonEC2 {
      * 
      * @param createTagsRequest
      *        Contains the parameters for CreateTags.
+     * @return Result of the CreateTags operation returned by the service.
      * @sample AmazonEC2.CreateTags
      */
-    void createTags(CreateTagsRequest createTagsRequest);
+    CreateTagsResult createTags(CreateTagsRequest createTagsRequest);
 
     /**
      * <p>
@@ -1569,9 +1588,11 @@ public interface AmazonEC2 {
      * 
      * @param createVpnConnectionRouteRequest
      *        Contains the parameters for CreateVpnConnectionRoute.
+     * @return Result of the CreateVpnConnectionRoute operation returned by the
+     *         service.
      * @sample AmazonEC2.CreateVpnConnectionRoute
      */
-    void createVpnConnectionRoute(
+    CreateVpnConnectionRouteResult createVpnConnectionRoute(
             CreateVpnConnectionRouteRequest createVpnConnectionRouteRequest);
 
     /**
@@ -1603,9 +1624,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteCustomerGatewayRequest
      *        Contains the parameters for DeleteCustomerGateway.
+     * @return Result of the DeleteCustomerGateway operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteCustomerGateway
      */
-    void deleteCustomerGateway(
+    DeleteCustomerGatewayResult deleteCustomerGateway(
             DeleteCustomerGatewayRequest deleteCustomerGatewayRequest);
 
     /**
@@ -1618,9 +1641,12 @@ public interface AmazonEC2 {
      * 
      * @param deleteDhcpOptionsRequest
      *        Contains the parameters for DeleteDhcpOptions.
+     * @return Result of the DeleteDhcpOptions operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteDhcpOptions
      */
-    void deleteDhcpOptions(DeleteDhcpOptionsRequest deleteDhcpOptionsRequest);
+    DeleteDhcpOptionsResult deleteDhcpOptions(
+            DeleteDhcpOptionsRequest deleteDhcpOptionsRequest);
 
     /**
      * <p>
@@ -1643,9 +1669,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteInternetGatewayRequest
      *        Contains the parameters for DeleteInternetGateway.
+     * @return Result of the DeleteInternetGateway operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteInternetGateway
      */
-    void deleteInternetGateway(
+    DeleteInternetGatewayResult deleteInternetGateway(
             DeleteInternetGatewayRequest deleteInternetGatewayRequest);
 
     /**
@@ -1656,9 +1684,10 @@ public interface AmazonEC2 {
      * 
      * @param deleteKeyPairRequest
      *        Contains the parameters for DeleteKeyPair.
+     * @return Result of the DeleteKeyPair operation returned by the service.
      * @sample AmazonEC2.DeleteKeyPair
      */
-    void deleteKeyPair(DeleteKeyPairRequest deleteKeyPairRequest);
+    DeleteKeyPairResult deleteKeyPair(DeleteKeyPairRequest deleteKeyPairRequest);
 
     /**
      * <p>
@@ -1684,9 +1713,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteNetworkAclRequest
      *        Contains the parameters for DeleteNetworkAcl.
+     * @return Result of the DeleteNetworkAcl operation returned by the service.
      * @sample AmazonEC2.DeleteNetworkAcl
      */
-    void deleteNetworkAcl(DeleteNetworkAclRequest deleteNetworkAclRequest);
+    DeleteNetworkAclResult deleteNetworkAcl(
+            DeleteNetworkAclRequest deleteNetworkAclRequest);
 
     /**
      * <p>
@@ -1696,9 +1727,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteNetworkAclEntryRequest
      *        Contains the parameters for DeleteNetworkAclEntry.
+     * @return Result of the DeleteNetworkAclEntry operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteNetworkAclEntry
      */
-    void deleteNetworkAclEntry(
+    DeleteNetworkAclEntryResult deleteNetworkAclEntry(
             DeleteNetworkAclEntryRequest deleteNetworkAclEntryRequest);
 
     /**
@@ -1709,9 +1742,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteNetworkInterfaceRequest
      *        Contains the parameters for DeleteNetworkInterface.
+     * @return Result of the DeleteNetworkInterface operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteNetworkInterface
      */
-    void deleteNetworkInterface(
+    DeleteNetworkInterfaceResult deleteNetworkInterface(
             DeleteNetworkInterfaceRequest deleteNetworkInterfaceRequest);
 
     /**
@@ -1727,9 +1762,11 @@ public interface AmazonEC2 {
      * 
      * @param deletePlacementGroupRequest
      *        Contains the parameters for DeletePlacementGroup.
+     * @return Result of the DeletePlacementGroup operation returned by the
+     *         service.
      * @sample AmazonEC2.DeletePlacementGroup
      */
-    void deletePlacementGroup(
+    DeletePlacementGroupResult deletePlacementGroup(
             DeletePlacementGroupRequest deletePlacementGroupRequest);
 
     /**
@@ -1739,9 +1776,10 @@ public interface AmazonEC2 {
      * 
      * @param deleteRouteRequest
      *        Contains the parameters for DeleteRoute.
+     * @return Result of the DeleteRoute operation returned by the service.
      * @sample AmazonEC2.DeleteRoute
      */
-    void deleteRoute(DeleteRouteRequest deleteRouteRequest);
+    DeleteRouteResult deleteRoute(DeleteRouteRequest deleteRouteRequest);
 
     /**
      * <p>
@@ -1752,9 +1790,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteRouteTableRequest
      *        Contains the parameters for DeleteRouteTable.
+     * @return Result of the DeleteRouteTable operation returned by the service.
      * @sample AmazonEC2.DeleteRouteTable
      */
-    void deleteRouteTable(DeleteRouteTableRequest deleteRouteTableRequest);
+    DeleteRouteTableResult deleteRouteTable(
+            DeleteRouteTableRequest deleteRouteTableRequest);
 
     /**
      * <p>
@@ -1769,9 +1809,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteSecurityGroupRequest
      *        Contains the parameters for DeleteSecurityGroup.
+     * @return Result of the DeleteSecurityGroup operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteSecurityGroup
      */
-    void deleteSecurityGroup(
+    DeleteSecurityGroupResult deleteSecurityGroup(
             DeleteSecurityGroupRequest deleteSecurityGroupRequest);
 
     /**
@@ -1801,9 +1843,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteSnapshotRequest
      *        Contains the parameters for DeleteSnapshot.
+     * @return Result of the DeleteSnapshot operation returned by the service.
      * @sample AmazonEC2.DeleteSnapshot
      */
-    void deleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest);
+    DeleteSnapshotResult deleteSnapshot(
+            DeleteSnapshotRequest deleteSnapshotRequest);
 
     /**
      * <p>
@@ -1812,9 +1856,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteSpotDatafeedSubscriptionRequest
      *        Contains the parameters for DeleteSpotDatafeedSubscription.
+     * @return Result of the DeleteSpotDatafeedSubscription operation returned
+     *         by the service.
      * @sample AmazonEC2.DeleteSpotDatafeedSubscription
      */
-    void deleteSpotDatafeedSubscription(
+    DeleteSpotDatafeedSubscriptionResult deleteSpotDatafeedSubscription(
             DeleteSpotDatafeedSubscriptionRequest deleteSpotDatafeedSubscriptionRequest);
 
     /**
@@ -1823,7 +1869,7 @@ public interface AmazonEC2 {
      *
      * @see #deleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest)
      */
-    void deleteSpotDatafeedSubscription();
+    DeleteSpotDatafeedSubscriptionResult deleteSpotDatafeedSubscription();
 
     /**
      * <p>
@@ -1833,9 +1879,10 @@ public interface AmazonEC2 {
      * 
      * @param deleteSubnetRequest
      *        Contains the parameters for DeleteSubnet.
+     * @return Result of the DeleteSubnet operation returned by the service.
      * @sample AmazonEC2.DeleteSubnet
      */
-    void deleteSubnet(DeleteSubnetRequest deleteSubnetRequest);
+    DeleteSubnetResult deleteSubnet(DeleteSubnetRequest deleteSubnetRequest);
 
     /**
      * <p>
@@ -1851,9 +1898,10 @@ public interface AmazonEC2 {
      * 
      * @param deleteTagsRequest
      *        Contains the parameters for DeleteTags.
+     * @return Result of the DeleteTags operation returned by the service.
      * @sample AmazonEC2.DeleteTags
      */
-    void deleteTags(DeleteTagsRequest deleteTagsRequest);
+    DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
 
     /**
      * <p>
@@ -1875,9 +1923,10 @@ public interface AmazonEC2 {
      * 
      * @param deleteVolumeRequest
      *        Contains the parameters for DeleteVolume.
+     * @return Result of the DeleteVolume operation returned by the service.
      * @sample AmazonEC2.DeleteVolume
      */
-    void deleteVolume(DeleteVolumeRequest deleteVolumeRequest);
+    DeleteVolumeResult deleteVolume(DeleteVolumeRequest deleteVolumeRequest);
 
     /**
      * <p>
@@ -1891,9 +1940,10 @@ public interface AmazonEC2 {
      * 
      * @param deleteVpcRequest
      *        Contains the parameters for DeleteVpc.
+     * @return Result of the DeleteVpc operation returned by the service.
      * @sample AmazonEC2.DeleteVpc
      */
-    void deleteVpc(DeleteVpcRequest deleteVpcRequest);
+    DeleteVpcResult deleteVpc(DeleteVpcRequest deleteVpcRequest);
 
     /**
      * <p>
@@ -1946,9 +1996,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteVpnConnectionRequest
      *        Contains the parameters for DeleteVpnConnection.
+     * @return Result of the DeleteVpnConnection operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteVpnConnection
      */
-    void deleteVpnConnection(
+    DeleteVpnConnectionResult deleteVpnConnection(
             DeleteVpnConnectionRequest deleteVpnConnectionRequest);
 
     /**
@@ -1961,9 +2013,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteVpnConnectionRouteRequest
      *        Contains the parameters for DeleteVpnConnectionRoute.
+     * @return Result of the DeleteVpnConnectionRoute operation returned by the
+     *         service.
      * @sample AmazonEC2.DeleteVpnConnectionRoute
      */
-    void deleteVpnConnectionRoute(
+    DeleteVpnConnectionRouteResult deleteVpnConnectionRoute(
             DeleteVpnConnectionRouteRequest deleteVpnConnectionRouteRequest);
 
     /**
@@ -1977,9 +2031,11 @@ public interface AmazonEC2 {
      * 
      * @param deleteVpnGatewayRequest
      *        Contains the parameters for DeleteVpnGateway.
+     * @return Result of the DeleteVpnGateway operation returned by the service.
      * @sample AmazonEC2.DeleteVpnGateway
      */
-    void deleteVpnGateway(DeleteVpnGatewayRequest deleteVpnGatewayRequest);
+    DeleteVpnGatewayResult deleteVpnGateway(
+            DeleteVpnGatewayRequest deleteVpnGatewayRequest);
 
     /**
      * <p>
@@ -1992,9 +2048,11 @@ public interface AmazonEC2 {
      * 
      * @param deregisterImageRequest
      *        Contains the parameters for DeregisterImage.
+     * @return Result of the DeregisterImage operation returned by the service.
      * @sample AmazonEC2.DeregisterImage
      */
-    void deregisterImage(DeregisterImageRequest deregisterImageRequest);
+    DeregisterImageResult deregisterImage(
+            DeregisterImageRequest deregisterImageRequest);
 
     /**
      * <p>
@@ -3011,6 +3069,21 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * [EC2-VPC only] Describes the VPCs on the other side of a VPC peering
+     * connection that are referencing the security groups you've specified in
+     * this request.
+     * </p>
+     * 
+     * @param describeSecurityGroupReferencesRequest
+     * @return Result of the DescribeSecurityGroupReferences operation returned
+     *         by the service.
+     * @sample AmazonEC2.DescribeSecurityGroupReferences
+     */
+    DescribeSecurityGroupReferencesResult describeSecurityGroupReferences(
+            DescribeSecurityGroupReferencesRequest describeSecurityGroupReferencesRequest);
+
+    /**
+     * <p>
      * Describes one or more of your security groups.
      * </p>
      * <p>
@@ -3301,6 +3374,22 @@ public interface AmazonEC2 {
      * @see #describeSpotPriceHistory(DescribeSpotPriceHistoryRequest)
      */
     DescribeSpotPriceHistoryResult describeSpotPriceHistory();
+
+    /**
+     * <p>
+     * [EC2-VPC only] Describes the stale security group rules for security
+     * groups in a specified VPC. Rules are stale when they reference a deleted
+     * security group in a peer VPC, or a security group in a peer VPC for which
+     * the VPC peering connection has been deleted.
+     * </p>
+     * 
+     * @param describeStaleSecurityGroupsRequest
+     * @return Result of the DescribeStaleSecurityGroups operation returned by
+     *         the service.
+     * @sample AmazonEC2.DescribeStaleSecurityGroups
+     */
+    DescribeStaleSecurityGroupsResult describeStaleSecurityGroups(
+            DescribeStaleSecurityGroupsRequest describeStaleSecurityGroupsRequest);
 
     /**
      * <p>
@@ -3699,9 +3788,11 @@ public interface AmazonEC2 {
      * 
      * @param detachInternetGatewayRequest
      *        Contains the parameters for DetachInternetGateway.
+     * @return Result of the DetachInternetGateway operation returned by the
+     *         service.
      * @sample AmazonEC2.DetachInternetGateway
      */
-    void detachInternetGateway(
+    DetachInternetGatewayResult detachInternetGateway(
             DetachInternetGatewayRequest detachInternetGatewayRequest);
 
     /**
@@ -3711,9 +3802,11 @@ public interface AmazonEC2 {
      * 
      * @param detachNetworkInterfaceRequest
      *        Contains the parameters for DetachNetworkInterface.
+     * @return Result of the DetachNetworkInterface operation returned by the
+     *         service.
      * @sample AmazonEC2.DetachNetworkInterface
      */
-    void detachNetworkInterface(
+    DetachNetworkInterfaceResult detachNetworkInterface(
             DetachNetworkInterfaceRequest detachNetworkInterfaceRequest);
 
     /**
@@ -3762,9 +3855,11 @@ public interface AmazonEC2 {
      * 
      * @param detachVpnGatewayRequest
      *        Contains the parameters for DetachVpnGateway.
+     * @return Result of the DetachVpnGateway operation returned by the service.
      * @sample AmazonEC2.DetachVpnGateway
      */
-    void detachVpnGateway(DetachVpnGatewayRequest detachVpnGatewayRequest);
+    DetachVpnGatewayResult detachVpnGateway(
+            DetachVpnGatewayRequest detachVpnGatewayRequest);
 
     /**
      * <p>
@@ -3774,9 +3869,11 @@ public interface AmazonEC2 {
      * 
      * @param disableVgwRoutePropagationRequest
      *        Contains the parameters for DisableVgwRoutePropagation.
+     * @return Result of the DisableVgwRoutePropagation operation returned by
+     *         the service.
      * @sample AmazonEC2.DisableVgwRoutePropagation
      */
-    void disableVgwRoutePropagation(
+    DisableVgwRoutePropagationResult disableVgwRoutePropagation(
             DisableVgwRoutePropagationRequest disableVgwRoutePropagationRequest);
 
     /**
@@ -3832,9 +3929,11 @@ public interface AmazonEC2 {
      * 
      * @param disassociateAddressRequest
      *        Contains the parameters for DisassociateAddress.
+     * @return Result of the DisassociateAddress operation returned by the
+     *         service.
      * @sample AmazonEC2.DisassociateAddress
      */
-    void disassociateAddress(
+    DisassociateAddressResult disassociateAddress(
             DisassociateAddressRequest disassociateAddressRequest);
 
     /**
@@ -3851,9 +3950,11 @@ public interface AmazonEC2 {
      * 
      * @param disassociateRouteTableRequest
      *        Contains the parameters for DisassociateRouteTable.
+     * @return Result of the DisassociateRouteTable operation returned by the
+     *         service.
      * @sample AmazonEC2.DisassociateRouteTable
      */
-    void disassociateRouteTable(
+    DisassociateRouteTableResult disassociateRouteTable(
             DisassociateRouteTableRequest disassociateRouteTableRequest);
 
     /**
@@ -3864,9 +3965,11 @@ public interface AmazonEC2 {
      * 
      * @param enableVgwRoutePropagationRequest
      *        Contains the parameters for EnableVgwRoutePropagation.
+     * @return Result of the EnableVgwRoutePropagation operation returned by the
+     *         service.
      * @sample AmazonEC2.EnableVgwRoutePropagation
      */
-    void enableVgwRoutePropagation(
+    EnableVgwRoutePropagationResult enableVgwRoutePropagation(
             EnableVgwRoutePropagationRequest enableVgwRoutePropagationRequest);
 
     /**
@@ -3877,9 +3980,11 @@ public interface AmazonEC2 {
      * 
      * @param enableVolumeIORequest
      *        Contains the parameters for EnableVolumeIO.
+     * @return Result of the EnableVolumeIO operation returned by the service.
      * @sample AmazonEC2.EnableVolumeIO
      */
-    void enableVolumeIO(EnableVolumeIORequest enableVolumeIORequest);
+    EnableVolumeIOResult enableVolumeIO(
+            EnableVolumeIORequest enableVolumeIORequest);
 
     /**
      * <p>
@@ -4151,9 +4256,11 @@ public interface AmazonEC2 {
      * 
      * @param modifyIdFormatRequest
      *        Contains the parameters of ModifyIdFormat.
+     * @return Result of the ModifyIdFormat operation returned by the service.
      * @sample AmazonEC2.ModifyIdFormat
      */
-    void modifyIdFormat(ModifyIdFormatRequest modifyIdFormatRequest);
+    ModifyIdFormatResult modifyIdFormat(
+            ModifyIdFormatRequest modifyIdFormatRequest);
 
     /**
      * <p>
@@ -4169,9 +4276,11 @@ public interface AmazonEC2 {
      * 
      * @param modifyImageAttributeRequest
      *        Contains the parameters for ModifyImageAttribute.
+     * @return Result of the ModifyImageAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifyImageAttribute
      */
-    void modifyImageAttribute(
+    ModifyImageAttributeResult modifyImageAttribute(
             ModifyImageAttributeRequest modifyImageAttributeRequest);
 
     /**
@@ -4189,9 +4298,11 @@ public interface AmazonEC2 {
      * 
      * @param modifyInstanceAttributeRequest
      *        Contains the parameters for ModifyInstanceAttribute.
+     * @return Result of the ModifyInstanceAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifyInstanceAttribute
      */
-    void modifyInstanceAttribute(
+    ModifyInstanceAttributeResult modifyInstanceAttribute(
             ModifyInstanceAttributeRequest modifyInstanceAttributeRequest);
 
     /**
@@ -4239,9 +4350,11 @@ public interface AmazonEC2 {
      * 
      * @param modifyNetworkInterfaceAttributeRequest
      *        Contains the parameters for ModifyNetworkInterfaceAttribute.
+     * @return Result of the ModifyNetworkInterfaceAttribute operation returned
+     *         by the service.
      * @sample AmazonEC2.ModifyNetworkInterfaceAttribute
      */
-    void modifyNetworkInterfaceAttribute(
+    ModifyNetworkInterfaceAttributeResult modifyNetworkInterfaceAttribute(
             ModifyNetworkInterfaceAttributeRequest modifyNetworkInterfaceAttributeRequest);
 
     /**
@@ -4289,9 +4402,11 @@ public interface AmazonEC2 {
      * 
      * @param modifySnapshotAttributeRequest
      *        Contains the parameters for ModifySnapshotAttribute.
+     * @return Result of the ModifySnapshotAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifySnapshotAttribute
      */
-    void modifySnapshotAttribute(
+    ModifySnapshotAttributeResult modifySnapshotAttribute(
             ModifySnapshotAttributeRequest modifySnapshotAttributeRequest);
 
     /**
@@ -4340,9 +4455,11 @@ public interface AmazonEC2 {
      * 
      * @param modifySubnetAttributeRequest
      *        Contains the parameters for ModifySubnetAttribute.
+     * @return Result of the ModifySubnetAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifySubnetAttribute
      */
-    void modifySubnetAttribute(
+    ModifySubnetAttributeResult modifySubnetAttribute(
             ModifySubnetAttributeRequest modifySubnetAttributeRequest);
 
     /**
@@ -4364,9 +4481,11 @@ public interface AmazonEC2 {
      * 
      * @param modifyVolumeAttributeRequest
      *        Contains the parameters for ModifyVolumeAttribute.
+     * @return Result of the ModifyVolumeAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifyVolumeAttribute
      */
-    void modifyVolumeAttribute(
+    ModifyVolumeAttributeResult modifyVolumeAttribute(
             ModifyVolumeAttributeRequest modifyVolumeAttributeRequest);
 
     /**
@@ -4376,9 +4495,12 @@ public interface AmazonEC2 {
      * 
      * @param modifyVpcAttributeRequest
      *        Contains the parameters for ModifyVpcAttribute.
+     * @return Result of the ModifyVpcAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ModifyVpcAttribute
      */
-    void modifyVpcAttribute(ModifyVpcAttributeRequest modifyVpcAttributeRequest);
+    ModifyVpcAttributeResult modifyVpcAttribute(
+            ModifyVpcAttributeRequest modifyVpcAttributeRequest);
 
     /**
      * <p>
@@ -4551,9 +4673,11 @@ public interface AmazonEC2 {
      * 
      * @param rebootInstancesRequest
      *        Contains the parameters for RebootInstances.
+     * @return Result of the RebootInstances operation returned by the service.
      * @sample AmazonEC2.RebootInstances
      */
-    void rebootInstances(RebootInstancesRequest rebootInstancesRequest);
+    RebootInstancesResult rebootInstances(
+            RebootInstancesRequest rebootInstancesRequest);
 
     /**
      * <p>
@@ -4663,9 +4787,11 @@ public interface AmazonEC2 {
      * 
      * @param releaseAddressRequest
      *        Contains the parameters for ReleaseAddress.
+     * @return Result of the ReleaseAddress operation returned by the service.
      * @sample AmazonEC2.ReleaseAddress
      */
-    void releaseAddress(ReleaseAddressRequest releaseAddressRequest);
+    ReleaseAddressResult releaseAddress(
+            ReleaseAddressRequest releaseAddressRequest);
 
     /**
      * <p>
@@ -4720,9 +4846,11 @@ public interface AmazonEC2 {
      * 
      * @param replaceNetworkAclEntryRequest
      *        Contains the parameters for ReplaceNetworkAclEntry.
+     * @return Result of the ReplaceNetworkAclEntry operation returned by the
+     *         service.
      * @sample AmazonEC2.ReplaceNetworkAclEntry
      */
-    void replaceNetworkAclEntry(
+    ReplaceNetworkAclEntryResult replaceNetworkAclEntry(
             ReplaceNetworkAclEntryRequest replaceNetworkAclEntryRequest);
 
     /**
@@ -4740,9 +4868,10 @@ public interface AmazonEC2 {
      * 
      * @param replaceRouteRequest
      *        Contains the parameters for ReplaceRoute.
+     * @return Result of the ReplaceRoute operation returned by the service.
      * @sample AmazonEC2.ReplaceRoute
      */
-    void replaceRoute(ReplaceRouteRequest replaceRouteRequest);
+    ReplaceRouteResult replaceRoute(ReplaceRouteRequest replaceRouteRequest);
 
     /**
      * <p>
@@ -4784,9 +4913,11 @@ public interface AmazonEC2 {
      * 
      * @param reportInstanceStatusRequest
      *        Contains the parameters for ReportInstanceStatus.
+     * @return Result of the ReportInstanceStatus operation returned by the
+     *         service.
      * @sample AmazonEC2.ReportInstanceStatus
      */
-    void reportInstanceStatus(
+    ReportInstanceStatusResult reportInstanceStatus(
             ReportInstanceStatusRequest reportInstanceStatusRequest);
 
     /**
@@ -4858,20 +4989,22 @@ public interface AmazonEC2 {
      * 
      * @param resetImageAttributeRequest
      *        Contains the parameters for ResetImageAttribute.
+     * @return Result of the ResetImageAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ResetImageAttribute
      */
-    void resetImageAttribute(
+    ResetImageAttributeResult resetImageAttribute(
             ResetImageAttributeRequest resetImageAttributeRequest);
 
     /**
      * <p>
      * Resets an attribute of an instance to its default value. To reset the
      * <code>kernel</code> or <code>ramdisk</code>, the instance must be in a
-     * stopped state. To reset the <code>SourceDestCheck</code>, the instance
+     * stopped state. To reset the <code>sourceDestCheck</code>, the instance
      * can be either running or stopped.
      * </p>
      * <p>
-     * The <code>SourceDestCheck</code> attribute controls whether
+     * The <code>sourceDestCheck</code> attribute controls whether
      * source/destination checking is enabled. The default value is
      * <code>true</code>, which means checking is enabled. This value must be
      * <code>false</code> for a NAT instance to perform NAT. For more
@@ -4882,9 +5015,11 @@ public interface AmazonEC2 {
      * 
      * @param resetInstanceAttributeRequest
      *        Contains the parameters for ResetInstanceAttribute.
+     * @return Result of the ResetInstanceAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ResetInstanceAttribute
      */
-    void resetInstanceAttribute(
+    ResetInstanceAttributeResult resetInstanceAttribute(
             ResetInstanceAttributeRequest resetInstanceAttributeRequest);
 
     /**
@@ -4895,9 +5030,11 @@ public interface AmazonEC2 {
      * 
      * @param resetNetworkInterfaceAttributeRequest
      *        Contains the parameters for ResetNetworkInterfaceAttribute.
+     * @return Result of the ResetNetworkInterfaceAttribute operation returned
+     *         by the service.
      * @sample AmazonEC2.ResetNetworkInterfaceAttribute
      */
-    void resetNetworkInterfaceAttribute(
+    ResetNetworkInterfaceAttributeResult resetNetworkInterfaceAttribute(
             ResetNetworkInterfaceAttributeRequest resetNetworkInterfaceAttributeRequest);
 
     /**
@@ -4913,9 +5050,11 @@ public interface AmazonEC2 {
      * 
      * @param resetSnapshotAttributeRequest
      *        Contains the parameters for ResetSnapshotAttribute.
+     * @return Result of the ResetSnapshotAttribute operation returned by the
+     *         service.
      * @sample AmazonEC2.ResetSnapshotAttribute
      */
-    void resetSnapshotAttribute(
+    ResetSnapshotAttributeResult resetSnapshotAttribute(
             ResetSnapshotAttributeRequest resetSnapshotAttributeRequest);
 
     /**
@@ -4959,9 +5098,11 @@ public interface AmazonEC2 {
      * 
      * @param revokeSecurityGroupEgressRequest
      *        Contains the parameters for RevokeSecurityGroupEgress.
+     * @return Result of the RevokeSecurityGroupEgress operation returned by the
+     *         service.
      * @sample AmazonEC2.RevokeSecurityGroupEgress
      */
-    void revokeSecurityGroupEgress(
+    RevokeSecurityGroupEgressResult revokeSecurityGroupEgress(
             RevokeSecurityGroupEgressRequest revokeSecurityGroupEgressRequest);
 
     /**
@@ -4983,9 +5124,11 @@ public interface AmazonEC2 {
      * 
      * @param revokeSecurityGroupIngressRequest
      *        Contains the parameters for RevokeSecurityGroupIngress.
+     * @return Result of the RevokeSecurityGroupIngress operation returned by
+     *         the service.
      * @sample AmazonEC2.RevokeSecurityGroupIngress
      */
-    void revokeSecurityGroupIngress(
+    RevokeSecurityGroupIngressResult revokeSecurityGroupIngress(
             RevokeSecurityGroupIngressRequest revokeSecurityGroupIngressRequest);
 
     /**
@@ -4994,7 +5137,7 @@ public interface AmazonEC2 {
      *
      * @see #revokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest)
      */
-    void revokeSecurityGroupIngress();
+    RevokeSecurityGroupIngressResult revokeSecurityGroupIngress();
 
     /**
      * <p>
@@ -5168,7 +5311,10 @@ public interface AmazonEC2 {
      * Guide</i>.
      * </p>
      * <p>
-     * For more information about troubleshooting, see <a href=
+     * When you stop an instance, we attempt to shut it down forcibly after a
+     * short while. If your instance appears stuck in the stopping state after a
+     * period of time, there may be an issue with the underlying host computer.
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html"
      * >Troubleshooting Stopping Your Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.
@@ -5233,9 +5379,11 @@ public interface AmazonEC2 {
      * 
      * @param unassignPrivateIpAddressesRequest
      *        Contains the parameters for UnassignPrivateIpAddresses.
+     * @return Result of the UnassignPrivateIpAddresses operation returned by
+     *         the service.
      * @sample AmazonEC2.UnassignPrivateIpAddresses
      */
-    void unassignPrivateIpAddresses(
+    UnassignPrivateIpAddressesResult unassignPrivateIpAddresses(
             UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest);
 
     /**

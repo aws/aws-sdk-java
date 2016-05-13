@@ -22,7 +22,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 <#if customizationConfig.serviceClientHoldInputStream>
@@ -64,10 +64,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ${clientConfigFactory} configFactory = new ${clientConfigFactory}();
 
-    /**
-     * List of exception unmarshallers for all ${serviceAbbreviation} exceptions.
-     */
-<@ExceptionUnmarshallerListVariableDeclarationMacro.content />
+    <@AdditionalSyncClientFieldsMacro.content .data_model />
 
     /**
      * Constructs a new client to invoke service methods on
@@ -285,7 +282,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        <@ClientInvokeMethodErrorResponseHandlerCreation.content metadata/>
+        <@ClientInvokeMethodErrorResponseHandlerCreation.content metadata customizationConfig />
 
         return client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);

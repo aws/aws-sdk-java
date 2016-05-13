@@ -3,8 +3,8 @@
     "mainTemplate" : "/templates/common/SyncClientClassBase.ftl",
     "childTemplates" : [
       {
-        "location" : "/macros/syncclientclass/awsquery/ExceptionUnmarshallerListVariableDeclaration.ftl",
-        "importAsNamespace" : "ExceptionUnmarshallerListVariableDeclarationMacro"
+        "location" : "/macros/syncclientclass/awsquery/AdditionalSyncClientFields.ftl",
+        "importAsNamespace" : "AdditionalSyncClientFieldsMacro"
       }, {
         "location" : "/macros/syncclientclass/awsquery/ClientInitMethod.ftl",
         "importAsNamespace" : "ClientInitMethodMacro"
@@ -23,6 +23,9 @@
       }, {
         "location" : "/macros/syncclientclass/common/ClientInvokeMethodInvocation.ftl",
         "importAsNamespace" : "ClientInvokeMethodInvocation"
+      }, {
+        "location" : "/macros/marshaller/common/RequestMarshallerCreation.ftl",
+        "importAsNamespace" : "RequestMarshallerCreation"
       }
     ]
   },

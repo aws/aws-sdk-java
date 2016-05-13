@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteAliasRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class DeleteAliasRequestMarshaller implements
         Marshaller<Request<DeleteAliasRequest>, DeleteAliasRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteAliasRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteAliasRequest> marshall(
             DeleteAliasRequest deleteAliasRequest) {
@@ -66,12 +73,14 @@ public class DeleteAliasRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{FunctionName}",
-                (deleteAliasRequest.getFunctionName() != null) ? StringUtils
-                        .fromString(deleteAliasRequest.getFunctionName()) : "");
+                (deleteAliasRequest.getFunctionName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteAliasRequest
+                                .getFunctionName()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{Name}",
-                (deleteAliasRequest.getName() != null) ? StringUtils
-                        .fromString(deleteAliasRequest.getName()) : "");
+                (deleteAliasRequest.getName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteAliasRequest
+                                .getName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

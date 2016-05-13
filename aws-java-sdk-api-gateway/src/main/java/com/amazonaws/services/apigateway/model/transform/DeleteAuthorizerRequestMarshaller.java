@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteAuthorizerRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class DeleteAuthorizerRequestMarshaller implements
         Marshaller<Request<DeleteAuthorizerRequest>, DeleteAuthorizerRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteAuthorizerRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteAuthorizerRequest> marshall(
             DeleteAuthorizerRequest deleteAuthorizerRequest) {
@@ -66,15 +74,18 @@ public class DeleteAuthorizerRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (deleteAuthorizerRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(deleteAuthorizerRequest.getRestApiId())
-                        : "");
+                (deleteAuthorizerRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(deleteAuthorizerRequest
+                                        .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{authorizer_id}",
-                        (deleteAuthorizerRequest.getAuthorizerId() != null) ? StringUtils
-                                .fromString(deleteAuthorizerRequest
-                                        .getAuthorizerId()) : "");
+                        (deleteAuthorizerRequest.getAuthorizerId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(deleteAuthorizerRequest
+                                                .getAuthorizerId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

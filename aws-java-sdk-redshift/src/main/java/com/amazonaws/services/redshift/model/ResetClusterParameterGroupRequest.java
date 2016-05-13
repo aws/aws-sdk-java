@@ -1,233 +1,295 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#resetClusterParameterGroup(ResetClusterParameterGroupRequest) ResetClusterParameterGroup operation}.
  * <p>
- * Sets one or more parameters of the specified parameter group to their
- * default values and sets the source values of the parameters to
- * "engine-default". To reset the entire parameter group specify the
- * <i>ResetAllParameters</i> parameter. For parameter changes to take
- * effect you must reboot any associated clusters.
  * </p>
- *
- * @see com.amazonaws.services.redshift.AmazonRedshift#resetClusterParameterGroup(ResetClusterParameterGroupRequest)
  */
-public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the cluster parameter group to be reset.
+     * </p>
      */
     private String parameterGroupName;
-
     /**
+     * <p>
      * If <code>true</code>, all parameters in the specified parameter group
-     * will be reset to their default values. <p>Default: <code>true</code>
+     * will be reset to their default values.
+     * </p>
+     * <p>
+     * Default: <code>true</code>
+     * </p>
      */
     private Boolean resetAllParameters;
+    /**
+     * <p>
+     * An array of names of parameters to be reset. If <i>ResetAllParameters</i>
+     * option is not used, then at least one parameter name must be supplied.
+     * </p>
+     * <p>
+     * Constraints: A maximum of 20 parameters can be reset in a single request.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
 
     /**
-     * An array of names of parameters to be reset. If
-     * <i>ResetAllParameters</i> option is not used, then at least one
-     * parameter name must be supplied. <p>Constraints: A maximum of 20
-     * parameters can be reset in a single request.
+     * <p>
+     * The name of the cluster parameter group to be reset.
+     * </p>
+     * 
+     * @param parameterGroupName
+     *        The name of the cluster parameter group to be reset.
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
-    /**
-     * The name of the cluster parameter group to be reset.
-     *
-     * @return The name of the cluster parameter group to be reset.
-     */
-    public String getParameterGroupName() {
-        return parameterGroupName;
-    }
-    
-    /**
-     * The name of the cluster parameter group to be reset.
-     *
-     * @param parameterGroupName The name of the cluster parameter group to be reset.
-     */
     public void setParameterGroupName(String parameterGroupName) {
         this.parameterGroupName = parameterGroupName;
     }
-    
+
     /**
-     * The name of the cluster parameter group to be reset.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param parameterGroupName The name of the cluster parameter group to be reset.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the cluster parameter group to be reset.
+     * </p>
+     * 
+     * @return The name of the cluster parameter group to be reset.
      */
-    public ResetClusterParameterGroupRequest withParameterGroupName(String parameterGroupName) {
-        this.parameterGroupName = parameterGroupName;
+
+    public String getParameterGroupName() {
+        return this.parameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the cluster parameter group to be reset.
+     * </p>
+     * 
+     * @param parameterGroupName
+     *        The name of the cluster parameter group to be reset.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ResetClusterParameterGroupRequest withParameterGroupName(
+            String parameterGroupName) {
+        setParameterGroupName(parameterGroupName);
         return this;
     }
 
     /**
+     * <p>
      * If <code>true</code>, all parameters in the specified parameter group
-     * will be reset to their default values. <p>Default: <code>true</code>
-     *
-     * @return If <code>true</code>, all parameters in the specified parameter group
-     *         will be reset to their default values. <p>Default: <code>true</code>
+     * will be reset to their default values.
+     * </p>
+     * <p>
+     * Default: <code>true</code>
+     * </p>
+     * 
+     * @param resetAllParameters
+     *        If <code>true</code>, all parameters in the specified parameter
+     *        group will be reset to their default values. </p>
+     *        <p>
+     *        Default: <code>true</code>
      */
-    public Boolean isResetAllParameters() {
-        return resetAllParameters;
-    }
-    
-    /**
-     * If <code>true</code>, all parameters in the specified parameter group
-     * will be reset to their default values. <p>Default: <code>true</code>
-     *
-     * @param resetAllParameters If <code>true</code>, all parameters in the specified parameter group
-     *         will be reset to their default values. <p>Default: <code>true</code>
-     */
+
     public void setResetAllParameters(Boolean resetAllParameters) {
         this.resetAllParameters = resetAllParameters;
     }
-    
+
     /**
-     * If <code>true</code>, all parameters in the specified parameter group
-     * will be reset to their default values. <p>Default: <code>true</code>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param resetAllParameters If <code>true</code>, all parameters in the specified parameter group
-     *         will be reset to their default values. <p>Default: <code>true</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * If <code>true</code>, all parameters in the specified parameter group
+     * will be reset to their default values.
+     * </p>
+     * <p>
+     * Default: <code>true</code>
+     * </p>
+     * 
+     * @return If <code>true</code>, all parameters in the specified parameter
+     *         group will be reset to their default values. </p>
+     *         <p>
+     *         Default: <code>true</code>
      */
-    public ResetClusterParameterGroupRequest withResetAllParameters(Boolean resetAllParameters) {
-        this.resetAllParameters = resetAllParameters;
+
+    public Boolean getResetAllParameters() {
+        return this.resetAllParameters;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, all parameters in the specified parameter group
+     * will be reset to their default values.
+     * </p>
+     * <p>
+     * Default: <code>true</code>
+     * </p>
+     * 
+     * @param resetAllParameters
+     *        If <code>true</code>, all parameters in the specified parameter
+     *        group will be reset to their default values. </p>
+     *        <p>
+     *        Default: <code>true</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ResetClusterParameterGroupRequest withResetAllParameters(
+            Boolean resetAllParameters) {
+        setResetAllParameters(resetAllParameters);
         return this;
     }
 
     /**
+     * <p>
      * If <code>true</code>, all parameters in the specified parameter group
-     * will be reset to their default values. <p>Default: <code>true</code>
-     *
-     * @return If <code>true</code>, all parameters in the specified parameter group
-     *         will be reset to their default values. <p>Default: <code>true</code>
+     * will be reset to their default values.
+     * </p>
+     * <p>
+     * Default: <code>true</code>
+     * </p>
+     * 
+     * @return If <code>true</code>, all parameters in the specified parameter
+     *         group will be reset to their default values. </p>
+     *         <p>
+     *         Default: <code>true</code>
      */
-    public Boolean getResetAllParameters() {
-        return resetAllParameters;
+
+    public Boolean isResetAllParameters() {
+        return this.resetAllParameters;
     }
 
     /**
-     * An array of names of parameters to be reset. If
-     * <i>ResetAllParameters</i> option is not used, then at least one
-     * parameter name must be supplied. <p>Constraints: A maximum of 20
-     * parameters can be reset in a single request.
-     *
+     * <p>
+     * An array of names of parameters to be reset. If <i>ResetAllParameters</i>
+     * option is not used, then at least one parameter name must be supplied.
+     * </p>
+     * <p>
+     * Constraints: A maximum of 20 parameters can be reset in a single request.
+     * </p>
+     * 
      * @return An array of names of parameters to be reset. If
      *         <i>ResetAllParameters</i> option is not used, then at least one
-     *         parameter name must be supplied. <p>Constraints: A maximum of 20
-     *         parameters can be reset in a single request.
+     *         parameter name must be supplied. </p>
+     *         <p>
+     *         Constraints: A maximum of 20 parameters can be reset in a single
+     *         request.
      */
+
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
-              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
-              parameters.setAutoConstruct(true);
+            parameters = new com.amazonaws.internal.SdkInternalList<Parameter>();
         }
         return parameters;
     }
-    
+
     /**
-     * An array of names of parameters to be reset. If
-     * <i>ResetAllParameters</i> option is not used, then at least one
-     * parameter name must be supplied. <p>Constraints: A maximum of 20
-     * parameters can be reset in a single request.
-     *
-     * @param parameters An array of names of parameters to be reset. If
-     *         <i>ResetAllParameters</i> option is not used, then at least one
-     *         parameter name must be supplied. <p>Constraints: A maximum of 20
-     *         parameters can be reset in a single request.
+     * <p>
+     * An array of names of parameters to be reset. If <i>ResetAllParameters</i>
+     * option is not used, then at least one parameter name must be supplied.
+     * </p>
+     * <p>
+     * Constraints: A maximum of 20 parameters can be reset in a single request.
+     * </p>
+     * 
+     * @param parameters
+     *        An array of names of parameters to be reset. If
+     *        <i>ResetAllParameters</i> option is not used, then at least one
+     *        parameter name must be supplied. </p>
+     *        <p>
+     *        Constraints: A maximum of 20 parameters can be reset in a single
+     *        request.
      */
+
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
             this.parameters = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
-        parametersCopy.addAll(parameters);
-        this.parameters = parametersCopy;
+
+        this.parameters = new com.amazonaws.internal.SdkInternalList<Parameter>(
+                parameters);
     }
-    
+
     /**
-     * An array of names of parameters to be reset. If
-     * <i>ResetAllParameters</i> option is not used, then at least one
-     * parameter name must be supplied. <p>Constraints: A maximum of 20
-     * parameters can be reset in a single request.
+     * <p>
+     * An array of names of parameters to be reset. If <i>ResetAllParameters</i>
+     * option is not used, then at least one parameter name must be supplied.
+     * </p>
+     * <p>
+     * Constraints: A maximum of 20 parameters can be reset in a single request.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setParameters(java.util.Collection)} or {@link
-     * #withParameters(java.util.Collection)} if you want to override the
+     * any). Use {@link #setParameters(java.util.Collection)} or
+     * {@link #withParameters(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param parameters An array of names of parameters to be reset. If
-     *         <i>ResetAllParameters</i> option is not used, then at least one
-     *         parameter name must be supplied. <p>Constraints: A maximum of 20
-     *         parameters can be reset in a single request.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param parameters
+     *        An array of names of parameters to be reset. If
+     *        <i>ResetAllParameters</i> option is not used, then at least one
+     *        parameter name must be supplied. </p>
+     *        <p>
+     *        Constraints: A maximum of 20 parameters can be reset in a single
+     *        request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ResetClusterParameterGroupRequest withParameters(Parameter... parameters) {
-        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
-        for (Parameter value : parameters) {
-            getParameters().add(value);
+
+    public ResetClusterParameterGroupRequest withParameters(
+            Parameter... parameters) {
+        if (this.parameters == null) {
+            setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(
+                    parameters.length));
+        }
+        for (Parameter ele : parameters) {
+            this.parameters.add(ele);
         }
         return this;
     }
-    
-    /**
-     * An array of names of parameters to be reset. If
-     * <i>ResetAllParameters</i> option is not used, then at least one
-     * parameter name must be supplied. <p>Constraints: A maximum of 20
-     * parameters can be reset in a single request.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param parameters An array of names of parameters to be reset. If
-     *         <i>ResetAllParameters</i> option is not used, then at least one
-     *         parameter name must be supplied. <p>Constraints: A maximum of 20
-     *         parameters can be reset in a single request.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ResetClusterParameterGroupRequest withParameters(java.util.Collection<Parameter> parameters) {
-        if (parameters == null) {
-            this.parameters = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
-            parametersCopy.addAll(parameters);
-            this.parameters = parametersCopy;
-        }
 
+    /**
+     * <p>
+     * An array of names of parameters to be reset. If <i>ResetAllParameters</i>
+     * option is not used, then at least one parameter name must be supplied.
+     * </p>
+     * <p>
+     * Constraints: A maximum of 20 parameters can be reset in a single request.
+     * </p>
+     * 
+     * @param parameters
+     *        An array of names of parameters to be reset. If
+     *        <i>ResetAllParameters</i> option is not used, then at least one
+     *        parameter name must be supplied. </p>
+     *        <p>
+     *        Constraints: A maximum of 20 parameters can be reset in a single
+     *        request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ResetClusterParameterGroupRequest withParameters(
+            java.util.Collection<Parameter> parameters) {
+        setParameters(parameters);
         return this;
     }
 
@@ -243,46 +305,68 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getParameterGroupName() != null) sb.append("ParameterGroupName: " + getParameterGroupName() + ",");
-        if (isResetAllParameters() != null) sb.append("ResetAllParameters: " + isResetAllParameters() + ",");
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() );
+        if (getParameterGroupName() != null)
+            sb.append("ParameterGroupName: " + getParameterGroupName() + ",");
+        if (getResetAllParameters() != null)
+            sb.append("ResetAllParameters: " + getResetAllParameters() + ",");
+        if (getParameters() != null)
+            sb.append("Parameters: " + getParameters());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ResetClusterParameterGroupRequest == false)
+            return false;
+        ResetClusterParameterGroupRequest other = (ResetClusterParameterGroupRequest) obj;
+        if (other.getParameterGroupName() == null
+                ^ this.getParameterGroupName() == null)
+            return false;
+        if (other.getParameterGroupName() != null
+                && other.getParameterGroupName().equals(
+                        this.getParameterGroupName()) == false)
+            return false;
+        if (other.getResetAllParameters() == null
+                ^ this.getResetAllParameters() == null)
+            return false;
+        if (other.getResetAllParameters() != null
+                && other.getResetAllParameters().equals(
+                        this.getResetAllParameters()) == false)
+            return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null
+                && other.getParameters().equals(this.getParameters()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getParameterGroupName() == null) ? 0 : getParameterGroupName().hashCode()); 
-        hashCode = prime * hashCode + ((isResetAllParameters() == null) ? 0 : isResetAllParameters().hashCode()); 
-        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getParameterGroupName() == null) ? 0
+                        : getParameterGroupName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getResetAllParameters() == null) ? 0
+                        : getResetAllParameters().hashCode());
+        hashCode = prime * hashCode
+                + ((getParameters() == null) ? 0 : getParameters().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ResetClusterParameterGroupRequest == false) return false;
-        ResetClusterParameterGroupRequest other = (ResetClusterParameterGroupRequest)obj;
-        
-        if (other.getParameterGroupName() == null ^ this.getParameterGroupName() == null) return false;
-        if (other.getParameterGroupName() != null && other.getParameterGroupName().equals(this.getParameterGroupName()) == false) return false; 
-        if (other.isResetAllParameters() == null ^ this.isResetAllParameters() == null) return false;
-        if (other.isResetAllParameters() != null && other.isResetAllParameters().equals(this.isResetAllParameters()) == false) return false; 
-        if (other.getParameters() == null ^ this.getParameters() == null) return false;
-        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ResetClusterParameterGroupRequest clone() {
-        
-            return (ResetClusterParameterGroupRequest) super.clone();
+        return (ResetClusterParameterGroupRequest) super.clone();
     }
-
 }
-    

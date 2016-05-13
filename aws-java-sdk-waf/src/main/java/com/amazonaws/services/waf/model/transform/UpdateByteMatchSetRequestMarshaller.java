@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateByteMatchSetRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class UpdateByteMatchSetRequestMarshaller
         implements
         Marshaller<Request<UpdateByteMatchSetRequest>, UpdateByteMatchSetRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateByteMatchSetRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateByteMatchSetRequest> marshall(
             UpdateByteMatchSetRequest updateByteMatchSetRequest) {
@@ -58,8 +65,8 @@ public class UpdateByteMatchSetRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

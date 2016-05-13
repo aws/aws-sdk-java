@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RegisterEcsClusterRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class RegisterEcsClusterRequestMarshaller
         implements
         Marshaller<Request<RegisterEcsClusterRequest>, RegisterEcsClusterRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RegisterEcsClusterRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RegisterEcsClusterRequest> marshall(
             RegisterEcsClusterRequest registerEcsClusterRequest) {
@@ -59,8 +66,8 @@ public class RegisterEcsClusterRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

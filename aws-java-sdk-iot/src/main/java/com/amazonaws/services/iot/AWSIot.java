@@ -111,6 +111,8 @@ public interface AWSIot {
      * 
      * @param acceptCertificateTransferRequest
      *        The input for the AcceptCertificateTransfer operation.
+     * @return Result of the AcceptCertificateTransfer operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
@@ -128,7 +130,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.AcceptCertificateTransfer
      */
-    void acceptCertificateTransfer(
+    AcceptCertificateTransferResult acceptCertificateTransfer(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest);
 
     /**
@@ -139,6 +141,8 @@ public interface AWSIot {
      * 
      * @param attachPrincipalPolicyRequest
      *        The input for the AttachPrincipalPolicy operation.
+     * @return Result of the AttachPrincipalPolicy operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException
@@ -155,7 +159,7 @@ public interface AWSIot {
      *         The number of attached entities exceeds the limit.
      * @sample AWSIot.AttachPrincipalPolicy
      */
-    void attachPrincipalPolicy(
+    AttachPrincipalPolicyResult attachPrincipalPolicy(
             AttachPrincipalPolicyRequest attachPrincipalPolicyRequest);
 
     /**
@@ -203,6 +207,8 @@ public interface AWSIot {
      * 
      * @param cancelCertificateTransferRequest
      *        The input for the CancelCertificateTransfer operation.
+     * @return Result of the CancelCertificateTransfer operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
@@ -220,7 +226,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.CancelCertificateTransfer
      */
-    void cancelCertificateTransfer(
+    CancelCertificateTransferResult cancelCertificateTransfer(
             CancelCertificateTransferRequest cancelCertificateTransferRequest);
 
     /**
@@ -432,6 +438,7 @@ public interface AWSIot {
      * 
      * @param createTopicRuleRequest
      *        The input for the CreateTopicRule operation.
+     * @return Result of the CreateTopicRule operation returned by the service.
      * @throws SqlParseException
      *         The Rule-SQL expression can't be parsed correctly.
      * @throws InternalException
@@ -444,7 +451,8 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @sample AWSIot.CreateTopicRule
      */
-    void createTopicRule(CreateTopicRuleRequest createTopicRuleRequest);
+    CreateTopicRuleResult createTopicRule(
+            CreateTopicRuleRequest createTopicRuleRequest);
 
     /**
      * <p>
@@ -488,6 +496,8 @@ public interface AWSIot {
      * 
      * @param deleteCertificateRequest
      *        The input for the DeleteCertificate operation.
+     * @return Result of the DeleteCertificate operation returned by the
+     *         service.
      * @throws CertificateStateException
      *         The certificate operation is not allowed.
      * @throws DeleteConflictException
@@ -507,7 +517,8 @@ public interface AWSIot {
      *         The specified resource does not exist.
      * @sample AWSIot.DeleteCertificate
      */
-    void deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
+    DeleteCertificateResult deleteCertificate(
+            DeleteCertificateRequest deleteCertificateRequest);
 
     /**
      * <p>
@@ -530,6 +541,7 @@ public interface AWSIot {
      * 
      * @param deletePolicyRequest
      *        The input for the DeletePolicy operation.
+     * @return Result of the DeletePolicy operation returned by the service.
      * @throws DeleteConflictException
      *         You can't delete the resource because it is attached to one or
      *         more resources.
@@ -547,7 +559,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.DeletePolicy
      */
-    void deletePolicy(DeletePolicyRequest deletePolicyRequest);
+    DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest);
 
     /**
      * <p>
@@ -559,6 +571,8 @@ public interface AWSIot {
      * 
      * @param deletePolicyVersionRequest
      *        The input for the DeletePolicyVersion operation.
+     * @return Result of the DeletePolicyVersion operation returned by the
+     *         service.
      * @throws DeleteConflictException
      *         You can't delete the resource because it is attached to one or
      *         more resources.
@@ -576,7 +590,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.DeletePolicyVersion
      */
-    void deletePolicyVersion(
+    DeletePolicyVersionResult deletePolicyVersion(
             DeletePolicyVersionRequest deletePolicyVersionRequest);
 
     /**
@@ -634,6 +648,7 @@ public interface AWSIot {
      * 
      * @param deleteTopicRuleRequest
      *        The input for the DeleteTopicRule operation.
+     * @return Result of the DeleteTopicRule operation returned by the service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -644,7 +659,8 @@ public interface AWSIot {
      *         You are not authorized to perform this operation.
      * @sample AWSIot.DeleteTopicRule
      */
-    void deleteTopicRule(DeleteTopicRuleRequest deleteTopicRuleRequest);
+    DeleteTopicRuleResult deleteTopicRule(
+            DeleteTopicRuleRequest deleteTopicRuleRequest);
 
     /**
      * <p>
@@ -750,6 +766,8 @@ public interface AWSIot {
      * 
      * @param detachPrincipalPolicyRequest
      *        The input for the DetachPrincipalPolicy operation.
+     * @return Result of the DetachPrincipalPolicy operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException
@@ -764,7 +782,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.DetachPrincipalPolicy
      */
-    void detachPrincipalPolicy(
+    DetachPrincipalPolicyResult detachPrincipalPolicy(
             DetachPrincipalPolicyRequest detachPrincipalPolicyRequest);
 
     /**
@@ -800,6 +818,7 @@ public interface AWSIot {
      * 
      * @param disableTopicRuleRequest
      *        The input for the DisableTopicRuleRequest operation.
+     * @return Result of the DisableTopicRule operation returned by the service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -810,7 +829,8 @@ public interface AWSIot {
      *         You are not authorized to perform this operation.
      * @sample AWSIot.DisableTopicRule
      */
-    void disableTopicRule(DisableTopicRuleRequest disableTopicRuleRequest);
+    DisableTopicRuleResult disableTopicRule(
+            DisableTopicRuleRequest disableTopicRuleRequest);
 
     /**
      * <p>
@@ -819,6 +839,7 @@ public interface AWSIot {
      * 
      * @param enableTopicRuleRequest
      *        The input for the EnableTopicRuleRequest operation.
+     * @return Result of the EnableTopicRule operation returned by the service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -829,7 +850,8 @@ public interface AWSIot {
      *         You are not authorized to perform this operation.
      * @sample AWSIot.EnableTopicRule
      */
-    void enableTopicRule(EnableTopicRuleRequest enableTopicRuleRequest);
+    EnableTopicRuleResult enableTopicRule(
+            EnableTopicRuleRequest enableTopicRuleRequest);
 
     /**
      * <p>
@@ -1286,6 +1308,8 @@ public interface AWSIot {
      * 
      * @param rejectCertificateTransferRequest
      *        The input for the RejectCertificateTransfer operation.
+     * @return Result of the RejectCertificateTransfer operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
@@ -1303,7 +1327,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.RejectCertificateTransfer
      */
-    void rejectCertificateTransfer(
+    RejectCertificateTransferResult rejectCertificateTransfer(
             RejectCertificateTransferRequest rejectCertificateTransferRequest);
 
     /**
@@ -1316,6 +1340,7 @@ public interface AWSIot {
      * 
      * @param replaceTopicRuleRequest
      *        The input for the ReplaceTopicRule operation.
+     * @return Result of the ReplaceTopicRule operation returned by the service.
      * @throws SqlParseException
      *         The Rule-SQL expression can't be parsed correctly.
      * @throws InternalException
@@ -1328,7 +1353,8 @@ public interface AWSIot {
      *         You are not authorized to perform this operation.
      * @sample AWSIot.ReplaceTopicRule
      */
-    void replaceTopicRule(ReplaceTopicRuleRequest replaceTopicRuleRequest);
+    ReplaceTopicRuleResult replaceTopicRule(
+            ReplaceTopicRuleRequest replaceTopicRuleRequest);
 
     /**
      * <p>
@@ -1340,6 +1366,8 @@ public interface AWSIot {
      * 
      * @param setDefaultPolicyVersionRequest
      *        The input for the SetDefaultPolicyVersion operation.
+     * @return Result of the SetDefaultPolicyVersion operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException
@@ -1354,7 +1382,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.SetDefaultPolicyVersion
      */
-    void setDefaultPolicyVersion(
+    SetDefaultPolicyVersionResult setDefaultPolicyVersion(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest);
 
     /**
@@ -1364,6 +1392,8 @@ public interface AWSIot {
      * 
      * @param setLoggingOptionsRequest
      *        The input for the SetLoggingOptions operation.
+     * @return Result of the SetLoggingOptions operation returned by the
+     *         service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -1372,7 +1402,8 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @sample AWSIot.SetLoggingOptions
      */
-    void setLoggingOptions(SetLoggingOptionsRequest setLoggingOptionsRequest);
+    SetLoggingOptionsResult setLoggingOptions(
+            SetLoggingOptionsRequest setLoggingOptionsRequest);
 
     /**
      * <p>
@@ -1427,6 +1458,8 @@ public interface AWSIot {
      * 
      * @param updateCACertificateRequest
      *        The input to the UpdateCACertificate operation.
+     * @return Result of the UpdateCACertificate operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException
@@ -1441,7 +1474,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.UpdateCACertificate
      */
-    void updateCACertificate(
+    UpdateCACertificateResult updateCACertificate(
             UpdateCACertificateRequest updateCACertificateRequest);
 
     /**
@@ -1461,6 +1494,8 @@ public interface AWSIot {
      * 
      * @param updateCertificateRequest
      *        The input for the UpdateCertificate operation.
+     * @return Result of the UpdateCertificate operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws CertificateStateException
@@ -1477,7 +1512,8 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.UpdateCertificate
      */
-    void updateCertificate(UpdateCertificateRequest updateCertificateRequest);
+    UpdateCertificateResult updateCertificate(
+            UpdateCertificateRequest updateCertificateRequest);
 
     /**
      * <p>

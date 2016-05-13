@@ -335,25 +335,25 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> publishAsync(PublishRequest request) {
+    public java.util.concurrent.Future<PublishResult> publishAsync(
+            PublishRequest request) {
 
         return publishAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> publishAsync(
+    public java.util.concurrent.Future<PublishResult> publishAsync(
             final PublishRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PublishRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PublishResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PublishResult call() throws Exception {
+                        PublishResult result;
 
                         try {
-                            publish(request);
-                            result = null;
+                            result = publish(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

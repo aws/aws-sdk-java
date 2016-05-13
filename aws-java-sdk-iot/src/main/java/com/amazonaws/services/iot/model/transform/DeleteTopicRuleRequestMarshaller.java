@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteTopicRuleRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class DeleteTopicRuleRequestMarshaller implements
         Marshaller<Request<DeleteTopicRuleRequest>, DeleteTopicRuleRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteTopicRuleRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteTopicRuleRequest> marshall(
             DeleteTopicRuleRequest deleteTopicRuleRequest) {
@@ -66,8 +74,10 @@ public class DeleteTopicRuleRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{ruleName}",
-                (deleteTopicRuleRequest.getRuleName() != null) ? StringUtils
-                        .fromString(deleteTopicRuleRequest.getRuleName()) : "");
+                (deleteTopicRuleRequest.getRuleName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(deleteTopicRuleRequest
+                                        .getRuleName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

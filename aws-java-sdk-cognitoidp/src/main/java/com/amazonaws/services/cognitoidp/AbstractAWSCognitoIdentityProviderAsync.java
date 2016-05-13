@@ -61,16 +61,16 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> adminDeleteUserAsync(
+    public java.util.concurrent.Future<AdminDeleteUserResult> adminDeleteUserAsync(
             AdminDeleteUserRequest request) {
 
         return adminDeleteUserAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> adminDeleteUserAsync(
+    public java.util.concurrent.Future<AdminDeleteUserResult> adminDeleteUserAsync(
             AdminDeleteUserRequest request,
-            com.amazonaws.handlers.AsyncHandler<AdminDeleteUserRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AdminDeleteUserRequest, AdminDeleteUserResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -256,16 +256,16 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserAsync(
+    public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(
             DeleteUserRequest request) {
 
         return deleteUserAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserAsync(
+    public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(
             DeleteUserRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -286,31 +286,31 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserPoolAsync(
+    public java.util.concurrent.Future<DeleteUserPoolResult> deleteUserPoolAsync(
             DeleteUserPoolRequest request) {
 
         return deleteUserPoolAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserPoolAsync(
+    public java.util.concurrent.Future<DeleteUserPoolResult> deleteUserPoolAsync(
             DeleteUserPoolRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteUserPoolRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteUserPoolRequest, DeleteUserPoolResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserPoolClientAsync(
+    public java.util.concurrent.Future<DeleteUserPoolClientResult> deleteUserPoolClientAsync(
             DeleteUserPoolClientRequest request) {
 
         return deleteUserPoolClientAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserPoolClientAsync(
+    public java.util.concurrent.Future<DeleteUserPoolClientResult> deleteUserPoolClientAsync(
             DeleteUserPoolClientRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteUserPoolClientRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteUserPoolClientRequest, DeleteUserPoolClientResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

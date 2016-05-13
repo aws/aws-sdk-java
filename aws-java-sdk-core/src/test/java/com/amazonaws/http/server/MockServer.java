@@ -48,12 +48,12 @@ public class MockServer {
 
     public static MockServer createMockServer(ServerBehavior serverBehavior) {
         switch (serverBehavior) {
-        case UNRESPONSIVE:
-            return new MockServer(new UnresponsiveServerBehavior());
-        case OVERLOADED:
-            return new MockServer(new OverloadedServerBehavior());
-        default:
-            throw new IllegalArgumentException("Unsupported implementation for server issue: " + serverBehavior);
+            case UNRESPONSIVE:
+                return new MockServer(new UnresponsiveServerBehavior());
+            case OVERLOADED:
+                return new MockServer(new OverloadedServerBehavior());
+            default:
+                throw new IllegalArgumentException("Unsupported implementation for server issue: " + serverBehavior);
         }
     }
 
@@ -106,6 +106,10 @@ public class MockServer {
 
     public String getEndpoint() {
         return "http://localhost:" + getPort();
+    }
+
+    public String getHttpsEndpoint() {
+        return "https://localhost:" + getPort();
     }
 
     private static class MockServerListenerThread extends Thread {

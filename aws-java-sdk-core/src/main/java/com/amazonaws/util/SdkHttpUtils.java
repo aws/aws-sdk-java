@@ -186,15 +186,12 @@ public class SdkHttpUtils {
     /**
      * Append the given path to the given baseUri.
      *
-     * <p>This method will encode the given path but not the given
-     * baseUri.</p>
-     *
      * @param baseUri The URI to append to (required, may be relative)
-     * @param path The path to append (may be null or empty)
+     * @param path The path to append (may be null or empty).  Path should be pre-encoded.
      * @param escapeDoubleSlash Whether double-slash in the path should be escaped to "/%2F"
-     * @return The baseUri with the (encoded) path appended
+     * @return The baseUri with the path appended
      */
-    public static String appendUri(final String baseUri, String path, final boolean escapeDoubleSlash ) {
+    public static String appendUri(final String baseUri, String path, final boolean escapeDoubleSlash) {
         String resultUri = baseUri;
         if (path != null && path.length() > 0) {
             if (path.startsWith("/")) {
@@ -205,11 +202,11 @@ public class SdkHttpUtils {
             } else if (!resultUri.endsWith("/")) {
                 resultUri += "/";
             }
-            String encodedPath = SdkHttpUtils.urlEncode(path, true);
             if (escapeDoubleSlash) {
-                encodedPath = encodedPath.replace("//", "/%2F");
+                resultUri += path.replace("//", "/%2F");
+            } else {
+                resultUri += path;
             }
-            resultUri += encodedPath;
         } else if (!resultUri.endsWith("/")) {
             resultUri += "/";
         }

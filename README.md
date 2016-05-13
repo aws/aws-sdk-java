@@ -39,7 +39,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.10.77</version>
+      <version>1.11.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -102,10 +102,10 @@ mvn clean install -Dgpg.skip=true
 
 ## Supported Versions
 
-* **1.10.x** - Recommended.
+* **1.11.x** - Recommended.
 
-* **1.9.x** - Approved. Only major critical bugs will be fixed. To get the new features, upgrade to
-    1.10.x version of the SDK.
+* **1.10.x** - Approved. Only major critical bugs will be fixed. To get the new features, upgrade to
+    1.11.x version of the SDK.
 
 [aws-iam-credentials]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-roles.html
 [aws]: http://aws.amazon.com/

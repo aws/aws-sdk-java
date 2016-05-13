@@ -15,45 +15,35 @@
 package com.amazonaws.regions;
 
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Test cases for partition based region implementation and endpoint guessing.
  */
 public class PartitionsRegionsTest {
 
+    private static final String KeyManagementService = "kms";
+    private static final String IAM = "iam";
+
     @Test
     public void region_name_matches_regionregex_guesses_regionalized_endpoint() {
 
         final String regionName = "ap-newregion-1";
         Region partitionUsWest = RegionUtils.getRegion(regionName);
-        Assert.assertFalse(partitionUsWest.isServiceSupported
-                (ServiceAbbreviations.KeyManagementService));
-        Assert.assertFalse(partitionUsWest.hasHttpEndpoint
-                (ServiceAbbreviations.KeyManagementService));
-        Assert.assertFalse(partitionUsWest.hasHttpsEndpoint
-                (ServiceAbbreviations.KeyManagementService));
-        Assert.assertNotNull(partitionUsWest.getServiceEndpoint
-                (ServiceAbbreviations.KeyManagementService));
+        Assert.assertFalse(partitionUsWest.isServiceSupported(KeyManagementService));
+        Assert.assertFalse(partitionUsWest.hasHttpEndpoint(KeyManagementService));
+        Assert.assertFalse(partitionUsWest.hasHttpsEndpoint(KeyManagementService));
+        Assert.assertNotNull(partitionUsWest.getServiceEndpoint(KeyManagementService));
     }
 
     @Test
     public void region_name_matches_regionregex_guesses_partition_wide_endpoint() {
         final String regionName = "ap-newregion-1";
         Region partitionUsWest = RegionUtils.getRegion(regionName);
-        Assert.assertTrue(partitionUsWest.isServiceSupported
-                (ServiceAbbreviations.IAM));
-        Assert.assertFalse(partitionUsWest.hasHttpEndpoint
-                (ServiceAbbreviations.IAM));
-        Assert.assertTrue(partitionUsWest.hasHttpsEndpoint
-                (ServiceAbbreviations.IAM));
-        Assert.assertNotNull(partitionUsWest.getServiceEndpoint
-                (ServiceAbbreviations.IAM));
+        Assert.assertTrue(partitionUsWest.isServiceSupported(IAM));
+        Assert.assertFalse(partitionUsWest.hasHttpEndpoint(IAM));
+        Assert.assertTrue(partitionUsWest.hasHttpsEndpoint(IAM));
+        Assert.assertNotNull(partitionUsWest.getServiceEndpoint(IAM));
     }
 
     @Test

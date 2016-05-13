@@ -44,9 +44,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param addTagsToStreamRequest
      *        Represents the input for <code>AddTagsToStream</code>.
+     * @return A Java Future containing the result of the AddTagsToStream
+     *         operation returned by the service.
      * @sample AmazonKinesisAsync.AddTagsToStream
      */
-    java.util.concurrent.Future<Void> addTagsToStreamAsync(
+    java.util.concurrent.Future<AddTagsToStreamResult> addTagsToStreamAsync(
             AddTagsToStreamRequest addTagsToStreamRequest);
 
     /**
@@ -67,11 +69,13 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddTagsToStream
+     *         operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.AddTagsToStream
      */
-    java.util.concurrent.Future<Void> addTagsToStreamAsync(
+    java.util.concurrent.Future<AddTagsToStreamResult> addTagsToStreamAsync(
             AddTagsToStreamRequest addTagsToStreamRequest,
-            com.amazonaws.handlers.AsyncHandler<AddTagsToStreamRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AddTagsToStreamRequest, AddTagsToStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -132,9 +136,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param createStreamRequest
      *        Represents the input for <code>CreateStream</code>.
+     * @return A Java Future containing the result of the CreateStream operation
+     *         returned by the service.
      * @sample AmazonKinesisAsync.CreateStream
      */
-    java.util.concurrent.Future<Void> createStreamAsync(
+    java.util.concurrent.Future<CreateStreamResult> createStreamAsync(
             CreateStreamRequest createStreamRequest);
 
     /**
@@ -201,19 +207,21 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateStream operation
+     *         returned by the service.
      * @sample AmazonKinesisAsyncHandler.CreateStream
      */
-    java.util.concurrent.Future<Void> createStreamAsync(
+    java.util.concurrent.Future<CreateStreamResult> createStreamAsync(
             CreateStreamRequest createStreamRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the CreateStream operation.
      *
      * @see #createStreamAsync(CreateStreamRequest)
      */
-    java.util.concurrent.Future<Void> createStreamAsync(String streamName,
-            Integer shardCount);
+    java.util.concurrent.Future<CreateStreamResult> createStreamAsync(
+            String streamName, Integer shardCount);
 
     /**
      * Simplified method form for invoking the CreateStream operation with an
@@ -222,10 +230,10 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * @see #createStreamAsync(CreateStreamRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> createStreamAsync(
+    java.util.concurrent.Future<CreateStreamResult> createStreamAsync(
             String streamName,
             Integer shardCount,
-            com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -241,9 +249,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param decreaseStreamRetentionPeriodRequest
      *        Represents the input for <a>DecreaseStreamRetentionPeriod</a>.
+     * @return A Java Future containing the result of the
+     *         DecreaseStreamRetentionPeriod operation returned by the service.
      * @sample AmazonKinesisAsync.DecreaseStreamRetentionPeriod
      */
-    java.util.concurrent.Future<Void> decreaseStreamRetentionPeriodAsync(
+    java.util.concurrent.Future<DecreaseStreamRetentionPeriodResult> decreaseStreamRetentionPeriodAsync(
             DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest);
 
     /**
@@ -265,11 +275,13 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DecreaseStreamRetentionPeriod operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.DecreaseStreamRetentionPeriod
      */
-    java.util.concurrent.Future<Void> decreaseStreamRetentionPeriodAsync(
+    java.util.concurrent.Future<DecreaseStreamRetentionPeriodResult> decreaseStreamRetentionPeriodAsync(
             DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest,
-            com.amazonaws.handlers.AsyncHandler<DecreaseStreamRetentionPeriodRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DecreaseStreamRetentionPeriodRequest, DecreaseStreamRetentionPeriodResult> asyncHandler);
 
     /**
      * <p>
@@ -304,9 +316,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param deleteStreamRequest
      *        Represents the input for <a>DeleteStream</a>.
+     * @return A Java Future containing the result of the DeleteStream operation
+     *         returned by the service.
      * @sample AmazonKinesisAsync.DeleteStream
      */
-    java.util.concurrent.Future<Void> deleteStreamAsync(
+    java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(
             DeleteStreamRequest deleteStreamRequest);
 
     /**
@@ -347,18 +361,21 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStream operation
+     *         returned by the service.
      * @sample AmazonKinesisAsyncHandler.DeleteStream
      */
-    java.util.concurrent.Future<Void> deleteStreamAsync(
+    java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(
             DeleteStreamRequest deleteStreamRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the DeleteStream operation.
      *
      * @see #deleteStreamAsync(DeleteStreamRequest)
      */
-    java.util.concurrent.Future<Void> deleteStreamAsync(String streamName);
+    java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(
+            String streamName);
 
     /**
      * Simplified method form for invoking the DeleteStream operation with an
@@ -367,9 +384,9 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * @see #deleteStreamAsync(DeleteStreamRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> deleteStreamAsync(
+    java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(
             String streamName,
-            com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -966,9 +983,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param increaseStreamRetentionPeriodRequest
      *        Represents the input for <a>IncreaseStreamRetentionPeriod</a>.
+     * @return A Java Future containing the result of the
+     *         IncreaseStreamRetentionPeriod operation returned by the service.
      * @sample AmazonKinesisAsync.IncreaseStreamRetentionPeriod
      */
-    java.util.concurrent.Future<Void> increaseStreamRetentionPeriodAsync(
+    java.util.concurrent.Future<IncreaseStreamRetentionPeriodResult> increaseStreamRetentionPeriodAsync(
             IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest);
 
     /**
@@ -995,11 +1014,13 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         IncreaseStreamRetentionPeriod operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.IncreaseStreamRetentionPeriod
      */
-    java.util.concurrent.Future<Void> increaseStreamRetentionPeriodAsync(
+    java.util.concurrent.Future<IncreaseStreamRetentionPeriodResult> increaseStreamRetentionPeriodAsync(
             IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest,
-            com.amazonaws.handlers.AsyncHandler<IncreaseStreamRetentionPeriodRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<IncreaseStreamRetentionPeriodRequest, IncreaseStreamRetentionPeriodResult> asyncHandler);
 
     /**
      * <p>
@@ -1224,9 +1245,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param mergeShardsRequest
      *        Represents the input for <code>MergeShards</code>.
+     * @return A Java Future containing the result of the MergeShards operation
+     *         returned by the service.
      * @sample AmazonKinesisAsync.MergeShards
      */
-    java.util.concurrent.Future<Void> mergeShardsAsync(
+    java.util.concurrent.Future<MergeShardsResult> mergeShardsAsync(
             MergeShardsRequest mergeShardsRequest);
 
     /**
@@ -1293,19 +1316,21 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the MergeShards operation
+     *         returned by the service.
      * @sample AmazonKinesisAsyncHandler.MergeShards
      */
-    java.util.concurrent.Future<Void> mergeShardsAsync(
+    java.util.concurrent.Future<MergeShardsResult> mergeShardsAsync(
             MergeShardsRequest mergeShardsRequest,
-            com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, MergeShardsResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the MergeShards operation.
      *
      * @see #mergeShardsAsync(MergeShardsRequest)
      */
-    java.util.concurrent.Future<Void> mergeShardsAsync(String streamName,
-            String shardToMerge, String adjacentShardToMerge);
+    java.util.concurrent.Future<MergeShardsResult> mergeShardsAsync(
+            String streamName, String shardToMerge, String adjacentShardToMerge);
 
     /**
      * Simplified method form for invoking the MergeShards operation with an
@@ -1314,11 +1339,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * @see #mergeShardsAsync(MergeShardsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> mergeShardsAsync(
+    java.util.concurrent.Future<MergeShardsResult> mergeShardsAsync(
             String streamName,
             String shardToMerge,
             String adjacentShardToMerge,
-            com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, MergeShardsResult> asyncHandler);
 
     /**
      * <p>
@@ -1718,9 +1743,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param removeTagsFromStreamRequest
      *        Represents the input for <code>RemoveTagsFromStream</code>.
+     * @return A Java Future containing the result of the RemoveTagsFromStream
+     *         operation returned by the service.
      * @sample AmazonKinesisAsync.RemoveTagsFromStream
      */
-    java.util.concurrent.Future<Void> removeTagsFromStreamAsync(
+    java.util.concurrent.Future<RemoveTagsFromStreamResult> removeTagsFromStreamAsync(
             RemoveTagsFromStreamRequest removeTagsFromStreamRequest);
 
     /**
@@ -1740,11 +1767,13 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveTagsFromStream
+     *         operation returned by the service.
      * @sample AmazonKinesisAsyncHandler.RemoveTagsFromStream
      */
-    java.util.concurrent.Future<Void> removeTagsFromStreamAsync(
+    java.util.concurrent.Future<RemoveTagsFromStreamResult> removeTagsFromStreamAsync(
             RemoveTagsFromStreamRequest removeTagsFromStreamRequest,
-            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromStreamRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromStreamRequest, RemoveTagsFromStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -1819,9 +1848,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * 
      * @param splitShardRequest
      *        Represents the input for <code>SplitShard</code>.
+     * @return A Java Future containing the result of the SplitShard operation
+     *         returned by the service.
      * @sample AmazonKinesisAsync.SplitShard
      */
-    java.util.concurrent.Future<Void> splitShardAsync(
+    java.util.concurrent.Future<SplitShardResult> splitShardAsync(
             SplitShardRequest splitShardRequest);
 
     /**
@@ -1902,19 +1933,21 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SplitShard operation
+     *         returned by the service.
      * @sample AmazonKinesisAsyncHandler.SplitShard
      */
-    java.util.concurrent.Future<Void> splitShardAsync(
+    java.util.concurrent.Future<SplitShardResult> splitShardAsync(
             SplitShardRequest splitShardRequest,
-            com.amazonaws.handlers.AsyncHandler<SplitShardRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SplitShardRequest, SplitShardResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the SplitShard operation.
      *
      * @see #splitShardAsync(SplitShardRequest)
      */
-    java.util.concurrent.Future<Void> splitShardAsync(String streamName,
-            String shardToSplit, String newStartingHashKey);
+    java.util.concurrent.Future<SplitShardResult> splitShardAsync(
+            String streamName, String shardToSplit, String newStartingHashKey);
 
     /**
      * Simplified method form for invoking the SplitShard operation with an
@@ -1923,10 +1956,10 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * @see #splitShardAsync(SplitShardRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> splitShardAsync(
+    java.util.concurrent.Future<SplitShardResult> splitShardAsync(
             String streamName,
             String shardToSplit,
             String newStartingHashKey,
-            com.amazonaws.handlers.AsyncHandler<SplitShardRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SplitShardRequest, SplitShardResult> asyncHandler);
 
 }

@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AdminDeleteUserRequest Marshaller
  */
 public class AdminDeleteUserRequestMarshaller implements
         Marshaller<Request<AdminDeleteUserRequest>, AdminDeleteUserRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public AdminDeleteUserRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<AdminDeleteUserRequest> marshall(
             AdminDeleteUserRequest adminDeleteUserRequest) {
@@ -58,8 +65,8 @@ public class AdminDeleteUserRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

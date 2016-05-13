@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DisableGatewayRequest Marshaller
  */
 public class DisableGatewayRequestMarshaller implements
         Marshaller<Request<DisableGatewayRequest>, DisableGatewayRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DisableGatewayRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DisableGatewayRequest> marshall(
             DisableGatewayRequest disableGatewayRequest) {
@@ -58,8 +65,8 @@ public class DisableGatewayRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

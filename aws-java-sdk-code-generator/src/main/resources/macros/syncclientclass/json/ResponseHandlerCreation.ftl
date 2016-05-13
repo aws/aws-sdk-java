@@ -1,5 +1,11 @@
 <#macro content operationModel metadata unmarshallerReference outputType>
-    JsonResponseHandler<${outputType}> responseHandler =
-    SdkJsonProtocolFactory.createResponseHandler(${unmarshallerReference},${metadata.cborProtocol?c});
-    responseHandler.setIsPayloadJson(${(!operationModel.hasBlobMemberAsPayload)?c});
+    HttpResponseHandler<AmazonWebServiceResponse<${outputType}>> responseHandler =
+        protocolFactory.createResponseHandler(new JsonOperationMetadata()
+            .withPayloadJson(${(!operationModel.hasBlobMemberAsPayload)?c})
+            <#if operationModel.outputShape??>
+            .withHasStreamingSuccessResponse(${operationModel.outputShape.hasStreamingMember?c})
+            <#else>
+            .withHasStreamingSuccessResponse(false)
+            </#if>
+        , ${unmarshallerReference});
 </#macro>

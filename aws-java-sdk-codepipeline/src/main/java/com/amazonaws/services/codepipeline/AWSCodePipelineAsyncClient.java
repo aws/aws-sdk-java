@@ -513,26 +513,25 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCustomActionTypeAsync(
+    public java.util.concurrent.Future<DeleteCustomActionTypeResult> deleteCustomActionTypeAsync(
             DeleteCustomActionTypeRequest request) {
 
         return deleteCustomActionTypeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCustomActionTypeAsync(
+    public java.util.concurrent.Future<DeleteCustomActionTypeResult> deleteCustomActionTypeAsync(
             final DeleteCustomActionTypeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, DeleteCustomActionTypeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteCustomActionTypeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteCustomActionTypeResult call() throws Exception {
+                        DeleteCustomActionTypeResult result;
 
                         try {
-                            deleteCustomActionType(request);
-                            result = null;
+                            result = deleteCustomActionType(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -549,26 +548,25 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePipelineAsync(
+    public java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest request) {
 
         return deletePipelineAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePipelineAsync(
+    public java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             final DeletePipelineRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeletePipelineResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeletePipelineResult call() throws Exception {
+                        DeletePipelineResult result;
 
                         try {
-                            deletePipeline(request);
-                            result = null;
+                            result = deletePipeline(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -585,26 +583,25 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableStageTransitionAsync(
+    public java.util.concurrent.Future<DisableStageTransitionResult> disableStageTransitionAsync(
             DisableStageTransitionRequest request) {
 
         return disableStageTransitionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableStageTransitionAsync(
+    public java.util.concurrent.Future<DisableStageTransitionResult> disableStageTransitionAsync(
             final DisableStageTransitionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, DisableStageTransitionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DisableStageTransitionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DisableStageTransitionResult call() throws Exception {
+                        DisableStageTransitionResult result;
 
                         try {
-                            disableStageTransition(request);
-                            result = null;
+                            result = disableStageTransition(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -621,26 +618,25 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableStageTransitionAsync(
+    public java.util.concurrent.Future<EnableStageTransitionResult> enableStageTransitionAsync(
             EnableStageTransitionRequest request) {
 
         return enableStageTransitionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableStageTransitionAsync(
+    public java.util.concurrent.Future<EnableStageTransitionResult> enableStageTransitionAsync(
             final EnableStageTransitionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, EnableStageTransitionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<EnableStageTransitionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public EnableStageTransitionResult call() throws Exception {
+                        EnableStageTransitionResult result;
 
                         try {
-                            enableStageTransition(request);
-                            result = null;
+                            result = enableStageTransition(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -973,26 +969,25 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putJobFailureResultAsync(
+    public java.util.concurrent.Future<PutJobFailureResultResult> putJobFailureResultAsync(
             PutJobFailureResultRequest request) {
 
         return putJobFailureResultAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putJobFailureResultAsync(
+    public java.util.concurrent.Future<PutJobFailureResultResult> putJobFailureResultAsync(
             final PutJobFailureResultRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, PutJobFailureResultResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutJobFailureResultResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutJobFailureResultResult call() throws Exception {
+                        PutJobFailureResultResult result;
 
                         try {
-                            putJobFailureResult(request);
-                            result = null;
+                            result = putJobFailureResult(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1009,26 +1004,25 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putJobSuccessResultAsync(
+    public java.util.concurrent.Future<PutJobSuccessResultResult> putJobSuccessResultAsync(
             PutJobSuccessResultRequest request) {
 
         return putJobSuccessResultAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putJobSuccessResultAsync(
+    public java.util.concurrent.Future<PutJobSuccessResultResult> putJobSuccessResultAsync(
             final PutJobSuccessResultRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, PutJobSuccessResultResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutJobSuccessResultResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutJobSuccessResultResult call() throws Exception {
+                        PutJobSuccessResultResult result;
 
                         try {
-                            putJobSuccessResult(request);
-                            result = null;
+                            result = putJobSuccessResult(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1045,26 +1039,26 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putThirdPartyJobFailureResultAsync(
+    public java.util.concurrent.Future<PutThirdPartyJobFailureResultResult> putThirdPartyJobFailureResultAsync(
             PutThirdPartyJobFailureResultRequest request) {
 
         return putThirdPartyJobFailureResultAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putThirdPartyJobFailureResultAsync(
+    public java.util.concurrent.Future<PutThirdPartyJobFailureResultResult> putThirdPartyJobFailureResultAsync(
             final PutThirdPartyJobFailureResultRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, PutThirdPartyJobFailureResultResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutThirdPartyJobFailureResultResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutThirdPartyJobFailureResultResult call()
+                            throws Exception {
+                        PutThirdPartyJobFailureResultResult result;
 
                         try {
-                            putThirdPartyJobFailureResult(request);
-                            result = null;
+                            result = putThirdPartyJobFailureResult(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1081,26 +1075,26 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putThirdPartyJobSuccessResultAsync(
+    public java.util.concurrent.Future<PutThirdPartyJobSuccessResultResult> putThirdPartyJobSuccessResultAsync(
             PutThirdPartyJobSuccessResultRequest request) {
 
         return putThirdPartyJobSuccessResultAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putThirdPartyJobSuccessResultAsync(
+    public java.util.concurrent.Future<PutThirdPartyJobSuccessResultResult> putThirdPartyJobSuccessResultAsync(
             final PutThirdPartyJobSuccessResultRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, PutThirdPartyJobSuccessResultResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutThirdPartyJobSuccessResultResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutThirdPartyJobSuccessResultResult call()
+                            throws Exception {
+                        PutThirdPartyJobSuccessResultResult result;
 
                         try {
-                            putThirdPartyJobSuccessResult(request);
-                            result = null;
+                            result = putThirdPartyJobSuccessResult(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

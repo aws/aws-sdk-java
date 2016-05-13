@@ -1,65 +1,58 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * The result of a <code>DeleteDomain</code> request. Contains the status
- * of a newly deleted domain, or no status if the domain has already been
- * completely deleted.
+ * The result of a <code>DeleteDomain</code> request. Contains the status of a
+ * newly deleted domain, or no status if the domain has already been completely
+ * deleted.
  * </p>
  */
 public class DeleteDomainResult implements Serializable, Cloneable {
 
-    /**
-     * The current status of the search domain.
-     */
     private DomainStatus domainStatus;
 
     /**
-     * The current status of the search domain.
-     *
-     * @return The current status of the search domain.
+     * @param domainStatus
      */
-    public DomainStatus getDomainStatus() {
-        return domainStatus;
-    }
-    
-    /**
-     * The current status of the search domain.
-     *
-     * @param domainStatus The current status of the search domain.
-     */
+
     public void setDomainStatus(DomainStatus domainStatus) {
         this.domainStatus = domainStatus;
     }
-    
+
     /**
-     * The current status of the search domain.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param domainStatus The current status of the search domain.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * @return
      */
+
+    public DomainStatus getDomainStatus() {
+        return this.domainStatus;
+    }
+
+    /**
+     * @param domainStatus
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DeleteDomainResult withDomainStatus(DomainStatus domainStatus) {
-        this.domainStatus = domainStatus;
+        setDomainStatus(domainStatus);
         return this;
     }
 
@@ -75,46 +68,50 @@ public class DeleteDomainResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDomainStatus() != null) sb.append("DomainStatus: " + getDomainStatus() );
+        if (getDomainStatus() != null)
+            sb.append("DomainStatus: " + getDomainStatus());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DeleteDomainResult == false)
+            return false;
+        DeleteDomainResult other = (DeleteDomainResult) obj;
+        if (other.getDomainStatus() == null ^ this.getDomainStatus() == null)
+            return false;
+        if (other.getDomainStatus() != null
+                && other.getDomainStatus().equals(this.getDomainStatus()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDomainStatus() == null) ? 0 : getDomainStatus().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDomainStatus() == null) ? 0 : getDomainStatus()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DeleteDomainResult == false) return false;
-        DeleteDomainResult other = (DeleteDomainResult)obj;
-        
-        if (other.getDomainStatus() == null ^ this.getDomainStatus() == null) return false;
-        if (other.getDomainStatus() != null && other.getDomainStatus().equals(this.getDomainStatus()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DeleteDomainResult clone() {
         try {
             return (DeleteDomainResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

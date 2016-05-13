@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AcceptCertificateTransferRequest Marshaller
@@ -48,7 +49,14 @@ public class AcceptCertificateTransferRequestMarshaller
         implements
         Marshaller<Request<AcceptCertificateTransferRequest>, AcceptCertificateTransferRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public AcceptCertificateTransferRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<AcceptCertificateTransferRequest> marshall(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest) {
@@ -68,9 +76,11 @@ public class AcceptCertificateTransferRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{certificateId}",
-                        (acceptCertificateTransferRequest.getCertificateId() != null) ? StringUtils
-                                .fromString(acceptCertificateTransferRequest
-                                        .getCertificateId()) : "");
+                        (acceptCertificateTransferRequest.getCertificateId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(acceptCertificateTransferRequest
+                                                .getCertificateId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         if (acceptCertificateTransferRequest.getSetAsActive() != null) {

@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "codecommit",
     "signingName" : "codecommit",
+    "jsonProtocol" : true,
     "serviceName" : "CodeCommit",
     "cborProtocol" : false,
-    "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "xmlProtocol" : false
   },
   "operations" : {
     "BatchGetRepositories" : {
@@ -93,7 +93,10 @@
         "variableSetterType" : "CreateBranchRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "CreateBranchResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>"
@@ -138,11 +141,11 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, Void>",
+      "syncReturnType" : "CreateBranchResult",
+      "asyncReturnType" : "CreateBranchResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateBranchResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<CreateBranchResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, CreateBranchResult>",
       "authenticated" : true,
       "methodName" : "createBranch"
     },
@@ -756,7 +759,10 @@
         "variableSetterType" : "UpdateDefaultBranchRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "UpdateDefaultBranchResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>"
@@ -792,11 +798,11 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, Void>",
+      "syncReturnType" : "UpdateDefaultBranchResult",
+      "asyncReturnType" : "UpdateDefaultBranchResult",
+      "asyncFutureType" : "java.util.concurrent.Future<UpdateDefaultBranchResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<UpdateDefaultBranchResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, UpdateDefaultBranchResult>",
       "authenticated" : true,
       "methodName" : "updateDefaultBranch"
     },
@@ -813,7 +819,10 @@
         "variableSetterType" : "UpdateRepositoryDescriptionRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "UpdateRepositoryDescriptionResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>"
@@ -843,11 +852,11 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, Void>",
+      "syncReturnType" : "UpdateRepositoryDescriptionResult",
+      "asyncReturnType" : "UpdateRepositoryDescriptionResult",
+      "asyncFutureType" : "java.util.concurrent.Future<UpdateRepositoryDescriptionResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<UpdateRepositoryDescriptionResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, UpdateRepositoryDescriptionResult>",
       "authenticated" : true,
       "methodName" : "updateRepositoryDescription"
     },
@@ -864,7 +873,10 @@
         "variableSetterType" : "UpdateRepositoryNameRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "UpdateRepositoryNameResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "RepositoryDoesNotExistException",
         "documentation" : "<p>The specified repository does not exist.</p>"
@@ -879,11 +891,11 @@
         "documentation" : "<p>At least one specified repository name is not valid.</p> <note><p>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p></note>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, Void>",
+      "syncReturnType" : "UpdateRepositoryNameResult",
+      "asyncReturnType" : "UpdateRepositoryNameResult",
+      "asyncFutureType" : "java.util.concurrent.Future<UpdateRepositoryNameResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<UpdateRepositoryNameResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, UpdateRepositoryNameResult>",
       "authenticated" : true,
       "methodName" : "updateRepositoryName"
     }
@@ -4394,6 +4406,41 @@
         }
       }
     },
+    "CreateBranchResult" : {
+      "c2jName" : "CreateBranchResult",
+      "documentation" : null,
+      "shapeName" : "CreateBranchResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "createBranchResult",
+        "variableType" : "CreateBranchResult",
+        "variableDeclarationType" : "CreateBranchResult",
+        "documentation" : null,
+        "simpleType" : "CreateBranchResult",
+        "variableSetterType" : "CreateBranchResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "InvalidRepositoryDescriptionException" : {
       "c2jName" : "InvalidRepositoryDescriptionException",
       "documentation" : "<p>The specified repository description is not valid.</p>",
@@ -7387,6 +7434,41 @@
       },
       "membersAsMap" : { }
     },
+    "UpdateRepositoryDescriptionResult" : {
+      "c2jName" : "UpdateRepositoryDescriptionResult",
+      "documentation" : null,
+      "shapeName" : "UpdateRepositoryDescriptionResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "updateRepositoryDescriptionResult",
+        "variableType" : "UpdateRepositoryDescriptionResult",
+        "variableDeclarationType" : "UpdateRepositoryDescriptionResult",
+        "documentation" : null,
+        "simpleType" : "UpdateRepositoryDescriptionResult",
+        "variableSetterType" : "UpdateRepositoryDescriptionResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "RepositoryNameRequiredException" : {
       "c2jName" : "RepositoryNameRequiredException",
       "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -8962,6 +9044,41 @@
       },
       "membersAsMap" : { }
     },
+    "UpdateDefaultBranchResult" : {
+      "c2jName" : "UpdateDefaultBranchResult",
+      "documentation" : null,
+      "shapeName" : "UpdateDefaultBranchResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "updateDefaultBranchResult",
+        "variableType" : "UpdateDefaultBranchResult",
+        "variableDeclarationType" : "UpdateDefaultBranchResult",
+        "documentation" : null,
+        "simpleType" : "UpdateDefaultBranchResult",
+        "variableSetterType" : "UpdateDefaultBranchResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "RepositoryDoesNotExistException" : {
       "c2jName" : "RepositoryDoesNotExistException",
       "documentation" : "<p>The specified repository does not exist.</p>",
@@ -9998,6 +10115,41 @@
         "documentation" : null,
         "simpleType" : "OrderEnum",
         "variableSetterType" : "OrderEnum"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "UpdateRepositoryNameResult" : {
+      "c2jName" : "UpdateRepositoryNameResult",
+      "documentation" : null,
+      "shapeName" : "UpdateRepositoryNameResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "updateRepositoryNameResult",
+        "variableType" : "UpdateRepositoryNameResult",
+        "variableDeclarationType" : "UpdateRepositoryNameResult",
+        "documentation" : null,
+        "simpleType" : "UpdateRepositoryNameResult",
+        "variableSetterType" : "UpdateRepositoryNameResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -12963,6 +13115,7 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
+    "customErrorCodeFieldName" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {

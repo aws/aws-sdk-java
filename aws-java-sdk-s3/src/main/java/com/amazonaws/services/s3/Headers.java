@@ -215,4 +215,8 @@ public interface Headers {
 
     /** Id of the lifecycle rule that makes a multipart upload eligible for abort operation. */
     public static final String ABORT_RULE_ID = "x-amz-abort-rule-id";
+
+    /** S3 response header for a multipart object containing the number of parts in the object. */
+    public static final String S3_PARTS_COUNT = "x-amz-mp-parts-count";
+
 }

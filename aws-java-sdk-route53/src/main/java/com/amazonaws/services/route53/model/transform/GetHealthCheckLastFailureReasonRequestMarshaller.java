@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * GetHealthCheckLastFailureReasonRequest Marshaller
@@ -63,9 +64,10 @@ public class GetHealthCheckLastFailureReasonRequestMarshaller
                 .replace(
                         "{HealthCheckId}",
                         (getHealthCheckLastFailureReasonRequest
-                                .getHealthCheckId() != null) ? StringUtils
-                                .fromString(getHealthCheckLastFailureReasonRequest
-                                        .getHealthCheckId())
+                                .getHealthCheckId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(getHealthCheckLastFailureReasonRequest
+                                                .getHealthCheckId()), false)
                                 : "");
         request.setResourcePath(uriResourcePath);
 

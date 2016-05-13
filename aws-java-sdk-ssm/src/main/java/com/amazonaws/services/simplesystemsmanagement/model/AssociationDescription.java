@@ -49,7 +49,11 @@ public class AssociationDescription implements Serializable, Cloneable {
      * </p>
      */
     private AssociationStatus status;
-    /** A description of the parameters for a document. */
+    /**
+     * <p>
+     * A description of the parameters for a document.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> parameters;
 
     /**
@@ -217,7 +221,9 @@ public class AssociationDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A description of the parameters for a document.
+     * </p>
      * 
      * @return A description of the parameters for a document.
      */
@@ -227,7 +233,9 @@ public class AssociationDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A description of the parameters for a document.
+     * </p>
      * 
      * @param parameters
      *        A description of the parameters for a document.
@@ -239,7 +247,9 @@ public class AssociationDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A description of the parameters for a document.
+     * </p>
      * 
      * @param parameters
      *        A description of the parameters for a document.

@@ -30,16 +30,16 @@ public class AbstractAWSElasticBeanstalkAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
+    public java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync(
             AbortEnvironmentUpdateRequest request) {
 
         return abortEnvironmentUpdateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
+    public java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync(
             AbortEnvironmentUpdateRequest request,
-            com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, AbortEnvironmentUpdateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -50,7 +50,7 @@ public class AbstractAWSElasticBeanstalkAsync extends
      * @see #abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync() {
+    public java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync() {
 
         return abortEnvironmentUpdateAsync(new AbortEnvironmentUpdateRequest());
     }
@@ -62,8 +62,8 @@ public class AbstractAWSElasticBeanstalkAsync extends
      * @see #abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
-            com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync(
+            com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, AbortEnvironmentUpdateResult> asyncHandler) {
 
         return abortEnvironmentUpdateAsync(new AbortEnvironmentUpdateRequest(),
                 asyncHandler);
@@ -215,61 +215,61 @@ public class AbstractAWSElasticBeanstalkAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApplicationAsync(
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
             DeleteApplicationRequest request) {
 
         return deleteApplicationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApplicationAsync(
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
             DeleteApplicationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApplicationVersionAsync(
+    public java.util.concurrent.Future<DeleteApplicationVersionResult> deleteApplicationVersionAsync(
             DeleteApplicationVersionRequest request) {
 
         return deleteApplicationVersionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApplicationVersionAsync(
+    public java.util.concurrent.Future<DeleteApplicationVersionResult> deleteApplicationVersionAsync(
             DeleteApplicationVersionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, DeleteApplicationVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteConfigurationTemplateAsync(
+    public java.util.concurrent.Future<DeleteConfigurationTemplateResult> deleteConfigurationTemplateAsync(
             DeleteConfigurationTemplateRequest request) {
 
         return deleteConfigurationTemplateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteConfigurationTemplateAsync(
+    public java.util.concurrent.Future<DeleteConfigurationTemplateResult> deleteConfigurationTemplateAsync(
             DeleteConfigurationTemplateRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, DeleteConfigurationTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteEnvironmentConfigurationAsync(
+    public java.util.concurrent.Future<DeleteEnvironmentConfigurationResult> deleteEnvironmentConfigurationAsync(
             DeleteEnvironmentConfigurationRequest request) {
 
         return deleteEnvironmentConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteEnvironmentConfigurationAsync(
+    public java.util.concurrent.Future<DeleteEnvironmentConfigurationResult> deleteEnvironmentConfigurationAsync(
             DeleteEnvironmentConfigurationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, DeleteEnvironmentConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -581,46 +581,46 @@ public class AbstractAWSElasticBeanstalkAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebuildEnvironmentAsync(
+    public java.util.concurrent.Future<RebuildEnvironmentResult> rebuildEnvironmentAsync(
             RebuildEnvironmentRequest request) {
 
         return rebuildEnvironmentAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebuildEnvironmentAsync(
+    public java.util.concurrent.Future<RebuildEnvironmentResult> rebuildEnvironmentAsync(
             RebuildEnvironmentRequest request,
-            com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, RebuildEnvironmentResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> requestEnvironmentInfoAsync(
+    public java.util.concurrent.Future<RequestEnvironmentInfoResult> requestEnvironmentInfoAsync(
             RequestEnvironmentInfoRequest request) {
 
         return requestEnvironmentInfoAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> requestEnvironmentInfoAsync(
+    public java.util.concurrent.Future<RequestEnvironmentInfoResult> requestEnvironmentInfoAsync(
             RequestEnvironmentInfoRequest request,
-            com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, RequestEnvironmentInfoResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> restartAppServerAsync(
+    public java.util.concurrent.Future<RestartAppServerResult> restartAppServerAsync(
             RestartAppServerRequest request) {
 
         return restartAppServerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> restartAppServerAsync(
+    public java.util.concurrent.Future<RestartAppServerResult> restartAppServerAsync(
             RestartAppServerRequest request,
-            com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, RestartAppServerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -641,16 +641,16 @@ public class AbstractAWSElasticBeanstalkAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync(
+    public java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync(
             SwapEnvironmentCNAMEsRequest request) {
 
         return swapEnvironmentCNAMEsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync(
+    public java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync(
             SwapEnvironmentCNAMEsRequest request,
-            com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -661,7 +661,7 @@ public class AbstractAWSElasticBeanstalkAsync extends
      * @see #swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync() {
+    public java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync() {
 
         return swapEnvironmentCNAMEsAsync(new SwapEnvironmentCNAMEsRequest());
     }
@@ -673,8 +673,8 @@ public class AbstractAWSElasticBeanstalkAsync extends
      * @see #swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync(
-            com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync(
+            com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResult> asyncHandler) {
 
         return swapEnvironmentCNAMEsAsync(new SwapEnvironmentCNAMEsRequest(),
                 asyncHandler);

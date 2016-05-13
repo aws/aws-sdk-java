@@ -335,6 +335,7 @@ public interface AmazonElasticFileSystem {
      * </p>
      * 
      * @param createTagsRequest
+     * @return Result of the CreateTags operation returned by the service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -345,7 +346,7 @@ public interface AmazonElasticFileSystem {
      *         exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.CreateTags
      */
-    void createTags(CreateTagsRequest createTagsRequest);
+    CreateTagsResult createTags(CreateTagsRequest createTagsRequest);
 
     /**
      * <p>
@@ -372,6 +373,7 @@ public interface AmazonElasticFileSystem {
      * </p>
      * 
      * @param deleteFileSystemRequest
+     * @return Result of the DeleteFileSystem operation returned by the service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -384,7 +386,8 @@ public interface AmazonElasticFileSystem {
      *         Returned if a file system has mount targets.
      * @sample AmazonElasticFileSystem.DeleteFileSystem
      */
-    void deleteFileSystem(DeleteFileSystemRequest deleteFileSystemRequest);
+    DeleteFileSystemResult deleteFileSystem(
+            DeleteFileSystemRequest deleteFileSystemRequest);
 
     /**
      * <p>
@@ -420,6 +423,8 @@ public interface AmazonElasticFileSystem {
      * </ul>
      * 
      * @param deleteMountTargetRequest
+     * @return Result of the DeleteMountTarget operation returned by the
+     *         service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -433,7 +438,8 @@ public interface AmazonElasticFileSystem {
      *         in the caller's account.
      * @sample AmazonElasticFileSystem.DeleteMountTarget
      */
-    void deleteMountTarget(DeleteMountTargetRequest deleteMountTargetRequest);
+    DeleteMountTargetResult deleteMountTarget(
+            DeleteMountTargetRequest deleteMountTargetRequest);
 
     /**
      * <p>
@@ -451,6 +457,7 @@ public interface AmazonElasticFileSystem {
      * </p>
      * 
      * @param deleteTagsRequest
+     * @return Result of the DeleteTags operation returned by the service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -461,7 +468,7 @@ public interface AmazonElasticFileSystem {
      *         exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.DeleteTags
      */
-    void deleteTags(DeleteTagsRequest deleteTagsRequest);
+    DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
 
     /**
      * <p>
@@ -646,6 +653,8 @@ public interface AmazonElasticFileSystem {
      * </ul>
      * 
      * @param modifyMountTargetSecurityGroupsRequest
+     * @return Result of the ModifyMountTargetSecurityGroups operation returned
+     *         by the service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -665,7 +674,7 @@ public interface AmazonElasticFileSystem {
      *         in the subnet's VPC.
      * @sample AmazonElasticFileSystem.ModifyMountTargetSecurityGroups
      */
-    void modifyMountTargetSecurityGroups(
+    ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(
             ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest);
 
     /**

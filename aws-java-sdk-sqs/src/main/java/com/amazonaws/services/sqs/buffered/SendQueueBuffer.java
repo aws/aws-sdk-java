@@ -32,11 +32,13 @@ import com.amazonaws.services.sqs.model.ChangeMessageVisibilityBatchRequestEntry
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityBatchResult;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityBatchResultEntry;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityRequest;
+import com.amazonaws.services.sqs.model.ChangeMessageVisibilityResult;
 import com.amazonaws.services.sqs.model.DeleteMessageBatchRequest;
 import com.amazonaws.services.sqs.model.DeleteMessageBatchRequestEntry;
 import com.amazonaws.services.sqs.model.DeleteMessageBatchResult;
 import com.amazonaws.services.sqs.model.DeleteMessageBatchResultEntry;
 import com.amazonaws.services.sqs.model.DeleteMessageRequest;
+import com.amazonaws.services.sqs.model.DeleteMessageResult;
 import com.amazonaws.services.sqs.model.SendMessageBatchRequest;
 import com.amazonaws.services.sqs.model.SendMessageBatchRequestEntry;
 import com.amazonaws.services.sqs.model.SendMessageBatchResult;
@@ -158,8 +160,8 @@ public class SendQueueBuffer {
     /**
      * @return never null
      */
-    public QueueBufferFuture<DeleteMessageRequest, Void> deleteMessage(DeleteMessageRequest request,
-                                                                       QueueBufferCallback<DeleteMessageRequest, Void> callback) {
+    public QueueBufferFuture<DeleteMessageRequest, DeleteMessageResult> deleteMessage(DeleteMessageRequest request,
+                                                                       QueueBufferCallback<DeleteMessageRequest, DeleteMessageResult> callback) {
         return submitOutboundRequest(deleteMessageLock, openDeleteMessageBatchTask, request,
                 inflightDeleteMessageBatches, callback);
     }
@@ -167,8 +169,8 @@ public class SendQueueBuffer {
     /**
      * @return never null
      */
-    public QueueBufferFuture<ChangeMessageVisibilityRequest, Void> changeMessageVisibility(ChangeMessageVisibilityRequest request,
-                                                                                           QueueBufferCallback<ChangeMessageVisibilityRequest, Void> callback) {
+    public QueueBufferFuture<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> changeMessageVisibility(ChangeMessageVisibilityRequest request,
+                                                                                           QueueBufferCallback<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> callback) {
         return submitOutboundRequest(changeMessageVisibilityLock, openChangeMessageVisibilityBatchTask, request,
                 inflightChangeMessageVisibilityBatches, callback);
     }
@@ -220,7 +222,7 @@ public class SendQueueBuffer {
     /**
      * Submits an outbound request for delivery to the queue associated with this buffer.
      * <p>
-     * 
+     *
      * @param operationLock
      *            the lock synchronizing calls for the call type ( {@code sendMessage},
      *            {@code deleteMessage}, {@code changeMessageVisibility} )
@@ -299,7 +301,7 @@ public class SendQueueBuffer {
      * request.
      * <p>
      * Instances of this class (and subclasses) are thread-safe.
-     * 
+     *
      * @param <R>
      *            the type of the SQS request to batch
      * @param <Result>
@@ -325,7 +327,7 @@ public class SendQueueBuffer {
 
         /**
          * Adds a request to the batch if it is still open and has capacity.
-         * 
+         *
          * @return the future that can be used to get the results of the execution, or null if the
          *         addition failed.
          */
@@ -350,7 +352,7 @@ public class SendQueueBuffer {
         /**
          * Adds the request to the batch if capacity allows it. Called by {@code addRequest} with a
          * lock on {@code this} held.
-         * 
+         *
          * @param request
          * @return the future that will be signaled when the request is completed and can be used to
          *         retrieve the result. Can be null if the addition could not be done
@@ -375,7 +377,7 @@ public class SendQueueBuffer {
         /**
          * Checks whether it's okay to add the request to this buffer. Called by
          * {@code addIfAllowed} with a lock on {@code this} held.
-         * 
+         *
          * @param request
          *            the request to add
          * @return true if the request is okay to add, false otherwise
@@ -387,7 +389,7 @@ public class SendQueueBuffer {
         /**
          * A hook to be run when a request is successfully added to this buffer. Called by
          * {@code addIfAllowed} with a lock on {@code this} held.
-         * 
+         *
          * @param request
          *            the request that was added
          */
@@ -398,7 +400,7 @@ public class SendQueueBuffer {
         /**
          * Checks whether the buffer is now full. Called by {@code addIfAllowed} with a lock on
          * {@code this} held.
-         * 
+         *
          * @return whether the buffer is filled to capacity
          */
         protected boolean isFull() {
@@ -533,11 +535,11 @@ public class SendQueueBuffer {
 
     }
 
-    private class DeleteMessageBatchTask extends OutboundBatchTask<DeleteMessageRequest, Void> {
+    private class DeleteMessageBatchTask extends OutboundBatchTask<DeleteMessageRequest, DeleteMessageResult> {
 
         @Override
         protected void process(List<DeleteMessageRequest> requests,
-                               List<QueueBufferFuture<DeleteMessageRequest, Void>> futures) {
+                               List<QueueBufferFuture<DeleteMessageRequest, DeleteMessageResult>> futures) {
 
             if (requests.isEmpty()) {
                 return;
@@ -578,11 +580,11 @@ public class SendQueueBuffer {
         }
     }
 
-    private class ChangeMessageVisibilityBatchTask extends OutboundBatchTask<ChangeMessageVisibilityRequest, Void> {
+    private class ChangeMessageVisibilityBatchTask extends OutboundBatchTask<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> {
 
         @Override
         protected void process(List<ChangeMessageVisibilityRequest> requests,
-                               List<QueueBufferFuture<ChangeMessageVisibilityRequest, Void>> futures) {
+                               List<QueueBufferFuture<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult>> futures) {
 
             if (requests.isEmpty()) {
                 return;

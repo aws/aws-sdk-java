@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetAuthorizerRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetAuthorizerRequestMarshaller implements
         Marshaller<Request<GetAuthorizerRequest>, GetAuthorizerRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetAuthorizerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetAuthorizerRequest> marshall(
             GetAuthorizerRequest getAuthorizerRequest) {
@@ -66,13 +73,14 @@ public class GetAuthorizerRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getAuthorizerRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(getAuthorizerRequest.getRestApiId()) : "");
+                (getAuthorizerRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getAuthorizerRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{authorizer_id}",
-                (getAuthorizerRequest.getAuthorizerId() != null) ? StringUtils
-                        .fromString(getAuthorizerRequest.getAuthorizerId())
-                        : "");
+                (getAuthorizerRequest.getAuthorizerId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getAuthorizerRequest
+                                .getAuthorizerId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

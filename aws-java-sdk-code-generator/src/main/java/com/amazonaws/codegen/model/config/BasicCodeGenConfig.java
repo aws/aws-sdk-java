@@ -30,7 +30,7 @@ public class BasicCodeGenConfig {
             @JsonProperty(value = "serviceInterfaceName", required = true) String interfaceName,
             @Deprecated @JsonProperty(value = "sourcePackageName") String packageName,
             @JsonProperty(value = "packageSuffix") String packageSuffix,
-            @JsonProperty(value = "defaultEndpoint", required = true) String endpoint) {
+            @JsonProperty(value = "defaultEndpoint") String endpoint) {
 
         this.interfaceName = interfaceName;
 

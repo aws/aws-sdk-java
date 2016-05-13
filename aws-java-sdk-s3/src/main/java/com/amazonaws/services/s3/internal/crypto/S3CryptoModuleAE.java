@@ -107,8 +107,8 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         // Adjust the crypto range to retrieve all of the cipher blocks needed to contain the user's desired
         // range of bytes.
         long[] desiredRange = req.getRange();
-        if (isStrict() && desiredRange  != null)
-            throw new SecurityException("Range get is not allowed in strict crypto mode");
+        if (isStrict() && (desiredRange  != null || req.getPartNumber() != null))
+            throw new SecurityException("Range get and getting a part are not allowed in strict crypto mode");
         long[] adjustedCryptoRange = getAdjustedCryptoRange(desiredRange);
         if (adjustedCryptoRange != null)
             req.setRange(adjustedCryptoRange[0], adjustedCryptoRange[1]);
@@ -228,7 +228,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
                 ContentCryptoMaterial.fromInstructionFile(
                     matdesc,
                     kekMaterialsProvider,
-                    cryptoConfig.getCryptoProvider(), 
+                    cryptoConfig.getCryptoProvider(),
                     cryptoRange,   // range is sometimes necessary to compute the adjusted IV
                     extraMatDesc,
                     keyWrapExpected,
@@ -323,7 +323,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             throw new AmazonClientException("Error adjusting output to desired byte range: " + e.getMessage());
         }
     }
-    
+
     @Override
     public ObjectMetadata getObjectSecurely(GetObjectRequest getObjectRequest,
             File destinationFile) {
@@ -405,7 +405,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             ContentCryptoMaterial cekMaterial, long[] range) {
         S3ObjectInputStream objectContent = wrapper.getObjectContent();
         wrapper.setObjectContent(new S3ObjectInputStream(
-                new CipherLiteInputStream(objectContent, 
+                new CipherLiteInputStream(objectContent,
                     cekMaterial.getCipherLite(),
                     DEFAULT_BUFFER_SIZE),
                     objectContent.getHttpRequest()));

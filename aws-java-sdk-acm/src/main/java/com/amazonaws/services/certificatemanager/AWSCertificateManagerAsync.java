@@ -66,9 +66,11 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * </p>
      * 
      * @param addTagsToCertificateRequest
+     * @return A Java Future containing the result of the AddTagsToCertificate
+     *         operation returned by the service.
      * @sample AWSCertificateManagerAsync.AddTagsToCertificate
      */
-    java.util.concurrent.Future<Void> addTagsToCertificateAsync(
+    java.util.concurrent.Future<AddTagsToCertificateResult> addTagsToCertificateAsync(
             AddTagsToCertificateRequest addTagsToCertificateRequest);
 
     /**
@@ -103,11 +105,13 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddTagsToCertificate
+     *         operation returned by the service.
      * @sample AWSCertificateManagerAsyncHandler.AddTagsToCertificate
      */
-    java.util.concurrent.Future<Void> addTagsToCertificateAsync(
+    java.util.concurrent.Future<AddTagsToCertificateResult> addTagsToCertificateAsync(
             AddTagsToCertificateRequest addTagsToCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, AddTagsToCertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -122,9 +126,11 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * association must first be removed. </note>
      * 
      * @param deleteCertificateRequest
+     * @return A Java Future containing the result of the DeleteCertificate
+     *         operation returned by the service.
      * @sample AWSCertificateManagerAsync.DeleteCertificate
      */
-    java.util.concurrent.Future<Void> deleteCertificateAsync(
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             DeleteCertificateRequest deleteCertificateRequest);
 
     /**
@@ -145,11 +151,13 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCertificate
+     *         operation returned by the service.
      * @sample AWSCertificateManagerAsyncHandler.DeleteCertificate
      */
-    java.util.concurrent.Future<Void> deleteCertificateAsync(
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             DeleteCertificateRequest deleteCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -336,9 +344,11 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * </p>
      * 
      * @param removeTagsFromCertificateRequest
+     * @return A Java Future containing the result of the
+     *         RemoveTagsFromCertificate operation returned by the service.
      * @sample AWSCertificateManagerAsync.RemoveTagsFromCertificate
      */
-    java.util.concurrent.Future<Void> removeTagsFromCertificateAsync(
+    java.util.concurrent.Future<RemoveTagsFromCertificateResult> removeTagsFromCertificateAsync(
             RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest);
 
     /**
@@ -361,11 +371,13 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RemoveTagsFromCertificate operation returned by the service.
      * @sample AWSCertificateManagerAsyncHandler.RemoveTagsFromCertificate
      */
-    java.util.concurrent.Future<Void> removeTagsFromCertificateAsync(
+    java.util.concurrent.Future<RemoveTagsFromCertificateResult> removeTagsFromCertificateAsync(
             RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, RemoveTagsFromCertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -430,9 +442,11 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * </p>
      * 
      * @param resendValidationEmailRequest
+     * @return A Java Future containing the result of the ResendValidationEmail
+     *         operation returned by the service.
      * @sample AWSCertificateManagerAsync.ResendValidationEmail
      */
-    java.util.concurrent.Future<Void> resendValidationEmailAsync(
+    java.util.concurrent.Future<ResendValidationEmailResult> resendValidationEmailAsync(
             ResendValidationEmailRequest resendValidationEmailRequest);
 
     /**
@@ -455,10 +469,12 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResendValidationEmail
+     *         operation returned by the service.
      * @sample AWSCertificateManagerAsyncHandler.ResendValidationEmail
      */
-    java.util.concurrent.Future<Void> resendValidationEmailAsync(
+    java.util.concurrent.Future<ResendValidationEmailResult> resendValidationEmailAsync(
             ResendValidationEmailRequest resendValidationEmailRequest,
-            com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, ResendValidationEmailResult> asyncHandler);
 
 }

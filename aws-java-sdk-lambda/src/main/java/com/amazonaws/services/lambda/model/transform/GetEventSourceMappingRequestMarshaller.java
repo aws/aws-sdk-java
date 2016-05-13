@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetEventSourceMappingRequest Marshaller
@@ -48,7 +49,14 @@ public class GetEventSourceMappingRequestMarshaller
         implements
         Marshaller<Request<GetEventSourceMappingRequest>, GetEventSourceMappingRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetEventSourceMappingRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetEventSourceMappingRequest> marshall(
             GetEventSourceMappingRequest getEventSourceMappingRequest) {
@@ -67,9 +75,10 @@ public class GetEventSourceMappingRequestMarshaller
 
         uriResourcePath = uriResourcePath.replace(
                 "{UUID}",
-                (getEventSourceMappingRequest.getUUID() != null) ? StringUtils
-                        .fromString(getEventSourceMappingRequest.getUUID())
-                        : "");
+                (getEventSourceMappingRequest.getUUID() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(getEventSourceMappingRequest
+                                        .getUUID()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -60,7 +60,7 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public void deleteAlias(DeleteAliasRequest request) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,7 +71,7 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public void deleteFunction(DeleteFunctionRequest request) {
+    public DeleteFunctionResult deleteFunction(DeleteFunctionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -151,7 +151,8 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
-    public void removePermission(RemovePermissionRequest request) {
+    public RemovePermissionResult removePermission(
+            RemovePermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,6 +17,8 @@
 package com.amazonaws.services.redshift.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -27,72 +30,103 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Reserved Node StAX Unmarshaller
+ * ReservedNode StAX Unmarshaller
  */
-public class ReservedNodeStaxUnmarshaller implements Unmarshaller<ReservedNode, StaxUnmarshallerContext> {
+public class ReservedNodeStaxUnmarshaller implements
+        Unmarshaller<ReservedNode, StaxUnmarshallerContext> {
 
-    public ReservedNode unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public ReservedNode unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         ReservedNode reservedNode = new ReservedNode();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
-
-        if (context.isStartOfDocument()) targetDepth++;
+        if (context.isStartOfDocument())
+            targetDepth += 3;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return reservedNode;
+            if (xmlEvent.isEndDocument())
+                return reservedNode;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("ReservedNodeId", targetDepth)) {
-                    reservedNode.setReservedNodeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedNode.setReservedNodeId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("ReservedNodeOfferingId", targetDepth)) {
-                    reservedNode.setReservedNodeOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("ReservedNodeOfferingId",
+                        targetDepth)) {
+                    reservedNode
+                            .setReservedNodeOfferingId(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("NodeType", targetDepth)) {
-                    reservedNode.setNodeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedNode.setNodeType(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("StartTime", targetDepth)) {
-                    reservedNode.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedNode.setStartTime(DateStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Duration", targetDepth)) {
-                    reservedNode.setDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedNode.setDuration(IntegerStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("FixedPrice", targetDepth)) {
-                    reservedNode.setFixedPrice(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedNode.setFixedPrice(DoubleStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("UsagePrice", targetDepth)) {
-                    reservedNode.setUsagePrice(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedNode.setUsagePrice(DoubleStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("CurrencyCode", targetDepth)) {
-                    reservedNode.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedNode.setCurrencyCode(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("NodeCount", targetDepth)) {
-                    reservedNode.setNodeCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedNode.setNodeCount(IntegerStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("State", targetDepth)) {
-                    reservedNode.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedNode.setState(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("OfferingType", targetDepth)) {
-                    reservedNode.setOfferingType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedNode.setOfferingType(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("RecurringCharges/RecurringCharge", targetDepth)) {
-                    reservedNode.getRecurringCharges().add(RecurringChargeStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("RecurringCharges/RecurringCharge",
+                        targetDepth)) {
+                    reservedNode
+                            .withRecurringCharges(RecurringChargeStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedNode;
@@ -102,9 +136,10 @@ public class ReservedNodeStaxUnmarshaller implements Unmarshaller<ReservedNode, 
     }
 
     private static ReservedNodeStaxUnmarshaller instance;
+
     public static ReservedNodeStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ReservedNodeStaxUnmarshaller();
+        if (instance == null)
+            instance = new ReservedNodeStaxUnmarshaller();
         return instance;
     }
 }
-    

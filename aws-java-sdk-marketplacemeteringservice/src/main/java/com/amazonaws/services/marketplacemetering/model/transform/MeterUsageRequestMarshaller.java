@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * MeterUsageRequest Marshaller
  */
 public class MeterUsageRequestMarshaller implements
         Marshaller<Request<MeterUsageRequest>, MeterUsageRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public MeterUsageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<MeterUsageRequest> marshall(
             MeterUsageRequest meterUsageRequest) {
@@ -57,8 +63,8 @@ public class MeterUsageRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

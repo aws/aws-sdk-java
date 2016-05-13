@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetDeploymentRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetDeploymentRequestMarshaller implements
         Marshaller<Request<GetDeploymentRequest>, GetDeploymentRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetDeploymentRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetDeploymentRequest> marshall(
             GetDeploymentRequest getDeploymentRequest) {
@@ -66,13 +73,14 @@ public class GetDeploymentRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getDeploymentRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(getDeploymentRequest.getRestApiId()) : "");
+                (getDeploymentRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getDeploymentRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{deployment_id}",
-                (getDeploymentRequest.getDeploymentId() != null) ? StringUtils
-                        .fromString(getDeploymentRequest.getDeploymentId())
-                        : "");
+                (getDeploymentRequest.getDeploymentId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getDeploymentRequest
+                                .getDeploymentId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

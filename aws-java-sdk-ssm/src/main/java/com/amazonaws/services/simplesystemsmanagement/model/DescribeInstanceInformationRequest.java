@@ -26,25 +26,33 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
     /**
+     * <p>
      * One or more filters. Use a filter to return a more specific list of
      * instances.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceInformationFilter> instanceInformationFilterList;
     /**
+     * <p>
      * The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the next
      * set of results.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * The token for the next set of items to return. (You received this token
      * from a previous call.)
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * One or more filters. Use a filter to return a more specific list of
      * instances.
+     * </p>
      * 
      * @return One or more filters. Use a filter to return a more specific list
      *         of instances.
@@ -58,8 +66,10 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * One or more filters. Use a filter to return a more specific list of
      * instances.
+     * </p>
      * 
      * @param instanceInformationFilterList
      *        One or more filters. Use a filter to return a more specific list
@@ -78,8 +88,10 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * One or more filters. Use a filter to return a more specific list of
      * instances.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInstanceInformationFilterList(java.util.Collection)}
@@ -107,8 +119,10 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * One or more filters. Use a filter to return a more specific list of
      * instances.
+     * </p>
      * 
      * @param instanceInformationFilterList
      *        One or more filters. Use a filter to return a more specific list
@@ -124,9 +138,11 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the next
      * set of results.
+     * </p>
      * 
      * @param maxResults
      *        The maximum number of items to return for this call. The call also
@@ -139,9 +155,11 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the next
      * set of results.
+     * </p>
      * 
      * @return The maximum number of items to return for this call. The call
      *         also returns a token that you can specify in a subsequent call to
@@ -153,9 +171,11 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the next
      * set of results.
+     * </p>
      * 
      * @param maxResults
      *        The maximum number of items to return for this call. The call also
@@ -171,8 +191,10 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * The token for the next set of items to return. (You received this token
      * from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        The token for the next set of items to return. (You received this
@@ -184,8 +206,10 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * The token for the next set of items to return. (You received this token
      * from a previous call.)
+     * </p>
      * 
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
@@ -196,8 +220,10 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * The token for the next set of items to return. (You received this token
      * from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        The token for the next set of items to return. (You received this

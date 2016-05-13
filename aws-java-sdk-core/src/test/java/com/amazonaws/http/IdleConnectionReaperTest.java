@@ -18,10 +18,15 @@
  */
 package com.amazonaws.http;
 
+import org.apache.http.HttpClientConnection;
+import org.apache.http.conn.ConnectionRequest;
+import org.apache.http.conn.HttpClientConnectionManager;
+import org.apache.http.protocol.HttpContext;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.http.conn.ClientConnectionManager;
@@ -56,8 +61,8 @@ public class IdleConnectionReaperTest {
     public void autoShutdown() throws Exception {
         assertEquals(0, IdleConnectionReaper.size());
         for (int i = 0; i < 3; i++) {
-            ClientConnectionManager m = new TestClientConnectionManager();
-            ClientConnectionManager m2 = new TestClientConnectionManager();
+            HttpClientConnectionManager m = new TestClientConnectionManager();
+            HttpClientConnectionManager m2 = new TestClientConnectionManager();
             assertTrue(IdleConnectionReaper
                     .registerConnectionManager(m));
             assertEquals(1, IdleConnectionReaper.size());
@@ -72,12 +77,22 @@ public class IdleConnectionReaperTest {
         }
     }
 
-    private static class TestClientConnectionManager implements ClientConnectionManager {
+    private static class TestClientConnectionManager implements HttpClientConnectionManager {
+        @Override
+        public void releaseConnection(HttpClientConnection conn, Object newState, long validDuration, TimeUnit timeUnit) {}
+        @Override
+        public void connect(HttpClientConnection conn, HttpRoute route, int connectTimeout, HttpContext context) throws IOException {}
+        @Override
+        public void upgrade(HttpClientConnection conn, HttpRoute route, HttpContext context) throws IOException {}
+        @Override
+        public void routeComplete(HttpClientConnection conn, HttpRoute route, HttpContext context) throws IOException {}
         @Override public void shutdown() {}
-        @Override public ClientConnectionRequest requestConnection(HttpRoute route, Object state) { return null; }
-        @Override public void releaseConnection(ManagedClientConnection conn, long validDuration, TimeUnit timeUnit) { }
-        @Override public SchemeRegistry getSchemeRegistry() { return null; }
         @Override public void closeIdleConnections(long idletime, TimeUnit tunit) {}
         @Override public void closeExpiredConnections() { }
+
+        @Override
+        public ConnectionRequest requestConnection(HttpRoute route, Object state) {
+            return null;
+        }
     }
 }

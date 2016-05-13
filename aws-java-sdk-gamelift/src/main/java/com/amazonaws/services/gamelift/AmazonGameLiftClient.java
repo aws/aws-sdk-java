@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -176,10 +176,69 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all Amazon GameLift exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UnauthorizedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.UnauthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidGameSessionStatusException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.InvalidGameSessionStatusException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ConflictException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.ConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalServiceException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.InternalServiceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "FleetCapacityExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.FleetCapacityExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "TerminalRoutingStrategyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.TerminalRoutingStrategyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("GameSessionFullException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.GameSessionFullException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidFleetStatusException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.InvalidFleetStatusException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.InvalidRequestException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon GameLift. A
@@ -336,51 +395,6 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.gamelift.model.UnauthorizedException.class,
-                        "UnauthorizedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.gamelift.model.LimitExceededException.class,
-                        "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.gamelift.model.InvalidGameSessionStatusException.class,
-                        "InvalidGameSessionStatusException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.gamelift.model.ConflictException.class,
-                "ConflictException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.gamelift.model.NotFoundException.class,
-                "NotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.gamelift.model.InternalServiceException.class,
-                        "InternalServiceException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.gamelift.model.FleetCapacityExceededException.class,
-                        "FleetCapacityExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.gamelift.model.TerminalRoutingStrategyException.class,
-                        "TerminalRoutingStrategyException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.gamelift.model.GameSessionFullException.class,
-                        "GameSessionFullException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.gamelift.model.InvalidFleetStatusException.class,
-                        "InvalidFleetStatusException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.gamelift.model.InvalidRequestException.class,
-                        "InvalidRequestException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -447,18 +461,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(createAliasRequest));
+                request = new CreateAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAliasResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateAliasResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -526,18 +541,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBuildRequestMarshaller().marshall(super
-                        .beforeMarshalling(createBuildRequest));
+                request = new CreateBuildRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateBuildResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateBuildResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBuildResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateBuildResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -631,18 +647,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateFleetRequestMarshaller().marshall(super
-                        .beforeMarshalling(createFleetRequest));
+                request = new CreateFleetRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateFleetResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateFleetResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFleetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateFleetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -722,20 +739,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateGameSessionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createGameSessionRequest));
+                request = new CreateGameSessionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createGameSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateGameSessionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateGameSessionResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGameSessionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateGameSessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -807,20 +824,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePlayerSessionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createPlayerSessionRequest));
+                request = new CreatePlayerSessionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createPlayerSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePlayerSessionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreatePlayerSessionResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePlayerSessionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreatePlayerSessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -894,20 +911,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePlayerSessionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createPlayerSessionsRequest));
+                request = new CreatePlayerSessionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createPlayerSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePlayerSessionsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreatePlayerSessionsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePlayerSessionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreatePlayerSessionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -927,6 +944,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * 
      * @param deleteAliasRequest
      *        Represents the input for a request action.
+     * @return Result of the DeleteAlias operation returned by the service.
      * @throws UnauthorizedException
      *         The client failed authentication. Such requests should not be
      *         retried without valid authentication credentials.
@@ -943,29 +961,33 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * @sample AmazonGameLift.DeleteAlias
      */
     @Override
-    public void deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAliasRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAliasResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteAliasRequest));
+                request = new DeleteAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -986,6 +1008,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * 
      * @param deleteBuildRequest
      *        Represents the input for a request action.
+     * @return Result of the DeleteBuild operation returned by the service.
      * @throws UnauthorizedException
      *         The client failed authentication. Such requests should not be
      *         retried without valid authentication credentials.
@@ -1002,29 +1025,33 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * @sample AmazonGameLift.DeleteBuild
      */
     @Override
-    public void deleteBuild(DeleteBuildRequest deleteBuildRequest) {
+    public DeleteBuildResult deleteBuild(DeleteBuildRequest deleteBuildRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteBuildRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteBuildResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBuildRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteBuildRequest));
+                request = new DeleteBuildRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBuildResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteBuildResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1044,6 +1071,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * 
      * @param deleteFleetRequest
      *        Represents the input for a request action.
+     * @return Result of the DeleteFleet operation returned by the service.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
      *         found. Such requests should not be retried by clients.
@@ -1068,29 +1096,33 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * @sample AmazonGameLift.DeleteFleet
      */
     @Override
-    public void deleteFleet(DeleteFleetRequest deleteFleetRequest) {
+    public DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteFleetRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteFleetResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFleetRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteFleetRequest));
+                request = new DeleteFleetRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFleetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteFleetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1108,6 +1140,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * 
      * @param deleteScalingPolicyRequest
      *        Represents the input for a request action.
+     * @return Result of the DeleteScalingPolicy operation returned by the
+     *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
      *         processing the request. Such requests can be retried by clients,
@@ -1124,31 +1158,35 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * @sample AmazonGameLift.DeleteScalingPolicy
      */
     @Override
-    public void deleteScalingPolicy(
+    public DeleteScalingPolicyResult deleteScalingPolicy(
             DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteScalingPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteScalingPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteScalingPolicyRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteScalingPolicyRequest));
+                request = new DeleteScalingPolicyRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteScalingPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteScalingPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1193,18 +1231,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeAliasRequest));
+                request = new DescribeAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAliasResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeAliasResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1252,18 +1291,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeBuildRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeBuildRequest));
+                request = new DescribeBuildRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeBuildResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeBuildResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBuildResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeBuildResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1317,20 +1357,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEC2InstanceLimitsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeEC2InstanceLimitsRequest));
+                request = new DescribeEC2InstanceLimitsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeEC2InstanceLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeEC2InstanceLimitsResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEC2InstanceLimitsResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeEC2InstanceLimitsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeEC2InstanceLimitsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1391,20 +1431,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetAttributesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeFleetAttributesRequest));
+                request = new DescribeFleetAttributesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFleetAttributesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeFleetAttributesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFleetAttributesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeFleetAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1467,20 +1507,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetCapacityRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeFleetCapacityRequest));
+                request = new DescribeFleetCapacityRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFleetCapacityResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeFleetCapacityResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFleetCapacityResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeFleetCapacityResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1531,20 +1571,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetEventsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeFleetEventsRequest));
+                request = new DescribeFleetEventsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFleetEventsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeFleetEventsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFleetEventsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeFleetEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1596,20 +1636,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetPortSettingsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeFleetPortSettingsRequest));
+                request = new DescribeFleetPortSettingsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetPortSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFleetPortSettingsResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFleetPortSettingsResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeFleetPortSettingsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeFleetPortSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1670,20 +1710,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetUtilizationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeFleetUtilizationRequest));
+                request = new DescribeFleetUtilizationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetUtilizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFleetUtilizationResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFleetUtilizationResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeFleetUtilizationResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeFleetUtilizationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1749,20 +1789,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeGameSessionDetailsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeGameSessionDetailsRequest));
+                request = new DescribeGameSessionDetailsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeGameSessionDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeGameSessionDetailsResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeGameSessionDetailsResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeGameSessionDetailsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeGameSessionDetailsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1828,20 +1868,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeGameSessionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeGameSessionsRequest));
+                request = new DescribeGameSessionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeGameSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeGameSessionsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeGameSessionsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeGameSessionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeGameSessionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1903,20 +1943,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePlayerSessionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describePlayerSessionsRequest));
+                request = new DescribePlayerSessionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describePlayerSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribePlayerSessionsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribePlayerSessionsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePlayerSessionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribePlayerSessionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1971,20 +2011,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeScalingPoliciesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeScalingPoliciesRequest));
+                request = new DescribeScalingPoliciesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeScalingPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeScalingPoliciesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeScalingPoliciesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeScalingPoliciesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeScalingPoliciesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2042,20 +2082,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetGameSessionLogUrlRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getGameSessionLogUrlRequest));
+                request = new GetGameSessionLogUrlRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getGameSessionLogUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetGameSessionLogUrlResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetGameSessionLogUrlResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetGameSessionLogUrlResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetGameSessionLogUrlResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2105,18 +2145,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAliasesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listAliasesRequest));
+                request = new ListAliasesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAliasesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListAliasesResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListAliasesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListAliasesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2166,18 +2207,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListBuildsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listBuildsRequest));
+                request = new ListBuildsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListBuildsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListBuildsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListBuildsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListBuildsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2230,18 +2272,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFleetsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listFleetsRequest));
+                request = new ListFleetsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListFleetsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListFleetsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListFleetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListFleetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2316,7 +2359,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutScalingPolicyRequestMarshaller()
+                request = new PutScalingPolicyRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(putScalingPolicyRequest));
                 // Binds the request metrics to the current request.
@@ -2325,10 +2368,11 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutScalingPolicyResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new PutScalingPolicyResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutScalingPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutScalingPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2392,20 +2436,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RequestUploadCredentialsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(requestUploadCredentialsRequest));
+                request = new RequestUploadCredentialsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(requestUploadCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RequestUploadCredentialsResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<RequestUploadCredentialsResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new RequestUploadCredentialsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new RequestUploadCredentialsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2459,18 +2503,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResolveAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(resolveAliasRequest));
+                request = new ResolveAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(resolveAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ResolveAliasResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ResolveAliasResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ResolveAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ResolveAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2519,18 +2564,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateAliasRequest));
+                request = new UpdateAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateAliasResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateAliasResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2579,18 +2625,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateBuildRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateBuildRequest));
+                request = new UpdateBuildRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateBuildResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateBuildResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateBuildResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateBuildResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2651,20 +2698,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFleetAttributesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateFleetAttributesRequest));
+                request = new UpdateFleetAttributesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateFleetAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateFleetAttributesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateFleetAttributesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFleetAttributesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateFleetAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2744,20 +2791,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFleetCapacityRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateFleetCapacityRequest));
+                request = new UpdateFleetCapacityRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateFleetCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateFleetCapacityResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateFleetCapacityResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFleetCapacityResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateFleetCapacityResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2822,20 +2869,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFleetPortSettingsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateFleetPortSettingsRequest));
+                request = new UpdateFleetPortSettingsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateFleetPortSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateFleetPortSettingsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateFleetPortSettingsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFleetPortSettingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateFleetPortSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2898,20 +2945,20 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateGameSessionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateGameSessionRequest));
+                request = new UpdateGameSessionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateGameSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateGameSessionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateGameSessionResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGameSessionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateGameSessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2985,8 +3032,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

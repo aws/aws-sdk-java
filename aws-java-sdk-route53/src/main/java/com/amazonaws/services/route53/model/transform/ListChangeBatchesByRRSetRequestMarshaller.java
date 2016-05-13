@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListChangeBatchesByRRSetRequest Marshaller
@@ -62,9 +63,11 @@ public class ListChangeBatchesByRRSetRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (listChangeBatchesByRRSetRequest.getHostedZoneId() != null) ? StringUtils
-                                .fromString(listChangeBatchesByRRSetRequest
-                                        .getHostedZoneId()) : "");
+                        (listChangeBatchesByRRSetRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(listChangeBatchesByRRSetRequest
+                                                .getHostedZoneId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         if (listChangeBatchesByRRSetRequest.getName() != null) {

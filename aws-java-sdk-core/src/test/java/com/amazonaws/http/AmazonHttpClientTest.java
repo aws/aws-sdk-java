@@ -23,6 +23,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 
+import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
+import com.amazonaws.http.apache.request.impl.ApacheHttpRequestFactory;
+import com.amazonaws.http.request.HttpRequestFactory;
+import com.amazonaws.http.settings.HttpClientSettings;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
@@ -30,7 +34,6 @@ import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.BasicHttpEntity;
 import org.apache.http.message.BasicHttpResponse;
-import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.protocol.HttpContext;
 import org.easymock.EasyMock;
 import org.easymock.IAnswer;
@@ -43,21 +46,20 @@ import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
-import com.amazonaws.util.FakeIOException;
 
 public class AmazonHttpClientTest {
 
     private final String SERVER_NAME = "testsvc";
     private final String URI_NAME = "http://testsvc.region.amazonaws.com";
 
-    private HttpClient httpClient;
+    private ConnectionManagerAwareHttpClient httpClient;
     private AmazonHttpClient client;
 
     @Before
     public void setUp() {
         ClientConfiguration config = new ClientConfiguration();
 
-        httpClient = EasyMock.createMock(HttpClient.class);
+        httpClient = EasyMock.createMock(ConnectionManagerAwareHttpClient.class);
         EasyMock.replay(httpClient);
 
         client = new AmazonHttpClient(config, httpClient, null);
@@ -166,31 +168,28 @@ public class AmazonHttpClientTest {
     }
 
     @Test
-    public void testUseExpectContinueTrue() throws FakeIOException {
+    public void testUseExpectContinueTrue() throws IOException {
         Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.PUT, URI_NAME, true);
         ClientConfiguration clientConfiguration = new ClientConfiguration().withUseExpectContinue(true);
 
-        HttpRequestFactory httpRequestFactory = new HttpRequestFactory();
-        HttpRequestBase httpRequest = httpRequestFactory.createHttpRequest(request, clientConfiguration, null);
+        HttpRequestFactory<HttpRequestBase> httpRequestFactory = new ApacheHttpRequestFactory();
+        HttpRequestBase httpRequest = httpRequestFactory.create(request, HttpClientSettings.adapt(clientConfiguration));
 
         Assert.assertNotNull(httpRequest);
-        Assert.assertNotNull(httpRequest.getParams());
-        Assert.assertNotNull(httpRequest.getParams().getParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE));
-        Boolean useExpectContinue = (Boolean)httpRequest.getParams().getParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE);
-        Assert.assertTrue(useExpectContinue.booleanValue());
+        Assert.assertTrue(httpRequest.getConfig().isExpectContinueEnabled());
+
     }
 
     @Test
-    public void testUseExpectContinueFalse() throws FakeIOException {
+    public void testUseExpectContinueFalse() throws IOException {
         Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.PUT, URI_NAME, true);
         ClientConfiguration clientConfiguration = new ClientConfiguration().withUseExpectContinue(false);
 
-        HttpRequestFactory httpRequestFactory = new HttpRequestFactory();
-        HttpRequestBase httpRequest = httpRequestFactory.createHttpRequest(request, clientConfiguration, null);
+        HttpRequestFactory<HttpRequestBase> httpRequestFactory = new ApacheHttpRequestFactory();
+        HttpRequestBase httpRequest = httpRequestFactory.create(request, HttpClientSettings.adapt(clientConfiguration));
 
         Assert.assertNotNull(httpRequest);
-        Assert.assertTrue(httpRequest.getParams() == null ||
-                httpRequest.getParams().getParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE) == null);
+        Assert.assertFalse(httpRequest.getConfig().isExpectContinueEnabled());
     }
 
     @Test

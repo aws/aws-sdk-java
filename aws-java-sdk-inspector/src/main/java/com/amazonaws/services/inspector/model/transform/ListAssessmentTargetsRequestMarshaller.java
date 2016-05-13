@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListAssessmentTargetsRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class ListAssessmentTargetsRequestMarshaller
         implements
         Marshaller<Request<ListAssessmentTargetsRequest>, ListAssessmentTargetsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListAssessmentTargetsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListAssessmentTargetsRequest> marshall(
             ListAssessmentTargetsRequest listAssessmentTargetsRequest) {
@@ -59,8 +66,8 @@ public class ListAssessmentTargetsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

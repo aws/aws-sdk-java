@@ -19,50 +19,84 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes a command request.
+ * </p>
  */
 public class Command implements Serializable, Cloneable {
 
-    /** A unique identifier for this command. */
+    /**
+     * <p>
+     * A unique identifier for this command.
+     * </p>
+     */
     private String commandId;
-    /** The name of the SSM document requested for execution. */
+    /**
+     * <p>
+     * The name of the SSM document requested for execution.
+     * </p>
+     */
     private String documentName;
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      */
     private String comment;
     /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute. Calculated based on the ExpiresAfter user
      * input provided as part of the SendCommand API.
+     * </p>
      */
     private java.util.Date expiresAfter;
     /**
+     * <p>
      * The parameter values to be inserted in the SSM document when executing
      * the command.
+     * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
-    /** The instance IDs against which this command was requested. */
+    /**
+     * <p>
+     * The instance IDs against which this command was requested.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
-    /** The date and time the command was requested. */
+    /**
+     * <p>
+     * The date and time the command was requested.
+     * </p>
+     */
     private java.util.Date requestedDateTime;
-    /** The status of the command. */
+    /**
+     * <p>
+     * The status of the command.
+     * </p>
+     */
     private String status;
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      */
     private String outputS3BucketName;
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      */
     private String outputS3KeyPrefix;
 
     /**
+     * <p>
      * A unique identifier for this command.
+     * </p>
      * 
      * @param commandId
      *        A unique identifier for this command.
@@ -73,7 +107,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A unique identifier for this command.
+     * </p>
      * 
      * @return A unique identifier for this command.
      */
@@ -83,7 +119,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A unique identifier for this command.
+     * </p>
      * 
      * @param commandId
      *        A unique identifier for this command.
@@ -97,7 +135,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the SSM document requested for execution.
+     * </p>
      * 
      * @param documentName
      *        The name of the SSM document requested for execution.
@@ -108,7 +148,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the SSM document requested for execution.
+     * </p>
      * 
      * @return The name of the SSM document requested for execution.
      */
@@ -118,7 +160,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the SSM document requested for execution.
+     * </p>
      * 
      * @param documentName
      *        The name of the SSM document requested for execution.
@@ -132,8 +176,10 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @param comment
      *        User-specified information about the command, such as a brief
@@ -145,8 +191,10 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @return User-specified information about the command, such as a brief
      *         description of what the command should do.
@@ -157,8 +205,10 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @param comment
      *        User-specified information about the command, such as a brief
@@ -173,9 +223,11 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute. Calculated based on the ExpiresAfter user
      * input provided as part of the SendCommand API.
+     * </p>
      * 
      * @param expiresAfter
      *        If this time is reached and the command has not already started
@@ -188,9 +240,11 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute. Calculated based on the ExpiresAfter user
      * input provided as part of the SendCommand API.
+     * </p>
      * 
      * @return If this time is reached and the command has not already started
      *         executing, it will not execute. Calculated based on the
@@ -202,9 +256,11 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute. Calculated based on the ExpiresAfter user
      * input provided as part of the SendCommand API.
+     * </p>
      * 
      * @param expiresAfter
      *        If this time is reached and the command has not already started
@@ -220,8 +276,10 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The parameter values to be inserted in the SSM document when executing
      * the command.
+     * </p>
      * 
      * @return The parameter values to be inserted in the SSM document when
      *         executing the command.
@@ -232,8 +290,10 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The parameter values to be inserted in the SSM document when executing
      * the command.
+     * </p>
      * 
      * @param parameters
      *        The parameter values to be inserted in the SSM document when
@@ -246,8 +306,10 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The parameter values to be inserted in the SSM document when executing
      * the command.
+     * </p>
      * 
      * @param parameters
      *        The parameter values to be inserted in the SSM document when
@@ -284,7 +346,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance IDs against which this command was requested.
+     * </p>
      * 
      * @return The instance IDs against which this command was requested.
      */
@@ -297,7 +361,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance IDs against which this command was requested.
+     * </p>
      * 
      * @param instanceIds
      *        The instance IDs against which this command was requested.
@@ -314,7 +380,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance IDs against which this command was requested.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInstanceIds(java.util.Collection)} or
@@ -340,7 +408,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance IDs against which this command was requested.
+     * </p>
      * 
      * @param instanceIds
      *        The instance IDs against which this command was requested.
@@ -354,7 +424,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the command was requested.
+     * </p>
      * 
      * @param requestedDateTime
      *        The date and time the command was requested.
@@ -365,7 +437,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the command was requested.
+     * </p>
      * 
      * @return The date and time the command was requested.
      */
@@ -375,7 +449,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the command was requested.
+     * </p>
      * 
      * @param requestedDateTime
      *        The date and time the command was requested.
@@ -389,7 +465,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of the command.
+     * </p>
      * 
      * @param status
      *        The status of the command.
@@ -401,7 +479,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of the command.
+     * </p>
      * 
      * @return The status of the command.
      * @see CommandStatus
@@ -412,7 +492,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of the command.
+     * </p>
      * 
      * @param status
      *        The status of the command.
@@ -427,7 +509,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of the command.
+     * </p>
      * 
      * @param status
      *        The status of the command.
@@ -439,7 +523,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of the command.
+     * </p>
      * 
      * @param status
      *        The status of the command.
@@ -454,8 +540,10 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      * 
      * @param outputS3BucketName
      *        The S3 bucket where the responses to the command executions should
@@ -467,8 +555,10 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      * 
      * @return The S3 bucket where the responses to the command executions
      *         should be stored. This was requested when issuing the command.
@@ -479,8 +569,10 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      * 
      * @param outputS3BucketName
      *        The S3 bucket where the responses to the command executions should
@@ -495,9 +587,11 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      * 
      * @param outputS3KeyPrefix
      *        The S3 directory path inside the bucket where the responses to the
@@ -510,9 +604,11 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      * 
      * @return The S3 directory path inside the bucket where the responses to
      *         the command executions should be stored. This was requested when
@@ -524,9 +620,11 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      * 
      * @param outputS3KeyPrefix
      *        The S3 directory path inside the bucket where the responses to the

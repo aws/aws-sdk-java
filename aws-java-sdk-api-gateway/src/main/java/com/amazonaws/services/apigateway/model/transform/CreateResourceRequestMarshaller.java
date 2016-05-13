@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateResourceRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class CreateResourceRequestMarshaller implements
         Marshaller<Request<CreateResourceRequest>, CreateResourceRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateResourceRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateResourceRequest> marshall(
             CreateResourceRequest createResourceRequest) {
@@ -66,17 +74,19 @@ public class CreateResourceRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (createResourceRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(createResourceRequest.getRestApiId()) : "");
+                (createResourceRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(createResourceRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{parent_id}",
-                (createResourceRequest.getParentId() != null) ? StringUtils
-                        .fromString(createResourceRequest.getParentId()) : "");
+                (createResourceRequest.getParentId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(createResourceRequest
+                                .getParentId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (createResourceRequest.getPathPart() != null) {

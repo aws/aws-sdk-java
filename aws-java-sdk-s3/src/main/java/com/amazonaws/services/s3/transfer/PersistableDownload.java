@@ -63,8 +63,21 @@ public final class PersistableDownload extends PersistableTransfer {
     @JsonProperty
     private final String file;
 
+    /**
+     * The last part that has been successfully written into the downloaded file.
+     */
+    @JsonProperty
+    private final Integer lastFullyDownloadedPartNumber;
+
+    /**
+     * Last Modified/created time on Amazon S3 for this object.
+     */
+    @JsonProperty
+    private final long lastModifiedTime;
+
+
     public PersistableDownload() {
-        this(null, null, null, null, null, false, null);
+        this(null, null, null, null, null, false, null, null, 0L);
     }
 
     public PersistableDownload(
@@ -74,7 +87,9 @@ public final class PersistableDownload extends PersistableTransfer {
             @JsonProperty(value = "range") long[] range,
             @JsonProperty(value = "responseHeaders") ResponseHeaderOverrides responseHeaders,
             @JsonProperty(value = "isRequesterPays") boolean isRequesterPays,
-            @JsonProperty(value = "file") String file) {
+            @JsonProperty(value = "file") String file,
+            @JsonProperty(value = "lastFullyDownloadedPartNumber") Integer lastFullyDownloadedPartNumber,
+            @JsonProperty(value = "lastModifiedTime") long lastModifiedTime) {
         this.bucketName = bucketName;
         this.key = key;
         this.versionId = versionId;
@@ -82,6 +97,8 @@ public final class PersistableDownload extends PersistableTransfer {
         this.responseHeaders = responseHeaders;
         this.isRequesterPays = isRequesterPays;
         this.file = file;
+        this.lastFullyDownloadedPartNumber = lastFullyDownloadedPartNumber;
+        this.lastModifiedTime = lastModifiedTime;
     }
 
     /**
@@ -136,5 +153,20 @@ public final class PersistableDownload extends PersistableTransfer {
 
     String getPauseType() {
         return pauseType;
+    }
+
+    /**
+     * Returns the last part number that was successfully written into the downloaded file.
+     */
+    Integer getLastFullyDownloadedPartNumber() {
+        return lastFullyDownloadedPartNumber;
+    }
+
+    /**
+     * Returns the last modified/created time of the object represented by
+     * the bucketName and key.
+     */
+    Long getlastModifiedTime() {
+        return lastModifiedTime;
     }
 }

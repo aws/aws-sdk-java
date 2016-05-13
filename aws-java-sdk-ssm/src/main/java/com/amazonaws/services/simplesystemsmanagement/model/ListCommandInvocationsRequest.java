@@ -25,34 +25,52 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
-    /** (Optional) The invocations for a specific command ID. */
+    /**
+     * <p>
+     * (Optional) The invocations for a specific command ID.
+     * </p>
+     */
     private String commandId;
-    /** (Optional) The command execution details for a specific instance ID. */
+    /**
+     * <p>
+     * (Optional) The command execution details for a specific instance ID.
+     * </p>
+     */
     private String instanceId;
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      */
     private String nextToken;
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CommandFilter> filters;
     /**
+     * <p>
      * (Optional) If set this returns the response of the command executions and
      * any command output. By default this is set to False.
+     * </p>
      */
     private Boolean details;
 
     /**
+     * <p>
      * (Optional) The invocations for a specific command ID.
+     * </p>
      * 
      * @param commandId
      *        (Optional) The invocations for a specific command ID.
@@ -63,7 +81,9 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) The invocations for a specific command ID.
+     * </p>
      * 
      * @return (Optional) The invocations for a specific command ID.
      */
@@ -73,7 +93,9 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) The invocations for a specific command ID.
+     * </p>
      * 
      * @param commandId
      *        (Optional) The invocations for a specific command ID.
@@ -87,7 +109,9 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) The command execution details for a specific instance ID.
+     * </p>
      * 
      * @param instanceId
      *        (Optional) The command execution details for a specific instance
@@ -99,7 +123,9 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) The command execution details for a specific instance ID.
+     * </p>
      * 
      * @return (Optional) The command execution details for a specific instance
      *         ID.
@@ -110,7 +136,9 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) The command execution details for a specific instance ID.
+     * </p>
      * 
      * @param instanceId
      *        (Optional) The command execution details for a specific instance
@@ -125,9 +153,11 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      * 
      * @param maxResults
      *        (Optional) The maximum number of items to return for this call.
@@ -140,9 +170,11 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      * 
      * @return (Optional) The maximum number of items to return for this call.
      *         The call also returns a token that you can specify in a
@@ -154,9 +186,11 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      * 
      * @param maxResults
      *        (Optional) The maximum number of items to return for this call.
@@ -172,8 +206,10 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        (Optional) The token for the next set of items to return. (You
@@ -185,8 +221,10 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @return (Optional) The token for the next set of items to return. (You
      *         received this token from a previous call.)
@@ -197,8 +235,10 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        (Optional) The token for the next set of items to return. (You
@@ -213,8 +253,10 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * 
      * @return (Optional) One or more filters. Use a filter to return a more
      *         specific list of results.
@@ -228,8 +270,10 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * 
      * @param filters
      *        (Optional) One or more filters. Use a filter to return a more
@@ -247,8 +291,10 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setFilters(java.util.Collection)} or
@@ -275,8 +321,10 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * 
      * @param filters
      *        (Optional) One or more filters. Use a filter to return a more
@@ -292,8 +340,10 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) If set this returns the response of the command executions and
      * any command output. By default this is set to False.
+     * </p>
      * 
      * @param details
      *        (Optional) If set this returns the response of the command
@@ -306,8 +356,10 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) If set this returns the response of the command executions and
      * any command output. By default this is set to False.
+     * </p>
      * 
      * @return (Optional) If set this returns the response of the command
      *         executions and any command output. By default this is set to
@@ -319,8 +371,10 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) If set this returns the response of the command executions and
      * any command output. By default this is set to False.
+     * </p>
      * 
      * @param details
      *        (Optional) If set this returns the response of the command
@@ -336,8 +390,10 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * (Optional) If set this returns the response of the command executions and
      * any command output. By default this is set to False.
+     * </p>
      * 
      * @return (Optional) If set this returns the response of the command
      *         executions and any command output. By default this is set to

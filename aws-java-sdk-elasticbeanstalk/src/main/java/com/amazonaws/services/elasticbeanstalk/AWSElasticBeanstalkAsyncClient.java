@@ -283,26 +283,25 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
+    public java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync(
             AbortEnvironmentUpdateRequest request) {
 
         return abortEnvironmentUpdateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
+    public java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync(
             final AbortEnvironmentUpdateRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, AbortEnvironmentUpdateResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AbortEnvironmentUpdateResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AbortEnvironmentUpdateResult call() throws Exception {
+                        AbortEnvironmentUpdateResult result;
 
                         try {
-                            abortEnvironmentUpdate(request);
-                            result = null;
+                            result = abortEnvironmentUpdate(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -324,7 +323,7 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * @see #abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync() {
+    public java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync() {
 
         return abortEnvironmentUpdateAsync(new AbortEnvironmentUpdateRequest());
     }
@@ -336,8 +335,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * @see #abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
-            com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync(
+            com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, AbortEnvironmentUpdateResult> asyncHandler) {
 
         return abortEnvironmentUpdateAsync(new AbortEnvironmentUpdateRequest(),
                 asyncHandler);
@@ -652,26 +651,25 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApplicationAsync(
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
             DeleteApplicationRequest request) {
 
         return deleteApplicationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApplicationAsync(
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
             final DeleteApplicationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteApplicationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteApplicationResult call() throws Exception {
+                        DeleteApplicationResult result;
 
                         try {
-                            deleteApplication(request);
-                            result = null;
+                            result = deleteApplication(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -688,26 +686,26 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApplicationVersionAsync(
+    public java.util.concurrent.Future<DeleteApplicationVersionResult> deleteApplicationVersionAsync(
             DeleteApplicationVersionRequest request) {
 
         return deleteApplicationVersionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApplicationVersionAsync(
+    public java.util.concurrent.Future<DeleteApplicationVersionResult> deleteApplicationVersionAsync(
             final DeleteApplicationVersionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, DeleteApplicationVersionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteApplicationVersionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteApplicationVersionResult call()
+                            throws Exception {
+                        DeleteApplicationVersionResult result;
 
                         try {
-                            deleteApplicationVersion(request);
-                            result = null;
+                            result = deleteApplicationVersion(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -724,26 +722,26 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteConfigurationTemplateAsync(
+    public java.util.concurrent.Future<DeleteConfigurationTemplateResult> deleteConfigurationTemplateAsync(
             DeleteConfigurationTemplateRequest request) {
 
         return deleteConfigurationTemplateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteConfigurationTemplateAsync(
+    public java.util.concurrent.Future<DeleteConfigurationTemplateResult> deleteConfigurationTemplateAsync(
             final DeleteConfigurationTemplateRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, DeleteConfigurationTemplateResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteConfigurationTemplateResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteConfigurationTemplateResult call()
+                            throws Exception {
+                        DeleteConfigurationTemplateResult result;
 
                         try {
-                            deleteConfigurationTemplate(request);
-                            result = null;
+                            result = deleteConfigurationTemplate(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -760,26 +758,26 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteEnvironmentConfigurationAsync(
+    public java.util.concurrent.Future<DeleteEnvironmentConfigurationResult> deleteEnvironmentConfigurationAsync(
             DeleteEnvironmentConfigurationRequest request) {
 
         return deleteEnvironmentConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteEnvironmentConfigurationAsync(
+    public java.util.concurrent.Future<DeleteEnvironmentConfigurationResult> deleteEnvironmentConfigurationAsync(
             final DeleteEnvironmentConfigurationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, DeleteEnvironmentConfigurationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteEnvironmentConfigurationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteEnvironmentConfigurationResult call()
+                            throws Exception {
+                        DeleteEnvironmentConfigurationResult result;
 
                         try {
-                            deleteEnvironmentConfiguration(request);
-                            result = null;
+                            result = deleteEnvironmentConfiguration(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1351,26 +1349,25 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebuildEnvironmentAsync(
+    public java.util.concurrent.Future<RebuildEnvironmentResult> rebuildEnvironmentAsync(
             RebuildEnvironmentRequest request) {
 
         return rebuildEnvironmentAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebuildEnvironmentAsync(
+    public java.util.concurrent.Future<RebuildEnvironmentResult> rebuildEnvironmentAsync(
             final RebuildEnvironmentRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, RebuildEnvironmentResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RebuildEnvironmentResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RebuildEnvironmentResult call() throws Exception {
+                        RebuildEnvironmentResult result;
 
                         try {
-                            rebuildEnvironment(request);
-                            result = null;
+                            result = rebuildEnvironment(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1387,26 +1384,25 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> requestEnvironmentInfoAsync(
+    public java.util.concurrent.Future<RequestEnvironmentInfoResult> requestEnvironmentInfoAsync(
             RequestEnvironmentInfoRequest request) {
 
         return requestEnvironmentInfoAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> requestEnvironmentInfoAsync(
+    public java.util.concurrent.Future<RequestEnvironmentInfoResult> requestEnvironmentInfoAsync(
             final RequestEnvironmentInfoRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, RequestEnvironmentInfoResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RequestEnvironmentInfoResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RequestEnvironmentInfoResult call() throws Exception {
+                        RequestEnvironmentInfoResult result;
 
                         try {
-                            requestEnvironmentInfo(request);
-                            result = null;
+                            result = requestEnvironmentInfo(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1423,26 +1419,25 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> restartAppServerAsync(
+    public java.util.concurrent.Future<RestartAppServerResult> restartAppServerAsync(
             RestartAppServerRequest request) {
 
         return restartAppServerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> restartAppServerAsync(
+    public java.util.concurrent.Future<RestartAppServerResult> restartAppServerAsync(
             final RestartAppServerRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, RestartAppServerResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RestartAppServerResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RestartAppServerResult call() throws Exception {
+                        RestartAppServerResult result;
 
                         try {
-                            restartAppServer(request);
-                            result = null;
+                            result = restartAppServer(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1495,26 +1490,25 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync(
+    public java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync(
             SwapEnvironmentCNAMEsRequest request) {
 
         return swapEnvironmentCNAMEsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync(
+    public java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync(
             final SwapEnvironmentCNAMEsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SwapEnvironmentCNAMEsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SwapEnvironmentCNAMEsResult call() throws Exception {
+                        SwapEnvironmentCNAMEsResult result;
 
                         try {
-                            swapEnvironmentCNAMEs(request);
-                            result = null;
+                            result = swapEnvironmentCNAMEs(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1536,7 +1530,7 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * @see #swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync() {
+    public java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync() {
 
         return swapEnvironmentCNAMEsAsync(new SwapEnvironmentCNAMEsRequest());
     }
@@ -1548,8 +1542,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * @see #swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> swapEnvironmentCNAMEsAsync(
-            com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync(
+            com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResult> asyncHandler) {
 
         return swapEnvironmentCNAMEsAsync(new SwapEnvironmentCNAMEsRequest(),
                 asyncHandler);

@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -71,10 +71,53 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all Amazon Inspector exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NoSuchEntityException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.inspector.model.NoSuchEntityException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.inspector.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidInputException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.inspector.model.InvalidInputException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.inspector.model.InternalException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AccessDeniedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.inspector.model.AccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "AgentsAlreadyRunningAssessmentException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "AssessmentRunInProgressException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.inspector.model.AssessmentRunInProgressException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidCrossAccountRoleException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Inspector. A
@@ -231,40 +274,6 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.inspector.model.NoSuchEntityException.class,
-                        "NoSuchEntityException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.inspector.model.LimitExceededException.class,
-                        "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.inspector.model.InvalidInputException.class,
-                        "InvalidInputException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.inspector.model.InternalException.class,
-                "InternalException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.inspector.model.AccessDeniedException.class,
-                        "AccessDeniedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException.class,
-                        "AgentsAlreadyRunningAssessmentException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.inspector.model.AssessmentRunInProgressException.class,
-                        "AssessmentRunInProgressException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException.class,
-                        "InvalidCrossAccountRoleException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -313,20 +322,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddAttributesToFindingsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(addAttributesToFindingsRequest));
+                request = new AddAttributesToFindingsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(addAttributesToFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddAttributesToFindingsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new AddAttributesToFindingsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddAttributesToFindingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddAttributesToFindingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -380,20 +389,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssessmentTargetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createAssessmentTargetRequest));
+                request = new CreateAssessmentTargetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createAssessmentTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAssessmentTargetResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateAssessmentTargetResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAssessmentTargetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateAssessmentTargetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -443,20 +452,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssessmentTemplateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createAssessmentTemplateRequest));
+                request = new CreateAssessmentTemplateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createAssessmentTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAssessmentTemplateResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAssessmentTemplateResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new CreateAssessmentTemplateResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CreateAssessmentTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -506,20 +515,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateResourceGroupRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createResourceGroupRequest));
+                request = new CreateResourceGroupRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createResourceGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateResourceGroupResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateResourceGroupResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateResourceGroupResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateResourceGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -537,6 +546,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteAssessmentRunRequest
+     * @return Result of the DeleteAssessmentRun operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -554,31 +565,35 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @sample AmazonInspector.DeleteAssessmentRun
      */
     @Override
-    public void deleteAssessmentRun(
+    public DeleteAssessmentRunResult deleteAssessmentRun(
             DeleteAssessmentRunRequest deleteAssessmentRunRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAssessmentRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAssessmentRunRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAssessmentRunResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssessmentRunRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteAssessmentRunRequest));
+                request = new DeleteAssessmentRunRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAssessmentRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAssessmentRunResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteAssessmentRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -593,6 +608,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteAssessmentTargetRequest
+     * @return Result of the DeleteAssessmentTarget operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -610,31 +627,35 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @sample AmazonInspector.DeleteAssessmentTarget
      */
     @Override
-    public void deleteAssessmentTarget(
+    public DeleteAssessmentTargetResult deleteAssessmentTarget(
             DeleteAssessmentTargetRequest deleteAssessmentTargetRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAssessmentTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAssessmentTargetRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAssessmentTargetResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssessmentTargetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteAssessmentTargetRequest));
+                request = new DeleteAssessmentTargetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAssessmentTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAssessmentTargetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteAssessmentTargetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -649,6 +670,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteAssessmentTemplateRequest
+     * @return Result of the DeleteAssessmentTemplate operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -666,31 +689,35 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @sample AmazonInspector.DeleteAssessmentTemplate
      */
     @Override
-    public void deleteAssessmentTemplate(
+    public DeleteAssessmentTemplateResult deleteAssessmentTemplate(
             DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAssessmentTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAssessmentTemplateRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAssessmentTemplateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssessmentTemplateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteAssessmentTemplateRequest));
+                request = new DeleteAssessmentTemplateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAssessmentTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAssessmentTemplateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteAssessmentTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -727,20 +754,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssessmentRunsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeAssessmentRunsRequest));
+                request = new DescribeAssessmentRunsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeAssessmentRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAssessmentRunsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeAssessmentRunsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAssessmentRunsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeAssessmentRunsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -780,20 +807,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssessmentTargetsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeAssessmentTargetsRequest));
+                request = new DescribeAssessmentTargetsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeAssessmentTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAssessmentTargetsResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAssessmentTargetsResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeAssessmentTargetsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeAssessmentTargetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -833,20 +860,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssessmentTemplatesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeAssessmentTemplatesRequest));
+                request = new DescribeAssessmentTemplatesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeAssessmentTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAssessmentTemplatesResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAssessmentTemplatesResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeAssessmentTemplatesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeAssessmentTemplatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -883,7 +910,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCrossAccountAccessRoleRequestMarshaller()
+                request = new DescribeCrossAccountAccessRoleRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeCrossAccountAccessRoleRequest));
                 // Binds the request metrics to the current request.
@@ -892,11 +920,11 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCrossAccountAccessRoleResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCrossAccountAccessRoleResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeCrossAccountAccessRoleResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeCrossAccountAccessRoleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -934,7 +962,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFindingsRequestMarshaller()
+                request = new DescribeFindingsRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeFindingsRequest));
                 // Binds the request metrics to the current request.
@@ -943,10 +971,11 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFindingsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeFindingsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFindingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeFindingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -986,20 +1015,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeResourceGroupsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeResourceGroupsRequest));
+                request = new DescribeResourceGroupsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeResourceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeResourceGroupsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeResourceGroupsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeResourceGroupsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeResourceGroupsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1039,20 +1068,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRulesPackagesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeRulesPackagesRequest));
+                request = new DescribeRulesPackagesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeRulesPackagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeRulesPackagesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeRulesPackagesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRulesPackagesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeRulesPackagesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1098,20 +1127,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTelemetryMetadataRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getTelemetryMetadataRequest));
+                request = new GetTelemetryMetadataRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getTelemetryMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetTelemetryMetadataResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetTelemetryMetadataResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetTelemetryMetadataResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetTelemetryMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1157,20 +1186,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentRunAgentsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listAssessmentRunAgentsRequest));
+                request = new ListAssessmentRunAgentsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listAssessmentRunAgentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAssessmentRunAgentsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListAssessmentRunAgentsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssessmentRunAgentsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListAssessmentRunAgentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1216,20 +1245,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentRunsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listAssessmentRunsRequest));
+                request = new ListAssessmentRunsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listAssessmentRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAssessmentRunsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListAssessmentRunsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssessmentRunsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListAssessmentRunsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1274,20 +1303,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentTargetsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listAssessmentTargetsRequest));
+                request = new ListAssessmentTargetsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listAssessmentTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAssessmentTargetsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListAssessmentTargetsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssessmentTargetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListAssessmentTargetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1333,20 +1362,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentTemplatesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listAssessmentTemplatesRequest));
+                request = new ListAssessmentTemplatesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listAssessmentTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAssessmentTemplatesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListAssessmentTemplatesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssessmentTemplatesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListAssessmentTemplatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1393,20 +1422,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListEventSubscriptionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listEventSubscriptionsRequest));
+                request = new ListEventSubscriptionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listEventSubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListEventSubscriptionsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListEventSubscriptionsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListEventSubscriptionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListEventSubscriptionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1451,18 +1480,19 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFindingsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listFindingsRequest));
+                request = new ListFindingsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListFindingsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListFindingsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListFindingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListFindingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1504,20 +1534,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRulesPackagesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listRulesPackagesRequest));
+                request = new ListRulesPackagesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listRulesPackagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRulesPackagesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListRulesPackagesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListRulesPackagesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListRulesPackagesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1562,20 +1592,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForResourceRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listTagsForResourceRequest));
+                request = new ListTagsForResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsForResourceResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListTagsForResourceResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1623,18 +1653,19 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PreviewAgentsRequestMarshaller().marshall(super
-                        .beforeMarshalling(previewAgentsRequest));
+                request = new PreviewAgentsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(previewAgentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PreviewAgentsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new PreviewAgentsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PreviewAgentsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PreviewAgentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1653,6 +1684,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param registerCrossAccountAccessRoleRequest
+     * @return Result of the RegisterCrossAccountAccessRole operation returned
+     *         by the service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -1667,19 +1700,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @sample AmazonInspector.RegisterCrossAccountAccessRole
      */
     @Override
-    public void registerCrossAccountAccessRole(
+    public RegisterCrossAccountAccessRoleResult registerCrossAccountAccessRole(
             RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest) {
         ExecutionContext executionContext = createExecutionContext(registerCrossAccountAccessRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RegisterCrossAccountAccessRoleRequest> request = null;
-        Response<Void> response = null;
+        Response<RegisterCrossAccountAccessRoleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterCrossAccountAccessRoleRequestMarshaller()
+                request = new RegisterCrossAccountAccessRoleRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(registerCrossAccountAccessRoleRequest));
                 // Binds the request metrics to the current request.
@@ -1688,10 +1722,14 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterCrossAccountAccessRoleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new RegisterCrossAccountAccessRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1735,7 +1773,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveAttributesFromFindingsRequestMarshaller()
+                request = new RemoveAttributesFromFindingsRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(removeAttributesFromFindingsRequest));
                 // Binds the request metrics to the current request.
@@ -1744,11 +1783,11 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RemoveAttributesFromFindingsResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveAttributesFromFindingsResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new RemoveAttributesFromFindingsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new RemoveAttributesFromFindingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1766,6 +1805,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param setTagsForResourceRequest
+     * @return Result of the SetTagsForResource operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -1780,31 +1821,35 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @sample AmazonInspector.SetTagsForResource
      */
     @Override
-    public void setTagsForResource(
+    public SetTagsForResourceResult setTagsForResource(
             SetTagsForResourceRequest setTagsForResourceRequest) {
         ExecutionContext executionContext = createExecutionContext(setTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetTagsForResourceRequest> request = null;
-        Response<Void> response = null;
+        Response<SetTagsForResourceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetTagsForResourceRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(setTagsForResourceRequest));
+                request = new SetTagsForResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(setTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<SetTagsForResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SetTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1858,20 +1903,20 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartAssessmentRunRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(startAssessmentRunRequest));
+                request = new StartAssessmentRunRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(startAssessmentRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StartAssessmentRunResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new StartAssessmentRunResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<StartAssessmentRunResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StartAssessmentRunResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1889,6 +1934,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param stopAssessmentRunRequest
+     * @return Result of the StopAssessmentRun operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -1903,31 +1950,35 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @sample AmazonInspector.StopAssessmentRun
      */
     @Override
-    public void stopAssessmentRun(
+    public StopAssessmentRunResult stopAssessmentRun(
             StopAssessmentRunRequest stopAssessmentRunRequest) {
         ExecutionContext executionContext = createExecutionContext(stopAssessmentRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StopAssessmentRunRequest> request = null;
-        Response<Void> response = null;
+        Response<StopAssessmentRunResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopAssessmentRunRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(stopAssessmentRunRequest));
+                request = new StopAssessmentRunRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(stopAssessmentRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<StopAssessmentRunResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StopAssessmentRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1942,6 +1993,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param subscribeToEventRequest
+     * @return Result of the SubscribeToEvent operation returned by the service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -1960,18 +2012,19 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @sample AmazonInspector.SubscribeToEvent
      */
     @Override
-    public void subscribeToEvent(SubscribeToEventRequest subscribeToEventRequest) {
+    public SubscribeToEventResult subscribeToEvent(
+            SubscribeToEventRequest subscribeToEventRequest) {
         ExecutionContext executionContext = createExecutionContext(subscribeToEventRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SubscribeToEventRequest> request = null;
-        Response<Void> response = null;
+        Response<SubscribeToEventResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubscribeToEventRequestMarshaller()
+                request = new SubscribeToEventRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(subscribeToEventRequest));
                 // Binds the request metrics to the current request.
@@ -1980,10 +2033,14 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<SubscribeToEventResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SubscribeToEventResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1998,6 +2055,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param unsubscribeFromEventRequest
+     * @return Result of the UnsubscribeFromEvent operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -2012,31 +2071,35 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @sample AmazonInspector.UnsubscribeFromEvent
      */
     @Override
-    public void unsubscribeFromEvent(
+    public UnsubscribeFromEventResult unsubscribeFromEvent(
             UnsubscribeFromEventRequest unsubscribeFromEventRequest) {
         ExecutionContext executionContext = createExecutionContext(unsubscribeFromEventRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UnsubscribeFromEventRequest> request = null;
-        Response<Void> response = null;
+        Response<UnsubscribeFromEventResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnsubscribeFromEventRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(unsubscribeFromEventRequest));
+                request = new UnsubscribeFromEventRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(unsubscribeFromEventRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UnsubscribeFromEventResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UnsubscribeFromEventResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2051,6 +2114,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateAssessmentTargetRequest
+     * @return Result of the UpdateAssessmentTarget operation returned by the
+     *         service.
      * @throws InternalException
      *         Internal server error.
      * @throws InvalidInputException
@@ -2065,31 +2130,35 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @sample AmazonInspector.UpdateAssessmentTarget
      */
     @Override
-    public void updateAssessmentTarget(
+    public UpdateAssessmentTargetResult updateAssessmentTarget(
             UpdateAssessmentTargetRequest updateAssessmentTargetRequest) {
         ExecutionContext executionContext = createExecutionContext(updateAssessmentTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateAssessmentTargetRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateAssessmentTargetResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAssessmentTargetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateAssessmentTargetRequest));
+                request = new UpdateAssessmentTargetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateAssessmentTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAssessmentTargetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateAssessmentTargetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2160,8 +2229,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

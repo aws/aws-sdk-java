@@ -269,6 +269,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param createAliasRequest
+     * @return Result of the CreateAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -301,7 +302,7 @@ public interface AWSKMS {
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.CreateAlias
      */
-    void createAlias(CreateAliasRequest createAliasRequest);
+    CreateAliasResult createAlias(CreateAliasRequest createAliasRequest);
 
     /**
      * <p>
@@ -488,6 +489,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param deleteAliasRequest
+     * @return Result of the DeleteAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -508,7 +510,7 @@ public interface AWSKMS {
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.DeleteAlias
      */
-    void deleteAlias(DeleteAliasRequest deleteAliasRequest);
+    DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest);
 
     /**
      * <p>
@@ -543,6 +545,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param disableKeyRequest
+     * @return Result of the DisableKey operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -565,7 +568,7 @@ public interface AWSKMS {
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.DisableKey
      */
-    void disableKey(DisableKeyRequest disableKeyRequest);
+    DisableKeyResult disableKey(DisableKeyRequest disableKeyRequest);
 
     /**
      * <p>
@@ -573,6 +576,8 @@ public interface AWSKMS {
      * </p>
      * 
      * @param disableKeyRotationRequest
+     * @return Result of the DisableKeyRotation operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -598,7 +603,8 @@ public interface AWSKMS {
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.DisableKeyRotation
      */
-    void disableKeyRotation(DisableKeyRotationRequest disableKeyRotationRequest);
+    DisableKeyRotationResult disableKeyRotation(
+            DisableKeyRotationRequest disableKeyRotationRequest);
 
     /**
      * <p>
@@ -606,6 +612,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param enableKeyRequest
+     * @return Result of the EnableKey operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -634,7 +641,7 @@ public interface AWSKMS {
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.EnableKey
      */
-    void enableKey(EnableKeyRequest enableKeyRequest);
+    EnableKeyResult enableKey(EnableKeyRequest enableKeyRequest);
 
     /**
      * <p>
@@ -642,6 +649,8 @@ public interface AWSKMS {
      * </p>
      * 
      * @param enableKeyRotationRequest
+     * @return Result of the EnableKeyRotation operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -667,7 +676,8 @@ public interface AWSKMS {
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.EnableKeyRotation
      */
-    void enableKeyRotation(EnableKeyRotationRequest enableKeyRotationRequest);
+    EnableKeyRotationResult enableKeyRotation(
+            EnableKeyRotationRequest enableKeyRotationRequest);
 
     /**
      * <p>
@@ -1123,6 +1133,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param putKeyPolicyRequest
+     * @return Result of the PutKeyPolicy operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1157,7 +1168,7 @@ public interface AWSKMS {
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.PutKeyPolicy
      */
-    void putKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest);
+    PutKeyPolicyResult putKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest);
 
     /**
      * <p>
@@ -1250,6 +1261,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param retireGrantRequest
+     * @return Result of the RetireGrant operation returned by the service.
      * @throws InvalidGrantTokenException
      *         The request was rejected because a grant token provided as part
      *         of the request is invalid.
@@ -1276,14 +1288,14 @@ public interface AWSKMS {
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.RetireGrant
      */
-    void retireGrant(RetireGrantRequest retireGrantRequest);
+    RetireGrantResult retireGrant(RetireGrantRequest retireGrantRequest);
 
     /**
      * Simplified method form for invoking the RetireGrant operation.
      *
      * @see #retireGrant(RetireGrantRequest)
      */
-    void retireGrant();
+    RetireGrantResult retireGrant();
 
     /**
      * <p>
@@ -1292,6 +1304,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param revokeGrantRequest
+     * @return Result of the RevokeGrant operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1317,7 +1330,7 @@ public interface AWSKMS {
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.RevokeGrant
      */
-    void revokeGrant(RevokeGrantRequest revokeGrantRequest);
+    RevokeGrantResult revokeGrant(RevokeGrantRequest revokeGrantRequest);
 
     /**
      * <p>
@@ -1395,6 +1408,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param updateAliasRequest
+     * @return Result of the UpdateAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -1415,7 +1429,7 @@ public interface AWSKMS {
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.UpdateAlias
      */
-    void updateAlias(UpdateAliasRequest updateAliasRequest);
+    UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest);
 
     /**
      * <p>
@@ -1423,6 +1437,8 @@ public interface AWSKMS {
      * </p>
      * 
      * @param updateKeyDescriptionRequest
+     * @return Result of the UpdateKeyDescription operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1445,7 +1461,7 @@ public interface AWSKMS {
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.UpdateKeyDescription
      */
-    void updateKeyDescription(
+    UpdateKeyDescriptionResult updateKeyDescription(
             UpdateKeyDescriptionRequest updateKeyDescriptionRequest);
 
     /**

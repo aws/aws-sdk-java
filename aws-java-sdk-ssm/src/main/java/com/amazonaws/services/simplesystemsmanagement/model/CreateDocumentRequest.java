@@ -27,10 +27,7 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid JSON string. For more information about the contents of this
-     * string, see <a href=
-     * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >SSM Document</a>.
+     * A valid JSON string.
      * </p>
      */
     private String content;
@@ -43,17 +40,11 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid JSON string. For more information about the contents of this
-     * string, see <a href=
-     * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >SSM Document</a>.
+     * A valid JSON string.
      * </p>
      * 
      * @param content
-     *        A valid JSON string. For more information about the contents of
-     *        this string, see <a href=
-     *        "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     *        >SSM Document</a>.
+     *        A valid JSON string.
      */
 
     public void setContent(String content) {
@@ -62,16 +53,10 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid JSON string. For more information about the contents of this
-     * string, see <a href=
-     * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >SSM Document</a>.
+     * A valid JSON string.
      * </p>
      * 
-     * @return A valid JSON string. For more information about the contents of
-     *         this string, see <a href=
-     *         "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     *         >SSM Document</a>.
+     * @return A valid JSON string.
      */
 
     public String getContent() {
@@ -80,17 +65,11 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid JSON string. For more information about the contents of this
-     * string, see <a href=
-     * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >SSM Document</a>.
+     * A valid JSON string.
      * </p>
      * 
      * @param content
-     *        A valid JSON string. For more information about the contents of
-     *        this string, see <a href=
-     *        "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     *        >SSM Document</a>.
+     *        A valid JSON string.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

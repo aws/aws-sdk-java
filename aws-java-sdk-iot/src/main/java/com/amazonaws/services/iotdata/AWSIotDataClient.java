@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -73,10 +73,63 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all AWS IoT Data Plane exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UnauthorizedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.UnauthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("MethodNotAllowedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.MethodNotAllowedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ConflictException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.ConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RequestEntityTooLargeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.RequestEntityTooLargeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedDocumentEncodingException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ThrottlingException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.ThrottlingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ServiceUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalFailureException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.InternalFailureException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.InvalidRequestException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS IoT Data Plane.
@@ -233,47 +286,6 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iotdata.model.UnauthorizedException.class,
-                        "UnauthorizedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iotdata.model.MethodNotAllowedException.class,
-                        "MethodNotAllowedException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.iotdata.model.ConflictException.class,
-                "ConflictException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iotdata.model.RequestEntityTooLargeException.class,
-                        "RequestEntityTooLargeException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException.class,
-                        "UnsupportedDocumentEncodingException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.iotdata.model.ThrottlingException.class,
-                "ThrottlingException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iotdata.model.ServiceUnavailableException.class,
-                        "ServiceUnavailableException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iotdata.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iotdata.model.InternalFailureException.class,
-                        "InternalFailureException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.iotdata.model.InvalidRequestException.class,
-                        "InvalidRequestException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -332,20 +344,20 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteThingShadowRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteThingShadowRequest));
+                request = new DeleteThingShadowRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteThingShadowResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DeleteThingShadowResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(false);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteThingShadowResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(false)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteThingShadowResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -400,18 +412,20 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetThingShadowRequestMarshaller().marshall(super
-                        .beforeMarshalling(getThingShadowRequest));
+                request = new GetThingShadowRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetThingShadowResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetThingShadowResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(false);
+            HttpResponseHandler<AmazonWebServiceResponse<GetThingShadowResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(false)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetThingShadowResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -434,6 +448,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
      * 
      * @param publishRequest
      *        The input for the Publish operation.
+     * @return Result of the Publish operation returned by the service.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -445,29 +460,33 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
      * @sample AWSIotData.Publish
      */
     @Override
-    public void publish(PublishRequest publishRequest) {
+    public PublishResult publish(PublishRequest publishRequest) {
         ExecutionContext executionContext = createExecutionContext(publishRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PublishRequest> request = null;
-        Response<Void> response = null;
+        Response<PublishResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PublishRequestMarshaller().marshall(super
-                        .beforeMarshalling(publishRequest));
+                request = new PublishRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(publishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PublishResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PublishResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -522,20 +541,20 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateThingShadowRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateThingShadowRequest));
+                request = new UpdateThingShadowRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateThingShadowResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateThingShadowResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(false);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThingShadowResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(false)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateThingShadowResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -609,8 +628,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

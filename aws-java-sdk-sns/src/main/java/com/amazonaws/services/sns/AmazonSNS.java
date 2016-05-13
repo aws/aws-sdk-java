@@ -111,6 +111,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param addPermissionRequest
+     * @return Result of the AddPermission operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -123,14 +124,14 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.AddPermission
      */
-    void addPermission(AddPermissionRequest addPermissionRequest);
+    AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest);
 
     /**
      * Simplified method form for invoking the AddPermission operation.
      *
      * @see #addPermission(AddPermissionRequest)
      */
-    void addPermission(String topicArn, String label,
+    AddPermissionResult addPermission(String topicArn, String label,
             java.util.List<String> aWSAccountIds,
             java.util.List<String> actionNames);
 
@@ -306,6 +307,7 @@ public interface AmazonSNS {
      * 
      * @param deleteEndpointRequest
      *        Input for DeleteEndpoint action.
+     * @return Result of the DeleteEndpoint operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -316,7 +318,8 @@ public interface AmazonSNS {
      *         resource.
      * @sample AmazonSNS.DeleteEndpoint
      */
-    void deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest);
+    DeleteEndpointResult deleteEndpoint(
+            DeleteEndpointRequest deleteEndpointRequest);
 
     /**
      * <p>
@@ -328,6 +331,8 @@ public interface AmazonSNS {
      * 
      * @param deletePlatformApplicationRequest
      *        Input for DeletePlatformApplication action.
+     * @return Result of the DeletePlatformApplication operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -338,7 +343,7 @@ public interface AmazonSNS {
      *         resource.
      * @sample AmazonSNS.DeletePlatformApplication
      */
-    void deletePlatformApplication(
+    DeletePlatformApplicationResult deletePlatformApplication(
             DeletePlatformApplicationRequest deletePlatformApplicationRequest);
 
     /**
@@ -350,6 +355,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param deleteTopicRequest
+     * @return Result of the DeleteTopic operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -362,14 +368,14 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.DeleteTopic
      */
-    void deleteTopic(DeleteTopicRequest deleteTopicRequest);
+    DeleteTopicResult deleteTopic(DeleteTopicRequest deleteTopicRequest);
 
     /**
      * Simplified method form for invoking the DeleteTopic operation.
      *
      * @see #deleteTopic(DeleteTopicRequest)
      */
-    void deleteTopic(String topicArn);
+    DeleteTopicResult deleteTopic(String topicArn);
 
     /**
      * <p>
@@ -748,6 +754,7 @@ public interface AmazonSNS {
      * 
      * @param removePermissionRequest
      *        Input for RemovePermission action.
+     * @return Result of the RemovePermission operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -760,14 +767,15 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.RemovePermission
      */
-    void removePermission(RemovePermissionRequest removePermissionRequest);
+    RemovePermissionResult removePermission(
+            RemovePermissionRequest removePermissionRequest);
 
     /**
      * Simplified method form for invoking the RemovePermission operation.
      *
      * @see #removePermission(RemovePermissionRequest)
      */
-    void removePermission(String topicArn, String label);
+    RemovePermissionResult removePermission(String topicArn, String label);
 
     /**
      * <p>
@@ -780,6 +788,8 @@ public interface AmazonSNS {
      * 
      * @param setEndpointAttributesRequest
      *        Input for SetEndpointAttributes action.
+     * @return Result of the SetEndpointAttributes operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -792,7 +802,7 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.SetEndpointAttributes
      */
-    void setEndpointAttributes(
+    SetEndpointAttributesResult setEndpointAttributes(
             SetEndpointAttributesRequest setEndpointAttributesRequest);
 
     /**
@@ -806,6 +816,8 @@ public interface AmazonSNS {
      * 
      * @param setPlatformApplicationAttributesRequest
      *        Input for SetPlatformApplicationAttributes action.
+     * @return Result of the SetPlatformApplicationAttributes operation returned
+     *         by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -818,7 +830,7 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.SetPlatformApplicationAttributes
      */
-    void setPlatformApplicationAttributes(
+    SetPlatformApplicationAttributesResult setPlatformApplicationAttributes(
             SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest);
 
     /**
@@ -829,6 +841,8 @@ public interface AmazonSNS {
      * 
      * @param setSubscriptionAttributesRequest
      *        Input for SetSubscriptionAttributes action.
+     * @return Result of the SetSubscriptionAttributes operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -841,7 +855,7 @@ public interface AmazonSNS {
      *         resource.
      * @sample AmazonSNS.SetSubscriptionAttributes
      */
-    void setSubscriptionAttributes(
+    SetSubscriptionAttributesResult setSubscriptionAttributes(
             SetSubscriptionAttributesRequest setSubscriptionAttributesRequest);
 
     /**
@@ -850,8 +864,8 @@ public interface AmazonSNS {
      *
      * @see #setSubscriptionAttributes(SetSubscriptionAttributesRequest)
      */
-    void setSubscriptionAttributes(String subscriptionArn,
-            String attributeName, String attributeValue);
+    SetSubscriptionAttributesResult setSubscriptionAttributes(
+            String subscriptionArn, String attributeName, String attributeValue);
 
     /**
      * <p>
@@ -860,6 +874,8 @@ public interface AmazonSNS {
      * 
      * @param setTopicAttributesRequest
      *        Input for SetTopicAttributes action.
+     * @return Result of the SetTopicAttributes operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -872,15 +888,16 @@ public interface AmazonSNS {
      *         resource.
      * @sample AmazonSNS.SetTopicAttributes
      */
-    void setTopicAttributes(SetTopicAttributesRequest setTopicAttributesRequest);
+    SetTopicAttributesResult setTopicAttributes(
+            SetTopicAttributesRequest setTopicAttributesRequest);
 
     /**
      * Simplified method form for invoking the SetTopicAttributes operation.
      *
      * @see #setTopicAttributes(SetTopicAttributesRequest)
      */
-    void setTopicAttributes(String topicArn, String attributeName,
-            String attributeValue);
+    SetTopicAttributesResult setTopicAttributes(String topicArn,
+            String attributeName, String attributeValue);
 
     /**
      * <p>
@@ -931,6 +948,7 @@ public interface AmazonSNS {
      * 
      * @param unsubscribeRequest
      *        Input for Unsubscribe action.
+     * @return Result of the Unsubscribe operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the
      *         associated constraints.
@@ -943,14 +961,14 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @sample AmazonSNS.Unsubscribe
      */
-    void unsubscribe(UnsubscribeRequest unsubscribeRequest);
+    UnsubscribeResult unsubscribe(UnsubscribeRequest unsubscribeRequest);
 
     /**
      * Simplified method form for invoking the Unsubscribe operation.
      *
      * @see #unsubscribe(UnsubscribeRequest)
      */
-    void unsubscribe(String subscriptionArn);
+    UnsubscribeResult unsubscribe(String subscriptionArn);
 
     /**
      * Shuts down this client object, releasing any resources that might be held

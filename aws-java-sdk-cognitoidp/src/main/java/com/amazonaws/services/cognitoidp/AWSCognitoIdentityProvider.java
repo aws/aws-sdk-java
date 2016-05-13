@@ -171,6 +171,7 @@ public interface AWSCognitoIdentityProvider {
      * 
      * @param adminDeleteUserRequest
      *        Represents the request to delete a user as an administrator.
+     * @return Result of the AdminDeleteUser operation returned by the service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot
      *         find the requested resource.
@@ -185,7 +186,8 @@ public interface AWSCognitoIdentityProvider {
      *         internal error.
      * @sample AWSCognitoIdentityProvider.AdminDeleteUser
      */
-    void adminDeleteUser(AdminDeleteUserRequest adminDeleteUserRequest);
+    AdminDeleteUserResult adminDeleteUser(
+            AdminDeleteUserRequest adminDeleteUserRequest);
 
     /**
      * <p>
@@ -597,6 +599,7 @@ public interface AWSCognitoIdentityProvider {
      * 
      * @param deleteUserRequest
      *        Represents the request to delete a user.
+     * @return Result of the DeleteUser operation returned by the service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot
      *         find the requested resource.
@@ -613,7 +616,7 @@ public interface AWSCognitoIdentityProvider {
      *         internal error.
      * @sample AWSCognitoIdentityProvider.DeleteUser
      */
-    void deleteUser(DeleteUserRequest deleteUserRequest);
+    DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest);
 
     /**
      * <p>
@@ -650,6 +653,7 @@ public interface AWSCognitoIdentityProvider {
      * 
      * @param deleteUserPoolRequest
      *        Represents the request to delete a user pool.
+     * @return Result of the DeleteUserPool operation returned by the service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot
      *         find the requested resource.
@@ -664,7 +668,8 @@ public interface AWSCognitoIdentityProvider {
      *         internal error.
      * @sample AWSCognitoIdentityProvider.DeleteUserPool
      */
-    void deleteUserPool(DeleteUserPoolRequest deleteUserPoolRequest);
+    DeleteUserPoolResult deleteUserPool(
+            DeleteUserPoolRequest deleteUserPoolRequest);
 
     /**
      * <p>
@@ -673,6 +678,8 @@ public interface AWSCognitoIdentityProvider {
      * 
      * @param deleteUserPoolClientRequest
      *        Represents the request to delete a user pool client.
+     * @return Result of the DeleteUserPoolClient operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot
      *         find the requested resource.
@@ -687,7 +694,7 @@ public interface AWSCognitoIdentityProvider {
      *         internal error.
      * @sample AWSCognitoIdentityProvider.DeleteUserPoolClient
      */
-    void deleteUserPoolClient(
+    DeleteUserPoolClientResult deleteUserPoolClient(
             DeleteUserPoolClientRequest deleteUserPoolClientRequest);
 
     /**

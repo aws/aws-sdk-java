@@ -39,7 +39,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public void attachInstances(AttachInstancesRequest request) {
+    public AttachInstancesResult attachInstances(AttachInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,28 +61,31 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public void createAutoScalingGroup(CreateAutoScalingGroupRequest request) {
+    public CreateAutoScalingGroupResult createAutoScalingGroup(
+            CreateAutoScalingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void createLaunchConfiguration(
+    public CreateLaunchConfigurationResult createLaunchConfiguration(
             CreateLaunchConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void createOrUpdateTags(CreateOrUpdateTagsRequest request) {
+    public CreateOrUpdateTagsResult createOrUpdateTags(
+            CreateOrUpdateTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteAutoScalingGroup(DeleteAutoScalingGroupRequest request) {
+    public DeleteAutoScalingGroupResult deleteAutoScalingGroup(
+            DeleteAutoScalingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteLaunchConfiguration(
+    public DeleteLaunchConfigurationResult deleteLaunchConfiguration(
             DeleteLaunchConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,23 +97,24 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public void deleteNotificationConfiguration(
+    public DeleteNotificationConfigurationResult deleteNotificationConfiguration(
             DeleteNotificationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deletePolicy(DeletePolicyRequest request) {
+    public DeletePolicyResult deletePolicy(DeletePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteScheduledAction(DeleteScheduledActionRequest request) {
+    public DeleteScheduledActionResult deleteScheduledAction(
+            DeleteScheduledActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteTags(DeleteTagsRequest request) {
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -307,12 +311,14 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public void disableMetricsCollection(DisableMetricsCollectionRequest request) {
+    public DisableMetricsCollectionResult disableMetricsCollection(
+            DisableMetricsCollectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void enableMetricsCollection(EnableMetricsCollectionRequest request) {
+    public EnableMetricsCollectionResult enableMetricsCollection(
+            EnableMetricsCollectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -322,7 +328,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public void executePolicy(ExecutePolicyRequest request) {
+    public ExecutePolicyResult executePolicy(ExecutePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -338,7 +344,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public void putNotificationConfiguration(
+    public PutNotificationConfigurationResult putNotificationConfiguration(
             PutNotificationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -350,7 +356,7 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public void putScheduledUpdateGroupAction(
+    public PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(
             PutScheduledUpdateGroupActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -362,17 +368,19 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public void resumeProcesses(ResumeProcessesRequest request) {
+    public ResumeProcessesResult resumeProcesses(ResumeProcessesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setDesiredCapacity(SetDesiredCapacityRequest request) {
+    public SetDesiredCapacityResult setDesiredCapacity(
+            SetDesiredCapacityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setInstanceHealth(SetInstanceHealthRequest request) {
+    public SetInstanceHealthResult setInstanceHealth(
+            SetInstanceHealthRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -383,7 +391,8 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public void suspendProcesses(SuspendProcessesRequest request) {
+    public SuspendProcessesResult suspendProcesses(
+            SuspendProcessesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -394,7 +403,8 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
-    public void updateAutoScalingGroup(UpdateAutoScalingGroupRequest request) {
+    public UpdateAutoScalingGroupResult updateAutoScalingGroup(
+            UpdateAutoScalingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

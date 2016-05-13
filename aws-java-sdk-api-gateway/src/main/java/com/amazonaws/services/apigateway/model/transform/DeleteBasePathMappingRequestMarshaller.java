@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteBasePathMappingRequest Marshaller
@@ -48,7 +49,14 @@ public class DeleteBasePathMappingRequestMarshaller
         implements
         Marshaller<Request<DeleteBasePathMappingRequest>, DeleteBasePathMappingRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteBasePathMappingRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteBasePathMappingRequest> marshall(
             DeleteBasePathMappingRequest deleteBasePathMappingRequest) {
@@ -68,15 +76,19 @@ public class DeleteBasePathMappingRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{domain_name}",
-                        (deleteBasePathMappingRequest.getDomainName() != null) ? StringUtils
-                                .fromString(deleteBasePathMappingRequest
-                                        .getDomainName()) : "");
+                        (deleteBasePathMappingRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteBasePathMappingRequest
+                                                .getDomainName()), false)
+                                : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{base_path}",
-                        (deleteBasePathMappingRequest.getBasePath() != null) ? StringUtils
-                                .fromString(deleteBasePathMappingRequest
-                                        .getBasePath()) : "");
+                        (deleteBasePathMappingRequest.getBasePath() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteBasePathMappingRequest
+                                                .getBasePath()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

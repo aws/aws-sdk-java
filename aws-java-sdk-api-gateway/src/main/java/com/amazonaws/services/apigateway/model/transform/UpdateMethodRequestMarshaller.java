@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateMethodRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class UpdateMethodRequestMarshaller implements
         Marshaller<Request<UpdateMethodRequest>, UpdateMethodRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateMethodRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateMethodRequest> marshall(
             UpdateMethodRequest updateMethodRequest) {
@@ -66,21 +73,24 @@ public class UpdateMethodRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (updateMethodRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(updateMethodRequest.getRestApiId()) : "");
+                (updateMethodRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateMethodRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{resource_id}",
-                (updateMethodRequest.getResourceId() != null) ? StringUtils
-                        .fromString(updateMethodRequest.getResourceId()) : "");
+                (updateMethodRequest.getResourceId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateMethodRequest
+                                .getResourceId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{http_method}",
-                (updateMethodRequest.getHttpMethod() != null) ? StringUtils
-                        .fromString(updateMethodRequest.getHttpMethod()) : "");
+                (updateMethodRequest.getHttpMethod() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateMethodRequest
+                                .getHttpMethod()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             java.util.List<PatchOperation> patchOperationsList = updateMethodRequest

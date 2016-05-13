@@ -90,46 +90,46 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAssessmentRunAsync(
+    public java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(
             DeleteAssessmentRunRequest request) {
 
         return deleteAssessmentRunAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAssessmentRunAsync(
+    public java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(
             DeleteAssessmentRunRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRunRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRunRequest, DeleteAssessmentRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAssessmentTargetAsync(
+    public java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(
             DeleteAssessmentTargetRequest request) {
 
         return deleteAssessmentTargetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAssessmentTargetAsync(
+    public java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(
             DeleteAssessmentTargetRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTargetRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTargetRequest, DeleteAssessmentTargetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAssessmentTemplateAsync(
+    public java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(
             DeleteAssessmentTemplateRequest request) {
 
         return deleteAssessmentTemplateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAssessmentTemplateAsync(
+    public java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(
             DeleteAssessmentTemplateRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTemplateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTemplateRequest, DeleteAssessmentTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -390,16 +390,16 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector
     }
 
     @Override
-    public java.util.concurrent.Future<Void> registerCrossAccountAccessRoleAsync(
+    public java.util.concurrent.Future<RegisterCrossAccountAccessRoleResult> registerCrossAccountAccessRoleAsync(
             RegisterCrossAccountAccessRoleRequest request) {
 
         return registerCrossAccountAccessRoleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> registerCrossAccountAccessRoleAsync(
+    public java.util.concurrent.Future<RegisterCrossAccountAccessRoleResult> registerCrossAccountAccessRoleAsync(
             RegisterCrossAccountAccessRoleRequest request,
-            com.amazonaws.handlers.AsyncHandler<RegisterCrossAccountAccessRoleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RegisterCrossAccountAccessRoleRequest, RegisterCrossAccountAccessRoleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -420,16 +420,16 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setTagsForResourceAsync(
+    public java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(
             SetTagsForResourceRequest request) {
 
         return setTagsForResourceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setTagsForResourceAsync(
+    public java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(
             SetTagsForResourceRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetTagsForResourceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetTagsForResourceRequest, SetTagsForResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -450,61 +450,61 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopAssessmentRunAsync(
+    public java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(
             StopAssessmentRunRequest request) {
 
         return stopAssessmentRunAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopAssessmentRunAsync(
+    public java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(
             StopAssessmentRunRequest request,
-            com.amazonaws.handlers.AsyncHandler<StopAssessmentRunRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<StopAssessmentRunRequest, StopAssessmentRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> subscribeToEventAsync(
+    public java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(
             SubscribeToEventRequest request) {
 
         return subscribeToEventAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> subscribeToEventAsync(
+    public java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(
             SubscribeToEventRequest request,
-            com.amazonaws.handlers.AsyncHandler<SubscribeToEventRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SubscribeToEventRequest, SubscribeToEventResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unsubscribeFromEventAsync(
+    public java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(
             UnsubscribeFromEventRequest request) {
 
         return unsubscribeFromEventAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unsubscribeFromEventAsync(
+    public java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(
             UnsubscribeFromEventRequest request,
-            com.amazonaws.handlers.AsyncHandler<UnsubscribeFromEventRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UnsubscribeFromEventRequest, UnsubscribeFromEventResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAssessmentTargetAsync(
+    public java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(
             UpdateAssessmentTargetRequest request) {
 
         return updateAssessmentTargetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAssessmentTargetAsync(
+    public java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(
             UpdateAssessmentTargetRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateAssessmentTargetRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateAssessmentTargetRequest, UpdateAssessmentTargetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

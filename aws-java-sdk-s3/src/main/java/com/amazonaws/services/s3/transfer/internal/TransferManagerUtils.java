@@ -21,11 +21,15 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Encryption;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
+import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.PauseStatus;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.TransferManagerConfiguration;
+import com.amazonaws.util.ValidationUtils;
 
 /**
  * Internal utilities for multipart uploads with TransferManager.
@@ -183,4 +187,28 @@ public class TransferManagerUtils {
         return PauseStatus.NO_EFFECT;
     }
 
+    /**
+     * Returns true if the specified download request can use parallel part
+     * downloads for increased performance.
+     *
+     * @param getObjectRequest
+     *            The request to check.
+     *
+     * @param s3
+     *            The Amazon s3 client.
+     *
+     * @return True if this request can use parallel part downloads.
+     */
+    public static boolean isDownloadParallelizable(final AmazonS3 s3, final GetObjectRequest getObjectRequest,
+            Integer partCount) {
+        ValidationUtils.assertNotNull(s3, "S3 client");
+        ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
+
+        if (s3 instanceof AmazonS3Encryption || getObjectRequest.getSSECustomerKey() != null
+                || getObjectRequest.getRange() != null || getObjectRequest.getPartNumber() != null
+                || partCount == null) {
+            return false;
+        }
+        return true;
+    }
 }

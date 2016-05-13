@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteIPSetRequest Marshaller
  */
 public class DeleteIPSetRequestMarshaller implements
         Marshaller<Request<DeleteIPSetRequest>, DeleteIPSetRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteIPSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteIPSetRequest> marshall(
             DeleteIPSetRequest deleteIPSetRequest) {
@@ -57,8 +63,8 @@ public class DeleteIPSetRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

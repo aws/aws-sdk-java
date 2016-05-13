@@ -19,7 +19,9 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes an SSM document.
+ * </p>
  */
 public class DocumentDescription implements Serializable, Cloneable {
 
@@ -32,11 +34,44 @@ public class DocumentDescription implements Serializable, Cloneable {
     private String sha1;
     /**
      * <p>
+     * The Sha256 or Sha1 hash created by the system when the document was
+     * created.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     */
+    private String hash;
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     */
+    private String hashType;
+    /**
+     * <p>
      * The name of the SSM document.
      * </p>
      */
     private String name;
-    /** The date when the SSM document was created. */
+    /**
+     * <p>
+     * The AWS user account of the person who created the document.
+     * </p>
+     */
+    private String owner;
+    /**
+     * <p>
+     * The date when the SSM document was created.
+     * </p>
+     */
     private java.util.Date createdDate;
     /**
      * <p>
@@ -44,7 +79,11 @@ public class DocumentDescription implements Serializable, Cloneable {
      * </p>
      */
     private String status;
-    /** A description of the document. */
+    /**
+     * <p>
+     * A description of the document.
+     * </p>
+     */
     private String description;
     /**
      * <p>
@@ -52,7 +91,11 @@ public class DocumentDescription implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DocumentParameter> parameters;
-    /** The list of OS platforms compatible with this SSM document. */
+    /**
+     * <p>
+     * The list of OS platforms compatible with this SSM document.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> platformTypes;
 
     /**
@@ -104,6 +147,192 @@ public class DocumentDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Sha256 or Sha1 hash created by the system when the document was
+     * created.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param hash
+     *        The Sha256 or Sha1 hash created by the system when the document
+     *        was created. </p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     */
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    /**
+     * <p>
+     * The Sha256 or Sha1 hash created by the system when the document was
+     * created.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @return The Sha256 or Sha1 hash created by the system when the document
+     *         was created. </p> <note>
+     *         <p>
+     *         Sha1 hashes have been deprecated.
+     *         </p>
+     */
+
+    public String getHash() {
+        return this.hash;
+    }
+
+    /**
+     * <p>
+     * The Sha256 or Sha1 hash created by the system when the document was
+     * created.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param hash
+     *        The Sha256 or Sha1 hash created by the system when the document
+     *        was created. </p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DocumentDescription withHash(String hash) {
+        setHash(hash);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param hashType
+     *        Sha256 or Sha1.</p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     * @see DocumentHashType
+     */
+
+    public void setHashType(String hashType) {
+        this.hashType = hashType;
+    }
+
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @return Sha256 or Sha1.</p> <note>
+     *         <p>
+     *         Sha1 hashes have been deprecated.
+     *         </p>
+     * @see DocumentHashType
+     */
+
+    public String getHashType() {
+        return this.hashType;
+    }
+
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param hashType
+     *        Sha256 or Sha1.</p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see DocumentHashType
+     */
+
+    public DocumentDescription withHashType(String hashType) {
+        setHashType(hashType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param hashType
+     *        Sha256 or Sha1.</p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     * @see DocumentHashType
+     */
+
+    public void setHashType(DocumentHashType hashType) {
+        this.hashType = hashType.toString();
+    }
+
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param hashType
+     *        Sha256 or Sha1.</p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see DocumentHashType
+     */
+
+    public DocumentDescription withHashType(DocumentHashType hashType) {
+        setHashType(hashType);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the SSM document.
      * </p>
      * 
@@ -144,7 +373,50 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The AWS user account of the person who created the document.
+     * </p>
+     * 
+     * @param owner
+     *        The AWS user account of the person who created the document.
+     */
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * <p>
+     * The AWS user account of the person who created the document.
+     * </p>
+     * 
+     * @return The AWS user account of the person who created the document.
+     */
+
+    public String getOwner() {
+        return this.owner;
+    }
+
+    /**
+     * <p>
+     * The AWS user account of the person who created the document.
+     * </p>
+     * 
+     * @param owner
+     *        The AWS user account of the person who created the document.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DocumentDescription withOwner(String owner) {
+        setOwner(owner);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date when the SSM document was created.
+     * </p>
      * 
      * @param createdDate
      *        The date when the SSM document was created.
@@ -155,7 +427,9 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date when the SSM document was created.
+     * </p>
      * 
      * @return The date when the SSM document was created.
      */
@@ -165,7 +439,9 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date when the SSM document was created.
+     * </p>
      * 
      * @param createdDate
      *        The date when the SSM document was created.
@@ -254,7 +530,9 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A description of the document.
+     * </p>
      * 
      * @param description
      *        A description of the document.
@@ -265,7 +543,9 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A description of the document.
+     * </p>
      * 
      * @return A description of the document.
      */
@@ -275,7 +555,9 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A description of the document.
+     * </p>
      * 
      * @param description
      *        A description of the document.
@@ -368,7 +650,9 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The list of OS platforms compatible with this SSM document.
+     * </p>
      * 
      * @return The list of OS platforms compatible with this SSM document.
      * @see PlatformType
@@ -382,7 +666,9 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The list of OS platforms compatible with this SSM document.
+     * </p>
      * 
      * @param platformTypes
      *        The list of OS platforms compatible with this SSM document.
@@ -400,7 +686,9 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The list of OS platforms compatible with this SSM document.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPlatformTypes(java.util.Collection)} or
@@ -427,7 +715,9 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The list of OS platforms compatible with this SSM document.
+     * </p>
      * 
      * @param platformTypes
      *        The list of OS platforms compatible with this SSM document.
@@ -443,7 +733,9 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The list of OS platforms compatible with this SSM document.
+     * </p>
      * 
      * @param platformTypes
      *        The list of OS platforms compatible with this SSM document.
@@ -480,8 +772,14 @@ public class DocumentDescription implements Serializable, Cloneable {
         sb.append("{");
         if (getSha1() != null)
             sb.append("Sha1: " + getSha1() + ",");
+        if (getHash() != null)
+            sb.append("Hash: " + getHash() + ",");
+        if (getHashType() != null)
+            sb.append("HashType: " + getHashType() + ",");
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
+        if (getOwner() != null)
+            sb.append("Owner: " + getOwner() + ",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: " + getCreatedDate() + ",");
         if (getStatus() != null)
@@ -511,10 +809,25 @@ public class DocumentDescription implements Serializable, Cloneable {
         if (other.getSha1() != null
                 && other.getSha1().equals(this.getSha1()) == false)
             return false;
+        if (other.getHash() == null ^ this.getHash() == null)
+            return false;
+        if (other.getHash() != null
+                && other.getHash().equals(this.getHash()) == false)
+            return false;
+        if (other.getHashType() == null ^ this.getHashType() == null)
+            return false;
+        if (other.getHashType() != null
+                && other.getHashType().equals(this.getHashType()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null
                 && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getOwner() == null ^ this.getOwner() == null)
+            return false;
+        if (other.getOwner() != null
+                && other.getOwner().equals(this.getOwner()) == false)
             return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
@@ -552,7 +865,13 @@ public class DocumentDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode
                 + ((getSha1() == null) ? 0 : getSha1().hashCode());
         hashCode = prime * hashCode
+                + ((getHash() == null) ? 0 : getHash().hashCode());
+        hashCode = prime * hashCode
+                + ((getHashType() == null) ? 0 : getHashType().hashCode());
+        hashCode = prime * hashCode
                 + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode
+                + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());

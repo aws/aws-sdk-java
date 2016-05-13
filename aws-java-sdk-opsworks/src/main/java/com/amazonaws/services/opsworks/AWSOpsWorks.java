@@ -169,13 +169,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param assignInstanceRequest
+     * @return Result of the AssignInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.AssignInstance
      */
-    void assignInstance(AssignInstanceRequest assignInstanceRequest);
+    AssignInstanceResult assignInstance(
+            AssignInstanceRequest assignInstanceRequest);
 
     /**
      * <p>
@@ -197,13 +199,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param assignVolumeRequest
+     * @return Result of the AssignVolume operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.AssignVolume
      */
-    void assignVolume(AssignVolumeRequest assignVolumeRequest);
+    AssignVolumeResult assignVolume(AssignVolumeRequest assignVolumeRequest);
 
     /**
      * <p>
@@ -223,13 +226,16 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param associateElasticIpRequest
+     * @return Result of the AssociateElasticIp operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.AssociateElasticIp
      */
-    void associateElasticIp(AssociateElasticIpRequest associateElasticIpRequest);
+    AssociateElasticIpResult associateElasticIp(
+            AssociateElasticIpRequest associateElasticIpRequest);
 
     /**
      * <p>
@@ -257,13 +263,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param attachElasticLoadBalancerRequest
+     * @return Result of the AttachElasticLoadBalancer operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.AttachElasticLoadBalancer
      */
-    void attachElasticLoadBalancer(
+    AttachElasticLoadBalancerResult attachElasticLoadBalancer(
             AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest);
 
     /**
@@ -464,13 +472,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param deleteAppRequest
+     * @return Result of the DeleteApp operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeleteApp
      */
-    void deleteApp(DeleteAppRequest deleteAppRequest);
+    DeleteAppResult deleteApp(DeleteAppRequest deleteAppRequest);
 
     /**
      * <p>
@@ -492,13 +501,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param deleteInstanceRequest
+     * @return Result of the DeleteInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeleteInstance
      */
-    void deleteInstance(DeleteInstanceRequest deleteInstanceRequest);
+    DeleteInstanceResult deleteInstance(
+            DeleteInstanceRequest deleteInstanceRequest);
 
     /**
      * <p>
@@ -518,13 +529,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param deleteLayerRequest
+     * @return Result of the DeleteLayer operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeleteLayer
      */
-    void deleteLayer(DeleteLayerRequest deleteLayerRequest);
+    DeleteLayerResult deleteLayer(DeleteLayerRequest deleteLayerRequest);
 
     /**
      * <p>
@@ -544,13 +556,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param deleteStackRequest
+     * @return Result of the DeleteStack operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeleteStack
      */
-    void deleteStack(DeleteStackRequest deleteStackRequest);
+    DeleteStackResult deleteStack(DeleteStackRequest deleteStackRequest);
 
     /**
      * <p>
@@ -565,13 +578,16 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param deleteUserProfileRequest
+     * @return Result of the DeleteUserProfile operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeleteUserProfile
      */
-    void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest);
+    DeleteUserProfileResult deleteUserProfile(
+            DeleteUserProfileRequest deleteUserProfileRequest);
 
     /**
      * <p>
@@ -590,13 +606,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param deregisterEcsClusterRequest
+     * @return Result of the DeregisterEcsCluster operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeregisterEcsCluster
      */
-    void deregisterEcsCluster(
+    DeregisterEcsClusterResult deregisterEcsCluster(
             DeregisterEcsClusterRequest deregisterEcsClusterRequest);
 
     /**
@@ -616,13 +634,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param deregisterElasticIpRequest
+     * @return Result of the DeregisterElasticIp operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeregisterElasticIp
      */
-    void deregisterElasticIp(
+    DeregisterElasticIpResult deregisterElasticIp(
             DeregisterElasticIpRequest deregisterElasticIpRequest);
 
     /**
@@ -642,13 +662,16 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param deregisterInstanceRequest
+     * @return Result of the DeregisterInstance operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeregisterInstance
      */
-    void deregisterInstance(DeregisterInstanceRequest deregisterInstanceRequest);
+    DeregisterInstanceResult deregisterInstance(
+            DeregisterInstanceRequest deregisterInstanceRequest);
 
     /**
      * <p>
@@ -664,13 +687,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param deregisterRdsDbInstanceRequest
+     * @return Result of the DeregisterRdsDbInstance operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeregisterRdsDbInstance
      */
-    void deregisterRdsDbInstance(
+    DeregisterRdsDbInstanceResult deregisterRdsDbInstance(
             DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest);
 
     /**
@@ -690,13 +715,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param deregisterVolumeRequest
+     * @return Result of the DeregisterVolume operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeregisterVolume
      */
-    void deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest);
+    DeregisterVolumeResult deregisterVolume(
+            DeregisterVolumeRequest deregisterVolumeRequest);
 
     /**
      * <p>
@@ -1283,11 +1310,13 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param detachElasticLoadBalancerRequest
+     * @return Result of the DetachElasticLoadBalancer operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DetachElasticLoadBalancer
      */
-    void detachElasticLoadBalancer(
+    DetachElasticLoadBalancerResult detachElasticLoadBalancer(
             DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest);
 
     /**
@@ -1307,13 +1336,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param disassociateElasticIpRequest
+     * @return Result of the DisassociateElasticIp operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DisassociateElasticIp
      */
-    void disassociateElasticIp(
+    DisassociateElasticIpResult disassociateElasticIp(
             DisassociateElasticIpRequest disassociateElasticIpRequest);
 
     /**
@@ -1374,13 +1405,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param rebootInstanceRequest
+     * @return Result of the RebootInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.RebootInstance
      */
-    void rebootInstance(RebootInstanceRequest rebootInstanceRequest);
+    RebootInstanceResult rebootInstance(
+            RebootInstanceRequest rebootInstanceRequest);
 
     /**
      * <p>
@@ -1489,13 +1522,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param registerRdsDbInstanceRequest
+     * @return Result of the RegisterRdsDbInstance operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.RegisterRdsDbInstance
      */
-    void registerRdsDbInstance(
+    RegisterRdsDbInstanceResult registerRdsDbInstance(
             RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest);
 
     /**
@@ -1552,13 +1587,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param setLoadBasedAutoScalingRequest
+     * @return Result of the SetLoadBasedAutoScaling operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.SetLoadBasedAutoScaling
      */
-    void setLoadBasedAutoScaling(
+    SetLoadBasedAutoScalingResult setLoadBasedAutoScaling(
             SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest);
 
     /**
@@ -1577,13 +1614,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param setPermissionRequest
+     * @return Result of the SetPermission operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.SetPermission
      */
-    void setPermission(SetPermissionRequest setPermissionRequest);
+    SetPermissionResult setPermission(SetPermissionRequest setPermissionRequest);
 
     /**
      * <p>
@@ -1602,13 +1640,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param setTimeBasedAutoScalingRequest
+     * @return Result of the SetTimeBasedAutoScaling operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.SetTimeBasedAutoScaling
      */
-    void setTimeBasedAutoScaling(
+    SetTimeBasedAutoScalingResult setTimeBasedAutoScaling(
             SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest);
 
     /**
@@ -1627,13 +1667,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param startInstanceRequest
+     * @return Result of the StartInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.StartInstance
      */
-    void startInstance(StartInstanceRequest startInstanceRequest);
+    StartInstanceResult startInstance(StartInstanceRequest startInstanceRequest);
 
     /**
      * <p>
@@ -1649,13 +1690,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param startStackRequest
+     * @return Result of the StartStack operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.StartStack
      */
-    void startStack(StartStackRequest startStackRequest);
+    StartStackResult startStack(StartStackRequest startStackRequest);
 
     /**
      * <p>
@@ -1676,13 +1718,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param stopInstanceRequest
+     * @return Result of the StopInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.StopInstance
      */
-    void stopInstance(StopInstanceRequest stopInstanceRequest);
+    StopInstanceResult stopInstance(StopInstanceRequest stopInstanceRequest);
 
     /**
      * <p>
@@ -1698,13 +1741,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param stopStackRequest
+     * @return Result of the StopStack operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.StopStack
      */
-    void stopStack(StopStackRequest stopStackRequest);
+    StopStackResult stopStack(StopStackRequest stopStackRequest);
 
     /**
      * <p>
@@ -1723,13 +1767,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param unassignInstanceRequest
+     * @return Result of the UnassignInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UnassignInstance
      */
-    void unassignInstance(UnassignInstanceRequest unassignInstanceRequest);
+    UnassignInstanceResult unassignInstance(
+            UnassignInstanceRequest unassignInstanceRequest);
 
     /**
      * <p>
@@ -1748,13 +1794,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param unassignVolumeRequest
+     * @return Result of the UnassignVolume operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UnassignVolume
      */
-    void unassignVolume(UnassignVolumeRequest unassignVolumeRequest);
+    UnassignVolumeResult unassignVolume(
+            UnassignVolumeRequest unassignVolumeRequest);
 
     /**
      * <p>
@@ -1770,13 +1818,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param updateAppRequest
+     * @return Result of the UpdateApp operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateApp
      */
-    void updateApp(UpdateAppRequest updateAppRequest);
+    UpdateAppResult updateApp(UpdateAppRequest updateAppRequest);
 
     /**
      * <p>
@@ -1795,13 +1844,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param updateElasticIpRequest
+     * @return Result of the UpdateElasticIp operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateElasticIp
      */
-    void updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest);
+    UpdateElasticIpResult updateElasticIp(
+            UpdateElasticIpRequest updateElasticIpRequest);
 
     /**
      * <p>
@@ -1817,13 +1868,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param updateInstanceRequest
+     * @return Result of the UpdateInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateInstance
      */
-    void updateInstance(UpdateInstanceRequest updateInstanceRequest);
+    UpdateInstanceResult updateInstance(
+            UpdateInstanceRequest updateInstanceRequest);
 
     /**
      * <p>
@@ -1839,13 +1892,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param updateLayerRequest
+     * @return Result of the UpdateLayer operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateLayer
      */
-    void updateLayer(UpdateLayerRequest updateLayerRequest);
+    UpdateLayerResult updateLayer(UpdateLayerRequest updateLayerRequest);
 
     /**
      * <p>
@@ -1860,11 +1914,13 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param updateMyUserProfileRequest
+     * @return Result of the UpdateMyUserProfile operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @sample AWSOpsWorks.UpdateMyUserProfile
      */
-    void updateMyUserProfile(
+    UpdateMyUserProfileResult updateMyUserProfile(
             UpdateMyUserProfileRequest updateMyUserProfileRequest);
 
     /**
@@ -1881,13 +1937,15 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param updateRdsDbInstanceRequest
+     * @return Result of the UpdateRdsDbInstance operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateRdsDbInstance
      */
-    void updateRdsDbInstance(
+    UpdateRdsDbInstanceResult updateRdsDbInstance(
             UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest);
 
     /**
@@ -1904,13 +1962,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param updateStackRequest
+     * @return Result of the UpdateStack operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateStack
      */
-    void updateStack(UpdateStackRequest updateStackRequest);
+    UpdateStackResult updateStack(UpdateStackRequest updateStackRequest);
 
     /**
      * <p>
@@ -1925,13 +1984,16 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param updateUserProfileRequest
+     * @return Result of the UpdateUserProfile operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateUserProfile
      */
-    void updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest);
+    UpdateUserProfileResult updateUserProfile(
+            UpdateUserProfileRequest updateUserProfileRequest);
 
     /**
      * <p>
@@ -1950,13 +2012,14 @@ public interface AWSOpsWorks {
      * </p>
      * 
      * @param updateVolumeRequest
+     * @return Result of the UpdateVolume operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateVolume
      */
-    void updateVolume(UpdateVolumeRequest updateVolumeRequest);
+    UpdateVolumeResult updateVolume(UpdateVolumeRequest updateVolumeRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held

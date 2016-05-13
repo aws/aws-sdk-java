@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateRecordsRequest Marshaller
@@ -48,6 +49,12 @@ public class UpdateRecordsRequestMarshaller implements
         Marshaller<Request<UpdateRecordsRequest>, UpdateRecordsRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateRecordsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateRecordsRequest> marshall(
             UpdateRecordsRequest updateRecordsRequest) {
@@ -72,24 +79,26 @@ public class UpdateRecordsRequestMarshaller implements
         uriResourcePath = uriResourcePath
                 .replace(
                         "{IdentityPoolId}",
-                        (updateRecordsRequest.getIdentityPoolId() != null) ? StringUtils
-                                .fromString(updateRecordsRequest
-                                        .getIdentityPoolId()) : "");
+                        (updateRecordsRequest.getIdentityPoolId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateRecordsRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
         uriResourcePath = uriResourcePath.replace(
                 "{IdentityId}",
-                (updateRecordsRequest.getIdentityId() != null) ? StringUtils
-                        .fromString(updateRecordsRequest.getIdentityId()) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{DatasetName}",
-                        (updateRecordsRequest.getDatasetName() != null) ? StringUtils
-                                .fromString(updateRecordsRequest
-                                        .getDatasetName()) : "");
+                (updateRecordsRequest.getIdentityId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateRecordsRequest
+                                .getIdentityId()), false) : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{DatasetName}",
+                (updateRecordsRequest.getDatasetName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateRecordsRequest
+                                .getDatasetName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (updateRecordsRequest.getDeviceId() != null) {

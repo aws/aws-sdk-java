@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeprecateDomainRequest Marshaller
  */
 public class DeprecateDomainRequestMarshaller implements
         Marshaller<Request<DeprecateDomainRequest>, DeprecateDomainRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeprecateDomainRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeprecateDomainRequest> marshall(
             DeprecateDomainRequest deprecateDomainRequest) {
@@ -58,8 +65,8 @@ public class DeprecateDomainRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.0");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

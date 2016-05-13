@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PutMetricFilterRequest Marshaller
  */
 public class PutMetricFilterRequestMarshaller implements
         Marshaller<Request<PutMetricFilterRequest>, PutMetricFilterRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PutMetricFilterRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PutMetricFilterRequest> marshall(
             PutMetricFilterRequest putMetricFilterRequest) {
@@ -57,8 +64,8 @@ public class PutMetricFilterRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

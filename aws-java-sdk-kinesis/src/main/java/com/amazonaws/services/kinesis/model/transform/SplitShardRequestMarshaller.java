@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SplitShardRequest Marshaller
  */
 public class SplitShardRequestMarshaller implements
         Marshaller<Request<SplitShardRequest>, SplitShardRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public SplitShardRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<SplitShardRequest> marshall(
             SplitShardRequest splitShardRequest) {
@@ -57,8 +63,8 @@ public class SplitShardRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

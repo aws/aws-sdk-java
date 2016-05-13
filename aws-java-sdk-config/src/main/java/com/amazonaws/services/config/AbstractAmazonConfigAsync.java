@@ -29,31 +29,31 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteConfigRuleAsync(
+    public java.util.concurrent.Future<DeleteConfigRuleResult> deleteConfigRuleAsync(
             DeleteConfigRuleRequest request) {
 
         return deleteConfigRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteConfigRuleAsync(
+    public java.util.concurrent.Future<DeleteConfigRuleResult> deleteConfigRuleAsync(
             DeleteConfigRuleRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteConfigRuleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteConfigRuleRequest, DeleteConfigRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDeliveryChannelAsync(
+    public java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(
             DeleteDeliveryChannelRequest request) {
 
         return deleteDeliveryChannelAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDeliveryChannelAsync(
+    public java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(
             DeleteDeliveryChannelRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteDeliveryChannelRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteDeliveryChannelRequest, DeleteDeliveryChannelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -543,46 +543,46 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putConfigRuleAsync(
+    public java.util.concurrent.Future<PutConfigRuleResult> putConfigRuleAsync(
             PutConfigRuleRequest request) {
 
         return putConfigRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putConfigRuleAsync(
+    public java.util.concurrent.Future<PutConfigRuleResult> putConfigRuleAsync(
             PutConfigRuleRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutConfigRuleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutConfigRuleRequest, PutConfigRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putConfigurationRecorderAsync(
+    public java.util.concurrent.Future<PutConfigurationRecorderResult> putConfigurationRecorderAsync(
             PutConfigurationRecorderRequest request) {
 
         return putConfigurationRecorderAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putConfigurationRecorderAsync(
+    public java.util.concurrent.Future<PutConfigurationRecorderResult> putConfigurationRecorderAsync(
             PutConfigurationRecorderRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutConfigurationRecorderRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutConfigurationRecorderRequest, PutConfigurationRecorderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putDeliveryChannelAsync(
+    public java.util.concurrent.Future<PutDeliveryChannelResult> putDeliveryChannelAsync(
             PutDeliveryChannelRequest request) {
 
         return putDeliveryChannelAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putDeliveryChannelAsync(
+    public java.util.concurrent.Future<PutDeliveryChannelResult> putDeliveryChannelAsync(
             PutDeliveryChannelRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutDeliveryChannelRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutDeliveryChannelRequest, PutDeliveryChannelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -603,31 +603,31 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startConfigurationRecorderAsync(
+    public java.util.concurrent.Future<StartConfigurationRecorderResult> startConfigurationRecorderAsync(
             StartConfigurationRecorderRequest request) {
 
         return startConfigurationRecorderAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startConfigurationRecorderAsync(
+    public java.util.concurrent.Future<StartConfigurationRecorderResult> startConfigurationRecorderAsync(
             StartConfigurationRecorderRequest request,
-            com.amazonaws.handlers.AsyncHandler<StartConfigurationRecorderRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<StartConfigurationRecorderRequest, StartConfigurationRecorderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopConfigurationRecorderAsync(
+    public java.util.concurrent.Future<StopConfigurationRecorderResult> stopConfigurationRecorderAsync(
             StopConfigurationRecorderRequest request) {
 
         return stopConfigurationRecorderAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopConfigurationRecorderAsync(
+    public java.util.concurrent.Future<StopConfigurationRecorderResult> stopConfigurationRecorderAsync(
             StopConfigurationRecorderRequest request,
-            com.amazonaws.handlers.AsyncHandler<StopConfigurationRecorderRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<StopConfigurationRecorderRequest, StopConfigurationRecorderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

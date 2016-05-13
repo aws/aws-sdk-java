@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateTopicRuleRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class CreateTopicRuleRequestMarshaller implements
         Marshaller<Request<CreateTopicRuleRequest>, CreateTopicRuleRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateTopicRuleRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateTopicRuleRequest> marshall(
             CreateTopicRuleRequest createTopicRuleRequest) {
@@ -66,12 +74,15 @@ public class CreateTopicRuleRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{ruleName}",
-                (createTopicRuleRequest.getRuleName() != null) ? StringUtils
-                        .fromString(createTopicRuleRequest.getRuleName()) : "");
+                (createTopicRuleRequest.getRuleName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(createTopicRuleRequest
+                                        .getRuleName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             TopicRulePayload topicRulePayload = createTopicRuleRequest
                     .getTopicRulePayload();

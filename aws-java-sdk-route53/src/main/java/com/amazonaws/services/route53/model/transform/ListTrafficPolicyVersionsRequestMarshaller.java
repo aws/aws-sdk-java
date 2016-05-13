@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListTrafficPolicyVersionsRequest Marshaller
@@ -62,9 +63,11 @@ public class ListTrafficPolicyVersionsRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (listTrafficPolicyVersionsRequest.getId() != null) ? StringUtils
-                                .fromString(listTrafficPolicyVersionsRequest
-                                        .getId()) : "");
+                        (listTrafficPolicyVersionsRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(listTrafficPolicyVersionsRequest
+                                                .getId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         if (listTrafficPolicyVersionsRequest.getTrafficPolicyVersionMarker() != null) {

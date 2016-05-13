@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TestInvokeMethodRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class TestInvokeMethodRequestMarshaller implements
         Marshaller<Request<TestInvokeMethodRequest>, TestInvokeMethodRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public TestInvokeMethodRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<TestInvokeMethodRequest> marshall(
             TestInvokeMethodRequest testInvokeMethodRequest) {
@@ -66,24 +74,29 @@ public class TestInvokeMethodRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (testInvokeMethodRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(testInvokeMethodRequest.getRestApiId())
-                        : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (testInvokeMethodRequest.getResourceId() != null) ? StringUtils
-                        .fromString(testInvokeMethodRequest.getResourceId())
-                        : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (testInvokeMethodRequest.getHttpMethod() != null) ? StringUtils
-                        .fromString(testInvokeMethodRequest.getHttpMethod())
-                        : "");
+                (testInvokeMethodRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(testInvokeMethodRequest
+                                        .getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (testInvokeMethodRequest.getResourceId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(testInvokeMethodRequest
+                                                .getResourceId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (testInvokeMethodRequest.getHttpMethod() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(testInvokeMethodRequest
+                                                .getHttpMethod()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (testInvokeMethodRequest.getPathWithQueryString() != null) {

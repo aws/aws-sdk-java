@@ -125,7 +125,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      * from service responses.
      *
      * @param unmarshallerContext
-     *            The unmarshaller context used to process a service's response
+     *            The unmarshaller context used to configure a service's response
      *            data.
      */
     protected void registerAdditionalMetadataExpressions(StaxUnmarshallerContext unmarshallerContext) {}

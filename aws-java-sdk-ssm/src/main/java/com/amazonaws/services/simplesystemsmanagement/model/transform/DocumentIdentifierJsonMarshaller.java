@@ -26,7 +26,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DocumentIdentifierMarshaller
@@ -50,6 +50,10 @@ public class DocumentIdentifierJsonMarshaller {
             if (documentIdentifier.getName() != null) {
                 jsonGenerator.writeFieldName("Name").writeValue(
                         documentIdentifier.getName());
+            }
+            if (documentIdentifier.getOwner() != null) {
+                jsonGenerator.writeFieldName("Owner").writeValue(
+                        documentIdentifier.getOwner());
             }
 
             com.amazonaws.internal.SdkInternalList<String> platformTypesList = (com.amazonaws.internal.SdkInternalList<String>) documentIdentifier

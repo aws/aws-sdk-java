@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeIdentityUsageRequest Marshaller
@@ -49,6 +50,13 @@ public class DescribeIdentityUsageRequestMarshaller
         Marshaller<Request<DescribeIdentityUsageRequest>, DescribeIdentityUsageRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeIdentityUsageRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeIdentityUsageRequest> marshall(
             DescribeIdentityUsageRequest describeIdentityUsageRequest) {
@@ -68,15 +76,19 @@ public class DescribeIdentityUsageRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{IdentityPoolId}",
-                        (describeIdentityUsageRequest.getIdentityPoolId() != null) ? StringUtils
-                                .fromString(describeIdentityUsageRequest
-                                        .getIdentityPoolId()) : "");
+                        (describeIdentityUsageRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(describeIdentityUsageRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{IdentityId}",
-                        (describeIdentityUsageRequest.getIdentityId() != null) ? StringUtils
-                                .fromString(describeIdentityUsageRequest
-                                        .getIdentityId()) : "");
+                        (describeIdentityUsageRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(describeIdentityUsageRequest
+                                                .getIdentityId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

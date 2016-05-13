@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SendCommandRequest Marshaller
  */
 public class SendCommandRequestMarshaller implements
         Marshaller<Request<SendCommandRequest>, SendCommandRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public SendCommandRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<SendCommandRequest> marshall(
             SendCommandRequest sendCommandRequest) {
@@ -57,8 +63,8 @@ public class SendCommandRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 
@@ -78,6 +84,14 @@ public class SendCommandRequestMarshaller implements
             if (sendCommandRequest.getDocumentName() != null) {
                 jsonGenerator.writeFieldName("DocumentName").writeValue(
                         sendCommandRequest.getDocumentName());
+            }
+            if (sendCommandRequest.getDocumentHash() != null) {
+                jsonGenerator.writeFieldName("DocumentHash").writeValue(
+                        sendCommandRequest.getDocumentHash());
+            }
+            if (sendCommandRequest.getDocumentHashType() != null) {
+                jsonGenerator.writeFieldName("DocumentHashType").writeValue(
+                        sendCommandRequest.getDocumentHashType());
             }
             if (sendCommandRequest.getTimeoutSeconds() != null) {
                 jsonGenerator.writeFieldName("TimeoutSeconds").writeValue(

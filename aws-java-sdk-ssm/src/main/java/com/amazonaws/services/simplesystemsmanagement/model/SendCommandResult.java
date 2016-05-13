@@ -24,14 +24,18 @@ import java.io.Serializable;
 public class SendCommandResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The request as it was received by SSM. Also provides the command ID which
      * can be used future references to this request.
+     * </p>
      */
     private Command command;
 
     /**
+     * <p>
      * The request as it was received by SSM. Also provides the command ID which
      * can be used future references to this request.
+     * </p>
      * 
      * @param command
      *        The request as it was received by SSM. Also provides the command
@@ -43,8 +47,10 @@ public class SendCommandResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The request as it was received by SSM. Also provides the command ID which
      * can be used future references to this request.
+     * </p>
      * 
      * @return The request as it was received by SSM. Also provides the command
      *         ID which can be used future references to this request.
@@ -55,8 +61,10 @@ public class SendCommandResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The request as it was received by SSM. Also provides the command ID which
      * can be used future references to this request.
+     * </p>
      * 
      * @param command
      *        The request as it was received by SSM. Also provides the command

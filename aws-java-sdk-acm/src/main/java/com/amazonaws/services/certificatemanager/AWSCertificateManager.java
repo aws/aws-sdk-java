@@ -124,6 +124,8 @@ public interface AWSCertificateManager {
      * </p>
      * 
      * @param addTagsToCertificateRequest
+     * @return Result of the AddTagsToCertificate operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified certificate cannot be found in the caller's
      *         account, or the caller's account cannot be found.
@@ -139,7 +141,7 @@ public interface AWSCertificateManager {
      *         fewer tags.
      * @sample AWSCertificateManager.AddTagsToCertificate
      */
-    void addTagsToCertificate(
+    AddTagsToCertificateResult addTagsToCertificate(
             AddTagsToCertificateRequest addTagsToCertificateRequest);
 
     /**
@@ -155,6 +157,8 @@ public interface AWSCertificateManager {
      * association must first be removed. </note>
      * 
      * @param deleteCertificateRequest
+     * @return Result of the DeleteCertificate operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified certificate cannot be found in the caller's
      *         account, or the caller's account cannot be found.
@@ -166,7 +170,8 @@ public interface AWSCertificateManager {
      *         existing resource.
      * @sample AWSCertificateManager.DeleteCertificate
      */
-    void deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
+    DeleteCertificateResult deleteCertificate(
+            DeleteCertificateRequest deleteCertificateRequest);
 
     /**
      * <p>
@@ -275,6 +280,8 @@ public interface AWSCertificateManager {
      * </p>
      * 
      * @param removeTagsFromCertificateRequest
+     * @return Result of the RemoveTagsFromCertificate operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified certificate cannot be found in the caller's
      *         account, or the caller's account cannot be found.
@@ -287,7 +294,7 @@ public interface AWSCertificateManager {
      *         with <code>aws:</code>.
      * @sample AWSCertificateManager.RemoveTagsFromCertificate
      */
-    void removeTagsFromCertificate(
+    RemoveTagsFromCertificateResult removeTagsFromCertificate(
             RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest);
 
     /**
@@ -337,6 +344,8 @@ public interface AWSCertificateManager {
      * </p>
      * 
      * @param resendValidationEmailRequest
+     * @return Result of the ResendValidationEmail operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified certificate cannot be found in the caller's
      *         account, or the caller's account cannot be found.
@@ -354,7 +363,7 @@ public interface AWSCertificateManager {
      *         is incorrect.
      * @sample AWSCertificateManager.ResendValidationEmail
      */
-    void resendValidationEmail(
+    ResendValidationEmailResult resendValidationEmail(
             ResendValidationEmailRequest resendValidationEmailRequest);
 
     /**

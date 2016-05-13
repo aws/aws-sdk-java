@@ -103,6 +103,10 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      */
     private SSECustomerKey sseCustomerKey;
 
+    /**
+     * The part number of the requested part in a multipart object.
+     */
+    private Integer partNumber;
 
     /**
      * Constructs a new {@link GetObjectRequest} with all the required parameters.
@@ -920,6 +924,67 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
         setSSECustomerKey(sseKey);
         return this;
     }
+
+    /**
+     * <p>
+     * Returns the optional part number that indicates the part to be downloaded in a multipart object.
+     * </p>
+     *
+     * @return The part number representing a part in a multipart object.
+     *
+     * @see GetObjectRequest#setPartNumber(Integer)
+     * @see GetObjectRequest#withPartNumber(Integer)
+     */
+    public Integer getPartNumber() {
+        return partNumber;
+    }
+
+    /**
+     * <p>
+     * Sets the optional part number that indicates the part to be downloaded in a multipart object.
+     * </p>
+     * <p>
+     * The valid range for part number is 1 - 10000 inclusive.
+     * Part numbers are 1 based. If an object has 1 part, partNumber=1 would be the correct not 0.
+     * For partNumber < 1, an AmazonS3Exception is thrown with response code 400 bad request.
+     * For partNumber larger than actual part count,  an AmazonS3Exception is thrown with response code 416 Request Range Not Satisfiable.
+     * </p>
+     *
+     * @param partNumber
+     *            The part number representing a part in a multipart object.
+     *
+     * @see GetObjectRequest#getPartNumber()
+     * @see GetObjectRequest#withPartNumber(Integer)
+     */
+    public void setPartNumber(Integer partNumber) {
+        this.partNumber = partNumber;
+    }
+
+    /**
+     * <p>
+     * Sets the optional part number that indicates the part to be downloaded in a multipart object.
+     * </p>
+     * <p>
+     * The valid range for part number is 1 - 10000 inclusive.
+     * Part numbers are 1 based. If an object has 1 part, partNumber=1 would be the correct not 0.
+     * For partNumber < 1, an AmazonS3Exception is thrown with response code 400 bad request.
+     * For partNumber larger than actual part count,  an AmazonS3Exception is thrown with response code 416 Request Range Not Satisfiable.
+     * </p>
+     *
+     * @param partNumber
+     *            The part number representing a part in a multipart object.
+     *
+     * @return This {@link GetObjectRequest}, enabling additional method
+     *         calls to be chained together.
+     *
+     * @see GetObjectRequest#getPartNumber()
+     * @see GetObjectRequest#setPartNumber(Integer)
+     */
+    public GetObjectRequest withPartNumber(Integer partNumber) {
+        setPartNumber(partNumber);
+        return this;
+    }
+
 
     /**
      * Returns an immutable S3 object id.

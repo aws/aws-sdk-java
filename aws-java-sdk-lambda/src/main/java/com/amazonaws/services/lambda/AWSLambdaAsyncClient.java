@@ -407,26 +407,25 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAliasAsync(
+    public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             DeleteAliasRequest request) {
 
         return deleteAliasAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAliasAsync(
+    public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             final DeleteAliasRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteAliasResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteAliasResult call() throws Exception {
+                        DeleteAliasResult result;
 
                         try {
-                            deleteAlias(request);
-                            result = null;
+                            result = deleteAlias(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -479,26 +478,25 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteFunctionAsync(
+    public java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(
             DeleteFunctionRequest request) {
 
         return deleteFunctionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteFunctionAsync(
+    public java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(
             final DeleteFunctionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteFunctionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteFunctionResult call() throws Exception {
+                        DeleteFunctionResult result;
 
                         try {
-                            deleteFunction(request);
-                            result = null;
+                            result = deleteFunction(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -989,26 +987,25 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             RemovePermissionRequest request) {
 
         return removePermissionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             final RemovePermissionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RemovePermissionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RemovePermissionResult call() throws Exception {
+                        RemovePermissionResult result;
 
                         try {
-                            removePermission(request);
-                            result = null;
+                            result = removePermission(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

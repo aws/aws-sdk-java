@@ -165,241 +165,241 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApiKeyAsync(
+    public java.util.concurrent.Future<DeleteApiKeyResult> deleteApiKeyAsync(
             DeleteApiKeyRequest request) {
 
         return deleteApiKeyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteApiKeyAsync(
+    public java.util.concurrent.Future<DeleteApiKeyResult> deleteApiKeyAsync(
             DeleteApiKeyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteApiKeyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteApiKeyRequest, DeleteApiKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+    public java.util.concurrent.Future<DeleteAuthorizerResult> deleteAuthorizerAsync(
             DeleteAuthorizerRequest request) {
 
         return deleteAuthorizerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAuthorizerAsync(
+    public java.util.concurrent.Future<DeleteAuthorizerResult> deleteAuthorizerAsync(
             DeleteAuthorizerRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, DeleteAuthorizerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteBasePathMappingAsync(
+    public java.util.concurrent.Future<DeleteBasePathMappingResult> deleteBasePathMappingAsync(
             DeleteBasePathMappingRequest request) {
 
         return deleteBasePathMappingAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteBasePathMappingAsync(
+    public java.util.concurrent.Future<DeleteBasePathMappingResult> deleteBasePathMappingAsync(
             DeleteBasePathMappingRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteBasePathMappingRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteBasePathMappingRequest, DeleteBasePathMappingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteClientCertificateAsync(
+    public java.util.concurrent.Future<DeleteClientCertificateResult> deleteClientCertificateAsync(
             DeleteClientCertificateRequest request) {
 
         return deleteClientCertificateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteClientCertificateAsync(
+    public java.util.concurrent.Future<DeleteClientCertificateResult> deleteClientCertificateAsync(
             DeleteClientCertificateRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteClientCertificateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteClientCertificateRequest, DeleteClientCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDeploymentAsync(
+    public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(
             DeleteDeploymentRequest request) {
 
         return deleteDeploymentAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDeploymentAsync(
+    public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(
             DeleteDeploymentRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, DeleteDeploymentResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDomainNameAsync(
+    public java.util.concurrent.Future<DeleteDomainNameResult> deleteDomainNameAsync(
             DeleteDomainNameRequest request) {
 
         return deleteDomainNameAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDomainNameAsync(
+    public java.util.concurrent.Future<DeleteDomainNameResult> deleteDomainNameAsync(
             DeleteDomainNameRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteDomainNameRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteDomainNameRequest, DeleteDomainNameResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteIntegrationAsync(
+    public java.util.concurrent.Future<DeleteIntegrationResult> deleteIntegrationAsync(
             DeleteIntegrationRequest request) {
 
         return deleteIntegrationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteIntegrationAsync(
+    public java.util.concurrent.Future<DeleteIntegrationResult> deleteIntegrationAsync(
             DeleteIntegrationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteIntegrationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteIntegrationRequest, DeleteIntegrationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteIntegrationResponseAsync(
+    public java.util.concurrent.Future<DeleteIntegrationResponseResult> deleteIntegrationResponseAsync(
             DeleteIntegrationResponseRequest request) {
 
         return deleteIntegrationResponseAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteIntegrationResponseAsync(
+    public java.util.concurrent.Future<DeleteIntegrationResponseResult> deleteIntegrationResponseAsync(
             DeleteIntegrationResponseRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteIntegrationResponseRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteIntegrationResponseRequest, DeleteIntegrationResponseResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMethodAsync(
+    public java.util.concurrent.Future<DeleteMethodResult> deleteMethodAsync(
             DeleteMethodRequest request) {
 
         return deleteMethodAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMethodAsync(
+    public java.util.concurrent.Future<DeleteMethodResult> deleteMethodAsync(
             DeleteMethodRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteMethodRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteMethodRequest, DeleteMethodResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMethodResponseAsync(
+    public java.util.concurrent.Future<DeleteMethodResponseResult> deleteMethodResponseAsync(
             DeleteMethodResponseRequest request) {
 
         return deleteMethodResponseAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMethodResponseAsync(
+    public java.util.concurrent.Future<DeleteMethodResponseResult> deleteMethodResponseAsync(
             DeleteMethodResponseRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteMethodResponseRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteMethodResponseRequest, DeleteMethodResponseResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteModelAsync(
+    public java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(
             DeleteModelRequest request) {
 
         return deleteModelAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteModelAsync(
+    public java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(
             DeleteModelRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteModelRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteModelRequest, DeleteModelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteResourceAsync(
+    public java.util.concurrent.Future<DeleteResourceResult> deleteResourceAsync(
             DeleteResourceRequest request) {
 
         return deleteResourceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteResourceAsync(
+    public java.util.concurrent.Future<DeleteResourceResult> deleteResourceAsync(
             DeleteResourceRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteResourceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteResourceRequest, DeleteResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRestApiAsync(
+    public java.util.concurrent.Future<DeleteRestApiResult> deleteRestApiAsync(
             DeleteRestApiRequest request) {
 
         return deleteRestApiAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRestApiAsync(
+    public java.util.concurrent.Future<DeleteRestApiResult> deleteRestApiAsync(
             DeleteRestApiRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteRestApiRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteRestApiRequest, DeleteRestApiResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStageAsync(
+    public java.util.concurrent.Future<DeleteStageResult> deleteStageAsync(
             DeleteStageRequest request) {
 
         return deleteStageAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStageAsync(
+    public java.util.concurrent.Future<DeleteStageResult> deleteStageAsync(
             DeleteStageRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteStageRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteStageRequest, DeleteStageResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> flushStageAuthorizersCacheAsync(
+    public java.util.concurrent.Future<FlushStageAuthorizersCacheResult> flushStageAuthorizersCacheAsync(
             FlushStageAuthorizersCacheRequest request) {
 
         return flushStageAuthorizersCacheAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> flushStageAuthorizersCacheAsync(
+    public java.util.concurrent.Future<FlushStageAuthorizersCacheResult> flushStageAuthorizersCacheAsync(
             FlushStageAuthorizersCacheRequest request,
-            com.amazonaws.handlers.AsyncHandler<FlushStageAuthorizersCacheRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<FlushStageAuthorizersCacheRequest, FlushStageAuthorizersCacheResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> flushStageCacheAsync(
+    public java.util.concurrent.Future<FlushStageCacheResult> flushStageCacheAsync(
             FlushStageCacheRequest request) {
 
         return flushStageCacheAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> flushStageCacheAsync(
+    public java.util.concurrent.Future<FlushStageCacheResult> flushStageCacheAsync(
             FlushStageCacheRequest request,
-            com.amazonaws.handlers.AsyncHandler<FlushStageCacheRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<FlushStageCacheRequest, FlushStageCacheResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "inspector",
     "signingName" : "inspector",
+    "xmlProtocol" : false,
     "serviceName" : "Amazon Inspector",
     "cborProtocol" : false,
-    "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "jsonProtocol" : true
   },
   "operations" : {
     "AddAttributesToFindings" : {
@@ -60,12 +60,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddAttributesToFindingsResult",
       "asyncReturnType" : "AddAttributesToFindingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddAttributesToFindingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddAttributesToFindingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddAttributesToFindingsRequest, AddAttributesToFindingsResult>",
-      "authenticated" : true,
       "methodName" : "addAttributesToFindings"
     },
     "CreateAssessmentTarget" : {
@@ -102,12 +102,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateAssessmentTargetResult",
       "asyncReturnType" : "CreateAssessmentTargetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAssessmentTargetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAssessmentTargetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAssessmentTargetRequest, CreateAssessmentTargetResult>",
-      "authenticated" : true,
       "methodName" : "createAssessmentTarget"
     },
     "CreateAssessmentTemplate" : {
@@ -144,12 +144,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateAssessmentTemplateResult",
       "asyncReturnType" : "CreateAssessmentTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAssessmentTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAssessmentTemplateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAssessmentTemplateRequest, CreateAssessmentTemplateResult>",
-      "authenticated" : true,
       "methodName" : "createAssessmentTemplate"
     },
     "CreateResourceGroup" : {
@@ -183,12 +183,12 @@
         "documentation" : "<p>You do not have required permissions to access the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateResourceGroupResult",
       "asyncReturnType" : "CreateResourceGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateResourceGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateResourceGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateResourceGroupRequest, CreateResourceGroupResult>",
-      "authenticated" : true,
       "methodName" : "createResourceGroup"
     },
     "DeleteAssessmentRun" : {
@@ -204,7 +204,10 @@
         "variableSetterType" : "DeleteAssessmentRunRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteAssessmentRunResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InternalException",
         "documentation" : "<p>Internal server error.</p>"
@@ -222,12 +225,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRunRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteAssessmentRunResult",
+      "asyncReturnType" : "DeleteAssessmentRunResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteAssessmentRunResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteAssessmentRunResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRunRequest, DeleteAssessmentRunResult>",
       "methodName" : "deleteAssessmentRun"
     },
     "DeleteAssessmentTarget" : {
@@ -243,7 +246,10 @@
         "variableSetterType" : "DeleteAssessmentTargetRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteAssessmentTargetResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InternalException",
         "documentation" : "<p>Internal server error.</p>"
@@ -261,12 +267,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTargetRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteAssessmentTargetResult",
+      "asyncReturnType" : "DeleteAssessmentTargetResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteAssessmentTargetResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteAssessmentTargetResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTargetRequest, DeleteAssessmentTargetResult>",
       "methodName" : "deleteAssessmentTarget"
     },
     "DeleteAssessmentTemplate" : {
@@ -282,7 +288,10 @@
         "variableSetterType" : "DeleteAssessmentTemplateRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteAssessmentTemplateResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InternalException",
         "documentation" : "<p>Internal server error.</p>"
@@ -300,12 +309,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTemplateRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteAssessmentTemplateResult",
+      "asyncReturnType" : "DeleteAssessmentTemplateResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteAssessmentTemplateResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteAssessmentTemplateResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTemplateRequest, DeleteAssessmentTemplateResult>",
       "methodName" : "deleteAssessmentTemplate"
     },
     "DescribeAssessmentRuns" : {
@@ -333,12 +342,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeAssessmentRunsResult",
       "asyncReturnType" : "DescribeAssessmentRunsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAssessmentRunsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAssessmentRunsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAssessmentRunsRequest, DescribeAssessmentRunsResult>",
-      "authenticated" : true,
       "methodName" : "describeAssessmentRuns"
     },
     "DescribeAssessmentTargets" : {
@@ -366,12 +375,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeAssessmentTargetsResult",
       "asyncReturnType" : "DescribeAssessmentTargetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAssessmentTargetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAssessmentTargetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAssessmentTargetsRequest, DescribeAssessmentTargetsResult>",
-      "authenticated" : true,
       "methodName" : "describeAssessmentTargets"
     },
     "DescribeAssessmentTemplates" : {
@@ -399,12 +408,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeAssessmentTemplatesResult",
       "asyncReturnType" : "DescribeAssessmentTemplatesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAssessmentTemplatesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAssessmentTemplatesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAssessmentTemplatesRequest, DescribeAssessmentTemplatesResult>",
-      "authenticated" : true,
       "methodName" : "describeAssessmentTemplates"
     },
     "DescribeCrossAccountAccessRole" : {
@@ -429,12 +438,12 @@
         "documentation" : "<p>Internal server error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeCrossAccountAccessRoleResult",
       "asyncReturnType" : "DescribeCrossAccountAccessRoleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCrossAccountAccessRoleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCrossAccountAccessRoleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCrossAccountAccessRoleRequest, DescribeCrossAccountAccessRoleResult>",
-      "authenticated" : true,
       "methodName" : "describeCrossAccountAccessRole"
     },
     "DescribeFindings" : {
@@ -462,12 +471,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFindingsResult",
       "asyncReturnType" : "DescribeFindingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFindingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeFindingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeFindingsRequest, DescribeFindingsResult>",
-      "authenticated" : true,
       "methodName" : "describeFindings"
     },
     "DescribeResourceGroups" : {
@@ -495,12 +504,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeResourceGroupsResult",
       "asyncReturnType" : "DescribeResourceGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeResourceGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeResourceGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeResourceGroupsRequest, DescribeResourceGroupsResult>",
-      "authenticated" : true,
       "methodName" : "describeResourceGroups"
     },
     "DescribeRulesPackages" : {
@@ -528,12 +537,12 @@
         "documentation" : "<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeRulesPackagesResult",
       "asyncReturnType" : "DescribeRulesPackagesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeRulesPackagesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeRulesPackagesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeRulesPackagesRequest, DescribeRulesPackagesResult>",
-      "authenticated" : true,
       "methodName" : "describeRulesPackages"
     },
     "GetTelemetryMetadata" : {
@@ -567,12 +576,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetTelemetryMetadataResult",
       "asyncReturnType" : "GetTelemetryMetadataResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTelemetryMetadataResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTelemetryMetadataResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTelemetryMetadataRequest, GetTelemetryMetadataResult>",
-      "authenticated" : true,
       "methodName" : "getTelemetryMetadata"
     },
     "ListAssessmentRunAgents" : {
@@ -606,12 +615,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListAssessmentRunAgentsResult",
       "asyncReturnType" : "ListAssessmentRunAgentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAssessmentRunAgentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAssessmentRunAgentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAssessmentRunAgentsRequest, ListAssessmentRunAgentsResult>",
-      "authenticated" : true,
       "methodName" : "listAssessmentRunAgents"
     },
     "ListAssessmentRuns" : {
@@ -645,12 +654,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListAssessmentRunsResult",
       "asyncReturnType" : "ListAssessmentRunsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAssessmentRunsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAssessmentRunsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAssessmentRunsRequest, ListAssessmentRunsResult>",
-      "authenticated" : true,
       "methodName" : "listAssessmentRuns"
     },
     "ListAssessmentTargets" : {
@@ -681,12 +690,12 @@
         "documentation" : "<p>You do not have required permissions to access the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListAssessmentTargetsResult",
       "asyncReturnType" : "ListAssessmentTargetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAssessmentTargetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAssessmentTargetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAssessmentTargetsRequest, ListAssessmentTargetsResult>",
-      "authenticated" : true,
       "methodName" : "listAssessmentTargets"
     },
     "ListAssessmentTemplates" : {
@@ -720,12 +729,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListAssessmentTemplatesResult",
       "asyncReturnType" : "ListAssessmentTemplatesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAssessmentTemplatesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAssessmentTemplatesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAssessmentTemplatesRequest, ListAssessmentTemplatesResult>",
-      "authenticated" : true,
       "methodName" : "listAssessmentTemplates"
     },
     "ListEventSubscriptions" : {
@@ -759,12 +768,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListEventSubscriptionsResult",
       "asyncReturnType" : "ListEventSubscriptionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListEventSubscriptionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListEventSubscriptionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListEventSubscriptionsRequest, ListEventSubscriptionsResult>",
-      "authenticated" : true,
       "methodName" : "listEventSubscriptions"
     },
     "ListFindings" : {
@@ -798,12 +807,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListFindingsResult",
       "asyncReturnType" : "ListFindingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListFindingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListFindingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListFindingsRequest, ListFindingsResult>",
-      "authenticated" : true,
       "methodName" : "listFindings"
     },
     "ListRulesPackages" : {
@@ -834,12 +843,12 @@
         "documentation" : "<p>You do not have required permissions to access the requested resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListRulesPackagesResult",
       "asyncReturnType" : "ListRulesPackagesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRulesPackagesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRulesPackagesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRulesPackagesRequest, ListRulesPackagesResult>",
-      "authenticated" : true,
       "methodName" : "listRulesPackages"
     },
     "ListTagsForResource" : {
@@ -873,12 +882,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
-      "authenticated" : true,
       "methodName" : "listTagsForResource"
     },
     "PreviewAgents" : {
@@ -915,12 +924,12 @@
         "documentation" : "<p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PreviewAgentsResult",
       "asyncReturnType" : "PreviewAgentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PreviewAgentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PreviewAgentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PreviewAgentsRequest, PreviewAgentsResult>",
-      "authenticated" : true,
       "methodName" : "previewAgents"
     },
     "RegisterCrossAccountAccessRole" : {
@@ -936,7 +945,10 @@
         "variableSetterType" : "RegisterCrossAccountAccessRoleRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "RegisterCrossAccountAccessRoleResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InternalException",
         "documentation" : "<p>Internal server error.</p>"
@@ -951,12 +963,12 @@
         "documentation" : "<p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterCrossAccountAccessRoleRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "RegisterCrossAccountAccessRoleResult",
+      "asyncReturnType" : "RegisterCrossAccountAccessRoleResult",
+      "asyncFutureType" : "java.util.concurrent.Future<RegisterCrossAccountAccessRoleResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<RegisterCrossAccountAccessRoleResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterCrossAccountAccessRoleRequest, RegisterCrossAccountAccessRoleResult>",
       "methodName" : "registerCrossAccountAccessRole"
     },
     "RemoveAttributesFromFindings" : {
@@ -990,12 +1002,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RemoveAttributesFromFindingsResult",
       "asyncReturnType" : "RemoveAttributesFromFindingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveAttributesFromFindingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveAttributesFromFindingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveAttributesFromFindingsRequest, RemoveAttributesFromFindingsResult>",
-      "authenticated" : true,
       "methodName" : "removeAttributesFromFindings"
     },
     "SetTagsForResource" : {
@@ -1011,7 +1023,10 @@
         "variableSetterType" : "SetTagsForResourceRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "SetTagsForResourceResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InternalException",
         "documentation" : "<p>Internal server error.</p>"
@@ -1026,12 +1041,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetTagsForResourceRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "SetTagsForResourceResult",
+      "asyncReturnType" : "SetTagsForResourceResult",
+      "asyncFutureType" : "java.util.concurrent.Future<SetTagsForResourceResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<SetTagsForResourceResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetTagsForResourceRequest, SetTagsForResourceResult>",
       "methodName" : "setTagsForResource"
     },
     "StartAssessmentRun" : {
@@ -1074,12 +1089,12 @@
         "documentation" : "<p>You started an assessment run, but one of the instances is already participating in another assessment run.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "StartAssessmentRunResult",
       "asyncReturnType" : "StartAssessmentRunResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartAssessmentRunResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartAssessmentRunResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartAssessmentRunRequest, StartAssessmentRunResult>",
-      "authenticated" : true,
       "methodName" : "startAssessmentRun"
     },
     "StopAssessmentRun" : {
@@ -1095,7 +1110,10 @@
         "variableSetterType" : "StopAssessmentRunRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "StopAssessmentRunResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InternalException",
         "documentation" : "<p>Internal server error.</p>"
@@ -1110,12 +1128,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopAssessmentRunRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "StopAssessmentRunResult",
+      "asyncReturnType" : "StopAssessmentRunResult",
+      "asyncFutureType" : "java.util.concurrent.Future<StopAssessmentRunResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<StopAssessmentRunResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopAssessmentRunRequest, StopAssessmentRunResult>",
       "methodName" : "stopAssessmentRun"
     },
     "SubscribeToEvent" : {
@@ -1131,7 +1149,10 @@
         "variableSetterType" : "SubscribeToEventRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "SubscribeToEventResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InternalException",
         "documentation" : "<p>Internal server error.</p>"
@@ -1149,12 +1170,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SubscribeToEventRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "SubscribeToEventResult",
+      "asyncReturnType" : "SubscribeToEventResult",
+      "asyncFutureType" : "java.util.concurrent.Future<SubscribeToEventResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<SubscribeToEventResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SubscribeToEventRequest, SubscribeToEventResult>",
       "methodName" : "subscribeToEvent"
     },
     "UnsubscribeFromEvent" : {
@@ -1170,7 +1191,10 @@
         "variableSetterType" : "UnsubscribeFromEventRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "UnsubscribeFromEventResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InternalException",
         "documentation" : "<p>Internal server error.</p>"
@@ -1185,12 +1209,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UnsubscribeFromEventRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "UnsubscribeFromEventResult",
+      "asyncReturnType" : "UnsubscribeFromEventResult",
+      "asyncFutureType" : "java.util.concurrent.Future<UnsubscribeFromEventResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<UnsubscribeFromEventResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UnsubscribeFromEventRequest, UnsubscribeFromEventResult>",
       "methodName" : "unsubscribeFromEvent"
     },
     "UpdateAssessmentTarget" : {
@@ -1206,7 +1230,10 @@
         "variableSetterType" : "UpdateAssessmentTargetRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "UpdateAssessmentTargetResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InternalException",
         "documentation" : "<p>Internal server error.</p>"
@@ -1221,12 +1248,12 @@
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAssessmentTargetRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "UpdateAssessmentTargetResult",
+      "asyncReturnType" : "UpdateAssessmentTargetResult",
+      "asyncFutureType" : "java.util.concurrent.Future<UpdateAssessmentTargetResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<UpdateAssessmentTargetResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAssessmentTargetRequest, UpdateAssessmentTargetResult>",
       "methodName" : "updateAssessmentTarget"
     }
   },
@@ -1963,6 +1990,41 @@
           "varargSetterDocumentation" : "/**<p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <a>AssessmentTarget</a> data type.</p>\n@param assessmentTargetNamePattern For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <a>AssessmentTarget</a> data type.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "StopAssessmentRunResult" : {
+      "c2jName" : "StopAssessmentRunResult",
+      "documentation" : null,
+      "shapeName" : "StopAssessmentRunResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "stopAssessmentRunResult",
+        "variableType" : "StopAssessmentRunResult",
+        "variableDeclarationType" : "StopAssessmentRunResult",
+        "documentation" : null,
+        "simpleType" : "StopAssessmentRunResult",
+        "variableSetterType" : "StopAssessmentRunResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "DescribeRulesPackagesRequest" : {
       "c2jName" : "DescribeRulesPackagesRequest",
@@ -9211,12 +9273,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -9353,12 +9415,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -10887,12 +10949,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -11029,12 +11091,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -12035,6 +12097,41 @@
         }
       }
     },
+    "DeleteAssessmentTargetResult" : {
+      "c2jName" : "DeleteAssessmentTargetResult",
+      "documentation" : null,
+      "shapeName" : "DeleteAssessmentTargetResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteAssessmentTargetResult",
+        "variableType" : "DeleteAssessmentTargetResult",
+        "variableDeclarationType" : "DeleteAssessmentTargetResult",
+        "documentation" : null,
+        "simpleType" : "DeleteAssessmentTargetResult",
+        "variableSetterType" : "DeleteAssessmentTargetResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "DescribeAssessmentRunsResult" : {
       "c2jName" : "DescribeAssessmentRunsResponse",
       "documentation" : "",
@@ -12266,12 +12363,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12527,12 +12624,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -12778,12 +12875,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -13039,12 +13136,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -16342,6 +16439,41 @@
         }
       }
     },
+    "UnsubscribeFromEventResult" : {
+      "c2jName" : "UnsubscribeFromEventResult",
+      "documentation" : null,
+      "shapeName" : "UnsubscribeFromEventResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "unsubscribeFromEventResult",
+        "variableType" : "UnsubscribeFromEventResult",
+        "variableDeclarationType" : "UnsubscribeFromEventResult",
+        "documentation" : null,
+        "simpleType" : "UnsubscribeFromEventResult",
+        "variableSetterType" : "UnsubscribeFromEventResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "AccessDeniedException" : {
       "c2jName" : "AccessDeniedException",
       "documentation" : "<p>You do not have required permissions to access the requested resource.</p>",
@@ -16839,12 +16971,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -16981,12 +17113,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -19279,6 +19411,41 @@
         }
       }
     },
+    "DeleteAssessmentTemplateResult" : {
+      "c2jName" : "DeleteAssessmentTemplateResult",
+      "documentation" : null,
+      "shapeName" : "DeleteAssessmentTemplateResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteAssessmentTemplateResult",
+        "variableType" : "DeleteAssessmentTemplateResult",
+        "variableDeclarationType" : "DeleteAssessmentTemplateResult",
+        "documentation" : null,
+        "simpleType" : "DeleteAssessmentTemplateResult",
+        "variableSetterType" : "DeleteAssessmentTemplateResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "Locale" : {
       "c2jName" : "Locale",
       "documentation" : "",
@@ -20187,6 +20354,41 @@
           "varargSetterDocumentation" : "/**<p>You can immediately retry your request.</p>\n@param canRetry You can immediately retry your request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "DeleteAssessmentRunResult" : {
+      "c2jName" : "DeleteAssessmentRunResult",
+      "documentation" : null,
+      "shapeName" : "DeleteAssessmentRunResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteAssessmentRunResult",
+        "variableType" : "DeleteAssessmentRunResult",
+        "variableDeclarationType" : "DeleteAssessmentRunResult",
+        "documentation" : null,
+        "simpleType" : "DeleteAssessmentRunResult",
+        "variableSetterType" : "DeleteAssessmentRunResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "AccessDeniedErrorCode" : {
       "c2jName" : "AccessDeniedErrorCode",
@@ -22678,6 +22880,41 @@
           "varargSetterDocumentation" : "/**<p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>\n@param assessmentRunArn The ARN that specifies the assessment run that has the telemetry data that you want to obtain.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "SubscribeToEventResult" : {
+      "c2jName" : "SubscribeToEventResult",
+      "documentation" : null,
+      "shapeName" : "SubscribeToEventResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "subscribeToEventResult",
+        "variableType" : "SubscribeToEventResult",
+        "variableDeclarationType" : "SubscribeToEventResult",
+        "documentation" : null,
+        "simpleType" : "SubscribeToEventResult",
+        "variableSetterType" : "SubscribeToEventResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "InspectorEvent" : {
       "c2jName" : "InspectorEvent",
@@ -26512,12 +26749,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -26654,12 +26891,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -27539,6 +27776,41 @@
           "varargSetterDocumentation" : "/**<p>The ARN that specifies the assessment template that you want to delete.</p>\n@param assessmentTemplateArn The ARN that specifies the assessment template that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "RegisterCrossAccountAccessRoleResult" : {
+      "c2jName" : "RegisterCrossAccountAccessRoleResult",
+      "documentation" : null,
+      "shapeName" : "RegisterCrossAccountAccessRoleResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "registerCrossAccountAccessRoleResult",
+        "variableType" : "RegisterCrossAccountAccessRoleResult",
+        "variableDeclarationType" : "RegisterCrossAccountAccessRoleResult",
+        "documentation" : null,
+        "simpleType" : "RegisterCrossAccountAccessRoleResult",
+        "variableSetterType" : "RegisterCrossAccountAccessRoleResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "InvalidCrossAccountRoleException" : {
       "c2jName" : "InvalidCrossAccountRoleException",
@@ -33972,6 +34244,41 @@
       },
       "membersAsMap" : { }
     },
+    "SetTagsForResourceResult" : {
+      "c2jName" : "SetTagsForResourceResult",
+      "documentation" : null,
+      "shapeName" : "SetTagsForResourceResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "setTagsForResourceResult",
+        "variableType" : "SetTagsForResourceResult",
+        "variableDeclarationType" : "SetTagsForResourceResult",
+        "documentation" : null,
+        "simpleType" : "SetTagsForResourceResult",
+        "variableSetterType" : "SetTagsForResourceResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "DeleteAssessmentTargetRequest" : {
       "c2jName" : "DeleteAssessmentTargetRequest",
       "documentation" : "",
@@ -36318,6 +36625,41 @@
         }
       }
     },
+    "UpdateAssessmentTargetResult" : {
+      "c2jName" : "UpdateAssessmentTargetResult",
+      "documentation" : null,
+      "shapeName" : "UpdateAssessmentTargetResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "updateAssessmentTargetResult",
+        "variableType" : "UpdateAssessmentTargetResult",
+        "variableDeclarationType" : "UpdateAssessmentTargetResult",
+        "documentation" : null,
+        "simpleType" : "UpdateAssessmentTargetResult",
+        "variableSetterType" : "UpdateAssessmentTargetResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "DescribeFindingsRequest" : {
       "c2jName" : "DescribeFindingsRequest",
       "documentation" : "",
@@ -37750,12 +38092,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -37892,12 +38234,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -39614,12 +39956,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -39756,12 +40098,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -39922,6 +40264,7 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
+    "customErrorCodeFieldName" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {

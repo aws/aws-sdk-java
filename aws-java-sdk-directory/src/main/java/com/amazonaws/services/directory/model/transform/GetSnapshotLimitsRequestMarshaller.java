@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetSnapshotLimitsRequest Marshaller
  */
 public class GetSnapshotLimitsRequestMarshaller implements
         Marshaller<Request<GetSnapshotLimitsRequest>, GetSnapshotLimitsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetSnapshotLimitsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetSnapshotLimitsRequest> marshall(
             GetSnapshotLimitsRequest getSnapshotLimitsRequest) {
@@ -58,8 +65,8 @@ public class GetSnapshotLimitsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

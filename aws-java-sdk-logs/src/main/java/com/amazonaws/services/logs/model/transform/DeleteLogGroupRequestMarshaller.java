@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteLogGroupRequest Marshaller
  */
 public class DeleteLogGroupRequestMarshaller implements
         Marshaller<Request<DeleteLogGroupRequest>, DeleteLogGroupRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteLogGroupRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteLogGroupRequest> marshall(
             DeleteLogGroupRequest deleteLogGroupRequest) {
@@ -57,8 +64,8 @@ public class DeleteLogGroupRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

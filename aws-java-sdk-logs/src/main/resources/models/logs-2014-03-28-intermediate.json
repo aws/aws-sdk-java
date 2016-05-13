@@ -21,10 +21,10 @@
     "endpointPrefix" : "logs",
     "signingName" : "logs",
     "xmlProtocol" : false,
-    "serviceName" : "Amazon CloudWatch Logs",
-    "cborProtocol" : false,
     "jsonProtocol" : true,
+    "serviceName" : "Amazon CloudWatch Logs",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "cborProtocol" : false,
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
@@ -42,7 +42,10 @@
         "variableSetterType" : "CancelExportTaskRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "CancelExportTaskResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -57,12 +60,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "CancelExportTaskResult",
+      "asyncReturnType" : "CancelExportTaskResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CancelExportTaskResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<CancelExportTaskResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult>",
       "methodName" : "cancelExportTask"
     },
     "CreateExportTask" : {
@@ -102,12 +105,12 @@
         "documentation" : "<p>Returned if the specified resource already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateExportTaskResult",
       "asyncReturnType" : "CreateExportTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateExportTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateExportTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateExportTaskRequest, CreateExportTaskResult>",
-      "authenticated" : true,
       "methodName" : "createExportTask"
     },
     "CreateLogGroup" : {
@@ -123,7 +126,10 @@
         "variableSetterType" : "CreateLogGroupRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "CreateLogGroupResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -141,12 +147,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "CreateLogGroupResult",
+      "asyncReturnType" : "CreateLogGroupResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateLogGroupResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<CreateLogGroupResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, CreateLogGroupResult>",
       "methodName" : "createLogGroup"
     },
     "CreateLogStream" : {
@@ -162,7 +168,10 @@
         "variableSetterType" : "CreateLogStreamRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "CreateLogStreamResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -177,12 +186,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "CreateLogStreamResult",
+      "asyncReturnType" : "CreateLogStreamResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateLogStreamResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<CreateLogStreamResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, CreateLogStreamResult>",
       "methodName" : "createLogStream"
     },
     "DeleteDestination" : {
@@ -198,7 +207,10 @@
         "variableSetterType" : "DeleteDestinationRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteDestinationResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -213,12 +225,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteDestinationResult",
+      "asyncReturnType" : "DeleteDestinationResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteDestinationResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteDestinationResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, DeleteDestinationResult>",
       "methodName" : "deleteDestination"
     },
     "DeleteLogGroup" : {
@@ -234,7 +246,10 @@
         "variableSetterType" : "DeleteLogGroupRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteLogGroupResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -249,12 +264,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteLogGroupResult",
+      "asyncReturnType" : "DeleteLogGroupResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteLogGroupResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteLogGroupResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, DeleteLogGroupResult>",
       "methodName" : "deleteLogGroup"
     },
     "DeleteLogStream" : {
@@ -270,7 +285,10 @@
         "variableSetterType" : "DeleteLogStreamRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteLogStreamResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -285,12 +303,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteLogStreamResult",
+      "asyncReturnType" : "DeleteLogStreamResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteLogStreamResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteLogStreamResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, DeleteLogStreamResult>",
       "methodName" : "deleteLogStream"
     },
     "DeleteMetricFilter" : {
@@ -306,7 +324,10 @@
         "variableSetterType" : "DeleteMetricFilterRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteMetricFilterResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -321,12 +342,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteMetricFilterResult",
+      "asyncReturnType" : "DeleteMetricFilterResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteMetricFilterResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteMetricFilterResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, DeleteMetricFilterResult>",
       "methodName" : "deleteMetricFilter"
     },
     "DeleteRetentionPolicy" : {
@@ -342,7 +363,10 @@
         "variableSetterType" : "DeleteRetentionPolicyRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteRetentionPolicyResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -357,12 +381,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteRetentionPolicyResult",
+      "asyncReturnType" : "DeleteRetentionPolicyResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteRetentionPolicyResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteRetentionPolicyResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, DeleteRetentionPolicyResult>",
       "methodName" : "deleteRetentionPolicy"
     },
     "DeleteSubscriptionFilter" : {
@@ -378,7 +402,10 @@
         "variableSetterType" : "DeleteSubscriptionFilterRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteSubscriptionFilterResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -393,12 +420,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteSubscriptionFilterResult",
+      "asyncReturnType" : "DeleteSubscriptionFilterResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteSubscriptionFilterResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteSubscriptionFilterResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, DeleteSubscriptionFilterResult>",
       "methodName" : "deleteSubscriptionFilter"
     },
     "DescribeDestinations" : {
@@ -426,12 +453,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeDestinationsResult",
       "asyncReturnType" : "DescribeDestinationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDestinationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDestinationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDestinationsRequest, DescribeDestinationsResult>",
-      "authenticated" : true,
       "methodName" : "describeDestinations"
     },
     "DescribeExportTasks" : {
@@ -459,12 +486,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeExportTasksResult",
       "asyncReturnType" : "DescribeExportTasksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeExportTasksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeExportTasksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult>",
-      "authenticated" : true,
       "methodName" : "describeExportTasks"
     },
     "DescribeLogGroups" : {
@@ -492,12 +519,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeLogGroupsResult",
       "asyncReturnType" : "DescribeLogGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLogGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLogGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLogGroupsRequest, DescribeLogGroupsResult>",
-      "authenticated" : true,
       "methodName" : "describeLogGroups"
     },
     "DescribeLogStreams" : {
@@ -528,12 +555,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeLogStreamsResult",
       "asyncReturnType" : "DescribeLogStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLogStreamsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLogStreamsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLogStreamsRequest, DescribeLogStreamsResult>",
-      "authenticated" : true,
       "methodName" : "describeLogStreams"
     },
     "DescribeMetricFilters" : {
@@ -564,12 +591,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeMetricFiltersResult",
       "asyncReturnType" : "DescribeMetricFiltersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMetricFiltersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMetricFiltersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMetricFiltersRequest, DescribeMetricFiltersResult>",
-      "authenticated" : true,
       "methodName" : "describeMetricFilters"
     },
     "DescribeSubscriptionFilters" : {
@@ -600,12 +627,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeSubscriptionFiltersResult",
       "asyncReturnType" : "DescribeSubscriptionFiltersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSubscriptionFiltersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSubscriptionFiltersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSubscriptionFiltersRequest, DescribeSubscriptionFiltersResult>",
-      "authenticated" : true,
       "methodName" : "describeSubscriptionFilters"
     },
     "FilterLogEvents" : {
@@ -636,12 +663,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "FilterLogEventsResult",
       "asyncReturnType" : "FilterLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<FilterLogEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<FilterLogEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<FilterLogEventsRequest, FilterLogEventsResult>",
-      "authenticated" : true,
       "methodName" : "filterLogEvents"
     },
     "GetLogEvents" : {
@@ -672,12 +699,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetLogEventsResult",
       "asyncReturnType" : "GetLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetLogEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetLogEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetLogEventsRequest, GetLogEventsResult>",
-      "authenticated" : true,
       "methodName" : "getLogEvents"
     },
     "PutDestination" : {
@@ -708,12 +735,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutDestinationResult",
       "asyncReturnType" : "PutDestinationResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutDestinationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutDestinationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutDestinationRequest, PutDestinationResult>",
-      "authenticated" : true,
       "methodName" : "putDestination"
     },
     "PutDestinationPolicy" : {
@@ -729,7 +756,10 @@
         "variableSetterType" : "PutDestinationPolicyRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "PutDestinationPolicyResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -741,12 +771,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "PutDestinationPolicyResult",
+      "asyncReturnType" : "PutDestinationPolicyResult",
+      "asyncFutureType" : "java.util.concurrent.Future<PutDestinationPolicyResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<PutDestinationPolicyResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, PutDestinationPolicyResult>",
       "methodName" : "putDestinationPolicy"
     },
     "PutLogEvents" : {
@@ -786,12 +816,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutLogEventsResult",
       "asyncReturnType" : "PutLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutLogEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutLogEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutLogEventsRequest, PutLogEventsResult>",
-      "authenticated" : true,
       "methodName" : "putLogEvents"
     },
     "PutMetricFilter" : {
@@ -807,7 +837,10 @@
         "variableSetterType" : "PutMetricFilterRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "PutMetricFilterResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -825,12 +858,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "PutMetricFilterResult",
+      "asyncReturnType" : "PutMetricFilterResult",
+      "asyncFutureType" : "java.util.concurrent.Future<PutMetricFilterResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<PutMetricFilterResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, PutMetricFilterResult>",
       "methodName" : "putMetricFilter"
     },
     "PutRetentionPolicy" : {
@@ -846,7 +879,10 @@
         "variableSetterType" : "PutRetentionPolicyRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "PutRetentionPolicyResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -861,12 +897,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "PutRetentionPolicyResult",
+      "asyncReturnType" : "PutRetentionPolicyResult",
+      "asyncFutureType" : "java.util.concurrent.Future<PutRetentionPolicyResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<PutRetentionPolicyResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, PutRetentionPolicyResult>",
       "methodName" : "putRetentionPolicy"
     },
     "PutSubscriptionFilter" : {
@@ -882,7 +918,10 @@
         "variableSetterType" : "PutSubscriptionFilterRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "PutSubscriptionFilterResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>Returned if a parameter of the request is incorrectly specified.</p>"
@@ -900,12 +939,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, Void>",
       "authenticated" : true,
+      "syncReturnType" : "PutSubscriptionFilterResult",
+      "asyncReturnType" : "PutSubscriptionFilterResult",
+      "asyncFutureType" : "java.util.concurrent.Future<PutSubscriptionFilterResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<PutSubscriptionFilterResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, PutSubscriptionFilterResult>",
       "methodName" : "putSubscriptionFilter"
     },
     "TestMetricFilter" : {
@@ -933,12 +972,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "TestMetricFilterResult",
       "asyncReturnType" : "TestMetricFilterResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestMetricFilterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestMetricFilterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult>",
-      "authenticated" : true,
       "methodName" : "testMetricFilter"
     }
   },
@@ -2670,6 +2709,41 @@
         }
       }
     },
+    "DeleteLogStreamResult" : {
+      "c2jName" : "DeleteLogStreamResult",
+      "documentation" : null,
+      "shapeName" : "DeleteLogStreamResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteLogStreamResult",
+        "variableType" : "DeleteLogStreamResult",
+        "variableDeclarationType" : "DeleteLogStreamResult",
+        "documentation" : null,
+        "simpleType" : "DeleteLogStreamResult",
+        "variableSetterType" : "DeleteLogStreamResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "DescribeDestinationsRequest" : {
       "c2jName" : "DescribeDestinationsRequest",
       "documentation" : "",
@@ -3024,6 +3098,41 @@
           "varargSetterDocumentation" : "/**\n@param limit \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "PutSubscriptionFilterResult" : {
+      "c2jName" : "PutSubscriptionFilterResult",
+      "documentation" : null,
+      "shapeName" : "PutSubscriptionFilterResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "putSubscriptionFilterResult",
+        "variableType" : "PutSubscriptionFilterResult",
+        "variableDeclarationType" : "PutSubscriptionFilterResult",
+        "documentation" : null,
+        "simpleType" : "PutSubscriptionFilterResult",
+        "variableSetterType" : "PutSubscriptionFilterResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "CreateLogStreamRequest" : {
       "c2jName" : "CreateLogStreamRequest",
@@ -4386,6 +4495,41 @@
         }
       }
     },
+    "DeleteMetricFilterResult" : {
+      "c2jName" : "DeleteMetricFilterResult",
+      "documentation" : null,
+      "shapeName" : "DeleteMetricFilterResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteMetricFilterResult",
+        "variableType" : "DeleteMetricFilterResult",
+        "variableDeclarationType" : "DeleteMetricFilterResult",
+        "documentation" : null,
+        "simpleType" : "DeleteMetricFilterResult",
+        "variableSetterType" : "DeleteMetricFilterResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "InputLogEvent" : {
       "c2jName" : "InputLogEvent",
       "documentation" : "<p>A log event is a record of some activity that was recorded by the application or resource being monitored. The log event record that CloudWatch Logs understands contains two properties: the timestamp of when the event occurred, and the raw event message.</p>",
@@ -5595,6 +5739,76 @@
         }
       }
     },
+    "PutMetricFilterResult" : {
+      "c2jName" : "PutMetricFilterResult",
+      "documentation" : null,
+      "shapeName" : "PutMetricFilterResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "putMetricFilterResult",
+        "variableType" : "PutMetricFilterResult",
+        "variableDeclarationType" : "PutMetricFilterResult",
+        "documentation" : null,
+        "simpleType" : "PutMetricFilterResult",
+        "variableSetterType" : "PutMetricFilterResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "DeleteLogGroupResult" : {
+      "c2jName" : "DeleteLogGroupResult",
+      "documentation" : null,
+      "shapeName" : "DeleteLogGroupResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteLogGroupResult",
+        "variableType" : "DeleteLogGroupResult",
+        "variableDeclarationType" : "DeleteLogGroupResult",
+        "documentation" : null,
+        "simpleType" : "DeleteLogGroupResult",
+        "variableSetterType" : "DeleteLogGroupResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "InvalidOperationException" : {
       "c2jName" : "InvalidOperationException",
       "documentation" : "<p>Returned if the operation is not valid on the specified resource</p>",
@@ -6332,6 +6546,41 @@
           "varargSetterDocumentation" : "/**\n@param timestamp \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "DeleteDestinationResult" : {
+      "c2jName" : "DeleteDestinationResult",
+      "documentation" : null,
+      "shapeName" : "DeleteDestinationResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteDestinationResult",
+        "variableType" : "DeleteDestinationResult",
+        "variableDeclarationType" : "DeleteDestinationResult",
+        "documentation" : null,
+        "simpleType" : "DeleteDestinationResult",
+        "variableSetterType" : "DeleteDestinationResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "InvalidParameterException" : {
       "c2jName" : "InvalidParameterException",
@@ -7491,47 +7740,6 @@
         }
       }
     },
-    "OrderBy" : {
-      "c2jName" : "OrderBy",
-      "documentation" : "",
-      "shapeName" : "OrderBy",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : null,
-      "enums" : [ {
-        "name" : "LogStreamName",
-        "value" : "LogStreamName"
-      }, {
-        "name" : "LastEventTime",
-        "value" : "LastEventTime"
-      } ],
-      "variable" : {
-        "variableName" : "orderBy",
-        "variableType" : "OrderBy",
-        "variableDeclarationType" : "OrderBy",
-        "documentation" : null,
-        "simpleType" : "OrderBy",
-        "variableSetterType" : "OrderBy"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
     "FilterLogEventsRequest" : {
       "c2jName" : "FilterLogEventsRequest",
       "documentation" : "",
@@ -8543,6 +8751,47 @@
           "varargSetterDocumentation" : "/**<p> A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched. </p>\n@param filterPattern A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided, all the events are matched.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "OrderBy" : {
+      "c2jName" : "OrderBy",
+      "documentation" : "",
+      "shapeName" : "OrderBy",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "LogStreamName",
+        "value" : "LogStreamName"
+      }, {
+        "name" : "LastEventTime",
+        "value" : "LastEventTime"
+      } ],
+      "variable" : {
+        "variableName" : "orderBy",
+        "variableType" : "OrderBy",
+        "variableDeclarationType" : "OrderBy",
+        "documentation" : null,
+        "simpleType" : "OrderBy",
+        "variableSetterType" : "OrderBy"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "RejectedLogEventsInfo" : {
       "c2jName" : "RejectedLogEventsInfo",
@@ -12770,10 +13019,10 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
           "keySimple" : true,
           "valueSimple" : true,
+          "valueList" : false,
+          "entryType" : "Map.Entry<String, String>",
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
@@ -13018,10 +13267,10 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
             "keySimple" : true,
             "valueSimple" : true,
+            "valueList" : false,
+            "entryType" : "Map.Entry<String, String>",
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
@@ -13598,6 +13847,41 @@
           "varargSetterDocumentation" : "/**\n@param timestamp \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "CreateLogStreamResult" : {
+      "c2jName" : "CreateLogStreamResult",
+      "documentation" : null,
+      "shapeName" : "CreateLogStreamResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "createLogStreamResult",
+        "variableType" : "CreateLogStreamResult",
+        "variableDeclarationType" : "CreateLogStreamResult",
+        "documentation" : null,
+        "simpleType" : "CreateLogStreamResult",
+        "variableSetterType" : "CreateLogStreamResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "DeleteRetentionPolicyRequest" : {
       "c2jName" : "DeleteRetentionPolicyRequest",
@@ -14645,6 +14929,41 @@
         }
       }
     },
+    "CancelExportTaskResult" : {
+      "c2jName" : "CancelExportTaskResult",
+      "documentation" : null,
+      "shapeName" : "CancelExportTaskResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "cancelExportTaskResult",
+        "variableType" : "CancelExportTaskResult",
+        "variableDeclarationType" : "CancelExportTaskResult",
+        "documentation" : null,
+        "simpleType" : "CancelExportTaskResult",
+        "variableSetterType" : "CancelExportTaskResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "DescribeDestinationsResult" : {
       "c2jName" : "DescribeDestinationsResponse",
       "documentation" : "",
@@ -15023,6 +15342,76 @@
         }
       }
     },
+    "PutDestinationPolicyResult" : {
+      "c2jName" : "PutDestinationPolicyResult",
+      "documentation" : null,
+      "shapeName" : "PutDestinationPolicyResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "putDestinationPolicyResult",
+        "variableType" : "PutDestinationPolicyResult",
+        "variableDeclarationType" : "PutDestinationPolicyResult",
+        "documentation" : null,
+        "simpleType" : "PutDestinationPolicyResult",
+        "variableSetterType" : "PutDestinationPolicyResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "DeleteRetentionPolicyResult" : {
+      "c2jName" : "DeleteRetentionPolicyResult",
+      "documentation" : null,
+      "shapeName" : "DeleteRetentionPolicyResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteRetentionPolicyResult",
+        "variableType" : "DeleteRetentionPolicyResult",
+        "variableDeclarationType" : "DeleteRetentionPolicyResult",
+        "documentation" : null,
+        "simpleType" : "DeleteRetentionPolicyResult",
+        "variableSetterType" : "DeleteRetentionPolicyResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "ExportTaskStatusCode" : {
       "c2jName" : "ExportTaskStatusCode",
       "documentation" : "",
@@ -15100,6 +15489,41 @@
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "OperationAbortedException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "PutRetentionPolicyResult" : {
+      "c2jName" : "PutRetentionPolicyResult",
+      "documentation" : null,
+      "shapeName" : "PutRetentionPolicyResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "putRetentionPolicyResult",
+        "variableType" : "PutRetentionPolicyResult",
+        "variableDeclarationType" : "PutRetentionPolicyResult",
+        "documentation" : null,
+        "simpleType" : "PutRetentionPolicyResult",
+        "variableSetterType" : "PutRetentionPolicyResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
       "customization" : {
         "artificialResultWrapper" : null,
         "skipGeneratingModelClass" : false,
@@ -15353,6 +15777,41 @@
           "varargSetterDocumentation" : "/**<p>The name of the log stream.</p>\n@param logStreamName The name of the log stream.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "DeleteSubscriptionFilterResult" : {
+      "c2jName" : "DeleteSubscriptionFilterResult",
+      "documentation" : null,
+      "shapeName" : "DeleteSubscriptionFilterResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteSubscriptionFilterResult",
+        "variableType" : "DeleteSubscriptionFilterResult",
+        "variableDeclarationType" : "DeleteSubscriptionFilterResult",
+        "documentation" : null,
+        "simpleType" : "DeleteSubscriptionFilterResult",
+        "variableSetterType" : "DeleteSubscriptionFilterResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "DescribeExportTasksResult" : {
       "c2jName" : "DescribeExportTasksResponse",
@@ -23262,6 +23721,41 @@
           "varargSetterDocumentation" : "/**\n@param nextSequenceToken \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "CreateLogGroupResult" : {
+      "c2jName" : "CreateLogGroupResult",
+      "documentation" : null,
+      "shapeName" : "CreateLogGroupResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "createLogGroupResult",
+        "variableType" : "CreateLogGroupResult",
+        "variableDeclarationType" : "CreateLogGroupResult",
+        "documentation" : null,
+        "simpleType" : "CreateLogGroupResult",
+        "variableSetterType" : "CreateLogGroupResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     }
   },
   "customizationConfig" : {
@@ -23334,6 +23828,7 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
+    "customErrorCodeFieldName" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {

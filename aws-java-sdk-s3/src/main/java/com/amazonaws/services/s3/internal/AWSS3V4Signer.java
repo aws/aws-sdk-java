@@ -39,6 +39,9 @@ import com.amazonaws.util.BinaryUtils;
 public class AWSS3V4Signer extends AWS4Signer {
     private static final String CONTENT_SHA_256 = "STREAMING-AWS4-HMAC-SHA256-PAYLOAD";
 
+    /** Sent to S3 in lieu of a payload hash when unsigned payloads are enabled */
+    private static final String UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
+
     /**
      * Don't double-url-encode path elements; S3 expects path elements to be encoded only once in
      * the canonical URI.
@@ -79,6 +82,8 @@ public class AWSS3V4Signer extends AWS4Signer {
         // we just set the header as "required", and AWS4Signer.sign() will be
         // notified to pick up the header value returned by this method.
         request.addHeader(X_AMZ_CONTENT_SHA256, "required");
+
+
         if (useChunkEncoding(request)) {
             final String contentLength = request.getHeaders().get(Headers.CONTENT_LENGTH);
             final long originalContentLength;
@@ -112,7 +117,12 @@ public class AWSS3V4Signer extends AWS4Signer {
                             .calculateStreamContentLength(originalContentLength)));
             return CONTENT_SHA_256;
         }
-        return super.calculateContentHash(request);
+
+        if (isPayloadSigningEnabled(request)) {
+            return super.calculateContentHash(request);
+        }
+
+        return UNSIGNED_PAYLOAD;
     }
 
     /**
@@ -141,6 +151,26 @@ public class AWSS3V4Signer extends AWS4Signer {
             Boolean isChunkedEncodingDisabled = request
                     .getHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED);
             return isChunkedEncodingDisabled != null && isChunkedEncodingDisabled;
+        }
+        return false;
+    }
+
+    /**
+     * @return True if payload signing is explicitly enabled.
+     */
+    private boolean isPayloadSigningEnabled(SignableRequest<?> signableRequest) {
+        /**
+         * If we aren't using https we should always sign the payload.
+         */
+        if (!signableRequest.getEndpoint().getScheme().equals("https")) {
+            return true;
+        }
+
+        if (signableRequest instanceof Request) {
+            Request<?> request = (Request<?>) signableRequest;
+            Boolean isPayloadSigningEnabled = request
+                    .getHandlerContext(S3HandlerContextKeys.IS_PAYLOAD_SIGNING_ENABLED);
+            return isPayloadSigningEnabled != null && isPayloadSigningEnabled;
         }
         return false;
     }

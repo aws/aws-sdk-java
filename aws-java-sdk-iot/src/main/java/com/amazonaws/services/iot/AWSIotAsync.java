@@ -53,9 +53,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param acceptCertificateTransferRequest
      *        The input for the AcceptCertificateTransfer operation.
+     * @return A Java Future containing the result of the
+     *         AcceptCertificateTransfer operation returned by the service.
      * @sample AWSIotAsync.AcceptCertificateTransfer
      */
-    java.util.concurrent.Future<Void> acceptCertificateTransferAsync(
+    java.util.concurrent.Future<AcceptCertificateTransferResult> acceptCertificateTransferAsync(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest);
 
     /**
@@ -75,11 +77,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         AcceptCertificateTransfer operation returned by the service.
      * @sample AWSIotAsyncHandler.AcceptCertificateTransfer
      */
-    java.util.concurrent.Future<Void> acceptCertificateTransferAsync(
+    java.util.concurrent.Future<AcceptCertificateTransferResult> acceptCertificateTransferAsync(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest,
-            com.amazonaws.handlers.AsyncHandler<AcceptCertificateTransferRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AcceptCertificateTransferRequest, AcceptCertificateTransferResult> asyncHandler);
 
     /**
      * <p>
@@ -89,9 +93,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param attachPrincipalPolicyRequest
      *        The input for the AttachPrincipalPolicy operation.
+     * @return A Java Future containing the result of the AttachPrincipalPolicy
+     *         operation returned by the service.
      * @sample AWSIotAsync.AttachPrincipalPolicy
      */
-    java.util.concurrent.Future<Void> attachPrincipalPolicyAsync(
+    java.util.concurrent.Future<AttachPrincipalPolicyResult> attachPrincipalPolicyAsync(
             AttachPrincipalPolicyRequest attachPrincipalPolicyRequest);
 
     /**
@@ -107,11 +113,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachPrincipalPolicy
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.AttachPrincipalPolicy
      */
-    java.util.concurrent.Future<Void> attachPrincipalPolicyAsync(
+    java.util.concurrent.Future<AttachPrincipalPolicyResult> attachPrincipalPolicyAsync(
             AttachPrincipalPolicyRequest attachPrincipalPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<AttachPrincipalPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AttachPrincipalPolicyRequest, AttachPrincipalPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -166,9 +174,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param cancelCertificateTransferRequest
      *        The input for the CancelCertificateTransfer operation.
+     * @return A Java Future containing the result of the
+     *         CancelCertificateTransfer operation returned by the service.
      * @sample AWSIotAsync.CancelCertificateTransfer
      */
-    java.util.concurrent.Future<Void> cancelCertificateTransferAsync(
+    java.util.concurrent.Future<CancelCertificateTransferResult> cancelCertificateTransferAsync(
             CancelCertificateTransferRequest cancelCertificateTransferRequest);
 
     /**
@@ -195,11 +205,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CancelCertificateTransfer operation returned by the service.
      * @sample AWSIotAsyncHandler.CancelCertificateTransfer
      */
-    java.util.concurrent.Future<Void> cancelCertificateTransferAsync(
+    java.util.concurrent.Future<CancelCertificateTransferResult> cancelCertificateTransferAsync(
             CancelCertificateTransferRequest cancelCertificateTransferRequest,
-            com.amazonaws.handlers.AsyncHandler<CancelCertificateTransferRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CancelCertificateTransferRequest, CancelCertificateTransferResult> asyncHandler);
 
     /**
      * <p>
@@ -524,9 +536,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param createTopicRuleRequest
      *        The input for the CreateTopicRule operation.
+     * @return A Java Future containing the result of the CreateTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsync.CreateTopicRule
      */
-    java.util.concurrent.Future<Void> createTopicRuleAsync(
+    java.util.concurrent.Future<CreateTopicRuleResult> createTopicRuleAsync(
             CreateTopicRuleRequest createTopicRuleRequest);
 
     /**
@@ -543,11 +557,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.CreateTopicRule
      */
-    java.util.concurrent.Future<Void> createTopicRuleAsync(
+    java.util.concurrent.Future<CreateTopicRuleResult> createTopicRuleAsync(
             CreateTopicRuleRequest createTopicRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateTopicRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateTopicRuleRequest, CreateTopicRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -597,9 +613,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param deleteCertificateRequest
      *        The input for the DeleteCertificate operation.
+     * @return A Java Future containing the result of the DeleteCertificate
+     *         operation returned by the service.
      * @sample AWSIotAsync.DeleteCertificate
      */
-    java.util.concurrent.Future<Void> deleteCertificateAsync(
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             DeleteCertificateRequest deleteCertificateRequest);
 
     /**
@@ -621,11 +639,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCertificate
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.DeleteCertificate
      */
-    java.util.concurrent.Future<Void> deleteCertificateAsync(
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             DeleteCertificateRequest deleteCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -648,9 +668,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param deletePolicyRequest
      *        The input for the DeletePolicy operation.
+     * @return A Java Future containing the result of the DeletePolicy operation
+     *         returned by the service.
      * @sample AWSIotAsync.DeletePolicy
      */
-    java.util.concurrent.Future<Void> deletePolicyAsync(
+    java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest deletePolicyRequest);
 
     /**
@@ -679,11 +701,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePolicy operation
+     *         returned by the service.
      * @sample AWSIotAsyncHandler.DeletePolicy
      */
-    java.util.concurrent.Future<Void> deletePolicyAsync(
+    java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest deletePolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -695,9 +719,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param deletePolicyVersionRequest
      *        The input for the DeletePolicyVersion operation.
+     * @return A Java Future containing the result of the DeletePolicyVersion
+     *         operation returned by the service.
      * @sample AWSIotAsync.DeletePolicyVersion
      */
-    java.util.concurrent.Future<Void> deletePolicyVersionAsync(
+    java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(
             DeletePolicyVersionRequest deletePolicyVersionRequest);
 
     /**
@@ -715,11 +741,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePolicyVersion
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.DeletePolicyVersion
      */
-    java.util.concurrent.Future<Void> deletePolicyVersionAsync(
+    java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(
             DeletePolicyVersionRequest deletePolicyVersionRequest,
-            com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, DeletePolicyVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -796,9 +824,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param deleteTopicRuleRequest
      *        The input for the DeleteTopicRule operation.
+     * @return A Java Future containing the result of the DeleteTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsync.DeleteTopicRule
      */
-    java.util.concurrent.Future<Void> deleteTopicRuleAsync(
+    java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(
             DeleteTopicRuleRequest deleteTopicRuleRequest);
 
     /**
@@ -813,11 +843,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.DeleteTopicRule
      */
-    java.util.concurrent.Future<Void> deleteTopicRuleAsync(
+    java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(
             DeleteTopicRuleRequest deleteTopicRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, DeleteTopicRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -966,9 +998,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param detachPrincipalPolicyRequest
      *        The input for the DetachPrincipalPolicy operation.
+     * @return A Java Future containing the result of the DetachPrincipalPolicy
+     *         operation returned by the service.
      * @sample AWSIotAsync.DetachPrincipalPolicy
      */
-    java.util.concurrent.Future<Void> detachPrincipalPolicyAsync(
+    java.util.concurrent.Future<DetachPrincipalPolicyResult> detachPrincipalPolicyAsync(
             DetachPrincipalPolicyRequest detachPrincipalPolicyRequest);
 
     /**
@@ -983,11 +1017,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachPrincipalPolicy
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.DetachPrincipalPolicy
      */
-    java.util.concurrent.Future<Void> detachPrincipalPolicyAsync(
+    java.util.concurrent.Future<DetachPrincipalPolicyResult> detachPrincipalPolicyAsync(
             DetachPrincipalPolicyRequest detachPrincipalPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DetachPrincipalPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DetachPrincipalPolicyRequest, DetachPrincipalPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1030,9 +1066,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param disableTopicRuleRequest
      *        The input for the DisableTopicRuleRequest operation.
+     * @return A Java Future containing the result of the DisableTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsync.DisableTopicRule
      */
-    java.util.concurrent.Future<Void> disableTopicRuleAsync(
+    java.util.concurrent.Future<DisableTopicRuleResult> disableTopicRuleAsync(
             DisableTopicRuleRequest disableTopicRuleRequest);
 
     /**
@@ -1047,11 +1085,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.DisableTopicRule
      */
-    java.util.concurrent.Future<Void> disableTopicRuleAsync(
+    java.util.concurrent.Future<DisableTopicRuleResult> disableTopicRuleAsync(
             DisableTopicRuleRequest disableTopicRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, DisableTopicRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -1060,9 +1100,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param enableTopicRuleRequest
      *        The input for the EnableTopicRuleRequest operation.
+     * @return A Java Future containing the result of the EnableTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsync.EnableTopicRule
      */
-    java.util.concurrent.Future<Void> enableTopicRuleAsync(
+    java.util.concurrent.Future<EnableTopicRuleResult> enableTopicRuleAsync(
             EnableTopicRuleRequest enableTopicRuleRequest);
 
     /**
@@ -1077,11 +1119,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.EnableTopicRule
      */
-    java.util.concurrent.Future<Void> enableTopicRuleAsync(
+    java.util.concurrent.Future<EnableTopicRuleResult> enableTopicRuleAsync(
             EnableTopicRuleRequest enableTopicRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, EnableTopicRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -1729,9 +1773,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param rejectCertificateTransferRequest
      *        The input for the RejectCertificateTransfer operation.
+     * @return A Java Future containing the result of the
+     *         RejectCertificateTransfer operation returned by the service.
      * @sample AWSIotAsync.RejectCertificateTransfer
      */
-    java.util.concurrent.Future<Void> rejectCertificateTransferAsync(
+    java.util.concurrent.Future<RejectCertificateTransferResult> rejectCertificateTransferAsync(
             RejectCertificateTransferRequest rejectCertificateTransferRequest);
 
     /**
@@ -1757,11 +1803,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RejectCertificateTransfer operation returned by the service.
      * @sample AWSIotAsyncHandler.RejectCertificateTransfer
      */
-    java.util.concurrent.Future<Void> rejectCertificateTransferAsync(
+    java.util.concurrent.Future<RejectCertificateTransferResult> rejectCertificateTransferAsync(
             RejectCertificateTransferRequest rejectCertificateTransferRequest,
-            com.amazonaws.handlers.AsyncHandler<RejectCertificateTransferRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RejectCertificateTransferRequest, RejectCertificateTransferResult> asyncHandler);
 
     /**
      * <p>
@@ -1773,9 +1821,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param replaceTopicRuleRequest
      *        The input for the ReplaceTopicRule operation.
+     * @return A Java Future containing the result of the ReplaceTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsync.ReplaceTopicRule
      */
-    java.util.concurrent.Future<Void> replaceTopicRuleAsync(
+    java.util.concurrent.Future<ReplaceTopicRuleResult> replaceTopicRuleAsync(
             ReplaceTopicRuleRequest replaceTopicRuleRequest);
 
     /**
@@ -1793,11 +1843,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReplaceTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.ReplaceTopicRule
      */
-    java.util.concurrent.Future<Void> replaceTopicRuleAsync(
+    java.util.concurrent.Future<ReplaceTopicRuleResult> replaceTopicRuleAsync(
             ReplaceTopicRuleRequest replaceTopicRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<ReplaceTopicRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ReplaceTopicRuleRequest, ReplaceTopicRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -1809,9 +1861,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param setDefaultPolicyVersionRequest
      *        The input for the SetDefaultPolicyVersion operation.
+     * @return A Java Future containing the result of the
+     *         SetDefaultPolicyVersion operation returned by the service.
      * @sample AWSIotAsync.SetDefaultPolicyVersion
      */
-    java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
+    java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest);
 
     /**
@@ -1829,11 +1883,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         SetDefaultPolicyVersion operation returned by the service.
      * @sample AWSIotAsyncHandler.SetDefaultPolicyVersion
      */
-    java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
+    java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest,
-            com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1842,9 +1898,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param setLoggingOptionsRequest
      *        The input for the SetLoggingOptions operation.
+     * @return A Java Future containing the result of the SetLoggingOptions
+     *         operation returned by the service.
      * @sample AWSIotAsync.SetLoggingOptions
      */
-    java.util.concurrent.Future<Void> setLoggingOptionsAsync(
+    java.util.concurrent.Future<SetLoggingOptionsResult> setLoggingOptionsAsync(
             SetLoggingOptionsRequest setLoggingOptionsRequest);
 
     /**
@@ -1859,11 +1917,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetLoggingOptions
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.SetLoggingOptions
      */
-    java.util.concurrent.Future<Void> setLoggingOptionsAsync(
+    java.util.concurrent.Future<SetLoggingOptionsResult> setLoggingOptionsAsync(
             SetLoggingOptionsRequest setLoggingOptionsRequest,
-            com.amazonaws.handlers.AsyncHandler<SetLoggingOptionsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetLoggingOptionsRequest, SetLoggingOptionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1936,9 +1996,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param updateCACertificateRequest
      *        The input to the UpdateCACertificate operation.
+     * @return A Java Future containing the result of the UpdateCACertificate
+     *         operation returned by the service.
      * @sample AWSIotAsync.UpdateCACertificate
      */
-    java.util.concurrent.Future<Void> updateCACertificateAsync(
+    java.util.concurrent.Future<UpdateCACertificateResult> updateCACertificateAsync(
             UpdateCACertificateRequest updateCACertificateRequest);
 
     /**
@@ -1953,11 +2015,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCACertificate
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.UpdateCACertificate
      */
-    java.util.concurrent.Future<Void> updateCACertificateAsync(
+    java.util.concurrent.Future<UpdateCACertificateResult> updateCACertificateAsync(
             UpdateCACertificateRequest updateCACertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateCACertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateCACertificateRequest, UpdateCACertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -1976,9 +2040,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param updateCertificateRequest
      *        The input for the UpdateCertificate operation.
+     * @return A Java Future containing the result of the UpdateCertificate
+     *         operation returned by the service.
      * @sample AWSIotAsync.UpdateCertificate
      */
-    java.util.concurrent.Future<Void> updateCertificateAsync(
+    java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(
             UpdateCertificateRequest updateCertificateRequest);
 
     /**
@@ -2003,11 +2069,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCertificate
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.UpdateCertificate
      */
-    java.util.concurrent.Future<Void> updateCertificateAsync(
+    java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(
             UpdateCertificateRequest updateCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResult> asyncHandler);
 
     /**
      * <p>

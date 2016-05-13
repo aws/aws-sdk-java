@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * DeleteDistributionRequest Marshaller
@@ -66,8 +67,10 @@ public class DeleteDistributionRequestMarshaller
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (deleteDistributionRequest.getId() != null) ? StringUtils
-                        .fromString(deleteDistributionRequest.getId()) : "");
+                (deleteDistributionRequest.getId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(deleteDistributionRequest.getId()),
+                                false) : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

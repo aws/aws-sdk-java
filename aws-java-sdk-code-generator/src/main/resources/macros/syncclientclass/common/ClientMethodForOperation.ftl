@@ -19,7 +19,7 @@
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ${operationModel.input.variableType}Marshaller().marshall(
+                request = <@RequestMarshallerCreation.content operationModel />.marshall(
                     super.beforeMarshalling(${operationModel.input.variableName}));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);

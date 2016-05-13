@@ -1,133 +1,94 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#uploadArchive(UploadArchiveRequest) UploadArchive operation}.
  * <p>
- * This operation adds an archive to a vault. This is a synchronous
- * operation, and for a successful upload, your data is durably
- * persisted. Amazon Glacier returns the archive ID in the
- * <code>x-amz-archive-id</code> header of the response.
+ * Provides options to add an archive to a vault.
  * </p>
- * <p>
- * You must use the archive ID to access your data in Amazon Glacier.
- * After you upload an archive, you should save the archive ID returned
- * so that you can retrieve or delete the archive later. Besides saving
- * the archive ID, you can also index it and give it a friendly name to
- * allow for better searching. You can also use the optional archive
- * description field to specify how the archive is referred to in an
- * external index of archives, such as you might create in Amazon
- * DynamoDB. You can also get the vault inventory to obtain a list of
- * archive IDs in a vault. For more information, see InitiateJob.
- * </p>
- * <p>
- * You must provide a SHA256 tree hash of the data you are uploading. For
- * information about computing a SHA256 tree hash, see
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a>
- * .
- * </p>
- * <p>
- * You can optionally specify an archive description of up to 1,024
- * printable ASCII characters. You can get the archive description when
- * you either retrieve the archive or get the vault inventory. For more
- * information, see InitiateJob. Amazon Glacier does not interpret the
- * description in any way. An archive description does not need to be
- * unique. You cannot use the description to retrieve or sort the archive
- * list.
- * </p>
- * <p>
- * Archives are immutable. After you upload an archive, you cannot edit
- * the archive or its description.
- * </p>
- * <p>
- * An AWS account has full permission to perform all operations
- * (actions). However, AWS Identity and Access Management (IAM) users
- * don't have any permissions by default. You must grant them explicit
- * permission to perform specific actions. For more information, see
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
- * .
- * </p>
- * <p>
- * For conceptual information and underlying REST API, go to
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html"> Uploading an Archive in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html"> Upload Archive </a>
- * in the <i>Amazon Glacier Developer Guide</i> .
- * 
- * </p>
- *
- * @see com.amazonaws.services.glacier.AmazonGlacier#uploadArchive(UploadArchiveRequest)
  */
-public class UploadArchiveRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class UploadArchiveRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the vault.
+     * </p>
+     */
+    private String vaultName;
+    /**
+     * <p>
+     * The <code>AccountId</code> value is the AWS account ID of the account
+     * that owns the vault. You can either specify an AWS account ID or
+     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, do not include any hyphens
+     * (apos-apos) in the ID.
+     * </p>
+     */
+    private String accountId;
+    /**
+     * <p>
+     * The optional description of the archive you are uploading.
+     * </p>
+     */
+    private String archiveDescription;
+    /**
+     * <p>
+     * The SHA256 tree hash of the data being uploaded.
+     * </p>
+     */
+    private String checksum;
+    /**
+     * <p>
+     * The data to upload.
+     * </p>
+     */
+    private java.io.InputStream body;
+    /** The content length of the archive to upload. */
     private Long contentLength;
 
     /**
-     * The name of the vault.
+     * Default constructor for UploadArchiveRequest object. Callers should use
+     * the setter or fluent setter (with...) methods to initialize the object
+     * after creating it.
      */
-    private String vaultName;
+    public UploadArchiveRequest() {
+    }
 
     /**
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you use an account ID, do not include any
-     * hyphens ('-') in the ID.
-     */
-    private String accountId;
-
-    /**
-     * The optional description of the archive you are uploading.
-     */
-    private String archiveDescription;
-
-    /**
-     * The SHA256 tree hash of the data being uploaded.
-     */
-    private String checksum;
-
-    /**
-     * The data to upload.
-     *
-     * This stream must implement mark/reset in order for signature calculation to be performed
-     * before this data is read for the request payload.
-     */
-    private java.io.InputStream body;
-
-    /**
-     * Default constructor for a new UploadArchiveRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
-     */
-    public UploadArchiveRequest() {}
-    
-    /**
-     * Constructs a new UploadArchiveRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new UploadArchiveRequest object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize any additional
+     * object members.
      * 
-     * @param vaultName The name of the vault.
-     * @param archiveDescription The optional description of the archive you
-     * are uploading.
-     * @param checksum The SHA256 tree hash of the data being uploaded.
-     * @param body The data to upload.
+     * @param vaultName
+     *        The name of the vault.
+     * @param archiveDescription
+     *        The optional description of the archive you are uploading.
+     * @param checksum
+     *        The SHA256 tree hash of the data being uploaded.
+     * @param body
+     *        The data to upload.
      */
-    public UploadArchiveRequest(String vaultName, String archiveDescription, String checksum, java.io.InputStream body) {
+    public UploadArchiveRequest(String vaultName, String archiveDescription,
+            String checksum, java.io.InputStream body) {
         setVaultName(vaultName);
         setArchiveDescription(archiveDescription);
         setChecksum(checksum);
@@ -135,23 +96,28 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Constructs a new UploadArchiveRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new UploadArchiveRequest object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize any additional
+     * object members.
      * 
-     * @param vaultName The name of the vault.
-     * @param accountId The <code>AccountId</code> value is the AWS account
-     * ID of the account that owns the vault. You can either specify an AWS
-     * account ID or optionally a single '<code>-</code>' (hyphen), in which
-     * case Amazon Glacier uses the AWS account ID associated with the
-     * credentials used to sign the request. If you use an account ID, do not
-     * include any hyphens ('-') in the ID.
-     * @param archiveDescription The optional description of the archive you
-     * are uploading.
-     * @param checksum The SHA256 tree hash of the data being uploaded.
-     * @param body The data to upload.
+     * @param vaultName
+     *        The name of the vault.
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID of the
+     *        account that owns the vault. You can either specify an AWS account
+     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
+     *        which case Amazon Glacier uses the AWS account ID associated with
+     *        the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
+     * @param archiveDescription
+     *        The optional description of the archive you are uploading.
+     * @param checksum
+     *        The SHA256 tree hash of the data being uploaded.
+     * @param body
+     *        The data to upload.
      */
-    public UploadArchiveRequest(String vaultName, String accountId, String archiveDescription, String checksum, java.io.InputStream body) {
+    public UploadArchiveRequest(String vaultName, String accountId,
+            String archiveDescription, String checksum, java.io.InputStream body) {
         setVaultName(vaultName);
         setAccountId(accountId);
         setArchiveDescription(archiveDescription);
@@ -160,239 +126,273 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Returns the value of the ContentLength property for this object.
-     *
-     * @return The value of the ContentLength property for this object.
-     */
-    public Long getContentLength() {
-        return contentLength;
-    }
-    
-    /**
-     * Sets the value of the ContentLength property for this object.
-     *
-     * @param contentLength The new value for the ContentLength property for this object.
-     */
-    public void setContentLength(Long contentLength) {
-        this.contentLength = contentLength;
-    }
-    
-    /**
-     * Sets the value of the ContentLength property for this object.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param contentLength The new value for the ContentLength property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the vault.
+     * </p>
+     * 
+     * @param vaultName
+     *        The name of the vault.
      */
-    public UploadArchiveRequest withContentLength(Long contentLength) {
-        this.contentLength = contentLength;
-        return this;
-    }
 
-    /**
-     * The name of the vault.
-     *
-     * @return The name of the vault.
-     */
-    public String getVaultName() {
-        return vaultName;
-    }
-    
-    /**
-     * The name of the vault.
-     *
-     * @param vaultName The name of the vault.
-     */
     public void setVaultName(String vaultName) {
         this.vaultName = vaultName;
     }
-    
+
     /**
-     * The name of the vault.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param vaultName The name of the vault.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the vault.
+     * </p>
+     * 
+     * @return The name of the vault.
      */
+
+    public String getVaultName() {
+        return this.vaultName;
+    }
+
+    /**
+     * <p>
+     * The name of the vault.
+     * </p>
+     * 
+     * @param vaultName
+     *        The name of the vault.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public UploadArchiveRequest withVaultName(String vaultName) {
-        this.vaultName = vaultName;
+        setVaultName(vaultName);
         return this;
     }
 
     /**
+     * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account
      * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you use an account ID, do not include any
-     * hyphens ('-') in the ID.
-     *
-     * @return The <code>AccountId</code> value is the AWS account ID of the account
-     *         that owns the vault. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you use an account ID, do not include any
-     *         hyphens ('-') in the ID.
+     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, do not include any hyphens
+     * (apos-apos) in the ID.
+     * </p>
+     * 
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID of the
+     *        account that owns the vault. You can either specify an AWS account
+     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
+     *        which case Amazon Glacier uses the AWS account ID associated with
+     *        the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
      */
-    public String getAccountId() {
-        return accountId;
-    }
-    
-    /**
-     * The <code>AccountId</code> value is the AWS account ID of the account
-     * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you use an account ID, do not include any
-     * hyphens ('-') in the ID.
-     *
-     * @param accountId The <code>AccountId</code> value is the AWS account ID of the account
-     *         that owns the vault. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you use an account ID, do not include any
-     *         hyphens ('-') in the ID.
-     */
+
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
-    
+
     /**
+     * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account
      * that owns the vault. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you use an account ID, do not include any
-     * hyphens ('-') in the ID.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param accountId The <code>AccountId</code> value is the AWS account ID of the account
-     *         that owns the vault. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you use an account ID, do not include any
-     *         hyphens ('-') in the ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, do not include any hyphens
+     * (apos-apos) in the ID.
+     * </p>
+     * 
+     * @return The <code>AccountId</code> value is the AWS account ID of the
+     *         account that owns the vault. You can either specify an AWS
+     *         account ID or optionally a single apos<code>-</code>apos
+     *         (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *         associated with the credentials used to sign the request. If you
+     *         use an account ID, do not include any hyphens (apos-apos) in the
+     *         ID.
      */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The <code>AccountId</code> value is the AWS account ID of the account
+     * that owns the vault. You can either specify an AWS account ID or
+     * optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, do not include any hyphens
+     * (apos-apos) in the ID.
+     * </p>
+     * 
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID of the
+     *        account that owns the vault. You can either specify an AWS account
+     *        ID or optionally a single apos<code>-</code>apos (hyphen), in
+     *        which case Amazon Glacier uses the AWS account ID associated with
+     *        the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public UploadArchiveRequest withAccountId(String accountId) {
-        this.accountId = accountId;
+        setAccountId(accountId);
         return this;
     }
 
     /**
+     * <p>
      * The optional description of the archive you are uploading.
-     *
-     * @return The optional description of the archive you are uploading.
+     * </p>
+     * 
+     * @param archiveDescription
+     *        The optional description of the archive you are uploading.
      */
-    public String getArchiveDescription() {
-        return archiveDescription;
-    }
-    
-    /**
-     * The optional description of the archive you are uploading.
-     *
-     * @param archiveDescription The optional description of the archive you are uploading.
-     */
+
     public void setArchiveDescription(String archiveDescription) {
         this.archiveDescription = archiveDescription;
     }
-    
+
     /**
-     * The optional description of the archive you are uploading.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param archiveDescription The optional description of the archive you are uploading.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The optional description of the archive you are uploading.
+     * </p>
+     * 
+     * @return The optional description of the archive you are uploading.
      */
+
+    public String getArchiveDescription() {
+        return this.archiveDescription;
+    }
+
+    /**
+     * <p>
+     * The optional description of the archive you are uploading.
+     * </p>
+     * 
+     * @param archiveDescription
+     *        The optional description of the archive you are uploading.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public UploadArchiveRequest withArchiveDescription(String archiveDescription) {
-        this.archiveDescription = archiveDescription;
+        setArchiveDescription(archiveDescription);
         return this;
     }
 
     /**
+     * <p>
      * The SHA256 tree hash of the data being uploaded.
-     *
-     * @return The SHA256 tree hash of the data being uploaded.
+     * </p>
+     * 
+     * @param checksum
+     *        The SHA256 tree hash of the data being uploaded.
      */
-    public String getChecksum() {
-        return checksum;
-    }
-    
-    /**
-     * The SHA256 tree hash of the data being uploaded.
-     *
-     * @param checksum The SHA256 tree hash of the data being uploaded.
-     */
+
     public void setChecksum(String checksum) {
         this.checksum = checksum;
     }
-    
+
     /**
-     * The SHA256 tree hash of the data being uploaded.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param checksum The SHA256 tree hash of the data being uploaded.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The SHA256 tree hash of the data being uploaded.
+     * </p>
+     * 
+     * @return The SHA256 tree hash of the data being uploaded.
      */
+
+    public String getChecksum() {
+        return this.checksum;
+    }
+
+    /**
+     * <p>
+     * The SHA256 tree hash of the data being uploaded.
+     * </p>
+     * 
+     * @param checksum
+     *        The SHA256 tree hash of the data being uploaded.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public UploadArchiveRequest withChecksum(String checksum) {
-        this.checksum = checksum;
+        setChecksum(checksum);
         return this;
     }
 
     /**
+     * <p>
      * The data to upload.
-     *
-     * This stream must implement mark/reset in order for signature calculation to be performed
-     * before this data is read for the request payload.
-     *
-     * @return The data to upload.
+     * </p>
+     * 
+     * @param body
+     *        The data to upload.
      */
-    public java.io.InputStream getBody() {
-        return body;
-    }
-    
-    /**
-     * The data to upload.
-     *
-     * This stream must implement mark/reset in order for signature calculation to be performed
-     * before this data is read for the request payload.
-     *
-     * @param body The data to upload.
-     */
+
     public void setBody(java.io.InputStream body) {
         this.body = body;
     }
-    
+
     /**
-     * The data to upload.
-     *
-     * This stream must implement mark/reset in order for signature calculation to be performed
-     * before this data is read for the request payload.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param body The data to upload.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The data to upload.
+     * </p>
+     * 
+     * @return The data to upload.
      */
+
+    public java.io.InputStream getBody() {
+        return this.body;
+    }
+
+    /**
+     * <p>
+     * The data to upload.
+     * </p>
+     * 
+     * @param body
+     *        The data to upload.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public UploadArchiveRequest withBody(java.io.InputStream body) {
-        this.body = body;
+        setBody(body);
+        return this;
+    }
+
+    /**
+     * The content length of the archive to upload.
+     * 
+     * @param contentLength
+     *        The content length of the archive to upload.
+     */
+
+    public void setContentLength(Long contentLength) {
+        this.contentLength = contentLength;
+    }
+
+    /**
+     * The content length of the archive to upload.
+     * 
+     * @return The content length of the archive to upload.
+     */
+
+    public Long getContentLength() {
+        return this.contentLength;
+    }
+
+    /**
+     * The content length of the archive to upload.
+     * 
+     * @param contentLength
+     *        The content length of the archive to upload.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UploadArchiveRequest withContentLength(Long contentLength) {
+        setContentLength(contentLength);
         return this;
     }
 
@@ -408,58 +408,93 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getContentLength() != null) sb.append("ContentLength: " + getContentLength() + ",");
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
-        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");
-        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ",");
-        if (getBody() != null) sb.append("Body: " + getBody() );
+        if (getVaultName() != null)
+            sb.append("VaultName: " + getVaultName() + ",");
+        if (getAccountId() != null)
+            sb.append("AccountId: " + getAccountId() + ",");
+        if (getArchiveDescription() != null)
+            sb.append("ArchiveDescription: " + getArchiveDescription() + ",");
+        if (getChecksum() != null)
+            sb.append("Checksum: " + getChecksum() + ",");
+        if (getBody() != null)
+            sb.append("Body: " + getBody() + ",");
+        if (getContentLength() != null)
+            sb.append("ContentLength: " + getContentLength());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof UploadArchiveRequest == false)
+            return false;
+        UploadArchiveRequest other = (UploadArchiveRequest) obj;
+        if (other.getVaultName() == null ^ this.getVaultName() == null)
+            return false;
+        if (other.getVaultName() != null
+                && other.getVaultName().equals(this.getVaultName()) == false)
+            return false;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null
+                && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
+        if (other.getArchiveDescription() == null
+                ^ this.getArchiveDescription() == null)
+            return false;
+        if (other.getArchiveDescription() != null
+                && other.getArchiveDescription().equals(
+                        this.getArchiveDescription()) == false)
+            return false;
+        if (other.getChecksum() == null ^ this.getChecksum() == null)
+            return false;
+        if (other.getChecksum() != null
+                && other.getChecksum().equals(this.getChecksum()) == false)
+            return false;
+        if (other.getBody() == null ^ this.getBody() == null)
+            return false;
+        if (other.getBody() != null
+                && other.getBody().equals(this.getBody()) == false)
+            return false;
+        if (other.getContentLength() == null ^ this.getContentLength() == null)
+            return false;
+        if (other.getContentLength() != null
+                && other.getContentLength().equals(this.getContentLength()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getContentLength() == null) ? 0 : getContentLength().hashCode()); 
-        hashCode = prime * hashCode + ((getVaultName() == null) ? 0 : getVaultName().hashCode()); 
-        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode()); 
-        hashCode = prime * hashCode + ((getArchiveDescription() == null) ? 0 : getArchiveDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode()); 
-        hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
+        hashCode = prime * hashCode
+                + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getArchiveDescription() == null) ? 0
+                        : getArchiveDescription().hashCode());
+        hashCode = prime * hashCode
+                + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
+        hashCode = prime * hashCode
+                + ((getBody() == null) ? 0 : getBody().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getContentLength() == null) ? 0 : getContentLength()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof UploadArchiveRequest == false) return false;
-        UploadArchiveRequest other = (UploadArchiveRequest)obj;
-        
-        if (other.getContentLength() == null ^ this.getContentLength() == null) return false;
-        if (other.getContentLength() != null && other.getContentLength().equals(this.getContentLength()) == false) return false; 
-        if (other.getVaultName() == null ^ this.getVaultName() == null) return false;
-        if (other.getVaultName() != null && other.getVaultName().equals(this.getVaultName()) == false) return false; 
-        if (other.getAccountId() == null ^ this.getAccountId() == null) return false;
-        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false) return false; 
-        if (other.getArchiveDescription() == null ^ this.getArchiveDescription() == null) return false;
-        if (other.getArchiveDescription() != null && other.getArchiveDescription().equals(this.getArchiveDescription()) == false) return false; 
-        if (other.getChecksum() == null ^ this.getChecksum() == null) return false;
-        if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false) return false; 
-        if (other.getBody() == null ^ this.getBody() == null) return false;
-        if (other.getBody() != null && other.getBody().equals(this.getBody()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public UploadArchiveRequest clone() {
-        
-            return (UploadArchiveRequest) super.clone();
+        return (UploadArchiveRequest) super.clone();
     }
-
 }
-    

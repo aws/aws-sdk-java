@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ChangeTagsForResourceRequest Marshaller
@@ -62,15 +63,19 @@ public class ChangeTagsForResourceRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{ResourceType}",
-                        (changeTagsForResourceRequest.getResourceType() != null) ? StringUtils
-                                .fromString(changeTagsForResourceRequest
-                                        .getResourceType()) : "");
+                        (changeTagsForResourceRequest.getResourceType() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(changeTagsForResourceRequest
+                                                .getResourceType()), false)
+                                : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{ResourceId}",
-                        (changeTagsForResourceRequest.getResourceId() != null) ? StringUtils
-                                .fromString(changeTagsForResourceRequest
-                                        .getResourceId()) : "");
+                        (changeTagsForResourceRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(changeTagsForResourceRequest
+                                                .getResourceId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

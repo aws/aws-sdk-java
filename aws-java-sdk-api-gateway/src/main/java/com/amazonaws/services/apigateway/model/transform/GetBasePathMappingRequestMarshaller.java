@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetBasePathMappingRequest Marshaller
@@ -48,7 +49,14 @@ public class GetBasePathMappingRequestMarshaller
         implements
         Marshaller<Request<GetBasePathMappingRequest>, GetBasePathMappingRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetBasePathMappingRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetBasePathMappingRequest> marshall(
             GetBasePathMappingRequest getBasePathMappingRequest) {
@@ -68,14 +76,17 @@ public class GetBasePathMappingRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{domain_name}",
-                        (getBasePathMappingRequest.getDomainName() != null) ? StringUtils
-                                .fromString(getBasePathMappingRequest
-                                        .getDomainName()) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{base_path}",
-                (getBasePathMappingRequest.getBasePath() != null) ? StringUtils
-                        .fromString(getBasePathMappingRequest.getBasePath())
-                        : "");
+                        (getBasePathMappingRequest.getDomainName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(getBasePathMappingRequest
+                                                .getDomainName()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{base_path}",
+                        (getBasePathMappingRequest.getBasePath() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(getBasePathMappingRequest
+                                                .getBasePath()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

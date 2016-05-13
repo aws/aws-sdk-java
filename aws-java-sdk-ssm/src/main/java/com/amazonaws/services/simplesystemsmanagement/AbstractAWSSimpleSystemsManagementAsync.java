@@ -151,6 +151,21 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDocumentPermissionResult> describeDocumentPermissionAsync(
+            DescribeDocumentPermissionRequest request) {
+
+        return describeDocumentPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDocumentPermissionResult> describeDocumentPermissionAsync(
+            DescribeDocumentPermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDocumentPermissionRequest, DescribeDocumentPermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInstanceInformationResult> describeInstanceInformationAsync(
             DescribeInstanceInformationRequest request) {
 
@@ -262,6 +277,21 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
             com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler) {
 
         return listDocumentsAsync(new ListDocumentsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(
+            ModifyDocumentPermissionRequest request) {
+
+        return modifyDocumentPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(
+            ModifyDocumentPermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyDocumentPermissionRequest, ModifyDocumentPermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

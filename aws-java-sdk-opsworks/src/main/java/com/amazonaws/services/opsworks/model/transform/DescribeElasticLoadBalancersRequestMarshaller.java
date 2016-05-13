@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeElasticLoadBalancersRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DescribeElasticLoadBalancersRequestMarshaller
         implements
         Marshaller<Request<DescribeElasticLoadBalancersRequest>, DescribeElasticLoadBalancersRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeElasticLoadBalancersRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeElasticLoadBalancersRequest> marshall(
             DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest) {
@@ -59,8 +66,8 @@ public class DescribeElasticLoadBalancersRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

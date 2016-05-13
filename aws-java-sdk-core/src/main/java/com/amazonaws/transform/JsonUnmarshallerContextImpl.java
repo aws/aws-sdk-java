@@ -26,7 +26,6 @@ import java.util.Map;
 import java.util.Stack;
 
 import com.amazonaws.http.HttpResponse;
-import com.amazonaws.util.json.SdkJsonProtocolFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
 
@@ -87,16 +86,6 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
     private final HttpResponse httpResponse;
 
     private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallerMap;
-
-    @Deprecated
-    public JsonUnmarshallerContextImpl(JsonParser jsonParser) {
-        this(jsonParser, null);
-    }
-
-    @Deprecated
-    public JsonUnmarshallerContextImpl(JsonParser jsonParser, HttpResponse httpResponse) {
-        this(jsonParser, SdkJsonProtocolFactory.DEFAULT_SCALAR_UNMARSHALLERS, httpResponse);
-    }
 
     public JsonUnmarshallerContextImpl(JsonParser jsonParser, Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> mapper, HttpResponse httpResponse) {
         this.jsonParser = jsonParser;

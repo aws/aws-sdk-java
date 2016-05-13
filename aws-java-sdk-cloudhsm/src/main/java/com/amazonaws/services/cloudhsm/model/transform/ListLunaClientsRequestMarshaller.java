@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListLunaClientsRequest Marshaller
  */
 public class ListLunaClientsRequestMarshaller implements
         Marshaller<Request<ListLunaClientsRequest>, ListLunaClientsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListLunaClientsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListLunaClientsRequest> marshall(
             ListLunaClientsRequest listLunaClientsRequest) {
@@ -58,8 +65,8 @@ public class ListLunaClientsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

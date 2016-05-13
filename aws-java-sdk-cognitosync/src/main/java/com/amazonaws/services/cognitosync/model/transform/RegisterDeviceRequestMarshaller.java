@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RegisterDeviceRequest Marshaller
@@ -48,6 +49,13 @@ public class RegisterDeviceRequestMarshaller implements
         Marshaller<Request<RegisterDeviceRequest>, RegisterDeviceRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RegisterDeviceRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RegisterDeviceRequest> marshall(
             RegisterDeviceRequest registerDeviceRequest) {
@@ -67,20 +75,21 @@ public class RegisterDeviceRequestMarshaller implements
         uriResourcePath = uriResourcePath
                 .replace(
                         "{IdentityPoolId}",
-                        (registerDeviceRequest.getIdentityPoolId() != null) ? StringUtils
-                                .fromString(registerDeviceRequest
-                                        .getIdentityPoolId()) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{IdentityId}",
-                        (registerDeviceRequest.getIdentityId() != null) ? StringUtils
-                                .fromString(registerDeviceRequest
-                                        .getIdentityId()) : "");
+                        (registerDeviceRequest.getIdentityPoolId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(registerDeviceRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
+        uriResourcePath = uriResourcePath.replace(
+                "{IdentityId}",
+                (registerDeviceRequest.getIdentityId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(registerDeviceRequest
+                                .getIdentityId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (registerDeviceRequest.getPlatform() != null) {

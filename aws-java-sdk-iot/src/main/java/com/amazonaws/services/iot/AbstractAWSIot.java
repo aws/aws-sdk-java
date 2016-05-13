@@ -39,13 +39,14 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public void acceptCertificateTransfer(
+    public AcceptCertificateTransferResult acceptCertificateTransfer(
             AcceptCertificateTransferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void attachPrincipalPolicy(AttachPrincipalPolicyRequest request) {
+    public AttachPrincipalPolicyResult attachPrincipalPolicy(
+            AttachPrincipalPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,7 +57,7 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public void cancelCertificateTransfer(
+    public CancelCertificateTransferResult cancelCertificateTransfer(
             CancelCertificateTransferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -90,7 +91,7 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public void createTopicRule(CreateTopicRuleRequest request) {
+    public CreateTopicRuleResult createTopicRule(CreateTopicRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -101,17 +102,19 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public void deleteCertificate(DeleteCertificateRequest request) {
+    public DeleteCertificateResult deleteCertificate(
+            DeleteCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deletePolicy(DeletePolicyRequest request) {
+    public DeletePolicyResult deletePolicy(DeletePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deletePolicyVersion(DeletePolicyVersionRequest request) {
+    public DeletePolicyVersionResult deletePolicyVersion(
+            DeletePolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -127,7 +130,7 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public void deleteTopicRule(DeleteTopicRuleRequest request) {
+    public DeleteTopicRuleResult deleteTopicRule(DeleteTopicRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -155,7 +158,8 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public void detachPrincipalPolicy(DetachPrincipalPolicyRequest request) {
+    public DetachPrincipalPolicyResult detachPrincipalPolicy(
+            DetachPrincipalPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -166,12 +170,13 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public void disableTopicRule(DisableTopicRuleRequest request) {
+    public DisableTopicRuleResult disableTopicRule(
+            DisableTopicRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void enableTopicRule(EnableTopicRuleRequest request) {
+    public EnableTopicRuleResult enableTopicRule(EnableTopicRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -273,23 +278,26 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public void rejectCertificateTransfer(
+    public RejectCertificateTransferResult rejectCertificateTransfer(
             RejectCertificateTransferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void replaceTopicRule(ReplaceTopicRuleRequest request) {
+    public ReplaceTopicRuleResult replaceTopicRule(
+            ReplaceTopicRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setDefaultPolicyVersion(SetDefaultPolicyVersionRequest request) {
+    public SetDefaultPolicyVersionResult setDefaultPolicyVersion(
+            SetDefaultPolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setLoggingOptions(SetLoggingOptionsRequest request) {
+    public SetLoggingOptionsResult setLoggingOptions(
+            SetLoggingOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -300,12 +308,14 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
-    public void updateCACertificate(UpdateCACertificateRequest request) {
+    public UpdateCACertificateResult updateCACertificate(
+            UpdateCACertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateCertificate(UpdateCertificateRequest request) {
+    public UpdateCertificateResult updateCertificate(
+            UpdateCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

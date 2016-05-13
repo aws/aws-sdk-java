@@ -72,6 +72,11 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
      */
     private SSECustomerKey sseCustomerKey;
 
+    /**
+     * The optional part number to find the number of parts of an object.
+     */
+    private Integer partNumber;
+
 
     /**
      * Constructs a new
@@ -362,4 +367,73 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
         setSSECustomerKey(sseKey);
         return this;
     }
+
+    /**
+     * <p>
+     * Returns the optional part number that indicates a part in multipart object.
+     * </p>
+     *
+     * @return The part number representing a part in a multipart object.
+     *
+     * @see GetObjectMetadataRequest#setPartNumber(Integer)
+     * @see GetObjectMetadataRequest#withPartNumber(Integer)
+     */
+    public Integer getPartNumber() {
+        return partNumber;
+    }
+
+    /**
+     * <p>
+     * Sets the optional part number to find the number of parts of an object.
+     * </p>
+     * <p>
+     * To find the number of parts of an object, set partNumber to 1 and observe the x-amz-mp-parts-count response.
+     * If the object exists and x-amz-mp-parts-count is missing it's implicitly 1.
+     * Otherwise number of parts is equal to the value returned by x-amz-mp-parts-count.
+     * </p>
+     * <p>
+     * The valid range for part number is 1 - 10000 inclusive.
+     * For partNumber < 1, an AmazonS3Exception is thrown with response code 400 bad request
+     * For partNumber larger than actual part count,  an AmazonS3Exception is thrown with response code 416 Request Range Not Satisfiable
+     * </p>
+     *
+     * @param partNumber
+     *            The part number representing a part in a multipart object.
+     *
+     * @see GetObjectMetadataRequest#getPartNumber()
+     * @see GetObjectMetadataRequest#withPartNumber(Integer)
+     */
+    public void setPartNumber(Integer partNumber) {
+        this.partNumber = partNumber;
+    }
+
+    /**
+     * <p>
+     * Sets the optional part number to find the number of parts of an object.
+     * </p>
+     * <p>
+     * To find the number of parts of an object, set partNumber to 1 and observe the x-amz-mp-parts-count response.
+     * If the object exists and x-amz-mp-parts-count is missing it's implicitly 1.
+     * Otherwise number of parts is equal to the value returned by x-amz-mp-parts-count.
+     * </p>
+     * <p>
+     * The valid range for part number is 1 - 10000 inclusive.
+     * For partNumber < 1, an AmazonS3Exception is thrown with response code 400 bad request
+     * For partNumber larger than actual part count,  an AmazonS3Exception is thrown with response code 416 Request Range Not Satisfiable
+     * </p>
+     *
+     * @param partNumber
+     *            The part number representing a part in a multipart object.
+     *
+     * @return This {@link GetObjectRequest}, enabling additional method
+     *         calls to be chained together.
+     *
+     * @see GetObjectMetadataRequest#getPartNumber()
+     * @see GetObjectMetadataRequest#setPartNumber(Integer)
+     */
+    public GetObjectMetadataRequest withPartNumber(Integer partNumber) {
+        setPartNumber(partNumber);
+        return this;
+    }
+
 }

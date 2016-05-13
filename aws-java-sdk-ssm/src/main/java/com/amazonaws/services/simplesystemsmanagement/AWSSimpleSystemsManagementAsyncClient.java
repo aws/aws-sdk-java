@@ -25,13 +25,22 @@ import com.amazonaws.annotation.ThreadSafe;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Simple Systems Manager (SSM) enables you to remotely manage the configuration
- * of your Amazon EC2 instance. Using SSM, you can run scripts or commands using
- * either EC2 Run Command or SSM Config. (SSM Config is currently available only
- * for Windows instances.)
+ * This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables
+ * you to remotely manage the configuration of your Amazon EC2 instance using
+ * scripts or commands with either an on-demand solution called <i>SSM Run
+ * Command</i> or a lightweight instance configuration solution called <i>SSM
+ * Config</i>.
  * </p>
- * <p/>
+ * <p>
+ * This references is intended to be used with the SSM User Guide for <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html"
+ * >Linux</a> or <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html"
+ * >Windows</a>.
+ * </p>
+ * <p>
  * <b>Run Command</b>
+ * </p>
  * <p>
  * Run Command provides an on-demand experience for executing commands. You can
  * use pre-defined Amazon SSM documents to perform the actions listed later in
@@ -40,9 +49,9 @@ import com.amazonaws.annotation.ThreadSafe;
  * <b>Commands</b> page in the <a
  * href="http://console.aws.amazon.com/ec2/">Amazon EC2 console</a>, <a href=
  * "http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html"
- * >AWS Tools for Windows PowerShell</a>, or the <a
+ * >AWS Tools for Windows PowerShell</a>, the <a
  * href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
- * CLI</a>.
+ * CLI</a>, or AWS SDKs.
  * </p>
  * <p>
  * Run Command reports the status of the command execution for each instance
@@ -58,7 +67,9 @@ import com.amazonaws.annotation.ThreadSafe;
  * >Windows</a>).
  * </p>
  * <p/>
+ * <p>
  * <b>SSM Config</b>
+ * </p>
  * <p>
  * SSM Config is a lightweight instance configuration solution. SSM Config is
  * currently only available for Windows instances. With SSM Config, you can
@@ -79,138 +90,132 @@ import com.amazonaws.annotation.ThreadSafe;
  * >Managing Windows Instance Configuration</a>.
  * </p>
  * <p>
- * SSM Config and Run Command include the following pre-defined documents.
+ * SSM Config and SSM Run Command include the following pre-defined documents.
  * </p>
- * <table>
- * <title>Amazon Pre-defined SSM Documents</title> <tgroup cols="3"> <colspec
- * colname="col1" colnum="1" colwidth="1*"/> <colspec colname="col2" colnum="2"
- * colwidth="1*"/> <colspec colname="col3" colnum="3" colwidth="1*"/> <thead>
- * <row> <entry>Name</entry> <entry>Description</entry> <entry>Platform</entry>
- * </row> </thead> <tbody> <row> <entry>
  * <p>
- * AWS-RunShellScript
+ * <b>Linux</b>
  * </p>
- * </entry> <entry>
+ * <ul>
+ * <li>
  * <p>
- * Run shell scripts
+ * <b>AWS-RunShellScript</b> to run shell scripts
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Linux
+ * <b>AWS-UpdateSSMAgent</b> to update the Amazon SSM agent
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * </ul>
+ * <p/>
  * <p>
- * AWS-UpdateSSMAgent
+ * <b>Windows</b>
  * </p>
- * </entry> <entry>
+ * <ul>
+ * <li>
  * <p>
- * Update the Amazon SSM agent
+ * <b>AWS-JoinDirectoryServiceDomain</b> to join an AWS Directory
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Linux
+ * <b>AWS-RunPowerShellScript</b> to run PowerShell commands or scripts
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * <li>
  * <p>
- * AWS-JoinDirectoryServiceDomain
+ * <b>AWS-UpdateEC2Config</b> to update the EC2Config service
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Join an AWS Directory
+ * <b>AWS-ConfigureWindowsUpdate</b> to configure Windows Update settings
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Windows
+ * <b>AWS-InstallApplication</b> to install, repair, or uninstall software using
+ * an MSI package
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * <li>
  * <p>
- * AWS-RunPowerShellScript
+ * <b>AWS-InstallPowerShellModule</b> to install PowerShell modules
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Run PowerShell commands or scripts
+ * <b>AWS-ConfigureCloudWatch</b> to configure Amazon CloudWatch Logs to monitor
+ * applications and systems
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Windows
+ * <b>AWS-ListWindowsInventory</b> to collect information about an EC2 instance
+ * running in Windows.
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * <li>
  * <p>
- * AWS-UpdateEC2Config
+ * <b>AWS-FindWindowsUpdates</b> to scan an instance and determines which
+ * updates are missing.
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Update the EC2Config service
+ * <b>AWS-InstallMissingWindowsUpdates</b> to install missing updates on your
+ * EC2 instance.
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Windows
+ * <b>AWS-InstallSpecificWindowsUpdates</b> to install one or more specific
+ * updates.
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * </ul>
+ * <important>
  * <p>
- * AWS-ConfigureWindowsUpdate
+ * The commands or scripts specified in SSM documents run with administrative
+ * privilege on your instances because the Amazon SSM agent runs as root on
+ * Linux and the EC2Config service runs in the Local System account on Windows.
+ * If a user has permission to execute any of the pre-defined SSM documents (any
+ * document that begins with AWS-*) then that user also has administrator access
+ * to the instance. Delegate access to SSM and Run Command judiciously. This
+ * becomes extremely important if you create your own SSM documents. Amazon Web
+ * Services does not provide guidance about how to create secure SSM documents.
+ * You create SSM documents and delegate access to Run Command at your own risk.
+ * As a security best practice, we recommend that you assign access to "AWS-*"
+ * documents, especially the AWS-RunShellScript document on Linux and the
+ * AWS-RunPowerShellScript document on Windows, to trusted administrators only.
+ * You can create SSM documents for specific tasks and delegate access to
+ * non-administrators.
  * </p>
- * </entry> <entry>
- * <p>
- * Configure Windows Update settings
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> <row> <entry>
- * <p>
- * AWS-InstallApplication
- * </p>
- * </entry> <entry>
- * <p>
- * Install, repair, or uninstall software using an MSI package
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> <row> <entry>
- * <p>
- * AWS-InstallPowerShellModule
- * </p>
- * </entry> <entry>
- * <p>
- * Install PowerShell modules
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> <row> <entry>
- * <p>
- * AWS-ConfigureCloudWatch
- * </p>
- * </entry> <entry>
- * <p>
- * Configure Amazon CloudWatch Logs to monitor applications and systems
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> </tbody> </tgroup>
- * </table>
- * <important> <simpara>The commands or scripts specified in SSM documents run
- * with administrative privilege on your instances because the Amazon SSM agent
- * runs as root on Linux and the EC2Config service runs in the Local System
- * account on Windows. If a user has permission to execute any of the
- * pre-defined SSM documents (any document that begins with AWS-*) then that
- * user also has administrator access to the instance. Delegate access to SSM
- * and Run Command judiciously. This becomes extremely important if you create
- * your own SSM documents. Amazon Web Services does not provide guidance about
- * how to create secure SSM documents. You create SSM documents and delegate
- * access to Run Command at your own risk. As a security best practice, we
- * recommend that you assign access to "AWS-*" documents, especially the
- * AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript document
- * on Windows, to trusted administrators only. You can create SSM documents for
- * specific tasks and delegate access to non-administrators.</simpara>
  * </important>
+ * <p>
+ * For information about creating and sharing SSM documents, see the following
+ * topics in the SSM User Guide:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ssm-doc.html"
+ * >Creating SSM Documents</a> and <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssm-sharing.html"
+ * >Sharing SSM Documents</a> (Linux)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html"
+ * >Creating SSM Documents</a> and <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ssm-sharing.html"
+ * >Sharing SSM Documents</a> (Windows)
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 public class AWSSimpleSystemsManagementAsyncClient extends
@@ -723,6 +728,42 @@ public class AWSSimpleSystemsManagementAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDocumentPermissionResult> describeDocumentPermissionAsync(
+            DescribeDocumentPermissionRequest request) {
+
+        return describeDocumentPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDocumentPermissionResult> describeDocumentPermissionAsync(
+            final DescribeDocumentPermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDocumentPermissionRequest, DescribeDocumentPermissionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeDocumentPermissionResult>() {
+                    @Override
+                    public DescribeDocumentPermissionResult call()
+                            throws Exception {
+                        DescribeDocumentPermissionResult result;
+
+                        try {
+                            result = describeDocumentPermission(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInstanceInformationResult> describeInstanceInformationAsync(
             DescribeInstanceInformationRequest request) {
 
@@ -955,6 +996,42 @@ public class AWSSimpleSystemsManagementAsyncClient extends
             com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler) {
 
         return listDocumentsAsync(new ListDocumentsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(
+            ModifyDocumentPermissionRequest request) {
+
+        return modifyDocumentPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(
+            final ModifyDocumentPermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyDocumentPermissionRequest, ModifyDocumentPermissionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ModifyDocumentPermissionResult>() {
+                    @Override
+                    public ModifyDocumentPermissionResult call()
+                            throws Exception {
+                        ModifyDocumentPermissionResult result;
+
+                        try {
+                            result = modifyDocumentPermission(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override

@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetModelTemplateRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class GetModelTemplateRequestMarshaller implements
         Marshaller<Request<GetModelTemplateRequest>, GetModelTemplateRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetModelTemplateRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetModelTemplateRequest> marshall(
             GetModelTemplateRequest getModelTemplateRequest) {
@@ -66,14 +74,16 @@ public class GetModelTemplateRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getModelTemplateRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(getModelTemplateRequest.getRestApiId())
-                        : "");
+                (getModelTemplateRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(getModelTemplateRequest
+                                        .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{model_name}",
-                (getModelTemplateRequest.getModelName() != null) ? StringUtils
-                        .fromString(getModelTemplateRequest.getModelName())
-                        : "");
+                (getModelTemplateRequest.getModelName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(getModelTemplateRequest
+                                        .getModelName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

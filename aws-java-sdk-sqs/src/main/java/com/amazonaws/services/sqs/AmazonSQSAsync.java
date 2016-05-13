@@ -145,9 +145,11 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * </p>
      * 
      * @param addPermissionRequest
+     * @return A Java Future containing the result of the AddPermission
+     *         operation returned by the service.
      * @sample AmazonSQSAsync.AddPermission
      */
-    java.util.concurrent.Future<Void> addPermissionAsync(
+    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             AddPermissionRequest addPermissionRequest);
 
     /**
@@ -194,20 +196,22 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddPermission
+     *         operation returned by the service.
      * @sample AmazonSQSAsyncHandler.AddPermission
      */
-    java.util.concurrent.Future<Void> addPermissionAsync(
+    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             AddPermissionRequest addPermissionRequest,
-            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the AddPermission operation.
      *
      * @see #addPermissionAsync(AddPermissionRequest)
      */
-    java.util.concurrent.Future<Void> addPermissionAsync(String queueUrl,
-            String label, java.util.List<String> aWSAccountIds,
-            java.util.List<String> actions);
+    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
+            String queueUrl, String label,
+            java.util.List<String> aWSAccountIds, java.util.List<String> actions);
 
     /**
      * Simplified method form for invoking the AddPermission operation with an
@@ -216,12 +220,12 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @see #addPermissionAsync(AddPermissionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> addPermissionAsync(
+    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             String queueUrl,
             String label,
             java.util.List<String> aWSAccountIds,
             java.util.List<String> actions,
-            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler);
 
     /**
      * <p>
@@ -273,9 +277,11 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * </important>
      * 
      * @param changeMessageVisibilityRequest
+     * @return A Java Future containing the result of the
+     *         ChangeMessageVisibility operation returned by the service.
      * @sample AmazonSQSAsync.ChangeMessageVisibility
      */
-    java.util.concurrent.Future<Void> changeMessageVisibilityAsync(
+    java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(
             ChangeMessageVisibilityRequest changeMessageVisibilityRequest);
 
     /**
@@ -333,11 +339,13 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ChangeMessageVisibility operation returned by the service.
      * @sample AmazonSQSAsyncHandler.ChangeMessageVisibility
      */
-    java.util.concurrent.Future<Void> changeMessageVisibilityAsync(
+    java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(
             ChangeMessageVisibilityRequest changeMessageVisibilityRequest,
-            com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the ChangeMessageVisibility
@@ -345,7 +353,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *
      * @see #changeMessageVisibilityAsync(ChangeMessageVisibilityRequest)
      */
-    java.util.concurrent.Future<Void> changeMessageVisibilityAsync(
+    java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(
             String queueUrl, String receiptHandle, Integer visibilityTimeout);
 
     /**
@@ -355,11 +363,11 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @see #changeMessageVisibilityAsync(ChangeMessageVisibilityRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> changeMessageVisibilityAsync(
+    java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(
             String queueUrl,
             String receiptHandle,
             Integer visibilityTimeout,
-            com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> asyncHandler);
 
     /**
      * <p>
@@ -628,9 +636,11 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * </important>
      * 
      * @param deleteMessageRequest
+     * @return A Java Future containing the result of the DeleteMessage
+     *         operation returned by the service.
      * @sample AmazonSQSAsync.DeleteMessage
      */
-    java.util.concurrent.Future<Void> deleteMessageAsync(
+    java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(
             DeleteMessageRequest deleteMessageRequest);
 
     /**
@@ -670,19 +680,21 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMessage
+     *         operation returned by the service.
      * @sample AmazonSQSAsyncHandler.DeleteMessage
      */
-    java.util.concurrent.Future<Void> deleteMessageAsync(
+    java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(
             DeleteMessageRequest deleteMessageRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteMessageRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteMessageRequest, DeleteMessageResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the DeleteMessage operation.
      *
      * @see #deleteMessageAsync(DeleteMessageRequest)
      */
-    java.util.concurrent.Future<Void> deleteMessageAsync(String queueUrl,
-            String receiptHandle);
+    java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(
+            String queueUrl, String receiptHandle);
 
     /**
      * Simplified method form for invoking the DeleteMessage operation with an
@@ -691,10 +703,10 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @see #deleteMessageAsync(DeleteMessageRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> deleteMessageAsync(
+    java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(
             String queueUrl,
             String receiptHandle,
-            com.amazonaws.handlers.AsyncHandler<DeleteMessageRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteMessageRequest, DeleteMessageResult> asyncHandler);
 
     /**
      * <p>
@@ -821,9 +833,11 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * </p>
      * 
      * @param deleteQueueRequest
+     * @return A Java Future containing the result of the DeleteQueue operation
+     *         returned by the service.
      * @sample AmazonSQSAsync.DeleteQueue
      */
-    java.util.concurrent.Future<Void> deleteQueueAsync(
+    java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(
             DeleteQueueRequest deleteQueueRequest);
 
     /**
@@ -859,18 +873,21 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteQueue operation
+     *         returned by the service.
      * @sample AmazonSQSAsyncHandler.DeleteQueue
      */
-    java.util.concurrent.Future<Void> deleteQueueAsync(
+    java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(
             DeleteQueueRequest deleteQueueRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteQueueRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteQueueRequest, DeleteQueueResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the DeleteQueue operation.
      *
      * @see #deleteQueueAsync(DeleteQueueRequest)
      */
-    java.util.concurrent.Future<Void> deleteQueueAsync(String queueUrl);
+    java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(
+            String queueUrl);
 
     /**
      * Simplified method form for invoking the DeleteQueue operation with an
@@ -879,9 +896,9 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @see #deleteQueueAsync(DeleteQueueRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> deleteQueueAsync(
+    java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(
             String queueUrl,
-            com.amazonaws.handlers.AsyncHandler<DeleteQueueRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteQueueRequest, DeleteQueueResult> asyncHandler);
 
     /**
      * <p>
@@ -1172,9 +1189,11 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * </p>
      * 
      * @param purgeQueueRequest
+     * @return A Java Future containing the result of the PurgeQueue operation
+     *         returned by the service.
      * @sample AmazonSQSAsync.PurgeQueue
      */
-    java.util.concurrent.Future<Void> purgeQueueAsync(
+    java.util.concurrent.Future<PurgeQueueResult> purgeQueueAsync(
             PurgeQueueRequest purgeQueueRequest);
 
     /**
@@ -1202,11 +1221,13 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PurgeQueue operation
+     *         returned by the service.
      * @sample AmazonSQSAsyncHandler.PurgeQueue
      */
-    java.util.concurrent.Future<Void> purgeQueueAsync(
+    java.util.concurrent.Future<PurgeQueueResult> purgeQueueAsync(
             PurgeQueueRequest purgeQueueRequest,
-            com.amazonaws.handlers.AsyncHandler<PurgeQueueRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PurgeQueueRequest, PurgeQueueResult> asyncHandler);
 
     /**
      * <p>
@@ -1419,9 +1440,11 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * </p>
      * 
      * @param removePermissionRequest
+     * @return A Java Future containing the result of the RemovePermission
+     *         operation returned by the service.
      * @sample AmazonSQSAsync.RemovePermission
      */
-    java.util.concurrent.Future<Void> removePermissionAsync(
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             RemovePermissionRequest removePermissionRequest);
 
     /**
@@ -1437,19 +1460,21 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemovePermission
+     *         operation returned by the service.
      * @sample AmazonSQSAsyncHandler.RemovePermission
      */
-    java.util.concurrent.Future<Void> removePermissionAsync(
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             RemovePermissionRequest removePermissionRequest,
-            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the RemovePermission operation.
      *
      * @see #removePermissionAsync(RemovePermissionRequest)
      */
-    java.util.concurrent.Future<Void> removePermissionAsync(String queueUrl,
-            String label);
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
+            String queueUrl, String label);
 
     /**
      * Simplified method form for invoking the RemovePermission operation with
@@ -1458,10 +1483,10 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @see #removePermissionAsync(RemovePermissionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> removePermissionAsync(
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             String queueUrl,
             String label,
-            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler);
 
     /**
      * <p>
@@ -1708,9 +1733,11 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * </note>
      * 
      * @param setQueueAttributesRequest
+     * @return A Java Future containing the result of the SetQueueAttributes
+     *         operation returned by the service.
      * @sample AmazonSQSAsync.SetQueueAttributes
      */
-    java.util.concurrent.Future<Void> setQueueAttributesAsync(
+    java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(
             SetQueueAttributesRequest setQueueAttributesRequest);
 
     /**
@@ -1734,19 +1761,21 @@ public interface AmazonSQSAsync extends AmazonSQS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetQueueAttributes
+     *         operation returned by the service.
      * @sample AmazonSQSAsyncHandler.SetQueueAttributes
      */
-    java.util.concurrent.Future<Void> setQueueAttributesAsync(
+    java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(
             SetQueueAttributesRequest setQueueAttributesRequest,
-            com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, SetQueueAttributesResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the SetQueueAttributes operation.
      *
      * @see #setQueueAttributesAsync(SetQueueAttributesRequest)
      */
-    java.util.concurrent.Future<Void> setQueueAttributesAsync(String queueUrl,
-            java.util.Map<String, String> attributes);
+    java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(
+            String queueUrl, java.util.Map<String, String> attributes);
 
     /**
      * Simplified method form for invoking the SetQueueAttributes operation with
@@ -1755,9 +1784,9 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * @see #setQueueAttributesAsync(SetQueueAttributesRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> setQueueAttributesAsync(
+    java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(
             String queueUrl,
             java.util.Map<String, String> attributes,
-            com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, SetQueueAttributesResult> asyncHandler);
 
 }

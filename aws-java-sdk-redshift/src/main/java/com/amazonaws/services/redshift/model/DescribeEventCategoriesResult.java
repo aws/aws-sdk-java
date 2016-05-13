@@ -1,103 +1,114 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * 
  * </p>
  */
 public class DescribeEventCategoriesResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * A list of event categories descriptions.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<EventCategoriesMap> eventCategoriesMapList;
+    private com.amazonaws.internal.SdkInternalList<EventCategoriesMap> eventCategoriesMapList;
 
     /**
+     * <p>
      * A list of event categories descriptions.
-     *
+     * </p>
+     * 
      * @return A list of event categories descriptions.
      */
+
     public java.util.List<EventCategoriesMap> getEventCategoriesMapList() {
         if (eventCategoriesMapList == null) {
-              eventCategoriesMapList = new com.amazonaws.internal.ListWithAutoConstructFlag<EventCategoriesMap>();
-              eventCategoriesMapList.setAutoConstruct(true);
+            eventCategoriesMapList = new com.amazonaws.internal.SdkInternalList<EventCategoriesMap>();
         }
         return eventCategoriesMapList;
     }
-    
+
     /**
+     * <p>
      * A list of event categories descriptions.
-     *
-     * @param eventCategoriesMapList A list of event categories descriptions.
+     * </p>
+     * 
+     * @param eventCategoriesMapList
+     *        A list of event categories descriptions.
      */
-    public void setEventCategoriesMapList(java.util.Collection<EventCategoriesMap> eventCategoriesMapList) {
+
+    public void setEventCategoriesMapList(
+            java.util.Collection<EventCategoriesMap> eventCategoriesMapList) {
         if (eventCategoriesMapList == null) {
             this.eventCategoriesMapList = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<EventCategoriesMap> eventCategoriesMapListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EventCategoriesMap>(eventCategoriesMapList.size());
-        eventCategoriesMapListCopy.addAll(eventCategoriesMapList);
-        this.eventCategoriesMapList = eventCategoriesMapListCopy;
+
+        this.eventCategoriesMapList = new com.amazonaws.internal.SdkInternalList<EventCategoriesMap>(
+                eventCategoriesMapList);
     }
-    
+
     /**
+     * <p>
      * A list of event categories descriptions.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setEventCategoriesMapList(java.util.Collection)} or
-     * {@link #withEventCategoriesMapList(java.util.Collection)} if you want
-     * to override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param eventCategoriesMapList A list of event categories descriptions.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * {@link #withEventCategoriesMapList(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param eventCategoriesMapList
+     *        A list of event categories descriptions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeEventCategoriesResult withEventCategoriesMapList(EventCategoriesMap... eventCategoriesMapList) {
-        if (getEventCategoriesMapList() == null) setEventCategoriesMapList(new java.util.ArrayList<EventCategoriesMap>(eventCategoriesMapList.length));
-        for (EventCategoriesMap value : eventCategoriesMapList) {
-            getEventCategoriesMapList().add(value);
+
+    public DescribeEventCategoriesResult withEventCategoriesMapList(
+            EventCategoriesMap... eventCategoriesMapList) {
+        if (this.eventCategoriesMapList == null) {
+            setEventCategoriesMapList(new com.amazonaws.internal.SdkInternalList<EventCategoriesMap>(
+                    eventCategoriesMapList.length));
+        }
+        for (EventCategoriesMap ele : eventCategoriesMapList) {
+            this.eventCategoriesMapList.add(ele);
         }
         return this;
     }
-    
-    /**
-     * A list of event categories descriptions.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param eventCategoriesMapList A list of event categories descriptions.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribeEventCategoriesResult withEventCategoriesMapList(java.util.Collection<EventCategoriesMap> eventCategoriesMapList) {
-        if (eventCategoriesMapList == null) {
-            this.eventCategoriesMapList = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<EventCategoriesMap> eventCategoriesMapListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EventCategoriesMap>(eventCategoriesMapList.size());
-            eventCategoriesMapListCopy.addAll(eventCategoriesMapList);
-            this.eventCategoriesMapList = eventCategoriesMapListCopy;
-        }
 
+    /**
+     * <p>
+     * A list of event categories descriptions.
+     * </p>
+     * 
+     * @param eventCategoriesMapList
+     *        A list of event categories descriptions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeEventCategoriesResult withEventCategoriesMapList(
+            java.util.Collection<EventCategoriesMap> eventCategoriesMapList) {
+        setEventCategoriesMapList(eventCategoriesMapList);
         return this;
     }
 
@@ -113,46 +124,52 @@ public class DescribeEventCategoriesResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEventCategoriesMapList() != null) sb.append("EventCategoriesMapList: " + getEventCategoriesMapList() );
+        if (getEventCategoriesMapList() != null)
+            sb.append("EventCategoriesMapList: " + getEventCategoriesMapList());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeEventCategoriesResult == false)
+            return false;
+        DescribeEventCategoriesResult other = (DescribeEventCategoriesResult) obj;
+        if (other.getEventCategoriesMapList() == null
+                ^ this.getEventCategoriesMapList() == null)
+            return false;
+        if (other.getEventCategoriesMapList() != null
+                && other.getEventCategoriesMapList().equals(
+                        this.getEventCategoriesMapList()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getEventCategoriesMapList() == null) ? 0 : getEventCategoriesMapList().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getEventCategoriesMapList() == null) ? 0
+                        : getEventCategoriesMapList().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeEventCategoriesResult == false) return false;
-        DescribeEventCategoriesResult other = (DescribeEventCategoriesResult)obj;
-        
-        if (other.getEventCategoriesMapList() == null ^ this.getEventCategoriesMapList() == null) return false;
-        if (other.getEventCategoriesMapList() != null && other.getEventCategoriesMapList().equals(this.getEventCategoriesMapList()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeEventCategoriesResult clone() {
         try {
             return (DescribeEventCategoriesResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

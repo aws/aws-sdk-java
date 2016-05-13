@@ -39,22 +39,23 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public void assignInstance(AssignInstanceRequest request) {
+    public AssignInstanceResult assignInstance(AssignInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void assignVolume(AssignVolumeRequest request) {
+    public AssignVolumeResult assignVolume(AssignVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void associateElasticIp(AssociateElasticIpRequest request) {
+    public AssociateElasticIpResult associateElasticIp(
+            AssociateElasticIpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void attachElasticLoadBalancer(
+    public AttachElasticLoadBalancerResult attachElasticLoadBalancer(
             AttachElasticLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -97,52 +98,58 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public void deleteApp(DeleteAppRequest request) {
+    public DeleteAppResult deleteApp(DeleteAppRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteInstance(DeleteInstanceRequest request) {
+    public DeleteInstanceResult deleteInstance(DeleteInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteLayer(DeleteLayerRequest request) {
+    public DeleteLayerResult deleteLayer(DeleteLayerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteStack(DeleteStackRequest request) {
+    public DeleteStackResult deleteStack(DeleteStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteUserProfile(DeleteUserProfileRequest request) {
+    public DeleteUserProfileResult deleteUserProfile(
+            DeleteUserProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deregisterEcsCluster(DeregisterEcsClusterRequest request) {
+    public DeregisterEcsClusterResult deregisterEcsCluster(
+            DeregisterEcsClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deregisterElasticIp(DeregisterElasticIpRequest request) {
+    public DeregisterElasticIpResult deregisterElasticIp(
+            DeregisterElasticIpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deregisterInstance(DeregisterInstanceRequest request) {
+    public DeregisterInstanceResult deregisterInstance(
+            DeregisterInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request) {
+    public DeregisterRdsDbInstanceResult deregisterRdsDbInstance(
+            DeregisterRdsDbInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deregisterVolume(DeregisterVolumeRequest request) {
+    public DeregisterVolumeResult deregisterVolume(
+            DeregisterVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -269,13 +276,14 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public void detachElasticLoadBalancer(
+    public DetachElasticLoadBalancerResult detachElasticLoadBalancer(
             DetachElasticLoadBalancerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void disassociateElasticIp(DisassociateElasticIpRequest request) {
+    public DisassociateElasticIpResult disassociateElasticIp(
+            DisassociateElasticIpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -291,7 +299,7 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public void rebootInstance(RebootInstanceRequest request) {
+    public RebootInstanceResult rebootInstance(RebootInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -314,7 +322,8 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public void registerRdsDbInstance(RegisterRdsDbInstanceRequest request) {
+    public RegisterRdsDbInstanceResult registerRdsDbInstance(
+            RegisterRdsDbInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -324,92 +333,98 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
-    public void setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request) {
+    public SetLoadBasedAutoScalingResult setLoadBasedAutoScaling(
+            SetLoadBasedAutoScalingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setPermission(SetPermissionRequest request) {
+    public SetPermissionResult setPermission(SetPermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request) {
+    public SetTimeBasedAutoScalingResult setTimeBasedAutoScaling(
+            SetTimeBasedAutoScalingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void startInstance(StartInstanceRequest request) {
+    public StartInstanceResult startInstance(StartInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void startStack(StartStackRequest request) {
+    public StartStackResult startStack(StartStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void stopInstance(StopInstanceRequest request) {
+    public StopInstanceResult stopInstance(StopInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void stopStack(StopStackRequest request) {
+    public StopStackResult stopStack(StopStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void unassignInstance(UnassignInstanceRequest request) {
+    public UnassignInstanceResult unassignInstance(
+            UnassignInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void unassignVolume(UnassignVolumeRequest request) {
+    public UnassignVolumeResult unassignVolume(UnassignVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateApp(UpdateAppRequest request) {
+    public UpdateAppResult updateApp(UpdateAppRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateElasticIp(UpdateElasticIpRequest request) {
+    public UpdateElasticIpResult updateElasticIp(UpdateElasticIpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateInstance(UpdateInstanceRequest request) {
+    public UpdateInstanceResult updateInstance(UpdateInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateLayer(UpdateLayerRequest request) {
+    public UpdateLayerResult updateLayer(UpdateLayerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateMyUserProfile(UpdateMyUserProfileRequest request) {
+    public UpdateMyUserProfileResult updateMyUserProfile(
+            UpdateMyUserProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateRdsDbInstance(UpdateRdsDbInstanceRequest request) {
+    public UpdateRdsDbInstanceResult updateRdsDbInstance(
+            UpdateRdsDbInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateStack(UpdateStackRequest request) {
+    public UpdateStackResult updateStack(UpdateStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateUserProfile(UpdateUserProfileRequest request) {
+    public UpdateUserProfileResult updateUserProfile(
+            UpdateUserProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateVolume(UpdateVolumeRequest request) {
+    public UpdateVolumeResult updateVolume(UpdateVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

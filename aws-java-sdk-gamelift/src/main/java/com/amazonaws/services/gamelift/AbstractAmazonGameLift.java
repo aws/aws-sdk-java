@@ -72,22 +72,23 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
-    public void deleteAlias(DeleteAliasRequest request) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteBuild(DeleteBuildRequest request) {
+    public DeleteBuildResult deleteBuild(DeleteBuildRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteFleet(DeleteFleetRequest request) {
+    public DeleteFleetResult deleteFleet(DeleteFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteScalingPolicy(DeleteScalingPolicyRequest request) {
+    public DeleteScalingPolicyResult deleteScalingPolicy(
+            DeleteScalingPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

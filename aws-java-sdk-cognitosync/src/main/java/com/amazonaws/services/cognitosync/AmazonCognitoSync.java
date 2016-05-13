@@ -505,6 +505,7 @@ public interface AmazonCognitoSync {
      * 
      * @param setCognitoEventsRequest
      *        A request to configure Cognito Events"
+     * @return Result of the SetCognitoEvents operation returned by the service.
      * @throws InvalidParameterException
      *         Thrown when a request parameter does not comply with the
      *         associated constraints.
@@ -519,7 +520,8 @@ public interface AmazonCognitoSync {
      *         Thrown if the request is throttled.
      * @sample AmazonCognitoSync.SetCognitoEvents
      */
-    void setCognitoEvents(SetCognitoEventsRequest setCognitoEventsRequest);
+    SetCognitoEventsResult setCognitoEvents(
+            SetCognitoEventsRequest setCognitoEventsRequest);
 
     /**
      * <p>

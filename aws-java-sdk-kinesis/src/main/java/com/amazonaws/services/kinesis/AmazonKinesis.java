@@ -102,6 +102,7 @@ public interface AmazonKinesis {
      * 
      * @param addTagsToStreamRequest
      *        Represents the input for <code>AddTagsToStream</code>.
+     * @return Result of the AddTagsToStream operation returned by the service.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not
      *         be specified correctly, or it might not be in the
@@ -119,7 +120,8 @@ public interface AmazonKinesis {
      *         allowed (5).
      * @sample AmazonKinesis.AddTagsToStream
      */
-    void addTagsToStream(AddTagsToStreamRequest addTagsToStreamRequest);
+    AddTagsToStreamResult addTagsToStream(
+            AddTagsToStreamRequest addTagsToStreamRequest);
 
     /**
      * <p>
@@ -180,6 +182,7 @@ public interface AmazonKinesis {
      * 
      * @param createStreamRequest
      *        Represents the input for <code>CreateStream</code>.
+     * @return Result of the CreateStream operation returned by the service.
      * @throws ResourceInUseException
      *         The resource is not available for this operation. For successful
      *         operation, the resource needs to be in the <code>ACTIVE</code>
@@ -193,14 +196,14 @@ public interface AmazonKinesis {
      *         or can't be used. For more information, see the returned message.
      * @sample AmazonKinesis.CreateStream
      */
-    void createStream(CreateStreamRequest createStreamRequest);
+    CreateStreamResult createStream(CreateStreamRequest createStreamRequest);
 
     /**
      * Simplified method form for invoking the CreateStream operation.
      *
      * @see #createStream(CreateStreamRequest)
      */
-    void createStream(String streamName, Integer shardCount);
+    CreateStreamResult createStream(String streamName, Integer shardCount);
 
     /**
      * <p>
@@ -216,6 +219,8 @@ public interface AmazonKinesis {
      * 
      * @param decreaseStreamRetentionPeriodRequest
      *        Represents the input for <a>DecreaseStreamRetentionPeriod</a>.
+     * @return Result of the DecreaseStreamRetentionPeriod operation returned by
+     *         the service.
      * @throws ResourceInUseException
      *         The resource is not available for this operation. For successful
      *         operation, the resource needs to be in the <code>ACTIVE</code>
@@ -233,7 +238,7 @@ public interface AmazonKinesis {
      *         or can't be used. For more information, see the returned message.
      * @sample AmazonKinesis.DecreaseStreamRetentionPeriod
      */
-    void decreaseStreamRetentionPeriod(
+    DecreaseStreamRetentionPeriodResult decreaseStreamRetentionPeriod(
             DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest);
 
     /**
@@ -269,6 +274,7 @@ public interface AmazonKinesis {
      * 
      * @param deleteStreamRequest
      *        Represents the input for <a>DeleteStream</a>.
+     * @return Result of the DeleteStream operation returned by the service.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not
      *         be specified correctly, or it might not be in the
@@ -279,14 +285,14 @@ public interface AmazonKinesis {
      *         allowed (5).
      * @sample AmazonKinesis.DeleteStream
      */
-    void deleteStream(DeleteStreamRequest deleteStreamRequest);
+    DeleteStreamResult deleteStream(DeleteStreamRequest deleteStreamRequest);
 
     /**
      * Simplified method form for invoking the DeleteStream operation.
      *
      * @see #deleteStream(DeleteStreamRequest)
      */
-    void deleteStream(String streamName);
+    DeleteStreamResult deleteStream(String streamName);
 
     /**
      * <p>
@@ -639,6 +645,8 @@ public interface AmazonKinesis {
      * 
      * @param increaseStreamRetentionPeriodRequest
      *        Represents the input for <a>IncreaseStreamRetentionPeriod</a>.
+     * @return Result of the IncreaseStreamRetentionPeriod operation returned by
+     *         the service.
      * @throws ResourceInUseException
      *         The resource is not available for this operation. For successful
      *         operation, the resource needs to be in the <code>ACTIVE</code>
@@ -656,7 +664,7 @@ public interface AmazonKinesis {
      *         or can't be used. For more information, see the returned message.
      * @sample AmazonKinesis.IncreaseStreamRetentionPeriod
      */
-    void increaseStreamRetentionPeriod(
+    IncreaseStreamRetentionPeriodResult increaseStreamRetentionPeriod(
             IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest);
 
     /**
@@ -800,6 +808,7 @@ public interface AmazonKinesis {
      * 
      * @param mergeShardsRequest
      *        Represents the input for <code>MergeShards</code>.
+     * @return Result of the MergeShards operation returned by the service.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not
      *         be specified correctly, or it might not be in the
@@ -817,14 +826,14 @@ public interface AmazonKinesis {
      *         allowed (5).
      * @sample AmazonKinesis.MergeShards
      */
-    void mergeShards(MergeShardsRequest mergeShardsRequest);
+    MergeShardsResult mergeShards(MergeShardsRequest mergeShardsRequest);
 
     /**
      * Simplified method form for invoking the MergeShards operation.
      *
      * @see #mergeShards(MergeShardsRequest)
      */
-    void mergeShards(String streamName, String shardToMerge,
+    MergeShardsResult mergeShards(String streamName, String shardToMerge,
             String adjacentShardToMerge);
 
     /**
@@ -1052,6 +1061,8 @@ public interface AmazonKinesis {
      * 
      * @param removeTagsFromStreamRequest
      *        Represents the input for <code>RemoveTagsFromStream</code>.
+     * @return Result of the RemoveTagsFromStream operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not
      *         be specified correctly, or it might not be in the
@@ -1069,7 +1080,7 @@ public interface AmazonKinesis {
      *         allowed (5).
      * @sample AmazonKinesis.RemoveTagsFromStream
      */
-    void removeTagsFromStream(
+    RemoveTagsFromStreamResult removeTagsFromStream(
             RemoveTagsFromStreamRequest removeTagsFromStreamRequest);
 
     /**
@@ -1145,6 +1156,7 @@ public interface AmazonKinesis {
      * 
      * @param splitShardRequest
      *        Represents the input for <code>SplitShard</code>.
+     * @return Result of the SplitShard operation returned by the service.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not
      *         be specified correctly, or it might not be in the
@@ -1162,14 +1174,14 @@ public interface AmazonKinesis {
      *         allowed (5).
      * @sample AmazonKinesis.SplitShard
      */
-    void splitShard(SplitShardRequest splitShardRequest);
+    SplitShardResult splitShard(SplitShardRequest splitShardRequest);
 
     /**
      * Simplified method form for invoking the SplitShard operation.
      *
      * @see #splitShard(SplitShardRequest)
      */
-    void splitShard(String streamName, String shardToSplit,
+    SplitShardResult splitShard(String streamName, String shardToSplit,
             String newStartingHashKey);
 
     /**

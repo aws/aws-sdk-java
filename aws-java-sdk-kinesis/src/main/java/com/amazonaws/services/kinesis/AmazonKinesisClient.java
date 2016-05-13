@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -69,10 +69,41 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all Kinesis exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(true)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceInUseException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kinesis.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kinesis.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ProvisionedThroughputExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kinesis.model.ProvisionedThroughputExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kinesis.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ExpiredIteratorException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kinesis.model.ExpiredIteratorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidArgumentException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kinesis.model.InvalidArgumentException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Kinesis. A
@@ -224,33 +255,6 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kinesis.model.ProvisionedThroughputExceededException.class,
-                        "ProvisionedThroughputExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kinesis.model.ResourceInUseException.class,
-                        "ResourceInUseException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kinesis.model.LimitExceededException.class,
-                        "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kinesis.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kinesis.model.ExpiredIteratorException.class,
-                        "ExpiredIteratorException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kinesis.model.InvalidArgumentException.class,
-                        "InvalidArgumentException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -277,6 +281,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * 
      * @param addTagsToStreamRequest
      *        Represents the input for <code>AddTagsToStream</code>.
+     * @return Result of the AddTagsToStream operation returned by the service.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not
      *         be specified correctly, or it might not be in the
@@ -295,29 +300,35 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @sample AmazonKinesis.AddTagsToStream
      */
     @Override
-    public void addTagsToStream(AddTagsToStreamRequest addTagsToStreamRequest) {
+    public AddTagsToStreamResult addTagsToStream(
+            AddTagsToStreamRequest addTagsToStreamRequest) {
         ExecutionContext executionContext = createExecutionContext(addTagsToStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddTagsToStreamRequest> request = null;
-        Response<Void> response = null;
+        Response<AddTagsToStreamResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsToStreamRequestMarshaller().marshall(super
-                        .beforeMarshalling(addTagsToStreamRequest));
+                request = new AddTagsToStreamRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(addTagsToStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<AddTagsToStreamResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddTagsToStreamResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -384,6 +395,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * 
      * @param createStreamRequest
      *        Represents the input for <code>CreateStream</code>.
+     * @return Result of the CreateStream operation returned by the service.
      * @throws ResourceInUseException
      *         The resource is not available for this operation. For successful
      *         operation, the resource needs to be in the <code>ACTIVE</code>
@@ -398,29 +410,34 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @sample AmazonKinesis.CreateStream
      */
     @Override
-    public void createStream(CreateStreamRequest createStreamRequest) {
+    public CreateStreamResult createStream(
+            CreateStreamRequest createStreamRequest) {
         ExecutionContext executionContext = createExecutionContext(createStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateStreamRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateStreamResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStreamRequestMarshaller().marshall(super
-                        .beforeMarshalling(createStreamRequest));
+                request = new CreateStreamRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateStreamResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateStreamResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -429,9 +446,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void createStream(String streamName, Integer shardCount) {
-        createStream(new CreateStreamRequest().withStreamName(streamName)
-                .withShardCount(shardCount));
+    public CreateStreamResult createStream(String streamName, Integer shardCount) {
+        return createStream(new CreateStreamRequest()
+                .withStreamName(streamName).withShardCount(shardCount));
     }
 
     /**
@@ -448,6 +465,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * 
      * @param decreaseStreamRetentionPeriodRequest
      *        Represents the input for <a>DecreaseStreamRetentionPeriod</a>.
+     * @return Result of the DecreaseStreamRetentionPeriod operation returned by
+     *         the service.
      * @throws ResourceInUseException
      *         The resource is not available for this operation. For successful
      *         operation, the resource needs to be in the <code>ACTIVE</code>
@@ -466,19 +485,20 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @sample AmazonKinesis.DecreaseStreamRetentionPeriod
      */
     @Override
-    public void decreaseStreamRetentionPeriod(
+    public DecreaseStreamRetentionPeriodResult decreaseStreamRetentionPeriod(
             DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest) {
         ExecutionContext executionContext = createExecutionContext(decreaseStreamRetentionPeriodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DecreaseStreamRetentionPeriodRequest> request = null;
-        Response<Void> response = null;
+        Response<DecreaseStreamRetentionPeriodResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DecreaseStreamRetentionPeriodRequestMarshaller()
+                request = new DecreaseStreamRetentionPeriodRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(decreaseStreamRetentionPeriodRequest));
                 // Binds the request metrics to the current request.
@@ -487,10 +507,14 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DecreaseStreamRetentionPeriodResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DecreaseStreamRetentionPeriodResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -531,6 +555,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * 
      * @param deleteStreamRequest
      *        Represents the input for <a>DeleteStream</a>.
+     * @return Result of the DeleteStream operation returned by the service.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not
      *         be specified correctly, or it might not be in the
@@ -542,29 +567,34 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @sample AmazonKinesis.DeleteStream
      */
     @Override
-    public void deleteStream(DeleteStreamRequest deleteStreamRequest) {
+    public DeleteStreamResult deleteStream(
+            DeleteStreamRequest deleteStreamRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteStreamRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteStreamResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteStreamRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteStreamRequest));
+                request = new DeleteStreamRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteStreamResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteStreamResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -573,8 +603,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void deleteStream(String streamName) {
-        deleteStream(new DeleteStreamRequest().withStreamName(streamName));
+    public DeleteStreamResult deleteStream(String streamName) {
+        return deleteStream(new DeleteStreamRequest()
+                .withStreamName(streamName));
     }
 
     /**
@@ -641,18 +672,20 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStreamRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeStreamRequest));
+                request = new DescribeStreamRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeStreamResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeStreamResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeStreamResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -723,20 +756,20 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableEnhancedMonitoringRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(disableEnhancedMonitoringRequest));
+                request = new DisableEnhancedMonitoringRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(disableEnhancedMonitoringRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DisableEnhancedMonitoringResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DisableEnhancedMonitoringResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DisableEnhancedMonitoringResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DisableEnhancedMonitoringResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -787,20 +820,20 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableEnhancedMonitoringRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(enableEnhancedMonitoringRequest));
+                request = new EnableEnhancedMonitoringRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(enableEnhancedMonitoringRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EnableEnhancedMonitoringResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<EnableEnhancedMonitoringResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new EnableEnhancedMonitoringResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new EnableEnhancedMonitoringResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -921,18 +954,19 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRecordsRequestMarshaller().marshall(super
-                        .beforeMarshalling(getRecordsRequest));
+                request = new GetRecordsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRecordsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetRecordsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetRecordsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetRecordsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1033,7 +1067,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetShardIteratorRequestMarshaller()
+                request = new GetShardIteratorRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(getShardIteratorRequest));
                 // Binds the request metrics to the current request.
@@ -1042,10 +1076,11 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetShardIteratorResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetShardIteratorResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetShardIteratorResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetShardIteratorResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1093,6 +1128,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * 
      * @param increaseStreamRetentionPeriodRequest
      *        Represents the input for <a>IncreaseStreamRetentionPeriod</a>.
+     * @return Result of the IncreaseStreamRetentionPeriod operation returned by
+     *         the service.
      * @throws ResourceInUseException
      *         The resource is not available for this operation. For successful
      *         operation, the resource needs to be in the <code>ACTIVE</code>
@@ -1111,19 +1148,20 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @sample AmazonKinesis.IncreaseStreamRetentionPeriod
      */
     @Override
-    public void increaseStreamRetentionPeriod(
+    public IncreaseStreamRetentionPeriodResult increaseStreamRetentionPeriod(
             IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest) {
         ExecutionContext executionContext = createExecutionContext(increaseStreamRetentionPeriodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<IncreaseStreamRetentionPeriodRequest> request = null;
-        Response<Void> response = null;
+        Response<IncreaseStreamRetentionPeriodResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new IncreaseStreamRetentionPeriodRequestMarshaller()
+                request = new IncreaseStreamRetentionPeriodRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(increaseStreamRetentionPeriodRequest));
                 // Binds the request metrics to the current request.
@@ -1132,10 +1170,14 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<IncreaseStreamRetentionPeriodResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new IncreaseStreamRetentionPeriodResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1189,18 +1231,19 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListStreamsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listStreamsRequest));
+                request = new ListStreamsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListStreamsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListStreamsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListStreamsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListStreamsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1264,20 +1307,20 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForStreamRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listTagsForStreamRequest));
+                request = new ListTagsForStreamRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listTagsForStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsForStreamResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListTagsForStreamResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForStreamResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTagsForStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1347,6 +1390,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * 
      * @param mergeShardsRequest
      *        Represents the input for <code>MergeShards</code>.
+     * @return Result of the MergeShards operation returned by the service.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not
      *         be specified correctly, or it might not be in the
@@ -1365,29 +1409,33 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @sample AmazonKinesis.MergeShards
      */
     @Override
-    public void mergeShards(MergeShardsRequest mergeShardsRequest) {
+    public MergeShardsResult mergeShards(MergeShardsRequest mergeShardsRequest) {
         ExecutionContext executionContext = createExecutionContext(mergeShardsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<MergeShardsRequest> request = null;
-        Response<Void> response = null;
+        Response<MergeShardsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new MergeShardsRequestMarshaller().marshall(super
-                        .beforeMarshalling(mergeShardsRequest));
+                request = new MergeShardsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(mergeShardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<MergeShardsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new MergeShardsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1396,9 +1444,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void mergeShards(String streamName, String shardToMerge,
-            String adjacentShardToMerge) {
-        mergeShards(new MergeShardsRequest().withStreamName(streamName)
+    public MergeShardsResult mergeShards(String streamName,
+            String shardToMerge, String adjacentShardToMerge) {
+        return mergeShards(new MergeShardsRequest().withStreamName(streamName)
                 .withShardToMerge(shardToMerge)
                 .withAdjacentShardToMerge(adjacentShardToMerge));
     }
@@ -1497,18 +1545,19 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRecordRequestMarshaller().marshall(super
-                        .beforeMarshalling(putRecordRequest));
+                request = new PutRecordRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(putRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutRecordResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new PutRecordResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutRecordResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutRecordResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1658,18 +1707,19 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRecordsRequestMarshaller().marshall(super
-                        .beforeMarshalling(putRecordsRequest));
+                request = new PutRecordsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(putRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutRecordsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new PutRecordsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutRecordsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutRecordsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1692,6 +1742,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * 
      * @param removeTagsFromStreamRequest
      *        Represents the input for <code>RemoveTagsFromStream</code>.
+     * @return Result of the RemoveTagsFromStream operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not
      *         be specified correctly, or it might not be in the
@@ -1710,31 +1762,35 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @sample AmazonKinesis.RemoveTagsFromStream
      */
     @Override
-    public void removeTagsFromStream(
+    public RemoveTagsFromStreamResult removeTagsFromStream(
             RemoveTagsFromStreamRequest removeTagsFromStreamRequest) {
         ExecutionContext executionContext = createExecutionContext(removeTagsFromStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RemoveTagsFromStreamRequest> request = null;
-        Response<Void> response = null;
+        Response<RemoveTagsFromStreamResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsFromStreamRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(removeTagsFromStreamRequest));
+                request = new RemoveTagsFromStreamRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(removeTagsFromStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsFromStreamResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemoveTagsFromStreamResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1815,6 +1871,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * 
      * @param splitShardRequest
      *        Represents the input for <code>SplitShard</code>.
+     * @return Result of the SplitShard operation returned by the service.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not
      *         be specified correctly, or it might not be in the
@@ -1833,29 +1890,33 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @sample AmazonKinesis.SplitShard
      */
     @Override
-    public void splitShard(SplitShardRequest splitShardRequest) {
+    public SplitShardResult splitShard(SplitShardRequest splitShardRequest) {
         ExecutionContext executionContext = createExecutionContext(splitShardRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SplitShardRequest> request = null;
-        Response<Void> response = null;
+        Response<SplitShardResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SplitShardRequestMarshaller().marshall(super
-                        .beforeMarshalling(splitShardRequest));
+                request = new SplitShardRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(splitShardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<SplitShardResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SplitShardResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1864,9 +1925,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void splitShard(String streamName, String shardToSplit,
+    public SplitShardResult splitShard(String streamName, String shardToSplit,
             String newStartingHashKey) {
-        splitShard(new SplitShardRequest().withStreamName(streamName)
+        return splitShard(new SplitShardRequest().withStreamName(streamName)
                 .withShardToSplit(shardToSplit)
                 .withNewStartingHashKey(newStartingHashKey));
     }
@@ -1934,8 +1995,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

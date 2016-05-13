@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * EnableRuleRequest Marshaller
  */
 public class EnableRuleRequestMarshaller implements
         Marshaller<Request<EnableRuleRequest>, EnableRuleRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public EnableRuleRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<EnableRuleRequest> marshall(
             EnableRuleRequest enableRuleRequest) {
@@ -57,8 +63,8 @@ public class EnableRuleRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

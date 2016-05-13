@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SetIdentityPoolConfigurationRequest Marshaller
@@ -49,6 +50,13 @@ public class SetIdentityPoolConfigurationRequestMarshaller
         Marshaller<Request<SetIdentityPoolConfigurationRequest>, SetIdentityPoolConfigurationRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public SetIdentityPoolConfigurationRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<SetIdentityPoolConfigurationRequest> marshall(
             SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest) {
@@ -69,14 +77,16 @@ public class SetIdentityPoolConfigurationRequestMarshaller
                 .replace(
                         "{IdentityPoolId}",
                         (setIdentityPoolConfigurationRequest
-                                .getIdentityPoolId() != null) ? StringUtils
-                                .fromString(setIdentityPoolConfigurationRequest
-                                        .getIdentityPoolId()) : "");
+                                .getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(setIdentityPoolConfigurationRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (setIdentityPoolConfigurationRequest.getPushSync() != null) {

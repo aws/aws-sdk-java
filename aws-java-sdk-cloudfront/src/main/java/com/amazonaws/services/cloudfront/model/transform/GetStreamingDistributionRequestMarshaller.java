@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * GetStreamingDistributionRequest Marshaller
@@ -59,11 +60,14 @@ public class GetStreamingDistributionRequestMarshaller
 
         String uriResourcePath = "/2016-01-28/streaming-distribution/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (getStreamingDistributionRequest.getId() != null) ? StringUtils
-                        .fromString(getStreamingDistributionRequest.getId())
-                        : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Id}",
+                        (getStreamingDistributionRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(getStreamingDistributionRequest
+                                                .getId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

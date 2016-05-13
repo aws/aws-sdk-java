@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TransferCertificateRequest Marshaller
@@ -48,7 +49,14 @@ public class TransferCertificateRequestMarshaller
         implements
         Marshaller<Request<TransferCertificateRequest>, TransferCertificateRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public TransferCertificateRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<TransferCertificateRequest> marshall(
             TransferCertificateRequest transferCertificateRequest) {
@@ -68,9 +76,11 @@ public class TransferCertificateRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{certificateId}",
-                        (transferCertificateRequest.getCertificateId() != null) ? StringUtils
-                                .fromString(transferCertificateRequest
-                                        .getCertificateId()) : "");
+                        (transferCertificateRequest.getCertificateId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(transferCertificateRequest
+                                                .getCertificateId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         if (transferCertificateRequest.getTargetAwsAccount() != null) {
@@ -80,8 +90,8 @@ public class TransferCertificateRequestMarshaller
         }
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (transferCertificateRequest.getTransferMessage() != null) {

@@ -78,12 +78,18 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * Boolean to enable or disable rollback on stack creation failures:
      * </p>
-     * <p>
      * <ul>
-     * <li><code>true</code>: disable rollback</li>
-     * <li><code>false</code>: enable rollback</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>true</code>: disable rollback
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: enable rollback
+     * </p>
+     * </li>
+     * </ul>
      */
     private Boolean disableRollback;
     /**
@@ -526,21 +532,33 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * Boolean to enable or disable rollback on stack creation failures:
      * </p>
-     * <p>
      * <ul>
-     * <li><code>true</code>: disable rollback</li>
-     * <li><code>false</code>: enable rollback</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>true</code>: disable rollback
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: enable rollback
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param disableRollback
      *        Boolean to enable or disable rollback on stack creation
      *        failures:</p>
-     *        <p>
      *        <ul>
-     *        <li><code>true</code>: disable rollback</li>
-     *        <li><code>false</code>: enable rollback</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <code>true</code>: disable rollback
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code>: enable rollback
+     *        </p>
+     *        </li>
      */
 
     public void setDisableRollback(Boolean disableRollback) {
@@ -551,20 +569,32 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * Boolean to enable or disable rollback on stack creation failures:
      * </p>
-     * <p>
      * <ul>
-     * <li><code>true</code>: disable rollback</li>
-     * <li><code>false</code>: enable rollback</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>true</code>: disable rollback
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: enable rollback
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Boolean to enable or disable rollback on stack creation
      *         failures:</p>
-     *         <p>
      *         <ul>
-     *         <li><code>true</code>: disable rollback</li>
-     *         <li><code>false</code>: enable rollback</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         <code>true</code>: disable rollback
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code>: enable rollback
+     *         </p>
+     *         </li>
      */
 
     public Boolean getDisableRollback() {
@@ -575,21 +605,33 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * Boolean to enable or disable rollback on stack creation failures:
      * </p>
-     * <p>
      * <ul>
-     * <li><code>true</code>: disable rollback</li>
-     * <li><code>false</code>: enable rollback</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>true</code>: disable rollback
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: enable rollback
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param disableRollback
      *        Boolean to enable or disable rollback on stack creation
      *        failures:</p>
-     *        <p>
      *        <ul>
-     *        <li><code>true</code>: disable rollback</li>
-     *        <li><code>false</code>: enable rollback</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <code>true</code>: disable rollback
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code>: enable rollback
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -603,20 +645,32 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * Boolean to enable or disable rollback on stack creation failures:
      * </p>
-     * <p>
      * <ul>
-     * <li><code>true</code>: disable rollback</li>
-     * <li><code>false</code>: enable rollback</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>true</code>: disable rollback
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: enable rollback
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Boolean to enable or disable rollback on stack creation
      *         failures:</p>
-     *         <p>
      *         <ul>
-     *         <li><code>true</code>: disable rollback</li>
-     *         <li><code>false</code>: enable rollback</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         <code>true</code>: disable rollback
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code>: enable rollback
+     *         </p>
+     *         </li>
      */
 
     public Boolean isDisableRollback() {

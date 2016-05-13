@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetWebACLRequest Marshaller
  */
 public class GetWebACLRequestMarshaller implements
         Marshaller<Request<GetWebACLRequest>, GetWebACLRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetWebACLRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetWebACLRequest> marshall(GetWebACLRequest getWebACLRequest) {
 
@@ -56,8 +62,8 @@ public class GetWebACLRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

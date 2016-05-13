@@ -531,6 +531,7 @@ public interface AmazonGameLift {
      * 
      * @param deleteAliasRequest
      *        Represents the input for a request action.
+     * @return Result of the DeleteAlias operation returned by the service.
      * @throws UnauthorizedException
      *         The client failed authentication. Such requests should not be
      *         retried without valid authentication credentials.
@@ -546,7 +547,7 @@ public interface AmazonGameLift {
      *         either immediately or after a back-off period.
      * @sample AmazonGameLift.DeleteAlias
      */
-    void deleteAlias(DeleteAliasRequest deleteAliasRequest);
+    DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest);
 
     /**
      * <p>
@@ -561,6 +562,7 @@ public interface AmazonGameLift {
      * 
      * @param deleteBuildRequest
      *        Represents the input for a request action.
+     * @return Result of the DeleteBuild operation returned by the service.
      * @throws UnauthorizedException
      *         The client failed authentication. Such requests should not be
      *         retried without valid authentication credentials.
@@ -576,7 +578,7 @@ public interface AmazonGameLift {
      *         invalid. Please correct the invalid parameters before retrying.
      * @sample AmazonGameLift.DeleteBuild
      */
-    void deleteBuild(DeleteBuildRequest deleteBuildRequest);
+    DeleteBuildResult deleteBuild(DeleteBuildRequest deleteBuildRequest);
 
     /**
      * <p>
@@ -590,6 +592,7 @@ public interface AmazonGameLift {
      * 
      * @param deleteFleetRequest
      *        Represents the input for a request action.
+     * @return Result of the DeleteFleet operation returned by the service.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
      *         found. Such requests should not be retried by clients.
@@ -613,7 +616,7 @@ public interface AmazonGameLift {
      *         Please resolve the conflict before retrying.
      * @sample AmazonGameLift.DeleteFleet
      */
-    void deleteFleet(DeleteFleetRequest deleteFleetRequest);
+    DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest);
 
     /**
      * <p>
@@ -625,6 +628,8 @@ public interface AmazonGameLift {
      * 
      * @param deleteScalingPolicyRequest
      *        Represents the input for a request action.
+     * @return Result of the DeleteScalingPolicy operation returned by the
+     *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
      *         processing the request. Such requests can be retried by clients,
@@ -640,7 +645,7 @@ public interface AmazonGameLift {
      *         found. Such requests should not be retried by clients.
      * @sample AmazonGameLift.DeleteScalingPolicy
      */
-    void deleteScalingPolicy(
+    DeleteScalingPolicyResult deleteScalingPolicy(
             DeleteScalingPolicyRequest deleteScalingPolicyRequest);
 
     /**

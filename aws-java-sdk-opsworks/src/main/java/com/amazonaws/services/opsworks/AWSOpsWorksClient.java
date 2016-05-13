@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -128,10 +128,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all AWS OpsWorks exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ValidationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.opsworks.model.ValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.opsworks.model.ResourceNotFoundException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS OpsWorks. A
@@ -283,17 +293,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.opsworks.model.ValidationException.class,
-                        "ValidationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.opsworks.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -328,6 +327,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param assignInstanceRequest
+     * @return Result of the AssignInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -335,29 +335,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.AssignInstance
      */
     @Override
-    public void assignInstance(AssignInstanceRequest assignInstanceRequest) {
+    public AssignInstanceResult assignInstance(
+            AssignInstanceRequest assignInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(assignInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AssignInstanceRequest> request = null;
-        Response<Void> response = null;
+        Response<AssignInstanceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssignInstanceRequestMarshaller().marshall(super
-                        .beforeMarshalling(assignInstanceRequest));
+                request = new AssignInstanceRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(assignInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<AssignInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AssignInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -385,6 +391,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param assignVolumeRequest
+     * @return Result of the AssignVolume operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -392,29 +399,34 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.AssignVolume
      */
     @Override
-    public void assignVolume(AssignVolumeRequest assignVolumeRequest) {
+    public AssignVolumeResult assignVolume(
+            AssignVolumeRequest assignVolumeRequest) {
         ExecutionContext executionContext = createExecutionContext(assignVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AssignVolumeRequest> request = null;
-        Response<Void> response = null;
+        Response<AssignVolumeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssignVolumeRequestMarshaller().marshall(super
-                        .beforeMarshalling(assignVolumeRequest));
+                request = new AssignVolumeRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(assignVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<AssignVolumeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AssignVolumeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -440,6 +452,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param associateElasticIpRequest
+     * @return Result of the AssociateElasticIp operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -447,31 +461,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.AssociateElasticIp
      */
     @Override
-    public void associateElasticIp(
+    public AssociateElasticIpResult associateElasticIp(
             AssociateElasticIpRequest associateElasticIpRequest) {
         ExecutionContext executionContext = createExecutionContext(associateElasticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AssociateElasticIpRequest> request = null;
-        Response<Void> response = null;
+        Response<AssociateElasticIpResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateElasticIpRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(associateElasticIpRequest));
+                request = new AssociateElasticIpRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(associateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateElasticIpResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AssociateElasticIpResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -505,6 +523,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param attachElasticLoadBalancerRequest
+     * @return Result of the AttachElasticLoadBalancer operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -512,31 +532,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.AttachElasticLoadBalancer
      */
     @Override
-    public void attachElasticLoadBalancer(
+    public AttachElasticLoadBalancerResult attachElasticLoadBalancer(
             AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) {
         ExecutionContext executionContext = createExecutionContext(attachElasticLoadBalancerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AttachElasticLoadBalancerRequest> request = null;
-        Response<Void> response = null;
+        Response<AttachElasticLoadBalancerResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachElasticLoadBalancerRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(attachElasticLoadBalancerRequest));
+                request = new AttachElasticLoadBalancerRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(attachElasticLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<AttachElasticLoadBalancerResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new AttachElasticLoadBalancerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -579,18 +603,19 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CloneStackRequestMarshaller().marshall(super
-                        .beforeMarshalling(cloneStackRequest));
+                request = new CloneStackRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(cloneStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CloneStackResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CloneStackResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CloneStackResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CloneStackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -636,18 +661,19 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAppRequestMarshaller().marshall(super
-                        .beforeMarshalling(createAppRequest));
+                request = new CreateAppRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAppResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateAppResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAppResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateAppResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -696,7 +722,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeploymentRequestMarshaller()
+                request = new CreateDeploymentRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(createDeploymentRequest));
                 // Binds the request metrics to the current request.
@@ -705,10 +731,11 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDeploymentResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateDeploymentResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDeploymentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateDeploymentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -756,18 +783,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateInstanceRequestMarshaller().marshall(super
-                        .beforeMarshalling(createInstanceRequest));
+                request = new CreateInstanceRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateInstanceResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateInstanceResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -823,18 +852,19 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLayerRequestMarshaller().marshall(super
-                        .beforeMarshalling(createLayerRequest));
+                request = new CreateLayerRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateLayerResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateLayerResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLayerResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateLayerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -877,18 +907,19 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStackRequestMarshaller().marshall(super
-                        .beforeMarshalling(createStackRequest));
+                request = new CreateStackRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateStackResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateStackResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateStackResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateStackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -931,20 +962,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUserProfileRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createUserProfileRequest));
+                request = new CreateUserProfileRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateUserProfileResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new CreateUserProfileResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUserProfileResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateUserProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -969,6 +1000,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteAppRequest
+     * @return Result of the DeleteApp operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -976,29 +1008,33 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.DeleteApp
      */
     @Override
-    public void deleteApp(DeleteAppRequest deleteAppRequest) {
+    public DeleteAppResult deleteApp(DeleteAppRequest deleteAppRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAppRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAppRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAppResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAppRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteAppRequest));
+                request = new DeleteAppRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteAppResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1026,6 +1062,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteInstanceRequest
+     * @return Result of the DeleteInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -1033,29 +1070,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.DeleteInstance
      */
     @Override
-    public void deleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
+    public DeleteInstanceResult deleteInstance(
+            DeleteInstanceRequest deleteInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteInstanceRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteInstanceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteInstanceRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteInstanceRequest));
+                request = new DeleteInstanceRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1081,6 +1124,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteLayerRequest
+     * @return Result of the DeleteLayer operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -1088,29 +1132,33 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.DeleteLayer
      */
     @Override
-    public void deleteLayer(DeleteLayerRequest deleteLayerRequest) {
+    public DeleteLayerResult deleteLayer(DeleteLayerRequest deleteLayerRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteLayerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteLayerRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteLayerResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLayerRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteLayerRequest));
+                request = new DeleteLayerRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLayerResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteLayerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1136,6 +1184,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteStackRequest
+     * @return Result of the DeleteStack operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -1143,29 +1192,33 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.DeleteStack
      */
     @Override
-    public void deleteStack(DeleteStackRequest deleteStackRequest) {
+    public DeleteStackResult deleteStack(DeleteStackRequest deleteStackRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteStackRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteStackResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteStackRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteStackRequest));
+                request = new DeleteStackRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteStackResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteStackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1186,6 +1239,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteUserProfileRequest
+     * @return Result of the DeleteUserProfile operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -1193,31 +1248,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.DeleteUserProfile
      */
     @Override
-    public void deleteUserProfile(
+    public DeleteUserProfileResult deleteUserProfile(
             DeleteUserProfileRequest deleteUserProfileRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteUserProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteUserProfileRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteUserProfileResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserProfileRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteUserProfileRequest));
+                request = new DeleteUserProfileRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUserProfileResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteUserProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1242,6 +1301,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deregisterEcsClusterRequest
+     * @return Result of the DeregisterEcsCluster operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -1249,31 +1310,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.DeregisterEcsCluster
      */
     @Override
-    public void deregisterEcsCluster(
+    public DeregisterEcsClusterResult deregisterEcsCluster(
             DeregisterEcsClusterRequest deregisterEcsClusterRequest) {
         ExecutionContext executionContext = createExecutionContext(deregisterEcsClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeregisterEcsClusterRequest> request = null;
-        Response<Void> response = null;
+        Response<DeregisterEcsClusterResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterEcsClusterRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deregisterEcsClusterRequest));
+                request = new DeregisterEcsClusterRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterEcsClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterEcsClusterResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeregisterEcsClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1298,6 +1363,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deregisterElasticIpRequest
+     * @return Result of the DeregisterElasticIp operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -1305,31 +1372,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.DeregisterElasticIp
      */
     @Override
-    public void deregisterElasticIp(
+    public DeregisterElasticIpResult deregisterElasticIp(
             DeregisterElasticIpRequest deregisterElasticIpRequest) {
         ExecutionContext executionContext = createExecutionContext(deregisterElasticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeregisterElasticIpRequest> request = null;
-        Response<Void> response = null;
+        Response<DeregisterElasticIpResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterElasticIpRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deregisterElasticIpRequest));
+                request = new DeregisterElasticIpRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterElasticIpResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeregisterElasticIpResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1354,6 +1425,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deregisterInstanceRequest
+     * @return Result of the DeregisterInstance operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -1361,31 +1434,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.DeregisterInstance
      */
     @Override
-    public void deregisterInstance(
+    public DeregisterInstanceResult deregisterInstance(
             DeregisterInstanceRequest deregisterInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(deregisterInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeregisterInstanceRequest> request = null;
-        Response<Void> response = null;
+        Response<DeregisterInstanceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterInstanceRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deregisterInstanceRequest));
+                request = new DeregisterInstanceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeregisterInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1407,6 +1484,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deregisterRdsDbInstanceRequest
+     * @return Result of the DeregisterRdsDbInstance operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -1414,31 +1493,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.DeregisterRdsDbInstance
      */
     @Override
-    public void deregisterRdsDbInstance(
+    public DeregisterRdsDbInstanceResult deregisterRdsDbInstance(
             DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(deregisterRdsDbInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeregisterRdsDbInstanceRequest> request = null;
-        Response<Void> response = null;
+        Response<DeregisterRdsDbInstanceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterRdsDbInstanceRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deregisterRdsDbInstanceRequest));
+                request = new DeregisterRdsDbInstanceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterRdsDbInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeregisterRdsDbInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1463,6 +1546,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deregisterVolumeRequest
+     * @return Result of the DeregisterVolume operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -1470,18 +1554,19 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.DeregisterVolume
      */
     @Override
-    public void deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest) {
+    public DeregisterVolumeResult deregisterVolume(
+            DeregisterVolumeRequest deregisterVolumeRequest) {
         ExecutionContext executionContext = createExecutionContext(deregisterVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeregisterVolumeRequest> request = null;
-        Response<Void> response = null;
+        Response<DeregisterVolumeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterVolumeRequestMarshaller()
+                request = new DeregisterVolumeRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(deregisterVolumeRequest));
                 // Binds the request metrics to the current request.
@@ -1490,10 +1575,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterVolumeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeregisterVolumeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1531,20 +1620,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAgentVersionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeAgentVersionsRequest));
+                request = new DescribeAgentVersionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeAgentVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAgentVersionsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeAgentVersionsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAgentVersionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeAgentVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1594,18 +1683,19 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAppsRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeAppsRequest));
+                request = new DescribeAppsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeAppsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAppsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeAppsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAppsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeAppsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1655,7 +1745,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCommandsRequestMarshaller()
+                request = new DescribeCommandsRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeCommandsRequest));
                 // Binds the request metrics to the current request.
@@ -1664,10 +1754,11 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCommandsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeCommandsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCommandsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeCommandsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1718,20 +1809,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDeploymentsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeDeploymentsRequest));
+                request = new DescribeDeploymentsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeDeploymentsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeDeploymentsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDeploymentsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeDeploymentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1781,20 +1872,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEcsClustersRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeEcsClustersRequest));
+                request = new DescribeEcsClustersRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeEcsClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeEcsClustersResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeEcsClustersResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEcsClustersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeEcsClustersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1847,20 +1938,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticIpsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeElasticIpsRequest));
+                request = new DescribeElasticIpsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeElasticIpsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeElasticIpsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeElasticIpsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeElasticIpsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeElasticIpsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1911,7 +2002,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticLoadBalancersRequestMarshaller()
+                request = new DescribeElasticLoadBalancersRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeElasticLoadBalancersRequest));
                 // Binds the request metrics to the current request.
@@ -1920,11 +2012,11 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeElasticLoadBalancersResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeElasticLoadBalancersResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeElasticLoadBalancersResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeElasticLoadBalancersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1975,20 +2067,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInstancesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeInstancesRequest));
+                request = new DescribeInstancesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeInstancesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeInstancesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInstancesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeInstancesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2038,18 +2130,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLayersRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeLayersRequest));
+                request = new DescribeLayersRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeLayersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeLayersResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeLayersResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeLayersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeLayersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2100,7 +2194,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLoadBasedAutoScalingRequestMarshaller()
+                request = new DescribeLoadBasedAutoScalingRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeLoadBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
@@ -2109,11 +2204,11 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeLoadBasedAutoScalingResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeLoadBasedAutoScalingResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeLoadBasedAutoScalingResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeLoadBasedAutoScalingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2154,20 +2249,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMyUserProfileRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeMyUserProfileRequest));
+                request = new DescribeMyUserProfileRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeMyUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeMyUserProfileResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeMyUserProfileResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMyUserProfileResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeMyUserProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2213,20 +2308,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePermissionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describePermissionsRequest));
+                request = new DescribePermissionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribePermissionsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribePermissionsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePermissionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribePermissionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2277,20 +2372,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRaidArraysRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeRaidArraysRequest));
+                request = new DescribeRaidArraysRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeRaidArraysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeRaidArraysResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeRaidArraysResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRaidArraysResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeRaidArraysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2336,20 +2431,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRdsDbInstancesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeRdsDbInstancesRequest));
+                request = new DescribeRdsDbInstancesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeRdsDbInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeRdsDbInstancesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeRdsDbInstancesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRdsDbInstancesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeRdsDbInstancesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2395,20 +2490,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeServiceErrorsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeServiceErrorsRequest));
+                request = new DescribeServiceErrorsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeServiceErrorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeServiceErrorsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeServiceErrorsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeServiceErrorsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeServiceErrorsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2454,7 +2549,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStackProvisioningParametersRequestMarshaller()
+                request = new DescribeStackProvisioningParametersRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeStackProvisioningParametersRequest));
                 // Binds the request metrics to the current request.
@@ -2463,11 +2559,11 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeStackProvisioningParametersResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeStackProvisioningParametersResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeStackProvisioningParametersResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeStackProvisioningParametersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2515,20 +2611,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStackSummaryRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeStackSummaryRequest));
+                request = new DescribeStackSummaryRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeStackSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeStackSummaryResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeStackSummaryResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeStackSummaryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeStackSummaryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2573,18 +2669,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStacksRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeStacksRequest));
+                request = new DescribeStacksRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeStacksResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeStacksResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeStacksResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeStacksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2635,7 +2733,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTimeBasedAutoScalingRequestMarshaller()
+                request = new DescribeTimeBasedAutoScalingRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeTimeBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
@@ -2644,11 +2743,11 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTimeBasedAutoScalingResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTimeBasedAutoScalingResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeTimeBasedAutoScalingResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeTimeBasedAutoScalingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2693,20 +2792,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUserProfilesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeUserProfilesRequest));
+                request = new DescribeUserProfilesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeUserProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeUserProfilesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeUserProfilesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeUserProfilesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeUserProfilesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2756,18 +2855,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVolumesRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeVolumesRequest));
+                request = new DescribeVolumesRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeVolumesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeVolumesResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeVolumesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeVolumesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2792,36 +2893,42 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param detachElasticLoadBalancerRequest
+     * @return Result of the DetachElasticLoadBalancer operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DetachElasticLoadBalancer
      */
     @Override
-    public void detachElasticLoadBalancer(
+    public DetachElasticLoadBalancerResult detachElasticLoadBalancer(
             DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) {
         ExecutionContext executionContext = createExecutionContext(detachElasticLoadBalancerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DetachElasticLoadBalancerRequest> request = null;
-        Response<Void> response = null;
+        Response<DetachElasticLoadBalancerResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachElasticLoadBalancerRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(detachElasticLoadBalancerRequest));
+                request = new DetachElasticLoadBalancerRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(detachElasticLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DetachElasticLoadBalancerResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DetachElasticLoadBalancerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2846,6 +2953,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param disassociateElasticIpRequest
+     * @return Result of the DisassociateElasticIp operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -2853,31 +2962,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.DisassociateElasticIp
      */
     @Override
-    public void disassociateElasticIp(
+    public DisassociateElasticIpResult disassociateElasticIp(
             DisassociateElasticIpRequest disassociateElasticIpRequest) {
         ExecutionContext executionContext = createExecutionContext(disassociateElasticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisassociateElasticIpRequest> request = null;
-        Response<Void> response = null;
+        Response<DisassociateElasticIpResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociateElasticIpRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(disassociateElasticIpRequest));
+                request = new DisassociateElasticIpRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateElasticIpResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisassociateElasticIpResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2921,20 +3034,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetHostnameSuggestionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getHostnameSuggestionRequest));
+                request = new GetHostnameSuggestionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getHostnameSuggestionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetHostnameSuggestionResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetHostnameSuggestionResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetHostnameSuggestionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetHostnameSuggestionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2971,18 +3084,19 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GrantAccessRequestMarshaller().marshall(super
-                        .beforeMarshalling(grantAccessRequest));
+                request = new GrantAccessRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(grantAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GrantAccessResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GrantAccessResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GrantAccessResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GrantAccessResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3009,6 +3123,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param rebootInstanceRequest
+     * @return Result of the RebootInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3016,29 +3131,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.RebootInstance
      */
     @Override
-    public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) {
+    public RebootInstanceResult rebootInstance(
+            RebootInstanceRequest rebootInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(rebootInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RebootInstanceRequest> request = null;
-        Response<Void> response = null;
+        Response<RebootInstanceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RebootInstanceRequestMarshaller().marshall(super
-                        .beforeMarshalling(rebootInstanceRequest));
+                request = new RebootInstanceRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(rebootInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<RebootInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RebootInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3085,20 +3206,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterEcsClusterRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(registerEcsClusterRequest));
+                request = new RegisterEcsClusterRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(registerEcsClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterEcsClusterResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new RegisterEcsClusterResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterEcsClusterResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RegisterEcsClusterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3149,20 +3270,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterElasticIpRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(registerElasticIpRequest));
+                request = new RegisterElasticIpRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(registerElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterElasticIpResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new RegisterElasticIpResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterElasticIpResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RegisterElasticIpResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3217,7 +3338,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterInstanceRequestMarshaller()
+                request = new RegisterInstanceRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(registerInstanceRequest));
                 // Binds the request metrics to the current request.
@@ -3226,10 +3347,11 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterInstanceResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new RegisterInstanceResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RegisterInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3254,6 +3376,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param registerRdsDbInstanceRequest
+     * @return Result of the RegisterRdsDbInstance operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3261,31 +3385,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.RegisterRdsDbInstance
      */
     @Override
-    public void registerRdsDbInstance(
+    public RegisterRdsDbInstanceResult registerRdsDbInstance(
             RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(registerRdsDbInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RegisterRdsDbInstanceRequest> request = null;
-        Response<Void> response = null;
+        Response<RegisterRdsDbInstanceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterRdsDbInstanceRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(registerRdsDbInstanceRequest));
+                request = new RegisterRdsDbInstanceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(registerRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterRdsDbInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RegisterRdsDbInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3332,18 +3460,20 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterVolumeRequestMarshaller().marshall(super
-                        .beforeMarshalling(registerVolumeRequest));
+                request = new RegisterVolumeRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(registerVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterVolumeResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new RegisterVolumeResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterVolumeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RegisterVolumeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3379,6 +3509,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param setLoadBasedAutoScalingRequest
+     * @return Result of the SetLoadBasedAutoScaling operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3386,31 +3518,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.SetLoadBasedAutoScaling
      */
     @Override
-    public void setLoadBasedAutoScaling(
+    public SetLoadBasedAutoScalingResult setLoadBasedAutoScaling(
             SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) {
         ExecutionContext executionContext = createExecutionContext(setLoadBasedAutoScalingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetLoadBasedAutoScalingRequest> request = null;
-        Response<Void> response = null;
+        Response<SetLoadBasedAutoScalingResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetLoadBasedAutoScalingRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(setLoadBasedAutoScalingRequest));
+                request = new SetLoadBasedAutoScalingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(setLoadBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<SetLoadBasedAutoScalingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SetLoadBasedAutoScalingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3434,6 +3570,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param setPermissionRequest
+     * @return Result of the SetPermission operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3441,29 +3578,34 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.SetPermission
      */
     @Override
-    public void setPermission(SetPermissionRequest setPermissionRequest) {
+    public SetPermissionResult setPermission(
+            SetPermissionRequest setPermissionRequest) {
         ExecutionContext executionContext = createExecutionContext(setPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetPermissionRequest> request = null;
-        Response<Void> response = null;
+        Response<SetPermissionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetPermissionRequestMarshaller().marshall(super
-                        .beforeMarshalling(setPermissionRequest));
+                request = new SetPermissionRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(setPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<SetPermissionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SetPermissionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3488,6 +3630,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param setTimeBasedAutoScalingRequest
+     * @return Result of the SetTimeBasedAutoScaling operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3495,31 +3639,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.SetTimeBasedAutoScaling
      */
     @Override
-    public void setTimeBasedAutoScaling(
+    public SetTimeBasedAutoScalingResult setTimeBasedAutoScaling(
             SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) {
         ExecutionContext executionContext = createExecutionContext(setTimeBasedAutoScalingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetTimeBasedAutoScalingRequest> request = null;
-        Response<Void> response = null;
+        Response<SetTimeBasedAutoScalingResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetTimeBasedAutoScalingRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(setTimeBasedAutoScalingRequest));
+                request = new SetTimeBasedAutoScalingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(setTimeBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<SetTimeBasedAutoScalingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SetTimeBasedAutoScalingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3543,6 +3691,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param startInstanceRequest
+     * @return Result of the StartInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3550,29 +3699,34 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.StartInstance
      */
     @Override
-    public void startInstance(StartInstanceRequest startInstanceRequest) {
+    public StartInstanceResult startInstance(
+            StartInstanceRequest startInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(startInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StartInstanceRequest> request = null;
-        Response<Void> response = null;
+        Response<StartInstanceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartInstanceRequestMarshaller().marshall(super
-                        .beforeMarshalling(startInstanceRequest));
+                request = new StartInstanceRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(startInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<StartInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StartInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3594,6 +3748,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param startStackRequest
+     * @return Result of the StartStack operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3601,29 +3756,33 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.StartStack
      */
     @Override
-    public void startStack(StartStackRequest startStackRequest) {
+    public StartStackResult startStack(StartStackRequest startStackRequest) {
         ExecutionContext executionContext = createExecutionContext(startStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StartStackRequest> request = null;
-        Response<Void> response = null;
+        Response<StartStackResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartStackRequestMarshaller().marshall(super
-                        .beforeMarshalling(startStackRequest));
+                request = new StartStackRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(startStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<StartStackResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StartStackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3650,6 +3809,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param stopInstanceRequest
+     * @return Result of the StopInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3657,29 +3817,34 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.StopInstance
      */
     @Override
-    public void stopInstance(StopInstanceRequest stopInstanceRequest) {
+    public StopInstanceResult stopInstance(
+            StopInstanceRequest stopInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(stopInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StopInstanceRequest> request = null;
-        Response<Void> response = null;
+        Response<StopInstanceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopInstanceRequestMarshaller().marshall(super
-                        .beforeMarshalling(stopInstanceRequest));
+                request = new StopInstanceRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(stopInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<StopInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StopInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3701,6 +3866,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param stopStackRequest
+     * @return Result of the StopStack operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3708,29 +3874,33 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.StopStack
      */
     @Override
-    public void stopStack(StopStackRequest stopStackRequest) {
+    public StopStackResult stopStack(StopStackRequest stopStackRequest) {
         ExecutionContext executionContext = createExecutionContext(stopStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StopStackRequest> request = null;
-        Response<Void> response = null;
+        Response<StopStackResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopStackRequestMarshaller().marshall(super
-                        .beforeMarshalling(stopStackRequest));
+                request = new StopStackRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(stopStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<StopStackResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StopStackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3755,6 +3925,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param unassignInstanceRequest
+     * @return Result of the UnassignInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3762,18 +3933,19 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.UnassignInstance
      */
     @Override
-    public void unassignInstance(UnassignInstanceRequest unassignInstanceRequest) {
+    public UnassignInstanceResult unassignInstance(
+            UnassignInstanceRequest unassignInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(unassignInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UnassignInstanceRequest> request = null;
-        Response<Void> response = null;
+        Response<UnassignInstanceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnassignInstanceRequestMarshaller()
+                request = new UnassignInstanceRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(unassignInstanceRequest));
                 // Binds the request metrics to the current request.
@@ -3782,10 +3954,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UnassignInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UnassignInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3810,6 +3986,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param unassignVolumeRequest
+     * @return Result of the UnassignVolume operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3817,29 +3994,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.UnassignVolume
      */
     @Override
-    public void unassignVolume(UnassignVolumeRequest unassignVolumeRequest) {
+    public UnassignVolumeResult unassignVolume(
+            UnassignVolumeRequest unassignVolumeRequest) {
         ExecutionContext executionContext = createExecutionContext(unassignVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UnassignVolumeRequest> request = null;
-        Response<Void> response = null;
+        Response<UnassignVolumeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnassignVolumeRequestMarshaller().marshall(super
-                        .beforeMarshalling(unassignVolumeRequest));
+                request = new UnassignVolumeRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(unassignVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UnassignVolumeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UnassignVolumeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3861,6 +4044,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateAppRequest
+     * @return Result of the UpdateApp operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3868,29 +4052,33 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.UpdateApp
      */
     @Override
-    public void updateApp(UpdateAppRequest updateAppRequest) {
+    public UpdateAppResult updateApp(UpdateAppRequest updateAppRequest) {
         ExecutionContext executionContext = createExecutionContext(updateAppRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateAppRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateAppResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAppRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateAppRequest));
+                request = new UpdateAppRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAppResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateAppResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3915,6 +4103,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateElasticIpRequest
+     * @return Result of the UpdateElasticIp operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3922,29 +4111,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.UpdateElasticIp
      */
     @Override
-    public void updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest) {
+    public UpdateElasticIpResult updateElasticIp(
+            UpdateElasticIpRequest updateElasticIpRequest) {
         ExecutionContext executionContext = createExecutionContext(updateElasticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateElasticIpRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateElasticIpResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateElasticIpRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateElasticIpRequest));
+                request = new UpdateElasticIpRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(updateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateElasticIpResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateElasticIpResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3966,6 +4161,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateInstanceRequest
+     * @return Result of the UpdateInstance operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -3973,29 +4169,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.UpdateInstance
      */
     @Override
-    public void updateInstance(UpdateInstanceRequest updateInstanceRequest) {
+    public UpdateInstanceResult updateInstance(
+            UpdateInstanceRequest updateInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(updateInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateInstanceRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateInstanceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateInstanceRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateInstanceRequest));
+                request = new UpdateInstanceRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(updateInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4017,6 +4219,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateLayerRequest
+     * @return Result of the UpdateLayer operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -4024,29 +4227,33 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.UpdateLayer
      */
     @Override
-    public void updateLayer(UpdateLayerRequest updateLayerRequest) {
+    public UpdateLayerResult updateLayer(UpdateLayerRequest updateLayerRequest) {
         ExecutionContext executionContext = createExecutionContext(updateLayerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateLayerRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateLayerResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateLayerRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateLayerRequest));
+                request = new UpdateLayerRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLayerResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateLayerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4067,36 +4274,42 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateMyUserProfileRequest
+     * @return Result of the UpdateMyUserProfile operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @sample AWSOpsWorks.UpdateMyUserProfile
      */
     @Override
-    public void updateMyUserProfile(
+    public UpdateMyUserProfileResult updateMyUserProfile(
             UpdateMyUserProfileRequest updateMyUserProfileRequest) {
         ExecutionContext executionContext = createExecutionContext(updateMyUserProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateMyUserProfileRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateMyUserProfileResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMyUserProfileRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateMyUserProfileRequest));
+                request = new UpdateMyUserProfileRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateMyUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMyUserProfileResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateMyUserProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4118,6 +4331,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateRdsDbInstanceRequest
+     * @return Result of the UpdateRdsDbInstance operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -4125,31 +4340,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.UpdateRdsDbInstance
      */
     @Override
-    public void updateRdsDbInstance(
+    public UpdateRdsDbInstanceResult updateRdsDbInstance(
             UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest) {
         ExecutionContext executionContext = createExecutionContext(updateRdsDbInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateRdsDbInstanceRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateRdsDbInstanceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRdsDbInstanceRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateRdsDbInstanceRequest));
+                request = new UpdateRdsDbInstanceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRdsDbInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateRdsDbInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4171,6 +4390,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateStackRequest
+     * @return Result of the UpdateStack operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -4178,29 +4398,33 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.UpdateStack
      */
     @Override
-    public void updateStack(UpdateStackRequest updateStackRequest) {
+    public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) {
         ExecutionContext executionContext = createExecutionContext(updateStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateStackRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateStackResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateStackRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateStackRequest));
+                request = new UpdateStackRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateStackResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateStackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4221,6 +4445,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateUserProfileRequest
+     * @return Result of the UpdateUserProfile operation returned by the
+     *         service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -4228,31 +4454,35 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.UpdateUserProfile
      */
     @Override
-    public void updateUserProfile(
+    public UpdateUserProfileResult updateUserProfile(
             UpdateUserProfileRequest updateUserProfileRequest) {
         ExecutionContext executionContext = createExecutionContext(updateUserProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateUserProfileRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateUserProfileResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateUserProfileRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateUserProfileRequest));
+                request = new UpdateUserProfileRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateUserProfileResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateUserProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4277,6 +4507,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateVolumeRequest
+     * @return Result of the UpdateVolume operation returned by the service.
      * @throws ValidationException
      *         Indicates that a request was invalid.
      * @throws ResourceNotFoundException
@@ -4284,29 +4515,34 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @sample AWSOpsWorks.UpdateVolume
      */
     @Override
-    public void updateVolume(UpdateVolumeRequest updateVolumeRequest) {
+    public UpdateVolumeResult updateVolume(
+            UpdateVolumeRequest updateVolumeRequest) {
         ExecutionContext executionContext = createExecutionContext(updateVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateVolumeRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateVolumeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateVolumeRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateVolumeRequest));
+                request = new UpdateVolumeRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVolumeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateVolumeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -4377,8 +4613,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

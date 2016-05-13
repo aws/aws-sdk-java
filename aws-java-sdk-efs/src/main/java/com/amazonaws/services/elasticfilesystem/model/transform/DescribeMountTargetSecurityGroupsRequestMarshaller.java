@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeMountTargetSecurityGroupsRequest Marshaller
@@ -48,7 +49,14 @@ public class DescribeMountTargetSecurityGroupsRequestMarshaller
         implements
         Marshaller<Request<DescribeMountTargetSecurityGroupsRequest>, DescribeMountTargetSecurityGroupsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeMountTargetSecurityGroupsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeMountTargetSecurityGroupsRequest> marshall(
             DescribeMountTargetSecurityGroupsRequest describeMountTargetSecurityGroupsRequest) {
@@ -70,9 +78,10 @@ public class DescribeMountTargetSecurityGroupsRequestMarshaller
                 .replace(
                         "{MountTargetId}",
                         (describeMountTargetSecurityGroupsRequest
-                                .getMountTargetId() != null) ? StringUtils
-                                .fromString(describeMountTargetSecurityGroupsRequest
-                                        .getMountTargetId())
+                                .getMountTargetId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(describeMountTargetSecurityGroupsRequest
+                                                .getMountTargetId()), false)
                                 : "");
         request.setResourcePath(uriResourcePath);
 

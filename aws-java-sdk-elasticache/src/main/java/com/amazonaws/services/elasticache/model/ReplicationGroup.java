@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
@@ -24,510 +26,626 @@ import java.io.Serializable;
 public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The identifier for the replication group.
+     * </p>
      */
     private String replicationGroupId;
-
     /**
+     * <p>
      * The description of the replication group.
+     * </p>
      */
     private String description;
-
     /**
+     * <p>
      * The current state of this replication group - <i>creating</i>,
      * <i>available</i>, etc.
+     * </p>
      */
     private String status;
-
     /**
+     * <p>
      * A group of settings to be applied to the replication group, either
      * immediately or during the next maintenance window.
+     * </p>
      */
     private ReplicationGroupPendingModifiedValues pendingModifiedValues;
-
     /**
+     * <p>
      * The names of all the cache clusters that are part of this replication
      * group.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> memberClusters;
-
+    private com.amazonaws.internal.SdkInternalList<String> memberClusters;
     /**
-     * A single element list with information about the nodes in the
-     * replication group.
+     * <p>
+     * A single element list with information about the nodes in the replication
+     * group.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroup> nodeGroups;
-
+    private com.amazonaws.internal.SdkInternalList<NodeGroup> nodeGroups;
     /**
+     * <p>
      * The cache cluster ID that is used as the daily snapshot source for the
      * replication group.
+     * </p>
      */
     private String snapshottingClusterId;
-
     /**
-     * Indicates the status of Multi-AZ for this replication group.
-     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
-     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
-     * node types.</li> </ul> </note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
+     * Indicates the status of Multi-AZ for this replication group.
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li>
+     * </ul>
+     * </note>
      */
     private String automaticFailover;
 
     /**
+     * <p>
      * The identifier for the replication group.
-     *
-     * @return The identifier for the replication group.
+     * </p>
+     * 
+     * @param replicationGroupId
+     *        The identifier for the replication group.
      */
-    public String getReplicationGroupId() {
-        return replicationGroupId;
-    }
-    
-    /**
-     * The identifier for the replication group.
-     *
-     * @param replicationGroupId The identifier for the replication group.
-     */
+
     public void setReplicationGroupId(String replicationGroupId) {
         this.replicationGroupId = replicationGroupId;
     }
-    
+
     /**
-     * The identifier for the replication group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param replicationGroupId The identifier for the replication group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier for the replication group.
+     * </p>
+     * 
+     * @return The identifier for the replication group.
      */
+
+    public String getReplicationGroupId() {
+        return this.replicationGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the replication group.
+     * </p>
+     * 
+     * @param replicationGroupId
+     *        The identifier for the replication group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ReplicationGroup withReplicationGroupId(String replicationGroupId) {
-        this.replicationGroupId = replicationGroupId;
+        setReplicationGroupId(replicationGroupId);
         return this;
     }
 
     /**
+     * <p>
      * The description of the replication group.
-     *
-     * @return The description of the replication group.
+     * </p>
+     * 
+     * @param description
+     *        The description of the replication group.
      */
-    public String getDescription() {
-        return description;
-    }
-    
-    /**
-     * The description of the replication group.
-     *
-     * @param description The description of the replication group.
-     */
+
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     /**
-     * The description of the replication group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param description The description of the replication group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The description of the replication group.
+     * </p>
+     * 
+     * @return The description of the replication group.
      */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the replication group.
+     * </p>
+     * 
+     * @param description
+     *        The description of the replication group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ReplicationGroup withDescription(String description) {
-        this.description = description;
+        setDescription(description);
         return this;
     }
 
     /**
+     * <p>
      * The current state of this replication group - <i>creating</i>,
      * <i>available</i>, etc.
-     *
-     * @return The current state of this replication group - <i>creating</i>,
-     *         <i>available</i>, etc.
+     * </p>
+     * 
+     * @param status
+     *        The current state of this replication group - <i>creating</i>,
+     *        <i>available</i>, etc.
      */
-    public String getStatus() {
-        return status;
-    }
-    
-    /**
-     * The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.
-     *
-     * @param status The current state of this replication group - <i>creating</i>,
-     *         <i>available</i>, etc.
-     */
+
     public void setStatus(String status) {
         this.status = status;
     }
-    
+
     /**
+     * <p>
      * The current state of this replication group - <i>creating</i>,
      * <i>available</i>, etc.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param status The current state of this replication group - <i>creating</i>,
+     * </p>
+     * 
+     * @return The current state of this replication group - <i>creating</i>,
      *         <i>available</i>, etc.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public ReplicationGroup withStatus(String status) {
-        this.status = status;
-        return this;
+
+    public String getStatus() {
+        return this.status;
     }
 
     /**
-     * A group of settings to be applied to the replication group, either
-     * immediately or during the next maintenance window.
-     *
-     * @return A group of settings to be applied to the replication group, either
-     *         immediately or during the next maintenance window.
-     */
-    public ReplicationGroupPendingModifiedValues getPendingModifiedValues() {
-        return pendingModifiedValues;
-    }
-    
-    /**
-     * A group of settings to be applied to the replication group, either
-     * immediately or during the next maintenance window.
-     *
-     * @param pendingModifiedValues A group of settings to be applied to the replication group, either
-     *         immediately or during the next maintenance window.
-     */
-    public void setPendingModifiedValues(ReplicationGroupPendingModifiedValues pendingModifiedValues) {
-        this.pendingModifiedValues = pendingModifiedValues;
-    }
-    
-    /**
-     * A group of settings to be applied to the replication group, either
-     * immediately or during the next maintenance window.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param pendingModifiedValues A group of settings to be applied to the replication group, either
-     *         immediately or during the next maintenance window.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The current state of this replication group - <i>creating</i>,
+     * <i>available</i>, etc.
+     * </p>
+     * 
+     * @param status
+     *        The current state of this replication group - <i>creating</i>,
+     *        <i>available</i>, etc.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ReplicationGroup withPendingModifiedValues(ReplicationGroupPendingModifiedValues pendingModifiedValues) {
-        this.pendingModifiedValues = pendingModifiedValues;
+
+    public ReplicationGroup withStatus(String status) {
+        setStatus(status);
         return this;
     }
 
     /**
+     * <p>
+     * A group of settings to be applied to the replication group, either
+     * immediately or during the next maintenance window.
+     * </p>
+     * 
+     * @param pendingModifiedValues
+     *        A group of settings to be applied to the replication group, either
+     *        immediately or during the next maintenance window.
+     */
+
+    public void setPendingModifiedValues(
+            ReplicationGroupPendingModifiedValues pendingModifiedValues) {
+        this.pendingModifiedValues = pendingModifiedValues;
+    }
+
+    /**
+     * <p>
+     * A group of settings to be applied to the replication group, either
+     * immediately or during the next maintenance window.
+     * </p>
+     * 
+     * @return A group of settings to be applied to the replication group,
+     *         either immediately or during the next maintenance window.
+     */
+
+    public ReplicationGroupPendingModifiedValues getPendingModifiedValues() {
+        return this.pendingModifiedValues;
+    }
+
+    /**
+     * <p>
+     * A group of settings to be applied to the replication group, either
+     * immediately or during the next maintenance window.
+     * </p>
+     * 
+     * @param pendingModifiedValues
+     *        A group of settings to be applied to the replication group, either
+     *        immediately or during the next maintenance window.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ReplicationGroup withPendingModifiedValues(
+            ReplicationGroupPendingModifiedValues pendingModifiedValues) {
+        setPendingModifiedValues(pendingModifiedValues);
+        return this;
+    }
+
+    /**
+     * <p>
      * The names of all the cache clusters that are part of this replication
      * group.
-     *
-     * @return The names of all the cache clusters that are part of this replication
-     *         group.
+     * </p>
+     * 
+     * @return The names of all the cache clusters that are part of this
+     *         replication group.
      */
+
     public java.util.List<String> getMemberClusters() {
         if (memberClusters == null) {
-              memberClusters = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              memberClusters.setAutoConstruct(true);
+            memberClusters = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return memberClusters;
     }
-    
+
     /**
+     * <p>
      * The names of all the cache clusters that are part of this replication
      * group.
-     *
-     * @param memberClusters The names of all the cache clusters that are part of this replication
-     *         group.
+     * </p>
+     * 
+     * @param memberClusters
+     *        The names of all the cache clusters that are part of this
+     *        replication group.
      */
+
     public void setMemberClusters(java.util.Collection<String> memberClusters) {
         if (memberClusters == null) {
             this.memberClusters = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> memberClustersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(memberClusters.size());
-        memberClustersCopy.addAll(memberClusters);
-        this.memberClusters = memberClustersCopy;
+
+        this.memberClusters = new com.amazonaws.internal.SdkInternalList<String>(
+                memberClusters);
     }
-    
+
     /**
+     * <p>
      * The names of all the cache clusters that are part of this replication
      * group.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setMemberClusters(java.util.Collection)} or {@link
-     * #withMemberClusters(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param memberClusters The names of all the cache clusters that are part of this replication
-     *         group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setMemberClusters(java.util.Collection)} or
+     * {@link #withMemberClusters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param memberClusters
+     *        The names of all the cache clusters that are part of this
+     *        replication group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public ReplicationGroup withMemberClusters(String... memberClusters) {
-        if (getMemberClusters() == null) setMemberClusters(new java.util.ArrayList<String>(memberClusters.length));
-        for (String value : memberClusters) {
-            getMemberClusters().add(value);
+        if (this.memberClusters == null) {
+            setMemberClusters(new com.amazonaws.internal.SdkInternalList<String>(
+                    memberClusters.length));
+        }
+        for (String ele : memberClusters) {
+            this.memberClusters.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The names of all the cache clusters that are part of this replication
      * group.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param memberClusters The names of all the cache clusters that are part of this replication
-     *         group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param memberClusters
+     *        The names of all the cache clusters that are part of this
+     *        replication group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ReplicationGroup withMemberClusters(java.util.Collection<String> memberClusters) {
-        if (memberClusters == null) {
-            this.memberClusters = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> memberClustersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(memberClusters.size());
-            memberClustersCopy.addAll(memberClusters);
-            this.memberClusters = memberClustersCopy;
-        }
 
+    public ReplicationGroup withMemberClusters(
+            java.util.Collection<String> memberClusters) {
+        setMemberClusters(memberClusters);
         return this;
     }
 
     /**
-     * A single element list with information about the nodes in the
-     * replication group.
-     *
+     * <p>
+     * A single element list with information about the nodes in the replication
+     * group.
+     * </p>
+     * 
      * @return A single element list with information about the nodes in the
      *         replication group.
      */
+
     public java.util.List<NodeGroup> getNodeGroups() {
         if (nodeGroups == null) {
-              nodeGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroup>();
-              nodeGroups.setAutoConstruct(true);
+            nodeGroups = new com.amazonaws.internal.SdkInternalList<NodeGroup>();
         }
         return nodeGroups;
     }
-    
+
     /**
-     * A single element list with information about the nodes in the
-     * replication group.
-     *
-     * @param nodeGroups A single element list with information about the nodes in the
-     *         replication group.
+     * <p>
+     * A single element list with information about the nodes in the replication
+     * group.
+     * </p>
+     * 
+     * @param nodeGroups
+     *        A single element list with information about the nodes in the
+     *        replication group.
      */
+
     public void setNodeGroups(java.util.Collection<NodeGroup> nodeGroups) {
         if (nodeGroups == null) {
             this.nodeGroups = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroup> nodeGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroup>(nodeGroups.size());
-        nodeGroupsCopy.addAll(nodeGroups);
-        this.nodeGroups = nodeGroupsCopy;
+
+        this.nodeGroups = new com.amazonaws.internal.SdkInternalList<NodeGroup>(
+                nodeGroups);
     }
-    
+
     /**
-     * A single element list with information about the nodes in the
-     * replication group.
+     * <p>
+     * A single element list with information about the nodes in the replication
+     * group.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNodeGroups(java.util.Collection)} or {@link
-     * #withNodeGroups(java.util.Collection)} if you want to override the
+     * any). Use {@link #setNodeGroups(java.util.Collection)} or
+     * {@link #withNodeGroups(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param nodeGroups A single element list with information about the nodes in the
-     *         replication group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param nodeGroups
+     *        A single element list with information about the nodes in the
+     *        replication group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public ReplicationGroup withNodeGroups(NodeGroup... nodeGroups) {
-        if (getNodeGroups() == null) setNodeGroups(new java.util.ArrayList<NodeGroup>(nodeGroups.length));
-        for (NodeGroup value : nodeGroups) {
-            getNodeGroups().add(value);
+        if (this.nodeGroups == null) {
+            setNodeGroups(new com.amazonaws.internal.SdkInternalList<NodeGroup>(
+                    nodeGroups.length));
+        }
+        for (NodeGroup ele : nodeGroups) {
+            this.nodeGroups.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * A single element list with information about the nodes in the
-     * replication group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param nodeGroups A single element list with information about the nodes in the
-     *         replication group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A single element list with information about the nodes in the replication
+     * group.
+     * </p>
+     * 
+     * @param nodeGroups
+     *        A single element list with information about the nodes in the
+     *        replication group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ReplicationGroup withNodeGroups(java.util.Collection<NodeGroup> nodeGroups) {
-        if (nodeGroups == null) {
-            this.nodeGroups = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroup> nodeGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroup>(nodeGroups.size());
-            nodeGroupsCopy.addAll(nodeGroups);
-            this.nodeGroups = nodeGroupsCopy;
-        }
 
+    public ReplicationGroup withNodeGroups(
+            java.util.Collection<NodeGroup> nodeGroups) {
+        setNodeGroups(nodeGroups);
         return this;
     }
 
     /**
+     * <p>
      * The cache cluster ID that is used as the daily snapshot source for the
      * replication group.
-     *
-     * @return The cache cluster ID that is used as the daily snapshot source for the
-     *         replication group.
+     * </p>
+     * 
+     * @param snapshottingClusterId
+     *        The cache cluster ID that is used as the daily snapshot source for
+     *        the replication group.
      */
-    public String getSnapshottingClusterId() {
-        return snapshottingClusterId;
-    }
-    
-    /**
-     * The cache cluster ID that is used as the daily snapshot source for the
-     * replication group.
-     *
-     * @param snapshottingClusterId The cache cluster ID that is used as the daily snapshot source for the
-     *         replication group.
-     */
+
     public void setSnapshottingClusterId(String snapshottingClusterId) {
         this.snapshottingClusterId = snapshottingClusterId;
     }
-    
+
     /**
+     * <p>
      * The cache cluster ID that is used as the daily snapshot source for the
      * replication group.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param snapshottingClusterId The cache cluster ID that is used as the daily snapshot source for the
-     *         replication group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The cache cluster ID that is used as the daily snapshot source
+     *         for the replication group.
      */
-    public ReplicationGroup withSnapshottingClusterId(String snapshottingClusterId) {
-        this.snapshottingClusterId = snapshottingClusterId;
+
+    public String getSnapshottingClusterId() {
+        return this.snapshottingClusterId;
+    }
+
+    /**
+     * <p>
+     * The cache cluster ID that is used as the daily snapshot source for the
+     * replication group.
+     * </p>
+     * 
+     * @param snapshottingClusterId
+     *        The cache cluster ID that is used as the daily snapshot source for
+     *        the replication group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ReplicationGroup withSnapshottingClusterId(
+            String snapshottingClusterId) {
+        setSnapshottingClusterId(snapshottingClusterId);
         return this;
     }
 
     /**
-     * Indicates the status of Multi-AZ for this replication group.
-     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
-     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
-     * node types.</li> </ul> </note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
-     *
-     * @return Indicates the status of Multi-AZ for this replication group.
-     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
-     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
-     *         node types.</li> </ul> </note>
-     *
+     * Indicates the status of Multi-AZ for this replication group.
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li>
+     * </ul>
+     * </note>
+     * 
+     * @param automaticFailover
+     *        Indicates the status of Multi-AZ for this replication group.</p>
+     *        <note>
+     *        <p>
+     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        </p>
+     *        <ul>
+     *        <li>Redis versions earlier than 2.8.6.</li>
+     *        <li>T1 and T2 cache node types.</li>
+     *        </ul>
      * @see AutomaticFailoverStatus
      */
-    public String getAutomaticFailover() {
-        return automaticFailover;
-    }
-    
-    /**
-     * Indicates the status of Multi-AZ for this replication group.
-     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
-     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
-     * node types.</li> </ul> </note>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
-     *
-     * @param automaticFailover Indicates the status of Multi-AZ for this replication group.
-     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
-     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
-     *         node types.</li> </ul> </note>
-     *
-     * @see AutomaticFailoverStatus
-     */
+
     public void setAutomaticFailover(String automaticFailover) {
         this.automaticFailover = automaticFailover;
     }
-    
+
     /**
+     * <p>
      * Indicates the status of Multi-AZ for this replication group.
-     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
-     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
-     * node types.</li> </ul> </note>
+     * </p>
+     * <note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
-     *
-     * @param automaticFailover Indicates the status of Multi-AZ for this replication group.
-     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
-     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
-     *         node types.</li> </ul> </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li>
+     * </ul>
+     * </note>
+     * 
+     * @return Indicates the status of Multi-AZ for this replication group.</p>
+     *         <note>
+     *         <p>
+     *         ElastiCache Multi-AZ replication groups are not supported on:
+     *         </p>
+     *         <ul>
+     *         <li>Redis versions earlier than 2.8.6.</li>
+     *         <li>T1 and T2 cache node types.</li>
+     *         </ul>
      * @see AutomaticFailoverStatus
      */
+
+    public String getAutomaticFailover() {
+        return this.automaticFailover;
+    }
+
+    /**
+     * <p>
+     * Indicates the status of Multi-AZ for this replication group.
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li>
+     * </ul>
+     * </note>
+     * 
+     * @param automaticFailover
+     *        Indicates the status of Multi-AZ for this replication group.</p>
+     *        <note>
+     *        <p>
+     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        </p>
+     *        <ul>
+     *        <li>Redis versions earlier than 2.8.6.</li>
+     *        <li>T1 and T2 cache node types.</li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see AutomaticFailoverStatus
+     */
+
     public ReplicationGroup withAutomaticFailover(String automaticFailover) {
-        this.automaticFailover = automaticFailover;
+        setAutomaticFailover(automaticFailover);
         return this;
     }
 
     /**
-     * Indicates the status of Multi-AZ for this replication group.
-     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
-     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
-     * node types.</li> </ul> </note>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
-     *
-     * @param automaticFailover Indicates the status of Multi-AZ for this replication group.
-     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
-     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
-     *         node types.</li> </ul> </note>
-     *
+     * Indicates the status of Multi-AZ for this replication group.
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li>
+     * </ul>
+     * </note>
+     * 
+     * @param automaticFailover
+     *        Indicates the status of Multi-AZ for this replication group.</p>
+     *        <note>
+     *        <p>
+     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        </p>
+     *        <ul>
+     *        <li>Redis versions earlier than 2.8.6.</li>
+     *        <li>T1 and T2 cache node types.</li>
+     *        </ul>
      * @see AutomaticFailoverStatus
      */
+
     public void setAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
         this.automaticFailover = automaticFailover.toString();
     }
-    
+
     /**
+     * <p>
      * Indicates the status of Multi-AZ for this replication group.
-     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:
-     * <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
-     * node types.</li> </ul> </note>
+     * </p>
+     * <note>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>enabled, disabled, enabling, disabling
-     *
-     * @param automaticFailover Indicates the status of Multi-AZ for this replication group.
-     *         <note><p>ElastiCache Multi-AZ replication groups are not supported on:
-     *         <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache
-     *         node types.</li> </ul> </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>Redis versions earlier than 2.8.6.</li>
+     * <li>T1 and T2 cache node types.</li>
+     * </ul>
+     * </note>
+     * 
+     * @param automaticFailover
+     *        Indicates the status of Multi-AZ for this replication group.</p>
+     *        <note>
+     *        <p>
+     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        </p>
+     *        <ul>
+     *        <li>Redis versions earlier than 2.8.6.</li>
+     *        <li>T1 and T2 cache node types.</li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see AutomaticFailoverStatus
      */
-    public ReplicationGroup withAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
-        this.automaticFailover = automaticFailover.toString();
+
+    public ReplicationGroup withAutomaticFailover(
+            AutomaticFailoverStatus automaticFailover) {
+        setAutomaticFailover(automaticFailover);
         return this;
     }
 
@@ -543,74 +661,133 @@ public class ReplicationGroup implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReplicationGroupId() != null) sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
-        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");
-        if (getMemberClusters() != null) sb.append("MemberClusters: " + getMemberClusters() + ",");
-        if (getNodeGroups() != null) sb.append("NodeGroups: " + getNodeGroups() + ",");
-        if (getSnapshottingClusterId() != null) sb.append("SnapshottingClusterId: " + getSnapshottingClusterId() + ",");
-        if (getAutomaticFailover() != null) sb.append("AutomaticFailover: " + getAutomaticFailover() );
+        if (getReplicationGroupId() != null)
+            sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
+        if (getDescription() != null)
+            sb.append("Description: " + getDescription() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus() + ",");
+        if (getPendingModifiedValues() != null)
+            sb.append("PendingModifiedValues: " + getPendingModifiedValues()
+                    + ",");
+        if (getMemberClusters() != null)
+            sb.append("MemberClusters: " + getMemberClusters() + ",");
+        if (getNodeGroups() != null)
+            sb.append("NodeGroups: " + getNodeGroups() + ",");
+        if (getSnapshottingClusterId() != null)
+            sb.append("SnapshottingClusterId: " + getSnapshottingClusterId()
+                    + ",");
+        if (getAutomaticFailover() != null)
+            sb.append("AutomaticFailover: " + getAutomaticFailover());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ReplicationGroup == false)
+            return false;
+        ReplicationGroup other = (ReplicationGroup) obj;
+        if (other.getReplicationGroupId() == null
+                ^ this.getReplicationGroupId() == null)
+            return false;
+        if (other.getReplicationGroupId() != null
+                && other.getReplicationGroupId().equals(
+                        this.getReplicationGroupId()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null
+                && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null
+                && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getPendingModifiedValues() == null
+                ^ this.getPendingModifiedValues() == null)
+            return false;
+        if (other.getPendingModifiedValues() != null
+                && other.getPendingModifiedValues().equals(
+                        this.getPendingModifiedValues()) == false)
+            return false;
+        if (other.getMemberClusters() == null
+                ^ this.getMemberClusters() == null)
+            return false;
+        if (other.getMemberClusters() != null
+                && other.getMemberClusters().equals(this.getMemberClusters()) == false)
+            return false;
+        if (other.getNodeGroups() == null ^ this.getNodeGroups() == null)
+            return false;
+        if (other.getNodeGroups() != null
+                && other.getNodeGroups().equals(this.getNodeGroups()) == false)
+            return false;
+        if (other.getSnapshottingClusterId() == null
+                ^ this.getSnapshottingClusterId() == null)
+            return false;
+        if (other.getSnapshottingClusterId() != null
+                && other.getSnapshottingClusterId().equals(
+                        this.getSnapshottingClusterId()) == false)
+            return false;
+        if (other.getAutomaticFailover() == null
+                ^ this.getAutomaticFailover() == null)
+            return false;
+        if (other.getAutomaticFailover() != null
+                && other.getAutomaticFailover().equals(
+                        this.getAutomaticFailover()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode()); 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getPendingModifiedValues() == null) ? 0 : getPendingModifiedValues().hashCode()); 
-        hashCode = prime * hashCode + ((getMemberClusters() == null) ? 0 : getMemberClusters().hashCode()); 
-        hashCode = prime * hashCode + ((getNodeGroups() == null) ? 0 : getNodeGroups().hashCode()); 
-        hashCode = prime * hashCode + ((getSnapshottingClusterId() == null) ? 0 : getSnapshottingClusterId().hashCode()); 
-        hashCode = prime * hashCode + ((getAutomaticFailover() == null) ? 0 : getAutomaticFailover().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getReplicationGroupId() == null) ? 0
+                        : getReplicationGroupId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode
+                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPendingModifiedValues() == null) ? 0
+                        : getPendingModifiedValues().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getMemberClusters() == null) ? 0 : getMemberClusters()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getNodeGroups() == null) ? 0 : getNodeGroups().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSnapshottingClusterId() == null) ? 0
+                        : getSnapshottingClusterId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAutomaticFailover() == null) ? 0
+                        : getAutomaticFailover().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ReplicationGroup == false) return false;
-        ReplicationGroup other = (ReplicationGroup)obj;
-        
-        if (other.getReplicationGroupId() == null ^ this.getReplicationGroupId() == null) return false;
-        if (other.getReplicationGroupId() != null && other.getReplicationGroupId().equals(this.getReplicationGroupId()) == false) return false; 
-        if (other.getDescription() == null ^ this.getDescription() == null) return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
-        if (other.getStatus() == null ^ this.getStatus() == null) return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
-        if (other.getPendingModifiedValues() == null ^ this.getPendingModifiedValues() == null) return false;
-        if (other.getPendingModifiedValues() != null && other.getPendingModifiedValues().equals(this.getPendingModifiedValues()) == false) return false; 
-        if (other.getMemberClusters() == null ^ this.getMemberClusters() == null) return false;
-        if (other.getMemberClusters() != null && other.getMemberClusters().equals(this.getMemberClusters()) == false) return false; 
-        if (other.getNodeGroups() == null ^ this.getNodeGroups() == null) return false;
-        if (other.getNodeGroups() != null && other.getNodeGroups().equals(this.getNodeGroups()) == false) return false; 
-        if (other.getSnapshottingClusterId() == null ^ this.getSnapshottingClusterId() == null) return false;
-        if (other.getSnapshottingClusterId() != null && other.getSnapshottingClusterId().equals(this.getSnapshottingClusterId()) == false) return false; 
-        if (other.getAutomaticFailover() == null ^ this.getAutomaticFailover() == null) return false;
-        if (other.getAutomaticFailover() != null && other.getAutomaticFailover().equals(this.getAutomaticFailover()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ReplicationGroup clone() {
         try {
             return (ReplicationGroup) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

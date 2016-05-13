@@ -581,26 +581,26 @@ public class AmazonSimpleEmailServiceAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVerifiedEmailAddressAsync(
+    public java.util.concurrent.Future<DeleteVerifiedEmailAddressResult> deleteVerifiedEmailAddressAsync(
             DeleteVerifiedEmailAddressRequest request) {
 
         return deleteVerifiedEmailAddressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVerifiedEmailAddressAsync(
+    public java.util.concurrent.Future<DeleteVerifiedEmailAddressResult> deleteVerifiedEmailAddressAsync(
             final DeleteVerifiedEmailAddressRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, DeleteVerifiedEmailAddressResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteVerifiedEmailAddressResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteVerifiedEmailAddressResult call()
+                            throws Exception {
+                        DeleteVerifiedEmailAddressResult result;
 
                         try {
-                            deleteVerifiedEmailAddress(request);
-                            result = null;
+                            result = deleteVerifiedEmailAddress(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1741,26 +1741,25 @@ public class AmazonSimpleEmailServiceAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> verifyEmailAddressAsync(
+    public java.util.concurrent.Future<VerifyEmailAddressResult> verifyEmailAddressAsync(
             VerifyEmailAddressRequest request) {
 
         return verifyEmailAddressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> verifyEmailAddressAsync(
+    public java.util.concurrent.Future<VerifyEmailAddressResult> verifyEmailAddressAsync(
             final VerifyEmailAddressRequest request,
-            final com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, VerifyEmailAddressResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<VerifyEmailAddressResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public VerifyEmailAddressResult call() throws Exception {
+                        VerifyEmailAddressResult result;
 
                         try {
-                            verifyEmailAddress(request);
-                            result = null;
+                            result = verifyEmailAddress(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

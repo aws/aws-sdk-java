@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PutMethodRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class PutMethodRequestMarshaller implements
         Marshaller<Request<PutMethodRequest>, PutMethodRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PutMethodRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PutMethodRequest> marshall(PutMethodRequest putMethodRequest) {
 
@@ -65,21 +72,24 @@ public class PutMethodRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (putMethodRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(putMethodRequest.getRestApiId()) : "");
+                (putMethodRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(putMethodRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{resource_id}",
-                (putMethodRequest.getResourceId() != null) ? StringUtils
-                        .fromString(putMethodRequest.getResourceId()) : "");
+                (putMethodRequest.getResourceId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(putMethodRequest
+                                .getResourceId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{http_method}",
-                (putMethodRequest.getHttpMethod() != null) ? StringUtils
-                        .fromString(putMethodRequest.getHttpMethod()) : "");
+                (putMethodRequest.getHttpMethod() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(putMethodRequest
+                                .getHttpMethod()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (putMethodRequest.getAuthorizationType() != null) {

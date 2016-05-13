@@ -109,12 +109,14 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param attachInstancesRequest
+     * @return Result of the AttachInstances operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.AttachInstances
      */
-    void attachInstances(AttachInstancesRequest attachInstancesRequest);
+    AttachInstancesResult attachInstances(
+            AttachInstancesRequest attachInstancesRequest);
 
     /**
      * <p>
@@ -206,6 +208,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param createAutoScalingGroupRequest
+     * @return Result of the CreateAutoScalingGroup operation returned by the
+     *         service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration
      *         with this name.
@@ -218,7 +222,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.CreateAutoScalingGroup
      */
-    void createAutoScalingGroup(
+    CreateAutoScalingGroupResult createAutoScalingGroup(
             CreateAutoScalingGroupRequest createAutoScalingGroupRequest);
 
     /**
@@ -237,6 +241,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param createLaunchConfigurationRequest
+     * @return Result of the CreateLaunchConfiguration operation returned by the
+     *         service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration
      *         with this name.
@@ -249,7 +255,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.CreateLaunchConfiguration
      */
-    void createLaunchConfiguration(
+    CreateLaunchConfigurationResult createLaunchConfiguration(
             CreateLaunchConfigurationRequest createLaunchConfigurationRequest);
 
     /**
@@ -269,6 +275,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param createOrUpdateTagsRequest
+     * @return Result of the CreateOrUpdateTags operation returned by the
+     *         service.
      * @throws LimitExceededException
      *         You have already reached a limit for your Auto Scaling resources
      *         (for example, groups, launch configurations, or lifecycle hooks).
@@ -281,7 +289,8 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.CreateOrUpdateTags
      */
-    void createOrUpdateTags(CreateOrUpdateTagsRequest createOrUpdateTagsRequest);
+    CreateOrUpdateTagsResult createOrUpdateTags(
+            CreateOrUpdateTagsRequest createOrUpdateTagsRequest);
 
     /**
      * <p>
@@ -309,6 +318,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deleteAutoScalingGroupRequest
+     * @return Result of the DeleteAutoScalingGroup operation returned by the
+     *         service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -320,7 +331,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteAutoScalingGroup
      */
-    void deleteAutoScalingGroup(
+    DeleteAutoScalingGroupResult deleteAutoScalingGroup(
             DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest);
 
     /**
@@ -334,6 +345,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deleteLaunchConfigurationRequest
+     * @return Result of the DeleteLaunchConfiguration operation returned by the
+     *         service.
      * @throws ResourceInUseException
      *         The Auto Scaling group or launch configuration can't be deleted
      *         because it is in use.
@@ -342,7 +355,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteLaunchConfiguration
      */
-    void deleteLaunchConfiguration(
+    DeleteLaunchConfigurationResult deleteLaunchConfiguration(
             DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest);
 
     /**
@@ -372,12 +385,14 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deleteNotificationConfigurationRequest
+     * @return Result of the DeleteNotificationConfiguration operation returned
+     *         by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteNotificationConfiguration
      */
-    void deleteNotificationConfiguration(
+    DeleteNotificationConfigurationResult deleteNotificationConfiguration(
             DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest);
 
     /**
@@ -390,12 +405,13 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deletePolicyRequest
+     * @return Result of the DeletePolicy operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeletePolicy
      */
-    void deletePolicy(DeletePolicyRequest deletePolicyRequest);
+    DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest);
 
     /**
      * <p>
@@ -403,12 +419,14 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deleteScheduledActionRequest
+     * @return Result of the DeleteScheduledAction operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteScheduledAction
      */
-    void deleteScheduledAction(
+    DeleteScheduledActionResult deleteScheduledAction(
             DeleteScheduledActionRequest deleteScheduledActionRequest);
 
     /**
@@ -417,12 +435,13 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deleteTagsRequest
+     * @return Result of the DeleteTags operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteTags
      */
-    void deleteTags(DeleteTagsRequest deleteTagsRequest);
+    DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
 
     /**
      * <p>
@@ -925,12 +944,14 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param disableMetricsCollectionRequest
+     * @return Result of the DisableMetricsCollection operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DisableMetricsCollection
      */
-    void disableMetricsCollection(
+    DisableMetricsCollectionResult disableMetricsCollection(
             DisableMetricsCollectionRequest disableMetricsCollectionRequest);
 
     /**
@@ -944,12 +965,14 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param enableMetricsCollectionRequest
+     * @return Result of the EnableMetricsCollection operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.EnableMetricsCollection
      */
-    void enableMetricsCollection(
+    EnableMetricsCollectionResult enableMetricsCollection(
             EnableMetricsCollectionRequest enableMetricsCollectionRequest);
 
     /**
@@ -977,6 +1000,7 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param executePolicyRequest
+     * @return Result of the ExecutePolicy operation returned by the service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -985,7 +1009,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.ExecutePolicy
      */
-    void executePolicy(ExecutePolicyRequest executePolicyRequest);
+    ExecutePolicyResult executePolicy(ExecutePolicyRequest executePolicyRequest);
 
     /**
      * <p>
@@ -1078,6 +1102,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param putNotificationConfigurationRequest
+     * @return Result of the PutNotificationConfiguration operation returned by
+     *         the service.
      * @throws LimitExceededException
      *         You have already reached a limit for your Auto Scaling resources
      *         (for example, groups, launch configurations, or lifecycle hooks).
@@ -1087,7 +1113,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.PutNotificationConfiguration
      */
-    void putNotificationConfiguration(
+    PutNotificationConfigurationResult putNotificationConfiguration(
             PutNotificationConfigurationRequest putNotificationConfigurationRequest);
 
     /**
@@ -1134,6 +1160,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param putScheduledUpdateGroupActionRequest
+     * @return Result of the PutScheduledUpdateGroupAction operation returned by
+     *         the service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration
      *         with this name.
@@ -1146,7 +1174,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.PutScheduledUpdateGroupAction
      */
-    void putScheduledUpdateGroupAction(
+    PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(
             PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest);
 
     /**
@@ -1203,6 +1231,7 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param resumeProcessesRequest
+     * @return Result of the ResumeProcesses operation returned by the service.
      * @throws ResourceInUseException
      *         The Auto Scaling group or launch configuration can't be deleted
      *         because it is in use.
@@ -1211,7 +1240,8 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.ResumeProcesses
      */
-    void resumeProcesses(ResumeProcessesRequest resumeProcessesRequest);
+    ResumeProcessesResult resumeProcesses(
+            ResumeProcessesRequest resumeProcessesRequest);
 
     /**
      * <p>
@@ -1224,6 +1254,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param setDesiredCapacityRequest
+     * @return Result of the SetDesiredCapacity operation returned by the
+     *         service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -1232,7 +1264,8 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.SetDesiredCapacity
      */
-    void setDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest);
+    SetDesiredCapacityResult setDesiredCapacity(
+            SetDesiredCapacityRequest setDesiredCapacityRequest);
 
     /**
      * <p>
@@ -1245,12 +1278,15 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param setInstanceHealthRequest
+     * @return Result of the SetInstanceHealth operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.SetInstanceHealth
      */
-    void setInstanceHealth(SetInstanceHealthRequest setInstanceHealthRequest);
+    SetInstanceHealthResult setInstanceHealth(
+            SetInstanceHealthRequest setInstanceHealthRequest);
 
     /**
      * <p>
@@ -1298,6 +1334,7 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param suspendProcessesRequest
+     * @return Result of the SuspendProcesses operation returned by the service.
      * @throws ResourceInUseException
      *         The Auto Scaling group or launch configuration can't be deleted
      *         because it is in use.
@@ -1306,7 +1343,8 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.SuspendProcesses
      */
-    void suspendProcesses(SuspendProcessesRequest suspendProcessesRequest);
+    SuspendProcessesResult suspendProcesses(
+            SuspendProcessesRequest suspendProcessesRequest);
 
     /**
      * <p>
@@ -1379,6 +1417,8 @@ public interface AmazonAutoScaling {
      * </ul>
      * 
      * @param updateAutoScalingGroupRequest
+     * @return Result of the UpdateAutoScalingGroup operation returned by the
+     *         service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -1387,7 +1427,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.UpdateAutoScalingGroup
      */
-    void updateAutoScalingGroup(
+    UpdateAutoScalingGroupResult updateAutoScalingGroup(
             UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest);
 
     /**

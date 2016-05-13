@@ -116,9 +116,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @param addTagsToOnPremisesInstancesRequest
      *        Represents the input of, and adds tags to, an on-premises instance
      *        operation.
+     * @return A Java Future containing the result of the
+     *         AddTagsToOnPremisesInstances operation returned by the service.
      * @sample AmazonCodeDeployAsync.AddTagsToOnPremisesInstances
      */
-    java.util.concurrent.Future<Void> addTagsToOnPremisesInstancesAsync(
+    java.util.concurrent.Future<AddTagsToOnPremisesInstancesResult> addTagsToOnPremisesInstancesAsync(
             AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest);
 
     /**
@@ -134,11 +136,13 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         AddTagsToOnPremisesInstances operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.AddTagsToOnPremisesInstances
      */
-    java.util.concurrent.Future<Void> addTagsToOnPremisesInstancesAsync(
+    java.util.concurrent.Future<AddTagsToOnPremisesInstancesResult> addTagsToOnPremisesInstancesAsync(
             AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest,
-            com.amazonaws.handlers.AsyncHandler<AddTagsToOnPremisesInstancesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AddTagsToOnPremisesInstancesRequest, AddTagsToOnPremisesInstancesResult> asyncHandler);
 
     /**
      * <p>
@@ -551,9 +555,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * 
      * @param deleteApplicationRequest
      *        Represents the input of a delete application operation.
+     * @return A Java Future containing the result of the DeleteApplication
+     *         operation returned by the service.
      * @sample AmazonCodeDeployAsync.DeleteApplication
      */
-    java.util.concurrent.Future<Void> deleteApplicationAsync(
+    java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
             DeleteApplicationRequest deleteApplicationRequest);
 
     /**
@@ -568,11 +574,13 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApplication
+     *         operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.DeleteApplication
      */
-    java.util.concurrent.Future<Void> deleteApplicationAsync(
+    java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
             DeleteApplicationRequest deleteApplicationRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler);
 
     /**
      * <p>
@@ -584,9 +592,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @param deleteDeploymentConfigRequest
      *        Represents the input of a delete deployment configuration
      *        operation.
+     * @return A Java Future containing the result of the DeleteDeploymentConfig
+     *         operation returned by the service.
      * @sample AmazonCodeDeployAsync.DeleteDeploymentConfig
      */
-    java.util.concurrent.Future<Void> deleteDeploymentConfigAsync(
+    java.util.concurrent.Future<DeleteDeploymentConfigResult> deleteDeploymentConfigAsync(
             DeleteDeploymentConfigRequest deleteDeploymentConfigRequest);
 
     /**
@@ -604,11 +614,13 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDeploymentConfig
+     *         operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.DeleteDeploymentConfig
      */
-    java.util.concurrent.Future<Void> deleteDeploymentConfigAsync(
+    java.util.concurrent.Future<DeleteDeploymentConfigResult> deleteDeploymentConfigAsync(
             DeleteDeploymentConfigRequest deleteDeploymentConfigRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentConfigRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentConfigRequest, DeleteDeploymentConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -652,9 +664,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @param deregisterOnPremisesInstanceRequest
      *        Represents the input of a deregister on-premises instance
      *        operation.
+     * @return A Java Future containing the result of the
+     *         DeregisterOnPremisesInstance operation returned by the service.
      * @sample AmazonCodeDeployAsync.DeregisterOnPremisesInstance
      */
-    java.util.concurrent.Future<Void> deregisterOnPremisesInstanceAsync(
+    java.util.concurrent.Future<DeregisterOnPremisesInstanceResult> deregisterOnPremisesInstanceAsync(
             DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest);
 
     /**
@@ -670,11 +684,13 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeregisterOnPremisesInstance operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.DeregisterOnPremisesInstance
      */
-    java.util.concurrent.Future<Void> deregisterOnPremisesInstanceAsync(
+    java.util.concurrent.Future<DeregisterOnPremisesInstanceResult> deregisterOnPremisesInstanceAsync(
             DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest,
-            com.amazonaws.handlers.AsyncHandler<DeregisterOnPremisesInstanceRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeregisterOnPremisesInstanceRequest, DeregisterOnPremisesInstanceResult> asyncHandler);
 
     /**
      * <p>
@@ -1250,9 +1266,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * 
      * @param registerApplicationRevisionRequest
      *        Represents the input of a register application revision operation.
+     * @return A Java Future containing the result of the
+     *         RegisterApplicationRevision operation returned by the service.
      * @sample AmazonCodeDeployAsync.RegisterApplicationRevision
      */
-    java.util.concurrent.Future<Void> registerApplicationRevisionAsync(
+    java.util.concurrent.Future<RegisterApplicationRevisionResult> registerApplicationRevisionAsync(
             RegisterApplicationRevisionRequest registerApplicationRevisionRequest);
 
     /**
@@ -1267,11 +1285,13 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RegisterApplicationRevision operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.RegisterApplicationRevision
      */
-    java.util.concurrent.Future<Void> registerApplicationRevisionAsync(
+    java.util.concurrent.Future<RegisterApplicationRevisionResult> registerApplicationRevisionAsync(
             RegisterApplicationRevisionRequest registerApplicationRevisionRequest,
-            com.amazonaws.handlers.AsyncHandler<RegisterApplicationRevisionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RegisterApplicationRevisionRequest, RegisterApplicationRevisionResult> asyncHandler);
 
     /**
      * <p>
@@ -1281,9 +1301,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @param registerOnPremisesInstanceRequest
      *        Represents the input of the register on-premises instance
      *        operation.
+     * @return A Java Future containing the result of the
+     *         RegisterOnPremisesInstance operation returned by the service.
      * @sample AmazonCodeDeployAsync.RegisterOnPremisesInstance
      */
-    java.util.concurrent.Future<Void> registerOnPremisesInstanceAsync(
+    java.util.concurrent.Future<RegisterOnPremisesInstanceResult> registerOnPremisesInstanceAsync(
             RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest);
 
     /**
@@ -1299,11 +1321,13 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RegisterOnPremisesInstance operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.RegisterOnPremisesInstance
      */
-    java.util.concurrent.Future<Void> registerOnPremisesInstanceAsync(
+    java.util.concurrent.Future<RegisterOnPremisesInstanceResult> registerOnPremisesInstanceAsync(
             RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest,
-            com.amazonaws.handlers.AsyncHandler<RegisterOnPremisesInstanceRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RegisterOnPremisesInstanceRequest, RegisterOnPremisesInstanceResult> asyncHandler);
 
     /**
      * <p>
@@ -1313,9 +1337,12 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @param removeTagsFromOnPremisesInstancesRequest
      *        Represents the input of a remove tags from on-premises instances
      *        operation.
+     * @return A Java Future containing the result of the
+     *         RemoveTagsFromOnPremisesInstances operation returned by the
+     *         service.
      * @sample AmazonCodeDeployAsync.RemoveTagsFromOnPremisesInstances
      */
-    java.util.concurrent.Future<Void> removeTagsFromOnPremisesInstancesAsync(
+    java.util.concurrent.Future<RemoveTagsFromOnPremisesInstancesResult> removeTagsFromOnPremisesInstancesAsync(
             RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest);
 
     /**
@@ -1331,11 +1358,14 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RemoveTagsFromOnPremisesInstances operation returned by the
+     *         service.
      * @sample AmazonCodeDeployAsyncHandler.RemoveTagsFromOnPremisesInstances
      */
-    java.util.concurrent.Future<Void> removeTagsFromOnPremisesInstancesAsync(
+    java.util.concurrent.Future<RemoveTagsFromOnPremisesInstancesResult> removeTagsFromOnPremisesInstancesAsync(
             RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest,
-            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromOnPremisesInstancesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromOnPremisesInstancesRequest, RemoveTagsFromOnPremisesInstancesResult> asyncHandler);
 
     /**
      * <p>
@@ -1378,9 +1408,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * 
      * @param updateApplicationRequest
      *        Represents the input of an update application operation.
+     * @return A Java Future containing the result of the UpdateApplication
+     *         operation returned by the service.
      * @sample AmazonCodeDeployAsync.UpdateApplication
      */
-    java.util.concurrent.Future<Void> updateApplicationAsync(
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
             UpdateApplicationRequest updateApplicationRequest);
 
     /**
@@ -1395,18 +1427,20 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApplication
+     *         operation returned by the service.
      * @sample AmazonCodeDeployAsyncHandler.UpdateApplication
      */
-    java.util.concurrent.Future<Void> updateApplicationAsync(
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
             UpdateApplicationRequest updateApplicationRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the UpdateApplication operation.
      *
      * @see #updateApplicationAsync(UpdateApplicationRequest)
      */
-    java.util.concurrent.Future<Void> updateApplicationAsync();
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync();
 
     /**
      * Simplified method form for invoking the UpdateApplication operation with
@@ -1415,8 +1449,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see #updateApplicationAsync(UpdateApplicationRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> updateApplicationAsync(
-            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, Void> asyncHandler);
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);
 
     /**
      * <p>

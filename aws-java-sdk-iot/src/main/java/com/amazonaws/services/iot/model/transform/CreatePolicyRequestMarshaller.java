@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreatePolicyRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class CreatePolicyRequestMarshaller implements
         Marshaller<Request<CreatePolicyRequest>, CreatePolicyRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreatePolicyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreatePolicyRequest> marshall(
             CreatePolicyRequest createPolicyRequest) {
@@ -66,13 +73,14 @@ public class CreatePolicyRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
-                (createPolicyRequest.getPolicyName() != null) ? StringUtils
-                        .fromString(createPolicyRequest.getPolicyName()) : "");
+                (createPolicyRequest.getPolicyName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(createPolicyRequest
+                                .getPolicyName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (createPolicyRequest.getPolicyDocument() != null) {

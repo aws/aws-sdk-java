@@ -28,7 +28,7 @@ import com.amazonaws.Request;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.HttpResponseHandler;
-import com.amazonaws.http.JsonErrorResponseHandlerV2;
+import com.amazonaws.http.JsonErrorResponseHandler;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 
 /**
@@ -47,7 +47,7 @@ public abstract class WireMockTestBase {
     }
 
     protected HttpResponseHandler<AmazonServiceException> stubErrorHandler() throws Exception {
-        HttpResponseHandler<AmazonServiceException> errorHandler = mock(JsonErrorResponseHandlerV2.class);
+        HttpResponseHandler<AmazonServiceException> errorHandler = mock(JsonErrorResponseHandler.class);
         when(errorHandler.handle(any(HttpResponse.class))).thenReturn(mockException());
         return errorHandler;
     }

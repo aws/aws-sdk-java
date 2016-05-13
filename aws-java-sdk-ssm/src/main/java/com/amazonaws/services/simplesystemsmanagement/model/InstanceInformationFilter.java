@@ -19,17 +19,29 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes a filter for a specific list of instances.
+ * </p>
  */
 public class InstanceInformationFilter implements Serializable, Cloneable {
 
-    /** The name of the filter. */
+    /**
+     * <p>
+     * The name of the filter.
+     * </p>
+     */
     private String key;
-    /** The filter values. */
+    /**
+     * <p>
+     * The filter values.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> valueSet;
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @param key
      *        The name of the filter.
@@ -41,7 +53,9 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @return The name of the filter.
      * @see InstanceInformationFilterKey
@@ -52,7 +66,9 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @param key
      *        The name of the filter.
@@ -67,7 +83,9 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @param key
      *        The name of the filter.
@@ -79,7 +97,9 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @param key
      *        The name of the filter.
@@ -94,7 +114,9 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The filter values.
+     * </p>
      * 
      * @return The filter values.
      */
@@ -107,7 +129,9 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The filter values.
+     * </p>
      * 
      * @param valueSet
      *        The filter values.
@@ -124,7 +148,9 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The filter values.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setValueSet(java.util.Collection)} or
@@ -150,7 +176,9 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The filter values.
+     * </p>
      * 
      * @param valueSet
      *        The filter values.

@@ -75,6 +75,12 @@ public class ChangeSetSummaryStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("ExecutionStatus", targetDepth)) {
+                    changeSetSummary.setExecutionStatus(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Status", targetDepth)) {
                     changeSetSummary.setStatus(StringStaxUnmarshaller
                             .getInstance().unmarshall(context));

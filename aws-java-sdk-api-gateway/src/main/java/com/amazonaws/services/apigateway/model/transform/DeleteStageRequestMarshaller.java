@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteStageRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class DeleteStageRequestMarshaller implements
         Marshaller<Request<DeleteStageRequest>, DeleteStageRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteStageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteStageRequest> marshall(
             DeleteStageRequest deleteStageRequest) {
@@ -66,12 +73,14 @@ public class DeleteStageRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (deleteStageRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(deleteStageRequest.getRestApiId()) : "");
+                (deleteStageRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteStageRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{stage_name}",
-                (deleteStageRequest.getStageName() != null) ? StringUtils
-                        .fromString(deleteStageRequest.getStageName()) : "");
+                (deleteStageRequest.getStageName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteStageRequest
+                                .getStageName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

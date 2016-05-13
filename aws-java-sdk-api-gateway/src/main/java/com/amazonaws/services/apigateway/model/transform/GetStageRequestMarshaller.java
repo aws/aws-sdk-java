@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetStageRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetStageRequestMarshaller implements
         Marshaller<Request<GetStageRequest>, GetStageRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetStageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetStageRequest> marshall(GetStageRequest getStageRequest) {
 
@@ -65,12 +72,14 @@ public class GetStageRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getStageRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(getStageRequest.getRestApiId()) : "");
+                (getStageRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getStageRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{stage_name}",
-                (getStageRequest.getStageName() != null) ? StringUtils
-                        .fromString(getStageRequest.getStageName()) : "");
+                (getStageRequest.getStageName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getStageRequest
+                                .getStageName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -174,6 +174,7 @@ public interface AWSIotData {
      * 
      * @param publishRequest
      *        The input for the Publish operation.
+     * @return Result of the Publish operation returned by the service.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -184,7 +185,7 @@ public interface AWSIotData {
      *         The specified combination of HTTP verb and URI is not supported.
      * @sample AWSIotData.Publish
      */
-    void publish(PublishRequest publishRequest);
+    PublishResult publish(PublishRequest publishRequest);
 
     /**
      * <p>

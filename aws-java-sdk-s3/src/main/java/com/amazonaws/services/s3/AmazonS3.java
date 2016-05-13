@@ -4523,4 +4523,31 @@ public interface AmazonS3 extends S3DirectSpi {
     public void setBucketAccelerateConfiguration(
             SetBucketAccelerateConfigurationRequest setBucketAccelerateConfigurationRequest)
             throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Returns the region with which the client is configured.
+     *
+     * @return The region this client will communicate with.
+     */
+    Region getRegion();
+
+    /**
+     * Returns an URL for the object stored in the specified bucket and
+     * key.
+     * <p>
+     * If the object identified by the given bucket and key has public read
+     * permissions (ex: {@link CannedAccessControlList#PublicRead}), then this
+     * URL can be directly accessed to retrieve the object's data.
+     *
+     * @param bucketName
+     *            The name of the bucket containing the object whose URL is
+     *            being requested.
+     * @param key
+     *            The key under which the object whose URL is being requested is
+     *            stored.
+     *
+     * @return A unique URL for the object stored in the specified bucket and
+     *         key.
+     */
+    URL getUrl(String bucketName, String key);
 }

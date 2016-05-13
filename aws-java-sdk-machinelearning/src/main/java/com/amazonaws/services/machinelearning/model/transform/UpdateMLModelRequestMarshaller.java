@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateMLModelRequest Marshaller
  */
 public class UpdateMLModelRequestMarshaller implements
         Marshaller<Request<UpdateMLModelRequest>, UpdateMLModelRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateMLModelRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateMLModelRequest> marshall(
             UpdateMLModelRequest updateMLModelRequest) {
@@ -57,8 +63,8 @@ public class UpdateMLModelRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

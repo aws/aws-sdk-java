@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -149,7 +149,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
     /**
-     * List of exception unmarshallers for all IAM exceptions.
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -367,6 +367,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param addClientIDToOpenIDConnectProviderRequest
+     * @return Result of the AddClientIDToOpenIDConnectProvider operation
+     *         returned by the service.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value
      *         was supplied for an input parameter.
@@ -383,14 +385,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.AddClientIDToOpenIDConnectProvider
      */
     @Override
-    public void addClientIDToOpenIDConnectProvider(
+    public AddClientIDToOpenIDConnectProviderResult addClientIDToOpenIDConnectProvider(
             AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest) {
         ExecutionContext executionContext = createExecutionContext(addClientIDToOpenIDConnectProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddClientIDToOpenIDConnectProviderRequest> request = null;
-        Response<Void> response = null;
+        Response<AddClientIDToOpenIDConnectProviderResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -404,9 +406,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AddClientIDToOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<AddClientIDToOpenIDConnectProviderResult>(
+                    new AddClientIDToOpenIDConnectProviderResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -434,6 +438,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param addRoleToInstanceProfileRequest
+     * @return Result of the AddRoleToInstanceProfile operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -450,14 +456,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.AddRoleToInstanceProfile
      */
     @Override
-    public void addRoleToInstanceProfile(
+    public AddRoleToInstanceProfileResult addRoleToInstanceProfile(
             AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest) {
         ExecutionContext executionContext = createExecutionContext(addRoleToInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddRoleToInstanceProfileRequest> request = null;
-        Response<Void> response = null;
+        Response<AddRoleToInstanceProfileResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -471,9 +477,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AddRoleToInstanceProfileResult> responseHandler = new StaxResponseHandler<AddRoleToInstanceProfileResult>(
+                    new AddRoleToInstanceProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -487,6 +495,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param addUserToGroupRequest
+     * @return Result of the AddUserToGroup operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -500,13 +509,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.AddUserToGroup
      */
     @Override
-    public void addUserToGroup(AddUserToGroupRequest addUserToGroupRequest) {
+    public AddUserToGroupResult addUserToGroup(
+            AddUserToGroupRequest addUserToGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(addUserToGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddUserToGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<AddUserToGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -519,9 +529,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AddUserToGroupResult> responseHandler = new StaxResponseHandler<AddUserToGroupResult>(
+                    new AddUserToGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -544,6 +556,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param attachGroupPolicyRequest
+     * @return Result of the AttachGroupPolicy operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -560,14 +574,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.AttachGroupPolicy
      */
     @Override
-    public void attachGroupPolicy(
+    public AttachGroupPolicyResult attachGroupPolicy(
             AttachGroupPolicyRequest attachGroupPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(attachGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AttachGroupPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<AttachGroupPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -581,9 +595,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AttachGroupPolicyResult> responseHandler = new StaxResponseHandler<AttachGroupPolicyResult>(
+                    new AttachGroupPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -611,6 +627,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param attachRolePolicyRequest
+     * @return Result of the AttachRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -627,13 +644,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.AttachRolePolicy
      */
     @Override
-    public void attachRolePolicy(AttachRolePolicyRequest attachRolePolicyRequest) {
+    public AttachRolePolicyResult attachRolePolicy(
+            AttachRolePolicyRequest attachRolePolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(attachRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AttachRolePolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<AttachRolePolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -647,9 +665,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AttachRolePolicyResult> responseHandler = new StaxResponseHandler<AttachRolePolicyResult>(
+                    new AttachRolePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -672,6 +692,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param attachUserPolicyRequest
+     * @return Result of the AttachUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -688,13 +709,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.AttachUserPolicy
      */
     @Override
-    public void attachUserPolicy(AttachUserPolicyRequest attachUserPolicyRequest) {
+    public AttachUserPolicyResult attachUserPolicy(
+            AttachUserPolicyRequest attachUserPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(attachUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AttachUserPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<AttachUserPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -708,9 +730,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AttachUserPolicyResult> responseHandler = new StaxResponseHandler<AttachUserPolicyResult>(
+                    new AttachUserPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -732,6 +756,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param changePasswordRequest
+     * @return Result of the ChangePassword operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -757,13 +782,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.ChangePassword
      */
     @Override
-    public void changePassword(ChangePasswordRequest changePasswordRequest) {
+    public ChangePasswordResult changePassword(
+            ChangePasswordRequest changePasswordRequest) {
         ExecutionContext executionContext = createExecutionContext(changePasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ChangePasswordRequest> request = null;
-        Response<Void> response = null;
+        Response<ChangePasswordResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -776,9 +802,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ChangePasswordResult> responseHandler = new StaxResponseHandler<ChangePasswordResult>(
+                    new ChangePasswordResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -876,6 +904,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param createAccountAliasRequest
+     * @return Result of the CreateAccountAlias operation returned by the
+     *         service.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a
      *         resource that already exists.
@@ -889,14 +919,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.CreateAccountAlias
      */
     @Override
-    public void createAccountAlias(
+    public CreateAccountAliasResult createAccountAlias(
             CreateAccountAliasRequest createAccountAliasRequest) {
         ExecutionContext executionContext = createExecutionContext(createAccountAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateAccountAliasRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateAccountAliasResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -910,9 +940,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<CreateAccountAliasResult> responseHandler = new StaxResponseHandler<CreateAccountAliasResult>(
+                    new CreateAccountAliasResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1624,6 +1656,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deactivateMFADeviceRequest
+     * @return Result of the DeactivateMFADevice operation returned by the
+     *         service.
      * @throws EntityTemporarilyUnmodifiableException
      *         The request was rejected because it referenced an entity that is
      *         temporarily unmodifiable, such as a user name that was deleted
@@ -1643,14 +1677,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeactivateMFADevice
      */
     @Override
-    public void deactivateMFADevice(
+    public DeactivateMFADeviceResult deactivateMFADevice(
             DeactivateMFADeviceRequest deactivateMFADeviceRequest) {
         ExecutionContext executionContext = createExecutionContext(deactivateMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeactivateMFADeviceRequest> request = null;
-        Response<Void> response = null;
+        Response<DeactivateMFADeviceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1664,9 +1698,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeactivateMFADeviceResult> responseHandler = new StaxResponseHandler<DeactivateMFADeviceResult>(
+                    new DeactivateMFADeviceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1687,6 +1723,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteAccessKeyRequest
+     * @return Result of the DeleteAccessKey operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1700,13 +1737,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteAccessKey
      */
     @Override
-    public void deleteAccessKey(DeleteAccessKeyRequest deleteAccessKeyRequest) {
+    public DeleteAccessKeyResult deleteAccessKey(
+            DeleteAccessKeyRequest deleteAccessKeyRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAccessKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAccessKeyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAccessKeyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1719,9 +1757,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteAccessKeyResult> responseHandler = new StaxResponseHandler<DeleteAccessKeyResult>(
+                    new DeleteAccessKeyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1738,6 +1778,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteAccountAliasRequest
+     * @return Result of the DeleteAccountAlias operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1751,14 +1793,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteAccountAlias
      */
     @Override
-    public void deleteAccountAlias(
+    public DeleteAccountAliasResult deleteAccountAlias(
             DeleteAccountAliasRequest deleteAccountAliasRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAccountAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAccountAliasRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAccountAliasResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1772,9 +1814,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteAccountAliasResult> responseHandler = new StaxResponseHandler<DeleteAccountAliasResult>(
+                    new DeleteAccountAliasResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1788,6 +1832,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteAccountPasswordPolicyRequest
+     * @return Result of the DeleteAccountPasswordPolicy operation returned by
+     *         the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1801,14 +1847,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteAccountPasswordPolicy
      */
     @Override
-    public void deleteAccountPasswordPolicy(
+    public DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy(
             DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAccountPasswordPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAccountPasswordPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAccountPasswordPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1822,9 +1868,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteAccountPasswordPolicyResult> responseHandler = new StaxResponseHandler<DeleteAccountPasswordPolicyResult>(
+                    new DeleteAccountPasswordPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1833,8 +1881,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     }
 
     @Override
-    public void deleteAccountPasswordPolicy() {
-        deleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest());
+    public DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy() {
+        return deleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest());
     }
 
     /**
@@ -1844,6 +1892,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteGroupRequest
+     * @return Result of the DeleteGroup operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1861,13 +1910,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteGroup
      */
     @Override
-    public void deleteGroup(DeleteGroupRequest deleteGroupRequest) {
+    public DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1880,9 +1929,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteGroupResult> responseHandler = new StaxResponseHandler<DeleteGroupResult>(
+                    new DeleteGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1904,6 +1955,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteGroupPolicyRequest
+     * @return Result of the DeleteGroupPolicy operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1917,14 +1970,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteGroupPolicy
      */
     @Override
-    public void deleteGroupPolicy(
+    public DeleteGroupPolicyResult deleteGroupPolicy(
             DeleteGroupPolicyRequest deleteGroupPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteGroupPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteGroupPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1938,9 +1991,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteGroupPolicyResult> responseHandler = new StaxResponseHandler<DeleteGroupPolicyResult>(
+                    new DeleteGroupPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1968,6 +2023,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteInstanceProfileRequest
+     * @return Result of the DeleteInstanceProfile operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1985,14 +2042,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteInstanceProfile
      */
     @Override
-    public void deleteInstanceProfile(
+    public DeleteInstanceProfileResult deleteInstanceProfile(
             DeleteInstanceProfileRequest deleteInstanceProfileRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteInstanceProfileRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteInstanceProfileResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2006,9 +2063,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteInstanceProfileResult> responseHandler = new StaxResponseHandler<DeleteInstanceProfileResult>(
+                    new DeleteInstanceProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2032,6 +2091,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </important>
      * 
      * @param deleteLoginProfileRequest
+     * @return Result of the DeleteLoginProfile operation returned by the
+     *         service.
      * @throws EntityTemporarilyUnmodifiableException
      *         The request was rejected because it referenced an entity that is
      *         temporarily unmodifiable, such as a user name that was deleted
@@ -2051,14 +2112,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteLoginProfile
      */
     @Override
-    public void deleteLoginProfile(
+    public DeleteLoginProfileResult deleteLoginProfile(
             DeleteLoginProfileRequest deleteLoginProfileRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteLoginProfileRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteLoginProfileResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2072,9 +2133,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteLoginProfileResult> responseHandler = new StaxResponseHandler<DeleteLoginProfileResult>(
+                    new DeleteLoginProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2097,6 +2160,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteOpenIDConnectProviderRequest
+     * @return Result of the DeleteOpenIDConnectProvider operation returned by
+     *         the service.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value
      *         was supplied for an input parameter.
@@ -2109,14 +2174,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteOpenIDConnectProvider
      */
     @Override
-    public void deleteOpenIDConnectProvider(
+    public DeleteOpenIDConnectProviderResult deleteOpenIDConnectProvider(
             DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteOpenIDConnectProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteOpenIDConnectProviderRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteOpenIDConnectProviderResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2130,9 +2195,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<DeleteOpenIDConnectProviderResult>(
+                    new DeleteOpenIDConnectProviderResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2182,6 +2249,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deletePolicyRequest
+     * @return Result of the DeletePolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -2202,13 +2270,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeletePolicy
      */
     @Override
-    public void deletePolicy(DeletePolicyRequest deletePolicyRequest) {
+    public DeletePolicyResult deletePolicy(
+            DeletePolicyRequest deletePolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeletePolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeletePolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2221,9 +2290,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeletePolicyResult> responseHandler = new StaxResponseHandler<DeletePolicyResult>(
+                    new DeletePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2248,6 +2319,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deletePolicyVersionRequest
+     * @return Result of the DeletePolicyVersion operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -2268,14 +2341,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeletePolicyVersion
      */
     @Override
-    public void deletePolicyVersion(
+    public DeletePolicyVersionResult deletePolicyVersion(
             DeletePolicyVersionRequest deletePolicyVersionRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeletePolicyVersionRequest> request = null;
-        Response<Void> response = null;
+        Response<DeletePolicyVersionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2289,9 +2362,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeletePolicyVersionResult> responseHandler = new StaxResponseHandler<DeletePolicyVersionResult>(
+                    new DeletePolicyVersionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2316,6 +2391,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </important>
      * 
      * @param deleteRoleRequest
+     * @return Result of the DeleteRole operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -2333,13 +2409,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteRole
      */
     @Override
-    public void deleteRole(DeleteRoleRequest deleteRoleRequest) {
+    public DeleteRoleResult deleteRole(DeleteRoleRequest deleteRoleRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteRoleRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteRoleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2352,9 +2428,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteRoleResult> responseHandler = new StaxResponseHandler<DeleteRoleResult>(
+                    new DeleteRoleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2376,6 +2454,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteRolePolicyRequest
+     * @return Result of the DeleteRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -2389,13 +2468,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteRolePolicy
      */
     @Override
-    public void deleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest) {
+    public DeleteRolePolicyResult deleteRolePolicy(
+            DeleteRolePolicyRequest deleteRolePolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteRolePolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteRolePolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2409,9 +2489,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteRolePolicyResult> responseHandler = new StaxResponseHandler<DeleteRolePolicyResult>(
+                    new DeleteRolePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2438,6 +2520,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </note>
      * 
      * @param deleteSAMLProviderRequest
+     * @return Result of the DeleteSAMLProvider operation returned by the
+     *         service.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value
      *         was supplied for an input parameter.
@@ -2454,14 +2538,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteSAMLProvider
      */
     @Override
-    public void deleteSAMLProvider(
+    public DeleteSAMLProviderResult deleteSAMLProvider(
             DeleteSAMLProviderRequest deleteSAMLProviderRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteSAMLProviderRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteSAMLProviderResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2475,9 +2559,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteSAMLProviderResult> responseHandler = new StaxResponseHandler<DeleteSAMLProviderResult>(
+                    new DeleteSAMLProviderResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2500,20 +2586,22 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteSSHPublicKeyRequest
+     * @return Result of the DeleteSSHPublicKey operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
      * @sample AmazonIdentityManagement.DeleteSSHPublicKey
      */
     @Override
-    public void deleteSSHPublicKey(
+    public DeleteSSHPublicKeyResult deleteSSHPublicKey(
             DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteSSHPublicKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteSSHPublicKeyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteSSHPublicKeyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2527,9 +2615,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteSSHPublicKeyResult> responseHandler = new StaxResponseHandler<DeleteSSHPublicKeyResult>(
+                    new DeleteSSHPublicKeyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2565,6 +2655,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </important>
      * 
      * @param deleteServerCertificateRequest
+     * @return Result of the DeleteServerCertificate operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -2582,14 +2674,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteServerCertificate
      */
     @Override
-    public void deleteServerCertificate(
+    public DeleteServerCertificateResult deleteServerCertificate(
             DeleteServerCertificateRequest deleteServerCertificateRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteServerCertificateRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteServerCertificateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2603,9 +2695,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteServerCertificateResult> responseHandler = new StaxResponseHandler<DeleteServerCertificateResult>(
+                    new DeleteServerCertificateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2626,6 +2720,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteSigningCertificateRequest
+     * @return Result of the DeleteSigningCertificate operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -2639,14 +2735,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteSigningCertificate
      */
     @Override
-    public void deleteSigningCertificate(
+    public DeleteSigningCertificateResult deleteSigningCertificate(
             DeleteSigningCertificateRequest deleteSigningCertificateRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteSigningCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteSigningCertificateRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteSigningCertificateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2660,9 +2756,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteSigningCertificateResult> responseHandler = new StaxResponseHandler<DeleteSigningCertificateResult>(
+                    new DeleteSigningCertificateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2677,6 +2775,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteUserRequest
+     * @return Result of the DeleteUser operation returned by the service.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources
      *         beyond the current AWS account limits. The error message
@@ -2694,13 +2793,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteUser
      */
     @Override
-    public void deleteUser(DeleteUserRequest deleteUserRequest) {
+    public DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteUserRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteUserResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2713,9 +2812,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteUserResult> responseHandler = new StaxResponseHandler<DeleteUserResult>(
+                    new DeleteUserResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2737,6 +2838,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteUserPolicyRequest
+     * @return Result of the DeleteUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -2750,13 +2852,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteUserPolicy
      */
     @Override
-    public void deleteUserPolicy(DeleteUserPolicyRequest deleteUserPolicyRequest) {
+    public DeleteUserPolicyResult deleteUserPolicy(
+            DeleteUserPolicyRequest deleteUserPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteUserPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteUserPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2770,9 +2873,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteUserPolicyResult> responseHandler = new StaxResponseHandler<DeleteUserPolicyResult>(
+                    new DeleteUserPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2793,6 +2898,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </note>
      * 
      * @param deleteVirtualMFADeviceRequest
+     * @return Result of the DeleteVirtualMFADevice operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -2810,14 +2917,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DeleteVirtualMFADevice
      */
     @Override
-    public void deleteVirtualMFADevice(
+    public DeleteVirtualMFADeviceResult deleteVirtualMFADevice(
             DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteVirtualMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteVirtualMFADeviceRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteVirtualMFADeviceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2831,9 +2938,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteVirtualMFADeviceResult> responseHandler = new StaxResponseHandler<DeleteVirtualMFADeviceResult>(
+                    new DeleteVirtualMFADeviceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2854,6 +2963,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param detachGroupPolicyRequest
+     * @return Result of the DetachGroupPolicy operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -2870,14 +2981,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DetachGroupPolicy
      */
     @Override
-    public void detachGroupPolicy(
+    public DetachGroupPolicyResult detachGroupPolicy(
             DetachGroupPolicyRequest detachGroupPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(detachGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DetachGroupPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DetachGroupPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2891,9 +3002,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DetachGroupPolicyResult> responseHandler = new StaxResponseHandler<DetachGroupPolicyResult>(
+                    new DetachGroupPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2914,6 +3027,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param detachRolePolicyRequest
+     * @return Result of the DetachRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -2930,13 +3044,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DetachRolePolicy
      */
     @Override
-    public void detachRolePolicy(DetachRolePolicyRequest detachRolePolicyRequest) {
+    public DetachRolePolicyResult detachRolePolicy(
+            DetachRolePolicyRequest detachRolePolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(detachRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DetachRolePolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DetachRolePolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2950,9 +3065,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DetachRolePolicyResult> responseHandler = new StaxResponseHandler<DetachRolePolicyResult>(
+                    new DetachRolePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2973,6 +3090,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param detachUserPolicyRequest
+     * @return Result of the DetachUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -2989,13 +3107,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.DetachUserPolicy
      */
     @Override
-    public void detachUserPolicy(DetachUserPolicyRequest detachUserPolicyRequest) {
+    public DetachUserPolicyResult detachUserPolicy(
+            DetachUserPolicyRequest detachUserPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(detachUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DetachUserPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DetachUserPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3009,9 +3128,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DetachUserPolicyResult> responseHandler = new StaxResponseHandler<DetachUserPolicyResult>(
+                    new DetachUserPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -3027,6 +3148,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param enableMFADeviceRequest
+     * @return Result of the EnableMFADevice operation returned by the service.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a
      *         resource that already exists.
@@ -3052,13 +3174,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.EnableMFADevice
      */
     @Override
-    public void enableMFADevice(EnableMFADeviceRequest enableMFADeviceRequest) {
+    public EnableMFADeviceResult enableMFADevice(
+            EnableMFADeviceRequest enableMFADeviceRequest) {
         ExecutionContext executionContext = createExecutionContext(enableMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableMFADeviceRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableMFADeviceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -3071,9 +3194,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<EnableMFADeviceResult> responseHandler = new StaxResponseHandler<EnableMFADeviceResult>(
+                    new EnableMFADeviceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -5890,6 +6015,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </note>
      * 
      * @param putGroupPolicyRequest
+     * @return Result of the PutGroupPolicy operation returned by the service.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources
      *         beyond the current AWS account limits. The error message
@@ -5906,13 +6032,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.PutGroupPolicy
      */
     @Override
-    public void putGroupPolicy(PutGroupPolicyRequest putGroupPolicyRequest) {
+    public PutGroupPolicyResult putGroupPolicy(
+            PutGroupPolicyRequest putGroupPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(putGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutGroupPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<PutGroupPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -5925,9 +6052,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<PutGroupPolicyResult> responseHandler = new StaxResponseHandler<PutGroupPolicyResult>(
+                    new PutGroupPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -5974,6 +6103,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </note>
      * 
      * @param putRolePolicyRequest
+     * @return Result of the PutRolePolicy operation returned by the service.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources
      *         beyond the current AWS account limits. The error message
@@ -5990,13 +6120,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.PutRolePolicy
      */
     @Override
-    public void putRolePolicy(PutRolePolicyRequest putRolePolicyRequest) {
+    public PutRolePolicyResult putRolePolicy(
+            PutRolePolicyRequest putRolePolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(putRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutRolePolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<PutRolePolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6009,9 +6140,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<PutRolePolicyResult> responseHandler = new StaxResponseHandler<PutRolePolicyResult>(
+                    new PutRolePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6049,6 +6182,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </note>
      * 
      * @param putUserPolicyRequest
+     * @return Result of the PutUserPolicy operation returned by the service.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources
      *         beyond the current AWS account limits. The error message
@@ -6065,13 +6199,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.PutUserPolicy
      */
     @Override
-    public void putUserPolicy(PutUserPolicyRequest putUserPolicyRequest) {
+    public PutUserPolicyResult putUserPolicy(
+            PutUserPolicyRequest putUserPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(putUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutUserPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<PutUserPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6084,9 +6219,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<PutUserPolicyResult> responseHandler = new StaxResponseHandler<PutUserPolicyResult>(
+                    new PutUserPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6106,6 +6243,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param removeClientIDFromOpenIDConnectProviderRequest
+     * @return Result of the RemoveClientIDFromOpenIDConnectProvider operation
+     *         returned by the service.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value
      *         was supplied for an input parameter.
@@ -6118,14 +6257,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.RemoveClientIDFromOpenIDConnectProvider
      */
     @Override
-    public void removeClientIDFromOpenIDConnectProvider(
+    public RemoveClientIDFromOpenIDConnectProviderResult removeClientIDFromOpenIDConnectProvider(
             RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest) {
         ExecutionContext executionContext = createExecutionContext(removeClientIDFromOpenIDConnectProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RemoveClientIDFromOpenIDConnectProviderRequest> request = null;
-        Response<Void> response = null;
+        Response<RemoveClientIDFromOpenIDConnectProviderResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6139,9 +6278,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RemoveClientIDFromOpenIDConnectProviderResult> responseHandler = new StaxResponseHandler<RemoveClientIDFromOpenIDConnectProviderResult>(
+                    new RemoveClientIDFromOpenIDConnectProviderResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6171,6 +6312,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param removeRoleFromInstanceProfileRequest
+     * @return Result of the RemoveRoleFromInstanceProfile operation returned by
+     *         the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -6184,14 +6327,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.RemoveRoleFromInstanceProfile
      */
     @Override
-    public void removeRoleFromInstanceProfile(
+    public RemoveRoleFromInstanceProfileResult removeRoleFromInstanceProfile(
             RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest) {
         ExecutionContext executionContext = createExecutionContext(removeRoleFromInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RemoveRoleFromInstanceProfileRequest> request = null;
-        Response<Void> response = null;
+        Response<RemoveRoleFromInstanceProfileResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6205,9 +6348,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RemoveRoleFromInstanceProfileResult> responseHandler = new StaxResponseHandler<RemoveRoleFromInstanceProfileResult>(
+                    new RemoveRoleFromInstanceProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6221,6 +6366,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param removeUserFromGroupRequest
+     * @return Result of the RemoveUserFromGroup operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -6234,14 +6381,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.RemoveUserFromGroup
      */
     @Override
-    public void removeUserFromGroup(
+    public RemoveUserFromGroupResult removeUserFromGroup(
             RemoveUserFromGroupRequest removeUserFromGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(removeUserFromGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RemoveUserFromGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<RemoveUserFromGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6255,9 +6402,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RemoveUserFromGroupResult> responseHandler = new StaxResponseHandler<RemoveUserFromGroupResult>(
+                    new RemoveUserFromGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6278,6 +6427,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param resyncMFADeviceRequest
+     * @return Result of the ResyncMFADevice operation returned by the service.
      * @throws InvalidAuthenticationCodeException
      *         The request was rejected because the authentication code was not
      *         recognized. The error message describes the specific error.
@@ -6294,13 +6444,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.ResyncMFADevice
      */
     @Override
-    public void resyncMFADevice(ResyncMFADeviceRequest resyncMFADeviceRequest) {
+    public ResyncMFADeviceResult resyncMFADevice(
+            ResyncMFADeviceRequest resyncMFADeviceRequest) {
         ExecutionContext executionContext = createExecutionContext(resyncMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ResyncMFADeviceRequest> request = null;
-        Response<Void> response = null;
+        Response<ResyncMFADeviceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6313,9 +6464,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ResyncMFADeviceResult> responseHandler = new StaxResponseHandler<ResyncMFADeviceResult>(
+                    new ResyncMFADeviceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6340,6 +6493,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param setDefaultPolicyVersionRequest
+     * @return Result of the SetDefaultPolicyVersion operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -6356,14 +6511,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.SetDefaultPolicyVersion
      */
     @Override
-    public void setDefaultPolicyVersion(
+    public SetDefaultPolicyVersionResult setDefaultPolicyVersion(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest) {
         ExecutionContext executionContext = createExecutionContext(setDefaultPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetDefaultPolicyVersionRequest> request = null;
-        Response<Void> response = null;
+        Response<SetDefaultPolicyVersionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6377,9 +6532,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetDefaultPolicyVersionResult> responseHandler = new StaxResponseHandler<SetDefaultPolicyVersionResult>(
+                    new SetDefaultPolicyVersionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6569,6 +6726,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param updateAccessKeyRequest
+     * @return Result of the UpdateAccessKey operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -6582,13 +6740,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.UpdateAccessKey
      */
     @Override
-    public void updateAccessKey(UpdateAccessKeyRequest updateAccessKeyRequest) {
+    public UpdateAccessKeyResult updateAccessKey(
+            UpdateAccessKeyRequest updateAccessKeyRequest) {
         ExecutionContext executionContext = createExecutionContext(updateAccessKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateAccessKeyRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateAccessKeyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6601,9 +6760,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UpdateAccessKeyResult> responseHandler = new StaxResponseHandler<UpdateAccessKeyResult>(
+                    new UpdateAccessKeyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6630,6 +6791,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param updateAccountPasswordPolicyRequest
+     * @return Result of the UpdateAccountPasswordPolicy operation returned by
+     *         the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -6646,14 +6809,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.UpdateAccountPasswordPolicy
      */
     @Override
-    public void updateAccountPasswordPolicy(
+    public UpdateAccountPasswordPolicyResult updateAccountPasswordPolicy(
             UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(updateAccountPasswordPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateAccountPasswordPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateAccountPasswordPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6667,9 +6830,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UpdateAccountPasswordPolicyResult> responseHandler = new StaxResponseHandler<UpdateAccountPasswordPolicyResult>(
+                    new UpdateAccountPasswordPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6687,6 +6852,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param updateAssumeRolePolicyRequest
+     * @return Result of the UpdateAssumeRolePolicy operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -6703,14 +6870,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.UpdateAssumeRolePolicy
      */
     @Override
-    public void updateAssumeRolePolicy(
+    public UpdateAssumeRolePolicyResult updateAssumeRolePolicy(
             UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(updateAssumeRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateAssumeRolePolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateAssumeRolePolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6724,9 +6891,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UpdateAssumeRolePolicyResult> responseHandler = new StaxResponseHandler<UpdateAssumeRolePolicyResult>(
+                    new UpdateAssumeRolePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6758,6 +6927,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </note>
      * 
      * @param updateGroupRequest
+     * @return Result of the UpdateGroup operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -6774,13 +6944,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.UpdateGroup
      */
     @Override
-    public void updateGroup(UpdateGroupRequest updateGroupRequest) {
+    public UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(updateGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6793,9 +6963,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UpdateGroupResult> responseHandler = new StaxResponseHandler<UpdateGroupResult>(
+                    new UpdateGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6816,6 +6988,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param updateLoginProfileRequest
+     * @return Result of the UpdateLoginProfile operation returned by the
+     *         service.
      * @throws EntityTemporarilyUnmodifiableException
      *         The request was rejected because it referenced an entity that is
      *         temporarily unmodifiable, such as a user name that was deleted
@@ -6838,14 +7012,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.UpdateLoginProfile
      */
     @Override
-    public void updateLoginProfile(
+    public UpdateLoginProfileResult updateLoginProfile(
             UpdateLoginProfileRequest updateLoginProfileRequest) {
         ExecutionContext executionContext = createExecutionContext(updateLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateLoginProfileRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateLoginProfileResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6859,9 +7033,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UpdateLoginProfileResult> responseHandler = new StaxResponseHandler<UpdateLoginProfileResult>(
+                    new UpdateLoginProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -6897,6 +7073,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </note>
      * 
      * @param updateOpenIDConnectProviderThumbprintRequest
+     * @return Result of the UpdateOpenIDConnectProviderThumbprint operation
+     *         returned by the service.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value
      *         was supplied for an input parameter.
@@ -6909,14 +7087,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.UpdateOpenIDConnectProviderThumbprint
      */
     @Override
-    public void updateOpenIDConnectProviderThumbprint(
+    public UpdateOpenIDConnectProviderThumbprintResult updateOpenIDConnectProviderThumbprint(
             UpdateOpenIDConnectProviderThumbprintRequest updateOpenIDConnectProviderThumbprintRequest) {
         ExecutionContext executionContext = createExecutionContext(updateOpenIDConnectProviderThumbprintRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateOpenIDConnectProviderThumbprintRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateOpenIDConnectProviderThumbprintResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -6930,9 +7108,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UpdateOpenIDConnectProviderThumbprintResult> responseHandler = new StaxResponseHandler<UpdateOpenIDConnectProviderThumbprintResult>(
+                    new UpdateOpenIDConnectProviderThumbprintResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -7023,20 +7203,22 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param updateSSHPublicKeyRequest
+     * @return Result of the UpdateSSHPublicKey operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
      * @sample AmazonIdentityManagement.UpdateSSHPublicKey
      */
     @Override
-    public void updateSSHPublicKey(
+    public UpdateSSHPublicKeyResult updateSSHPublicKey(
             UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest) {
         ExecutionContext executionContext = createExecutionContext(updateSSHPublicKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateSSHPublicKeyRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateSSHPublicKeyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -7050,9 +7232,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UpdateSSHPublicKeyResult> responseHandler = new StaxResponseHandler<UpdateSSHPublicKeyResult>(
+                    new UpdateSSHPublicKeyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -7093,6 +7277,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </note>
      * 
      * @param updateServerCertificateRequest
+     * @return Result of the UpdateServerCertificate operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -7109,14 +7295,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.UpdateServerCertificate
      */
     @Override
-    public void updateServerCertificate(
+    public UpdateServerCertificateResult updateServerCertificate(
             UpdateServerCertificateRequest updateServerCertificateRequest) {
         ExecutionContext executionContext = createExecutionContext(updateServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateServerCertificateRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateServerCertificateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -7130,9 +7316,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UpdateServerCertificateResult> responseHandler = new StaxResponseHandler<UpdateServerCertificateResult>(
+                    new UpdateServerCertificateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -7155,6 +7343,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param updateSigningCertificateRequest
+     * @return Result of the UpdateSigningCertificate operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -7168,14 +7358,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.UpdateSigningCertificate
      */
     @Override
-    public void updateSigningCertificate(
+    public UpdateSigningCertificateResult updateSigningCertificate(
             UpdateSigningCertificateRequest updateSigningCertificateRequest) {
         ExecutionContext executionContext = createExecutionContext(updateSigningCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateSigningCertificateRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateSigningCertificateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -7189,9 +7379,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UpdateSigningCertificateResult> responseHandler = new StaxResponseHandler<UpdateSigningCertificateResult>(
+                    new UpdateSigningCertificateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -7225,6 +7417,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * </note>
      * 
      * @param updateUserRequest
+     * @return Result of the UpdateUser operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -7247,13 +7440,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @sample AmazonIdentityManagement.UpdateUser
      */
     @Override
-    public void updateUser(UpdateUserRequest updateUserRequest) {
+    public UpdateUserResult updateUser(UpdateUserRequest updateUserRequest) {
         ExecutionContext executionContext = createExecutionContext(updateUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateUserRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateUserResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -7266,9 +7459,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UpdateUserResult> responseHandler = new StaxResponseHandler<UpdateUserResult>(
+                    new UpdateUserResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 

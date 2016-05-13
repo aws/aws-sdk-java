@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RecordActivityTaskHeartbeatRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class RecordActivityTaskHeartbeatRequestMarshaller
         implements
         Marshaller<Request<RecordActivityTaskHeartbeatRequest>, RecordActivityTaskHeartbeatRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RecordActivityTaskHeartbeatRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RecordActivityTaskHeartbeatRequest> marshall(
             RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest) {
@@ -59,8 +66,8 @@ public class RecordActivityTaskHeartbeatRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.0");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

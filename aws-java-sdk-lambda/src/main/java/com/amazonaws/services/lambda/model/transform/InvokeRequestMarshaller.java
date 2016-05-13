@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * InvokeRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class InvokeRequestMarshaller implements
         Marshaller<Request<InvokeRequest>, InvokeRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public InvokeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<InvokeRequest> marshall(InvokeRequest invokeRequest) {
 
@@ -80,8 +87,9 @@ public class InvokeRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{FunctionName}",
-                (invokeRequest.getFunctionName() != null) ? StringUtils
-                        .fromString(invokeRequest.getFunctionName()) : "");
+                (invokeRequest.getFunctionName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(invokeRequest
+                                .getFunctionName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (invokeRequest.getQualifier() != null) {

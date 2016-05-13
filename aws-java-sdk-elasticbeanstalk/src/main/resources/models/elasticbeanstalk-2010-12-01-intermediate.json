@@ -20,9 +20,9 @@
     "jsonVersion" : null,
     "endpointPrefix" : "elasticbeanstalk",
     "signingName" : "elasticbeanstalk",
+    "jsonProtocol" : false,
     "serviceName" : "Elastic Beanstalk",
     "cborProtocol" : false,
-    "jsonProtocol" : false,
     "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
@@ -42,19 +42,22 @@
         "variableSetterType" : "AbortEnvironmentUpdateRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "AbortEnvironmentUpdateResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InsufficientPrivilegesException",
         "documentation" : "<p>The specified account does not have sufficient privileges for one of more AWS services.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, Void>",
-      "methodName" : "abortEnvironmentUpdate"
+      "methodName" : "abortEnvironmentUpdate",
+      "syncReturnType" : "AbortEnvironmentUpdateResult",
+      "asyncReturnType" : "AbortEnvironmentUpdateResult",
+      "asyncFutureType" : "java.util.concurrent.Future<AbortEnvironmentUpdateResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<AbortEnvironmentUpdateResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, AbortEnvironmentUpdateResult>",
+      "authenticated" : true
     },
     "ApplyEnvironmentManagedAction" : {
       "documentation" : "<p>Applies a scheduled managed action immediately. A managed action can be applied only if its status is <code>Scheduled</code>. Get the status and action ID of a managed action with <a>DescribeEnvironmentManagedActions</a>.</p>",
@@ -81,13 +84,13 @@
         "documentation" : "<p>Cannot modify the managed action in its current state.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "applyEnvironmentManagedAction",
       "syncReturnType" : "ApplyEnvironmentManagedActionResult",
       "asyncReturnType" : "ApplyEnvironmentManagedActionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ApplyEnvironmentManagedActionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ApplyEnvironmentManagedActionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ApplyEnvironmentManagedActionRequest, ApplyEnvironmentManagedActionResult>",
-      "methodName" : "applyEnvironmentManagedAction"
+      "authenticated" : true
     },
     "CheckDNSAvailability" : {
       "documentation" : "<p> Checks if the specified CNAME is available. </p>",
@@ -108,13 +111,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "checkDNSAvailability",
       "syncReturnType" : "CheckDNSAvailabilityResult",
       "asyncReturnType" : "CheckDNSAvailabilityResult",
       "asyncFutureType" : "java.util.concurrent.Future<CheckDNSAvailabilityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CheckDNSAvailabilityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CheckDNSAvailabilityRequest, CheckDNSAvailabilityResult>",
-      "methodName" : "checkDNSAvailability"
+      "authenticated" : true
     },
     "ComposeEnvironments" : {
       "documentation" : "<p>Create or update a group of environments that each run a separate component of a single application. Takes a list of version labels that specify application source bundles for each of the environments to create or update. The name of each environment and other required information must be included in the source bundles in an environment manifest named <code>env.yaml</code>. See <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html\">Compose Environments</a> for details.</p>",
@@ -141,13 +144,13 @@
         "documentation" : "<p>The specified account does not have sufficient privileges for one of more AWS services.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "composeEnvironments",
       "syncReturnType" : "ComposeEnvironmentsResult",
       "asyncReturnType" : "ComposeEnvironmentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ComposeEnvironmentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ComposeEnvironmentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ComposeEnvironmentsRequest, ComposeEnvironmentsResult>",
-      "methodName" : "composeEnvironments"
+      "authenticated" : true
     },
     "CreateApplication" : {
       "documentation" : "<p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>",
@@ -171,13 +174,13 @@
         "documentation" : "<p>The specified account has reached its limit of applications.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "createApplication",
       "syncReturnType" : "CreateApplicationResult",
       "asyncReturnType" : "CreateApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateApplicationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult>",
-      "methodName" : "createApplication"
+      "authenticated" : true
     },
     "CreateApplicationVersion" : {
       "documentation" : "<p>Creates an application version for the specified application.</p> <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version. </note>",
@@ -210,13 +213,13 @@
         "documentation" : "<p>The specified S3 bucket does not belong to the S3 region in which the service is running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "createApplicationVersion",
       "syncReturnType" : "CreateApplicationVersionResult",
       "asyncReturnType" : "CreateApplicationVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateApplicationVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateApplicationVersionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationVersionRequest, CreateApplicationVersionResult>",
-      "methodName" : "createApplicationVersion"
+      "authenticated" : true
     },
     "CreateConfigurationTemplate" : {
       "documentation" : "<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>",
@@ -246,13 +249,13 @@
         "documentation" : "<p>The specified account has reached its limit of configuration templates.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "createConfigurationTemplate",
       "syncReturnType" : "CreateConfigurationTemplateResult",
       "asyncReturnType" : "CreateConfigurationTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateConfigurationTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateConfigurationTemplateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResult>",
-      "methodName" : "createConfigurationTemplate"
+      "authenticated" : true
     },
     "CreateEnvironment" : {
       "documentation" : "<p>Launches an environment for the specified application using the specified configuration.</p>",
@@ -279,13 +282,13 @@
         "documentation" : "<p>The specified account does not have sufficient privileges for one of more AWS services.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "createEnvironment",
       "syncReturnType" : "CreateEnvironmentResult",
       "asyncReturnType" : "CreateEnvironmentResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateEnvironmentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateEnvironmentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEnvironmentRequest, CreateEnvironmentResult>",
-      "methodName" : "createEnvironment"
+      "authenticated" : true
     },
     "CreateStorageLocation" : {
       "documentation" : "<p> Creates the Amazon S3 storage location for the account. </p> <p> This location is used to store user log files. </p>",
@@ -315,13 +318,13 @@
         "documentation" : "<p>The specified account does not have sufficient privileges for one of more AWS services.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "createStorageLocation",
       "syncReturnType" : "CreateStorageLocationResult",
       "asyncReturnType" : "CreateStorageLocationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateStorageLocationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateStorageLocationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStorageLocationRequest, CreateStorageLocationResult>",
-      "methodName" : "createStorageLocation"
+      "authenticated" : true
     },
     "DeleteApplication" : {
       "documentation" : "<p> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. </p> <note>You cannot delete an application that has a running environment. </note>",
@@ -336,19 +339,22 @@
         "variableSetterType" : "DeleteApplicationRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteApplicationResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "OperationInProgressException",
         "documentation" : "<p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, Void>",
-      "methodName" : "deleteApplication"
+      "methodName" : "deleteApplication",
+      "syncReturnType" : "DeleteApplicationResult",
+      "asyncReturnType" : "DeleteApplicationResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteApplicationResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteApplicationResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult>",
+      "authenticated" : true
     },
     "DeleteApplicationVersion" : {
       "documentation" : "<p> Deletes the specified version from the specified application. </p> <note>You cannot delete an application version that is associated with a running environment.</note>",
@@ -363,7 +369,10 @@
         "variableSetterType" : "DeleteApplicationVersionRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteApplicationVersionResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "SourceBundleDeletionException",
         "documentation" : "<p>Unable to delete the Amazon S3 source bundle associated with the application version. The application version was deleted successfully.</p>"
@@ -378,13 +387,13 @@
         "documentation" : "<p>The specified S3 bucket does not belong to the S3 region in which the service is running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, Void>",
-      "methodName" : "deleteApplicationVersion"
+      "methodName" : "deleteApplicationVersion",
+      "syncReturnType" : "DeleteApplicationVersionResult",
+      "asyncReturnType" : "DeleteApplicationVersionResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteApplicationVersionResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteApplicationVersionResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, DeleteApplicationVersionResult>",
+      "authenticated" : true
     },
     "DeleteConfigurationTemplate" : {
       "documentation" : "<p>Deletes the specified configuration template.</p> <note>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</note>",
@@ -399,19 +408,22 @@
         "variableSetterType" : "DeleteConfigurationTemplateRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteConfigurationTemplateResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "OperationInProgressException",
         "documentation" : "<p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, Void>",
-      "methodName" : "deleteConfigurationTemplate"
+      "methodName" : "deleteConfigurationTemplate",
+      "syncReturnType" : "DeleteConfigurationTemplateResult",
+      "asyncReturnType" : "DeleteConfigurationTemplateResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteConfigurationTemplateResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteConfigurationTemplateResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, DeleteConfigurationTemplateResult>",
+      "authenticated" : true
     },
     "DeleteEnvironmentConfiguration" : {
       "documentation" : "<p>Deletes the draft configuration associated with the running environment.</p> <p>Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action.</p>",
@@ -426,16 +438,19 @@
         "variableSetterType" : "DeleteEnvironmentConfigurationRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "DeleteEnvironmentConfigurationResult",
+        "documentation" : null
+      },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, Void>",
-      "methodName" : "deleteEnvironmentConfiguration"
+      "methodName" : "deleteEnvironmentConfiguration",
+      "syncReturnType" : "DeleteEnvironmentConfigurationResult",
+      "asyncReturnType" : "DeleteEnvironmentConfigurationResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteEnvironmentConfigurationResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteEnvironmentConfigurationResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, DeleteEnvironmentConfigurationResult>",
+      "authenticated" : true
     },
     "DescribeApplicationVersions" : {
       "documentation" : "<p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage bucket.</p>",
@@ -456,13 +471,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeApplicationVersions",
       "syncReturnType" : "DescribeApplicationVersionsResult",
       "asyncReturnType" : "DescribeApplicationVersionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeApplicationVersionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeApplicationVersionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeApplicationVersionsRequest, DescribeApplicationVersionsResult>",
-      "methodName" : "describeApplicationVersions"
+      "authenticated" : true
     },
     "DescribeApplications" : {
       "documentation" : "<p>Returns the descriptions of existing applications.</p>",
@@ -483,13 +498,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeApplications",
       "syncReturnType" : "DescribeApplicationsResult",
       "asyncReturnType" : "DescribeApplicationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeApplicationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeApplicationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult>",
-      "methodName" : "describeApplications"
+      "authenticated" : true
     },
     "DescribeConfigurationOptions" : {
       "documentation" : "<p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>",
@@ -513,13 +528,13 @@
         "documentation" : "<p>The specified account has reached its limit of Amazon S3 buckets.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeConfigurationOptions",
       "syncReturnType" : "DescribeConfigurationOptionsResult",
       "asyncReturnType" : "DescribeConfigurationOptionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationOptionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationOptionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResult>",
-      "methodName" : "describeConfigurationOptions"
+      "authenticated" : true
     },
     "DescribeConfigurationSettings" : {
       "documentation" : "<p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>",
@@ -543,13 +558,13 @@
         "documentation" : "<p>The specified account has reached its limit of Amazon S3 buckets.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeConfigurationSettings",
       "syncReturnType" : "DescribeConfigurationSettingsResult",
       "asyncReturnType" : "DescribeConfigurationSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationSettingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResult>",
-      "methodName" : "describeConfigurationSettings"
+      "authenticated" : true
     },
     "DescribeEnvironmentHealth" : {
       "documentation" : "<p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>",
@@ -576,13 +591,13 @@
         "documentation" : "<p>A generic service exception has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeEnvironmentHealth",
       "syncReturnType" : "DescribeEnvironmentHealthResult",
       "asyncReturnType" : "DescribeEnvironmentHealthResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentHealthResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentHealthResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentHealthRequest, DescribeEnvironmentHealthResult>",
-      "methodName" : "describeEnvironmentHealth"
+      "authenticated" : true
     },
     "DescribeEnvironmentManagedActionHistory" : {
       "documentation" : "<p>Lists an environment's completed and failed managed actions.</p>",
@@ -606,13 +621,13 @@
         "documentation" : "<p>A generic service exception has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeEnvironmentManagedActionHistory",
       "syncReturnType" : "DescribeEnvironmentManagedActionHistoryResult",
       "asyncReturnType" : "DescribeEnvironmentManagedActionHistoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentManagedActionHistoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentManagedActionHistoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionHistoryRequest, DescribeEnvironmentManagedActionHistoryResult>",
-      "methodName" : "describeEnvironmentManagedActionHistory"
+      "authenticated" : true
     },
     "DescribeEnvironmentManagedActions" : {
       "documentation" : "<p>Lists an environment's upcoming and in-progress managed actions.</p>",
@@ -636,13 +651,13 @@
         "documentation" : "<p>A generic service exception has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeEnvironmentManagedActions",
       "syncReturnType" : "DescribeEnvironmentManagedActionsResult",
       "asyncReturnType" : "DescribeEnvironmentManagedActionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentManagedActionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentManagedActionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionsRequest, DescribeEnvironmentManagedActionsResult>",
-      "methodName" : "describeEnvironmentManagedActions"
+      "authenticated" : true
     },
     "DescribeEnvironmentResources" : {
       "documentation" : "<p>Returns AWS resources for this environment.</p>",
@@ -666,13 +681,13 @@
         "documentation" : "<p>The specified account does not have sufficient privileges for one of more AWS services.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeEnvironmentResources",
       "syncReturnType" : "DescribeEnvironmentResourcesResult",
       "asyncReturnType" : "DescribeEnvironmentResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentResourcesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResult>",
-      "methodName" : "describeEnvironmentResources"
+      "authenticated" : true
     },
     "DescribeEnvironments" : {
       "documentation" : "<p>Returns descriptions for existing environments.</p>",
@@ -693,13 +708,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeEnvironments",
       "syncReturnType" : "DescribeEnvironmentsResult",
       "asyncReturnType" : "DescribeEnvironmentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult>",
-      "methodName" : "describeEnvironments"
+      "authenticated" : true
     },
     "DescribeEvents" : {
       "documentation" : "<p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>",
@@ -720,13 +735,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeEvents",
       "syncReturnType" : "DescribeEventsResult",
       "asyncReturnType" : "DescribeEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult>",
-      "methodName" : "describeEvents"
+      "authenticated" : true
     },
     "DescribeInstancesHealth" : {
       "documentation" : "<p>Returns more detailed information about the health of the specified instances (for example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>",
@@ -753,13 +768,13 @@
         "documentation" : "<p>A generic service exception has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeInstancesHealth",
       "syncReturnType" : "DescribeInstancesHealthResult",
       "asyncReturnType" : "DescribeInstancesHealthResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeInstancesHealthResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeInstancesHealthResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInstancesHealthRequest, DescribeInstancesHealthResult>",
-      "methodName" : "describeInstancesHealth"
+      "authenticated" : true
     },
     "ListAvailableSolutionStacks" : {
       "documentation" : "<p> Returns a list of the available solution stack names. </p>",
@@ -780,13 +795,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "listAvailableSolutionStacks",
       "syncReturnType" : "ListAvailableSolutionStacksResult",
       "asyncReturnType" : "ListAvailableSolutionStacksResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAvailableSolutionStacksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAvailableSolutionStacksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult>",
-      "methodName" : "listAvailableSolutionStacks"
+      "authenticated" : true
     },
     "RebuildEnvironment" : {
       "documentation" : "<p> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart. </p>",
@@ -801,19 +816,22 @@
         "variableSetterType" : "RebuildEnvironmentRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "RebuildEnvironmentResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InsufficientPrivilegesException",
         "documentation" : "<p>The specified account does not have sufficient privileges for one of more AWS services.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, Void>",
-      "methodName" : "rebuildEnvironment"
+      "methodName" : "rebuildEnvironment",
+      "syncReturnType" : "RebuildEnvironmentResult",
+      "asyncReturnType" : "RebuildEnvironmentResult",
+      "asyncFutureType" : "java.util.concurrent.Future<RebuildEnvironmentResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<RebuildEnvironmentResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, RebuildEnvironmentResult>",
+      "authenticated" : true
     },
     "RequestEnvironmentInfo" : {
       "documentation" : "<p> Initiates a request to compile the specified type of information of the deployed environment. </p> <p> Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. </p> <p> Setting the <code>InfoType</code> to <code>bundle</code> compresses the application server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy and .NET containers do not support bundle logs. </p> <p> Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>",
@@ -828,16 +846,19 @@
         "variableSetterType" : "RequestEnvironmentInfoRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "RequestEnvironmentInfoResult",
+        "documentation" : null
+      },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, Void>",
-      "methodName" : "requestEnvironmentInfo"
+      "methodName" : "requestEnvironmentInfo",
+      "syncReturnType" : "RequestEnvironmentInfoResult",
+      "asyncReturnType" : "RequestEnvironmentInfoResult",
+      "asyncFutureType" : "java.util.concurrent.Future<RequestEnvironmentInfoResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<RequestEnvironmentInfoResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, RequestEnvironmentInfoResult>",
+      "authenticated" : true
     },
     "RestartAppServer" : {
       "documentation" : "<p>Causes the environment to restart the application container server running on each Amazon EC2 instance.</p>",
@@ -852,16 +873,19 @@
         "variableSetterType" : "RestartAppServerRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "RestartAppServerResult",
+        "documentation" : null
+      },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, Void>",
-      "methodName" : "restartAppServer"
+      "methodName" : "restartAppServer",
+      "syncReturnType" : "RestartAppServerResult",
+      "asyncReturnType" : "RestartAppServerResult",
+      "asyncFutureType" : "java.util.concurrent.Future<RestartAppServerResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<RestartAppServerResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, RestartAppServerResult>",
+      "authenticated" : true
     },
     "RetrieveEnvironmentInfo" : {
       "documentation" : "<p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.</p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>",
@@ -882,13 +906,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "retrieveEnvironmentInfo",
       "syncReturnType" : "RetrieveEnvironmentInfoResult",
       "asyncReturnType" : "RetrieveEnvironmentInfoResult",
       "asyncFutureType" : "java.util.concurrent.Future<RetrieveEnvironmentInfoResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RetrieveEnvironmentInfoResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResult>",
-      "methodName" : "retrieveEnvironmentInfo"
+      "authenticated" : true
     },
     "SwapEnvironmentCNAMEs" : {
       "documentation" : "<p> Swaps the CNAMEs of two environments. </p>",
@@ -903,16 +927,19 @@
         "variableSetterType" : "SwapEnvironmentCNAMEsRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "SwapEnvironmentCNAMEsResult",
+        "documentation" : null
+      },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, Void>",
-      "methodName" : "swapEnvironmentCNAMEs"
+      "methodName" : "swapEnvironmentCNAMEs",
+      "syncReturnType" : "SwapEnvironmentCNAMEsResult",
+      "asyncReturnType" : "SwapEnvironmentCNAMEsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<SwapEnvironmentCNAMEsResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<SwapEnvironmentCNAMEsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResult>",
+      "authenticated" : true
     },
     "TerminateEnvironment" : {
       "documentation" : "<p> Terminates the specified environment. </p>",
@@ -936,13 +963,13 @@
         "documentation" : "<p>The specified account does not have sufficient privileges for one of more AWS services.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "terminateEnvironment",
       "syncReturnType" : "TerminateEnvironmentResult",
       "asyncReturnType" : "TerminateEnvironmentResult",
       "asyncFutureType" : "java.util.concurrent.Future<TerminateEnvironmentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TerminateEnvironmentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateEnvironmentRequest, TerminateEnvironmentResult>",
-      "methodName" : "terminateEnvironment"
+      "authenticated" : true
     },
     "UpdateApplication" : {
       "documentation" : "<p>Updates the specified application to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </note>",
@@ -963,13 +990,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "updateApplication",
       "syncReturnType" : "UpdateApplicationResult",
       "asyncReturnType" : "UpdateApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateApplicationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult>",
-      "methodName" : "updateApplication"
+      "authenticated" : true
     },
     "UpdateApplicationVersion" : {
       "documentation" : "<p> Updates the specified application version to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string. </note>",
@@ -990,13 +1017,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "updateApplicationVersion",
       "syncReturnType" : "UpdateApplicationVersionResult",
       "asyncReturnType" : "UpdateApplicationVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateApplicationVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateApplicationVersionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationVersionRequest, UpdateApplicationVersionResult>",
-      "methodName" : "updateApplicationVersion"
+      "authenticated" : true
     },
     "UpdateConfigurationTemplate" : {
       "documentation" : "<p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>",
@@ -1023,13 +1050,13 @@
         "documentation" : "<p>The specified account has reached its limit of Amazon S3 buckets.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "updateConfigurationTemplate",
       "syncReturnType" : "UpdateConfigurationTemplateResult",
       "asyncReturnType" : "UpdateConfigurationTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateConfigurationTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateConfigurationTemplateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResult>",
-      "methodName" : "updateConfigurationTemplate"
+      "authenticated" : true
     },
     "UpdateEnvironment" : {
       "documentation" : "<p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>",
@@ -1056,13 +1083,13 @@
         "documentation" : "<p>The specified account has reached its limit of Amazon S3 buckets.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "updateEnvironment",
       "syncReturnType" : "UpdateEnvironmentResult",
       "asyncReturnType" : "UpdateEnvironmentResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateEnvironmentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateEnvironmentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult>",
-      "methodName" : "updateEnvironment"
+      "authenticated" : true
     },
     "ValidateConfigurationSettings" : {
       "documentation" : "<p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>",
@@ -1089,13 +1116,13 @@
         "documentation" : "<p>The specified account has reached its limit of Amazon S3 buckets.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "validateConfigurationSettings",
       "syncReturnType" : "ValidateConfigurationSettingsResult",
       "asyncReturnType" : "ValidateConfigurationSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ValidateConfigurationSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ValidateConfigurationSettingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResult>",
-      "methodName" : "validateConfigurationSettings"
+      "authenticated" : true
     }
   },
   "shapes" : {
@@ -2662,6 +2689,41 @@
         "documentation" : null,
         "simpleType" : "InstancesHealthAttribute",
         "variableSetterType" : "InstancesHealthAttribute"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "DeleteApplicationResult" : {
+      "c2jName" : "DeleteApplicationResult",
+      "documentation" : null,
+      "shapeName" : "DeleteApplicationResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteApplicationResult",
+        "variableType" : "DeleteApplicationResult",
+        "variableDeclarationType" : "DeleteApplicationResult",
+        "documentation" : null,
+        "simpleType" : "DeleteApplicationResult",
+        "variableSetterType" : "DeleteApplicationResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -17276,6 +17338,41 @@
       },
       "membersAsMap" : { }
     },
+    "DeleteEnvironmentConfigurationResult" : {
+      "c2jName" : "DeleteEnvironmentConfigurationResult",
+      "documentation" : null,
+      "shapeName" : "DeleteEnvironmentConfigurationResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteEnvironmentConfigurationResult",
+        "variableType" : "DeleteEnvironmentConfigurationResult",
+        "variableDeclarationType" : "DeleteEnvironmentConfigurationResult",
+        "documentation" : null,
+        "simpleType" : "DeleteEnvironmentConfigurationResult",
+        "variableSetterType" : "DeleteEnvironmentConfigurationResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "ManagedActionHistoryItem" : {
       "c2jName" : "ManagedActionHistoryItem",
       "documentation" : "<p>The record of a completed or failed managed action.</p>",
@@ -21143,6 +21240,41 @@
           "varargSetterDocumentation" : "/**<p>If specified, restricts the returned descriptions to only include ones that have the specified version labels.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVersionLabels(java.util.Collection)} or {@link #withVersionLabels(java.util.Collection)} if you want to override the existing values.</p>\n@param versionLabels If specified, restricts the returned descriptions to only include ones that have the specified version labels.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "RestartAppServerResult" : {
+      "c2jName" : "RestartAppServerResult",
+      "documentation" : null,
+      "shapeName" : "RestartAppServerResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "restartAppServerResult",
+        "variableType" : "RestartAppServerResult",
+        "variableDeclarationType" : "RestartAppServerResult",
+        "documentation" : null,
+        "simpleType" : "RestartAppServerResult",
+        "variableSetterType" : "RestartAppServerResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "CheckDNSAvailabilityResult" : {
       "c2jName" : "CheckDNSAvailabilityResultMessage",
@@ -25747,53 +25879,6 @@
         }
       }
     },
-    "EnvironmentHealth" : {
-      "c2jName" : "EnvironmentHealth",
-      "documentation" : "",
-      "shapeName" : "EnvironmentHealth",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : null,
-      "enums" : [ {
-        "name" : "Green",
-        "value" : "Green"
-      }, {
-        "name" : "Yellow",
-        "value" : "Yellow"
-      }, {
-        "name" : "Red",
-        "value" : "Red"
-      }, {
-        "name" : "Grey",
-        "value" : "Grey"
-      } ],
-      "variable" : {
-        "variableName" : "environmentHealth",
-        "variableType" : "EnvironmentHealth",
-        "variableDeclarationType" : "EnvironmentHealth",
-        "documentation" : null,
-        "simpleType" : "EnvironmentHealth",
-        "variableSetterType" : "EnvironmentHealth"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
     "EventSeverity" : {
       "c2jName" : "EventSeverity",
       "documentation" : "",
@@ -25847,10 +25932,10 @@
       },
       "membersAsMap" : { }
     },
-    "DescribeEnvironmentManagedActionsRequest" : {
-      "c2jName" : "DescribeEnvironmentManagedActionsRequest",
-      "documentation" : "<p>Request to list an environment's upcoming and in-progress managed actions.</p>",
-      "shapeName" : "DescribeEnvironmentManagedActionsRequest",
+    "EnvironmentHealth" : {
+      "c2jName" : "EnvironmentHealth",
+      "documentation" : "",
+      "shapeName" : "EnvironmentHealth",
       "deprecated" : false,
       "required" : null,
       "hasPayloadMember" : false,
@@ -25858,181 +25943,33 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "wrapper" : false,
-      "members" : [ {
-        "documentation" : "<p>The name of the target environment.</p>",
-        "name" : "EnvironmentName",
-        "c2jName" : "EnvironmentName",
-        "c2jShape" : "String",
-        "variable" : {
-          "variableName" : "environmentName",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The name of the target environment.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "environmentName",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "EnvironmentName",
-          "marshallLocationName" : "EnvironmentName",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.*/",
-        "getterDocumentation" : "/**<p>The name of the target environment.</p>\n@return The name of the target environment.*/",
-        "fluentSetterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      "members" : null,
+      "enums" : [ {
+        "name" : "Green",
+        "value" : "Green"
       }, {
-        "documentation" : "<p>The environment ID of the target environment.</p>",
-        "name" : "EnvironmentId",
-        "c2jName" : "EnvironmentId",
-        "c2jShape" : "String",
-        "variable" : {
-          "variableName" : "environmentId",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The environment ID of the target environment.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "environmentId",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "EnvironmentId",
-          "marshallLocationName" : "EnvironmentId",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.*/",
-        "getterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@return The environment ID of the target environment.*/",
-        "fluentSetterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "name" : "Yellow",
+        "value" : "Yellow"
       }, {
-        "documentation" : "<p>To show only actions with a particular status, specify a status.</p>",
-        "name" : "Status",
-        "c2jName" : "Status",
-        "c2jShape" : "ActionStatus",
-        "variable" : {
-          "variableName" : "status",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>To show only actions with a particular status, specify a status.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "status",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "Status",
-          "marshallLocationName" : "Status",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : "ActionStatus",
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@see ActionStatus*/",
-        "getterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@return To show only actions with a particular status, specify a status.\n@see ActionStatus*/",
-        "fluentSetterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionStatus*/",
-        "varargSetterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionStatus*/"
+        "name" : "Red",
+        "value" : "Red"
+      }, {
+        "name" : "Grey",
+        "value" : "Grey"
       } ],
-      "enums" : null,
       "variable" : {
-        "variableName" : "describeEnvironmentManagedActionsRequest",
-        "variableType" : "DescribeEnvironmentManagedActionsRequest",
-        "variableDeclarationType" : "DescribeEnvironmentManagedActionsRequest",
+        "variableName" : "environmentHealth",
+        "variableType" : "EnvironmentHealth",
+        "variableDeclarationType" : "EnvironmentHealth",
         "documentation" : null,
-        "simpleType" : "DescribeEnvironmentManagedActionsRequest",
-        "variableSetterType" : "DescribeEnvironmentManagedActionsRequest"
+        "simpleType" : "EnvironmentHealth",
+        "variableSetterType" : "EnvironmentHealth"
       },
-      "marshaller" : {
-        "action" : "DescribeEnvironmentManagedActions",
-        "verb" : "POST",
-        "target" : null,
-        "requestUri" : "/",
-        "locationName" : null,
-        "xmlNameSpaceUri" : null
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
       },
-      "unmarshaller" : null,
       "errorCode" : null,
       "customization" : {
         "artificialResultWrapper" : null,
@@ -26040,167 +25977,7 @@
         "skipGeneratingMarshaller" : false,
         "skipGeneratingUnmarshaller" : false
       },
-      "membersAsMap" : {
-        "Status" : {
-          "documentation" : "<p>To show only actions with a particular status, specify a status.</p>",
-          "name" : "Status",
-          "c2jName" : "Status",
-          "c2jShape" : "ActionStatus",
-          "variable" : {
-            "variableName" : "status",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>To show only actions with a particular status, specify a status.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "status",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "Status",
-            "marshallLocationName" : "Status",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : "ActionStatus",
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@see ActionStatus*/",
-          "getterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@return To show only actions with a particular status, specify a status.\n@see ActionStatus*/",
-          "fluentSetterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionStatus*/",
-          "varargSetterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionStatus*/"
-        },
-        "EnvironmentName" : {
-          "documentation" : "<p>The name of the target environment.</p>",
-          "name" : "EnvironmentName",
-          "c2jName" : "EnvironmentName",
-          "c2jShape" : "String",
-          "variable" : {
-            "variableName" : "environmentName",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The name of the target environment.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "environmentName",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "EnvironmentName",
-            "marshallLocationName" : "EnvironmentName",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.*/",
-          "getterDocumentation" : "/**<p>The name of the target environment.</p>\n@return The name of the target environment.*/",
-          "fluentSetterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "EnvironmentId" : {
-          "documentation" : "<p>The environment ID of the target environment.</p>",
-          "name" : "EnvironmentId",
-          "c2jName" : "EnvironmentId",
-          "c2jShape" : "String",
-          "variable" : {
-            "variableName" : "environmentId",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The environment ID of the target environment.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "environmentId",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "EnvironmentId",
-            "marshallLocationName" : "EnvironmentId",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.*/",
-          "getterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@return The environment ID of the target environment.*/",
-          "fluentSetterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
+      "membersAsMap" : { }
     },
     "EventDescription" : {
       "c2jName" : "EventDescription",
@@ -27075,6 +26852,361 @@
           "getterDocumentation" : "/**<p>The date when the event occurred.</p>\n@return The date when the event occurred.*/",
           "fluentSetterDocumentation" : "/**<p>The date when the event occurred.</p>\n@param eventDate The date when the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The date when the event occurred.</p>\n@param eventDate The date when the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "DescribeEnvironmentManagedActionsRequest" : {
+      "c2jName" : "DescribeEnvironmentManagedActionsRequest",
+      "documentation" : "<p>Request to list an environment's upcoming and in-progress managed actions.</p>",
+      "shapeName" : "DescribeEnvironmentManagedActionsRequest",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The name of the target environment.</p>",
+        "name" : "EnvironmentName",
+        "c2jName" : "EnvironmentName",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "environmentName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The name of the target environment.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "environmentName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "EnvironmentName",
+          "marshallLocationName" : "EnvironmentName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.*/",
+        "getterDocumentation" : "/**<p>The name of the target environment.</p>\n@return The name of the target environment.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The environment ID of the target environment.</p>",
+        "name" : "EnvironmentId",
+        "c2jName" : "EnvironmentId",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "environmentId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The environment ID of the target environment.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "environmentId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "EnvironmentId",
+          "marshallLocationName" : "EnvironmentId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.*/",
+        "getterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@return The environment ID of the target environment.*/",
+        "fluentSetterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>To show only actions with a particular status, specify a status.</p>",
+        "name" : "Status",
+        "c2jName" : "Status",
+        "c2jShape" : "ActionStatus",
+        "variable" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>To show only actions with a particular status, specify a status.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Status",
+          "marshallLocationName" : "Status",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "ActionStatus",
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@see ActionStatus*/",
+        "getterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@return To show only actions with a particular status, specify a status.\n@see ActionStatus*/",
+        "fluentSetterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionStatus*/",
+        "varargSetterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionStatus*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "describeEnvironmentManagedActionsRequest",
+        "variableType" : "DescribeEnvironmentManagedActionsRequest",
+        "variableDeclarationType" : "DescribeEnvironmentManagedActionsRequest",
+        "documentation" : null,
+        "simpleType" : "DescribeEnvironmentManagedActionsRequest",
+        "variableSetterType" : "DescribeEnvironmentManagedActionsRequest"
+      },
+      "marshaller" : {
+        "action" : "DescribeEnvironmentManagedActions",
+        "verb" : "POST",
+        "target" : null,
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Status" : {
+          "documentation" : "<p>To show only actions with a particular status, specify a status.</p>",
+          "name" : "Status",
+          "c2jName" : "Status",
+          "c2jShape" : "ActionStatus",
+          "variable" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>To show only actions with a particular status, specify a status.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Status",
+            "marshallLocationName" : "Status",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "ActionStatus",
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@see ActionStatus*/",
+          "getterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@return To show only actions with a particular status, specify a status.\n@see ActionStatus*/",
+          "fluentSetterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionStatus*/",
+          "varargSetterDocumentation" : "/**<p>To show only actions with a particular status, specify a status.</p>\n@param status To show only actions with a particular status, specify a status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionStatus*/"
+        },
+        "EnvironmentName" : {
+          "documentation" : "<p>The name of the target environment.</p>",
+          "name" : "EnvironmentName",
+          "c2jName" : "EnvironmentName",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "environmentName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The name of the target environment.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "environmentName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "EnvironmentName",
+            "marshallLocationName" : "EnvironmentName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.*/",
+          "getterDocumentation" : "/**<p>The name of the target environment.</p>\n@return The name of the target environment.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the target environment.</p>\n@param environmentName The name of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "EnvironmentId" : {
+          "documentation" : "<p>The environment ID of the target environment.</p>",
+          "name" : "EnvironmentId",
+          "c2jName" : "EnvironmentId",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "environmentId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The environment ID of the target environment.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "environmentId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "EnvironmentId",
+            "marshallLocationName" : "EnvironmentId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.*/",
+          "getterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@return The environment ID of the target environment.*/",
+          "fluentSetterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The environment ID of the target environment.</p>\n@param environmentId The environment ID of the target environment.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -28961,6 +29093,41 @@
           "varargSetterDocumentation" : "/**<p> A list of the configuration options and their values in this configuration set. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOptionSettings(java.util.Collection)} or {@link #withOptionSettings(java.util.Collection)} if you want to override the existing values.</p>\n@param optionSettings A list of the configuration options and their values in this configuration set.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "DeleteConfigurationTemplateResult" : {
+      "c2jName" : "DeleteConfigurationTemplateResult",
+      "documentation" : null,
+      "shapeName" : "DeleteConfigurationTemplateResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteConfigurationTemplateResult",
+        "variableType" : "DeleteConfigurationTemplateResult",
+        "variableDeclarationType" : "DeleteConfigurationTemplateResult",
+        "documentation" : null,
+        "simpleType" : "DeleteConfigurationTemplateResult",
+        "variableSetterType" : "DeleteConfigurationTemplateResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "DescribeEnvironmentManagedActionHistoryRequest" : {
       "c2jName" : "DescribeEnvironmentManagedActionHistoryRequest",
@@ -32693,6 +32860,41 @@
         }
       }
     },
+    "DeleteApplicationVersionResult" : {
+      "c2jName" : "DeleteApplicationVersionResult",
+      "documentation" : null,
+      "shapeName" : "DeleteApplicationVersionResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteApplicationVersionResult",
+        "variableType" : "DeleteApplicationVersionResult",
+        "variableDeclarationType" : "DeleteApplicationVersionResult",
+        "documentation" : null,
+        "simpleType" : "DeleteApplicationVersionResult",
+        "variableSetterType" : "DeleteApplicationVersionResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "UpdateConfigurationTemplateResult" : {
       "c2jName" : "ConfigurationSettingsDescription",
       "documentation" : "<p> Describes the settings for a configuration set. </p>",
@@ -34156,6 +34358,41 @@
           "varargSetterDocumentation" : "/**<p>The version of this environment tier.</p>\n@param version The version of this environment tier.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "SwapEnvironmentCNAMEsResult" : {
+      "c2jName" : "SwapEnvironmentCNAMEsResult",
+      "documentation" : null,
+      "shapeName" : "SwapEnvironmentCNAMEsResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "swapEnvironmentCNAMEsResult",
+        "variableType" : "SwapEnvironmentCNAMEsResult",
+        "variableDeclarationType" : "SwapEnvironmentCNAMEsResult",
+        "documentation" : null,
+        "simpleType" : "SwapEnvironmentCNAMEsResult",
+        "variableSetterType" : "SwapEnvironmentCNAMEsResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "OptionSpecification" : {
       "c2jName" : "OptionSpecification",
@@ -39088,6 +39325,41 @@
           "varargSetterDocumentation" : "/**<p> The ID of the environment to retrieve AWS resource usage data. </p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>\n@param environmentId The ID of the environment to retrieve AWS resource usage data. </p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "RequestEnvironmentInfoResult" : {
+      "c2jName" : "RequestEnvironmentInfoResult",
+      "documentation" : null,
+      "shapeName" : "RequestEnvironmentInfoResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "requestEnvironmentInfoResult",
+        "variableType" : "RequestEnvironmentInfoResult",
+        "variableDeclarationType" : "RequestEnvironmentInfoResult",
+        "documentation" : null,
+        "simpleType" : "RequestEnvironmentInfoResult",
+        "variableSetterType" : "RequestEnvironmentInfoResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "CreateEnvironmentResult" : {
       "c2jName" : "EnvironmentDescription",
@@ -52390,6 +52662,41 @@
         }
       }
     },
+    "RebuildEnvironmentResult" : {
+      "c2jName" : "RebuildEnvironmentResult",
+      "documentation" : null,
+      "shapeName" : "RebuildEnvironmentResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "rebuildEnvironmentResult",
+        "variableType" : "RebuildEnvironmentResult",
+        "variableDeclarationType" : "RebuildEnvironmentResult",
+        "documentation" : null,
+        "simpleType" : "RebuildEnvironmentResult",
+        "variableSetterType" : "RebuildEnvironmentResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "ApplicationVersionStatus" : {
       "c2jName" : "ApplicationVersionStatus",
       "documentation" : "",
@@ -54741,6 +55048,41 @@
         }
       }
     },
+    "AbortEnvironmentUpdateResult" : {
+      "c2jName" : "AbortEnvironmentUpdateResult",
+      "documentation" : null,
+      "shapeName" : "AbortEnvironmentUpdateResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "abortEnvironmentUpdateResult",
+        "variableType" : "AbortEnvironmentUpdateResult",
+        "variableDeclarationType" : "AbortEnvironmentUpdateResult",
+        "documentation" : null,
+        "simpleType" : "AbortEnvironmentUpdateResult",
+        "variableSetterType" : "AbortEnvironmentUpdateResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "UpdateApplicationVersionRequest" : {
       "c2jName" : "UpdateApplicationVersionMessage",
       "documentation" : "<p/>",
@@ -56229,6 +56571,7 @@
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
+    "customErrorCodeFieldName" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {

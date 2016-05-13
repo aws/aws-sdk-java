@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ValidatePipelineDefinitionRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class ValidatePipelineDefinitionRequestMarshaller
         implements
         Marshaller<Request<ValidatePipelineDefinitionRequest>, ValidatePipelineDefinitionRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ValidatePipelineDefinitionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ValidatePipelineDefinitionRequest> marshall(
             ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest) {
@@ -59,8 +66,8 @@ public class ValidatePipelineDefinitionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

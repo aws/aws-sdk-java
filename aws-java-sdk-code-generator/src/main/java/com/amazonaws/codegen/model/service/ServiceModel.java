@@ -59,6 +59,16 @@ public class ServiceModel {
         return shapes;
     }
 
+    /**
+     * Convenience getter to retrieve a {@link Shape} by name.
+     *
+     * @param shapeName Name of shape to retrieve.
+     * @return Shape or null if not found.
+     */
+    public Shape getShape(String shapeName) {
+        return shapes.get(shapeName);
+    }
+
     public String getDocumentation() {
         return documentation;
     }

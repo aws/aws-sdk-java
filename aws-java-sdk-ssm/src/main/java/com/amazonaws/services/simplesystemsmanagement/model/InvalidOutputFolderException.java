@@ -19,7 +19,9 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
+ * <p>
  * The S3 bucket does not exist.
+ * </p>
  */
 public class InvalidOutputFolderException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

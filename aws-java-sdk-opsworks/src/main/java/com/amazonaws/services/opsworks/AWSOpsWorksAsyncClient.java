@@ -319,26 +319,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignInstanceAsync(
+    public java.util.concurrent.Future<AssignInstanceResult> assignInstanceAsync(
             AssignInstanceRequest request) {
 
         return assignInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignInstanceAsync(
+    public java.util.concurrent.Future<AssignInstanceResult> assignInstanceAsync(
             final AssignInstanceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AssignInstanceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AssignInstanceRequest, AssignInstanceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AssignInstanceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AssignInstanceResult call() throws Exception {
+                        AssignInstanceResult result;
 
                         try {
-                            assignInstance(request);
-                            result = null;
+                            result = assignInstance(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -355,26 +354,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignVolumeAsync(
+    public java.util.concurrent.Future<AssignVolumeResult> assignVolumeAsync(
             AssignVolumeRequest request) {
 
         return assignVolumeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignVolumeAsync(
+    public java.util.concurrent.Future<AssignVolumeResult> assignVolumeAsync(
             final AssignVolumeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AssignVolumeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AssignVolumeRequest, AssignVolumeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AssignVolumeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AssignVolumeResult call() throws Exception {
+                        AssignVolumeResult result;
 
                         try {
-                            assignVolume(request);
-                            result = null;
+                            result = assignVolume(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -391,26 +389,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> associateElasticIpAsync(
+    public java.util.concurrent.Future<AssociateElasticIpResult> associateElasticIpAsync(
             AssociateElasticIpRequest request) {
 
         return associateElasticIpAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> associateElasticIpAsync(
+    public java.util.concurrent.Future<AssociateElasticIpResult> associateElasticIpAsync(
             final AssociateElasticIpRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AssociateElasticIpRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AssociateElasticIpRequest, AssociateElasticIpResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AssociateElasticIpResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AssociateElasticIpResult call() throws Exception {
+                        AssociateElasticIpResult result;
 
                         try {
-                            associateElasticIp(request);
-                            result = null;
+                            result = associateElasticIp(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -427,26 +424,26 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachElasticLoadBalancerAsync(
+    public java.util.concurrent.Future<AttachElasticLoadBalancerResult> attachElasticLoadBalancerAsync(
             AttachElasticLoadBalancerRequest request) {
 
         return attachElasticLoadBalancerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachElasticLoadBalancerAsync(
+    public java.util.concurrent.Future<AttachElasticLoadBalancerResult> attachElasticLoadBalancerAsync(
             final AttachElasticLoadBalancerRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AttachElasticLoadBalancerRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AttachElasticLoadBalancerRequest, AttachElasticLoadBalancerResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AttachElasticLoadBalancerResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AttachElasticLoadBalancerResult call()
+                            throws Exception {
+                        AttachElasticLoadBalancerResult result;
 
                         try {
-                            attachElasticLoadBalancer(request);
-                            result = null;
+                            result = attachElasticLoadBalancer(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -708,26 +705,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAppAsync(
+    public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(
             DeleteAppRequest request) {
 
         return deleteAppAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAppAsync(
+    public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(
             final DeleteAppRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteAppResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteAppResult call() throws Exception {
+                        DeleteAppResult result;
 
                         try {
-                            deleteApp(request);
-                            result = null;
+                            result = deleteApp(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -744,26 +740,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteInstanceAsync(
+    public java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(
             DeleteInstanceRequest request) {
 
         return deleteInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteInstanceAsync(
+    public java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(
             final DeleteInstanceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, DeleteInstanceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteInstanceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteInstanceResult call() throws Exception {
+                        DeleteInstanceResult result;
 
                         try {
-                            deleteInstance(request);
-                            result = null;
+                            result = deleteInstance(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -780,26 +775,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLayerAsync(
+    public java.util.concurrent.Future<DeleteLayerResult> deleteLayerAsync(
             DeleteLayerRequest request) {
 
         return deleteLayerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLayerAsync(
+    public java.util.concurrent.Future<DeleteLayerResult> deleteLayerAsync(
             final DeleteLayerRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteLayerRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteLayerRequest, DeleteLayerResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteLayerResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteLayerResult call() throws Exception {
+                        DeleteLayerResult result;
 
                         try {
-                            deleteLayer(request);
-                            result = null;
+                            result = deleteLayer(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -816,26 +810,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStackAsync(
+    public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(
             DeleteStackRequest request) {
 
         return deleteStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStackAsync(
+    public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(
             final DeleteStackRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteStackResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteStackResult call() throws Exception {
+                        DeleteStackResult result;
 
                         try {
-                            deleteStack(request);
-                            result = null;
+                            result = deleteStack(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -852,26 +845,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserProfileAsync(
+    public java.util.concurrent.Future<DeleteUserProfileResult> deleteUserProfileAsync(
             DeleteUserProfileRequest request) {
 
         return deleteUserProfileAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserProfileAsync(
+    public java.util.concurrent.Future<DeleteUserProfileResult> deleteUserProfileAsync(
             final DeleteUserProfileRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteUserProfileRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteUserProfileRequest, DeleteUserProfileResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteUserProfileResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteUserProfileResult call() throws Exception {
+                        DeleteUserProfileResult result;
 
                         try {
-                            deleteUserProfile(request);
-                            result = null;
+                            result = deleteUserProfile(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -888,26 +880,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterEcsClusterAsync(
+    public java.util.concurrent.Future<DeregisterEcsClusterResult> deregisterEcsClusterAsync(
             DeregisterEcsClusterRequest request) {
 
         return deregisterEcsClusterAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterEcsClusterAsync(
+    public java.util.concurrent.Future<DeregisterEcsClusterResult> deregisterEcsClusterAsync(
             final DeregisterEcsClusterRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeregisterEcsClusterRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeregisterEcsClusterRequest, DeregisterEcsClusterResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeregisterEcsClusterResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeregisterEcsClusterResult call() throws Exception {
+                        DeregisterEcsClusterResult result;
 
                         try {
-                            deregisterEcsCluster(request);
-                            result = null;
+                            result = deregisterEcsCluster(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -924,26 +915,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterElasticIpAsync(
+    public java.util.concurrent.Future<DeregisterElasticIpResult> deregisterElasticIpAsync(
             DeregisterElasticIpRequest request) {
 
         return deregisterElasticIpAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterElasticIpAsync(
+    public java.util.concurrent.Future<DeregisterElasticIpResult> deregisterElasticIpAsync(
             final DeregisterElasticIpRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeregisterElasticIpRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeregisterElasticIpRequest, DeregisterElasticIpResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeregisterElasticIpResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeregisterElasticIpResult call() throws Exception {
+                        DeregisterElasticIpResult result;
 
                         try {
-                            deregisterElasticIp(request);
-                            result = null;
+                            result = deregisterElasticIp(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -960,26 +950,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterInstanceAsync(
+    public java.util.concurrent.Future<DeregisterInstanceResult> deregisterInstanceAsync(
             DeregisterInstanceRequest request) {
 
         return deregisterInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterInstanceAsync(
+    public java.util.concurrent.Future<DeregisterInstanceResult> deregisterInstanceAsync(
             final DeregisterInstanceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeregisterInstanceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeregisterInstanceRequest, DeregisterInstanceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeregisterInstanceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeregisterInstanceResult call() throws Exception {
+                        DeregisterInstanceResult result;
 
                         try {
-                            deregisterInstance(request);
-                            result = null;
+                            result = deregisterInstance(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -996,26 +985,26 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterRdsDbInstanceAsync(
+    public java.util.concurrent.Future<DeregisterRdsDbInstanceResult> deregisterRdsDbInstanceAsync(
             DeregisterRdsDbInstanceRequest request) {
 
         return deregisterRdsDbInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterRdsDbInstanceAsync(
+    public java.util.concurrent.Future<DeregisterRdsDbInstanceResult> deregisterRdsDbInstanceAsync(
             final DeregisterRdsDbInstanceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeregisterRdsDbInstanceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeregisterRdsDbInstanceRequest, DeregisterRdsDbInstanceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeregisterRdsDbInstanceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeregisterRdsDbInstanceResult call()
+                            throws Exception {
+                        DeregisterRdsDbInstanceResult result;
 
                         try {
-                            deregisterRdsDbInstance(request);
-                            result = null;
+                            result = deregisterRdsDbInstance(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1032,26 +1021,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterVolumeAsync(
+    public java.util.concurrent.Future<DeregisterVolumeResult> deregisterVolumeAsync(
             DeregisterVolumeRequest request) {
 
         return deregisterVolumeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterVolumeAsync(
+    public java.util.concurrent.Future<DeregisterVolumeResult> deregisterVolumeAsync(
             final DeregisterVolumeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeregisterVolumeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeregisterVolumeRequest, DeregisterVolumeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeregisterVolumeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeregisterVolumeResult call() throws Exception {
+                        DeregisterVolumeResult result;
 
                         try {
-                            deregisterVolume(request);
-                            result = null;
+                            result = deregisterVolume(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1807,26 +1795,26 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachElasticLoadBalancerAsync(
+    public java.util.concurrent.Future<DetachElasticLoadBalancerResult> detachElasticLoadBalancerAsync(
             DetachElasticLoadBalancerRequest request) {
 
         return detachElasticLoadBalancerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachElasticLoadBalancerAsync(
+    public java.util.concurrent.Future<DetachElasticLoadBalancerResult> detachElasticLoadBalancerAsync(
             final DetachElasticLoadBalancerRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DetachElasticLoadBalancerRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DetachElasticLoadBalancerRequest, DetachElasticLoadBalancerResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DetachElasticLoadBalancerResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DetachElasticLoadBalancerResult call()
+                            throws Exception {
+                        DetachElasticLoadBalancerResult result;
 
                         try {
-                            detachElasticLoadBalancer(request);
-                            result = null;
+                            result = detachElasticLoadBalancer(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1843,26 +1831,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateElasticIpAsync(
+    public java.util.concurrent.Future<DisassociateElasticIpResult> disassociateElasticIpAsync(
             DisassociateElasticIpRequest request) {
 
         return disassociateElasticIpAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateElasticIpAsync(
+    public java.util.concurrent.Future<DisassociateElasticIpResult> disassociateElasticIpAsync(
             final DisassociateElasticIpRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DisassociateElasticIpRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DisassociateElasticIpRequest, DisassociateElasticIpResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DisassociateElasticIpResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DisassociateElasticIpResult call() throws Exception {
+                        DisassociateElasticIpResult result;
 
                         try {
-                            disassociateElasticIp(request);
-                            result = null;
+                            result = disassociateElasticIp(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1949,26 +1936,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebootInstanceAsync(
+    public java.util.concurrent.Future<RebootInstanceResult> rebootInstanceAsync(
             RebootInstanceRequest request) {
 
         return rebootInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebootInstanceAsync(
+    public java.util.concurrent.Future<RebootInstanceResult> rebootInstanceAsync(
             final RebootInstanceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RebootInstanceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RebootInstanceRequest, RebootInstanceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RebootInstanceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RebootInstanceResult call() throws Exception {
+                        RebootInstanceResult result;
 
                         try {
-                            rebootInstance(request);
-                            result = null;
+                            result = rebootInstance(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2090,26 +2076,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> registerRdsDbInstanceAsync(
+    public java.util.concurrent.Future<RegisterRdsDbInstanceResult> registerRdsDbInstanceAsync(
             RegisterRdsDbInstanceRequest request) {
 
         return registerRdsDbInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> registerRdsDbInstanceAsync(
+    public java.util.concurrent.Future<RegisterRdsDbInstanceResult> registerRdsDbInstanceAsync(
             final RegisterRdsDbInstanceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RegisterRdsDbInstanceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RegisterRdsDbInstanceRequest, RegisterRdsDbInstanceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RegisterRdsDbInstanceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RegisterRdsDbInstanceResult call() throws Exception {
+                        RegisterRdsDbInstanceResult result;
 
                         try {
-                            registerRdsDbInstance(request);
-                            result = null;
+                            result = registerRdsDbInstance(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2161,26 +2146,26 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setLoadBasedAutoScalingAsync(
+    public java.util.concurrent.Future<SetLoadBasedAutoScalingResult> setLoadBasedAutoScalingAsync(
             SetLoadBasedAutoScalingRequest request) {
 
         return setLoadBasedAutoScalingAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setLoadBasedAutoScalingAsync(
+    public java.util.concurrent.Future<SetLoadBasedAutoScalingResult> setLoadBasedAutoScalingAsync(
             final SetLoadBasedAutoScalingRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetLoadBasedAutoScalingRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetLoadBasedAutoScalingRequest, SetLoadBasedAutoScalingResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetLoadBasedAutoScalingResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetLoadBasedAutoScalingResult call()
+                            throws Exception {
+                        SetLoadBasedAutoScalingResult result;
 
                         try {
-                            setLoadBasedAutoScaling(request);
-                            result = null;
+                            result = setLoadBasedAutoScaling(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2197,26 +2182,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setPermissionAsync(
+    public java.util.concurrent.Future<SetPermissionResult> setPermissionAsync(
             SetPermissionRequest request) {
 
         return setPermissionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setPermissionAsync(
+    public java.util.concurrent.Future<SetPermissionResult> setPermissionAsync(
             final SetPermissionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetPermissionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetPermissionRequest, SetPermissionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetPermissionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetPermissionResult call() throws Exception {
+                        SetPermissionResult result;
 
                         try {
-                            setPermission(request);
-                            result = null;
+                            result = setPermission(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2233,26 +2217,26 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setTimeBasedAutoScalingAsync(
+    public java.util.concurrent.Future<SetTimeBasedAutoScalingResult> setTimeBasedAutoScalingAsync(
             SetTimeBasedAutoScalingRequest request) {
 
         return setTimeBasedAutoScalingAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setTimeBasedAutoScalingAsync(
+    public java.util.concurrent.Future<SetTimeBasedAutoScalingResult> setTimeBasedAutoScalingAsync(
             final SetTimeBasedAutoScalingRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetTimeBasedAutoScalingRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetTimeBasedAutoScalingRequest, SetTimeBasedAutoScalingResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetTimeBasedAutoScalingResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetTimeBasedAutoScalingResult call()
+                            throws Exception {
+                        SetTimeBasedAutoScalingResult result;
 
                         try {
-                            setTimeBasedAutoScaling(request);
-                            result = null;
+                            result = setTimeBasedAutoScaling(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2269,26 +2253,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startInstanceAsync(
+    public java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(
             StartInstanceRequest request) {
 
         return startInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startInstanceAsync(
+    public java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(
             final StartInstanceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<StartInstanceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<StartInstanceRequest, StartInstanceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<StartInstanceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public StartInstanceResult call() throws Exception {
+                        StartInstanceResult result;
 
                         try {
-                            startInstance(request);
-                            result = null;
+                            result = startInstance(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2305,26 +2288,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startStackAsync(
+    public java.util.concurrent.Future<StartStackResult> startStackAsync(
             StartStackRequest request) {
 
         return startStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startStackAsync(
+    public java.util.concurrent.Future<StartStackResult> startStackAsync(
             final StartStackRequest request,
-            final com.amazonaws.handlers.AsyncHandler<StartStackRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<StartStackRequest, StartStackResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<StartStackResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public StartStackResult call() throws Exception {
+                        StartStackResult result;
 
                         try {
-                            startStack(request);
-                            result = null;
+                            result = startStack(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2341,26 +2323,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopInstanceAsync(
+    public java.util.concurrent.Future<StopInstanceResult> stopInstanceAsync(
             StopInstanceRequest request) {
 
         return stopInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopInstanceAsync(
+    public java.util.concurrent.Future<StopInstanceResult> stopInstanceAsync(
             final StopInstanceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<StopInstanceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<StopInstanceRequest, StopInstanceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<StopInstanceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public StopInstanceResult call() throws Exception {
+                        StopInstanceResult result;
 
                         try {
-                            stopInstance(request);
-                            result = null;
+                            result = stopInstance(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2377,26 +2358,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopStackAsync(
+    public java.util.concurrent.Future<StopStackResult> stopStackAsync(
             StopStackRequest request) {
 
         return stopStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopStackAsync(
+    public java.util.concurrent.Future<StopStackResult> stopStackAsync(
             final StopStackRequest request,
-            final com.amazonaws.handlers.AsyncHandler<StopStackRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<StopStackRequest, StopStackResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<StopStackResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public StopStackResult call() throws Exception {
+                        StopStackResult result;
 
                         try {
-                            stopStack(request);
-                            result = null;
+                            result = stopStack(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2413,26 +2393,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignInstanceAsync(
+    public java.util.concurrent.Future<UnassignInstanceResult> unassignInstanceAsync(
             UnassignInstanceRequest request) {
 
         return unassignInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignInstanceAsync(
+    public java.util.concurrent.Future<UnassignInstanceResult> unassignInstanceAsync(
             final UnassignInstanceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UnassignInstanceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UnassignInstanceRequest, UnassignInstanceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UnassignInstanceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UnassignInstanceResult call() throws Exception {
+                        UnassignInstanceResult result;
 
                         try {
-                            unassignInstance(request);
-                            result = null;
+                            result = unassignInstance(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2449,26 +2428,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignVolumeAsync(
+    public java.util.concurrent.Future<UnassignVolumeResult> unassignVolumeAsync(
             UnassignVolumeRequest request) {
 
         return unassignVolumeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignVolumeAsync(
+    public java.util.concurrent.Future<UnassignVolumeResult> unassignVolumeAsync(
             final UnassignVolumeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UnassignVolumeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UnassignVolumeRequest, UnassignVolumeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UnassignVolumeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UnassignVolumeResult call() throws Exception {
+                        UnassignVolumeResult result;
 
                         try {
-                            unassignVolume(request);
-                            result = null;
+                            result = unassignVolume(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2485,26 +2463,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAppAsync(
+    public java.util.concurrent.Future<UpdateAppResult> updateAppAsync(
             UpdateAppRequest request) {
 
         return updateAppAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAppAsync(
+    public java.util.concurrent.Future<UpdateAppResult> updateAppAsync(
             final UpdateAppRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateAppRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateAppRequest, UpdateAppResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateAppResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateAppResult call() throws Exception {
+                        UpdateAppResult result;
 
                         try {
-                            updateApp(request);
-                            result = null;
+                            result = updateApp(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2521,26 +2498,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateElasticIpAsync(
+    public java.util.concurrent.Future<UpdateElasticIpResult> updateElasticIpAsync(
             UpdateElasticIpRequest request) {
 
         return updateElasticIpAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateElasticIpAsync(
+    public java.util.concurrent.Future<UpdateElasticIpResult> updateElasticIpAsync(
             final UpdateElasticIpRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateElasticIpRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateElasticIpRequest, UpdateElasticIpResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateElasticIpResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateElasticIpResult call() throws Exception {
+                        UpdateElasticIpResult result;
 
                         try {
-                            updateElasticIp(request);
-                            result = null;
+                            result = updateElasticIp(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2557,26 +2533,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateInstanceAsync(
+    public java.util.concurrent.Future<UpdateInstanceResult> updateInstanceAsync(
             UpdateInstanceRequest request) {
 
         return updateInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateInstanceAsync(
+    public java.util.concurrent.Future<UpdateInstanceResult> updateInstanceAsync(
             final UpdateInstanceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateInstanceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateInstanceRequest, UpdateInstanceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateInstanceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateInstanceResult call() throws Exception {
+                        UpdateInstanceResult result;
 
                         try {
-                            updateInstance(request);
-                            result = null;
+                            result = updateInstance(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2593,26 +2568,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateLayerAsync(
+    public java.util.concurrent.Future<UpdateLayerResult> updateLayerAsync(
             UpdateLayerRequest request) {
 
         return updateLayerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateLayerAsync(
+    public java.util.concurrent.Future<UpdateLayerResult> updateLayerAsync(
             final UpdateLayerRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateLayerRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateLayerRequest, UpdateLayerResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateLayerResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateLayerResult call() throws Exception {
+                        UpdateLayerResult result;
 
                         try {
-                            updateLayer(request);
-                            result = null;
+                            result = updateLayer(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2629,26 +2603,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateMyUserProfileAsync(
+    public java.util.concurrent.Future<UpdateMyUserProfileResult> updateMyUserProfileAsync(
             UpdateMyUserProfileRequest request) {
 
         return updateMyUserProfileAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateMyUserProfileAsync(
+    public java.util.concurrent.Future<UpdateMyUserProfileResult> updateMyUserProfileAsync(
             final UpdateMyUserProfileRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateMyUserProfileRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateMyUserProfileRequest, UpdateMyUserProfileResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateMyUserProfileResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateMyUserProfileResult call() throws Exception {
+                        UpdateMyUserProfileResult result;
 
                         try {
-                            updateMyUserProfile(request);
-                            result = null;
+                            result = updateMyUserProfile(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2665,26 +2638,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRdsDbInstanceAsync(
+    public java.util.concurrent.Future<UpdateRdsDbInstanceResult> updateRdsDbInstanceAsync(
             UpdateRdsDbInstanceRequest request) {
 
         return updateRdsDbInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRdsDbInstanceAsync(
+    public java.util.concurrent.Future<UpdateRdsDbInstanceResult> updateRdsDbInstanceAsync(
             final UpdateRdsDbInstanceRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateRdsDbInstanceRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateRdsDbInstanceRequest, UpdateRdsDbInstanceResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateRdsDbInstanceResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateRdsDbInstanceResult call() throws Exception {
+                        UpdateRdsDbInstanceResult result;
 
                         try {
-                            updateRdsDbInstance(request);
-                            result = null;
+                            result = updateRdsDbInstance(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2701,26 +2673,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateStackAsync(
+    public java.util.concurrent.Future<UpdateStackResult> updateStackAsync(
             UpdateStackRequest request) {
 
         return updateStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateStackAsync(
+    public java.util.concurrent.Future<UpdateStackResult> updateStackAsync(
             final UpdateStackRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, UpdateStackResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateStackResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateStackResult call() throws Exception {
+                        UpdateStackResult result;
 
                         try {
-                            updateStack(request);
-                            result = null;
+                            result = updateStack(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2737,26 +2708,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateUserProfileAsync(
+    public java.util.concurrent.Future<UpdateUserProfileResult> updateUserProfileAsync(
             UpdateUserProfileRequest request) {
 
         return updateUserProfileAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateUserProfileAsync(
+    public java.util.concurrent.Future<UpdateUserProfileResult> updateUserProfileAsync(
             final UpdateUserProfileRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateUserProfileRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateUserProfileRequest, UpdateUserProfileResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateUserProfileResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateUserProfileResult call() throws Exception {
+                        UpdateUserProfileResult result;
 
                         try {
-                            updateUserProfile(request);
-                            result = null;
+                            result = updateUserProfile(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2773,26 +2743,25 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateVolumeAsync(
+    public java.util.concurrent.Future<UpdateVolumeResult> updateVolumeAsync(
             UpdateVolumeRequest request) {
 
         return updateVolumeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateVolumeAsync(
+    public java.util.concurrent.Future<UpdateVolumeResult> updateVolumeAsync(
             final UpdateVolumeRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateVolumeRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateVolumeRequest, UpdateVolumeResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateVolumeResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateVolumeResult call() throws Exception {
+                        UpdateVolumeResult result;
 
                         try {
-                            updateVolume(request);
-                            result = null;
+                            result = updateVolume(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

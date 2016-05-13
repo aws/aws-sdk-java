@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * GetInvalidationRequest Marshaller
@@ -61,13 +62,17 @@ public class GetInvalidationRequestMarshaller implements
         uriResourcePath = uriResourcePath
                 .replace(
                         "{DistributionId}",
-                        (getInvalidationRequest.getDistributionId() != null) ? StringUtils
-                                .fromString(getInvalidationRequest
-                                        .getDistributionId()) : "");
+                        (getInvalidationRequest.getDistributionId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(getInvalidationRequest
+                                                .getDistributionId()), false)
+                                : "");
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (getInvalidationRequest.getId() != null) ? StringUtils
-                        .fromString(getInvalidationRequest.getId()) : "");
+                (getInvalidationRequest.getId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(getInvalidationRequest.getId()),
+                                false) : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

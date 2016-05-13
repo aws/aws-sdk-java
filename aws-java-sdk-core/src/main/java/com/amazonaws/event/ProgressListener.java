@@ -30,17 +30,17 @@ import com.amazonaws.AmazonClientException;
 public interface ProgressListener {
 	public static final ProgressListener NOOP = new NoOpProgressListener();
 
-	static class NoOpProgressListener implements ProgressListener, DeliveryMode {
+    static class NoOpProgressListener implements ProgressListener, DeliveryMode {
 
-		@Override
-		public boolean isSyncCallSafe() {
-			return true;
-		}
+        @Override
+        public boolean isSyncCallSafe() {
+            return true;
+        }
 
-		@Override
-		public void progressChanged(ProgressEvent progressEvent) {
-		}
-	}
+        @Override
+        public void progressChanged(ProgressEvent progressEvent) {
+        }
+    }
 
     /**
      * Called when progress has changed, such as additional bytes transferred,

@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * EnableRadiusRequest Marshaller
  */
 public class EnableRadiusRequestMarshaller implements
         Marshaller<Request<EnableRadiusRequest>, EnableRadiusRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public EnableRadiusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<EnableRadiusRequest> marshall(
             EnableRadiusRequest enableRadiusRequest) {
@@ -58,8 +64,8 @@ public class EnableRadiusRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

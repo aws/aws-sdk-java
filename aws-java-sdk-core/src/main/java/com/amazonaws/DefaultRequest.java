@@ -169,6 +169,17 @@ public class DefaultRequest<T> implements Request<T> {
     }
 
     /**
+     *
+     * @see com.amazonaws.Request#addParameters(java.lang.String, java.util.List)
+     */
+    public void addParameters(String name, List<String> values) {
+        if (values == null) return;
+        for (String value : values) {
+            addParameter(name, value);
+        }
+    }
+
+    /**
      * @see com.amazonaws.Request#getParameters()
      */
     public Map<String, List<String>> getParameters() {

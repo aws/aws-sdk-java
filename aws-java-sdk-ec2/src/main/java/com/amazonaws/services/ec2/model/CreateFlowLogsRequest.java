@@ -33,6 +33,9 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * <p>
      * One or more subnet, network interface, or VPC IDs.
      * </p>
+     * <p>
+     * Constraints: Maximum of 1000 resources
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceIds;
     /**
@@ -74,8 +77,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * <p>
      * One or more subnet, network interface, or VPC IDs.
      * </p>
+     * <p>
+     * Constraints: Maximum of 1000 resources
+     * </p>
      * 
-     * @return One or more subnet, network interface, or VPC IDs.
+     * @return One or more subnet, network interface, or VPC IDs.</p>
+     *         <p>
+     *         Constraints: Maximum of 1000 resources
      */
 
     public java.util.List<String> getResourceIds() {
@@ -89,9 +97,14 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * <p>
      * One or more subnet, network interface, or VPC IDs.
      * </p>
+     * <p>
+     * Constraints: Maximum of 1000 resources
+     * </p>
      * 
      * @param resourceIds
-     *        One or more subnet, network interface, or VPC IDs.
+     *        One or more subnet, network interface, or VPC IDs.</p>
+     *        <p>
+     *        Constraints: Maximum of 1000 resources
      */
 
     public void setResourceIds(java.util.Collection<String> resourceIds) {
@@ -109,6 +122,9 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * One or more subnet, network interface, or VPC IDs.
      * </p>
      * <p>
+     * Constraints: Maximum of 1000 resources
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setResourceIds(java.util.Collection)} or
      * {@link #withResourceIds(java.util.Collection)} if you want to override
@@ -116,7 +132,9 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param resourceIds
-     *        One or more subnet, network interface, or VPC IDs.
+     *        One or more subnet, network interface, or VPC IDs.</p>
+     *        <p>
+     *        Constraints: Maximum of 1000 resources
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -136,9 +154,14 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * <p>
      * One or more subnet, network interface, or VPC IDs.
      * </p>
+     * <p>
+     * Constraints: Maximum of 1000 resources
+     * </p>
      * 
      * @param resourceIds
-     *        One or more subnet, network interface, or VPC IDs.
+     *        One or more subnet, network interface, or VPC IDs.</p>
+     *        <p>
+     *        Constraints: Maximum of 1000 resources
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

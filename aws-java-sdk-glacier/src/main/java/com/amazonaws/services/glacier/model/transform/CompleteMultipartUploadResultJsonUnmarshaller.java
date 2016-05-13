@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -17,6 +18,8 @@ package com.amazonaws.services.glacier.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.glacier.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -26,38 +29,41 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Complete Multipart Upload Result JSON Unmarshaller
+ * CompleteMultipartUploadResult JSON Unmarshaller
  */
-public class CompleteMultipartUploadResultJsonUnmarshaller implements Unmarshaller<CompleteMultipartUploadResult, JsonUnmarshallerContext> {
+public class CompleteMultipartUploadResultJsonUnmarshaller implements
+        Unmarshaller<CompleteMultipartUploadResult, JsonUnmarshallerContext> {
 
-    public CompleteMultipartUploadResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public CompleteMultipartUploadResult unmarshall(
+            JsonUnmarshallerContext context) throws Exception {
         CompleteMultipartUploadResult completeMultipartUploadResult = new CompleteMultipartUploadResult();
 
         if (context.isStartOfDocument()) {
             if (context.getHeader("Location") != null) {
                 context.setCurrentHeader("Location");
-                completeMultipartUploadResult.setLocation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                completeMultipartUploadResult.setLocation(context
+                        .getUnmarshaller(String.class).unmarshall(context));
             }
-            
             if (context.getHeader("x-amz-sha256-tree-hash") != null) {
                 context.setCurrentHeader("x-amz-sha256-tree-hash");
-                completeMultipartUploadResult.setChecksum(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                completeMultipartUploadResult.setChecksum(context
+                        .getUnmarshaller(String.class).unmarshall(context));
             }
-            
             if (context.getHeader("x-amz-archive-id") != null) {
                 context.setCurrentHeader("x-amz-archive-id");
-                completeMultipartUploadResult.setArchiveId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                completeMultipartUploadResult.setArchiveId(context
+                        .getUnmarshaller(String.class).unmarshall(context));
             }
-            
         }
-        
+
         return completeMultipartUploadResult;
     }
 
     private static CompleteMultipartUploadResultJsonUnmarshaller instance;
+
     public static CompleteMultipartUploadResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new CompleteMultipartUploadResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new CompleteMultipartUploadResultJsonUnmarshaller();
         return instance;
     }
 }
-    

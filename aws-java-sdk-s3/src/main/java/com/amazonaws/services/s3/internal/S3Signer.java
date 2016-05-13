@@ -161,7 +161,8 @@ public class S3Signer extends AbstractAWSSigner {
          * resource path.
          */
         String encodedResourcePath = SdkHttpUtils.appendUri(
-                request.getEndpoint().getPath(), resourcePath, true);
+                request.getEndpoint().getPath(), SdkHttpUtils.urlEncode(resourcePath, true),
+                true);
 
         int timeOffset = request.getTimeOffset();
         Date date = getSignatureDate(timeOffset);

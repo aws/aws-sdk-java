@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * FlushStageAuthorizersCacheRequest Marshaller
@@ -48,7 +49,14 @@ public class FlushStageAuthorizersCacheRequestMarshaller
         implements
         Marshaller<Request<FlushStageAuthorizersCacheRequest>, FlushStageAuthorizersCacheRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public FlushStageAuthorizersCacheRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<FlushStageAuthorizersCacheRequest> marshall(
             FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest) {
@@ -68,15 +76,19 @@ public class FlushStageAuthorizersCacheRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{restapi_id}",
-                        (flushStageAuthorizersCacheRequest.getRestApiId() != null) ? StringUtils
-                                .fromString(flushStageAuthorizersCacheRequest
-                                        .getRestApiId()) : "");
+                        (flushStageAuthorizersCacheRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(flushStageAuthorizersCacheRequest
+                                                .getRestApiId()), false)
+                                : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{stage_name}",
-                        (flushStageAuthorizersCacheRequest.getStageName() != null) ? StringUtils
-                                .fromString(flushStageAuthorizersCacheRequest
-                                        .getStageName()) : "");
+                        (flushStageAuthorizersCacheRequest.getStageName() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(flushStageAuthorizersCacheRequest
+                                                .getStageName()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

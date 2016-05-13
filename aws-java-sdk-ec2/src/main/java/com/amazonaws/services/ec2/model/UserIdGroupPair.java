@@ -27,7 +27,8 @@ public class UserIdGroupPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of an AWS account.
+     * The ID of an AWS account. For a referenced security group in another VPC,
+     * the account ID of the referenced security group is returned.
      * </p>
      * <p>
      * [EC2-Classic] Required when adding or removing rules that reference a
@@ -70,7 +71,8 @@ public class UserIdGroupPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of an AWS account.
+     * The ID of an AWS account. For a referenced security group in another VPC,
+     * the account ID of the referenced security group is returned.
      * </p>
      * <p>
      * [EC2-Classic] Required when adding or removing rules that reference a
@@ -78,7 +80,9 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * </p>
      * 
      * @param userId
-     *        The ID of an AWS account.</p>
+     *        The ID of an AWS account. For a referenced security group in
+     *        another VPC, the account ID of the referenced security group is
+     *        returned.</p>
      *        <p>
      *        [EC2-Classic] Required when adding or removing rules that
      *        reference a security group in another AWS account.
@@ -90,14 +94,17 @@ public class UserIdGroupPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of an AWS account.
+     * The ID of an AWS account. For a referenced security group in another VPC,
+     * the account ID of the referenced security group is returned.
      * </p>
      * <p>
      * [EC2-Classic] Required when adding or removing rules that reference a
      * security group in another AWS account.
      * </p>
      * 
-     * @return The ID of an AWS account.</p>
+     * @return The ID of an AWS account. For a referenced security group in
+     *         another VPC, the account ID of the referenced security group is
+     *         returned.</p>
      *         <p>
      *         [EC2-Classic] Required when adding or removing rules that
      *         reference a security group in another AWS account.
@@ -109,7 +116,8 @@ public class UserIdGroupPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of an AWS account.
+     * The ID of an AWS account. For a referenced security group in another VPC,
+     * the account ID of the referenced security group is returned.
      * </p>
      * <p>
      * [EC2-Classic] Required when adding or removing rules that reference a
@@ -117,7 +125,9 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * </p>
      * 
      * @param userId
-     *        The ID of an AWS account.</p>
+     *        The ID of an AWS account. For a referenced security group in
+     *        another VPC, the account ID of the referenced security group is
+     *        returned.</p>
      *        <p>
      *        [EC2-Classic] Required when adding or removing rules that
      *        reference a security group in another AWS account.

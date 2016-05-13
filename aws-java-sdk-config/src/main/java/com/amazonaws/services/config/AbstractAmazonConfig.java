@@ -39,12 +39,14 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public void deleteConfigRule(DeleteConfigRuleRequest request) {
+    public DeleteConfigRuleResult deleteConfigRule(
+            DeleteConfigRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteDeliveryChannel(DeleteDeliveryChannelRequest request) {
+    public DeleteDeliveryChannelResult deleteDeliveryChannel(
+            DeleteDeliveryChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -189,17 +191,19 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public void putConfigRule(PutConfigRuleRequest request) {
+    public PutConfigRuleResult putConfigRule(PutConfigRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void putConfigurationRecorder(PutConfigurationRecorderRequest request) {
+    public PutConfigurationRecorderResult putConfigurationRecorder(
+            PutConfigurationRecorderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void putDeliveryChannel(PutDeliveryChannelRequest request) {
+    public PutDeliveryChannelResult putDeliveryChannel(
+            PutDeliveryChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -209,13 +213,13 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
-    public void startConfigurationRecorder(
+    public StartConfigurationRecorderResult startConfigurationRecorder(
             StartConfigurationRecorderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void stopConfigurationRecorder(
+    public StopConfigurationRecorderResult stopConfigurationRecorder(
             StopConfigurationRecorderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

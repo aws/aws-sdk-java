@@ -1582,7 +1582,9 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the DnsResolver that is used by the client for resolving AWS IP addresses.
+     * Returns the DnsResolver for resolving AWS IP addresses.
+     * Returns the {@link SystemDefaultDnsResolver} by default if not
+     * explicitly configured by the user.
      */
     public DnsResolver getDnsResolver() {
         return dnsResolver;

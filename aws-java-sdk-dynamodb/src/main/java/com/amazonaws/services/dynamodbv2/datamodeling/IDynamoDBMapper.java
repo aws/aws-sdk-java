@@ -211,16 +211,7 @@ public interface IDynamoDBMapper {
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No version checks are
      * performed</b>, as required by the API.
      *
-     * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
-     */
-    List<FailedBatch> batchDelete(List<? extends Object> objectsToDelete);
-
-    /**
-     * Deletes the objects given using one or more calls to the
-     * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No version checks are
-     * performed</b>, as required by the API.
-     *
-     * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
+     * @see DynamoDBMapper#batchWrite(Iterable, Iterable)
      */
     List<FailedBatch> batchDelete(Iterable<? extends Object> objectsToDelete);
 
@@ -229,7 +220,7 @@ public interface IDynamoDBMapper {
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No version checks are
      * performed</b>, as required by the API.
      *
-     * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
+     * @see DynamoDBMapper#batchWrite(Iterable, Iterable)
      */
     List<FailedBatch> batchDelete(Object... objectsToDelete);
 
@@ -247,25 +238,7 @@ public interface IDynamoDBMapper {
      * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
      * </p>
      *
-     * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
-     */
-    List<FailedBatch> batchSave(List<? extends Object> objectsToSave);
-
-    /**
-     * Saves the objects given using one or more calls to the
-     * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No version checks are
-     * performed</b>, as required by the API.
-     * <p/>
-     * <b>This method ignores any SaveBehavior set on the mapper</b>, and always behaves as if
-     * SaveBehavior.CLOBBER was specified, as the AmazonDynamoDB.batchWriteItem() request does not
-     * support updating existing items.
-     * <p>
-     * This method fails to save the batch if the size of an individual object in the batch exceeds
-     * 400 KB. For more information on batch restrictions see, http://docs.aws.amazon
-     * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
-     * </p>
-     *
-     * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
+     * @see DynamoDBMapper#batchWrite(Iterable, Iterable)
      */
     List<FailedBatch> batchSave(Iterable<? extends Object> objectsToSave);
 
@@ -283,7 +256,7 @@ public interface IDynamoDBMapper {
      * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
      * </p>
      *
-     * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
+     * @see DynamoDBMapper#batchWrite(Iterable, Iterable)
      */
     List<FailedBatch> batchSave(Object... objectsToSave);
 
@@ -306,70 +279,9 @@ public interface IDynamoDBMapper {
      * unprocessed items.
      * </p>
      *
-     * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
-     */
-    List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite, List<? extends Object> objectsToDelete);
-
-    /**
-     * Saves and deletes the objects given using one or more calls to the
-     * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No version checks are
-     * performed</b>, as required by the API.
-     * <p/>
-     * <b>This method ignores any SaveBehavior set on the mapper</b>, and always behaves as if
-     * SaveBehavior.CLOBBER was specified, as the AmazonDynamoDB.batchWriteItem() request does not
-     * support updating existing items.
-     * <p>
-     * This method fails to save the batch if the size of an individual object in the batch exceeds
-     * 400 KB. For more information on batch restrictions see, http://docs.aws.amazon
-     * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
-     * </p>
-     * <p>
-     * If one of the write requests is for a table that is not present, this method does not throw a
-     * ResourceNotFoundException but returns a FailedBatch which includes this exception and the
-     * unprocessed items.
-     * </p>
-     *
-     * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
+     * @see DynamoDBMapper#batchWrite(Iterable, Iterable)
      */
     List<FailedBatch> batchWrite(Iterable<? extends Object> objectsToWrite, Iterable<? extends Object> objectsToDelete);
-
-    /**
-     * Saves and deletes the objects given using one or more calls to the
-     * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. Use mapper config to
-     * control the retry strategy when UnprocessedItems are returned by the BatchWriteItem API
-     * <p>
-     * This method fails to save the batch if the size of an individual object in the batch exceeds
-     * 400 KB. For more information on batch restrictions see, http://docs.aws.amazon
-     * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
-     * </p>
-     * <p>
-     * If one of the write requests is for a table that is not present, this method does not throw a
-     * ResourceNotFoundException but returns a FailedBatch which includes this exception and the
-     * unprocessed items.
-     * </p>
-     *
-     * @param objectsToWrite
-     *            A list of objects to save to DynamoDB. <b>No version checks are performed</b>, as
-     *            required by the {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
-     * @param objectsToDelete
-     *            A list of objects to delete from DynamoDB. <b>No version checks are performed</b>,
-     *            as required by the {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)}
-     *            API.
-     * @param config
-     *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} and
-     *            {@link DynamoDBMapperConfig#getBatchWriteRetryStrategy()} are considered. If
-     *            TableNameOverride is specified, all objects in the two parameter lists will be
-     *            considered to belong to the given table override. In particular, this method
-     *            <b>always acts as if SaveBehavior.CLOBBER was specified</b> regardless of the
-     *            value of the config parameter.
-     * @return A list of failed batches which includes the unprocessed items and the exceptions
-     *         causing the failure.
-     * @see DynamoDBMapperConfig#getTableNameOverride()
-     * @see DynamoDBMapperConfig#getBatchWriteRetryStrategy()
-     */
-    List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite,
-                                 List<? extends Object> objectsToDelete,
-                                 DynamoDBMapperConfig config);
 
     /**
      * Saves and deletes the objects given using one or more calls to the
@@ -418,34 +330,7 @@ public interface IDynamoDBMapper {
      *         objects for each table can be cast to the associated user defined type that is
      *         annotated as mapping that table.
      */
-    Map<String, List<Object>> batchLoad(List<Object> itemsToGet);
-
-    /**
-     * Retrieves multiple items from multiple tables using their primary keys.
-     *
-     * @see DynamoDBMapper#batchLoad(List, DynamoDBMapperConfig)
-     * @return A map of the loaded objects. Each key in the map is the name of a DynamoDB table.
-     *         Each value in the map is a list of objects that have been loaded from that table. All
-     *         objects for each table can be cast to the associated user defined type that is
-     *         annotated as mapping that table.
-     */
     Map<String, List<Object>> batchLoad(Iterable<? extends Object> itemsToGet);
-
-    /**
-     * Retrieves multiple items from multiple tables using their primary keys.
-     *
-     * @param itemsToGet
-     *            Key objects, corresponding to the class to fetch, with their primary key values
-     *            set.
-     * @param config
-     *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} and
-     *            {@link DynamoDBMapperConfig#getConsistentReads()} are considered.
-     * @return A map of the loaded objects. Each key in the map is the name of a DynamoDB table.
-     *         Each value in the map is a list of objects that have been loaded from that table. All
-     *         objects for each table can be cast to the associated user defined type that is
-     *         annotated as mapping that table.
-     */
-    Map<String, List<Object>> batchLoad(List<Object> itemsToGet, DynamoDBMapperConfig config);
 
     /**
      * Retrieves multiple items from multiple tables using their primary keys.

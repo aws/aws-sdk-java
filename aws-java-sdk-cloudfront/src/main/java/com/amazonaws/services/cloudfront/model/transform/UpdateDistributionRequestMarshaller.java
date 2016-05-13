@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * UpdateDistributionRequest Marshaller
@@ -66,8 +67,10 @@ public class UpdateDistributionRequestMarshaller
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (updateDistributionRequest.getId() != null) ? StringUtils
-                        .fromString(updateDistributionRequest.getId()) : "");
+                (updateDistributionRequest.getId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(updateDistributionRequest.getId()),
+                                false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

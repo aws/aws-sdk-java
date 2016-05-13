@@ -58,6 +58,11 @@ public class DocumentIdentifierJsonUnmarshaller implements
                     documentIdentifier.setName(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("Owner", targetDepth)) {
+                    context.nextToken();
+                    documentIdentifier.setOwner(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("PlatformTypes", targetDepth)) {
                     context.nextToken();
                     documentIdentifier

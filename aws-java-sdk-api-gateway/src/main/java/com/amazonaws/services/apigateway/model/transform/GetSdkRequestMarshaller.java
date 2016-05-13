@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetSdkRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetSdkRequestMarshaller implements
         Marshaller<Request<GetSdkRequest>, GetSdkRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetSdkRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetSdkRequest> marshall(GetSdkRequest getSdkRequest) {
 
@@ -65,16 +72,19 @@ public class GetSdkRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getSdkRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(getSdkRequest.getRestApiId()) : "");
+                (getSdkRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getSdkRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{stage_name}",
-                (getSdkRequest.getStageName() != null) ? StringUtils
-                        .fromString(getSdkRequest.getStageName()) : "");
+                (getSdkRequest.getStageName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getSdkRequest
+                                .getStageName()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{sdk_type}",
-                (getSdkRequest.getSdkType() != null) ? StringUtils
-                        .fromString(getSdkRequest.getSdkType()) : "");
+                (getSdkRequest.getSdkType() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(getSdkRequest.getSdkType()),
+                        false) : "");
         request.setResourcePath(uriResourcePath);
 
         java.util.Map<String, String> parameters = getSdkRequest

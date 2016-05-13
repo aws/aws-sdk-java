@@ -45,7 +45,7 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
-    public void createBranch(CreateBranchRequest request) {
+    public CreateBranchResult createBranch(CreateBranchRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -106,18 +106,20 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
-    public void updateDefaultBranch(UpdateDefaultBranchRequest request) {
+    public UpdateDefaultBranchResult updateDefaultBranch(
+            UpdateDefaultBranchRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateRepositoryDescription(
+    public UpdateRepositoryDescriptionResult updateRepositoryDescription(
             UpdateRepositoryDescriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateRepositoryName(UpdateRepositoryNameRequest request) {
+    public UpdateRepositoryNameResult updateRepositoryName(
+            UpdateRepositoryNameRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

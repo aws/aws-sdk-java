@@ -203,6 +203,7 @@ public interface AWSCodeCommit {
      * 
      * @param createBranchRequest
      *        Represents the input of a create branch operation.
+     * @return Result of the CreateBranch operation returned by the service.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws InvalidRepositoryNameException
@@ -240,7 +241,7 @@ public interface AWSCodeCommit {
      *         The encryption key is not available.
      * @sample AWSCodeCommit.CreateBranch
      */
-    void createBranch(CreateBranchRequest createBranchRequest);
+    CreateBranchResult createBranch(CreateBranchRequest createBranchRequest);
 
     /**
      * <p>
@@ -699,6 +700,8 @@ public interface AWSCodeCommit {
      * 
      * @param updateDefaultBranchRequest
      *        Represents the input of an update default branch operation.
+     * @return Result of the UpdateDefaultBranch operation returned by the
+     *         service.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws RepositoryDoesNotExistException
@@ -729,7 +732,7 @@ public interface AWSCodeCommit {
      *         The encryption key is not available.
      * @sample AWSCodeCommit.UpdateDefaultBranch
      */
-    void updateDefaultBranch(
+    UpdateDefaultBranchResult updateDefaultBranch(
             UpdateDefaultBranchRequest updateDefaultBranchRequest);
 
     /**
@@ -750,6 +753,8 @@ public interface AWSCodeCommit {
      * @param updateRepositoryDescriptionRequest
      *        Represents the input of an update repository description
      *        operation.
+     * @return Result of the UpdateRepositoryDescription operation returned by
+     *         the service.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws RepositoryDoesNotExistException
@@ -776,7 +781,7 @@ public interface AWSCodeCommit {
      *         The encryption key is not available.
      * @sample AWSCodeCommit.UpdateRepositoryDescription
      */
-    void updateRepositoryDescription(
+    UpdateRepositoryDescriptionResult updateRepositoryDescription(
             UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest);
 
     /**
@@ -793,6 +798,8 @@ public interface AWSCodeCommit {
      * @param updateRepositoryNameRequest
      *        Represents the input of an update repository description
      *        operation.
+     * @return Result of the UpdateRepositoryName operation returned by the
+     *         service.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws RepositoryNameExistsException
@@ -809,7 +816,7 @@ public interface AWSCodeCommit {
      *         </p>
      * @sample AWSCodeCommit.UpdateRepositoryName
      */
-    void updateRepositoryName(
+    UpdateRepositoryNameResult updateRepositoryName(
             UpdateRepositoryNameRequest updateRepositoryNameRequest);
 
     /**

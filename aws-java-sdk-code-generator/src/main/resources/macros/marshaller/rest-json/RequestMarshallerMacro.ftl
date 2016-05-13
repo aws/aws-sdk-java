@@ -32,7 +32,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ${shapeName} Marshaller
@@ -44,6 +45,12 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
          default to empty string.
     -->
     private static final String DEFAULT_CONTENT_TYPE = "${contentType}";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ${shapeName}Marshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     <#local shape = shapes[shapeName]/>
     public Request<${shapeName}> marshall(${shape.variable.variableType} ${shape.variable.variableName}) {
@@ -79,7 +86,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
                 }
                 <#elseif (member.http.isPayload)>
                 try {
-                    final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
+                    final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
                     ${member.variable.variableType} ${member.variable.variableName} = ${shape.variable.variableName}.get${member.name}();
                     if (${member.variable.variableName} != null) {
@@ -108,8 +115,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
         }
         <#else>
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
             jsonGenerator.writeStartObject();
 
             <@MemberMarshallerMacro.content customConfig shapeName shape.variable.variableName shapes/>

@@ -629,9 +629,11 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      * 
      * @param setCognitoEventsRequest
      *        A request to configure Cognito Events"
+     * @return A Java Future containing the result of the SetCognitoEvents
+     *         operation returned by the service.
      * @sample AmazonCognitoSyncAsync.SetCognitoEvents
      */
-    java.util.concurrent.Future<Void> setCognitoEventsAsync(
+    java.util.concurrent.Future<SetCognitoEventsResult> setCognitoEventsAsync(
             SetCognitoEventsRequest setCognitoEventsRequest);
 
     /**
@@ -654,11 +656,13 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetCognitoEvents
+     *         operation returned by the service.
      * @sample AmazonCognitoSyncAsyncHandler.SetCognitoEvents
      */
-    java.util.concurrent.Future<Void> setCognitoEventsAsync(
+    java.util.concurrent.Future<SetCognitoEventsResult> setCognitoEventsAsync(
             SetCognitoEventsRequest setCognitoEventsRequest,
-            com.amazonaws.handlers.AsyncHandler<SetCognitoEventsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetCognitoEventsRequest, SetCognitoEventsResult> asyncHandler);
 
     /**
      * <p>

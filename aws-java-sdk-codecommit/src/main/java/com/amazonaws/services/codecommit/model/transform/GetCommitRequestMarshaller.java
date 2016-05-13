@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetCommitRequest Marshaller
  */
 public class GetCommitRequestMarshaller implements
         Marshaller<Request<GetCommitRequest>, GetCommitRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetCommitRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetCommitRequest> marshall(GetCommitRequest getCommitRequest) {
 
@@ -56,8 +62,8 @@ public class GetCommitRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

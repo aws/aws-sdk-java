@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdatePipelineStatusRequest Marshaller
@@ -48,7 +49,14 @@ public class UpdatePipelineStatusRequestMarshaller
         implements
         Marshaller<Request<UpdatePipelineStatusRequest>, UpdatePipelineStatusRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdatePipelineStatusRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdatePipelineStatusRequest> marshall(
             UpdatePipelineStatusRequest updatePipelineStatusRequest) {
@@ -67,13 +75,16 @@ public class UpdatePipelineStatusRequestMarshaller
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (updatePipelineStatusRequest.getId() != null) ? StringUtils
-                        .fromString(updatePipelineStatusRequest.getId()) : "");
+                (updatePipelineStatusRequest.getId() != null) ? SdkHttpUtils
+                        .urlEncode(
+                                StringUtils
+                                        .fromString(updatePipelineStatusRequest
+                                                .getId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (updatePipelineStatusRequest.getStatus() != null) {

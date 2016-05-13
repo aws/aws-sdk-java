@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * UpdateHealthCheckRequest Marshaller
@@ -61,9 +62,11 @@ public class UpdateHealthCheckRequestMarshaller implements
         uriResourcePath = uriResourcePath
                 .replace(
                         "{HealthCheckId}",
-                        (updateHealthCheckRequest.getHealthCheckId() != null) ? StringUtils
-                                .fromString(updateHealthCheckRequest
-                                        .getHealthCheckId()) : "");
+                        (updateHealthCheckRequest.getHealthCheckId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateHealthCheckRequest
+                                                .getHealthCheckId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

@@ -136,6 +136,7 @@ public interface AWSLogs {
      * </p>
      * 
      * @param cancelExportTaskRequest
+     * @return Result of the CancelExportTask operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -146,7 +147,8 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.CancelExportTask
      */
-    void cancelExportTask(CancelExportTaskRequest cancelExportTaskRequest);
+    CancelExportTaskResult cancelExportTask(
+            CancelExportTaskRequest cancelExportTaskRequest);
 
     /**
      * <p>
@@ -205,6 +207,7 @@ public interface AWSLogs {
      * </p>
      * 
      * @param createLogGroupRequest
+     * @return Result of the CreateLogGroup operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceAlreadyExistsException
@@ -219,7 +222,8 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.CreateLogGroup
      */
-    void createLogGroup(CreateLogGroupRequest createLogGroupRequest);
+    CreateLogGroupResult createLogGroup(
+            CreateLogGroupRequest createLogGroupRequest);
 
     /**
      * <p>
@@ -236,6 +240,7 @@ public interface AWSLogs {
      * </p>
      * 
      * @param createLogStreamRequest
+     * @return Result of the CreateLogStream operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceAlreadyExistsException
@@ -246,7 +251,8 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.CreateLogStream
      */
-    void createLogStream(CreateLogStreamRequest createLogStreamRequest);
+    CreateLogStreamResult createLogStream(
+            CreateLogStreamRequest createLogStreamRequest);
 
     /**
      * <p>
@@ -256,6 +262,8 @@ public interface AWSLogs {
      * </p>
      * 
      * @param deleteDestinationRequest
+     * @return Result of the DeleteDestination operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -267,7 +275,8 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.DeleteDestination
      */
-    void deleteDestination(DeleteDestinationRequest deleteDestinationRequest);
+    DeleteDestinationResult deleteDestination(
+            DeleteDestinationRequest deleteDestinationRequest);
 
     /**
      * <p>
@@ -276,6 +285,7 @@ public interface AWSLogs {
      * </p>
      * 
      * @param deleteLogGroupRequest
+     * @return Result of the DeleteLogGroup operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -287,7 +297,8 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.DeleteLogGroup
      */
-    void deleteLogGroup(DeleteLogGroupRequest deleteLogGroupRequest);
+    DeleteLogGroupResult deleteLogGroup(
+            DeleteLogGroupRequest deleteLogGroupRequest);
 
     /**
      * <p>
@@ -296,6 +307,7 @@ public interface AWSLogs {
      * </p>
      * 
      * @param deleteLogStreamRequest
+     * @return Result of the DeleteLogStream operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -307,7 +319,8 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.DeleteLogStream
      */
-    void deleteLogStream(DeleteLogStreamRequest deleteLogStreamRequest);
+    DeleteLogStreamResult deleteLogStream(
+            DeleteLogStreamRequest deleteLogStreamRequest);
 
     /**
      * <p>
@@ -315,6 +328,8 @@ public interface AWSLogs {
      * </p>
      * 
      * @param deleteMetricFilterRequest
+     * @return Result of the DeleteMetricFilter operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -326,7 +341,8 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.DeleteMetricFilter
      */
-    void deleteMetricFilter(DeleteMetricFilterRequest deleteMetricFilterRequest);
+    DeleteMetricFilterResult deleteMetricFilter(
+            DeleteMetricFilterRequest deleteMetricFilterRequest);
 
     /**
      * <p>
@@ -335,6 +351,8 @@ public interface AWSLogs {
      * </p>
      * 
      * @param deleteRetentionPolicyRequest
+     * @return Result of the DeleteRetentionPolicy operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -346,7 +364,7 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.DeleteRetentionPolicy
      */
-    void deleteRetentionPolicy(
+    DeleteRetentionPolicyResult deleteRetentionPolicy(
             DeleteRetentionPolicyRequest deleteRetentionPolicyRequest);
 
     /**
@@ -355,6 +373,8 @@ public interface AWSLogs {
      * </p>
      * 
      * @param deleteSubscriptionFilterRequest
+     * @return Result of the DeleteSubscriptionFilter operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -366,7 +386,7 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.DeleteSubscriptionFilter
      */
-    void deleteSubscriptionFilter(
+    DeleteSubscriptionFilterResult deleteSubscriptionFilter(
             DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest);
 
     /**
@@ -653,6 +673,8 @@ public interface AWSLogs {
      * </p>
      * 
      * @param putDestinationPolicyRequest
+     * @return Result of the PutDestinationPolicy operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws OperationAbortedException
@@ -662,7 +684,7 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.PutDestinationPolicy
      */
-    void putDestinationPolicy(
+    PutDestinationPolicyResult putDestinationPolicy(
             PutDestinationPolicyRequest putDestinationPolicyRequest);
 
     /**
@@ -723,6 +745,7 @@ public interface AWSLogs {
      * </p>
      * 
      * @param putMetricFilterRequest
+     * @return Result of the PutMetricFilter operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -737,7 +760,8 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.PutMetricFilter
      */
-    void putMetricFilter(PutMetricFilterRequest putMetricFilterRequest);
+    PutMetricFilterResult putMetricFilter(
+            PutMetricFilterRequest putMetricFilterRequest);
 
     /**
      * <p>
@@ -747,6 +771,8 @@ public interface AWSLogs {
      * </p>
      * 
      * @param putRetentionPolicyRequest
+     * @return Result of the PutRetentionPolicy operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -758,7 +784,8 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.PutRetentionPolicy
      */
-    void putRetentionPolicy(PutRetentionPolicyRequest putRetentionPolicyRequest);
+    PutRetentionPolicyResult putRetentionPolicy(
+            PutRetentionPolicyRequest putRetentionPolicyRequest);
 
     /**
      * <p>
@@ -784,6 +811,8 @@ public interface AWSLogs {
      * </p>
      * 
      * @param putSubscriptionFilterRequest
+     * @return Result of the PutSubscriptionFilter operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -798,7 +827,7 @@ public interface AWSLogs {
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.PutSubscriptionFilter
      */
-    void putSubscriptionFilter(
+    PutSubscriptionFilterResult putSubscriptionFilter(
             PutSubscriptionFilterRequest putSubscriptionFilterRequest);
 
     /**

@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateCertificateRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class UpdateCertificateRequestMarshaller implements
         Marshaller<Request<UpdateCertificateRequest>, UpdateCertificateRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateCertificateRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateCertificateRequest> marshall(
             UpdateCertificateRequest updateCertificateRequest) {
@@ -67,9 +75,11 @@ public class UpdateCertificateRequestMarshaller implements
         uriResourcePath = uriResourcePath
                 .replace(
                         "{certificateId}",
-                        (updateCertificateRequest.getCertificateId() != null) ? StringUtils
-                                .fromString(updateCertificateRequest
-                                        .getCertificateId()) : "");
+                        (updateCertificateRequest.getCertificateId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateCertificateRequest
+                                                .getCertificateId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         if (updateCertificateRequest.getNewStatus() != null) {

@@ -29,7 +29,7 @@ import com.amazonaws.regions.Region;
 import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.ec2.model.CopySnapshotRequest;
 import com.amazonaws.util.AwsHostNameUtils;
-import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.StringUtils;
 
 /**
@@ -115,9 +115,9 @@ public class GeneratePreSignUrlRequestHandler extends CredentialsRequestHandler 
     private String generateUrl(Request<?> request) {
 
         URI endpoint = request.getEndpoint();
-        String uri = HttpUtils.appendUri(endpoint.toString(),
+        String uri = SdkHttpUtils.appendUri(endpoint.toString(),
                 request.getResourcePath(), true);
-        String encodedParams = HttpUtils.encodeParameters(request);
+        String encodedParams = SdkHttpUtils.encodeParameters(request);
 
         if (encodedParams != null) {
             uri += "?" + encodedParams;

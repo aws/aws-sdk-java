@@ -53,9 +53,11 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param deleteAlarmsRequest
+     * @return A Java Future containing the result of the DeleteAlarms operation
+     *         returned by the service.
      * @sample AmazonCloudWatchAsync.DeleteAlarms
      */
-    java.util.concurrent.Future<Void> deleteAlarmsAsync(
+    java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(
             DeleteAlarmsRequest deleteAlarmsRequest);
 
     /**
@@ -70,11 +72,13 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAlarms operation
+     *         returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DeleteAlarms
      */
-    java.util.concurrent.Future<Void> deleteAlarmsAsync(
+    java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(
             DeleteAlarmsRequest deleteAlarmsRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteAlarmsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteAlarmsRequest, DeleteAlarmsResult> asyncHandler);
 
     /**
      * <p>
@@ -228,9 +232,11 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param disableAlarmActionsRequest
+     * @return A Java Future containing the result of the DisableAlarmActions
+     *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.DisableAlarmActions
      */
-    java.util.concurrent.Future<Void> disableAlarmActionsAsync(
+    java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(
             DisableAlarmActionsRequest disableAlarmActionsRequest);
 
     /**
@@ -246,11 +252,13 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableAlarmActions
+     *         operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.DisableAlarmActions
      */
-    java.util.concurrent.Future<Void> disableAlarmActionsAsync(
+    java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(
             DisableAlarmActionsRequest disableAlarmActionsRequest,
-            com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, DisableAlarmActionsResult> asyncHandler);
 
     /**
      * <p>
@@ -258,9 +266,11 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param enableAlarmActionsRequest
+     * @return A Java Future containing the result of the EnableAlarmActions
+     *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.EnableAlarmActions
      */
-    java.util.concurrent.Future<Void> enableAlarmActionsAsync(
+    java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(
             EnableAlarmActionsRequest enableAlarmActionsRequest);
 
     /**
@@ -274,11 +284,13 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableAlarmActions
+     *         operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.EnableAlarmActions
      */
-    java.util.concurrent.Future<Void> enableAlarmActionsAsync(
+    java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(
             EnableAlarmActionsRequest enableAlarmActionsRequest,
-            com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, EnableAlarmActionsResult> asyncHandler);
 
     /**
      * <p>
@@ -503,9 +515,11 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </note>
      * 
      * @param putMetricAlarmRequest
+     * @return A Java Future containing the result of the PutMetricAlarm
+     *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.PutMetricAlarm
      */
-    java.util.concurrent.Future<Void> putMetricAlarmAsync(
+    java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(
             PutMetricAlarmRequest putMetricAlarmRequest);
 
     /**
@@ -563,11 +577,13 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutMetricAlarm
+     *         operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.PutMetricAlarm
      */
-    java.util.concurrent.Future<Void> putMetricAlarmAsync(
+    java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(
             PutMetricAlarmRequest putMetricAlarmRequest,
-            com.amazonaws.handlers.AsyncHandler<PutMetricAlarmRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutMetricAlarmRequest, PutMetricAlarmResult> asyncHandler);
 
     /**
      * <p>
@@ -594,9 +610,11 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param putMetricDataRequest
+     * @return A Java Future containing the result of the PutMetricData
+     *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.PutMetricData
      */
-    java.util.concurrent.Future<Void> putMetricDataAsync(
+    java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(
             PutMetricDataRequest putMetricDataRequest);
 
     /**
@@ -629,11 +647,13 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutMetricData
+     *         operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.PutMetricData
      */
-    java.util.concurrent.Future<Void> putMetricDataAsync(
+    java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(
             PutMetricDataRequest putMetricDataRequest,
-            com.amazonaws.handlers.AsyncHandler<PutMetricDataRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutMetricDataRequest, PutMetricDataResult> asyncHandler);
 
     /**
      * <p>
@@ -650,9 +670,11 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param setAlarmStateRequest
+     * @return A Java Future containing the result of the SetAlarmState
+     *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.SetAlarmState
      */
-    java.util.concurrent.Future<Void> setAlarmStateAsync(
+    java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(
             SetAlarmStateRequest setAlarmStateRequest);
 
     /**
@@ -675,10 +697,12 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetAlarmState
+     *         operation returned by the service.
      * @sample AmazonCloudWatchAsyncHandler.SetAlarmState
      */
-    java.util.concurrent.Future<Void> setAlarmStateAsync(
+    java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(
             SetAlarmStateRequest setAlarmStateRequest,
-            com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, SetAlarmStateResult> asyncHandler);
 
 }

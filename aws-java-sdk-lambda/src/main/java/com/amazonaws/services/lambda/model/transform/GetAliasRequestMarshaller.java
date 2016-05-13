@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetAliasRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetAliasRequestMarshaller implements
         Marshaller<Request<GetAliasRequest>, GetAliasRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetAliasRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetAliasRequest> marshall(GetAliasRequest getAliasRequest) {
 
@@ -65,12 +72,14 @@ public class GetAliasRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{FunctionName}",
-                (getAliasRequest.getFunctionName() != null) ? StringUtils
-                        .fromString(getAliasRequest.getFunctionName()) : "");
+                (getAliasRequest.getFunctionName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getAliasRequest
+                                .getFunctionName()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{Name}",
-                (getAliasRequest.getName() != null) ? StringUtils
-                        .fromString(getAliasRequest.getName()) : "");
+                (getAliasRequest.getName() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(getAliasRequest.getName()),
+                        false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * UpdateTrafficPolicyCommentRequest Marshaller
@@ -62,15 +63,19 @@ public class UpdateTrafficPolicyCommentRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (updateTrafficPolicyCommentRequest.getId() != null) ? StringUtils
-                                .fromString(updateTrafficPolicyCommentRequest
-                                        .getId()) : "");
+                        (updateTrafficPolicyCommentRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(updateTrafficPolicyCommentRequest
+                                                .getId()), false)
+                                : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Version}",
-                        (updateTrafficPolicyCommentRequest.getVersion() != null) ? StringUtils
-                                .fromInteger(updateTrafficPolicyCommentRequest
-                                        .getVersion()) : "");
+                        (updateTrafficPolicyCommentRequest.getVersion() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromInteger(updateTrafficPolicyCommentRequest
+                                                .getVersion()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

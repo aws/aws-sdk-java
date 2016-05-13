@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetBulkPublishDetailsRequest Marshaller
@@ -49,6 +50,13 @@ public class GetBulkPublishDetailsRequestMarshaller
         Marshaller<Request<GetBulkPublishDetailsRequest>, GetBulkPublishDetailsRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetBulkPublishDetailsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetBulkPublishDetailsRequest> marshall(
             GetBulkPublishDetailsRequest getBulkPublishDetailsRequest) {
@@ -68,9 +76,11 @@ public class GetBulkPublishDetailsRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{IdentityPoolId}",
-                        (getBulkPublishDetailsRequest.getIdentityPoolId() != null) ? StringUtils
-                                .fromString(getBulkPublishDetailsRequest
-                                        .getIdentityPoolId()) : "");
+                        (getBulkPublishDetailsRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(getBulkPublishDetailsRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -35,6 +35,7 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * DeleteReusableDelegationSetRequest Marshaller
@@ -62,9 +63,11 @@ public class DeleteReusableDelegationSetRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (deleteReusableDelegationSetRequest.getId() != null) ? StringUtils
-                                .fromString(deleteReusableDelegationSetRequest
-                                        .getId()) : "");
+                        (deleteReusableDelegationSetRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteReusableDelegationSetRequest
+                                                .getId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

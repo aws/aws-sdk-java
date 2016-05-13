@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateIPSetRequest Marshaller
  */
 public class UpdateIPSetRequestMarshaller implements
         Marshaller<Request<UpdateIPSetRequest>, UpdateIPSetRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateIPSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateIPSetRequest> marshall(
             UpdateIPSetRequest updateIPSetRequest) {
@@ -57,8 +63,8 @@ public class UpdateIPSetRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

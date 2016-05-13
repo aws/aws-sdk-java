@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteMethodRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class DeleteMethodRequestMarshaller implements
         Marshaller<Request<DeleteMethodRequest>, DeleteMethodRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteMethodRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteMethodRequest> marshall(
             DeleteMethodRequest deleteMethodRequest) {
@@ -66,16 +73,19 @@ public class DeleteMethodRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (deleteMethodRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(deleteMethodRequest.getRestApiId()) : "");
+                (deleteMethodRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteMethodRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{resource_id}",
-                (deleteMethodRequest.getResourceId() != null) ? StringUtils
-                        .fromString(deleteMethodRequest.getResourceId()) : "");
+                (deleteMethodRequest.getResourceId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteMethodRequest
+                                .getResourceId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{http_method}",
-                (deleteMethodRequest.getHttpMethod() != null) ? StringUtils
-                        .fromString(deleteMethodRequest.getHttpMethod()) : "");
+                (deleteMethodRequest.getHttpMethod() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteMethodRequest
+                                .getHttpMethod()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

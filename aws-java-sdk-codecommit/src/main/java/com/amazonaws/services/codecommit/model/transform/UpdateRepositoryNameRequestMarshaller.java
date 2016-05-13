@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateRepositoryNameRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class UpdateRepositoryNameRequestMarshaller
         implements
         Marshaller<Request<UpdateRepositoryNameRequest>, UpdateRepositoryNameRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateRepositoryNameRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateRepositoryNameRequest> marshall(
             UpdateRepositoryNameRequest updateRepositoryNameRequest) {
@@ -59,8 +66,8 @@ public class UpdateRepositoryNameRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ConnectDirectoryRequest Marshaller
  */
 public class ConnectDirectoryRequestMarshaller implements
         Marshaller<Request<ConnectDirectoryRequest>, ConnectDirectoryRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ConnectDirectoryRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ConnectDirectoryRequest> marshall(
             ConnectDirectoryRequest connectDirectoryRequest) {
@@ -58,8 +65,8 @@ public class ConnectDirectoryRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

@@ -297,26 +297,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             CancelExportTaskRequest request) {
 
         return cancelExportTaskAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             final CancelExportTaskRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CancelExportTaskResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CancelExportTaskResult call() throws Exception {
+                        CancelExportTaskResult result;
 
                         try {
-                            cancelExportTask(request);
-                            result = null;
+                            result = cancelExportTask(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -368,26 +367,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLogGroupAsync(
+    public java.util.concurrent.Future<CreateLogGroupResult> createLogGroupAsync(
             CreateLogGroupRequest request) {
 
         return createLogGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLogGroupAsync(
+    public java.util.concurrent.Future<CreateLogGroupResult> createLogGroupAsync(
             final CreateLogGroupRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, CreateLogGroupResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreateLogGroupResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreateLogGroupResult call() throws Exception {
+                        CreateLogGroupResult result;
 
                         try {
-                            createLogGroup(request);
-                            result = null;
+                            result = createLogGroup(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -404,26 +402,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLogStreamAsync(
+    public java.util.concurrent.Future<CreateLogStreamResult> createLogStreamAsync(
             CreateLogStreamRequest request) {
 
         return createLogStreamAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLogStreamAsync(
+    public java.util.concurrent.Future<CreateLogStreamResult> createLogStreamAsync(
             final CreateLogStreamRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, CreateLogStreamResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreateLogStreamResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreateLogStreamResult call() throws Exception {
+                        CreateLogStreamResult result;
 
                         try {
-                            createLogStream(request);
-                            result = null;
+                            result = createLogStream(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -440,26 +437,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDestinationAsync(
+    public java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(
             DeleteDestinationRequest request) {
 
         return deleteDestinationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDestinationAsync(
+    public java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(
             final DeleteDestinationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, DeleteDestinationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteDestinationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteDestinationResult call() throws Exception {
+                        DeleteDestinationResult result;
 
                         try {
-                            deleteDestination(request);
-                            result = null;
+                            result = deleteDestination(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -476,26 +472,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLogGroupAsync(
+    public java.util.concurrent.Future<DeleteLogGroupResult> deleteLogGroupAsync(
             DeleteLogGroupRequest request) {
 
         return deleteLogGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLogGroupAsync(
+    public java.util.concurrent.Future<DeleteLogGroupResult> deleteLogGroupAsync(
             final DeleteLogGroupRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, DeleteLogGroupResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteLogGroupResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteLogGroupResult call() throws Exception {
+                        DeleteLogGroupResult result;
 
                         try {
-                            deleteLogGroup(request);
-                            result = null;
+                            result = deleteLogGroup(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -512,26 +507,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLogStreamAsync(
+    public java.util.concurrent.Future<DeleteLogStreamResult> deleteLogStreamAsync(
             DeleteLogStreamRequest request) {
 
         return deleteLogStreamAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLogStreamAsync(
+    public java.util.concurrent.Future<DeleteLogStreamResult> deleteLogStreamAsync(
             final DeleteLogStreamRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, DeleteLogStreamResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteLogStreamResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteLogStreamResult call() throws Exception {
+                        DeleteLogStreamResult result;
 
                         try {
-                            deleteLogStream(request);
-                            result = null;
+                            result = deleteLogStream(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -548,26 +542,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMetricFilterAsync(
+    public java.util.concurrent.Future<DeleteMetricFilterResult> deleteMetricFilterAsync(
             DeleteMetricFilterRequest request) {
 
         return deleteMetricFilterAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMetricFilterAsync(
+    public java.util.concurrent.Future<DeleteMetricFilterResult> deleteMetricFilterAsync(
             final DeleteMetricFilterRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, DeleteMetricFilterResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteMetricFilterResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteMetricFilterResult call() throws Exception {
+                        DeleteMetricFilterResult result;
 
                         try {
-                            deleteMetricFilter(request);
-                            result = null;
+                            result = deleteMetricFilter(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -584,26 +577,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRetentionPolicyAsync(
+    public java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(
             DeleteRetentionPolicyRequest request) {
 
         return deleteRetentionPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRetentionPolicyAsync(
+    public java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(
             final DeleteRetentionPolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, DeleteRetentionPolicyResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteRetentionPolicyResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteRetentionPolicyResult call() throws Exception {
+                        DeleteRetentionPolicyResult result;
 
                         try {
-                            deleteRetentionPolicy(request);
-                            result = null;
+                            result = deleteRetentionPolicy(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -620,26 +612,26 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSubscriptionFilterAsync(
+    public java.util.concurrent.Future<DeleteSubscriptionFilterResult> deleteSubscriptionFilterAsync(
             DeleteSubscriptionFilterRequest request) {
 
         return deleteSubscriptionFilterAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSubscriptionFilterAsync(
+    public java.util.concurrent.Future<DeleteSubscriptionFilterResult> deleteSubscriptionFilterAsync(
             final DeleteSubscriptionFilterRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, DeleteSubscriptionFilterResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteSubscriptionFilterResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteSubscriptionFilterResult call()
+                            throws Exception {
+                        DeleteSubscriptionFilterResult result;
 
                         try {
-                            deleteSubscriptionFilter(request);
-                            result = null;
+                            result = deleteSubscriptionFilter(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1022,26 +1014,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putDestinationPolicyAsync(
+    public java.util.concurrent.Future<PutDestinationPolicyResult> putDestinationPolicyAsync(
             PutDestinationPolicyRequest request) {
 
         return putDestinationPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putDestinationPolicyAsync(
+    public java.util.concurrent.Future<PutDestinationPolicyResult> putDestinationPolicyAsync(
             final PutDestinationPolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, PutDestinationPolicyResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutDestinationPolicyResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutDestinationPolicyResult call() throws Exception {
+                        PutDestinationPolicyResult result;
 
                         try {
-                            putDestinationPolicy(request);
-                            result = null;
+                            result = putDestinationPolicy(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1093,26 +1084,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricFilterAsync(
+    public java.util.concurrent.Future<PutMetricFilterResult> putMetricFilterAsync(
             PutMetricFilterRequest request) {
 
         return putMetricFilterAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricFilterAsync(
+    public java.util.concurrent.Future<PutMetricFilterResult> putMetricFilterAsync(
             final PutMetricFilterRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, PutMetricFilterResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutMetricFilterResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutMetricFilterResult call() throws Exception {
+                        PutMetricFilterResult result;
 
                         try {
-                            putMetricFilter(request);
-                            result = null;
+                            result = putMetricFilter(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1129,26 +1119,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putRetentionPolicyAsync(
+    public java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(
             PutRetentionPolicyRequest request) {
 
         return putRetentionPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putRetentionPolicyAsync(
+    public java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(
             final PutRetentionPolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, PutRetentionPolicyResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutRetentionPolicyResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutRetentionPolicyResult call() throws Exception {
+                        PutRetentionPolicyResult result;
 
                         try {
-                            putRetentionPolicy(request);
-                            result = null;
+                            result = putRetentionPolicy(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1165,26 +1154,25 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putSubscriptionFilterAsync(
+    public java.util.concurrent.Future<PutSubscriptionFilterResult> putSubscriptionFilterAsync(
             PutSubscriptionFilterRequest request) {
 
         return putSubscriptionFilterAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putSubscriptionFilterAsync(
+    public java.util.concurrent.Future<PutSubscriptionFilterResult> putSubscriptionFilterAsync(
             final PutSubscriptionFilterRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, PutSubscriptionFilterResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutSubscriptionFilterResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutSubscriptionFilterResult call() throws Exception {
+                        PutSubscriptionFilterResult result;
 
                         try {
-                            putSubscriptionFilter(request);
-                            result = null;
+                            result = putSubscriptionFilter(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

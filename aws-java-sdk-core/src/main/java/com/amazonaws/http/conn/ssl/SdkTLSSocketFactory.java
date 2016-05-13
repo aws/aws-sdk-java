@@ -14,50 +14,45 @@
  */
 package com.amazonaws.http.conn.ssl;
 
-import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.UnknownHostException;
-import java.security.AccessController;
-import java.security.PrivilegedAction;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.List;
+import com.amazonaws.internal.SdkMetricsSocket;
+import com.amazonaws.internal.SdkSSLMetricsSocket;
+import com.amazonaws.internal.SdkSSLSocket;
+import com.amazonaws.internal.SdkSocket;
+import com.amazonaws.metrics.AwsSdkMetrics;
+import com.amazonaws.util.JavaVersionParser;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.HttpHost;
+import org.apache.http.annotation.ThreadSafe;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.protocol.HttpContext;
 
+import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSessionContext;
 import javax.net.ssl.SSLSocket;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
-import org.apache.http.conn.ConnectTimeoutException;
-import org.apache.http.conn.ssl.SSLSocketFactory;
-import org.apache.http.conn.ssl.X509HostnameVerifier;
-import org.apache.http.params.HttpParams;
-
-import com.amazonaws.internal.SdkSSLMetricsSocket;
-import com.amazonaws.internal.SdkSSLSocket;
-import com.amazonaws.internal.SdkSocket;
-import com.amazonaws.internal.SdkMetricsSocket;
-import com.amazonaws.metrics.AwsSdkMetrics;
-import com.amazonaws.util.JavaVersionParser;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Enumeration;
+import java.util.List;
 
 /**
  * Used to enforce the preferred TLS protocol during SSL handshake.
  */
 @ThreadSafe
-public class SdkTLSSocketFactory extends SSLSocketFactory {
+public class SdkTLSSocketFactory extends SSLConnectionSocketFactory {
 
     private static final Log LOG = LogFactory.getLog(SdkTLSSocketFactory.class);
     private final SSLContext sslContext;
     private final MasterSecretValidators.MasterSecretValidator masterSecretValidator;
     private final ShouldClearSslSessionPredicate shouldClearSslSessionsPredicate;
 
-    public SdkTLSSocketFactory(final SSLContext sslContext, final X509HostnameVerifier hostnameVerifier) {
+    public SdkTLSSocketFactory(final SSLContext sslContext, final HostnameVerifier hostnameVerifier) {
         super(sslContext, hostnameVerifier);
         if (sslContext == null) {
             throw new IllegalArgumentException(
@@ -121,17 +116,20 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
         return false;
     }
 
-    @Override
-    public Socket connectSocket(final Socket socket,
-                                final InetSocketAddress remoteAddress,
-                                final InetSocketAddress localAddress,
-                                final HttpParams params)
-                                        throws IOException, UnknownHostException, ConnectTimeoutException {
+    public Socket connectSocket(
+            final int connectTimeout,
+            final Socket socket,
+            final HttpHost host,
+            final InetSocketAddress remoteAddress,
+            final InetSocketAddress localAddress,
+            final HttpContext context) throws IOException {
         if (LOG.isDebugEnabled()) {
             LOG.debug("connecting to " + remoteAddress.getAddress() + ":" + remoteAddress.getPort());
         }
+        Socket connectedSocket;
         try {
-            final Socket connectedSocket = super.connectSocket(socket, remoteAddress, localAddress, params);
+            connectedSocket = super.connectSocket
+                    (connectTimeout, socket, host, remoteAddress, localAddress, context);
             if (!masterSecretValidator.isMasterSecretValid(connectedSocket)) {
                 throw log(new IllegalStateException("Invalid SSL master secret"));
             }
@@ -145,22 +143,20 @@ public class SdkTLSSocketFactory extends SSLSocketFactory {
             }
             throw sslEx;
         }
-        if (socket instanceof SSLSocket) {
-            SdkSSLSocket sslSocket = new SdkSSLSocket((SSLSocket) socket);
+
+        if (connectedSocket instanceof SSLSocket) {
+            SdkSSLSocket sslSocket = new SdkSSLSocket((SSLSocket) connectedSocket);
             return AwsSdkMetrics.isHttpSocketReadMetricEnabled() ? new SdkSSLMetricsSocket(sslSocket) : sslSocket;
         }
-        SdkSocket sdkSocket = new SdkSocket(socket);
+        SdkSocket sdkSocket = new SdkSocket(connectedSocket);
         return AwsSdkMetrics.isHttpSocketReadMetricEnabled() ? new SdkMetricsSocket(sdkSocket) : sdkSocket;
     }
 
     /**
-     * Invalidates all SSL/TLS sessions in {@code sessionContext} associated with
-     * {@code remoteAddress}.
+     * Invalidates all SSL/TLS sessions in {@code sessionContext} associated with {@code remoteAddress}.
      *
-     * @param sessionContext
-     *            collection of SSL/TLS sessions to be (potentially) invalidated
-     * @param remoteAddress
-     *            associated with sessions to invalidate
+     * @param sessionContext collection of SSL/TLS sessions to be (potentially) invalidated
+     * @param remoteAddress  associated with sessions to invalidate
      */
     private void clearSessionCache(final SSLSessionContext sessionContext, final InetSocketAddress remoteAddress) {
         final String hostName = remoteAddress.getHostName();

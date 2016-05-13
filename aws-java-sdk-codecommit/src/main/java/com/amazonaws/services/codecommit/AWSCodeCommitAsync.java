@@ -152,9 +152,11 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * 
      * @param createBranchRequest
      *        Represents the input of a create branch operation.
+     * @return A Java Future containing the result of the CreateBranch operation
+     *         returned by the service.
      * @sample AWSCodeCommitAsync.CreateBranch
      */
-    java.util.concurrent.Future<Void> createBranchAsync(
+    java.util.concurrent.Future<CreateBranchResult> createBranchAsync(
             CreateBranchRequest createBranchRequest);
 
     /**
@@ -175,11 +177,13 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBranch operation
+     *         returned by the service.
      * @sample AWSCodeCommitAsyncHandler.CreateBranch
      */
-    java.util.concurrent.Future<Void> createBranchAsync(
+    java.util.concurrent.Future<CreateBranchResult> createBranchAsync(
             CreateBranchRequest createBranchRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, CreateBranchResult> asyncHandler);
 
     /**
      * <p>
@@ -575,9 +579,11 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * 
      * @param updateDefaultBranchRequest
      *        Represents the input of an update default branch operation.
+     * @return A Java Future containing the result of the UpdateDefaultBranch
+     *         operation returned by the service.
      * @sample AWSCodeCommitAsync.UpdateDefaultBranch
      */
-    java.util.concurrent.Future<Void> updateDefaultBranchAsync(
+    java.util.concurrent.Future<UpdateDefaultBranchResult> updateDefaultBranchAsync(
             UpdateDefaultBranchRequest updateDefaultBranchRequest);
 
     /**
@@ -599,11 +605,13 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDefaultBranch
+     *         operation returned by the service.
      * @sample AWSCodeCommitAsyncHandler.UpdateDefaultBranch
      */
-    java.util.concurrent.Future<Void> updateDefaultBranchAsync(
+    java.util.concurrent.Future<UpdateDefaultBranchResult> updateDefaultBranchAsync(
             UpdateDefaultBranchRequest updateDefaultBranchRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, UpdateDefaultBranchResult> asyncHandler);
 
     /**
      * <p>
@@ -623,9 +631,11 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * @param updateRepositoryDescriptionRequest
      *        Represents the input of an update repository description
      *        operation.
+     * @return A Java Future containing the result of the
+     *         UpdateRepositoryDescription operation returned by the service.
      * @sample AWSCodeCommitAsync.UpdateRepositoryDescription
      */
-    java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
+    java.util.concurrent.Future<UpdateRepositoryDescriptionResult> updateRepositoryDescriptionAsync(
             UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest);
 
     /**
@@ -651,11 +661,13 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateRepositoryDescription operation returned by the service.
      * @sample AWSCodeCommitAsyncHandler.UpdateRepositoryDescription
      */
-    java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
+    java.util.concurrent.Future<UpdateRepositoryDescriptionResult> updateRepositoryDescriptionAsync(
             UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, UpdateRepositoryDescriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -671,9 +683,11 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * @param updateRepositoryNameRequest
      *        Represents the input of an update repository description
      *        operation.
+     * @return A Java Future containing the result of the UpdateRepositoryName
+     *         operation returned by the service.
      * @sample AWSCodeCommitAsync.UpdateRepositoryName
      */
-    java.util.concurrent.Future<Void> updateRepositoryNameAsync(
+    java.util.concurrent.Future<UpdateRepositoryNameResult> updateRepositoryNameAsync(
             UpdateRepositoryNameRequest updateRepositoryNameRequest);
 
     /**
@@ -695,10 +709,12 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRepositoryName
+     *         operation returned by the service.
      * @sample AWSCodeCommitAsyncHandler.UpdateRepositoryName
      */
-    java.util.concurrent.Future<Void> updateRepositoryNameAsync(
+    java.util.concurrent.Future<UpdateRepositoryNameResult> updateRepositoryNameAsync(
             UpdateRepositoryNameRequest updateRepositoryNameRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, UpdateRepositoryNameResult> asyncHandler);
 
 }

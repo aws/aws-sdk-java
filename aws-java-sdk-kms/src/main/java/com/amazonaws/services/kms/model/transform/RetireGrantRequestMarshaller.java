@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RetireGrantRequest Marshaller
  */
 public class RetireGrantRequestMarshaller implements
         Marshaller<Request<RetireGrantRequest>, RetireGrantRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RetireGrantRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RetireGrantRequest> marshall(
             RetireGrantRequest retireGrantRequest) {
@@ -57,8 +63,8 @@ public class RetireGrantRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

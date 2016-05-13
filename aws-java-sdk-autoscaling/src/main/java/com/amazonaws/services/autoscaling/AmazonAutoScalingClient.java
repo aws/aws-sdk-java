@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -72,7 +72,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
     /**
-     * List of exception unmarshallers for all Auto Scaling exceptions.
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -269,19 +269,21 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param attachInstancesRequest
+     * @return Result of the AttachInstances operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.AttachInstances
      */
     @Override
-    public void attachInstances(AttachInstancesRequest attachInstancesRequest) {
+    public AttachInstancesResult attachInstances(
+            AttachInstancesRequest attachInstancesRequest) {
         ExecutionContext executionContext = createExecutionContext(attachInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AttachInstancesRequest> request = null;
-        Response<Void> response = null;
+        Response<AttachInstancesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -294,9 +296,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AttachInstancesResult> responseHandler = new StaxResponseHandler<AttachInstancesResult>(
+                    new AttachInstancesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -454,6 +458,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createAutoScalingGroupRequest
+     * @return Result of the CreateAutoScalingGroup operation returned by the
+     *         service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration
      *         with this name.
@@ -467,14 +473,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.CreateAutoScalingGroup
      */
     @Override
-    public void createAutoScalingGroup(
+    public CreateAutoScalingGroupResult createAutoScalingGroup(
             CreateAutoScalingGroupRequest createAutoScalingGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(createAutoScalingGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateAutoScalingGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateAutoScalingGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -488,9 +494,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<CreateAutoScalingGroupResult> responseHandler = new StaxResponseHandler<CreateAutoScalingGroupResult>(
+                    new CreateAutoScalingGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -514,6 +522,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createLaunchConfigurationRequest
+     * @return Result of the CreateLaunchConfiguration operation returned by the
+     *         service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration
      *         with this name.
@@ -527,14 +537,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.CreateLaunchConfiguration
      */
     @Override
-    public void createLaunchConfiguration(
+    public CreateLaunchConfigurationResult createLaunchConfiguration(
             CreateLaunchConfigurationRequest createLaunchConfigurationRequest) {
         ExecutionContext executionContext = createExecutionContext(createLaunchConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateLaunchConfigurationRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateLaunchConfigurationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -548,9 +558,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<CreateLaunchConfigurationResult> responseHandler = new StaxResponseHandler<CreateLaunchConfigurationResult>(
+                    new CreateLaunchConfigurationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -575,6 +587,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createOrUpdateTagsRequest
+     * @return Result of the CreateOrUpdateTags operation returned by the
+     *         service.
      * @throws LimitExceededException
      *         You have already reached a limit for your Auto Scaling resources
      *         (for example, groups, launch configurations, or lifecycle hooks).
@@ -588,14 +602,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.CreateOrUpdateTags
      */
     @Override
-    public void createOrUpdateTags(
+    public CreateOrUpdateTagsResult createOrUpdateTags(
             CreateOrUpdateTagsRequest createOrUpdateTagsRequest) {
         ExecutionContext executionContext = createExecutionContext(createOrUpdateTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateOrUpdateTagsRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateOrUpdateTagsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -609,9 +623,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<CreateOrUpdateTagsResult> responseHandler = new StaxResponseHandler<CreateOrUpdateTagsResult>(
+                    new CreateOrUpdateTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -645,6 +661,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteAutoScalingGroupRequest
+     * @return Result of the DeleteAutoScalingGroup operation returned by the
+     *         service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -657,14 +675,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.DeleteAutoScalingGroup
      */
     @Override
-    public void deleteAutoScalingGroup(
+    public DeleteAutoScalingGroupResult deleteAutoScalingGroup(
             DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAutoScalingGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAutoScalingGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAutoScalingGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -678,9 +696,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteAutoScalingGroupResult> responseHandler = new StaxResponseHandler<DeleteAutoScalingGroupResult>(
+                    new DeleteAutoScalingGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -699,6 +719,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteLaunchConfigurationRequest
+     * @return Result of the DeleteLaunchConfiguration operation returned by the
+     *         service.
      * @throws ResourceInUseException
      *         The Auto Scaling group or launch configuration can't be deleted
      *         because it is in use.
@@ -708,14 +730,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.DeleteLaunchConfiguration
      */
     @Override
-    public void deleteLaunchConfiguration(
+    public DeleteLaunchConfigurationResult deleteLaunchConfiguration(
             DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteLaunchConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteLaunchConfigurationRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteLaunchConfigurationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -729,9 +751,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteLaunchConfigurationResult> responseHandler = new StaxResponseHandler<DeleteLaunchConfigurationResult>(
+                    new DeleteLaunchConfigurationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -797,20 +821,22 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteNotificationConfigurationRequest
+     * @return Result of the DeleteNotificationConfiguration operation returned
+     *         by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteNotificationConfiguration
      */
     @Override
-    public void deleteNotificationConfiguration(
+    public DeleteNotificationConfigurationResult deleteNotificationConfiguration(
             DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteNotificationConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteNotificationConfigurationRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteNotificationConfigurationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -824,9 +850,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteNotificationConfigurationResult> responseHandler = new StaxResponseHandler<DeleteNotificationConfigurationResult>(
+                    new DeleteNotificationConfigurationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -844,19 +872,21 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deletePolicyRequest
+     * @return Result of the DeletePolicy operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeletePolicy
      */
     @Override
-    public void deletePolicy(DeletePolicyRequest deletePolicyRequest) {
+    public DeletePolicyResult deletePolicy(
+            DeletePolicyRequest deletePolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeletePolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeletePolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -869,9 +899,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeletePolicyResult> responseHandler = new StaxResponseHandler<DeletePolicyResult>(
+                    new DeletePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -885,20 +917,22 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteScheduledActionRequest
+     * @return Result of the DeleteScheduledAction operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteScheduledAction
      */
     @Override
-    public void deleteScheduledAction(
+    public DeleteScheduledActionResult deleteScheduledAction(
             DeleteScheduledActionRequest deleteScheduledActionRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteScheduledActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteScheduledActionRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteScheduledActionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -912,9 +946,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteScheduledActionResult> responseHandler = new StaxResponseHandler<DeleteScheduledActionResult>(
+                    new DeleteScheduledActionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -928,19 +964,20 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteTagsRequest
+     * @return Result of the DeleteTags operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteTags
      */
     @Override
-    public void deleteTags(DeleteTagsRequest deleteTagsRequest) {
+    public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteTagsRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteTagsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -953,9 +990,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(
+                    new DeleteTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2008,20 +2047,22 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param disableMetricsCollectionRequest
+     * @return Result of the DisableMetricsCollection operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DisableMetricsCollection
      */
     @Override
-    public void disableMetricsCollection(
+    public DisableMetricsCollectionResult disableMetricsCollection(
             DisableMetricsCollectionRequest disableMetricsCollectionRequest) {
         ExecutionContext executionContext = createExecutionContext(disableMetricsCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableMetricsCollectionRequest> request = null;
-        Response<Void> response = null;
+        Response<DisableMetricsCollectionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2035,9 +2076,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DisableMetricsCollectionResult> responseHandler = new StaxResponseHandler<DisableMetricsCollectionResult>(
+                    new DisableMetricsCollectionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2056,20 +2099,22 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param enableMetricsCollectionRequest
+     * @return Result of the EnableMetricsCollection operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.EnableMetricsCollection
      */
     @Override
-    public void enableMetricsCollection(
+    public EnableMetricsCollectionResult enableMetricsCollection(
             EnableMetricsCollectionRequest enableMetricsCollectionRequest) {
         ExecutionContext executionContext = createExecutionContext(enableMetricsCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableMetricsCollectionRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableMetricsCollectionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2083,9 +2128,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<EnableMetricsCollectionResult> responseHandler = new StaxResponseHandler<EnableMetricsCollectionResult>(
+                    new EnableMetricsCollectionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2149,6 +2196,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param executePolicyRequest
+     * @return Result of the ExecutePolicy operation returned by the service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -2158,13 +2206,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.ExecutePolicy
      */
     @Override
-    public void executePolicy(ExecutePolicyRequest executePolicyRequest) {
+    public ExecutePolicyResult executePolicy(
+            ExecutePolicyRequest executePolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(executePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ExecutePolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<ExecutePolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2177,9 +2226,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ExecutePolicyResult> responseHandler = new StaxResponseHandler<ExecutePolicyResult>(
+                    new ExecutePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2339,6 +2390,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param putNotificationConfigurationRequest
+     * @return Result of the PutNotificationConfiguration operation returned by
+     *         the service.
      * @throws LimitExceededException
      *         You have already reached a limit for your Auto Scaling resources
      *         (for example, groups, launch configurations, or lifecycle hooks).
@@ -2349,14 +2402,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.PutNotificationConfiguration
      */
     @Override
-    public void putNotificationConfiguration(
+    public PutNotificationConfigurationResult putNotificationConfiguration(
             PutNotificationConfigurationRequest putNotificationConfigurationRequest) {
         ExecutionContext executionContext = createExecutionContext(putNotificationConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutNotificationConfigurationRequest> request = null;
-        Response<Void> response = null;
+        Response<PutNotificationConfigurationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2370,9 +2423,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<PutNotificationConfigurationResult> responseHandler = new StaxResponseHandler<PutNotificationConfigurationResult>(
+                    new PutNotificationConfigurationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2455,6 +2510,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param putScheduledUpdateGroupActionRequest
+     * @return Result of the PutScheduledUpdateGroupAction operation returned by
+     *         the service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration
      *         with this name.
@@ -2468,14 +2525,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.PutScheduledUpdateGroupAction
      */
     @Override
-    public void putScheduledUpdateGroupAction(
+    public PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(
             PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest) {
         ExecutionContext executionContext = createExecutionContext(putScheduledUpdateGroupActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutScheduledUpdateGroupActionRequest> request = null;
-        Response<Void> response = null;
+        Response<PutScheduledUpdateGroupActionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2489,9 +2546,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<PutScheduledUpdateGroupActionResult> responseHandler = new StaxResponseHandler<PutScheduledUpdateGroupActionResult>(
+                    new PutScheduledUpdateGroupActionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2584,6 +2643,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param resumeProcessesRequest
+     * @return Result of the ResumeProcesses operation returned by the service.
      * @throws ResourceInUseException
      *         The Auto Scaling group or launch configuration can't be deleted
      *         because it is in use.
@@ -2593,13 +2653,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.ResumeProcesses
      */
     @Override
-    public void resumeProcesses(ResumeProcessesRequest resumeProcessesRequest) {
+    public ResumeProcessesResult resumeProcesses(
+            ResumeProcessesRequest resumeProcessesRequest) {
         ExecutionContext executionContext = createExecutionContext(resumeProcessesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ResumeProcessesRequest> request = null;
-        Response<Void> response = null;
+        Response<ResumeProcessesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2612,9 +2673,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ResumeProcessesResult> responseHandler = new StaxResponseHandler<ResumeProcessesResult>(
+                    new ResumeProcessesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2633,6 +2696,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param setDesiredCapacityRequest
+     * @return Result of the SetDesiredCapacity operation returned by the
+     *         service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -2642,14 +2707,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.SetDesiredCapacity
      */
     @Override
-    public void setDesiredCapacity(
+    public SetDesiredCapacityResult setDesiredCapacity(
             SetDesiredCapacityRequest setDesiredCapacityRequest) {
         ExecutionContext executionContext = createExecutionContext(setDesiredCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetDesiredCapacityRequest> request = null;
-        Response<Void> response = null;
+        Response<SetDesiredCapacityResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2663,9 +2728,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetDesiredCapacityResult> responseHandler = new StaxResponseHandler<SetDesiredCapacityResult>(
+                    new SetDesiredCapacityResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2684,20 +2751,22 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param setInstanceHealthRequest
+     * @return Result of the SetInstanceHealth operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.SetInstanceHealth
      */
     @Override
-    public void setInstanceHealth(
+    public SetInstanceHealthResult setInstanceHealth(
             SetInstanceHealthRequest setInstanceHealthRequest) {
         ExecutionContext executionContext = createExecutionContext(setInstanceHealthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetInstanceHealthRequest> request = null;
-        Response<Void> response = null;
+        Response<SetInstanceHealthResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2711,9 +2780,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetInstanceHealthResult> responseHandler = new StaxResponseHandler<SetInstanceHealthResult>(
+                    new SetInstanceHealthResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2798,6 +2869,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param suspendProcessesRequest
+     * @return Result of the SuspendProcesses operation returned by the service.
      * @throws ResourceInUseException
      *         The Auto Scaling group or launch configuration can't be deleted
      *         because it is in use.
@@ -2807,13 +2879,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.SuspendProcesses
      */
     @Override
-    public void suspendProcesses(SuspendProcessesRequest suspendProcessesRequest) {
+    public SuspendProcessesResult suspendProcesses(
+            SuspendProcessesRequest suspendProcessesRequest) {
         ExecutionContext executionContext = createExecutionContext(suspendProcessesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SuspendProcessesRequest> request = null;
-        Response<Void> response = null;
+        Response<SuspendProcessesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2827,9 +2900,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SuspendProcessesResult> responseHandler = new StaxResponseHandler<SuspendProcessesResult>(
+                    new SuspendProcessesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2939,6 +3014,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * </ul>
      * 
      * @param updateAutoScalingGroupRequest
+     * @return Result of the UpdateAutoScalingGroup operation returned by the
+     *         service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -2948,14 +3025,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
      * @sample AmazonAutoScaling.UpdateAutoScalingGroup
      */
     @Override
-    public void updateAutoScalingGroup(
+    public UpdateAutoScalingGroupResult updateAutoScalingGroup(
             UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(updateAutoScalingGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateAutoScalingGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateAutoScalingGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2969,9 +3046,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<UpdateAutoScalingGroupResult> responseHandler = new StaxResponseHandler<UpdateAutoScalingGroupResult>(
+                    new UpdateAutoScalingGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 

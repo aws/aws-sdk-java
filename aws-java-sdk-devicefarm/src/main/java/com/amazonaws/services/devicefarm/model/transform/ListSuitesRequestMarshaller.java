@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListSuitesRequest Marshaller
  */
 public class ListSuitesRequestMarshaller implements
         Marshaller<Request<ListSuitesRequest>, ListSuitesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListSuitesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListSuitesRequest> marshall(
             ListSuitesRequest listSuitesRequest) {
@@ -57,8 +63,8 @@ public class ListSuitesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

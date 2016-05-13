@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RebootInstanceRequest Marshaller
  */
 public class RebootInstanceRequestMarshaller implements
         Marshaller<Request<RebootInstanceRequest>, RebootInstanceRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RebootInstanceRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RebootInstanceRequest> marshall(
             RebootInstanceRequest rebootInstanceRequest) {
@@ -57,8 +64,8 @@ public class RebootInstanceRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

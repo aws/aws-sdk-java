@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * VerifyTrustRequest Marshaller
  */
 public class VerifyTrustRequestMarshaller implements
         Marshaller<Request<VerifyTrustRequest>, VerifyTrustRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public VerifyTrustRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<VerifyTrustRequest> marshall(
             VerifyTrustRequest verifyTrustRequest) {
@@ -58,8 +64,8 @@ public class VerifyTrustRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

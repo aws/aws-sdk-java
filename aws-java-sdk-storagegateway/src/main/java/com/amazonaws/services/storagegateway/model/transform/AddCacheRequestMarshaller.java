@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AddCacheRequest Marshaller
  */
 public class AddCacheRequestMarshaller implements
         Marshaller<Request<AddCacheRequest>, AddCacheRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public AddCacheRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<AddCacheRequest> marshall(AddCacheRequest addCacheRequest) {
 
@@ -56,8 +62,8 @@ public class AddCacheRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

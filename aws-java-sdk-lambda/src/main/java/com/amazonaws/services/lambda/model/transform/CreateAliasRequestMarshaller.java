@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateAliasRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class CreateAliasRequestMarshaller implements
         Marshaller<Request<CreateAliasRequest>, CreateAliasRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateAliasRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateAliasRequest> marshall(
             CreateAliasRequest createAliasRequest) {
@@ -66,13 +73,14 @@ public class CreateAliasRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{FunctionName}",
-                (createAliasRequest.getFunctionName() != null) ? StringUtils
-                        .fromString(createAliasRequest.getFunctionName()) : "");
+                (createAliasRequest.getFunctionName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(createAliasRequest
+                                .getFunctionName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             if (createAliasRequest.getName() != null) {

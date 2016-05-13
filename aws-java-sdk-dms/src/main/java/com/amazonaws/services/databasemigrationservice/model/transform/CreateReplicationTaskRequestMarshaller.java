@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateReplicationTaskRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class CreateReplicationTaskRequestMarshaller
         implements
         Marshaller<Request<CreateReplicationTaskRequest>, CreateReplicationTaskRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateReplicationTaskRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateReplicationTaskRequest> marshall(
             CreateReplicationTaskRequest createReplicationTaskRequest) {
@@ -59,8 +66,8 @@ public class CreateReplicationTaskRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

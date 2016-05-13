@@ -493,9 +493,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteVerifiedEmailAddressRequest
+     * @return A Java Future containing the result of the
+     *         DeleteVerifiedEmailAddress operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DeleteVerifiedEmailAddress
      */
-    java.util.concurrent.Future<Void> deleteVerifiedEmailAddressAsync(
+    java.util.concurrent.Future<DeleteVerifiedEmailAddressResult> deleteVerifiedEmailAddressAsync(
             DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest);
 
     /**
@@ -515,11 +517,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteVerifiedEmailAddress operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsyncHandler.DeleteVerifiedEmailAddress
      */
-    java.util.concurrent.Future<Void> deleteVerifiedEmailAddressAsync(
+    java.util.concurrent.Future<DeleteVerifiedEmailAddressResult> deleteVerifiedEmailAddressAsync(
             DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, DeleteVerifiedEmailAddressResult> asyncHandler);
 
     /**
      * <p>
@@ -2282,9 +2286,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyEmailAddressRequest
+     * @return A Java Future containing the result of the VerifyEmailAddress
+     *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.VerifyEmailAddress
      */
-    java.util.concurrent.Future<Void> verifyEmailAddressAsync(
+    java.util.concurrent.Future<VerifyEmailAddressResult> verifyEmailAddressAsync(
             VerifyEmailAddressRequest verifyEmailAddressRequest);
 
     /**
@@ -2305,11 +2311,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the VerifyEmailAddress
+     *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsyncHandler.VerifyEmailAddress
      */
-    java.util.concurrent.Future<Void> verifyEmailAddressAsync(
+    java.util.concurrent.Future<VerifyEmailAddressResult> verifyEmailAddressAsync(
             VerifyEmailAddressRequest verifyEmailAddressRequest,
-            com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, VerifyEmailAddressResult> asyncHandler);
 
     /**
      * <p>

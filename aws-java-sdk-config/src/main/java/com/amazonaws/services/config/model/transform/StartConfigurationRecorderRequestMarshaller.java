@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * StartConfigurationRecorderRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class StartConfigurationRecorderRequestMarshaller
         implements
         Marshaller<Request<StartConfigurationRecorderRequest>, StartConfigurationRecorderRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public StartConfigurationRecorderRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<StartConfigurationRecorderRequest> marshall(
             StartConfigurationRecorderRequest startConfigurationRecorderRequest) {
@@ -59,8 +66,8 @@ public class StartConfigurationRecorderRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

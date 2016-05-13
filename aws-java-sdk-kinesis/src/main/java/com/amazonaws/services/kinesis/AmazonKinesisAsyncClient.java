@@ -260,26 +260,25 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addTagsToStreamAsync(
+    public java.util.concurrent.Future<AddTagsToStreamResult> addTagsToStreamAsync(
             AddTagsToStreamRequest request) {
 
         return addTagsToStreamAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addTagsToStreamAsync(
+    public java.util.concurrent.Future<AddTagsToStreamResult> addTagsToStreamAsync(
             final AddTagsToStreamRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AddTagsToStreamRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AddTagsToStreamRequest, AddTagsToStreamResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AddTagsToStreamResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AddTagsToStreamResult call() throws Exception {
+                        AddTagsToStreamResult result;
 
                         try {
-                            addTagsToStream(request);
-                            result = null;
+                            result = addTagsToStream(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -296,26 +295,25 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createStreamAsync(
+    public java.util.concurrent.Future<CreateStreamResult> createStreamAsync(
             CreateStreamRequest request) {
 
         return createStreamAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createStreamAsync(
+    public java.util.concurrent.Future<CreateStreamResult> createStreamAsync(
             final CreateStreamRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreateStreamResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreateStreamResult call() throws Exception {
+                        CreateStreamResult result;
 
                         try {
-                            createStream(request);
-                            result = null;
+                            result = createStream(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -337,7 +335,7 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
      * @see #createStreamAsync(CreateStreamRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> createStreamAsync(
+    public java.util.concurrent.Future<CreateStreamResult> createStreamAsync(
             String streamName, Integer shardCount) {
 
         return createStreamAsync(new CreateStreamRequest().withStreamName(
@@ -351,10 +349,10 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
      * @see #createStreamAsync(CreateStreamRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> createStreamAsync(
+    public java.util.concurrent.Future<CreateStreamResult> createStreamAsync(
             String streamName,
             Integer shardCount,
-            com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult> asyncHandler) {
 
         return createStreamAsync(
                 new CreateStreamRequest().withStreamName(streamName)
@@ -362,26 +360,26 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> decreaseStreamRetentionPeriodAsync(
+    public java.util.concurrent.Future<DecreaseStreamRetentionPeriodResult> decreaseStreamRetentionPeriodAsync(
             DecreaseStreamRetentionPeriodRequest request) {
 
         return decreaseStreamRetentionPeriodAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> decreaseStreamRetentionPeriodAsync(
+    public java.util.concurrent.Future<DecreaseStreamRetentionPeriodResult> decreaseStreamRetentionPeriodAsync(
             final DecreaseStreamRetentionPeriodRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DecreaseStreamRetentionPeriodRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DecreaseStreamRetentionPeriodRequest, DecreaseStreamRetentionPeriodResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DecreaseStreamRetentionPeriodResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DecreaseStreamRetentionPeriodResult call()
+                            throws Exception {
+                        DecreaseStreamRetentionPeriodResult result;
 
                         try {
-                            decreaseStreamRetentionPeriod(request);
-                            result = null;
+                            result = decreaseStreamRetentionPeriod(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -398,26 +396,25 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStreamAsync(
+    public java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(
             DeleteStreamRequest request) {
 
         return deleteStreamAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStreamAsync(
+    public java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(
             final DeleteStreamRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteStreamResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteStreamResult call() throws Exception {
+                        DeleteStreamResult result;
 
                         try {
-                            deleteStream(request);
-                            result = null;
+                            result = deleteStream(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -439,7 +436,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
      * @see #deleteStreamAsync(DeleteStreamRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> deleteStreamAsync(String streamName) {
+    public java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(
+            String streamName) {
 
         return deleteStreamAsync(new DeleteStreamRequest()
                 .withStreamName(streamName));
@@ -452,9 +450,9 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
      * @see #deleteStreamAsync(DeleteStreamRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> deleteStreamAsync(
+    public java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(
             String streamName,
-            com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult> asyncHandler) {
 
         return deleteStreamAsync(
                 new DeleteStreamRequest().withStreamName(streamName),
@@ -802,26 +800,26 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> increaseStreamRetentionPeriodAsync(
+    public java.util.concurrent.Future<IncreaseStreamRetentionPeriodResult> increaseStreamRetentionPeriodAsync(
             IncreaseStreamRetentionPeriodRequest request) {
 
         return increaseStreamRetentionPeriodAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> increaseStreamRetentionPeriodAsync(
+    public java.util.concurrent.Future<IncreaseStreamRetentionPeriodResult> increaseStreamRetentionPeriodAsync(
             final IncreaseStreamRetentionPeriodRequest request,
-            final com.amazonaws.handlers.AsyncHandler<IncreaseStreamRetentionPeriodRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<IncreaseStreamRetentionPeriodRequest, IncreaseStreamRetentionPeriodResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<IncreaseStreamRetentionPeriodResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public IncreaseStreamRetentionPeriodResult call()
+                            throws Exception {
+                        IncreaseStreamRetentionPeriodResult result;
 
                         try {
-                            increaseStreamRetentionPeriod(request);
-                            result = null;
+                            result = increaseStreamRetentionPeriod(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -992,26 +990,25 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> mergeShardsAsync(
+    public java.util.concurrent.Future<MergeShardsResult> mergeShardsAsync(
             MergeShardsRequest request) {
 
         return mergeShardsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> mergeShardsAsync(
+    public java.util.concurrent.Future<MergeShardsResult> mergeShardsAsync(
             final MergeShardsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, MergeShardsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<MergeShardsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public MergeShardsResult call() throws Exception {
+                        MergeShardsResult result;
 
                         try {
-                            mergeShards(request);
-                            result = null;
+                            result = mergeShards(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1033,7 +1030,7 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
      * @see #mergeShardsAsync(MergeShardsRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> mergeShardsAsync(
+    public java.util.concurrent.Future<MergeShardsResult> mergeShardsAsync(
             String streamName, String shardToMerge, String adjacentShardToMerge) {
 
         return mergeShardsAsync(new MergeShardsRequest()
@@ -1048,11 +1045,11 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
      * @see #mergeShardsAsync(MergeShardsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> mergeShardsAsync(
+    public java.util.concurrent.Future<MergeShardsResult> mergeShardsAsync(
             String streamName,
             String shardToMerge,
             String adjacentShardToMerge,
-            com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, MergeShardsResult> asyncHandler) {
 
         return mergeShardsAsync(
                 new MergeShardsRequest().withStreamName(streamName)
@@ -1197,26 +1194,25 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeTagsFromStreamAsync(
+    public java.util.concurrent.Future<RemoveTagsFromStreamResult> removeTagsFromStreamAsync(
             RemoveTagsFromStreamRequest request) {
 
         return removeTagsFromStreamAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeTagsFromStreamAsync(
+    public java.util.concurrent.Future<RemoveTagsFromStreamResult> removeTagsFromStreamAsync(
             final RemoveTagsFromStreamRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RemoveTagsFromStreamRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RemoveTagsFromStreamRequest, RemoveTagsFromStreamResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RemoveTagsFromStreamResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RemoveTagsFromStreamResult call() throws Exception {
+                        RemoveTagsFromStreamResult result;
 
                         try {
-                            removeTagsFromStream(request);
-                            result = null;
+                            result = removeTagsFromStream(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1233,26 +1229,25 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> splitShardAsync(
+    public java.util.concurrent.Future<SplitShardResult> splitShardAsync(
             SplitShardRequest request) {
 
         return splitShardAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> splitShardAsync(
+    public java.util.concurrent.Future<SplitShardResult> splitShardAsync(
             final SplitShardRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SplitShardRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SplitShardRequest, SplitShardResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SplitShardResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SplitShardResult call() throws Exception {
+                        SplitShardResult result;
 
                         try {
-                            splitShard(request);
-                            result = null;
+                            result = splitShard(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1274,8 +1269,8 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
      * @see #splitShardAsync(SplitShardRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> splitShardAsync(String streamName,
-            String shardToSplit, String newStartingHashKey) {
+    public java.util.concurrent.Future<SplitShardResult> splitShardAsync(
+            String streamName, String shardToSplit, String newStartingHashKey) {
 
         return splitShardAsync(new SplitShardRequest()
                 .withStreamName(streamName).withShardToSplit(shardToSplit)
@@ -1289,11 +1284,11 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
      * @see #splitShardAsync(SplitShardRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> splitShardAsync(
+    public java.util.concurrent.Future<SplitShardResult> splitShardAsync(
             String streamName,
             String shardToSplit,
             String newStartingHashKey,
-            com.amazonaws.handlers.AsyncHandler<SplitShardRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SplitShardRequest, SplitShardResult> asyncHandler) {
 
         return splitShardAsync(
                 new SplitShardRequest().withStreamName(streamName)

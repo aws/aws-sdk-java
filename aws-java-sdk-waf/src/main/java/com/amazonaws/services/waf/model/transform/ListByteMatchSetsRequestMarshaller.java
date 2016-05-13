@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListByteMatchSetsRequest Marshaller
  */
 public class ListByteMatchSetsRequestMarshaller implements
         Marshaller<Request<ListByteMatchSetsRequest>, ListByteMatchSetsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListByteMatchSetsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListByteMatchSetsRequest> marshall(
             ListByteMatchSetsRequest listByteMatchSetsRequest) {
@@ -57,8 +64,8 @@ public class ListByteMatchSetsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PutMethodResponseRequest Marshaller
@@ -47,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class PutMethodResponseRequestMarshaller implements
         Marshaller<Request<PutMethodResponseRequest>, PutMethodResponseRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PutMethodResponseRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PutMethodResponseRequest> marshall(
             PutMethodResponseRequest putMethodResponseRequest) {
@@ -64,34 +72,39 @@ public class PutMethodResponseRequestMarshaller implements
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (putMethodResponseRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(putMethodResponseRequest.getRestApiId())
-                        : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (putMethodResponseRequest.getRestApiId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(putMethodResponseRequest
+                                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{resource_id}",
-                        (putMethodResponseRequest.getResourceId() != null) ? StringUtils
-                                .fromString(putMethodResponseRequest
-                                        .getResourceId()) : "");
+                        (putMethodResponseRequest.getResourceId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(putMethodResponseRequest
+                                                .getResourceId()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{http_method}",
-                        (putMethodResponseRequest.getHttpMethod() != null) ? StringUtils
-                                .fromString(putMethodResponseRequest
-                                        .getHttpMethod()) : "");
+                        (putMethodResponseRequest.getHttpMethod() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(putMethodResponseRequest
+                                                .getHttpMethod()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{status_code}",
-                        (putMethodResponseRequest.getStatusCode() != null) ? StringUtils
-                                .fromString(putMethodResponseRequest
-                                        .getStatusCode()) : "");
+                        (putMethodResponseRequest.getStatusCode() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(putMethodResponseRequest
+                                                .getStatusCode()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             java.util.Map<String, Boolean> responseParametersMap = putMethodResponseRequest

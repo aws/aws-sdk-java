@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateGameSessionRequest Marshaller
  */
 public class CreateGameSessionRequestMarshaller implements
         Marshaller<Request<CreateGameSessionRequest>, CreateGameSessionRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateGameSessionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateGameSessionRequest> marshall(
             CreateGameSessionRequest createGameSessionRequest) {
@@ -57,8 +64,8 @@ public class CreateGameSessionRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

@@ -27,9 +27,9 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the peer VPC. CIDR block information is not returned
-     * when creating a VPC peering connection, or when describing a VPC peering
-     * connection that's in the <code>initiating-request</code> or
+     * Information about the accepter VPC. CIDR block information is not
+     * returned when creating a VPC peering connection, or when describing a VPC
+     * peering connection that's in the <code>initiating-request</code> or
      * <code>pending-acceptance</code> state.
      * </p>
      */
@@ -67,14 +67,14 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the peer VPC. CIDR block information is not returned
-     * when creating a VPC peering connection, or when describing a VPC peering
-     * connection that's in the <code>initiating-request</code> or
+     * Information about the accepter VPC. CIDR block information is not
+     * returned when creating a VPC peering connection, or when describing a VPC
+     * peering connection that's in the <code>initiating-request</code> or
      * <code>pending-acceptance</code> state.
      * </p>
      * 
      * @param accepterVpcInfo
-     *        Information about the peer VPC. CIDR block information is not
+     *        Information about the accepter VPC. CIDR block information is not
      *        returned when creating a VPC peering connection, or when
      *        describing a VPC peering connection that's in the
      *        <code>initiating-request</code> or <code>pending-acceptance</code>
@@ -87,13 +87,13 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the peer VPC. CIDR block information is not returned
-     * when creating a VPC peering connection, or when describing a VPC peering
-     * connection that's in the <code>initiating-request</code> or
+     * Information about the accepter VPC. CIDR block information is not
+     * returned when creating a VPC peering connection, or when describing a VPC
+     * peering connection that's in the <code>initiating-request</code> or
      * <code>pending-acceptance</code> state.
      * </p>
      * 
-     * @return Information about the peer VPC. CIDR block information is not
+     * @return Information about the accepter VPC. CIDR block information is not
      *         returned when creating a VPC peering connection, or when
      *         describing a VPC peering connection that's in the
      *         <code>initiating-request</code> or
@@ -106,14 +106,14 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the peer VPC. CIDR block information is not returned
-     * when creating a VPC peering connection, or when describing a VPC peering
-     * connection that's in the <code>initiating-request</code> or
+     * Information about the accepter VPC. CIDR block information is not
+     * returned when creating a VPC peering connection, or when describing a VPC
+     * peering connection that's in the <code>initiating-request</code> or
      * <code>pending-acceptance</code> state.
      * </p>
      * 
      * @param accepterVpcInfo
-     *        Information about the peer VPC. CIDR block information is not
+     *        Information about the accepter VPC. CIDR block information is not
      *        returned when creating a VPC peering connection, or when
      *        describing a VPC peering connection that's in the
      *        <code>initiating-request</code> or <code>pending-acceptance</code>

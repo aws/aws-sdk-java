@@ -174,6 +174,8 @@ public interface AmazonCodeDeploy {
      * @param addTagsToOnPremisesInstancesRequest
      *        Represents the input of, and adds tags to, an on-premises instance
      *        operation.
+     * @return Result of the AddTagsToOnPremisesInstances operation returned by
+     *         the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
      * @throws TagRequiredException
@@ -189,7 +191,7 @@ public interface AmazonCodeDeploy {
      *         The specified on-premises instance is not registered.
      * @sample AmazonCodeDeploy.AddTagsToOnPremisesInstances
      */
-    void addTagsToOnPremisesInstances(
+    AddTagsToOnPremisesInstancesResult addTagsToOnPremisesInstances(
             AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest);
 
     /**
@@ -533,6 +535,8 @@ public interface AmazonCodeDeploy {
      * 
      * @param deleteApplicationRequest
      *        Represents the input of a delete application operation.
+     * @return Result of the DeleteApplication operation returned by the
+     *         service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not
      *         specified.
@@ -540,7 +544,8 @@ public interface AmazonCodeDeploy {
      *         The application name was specified in an invalid format.
      * @sample AmazonCodeDeploy.DeleteApplication
      */
-    void deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
+    DeleteApplicationResult deleteApplication(
+            DeleteApplicationRequest deleteApplicationRequest);
 
     /**
      * <p>
@@ -552,6 +557,8 @@ public interface AmazonCodeDeploy {
      * @param deleteDeploymentConfigRequest
      *        Represents the input of a delete deployment configuration
      *        operation.
+     * @return Result of the DeleteDeploymentConfig operation returned by the
+     *         service.
      * @throws InvalidDeploymentConfigNameException
      *         The deployment configuration name was specified in an invalid
      *         format.
@@ -563,7 +570,7 @@ public interface AmazonCodeDeploy {
      *         An invalid operation was detected.
      * @sample AmazonCodeDeploy.DeleteDeploymentConfig
      */
-    void deleteDeploymentConfig(
+    DeleteDeploymentConfigResult deleteDeploymentConfig(
             DeleteDeploymentConfigRequest deleteDeploymentConfigRequest);
 
     /**
@@ -601,6 +608,8 @@ public interface AmazonCodeDeploy {
      * @param deregisterOnPremisesInstanceRequest
      *        Represents the input of a deregister on-premises instance
      *        operation.
+     * @return Result of the DeregisterOnPremisesInstance operation returned by
+     *         the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
      * @throws InvalidInstanceNameException
@@ -608,7 +617,7 @@ public interface AmazonCodeDeploy {
      *         invalid format.
      * @sample AmazonCodeDeploy.DeregisterOnPremisesInstance
      */
-    void deregisterOnPremisesInstance(
+    DeregisterOnPremisesInstanceResult deregisterOnPremisesInstance(
             DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest);
 
     /**
@@ -1006,6 +1015,8 @@ public interface AmazonCodeDeploy {
      * 
      * @param registerApplicationRevisionRequest
      *        Represents the input of a register application revision operation.
+     * @return Result of the RegisterApplicationRevision operation returned by
+     *         the service.
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or
      *         AWS account.
@@ -1022,7 +1033,7 @@ public interface AmazonCodeDeploy {
      *         The revision was specified in an invalid format.
      * @sample AmazonCodeDeploy.RegisterApplicationRevision
      */
-    void registerApplicationRevision(
+    RegisterApplicationRevisionResult registerApplicationRevision(
             RegisterApplicationRevisionRequest registerApplicationRevisionRequest);
 
     /**
@@ -1033,6 +1044,8 @@ public interface AmazonCodeDeploy {
      * @param registerOnPremisesInstanceRequest
      *        Represents the input of the register on-premises instance
      *        operation.
+     * @return Result of the RegisterOnPremisesInstance operation returned by
+     *         the service.
      * @throws InstanceNameAlreadyRegisteredException
      *         The specified on-premises instance name is already registered.
      * @throws IamUserArnAlreadyRegisteredException
@@ -1049,7 +1062,7 @@ public interface AmazonCodeDeploy {
      *         The IAM user ARN was specified in an invalid format.
      * @sample AmazonCodeDeploy.RegisterOnPremisesInstance
      */
-    void registerOnPremisesInstance(
+    RegisterOnPremisesInstanceResult registerOnPremisesInstance(
             RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest);
 
     /**
@@ -1060,6 +1073,8 @@ public interface AmazonCodeDeploy {
      * @param removeTagsFromOnPremisesInstancesRequest
      *        Represents the input of a remove tags from on-premises instances
      *        operation.
+     * @return Result of the RemoveTagsFromOnPremisesInstances operation
+     *         returned by the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
      * @throws TagRequiredException
@@ -1075,7 +1090,7 @@ public interface AmazonCodeDeploy {
      *         The specified on-premises instance is not registered.
      * @sample AmazonCodeDeploy.RemoveTagsFromOnPremisesInstances
      */
-    void removeTagsFromOnPremisesInstances(
+    RemoveTagsFromOnPremisesInstancesResult removeTagsFromOnPremisesInstances(
             RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest);
 
     /**
@@ -1108,6 +1123,8 @@ public interface AmazonCodeDeploy {
      * 
      * @param updateApplicationRequest
      *        Represents the input of an update application operation.
+     * @return Result of the UpdateApplication operation returned by the
+     *         service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not
      *         specified.
@@ -1121,14 +1138,15 @@ public interface AmazonCodeDeploy {
      *         AWS account.
      * @sample AmazonCodeDeploy.UpdateApplication
      */
-    void updateApplication(UpdateApplicationRequest updateApplicationRequest);
+    UpdateApplicationResult updateApplication(
+            UpdateApplicationRequest updateApplicationRequest);
 
     /**
      * Simplified method form for invoking the UpdateApplication operation.
      *
      * @see #updateApplication(UpdateApplicationRequest)
      */
-    void updateApplication();
+    UpdateApplicationResult updateApplication();
 
     /**
      * <p>

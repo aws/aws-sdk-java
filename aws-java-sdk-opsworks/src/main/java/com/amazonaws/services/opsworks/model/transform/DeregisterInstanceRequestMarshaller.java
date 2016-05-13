@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeregisterInstanceRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DeregisterInstanceRequestMarshaller
         implements
         Marshaller<Request<DeregisterInstanceRequest>, DeregisterInstanceRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeregisterInstanceRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeregisterInstanceRequest> marshall(
             DeregisterInstanceRequest deregisterInstanceRequest) {
@@ -59,8 +66,8 @@ public class DeregisterInstanceRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

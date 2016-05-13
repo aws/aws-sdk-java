@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -77,7 +77,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
     /**
-     * List of exception unmarshallers for all Amazon SES exceptions.
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -812,17 +812,19 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteVerifiedEmailAddressRequest
+     * @return Result of the DeleteVerifiedEmailAddress operation returned by
+     *         the service.
      * @sample AmazonSimpleEmailService.DeleteVerifiedEmailAddress
      */
     @Override
-    public void deleteVerifiedEmailAddress(
+    public DeleteVerifiedEmailAddressResult deleteVerifiedEmailAddress(
             DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteVerifiedEmailAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteVerifiedEmailAddressRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteVerifiedEmailAddressResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -836,9 +838,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteVerifiedEmailAddressResult> responseHandler = new StaxResponseHandler<DeleteVerifiedEmailAddressResult>(
+                    new DeleteVerifiedEmailAddressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2586,17 +2590,19 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param verifyEmailAddressRequest
+     * @return Result of the VerifyEmailAddress operation returned by the
+     *         service.
      * @sample AmazonSimpleEmailService.VerifyEmailAddress
      */
     @Override
-    public void verifyEmailAddress(
+    public VerifyEmailAddressResult verifyEmailAddress(
             VerifyEmailAddressRequest verifyEmailAddressRequest) {
         ExecutionContext executionContext = createExecutionContext(verifyEmailAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<VerifyEmailAddressRequest> request = null;
-        Response<Void> response = null;
+        Response<VerifyEmailAddressResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2610,9 +2616,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<VerifyEmailAddressResult> responseHandler = new StaxResponseHandler<VerifyEmailAddressResult>(
+                    new VerifyEmailAddressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 

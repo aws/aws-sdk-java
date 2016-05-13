@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The output for a <a>UpdateStack</a> action.
+ * The output for an <a>UpdateStack</a> action.
  * </p>
  */
 public class UpdateStackResult implements Serializable, Cloneable {

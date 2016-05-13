@@ -104,8 +104,6 @@ public class DefaultNamingStrategy implements NamingStrategy {
                 return operationOutput.getShape();
             }
         }
-        // TODO if an operation has no output and uses the useModeledOutputShapeNames customization
-        // then we can't auto generate an empty shape. Keep in mind when merging @zhaoxiz's changes.
         return capitialize(operationName + RESPONSE_CLASS_SUFFIX);
     }
 

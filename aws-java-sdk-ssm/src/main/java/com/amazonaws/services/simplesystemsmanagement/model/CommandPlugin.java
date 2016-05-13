@@ -19,48 +19,74 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes plugin details.
+ * </p>
  */
 public class CommandPlugin implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
      * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * </p>
      */
     private String name;
     /**
+     * <p>
      * The status of this plugin. You can execute a document with multiple
      * plugins.
+     * </p>
      */
     private String status;
-    /** A numeric response code generated after executing the plugin. */
+    /**
+     * <p>
+     * A numeric response code generated after executing the plugin.
+     * </p>
+     */
     private Integer responseCode;
-    /** The time the plugin started executing. */
+    /**
+     * <p>
+     * The time the plugin started executing.
+     * </p>
+     */
     private java.util.Date responseStartDateTime;
     /**
+     * <p>
      * The time the plugin stopped executing. Could stop prematurely if, for
      * example, a cancel command was sent.
+     * </p>
      */
     private java.util.Date responseFinishDateTime;
-    /** Output of the plugin execution. */
+    /**
+     * <p>
+     * Output of the plugin execution.
+     * </p>
+     */
     private String output;
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      */
     private String outputS3BucketName;
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      */
     private String outputS3KeyPrefix;
 
     /**
+     * <p>
      * The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
      * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * </p>
      * 
      * @param name
      *        The name of the plugin. Must be one of the following:
@@ -74,9 +100,11 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
      * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * </p>
      * 
      * @return The name of the plugin. Must be one of the following:
      *         aws:updateAgent, aws:domainjoin, aws:applications,
@@ -89,9 +117,11 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
      * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * </p>
      * 
      * @param name
      *        The name of the plugin. Must be one of the following:
@@ -108,8 +138,10 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of this plugin. You can execute a document with multiple
      * plugins.
+     * </p>
      * 
      * @param status
      *        The status of this plugin. You can execute a document with
@@ -122,8 +154,10 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of this plugin. You can execute a document with multiple
      * plugins.
+     * </p>
      * 
      * @return The status of this plugin. You can execute a document with
      *         multiple plugins.
@@ -135,8 +169,10 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of this plugin. You can execute a document with multiple
      * plugins.
+     * </p>
      * 
      * @param status
      *        The status of this plugin. You can execute a document with
@@ -152,8 +188,10 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of this plugin. You can execute a document with multiple
      * plugins.
+     * </p>
      * 
      * @param status
      *        The status of this plugin. You can execute a document with
@@ -166,8 +204,10 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of this plugin. You can execute a document with multiple
      * plugins.
+     * </p>
      * 
      * @param status
      *        The status of this plugin. You can execute a document with
@@ -183,7 +223,9 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A numeric response code generated after executing the plugin.
+     * </p>
      * 
      * @param responseCode
      *        A numeric response code generated after executing the plugin.
@@ -194,7 +236,9 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A numeric response code generated after executing the plugin.
+     * </p>
      * 
      * @return A numeric response code generated after executing the plugin.
      */
@@ -204,7 +248,9 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A numeric response code generated after executing the plugin.
+     * </p>
      * 
      * @param responseCode
      *        A numeric response code generated after executing the plugin.
@@ -218,7 +264,9 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The time the plugin started executing.
+     * </p>
      * 
      * @param responseStartDateTime
      *        The time the plugin started executing.
@@ -229,7 +277,9 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The time the plugin started executing.
+     * </p>
      * 
      * @return The time the plugin started executing.
      */
@@ -239,7 +289,9 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The time the plugin started executing.
+     * </p>
      * 
      * @param responseStartDateTime
      *        The time the plugin started executing.
@@ -254,8 +306,10 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The time the plugin stopped executing. Could stop prematurely if, for
      * example, a cancel command was sent.
+     * </p>
      * 
      * @param responseFinishDateTime
      *        The time the plugin stopped executing. Could stop prematurely if,
@@ -267,8 +321,10 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The time the plugin stopped executing. Could stop prematurely if, for
      * example, a cancel command was sent.
+     * </p>
      * 
      * @return The time the plugin stopped executing. Could stop prematurely if,
      *         for example, a cancel command was sent.
@@ -279,8 +335,10 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The time the plugin stopped executing. Could stop prematurely if, for
      * example, a cancel command was sent.
+     * </p>
      * 
      * @param responseFinishDateTime
      *        The time the plugin stopped executing. Could stop prematurely if,
@@ -296,7 +354,9 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Output of the plugin execution.
+     * </p>
      * 
      * @param output
      *        Output of the plugin execution.
@@ -307,7 +367,9 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Output of the plugin execution.
+     * </p>
      * 
      * @return Output of the plugin execution.
      */
@@ -317,7 +379,9 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Output of the plugin execution.
+     * </p>
      * 
      * @param output
      *        Output of the plugin execution.
@@ -331,8 +395,10 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      * 
      * @param outputS3BucketName
      *        The S3 bucket where the responses to the command executions should
@@ -344,8 +410,10 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      * 
      * @return The S3 bucket where the responses to the command executions
      *         should be stored. This was requested when issuing the command.
@@ -356,8 +424,10 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      * 
      * @param outputS3BucketName
      *        The S3 bucket where the responses to the command executions should
@@ -372,9 +442,11 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      * 
      * @param outputS3KeyPrefix
      *        The S3 directory path inside the bucket where the responses to the
@@ -387,9 +459,11 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      * 
      * @return The S3 directory path inside the bucket where the responses to
      *         the command executions should be stored. This was requested when
@@ -401,9 +475,11 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      * 
      * @param outputS3KeyPrefix
      *        The S3 directory path inside the bucket where the responses to the

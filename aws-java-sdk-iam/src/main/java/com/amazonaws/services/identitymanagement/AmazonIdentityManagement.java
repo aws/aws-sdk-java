@@ -177,6 +177,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param addClientIDToOpenIDConnectProviderRequest
+     * @return Result of the AddClientIDToOpenIDConnectProvider operation
+     *         returned by the service.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value
      *         was supplied for an input parameter.
@@ -192,7 +194,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.AddClientIDToOpenIDConnectProvider
      */
-    void addClientIDToOpenIDConnectProvider(
+    AddClientIDToOpenIDConnectProviderResult addClientIDToOpenIDConnectProvider(
             AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest);
 
     /**
@@ -215,6 +217,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param addRoleToInstanceProfileRequest
+     * @return Result of the AddRoleToInstanceProfile operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -230,7 +234,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.AddRoleToInstanceProfile
      */
-    void addRoleToInstanceProfile(
+    AddRoleToInstanceProfileResult addRoleToInstanceProfile(
             AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest);
 
     /**
@@ -239,6 +243,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param addUserToGroupRequest
+     * @return Result of the AddUserToGroup operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -251,7 +256,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.AddUserToGroup
      */
-    void addUserToGroup(AddUserToGroupRequest addUserToGroupRequest);
+    AddUserToGroupResult addUserToGroup(
+            AddUserToGroupRequest addUserToGroupRequest);
 
     /**
      * <p>
@@ -268,6 +274,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param attachGroupPolicyRequest
+     * @return Result of the AttachGroupPolicy operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -283,7 +291,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.AttachGroupPolicy
      */
-    void attachGroupPolicy(AttachGroupPolicyRequest attachGroupPolicyRequest);
+    AttachGroupPolicyResult attachGroupPolicy(
+            AttachGroupPolicyRequest attachGroupPolicyRequest);
 
     /**
      * <p>
@@ -305,6 +314,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param attachRolePolicyRequest
+     * @return Result of the AttachRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -320,7 +330,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.AttachRolePolicy
      */
-    void attachRolePolicy(AttachRolePolicyRequest attachRolePolicyRequest);
+    AttachRolePolicyResult attachRolePolicy(
+            AttachRolePolicyRequest attachRolePolicyRequest);
 
     /**
      * <p>
@@ -337,6 +348,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param attachUserPolicyRequest
+     * @return Result of the AttachUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -352,7 +364,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.AttachUserPolicy
      */
-    void attachUserPolicy(AttachUserPolicyRequest attachUserPolicyRequest);
+    AttachUserPolicyResult attachUserPolicy(
+            AttachUserPolicyRequest attachUserPolicyRequest);
 
     /**
      * <p>
@@ -368,6 +381,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param changePasswordRequest
+     * @return Result of the ChangePassword operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -392,7 +406,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.ChangePassword
      */
-    void changePassword(ChangePasswordRequest changePasswordRequest);
+    ChangePasswordResult changePassword(
+            ChangePasswordRequest changePasswordRequest);
 
     /**
      * <p>
@@ -456,6 +471,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param createAccountAliasRequest
+     * @return Result of the CreateAccountAlias operation returned by the
+     *         service.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a
      *         resource that already exists.
@@ -468,7 +485,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.CreateAccountAlias
      */
-    void createAccountAlias(CreateAccountAliasRequest createAccountAliasRequest);
+    CreateAccountAliasResult createAccountAlias(
+            CreateAccountAliasRequest createAccountAliasRequest);
 
     /**
      * <p>
@@ -867,6 +885,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deactivateMFADeviceRequest
+     * @return Result of the DeactivateMFADevice operation returned by the
+     *         service.
      * @throws EntityTemporarilyUnmodifiableException
      *         The request was rejected because it referenced an entity that is
      *         temporarily unmodifiable, such as a user name that was deleted
@@ -885,7 +905,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeactivateMFADevice
      */
-    void deactivateMFADevice(
+    DeactivateMFADeviceResult deactivateMFADevice(
             DeactivateMFADeviceRequest deactivateMFADeviceRequest);
 
     /**
@@ -901,6 +921,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteAccessKeyRequest
+     * @return Result of the DeleteAccessKey operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -913,7 +934,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteAccessKey
      */
-    void deleteAccessKey(DeleteAccessKeyRequest deleteAccessKeyRequest);
+    DeleteAccessKeyResult deleteAccessKey(
+            DeleteAccessKeyRequest deleteAccessKeyRequest);
 
     /**
      * <p>
@@ -924,6 +946,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteAccountAliasRequest
+     * @return Result of the DeleteAccountAlias operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -936,7 +960,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteAccountAlias
      */
-    void deleteAccountAlias(DeleteAccountAliasRequest deleteAccountAliasRequest);
+    DeleteAccountAliasResult deleteAccountAlias(
+            DeleteAccountAliasRequest deleteAccountAliasRequest);
 
     /**
      * <p>
@@ -944,6 +969,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteAccountPasswordPolicyRequest
+     * @return Result of the DeleteAccountPasswordPolicy operation returned by
+     *         the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -956,7 +983,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteAccountPasswordPolicy
      */
-    void deleteAccountPasswordPolicy(
+    DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy(
             DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest);
 
     /**
@@ -965,7 +992,7 @@ public interface AmazonIdentityManagement {
      *
      * @see #deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest)
      */
-    void deleteAccountPasswordPolicy();
+    DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy();
 
     /**
      * <p>
@@ -974,6 +1001,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteGroupRequest
+     * @return Result of the DeleteGroup operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -990,7 +1018,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteGroup
      */
-    void deleteGroup(DeleteGroupRequest deleteGroupRequest);
+    DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest);
 
     /**
      * <p>
@@ -1006,6 +1034,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteGroupPolicyRequest
+     * @return Result of the DeleteGroupPolicy operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1018,7 +1048,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteGroupPolicy
      */
-    void deleteGroupPolicy(DeleteGroupPolicyRequest deleteGroupPolicyRequest);
+    DeleteGroupPolicyResult deleteGroupPolicy(
+            DeleteGroupPolicyRequest deleteGroupPolicyRequest);
 
     /**
      * <p>
@@ -1040,6 +1071,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteInstanceProfileRequest
+     * @return Result of the DeleteInstanceProfile operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1056,7 +1089,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteInstanceProfile
      */
-    void deleteInstanceProfile(
+    DeleteInstanceProfileResult deleteInstanceProfile(
             DeleteInstanceProfileRequest deleteInstanceProfileRequest);
 
     /**
@@ -1075,6 +1108,8 @@ public interface AmazonIdentityManagement {
      * </important>
      * 
      * @param deleteLoginProfileRequest
+     * @return Result of the DeleteLoginProfile operation returned by the
+     *         service.
      * @throws EntityTemporarilyUnmodifiableException
      *         The request was rejected because it referenced an entity that is
      *         temporarily unmodifiable, such as a user name that was deleted
@@ -1093,7 +1128,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteLoginProfile
      */
-    void deleteLoginProfile(DeleteLoginProfileRequest deleteLoginProfileRequest);
+    DeleteLoginProfileResult deleteLoginProfile(
+            DeleteLoginProfileRequest deleteLoginProfileRequest);
 
     /**
      * <p>
@@ -1110,6 +1146,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteOpenIDConnectProviderRequest
+     * @return Result of the DeleteOpenIDConnectProvider operation returned by
+     *         the service.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value
      *         was supplied for an input parameter.
@@ -1121,7 +1159,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteOpenIDConnectProvider
      */
-    void deleteOpenIDConnectProvider(
+    DeleteOpenIDConnectProviderResult deleteOpenIDConnectProvider(
             DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest);
 
     /**
@@ -1166,6 +1204,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deletePolicyRequest
+     * @return Result of the DeletePolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1185,7 +1224,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeletePolicy
      */
-    void deletePolicy(DeletePolicyRequest deletePolicyRequest);
+    DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest);
 
     /**
      * <p>
@@ -1204,6 +1243,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deletePolicyVersionRequest
+     * @return Result of the DeletePolicyVersion operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1223,7 +1264,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeletePolicyVersion
      */
-    void deletePolicyVersion(
+    DeletePolicyVersionResult deletePolicyVersion(
             DeletePolicyVersionRequest deletePolicyVersionRequest);
 
     /**
@@ -1243,6 +1284,7 @@ public interface AmazonIdentityManagement {
      * </important>
      * 
      * @param deleteRoleRequest
+     * @return Result of the DeleteRole operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1259,7 +1301,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteRole
      */
-    void deleteRole(DeleteRoleRequest deleteRoleRequest);
+    DeleteRoleResult deleteRole(DeleteRoleRequest deleteRoleRequest);
 
     /**
      * <p>
@@ -1275,6 +1317,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteRolePolicyRequest
+     * @return Result of the DeleteRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1287,7 +1330,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteRolePolicy
      */
-    void deleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest);
+    DeleteRolePolicyResult deleteRolePolicy(
+            DeleteRolePolicyRequest deleteRolePolicyRequest);
 
     /**
      * <p>
@@ -1308,6 +1352,8 @@ public interface AmazonIdentityManagement {
      * </note>
      * 
      * @param deleteSAMLProviderRequest
+     * @return Result of the DeleteSAMLProvider operation returned by the
+     *         service.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value
      *         was supplied for an input parameter.
@@ -1323,7 +1369,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteSAMLProvider
      */
-    void deleteSAMLProvider(DeleteSAMLProviderRequest deleteSAMLProviderRequest);
+    DeleteSAMLProviderResult deleteSAMLProvider(
+            DeleteSAMLProviderRequest deleteSAMLProviderRequest);
 
     /**
      * <p>
@@ -1340,12 +1387,15 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteSSHPublicKeyRequest
+     * @return Result of the DeleteSSHPublicKey operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
      * @sample AmazonIdentityManagement.DeleteSSHPublicKey
      */
-    void deleteSSHPublicKey(DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest);
+    DeleteSSHPublicKeyResult deleteSSHPublicKey(
+            DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest);
 
     /**
      * <p>
@@ -1375,6 +1425,8 @@ public interface AmazonIdentityManagement {
      * </important>
      * 
      * @param deleteServerCertificateRequest
+     * @return Result of the DeleteServerCertificate operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1391,7 +1443,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteServerCertificate
      */
-    void deleteServerCertificate(
+    DeleteServerCertificateResult deleteServerCertificate(
             DeleteServerCertificateRequest deleteServerCertificateRequest);
 
     /**
@@ -1407,6 +1459,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteSigningCertificateRequest
+     * @return Result of the DeleteSigningCertificate operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1419,7 +1473,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteSigningCertificate
      */
-    void deleteSigningCertificate(
+    DeleteSigningCertificateResult deleteSigningCertificate(
             DeleteSigningCertificateRequest deleteSigningCertificateRequest);
 
     /**
@@ -1429,6 +1483,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteUserRequest
+     * @return Result of the DeleteUser operation returned by the service.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources
      *         beyond the current AWS account limits. The error message
@@ -1445,7 +1500,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteUser
      */
-    void deleteUser(DeleteUserRequest deleteUserRequest);
+    DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest);
 
     /**
      * <p>
@@ -1461,6 +1516,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param deleteUserPolicyRequest
+     * @return Result of the DeleteUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1473,7 +1529,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteUserPolicy
      */
-    void deleteUserPolicy(DeleteUserPolicyRequest deleteUserPolicyRequest);
+    DeleteUserPolicyResult deleteUserPolicy(
+            DeleteUserPolicyRequest deleteUserPolicyRequest);
 
     /**
      * <p>
@@ -1488,6 +1545,8 @@ public interface AmazonIdentityManagement {
      * </note>
      * 
      * @param deleteVirtualMFADeviceRequest
+     * @return Result of the DeleteVirtualMFADevice operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1504,7 +1563,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DeleteVirtualMFADevice
      */
-    void deleteVirtualMFADevice(
+    DeleteVirtualMFADeviceResult deleteVirtualMFADevice(
             DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest);
 
     /**
@@ -1520,6 +1579,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param detachGroupPolicyRequest
+     * @return Result of the DetachGroupPolicy operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1535,7 +1596,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DetachGroupPolicy
      */
-    void detachGroupPolicy(DetachGroupPolicyRequest detachGroupPolicyRequest);
+    DetachGroupPolicyResult detachGroupPolicy(
+            DetachGroupPolicyRequest detachGroupPolicyRequest);
 
     /**
      * <p>
@@ -1550,6 +1612,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param detachRolePolicyRequest
+     * @return Result of the DetachRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1565,7 +1628,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DetachRolePolicy
      */
-    void detachRolePolicy(DetachRolePolicyRequest detachRolePolicyRequest);
+    DetachRolePolicyResult detachRolePolicy(
+            DetachRolePolicyRequest detachRolePolicyRequest);
 
     /**
      * <p>
@@ -1580,6 +1644,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param detachUserPolicyRequest
+     * @return Result of the DetachUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -1595,7 +1660,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.DetachUserPolicy
      */
-    void detachUserPolicy(DetachUserPolicyRequest detachUserPolicyRequest);
+    DetachUserPolicyResult detachUserPolicy(
+            DetachUserPolicyRequest detachUserPolicyRequest);
 
     /**
      * <p>
@@ -1605,6 +1671,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param enableMFADeviceRequest
+     * @return Result of the EnableMFADevice operation returned by the service.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a
      *         resource that already exists.
@@ -1629,7 +1696,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.EnableMFADevice
      */
-    void enableMFADevice(EnableMFADeviceRequest enableMFADeviceRequest);
+    EnableMFADeviceResult enableMFADevice(
+            EnableMFADeviceRequest enableMFADeviceRequest);
 
     /**
      * <p>
@@ -3072,6 +3140,7 @@ public interface AmazonIdentityManagement {
      * </note>
      * 
      * @param putGroupPolicyRequest
+     * @return Result of the PutGroupPolicy operation returned by the service.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources
      *         beyond the current AWS account limits. The error message
@@ -3087,7 +3156,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.PutGroupPolicy
      */
-    void putGroupPolicy(PutGroupPolicyRequest putGroupPolicyRequest);
+    PutGroupPolicyResult putGroupPolicy(
+            PutGroupPolicyRequest putGroupPolicyRequest);
 
     /**
      * <p>
@@ -3128,6 +3198,7 @@ public interface AmazonIdentityManagement {
      * </note>
      * 
      * @param putRolePolicyRequest
+     * @return Result of the PutRolePolicy operation returned by the service.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources
      *         beyond the current AWS account limits. The error message
@@ -3143,7 +3214,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.PutRolePolicy
      */
-    void putRolePolicy(PutRolePolicyRequest putRolePolicyRequest);
+    PutRolePolicyResult putRolePolicy(PutRolePolicyRequest putRolePolicyRequest);
 
     /**
      * <p>
@@ -3175,6 +3246,7 @@ public interface AmazonIdentityManagement {
      * </note>
      * 
      * @param putUserPolicyRequest
+     * @return Result of the PutUserPolicy operation returned by the service.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources
      *         beyond the current AWS account limits. The error message
@@ -3190,7 +3262,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.PutUserPolicy
      */
-    void putUserPolicy(PutUserPolicyRequest putUserPolicyRequest);
+    PutUserPolicyResult putUserPolicy(PutUserPolicyRequest putUserPolicyRequest);
 
     /**
      * <p>
@@ -3204,6 +3276,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param removeClientIDFromOpenIDConnectProviderRequest
+     * @return Result of the RemoveClientIDFromOpenIDConnectProvider operation
+     *         returned by the service.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value
      *         was supplied for an input parameter.
@@ -3215,7 +3289,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.RemoveClientIDFromOpenIDConnectProvider
      */
-    void removeClientIDFromOpenIDConnectProvider(
+    RemoveClientIDFromOpenIDConnectProviderResult removeClientIDFromOpenIDConnectProvider(
             RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest);
 
     /**
@@ -3240,6 +3314,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param removeRoleFromInstanceProfileRequest
+     * @return Result of the RemoveRoleFromInstanceProfile operation returned by
+     *         the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -3252,7 +3328,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.RemoveRoleFromInstanceProfile
      */
-    void removeRoleFromInstanceProfile(
+    RemoveRoleFromInstanceProfileResult removeRoleFromInstanceProfile(
             RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest);
 
     /**
@@ -3261,6 +3337,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param removeUserFromGroupRequest
+     * @return Result of the RemoveUserFromGroup operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -3273,7 +3351,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.RemoveUserFromGroup
      */
-    void removeUserFromGroup(
+    RemoveUserFromGroupResult removeUserFromGroup(
             RemoveUserFromGroupRequest removeUserFromGroupRequest);
 
     /**
@@ -3289,6 +3367,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param resyncMFADeviceRequest
+     * @return Result of the ResyncMFADevice operation returned by the service.
      * @throws InvalidAuthenticationCodeException
      *         The request was rejected because the authentication code was not
      *         recognized. The error message describes the specific error.
@@ -3304,7 +3383,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.ResyncMFADevice
      */
-    void resyncMFADevice(ResyncMFADeviceRequest resyncMFADeviceRequest);
+    ResyncMFADeviceResult resyncMFADevice(
+            ResyncMFADeviceRequest resyncMFADeviceRequest);
 
     /**
      * <p>
@@ -3323,6 +3403,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param setDefaultPolicyVersionRequest
+     * @return Result of the SetDefaultPolicyVersion operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -3338,7 +3420,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.SetDefaultPolicyVersion
      */
-    void setDefaultPolicyVersion(
+    SetDefaultPolicyVersionResult setDefaultPolicyVersion(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest);
 
     /**
@@ -3461,6 +3543,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param updateAccessKeyRequest
+     * @return Result of the UpdateAccessKey operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -3473,7 +3556,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.UpdateAccessKey
      */
-    void updateAccessKey(UpdateAccessKeyRequest updateAccessKeyRequest);
+    UpdateAccessKeyResult updateAccessKey(
+            UpdateAccessKeyRequest updateAccessKeyRequest);
 
     /**
      * <p>
@@ -3494,6 +3578,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param updateAccountPasswordPolicyRequest
+     * @return Result of the UpdateAccountPasswordPolicy operation returned by
+     *         the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -3509,7 +3595,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.UpdateAccountPasswordPolicy
      */
-    void updateAccountPasswordPolicy(
+    UpdateAccountPasswordPolicyResult updateAccountPasswordPolicy(
             UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest);
 
     /**
@@ -3522,6 +3608,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param updateAssumeRolePolicyRequest
+     * @return Result of the UpdateAssumeRolePolicy operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -3537,7 +3625,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.UpdateAssumeRolePolicy
      */
-    void updateAssumeRolePolicy(
+    UpdateAssumeRolePolicyResult updateAssumeRolePolicy(
             UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest);
 
     /**
@@ -3564,6 +3652,7 @@ public interface AmazonIdentityManagement {
      * </note>
      * 
      * @param updateGroupRequest
+     * @return Result of the UpdateGroup operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -3579,7 +3668,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.UpdateGroup
      */
-    void updateGroup(UpdateGroupRequest updateGroupRequest);
+    UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest);
 
     /**
      * <p>
@@ -3594,6 +3683,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param updateLoginProfileRequest
+     * @return Result of the UpdateLoginProfile operation returned by the
+     *         service.
      * @throws EntityTemporarilyUnmodifiableException
      *         The request was rejected because it referenced an entity that is
      *         temporarily unmodifiable, such as a user name that was deleted
@@ -3615,7 +3706,8 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.UpdateLoginProfile
      */
-    void updateLoginProfile(UpdateLoginProfileRequest updateLoginProfileRequest);
+    UpdateLoginProfileResult updateLoginProfile(
+            UpdateLoginProfileRequest updateLoginProfileRequest);
 
     /**
      * <p>
@@ -3645,6 +3737,8 @@ public interface AmazonIdentityManagement {
      * </note>
      * 
      * @param updateOpenIDConnectProviderThumbprintRequest
+     * @return Result of the UpdateOpenIDConnectProviderThumbprint operation
+     *         returned by the service.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value
      *         was supplied for an input parameter.
@@ -3656,7 +3750,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.UpdateOpenIDConnectProviderThumbprint
      */
-    void updateOpenIDConnectProviderThumbprint(
+    UpdateOpenIDConnectProviderThumbprintResult updateOpenIDConnectProviderThumbprint(
             UpdateOpenIDConnectProviderThumbprintRequest updateOpenIDConnectProviderThumbprintRequest);
 
     /**
@@ -3711,12 +3805,15 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param updateSSHPublicKeyRequest
+     * @return Result of the UpdateSSHPublicKey operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
      * @sample AmazonIdentityManagement.UpdateSSHPublicKey
      */
-    void updateSSHPublicKey(UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest);
+    UpdateSSHPublicKeyResult updateSSHPublicKey(
+            UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest);
 
     /**
      * <p>
@@ -3751,6 +3848,8 @@ public interface AmazonIdentityManagement {
      * </note>
      * 
      * @param updateServerCertificateRequest
+     * @return Result of the UpdateServerCertificate operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -3766,7 +3865,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.UpdateServerCertificate
      */
-    void updateServerCertificate(
+    UpdateServerCertificateResult updateServerCertificate(
             UpdateServerCertificateRequest updateServerCertificateRequest);
 
     /**
@@ -3784,6 +3883,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * 
      * @param updateSigningCertificateRequest
+     * @return Result of the UpdateSigningCertificate operation returned by the
+     *         service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -3796,7 +3897,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.UpdateSigningCertificate
      */
-    void updateSigningCertificate(
+    UpdateSigningCertificateResult updateSigningCertificate(
             UpdateSigningCertificateRequest updateSigningCertificateRequest);
 
     /**
@@ -3825,6 +3926,7 @@ public interface AmazonIdentityManagement {
      * </note>
      * 
      * @param updateUserRequest
+     * @return Result of the UpdateUser operation returned by the service.
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that
      *         does not exist. The error message describes the entity.
@@ -3846,7 +3948,7 @@ public interface AmazonIdentityManagement {
      *         exception or failure.
      * @sample AmazonIdentityManagement.UpdateUser
      */
-    void updateUser(UpdateUserRequest updateUserRequest);
+    UpdateUserResult updateUser(UpdateUserRequest updateUserRequest);
 
     /**
      * <p>

@@ -30,16 +30,16 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachInstancesAsync(
+    public java.util.concurrent.Future<AttachInstancesResult> attachInstancesAsync(
             AttachInstancesRequest request) {
 
         return attachInstancesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachInstancesAsync(
+    public java.util.concurrent.Future<AttachInstancesResult> attachInstancesAsync(
             AttachInstancesRequest request,
-            com.amazonaws.handlers.AsyncHandler<AttachInstancesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AttachInstancesRequest, AttachInstancesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -100,76 +100,76 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createAutoScalingGroupAsync(
+    public java.util.concurrent.Future<CreateAutoScalingGroupResult> createAutoScalingGroupAsync(
             CreateAutoScalingGroupRequest request) {
 
         return createAutoScalingGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createAutoScalingGroupAsync(
+    public java.util.concurrent.Future<CreateAutoScalingGroupResult> createAutoScalingGroupAsync(
             CreateAutoScalingGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateAutoScalingGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateAutoScalingGroupRequest, CreateAutoScalingGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLaunchConfigurationAsync(
+    public java.util.concurrent.Future<CreateLaunchConfigurationResult> createLaunchConfigurationAsync(
             CreateLaunchConfigurationRequest request) {
 
         return createLaunchConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLaunchConfigurationAsync(
+    public java.util.concurrent.Future<CreateLaunchConfigurationResult> createLaunchConfigurationAsync(
             CreateLaunchConfigurationRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateLaunchConfigurationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateLaunchConfigurationRequest, CreateLaunchConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createOrUpdateTagsAsync(
+    public java.util.concurrent.Future<CreateOrUpdateTagsResult> createOrUpdateTagsAsync(
             CreateOrUpdateTagsRequest request) {
 
         return createOrUpdateTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createOrUpdateTagsAsync(
+    public java.util.concurrent.Future<CreateOrUpdateTagsResult> createOrUpdateTagsAsync(
             CreateOrUpdateTagsRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateOrUpdateTagsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAutoScalingGroupAsync(
+    public java.util.concurrent.Future<DeleteAutoScalingGroupResult> deleteAutoScalingGroupAsync(
             DeleteAutoScalingGroupRequest request) {
 
         return deleteAutoScalingGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAutoScalingGroupAsync(
+    public java.util.concurrent.Future<DeleteAutoScalingGroupResult> deleteAutoScalingGroupAsync(
             DeleteAutoScalingGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAutoScalingGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAutoScalingGroupRequest, DeleteAutoScalingGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLaunchConfigurationAsync(
+    public java.util.concurrent.Future<DeleteLaunchConfigurationResult> deleteLaunchConfigurationAsync(
             DeleteLaunchConfigurationRequest request) {
 
         return deleteLaunchConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLaunchConfigurationAsync(
+    public java.util.concurrent.Future<DeleteLaunchConfigurationResult> deleteLaunchConfigurationAsync(
             DeleteLaunchConfigurationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteLaunchConfigurationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteLaunchConfigurationRequest, DeleteLaunchConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -190,61 +190,61 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNotificationConfigurationAsync(
+    public java.util.concurrent.Future<DeleteNotificationConfigurationResult> deleteNotificationConfigurationAsync(
             DeleteNotificationConfigurationRequest request) {
 
         return deleteNotificationConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNotificationConfigurationAsync(
+    public java.util.concurrent.Future<DeleteNotificationConfigurationResult> deleteNotificationConfigurationAsync(
             DeleteNotificationConfigurationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteNotificationConfigurationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteNotificationConfigurationRequest, DeleteNotificationConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyAsync(
+    public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest request) {
 
         return deletePolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyAsync(
+    public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteScheduledActionAsync(
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(
             DeleteScheduledActionRequest request) {
 
         return deleteScheduledActionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteScheduledActionAsync(
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(
             DeleteScheduledActionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, DeleteScheduledActionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTagsAsync(
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             DeleteTagsRequest request) {
 
         return deleteTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTagsAsync(
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             DeleteTagsRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -946,31 +946,31 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableMetricsCollectionAsync(
+    public java.util.concurrent.Future<DisableMetricsCollectionResult> disableMetricsCollectionAsync(
             DisableMetricsCollectionRequest request) {
 
         return disableMetricsCollectionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableMetricsCollectionAsync(
+    public java.util.concurrent.Future<DisableMetricsCollectionResult> disableMetricsCollectionAsync(
             DisableMetricsCollectionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DisableMetricsCollectionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DisableMetricsCollectionRequest, DisableMetricsCollectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableMetricsCollectionAsync(
+    public java.util.concurrent.Future<EnableMetricsCollectionResult> enableMetricsCollectionAsync(
             EnableMetricsCollectionRequest request) {
 
         return enableMetricsCollectionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableMetricsCollectionAsync(
+    public java.util.concurrent.Future<EnableMetricsCollectionResult> enableMetricsCollectionAsync(
             EnableMetricsCollectionRequest request,
-            com.amazonaws.handlers.AsyncHandler<EnableMetricsCollectionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<EnableMetricsCollectionRequest, EnableMetricsCollectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -991,16 +991,16 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
-    public java.util.concurrent.Future<Void> executePolicyAsync(
+    public java.util.concurrent.Future<ExecutePolicyResult> executePolicyAsync(
             ExecutePolicyRequest request) {
 
         return executePolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> executePolicyAsync(
+    public java.util.concurrent.Future<ExecutePolicyResult> executePolicyAsync(
             ExecutePolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<ExecutePolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ExecutePolicyRequest, ExecutePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1036,16 +1036,16 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putNotificationConfigurationAsync(
+    public java.util.concurrent.Future<PutNotificationConfigurationResult> putNotificationConfigurationAsync(
             PutNotificationConfigurationRequest request) {
 
         return putNotificationConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putNotificationConfigurationAsync(
+    public java.util.concurrent.Future<PutNotificationConfigurationResult> putNotificationConfigurationAsync(
             PutNotificationConfigurationRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutNotificationConfigurationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutNotificationConfigurationRequest, PutNotificationConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1066,16 +1066,16 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putScheduledUpdateGroupActionAsync(
+    public java.util.concurrent.Future<PutScheduledUpdateGroupActionResult> putScheduledUpdateGroupActionAsync(
             PutScheduledUpdateGroupActionRequest request) {
 
         return putScheduledUpdateGroupActionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putScheduledUpdateGroupActionAsync(
+    public java.util.concurrent.Future<PutScheduledUpdateGroupActionResult> putScheduledUpdateGroupActionAsync(
             PutScheduledUpdateGroupActionRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutScheduledUpdateGroupActionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutScheduledUpdateGroupActionRequest, PutScheduledUpdateGroupActionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1096,46 +1096,46 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resumeProcessesAsync(
+    public java.util.concurrent.Future<ResumeProcessesResult> resumeProcessesAsync(
             ResumeProcessesRequest request) {
 
         return resumeProcessesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resumeProcessesAsync(
+    public java.util.concurrent.Future<ResumeProcessesResult> resumeProcessesAsync(
             ResumeProcessesRequest request,
-            com.amazonaws.handlers.AsyncHandler<ResumeProcessesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ResumeProcessesRequest, ResumeProcessesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setDesiredCapacityAsync(
+    public java.util.concurrent.Future<SetDesiredCapacityResult> setDesiredCapacityAsync(
             SetDesiredCapacityRequest request) {
 
         return setDesiredCapacityAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setDesiredCapacityAsync(
+    public java.util.concurrent.Future<SetDesiredCapacityResult> setDesiredCapacityAsync(
             SetDesiredCapacityRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetDesiredCapacityRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetDesiredCapacityRequest, SetDesiredCapacityResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setInstanceHealthAsync(
+    public java.util.concurrent.Future<SetInstanceHealthResult> setInstanceHealthAsync(
             SetInstanceHealthRequest request) {
 
         return setInstanceHealthAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setInstanceHealthAsync(
+    public java.util.concurrent.Future<SetInstanceHealthResult> setInstanceHealthAsync(
             SetInstanceHealthRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetInstanceHealthRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetInstanceHealthRequest, SetInstanceHealthResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1156,16 +1156,16 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
-    public java.util.concurrent.Future<Void> suspendProcessesAsync(
+    public java.util.concurrent.Future<SuspendProcessesResult> suspendProcessesAsync(
             SuspendProcessesRequest request) {
 
         return suspendProcessesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> suspendProcessesAsync(
+    public java.util.concurrent.Future<SuspendProcessesResult> suspendProcessesAsync(
             SuspendProcessesRequest request,
-            com.amazonaws.handlers.AsyncHandler<SuspendProcessesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SuspendProcessesRequest, SuspendProcessesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1186,16 +1186,16 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAutoScalingGroupAsync(
+    public java.util.concurrent.Future<UpdateAutoScalingGroupResult> updateAutoScalingGroupAsync(
             UpdateAutoScalingGroupRequest request) {
 
         return updateAutoScalingGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAutoScalingGroupAsync(
+    public java.util.concurrent.Future<UpdateAutoScalingGroupResult> updateAutoScalingGroupAsync(
             UpdateAutoScalingGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateAutoScalingGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateAutoScalingGroupRequest, UpdateAutoScalingGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

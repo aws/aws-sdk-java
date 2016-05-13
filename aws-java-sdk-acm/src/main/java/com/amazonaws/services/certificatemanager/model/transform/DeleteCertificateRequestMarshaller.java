@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteCertificateRequest Marshaller
  */
 public class DeleteCertificateRequestMarshaller implements
         Marshaller<Request<DeleteCertificateRequest>, DeleteCertificateRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteCertificateRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteCertificateRequest> marshall(
             DeleteCertificateRequest deleteCertificateRequest) {
@@ -58,8 +65,8 @@ public class DeleteCertificateRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateDocumentRequest Marshaller
  */
 public class CreateDocumentRequestMarshaller implements
         Marshaller<Request<CreateDocumentRequest>, CreateDocumentRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateDocumentRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateDocumentRequest> marshall(
             CreateDocumentRequest createDocumentRequest) {
@@ -57,8 +64,8 @@ public class CreateDocumentRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

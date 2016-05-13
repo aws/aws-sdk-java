@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
@@ -24,655 +26,827 @@ import java.io.Serializable;
 public class EventSubscription implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The AWS customer account associated with the Amazon Redshift event
      * notification subscription.
+     * </p>
      */
     private String customerAwsId;
-
     /**
+     * <p>
      * The name of the Amazon Redshift event notification subscription.
+     * </p>
      */
     private String custSubscriptionId;
-
     /**
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic used by the
-     * event notification subscription.
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event
+     * notification subscription.
+     * </p>
      */
     private String snsTopicArn;
-
     /**
+     * <p>
      * The status of the Amazon Redshift event notification subscription.
-     * <p>Constraints: <ul> <li>Can be one of the following: active |
-     * no-permission | topic-not-exist</li> <li>The status "no-permission"
-     * indicates that Amazon Redshift no longer has permission to post to the
-     * Amazon SNS topic. The status "topic-not-exist" indicates that the
-     * topic was deleted after the subscription was created.</li> </ul>
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Can be one of the following: active | no-permission | topic-not-exist
+     * </li>
+     * <li>The status "no-permission" indicates that Amazon Redshift no longer
+     * has permission to post to the Amazon SNS topic. The status
+     * "topic-not-exist" indicates that the topic was deleted after the
+     * subscription was created.</li>
+     * </ul>
      */
     private String status;
-
     /**
-     * The date and time the Amazon Redshift event notification subscription
-     * was created.
+     * <p>
+     * The date and time the Amazon Redshift event notification subscription was
+     * created.
+     * </p>
      */
     private java.util.Date subscriptionCreationTime;
-
     /**
+     * <p>
      * The source type of the events returned the Amazon Redshift event
      * notification, such as cluster, or cluster-snapshot.
+     * </p>
      */
     private String sourceType;
-
     /**
+     * <p>
      * A list of the sources that publish events to the Amazon Redshift event
      * notification subscription.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> sourceIdsList;
-
+    private com.amazonaws.internal.SdkInternalList<String> sourceIdsList;
     /**
+     * <p>
      * The list of Amazon Redshift event categories specified in the event
-     * notification subscription. <p>Values: Configuration, Management,
-     * Monitoring, Security
+     * notification subscription.
+     * </p>
+     * <p>
+     * Values: Configuration, Management, Monitoring, Security
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesList;
-
+    private com.amazonaws.internal.SdkInternalList<String> eventCategoriesList;
     /**
+     * <p>
      * The event severity specified in the Amazon Redshift event notification
-     * subscription. <p>Values: ERROR, INFO
+     * subscription.
+     * </p>
+     * <p>
+     * Values: ERROR, INFO
+     * </p>
      */
     private String severity;
-
     /**
+     * <p>
      * A Boolean value indicating whether the subscription is enabled.
      * <code>true</code> indicates the subscription is enabled.
+     * </p>
      */
     private Boolean enabled;
-
     /**
+     * <p>
      * The list of tags for the event subscription.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
+     * <p>
      * The AWS customer account associated with the Amazon Redshift event
      * notification subscription.
-     *
-     * @return The AWS customer account associated with the Amazon Redshift event
-     *         notification subscription.
+     * </p>
+     * 
+     * @param customerAwsId
+     *        The AWS customer account associated with the Amazon Redshift event
+     *        notification subscription.
      */
-    public String getCustomerAwsId() {
-        return customerAwsId;
-    }
-    
-    /**
-     * The AWS customer account associated with the Amazon Redshift event
-     * notification subscription.
-     *
-     * @param customerAwsId The AWS customer account associated with the Amazon Redshift event
-     *         notification subscription.
-     */
+
     public void setCustomerAwsId(String customerAwsId) {
         this.customerAwsId = customerAwsId;
     }
-    
+
     /**
+     * <p>
      * The AWS customer account associated with the Amazon Redshift event
      * notification subscription.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param customerAwsId The AWS customer account associated with the Amazon Redshift event
-     *         notification subscription.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The AWS customer account associated with the Amazon Redshift
+     *         event notification subscription.
      */
+
+    public String getCustomerAwsId() {
+        return this.customerAwsId;
+    }
+
+    /**
+     * <p>
+     * The AWS customer account associated with the Amazon Redshift event
+     * notification subscription.
+     * </p>
+     * 
+     * @param customerAwsId
+     *        The AWS customer account associated with the Amazon Redshift event
+     *        notification subscription.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public EventSubscription withCustomerAwsId(String customerAwsId) {
-        this.customerAwsId = customerAwsId;
+        setCustomerAwsId(customerAwsId);
         return this;
     }
 
     /**
+     * <p>
      * The name of the Amazon Redshift event notification subscription.
-     *
-     * @return The name of the Amazon Redshift event notification subscription.
+     * </p>
+     * 
+     * @param custSubscriptionId
+     *        The name of the Amazon Redshift event notification subscription.
      */
-    public String getCustSubscriptionId() {
-        return custSubscriptionId;
-    }
-    
-    /**
-     * The name of the Amazon Redshift event notification subscription.
-     *
-     * @param custSubscriptionId The name of the Amazon Redshift event notification subscription.
-     */
+
     public void setCustSubscriptionId(String custSubscriptionId) {
         this.custSubscriptionId = custSubscriptionId;
     }
-    
+
     /**
-     * The name of the Amazon Redshift event notification subscription.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param custSubscriptionId The name of the Amazon Redshift event notification subscription.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the Amazon Redshift event notification subscription.
+     * </p>
+     * 
+     * @return The name of the Amazon Redshift event notification subscription.
      */
+
+    public String getCustSubscriptionId() {
+        return this.custSubscriptionId;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Redshift event notification subscription.
+     * </p>
+     * 
+     * @param custSubscriptionId
+     *        The name of the Amazon Redshift event notification subscription.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public EventSubscription withCustSubscriptionId(String custSubscriptionId) {
-        this.custSubscriptionId = custSubscriptionId;
+        setCustSubscriptionId(custSubscriptionId);
         return this;
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic used by the
-     * event notification subscription.
-     *
-     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic used by the
-     *         event notification subscription.
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event
+     * notification subscription.
+     * </p>
+     * 
+     * @param snsTopicArn
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic used by the
+     *        event notification subscription.
      */
-    public String getSnsTopicArn() {
-        return snsTopicArn;
-    }
-    
-    /**
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic used by the
-     * event notification subscription.
-     *
-     * @param snsTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic used by the
-     *         event notification subscription.
-     */
+
     public void setSnsTopicArn(String snsTopicArn) {
         this.snsTopicArn = snsTopicArn;
     }
-    
+
     /**
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic used by the
-     * event notification subscription.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param snsTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic used by the
-     *         event notification subscription.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event
+     * notification subscription.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic used by
+     *         the event notification subscription.
      */
+
+    public String getSnsTopicArn() {
+        return this.snsTopicArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event
+     * notification subscription.
+     * </p>
+     * 
+     * @param snsTopicArn
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic used by the
+     *        event notification subscription.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public EventSubscription withSnsTopicArn(String snsTopicArn) {
-        this.snsTopicArn = snsTopicArn;
+        setSnsTopicArn(snsTopicArn);
         return this;
     }
 
     /**
+     * <p>
      * The status of the Amazon Redshift event notification subscription.
-     * <p>Constraints: <ul> <li>Can be one of the following: active |
-     * no-permission | topic-not-exist</li> <li>The status "no-permission"
-     * indicates that Amazon Redshift no longer has permission to post to the
-     * Amazon SNS topic. The status "topic-not-exist" indicates that the
-     * topic was deleted after the subscription was created.</li> </ul>
-     *
-     * @return The status of the Amazon Redshift event notification subscription.
-     *         <p>Constraints: <ul> <li>Can be one of the following: active |
-     *         no-permission | topic-not-exist</li> <li>The status "no-permission"
-     *         indicates that Amazon Redshift no longer has permission to post to the
-     *         Amazon SNS topic. The status "topic-not-exist" indicates that the
-     *         topic was deleted after the subscription was created.</li> </ul>
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Can be one of the following: active | no-permission | topic-not-exist
+     * </li>
+     * <li>The status "no-permission" indicates that Amazon Redshift no longer
+     * has permission to post to the Amazon SNS topic. The status
+     * "topic-not-exist" indicates that the topic was deleted after the
+     * subscription was created.</li>
+     * </ul>
+     * 
+     * @param status
+     *        The status of the Amazon Redshift event notification
+     *        subscription.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>Can be one of the following: active | no-permission |
+     *        topic-not-exist</li>
+     *        <li>The status "no-permission" indicates that Amazon Redshift no
+     *        longer has permission to post to the Amazon SNS topic. The status
+     *        "topic-not-exist" indicates that the topic was deleted after the
+     *        subscription was created.</li>
      */
-    public String getStatus() {
-        return status;
-    }
-    
-    /**
-     * The status of the Amazon Redshift event notification subscription.
-     * <p>Constraints: <ul> <li>Can be one of the following: active |
-     * no-permission | topic-not-exist</li> <li>The status "no-permission"
-     * indicates that Amazon Redshift no longer has permission to post to the
-     * Amazon SNS topic. The status "topic-not-exist" indicates that the
-     * topic was deleted after the subscription was created.</li> </ul>
-     *
-     * @param status The status of the Amazon Redshift event notification subscription.
-     *         <p>Constraints: <ul> <li>Can be one of the following: active |
-     *         no-permission | topic-not-exist</li> <li>The status "no-permission"
-     *         indicates that Amazon Redshift no longer has permission to post to the
-     *         Amazon SNS topic. The status "topic-not-exist" indicates that the
-     *         topic was deleted after the subscription was created.</li> </ul>
-     */
+
     public void setStatus(String status) {
         this.status = status;
     }
-    
+
     /**
+     * <p>
      * The status of the Amazon Redshift event notification subscription.
-     * <p>Constraints: <ul> <li>Can be one of the following: active |
-     * no-permission | topic-not-exist</li> <li>The status "no-permission"
-     * indicates that Amazon Redshift no longer has permission to post to the
-     * Amazon SNS topic. The status "topic-not-exist" indicates that the
-     * topic was deleted after the subscription was created.</li> </ul>
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param status The status of the Amazon Redshift event notification subscription.
-     *         <p>Constraints: <ul> <li>Can be one of the following: active |
-     *         no-permission | topic-not-exist</li> <li>The status "no-permission"
-     *         indicates that Amazon Redshift no longer has permission to post to the
-     *         Amazon SNS topic. The status "topic-not-exist" indicates that the
-     *         topic was deleted after the subscription was created.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Can be one of the following: active | no-permission | topic-not-exist
+     * </li>
+     * <li>The status "no-permission" indicates that Amazon Redshift no longer
+     * has permission to post to the Amazon SNS topic. The status
+     * "topic-not-exist" indicates that the topic was deleted after the
+     * subscription was created.</li>
+     * </ul>
+     * 
+     * @return The status of the Amazon Redshift event notification
+     *         subscription.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>Can be one of the following: active | no-permission |
+     *         topic-not-exist</li>
+     *         <li>The status "no-permission" indicates that Amazon Redshift no
+     *         longer has permission to post to the Amazon SNS topic. The status
+     *         "topic-not-exist" indicates that the topic was deleted after the
+     *         subscription was created.</li>
      */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the Amazon Redshift event notification subscription.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Can be one of the following: active | no-permission | topic-not-exist
+     * </li>
+     * <li>The status "no-permission" indicates that Amazon Redshift no longer
+     * has permission to post to the Amazon SNS topic. The status
+     * "topic-not-exist" indicates that the topic was deleted after the
+     * subscription was created.</li>
+     * </ul>
+     * 
+     * @param status
+     *        The status of the Amazon Redshift event notification
+     *        subscription.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>Can be one of the following: active | no-permission |
+     *        topic-not-exist</li>
+     *        <li>The status "no-permission" indicates that Amazon Redshift no
+     *        longer has permission to post to the Amazon SNS topic. The status
+     *        "topic-not-exist" indicates that the topic was deleted after the
+     *        subscription was created.</li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public EventSubscription withStatus(String status) {
-        this.status = status;
+        setStatus(status);
         return this;
     }
 
     /**
-     * The date and time the Amazon Redshift event notification subscription
-     * was created.
-     *
-     * @return The date and time the Amazon Redshift event notification subscription
-     *         was created.
-     */
-    public java.util.Date getSubscriptionCreationTime() {
-        return subscriptionCreationTime;
-    }
-    
-    /**
-     * The date and time the Amazon Redshift event notification subscription
-     * was created.
-     *
-     * @param subscriptionCreationTime The date and time the Amazon Redshift event notification subscription
-     *         was created.
-     */
-    public void setSubscriptionCreationTime(java.util.Date subscriptionCreationTime) {
-        this.subscriptionCreationTime = subscriptionCreationTime;
-    }
-    
-    /**
-     * The date and time the Amazon Redshift event notification subscription
-     * was created.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param subscriptionCreationTime The date and time the Amazon Redshift event notification subscription
-     *         was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The date and time the Amazon Redshift event notification subscription was
+     * created.
+     * </p>
+     * 
+     * @param subscriptionCreationTime
+     *        The date and time the Amazon Redshift event notification
+     *        subscription was created.
      */
-    public EventSubscription withSubscriptionCreationTime(java.util.Date subscriptionCreationTime) {
+
+    public void setSubscriptionCreationTime(
+            java.util.Date subscriptionCreationTime) {
         this.subscriptionCreationTime = subscriptionCreationTime;
+    }
+
+    /**
+     * <p>
+     * The date and time the Amazon Redshift event notification subscription was
+     * created.
+     * </p>
+     * 
+     * @return The date and time the Amazon Redshift event notification
+     *         subscription was created.
+     */
+
+    public java.util.Date getSubscriptionCreationTime() {
+        return this.subscriptionCreationTime;
+    }
+
+    /**
+     * <p>
+     * The date and time the Amazon Redshift event notification subscription was
+     * created.
+     * </p>
+     * 
+     * @param subscriptionCreationTime
+     *        The date and time the Amazon Redshift event notification
+     *        subscription was created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public EventSubscription withSubscriptionCreationTime(
+            java.util.Date subscriptionCreationTime) {
+        setSubscriptionCreationTime(subscriptionCreationTime);
         return this;
     }
 
     /**
+     * <p>
      * The source type of the events returned the Amazon Redshift event
      * notification, such as cluster, or cluster-snapshot.
-     *
-     * @return The source type of the events returned the Amazon Redshift event
-     *         notification, such as cluster, or cluster-snapshot.
+     * </p>
+     * 
+     * @param sourceType
+     *        The source type of the events returned the Amazon Redshift event
+     *        notification, such as cluster, or cluster-snapshot.
      */
-    public String getSourceType() {
-        return sourceType;
-    }
-    
-    /**
-     * The source type of the events returned the Amazon Redshift event
-     * notification, such as cluster, or cluster-snapshot.
-     *
-     * @param sourceType The source type of the events returned the Amazon Redshift event
-     *         notification, such as cluster, or cluster-snapshot.
-     */
+
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
-    
+
     /**
+     * <p>
      * The source type of the events returned the Amazon Redshift event
      * notification, such as cluster, or cluster-snapshot.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param sourceType The source type of the events returned the Amazon Redshift event
+     * </p>
+     * 
+     * @return The source type of the events returned the Amazon Redshift event
      *         notification, such as cluster, or cluster-snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
+
+    public String getSourceType() {
+        return this.sourceType;
+    }
+
+    /**
+     * <p>
+     * The source type of the events returned the Amazon Redshift event
+     * notification, such as cluster, or cluster-snapshot.
+     * </p>
+     * 
+     * @param sourceType
+     *        The source type of the events returned the Amazon Redshift event
+     *        notification, such as cluster, or cluster-snapshot.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public EventSubscription withSourceType(String sourceType) {
-        this.sourceType = sourceType;
+        setSourceType(sourceType);
         return this;
     }
 
     /**
+     * <p>
      * A list of the sources that publish events to the Amazon Redshift event
      * notification subscription.
-     *
-     * @return A list of the sources that publish events to the Amazon Redshift event
-     *         notification subscription.
+     * </p>
+     * 
+     * @return A list of the sources that publish events to the Amazon Redshift
+     *         event notification subscription.
      */
+
     public java.util.List<String> getSourceIdsList() {
         if (sourceIdsList == null) {
-              sourceIdsList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              sourceIdsList.setAutoConstruct(true);
+            sourceIdsList = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return sourceIdsList;
     }
-    
+
     /**
+     * <p>
      * A list of the sources that publish events to the Amazon Redshift event
      * notification subscription.
-     *
-     * @param sourceIdsList A list of the sources that publish events to the Amazon Redshift event
-     *         notification subscription.
+     * </p>
+     * 
+     * @param sourceIdsList
+     *        A list of the sources that publish events to the Amazon Redshift
+     *        event notification subscription.
      */
+
     public void setSourceIdsList(java.util.Collection<String> sourceIdsList) {
         if (sourceIdsList == null) {
             this.sourceIdsList = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> sourceIdsListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(sourceIdsList.size());
-        sourceIdsListCopy.addAll(sourceIdsList);
-        this.sourceIdsList = sourceIdsListCopy;
+
+        this.sourceIdsList = new com.amazonaws.internal.SdkInternalList<String>(
+                sourceIdsList);
     }
-    
+
     /**
+     * <p>
      * A list of the sources that publish events to the Amazon Redshift event
      * notification subscription.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSourceIdsList(java.util.Collection)} or {@link
-     * #withSourceIdsList(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param sourceIdsList A list of the sources that publish events to the Amazon Redshift event
-     *         notification subscription.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setSourceIdsList(java.util.Collection)} or
+     * {@link #withSourceIdsList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sourceIdsList
+     *        A list of the sources that publish events to the Amazon Redshift
+     *        event notification subscription.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public EventSubscription withSourceIdsList(String... sourceIdsList) {
-        if (getSourceIdsList() == null) setSourceIdsList(new java.util.ArrayList<String>(sourceIdsList.length));
-        for (String value : sourceIdsList) {
-            getSourceIdsList().add(value);
+        if (this.sourceIdsList == null) {
+            setSourceIdsList(new com.amazonaws.internal.SdkInternalList<String>(
+                    sourceIdsList.length));
+        }
+        for (String ele : sourceIdsList) {
+            this.sourceIdsList.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * A list of the sources that publish events to the Amazon Redshift event
      * notification subscription.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param sourceIdsList A list of the sources that publish events to the Amazon Redshift event
-     *         notification subscription.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param sourceIdsList
+     *        A list of the sources that publish events to the Amazon Redshift
+     *        event notification subscription.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public EventSubscription withSourceIdsList(java.util.Collection<String> sourceIdsList) {
-        if (sourceIdsList == null) {
-            this.sourceIdsList = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> sourceIdsListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(sourceIdsList.size());
-            sourceIdsListCopy.addAll(sourceIdsList);
-            this.sourceIdsList = sourceIdsListCopy;
-        }
 
+    public EventSubscription withSourceIdsList(
+            java.util.Collection<String> sourceIdsList) {
+        setSourceIdsList(sourceIdsList);
         return this;
     }
 
     /**
+     * <p>
      * The list of Amazon Redshift event categories specified in the event
-     * notification subscription. <p>Values: Configuration, Management,
-     * Monitoring, Security
-     *
-     * @return The list of Amazon Redshift event categories specified in the event
-     *         notification subscription. <p>Values: Configuration, Management,
-     *         Monitoring, Security
+     * notification subscription.
+     * </p>
+     * <p>
+     * Values: Configuration, Management, Monitoring, Security
+     * </p>
+     * 
+     * @return The list of Amazon Redshift event categories specified in the
+     *         event notification subscription.</p>
+     *         <p>
+     *         Values: Configuration, Management, Monitoring, Security
      */
+
     public java.util.List<String> getEventCategoriesList() {
         if (eventCategoriesList == null) {
-              eventCategoriesList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              eventCategoriesList.setAutoConstruct(true);
+            eventCategoriesList = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return eventCategoriesList;
     }
-    
+
     /**
+     * <p>
      * The list of Amazon Redshift event categories specified in the event
-     * notification subscription. <p>Values: Configuration, Management,
-     * Monitoring, Security
-     *
-     * @param eventCategoriesList The list of Amazon Redshift event categories specified in the event
-     *         notification subscription. <p>Values: Configuration, Management,
-     *         Monitoring, Security
+     * notification subscription.
+     * </p>
+     * <p>
+     * Values: Configuration, Management, Monitoring, Security
+     * </p>
+     * 
+     * @param eventCategoriesList
+     *        The list of Amazon Redshift event categories specified in the
+     *        event notification subscription.</p>
+     *        <p>
+     *        Values: Configuration, Management, Monitoring, Security
      */
-    public void setEventCategoriesList(java.util.Collection<String> eventCategoriesList) {
+
+    public void setEventCategoriesList(
+            java.util.Collection<String> eventCategoriesList) {
         if (eventCategoriesList == null) {
             this.eventCategoriesList = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategoriesList.size());
-        eventCategoriesListCopy.addAll(eventCategoriesList);
-        this.eventCategoriesList = eventCategoriesListCopy;
+
+        this.eventCategoriesList = new com.amazonaws.internal.SdkInternalList<String>(
+                eventCategoriesList);
     }
-    
+
     /**
+     * <p>
      * The list of Amazon Redshift event categories specified in the event
-     * notification subscription. <p>Values: Configuration, Management,
-     * Monitoring, Security
+     * notification subscription.
+     * </p>
+     * <p>
+     * Values: Configuration, Management, Monitoring, Security
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setEventCategoriesList(java.util.Collection)} or
      * {@link #withEventCategoriesList(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param eventCategoriesList The list of Amazon Redshift event categories specified in the event
-     *         notification subscription. <p>Values: Configuration, Management,
-     *         Monitoring, Security
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param eventCategoriesList
+     *        The list of Amazon Redshift event categories specified in the
+     *        event notification subscription.</p>
+     *        <p>
+     *        Values: Configuration, Management, Monitoring, Security
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public EventSubscription withEventCategoriesList(String... eventCategoriesList) {
-        if (getEventCategoriesList() == null) setEventCategoriesList(new java.util.ArrayList<String>(eventCategoriesList.length));
-        for (String value : eventCategoriesList) {
-            getEventCategoriesList().add(value);
+
+    public EventSubscription withEventCategoriesList(
+            String... eventCategoriesList) {
+        if (this.eventCategoriesList == null) {
+            setEventCategoriesList(new com.amazonaws.internal.SdkInternalList<String>(
+                    eventCategoriesList.length));
+        }
+        for (String ele : eventCategoriesList) {
+            this.eventCategoriesList.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The list of Amazon Redshift event categories specified in the event
-     * notification subscription. <p>Values: Configuration, Management,
-     * Monitoring, Security
+     * notification subscription.
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param eventCategoriesList The list of Amazon Redshift event categories specified in the event
-     *         notification subscription. <p>Values: Configuration, Management,
-     *         Monitoring, Security
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Values: Configuration, Management, Monitoring, Security
+     * </p>
+     * 
+     * @param eventCategoriesList
+     *        The list of Amazon Redshift event categories specified in the
+     *        event notification subscription.</p>
+     *        <p>
+     *        Values: Configuration, Management, Monitoring, Security
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public EventSubscription withEventCategoriesList(java.util.Collection<String> eventCategoriesList) {
-        if (eventCategoriesList == null) {
-            this.eventCategoriesList = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategoriesList.size());
-            eventCategoriesListCopy.addAll(eventCategoriesList);
-            this.eventCategoriesList = eventCategoriesListCopy;
-        }
 
+    public EventSubscription withEventCategoriesList(
+            java.util.Collection<String> eventCategoriesList) {
+        setEventCategoriesList(eventCategoriesList);
         return this;
     }
 
     /**
+     * <p>
      * The event severity specified in the Amazon Redshift event notification
-     * subscription. <p>Values: ERROR, INFO
-     *
-     * @return The event severity specified in the Amazon Redshift event notification
-     *         subscription. <p>Values: ERROR, INFO
+     * subscription.
+     * </p>
+     * <p>
+     * Values: ERROR, INFO
+     * </p>
+     * 
+     * @param severity
+     *        The event severity specified in the Amazon Redshift event
+     *        notification subscription.</p>
+     *        <p>
+     *        Values: ERROR, INFO
      */
-    public String getSeverity() {
-        return severity;
-    }
-    
-    /**
-     * The event severity specified in the Amazon Redshift event notification
-     * subscription. <p>Values: ERROR, INFO
-     *
-     * @param severity The event severity specified in the Amazon Redshift event notification
-     *         subscription. <p>Values: ERROR, INFO
-     */
+
     public void setSeverity(String severity) {
         this.severity = severity;
     }
-    
+
     /**
-     * The event severity specified in the Amazon Redshift event notification
-     * subscription. <p>Values: ERROR, INFO
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param severity The event severity specified in the Amazon Redshift event notification
-     *         subscription. <p>Values: ERROR, INFO
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The event severity specified in the Amazon Redshift event notification
+     * subscription.
+     * </p>
+     * <p>
+     * Values: ERROR, INFO
+     * </p>
+     * 
+     * @return The event severity specified in the Amazon Redshift event
+     *         notification subscription.</p>
+     *         <p>
+     *         Values: ERROR, INFO
      */
+
+    public String getSeverity() {
+        return this.severity;
+    }
+
+    /**
+     * <p>
+     * The event severity specified in the Amazon Redshift event notification
+     * subscription.
+     * </p>
+     * <p>
+     * Values: ERROR, INFO
+     * </p>
+     * 
+     * @param severity
+     *        The event severity specified in the Amazon Redshift event
+     *        notification subscription.</p>
+     *        <p>
+     *        Values: ERROR, INFO
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public EventSubscription withSeverity(String severity) {
-        this.severity = severity;
+        setSeverity(severity);
         return this;
     }
 
     /**
+     * <p>
      * A Boolean value indicating whether the subscription is enabled.
      * <code>true</code> indicates the subscription is enabled.
-     *
-     * @return A Boolean value indicating whether the subscription is enabled.
-     *         <code>true</code> indicates the subscription is enabled.
+     * </p>
+     * 
+     * @param enabled
+     *        A Boolean value indicating whether the subscription is enabled.
+     *        <code>true</code> indicates the subscription is enabled.
      */
-    public Boolean isEnabled() {
-        return enabled;
-    }
-    
-    /**
-     * A Boolean value indicating whether the subscription is enabled.
-     * <code>true</code> indicates the subscription is enabled.
-     *
-     * @param enabled A Boolean value indicating whether the subscription is enabled.
-     *         <code>true</code> indicates the subscription is enabled.
-     */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
-    
+
     /**
+     * <p>
      * A Boolean value indicating whether the subscription is enabled.
      * <code>true</code> indicates the subscription is enabled.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param enabled A Boolean value indicating whether the subscription is enabled.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether the subscription is enabled.
      *         <code>true</code> indicates the subscription is enabled.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
+
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether the subscription is enabled.
+     * <code>true</code> indicates the subscription is enabled.
+     * </p>
+     * 
+     * @param enabled
+     *        A Boolean value indicating whether the subscription is enabled.
+     *        <code>true</code> indicates the subscription is enabled.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public EventSubscription withEnabled(Boolean enabled) {
-        this.enabled = enabled;
+        setEnabled(enabled);
         return this;
     }
 
     /**
+     * <p>
      * A Boolean value indicating whether the subscription is enabled.
      * <code>true</code> indicates the subscription is enabled.
-     *
+     * </p>
+     * 
      * @return A Boolean value indicating whether the subscription is enabled.
      *         <code>true</code> indicates the subscription is enabled.
      */
-    public Boolean getEnabled() {
-        return enabled;
+
+    public Boolean isEnabled() {
+        return this.enabled;
     }
 
     /**
+     * <p>
      * The list of tags for the event subscription.
-     *
+     * </p>
+     * 
      * @return The list of tags for the event subscription.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
-              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
-              tags.setAutoConstruct(true);
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
         }
         return tags;
     }
-    
+
     /**
+     * <p>
      * The list of tags for the event subscription.
-     *
-     * @param tags The list of tags for the event subscription.
+     * </p>
+     * 
+     * @param tags
+     *        The list of tags for the event subscription.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
-        tagsCopy.addAll(tags);
-        this.tags = tagsCopy;
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
     }
-    
+
     /**
+     * <p>
      * The list of tags for the event subscription.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or {@link
-     * #withTags(java.util.Collection)} if you want to override the existing
-     * values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tags The list of tags for the event subscription.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The list of tags for the event subscription.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public EventSubscription withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
-        for (Tag value : tags) {
-            getTags().add(value);
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
         }
         return this;
     }
-    
-    /**
-     * The list of tags for the event subscription.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tags The list of tags for the event subscription.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public EventSubscription withTags(java.util.Collection<Tag> tags) {
-        if (tags == null) {
-            this.tags = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
-            tagsCopy.addAll(tags);
-            this.tags = tagsCopy;
-        }
 
+    /**
+     * <p>
+     * The list of tags for the event subscription.
+     * </p>
+     * 
+     * @param tags
+     *        The list of tags for the event subscription.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public EventSubscription withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -688,86 +862,156 @@ public class EventSubscription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCustomerAwsId() != null) sb.append("CustomerAwsId: " + getCustomerAwsId() + ",");
-        if (getCustSubscriptionId() != null) sb.append("CustSubscriptionId: " + getCustSubscriptionId() + ",");
-        if (getSnsTopicArn() != null) sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
-        if (getSubscriptionCreationTime() != null) sb.append("SubscriptionCreationTime: " + getSubscriptionCreationTime() + ",");
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");
-        if (getSourceIdsList() != null) sb.append("SourceIdsList: " + getSourceIdsList() + ",");
-        if (getEventCategoriesList() != null) sb.append("EventCategoriesList: " + getEventCategoriesList() + ",");
-        if (getSeverity() != null) sb.append("Severity: " + getSeverity() + ",");
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getCustomerAwsId() != null)
+            sb.append("CustomerAwsId: " + getCustomerAwsId() + ",");
+        if (getCustSubscriptionId() != null)
+            sb.append("CustSubscriptionId: " + getCustSubscriptionId() + ",");
+        if (getSnsTopicArn() != null)
+            sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus() + ",");
+        if (getSubscriptionCreationTime() != null)
+            sb.append("SubscriptionCreationTime: "
+                    + getSubscriptionCreationTime() + ",");
+        if (getSourceType() != null)
+            sb.append("SourceType: " + getSourceType() + ",");
+        if (getSourceIdsList() != null)
+            sb.append("SourceIdsList: " + getSourceIdsList() + ",");
+        if (getEventCategoriesList() != null)
+            sb.append("EventCategoriesList: " + getEventCategoriesList() + ",");
+        if (getSeverity() != null)
+            sb.append("Severity: " + getSeverity() + ",");
+        if (getEnabled() != null)
+            sb.append("Enabled: " + getEnabled() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof EventSubscription == false)
+            return false;
+        EventSubscription other = (EventSubscription) obj;
+        if (other.getCustomerAwsId() == null ^ this.getCustomerAwsId() == null)
+            return false;
+        if (other.getCustomerAwsId() != null
+                && other.getCustomerAwsId().equals(this.getCustomerAwsId()) == false)
+            return false;
+        if (other.getCustSubscriptionId() == null
+                ^ this.getCustSubscriptionId() == null)
+            return false;
+        if (other.getCustSubscriptionId() != null
+                && other.getCustSubscriptionId().equals(
+                        this.getCustSubscriptionId()) == false)
+            return false;
+        if (other.getSnsTopicArn() == null ^ this.getSnsTopicArn() == null)
+            return false;
+        if (other.getSnsTopicArn() != null
+                && other.getSnsTopicArn().equals(this.getSnsTopicArn()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null
+                && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getSubscriptionCreationTime() == null
+                ^ this.getSubscriptionCreationTime() == null)
+            return false;
+        if (other.getSubscriptionCreationTime() != null
+                && other.getSubscriptionCreationTime().equals(
+                        this.getSubscriptionCreationTime()) == false)
+            return false;
+        if (other.getSourceType() == null ^ this.getSourceType() == null)
+            return false;
+        if (other.getSourceType() != null
+                && other.getSourceType().equals(this.getSourceType()) == false)
+            return false;
+        if (other.getSourceIdsList() == null ^ this.getSourceIdsList() == null)
+            return false;
+        if (other.getSourceIdsList() != null
+                && other.getSourceIdsList().equals(this.getSourceIdsList()) == false)
+            return false;
+        if (other.getEventCategoriesList() == null
+                ^ this.getEventCategoriesList() == null)
+            return false;
+        if (other.getEventCategoriesList() != null
+                && other.getEventCategoriesList().equals(
+                        this.getEventCategoriesList()) == false)
+            return false;
+        if (other.getSeverity() == null ^ this.getSeverity() == null)
+            return false;
+        if (other.getSeverity() != null
+                && other.getSeverity().equals(this.getSeverity()) == false)
+            return false;
+        if (other.getEnabled() == null ^ this.getEnabled() == null)
+            return false;
+        if (other.getEnabled() != null
+                && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null
+                && other.getTags().equals(this.getTags()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getCustomerAwsId() == null) ? 0 : getCustomerAwsId().hashCode()); 
-        hashCode = prime * hashCode + ((getCustSubscriptionId() == null) ? 0 : getCustSubscriptionId().hashCode()); 
-        hashCode = prime * hashCode + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode()); 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getSubscriptionCreationTime() == null) ? 0 : getSubscriptionCreationTime().hashCode()); 
-        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode()); 
-        hashCode = prime * hashCode + ((getSourceIdsList() == null) ? 0 : getSourceIdsList().hashCode()); 
-        hashCode = prime * hashCode + ((getEventCategoriesList() == null) ? 0 : getEventCategoriesList().hashCode()); 
-        hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode()); 
-        hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getCustomerAwsId() == null) ? 0 : getCustomerAwsId()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCustSubscriptionId() == null) ? 0
+                        : getCustSubscriptionId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
+        hashCode = prime * hashCode
+                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSubscriptionCreationTime() == null) ? 0
+                        : getSubscriptionCreationTime().hashCode());
+        hashCode = prime * hashCode
+                + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSourceIdsList() == null) ? 0 : getSourceIdsList()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEventCategoriesList() == null) ? 0
+                        : getEventCategoriesList().hashCode());
+        hashCode = prime * hashCode
+                + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
+        hashCode = prime * hashCode
+                + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode
+                + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof EventSubscription == false) return false;
-        EventSubscription other = (EventSubscription)obj;
-        
-        if (other.getCustomerAwsId() == null ^ this.getCustomerAwsId() == null) return false;
-        if (other.getCustomerAwsId() != null && other.getCustomerAwsId().equals(this.getCustomerAwsId()) == false) return false; 
-        if (other.getCustSubscriptionId() == null ^ this.getCustSubscriptionId() == null) return false;
-        if (other.getCustSubscriptionId() != null && other.getCustSubscriptionId().equals(this.getCustSubscriptionId()) == false) return false; 
-        if (other.getSnsTopicArn() == null ^ this.getSnsTopicArn() == null) return false;
-        if (other.getSnsTopicArn() != null && other.getSnsTopicArn().equals(this.getSnsTopicArn()) == false) return false; 
-        if (other.getStatus() == null ^ this.getStatus() == null) return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
-        if (other.getSubscriptionCreationTime() == null ^ this.getSubscriptionCreationTime() == null) return false;
-        if (other.getSubscriptionCreationTime() != null && other.getSubscriptionCreationTime().equals(this.getSubscriptionCreationTime()) == false) return false; 
-        if (other.getSourceType() == null ^ this.getSourceType() == null) return false;
-        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false) return false; 
-        if (other.getSourceIdsList() == null ^ this.getSourceIdsList() == null) return false;
-        if (other.getSourceIdsList() != null && other.getSourceIdsList().equals(this.getSourceIdsList()) == false) return false; 
-        if (other.getEventCategoriesList() == null ^ this.getEventCategoriesList() == null) return false;
-        if (other.getEventCategoriesList() != null && other.getEventCategoriesList().equals(this.getEventCategoriesList()) == false) return false; 
-        if (other.getSeverity() == null ^ this.getSeverity() == null) return false;
-        if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false) return false; 
-        if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
-        if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
-        if (other.getTags() == null ^ this.getTags() == null) return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public EventSubscription clone() {
         try {
             return (EventSubscription) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

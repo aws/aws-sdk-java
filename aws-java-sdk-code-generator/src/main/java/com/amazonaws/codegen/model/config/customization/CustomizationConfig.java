@@ -140,6 +140,12 @@ public class CustomizationConfig {
     private Map<String, ShapeModifier> shapeModifiers;
 
     /**
+     * Sets the custom field name that identifies the type of modeled exception for JSON protocols.
+     * Normally this is '__type' but Glacier has a custom error code field named simply 'code'.
+     */
+    private String customErrorCodeFieldName;
+
+    /**
      * Customization to use the actual shape name of output shapes (as defined in the service model)
      * to name the corresponding Java class. Normally we derive a new name using the operation name
      * (i.e. PutFooResult). This is currently only exercised by SWF and mainly to preserve backwards
@@ -353,6 +359,14 @@ public class CustomizationConfig {
 
     public void setCustomServiceMetadata(MetadataConfig metadataConfig) {
         this.customServiceMetadata = metadataConfig;
+    }
+
+    public String getCustomErrorCodeFieldName() {
+        return customErrorCodeFieldName;
+    }
+
+    public void setCustomErrorCodeFieldName(String customErrorCodeFieldName) {
+        this.customErrorCodeFieldName = customErrorCodeFieldName;
     }
 
     public boolean useModeledOutputShapeNames() {

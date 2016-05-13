@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateReplicationSubnetGroupRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class CreateReplicationSubnetGroupRequestMarshaller
         implements
         Marshaller<Request<CreateReplicationSubnetGroupRequest>, CreateReplicationSubnetGroupRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateReplicationSubnetGroupRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateReplicationSubnetGroupRequest> marshall(
             CreateReplicationSubnetGroupRequest createReplicationSubnetGroupRequest) {
@@ -60,8 +67,8 @@ public class CreateReplicationSubnetGroupRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

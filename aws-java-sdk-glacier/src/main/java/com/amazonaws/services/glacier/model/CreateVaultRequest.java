@@ -1,118 +1,86 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#createVault(CreateVaultRequest) CreateVault operation}.
  * <p>
- * This operation creates a new vault with the specified name. The name
- * of the vault must be unique within a region for an AWS account. You
- * can create up to 1,000 vaults per account. If you need to create more
- * vaults, contact Amazon Glacier.
+ * Provides options to create a vault.
  * </p>
- * <p>
- * You must use the following guidelines when naming a vault.
- * </p>
- * <p>
- * 
- * <ul>
- * <li> <p>
- * Names can be between 1 and 255 characters long.
- * </p>
- * </li>
- * <li> <p>
- * Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen),
- * and '.' (period).
- * </p>
- * </li>
- * 
- * </ul>
- * 
- * </p>
- * <p>
- * This operation is idempotent.
- * </p>
- * <p>
- * An AWS account has full permission to perform all operations
- * (actions). However, AWS Identity and Access Management (IAM) users
- * don't have any permissions by default. You must grant them explicit
- * permission to perform specific actions. For more information, see
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and Access Management (IAM) </a>
- * .
- * </p>
- * <p>
- * For conceptual information and underlying REST API, go to
- * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html"> Creating a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html"> Create Vault </a>
- * in the <i>Amazon Glacier Developer Guide</i> .
- * 
- * </p>
- *
- * @see com.amazonaws.services.glacier.AmazonGlacier#createVault(CreateVaultRequest)
  */
-public class CreateVaultRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CreateVaultRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The <code>AccountId</code> value is the AWS account ID. This value
-     * must match the AWS account ID associated with the credentials used to
-     * sign the request. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your account ID, do not include
-     * any hyphens ('-') in the ID.
+     * <p>
+     * The <code>AccountId</code> value is the AWS account ID. This value must
+     * match the AWS account ID associated with the credentials used to sign the
+     * request. You can either specify an AWS account ID or optionally a single
+     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request.
+     * If you specify your account ID, do not include any hyphens (apos-apos) in
+     * the ID.
+     * </p>
      */
     private String accountId;
-
     /**
+     * <p>
      * The name of the vault.
+     * </p>
      */
     private String vaultName;
 
     /**
-     * Default constructor for a new CreateVaultRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for CreateVaultRequest object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize the object after
+     * creating it.
      */
-    public CreateVaultRequest() {}
-    
+    public CreateVaultRequest() {
+    }
+
     /**
-     * Constructs a new CreateVaultRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new CreateVaultRequest object. Callers should use the setter
+     * or fluent setter (with...) methods to initialize any additional object
+     * members.
      * 
-     * @param vaultName The name of the vault.
+     * @param vaultName
+     *        The name of the vault.
      */
     public CreateVaultRequest(String vaultName) {
         setVaultName(vaultName);
     }
 
     /**
-     * Constructs a new CreateVaultRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new CreateVaultRequest object. Callers should use the setter
+     * or fluent setter (with...) methods to initialize any additional object
+     * members.
      * 
-     * @param accountId The <code>AccountId</code> value is the AWS account
-     * ID. This value must match the AWS account ID associated with the
-     * credentials used to sign the request. You can either specify an AWS
-     * account ID or optionally a single '<code>-</code>' (hyphen), in which
-     * case Amazon Glacier uses the AWS account ID associated with the
-     * credentials used to sign the request. If you specify your account ID,
-     * do not include any hyphens ('-') in the ID.
-     * @param vaultName The name of the vault.
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID. This value
+     *        must match the AWS account ID associated with the credentials used
+     *        to sign the request. You can either specify an AWS account ID or
+     *        optionally a single apos<code>-</code>apos (hyphen), in which case
+     *        Amazon Glacier uses the AWS account ID associated with the
+     *        credentials used to sign the request. If you specify your account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
+     * @param vaultName
+     *        The name of the vault.
      */
     public CreateVaultRequest(String accountId, String vaultName) {
         setAccountId(accountId);
@@ -120,104 +88,121 @@ public class CreateVaultRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The <code>AccountId</code> value is the AWS account ID. This value
-     * must match the AWS account ID associated with the credentials used to
-     * sign the request. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your account ID, do not include
-     * any hyphens ('-') in the ID.
-     *
-     * @return The <code>AccountId</code> value is the AWS account ID. This value
-     *         must match the AWS account ID associated with the credentials used to
-     *         sign the request. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your account ID, do not include
-     *         any hyphens ('-') in the ID.
+     * <p>
+     * The <code>AccountId</code> value is the AWS account ID. This value must
+     * match the AWS account ID associated with the credentials used to sign the
+     * request. You can either specify an AWS account ID or optionally a single
+     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request.
+     * If you specify your account ID, do not include any hyphens (apos-apos) in
+     * the ID.
+     * </p>
+     * 
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID. This value
+     *        must match the AWS account ID associated with the credentials used
+     *        to sign the request. You can either specify an AWS account ID or
+     *        optionally a single apos<code>-</code>apos (hyphen), in which case
+     *        Amazon Glacier uses the AWS account ID associated with the
+     *        credentials used to sign the request. If you specify your account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
      */
-    public String getAccountId() {
-        return accountId;
-    }
-    
-    /**
-     * The <code>AccountId</code> value is the AWS account ID. This value
-     * must match the AWS account ID associated with the credentials used to
-     * sign the request. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your account ID, do not include
-     * any hyphens ('-') in the ID.
-     *
-     * @param accountId The <code>AccountId</code> value is the AWS account ID. This value
-     *         must match the AWS account ID associated with the credentials used to
-     *         sign the request. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your account ID, do not include
-     *         any hyphens ('-') in the ID.
-     */
+
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
-    
+
     /**
-     * The <code>AccountId</code> value is the AWS account ID. This value
-     * must match the AWS account ID associated with the credentials used to
-     * sign the request. You can either specify an AWS account ID or
-     * optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     * Glacier uses the AWS account ID associated with the credentials used
-     * to sign the request. If you specify your account ID, do not include
-     * any hyphens ('-') in the ID.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param accountId The <code>AccountId</code> value is the AWS account ID. This value
-     *         must match the AWS account ID associated with the credentials used to
-     *         sign the request. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used
-     *         to sign the request. If you specify your account ID, do not include
-     *         any hyphens ('-') in the ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The <code>AccountId</code> value is the AWS account ID. This value must
+     * match the AWS account ID associated with the credentials used to sign the
+     * request. You can either specify an AWS account ID or optionally a single
+     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request.
+     * If you specify your account ID, do not include any hyphens (apos-apos) in
+     * the ID.
+     * </p>
+     * 
+     * @return The <code>AccountId</code> value is the AWS account ID. This
+     *         value must match the AWS account ID associated with the
+     *         credentials used to sign the request. You can either specify an
+     *         AWS account ID or optionally a single apos<code>-</code>apos
+     *         (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *         associated with the credentials used to sign the request. If you
+     *         specify your account ID, do not include any hyphens (apos-apos)
+     *         in the ID.
      */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The <code>AccountId</code> value is the AWS account ID. This value must
+     * match the AWS account ID associated with the credentials used to sign the
+     * request. You can either specify an AWS account ID or optionally a single
+     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
+     * AWS account ID associated with the credentials used to sign the request.
+     * If you specify your account ID, do not include any hyphens (apos-apos) in
+     * the ID.
+     * </p>
+     * 
+     * @param accountId
+     *        The <code>AccountId</code> value is the AWS account ID. This value
+     *        must match the AWS account ID associated with the credentials used
+     *        to sign the request. You can either specify an AWS account ID or
+     *        optionally a single apos<code>-</code>apos (hyphen), in which case
+     *        Amazon Glacier uses the AWS account ID associated with the
+     *        credentials used to sign the request. If you specify your account
+     *        ID, do not include any hyphens (apos-apos) in the ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public CreateVaultRequest withAccountId(String accountId) {
-        this.accountId = accountId;
+        setAccountId(accountId);
         return this;
     }
 
     /**
+     * <p>
      * The name of the vault.
-     *
-     * @return The name of the vault.
+     * </p>
+     * 
+     * @param vaultName
+     *        The name of the vault.
      */
-    public String getVaultName() {
-        return vaultName;
-    }
-    
-    /**
-     * The name of the vault.
-     *
-     * @param vaultName The name of the vault.
-     */
+
     public void setVaultName(String vaultName) {
         this.vaultName = vaultName;
     }
-    
+
     /**
-     * The name of the vault.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param vaultName The name of the vault.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the vault.
+     * </p>
+     * 
+     * @return The name of the vault.
      */
+
+    public String getVaultName() {
+        return this.vaultName;
+    }
+
+    /**
+     * <p>
+     * The name of the vault.
+     * </p>
+     * 
+     * @param vaultName
+     *        The name of the vault.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public CreateVaultRequest withVaultName(String vaultName) {
-        this.vaultName = vaultName;
+        setVaultName(vaultName);
         return this;
     }
 
@@ -233,42 +218,51 @@ public class CreateVaultRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() );
+        if (getAccountId() != null)
+            sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null)
+            sb.append("VaultName: " + getVaultName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateVaultRequest == false)
+            return false;
+        CreateVaultRequest other = (CreateVaultRequest) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null
+                && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
+        if (other.getVaultName() == null ^ this.getVaultName() == null)
+            return false;
+        if (other.getVaultName() != null
+                && other.getVaultName().equals(this.getVaultName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode()); 
-        hashCode = prime * hashCode + ((getVaultName() == null) ? 0 : getVaultName().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode
+                + ((getVaultName() == null) ? 0 : getVaultName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateVaultRequest == false) return false;
-        CreateVaultRequest other = (CreateVaultRequest)obj;
-        
-        if (other.getAccountId() == null ^ this.getAccountId() == null) return false;
-        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false) return false; 
-        if (other.getVaultName() == null ^ this.getVaultName() == null) return false;
-        if (other.getVaultName() != null && other.getVaultName().equals(this.getVaultName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateVaultRequest clone() {
-        
-            return (CreateVaultRequest) super.clone();
+        return (CreateVaultRequest) super.clone();
     }
-
 }
-    

@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -99,10 +99,164 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all Config Service exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceInUseException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "NoAvailableDeliveryChannelException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.NoAvailableDeliveryChannelException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidResultTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidResultTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidParameterValueException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidParameterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidLimitException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidLimitException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidConfigurationRecorderNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MaxNumberOfConfigurationRecordersExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "LastDeliveryChannelDeleteFailedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ValidationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.ValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNextTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidS3KeyPrefixException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidS3KeyPrefixException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "NoSuchConfigurationRecorderException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.NoSuchConfigurationRecorderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidTimeRangeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidTimeRangeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidSNSTopicARNException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidSNSTopicARNException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "NoAvailableConfigurationRecorderException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.NoAvailableConfigurationRecorderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRecordingGroupException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidRecordingGroupException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "NoSuchDeliveryChannelException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.NoSuchDeliveryChannelException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MaxNumberOfConfigRulesExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NoSuchConfigRuleException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.NoSuchConfigRuleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MaxNumberOfDeliveryChannelsExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidRoleException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidRoleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InsufficientPermissionsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InsufficientPermissionsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ResourceNotDiscoveredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.ResourceNotDiscoveredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidDeliveryChannelNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidDeliveryChannelNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InsufficientDeliveryPolicyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InsufficientDeliveryPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "NoRunningConfigurationRecorderException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.NoRunningConfigurationRecorderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NoSuchBucketException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.NoSuchBucketException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Config Service. A
@@ -258,115 +412,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.ResourceInUseException.class,
-                        "ResourceInUseException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.NoAvailableDeliveryChannelException.class,
-                        "NoAvailableDeliveryChannelException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InvalidResultTokenException.class,
-                        "InvalidResultTokenException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InvalidParameterValueException.class,
-                        "InvalidParameterValueException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InvalidLimitException.class,
-                        "InvalidLimitException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException.class,
-                        "InvalidConfigurationRecorderNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException.class,
-                        "MaxNumberOfConfigurationRecordersExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException.class,
-                        "LastDeliveryChannelDeleteFailedException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.config.model.ValidationException.class,
-                "ValidationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InvalidNextTokenException.class,
-                        "InvalidNextTokenException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InvalidS3KeyPrefixException.class,
-                        "InvalidS3KeyPrefixException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.NoSuchConfigurationRecorderException.class,
-                        "NoSuchConfigurationRecorderException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InvalidTimeRangeException.class,
-                        "InvalidTimeRangeException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InvalidSNSTopicARNException.class,
-                        "InvalidSNSTopicARNException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.NoAvailableConfigurationRecorderException.class,
-                        "NoAvailableConfigurationRecorderException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InvalidRecordingGroupException.class,
-                        "InvalidRecordingGroupException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.NoSuchDeliveryChannelException.class,
-                        "NoSuchDeliveryChannelException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException.class,
-                        "MaxNumberOfConfigRulesExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.NoSuchConfigRuleException.class,
-                        "NoSuchConfigRuleException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException.class,
-                        "MaxNumberOfDeliveryChannelsExceededException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.config.model.InvalidRoleException.class,
-                "InvalidRoleException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InsufficientPermissionsException.class,
-                        "InsufficientPermissionsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.ResourceNotDiscoveredException.class,
-                        "ResourceNotDiscoveredException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InvalidDeliveryChannelNameException.class,
-                        "InvalidDeliveryChannelNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.InsufficientDeliveryPolicyException.class,
-                        "InsufficientDeliveryPolicyException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.NoRunningConfigurationRecorderException.class,
-                        "NoRunningConfigurationRecorderException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.config.model.NoSuchBucketException.class,
-                        "NoSuchBucketException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -397,6 +442,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteConfigRuleRequest
+     * @return Result of the DeleteConfigRule operation returned by the service.
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify
      *         that the rule names are correct and try again.
@@ -406,18 +452,19 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * @sample AmazonConfig.DeleteConfigRule
      */
     @Override
-    public void deleteConfigRule(DeleteConfigRuleRequest deleteConfigRuleRequest) {
+    public DeleteConfigRuleResult deleteConfigRule(
+            DeleteConfigRuleRequest deleteConfigRuleRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteConfigRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteConfigRuleRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteConfigRuleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteConfigRuleRequestMarshaller()
+                request = new DeleteConfigRuleRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(deleteConfigRuleRequest));
                 // Binds the request metrics to the current request.
@@ -426,10 +473,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteConfigRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteConfigRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -451,6 +502,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * @param deleteDeliveryChannelRequest
      *        The input for the <a>DeleteDeliveryChannel</a> action. The action
      *        accepts the following data in JSON format.
+     * @return Result of the DeleteDeliveryChannel operation returned by the
+     *         service.
      * @throws NoSuchDeliveryChannelException
      *         You have specified a delivery channel that does not exist.
      * @throws LastDeliveryChannelDeleteFailedException
@@ -459,31 +512,35 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * @sample AmazonConfig.DeleteDeliveryChannel
      */
     @Override
-    public void deleteDeliveryChannel(
+    public DeleteDeliveryChannelResult deleteDeliveryChannel(
             DeleteDeliveryChannelRequest deleteDeliveryChannelRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteDeliveryChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteDeliveryChannelRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteDeliveryChannelResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDeliveryChannelRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteDeliveryChannelRequest));
+                request = new DeleteDeliveryChannelRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDeliveryChannelResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteDeliveryChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -533,20 +590,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeliverConfigSnapshotRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deliverConfigSnapshotRequest));
+                request = new DeliverConfigSnapshotRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deliverConfigSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeliverConfigSnapshotResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DeliverConfigSnapshotResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeliverConfigSnapshotResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeliverConfigSnapshotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -612,7 +669,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeComplianceByConfigRuleRequestMarshaller()
+                request = new DescribeComplianceByConfigRuleRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeComplianceByConfigRuleRequest));
                 // Binds the request metrics to the current request.
@@ -621,11 +679,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeComplianceByConfigRuleResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeComplianceByConfigRuleResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeComplianceByConfigRuleResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeComplianceByConfigRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -698,7 +756,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeComplianceByResourceRequestMarshaller()
+                request = new DescribeComplianceByResourceRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeComplianceByResourceRequest));
                 // Binds the request metrics to the current request.
@@ -707,11 +766,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeComplianceByResourceResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeComplianceByResourceResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeComplianceByResourceResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeComplianceByResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -756,7 +815,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigRuleEvaluationStatusRequestMarshaller()
+                request = new DescribeConfigRuleEvaluationStatusRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeConfigRuleEvaluationStatusRequest));
                 // Binds the request metrics to the current request.
@@ -765,11 +825,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeConfigRuleEvaluationStatusResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigRuleEvaluationStatusResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeConfigRuleEvaluationStatusResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeConfigRuleEvaluationStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -811,20 +871,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigRulesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeConfigRulesRequest));
+                request = new DescribeConfigRulesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeConfigRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeConfigRulesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeConfigRulesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigRulesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeConfigRulesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -871,7 +931,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigurationRecorderStatusRequestMarshaller()
+                request = new DescribeConfigurationRecorderStatusRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeConfigurationRecorderStatusRequest));
                 // Binds the request metrics to the current request.
@@ -880,11 +941,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeConfigurationRecorderStatusResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigurationRecorderStatusResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeConfigurationRecorderStatusResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeConfigurationRecorderStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -933,7 +994,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigurationRecordersRequestMarshaller()
+                request = new DescribeConfigurationRecordersRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeConfigurationRecordersRequest));
                 // Binds the request metrics to the current request.
@@ -942,11 +1004,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeConfigurationRecordersResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigurationRecordersResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeConfigurationRecordersResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeConfigurationRecordersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -992,7 +1054,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDeliveryChannelStatusRequestMarshaller()
+                request = new DescribeDeliveryChannelStatusRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeDeliveryChannelStatusRequest));
                 // Binds the request metrics to the current request.
@@ -1001,11 +1064,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeDeliveryChannelStatusResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDeliveryChannelStatusResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeDeliveryChannelStatusResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeDeliveryChannelStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1054,20 +1117,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDeliveryChannelsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeDeliveryChannelsRequest));
+                request = new DescribeDeliveryChannelsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeDeliveryChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeDeliveryChannelsResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDeliveryChannelsResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeDeliveryChannelsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeDeliveryChannelsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1119,7 +1182,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetComplianceDetailsByConfigRuleRequestMarshaller()
+                request = new GetComplianceDetailsByConfigRuleRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(getComplianceDetailsByConfigRuleRequest));
                 // Binds the request metrics to the current request.
@@ -1128,11 +1192,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetComplianceDetailsByConfigRuleResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<GetComplianceDetailsByConfigRuleResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new GetComplianceDetailsByConfigRuleResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GetComplianceDetailsByConfigRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1172,7 +1236,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetComplianceDetailsByResourceRequestMarshaller()
+                request = new GetComplianceDetailsByResourceRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(getComplianceDetailsByResourceRequest));
                 // Binds the request metrics to the current request.
@@ -1181,11 +1246,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetComplianceDetailsByResourceResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<GetComplianceDetailsByResourceResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new GetComplianceDetailsByResourceResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GetComplianceDetailsByResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1220,7 +1285,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetComplianceSummaryByConfigRuleRequestMarshaller()
+                request = new GetComplianceSummaryByConfigRuleRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(getComplianceSummaryByConfigRuleRequest));
                 // Binds the request metrics to the current request.
@@ -1229,11 +1295,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetComplianceSummaryByConfigRuleResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<GetComplianceSummaryByConfigRuleResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new GetComplianceSummaryByConfigRuleResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GetComplianceSummaryByConfigRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1277,7 +1343,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetComplianceSummaryByResourceTypeRequestMarshaller()
+                request = new GetComplianceSummaryByResourceTypeRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(getComplianceSummaryByResourceTypeRequest));
                 // Binds the request metrics to the current request.
@@ -1286,11 +1353,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetComplianceSummaryByResourceTypeResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<GetComplianceSummaryByResourceTypeResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new GetComplianceSummaryByResourceTypeResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GetComplianceSummaryByResourceTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1366,20 +1433,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetResourceConfigHistoryRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getResourceConfigHistoryRequest));
+                request = new GetResourceConfigHistoryRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getResourceConfigHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetResourceConfigHistoryResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourceConfigHistoryResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new GetResourceConfigHistoryResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GetResourceConfigHistoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1441,20 +1508,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDiscoveredResourcesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listDiscoveredResourcesRequest));
+                request = new ListDiscoveredResourcesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listDiscoveredResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDiscoveredResourcesResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListDiscoveredResourcesResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListDiscoveredResourcesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListDiscoveredResourcesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1518,6 +1585,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * <p/>
      * 
      * @param putConfigRuleRequest
+     * @return Result of the PutConfigRule operation returned by the service.
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that
      *         your parameters are valid and try again.
@@ -1539,29 +1607,34 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * @sample AmazonConfig.PutConfigRule
      */
     @Override
-    public void putConfigRule(PutConfigRuleRequest putConfigRuleRequest) {
+    public PutConfigRuleResult putConfigRule(
+            PutConfigRuleRequest putConfigRuleRequest) {
         ExecutionContext executionContext = createExecutionContext(putConfigRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutConfigRuleRequest> request = null;
-        Response<Void> response = null;
+        Response<PutConfigRuleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutConfigRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(putConfigRuleRequest));
+                request = new PutConfigRuleRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(putConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutConfigRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutConfigRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1593,6 +1666,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * 
      * @param putConfigurationRecorderRequest
      *        The input for the <a>PutConfigurationRecorder</a> action.
+     * @return Result of the PutConfigurationRecorder operation returned by the
+     *         service.
      * @throws MaxNumberOfConfigurationRecordersExceededException
      *         You have reached the limit on the number of recorders you can
      *         create.
@@ -1608,31 +1683,35 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * @sample AmazonConfig.PutConfigurationRecorder
      */
     @Override
-    public void putConfigurationRecorder(
+    public PutConfigurationRecorderResult putConfigurationRecorder(
             PutConfigurationRecorderRequest putConfigurationRecorderRequest) {
         ExecutionContext executionContext = createExecutionContext(putConfigurationRecorderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutConfigurationRecorderRequest> request = null;
-        Response<Void> response = null;
+        Response<PutConfigurationRecorderResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutConfigurationRecorderRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putConfigurationRecorderRequest));
+                request = new PutConfigurationRecorderRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutConfigurationRecorderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new PutConfigurationRecorderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1661,6 +1740,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * 
      * @param putDeliveryChannelRequest
      *        The input for the <a>PutDeliveryChannel</a> action.
+     * @return Result of the PutDeliveryChannel operation returned by the
+     *         service.
      * @throws MaxNumberOfDeliveryChannelsExceededException
      *         You have reached the limit on the number of delivery channels you
      *         can create.
@@ -1682,31 +1763,35 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * @sample AmazonConfig.PutDeliveryChannel
      */
     @Override
-    public void putDeliveryChannel(
+    public PutDeliveryChannelResult putDeliveryChannel(
             PutDeliveryChannelRequest putDeliveryChannelRequest) {
         ExecutionContext executionContext = createExecutionContext(putDeliveryChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutDeliveryChannelRequest> request = null;
-        Response<Void> response = null;
+        Response<PutDeliveryChannelResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutDeliveryChannelRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putDeliveryChannelRequest));
+                request = new PutDeliveryChannelRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutDeliveryChannelResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutDeliveryChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1746,18 +1831,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutEvaluationsRequestMarshaller().marshall(super
-                        .beforeMarshalling(putEvaluationsRequest));
+                request = new PutEvaluationsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(putEvaluationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutEvaluationsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new PutEvaluationsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutEvaluationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutEvaluationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1780,6 +1867,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * 
      * @param startConfigurationRecorderRequest
      *        The input for the <a>StartConfigurationRecorder</a> action.
+     * @return Result of the StartConfigurationRecorder operation returned by
+     *         the service.
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @throws NoAvailableDeliveryChannelException
@@ -1787,31 +1876,35 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * @sample AmazonConfig.StartConfigurationRecorder
      */
     @Override
-    public void startConfigurationRecorder(
+    public StartConfigurationRecorderResult startConfigurationRecorder(
             StartConfigurationRecorderRequest startConfigurationRecorderRequest) {
         ExecutionContext executionContext = createExecutionContext(startConfigurationRecorderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StartConfigurationRecorderRequest> request = null;
-        Response<Void> response = null;
+        Response<StartConfigurationRecorderResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartConfigurationRecorderRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(startConfigurationRecorderRequest));
+                request = new StartConfigurationRecorderRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(startConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<StartConfigurationRecorderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new StartConfigurationRecorderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1829,36 +1922,42 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      *        <p>
      *        The input for the <a>StopConfigurationRecorder</a> action.
      *        </p>
+     * @return Result of the StopConfigurationRecorder operation returned by the
+     *         service.
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @sample AmazonConfig.StopConfigurationRecorder
      */
     @Override
-    public void stopConfigurationRecorder(
+    public StopConfigurationRecorderResult stopConfigurationRecorder(
             StopConfigurationRecorderRequest stopConfigurationRecorderRequest) {
         ExecutionContext executionContext = createExecutionContext(stopConfigurationRecorderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StopConfigurationRecorderRequest> request = null;
-        Response<Void> response = null;
+        Response<StopConfigurationRecorderResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopConfigurationRecorderRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(stopConfigurationRecorderRequest));
+                request = new StopConfigurationRecorderRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(stopConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<StopConfigurationRecorderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new StopConfigurationRecorderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1929,8 +2028,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

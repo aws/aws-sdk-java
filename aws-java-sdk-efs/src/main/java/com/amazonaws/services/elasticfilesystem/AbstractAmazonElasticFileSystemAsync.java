@@ -60,61 +60,61 @@ public class AbstractAmazonElasticFileSystemAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createTagsAsync(
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
             CreateTagsRequest request) {
 
         return createTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createTagsAsync(
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
             CreateTagsRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteFileSystemAsync(
+    public java.util.concurrent.Future<DeleteFileSystemResult> deleteFileSystemAsync(
             DeleteFileSystemRequest request) {
 
         return deleteFileSystemAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteFileSystemAsync(
+    public java.util.concurrent.Future<DeleteFileSystemResult> deleteFileSystemAsync(
             DeleteFileSystemRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteFileSystemRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteFileSystemRequest, DeleteFileSystemResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMountTargetAsync(
+    public java.util.concurrent.Future<DeleteMountTargetResult> deleteMountTargetAsync(
             DeleteMountTargetRequest request) {
 
         return deleteMountTargetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMountTargetAsync(
+    public java.util.concurrent.Future<DeleteMountTargetResult> deleteMountTargetAsync(
             DeleteMountTargetRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteMountTargetRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteMountTargetRequest, DeleteMountTargetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTagsAsync(
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             DeleteTagsRequest request) {
 
         return deleteTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTagsAsync(
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             DeleteTagsRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -205,16 +205,16 @@ public class AbstractAmazonElasticFileSystemAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyMountTargetSecurityGroupsAsync(
+    public java.util.concurrent.Future<ModifyMountTargetSecurityGroupsResult> modifyMountTargetSecurityGroupsAsync(
             ModifyMountTargetSecurityGroupsRequest request) {
 
         return modifyMountTargetSecurityGroupsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyMountTargetSecurityGroupsAsync(
+    public java.util.concurrent.Future<ModifyMountTargetSecurityGroupsResult> modifyMountTargetSecurityGroupsAsync(
             ModifyMountTargetSecurityGroupsRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifyMountTargetSecurityGroupsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ModifyMountTargetSecurityGroupsRequest, ModifyMountTargetSecurityGroupsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

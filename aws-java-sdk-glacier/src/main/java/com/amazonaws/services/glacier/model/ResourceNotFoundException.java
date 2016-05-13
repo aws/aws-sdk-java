@@ -1,77 +1,138 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.glacier.model;
 
 import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned if the specified resource, such as a vault, upload ID, or job
- * ID, does not exist.
+ * Returned if the specified resource, such as a vault, upload ID, or job ID,
+ * does not exist.
  * </p>
- */        
+ */
 public class ResourceNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
-    
+
+    /**
+     * <p>
+     * Client
+     * </p>
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     private String type;
-    
+    /**
+     * <p>
+     * 404 Not Found
+     * </p>
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     private String code;
-    
+
     /**
      * Constructs a new ResourceNotFoundException with the specified error
      * message.
-     * 
-     * @param message Describes the error encountered.
+     *
+     * @param message
+     *        Describes the error encountered.
      */
     public ResourceNotFoundException(String message) {
         super(message);
     }
-    
+
     /**
-     * Returns the value of the Type property for this object.
-     *
-     * @return The value of the Type property for this object.         
+     * <p>
+     * Client
+     * </p>
+     * 
+     * @param type
+     *        Client
      */
-    public String getType() {
-        return type;
-    }
-        
-    /**
-     * Sets the value of the Type property for this object.
-     *
-     * @param type The new value for this object's Type property. 
-     */
+
     public void setType(String type) {
         this.type = type;
     }
+
     /**
-     * Returns the value of the Code property for this object.
-     *
-     * @return The value of the Code property for this object.         
+     * <p>
+     * Client
+     * </p>
+     * 
+     * @return Client
      */
-    public String getCode() {
-        return code;
+
+    public String getType() {
+        return this.type;
     }
-        
+
     /**
-     * Sets the value of the Code property for this object.
-     *
-     * @param code The new value for this object's Code property. 
+     * <p>
+     * Client
+     * </p>
+     * 
+     * @param type
+     *        Client
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
+    public ResourceNotFoundException withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * 404 Not Found
+     * </p>
+     * 
+     * @param code
+     *        404 Not Found
+     */
+
     public void setCode(String code) {
         this.code = code;
     }
+
+    /**
+     * <p>
+     * 404 Not Found
+     * </p>
+     * 
+     * @return 404 Not Found
+     */
+
+    public String getCode() {
+        return this.code;
+    }
+
+    /**
+     * <p>
+     * 404 Not Found
+     * </p>
+     * 
+     * @param code
+     *        404 Not Found
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ResourceNotFoundException withCode(String code) {
+        setCode(code);
+        return this;
+    }
+
 }
-    

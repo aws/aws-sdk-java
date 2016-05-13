@@ -210,16 +210,16 @@ public class AbstractAmazonCognitoSyncAsync extends AbstractAmazonCognitoSync
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setCognitoEventsAsync(
+    public java.util.concurrent.Future<SetCognitoEventsResult> setCognitoEventsAsync(
             SetCognitoEventsRequest request) {
 
         return setCognitoEventsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setCognitoEventsAsync(
+    public java.util.concurrent.Future<SetCognitoEventsResult> setCognitoEventsAsync(
             SetCognitoEventsRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetCognitoEventsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetCognitoEventsRequest, SetCognitoEventsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

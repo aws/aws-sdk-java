@@ -26,6 +26,7 @@ import com.amazonaws.codegen.model.intermediate.MemberModel;
 import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.ServiceExamples;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
+import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.naming.DefaultNamingStrategy;
 import com.amazonaws.codegen.naming.NamingStrategy;
@@ -76,6 +77,7 @@ public class IntermediateModelBuilder {
         processors.add(new AddExceptionShapes(this));
         processors.add(new AddModelShapes(this));
         processors.add(new AddEmptyInputShape(this));
+        processors.add(new AddEmptyOutputShape(this));
         return processors;
     }
 
@@ -118,6 +120,7 @@ public class IntermediateModelBuilder {
                                                                fullModel.getExamples());
 
         linkMembersToShapes(trimmedModel);
+        linkOperationsToInputOutputShapes(trimmedModel);
 
         return trimmedModel;
     }
@@ -135,6 +138,25 @@ public class IntermediateModelBuilder {
                             Utils.findShapeModelByC2jNameIfExists(model, member.getC2jShape()));
                 }
             }
+        }
+    }
+
+    private void linkOperationsToInputOutputShapes(IntermediateModel model) {
+        for (Map.Entry<String, OperationModel> entry : model.getOperations().entrySet()) {
+            Operation operation = service.getOperations().get(entry.getKey());
+            if (operation.getInput() != null) {
+                String inputShapeName = operation.getInput().getShape();
+                entry.getValue().setInputShape(model.getShapeByC2jName(inputShapeName));
+            }
+            if (operation.getOutput() != null) {
+                String outputShapeName = operation.getOutput().getShape();
+                // TODO need to figure this out for wrapper outputs.
+                // Not a problem right now because output is only referenced by JSON protocols
+                if (service.getShape(outputShapeName).isWrapper()) {
+                    entry.getValue().setOutputShape(model.getShapeByC2jName(outputShapeName));
+                }
+            }
+
         }
     }
 

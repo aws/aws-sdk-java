@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TestInvokeAuthorizerRequest Marshaller
@@ -48,7 +49,14 @@ public class TestInvokeAuthorizerRequestMarshaller
         implements
         Marshaller<Request<TestInvokeAuthorizerRequest>, TestInvokeAuthorizerRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public TestInvokeAuthorizerRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<TestInvokeAuthorizerRequest> marshall(
             TestInvokeAuthorizerRequest testInvokeAuthorizerRequest) {
@@ -68,20 +76,23 @@ public class TestInvokeAuthorizerRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{restapi_id}",
-                        (testInvokeAuthorizerRequest.getRestApiId() != null) ? StringUtils
-                                .fromString(testInvokeAuthorizerRequest
-                                        .getRestApiId()) : "");
+                        (testInvokeAuthorizerRequest.getRestApiId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(testInvokeAuthorizerRequest
+                                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath
                 .replace(
                         "{authorizer_id}",
-                        (testInvokeAuthorizerRequest.getAuthorizerId() != null) ? StringUtils
-                                .fromString(testInvokeAuthorizerRequest
-                                        .getAuthorizerId()) : "");
+                        (testInvokeAuthorizerRequest.getAuthorizerId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(testInvokeAuthorizerRequest
+                                                .getAuthorizerId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
-
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
             jsonGenerator.writeStartObject();
 
             java.util.Map<String, String> headersMap = testInvokeAuthorizerRequest

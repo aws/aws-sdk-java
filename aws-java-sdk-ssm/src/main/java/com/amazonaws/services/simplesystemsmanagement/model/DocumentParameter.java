@@ -19,7 +19,10 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Parameters specified in the SSM document that execute on the server when the
+ * command is run.
+ * </p>
  */
 public class DocumentParameter implements Serializable, Cloneable {
 

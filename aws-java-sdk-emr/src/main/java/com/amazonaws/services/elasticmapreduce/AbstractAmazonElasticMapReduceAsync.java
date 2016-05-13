@@ -247,16 +247,16 @@ public class AbstractAmazonElasticMapReduceAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyInstanceGroupsAsync(
+    public java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync(
             ModifyInstanceGroupsRequest request) {
 
         return modifyInstanceGroupsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> modifyInstanceGroupsAsync(
+    public java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync(
             ModifyInstanceGroupsRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, ModifyInstanceGroupsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -267,7 +267,7 @@ public class AbstractAmazonElasticMapReduceAsync extends
      * @see #modifyInstanceGroupsAsync(ModifyInstanceGroupsRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> modifyInstanceGroupsAsync() {
+    public java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync() {
 
         return modifyInstanceGroupsAsync(new ModifyInstanceGroupsRequest());
     }
@@ -279,8 +279,8 @@ public class AbstractAmazonElasticMapReduceAsync extends
      * @see #modifyInstanceGroupsAsync(ModifyInstanceGroupsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> modifyInstanceGroupsAsync(
-            com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync(
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, ModifyInstanceGroupsResult> asyncHandler) {
 
         return modifyInstanceGroupsAsync(new ModifyInstanceGroupsRequest(),
                 asyncHandler);
@@ -317,46 +317,46 @@ public class AbstractAmazonElasticMapReduceAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setTerminationProtectionAsync(
+    public java.util.concurrent.Future<SetTerminationProtectionResult> setTerminationProtectionAsync(
             SetTerminationProtectionRequest request) {
 
         return setTerminationProtectionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setTerminationProtectionAsync(
+    public java.util.concurrent.Future<SetTerminationProtectionResult> setTerminationProtectionAsync(
             SetTerminationProtectionRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetTerminationProtectionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetTerminationProtectionRequest, SetTerminationProtectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setVisibleToAllUsersAsync(
+    public java.util.concurrent.Future<SetVisibleToAllUsersResult> setVisibleToAllUsersAsync(
             SetVisibleToAllUsersRequest request) {
 
         return setVisibleToAllUsersAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setVisibleToAllUsersAsync(
+    public java.util.concurrent.Future<SetVisibleToAllUsersResult> setVisibleToAllUsersAsync(
             SetVisibleToAllUsersRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetVisibleToAllUsersRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetVisibleToAllUsersRequest, SetVisibleToAllUsersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> terminateJobFlowsAsync(
+    public java.util.concurrent.Future<TerminateJobFlowsResult> terminateJobFlowsAsync(
             TerminateJobFlowsRequest request) {
 
         return terminateJobFlowsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> terminateJobFlowsAsync(
+    public java.util.concurrent.Future<TerminateJobFlowsResult> terminateJobFlowsAsync(
             TerminateJobFlowsRequest request,
-            com.amazonaws.handlers.AsyncHandler<TerminateJobFlowsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<TerminateJobFlowsRequest, TerminateJobFlowsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

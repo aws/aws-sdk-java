@@ -32,7 +32,7 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeInstanceInformationRequest Marshaller
@@ -40,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DescribeInstanceInformationRequestMarshaller
         implements
         Marshaller<Request<DescribeInstanceInformationRequest>, DescribeInstanceInformationRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeInstanceInformationRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeInstanceInformationRequest> marshall(
             DescribeInstanceInformationRequest describeInstanceInformationRequest) {
@@ -60,8 +67,8 @@ public class DescribeInstanceInformationRequestMarshaller
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

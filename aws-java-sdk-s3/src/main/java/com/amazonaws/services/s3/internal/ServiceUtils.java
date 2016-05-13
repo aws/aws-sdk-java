@@ -19,7 +19,9 @@ package com.amazonaws.services.s3.internal;
 
 import static com.amazonaws.util.IOUtils.closeQuietly;
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.services.s3.internal.Constants.KB;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -41,21 +43,25 @@ import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
+import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
+import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.transfer.exception.FileLockException;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
-import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.Md5Utils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.ValidationUtils;
 
 /**
  * General utility methods used throughout the AWS S3 Java client.
  */
 public class ServiceUtils {
-    private static final Log log = LogFactory.getLog(ServiceUtils.class);
+    private static final Log LOG = LogFactory.getLog(ServiceUtils.class);
 
     public static final boolean APPEND_MODE = true;
 
@@ -154,7 +160,7 @@ public class ServiceUtils {
      *             If the request cannot be converted to a well formed URL.
      */
     public static URL convertRequestToUrl(Request<?> request, boolean removeLeadingSlashInResourcePath) {
-        String resourcePath = HttpUtils.urlEncode(request.getResourcePath(), true);
+        String resourcePath = SdkHttpUtils.urlEncode(request.getResourcePath(), true);
 
         // Removed the padding "/" that was already added into the request's resource path.
         if (removeLeadingSlashInResourcePath
@@ -180,7 +186,7 @@ public class ServiceUtils {
                         .append("&") : queryParams.append("?");
                 queryParams.append(entry.getKey())
                            .append("=")
-                           .append(HttpUtils.urlEncode(value, false));
+                           .append(SdkHttpUtils.urlEncode(value, false));
             }
         }
         url.append(queryParams.toString());
@@ -288,9 +294,9 @@ public class ServiceUtils {
             throw new AmazonClientException(
                     "Unable to store object contents to disk: " + e.getMessage(), e);
         } finally {
-            closeQuietly(outputStream, log);
+            closeQuietly(outputStream, LOG);
             FileLocks.unlock(dstfile);
-            closeQuietly(s3Object.getObjectContent(), log);
+            closeQuietly(s3Object.getObjectContent(), LOG);
         }
 
         if (performIntegrityCheck) {
@@ -303,7 +309,7 @@ public class ServiceUtils {
                     serverSideHash = BinaryUtils.fromHex(metadata.getETag());
                 }
             } catch (Exception e) {
-                log.warn("Unable to calculate MD5 hash to validate download: " + e.getMessage(), e);
+                LOG.warn("Unable to calculate MD5 hash to validate download: " + e.getMessage(), e);
             }
 
             if (clientSideHash != null && serverSideHash != null && !Arrays.equals(clientSideHash, serverSideHash)) {
@@ -384,13 +390,57 @@ public class ServiceUtils {
                         s3Object.getObjectContent().abort();
                         throw ace;
                     } else {
-                        log.info("Retry the download of object " + s3Object.getKey() + " (bucket " + s3Object.getBucketName() + ")", ace);
+                        LOG.info("Retry the download of object " + s3Object.getKey() + " (bucket " + s3Object.getBucketName() + ")", ace);
                         hasRetried = true;
                     }
                 }
             }
         } while ( needRetry );
         return s3Object;
+    }
+
+    /**
+     * Append the data in sourceFile to destinationFile.
+     *
+     * Note that the sourceFile is deleted after appending the data.
+     *
+     * @param sourceFile
+     *                 The file that is to be appended.
+     * @param destinationFile
+     *                 The file to append to.
+     */
+    public static void appendFile(File sourceFile, File destinationFile) {
+        ValidationUtils.assertNotNull(destinationFile, "destFile");
+        ValidationUtils.assertNotNull(sourceFile, "sourceFile");
+        if (!FileLocks.lock(sourceFile)) {
+            throw new FileLockException("Fail to lock " + sourceFile);
+        }
+        if (!FileLocks.lock(destinationFile)) {
+            throw new FileLockException("Fail to lock " + destinationFile);
+        }
+
+        BufferedInputStream in = null;
+        BufferedOutputStream out = null;
+        try {
+            in = new BufferedInputStream(new FileInputStream(sourceFile));
+            out = new BufferedOutputStream(new FileOutputStream(destinationFile, true));
+            byte[] buffer = new byte[4 * KB];
+            int length;
+            while ((length = in.read(buffer)) > 0) {
+                out.write(buffer, 0, length);
+            }
+        } catch (IOException e) {
+            throw new AmazonClientException("Unable to append file " + sourceFile.getAbsolutePath()
+                    + "to destination file " + destinationFile.getAbsolutePath() + "\n" + e.getMessage(), e);
+        } finally {
+            closeQuietly(out, LOG);
+            closeQuietly(in, LOG);
+            FileLocks.unlock(sourceFile);
+            FileLocks.unlock(destinationFile);
+            if (!sourceFile.delete()) {
+                LOG.warn("Failed to delete file " + sourceFile.getAbsolutePath());
+            }
+        }
     }
 
     public static boolean isS3USStandardEndpoint(String endpoint) {
@@ -408,5 +458,46 @@ public class ServiceUtils {
 
     public static boolean isS3AccelerateEndpoint(String endpoint) {
         return endpoint.endsWith(Constants.S3_ACCELERATE_HOSTNAME);
+    }
+
+    /**
+     * Returns the part count of the object represented by the getObjectRequest.
+     *
+     * @param getObjectRequest
+     * 					The request to check.
+     * @param s3
+     * 					The Amazon s3 client.
+     *
+     * @return  The number of parts in the object if it is multipart object, otherwise returns null.
+     */
+    public static Integer getPartCount(GetObjectRequest getObjectRequest, AmazonS3 s3) {
+        ValidationUtils.assertNotNull(s3, "S3 client");
+        ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
+
+        ObjectMetadata metadata = s3.getObjectMetadata(new GetObjectMetadataRequest(getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest.getVersionId())
+                .withPartNumber(1));
+        return metadata.getPartCount();
+    }
+
+    /**
+     * Returns the last byte number in a part of an object.
+     *
+     * @param s3
+     *             The Amazon s3 client.
+     * @param getObjectRequest
+     *             The request to check.
+     * @param partNumber
+     *             The part in which we need the last byte number.
+     * @return
+     *         The last byte number in the part.
+     */
+    public static long getLastByteInPart(AmazonS3 s3, GetObjectRequest getObjectRequest, Integer partNumber) {
+        ValidationUtils.assertNotNull(s3, "S3 client");
+        ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
+        ValidationUtils.assertNotNull(partNumber, "partNumber");
+
+        ObjectMetadata metadata = s3.getObjectMetadata(new GetObjectMetadataRequest(getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest.getVersionId())
+                .withPartNumber(partNumber));
+        return metadata.getContentRange()[1];
     }
 }

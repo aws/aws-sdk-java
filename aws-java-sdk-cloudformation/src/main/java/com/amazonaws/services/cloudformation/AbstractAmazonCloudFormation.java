@@ -39,7 +39,8 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
-    public void cancelUpdateStack(CancelUpdateStackRequest request) {
+    public CancelUpdateStackResult cancelUpdateStack(
+            CancelUpdateStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,7 +66,7 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
-    public void deleteStack(DeleteStackRequest request) {
+    public DeleteStackResult deleteStack(DeleteStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -169,12 +170,12 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
-    public void setStackPolicy(SetStackPolicyRequest request) {
+    public SetStackPolicyResult setStackPolicy(SetStackPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void signalResource(SignalResourceRequest request) {
+    public SignalResourceResult signalResource(SignalResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

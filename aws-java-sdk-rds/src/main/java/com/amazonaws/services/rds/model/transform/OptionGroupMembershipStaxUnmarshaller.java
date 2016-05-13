@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,6 +17,8 @@
 package com.amazonaws.services.rds.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -27,28 +30,37 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Option Group Membership StAX Unmarshaller
+ * OptionGroupMembership StAX Unmarshaller
  */
-public class OptionGroupMembershipStaxUnmarshaller implements Unmarshaller<OptionGroupMembership, StaxUnmarshallerContext> {
+public class OptionGroupMembershipStaxUnmarshaller implements
+        Unmarshaller<OptionGroupMembership, StaxUnmarshallerContext> {
 
-    public OptionGroupMembership unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public OptionGroupMembership unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         OptionGroupMembership optionGroupMembership = new OptionGroupMembership();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return optionGroupMembership;
+            if (xmlEvent.isEndDocument())
+                return optionGroupMembership;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("OptionGroupName", targetDepth)) {
-                    optionGroupMembership.setOptionGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    optionGroupMembership
+                            .setOptionGroupName(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("Status", targetDepth)) {
-                    optionGroupMembership.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    optionGroupMembership.setStatus(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -60,9 +72,10 @@ public class OptionGroupMembershipStaxUnmarshaller implements Unmarshaller<Optio
     }
 
     private static OptionGroupMembershipStaxUnmarshaller instance;
+
     public static OptionGroupMembershipStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new OptionGroupMembershipStaxUnmarshaller();
+        if (instance == null)
+            instance = new OptionGroupMembershipStaxUnmarshaller();
         return instance;
     }
 }
-    

@@ -14,8 +14,6 @@
  */
 package com.amazonaws.services.s3;
 
-import static com.amazonaws.SDKGlobalConfiguration.ENABLE_S3_SIGV4_SYSTEM_PROPERTY;
-import static com.amazonaws.SDKGlobalConfiguration.ENFORCE_S3_SIGV4_SYSTEM_PROPERTY;
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 import static com.amazonaws.internal.ResettableInputStream.newResettableInputStream;
 import static com.amazonaws.services.s3.model.S3DataSource.Utils.cleanupDataSource;
@@ -149,10 +147,11 @@ import com.amazonaws.util.Base16;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
-import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.LengthCheckInputStream;
 import com.amazonaws.util.Md5Utils;
+import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.ServiceClientHolderInputStream;
 import com.amazonaws.util.StringUtils;
 
@@ -391,7 +390,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector,
             SkipMd5CheckStrategy skipMd5CheckStrategy) {
-        super(clientConfiguration, requestMetricCollector);
+        super(clientConfiguration, requestMetricCollector, true);
         this.awsCredentialsProvider = credentialsProvider;
         this.skipMd5CheckStrategy = skipMd5CheckStrategy;
         init();
@@ -445,9 +444,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     private void init() {
-        // Because of S3's virtual host style addressing, we need to change the
-        // default, strict hostname verification to be more lenient.
-        client.disableStrictHostnameVerification();
 
         // calling this.setEndpoint(...) will also modify the signer accordingly
         setEndpoint(Constants.S3_HOSTNAME);
@@ -1009,6 +1005,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (versionId != null) request.addParameter("versionId", versionId);
 
         populateRequesterPaysHeader(request, getObjectMetadataRequest.isRequesterPays());
+        addPartNumberIfNotNull(request, getObjectMetadataRequest.getPartNumber());
 
         populateSSE_C(request, getObjectMetadataRequest.getSSECustomerKey());
 
@@ -1114,6 +1111,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (getObjectRequest.getVersionId() != null) {
             request.addParameter("versionId", getObjectRequest.getVersionId());
         }
+
+        addPartNumberIfNotNull(request, getObjectRequest.getPartNumber());
 
         // Range
         long[] range = getObjectRequest.getRange();
@@ -3092,59 +3091,37 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         URI uri = clientOptions.isAccelerateModeEnabled() ? endpoint : request.getEndpoint();
         final Signer signer = getSignerByURI(uri);
         if (!isSignerOverridden()) {
-            final AmazonWebServiceRequest req = request.getOriginalRequest();
+            if ((signer instanceof AWSS3V4Signer) && downgradeToSigV2(request)) {
+                return createSigV2Signer(request, bucketName, key);
+            }
 
-            if (!(signer instanceof AWSS3V4Signer) && (upgradeToSigV4(req))) {
+            String regionOverride = getSignerRegionOverride();
+            if (regionOverride != null) {
                 final AWSS3V4Signer v4Signer = new AWSS3V4Signer();
-                // Always set the service name; if the user has overridden it via
-                // setServiceNameIntern(String), this will return the right
-                // value. Otherwise it will return "s3", which is an appropriate
-                // default.
                 v4Signer.setServiceName(getServiceNameIntern());
-
-                String signerRegion = getSignerRegion();
-                if (signerRegion == null) {
-                    throw new AmazonClientException("Signature Version 4 requires knowing the region of "
-                            + "the bucket you're trying to access. You can "
-                            + "configure a region by calling AmazonS3Client."
-                            + "setRegion(Region) or AmazonS3Client.setEndpoint("
-                            + "String) with a region-specific endpoint such as "
-                            + "\"s3-us-west-2.amazonaws.com\".");
-                } else {
-                    v4Signer.setRegionName(signerRegion);
-                    /*
-                     * After this point, the signer region might be
-                     * re-calculated inside S3ExecutionContext#getSignerByURI,
-                     * in order to handle 307 redirections. But it won't do so
-                     * if:
-                     *  (a) the request endpoint is a global S3 endpoint (in
-                     * which case we want to preserve the signer region
-                     * specified by the user),
-                     *  OR
-                     *  (b) signerRegionOverride is set.
-                     */
-                }
+                v4Signer.setRegionName(regionOverride);
                 return v4Signer;
             }
         }
 
         if (signer instanceof S3Signer) {
-
             // The old S3Signer needs a method and path passed to its
             // constructor; if that's what we should use, getSigner()
             // will return a dummy instance and we need to create a
             // new one with the appropriate values for this request.
-
-            String resourcePath =
-                "/" +
-                ((bucketName != null) ? bucketName + "/" : "") +
-                ((key != null) ? key : "");
-
-            return new S3Signer(request.getHttpMethod().toString(),
-                                resourcePath);
+            return createSigV2Signer(request, bucketName, key);
         }
 
         return signer;
+    }
+
+    private S3Signer createSigV2Signer(final Request<?> request,
+                                       final String bucketName,
+                                       final String key) {
+        String resourcePath = "/" +
+                ((bucketName != null) ? bucketName + "/" : "") +
+                ((key != null) ? key : "");
+        return new S3Signer(request.getHttpMethod().toString(), resourcePath);
     }
 
     /**
@@ -3170,44 +3147,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
           && clientConfiguration.getSignerOverride() != null;
     }
 
-    private boolean isKMSPutRequest(AmazonWebServiceRequest originalRequest) {
-        boolean isPutRequest = (originalRequest instanceof PutObjectRequest);
-
-        if (isPutRequest) {
-            return (((PutObjectRequest) originalRequest)
-                    .getSSEAwsKeyManagementParams() != null);
-        }
-
-        return false;
+    /**
+     * Determines whether we should downgrade to use SigV2 for this request.  This is only the case
+     * when the standard endpoint is in use and neither an explicit region nor a signer override
+     * have been provided by the user.
+     *
+     * @return true if we should downgrade to SigV2 for this request
+     */
+    private boolean downgradeToSigV2(final Request<?> request) {
+        return isStandardEndpoint(request.getEndpoint())
+                && getSignerRegion() == null
+                && getSignerRegionOverride() == null;
     }
 
-    private boolean upgradeToSigV4(AmazonWebServiceRequest req) {
-        // User has said to always use SigV4 - this will fail if the user
-        // attempts to read from or write to a non-US-Standard bucket without
-        // explicitly setting the region.
-        if (System.getProperty(ENFORCE_S3_SIGV4_SYSTEM_PROPERTY) != null) {
-            return true;
-        }
-
-        // User can ask to enable SigV4 if it's safe - this will fall back
-        // to SigV2 if the endpoint has not been set to one of the explicit
-        // regional endpoints because we can't be sure it will work otherwise.
-
-        // For all GetObject requests, we default to SigV4 if the endpoint is a
-        // non-standard endpoint. This is because, we know the region name to be
-        // used for SigV4 signing.
-
-        // For all PutObjectRequests that involve KMS we upgrade to SigV4 if the
-        // endpoint is a non-standard endpoint.
-        if (!ServiceUtils.isS3USStandardEndpoint(endpoint.getHost())) {
-            return ((System.getProperty(ENABLE_S3_SIGV4_SYSTEM_PROPERTY) != null)
-                    || (req instanceof GetObjectRequest) || (isKMSPutRequest(req)));
-        }
-
-        // Go with the default (SigV4 only if we know we're talking to an
-        // endpoint that requires SigV4).
-
-        return false;
+    private boolean isStandardEndpoint(URI endpoint) {
+        return endpoint.getHost().endsWith(Constants.S3_HOSTNAME);
     }
 
     /**
@@ -3239,7 +3193,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         String resourcePath = "/" +
             ((bucketName != null) ? bucketName + "/" : "") +
-            ((key != null) ? HttpUtils.urlEncode(key, true) : "") +
+            ((key != null) ? SdkHttpUtils.urlEncode(key, true) : "") +
             ((subResource != null) ? "?" + subResource : "");
 
         // Make sure the resource-path for signing does not contain
@@ -3374,8 +3328,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     private static void populateRequestWithCopyObjectParameters(Request<? extends AmazonWebServiceRequest> request, CopyObjectRequest copyObjectRequest) {
         String copySourceHeader =
-             "/" + HttpUtils.urlEncode(copyObjectRequest.getSourceBucketName(), true)
-           + "/" + HttpUtils.urlEncode(copyObjectRequest.getSourceKey(), true);
+             "/" + SdkHttpUtils.urlEncode(copyObjectRequest.getSourceBucketName(), true)
+           + "/" + SdkHttpUtils.urlEncode(copyObjectRequest.getSourceKey(), true);
         if (copyObjectRequest.getSourceVersionId() != null) {
             copySourceHeader += "?versionId=" + copyObjectRequest.getSourceVersionId();
         }
@@ -3434,8 +3388,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     private static void populateRequestWithCopyPartParameters(Request<?> request, CopyPartRequest copyPartRequest) {
         String copySourceHeader =
-             "/" + HttpUtils.urlEncode(copyPartRequest.getSourceBucketName(), true)
-           + "/" + HttpUtils.urlEncode(copyPartRequest.getSourceKey(), true);
+             "/" + SdkHttpUtils.urlEncode(copyPartRequest.getSourceBucketName(), true)
+           + "/" + SdkHttpUtils.urlEncode(copyPartRequest.getSourceKey(), true);
         if (copyPartRequest.getSourceVersionId() != null) {
             copySourceHeader += "?versionId=" + copyPartRequest.getSourceVersionId();
         }
@@ -3526,6 +3480,20 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             addHeaderIfNotNull(request,
                     Headers.SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID,
                     sseParams.getAwsKmsKeyId());
+        }
+    }
+
+    /**
+     * Adds the part number to the specified request, if partNumber is not null.
+     *
+     * @param request
+     *            The request to add the partNumber to.
+     * @param partNumber
+     *               The part number to be added.
+     */
+    private void addPartNumberIfNotNull(Request<?> request, Integer partNumber) {
+        if (partNumber != null) {
+            request.addParameter("partNumber", partNumber.toString());
         }
     }
 
@@ -3670,30 +3638,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
     }
 
-    /**
-     * Returns an URL for the object stored in the specified bucket and
-     * key.
-     * <p>
-     * If the object identified by the given bucket and key has public read
-     * permissions (ex: {@link CannedAccessControlList#PublicRead}), then this
-     * URL can be directly accessed to retrieve the object's data.
-     *
-     * @param bucketName
-     *            The name of the bucket containing the object whose URL is
-     *            being requested.
-     * @param key
-     *            The key under which the object whose URL is being requested is
-     *            stored.
-     *
-     * @return A unique URL for the object stored in the specified bucket and
-     *         key.
-     */
+    @Override
     public URL getUrl(String bucketName, String key) {
         Request<?> request = new DefaultRequest<Object>(Constants.S3_SERVICE_DISPLAY_NAME);
         resolveRequestEndpoint(request, bucketName, key, endpoint);
         return ServiceUtils.convertRequestToUrl(request);
     }
 
+    @Override
     public synchronized Region getRegion() {
         String authority = super.endpoint.getAuthority();
         if (Constants.S3_HOSTNAME.equals(authority)) {
@@ -3742,13 +3694,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // request operation is accelerate mode supported, then the request will use the
         // s3-accelerate endpoint to performe the operations.
         if (clientOptions.isAccelerateModeEnabled() && !(originalRequest instanceof S3AccelerateUnsupported)) {
-            endpoint = HttpUtils.toUri(Constants.S3_ACCELERATE_HOSTNAME, clientConfiguration);
+            endpoint = RuntimeHttpUtils.toUri(Constants.S3_ACCELERATE_HOSTNAME, clientConfiguration);
         }
 
         Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_DISPLAY_NAME);
         request.setHttpMethod(httpMethod);
         request.addHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED,
                 Boolean.valueOf(clientOptions.isChunkedEncodingDisabled()));
+        request.addHandlerContext(S3HandlerContextKeys.IS_PAYLOAD_SIGNING_ENABLED,
+                Boolean.valueOf(clientOptions.isPayloadSigningEnabled()));
         resolveRequestEndpoint(request, bucketName, key, endpoint);
         return request;
     }
@@ -3807,6 +3761,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Response<X> response = null;
         try {
             request.setTimeOffset(timeOffset);
+            request.setResourcePath(SdkHttpUtils.urlEncode(request.getResourcePath(), true));
             /*
              * The string we sign needs to include the exact headers that we
              * send with the request, but the client runtime layer adds the
@@ -3821,8 +3776,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             if (originalRequest.getRequestCredentials() != null) {
                 credentials = originalRequest.getRequestCredentials();
             }
+            Signer signer = createSigner(request, bucket, key);
             executionContext.setSigner(createSigner(request, bucket, key));
-            executionContext.setCredentials(credentials);
+
+            if (!(signer instanceof AWSS3V4Signer)) {
+                // Retry V4 auth errors if SigV4 signer is not used
+                executionContext.setAuthErrorRetryStrategy(
+                        new S3V4AuthErrorRetryStrategy(buildDefaultEndpointResolver(getProtocol(request), bucket, key)));
+            }
+
+            executionContext.setCredentialsProvider(new StaticCredentialsProvider(credentials));
+
             response = client.execute(request, responseHandler,
                     errorResponseHandler, executionContext);
             return response.getAwsResponse();
@@ -4201,7 +4165,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         return region != null
-                ? HttpUtils.toUri(region.getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration)
+                ? RuntimeHttpUtils.toUri(region.getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration)
                 : endpoint;
     }
 

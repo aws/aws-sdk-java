@@ -52,9 +52,12 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        Container for the parameters to the <code><a>AddTags</a></code>
      *        operation. Specify the tags that you want to attach to the
      *        Elasticsearch domain.
+     * @return A Java Future containing the result of the AddTags operation
+     *         returned by the service.
      * @sample AWSElasticsearchAsync.AddTags
      */
-    java.util.concurrent.Future<Void> addTagsAsync(AddTagsRequest addTagsRequest);
+    java.util.concurrent.Future<AddTagsResult> addTagsAsync(
+            AddTagsRequest addTagsRequest);
 
     /**
      * <p>
@@ -75,11 +78,13 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddTags operation
+     *         returned by the service.
      * @sample AWSElasticsearchAsyncHandler.AddTags
      */
-    java.util.concurrent.Future<Void> addTagsAsync(
+    java.util.concurrent.Future<AddTagsResult> addTagsAsync(
             AddTagsRequest addTagsRequest,
-            com.amazonaws.handlers.AsyncHandler<AddTagsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler);
 
     /**
      * <p>
@@ -372,9 +377,11 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        operation. Specify the <code>ARN</code> for the Elasticsearch
      *        domain from which you want to remove the specified
      *        <code>TagKey</code>.
+     * @return A Java Future containing the result of the RemoveTags operation
+     *         returned by the service.
      * @sample AWSElasticsearchAsync.RemoveTags
      */
-    java.util.concurrent.Future<Void> removeTagsAsync(
+    java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             RemoveTagsRequest removeTagsRequest);
 
     /**
@@ -393,11 +400,13 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveTags operation
+     *         returned by the service.
      * @sample AWSElasticsearchAsyncHandler.RemoveTags
      */
-    java.util.concurrent.Future<Void> removeTagsAsync(
+    java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             RemoveTagsRequest removeTagsRequest,
-            com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler);
 
     /**
      * <p>

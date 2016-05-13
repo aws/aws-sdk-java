@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetModelsRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetModelsRequestMarshaller implements
         Marshaller<Request<GetModelsRequest>, GetModelsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetModelsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetModelsRequest> marshall(GetModelsRequest getModelsRequest) {
 
@@ -65,8 +72,9 @@ public class GetModelsRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getModelsRequest.getRestApiId() != null) ? StringUtils
-                        .fromString(getModelsRequest.getRestApiId()) : "");
+                (getModelsRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getModelsRequest
+                                .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         if (getModelsRequest.getPosition() != null) {

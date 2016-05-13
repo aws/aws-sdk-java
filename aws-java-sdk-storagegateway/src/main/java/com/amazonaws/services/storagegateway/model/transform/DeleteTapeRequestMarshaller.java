@@ -32,13 +32,19 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteTapeRequest Marshaller
  */
 public class DeleteTapeRequestMarshaller implements
         Marshaller<Request<DeleteTapeRequest>, DeleteTapeRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteTapeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteTapeRequest> marshall(
             DeleteTapeRequest deleteTapeRequest) {
@@ -57,8 +63,8 @@ public class DeleteTapeRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

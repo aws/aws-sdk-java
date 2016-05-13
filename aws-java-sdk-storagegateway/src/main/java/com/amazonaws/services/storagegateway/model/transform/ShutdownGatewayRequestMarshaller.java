@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ShutdownGatewayRequest Marshaller
  */
 public class ShutdownGatewayRequestMarshaller implements
         Marshaller<Request<ShutdownGatewayRequest>, ShutdownGatewayRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ShutdownGatewayRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ShutdownGatewayRequest> marshall(
             ShutdownGatewayRequest shutdownGatewayRequest) {
@@ -58,8 +65,8 @@ public class ShutdownGatewayRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

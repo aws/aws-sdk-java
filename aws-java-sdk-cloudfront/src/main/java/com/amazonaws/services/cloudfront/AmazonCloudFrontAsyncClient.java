@@ -396,26 +396,26 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCloudFrontOriginAccessIdentityAsync(
+    public java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
             DeleteCloudFrontOriginAccessIdentityRequest request) {
 
         return deleteCloudFrontOriginAccessIdentityAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCloudFrontOriginAccessIdentityAsync(
+    public java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
             final DeleteCloudFrontOriginAccessIdentityRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteCloudFrontOriginAccessIdentityResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteCloudFrontOriginAccessIdentityResult call()
+                            throws Exception {
+                        DeleteCloudFrontOriginAccessIdentityResult result;
 
                         try {
-                            deleteCloudFrontOriginAccessIdentity(request);
-                            result = null;
+                            result = deleteCloudFrontOriginAccessIdentity(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -432,26 +432,25 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDistributionAsync(
+    public java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(
             DeleteDistributionRequest request) {
 
         return deleteDistributionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDistributionAsync(
+    public java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(
             final DeleteDistributionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, DeleteDistributionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteDistributionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteDistributionResult call() throws Exception {
+                        DeleteDistributionResult result;
 
                         try {
-                            deleteDistribution(request);
-                            result = null;
+                            result = deleteDistribution(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -468,26 +467,26 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStreamingDistributionAsync(
+    public java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
             DeleteStreamingDistributionRequest request) {
 
         return deleteStreamingDistributionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStreamingDistributionAsync(
+    public java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
             final DeleteStreamingDistributionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteStreamingDistributionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteStreamingDistributionResult call()
+                            throws Exception {
+                        DeleteStreamingDistributionResult result;
 
                         try {
-                            deleteStreamingDistribution(request);
-                            result = null;
+                            result = deleteStreamingDistribution(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

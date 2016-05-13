@@ -32,7 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -92,10 +92,78 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
      */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    /**
-     * List of exception unmarshallers for all Amazon Cognito Sync exceptions.
-     */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidConfigurationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.InvalidConfigurationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NotAuthorizedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.NotAuthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceConflictException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.ResourceConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AlreadyStreamedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.AlreadyStreamedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidParameterException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ConcurrentModificationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.ConcurrentModificationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidLambdaFunctionOutputException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.InvalidLambdaFunctionOutputException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DuplicateRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.DuplicateRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LambdaThrottledException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.LambdaThrottledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TooManyRequestsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.TooManyRequestsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalErrorException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitosync.model.InternalErrorException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito Sync.
@@ -254,61 +322,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.InvalidConfigurationException.class,
-                        "InvalidConfigurationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.NotAuthorizedException.class,
-                        "NotAuthorizedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.LimitExceededException.class,
-                        "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.ResourceConflictException.class,
-                        "ResourceConflictException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.AlreadyStreamedException.class,
-                        "AlreadyStreamedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.InvalidParameterException.class,
-                        "InvalidParameterException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.ConcurrentModificationException.class,
-                        "ConcurrentModificationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.InvalidLambdaFunctionOutputException.class,
-                        "InvalidLambdaFunctionOutputException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.DuplicateRequestException.class,
-                        "DuplicateRequestException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.LambdaThrottledException.class,
-                        "LambdaThrottledException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.TooManyRequestsException.class,
-                        "TooManyRequestsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitosync.model.InternalErrorException.class,
-                        "InternalErrorException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -370,18 +383,19 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BulkPublishRequestMarshaller().marshall(super
-                        .beforeMarshalling(bulkPublishRequest));
+                request = new BulkPublishRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(bulkPublishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BulkPublishResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new BulkPublishResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<BulkPublishResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new BulkPublishResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -437,18 +451,19 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDatasetRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteDatasetRequest));
+                request = new DeleteDatasetRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteDatasetResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DeleteDatasetResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDatasetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteDatasetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -503,18 +518,20 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDatasetRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeDatasetRequest));
+                request = new DescribeDatasetRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeDatasetResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeDatasetResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDatasetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeDatasetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -567,20 +584,20 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeIdentityPoolUsageRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeIdentityPoolUsageRequest));
+                request = new DescribeIdentityPoolUsageRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeIdentityPoolUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeIdentityPoolUsageResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeIdentityPoolUsageResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new DescribeIdentityPoolUsageResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeIdentityPoolUsageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -632,20 +649,20 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeIdentityUsageRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeIdentityUsageRequest));
+                request = new DescribeIdentityUsageRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeIdentityUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeIdentityUsageResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new DescribeIdentityUsageResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeIdentityUsageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeIdentityUsageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -695,20 +712,20 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBulkPublishDetailsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getBulkPublishDetailsRequest));
+                request = new GetBulkPublishDetailsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getBulkPublishDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetBulkPublishDetailsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetBulkPublishDetailsResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetBulkPublishDetailsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetBulkPublishDetailsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -760,7 +777,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCognitoEventsRequestMarshaller()
+                request = new GetCognitoEventsRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(getCognitoEventsRequest));
                 // Binds the request metrics to the current request.
@@ -769,10 +786,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetCognitoEventsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new GetCognitoEventsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetCognitoEventsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetCognitoEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -824,7 +842,8 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIdentityPoolConfigurationRequestMarshaller()
+                request = new GetIdentityPoolConfigurationRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(getIdentityPoolConfigurationRequest));
                 // Binds the request metrics to the current request.
@@ -833,11 +852,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetIdentityPoolConfigurationResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<GetIdentityPoolConfigurationResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new GetIdentityPoolConfigurationResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GetIdentityPoolConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -888,18 +907,19 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDatasetsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listDatasetsRequest));
+                request = new ListDatasetsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listDatasetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDatasetsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListDatasetsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListDatasetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListDatasetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -949,20 +969,20 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListIdentityPoolUsageRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listIdentityPoolUsageRequest));
+                request = new ListIdentityPoolUsageRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listIdentityPoolUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListIdentityPoolUsageResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListIdentityPoolUsageResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListIdentityPoolUsageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListIdentityPoolUsageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1013,18 +1033,19 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRecordsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listRecordsRequest));
+                request = new ListRecordsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRecordsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new ListRecordsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListRecordsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListRecordsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1075,18 +1096,20 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterDeviceRequestMarshaller().marshall(super
-                        .beforeMarshalling(registerDeviceRequest));
+                request = new RegisterDeviceRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(registerDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterDeviceResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new RegisterDeviceResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterDeviceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RegisterDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1112,6 +1135,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
      * 
      * @param setCognitoEventsRequest
      *        A request to configure Cognito Events"
+     * @return Result of the SetCognitoEvents operation returned by the service.
      * @throws InvalidParameterException
      *         Thrown when a request parameter does not comply with the
      *         associated constraints.
@@ -1127,18 +1151,19 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
      * @sample AmazonCognitoSync.SetCognitoEvents
      */
     @Override
-    public void setCognitoEvents(SetCognitoEventsRequest setCognitoEventsRequest) {
+    public SetCognitoEventsResult setCognitoEvents(
+            SetCognitoEventsRequest setCognitoEventsRequest) {
         ExecutionContext executionContext = createExecutionContext(setCognitoEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetCognitoEventsRequest> request = null;
-        Response<Void> response = null;
+        Response<SetCognitoEventsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetCognitoEventsRequestMarshaller()
+                request = new SetCognitoEventsRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(setCognitoEventsRequest));
                 // Binds the request metrics to the current request.
@@ -1147,10 +1172,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(null, false);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<SetCognitoEventsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SetCognitoEventsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1201,7 +1230,8 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetIdentityPoolConfigurationRequestMarshaller()
+                request = new SetIdentityPoolConfigurationRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(setIdentityPoolConfigurationRequest));
                 // Binds the request metrics to the current request.
@@ -1210,11 +1240,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SetIdentityPoolConfigurationResult> responseHandler = SdkJsonProtocolFactory
+            HttpResponseHandler<AmazonWebServiceResponse<SetIdentityPoolConfigurationResult>> responseHandler = protocolFactory
                     .createResponseHandler(
-                            new SetIdentityPoolConfigurationResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new SetIdentityPoolConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1267,20 +1297,20 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubscribeToDatasetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(subscribeToDatasetRequest));
+                request = new SubscribeToDatasetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(subscribeToDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SubscribeToDatasetResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new SubscribeToDatasetResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<SubscribeToDatasetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SubscribeToDatasetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1333,20 +1363,20 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnsubscribeFromDatasetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(unsubscribeFromDatasetRequest));
+                request = new UnsubscribeFromDatasetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(unsubscribeFromDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UnsubscribeFromDatasetResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UnsubscribeFromDatasetResultJsonUnmarshaller(),
-                            false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UnsubscribeFromDatasetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UnsubscribeFromDatasetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1423,18 +1453,19 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRecordsRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateRecordsRequest));
+                request = new UpdateRecordsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateRecordsResult> responseHandler = SdkJsonProtocolFactory
-                    .createResponseHandler(
-                            new UpdateRecordsResultJsonUnmarshaller(), false);
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRecordsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateRecordsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1508,8 +1539,8 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
-                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

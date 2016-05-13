@@ -39,7 +39,8 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ReadJobRequest Marshaller
@@ -47,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class ReadJobRequestMarshaller implements
         Marshaller<Request<ReadJobRequest>, ReadJobRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ReadJobRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ReadJobRequest> marshall(ReadJobRequest readJobRequest) {
 
@@ -65,8 +72,9 @@ public class ReadJobRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (readJobRequest.getId() != null) ? StringUtils
-                        .fromString(readJobRequest.getId()) : "");
+                (readJobRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(readJobRequest.getId()), false)
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

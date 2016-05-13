@@ -32,13 +32,20 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateDevicePoolRequest Marshaller
  */
 public class CreateDevicePoolRequestMarshaller implements
         Marshaller<Request<CreateDevicePoolRequest>, CreateDevicePoolRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateDevicePoolRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateDevicePoolRequest> marshall(
             CreateDevicePoolRequest createDevicePoolRequest) {
@@ -58,8 +65,8 @@ public class CreateDevicePoolRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
-                    .createWriter(false, "1.1");
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             jsonGenerator.writeStartObject();
 

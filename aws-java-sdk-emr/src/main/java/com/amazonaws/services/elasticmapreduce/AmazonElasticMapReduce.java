@@ -385,12 +385,14 @@ public interface AmazonElasticMapReduce {
      * 
      * @param modifyInstanceGroupsRequest
      *        Change the size of some instance groups.
+     * @return Result of the ModifyInstanceGroups operation returned by the
+     *         service.
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
      * @sample AmazonElasticMapReduce.ModifyInstanceGroups
      */
-    void modifyInstanceGroups(
+    ModifyInstanceGroupsResult modifyInstanceGroups(
             ModifyInstanceGroupsRequest modifyInstanceGroupsRequest);
 
     /**
@@ -398,7 +400,7 @@ public interface AmazonElasticMapReduce {
      *
      * @see #modifyInstanceGroups(ModifyInstanceGroupsRequest)
      */
-    void modifyInstanceGroups();
+    ModifyInstanceGroupsResult modifyInstanceGroups();
 
     /**
      * <p>
@@ -503,12 +505,14 @@ public interface AmazonElasticMapReduce {
      * 
      * @param setTerminationProtectionRequest
      *        The input argument to the <a>TerminationProtection</a> operation.
+     * @return Result of the SetTerminationProtection operation returned by the
+     *         service.
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
      * @sample AmazonElasticMapReduce.SetTerminationProtection
      */
-    void setTerminationProtection(
+    SetTerminationProtectionResult setTerminationProtection(
             SetTerminationProtectionRequest setTerminationProtectionRequest);
 
     /**
@@ -524,12 +528,14 @@ public interface AmazonElasticMapReduce {
      * 
      * @param setVisibleToAllUsersRequest
      *        The input to the SetVisibleToAllUsers action.
+     * @return Result of the SetVisibleToAllUsers operation returned by the
+     *         service.
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
      * @sample AmazonElasticMapReduce.SetVisibleToAllUsers
      */
-    void setVisibleToAllUsers(
+    SetVisibleToAllUsersResult setVisibleToAllUsers(
             SetVisibleToAllUsersRequest setVisibleToAllUsersRequest);
 
     /**
@@ -549,12 +555,15 @@ public interface AmazonElasticMapReduce {
      * 
      * @param terminateJobFlowsRequest
      *        Input to the <a>TerminateJobFlows</a> operation.
+     * @return Result of the TerminateJobFlows operation returned by the
+     *         service.
      * @throws InternalServerErrorException
      *         Indicates that an error occurred while processing the request and
      *         that the request was not completed.
      * @sample AmazonElasticMapReduce.TerminateJobFlows
      */
-    void terminateJobFlows(TerminateJobFlowsRequest terminateJobFlowsRequest);
+    TerminateJobFlowsResult terminateJobFlows(
+            TerminateJobFlowsRequest terminateJobFlowsRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held
