@@ -12,6 +12,9 @@
   <name>AWS SDK for Java - Core</name>
   <description>The AWS SDK for Java - Core module holds the classes that is used by the individual service clients to interact with Amazon Web Services. Users need to depend on aws-java-sdk artifact for accessing individual client classes.</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+  <properties>
+    <powermock.version>1.6.4</powermock.version>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>commons-logging</groupId>
@@ -82,6 +85,25 @@
       <version>1.7.5</version>
       <scope>test</scope>
     </dependency>
+
+      <dependency>
+        <groupId>org.powermock</groupId>
+        <artifactId>powermock-module-junit4</artifactId>
+        <version>${powermock.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.powermock</groupId>
+        <artifactId>powermock-api-mockito</artifactId>
+        <version>${powermock.version}</version>
+        <scope>test</scope>
+      </dependency><dependency>
+        <groupId>org.powermock</groupId>
+        <artifactId>powermock-api-easymock</artifactId>
+        <version>${powermock.version}</version>
+        <scope>test</scope>
+      </dependency>
+
   </dependencies>
   <build>
     <plugins>
