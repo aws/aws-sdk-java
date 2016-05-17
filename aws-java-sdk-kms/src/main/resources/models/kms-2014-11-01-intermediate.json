@@ -23,10 +23,10 @@
     "jsonProtocol" : true,
     "serviceName" : "KMS",
     "cborProtocol" : false,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "xmlProtocol" : false
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "CancelKeyDeletion" : {
@@ -63,12 +63,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CancelKeyDeletionResult",
       "asyncReturnType" : "CancelKeyDeletionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelKeyDeletionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelKeyDeletionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelKeyDeletionRequest, CancelKeyDeletionResult>",
+      "authenticated" : true,
       "methodName" : "cancelKeyDeletion"
     },
     "CreateAlias" : {
@@ -111,12 +111,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateAliasResult",
       "asyncReturnType" : "CreateAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult>",
+      "authenticated" : true,
       "methodName" : "createAlias"
     },
     "CreateGrant" : {
@@ -162,12 +162,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateGrantResult",
       "asyncReturnType" : "CreateGrantResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateGrantResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateGrantResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateGrantRequest, CreateGrantResult>",
+      "authenticated" : true,
       "methodName" : "createGrant"
     },
     "CreateKey" : {
@@ -207,12 +207,12 @@
         "documentation" : "<p>The request was rejected because a limit was exceeded. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/limits.html\">Limits</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateKeyResult",
       "asyncReturnType" : "CreateKeyResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateKeyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateKeyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateKeyRequest, CreateKeyResult>",
+      "authenticated" : true,
       "methodName" : "createKey"
     },
     "Decrypt" : {
@@ -258,12 +258,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DecryptResult",
       "asyncReturnType" : "DecryptResult",
       "asyncFutureType" : "java.util.concurrent.Future<DecryptResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DecryptResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DecryptRequest, DecryptResult>",
+      "authenticated" : true,
       "methodName" : "decrypt"
     },
     "DeleteAlias" : {
@@ -297,12 +297,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteAliasResult",
       "asyncReturnType" : "DeleteAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult>",
+      "authenticated" : true,
       "methodName" : "deleteAlias"
     },
     "DescribeKey" : {
@@ -336,12 +336,12 @@
         "documentation" : "<p>The request was rejected because an internal exception occurred. The request can be retried.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeKeyResult",
       "asyncReturnType" : "DescribeKeyResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeKeyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeKeyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeKeyRequest, DescribeKeyResult>",
+      "authenticated" : true,
       "methodName" : "describeKey"
     },
     "DisableKey" : {
@@ -378,12 +378,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DisableKeyResult",
       "asyncReturnType" : "DisableKeyResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableKeyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableKeyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableKeyRequest, DisableKeyResult>",
+      "authenticated" : true,
       "methodName" : "disableKey"
     },
     "DisableKeyRotation" : {
@@ -423,12 +423,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DisableKeyRotationResult",
       "asyncReturnType" : "DisableKeyRotationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableKeyRotationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableKeyRotationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableKeyRotationRequest, DisableKeyRotationResult>",
+      "authenticated" : true,
       "methodName" : "disableKeyRotation"
     },
     "EnableKey" : {
@@ -468,12 +468,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "EnableKeyResult",
       "asyncReturnType" : "EnableKeyResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableKeyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableKeyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableKeyRequest, EnableKeyResult>",
+      "authenticated" : true,
       "methodName" : "enableKey"
     },
     "EnableKeyRotation" : {
@@ -513,12 +513,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "EnableKeyRotationResult",
       "asyncReturnType" : "EnableKeyRotationResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableKeyRotationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableKeyRotationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableKeyRotationRequest, EnableKeyRotationResult>",
+      "authenticated" : true,
       "methodName" : "enableKeyRotation"
     },
     "Encrypt" : {
@@ -564,12 +564,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "EncryptResult",
       "asyncReturnType" : "EncryptResult",
       "asyncFutureType" : "java.util.concurrent.Future<EncryptResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EncryptResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EncryptRequest, EncryptResult>",
+      "authenticated" : true,
       "methodName" : "encrypt"
     },
     "GenerateDataKey" : {
@@ -615,12 +615,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GenerateDataKeyResult",
       "asyncReturnType" : "GenerateDataKeyResult",
       "asyncFutureType" : "java.util.concurrent.Future<GenerateDataKeyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GenerateDataKeyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GenerateDataKeyRequest, GenerateDataKeyResult>",
+      "authenticated" : true,
       "methodName" : "generateDataKey"
     },
     "GenerateDataKeyWithoutPlaintext" : {
@@ -666,12 +666,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GenerateDataKeyWithoutPlaintextResult",
       "asyncReturnType" : "GenerateDataKeyWithoutPlaintextResult",
       "asyncFutureType" : "java.util.concurrent.Future<GenerateDataKeyWithoutPlaintextResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GenerateDataKeyWithoutPlaintextResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GenerateDataKeyWithoutPlaintextRequest, GenerateDataKeyWithoutPlaintextResult>",
+      "authenticated" : true,
       "methodName" : "generateDataKeyWithoutPlaintext"
     },
     "GenerateRandom" : {
@@ -699,12 +699,12 @@
         "documentation" : "<p>The request was rejected because an internal exception occurred. The request can be retried.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GenerateRandomResult",
       "asyncReturnType" : "GenerateRandomResult",
       "asyncFutureType" : "java.util.concurrent.Future<GenerateRandomResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GenerateRandomResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GenerateRandomRequest, GenerateRandomResult>",
+      "authenticated" : true,
       "methodName" : "generateRandom"
     },
     "GetKeyPolicy" : {
@@ -741,12 +741,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetKeyPolicyResult",
       "asyncReturnType" : "GetKeyPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetKeyPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetKeyPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetKeyPolicyRequest, GetKeyPolicyResult>",
+      "authenticated" : true,
       "methodName" : "getKeyPolicy"
     },
     "GetKeyRotationStatus" : {
@@ -783,12 +783,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetKeyRotationStatusResult",
       "asyncReturnType" : "GetKeyRotationStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetKeyRotationStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetKeyRotationStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetKeyRotationStatusRequest, GetKeyRotationStatusResult>",
+      "authenticated" : true,
       "methodName" : "getKeyRotationStatus"
     },
     "ListAliases" : {
@@ -819,12 +819,12 @@
         "documentation" : "<p>The request was rejected because an internal exception occurred. The request can be retried.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListAliasesResult",
       "asyncReturnType" : "ListAliasesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAliasesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAliasesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult>",
+      "authenticated" : true,
       "methodName" : "listAliases"
     },
     "ListGrants" : {
@@ -864,12 +864,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListGrantsResult",
       "asyncReturnType" : "ListGrantsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListGrantsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListGrantsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListGrantsRequest, ListGrantsResult>",
+      "authenticated" : true,
       "methodName" : "listGrants"
     },
     "ListKeyPolicies" : {
@@ -906,12 +906,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListKeyPoliciesResult",
       "asyncReturnType" : "ListKeyPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListKeyPoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListKeyPoliciesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListKeyPoliciesRequest, ListKeyPoliciesResult>",
+      "authenticated" : true,
       "methodName" : "listKeyPolicies"
     },
     "ListKeys" : {
@@ -939,12 +939,12 @@
         "documentation" : "<p>The request was rejected because an internal exception occurred. The request can be retried.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListKeysResult",
       "asyncReturnType" : "ListKeysResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListKeysResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListKeysResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListKeysRequest, ListKeysResult>",
+      "authenticated" : true,
       "methodName" : "listKeys"
     },
     "ListRetirableGrants" : {
@@ -981,12 +981,12 @@
         "documentation" : "<p>The request was rejected because an internal exception occurred. The request can be retried.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListRetirableGrantsResult",
       "asyncReturnType" : "ListRetirableGrantsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRetirableGrantsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRetirableGrantsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRetirableGrantsRequest, ListRetirableGrantsResult>",
+      "authenticated" : true,
       "methodName" : "listRetirableGrants"
     },
     "PutKeyPolicy" : {
@@ -1032,12 +1032,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutKeyPolicyResult",
       "asyncReturnType" : "PutKeyPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutKeyPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutKeyPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutKeyPolicyRequest, PutKeyPolicyResult>",
+      "authenticated" : true,
       "methodName" : "putKeyPolicy"
     },
     "ReEncrypt" : {
@@ -1086,12 +1086,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ReEncryptResult",
       "asyncReturnType" : "ReEncryptResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReEncryptResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReEncryptResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReEncryptRequest, ReEncryptResult>",
+      "authenticated" : true,
       "methodName" : "reEncrypt"
     },
     "RetireGrant" : {
@@ -1131,12 +1131,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RetireGrantResult",
       "asyncReturnType" : "RetireGrantResult",
       "asyncFutureType" : "java.util.concurrent.Future<RetireGrantResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RetireGrantResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RetireGrantRequest, RetireGrantResult>",
+      "authenticated" : true,
       "methodName" : "retireGrant"
     },
     "RevokeGrant" : {
@@ -1176,12 +1176,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RevokeGrantResult",
       "asyncReturnType" : "RevokeGrantResult",
       "asyncFutureType" : "java.util.concurrent.Future<RevokeGrantResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RevokeGrantResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RevokeGrantRequest, RevokeGrantResult>",
+      "authenticated" : true,
       "methodName" : "revokeGrant"
     },
     "ScheduleKeyDeletion" : {
@@ -1218,12 +1218,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ScheduleKeyDeletionResult",
       "asyncReturnType" : "ScheduleKeyDeletionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ScheduleKeyDeletionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ScheduleKeyDeletionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ScheduleKeyDeletionRequest, ScheduleKeyDeletionResult>",
+      "authenticated" : true,
       "methodName" : "scheduleKeyDeletion"
     },
     "UpdateAlias" : {
@@ -1257,12 +1257,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateAliasResult",
       "asyncReturnType" : "UpdateAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAliasRequest, UpdateAliasResult>",
+      "authenticated" : true,
       "methodName" : "updateAlias"
     },
     "UpdateKeyDescription" : {
@@ -1299,12 +1299,12 @@
         "documentation" : "<p>The request was rejected because the state of the specified resource is not valid for this request.</p> <p>For more information about how key state affects the use of a customer master key (CMK), see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateKeyDescriptionResult",
       "asyncReturnType" : "UpdateKeyDescriptionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateKeyDescriptionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateKeyDescriptionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResult>",
+      "authenticated" : true,
       "methodName" : "updateKeyDescription"
     }
   },

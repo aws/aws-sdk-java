@@ -37,14 +37,6 @@ public class RegionUtilsIntegrationTest {
         RegionUtils.initialize();
     }
 
-    @Test
-    public void testGetRegionByEndpoint() {
-
-        RegionUtils.initialize();
-        assertEquals("us-east-1", RegionUtils.getRegionByEndpoint("redshift.us-east-1.amazonaws.com/bla").getName());
-        assertEquals("us-east-1", RegionUtils.getRegionByEndpoint("http://redshift.us-east-1.amazonaws.com").getName());
-    }
-
     /**
      * Tests that region file override could be properly loaded, and the
      * endpoint verification is also disabled so that invalid (not owned by AWS)

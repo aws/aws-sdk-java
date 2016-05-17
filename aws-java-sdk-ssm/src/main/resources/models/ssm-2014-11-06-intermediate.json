@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "ssm",
     "signingName" : "ssm",
-    "xmlProtocol" : false,
-    "jsonProtocol" : true,
     "serviceName" : "Amazon SSM",
     "cborProtocol" : false,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "jsonProtocol" : true
   },
   "operations" : {
     "CancelCommand" : {
@@ -60,12 +60,12 @@
         "documentation" : "<p>You cannot specify an instance ID in more than one association.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CancelCommandResult",
       "asyncReturnType" : "CancelCommandResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelCommandResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelCommandResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelCommandRequest, CancelCommandResult>",
+      "authenticated" : true,
       "methodName" : "cancelCommand"
     },
     "CreateAssociation" : {
@@ -108,12 +108,12 @@
         "documentation" : "<p>You must specify values for all required parameters in the SSM document. You can only supply values to parameters defined in the SSM document.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateAssociationResult",
       "asyncReturnType" : "CreateAssociationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAssociationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAssociationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAssociationRequest, CreateAssociationResult>",
+      "authenticated" : true,
       "methodName" : "createAssociation"
     },
     "CreateAssociationBatch" : {
@@ -156,12 +156,12 @@
         "documentation" : "<p>The document does not support the platform type of the given instance ID(s). For example, you sent an SSM document for a Windows instance to a Linux instance.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateAssociationBatchResult",
       "asyncReturnType" : "CreateAssociationBatchResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAssociationBatchResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAssociationBatchResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAssociationBatchRequest, CreateAssociationBatchResult>",
+      "authenticated" : true,
       "methodName" : "createAssociationBatch"
     },
     "CreateDocument" : {
@@ -198,12 +198,12 @@
         "documentation" : "<p>You can have at most 100 active SSM documents.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDocumentResult",
       "asyncReturnType" : "CreateDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDocumentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDocumentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDocumentRequest, CreateDocumentResult>",
+      "authenticated" : true,
       "methodName" : "createDocument"
     },
     "DeleteAssociation" : {
@@ -240,12 +240,12 @@
         "documentation" : "<p>There are concurrent updates for a resource that supports one update at a time.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteAssociationResult",
       "asyncReturnType" : "DeleteAssociationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteAssociationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteAssociationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAssociationRequest, DeleteAssociationResult>",
+      "authenticated" : true,
       "methodName" : "deleteAssociation"
     },
     "DeleteDocument" : {
@@ -279,12 +279,12 @@
         "documentation" : "<p>You must disassociate an SSM document from all instances before you can delete it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteDocumentResult",
       "asyncReturnType" : "DeleteDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDocumentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDocumentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDocumentRequest, DeleteDocumentResult>",
+      "authenticated" : true,
       "methodName" : "deleteDocument"
     },
     "DescribeAssociation" : {
@@ -318,12 +318,12 @@
         "documentation" : "<p>The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeAssociationResult",
       "asyncReturnType" : "DescribeAssociationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAssociationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAssociationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAssociationRequest, DescribeAssociationResult>",
+      "authenticated" : true,
       "methodName" : "describeAssociation"
     },
     "DescribeDocument" : {
@@ -351,12 +351,12 @@
         "documentation" : "<p>The specified document does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDocumentResult",
       "asyncReturnType" : "DescribeDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDocumentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDocumentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDocumentRequest, DescribeDocumentResult>",
+      "authenticated" : true,
       "methodName" : "describeDocument"
     },
     "DescribeDocumentPermission" : {
@@ -387,12 +387,12 @@
         "documentation" : "<p>The permission type is not supported. <i>Share</i> is the only supported permission type.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDocumentPermissionResult",
       "asyncReturnType" : "DescribeDocumentPermissionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDocumentPermissionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDocumentPermissionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDocumentPermissionRequest, DescribeDocumentPermissionResult>",
+      "authenticated" : true,
       "methodName" : "describeDocumentPermission"
     },
     "DescribeInstanceInformation" : {
@@ -429,12 +429,12 @@
         "documentation" : "<p>The specified key is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeInstanceInformationResult",
       "asyncReturnType" : "DescribeInstanceInformationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeInstanceInformationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeInstanceInformationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInstanceInformationRequest, DescribeInstanceInformationResult>",
+      "authenticated" : true,
       "methodName" : "describeInstanceInformation"
     },
     "GetDocument" : {
@@ -462,12 +462,12 @@
         "documentation" : "<p>The specified document does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDocumentResult",
       "asyncReturnType" : "GetDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDocumentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDocumentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDocumentRequest, GetDocumentResult>",
+      "authenticated" : true,
       "methodName" : "getDocument"
     },
     "ListAssociations" : {
@@ -495,12 +495,12 @@
         "documentation" : "<p>The specified token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListAssociationsResult",
       "asyncReturnType" : "ListAssociationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAssociationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAssociationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAssociationsRequest, ListAssociationsResult>",
+      "authenticated" : true,
       "methodName" : "listAssociations"
     },
     "ListCommandInvocations" : {
@@ -537,12 +537,12 @@
         "documentation" : "<p>The specified token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListCommandInvocationsResult",
       "asyncReturnType" : "ListCommandInvocationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCommandInvocationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCommandInvocationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCommandInvocationsRequest, ListCommandInvocationsResult>",
+      "authenticated" : true,
       "methodName" : "listCommandInvocations"
     },
     "ListCommands" : {
@@ -579,12 +579,12 @@
         "documentation" : "<p>The specified token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListCommandsResult",
       "asyncReturnType" : "ListCommandsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCommandsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCommandsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCommandsRequest, ListCommandsResult>",
+      "authenticated" : true,
       "methodName" : "listCommands"
     },
     "ListDocuments" : {
@@ -615,12 +615,12 @@
         "documentation" : "<p>The specified key is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDocumentsResult",
       "asyncReturnType" : "ListDocumentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDocumentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDocumentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult>",
+      "authenticated" : true,
       "methodName" : "listDocuments"
     },
     "ModifyDocumentPermission" : {
@@ -657,12 +657,12 @@
         "documentation" : "<p>You can have at most 100 active SSM documents.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ModifyDocumentPermissionResult",
       "asyncReturnType" : "ModifyDocumentPermissionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyDocumentPermissionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyDocumentPermissionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyDocumentPermissionRequest, ModifyDocumentPermissionResult>",
+      "authenticated" : true,
       "methodName" : "modifyDocumentPermission"
     },
     "SendCommand" : {
@@ -708,12 +708,12 @@
         "documentation" : "<p>The size limit of an SSM document is 64 KB.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "SendCommandResult",
       "asyncReturnType" : "SendCommandResult",
       "asyncFutureType" : "java.util.concurrent.Future<SendCommandResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SendCommandResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SendCommandRequest, SendCommandResult>",
+      "authenticated" : true,
       "methodName" : "sendCommand"
     },
     "UpdateAssociationStatus" : {
@@ -753,12 +753,12 @@
         "documentation" : "<p>There are concurrent updates for a resource that supports one update at a time.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateAssociationStatusResult",
       "asyncReturnType" : "UpdateAssociationStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateAssociationStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateAssociationStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAssociationStatusRequest, UpdateAssociationStatusResult>",
+      "authenticated" : true,
       "methodName" : "updateAssociationStatus"
     }
   },

@@ -536,8 +536,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * When designing your application, keep in mind that DynamoDB does not
-     * return attributes in any particular order. To help parse the response by
-     * item, include the primary key values for the items in your request in the
+     * return items in any particular order. To help parse the response by item,
+     * include the primary key values for the items in your request in the
      * <i>AttributesToGet</i> parameter.
      * </p>
      * <p>
@@ -1120,29 +1120,57 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      * For example, you could use one of the AWS SDKs to do the following:
      * </p>
      * <ol>
-     * <li>Call <i>DescribeLimits</i> for a particular region to obtain your
-     * current account limits on provisioned capacity there.</li>
-     * <li>Create a variable to hold the aggregate read capacity units
-     * provisioned for all your tables in that region, and one to hold the
-     * aggregate write capacity units. Zero them both.</li>
-     * <li>Call <i>ListTables</i> to obtain a list of all your DynamoDB tables.</li>
+     * <li>
+     * <p>
+     * Call <i>DescribeLimits</i> for a particular region to obtain your current
+     * account limits on provisioned capacity there.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a variable to hold the aggregate read capacity units provisioned
+     * for all your tables in that region, and one to hold the aggregate write
+     * capacity units. Zero them both.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <i>ListTables</i> to obtain a list of all your DynamoDB tables.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * For each table name listed by <i>ListTables</i>, do the following:
      * </p>
      * <ul>
-     * <li>Call <i>DescribeTable</i> with the table name.</li>
-     * <li>Use the data returned by <i>DescribeTable</i> to add the read
-     * capacity units and write capacity units provisioned for the table itself
-     * to your variables.</li>
-     * <li>If the table has one or more global secondary indexes (GSIs), loop
-     * over these GSIs and add their provisioned capacity values to your
-     * variables as well.</li>
+     * <li>
+     * <p>
+     * Call <i>DescribeTable</i> with the table name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the data returned by <i>DescribeTable</i> to add the read capacity
+     * units and write capacity units provisioned for the table itself to your
+     * variables.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the table has one or more global secondary indexes (GSIs), loop over
+     * these GSIs and add their provisioned capacity values to your variables as
+     * well.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Report the account limits for that region returned by
+     * <li>
+     * <p>
+     * Report the account limits for that region returned by
      * <i>DescribeLimits</i>, along with the total current provisioned capacity
-     * levels you have calculated.</li>
+     * levels you have calculated.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * This will let you see whether you are getting close to your account-level
@@ -1580,8 +1608,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      * query in a subsequent operation. Unlike a <i>Scan</i> operation, a
      * <i>Query</i> operation never returns both an empty result set and a
      * <i>LastEvaluatedKey</i> value. <i>LastEvaluatedKey</i> is only provided
-     * if the results exceed 1 MB, or if you have used the <i>Limit</i>
-     * parameter.
+     * if you have used the <i>Limit</i> parameter, or if the result set exceeds
+     * 1 MB (prior to applying a filter).
      * </p>
      * <p>
      * You can query a table, a local secondary index, or a global secondary

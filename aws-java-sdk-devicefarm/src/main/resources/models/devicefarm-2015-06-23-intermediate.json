@@ -3827,9 +3827,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Device",
-          "map" : false,
           "templateType" : "java.util.List<Device>",
-          "templateImplType" : "java.util.ArrayList<Device>"
+          "templateImplType" : "java.util.ArrayList<Device>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4073,9 +4073,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Device",
-            "map" : false,
             "templateType" : "java.util.List<Device>",
-            "templateImplType" : "java.util.ArrayList<Device>"
+            "templateImplType" : "java.util.ArrayList<Device>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4690,9 +4690,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Sample",
-          "map" : false,
           "templateType" : "java.util.List<Sample>",
-          "templateImplType" : "java.util.ArrayList<Sample>"
+          "templateImplType" : "java.util.ArrayList<Sample>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4936,9 +4936,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Sample",
-            "map" : false,
             "templateType" : "java.util.List<Sample>",
-            "templateImplType" : "java.util.ArrayList<Sample>"
+            "templateImplType" : "java.util.ArrayList<Sample>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5973,9 +5973,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6272,9 +6272,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7105,9 +7105,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "RecurringCharge",
-          "map" : false,
           "templateType" : "java.util.List<RecurringCharge>",
-          "templateImplType" : "java.util.ArrayList<RecurringCharge>"
+          "templateImplType" : "java.util.ArrayList<RecurringCharge>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7405,9 +7405,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "RecurringCharge",
-            "map" : false,
             "templateType" : "java.util.List<RecurringCharge>",
-            "templateImplType" : "java.util.ArrayList<RecurringCharge>"
+            "templateImplType" : "java.util.ArrayList<RecurringCharge>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8976,9 +8976,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "OfferingTransaction",
-          "map" : false,
           "templateType" : "java.util.List<OfferingTransaction>",
-          "templateImplType" : "java.util.ArrayList<OfferingTransaction>"
+          "templateImplType" : "java.util.ArrayList<OfferingTransaction>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9222,9 +9222,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "OfferingTransaction",
-            "map" : false,
             "templateType" : "java.util.List<OfferingTransaction>",
-            "templateImplType" : "java.util.ArrayList<OfferingTransaction>"
+            "templateImplType" : "java.util.ArrayList<OfferingTransaction>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10356,9 +10356,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Offering",
-          "map" : false,
           "templateType" : "java.util.List<Offering>",
-          "templateImplType" : "java.util.ArrayList<Offering>"
+          "templateImplType" : "java.util.ArrayList<Offering>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10602,9 +10602,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Offering",
-            "map" : false,
             "templateType" : "java.util.List<Offering>",
-            "templateImplType" : "java.util.ArrayList<Offering>"
+            "templateImplType" : "java.util.ArrayList<Offering>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11892,9 +11892,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Job",
-          "map" : false,
           "templateType" : "java.util.List<Job>",
-          "templateImplType" : "java.util.ArrayList<Job>"
+          "templateImplType" : "java.util.ArrayList<Job>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12138,9 +12138,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Job",
-            "map" : false,
             "templateType" : "java.util.List<Job>",
-            "templateImplType" : "java.util.ArrayList<Job>"
+            "templateImplType" : "java.util.ArrayList<Job>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12516,9 +12516,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Run",
-          "map" : false,
           "templateType" : "java.util.List<Run>",
-          "templateImplType" : "java.util.ArrayList<Run>"
+          "templateImplType" : "java.util.ArrayList<Run>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12762,9 +12762,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Run",
-            "map" : false,
             "templateType" : "java.util.List<Run>",
-            "templateImplType" : "java.util.ArrayList<Run>"
+            "templateImplType" : "java.util.ArrayList<Run>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13331,9 +13331,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Test",
-          "map" : false,
           "templateType" : "java.util.List<Test>",
-          "templateImplType" : "java.util.ArrayList<Test>"
+          "templateImplType" : "java.util.ArrayList<Test>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13577,9 +13577,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Test",
-            "map" : false,
             "templateType" : "java.util.List<Test>",
-            "templateImplType" : "java.util.ArrayList<Test>"
+            "templateImplType" : "java.util.ArrayList<Test>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13810,9 +13810,9 @@
               "sendEmptyQueryString" : false,
               "simple" : false,
               "simpleType" : "UniqueProblem",
-              "map" : false,
               "templateType" : "java.util.List<UniqueProblem>",
-              "templateImplType" : "java.util.ArrayList<UniqueProblem>"
+              "templateImplType" : "java.util.ArrayList<UniqueProblem>",
+              "map" : false
             },
             "mapModel" : null,
             "enumType" : null,
@@ -14122,9 +14122,9 @@
                 "sendEmptyQueryString" : false,
                 "simple" : false,
                 "simpleType" : "UniqueProblem",
-                "map" : false,
                 "templateType" : "java.util.List<UniqueProblem>",
-                "templateImplType" : "java.util.ArrayList<UniqueProblem>"
+                "templateImplType" : "java.util.ArrayList<UniqueProblem>",
+                "map" : false
               },
               "mapModel" : null,
               "enumType" : null,
@@ -16535,9 +16535,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Rule",
-          "map" : false,
           "templateType" : "java.util.List<Rule>",
-          "templateImplType" : "java.util.ArrayList<Rule>"
+          "templateImplType" : "java.util.ArrayList<Rule>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16786,9 +16786,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Rule",
-            "map" : false,
             "templateType" : "java.util.List<Rule>",
-            "templateImplType" : "java.util.ArrayList<Rule>"
+            "templateImplType" : "java.util.ArrayList<Rule>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17532,9 +17532,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Project",
-          "map" : false,
           "templateType" : "java.util.List<Project>",
-          "templateImplType" : "java.util.ArrayList<Project>"
+          "templateImplType" : "java.util.ArrayList<Project>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17778,9 +17778,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Project",
-            "map" : false,
             "templateType" : "java.util.List<Project>",
-            "templateImplType" : "java.util.ArrayList<Project>"
+            "templateImplType" : "java.util.ArrayList<Project>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21124,9 +21124,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "DevicePool",
-          "map" : false,
           "templateType" : "java.util.List<DevicePool>",
-          "templateImplType" : "java.util.ArrayList<DevicePool>"
+          "templateImplType" : "java.util.ArrayList<DevicePool>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21370,9 +21370,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "DevicePool",
-            "map" : false,
             "templateType" : "java.util.List<DevicePool>",
-            "templateImplType" : "java.util.ArrayList<DevicePool>"
+            "templateImplType" : "java.util.ArrayList<DevicePool>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24186,9 +24186,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Problem",
-          "map" : false,
           "templateType" : "java.util.List<Problem>",
-          "templateImplType" : "java.util.ArrayList<Problem>"
+          "templateImplType" : "java.util.ArrayList<Problem>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24327,9 +24327,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Problem",
-            "map" : false,
             "templateType" : "java.util.List<Problem>",
-            "templateImplType" : "java.util.ArrayList<Problem>"
+            "templateImplType" : "java.util.ArrayList<Problem>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32289,9 +32289,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "IncompatibilityMessage",
-          "map" : false,
           "templateType" : "java.util.List<IncompatibilityMessage>",
-          "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>"
+          "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32430,9 +32430,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "IncompatibilityMessage",
-            "map" : false,
             "templateType" : "java.util.List<IncompatibilityMessage>",
-            "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>"
+            "templateImplType" : "java.util.ArrayList<IncompatibilityMessage>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32813,9 +32813,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Upload",
-          "map" : false,
           "templateType" : "java.util.List<Upload>",
-          "templateImplType" : "java.util.ArrayList<Upload>"
+          "templateImplType" : "java.util.ArrayList<Upload>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33006,9 +33006,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Upload",
-            "map" : false,
             "templateType" : "java.util.List<Upload>",
-            "templateImplType" : "java.util.ArrayList<Upload>"
+            "templateImplType" : "java.util.ArrayList<Upload>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33336,9 +33336,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Suite",
-          "map" : false,
           "templateType" : "java.util.List<Suite>",
-          "templateImplType" : "java.util.ArrayList<Suite>"
+          "templateImplType" : "java.util.ArrayList<Suite>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33582,9 +33582,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Suite",
-            "map" : false,
             "templateType" : "java.util.List<Suite>",
-            "templateImplType" : "java.util.ArrayList<Suite>"
+            "templateImplType" : "java.util.ArrayList<Suite>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34214,9 +34214,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Artifact",
-          "map" : false,
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "java.util.ArrayList<Artifact>"
+          "templateImplType" : "java.util.ArrayList<Artifact>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -34407,9 +34407,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Artifact",
-            "map" : false,
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "java.util.ArrayList<Artifact>"
+            "templateImplType" : "java.util.ArrayList<Artifact>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34889,9 +34889,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Rule",
-          "map" : false,
           "templateType" : "java.util.List<Rule>",
-          "templateImplType" : "java.util.ArrayList<Rule>"
+          "templateImplType" : "java.util.ArrayList<Rule>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35140,9 +35140,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Rule",
-            "map" : false,
             "templateType" : "java.util.List<Rule>",
-            "templateImplType" : "java.util.ArrayList<Rule>"
+            "templateImplType" : "java.util.ArrayList<Rule>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -36200,9 +36200,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "DevicePoolCompatibilityResult",
-          "map" : false,
           "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -36318,9 +36318,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "DevicePoolCompatibilityResult",
-          "map" : false,
           "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+          "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -36459,9 +36459,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "DevicePoolCompatibilityResult",
-            "map" : false,
             "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -36578,9 +36578,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "DevicePoolCompatibilityResult",
-            "map" : false,
             "templateType" : "java.util.List<DevicePoolCompatibilityResult>",
-            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>"
+            "templateImplType" : "java.util.ArrayList<DevicePoolCompatibilityResult>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -36918,9 +36918,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Rule",
-          "map" : false,
           "templateType" : "java.util.List<Rule>",
-          "templateImplType" : "java.util.ArrayList<Rule>"
+          "templateImplType" : "java.util.ArrayList<Rule>",
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -37218,9 +37218,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Rule",
-            "map" : false,
             "templateType" : "java.util.List<Rule>",
-            "templateImplType" : "java.util.ArrayList<Rule>"
+            "templateImplType" : "java.util.ArrayList<Rule>",
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,

@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "machinelearning",
     "signingName" : "machinelearning",
+    "xmlProtocol" : false,
     "jsonProtocol" : true,
     "serviceName" : "Amazon Machine Learning",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -57,12 +57,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateBatchPredictionResult",
       "asyncReturnType" : "CreateBatchPredictionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateBatchPredictionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateBatchPredictionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateBatchPredictionRequest, CreateBatchPredictionResult>",
+      "authenticated" : true,
       "methodName" : "createBatchPrediction"
     },
     "CreateDataSourceFromRDS" : {
@@ -93,12 +93,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDataSourceFromRDSResult",
       "asyncReturnType" : "CreateDataSourceFromRDSResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDataSourceFromRDSResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDataSourceFromRDSResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromRDSRequest, CreateDataSourceFromRDSResult>",
+      "authenticated" : true,
       "methodName" : "createDataSourceFromRDS"
     },
     "CreateDataSourceFromRedshift" : {
@@ -129,12 +129,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDataSourceFromRedshiftResult",
       "asyncReturnType" : "CreateDataSourceFromRedshiftResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDataSourceFromRedshiftResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDataSourceFromRedshiftResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromRedshiftRequest, CreateDataSourceFromRedshiftResult>",
+      "authenticated" : true,
       "methodName" : "createDataSourceFromRedshift"
     },
     "CreateDataSourceFromS3" : {
@@ -165,12 +165,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDataSourceFromS3Result",
       "asyncReturnType" : "CreateDataSourceFromS3Result",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDataSourceFromS3Result>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDataSourceFromS3Result>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromS3Request, CreateDataSourceFromS3Result>",
+      "authenticated" : true,
       "methodName" : "createDataSourceFromS3"
     },
     "CreateEvaluation" : {
@@ -201,12 +201,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateEvaluationResult",
       "asyncReturnType" : "CreateEvaluationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateEvaluationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateEvaluationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEvaluationRequest, CreateEvaluationResult>",
+      "authenticated" : true,
       "methodName" : "createEvaluation"
     },
     "CreateMLModel" : {
@@ -237,12 +237,12 @@
         "documentation" : "<p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateMLModelResult",
       "asyncReturnType" : "CreateMLModelResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateMLModelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateMLModelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateMLModelRequest, CreateMLModelResult>",
+      "authenticated" : true,
       "methodName" : "createMLModel"
     },
     "CreateRealtimeEndpoint" : {
@@ -273,12 +273,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateRealtimeEndpointResult",
       "asyncReturnType" : "CreateRealtimeEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateRealtimeEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateRealtimeEndpointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateRealtimeEndpointRequest, CreateRealtimeEndpointResult>",
+      "authenticated" : true,
       "methodName" : "createRealtimeEndpoint"
     },
     "DeleteBatchPrediction" : {
@@ -309,12 +309,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteBatchPredictionResult",
       "asyncReturnType" : "DeleteBatchPredictionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteBatchPredictionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteBatchPredictionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteBatchPredictionRequest, DeleteBatchPredictionResult>",
+      "authenticated" : true,
       "methodName" : "deleteBatchPrediction"
     },
     "DeleteDataSource" : {
@@ -345,12 +345,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteDataSourceResult",
       "asyncReturnType" : "DeleteDataSourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDataSourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDataSourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult>",
+      "authenticated" : true,
       "methodName" : "deleteDataSource"
     },
     "DeleteEvaluation" : {
@@ -381,12 +381,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteEvaluationResult",
       "asyncReturnType" : "DeleteEvaluationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteEvaluationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteEvaluationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEvaluationRequest, DeleteEvaluationResult>",
+      "authenticated" : true,
       "methodName" : "deleteEvaluation"
     },
     "DeleteMLModel" : {
@@ -417,12 +417,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteMLModelResult",
       "asyncReturnType" : "DeleteMLModelResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteMLModelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteMLModelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteMLModelRequest, DeleteMLModelResult>",
+      "authenticated" : true,
       "methodName" : "deleteMLModel"
     },
     "DeleteRealtimeEndpoint" : {
@@ -453,12 +453,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteRealtimeEndpointResult",
       "asyncReturnType" : "DeleteRealtimeEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRealtimeEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteRealtimeEndpointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRealtimeEndpointRequest, DeleteRealtimeEndpointResult>",
+      "authenticated" : true,
       "methodName" : "deleteRealtimeEndpoint"
     },
     "DescribeBatchPredictions" : {
@@ -486,12 +486,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeBatchPredictionsResult",
       "asyncReturnType" : "DescribeBatchPredictionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeBatchPredictionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeBatchPredictionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeBatchPredictionsRequest, DescribeBatchPredictionsResult>",
+      "authenticated" : true,
       "methodName" : "describeBatchPredictions"
     },
     "DescribeDataSources" : {
@@ -519,12 +519,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDataSourcesResult",
       "asyncReturnType" : "DescribeDataSourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDataSourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDataSourcesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDataSourcesRequest, DescribeDataSourcesResult>",
+      "authenticated" : true,
       "methodName" : "describeDataSources"
     },
     "DescribeEvaluations" : {
@@ -552,12 +552,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeEvaluationsResult",
       "asyncReturnType" : "DescribeEvaluationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEvaluationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEvaluationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEvaluationsRequest, DescribeEvaluationsResult>",
+      "authenticated" : true,
       "methodName" : "describeEvaluations"
     },
     "DescribeMLModels" : {
@@ -585,12 +585,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeMLModelsResult",
       "asyncReturnType" : "DescribeMLModelsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMLModelsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMLModelsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMLModelsRequest, DescribeMLModelsResult>",
+      "authenticated" : true,
       "methodName" : "describeMLModels"
     },
     "GetBatchPrediction" : {
@@ -621,12 +621,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetBatchPredictionResult",
       "asyncReturnType" : "GetBatchPredictionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetBatchPredictionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetBatchPredictionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetBatchPredictionRequest, GetBatchPredictionResult>",
+      "authenticated" : true,
       "methodName" : "getBatchPrediction"
     },
     "GetDataSource" : {
@@ -657,12 +657,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDataSourceResult",
       "asyncReturnType" : "GetDataSourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDataSourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDataSourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDataSourceRequest, GetDataSourceResult>",
+      "authenticated" : true,
       "methodName" : "getDataSource"
     },
     "GetEvaluation" : {
@@ -693,12 +693,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetEvaluationResult",
       "asyncReturnType" : "GetEvaluationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetEvaluationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetEvaluationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetEvaluationRequest, GetEvaluationResult>",
+      "authenticated" : true,
       "methodName" : "getEvaluation"
     },
     "GetMLModel" : {
@@ -729,12 +729,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetMLModelResult",
       "asyncReturnType" : "GetMLModelResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetMLModelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetMLModelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetMLModelRequest, GetMLModelResult>",
+      "authenticated" : true,
       "methodName" : "getMLModel"
     },
     "Predict" : {
@@ -771,12 +771,12 @@
         "documentation" : "<p>The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PredictResult",
       "asyncReturnType" : "PredictResult",
       "asyncFutureType" : "java.util.concurrent.Future<PredictResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PredictResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PredictRequest, PredictResult>",
+      "authenticated" : true,
       "methodName" : "predict"
     },
     "UpdateBatchPrediction" : {
@@ -807,12 +807,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateBatchPredictionResult",
       "asyncReturnType" : "UpdateBatchPredictionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateBatchPredictionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateBatchPredictionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateBatchPredictionRequest, UpdateBatchPredictionResult>",
+      "authenticated" : true,
       "methodName" : "updateBatchPrediction"
     },
     "UpdateDataSource" : {
@@ -843,12 +843,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateDataSourceResult",
       "asyncReturnType" : "UpdateDataSourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDataSourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDataSourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResult>",
+      "authenticated" : true,
       "methodName" : "updateDataSource"
     },
     "UpdateEvaluation" : {
@@ -879,12 +879,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateEvaluationResult",
       "asyncReturnType" : "UpdateEvaluationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateEvaluationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateEvaluationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateEvaluationRequest, UpdateEvaluationResult>",
+      "authenticated" : true,
       "methodName" : "updateEvaluation"
     },
     "UpdateMLModel" : {
@@ -915,12 +915,12 @@
         "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateMLModelResult",
       "asyncReturnType" : "UpdateMLModelResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateMLModelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateMLModelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateMLModelRequest, UpdateMLModelResult>",
+      "authenticated" : true,
       "methodName" : "updateMLModel"
     }
   },

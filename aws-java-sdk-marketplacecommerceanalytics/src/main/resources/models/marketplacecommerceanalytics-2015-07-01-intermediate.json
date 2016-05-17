@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "marketplacecommerceanalytics",
     "signingName" : "marketplacecommerceanalytics",
+    "xmlProtocol" : false,
     "jsonProtocol" : true,
     "serviceName" : "AWS Marketplace Commerce Analytics",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "xmlProtocol" : false
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "GenerateDataSet" : {
@@ -51,12 +51,12 @@
         "documentation" : "This exception is thrown when an internal service error occurs."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GenerateDataSetResult",
       "asyncReturnType" : "GenerateDataSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GenerateDataSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GenerateDataSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GenerateDataSetRequest, GenerateDataSetResult>",
+      "authenticated" : true,
       "methodName" : "generateDataSet"
     }
   },

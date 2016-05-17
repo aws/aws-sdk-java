@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "ecs",
     "signingName" : "ecs",
+    "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "serviceName" : "Amazon ECS",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "jsonProtocol" : true,
-    "xmlProtocol" : false
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "CreateCluster" : {
@@ -57,12 +57,12 @@
         "documentation" : "<p>The specified parameter is invalid. Review the available parameters for the API request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateClusterResult",
       "asyncReturnType" : "CreateClusterResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateClusterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateClusterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, CreateClusterResult>",
-      "authenticated" : true,
       "methodName" : "createCluster"
     },
     "CreateService" : {
@@ -96,12 +96,12 @@
         "documentation" : "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateServiceResult",
       "asyncReturnType" : "CreateServiceResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateServiceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateServiceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateServiceRequest, CreateServiceResult>",
-      "authenticated" : true,
       "methodName" : "createService"
     },
     "DeleteCluster" : {
@@ -141,12 +141,12 @@
         "documentation" : "<p>You cannot delete a cluster that contains services. You must first update the service to reduce its desired task count to 0 and then delete the service. For more information, see <a>UpdateService</a> and <a>DeleteService</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteClusterResult",
       "asyncReturnType" : "DeleteClusterResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteClusterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteClusterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteClusterRequest, DeleteClusterResult>",
-      "authenticated" : true,
       "methodName" : "deleteCluster"
     },
     "DeleteService" : {
@@ -183,12 +183,12 @@
         "documentation" : "<p>The specified service could not be found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteServiceResult",
       "asyncReturnType" : "DeleteServiceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteServiceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteServiceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteServiceRequest, DeleteServiceResult>",
-      "authenticated" : true,
       "methodName" : "deleteService"
     },
     "DeregisterContainerInstance" : {
@@ -222,12 +222,12 @@
         "documentation" : "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeregisterContainerInstanceResult",
       "asyncReturnType" : "DeregisterContainerInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeregisterContainerInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeregisterContainerInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeregisterContainerInstanceRequest, DeregisterContainerInstanceResult>",
-      "authenticated" : true,
       "methodName" : "deregisterContainerInstance"
     },
     "DeregisterTaskDefinition" : {
@@ -258,12 +258,12 @@
         "documentation" : "<p>The specified parameter is invalid. Review the available parameters for the API request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeregisterTaskDefinitionResult",
       "asyncReturnType" : "DeregisterTaskDefinitionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeregisterTaskDefinitionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeregisterTaskDefinitionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeregisterTaskDefinitionRequest, DeregisterTaskDefinitionResult>",
-      "authenticated" : true,
       "methodName" : "deregisterTaskDefinition"
     },
     "DescribeClusters" : {
@@ -294,12 +294,12 @@
         "documentation" : "<p>The specified parameter is invalid. Review the available parameters for the API request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeClustersResult",
       "asyncReturnType" : "DescribeClustersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeClustersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeClustersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeClustersRequest, DescribeClustersResult>",
-      "authenticated" : true,
       "methodName" : "describeClusters"
     },
     "DescribeContainerInstances" : {
@@ -333,12 +333,12 @@
         "documentation" : "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeContainerInstancesResult",
       "asyncReturnType" : "DescribeContainerInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeContainerInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeContainerInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeContainerInstancesRequest, DescribeContainerInstancesResult>",
-      "authenticated" : true,
       "methodName" : "describeContainerInstances"
     },
     "DescribeServices" : {
@@ -372,12 +372,12 @@
         "documentation" : "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeServicesResult",
       "asyncReturnType" : "DescribeServicesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeServicesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeServicesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeServicesRequest, DescribeServicesResult>",
-      "authenticated" : true,
       "methodName" : "describeServices"
     },
     "DescribeTaskDefinition" : {
@@ -408,12 +408,12 @@
         "documentation" : "<p>The specified parameter is invalid. Review the available parameters for the API request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeTaskDefinitionResult",
       "asyncReturnType" : "DescribeTaskDefinitionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTaskDefinitionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTaskDefinitionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTaskDefinitionRequest, DescribeTaskDefinitionResult>",
-      "authenticated" : true,
       "methodName" : "describeTaskDefinition"
     },
     "DescribeTasks" : {
@@ -447,12 +447,12 @@
         "documentation" : "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeTasksResult",
       "asyncReturnType" : "DescribeTasksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTasksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTasksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTasksRequest, DescribeTasksResult>",
-      "authenticated" : true,
       "methodName" : "describeTasks"
     },
     "DiscoverPollEndpoint" : {
@@ -480,12 +480,12 @@
         "documentation" : "<p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permission to use the action or resource, or specifying an identifier that is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DiscoverPollEndpointResult",
       "asyncReturnType" : "DiscoverPollEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<DiscoverPollEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DiscoverPollEndpointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DiscoverPollEndpointRequest, DiscoverPollEndpointResult>",
-      "authenticated" : true,
       "methodName" : "discoverPollEndpoint"
     },
     "ListClusters" : {
@@ -516,12 +516,12 @@
         "documentation" : "<p>The specified parameter is invalid. Review the available parameters for the API request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListClustersResult",
       "asyncReturnType" : "ListClustersResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListClustersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListClustersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult>",
-      "authenticated" : true,
       "methodName" : "listClusters"
     },
     "ListContainerInstances" : {
@@ -555,12 +555,12 @@
         "documentation" : "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListContainerInstancesResult",
       "asyncReturnType" : "ListContainerInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListContainerInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListContainerInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListContainerInstancesRequest, ListContainerInstancesResult>",
-      "authenticated" : true,
       "methodName" : "listContainerInstances"
     },
     "ListServices" : {
@@ -594,12 +594,12 @@
         "documentation" : "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListServicesResult",
       "asyncReturnType" : "ListServicesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListServicesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListServicesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListServicesRequest, ListServicesResult>",
-      "authenticated" : true,
       "methodName" : "listServices"
     },
     "ListTaskDefinitionFamilies" : {
@@ -630,12 +630,12 @@
         "documentation" : "<p>The specified parameter is invalid. Review the available parameters for the API request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTaskDefinitionFamiliesResult",
       "asyncReturnType" : "ListTaskDefinitionFamiliesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTaskDefinitionFamiliesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTaskDefinitionFamiliesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTaskDefinitionFamiliesRequest, ListTaskDefinitionFamiliesResult>",
-      "authenticated" : true,
       "methodName" : "listTaskDefinitionFamilies"
     },
     "ListTaskDefinitions" : {
@@ -666,12 +666,12 @@
         "documentation" : "<p>The specified parameter is invalid. Review the available parameters for the API request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTaskDefinitionsResult",
       "asyncReturnType" : "ListTaskDefinitionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTaskDefinitionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTaskDefinitionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTaskDefinitionsRequest, ListTaskDefinitionsResult>",
-      "authenticated" : true,
       "methodName" : "listTaskDefinitions"
     },
     "ListTasks" : {
@@ -708,12 +708,12 @@
         "documentation" : "<p>The specified service could not be found. You can view your available services with <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTasksResult",
       "asyncReturnType" : "ListTasksResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTasksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTasksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult>",
-      "authenticated" : true,
       "methodName" : "listTasks"
     },
     "RegisterContainerInstance" : {
@@ -741,12 +741,12 @@
         "documentation" : "<p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permission to use the action or resource, or specifying an identifier that is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RegisterContainerInstanceResult",
       "asyncReturnType" : "RegisterContainerInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterContainerInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RegisterContainerInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterContainerInstanceRequest, RegisterContainerInstanceResult>",
-      "authenticated" : true,
       "methodName" : "registerContainerInstance"
     },
     "RegisterTaskDefinition" : {
@@ -777,12 +777,12 @@
         "documentation" : "<p>The specified parameter is invalid. Review the available parameters for the API request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RegisterTaskDefinitionResult",
       "asyncReturnType" : "RegisterTaskDefinitionResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterTaskDefinitionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RegisterTaskDefinitionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterTaskDefinitionRequest, RegisterTaskDefinitionResult>",
-      "authenticated" : true,
       "methodName" : "registerTaskDefinition"
     },
     "RunTask" : {
@@ -816,12 +816,12 @@
         "documentation" : "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RunTaskResult",
       "asyncReturnType" : "RunTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<RunTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RunTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RunTaskRequest, RunTaskResult>",
-      "authenticated" : true,
       "methodName" : "runTask"
     },
     "StartTask" : {
@@ -855,12 +855,12 @@
         "documentation" : "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "StartTaskResult",
       "asyncReturnType" : "StartTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartTaskRequest, StartTaskResult>",
-      "authenticated" : true,
       "methodName" : "startTask"
     },
     "StopTask" : {
@@ -894,12 +894,12 @@
         "documentation" : "<p>The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "StopTaskResult",
       "asyncReturnType" : "StopTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopTaskRequest, StopTaskResult>",
-      "authenticated" : true,
       "methodName" : "stopTask"
     },
     "SubmitContainerStateChange" : {
@@ -927,12 +927,12 @@
         "documentation" : "<p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permission to use the action or resource, or specifying an identifier that is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SubmitContainerStateChangeResult",
       "asyncReturnType" : "SubmitContainerStateChangeResult",
       "asyncFutureType" : "java.util.concurrent.Future<SubmitContainerStateChangeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SubmitContainerStateChangeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SubmitContainerStateChangeRequest, SubmitContainerStateChangeResult>",
-      "authenticated" : true,
       "methodName" : "submitContainerStateChange"
     },
     "SubmitTaskStateChange" : {
@@ -960,12 +960,12 @@
         "documentation" : "<p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permission to use the action or resource, or specifying an identifier that is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SubmitTaskStateChangeResult",
       "asyncReturnType" : "SubmitTaskStateChangeResult",
       "asyncFutureType" : "java.util.concurrent.Future<SubmitTaskStateChangeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SubmitTaskStateChangeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SubmitTaskStateChangeRequest, SubmitTaskStateChangeResult>",
-      "authenticated" : true,
       "methodName" : "submitTaskStateChange"
     },
     "UpdateContainerAgent" : {
@@ -1008,12 +1008,12 @@
         "documentation" : "<p>Amazon ECS is unable to determine the current version of the Amazon ECS container agent on the container instance and does not have enough information to proceed with an update. This could be because the agent running on the container instance is an older or custom version that does not use our version information.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateContainerAgentResult",
       "asyncReturnType" : "UpdateContainerAgentResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateContainerAgentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateContainerAgentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateContainerAgentRequest, UpdateContainerAgentResult>",
-      "authenticated" : true,
       "methodName" : "updateContainerAgent"
     },
     "UpdateService" : {
@@ -1053,12 +1053,12 @@
         "documentation" : "<p>The specified service is not active. You cannot update a service that is not active. If you have previously deleted a service, you can re-create it with <a>CreateService</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateServiceResult",
       "asyncReturnType" : "UpdateServiceResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateServiceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateServiceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateServiceRequest, UpdateServiceResult>",
-      "authenticated" : true,
       "methodName" : "updateService"
     }
   },

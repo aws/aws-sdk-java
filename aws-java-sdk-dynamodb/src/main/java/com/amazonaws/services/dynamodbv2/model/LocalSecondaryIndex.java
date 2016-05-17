@@ -52,7 +52,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * The term "hash attribute" derives from DynamoDB' usage of an internal
      * hash function to evenly distribute data items across partitions, based on
      * their partition key values.
      * </p>
@@ -135,7 +135,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * The term "hash attribute" derives from DynamoDB' usage of an internal
      * hash function to evenly distribute data items across partitions, based on
      * their partition key values.
      * </p>
@@ -164,10 +164,9 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      *         <note>
      *         <p>
      *         The partition key of an item is also known as its <i>hash
-     *         attribute</i>. The term "hash attribute" derives from
-     *         DynamoDB&#39; usage of an internal hash function to evenly
-     *         distribute data items across partitions, based on their partition
-     *         key values.
+     *         attribute</i>. The term "hash attribute" derives from DynamoDB'
+     *         usage of an internal hash function to evenly distribute data
+     *         items across partitions, based on their partition key values.
      *         </p>
      *         <p>
      *         The sort key of an item is also known as its <i>range
@@ -201,7 +200,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * The term "hash attribute" derives from DynamoDB' usage of an internal
      * hash function to evenly distribute data items across partitions, based on
      * their partition key values.
      * </p>
@@ -231,10 +230,9 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash
-     *        attribute</i>. The term "hash attribute" derives from
-     *        DynamoDB&#39; usage of an internal hash function to evenly
-     *        distribute data items across partitions, based on their partition
-     *        key values.
+     *        attribute</i>. The term "hash attribute" derives from DynamoDB'
+     *        usage of an internal hash function to evenly distribute data items
+     *        across partitions, based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range
@@ -273,7 +271,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * The term "hash attribute" derives from DynamoDB' usage of an internal
      * hash function to evenly distribute data items across partitions, based on
      * their partition key values.
      * </p>
@@ -309,10 +307,9 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash
-     *        attribute</i>. The term "hash attribute" derives from
-     *        DynamoDB&#39; usage of an internal hash function to evenly
-     *        distribute data items across partitions, based on their partition
-     *        key values.
+     *        attribute</i>. The term "hash attribute" derives from DynamoDB'
+     *        usage of an internal hash function to evenly distribute data items
+     *        across partitions, based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range
@@ -355,7 +352,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>.
-     * The term "hash attribute" derives from DynamoDB&#39; usage of an internal
+     * The term "hash attribute" derives from DynamoDB' usage of an internal
      * hash function to evenly distribute data items across partitions, based on
      * their partition key values.
      * </p>
@@ -385,10 +382,9 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash
-     *        attribute</i>. The term "hash attribute" derives from
-     *        DynamoDB&#39; usage of an internal hash function to evenly
-     *        distribute data items across partitions, based on their partition
-     *        key values.
+     *        attribute</i>. The term "hash attribute" derives from DynamoDB'
+     *        usage of an internal hash function to evenly distribute data items
+     *        across partitions, based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range

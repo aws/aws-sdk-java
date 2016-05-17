@@ -625,30 +625,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
-     * <code>:sortkeyval</code> - true if the sort key value is less than
-     * <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if
+     * the sort key value is less than <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
-     * <code>:sortkeyval</code> - true if the sort key value is less than or
-     * equal to <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if
+     * the sort key value is less than or equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
-     * <code>:sortkeyval</code> - true if the sort key value is greater than
-     * <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if
+     * the sort key value is greater than <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
-     * <code>:sortkeyval</code> - true if the sort key value is greater than or
-     * equal to <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if
+     * the sort key value is greater than or equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
@@ -661,7 +657,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <i>begins_with (</i><code>sortKeyName</code>, <code>:sortkeyval</code>
+     * <i>begins_with (</i> <code>sortKeyName</code>, <code>:sortkeyval</code>
      * <i>)</i> - true if the sort key value begins with a particular operand.
      * (You cannot use this function with a sort key that is of type Number.)
      * Note that the function name <code>begins_with</code> is case-sensitive.
@@ -682,7 +678,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <i>Size</i> is a reserved word:
      * </p>
      * <ul>
-     * <li> <code>Size = :myval</code></li>
+     * <li>
+     * <p>
+     * <code>Size = :myval</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To work around this, define a placeholder (such a <code>#S</code>) to
@@ -690,7 +690,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * then is as follows:
      * </p>
      * <ul>
-     * <li> <code>#S = :myval</code></li>
+     * <li>
+     * <p>
+     * <code>#S = :myval</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a list of reserved words, see <a href=
@@ -1727,11 +1731,13 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * fetch attributes from the parent table.
      * </p>
      * 
-     * @return This is a legacy parameter, for backward compatibility. New
+     * @return <p>
+     *         This is a legacy parameter, for backward compatibility. New
      *         applications should use <i>ProjectionExpression</i> instead. Do
      *         not combine legacy parameters and expression parameters in a
      *         single API call; otherwise, DynamoDB will return a
-     *         <i>ValidationException</i> exception.</p>
+     *         <i>ValidationException</i> exception.
+     *         </p>
      *         <p>
      *         This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a
@@ -1765,6 +1771,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         fetch each of these attributes from the parent table. This extra
      *         fetching incurs additional throughput cost and latency.
      *         </p>
+     *         <p>
+     *         If you query a global secondary index, you can only request
+     *         attributes that are projected into the index. Global secondary
+     *         index queries cannot fetch attributes from the parent table.
      */
 
     public java.util.List<String> getAttributesToGet() {
@@ -1815,11 +1825,13 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -1853,6 +1865,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        fetch each of these attributes from the parent table. This extra
      *        fetching incurs additional throughput cost and latency.
      *        </p>
+     *        <p>
+     *        If you query a global secondary index, you can only request
+     *        attributes that are projected into the index. Global secondary
+     *        index queries cannot fetch attributes from the parent table.
      */
 
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
@@ -1914,11 +1930,13 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -1952,6 +1970,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        fetch each of these attributes from the parent table. This extra
      *        fetching incurs additional throughput cost and latency.
      *        </p>
+     *        <p>
+     *        If you query a global secondary index, you can only request
+     *        attributes that are projected into the index. Global secondary
+     *        index queries cannot fetch attributes from the parent table.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2011,11 +2033,13 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -2049,6 +2073,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        fetch each of these attributes from the parent table. This extra
      *        fetching incurs additional throughput cost and latency.
      *        </p>
+     *        <p>
+     *        If you query a global secondary index, you can only request
+     *        attributes that are projected into the index. Global secondary
+     *        index queries cannot fetch attributes from the parent table.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -5117,30 +5145,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
-     * <code>:sortkeyval</code> - true if the sort key value is less than
-     * <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if
+     * the sort key value is less than <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
-     * <code>:sortkeyval</code> - true if the sort key value is less than or
-     * equal to <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if
+     * the sort key value is less than or equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
-     * <code>:sortkeyval</code> - true if the sort key value is greater than
-     * <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if
+     * the sort key value is greater than <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
-     * <code>:sortkeyval</code> - true if the sort key value is greater than or
-     * equal to <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if
+     * the sort key value is greater than or equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
@@ -5153,7 +5177,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <i>begins_with (</i><code>sortKeyName</code>, <code>:sortkeyval</code>
+     * <i>begins_with (</i> <code>sortKeyName</code>, <code>:sortkeyval</code>
      * <i>)</i> - true if the sort key value begins with a particular operand.
      * (You cannot use this function with a sort key that is of type Number.)
      * Note that the function name <code>begins_with</code> is case-sensitive.
@@ -5174,7 +5198,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <i>Size</i> is a reserved word:
      * </p>
      * <ul>
-     * <li> <code>Size = :myval</code></li>
+     * <li>
+     * <p>
+     * <code>Size = :myval</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To work around this, define a placeholder (such a <code>#S</code>) to
@@ -5182,7 +5210,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * then is as follows:
      * </p>
      * <ul>
-     * <li> <code>#S = :myval</code></li>
+     * <li>
+     * <p>
+     * <code>#S = :myval</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a list of reserved words, see <a href=
@@ -5245,30 +5277,29 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
-     *        <code>:sortkeyval</code> - true if the sort key value is less than
+     *        <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> -
+     *        true if the sort key value is less than <code>:sortkeyval</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> -
+     *        true if the sort key value is less than or equal to
      *        <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
-     *        <code>:sortkeyval</code> - true if the sort key value is less than
-     *        or equal to <code>:sortkeyval</code>.
+     *        <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> -
+     *        true if the sort key value is greater than
+     *        <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
-     *        <code>:sortkeyval</code> - true if the sort key value is greater
-     *        than <code>:sortkeyval</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
-     *        <code>:sortkeyval</code> - true if the sort key value is greater
-     *        than or equal to <code>:sortkeyval</code>.
+     *        <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> -
+     *        true if the sort key value is greater than or equal to
+     *        <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -5281,8 +5312,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <i>begins_with (</i><code>sortKeyName</code>,
-     *        <code>:sortkeyval</code><i>)</i> - true if the sort key value
+     *        <i>begins_with (</i> <code>sortKeyName</code>,
+     *        <code>:sortkeyval</code> <i>)</i> - true if the sort key value
      *        begins with a particular operand. (You cannot use this function
      *        with a sort key that is of type Number.) Note that the function
      *        name <code>begins_with</code> is case-sensitive.
@@ -5303,7 +5334,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        causes an error because <i>Size</i> is a reserved word:
      *        </p>
      *        <ul>
-     *        <li> <code>Size = :myval</code></li>
+     *        <li>
+     *        <p>
+     *        <code>Size = :myval</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        To work around this, define a placeholder (such a <code>#S</code>)
@@ -5311,7 +5346,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <i>KeyConditionExpression</i> then is as follows:
      *        </p>
      *        <ul>
-     *        <li> <code>#S = :myval</code></li>
+     *        <li>
+     *        <p>
+     *        <code>#S = :myval</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For a list of reserved words, see <a href=
@@ -5377,30 +5416,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
-     * <code>:sortkeyval</code> - true if the sort key value is less than
-     * <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if
+     * the sort key value is less than <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
-     * <code>:sortkeyval</code> - true if the sort key value is less than or
-     * equal to <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if
+     * the sort key value is less than or equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
-     * <code>:sortkeyval</code> - true if the sort key value is greater than
-     * <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if
+     * the sort key value is greater than <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
-     * <code>:sortkeyval</code> - true if the sort key value is greater than or
-     * equal to <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if
+     * the sort key value is greater than or equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
@@ -5413,7 +5448,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <i>begins_with (</i><code>sortKeyName</code>, <code>:sortkeyval</code>
+     * <i>begins_with (</i> <code>sortKeyName</code>, <code>:sortkeyval</code>
      * <i>)</i> - true if the sort key value begins with a particular operand.
      * (You cannot use this function with a sort key that is of type Number.)
      * Note that the function name <code>begins_with</code> is case-sensitive.
@@ -5434,7 +5469,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <i>Size</i> is a reserved word:
      * </p>
      * <ul>
-     * <li> <code>Size = :myval</code></li>
+     * <li>
+     * <p>
+     * <code>Size = :myval</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To work around this, define a placeholder (such a <code>#S</code>) to
@@ -5442,7 +5481,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * then is as follows:
      * </p>
      * <ul>
-     * <li> <code>#S = :myval</code></li>
+     * <li>
+     * <p>
+     * <code>#S = :myval</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a list of reserved words, see <a href=
@@ -5504,30 +5547,29 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
-     *         <code>:sortkeyval</code> - true if the sort key value is less
-     *         than <code>:sortkeyval</code>.
+     *         <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> -
+     *         true if the sort key value is less than <code>:sortkeyval</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
-     *         <code>:sortkeyval</code> - true if the sort key value is less
-     *         than or equal to <code>:sortkeyval</code>.
+     *         <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> -
+     *         true if the sort key value is less than or equal to
+     *         <code>:sortkeyval</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
-     *         <code>:sortkeyval</code> - true if the sort key value is greater
-     *         than <code>:sortkeyval</code>.
+     *         <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> -
+     *         true if the sort key value is greater than
+     *         <code>:sortkeyval</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
-     *         <code>:sortkeyval</code> - true if the sort key value is greater
-     *         than or equal to <code>:sortkeyval</code>.
+     *         <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> -
+     *         true if the sort key value is greater than or equal to
+     *         <code>:sortkeyval</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -5540,8 +5582,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <i>begins_with (</i><code>sortKeyName</code>,
-     *         <code>:sortkeyval</code><i>)</i> - true if the sort key value
+     *         <i>begins_with (</i> <code>sortKeyName</code>,
+     *         <code>:sortkeyval</code> <i>)</i> - true if the sort key value
      *         begins with a particular operand. (You cannot use this function
      *         with a sort key that is of type Number.) Note that the function
      *         name <code>begins_with</code> is case-sensitive.
@@ -5562,7 +5604,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         causes an error because <i>Size</i> is a reserved word:
      *         </p>
      *         <ul>
-     *         <li> <code>Size = :myval</code></li>
+     *         <li>
+     *         <p>
+     *         <code>Size = :myval</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         To work around this, define a placeholder (such a <code>#S</code>
@@ -5570,7 +5616,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         <i>KeyConditionExpression</i> then is as follows:
      *         </p>
      *         <ul>
-     *         <li> <code>#S = :myval</code></li>
+     *         <li>
+     *         <p>
+     *         <code>#S = :myval</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For a list of reserved words, see <a href=
@@ -5637,30 +5687,26 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
-     * <code>:sortkeyval</code> - true if the sort key value is less than
-     * <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if
+     * the sort key value is less than <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
-     * <code>:sortkeyval</code> - true if the sort key value is less than or
-     * equal to <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if
+     * the sort key value is less than or equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
-     * <code>:sortkeyval</code> - true if the sort key value is greater than
-     * <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if
+     * the sort key value is greater than <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
-     * <code>:sortkeyval</code> - true if the sort key value is greater than or
-     * equal to <code>:sortkeyval</code>.
+     * <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if
+     * the sort key value is greater than or equal to <code>:sortkeyval</code>.
      * </p>
      * </li>
      * <li>
@@ -5673,7 +5719,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <i>begins_with (</i><code>sortKeyName</code>, <code>:sortkeyval</code>
+     * <i>begins_with (</i> <code>sortKeyName</code>, <code>:sortkeyval</code>
      * <i>)</i> - true if the sort key value begins with a particular operand.
      * (You cannot use this function with a sort key that is of type Number.)
      * Note that the function name <code>begins_with</code> is case-sensitive.
@@ -5694,7 +5740,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * <i>Size</i> is a reserved word:
      * </p>
      * <ul>
-     * <li> <code>Size = :myval</code></li>
+     * <li>
+     * <p>
+     * <code>Size = :myval</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To work around this, define a placeholder (such a <code>#S</code>) to
@@ -5702,7 +5752,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * then is as follows:
      * </p>
      * <ul>
-     * <li> <code>#S = :myval</code></li>
+     * <li>
+     * <p>
+     * <code>#S = :myval</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a list of reserved words, see <a href=
@@ -5765,30 +5819,29 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i>
-     *        <code>:sortkeyval</code> - true if the sort key value is less than
+     *        <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> -
+     *        true if the sort key value is less than <code>:sortkeyval</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> -
+     *        true if the sort key value is less than or equal to
      *        <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i>
-     *        <code>:sortkeyval</code> - true if the sort key value is less than
-     *        or equal to <code>:sortkeyval</code>.
+     *        <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> -
+     *        true if the sort key value is greater than
+     *        <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i>
-     *        <code>:sortkeyval</code> - true if the sort key value is greater
-     *        than <code>:sortkeyval</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i>
-     *        <code>:sortkeyval</code> - true if the sort key value is greater
-     *        than or equal to <code>:sortkeyval</code>.
+     *        <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> -
+     *        true if the sort key value is greater than or equal to
+     *        <code>:sortkeyval</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -5801,8 +5854,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <i>begins_with (</i><code>sortKeyName</code>,
-     *        <code>:sortkeyval</code><i>)</i> - true if the sort key value
+     *        <i>begins_with (</i> <code>sortKeyName</code>,
+     *        <code>:sortkeyval</code> <i>)</i> - true if the sort key value
      *        begins with a particular operand. (You cannot use this function
      *        with a sort key that is of type Number.) Note that the function
      *        name <code>begins_with</code> is case-sensitive.
@@ -5823,7 +5876,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        causes an error because <i>Size</i> is a reserved word:
      *        </p>
      *        <ul>
-     *        <li> <code>Size = :myval</code></li>
+     *        <li>
+     *        <p>
+     *        <code>Size = :myval</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        To work around this, define a placeholder (such a <code>#S</code>)
@@ -5831,7 +5888,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <i>KeyConditionExpression</i> then is as follows:
      *        </p>
      *        <ul>
-     *        <li> <code>#S = :myval</code></li>
+     *        <li>
+     *        <p>
+     *        <code>#S = :myval</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For a list of reserved words, see <a href=

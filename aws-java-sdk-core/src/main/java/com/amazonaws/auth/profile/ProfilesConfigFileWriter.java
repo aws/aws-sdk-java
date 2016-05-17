@@ -15,8 +15,10 @@
 package com.amazonaws.auth.profile;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.Collections;
 import java.util.HashMap;
@@ -34,6 +36,7 @@ import org.apache.commons.logging.LogFactory;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.profile.internal.AbstractProfilesConfigFileScanner;
 import com.amazonaws.auth.profile.internal.Profile;
+import com.amazonaws.util.StringUtils;
 
 /**
  * The class for creating and modifying the credential profiles file.
@@ -65,9 +68,10 @@ public class ProfilesConfigFileWriter {
                     "content and completely re-write the file.");
         }
 
-        FileWriter writer;
+        OutputStreamWriter writer;
         try {
-            writer = new FileWriter(destination, false); // append=false
+            writer = new OutputStreamWriter(new FileOutputStream(destination, false), StringUtils.UTF8);
+
         } catch (IOException ioe) {
             throw new AmazonClientException(
                     "Unable to open the destination file.", ioe);
@@ -183,13 +187,13 @@ public class ProfilesConfigFileWriter {
             }
         }
 
-        FileWriter writer = null;
+        OutputStreamWriter writer = null;
         try {
-            writer = new FileWriter(destination);
+            writer = new OutputStreamWriter(new FileOutputStream(destination), StringUtils.UTF8);
             ProfilesConfigFileWriterHelper writerHelper = new ProfilesConfigFileWriterHelper(writer, modifications);
 
             if (inPlaceModify) {
-                Scanner existingContent = new Scanner(stashLocation);
+                Scanner existingContent = new Scanner(stashLocation, StringUtils.UTF8.name());
                 writerHelper.writeWithExistingContent(existingContent);
             } else {
                 writerHelper.writeWithoutExistingContent();

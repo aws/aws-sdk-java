@@ -32,7 +32,7 @@ public class Example {
             @JsonProperty(value = "description", required = true) String description,
             @JsonProperty(value = "id", required = true) String id,
             @JsonProperty(value = "title", required = true) String title,
-            @JsonProperty(value = "input", required = true) JsonNode input,
+            @JsonProperty(value = "input") JsonNode input,
             @JsonProperty(value = "output") JsonNode output,
             @JsonProperty(value = "comments", required = true) ExampleComments comments) {
         this.description = description;

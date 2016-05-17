@@ -99,6 +99,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.
      * </p>
@@ -656,11 +664,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * size, not on the amount of data that is returned to an application.
      * </p>
      * 
-     * @return This is a legacy parameter, for backward compatibility. New
+     * @return <p>
+     *         This is a legacy parameter, for backward compatibility. New
      *         applications should use <i>ProjectionExpression</i> instead. Do
      *         not combine legacy parameters and expression parameters in a
      *         single API call; otherwise, DynamoDB will return a
-     *         <i>ValidationException</i> exception.</p>
+     *         <i>ValidationException</i> exception.
+     *         </p>
      *         <p>
      *         This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a
@@ -674,7 +684,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         in the result.
      *         </p>
      *         <p>
-     *         Note that <i>AttributesToGet
+     *         Note that <i>AttributesToGet</i> has no effect on provisioned
+     *         throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application.
      */
 
     public java.util.List<String> getAttributesToGet() {
@@ -706,11 +719,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -724,7 +739,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        the result.
      *        </p>
      *        <p>
-     *        Note that <i>AttributesToGet
+     *        Note that <i>AttributesToGet</i> has no effect on provisioned
+     *        throughput consumption. DynamoDB determines capacity units
+     *        consumed based on item size, not on the amount of data that is
+     *        returned to an application.
      */
 
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
@@ -767,11 +785,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -785,7 +805,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        the result.
      *        </p>
      *        <p>
-     *        Note that <i>AttributesToGet
+     *        Note that <i>AttributesToGet</i> has no effect on provisioned
+     *        throughput consumption. DynamoDB determines capacity units
+     *        consumed based on item size, not on the amount of data that is
+     *        returned to an application.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -826,11 +849,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -844,7 +869,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        the result.
      *        </p>
      *        <p>
-     *        Note that <i>AttributesToGet
+     *        Note that <i>AttributesToGet</i> has no effect on provisioned
+     *        throughput consumption. DynamoDB determines capacity units
+     *        consumed based on item size, not on the amount of data that is
+     *        returned to an application.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -979,6 +1007,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.
      * </p>
@@ -1008,6 +1044,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying
+     *        an index. Retrieves all attributes that have been projected into
+     *        the index. If the index is configured to project all attributes,
+     *        this return value is equivalent to specifying
+     *        <code>ALL_ATTRIBUTES</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1053,6 +1098,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.
      * </p>
@@ -1081,6 +1134,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when
+     *         querying an index. Retrieves all attributes that have been
+     *         projected into the index. If the index is configured to project
+     *         all attributes, this return value is equivalent to specifying
+     *         <code>ALL_ATTRIBUTES</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1126,6 +1188,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.
      * </p>
@@ -1155,6 +1225,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying
+     *        an index. Retrieves all attributes that have been projected into
+     *        the index. If the index is configured to project all attributes,
+     *        this return value is equivalent to specifying
+     *        <code>ALL_ATTRIBUTES</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1203,6 +1282,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.
      * </p>
@@ -1232,6 +1319,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying
+     *        an index. Retrieves all attributes that have been projected into
+     *        the index. If the index is configured to project all attributes,
+     *        this return value is equivalent to specifying
+     *        <code>ALL_ATTRIBUTES</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1277,6 +1373,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.
      * </p>
@@ -1306,6 +1410,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying
+     *        an index. Retrieves all attributes that have been projected into
+     *        the index. If the index is configured to project all attributes,
+     *        this return value is equivalent to specifying
+     *        <code>ALL_ATTRIBUTES</code>.
      *        </p>
      *        </li>
      *        <li>

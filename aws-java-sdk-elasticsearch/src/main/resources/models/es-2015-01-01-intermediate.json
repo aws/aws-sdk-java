@@ -60,12 +60,12 @@
         "documentation" : "<p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddTagsResult",
       "asyncReturnType" : "AddTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>",
-      "authenticated" : true,
       "methodName" : "addTags"
     },
     "CreateElasticsearchDomain" : {
@@ -108,12 +108,12 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateElasticsearchDomainResult",
       "asyncReturnType" : "CreateElasticsearchDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateElasticsearchDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateElasticsearchDomainResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateElasticsearchDomainRequest, CreateElasticsearchDomainResult>",
-      "authenticated" : true,
       "methodName" : "createElasticsearchDomain"
     },
     "DeleteElasticsearchDomain" : {
@@ -147,12 +147,12 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteElasticsearchDomainResult",
       "asyncReturnType" : "DeleteElasticsearchDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteElasticsearchDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteElasticsearchDomainResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteElasticsearchDomainRequest, DeleteElasticsearchDomainResult>",
-      "authenticated" : true,
       "methodName" : "deleteElasticsearchDomain"
     },
     "DescribeElasticsearchDomain" : {
@@ -186,12 +186,12 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeElasticsearchDomainResult",
       "asyncReturnType" : "DescribeElasticsearchDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeElasticsearchDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeElasticsearchDomainResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeElasticsearchDomainRequest, DescribeElasticsearchDomainResult>",
-      "authenticated" : true,
       "methodName" : "describeElasticsearchDomain"
     },
     "DescribeElasticsearchDomainConfig" : {
@@ -225,12 +225,12 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeElasticsearchDomainConfigResult",
       "asyncReturnType" : "DescribeElasticsearchDomainConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeElasticsearchDomainConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeElasticsearchDomainConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeElasticsearchDomainConfigRequest, DescribeElasticsearchDomainConfigResult>",
-      "authenticated" : true,
       "methodName" : "describeElasticsearchDomainConfig"
     },
     "DescribeElasticsearchDomains" : {
@@ -261,12 +261,12 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeElasticsearchDomainsResult",
       "asyncReturnType" : "DescribeElasticsearchDomainsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeElasticsearchDomainsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeElasticsearchDomainsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeElasticsearchDomainsRequest, DescribeElasticsearchDomainsResult>",
-      "authenticated" : true,
       "methodName" : "describeElasticsearchDomains"
     },
     "ListDomainNames" : {
@@ -294,12 +294,12 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListDomainNamesResult",
       "asyncReturnType" : "ListDomainNamesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDomainNamesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDomainNamesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDomainNamesRequest, ListDomainNamesResult>",
-      "authenticated" : true,
       "methodName" : "listDomainNames"
     },
     "ListTags" : {
@@ -333,12 +333,12 @@
         "documentation" : "<p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTagsResult",
       "asyncReturnType" : "ListTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult>",
-      "authenticated" : true,
       "methodName" : "listTags"
     },
     "RemoveTags" : {
@@ -369,12 +369,12 @@
         "documentation" : "<p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RemoveTagsResult",
       "asyncReturnType" : "RemoveTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>",
-      "authenticated" : true,
       "methodName" : "removeTags"
     },
     "UpdateElasticsearchDomainConfig" : {
@@ -414,12 +414,12 @@
         "documentation" : "<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateElasticsearchDomainConfigResult",
       "asyncReturnType" : "UpdateElasticsearchDomainConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateElasticsearchDomainConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateElasticsearchDomainConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateElasticsearchDomainConfigRequest, UpdateElasticsearchDomainConfigResult>",
-      "authenticated" : true,
       "methodName" : "updateElasticsearchDomainConfig"
     }
   },

@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cognito-sync",
     "signingName" : "cognito-sync",
-    "xmlProtocol" : false,
-    "jsonProtocol" : true,
     "serviceName" : "Amazon Cognito Sync",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "xmlProtocol" : false,
+    "jsonProtocol" : true
   },
   "operations" : {
     "BulkPublish" : {
@@ -66,12 +66,12 @@
         "documentation" : "An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BulkPublishResult",
       "asyncReturnType" : "BulkPublishResult",
       "asyncFutureType" : "java.util.concurrent.Future<BulkPublishResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BulkPublishResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BulkPublishRequest, BulkPublishResult>",
+      "authenticated" : true,
       "methodName" : "bulkPublish"
     },
     "DeleteDataset" : {
@@ -111,12 +111,12 @@
         "documentation" : "Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteDatasetResult",
       "asyncReturnType" : "DeleteDatasetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDatasetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDatasetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDatasetRequest, DeleteDatasetResult>",
+      "authenticated" : true,
       "methodName" : "deleteDataset"
     },
     "DescribeDataset" : {
@@ -153,12 +153,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDatasetResult",
       "asyncReturnType" : "DescribeDatasetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDatasetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDatasetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDatasetRequest, DescribeDatasetResult>",
+      "authenticated" : true,
       "methodName" : "describeDataset"
     },
     "DescribeIdentityPoolUsage" : {
@@ -195,12 +195,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeIdentityPoolUsageResult",
       "asyncReturnType" : "DescribeIdentityPoolUsageResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeIdentityPoolUsageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeIdentityPoolUsageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeIdentityPoolUsageRequest, DescribeIdentityPoolUsageResult>",
+      "authenticated" : true,
       "methodName" : "describeIdentityPoolUsage"
     },
     "DescribeIdentityUsage" : {
@@ -237,12 +237,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeIdentityUsageResult",
       "asyncReturnType" : "DescribeIdentityUsageResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeIdentityUsageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeIdentityUsageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeIdentityUsageRequest, DescribeIdentityUsageResult>",
+      "authenticated" : true,
       "methodName" : "describeIdentityUsage"
     },
     "GetBulkPublishDetails" : {
@@ -276,12 +276,12 @@
         "documentation" : "Indicates an internal service error."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetBulkPublishDetailsResult",
       "asyncReturnType" : "GetBulkPublishDetailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetBulkPublishDetailsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetBulkPublishDetailsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetBulkPublishDetailsRequest, GetBulkPublishDetailsResult>",
+      "authenticated" : true,
       "methodName" : "getBulkPublishDetails"
     },
     "GetCognitoEvents" : {
@@ -318,12 +318,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetCognitoEventsResult",
       "asyncReturnType" : "GetCognitoEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCognitoEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCognitoEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCognitoEventsRequest, GetCognitoEventsResult>",
+      "authenticated" : true,
       "methodName" : "getCognitoEvents"
     },
     "GetIdentityPoolConfiguration" : {
@@ -360,12 +360,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetIdentityPoolConfigurationResult",
       "asyncReturnType" : "GetIdentityPoolConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIdentityPoolConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityPoolConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityPoolConfigurationRequest, GetIdentityPoolConfigurationResult>",
+      "authenticated" : true,
       "methodName" : "getIdentityPoolConfiguration"
     },
     "ListDatasets" : {
@@ -399,12 +399,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDatasetsResult",
       "asyncReturnType" : "ListDatasetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDatasetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDatasetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDatasetsRequest, ListDatasetsResult>",
+      "authenticated" : true,
       "methodName" : "listDatasets"
     },
     "ListIdentityPoolUsage" : {
@@ -438,12 +438,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListIdentityPoolUsageResult",
       "asyncReturnType" : "ListIdentityPoolUsageResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListIdentityPoolUsageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListIdentityPoolUsageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIdentityPoolUsageRequest, ListIdentityPoolUsageResult>",
+      "authenticated" : true,
       "methodName" : "listIdentityPoolUsage"
     },
     "ListRecords" : {
@@ -477,12 +477,12 @@
         "documentation" : "Indicates an internal service error."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListRecordsResult",
       "asyncReturnType" : "ListRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRecordsRequest, ListRecordsResult>",
+      "authenticated" : true,
       "methodName" : "listRecords"
     },
     "RegisterDevice" : {
@@ -522,12 +522,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RegisterDeviceResult",
       "asyncReturnType" : "RegisterDeviceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterDeviceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RegisterDeviceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterDeviceRequest, RegisterDeviceResult>",
+      "authenticated" : true,
       "methodName" : "registerDevice"
     },
     "SetCognitoEvents" : {
@@ -564,12 +564,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "SetCognitoEventsResult",
       "asyncReturnType" : "SetCognitoEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetCognitoEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetCognitoEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetCognitoEventsRequest, SetCognitoEventsResult>",
+      "authenticated" : true,
       "methodName" : "setCognitoEvents"
     },
     "SetIdentityPoolConfiguration" : {
@@ -609,12 +609,12 @@
         "documentation" : "<p>Thrown if there are parallel requests to modify a resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "SetIdentityPoolConfigurationResult",
       "asyncReturnType" : "SetIdentityPoolConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetIdentityPoolConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityPoolConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityPoolConfigurationRequest, SetIdentityPoolConfigurationResult>",
+      "authenticated" : true,
       "methodName" : "setIdentityPoolConfiguration"
     },
     "SubscribeToDataset" : {
@@ -654,12 +654,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "SubscribeToDatasetResult",
       "asyncReturnType" : "SubscribeToDatasetResult",
       "asyncFutureType" : "java.util.concurrent.Future<SubscribeToDatasetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SubscribeToDatasetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SubscribeToDatasetRequest, SubscribeToDatasetResult>",
+      "authenticated" : true,
       "methodName" : "subscribeToDataset"
     },
     "UnsubscribeFromDataset" : {
@@ -699,12 +699,12 @@
         "documentation" : "Thrown if the request is throttled."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UnsubscribeFromDatasetResult",
       "asyncReturnType" : "UnsubscribeFromDatasetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UnsubscribeFromDatasetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UnsubscribeFromDatasetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UnsubscribeFromDatasetRequest, UnsubscribeFromDatasetResult>",
+      "authenticated" : true,
       "methodName" : "unsubscribeFromDataset"
     },
     "UpdateRecords" : {
@@ -753,12 +753,12 @@
         "documentation" : "Indicates an internal service error."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateRecordsResult",
       "asyncReturnType" : "UpdateRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRecordsRequest, UpdateRecordsResult>",
+      "authenticated" : true,
       "methodName" : "updateRecords"
     }
   },

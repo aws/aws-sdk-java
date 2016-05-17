@@ -18,10 +18,14 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.config.Builder;
+import com.amazonaws.util.IOUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * A region metadata builder that loads the data by looking at all the
@@ -36,6 +40,8 @@ public class LegacyRegionXmlMetadataBuilder implements Builder<RegionMetadata> {
     private static final String OVERRIDE_ENDPOINTS_RESOURCE_PATH =
             "/com/amazonaws/regions/override/regions.xml";
 
+    private static final Log LOG = LogFactory.getLog(LegacyRegionXmlMetadataBuilder.class);
+
     @Override
     public RegionMetadata build() {
         return loadOverrideMetadataIfExists();
@@ -49,6 +55,7 @@ public class LegacyRegionXmlMetadataBuilder implements Builder<RegionMetadata> {
                     .getResourceAsStream(OVERRIDE_ENDPOINTS_RESOURCE_PATH);
             if (override != null) {
                 metadata = loadFromStream(override);
+                IOUtils.closeQuietly(override, LOG);
             }
         }
 

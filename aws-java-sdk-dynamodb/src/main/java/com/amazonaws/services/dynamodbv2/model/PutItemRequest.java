@@ -415,6 +415,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>PutItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      */
     private String returnValues;
 
@@ -490,7 +497,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -716,6 +723,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>PutItem</i> does not recognize any values
+     *        other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      */
     public PutItemRequest(String tableName,
             java.util.Map<String, AttributeValue> item, String returnValues) {
@@ -773,6 +787,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>PutItem</i> does not recognize any values
+     *        other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      */
     public PutItemRequest(String tableName,
             java.util.Map<String, AttributeValue> item, ReturnValue returnValues) {
@@ -1400,8 +1421,8 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *         is greater than <code>B</code>. For a list of code values, see <a
      *         href
      *         ="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *         >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a
-     *         >.
+     *         >http
+     *         ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         </p>
      *         <p>
      *         For type Binary, DynamoDB treats each byte of the binary data as
@@ -3122,6 +3143,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>PutItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3141,6 +3169,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>PutItem</i> does not recognize any values
+     *        other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      * @see ReturnValue
      */
 
@@ -3169,6 +3204,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>PutItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      * 
      * @return Use <i>ReturnValues</i> if you want to get the item attributes as
      *         they appeared before they were updated with the <i>PutItem</i>
@@ -3187,6 +3229,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *         name-value pair, then the content of the old item is returned.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *         operations; however, <i>PutItem</i> does not recognize any values
+     *         other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *         </p>
      * @see ReturnValue
      */
 
@@ -3215,6 +3264,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>PutItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3234,6 +3290,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>PutItem</i> does not recognize any values
+     *        other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue
@@ -3265,6 +3328,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>PutItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3284,6 +3354,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>PutItem</i> does not recognize any values
+     *        other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      * @see ReturnValue
      */
 
@@ -3312,6 +3389,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>PutItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3331,6 +3415,13 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>PutItem</i> does not recognize any values
+     *        other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue
@@ -3967,7 +4058,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -4007,7 +4098,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        Comparison operators:
-     *        <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *        <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *        </p>
      *        </li>
      *        <li>
@@ -4054,7 +4145,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -4093,7 +4184,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         Comparison operators:
-     *         <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *         <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *         </p>
      *         </li>
      *         <li>
@@ -4140,7 +4231,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -4180,7 +4271,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        Comparison operators:
-     *        <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *        <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *        </p>
      *        </li>
      *        <li>

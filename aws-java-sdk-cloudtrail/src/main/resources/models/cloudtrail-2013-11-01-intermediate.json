@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cloudtrail",
     "signingName" : "cloudtrail",
+    "jsonProtocol" : true,
     "serviceName" : "CloudTrail",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "jsonProtocol" : true
+    "xmlProtocol" : false
   },
   "operations" : {
     "AddTags" : {
@@ -72,12 +72,12 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddTagsResult",
       "asyncReturnType" : "AddTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>",
-      "authenticated" : true,
       "methodName" : "addTags"
     },
     "CreateTrail" : {
@@ -159,12 +159,12 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateTrailResult",
       "asyncReturnType" : "CreateTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTrailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrailRequest, CreateTrailResult>",
-      "authenticated" : true,
       "methodName" : "createTrail"
     },
     "DeleteTrail" : {
@@ -195,12 +195,12 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteTrailResult",
       "asyncReturnType" : "DeleteTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTrailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrailRequest, DeleteTrailResult>",
-      "authenticated" : true,
       "methodName" : "deleteTrail"
     },
     "DescribeTrails" : {
@@ -228,12 +228,12 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeTrailsResult",
       "asyncReturnType" : "DescribeTrailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTrailsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTrailsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult>",
-      "authenticated" : true,
       "methodName" : "describeTrails"
     },
     "GetTrailStatus" : {
@@ -261,12 +261,12 @@
         "documentation" : "<p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetTrailStatusResult",
       "asyncReturnType" : "GetTrailStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTrailStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTrailStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrailStatusRequest, GetTrailStatusResult>",
-      "authenticated" : true,
       "methodName" : "getTrailStatus"
     },
     "ListPublicKeys" : {
@@ -300,12 +300,12 @@
         "documentation" : "<p>Reserved for future use.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListPublicKeysResult",
       "asyncReturnType" : "ListPublicKeysResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPublicKeysResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPublicKeysResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult>",
-      "authenticated" : true,
       "methodName" : "listPublicKeys"
     },
     "ListTags" : {
@@ -348,12 +348,12 @@
         "documentation" : "<p>Reserved for future use.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTagsResult",
       "asyncReturnType" : "ListTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult>",
-      "authenticated" : true,
       "methodName" : "listTags"
     },
     "LookupEvents" : {
@@ -387,12 +387,12 @@
         "documentation" : "<p>Invalid token or token that was previously used in a request with different parameters. This exception is thrown if the token is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "LookupEventsResult",
       "asyncReturnType" : "LookupEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<LookupEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<LookupEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult>",
-      "authenticated" : true,
       "methodName" : "lookupEvents"
     },
     "RemoveTags" : {
@@ -435,12 +435,12 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RemoveTagsResult",
       "asyncReturnType" : "RemoveTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>",
-      "authenticated" : true,
       "methodName" : "removeTags"
     },
     "StartLogging" : {
@@ -471,12 +471,12 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "StartLoggingResult",
       "asyncReturnType" : "StartLoggingResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartLoggingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartLoggingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartLoggingRequest, StartLoggingResult>",
-      "authenticated" : true,
       "methodName" : "startLogging"
     },
     "StopLogging" : {
@@ -507,12 +507,12 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "StopLoggingResult",
       "asyncReturnType" : "StopLoggingResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopLoggingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopLoggingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopLoggingRequest, StopLoggingResult>",
-      "authenticated" : true,
       "methodName" : "stopLogging"
     },
     "UpdateTrail" : {
@@ -594,12 +594,12 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateTrailResult",
       "asyncReturnType" : "UpdateTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateTrailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrailRequest, UpdateTrailResult>",
-      "authenticated" : true,
       "methodName" : "updateTrail"
     }
   },

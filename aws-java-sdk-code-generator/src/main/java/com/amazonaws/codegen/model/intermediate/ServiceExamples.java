@@ -15,6 +15,7 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -31,9 +32,12 @@ public class ServiceExamples {
     }
 
     public ServiceExamples(
-            @JsonProperty(value = "examples", required = true) Map<String, List<Example>> examples,
-            @JsonProperty(value = "version", required = true) String version) {
-        this.operationExamples = examples;
+            @JsonProperty(value = "examples") Map<String, List<Example>> examples,
+            @JsonProperty(value = "version") String version) {
+        this.operationExamples = examples == null
+                ? new HashMap<String, List<Example>>()
+                : examples;
+
         this.version = version;
     }
 

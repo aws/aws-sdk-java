@@ -54,12 +54,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AllocateConnectionOnInterconnectResult",
       "asyncReturnType" : "AllocateConnectionOnInterconnectResult",
       "asyncFutureType" : "java.util.concurrent.Future<AllocateConnectionOnInterconnectResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AllocateConnectionOnInterconnectResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AllocateConnectionOnInterconnectRequest, AllocateConnectionOnInterconnectResult>",
-      "authenticated" : true,
       "methodName" : "allocateConnectionOnInterconnect"
     },
     "AllocatePrivateVirtualInterface" : {
@@ -87,12 +87,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AllocatePrivateVirtualInterfaceResult",
       "asyncReturnType" : "AllocatePrivateVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AllocatePrivateVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AllocatePrivateVirtualInterfaceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AllocatePrivateVirtualInterfaceRequest, AllocatePrivateVirtualInterfaceResult>",
-      "authenticated" : true,
       "methodName" : "allocatePrivateVirtualInterface"
     },
     "AllocatePublicVirtualInterface" : {
@@ -120,12 +120,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AllocatePublicVirtualInterfaceResult",
       "asyncReturnType" : "AllocatePublicVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AllocatePublicVirtualInterfaceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AllocatePublicVirtualInterfaceRequest, AllocatePublicVirtualInterfaceResult>",
-      "authenticated" : true,
       "methodName" : "allocatePublicVirtualInterface"
     },
     "ConfirmConnection" : {
@@ -153,12 +153,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ConfirmConnectionResult",
       "asyncReturnType" : "ConfirmConnectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmConnectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmConnectionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmConnectionRequest, ConfirmConnectionResult>",
-      "authenticated" : true,
       "methodName" : "confirmConnection"
     },
     "ConfirmPrivateVirtualInterface" : {
@@ -186,12 +186,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ConfirmPrivateVirtualInterfaceResult",
       "asyncReturnType" : "ConfirmPrivateVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmPrivateVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmPrivateVirtualInterfaceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmPrivateVirtualInterfaceRequest, ConfirmPrivateVirtualInterfaceResult>",
-      "authenticated" : true,
       "methodName" : "confirmPrivateVirtualInterface"
     },
     "ConfirmPublicVirtualInterface" : {
@@ -219,12 +219,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ConfirmPublicVirtualInterfaceResult",
       "asyncReturnType" : "ConfirmPublicVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmPublicVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmPublicVirtualInterfaceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmPublicVirtualInterfaceRequest, ConfirmPublicVirtualInterfaceResult>",
-      "authenticated" : true,
       "methodName" : "confirmPublicVirtualInterface"
     },
     "CreateConnection" : {
@@ -252,12 +252,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateConnectionResult",
       "asyncReturnType" : "CreateConnectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateConnectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateConnectionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult>",
-      "authenticated" : true,
       "methodName" : "createConnection"
     },
     "CreateInterconnect" : {
@@ -285,12 +285,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateInterconnectResult",
       "asyncReturnType" : "CreateInterconnectResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateInterconnectResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateInterconnectResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateInterconnectRequest, CreateInterconnectResult>",
-      "authenticated" : true,
       "methodName" : "createInterconnect"
     },
     "CreatePrivateVirtualInterface" : {
@@ -318,12 +318,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreatePrivateVirtualInterfaceResult",
       "asyncReturnType" : "CreatePrivateVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePrivateVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePrivateVirtualInterfaceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePrivateVirtualInterfaceRequest, CreatePrivateVirtualInterfaceResult>",
-      "authenticated" : true,
       "methodName" : "createPrivateVirtualInterface"
     },
     "CreatePublicVirtualInterface" : {
@@ -351,12 +351,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreatePublicVirtualInterfaceResult",
       "asyncReturnType" : "CreatePublicVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePublicVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePublicVirtualInterfaceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePublicVirtualInterfaceRequest, CreatePublicVirtualInterfaceResult>",
-      "authenticated" : true,
       "methodName" : "createPublicVirtualInterface"
     },
     "DeleteConnection" : {
@@ -384,12 +384,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteConnectionResult",
       "asyncReturnType" : "DeleteConnectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteConnectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteConnectionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult>",
-      "authenticated" : true,
       "methodName" : "deleteConnection"
     },
     "DeleteInterconnect" : {
@@ -417,12 +417,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteInterconnectResult",
       "asyncReturnType" : "DeleteInterconnectResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteInterconnectResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteInterconnectResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteInterconnectRequest, DeleteInterconnectResult>",
-      "authenticated" : true,
       "methodName" : "deleteInterconnect"
     },
     "DeleteVirtualInterface" : {
@@ -450,12 +450,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteVirtualInterfaceResult",
       "asyncReturnType" : "DeleteVirtualInterfaceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteVirtualInterfaceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteVirtualInterfaceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResult>",
-      "authenticated" : true,
       "methodName" : "deleteVirtualInterface"
     },
     "DescribeConnections" : {
@@ -483,12 +483,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeConnectionsResult",
       "asyncReturnType" : "DescribeConnectionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConnectionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConnectionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionsRequest, DescribeConnectionsResult>",
-      "authenticated" : true,
       "methodName" : "describeConnections"
     },
     "DescribeConnectionsOnInterconnect" : {
@@ -516,12 +516,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeConnectionsOnInterconnectResult",
       "asyncReturnType" : "DescribeConnectionsOnInterconnectResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConnectionsOnInterconnectResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConnectionsOnInterconnectResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionsOnInterconnectRequest, DescribeConnectionsOnInterconnectResult>",
-      "authenticated" : true,
       "methodName" : "describeConnectionsOnInterconnect"
     },
     "DescribeInterconnects" : {
@@ -549,12 +549,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeInterconnectsResult",
       "asyncReturnType" : "DescribeInterconnectsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeInterconnectsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeInterconnectsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInterconnectsRequest, DescribeInterconnectsResult>",
-      "authenticated" : true,
       "methodName" : "describeInterconnects"
     },
     "DescribeLocations" : {
@@ -582,12 +582,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeLocationsResult",
       "asyncReturnType" : "DescribeLocationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLocationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLocationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLocationsRequest, DescribeLocationsResult>",
-      "authenticated" : true,
       "methodName" : "describeLocations"
     },
     "DescribeVirtualGateways" : {
@@ -615,12 +615,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeVirtualGatewaysResult",
       "asyncReturnType" : "DescribeVirtualGatewaysResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeVirtualGatewaysResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeVirtualGatewaysResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResult>",
-      "authenticated" : true,
       "methodName" : "describeVirtualGateways"
     },
     "DescribeVirtualInterfaces" : {
@@ -648,12 +648,12 @@
         "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeVirtualInterfacesResult",
       "asyncReturnType" : "DescribeVirtualInterfacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeVirtualInterfacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeVirtualInterfacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResult>",
-      "authenticated" : true,
       "methodName" : "describeVirtualInterfaces"
     }
   },

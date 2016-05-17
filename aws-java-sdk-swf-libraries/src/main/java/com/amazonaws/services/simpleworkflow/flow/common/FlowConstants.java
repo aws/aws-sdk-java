@@ -38,6 +38,6 @@ public final class FlowConstants {
      */
     public static final int DEFAULT_TASK_PRIORITY = 0;
 
-	public static final long DEFAULT_LAMBDA_FUNCTION_TIMEOUT = 60;
+	public static final long DEFAULT_LAMBDA_FUNCTION_TIMEOUT = 300;
 
 }

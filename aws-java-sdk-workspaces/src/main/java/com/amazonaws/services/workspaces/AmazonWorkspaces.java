@@ -92,6 +92,24 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Creates tags for a WorkSpace.
+     * </p>
+     * 
+     * @param createTagsRequest
+     *        The request of the create tags action.
+     * @return Result of the CreateTags operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @sample AmazonWorkspaces.CreateTags
+     */
+    CreateTagsResult createTags(CreateTagsRequest createTagsRequest);
+
+    /**
+     * <p>
      * Creates one or more WorkSpaces.
      * </p>
      * <note>
@@ -106,10 +124,42 @@ public interface AmazonWorkspaces {
      * @return Result of the CreateWorkspaces operation returned by the service.
      * @throws ResourceLimitExceededException
      *         Your resource limits have been exceeded.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
      * @sample AmazonWorkspaces.CreateWorkspaces
      */
     CreateWorkspacesResult createWorkspaces(
             CreateWorkspacesRequest createWorkspacesRequest);
+
+    /**
+     * <p>
+     * Deletes tags from a WorkSpace.
+     * </p>
+     * 
+     * @param deleteTagsRequest
+     *        The request of the delete tags action.
+     * @return Result of the DeleteTags operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @sample AmazonWorkspaces.DeleteTags
+     */
+    DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
+
+    /**
+     * <p>
+     * Describes tags for a WorkSpace.
+     * </p>
+     * 
+     * @param describeTagsRequest
+     *        The request of the describe tags action.
+     * @return Result of the DescribeTags operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AmazonWorkspaces.DescribeTags
+     */
+    DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest);
 
     /**
      * <p>

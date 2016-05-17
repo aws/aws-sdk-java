@@ -20,15 +20,51 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "workspaces",
     "signingName" : "workspaces",
-    "xmlProtocol" : false,
     "jsonProtocol" : true,
     "serviceName" : "Amazon WorkSpaces",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "xmlProtocol" : false
   },
   "operations" : {
+    "CreateTags" : {
+      "documentation" : "<p>Creates tags for a WorkSpace.</p>",
+      "operationName" : "CreateTags",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "createTagsRequest",
+        "variableType" : "CreateTagsRequest",
+        "variableDeclarationType" : "CreateTagsRequest",
+        "documentation" : "<p>The request of the create tags action.</p>",
+        "simpleType" : "CreateTagsRequest",
+        "variableSetterType" : "CreateTagsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "CreateTagsResult",
+        "documentation" : "<p>The result of the create tags action.</p>"
+      },
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The resource could not be found.</p>"
+      }, {
+        "exceptionName" : "InvalidParameterValuesException",
+        "documentation" : "<p>One or more parameter values are not valid.</p>"
+      }, {
+        "exceptionName" : "ResourceLimitExceededException",
+        "documentation" : "<p>Your resource limits have been exceeded.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
+      "syncReturnType" : "CreateTagsResult",
+      "asyncReturnType" : "CreateTagsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateTagsResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<CreateTagsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult>",
+      "methodName" : "createTags"
+    },
     "CreateWorkspaces" : {
       "documentation" : "<p>Creates one or more WorkSpaces.</p> <note> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p> </note>",
       "operationName" : "CreateWorkspaces",
@@ -49,15 +85,81 @@
       "exceptions" : [ {
         "exceptionName" : "ResourceLimitExceededException",
         "documentation" : "<p>Your resource limits have been exceeded.</p>"
+      }, {
+        "exceptionName" : "InvalidParameterValuesException",
+        "documentation" : "<p>One or more parameter values are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateWorkspacesResult",
       "asyncReturnType" : "CreateWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateWorkspacesRequest, CreateWorkspacesResult>",
-      "authenticated" : true,
       "methodName" : "createWorkspaces"
+    },
+    "DeleteTags" : {
+      "documentation" : "<p>Deletes tags from a WorkSpace.</p>",
+      "operationName" : "DeleteTags",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "deleteTagsRequest",
+        "variableType" : "DeleteTagsRequest",
+        "variableDeclarationType" : "DeleteTagsRequest",
+        "documentation" : "<p>The request of the delete tags action.</p>",
+        "simpleType" : "DeleteTagsRequest",
+        "variableSetterType" : "DeleteTagsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "DeleteTagsResult",
+        "documentation" : "<p>The result of the delete tags action.</p>"
+      },
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The resource could not be found.</p>"
+      }, {
+        "exceptionName" : "InvalidParameterValuesException",
+        "documentation" : "<p>One or more parameter values are not valid.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
+      "syncReturnType" : "DeleteTagsResult",
+      "asyncReturnType" : "DeleteTagsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteTagsResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteTagsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult>",
+      "methodName" : "deleteTags"
+    },
+    "DescribeTags" : {
+      "documentation" : "<p>Describes tags for a WorkSpace.</p>",
+      "operationName" : "DescribeTags",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "describeTagsRequest",
+        "variableType" : "DescribeTagsRequest",
+        "variableDeclarationType" : "DescribeTagsRequest",
+        "documentation" : "<p>The request of the describe tags action.</p>",
+        "simpleType" : "DescribeTagsRequest",
+        "variableSetterType" : "DescribeTagsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "DescribeTagsResult",
+        "documentation" : "<p>The result of the describe tags action.</p>"
+      },
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The resource could not be found.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
+      "syncReturnType" : "DescribeTagsResult",
+      "asyncReturnType" : "DescribeTagsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeTagsResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeTagsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult>",
+      "methodName" : "describeTags"
     },
     "DescribeWorkspaceBundles" : {
       "documentation" : "<p>Obtains information about the WorkSpace bundles that are available to your account in the specified region.</p> <p>You can filter the results with either the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter, but not both.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>",
@@ -81,12 +183,12 @@
         "documentation" : "<p>One or more parameter values are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeWorkspaceBundlesResult",
       "asyncReturnType" : "DescribeWorkspaceBundlesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspaceBundlesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeWorkspaceBundlesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceBundlesRequest, DescribeWorkspaceBundlesResult>",
-      "authenticated" : true,
       "methodName" : "describeWorkspaceBundles"
     },
     "DescribeWorkspaceDirectories" : {
@@ -111,12 +213,12 @@
         "documentation" : "<p>One or more parameter values are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeWorkspaceDirectoriesResult",
       "asyncReturnType" : "DescribeWorkspaceDirectoriesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspaceDirectoriesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeWorkspaceDirectoriesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceDirectoriesRequest, DescribeWorkspaceDirectoriesResult>",
-      "authenticated" : true,
       "methodName" : "describeWorkspaceDirectories"
     },
     "DescribeWorkspaces" : {
@@ -144,12 +246,12 @@
         "documentation" : "<p>The specified resource is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeWorkspacesResult",
       "asyncReturnType" : "DescribeWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeWorkspacesRequest, DescribeWorkspacesResult>",
-      "authenticated" : true,
       "methodName" : "describeWorkspaces"
     },
     "RebootWorkspaces" : {
@@ -171,12 +273,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RebootWorkspacesResult",
       "asyncReturnType" : "RebootWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<RebootWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RebootWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebootWorkspacesRequest, RebootWorkspacesResult>",
-      "authenticated" : true,
       "methodName" : "rebootWorkspaces"
     },
     "RebuildWorkspaces" : {
@@ -198,12 +300,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RebuildWorkspacesResult",
       "asyncReturnType" : "RebuildWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<RebuildWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RebuildWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebuildWorkspacesRequest, RebuildWorkspacesResult>",
-      "authenticated" : true,
       "methodName" : "rebuildWorkspaces"
     },
     "TerminateWorkspaces" : {
@@ -225,12 +327,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "TerminateWorkspacesResult",
       "asyncReturnType" : "TerminateWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<TerminateWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TerminateWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateWorkspacesRequest, TerminateWorkspacesResult>",
-      "authenticated" : true,
       "methodName" : "terminateWorkspaces"
     }
   },
@@ -558,6 +660,124 @@
         "getterDocumentation" : "/**<p>Specifies whether the data stored on the root volume, or C: drive, is encrypted.</p>\n@return Specifies whether the data stored on the root volume, or C: drive, is encrypted.*/",
         "fluentSetterDocumentation" : "/**<p>Specifies whether the data stored on the root volume, or C: drive, is encrypted.</p>\n@param rootVolumeEncryptionEnabled Specifies whether the data stored on the root volume, or C: drive, is encrypted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>Specifies whether the data stored on the root volume, or C: drive, is encrypted.</p>\n@param rootVolumeEncryptionEnabled Specifies whether the data stored on the root volume, or C: drive, is encrypted.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The tags of the WorkSpace request.</p>",
+        "name" : "Tags",
+        "c2jName" : "Tags",
+        "c2jShape" : "TagList",
+        "variable" : {
+          "variableName" : "tags",
+          "variableType" : "java.util.List<Tag>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "documentation" : "<p>The tags of the WorkSpace request.</p>",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "setterModel" : {
+          "variableName" : "tags",
+          "variableType" : "java.util.List<Tag>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Tags",
+          "marshallLocationName" : "Tags",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "Tag",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "variableDeclarationType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "variableDeclarationType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : false,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
+          "simpleType" : "Tag",
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : false,
+        "list" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The tags of the WorkSpace request.</p>\n@param tags The tags of the WorkSpace request.*/",
+        "getterDocumentation" : "/**<p>The tags of the WorkSpace request.</p>\n@return The tags of the WorkSpace request.*/",
+        "fluentSetterDocumentation" : "/**<p>The tags of the WorkSpace request.</p>\n@param tags The tags of the WorkSpace request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The tags of the WorkSpace request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags of the WorkSpace request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -633,6 +853,125 @@
           "getterDocumentation" : "/**<p>The KMS key used to encrypt data stored on your WorkSpace.</p>\n@return The KMS key used to encrypt data stored on your WorkSpace.*/",
           "fluentSetterDocumentation" : "/**<p>The KMS key used to encrypt data stored on your WorkSpace.</p>\n@param volumeEncryptionKey The KMS key used to encrypt data stored on your WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The KMS key used to encrypt data stored on your WorkSpace.</p>\n@param volumeEncryptionKey The KMS key used to encrypt data stored on your WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Tags" : {
+          "documentation" : "<p>The tags of the WorkSpace request.</p>",
+          "name" : "Tags",
+          "c2jName" : "Tags",
+          "c2jShape" : "TagList",
+          "variable" : {
+            "variableName" : "tags",
+            "variableType" : "java.util.List<Tag>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "documentation" : "<p>The tags of the WorkSpace request.</p>",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "setterModel" : {
+            "variableName" : "tags",
+            "variableType" : "java.util.List<Tag>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Tags",
+            "marshallLocationName" : "Tags",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "Tag",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "variableDeclarationType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "variableDeclarationType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : false,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
+            "simpleType" : "Tag",
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : false,
+          "list" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The tags of the WorkSpace request.</p>\n@param tags The tags of the WorkSpace request.*/",
+          "getterDocumentation" : "/**<p>The tags of the WorkSpace request.</p>\n@return The tags of the WorkSpace request.*/",
+          "fluentSetterDocumentation" : "/**<p>The tags of the WorkSpace request.</p>\n@param tags The tags of the WorkSpace request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The tags of the WorkSpace request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags of the WorkSpace request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "DirectoryId" : {
           "documentation" : "<p>The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.</p>",
@@ -1016,8 +1355,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "FailedWorkspaceChangeRequest",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1157,8 +1496,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "FailedWorkspaceChangeRequest",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1171,6 +1510,151 @@
           "getterDocumentation" : "/**<p>An array of structures that represent any WorkSpaces that could not be rebooted.</p>\n@return An array of structures that represent any WorkSpaces that could not be rebooted.*/",
           "fluentSetterDocumentation" : "/**<p>An array of structures that represent any WorkSpaces that could not be rebooted.</p>\n@param failedRequests An array of structures that represent any WorkSpaces that could not be rebooted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>An array of structures that represent any WorkSpaces that could not be rebooted.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests An array of structures that represent any WorkSpaces that could not be rebooted.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "DescribeTagsRequest" : {
+      "c2jName" : "DescribeTagsRequest",
+      "documentation" : "<p>The request of the describe tags action.</p>",
+      "shapeName" : "DescribeTagsRequest",
+      "deprecated" : false,
+      "required" : [ "ResourceId" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The resource ID of the request.</p>",
+        "name" : "ResourceId",
+        "c2jName" : "ResourceId",
+        "c2jShape" : "NonEmptyString",
+        "variable" : {
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The resource ID of the request.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "ResourceId",
+          "marshallLocationName" : "ResourceId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.*/",
+        "getterDocumentation" : "/**<p>The resource ID of the request.</p>\n@return The resource ID of the request.*/",
+        "fluentSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "describeTagsRequest",
+        "variableType" : "DescribeTagsRequest",
+        "variableDeclarationType" : "DescribeTagsRequest",
+        "documentation" : null,
+        "simpleType" : "DescribeTagsRequest",
+        "variableSetterType" : "DescribeTagsRequest"
+      },
+      "marshaller" : {
+        "action" : "DescribeTags",
+        "verb" : "POST",
+        "target" : "WorkspacesService.DescribeTags",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "ResourceId" : {
+          "documentation" : "<p>The resource ID of the request.</p>",
+          "name" : "ResourceId",
+          "c2jName" : "ResourceId",
+          "c2jShape" : "NonEmptyString",
+          "variable" : {
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The resource ID of the request.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "ResourceId",
+            "marshallLocationName" : "ResourceId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.*/",
+          "getterDocumentation" : "/**<p>The resource ID of the request.</p>\n@return The resource ID of the request.*/",
+          "fluentSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -1289,8 +1773,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "FailedWorkspaceChangeRequest",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1430,8 +1914,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "FailedWorkspaceChangeRequest",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3104,8 +3588,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TerminateRequest",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>",
-          "templateType" : "java.util.List<TerminateRequest>"
+          "templateType" : "java.util.List<TerminateRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3249,8 +3733,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TerminateRequest",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>",
-            "templateType" : "java.util.List<TerminateRequest>"
+            "templateType" : "java.util.List<TerminateRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3381,8 +3865,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RebootRequest",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>",
-          "templateType" : "java.util.List<RebootRequest>"
+          "templateType" : "java.util.List<RebootRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3526,8 +4010,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RebootRequest",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>",
-            "templateType" : "java.util.List<RebootRequest>"
+            "templateType" : "java.util.List<RebootRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3658,8 +4142,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RebuildRequest",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>",
-          "templateType" : "java.util.List<RebuildRequest>"
+          "templateType" : "java.util.List<RebuildRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3803,8 +4287,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RebuildRequest",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>",
-            "templateType" : "java.util.List<RebuildRequest>"
+            "templateType" : "java.util.List<RebuildRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4496,8 +4980,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "FailedWorkspaceChangeRequest",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+          "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4637,8 +5121,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "FailedWorkspaceChangeRequest",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>",
-            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>"
+            "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4653,6 +5137,56 @@
           "varargSetterDocumentation" : "/**<p>An array of structures that represent any WorkSpaces that could not be rebuilt.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests An array of structures that represent any WorkSpaces that could not be rebuilt.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "WorkspaceDirectoryState" : {
+      "c2jName" : "WorkspaceDirectoryState",
+      "documentation" : "",
+      "shapeName" : "WorkspaceDirectoryState",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "REGISTERING",
+        "value" : "REGISTERING"
+      }, {
+        "name" : "REGISTERED",
+        "value" : "REGISTERED"
+      }, {
+        "name" : "DEREGISTERING",
+        "value" : "DEREGISTERING"
+      }, {
+        "name" : "DEREGISTERED",
+        "value" : "DEREGISTERED"
+      }, {
+        "name" : "ERROR",
+        "value" : "ERROR"
+      } ],
+      "variable" : {
+        "variableName" : "workspaceDirectoryState",
+        "variableType" : "WorkspaceDirectoryState",
+        "variableDeclarationType" : "WorkspaceDirectoryState",
+        "documentation" : null,
+        "simpleType" : "WorkspaceDirectoryState",
+        "variableSetterType" : "WorkspaceDirectoryState"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "DescribeWorkspaceBundlesResult" : {
       "c2jName" : "DescribeWorkspaceBundlesResult",
@@ -4769,8 +5303,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "WorkspaceBundle",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>",
-          "templateType" : "java.util.List<WorkspaceBundle>"
+          "templateType" : "java.util.List<WorkspaceBundle>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5015,8 +5549,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "WorkspaceBundle",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>",
-            "templateType" : "java.util.List<WorkspaceBundle>"
+            "templateType" : "java.util.List<WorkspaceBundle>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5032,41 +5566,130 @@
         }
       }
     },
-    "WorkspaceDirectoryState" : {
-      "c2jName" : "WorkspaceDirectoryState",
-      "documentation" : "",
-      "shapeName" : "WorkspaceDirectoryState",
+    "Tag" : {
+      "c2jName" : "Tag",
+      "documentation" : "<p>Describes the tag of the WorkSpace.</p>",
+      "shapeName" : "Tag",
       "deprecated" : false,
-      "required" : null,
+      "required" : [ "Key" ],
       "hasPayloadMember" : false,
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "wrapper" : false,
-      "members" : null,
-      "enums" : [ {
-        "name" : "REGISTERING",
-        "value" : "REGISTERING"
+      "members" : [ {
+        "documentation" : "<p>The key of the tag.</p>",
+        "name" : "Key",
+        "c2jName" : "Key",
+        "c2jShape" : "TagKey",
+        "variable" : {
+          "variableName" : "key",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The key of the tag.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "key",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Key",
+          "marshallLocationName" : "Key",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
+        "getterDocumentation" : "/**<p>The key of the tag.</p>\n@return The key of the tag.*/",
+        "fluentSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "name" : "REGISTERED",
-        "value" : "REGISTERED"
-      }, {
-        "name" : "DEREGISTERING",
-        "value" : "DEREGISTERING"
-      }, {
-        "name" : "DEREGISTERED",
-        "value" : "DEREGISTERED"
-      }, {
-        "name" : "ERROR",
-        "value" : "ERROR"
+        "documentation" : "<p>The value of the tag.</p>",
+        "name" : "Value",
+        "c2jName" : "Value",
+        "c2jShape" : "TagValue",
+        "variable" : {
+          "variableName" : "value",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The value of the tag.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "value",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Value",
+          "marshallLocationName" : "Value",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
+        "getterDocumentation" : "/**<p>The value of the tag.</p>\n@return The value of the tag.*/",
+        "fluentSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
+      "enums" : null,
       "variable" : {
-        "variableName" : "workspaceDirectoryState",
-        "variableType" : "WorkspaceDirectoryState",
-        "variableDeclarationType" : "WorkspaceDirectoryState",
+        "variableName" : "tag",
+        "variableType" : "Tag",
+        "variableDeclarationType" : "Tag",
         "documentation" : null,
-        "simpleType" : "WorkspaceDirectoryState",
-        "variableSetterType" : "WorkspaceDirectoryState"
+        "simpleType" : "Tag",
+        "variableSetterType" : "Tag"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5080,7 +5703,114 @@
         "skipGeneratingMarshaller" : false,
         "skipGeneratingUnmarshaller" : false
       },
-      "membersAsMap" : { }
+      "membersAsMap" : {
+        "Value" : {
+          "documentation" : "<p>The value of the tag.</p>",
+          "name" : "Value",
+          "c2jName" : "Value",
+          "c2jShape" : "TagValue",
+          "variable" : {
+            "variableName" : "value",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The value of the tag.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "value",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Value",
+            "marshallLocationName" : "Value",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
+          "getterDocumentation" : "/**<p>The value of the tag.</p>\n@return The value of the tag.*/",
+          "fluentSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Key" : {
+          "documentation" : "<p>The key of the tag.</p>",
+          "name" : "Key",
+          "c2jName" : "Key",
+          "c2jShape" : "TagKey",
+          "variable" : {
+            "variableName" : "key",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The key of the tag.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "key",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Key",
+            "marshallLocationName" : "Key",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
+          "getterDocumentation" : "/**<p>The key of the tag.</p>\n@return The key of the tag.*/",
+          "fluentSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
     },
     "DescribeWorkspaceDirectoriesResult" : {
       "c2jName" : "DescribeWorkspaceDirectoriesResult",
@@ -5197,8 +5927,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "WorkspaceDirectory",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>",
-          "templateType" : "java.util.List<WorkspaceDirectory>"
+          "templateType" : "java.util.List<WorkspaceDirectory>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5443,8 +6173,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "WorkspaceDirectory",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>",
-            "templateType" : "java.util.List<WorkspaceDirectory>"
+            "templateType" : "java.util.List<WorkspaceDirectory>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5575,8 +6305,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "FailedCreateWorkspaceRequest",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>",
-          "templateType" : "java.util.List<FailedCreateWorkspaceRequest>"
+          "templateType" : "java.util.List<FailedCreateWorkspaceRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5693,8 +6423,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Workspace",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-          "templateType" : "java.util.List<Workspace>"
+          "templateType" : "java.util.List<Workspace>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5834,8 +6564,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Workspace",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-            "templateType" : "java.util.List<Workspace>"
+            "templateType" : "java.util.List<Workspace>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5953,8 +6683,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "FailedCreateWorkspaceRequest",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>",
-            "templateType" : "java.util.List<FailedCreateWorkspaceRequest>"
+            "templateType" : "java.util.List<FailedCreateWorkspaceRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6813,6 +7543,344 @@
         }
       }
     },
+    "DescribeTagsResult" : {
+      "c2jName" : "DescribeTagsResult",
+      "documentation" : "<p>The result of the describe tags action.</p>",
+      "shapeName" : "DescribeTagsResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The list of tags.</p>",
+        "name" : "TagList",
+        "c2jName" : "TagList",
+        "c2jShape" : "TagList",
+        "variable" : {
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "documentation" : "<p>The list of tags.</p>",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "setterModel" : {
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "TagList",
+          "marshallLocationName" : "TagList",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "Tag",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "variableDeclarationType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "variableDeclarationType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : false,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
+          "simpleType" : "Tag",
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : false,
+        "list" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The list of tags.</p>\n@param tagList The list of tags.*/",
+        "getterDocumentation" : "/**<p>The list of tags.</p>\n@return The list of tags.*/",
+        "fluentSetterDocumentation" : "/**<p>The list of tags.</p>\n@param tagList The list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The list of tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList The list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "describeTagsResult",
+        "variableType" : "DescribeTagsResult",
+        "variableDeclarationType" : "DescribeTagsResult",
+        "documentation" : null,
+        "simpleType" : "DescribeTagsResult",
+        "variableSetterType" : "DescribeTagsResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "TagList" : {
+          "documentation" : "<p>The list of tags.</p>",
+          "name" : "TagList",
+          "c2jName" : "TagList",
+          "c2jShape" : "TagList",
+          "variable" : {
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "documentation" : "<p>The list of tags.</p>",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "setterModel" : {
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "TagList",
+            "marshallLocationName" : "TagList",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "Tag",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "variableDeclarationType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "variableDeclarationType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : false,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
+            "simpleType" : "Tag",
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : false,
+          "list" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The list of tags.</p>\n@param tagList The list of tags.*/",
+          "getterDocumentation" : "/**<p>The list of tags.</p>\n@return The list of tags.*/",
+          "fluentSetterDocumentation" : "/**<p>The list of tags.</p>\n@param tagList The list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The list of tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList The list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "WorkspaceState" : {
+      "c2jName" : "WorkspaceState",
+      "documentation" : "",
+      "shapeName" : "WorkspaceState",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "PENDING",
+        "value" : "PENDING"
+      }, {
+        "name" : "AVAILABLE",
+        "value" : "AVAILABLE"
+      }, {
+        "name" : "IMPAIRED",
+        "value" : "IMPAIRED"
+      }, {
+        "name" : "UNHEALTHY",
+        "value" : "UNHEALTHY"
+      }, {
+        "name" : "REBOOTING",
+        "value" : "REBOOTING"
+      }, {
+        "name" : "REBUILDING",
+        "value" : "REBUILDING"
+      }, {
+        "name" : "TERMINATING",
+        "value" : "TERMINATING"
+      }, {
+        "name" : "TERMINATED",
+        "value" : "TERMINATED"
+      }, {
+        "name" : "SUSPENDED",
+        "value" : "SUSPENDED"
+      }, {
+        "name" : "ERROR",
+        "value" : "ERROR"
+      } ],
+      "variable" : {
+        "variableName" : "workspaceState",
+        "variableType" : "WorkspaceState",
+        "variableDeclarationType" : "WorkspaceState",
+        "documentation" : null,
+        "simpleType" : "WorkspaceState",
+        "variableSetterType" : "WorkspaceState"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "DescribeWorkspaceBundlesRequest" : {
       "c2jName" : "DescribeWorkspaceBundlesRequest",
       "documentation" : "<p>Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.</p>",
@@ -6928,8 +7996,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6943,7 +8011,7 @@
         "fluentSetterDocumentation" : "/**<p>An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p>\n@param bundleIds An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBundleIds(java.util.Collection)} or {@link #withBundleIds(java.util.Collection)} if you want to override the existing values.</p>\n@param bundleIds An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>",
+        "documentation" : "<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>",
         "name" : "Owner",
         "c2jName" : "Owner",
         "c2jShape" : "BundleOwner",
@@ -6951,7 +8019,7 @@
           "variableName" : "owner",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>",
+          "documentation" : "<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6990,10 +8058,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>*/",
-        "getterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@return The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>*/",
-        "fluentSetterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>*/",
+        "getterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@return The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>*/",
+        "fluentSetterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.</p>",
         "name" : "NextToken",
@@ -7074,7 +8142,7 @@
       },
       "membersAsMap" : {
         "Owner" : {
-          "documentation" : "<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>",
+          "documentation" : "<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>",
           "name" : "Owner",
           "c2jName" : "Owner",
           "c2jShape" : "BundleOwner",
@@ -7082,7 +8150,7 @@
             "variableName" : "owner",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>",
+            "documentation" : "<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7121,10 +8189,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>*/",
-          "getterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@return The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>*/",
-          "fluentSetterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>*/",
+          "getterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@return The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>*/",
+          "fluentSetterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li>\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "NextToken" : {
           "documentation" : "<p>The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.</p>",
@@ -7283,8 +8351,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7299,71 +8367,6 @@
           "varargSetterDocumentation" : "/**<p>An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBundleIds(java.util.Collection)} or {@link #withBundleIds(java.util.Collection)} if you want to override the existing values.</p>\n@param bundleIds An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
-    },
-    "WorkspaceState" : {
-      "c2jName" : "WorkspaceState",
-      "documentation" : "",
-      "shapeName" : "WorkspaceState",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : null,
-      "enums" : [ {
-        "name" : "PENDING",
-        "value" : "PENDING"
-      }, {
-        "name" : "AVAILABLE",
-        "value" : "AVAILABLE"
-      }, {
-        "name" : "IMPAIRED",
-        "value" : "IMPAIRED"
-      }, {
-        "name" : "UNHEALTHY",
-        "value" : "UNHEALTHY"
-      }, {
-        "name" : "REBOOTING",
-        "value" : "REBOOTING"
-      }, {
-        "name" : "REBUILDING",
-        "value" : "REBUILDING"
-      }, {
-        "name" : "TERMINATING",
-        "value" : "TERMINATING"
-      }, {
-        "name" : "TERMINATED",
-        "value" : "TERMINATED"
-      }, {
-        "name" : "SUSPENDED",
-        "value" : "SUSPENDED"
-      }, {
-        "name" : "ERROR",
-        "value" : "ERROR"
-      } ],
-      "variable" : {
-        "variableName" : "workspaceState",
-        "variableType" : "WorkspaceState",
-        "variableDeclarationType" : "WorkspaceState",
-        "documentation" : null,
-        "simpleType" : "WorkspaceState",
-        "variableSetterType" : "WorkspaceState"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
     },
     "DescribeWorkspacesResult" : {
       "c2jName" : "DescribeWorkspacesResult",
@@ -7480,8 +8483,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Workspace",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-          "templateType" : "java.util.List<Workspace>"
+          "templateType" : "java.util.List<Workspace>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7726,8 +8729,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Workspace",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>",
-            "templateType" : "java.util.List<Workspace>"
+            "templateType" : "java.util.List<Workspace>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7881,38 +8884,6 @@
         }
       }
     },
-    "ResourceLimitExceededException" : {
-      "c2jName" : "ResourceLimitExceededException",
-      "documentation" : "<p>Your resource limits have been exceeded.</p>",
-      "shapeName" : "ResourceLimitExceededException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "resourceLimitExceededException",
-        "variableType" : "ResourceLimitExceededException",
-        "variableDeclarationType" : "ResourceLimitExceededException",
-        "documentation" : null,
-        "simpleType" : "ResourceLimitExceededException",
-        "variableSetterType" : "ResourceLimitExceededException"
-      },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "ResourceLimitExceededException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
     "CreateWorkspacesRequest" : {
       "c2jName" : "CreateWorkspacesRequest",
       "documentation" : "<p>Contains the inputs for the <a>CreateWorkspaces</a> operation.</p>",
@@ -8028,8 +8999,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "WorkspaceRequest",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>",
-          "templateType" : "java.util.List<WorkspaceRequest>"
+          "templateType" : "java.util.List<WorkspaceRequest>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8173,8 +9144,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "WorkspaceRequest",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>",
-            "templateType" : "java.util.List<WorkspaceRequest>"
+            "templateType" : "java.util.List<WorkspaceRequest>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8189,6 +9160,38 @@
           "varargSetterDocumentation" : "/**<p>An array of structures that specify the WorkSpaces to create.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWorkspaces(java.util.Collection)} or {@link #withWorkspaces(java.util.Collection)} if you want to override the existing values.</p>\n@param workspaces An array of structures that specify the WorkSpaces to create.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "ResourceLimitExceededException" : {
+      "c2jName" : "ResourceLimitExceededException",
+      "documentation" : "<p>Your resource limits have been exceeded.</p>",
+      "shapeName" : "ResourceLimitExceededException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "resourceLimitExceededException",
+        "variableType" : "ResourceLimitExceededException",
+        "variableDeclarationType" : "ResourceLimitExceededException",
+        "documentation" : null,
+        "simpleType" : "ResourceLimitExceededException",
+        "variableSetterType" : "ResourceLimitExceededException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "ResourceLimitExceededException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "RebuildRequest" : {
       "c2jName" : "RebuildRequest",
@@ -8404,6 +9407,41 @@
       },
       "membersAsMap" : { }
     },
+    "CreateTagsResult" : {
+      "c2jName" : "CreateTagsResult",
+      "documentation" : "<p>The result of the create tags action.</p>",
+      "shapeName" : "CreateTagsResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "createTagsResult",
+        "variableType" : "CreateTagsResult",
+        "variableDeclarationType" : "CreateTagsResult",
+        "documentation" : null,
+        "simpleType" : "CreateTagsResult",
+        "variableSetterType" : "CreateTagsResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "ComputeType" : {
       "c2jName" : "ComputeType",
       "documentation" : "<p>Contains information about the compute type of a WorkSpace bundle.</p>",
@@ -8545,6 +9583,561 @@
         }
       }
     },
+    "DeleteTagsResult" : {
+      "c2jName" : "DeleteTagsResult",
+      "documentation" : "<p>The result of the delete tags action.</p>",
+      "shapeName" : "DeleteTagsResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteTagsResult",
+        "variableType" : "DeleteTagsResult",
+        "variableDeclarationType" : "DeleteTagsResult",
+        "documentation" : null,
+        "simpleType" : "DeleteTagsResult",
+        "variableSetterType" : "DeleteTagsResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "ResourceNotFoundException" : {
+      "c2jName" : "ResourceNotFoundException",
+      "documentation" : "<p>The resource could not be found.</p>",
+      "shapeName" : "ResourceNotFoundException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The resource could not be found.</p>",
+        "name" : "ResourceId",
+        "c2jName" : "ResourceId",
+        "c2jShape" : "NonEmptyString",
+        "variable" : {
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The resource could not be found.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "ResourceId",
+          "marshallLocationName" : "ResourceId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The resource could not be found.</p>\n@param resourceId The resource could not be found.*/",
+        "getterDocumentation" : "/**<p>The resource could not be found.</p>\n@return The resource could not be found.*/",
+        "fluentSetterDocumentation" : "/**<p>The resource could not be found.</p>\n@param resourceId The resource could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The resource could not be found.</p>\n@param resourceId The resource could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "resourceNotFoundException",
+        "variableType" : "ResourceNotFoundException",
+        "variableDeclarationType" : "ResourceNotFoundException",
+        "documentation" : null,
+        "simpleType" : "ResourceNotFoundException",
+        "variableSetterType" : "ResourceNotFoundException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "ResourceNotFoundException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "ResourceId" : {
+          "documentation" : "<p>The resource could not be found.</p>",
+          "name" : "ResourceId",
+          "c2jName" : "ResourceId",
+          "c2jShape" : "NonEmptyString",
+          "variable" : {
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The resource could not be found.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "ResourceId",
+            "marshallLocationName" : "ResourceId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The resource could not be found.</p>\n@param resourceId The resource could not be found.*/",
+          "getterDocumentation" : "/**<p>The resource could not be found.</p>\n@return The resource could not be found.*/",
+          "fluentSetterDocumentation" : "/**<p>The resource could not be found.</p>\n@param resourceId The resource could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The resource could not be found.</p>\n@param resourceId The resource could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "DeleteTagsRequest" : {
+      "c2jName" : "DeleteTagsRequest",
+      "documentation" : "<p>The request of the delete tags action.</p>",
+      "shapeName" : "DeleteTagsRequest",
+      "deprecated" : false,
+      "required" : [ "ResourceId", "TagKeys" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The resource ID of the request.</p>",
+        "name" : "ResourceId",
+        "c2jName" : "ResourceId",
+        "c2jShape" : "NonEmptyString",
+        "variable" : {
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The resource ID of the request.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "ResourceId",
+          "marshallLocationName" : "ResourceId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.*/",
+        "getterDocumentation" : "/**<p>The resource ID of the request.</p>\n@return The resource ID of the request.*/",
+        "fluentSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The tag keys of the request.</p>",
+        "name" : "TagKeys",
+        "c2jName" : "TagKeys",
+        "c2jShape" : "TagKeyList",
+        "variable" : {
+          "variableName" : "tagKeys",
+          "variableType" : "java.util.List<String>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "documentation" : "<p>The tag keys of the request.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "setterModel" : {
+          "variableName" : "tagKeys",
+          "variableType" : "java.util.List<String>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "TagKeys",
+          "marshallLocationName" : "TagKeys",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "String",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "NonEmptyString",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : true,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : false,
+        "list" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The tag keys of the request.</p>\n@param tagKeys The tag keys of the request.*/",
+        "getterDocumentation" : "/**<p>The tag keys of the request.</p>\n@return The tag keys of the request.*/",
+        "fluentSetterDocumentation" : "/**<p>The tag keys of the request.</p>\n@param tagKeys The tag keys of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The tag keys of the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The tag keys of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteTagsRequest",
+        "variableType" : "DeleteTagsRequest",
+        "variableDeclarationType" : "DeleteTagsRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteTagsRequest",
+        "variableSetterType" : "DeleteTagsRequest"
+      },
+      "marshaller" : {
+        "action" : "DeleteTags",
+        "verb" : "POST",
+        "target" : "WorkspacesService.DeleteTags",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "TagKeys" : {
+          "documentation" : "<p>The tag keys of the request.</p>",
+          "name" : "TagKeys",
+          "c2jName" : "TagKeys",
+          "c2jShape" : "TagKeyList",
+          "variable" : {
+            "variableName" : "tagKeys",
+            "variableType" : "java.util.List<String>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "documentation" : "<p>The tag keys of the request.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "setterModel" : {
+            "variableName" : "tagKeys",
+            "variableType" : "java.util.List<String>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "TagKeys",
+            "marshallLocationName" : "TagKeys",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "String",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "NonEmptyString",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : true,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : false,
+          "list" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The tag keys of the request.</p>\n@param tagKeys The tag keys of the request.*/",
+          "getterDocumentation" : "/**<p>The tag keys of the request.</p>\n@return The tag keys of the request.*/",
+          "fluentSetterDocumentation" : "/**<p>The tag keys of the request.</p>\n@param tagKeys The tag keys of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The tag keys of the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The tag keys of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "ResourceId" : {
+          "documentation" : "<p>The resource ID of the request.</p>",
+          "name" : "ResourceId",
+          "c2jName" : "ResourceId",
+          "c2jShape" : "NonEmptyString",
+          "variable" : {
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The resource ID of the request.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "ResourceId",
+            "marshallLocationName" : "ResourceId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.*/",
+          "getterDocumentation" : "/**<p>The resource ID of the request.</p>\n@return The resource ID of the request.*/",
+          "fluentSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "DescribeWorkspaceDirectoriesRequest" : {
       "c2jName" : "DescribeWorkspaceDirectoriesRequest",
       "documentation" : "<p>Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.</p>",
@@ -8660,8 +10253,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8910,8 +10503,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8924,6 +10517,388 @@
           "getterDocumentation" : "/**<p>An array of strings that contains the directory identifiers to retrieve information for. If this member is null, all directories are retrieved.</p>\n@return An array of strings that contains the directory identifiers to retrieve information for. If this member is null, all directories are retrieved.*/",
           "fluentSetterDocumentation" : "/**<p>An array of strings that contains the directory identifiers to retrieve information for. If this member is null, all directories are retrieved.</p>\n@param directoryIds An array of strings that contains the directory identifiers to retrieve information for. If this member is null, all directories are retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>An array of strings that contains the directory identifiers to retrieve information for. If this member is null, all directories are retrieved.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDirectoryIds(java.util.Collection)} or {@link #withDirectoryIds(java.util.Collection)} if you want to override the existing values.</p>\n@param directoryIds An array of strings that contains the directory identifiers to retrieve information for. If this member is null, all directories are retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "CreateTagsRequest" : {
+      "c2jName" : "CreateTagsRequest",
+      "documentation" : "<p>The request of the create tags action.</p>",
+      "shapeName" : "CreateTagsRequest",
+      "deprecated" : false,
+      "required" : [ "ResourceId", "Tags" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The resource ID of the request.</p>",
+        "name" : "ResourceId",
+        "c2jName" : "ResourceId",
+        "c2jShape" : "NonEmptyString",
+        "variable" : {
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The resource ID of the request.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "resourceId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "ResourceId",
+          "marshallLocationName" : "ResourceId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.*/",
+        "getterDocumentation" : "/**<p>The resource ID of the request.</p>\n@return The resource ID of the request.*/",
+        "fluentSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The tags of the request.</p>",
+        "name" : "Tags",
+        "c2jName" : "Tags",
+        "c2jShape" : "TagList",
+        "variable" : {
+          "variableName" : "tags",
+          "variableType" : "java.util.List<Tag>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "documentation" : "<p>The tags of the request.</p>",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "setterModel" : {
+          "variableName" : "tags",
+          "variableType" : "java.util.List<Tag>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Tags",
+          "marshallLocationName" : "Tags",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "Tag",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "variableDeclarationType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "variableDeclarationType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : false,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
+          "simpleType" : "Tag",
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : false,
+        "list" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The tags of the request.</p>\n@param tags The tags of the request.*/",
+        "getterDocumentation" : "/**<p>The tags of the request.</p>\n@return The tags of the request.*/",
+        "fluentSetterDocumentation" : "/**<p>The tags of the request.</p>\n@param tags The tags of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The tags of the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "createTagsRequest",
+        "variableType" : "CreateTagsRequest",
+        "variableDeclarationType" : "CreateTagsRequest",
+        "documentation" : null,
+        "simpleType" : "CreateTagsRequest",
+        "variableSetterType" : "CreateTagsRequest"
+      },
+      "marshaller" : {
+        "action" : "CreateTags",
+        "verb" : "POST",
+        "target" : "WorkspacesService.CreateTags",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Tags" : {
+          "documentation" : "<p>The tags of the request.</p>",
+          "name" : "Tags",
+          "c2jName" : "Tags",
+          "c2jShape" : "TagList",
+          "variable" : {
+            "variableName" : "tags",
+            "variableType" : "java.util.List<Tag>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "documentation" : "<p>The tags of the request.</p>",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "setterModel" : {
+            "variableName" : "tags",
+            "variableType" : "java.util.List<Tag>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Tags",
+            "marshallLocationName" : "Tags",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "Tag",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "variableDeclarationType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "variableDeclarationType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : false,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
+            "simpleType" : "Tag",
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : false,
+          "list" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The tags of the request.</p>\n@param tags The tags of the request.*/",
+          "getterDocumentation" : "/**<p>The tags of the request.</p>\n@return The tags of the request.*/",
+          "fluentSetterDocumentation" : "/**<p>The tags of the request.</p>\n@param tags The tags of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The tags of the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "ResourceId" : {
+          "documentation" : "<p>The resource ID of the request.</p>",
+          "name" : "ResourceId",
+          "c2jName" : "ResourceId",
+          "c2jShape" : "NonEmptyString",
+          "variable" : {
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The resource ID of the request.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "resourceId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "ResourceId",
+            "marshallLocationName" : "ResourceId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.*/",
+          "getterDocumentation" : "/**<p>The resource ID of the request.</p>\n@return The resource ID of the request.*/",
+          "fluentSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -9916,8 +11891,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10034,8 +12009,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10752,8 +12727,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10871,8 +12846,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11268,8 +13243,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11726,8 +13701,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,

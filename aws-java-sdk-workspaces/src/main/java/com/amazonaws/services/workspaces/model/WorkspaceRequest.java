@@ -69,6 +69,12 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * </p>
      */
     private Boolean rootVolumeEncryptionEnabled;
+    /**
+     * <p>
+     * The tags of the WorkSpace request.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -400,6 +406,82 @@ public class WorkspaceRequest implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The tags of the WorkSpace request.
+     * </p>
+     * 
+     * @return The tags of the WorkSpace request.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags of the WorkSpace request.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of the WorkSpace request.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags of the WorkSpace request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of the WorkSpace request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public WorkspaceRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags of the WorkSpace request.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of the WorkSpace request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public WorkspaceRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -424,7 +506,9 @@ public class WorkspaceRequest implements Serializable, Cloneable {
                     + getUserVolumeEncryptionEnabled() + ",");
         if (getRootVolumeEncryptionEnabled() != null)
             sb.append("RootVolumeEncryptionEnabled: "
-                    + getRootVolumeEncryptionEnabled());
+                    + getRootVolumeEncryptionEnabled() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -475,6 +559,11 @@ public class WorkspaceRequest implements Serializable, Cloneable {
                 && other.getRootVolumeEncryptionEnabled().equals(
                         this.getRootVolumeEncryptionEnabled()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null
+                && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -502,6 +591,8 @@ public class WorkspaceRequest implements Serializable, Cloneable {
                 * hashCode
                 + ((getRootVolumeEncryptionEnabled() == null) ? 0
                         : getRootVolumeEncryptionEnabled().hashCode());
+        hashCode = prime * hashCode
+                + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

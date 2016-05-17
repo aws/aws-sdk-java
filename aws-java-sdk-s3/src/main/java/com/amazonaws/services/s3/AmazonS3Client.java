@@ -768,12 +768,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * the endpoint.
          */
         if (!ServiceUtils.isS3USEastEndpiont(endpoint.getHost()) && StringUtils.isNullOrEmpty(region)) {
-            try {
-                region = RegionUtils.getRegionByEndpoint(this.endpoint.getHost()).getName();
-            } catch (IllegalArgumentException exception) {
-                // Endpoint does not correspond to a known region; send the
-                // request with no location constraint and hope for the best.
-            }
+            region = AwsHostNameUtils.parseRegionName(endpoint.getHost(), S3_SERVICE_NAME);
         }
 
         /*

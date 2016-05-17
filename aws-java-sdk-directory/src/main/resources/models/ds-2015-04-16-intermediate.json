@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "ds",
     "signingName" : "ds",
-    "jsonProtocol" : true,
-    "serviceName" : "Directory Service",
     "xmlProtocol" : false,
+    "serviceName" : "Directory Service",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "jsonProtocol" : true
   },
   "operations" : {
     "ConnectDirectory" : {
@@ -60,12 +60,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ConnectDirectoryResult",
       "asyncReturnType" : "ConnectDirectoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConnectDirectoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConnectDirectoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConnectDirectoryRequest, ConnectDirectoryResult>",
+      "authenticated" : true,
       "methodName" : "connectDirectory"
     },
     "CreateAlias" : {
@@ -102,12 +102,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateAliasResult",
       "asyncReturnType" : "CreateAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult>",
+      "authenticated" : true,
       "methodName" : "createAlias"
     },
     "CreateComputer" : {
@@ -153,12 +153,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateComputerResult",
       "asyncReturnType" : "CreateComputerResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateComputerResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateComputerResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateComputerRequest, CreateComputerResult>",
+      "authenticated" : true,
       "methodName" : "createComputer"
     },
     "CreateConditionalForwarder" : {
@@ -201,12 +201,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateConditionalForwarderResult",
       "asyncReturnType" : "CreateConditionalForwarderResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateConditionalForwarderResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateConditionalForwarderResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateConditionalForwarderRequest, CreateConditionalForwarderResult>",
+      "authenticated" : true,
       "methodName" : "createConditionalForwarder"
     },
     "CreateDirectory" : {
@@ -240,12 +240,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDirectoryResult",
       "asyncReturnType" : "CreateDirectoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDirectoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDirectoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDirectoryRequest, CreateDirectoryResult>",
+      "authenticated" : true,
       "methodName" : "createDirectory"
     },
     "CreateMicrosoftAD" : {
@@ -282,12 +282,12 @@
         "documentation" : "<p>The operation is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateMicrosoftADResult",
       "asyncReturnType" : "CreateMicrosoftADResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateMicrosoftADResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateMicrosoftADResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateMicrosoftADRequest, CreateMicrosoftADResult>",
+      "authenticated" : true,
       "methodName" : "createMicrosoftAD"
     },
     "CreateSnapshot" : {
@@ -324,12 +324,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateSnapshotResult",
       "asyncReturnType" : "CreateSnapshotResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateSnapshotResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateSnapshotResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResult>",
+      "authenticated" : true,
       "methodName" : "createSnapshot"
     },
     "CreateTrust" : {
@@ -369,12 +369,12 @@
         "documentation" : "<p>The operation is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateTrustResult",
       "asyncReturnType" : "CreateTrustResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTrustResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTrustResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrustRequest, CreateTrustResult>",
+      "authenticated" : true,
       "methodName" : "createTrust"
     },
     "DeleteConditionalForwarder" : {
@@ -414,12 +414,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteConditionalForwarderResult",
       "asyncReturnType" : "DeleteConditionalForwarderResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteConditionalForwarderResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteConditionalForwarderResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConditionalForwarderRequest, DeleteConditionalForwarderResult>",
+      "authenticated" : true,
       "methodName" : "deleteConditionalForwarder"
     },
     "DeleteDirectory" : {
@@ -450,12 +450,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteDirectoryResult",
       "asyncReturnType" : "DeleteDirectoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDirectoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDirectoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDirectoryRequest, DeleteDirectoryResult>",
+      "authenticated" : true,
       "methodName" : "deleteDirectory"
     },
     "DeleteSnapshot" : {
@@ -489,12 +489,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteSnapshotResult",
       "asyncReturnType" : "DeleteSnapshotResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteSnapshotResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteSnapshotResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, DeleteSnapshotResult>",
+      "authenticated" : true,
       "methodName" : "deleteSnapshot"
     },
     "DeleteTrust" : {
@@ -531,12 +531,12 @@
         "documentation" : "<p>The operation is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteTrustResult",
       "asyncReturnType" : "DeleteTrustResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTrustResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTrustResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrustRequest, DeleteTrustResult>",
+      "authenticated" : true,
       "methodName" : "deleteTrust"
     },
     "DeregisterEventTopic" : {
@@ -570,12 +570,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeregisterEventTopicResult",
       "asyncReturnType" : "DeregisterEventTopicResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeregisterEventTopicResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeregisterEventTopicResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeregisterEventTopicRequest, DeregisterEventTopicResult>",
+      "authenticated" : true,
       "methodName" : "deregisterEventTopic"
     },
     "DescribeConditionalForwarders" : {
@@ -615,12 +615,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConditionalForwardersResult",
       "asyncReturnType" : "DescribeConditionalForwardersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConditionalForwardersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConditionalForwardersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConditionalForwardersRequest, DescribeConditionalForwardersResult>",
+      "authenticated" : true,
       "methodName" : "describeConditionalForwarders"
     },
     "DescribeDirectories" : {
@@ -657,12 +657,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDirectoriesResult",
       "asyncReturnType" : "DescribeDirectoriesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDirectoriesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDirectoriesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDirectoriesRequest, DescribeDirectoriesResult>",
+      "authenticated" : true,
       "methodName" : "describeDirectories"
     },
     "DescribeEventTopics" : {
@@ -696,12 +696,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeEventTopicsResult",
       "asyncReturnType" : "DescribeEventTopicsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEventTopicsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEventTopicsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEventTopicsRequest, DescribeEventTopicsResult>",
+      "authenticated" : true,
       "methodName" : "describeEventTopics"
     },
     "DescribeSnapshots" : {
@@ -738,12 +738,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeSnapshotsResult",
       "asyncReturnType" : "DescribeSnapshotsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSnapshotsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSnapshotsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult>",
+      "authenticated" : true,
       "methodName" : "describeSnapshots"
     },
     "DescribeTrusts" : {
@@ -783,12 +783,12 @@
         "documentation" : "<p>The operation is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeTrustsResult",
       "asyncReturnType" : "DescribeTrustsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTrustsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTrustsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrustsRequest, DescribeTrustsResult>",
+      "authenticated" : true,
       "methodName" : "describeTrusts"
     },
     "DisableRadius" : {
@@ -819,12 +819,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DisableRadiusResult",
       "asyncReturnType" : "DisableRadiusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableRadiusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableRadiusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableRadiusRequest, DisableRadiusResult>",
+      "authenticated" : true,
       "methodName" : "disableRadius"
     },
     "DisableSso" : {
@@ -861,12 +861,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DisableSsoResult",
       "asyncReturnType" : "DisableSsoResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableSsoResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableSsoResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableSsoRequest, DisableSsoResult>",
+      "authenticated" : true,
       "methodName" : "disableSso"
     },
     "EnableRadius" : {
@@ -903,12 +903,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "EnableRadiusResult",
       "asyncReturnType" : "EnableRadiusResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableRadiusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableRadiusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableRadiusRequest, EnableRadiusResult>",
+      "authenticated" : true,
       "methodName" : "enableRadius"
     },
     "EnableSso" : {
@@ -945,12 +945,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "EnableSsoResult",
       "asyncReturnType" : "EnableSsoResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableSsoResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableSsoResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableSsoRequest, EnableSsoResult>",
+      "authenticated" : true,
       "methodName" : "enableSso"
     },
     "GetDirectoryLimits" : {
@@ -981,12 +981,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDirectoryLimitsResult",
       "asyncReturnType" : "GetDirectoryLimitsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDirectoryLimitsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDirectoryLimitsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDirectoryLimitsRequest, GetDirectoryLimitsResult>",
+      "authenticated" : true,
       "methodName" : "getDirectoryLimits"
     },
     "GetSnapshotLimits" : {
@@ -1017,12 +1017,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetSnapshotLimitsResult",
       "asyncReturnType" : "GetSnapshotLimitsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSnapshotLimitsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSnapshotLimitsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSnapshotLimitsRequest, GetSnapshotLimitsResult>",
+      "authenticated" : true,
       "methodName" : "getSnapshotLimits"
     },
     "RegisterEventTopic" : {
@@ -1056,12 +1056,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RegisterEventTopicResult",
       "asyncReturnType" : "RegisterEventTopicResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterEventTopicResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RegisterEventTopicResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterEventTopicRequest, RegisterEventTopicResult>",
+      "authenticated" : true,
       "methodName" : "registerEventTopic"
     },
     "RestoreFromSnapshot" : {
@@ -1095,12 +1095,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RestoreFromSnapshotResult",
       "asyncReturnType" : "RestoreFromSnapshotResult",
       "asyncFutureType" : "java.util.concurrent.Future<RestoreFromSnapshotResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RestoreFromSnapshotResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RestoreFromSnapshotRequest, RestoreFromSnapshotResult>",
+      "authenticated" : true,
       "methodName" : "restoreFromSnapshot"
     },
     "UpdateConditionalForwarder" : {
@@ -1140,12 +1140,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateConditionalForwarderResult",
       "asyncReturnType" : "UpdateConditionalForwarderResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateConditionalForwarderResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateConditionalForwarderResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateConditionalForwarderRequest, UpdateConditionalForwarderResult>",
+      "authenticated" : true,
       "methodName" : "updateConditionalForwarder"
     },
     "UpdateRadius" : {
@@ -1179,12 +1179,12 @@
         "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateRadiusResult",
       "asyncReturnType" : "UpdateRadiusResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateRadiusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateRadiusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRadiusRequest, UpdateRadiusResult>",
+      "authenticated" : true,
       "methodName" : "updateRadius"
     },
     "VerifyTrust" : {
@@ -1221,12 +1221,12 @@
         "documentation" : "<p>The operation is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "VerifyTrustResult",
       "asyncReturnType" : "VerifyTrustResult",
       "asyncFutureType" : "java.util.concurrent.Future<VerifyTrustResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<VerifyTrustResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyTrustRequest, VerifyTrustResult>",
+      "authenticated" : true,
       "methodName" : "verifyTrust"
     }
   },

@@ -32,7 +32,7 @@ import java.security.SecureRandom;
 public class ClientConfiguration {
 
     /** The default timeout for creating new connections. */
-    public static final int DEFAULT_CONNECTION_TIMEOUT = 50 * 1000;
+    public static final int DEFAULT_CONNECTION_TIMEOUT = 10 * 1000;
 
     /** The default timeout for reading from a connected socket. */
     public static final int DEFAULT_SOCKET_TIMEOUT = 50 * 1000;

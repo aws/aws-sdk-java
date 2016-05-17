@@ -796,7 +796,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -3062,8 +3062,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         is greater than <code>B</code>. For a list of code values, see <a
      *         href
      *         ="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *         >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a
-     *         >.
+     *         >http
+     *         ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         </p>
      *         <p>
      *         For type Binary, DynamoDB treats each byte of the binary data as
@@ -6755,7 +6755,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -6795,7 +6795,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        Comparison operators:
-     *        <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *        <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *        </p>
      *        </li>
      *        <li>
@@ -6842,7 +6842,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -6881,7 +6881,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         Comparison operators:
-     *         <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *         <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *         </p>
      *         </li>
      *         <li>
@@ -6928,7 +6928,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -6968,7 +6968,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        Comparison operators:
-     *        <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *        <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *        </p>
      *        </li>
      *        <li>

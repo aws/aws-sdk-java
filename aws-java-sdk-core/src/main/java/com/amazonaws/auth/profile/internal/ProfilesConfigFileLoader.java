@@ -72,7 +72,7 @@ public class ProfilesConfigFileLoader {
      */
     private static Map<String, Profile> loadProfiles(InputStream is, ProfileCredentialsService profileCredentialsService) throws IOException {
         ProfilesConfigFileLoaderHelper helper = new ProfilesConfigFileLoaderHelper();
-        Map<String, Map<String, String>> allProfileProperties = helper.parseProfileProperties(new Scanner(is));
+        Map<String, Map<String, String>> allProfileProperties = helper.parseProfileProperties(new Scanner(is, StringUtils.UTF8.name()));
 
         // Convert the loaded property map to credential objects
         Map<String, Profile> profilesByName = new LinkedHashMap<String, Profile>();

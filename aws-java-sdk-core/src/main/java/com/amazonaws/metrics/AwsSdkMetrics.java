@@ -308,12 +308,12 @@ public enum AwsSdkMetrics {
                             } else if (CLOUDWATCH_REGION.equals(key)) {
                                 region = Regions.fromName(value);
                             } else if (METRIC_QUEUE_SIZE.equals(key)) {
-                                Integer i = new Integer(value);
+                            	Integer i = Integer.valueOf(value);
                                 if (i.intValue() < 1)
                                     throw new IllegalArgumentException(METRIC_QUEUE_SIZE + " must be at least 1");
                                 metricQueueSize = i;
                             } else if (QUEUE_POLL_TIMEOUT_MILLI.equals(key)) {
-                                Long i = new Long(value);
+                            	Long i = Long.valueOf(value);
                                 if (i.intValue() < 1000)
                                     throw new IllegalArgumentException(QUEUE_POLL_TIMEOUT_MILLI + " must be at least 1000");
                                 queuePollTimeoutMilli = i;

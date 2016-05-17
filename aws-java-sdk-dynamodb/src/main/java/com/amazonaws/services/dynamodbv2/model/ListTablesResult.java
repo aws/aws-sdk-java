@@ -62,7 +62,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @return The names of the tables associated with the current account at
-     *         the current endpoint. The maximum size of this array is 100. </p>
+     *         the current endpoint. The maximum size of this array is 100.</p>
      *         <p>
      *         If <i>LastEvaluatedTableName</i> also appears in the output, you
      *         can use this value as the <i>ExclusiveStartTableName</i>
@@ -87,7 +87,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * 
      * @param tableNames
      *        The names of the tables associated with the current account at the
-     *        current endpoint. The maximum size of this array is 100. </p>
+     *        current endpoint. The maximum size of this array is 100.</p>
      *        <p>
      *        If <i>LastEvaluatedTableName</i> also appears in the output, you
      *        can use this value as the <i>ExclusiveStartTableName</i> parameter
@@ -123,7 +123,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * 
      * @param tableNames
      *        The names of the tables associated with the current account at the
-     *        current endpoint. The maximum size of this array is 100. </p>
+     *        current endpoint. The maximum size of this array is 100.</p>
      *        <p>
      *        If <i>LastEvaluatedTableName</i> also appears in the output, you
      *        can use this value as the <i>ExclusiveStartTableName</i> parameter
@@ -156,7 +156,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * 
      * @param tableNames
      *        The names of the tables associated with the current account at the
-     *        current endpoint. The maximum size of this array is 100. </p>
+     *        current endpoint. The maximum size of this array is 100.</p>
      *        <p>
      *        If <i>LastEvaluatedTableName</i> also appears in the output, you
      *        can use this value as the <i>ExclusiveStartTableName</i> parameter

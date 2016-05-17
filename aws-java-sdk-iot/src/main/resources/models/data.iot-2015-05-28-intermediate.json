@@ -72,12 +72,12 @@
         "documentation" : "<p>The document encoding is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
-      "authenticated" : true,
       "syncReturnType" : "DeleteThingShadowResult",
       "asyncReturnType" : "DeleteThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteThingShadowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteThingShadowResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteThingShadowRequest, DeleteThingShadowResult>",
+      "authenticated" : true,
       "methodName" : "deleteThingShadow"
     },
     "GetThingShadow" : {
@@ -123,12 +123,12 @@
         "documentation" : "<p>The document encoding is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
-      "authenticated" : true,
       "syncReturnType" : "GetThingShadowResult",
       "asyncReturnType" : "GetThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetThingShadowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetThingShadowResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetThingShadowRequest, GetThingShadowResult>",
+      "authenticated" : true,
       "methodName" : "getThingShadow"
     },
     "Publish" : {
@@ -162,12 +162,12 @@
         "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PublishResult",
       "asyncReturnType" : "PublishResult",
       "asyncFutureType" : "java.util.concurrent.Future<PublishResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PublishResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult>",
+      "authenticated" : true,
       "methodName" : "publish"
     },
     "UpdateThingShadow" : {
@@ -216,12 +216,12 @@
         "documentation" : "<p>The document encoding is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
-      "authenticated" : true,
       "syncReturnType" : "UpdateThingShadowResult",
       "asyncReturnType" : "UpdateThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateThingShadowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateThingShadowResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateThingShadowRequest, UpdateThingShadowResult>",
+      "authenticated" : true,
       "methodName" : "updateThingShadow"
     }
   },

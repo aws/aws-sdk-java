@@ -407,11 +407,13 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * size, not on the amount of data that is returned to an application.
      * </p>
      * 
-     * @return This is a legacy parameter, for backward compatibility. New
+     * @return <p>
+     *         This is a legacy parameter, for backward compatibility. New
      *         applications should use <i>ProjectionExpression</i> instead. Do
      *         not combine legacy parameters and expression parameters in a
      *         single API call; otherwise, DynamoDB will return a
-     *         <i>ValidationException</i> exception.</p>
+     *         <i>ValidationException</i> exception.
+     *         </p>
      *         <p>
      *         This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a
@@ -425,7 +427,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *         in the result.
      *         </p>
      *         <p>
-     *         Note that <i>AttributesToGet
+     *         Note that <i>AttributesToGet</i> has no effect on provisioned
+     *         throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application.
      */
 
     public java.util.List<String> getAttributesToGet() {
@@ -457,11 +462,13 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -475,7 +482,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        the result.
      *        </p>
      *        <p>
-     *        Note that <i>AttributesToGet
+     *        Note that <i>AttributesToGet</i> has no effect on provisioned
+     *        throughput consumption. DynamoDB determines capacity units
+     *        consumed based on item size, not on the amount of data that is
+     *        returned to an application.
      */
 
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
@@ -518,11 +528,13 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -536,7 +548,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        the result.
      *        </p>
      *        <p>
-     *        Note that <i>AttributesToGet
+     *        Note that <i>AttributesToGet</i> has no effect on provisioned
+     *        throughput consumption. DynamoDB determines capacity units
+     *        consumed based on item size, not on the amount of data that is
+     *        returned to an application.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -577,11 +592,13 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -595,7 +612,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        the result.
      *        </p>
      *        <p>
-     *        Note that <i>AttributesToGet
+     *        Note that <i>AttributesToGet</i> has no effect on provisioned
+     *        throughput consumption. DynamoDB determines capacity units
+     *        consumed based on item size, not on the amount of data that is
+     *        returned to an application.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

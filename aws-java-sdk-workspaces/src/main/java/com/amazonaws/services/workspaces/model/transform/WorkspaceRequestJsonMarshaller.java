@@ -76,6 +76,21 @@ public class WorkspaceRequestJsonMarshaller {
                                         .getRootVolumeEncryptionEnabled());
             }
 
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) workspaceRequest
+                    .getTags();
+            if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Tags");
+                jsonGenerator.writeStartArray();
+                for (Tag tagsListValue : tagsList) {
+                    if (tagsListValue != null) {
+
+                        TagJsonMarshaller.getInstance().marshall(tagsListValue,
+                                jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
