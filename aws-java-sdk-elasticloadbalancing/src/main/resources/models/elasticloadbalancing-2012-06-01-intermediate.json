@@ -20,10 +20,10 @@
     "jsonVersion" : null,
     "endpointPrefix" : "elasticloadbalancing",
     "signingName" : "elasticloadbalancing",
+    "xmlProtocol" : true,
     "jsonProtocol" : false,
     "serviceName" : "Elastic Load Balancing",
     "cborProtocol" : false,
-    "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"

@@ -21,9 +21,9 @@
     "endpointPrefix" : "ecs",
     "signingName" : "ecs",
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "serviceName" : "Amazon ECS",
     "cborProtocol" : false,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
