@@ -75,6 +75,10 @@ public class ListTaskDefinitionFamiliesRequestMarshaller
                 jsonGenerator.writeFieldName("familyPrefix").writeValue(
                         listTaskDefinitionFamiliesRequest.getFamilyPrefix());
             }
+            if (listTaskDefinitionFamiliesRequest.getStatus() != null) {
+                jsonGenerator.writeFieldName("status").writeValue(
+                        listTaskDefinitionFamiliesRequest.getStatus());
+            }
             if (listTaskDefinitionFamiliesRequest.getNextToken() != null) {
                 jsonGenerator.writeFieldName("nextToken").writeValue(
                         listTaskDefinitionFamiliesRequest.getNextToken());

@@ -36,7 +36,7 @@ public class PortMapping implements Serializable, Cloneable {
      * a host port, your container automatically receives a host port in the
      * ephemeral port range (for more information, see <code>hostPort</code>).
      * Port mappings that are automatically assigned in this way do not count
-     * toward the 50 reserved ports limit of a container instance.
+     * toward the 100 reserved ports limit of a container instance.
      * </p>
      */
     private Integer containerPort;
@@ -66,9 +66,9 @@ public class PortMapping implements Serializable, Cloneable {
      * task is running (after a task stops, the host port is released).The
      * current reserved ports are displayed in the
      * <code>remainingResources</code> of <a>DescribeContainerInstances</a>
-     * output, and a container instance may have up to 50 reserved ports at a
+     * output, and a container instance may have up to 100 reserved ports at a
      * time, including the default reserved ports (automatically assigned ports
-     * do not count toward the 50 reserved ports limit).
+     * do not count toward the 100 reserved ports limit).
      * </p>
      */
     private Integer hostPort;
@@ -87,7 +87,7 @@ public class PortMapping implements Serializable, Cloneable {
      * a host port, your container automatically receives a host port in the
      * ephemeral port range (for more information, see <code>hostPort</code>).
      * Port mappings that are automatically assigned in this way do not count
-     * toward the 50 reserved ports limit of a container instance.
+     * toward the 100 reserved ports limit of a container instance.
      * </p>
      * 
      * @param containerPort
@@ -96,7 +96,7 @@ public class PortMapping implements Serializable, Cloneable {
      *        a container port and not a host port, your container automatically
      *        receives a host port in the ephemeral port range (for more
      *        information, see <code>hostPort</code>). Port mappings that are
-     *        automatically assigned in this way do not count toward the 50
+     *        automatically assigned in this way do not count toward the 100
      *        reserved ports limit of a container instance.
      */
 
@@ -111,7 +111,7 @@ public class PortMapping implements Serializable, Cloneable {
      * a host port, your container automatically receives a host port in the
      * ephemeral port range (for more information, see <code>hostPort</code>).
      * Port mappings that are automatically assigned in this way do not count
-     * toward the 50 reserved ports limit of a container instance.
+     * toward the 100 reserved ports limit of a container instance.
      * </p>
      * 
      * @return The port number on the container that is bound to the
@@ -120,7 +120,7 @@ public class PortMapping implements Serializable, Cloneable {
      *         automatically receives a host port in the ephemeral port range
      *         (for more information, see <code>hostPort</code>). Port mappings
      *         that are automatically assigned in this way do not count toward
-     *         the 50 reserved ports limit of a container instance.
+     *         the 100 reserved ports limit of a container instance.
      */
 
     public Integer getContainerPort() {
@@ -134,7 +134,7 @@ public class PortMapping implements Serializable, Cloneable {
      * a host port, your container automatically receives a host port in the
      * ephemeral port range (for more information, see <code>hostPort</code>).
      * Port mappings that are automatically assigned in this way do not count
-     * toward the 50 reserved ports limit of a container instance.
+     * toward the 100 reserved ports limit of a container instance.
      * </p>
      * 
      * @param containerPort
@@ -143,7 +143,7 @@ public class PortMapping implements Serializable, Cloneable {
      *        a container port and not a host port, your container automatically
      *        receives a host port in the ephemeral port range (for more
      *        information, see <code>hostPort</code>). Port mappings that are
-     *        automatically assigned in this way do not count toward the 50
+     *        automatically assigned in this way do not count toward the 100
      *        reserved ports limit of a container instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -180,9 +180,9 @@ public class PortMapping implements Serializable, Cloneable {
      * task is running (after a task stops, the host port is released).The
      * current reserved ports are displayed in the
      * <code>remainingResources</code> of <a>DescribeContainerInstances</a>
-     * output, and a container instance may have up to 50 reserved ports at a
+     * output, and a container instance may have up to 100 reserved ports at a
      * time, including the default reserved ports (automatically assigned ports
-     * do not count toward the 50 reserved ports limit).
+     * do not count toward the 100 reserved ports limit).
      * </p>
      * 
      * @param hostPort
@@ -213,9 +213,9 @@ public class PortMapping implements Serializable, Cloneable {
      *        port is released).The current reserved ports are displayed in the
      *        <code>remainingResources</code> of
      *        <a>DescribeContainerInstances</a> output, and a container instance
-     *        may have up to 50 reserved ports at a time, including the default
+     *        may have up to 100 reserved ports at a time, including the default
      *        reserved ports (automatically assigned ports do not count toward
-     *        the 50 reserved ports limit).
+     *        the 100 reserved ports limit).
      */
 
     public void setHostPort(Integer hostPort) {
@@ -248,9 +248,9 @@ public class PortMapping implements Serializable, Cloneable {
      * task is running (after a task stops, the host port is released).The
      * current reserved ports are displayed in the
      * <code>remainingResources</code> of <a>DescribeContainerInstances</a>
-     * output, and a container instance may have up to 50 reserved ports at a
+     * output, and a container instance may have up to 100 reserved ports at a
      * time, including the default reserved ports (automatically assigned ports
-     * do not count toward the 50 reserved ports limit).
+     * do not count toward the 100 reserved ports limit).
      * </p>
      * 
      * @return The port number on the container instance to reserve for your
@@ -280,9 +280,9 @@ public class PortMapping implements Serializable, Cloneable {
      *         port is released).The current reserved ports are displayed in the
      *         <code>remainingResources</code> of
      *         <a>DescribeContainerInstances</a> output, and a container
-     *         instance may have up to 50 reserved ports at a time, including
+     *         instance may have up to 100 reserved ports at a time, including
      *         the default reserved ports (automatically assigned ports do not
-     *         count toward the 50 reserved ports limit).
+     *         count toward the 100 reserved ports limit).
      */
 
     public Integer getHostPort() {
@@ -315,9 +315,9 @@ public class PortMapping implements Serializable, Cloneable {
      * task is running (after a task stops, the host port is released).The
      * current reserved ports are displayed in the
      * <code>remainingResources</code> of <a>DescribeContainerInstances</a>
-     * output, and a container instance may have up to 50 reserved ports at a
+     * output, and a container instance may have up to 100 reserved ports at a
      * time, including the default reserved ports (automatically assigned ports
-     * do not count toward the 50 reserved ports limit).
+     * do not count toward the 100 reserved ports limit).
      * </p>
      * 
      * @param hostPort
@@ -348,9 +348,9 @@ public class PortMapping implements Serializable, Cloneable {
      *        port is released).The current reserved ports are displayed in the
      *        <code>remainingResources</code> of
      *        <a>DescribeContainerInstances</a> output, and a container instance
-     *        may have up to 50 reserved ports at a time, including the default
+     *        may have up to 100 reserved ports at a time, including the default
      *        reserved ports (automatically assigned ports do not count toward
-     *        the 50 reserved ports limit).
+     *        the 100 reserved ports limit).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

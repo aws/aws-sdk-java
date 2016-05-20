@@ -20,10 +20,10 @@
     "jsonVersion" : null,
     "endpointPrefix" : "cloudsearch",
     "signingName" : "cloudsearch",
-    "xmlProtocol" : true,
     "jsonProtocol" : false,
     "serviceName" : "Amazon CloudSearch",
     "cborProtocol" : false,
+    "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
@@ -57,13 +57,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "buildSuggesters",
       "syncReturnType" : "BuildSuggestersResult",
       "asyncReturnType" : "BuildSuggestersResult",
       "asyncFutureType" : "java.util.concurrent.Future<BuildSuggestersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BuildSuggestersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BuildSuggestersRequest, BuildSuggestersResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "buildSuggesters"
     },
     "CreateDomain" : {
       "documentation" : "<p>Creates a new search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html\" target=\"_blank\">Creating a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -93,13 +93,13 @@
         "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createDomain",
       "syncReturnType" : "CreateDomainResult",
       "asyncReturnType" : "CreateDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDomainResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "createDomain"
     },
     "DefineAnalysisScheme" : {
       "documentation" : "<p>Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code> field to define language-specific text processing options. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -135,13 +135,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "defineAnalysisScheme",
       "syncReturnType" : "DefineAnalysisSchemeResult",
       "asyncReturnType" : "DefineAnalysisSchemeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DefineAnalysisSchemeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DefineAnalysisSchemeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DefineAnalysisSchemeRequest, DefineAnalysisSchemeResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "defineAnalysisScheme"
     },
     "DefineExpression" : {
       "documentation" : "<p>Configures an <code><a>Expression</a></code> for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -177,13 +177,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "defineExpression",
       "syncReturnType" : "DefineExpressionResult",
       "asyncReturnType" : "DefineExpressionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DefineExpressionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DefineExpressionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DefineExpressionRequest, DefineExpressionResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "defineExpression"
     },
     "DefineIndexField" : {
       "documentation" : "<p>Configures an <code><a>IndexField</a></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><a>IndexFieldType</a></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html\" target=\"_blank\">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
@@ -219,13 +219,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "defineIndexField",
       "syncReturnType" : "DefineIndexFieldResult",
       "asyncReturnType" : "DefineIndexFieldResult",
       "asyncFutureType" : "java.util.concurrent.Future<DefineIndexFieldResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DefineIndexFieldResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DefineIndexFieldRequest, DefineIndexFieldResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "defineIndexField"
     },
     "DefineSuggester" : {
       "documentation" : "<p>Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -261,13 +261,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "defineSuggester",
       "syncReturnType" : "DefineSuggesterResult",
       "asyncReturnType" : "DefineSuggesterResult",
       "asyncFutureType" : "java.util.concurrent.Future<DefineSuggesterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DefineSuggesterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DefineSuggesterRequest, DefineSuggesterResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "defineSuggester"
     },
     "DeleteAnalysisScheme" : {
       "documentation" : "<p>Deletes an analysis scheme. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
@@ -300,13 +300,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteAnalysisScheme",
       "syncReturnType" : "DeleteAnalysisSchemeResult",
       "asyncReturnType" : "DeleteAnalysisSchemeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteAnalysisSchemeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteAnalysisSchemeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAnalysisSchemeRequest, DeleteAnalysisSchemeResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deleteAnalysisScheme"
     },
     "DeleteDomain" : {
       "documentation" : "<p>Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html\" target=\"_blank\">Deleting a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
@@ -333,13 +333,13 @@
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteDomain",
       "syncReturnType" : "DeleteDomainResult",
       "asyncReturnType" : "DeleteDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDomainResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deleteDomain"
     },
     "DeleteExpression" : {
       "documentation" : "<p>Removes an <code><a>Expression</a></code> from the search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -372,13 +372,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteExpression",
       "syncReturnType" : "DeleteExpressionResult",
       "asyncReturnType" : "DeleteExpressionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteExpressionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteExpressionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteExpressionRequest, DeleteExpressionResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deleteExpression"
     },
     "DeleteIndexField" : {
       "documentation" : "<p>Removes an <code><a>IndexField</a></code> from the search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html\" target=\"_blank\">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -411,13 +411,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteIndexField",
       "syncReturnType" : "DeleteIndexFieldResult",
       "asyncReturnType" : "DeleteIndexFieldResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteIndexFieldResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteIndexFieldResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteIndexFieldRequest, DeleteIndexFieldResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deleteIndexField"
     },
     "DeleteSuggester" : {
       "documentation" : "<p>Deletes a suggester. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -450,13 +450,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteSuggester",
       "syncReturnType" : "DeleteSuggesterResult",
       "asyncReturnType" : "DeleteSuggesterResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteSuggesterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteSuggesterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSuggesterRequest, DeleteSuggesterResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deleteSuggester"
     },
     "DescribeAnalysisSchemes" : {
       "documentation" : "<p>Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a <code>text</code> field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -486,13 +486,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeAnalysisSchemes",
       "syncReturnType" : "DescribeAnalysisSchemesResult",
       "asyncReturnType" : "DescribeAnalysisSchemesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAnalysisSchemesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAnalysisSchemesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAnalysisSchemesRequest, DescribeAnalysisSchemesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeAnalysisSchemes"
     },
     "DescribeAvailabilityOptions" : {
       "documentation" : "<p>Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html\" target=\"_blank\">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -531,13 +531,13 @@
         "documentation" : "<p>The request was rejected because it attempted an operation which is not enabled.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeAvailabilityOptions",
       "syncReturnType" : "DescribeAvailabilityOptionsResult",
       "asyncReturnType" : "DescribeAvailabilityOptionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAvailabilityOptionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAvailabilityOptionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAvailabilityOptionsRequest, DescribeAvailabilityOptionsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeAvailabilityOptions"
     },
     "DescribeDomains" : {
       "documentation" : "<p>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default. To get the number of searchable documents in a domain, use the console or submit a <code>matchall</code> request to your domain's search endpoint: <code>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html\" target=\"_blank\">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -564,13 +564,13 @@
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeDomains",
       "syncReturnType" : "DescribeDomainsResult",
       "asyncReturnType" : "DescribeDomainsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDomainsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDomainsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDomainsRequest, DescribeDomainsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeDomains"
     },
     "DescribeExpressions" : {
       "documentation" : "<p>Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -600,13 +600,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeExpressions",
       "syncReturnType" : "DescribeExpressionsResult",
       "asyncReturnType" : "DescribeExpressionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeExpressionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeExpressionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeExpressionsRequest, DescribeExpressionsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeExpressions"
     },
     "DescribeIndexFields" : {
       "documentation" : "<p>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default, shows all fields and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html\" target=\"_blank\">Getting Domain Information</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -636,13 +636,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeIndexFields",
       "syncReturnType" : "DescribeIndexFieldsResult",
       "asyncReturnType" : "DescribeIndexFieldsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeIndexFieldsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeIndexFieldsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeIndexFieldsRequest, DescribeIndexFieldsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeIndexFields"
     },
     "DescribeScalingParameters" : {
       "documentation" : "<p>Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html\" target=\"_blank\">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -672,13 +672,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeScalingParameters",
       "syncReturnType" : "DescribeScalingParametersResult",
       "asyncReturnType" : "DescribeScalingParametersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeScalingParametersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeScalingParametersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeScalingParametersRequest, DescribeScalingParametersResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeScalingParameters"
     },
     "DescribeServiceAccessPolicies" : {
       "documentation" : "<p>Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html\" target=\"_blank\">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -708,13 +708,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeServiceAccessPolicies",
       "syncReturnType" : "DescribeServiceAccessPoliciesResult",
       "asyncReturnType" : "DescribeServiceAccessPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeServiceAccessPoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeServiceAccessPoliciesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeServiceAccessPoliciesRequest, DescribeServiceAccessPoliciesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeServiceAccessPolicies"
     },
     "DescribeSuggesters" : {
       "documentation" : "<p>Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -744,13 +744,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeSuggesters",
       "syncReturnType" : "DescribeSuggestersResult",
       "asyncReturnType" : "DescribeSuggestersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSuggestersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSuggestersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSuggestersRequest, DescribeSuggestersResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeSuggesters"
     },
     "IndexDocuments" : {
       "documentation" : "<p>Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.</p>",
@@ -780,13 +780,13 @@
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "indexDocuments",
       "syncReturnType" : "IndexDocumentsResult",
       "asyncReturnType" : "IndexDocumentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<IndexDocumentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<IndexDocumentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<IndexDocumentsRequest, IndexDocumentsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "indexDocuments"
     },
     "ListDomainNames" : {
       "documentation" : "<p>Lists all search domains owned by an account.</p>",
@@ -810,13 +810,13 @@
         "documentation" : "<p>An error occurred while processing the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listDomainNames",
       "syncReturnType" : "ListDomainNamesResult",
       "asyncReturnType" : "ListDomainNamesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDomainNamesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDomainNamesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDomainNamesRequest, ListDomainNamesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "listDomainNames"
     },
     "UpdateAvailabilityOptions" : {
       "documentation" : "<p>Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html\" target=\"_blank\">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
@@ -855,13 +855,13 @@
         "documentation" : "<p>The request was rejected because it attempted an operation which is not enabled.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateAvailabilityOptions",
       "syncReturnType" : "UpdateAvailabilityOptionsResult",
       "asyncReturnType" : "UpdateAvailabilityOptionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateAvailabilityOptionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateAvailabilityOptionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAvailabilityOptionsRequest, UpdateAvailabilityOptionsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "updateAvailabilityOptions"
     },
     "UpdateScalingParameters" : {
       "documentation" : "<p>Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html\" target=\"_blank\">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
@@ -897,13 +897,13 @@
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateScalingParameters",
       "syncReturnType" : "UpdateScalingParametersResult",
       "asyncReturnType" : "UpdateScalingParametersResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateScalingParametersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateScalingParametersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateScalingParametersRequest, UpdateScalingParametersResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "updateScalingParameters"
     },
     "UpdateServiceAccessPolicies" : {
       "documentation" : "<p>Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html\" target=\"_blank\"> Configuring Access for an Amazon CloudSearch Domain</a>.</p>",
@@ -939,13 +939,13 @@
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateServiceAccessPolicies",
       "syncReturnType" : "UpdateServiceAccessPoliciesResult",
       "asyncReturnType" : "UpdateServiceAccessPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateServiceAccessPoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateServiceAccessPoliciesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateServiceAccessPoliciesRequest, UpdateServiceAccessPoliciesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "updateServiceAccessPolicies"
     }
   },
   "shapes" : {

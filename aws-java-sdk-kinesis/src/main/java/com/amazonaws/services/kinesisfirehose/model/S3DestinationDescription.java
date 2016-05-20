@@ -45,7 +45,8 @@ public class S3DestinationDescription implements Serializable, Cloneable {
      * appears as a folder in the S3 bucket. For more information, see <a href=
      * "http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html"
      * >Amazon S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis
+     * Firehose Developer Guide</a>.
      * </p>
      */
     private String prefix;
@@ -167,7 +168,8 @@ public class S3DestinationDescription implements Serializable, Cloneable {
      * appears as a folder in the S3 bucket. For more information, see <a href=
      * "http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html"
      * >Amazon S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis
+     * Firehose Developer Guide</a>.
      * </p>
      * 
      * @param prefix
@@ -178,8 +180,8 @@ public class S3DestinationDescription implements Serializable, Cloneable {
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html"
      *        >Amazon S3 Object Name Format</a> in the <a
-     *        href="http://docs.aws.amazon.com/firehose/latest/dev/"
-     *        >guide-fh-dev</a>.
+     *        href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon
+     *        Kinesis Firehose Developer Guide</a>.
      */
 
     public void setPrefix(String prefix) {
@@ -194,7 +196,8 @@ public class S3DestinationDescription implements Serializable, Cloneable {
      * appears as a folder in the S3 bucket. For more information, see <a href=
      * "http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html"
      * >Amazon S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis
+     * Firehose Developer Guide</a>.
      * </p>
      * 
      * @return The "YYYY/MM/DD/HH" time format prefix is automatically used for
@@ -204,8 +207,8 @@ public class S3DestinationDescription implements Serializable, Cloneable {
      *         information, see <a href=
      *         "http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html"
      *         >Amazon S3 Object Name Format</a> in the <a
-     *         href="http://docs.aws.amazon.com/firehose/latest/dev/"
-     *         >guide-fh-dev</a>.
+     *         href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon
+     *         Kinesis Firehose Developer Guide</a>.
      */
 
     public String getPrefix() {
@@ -220,7 +223,8 @@ public class S3DestinationDescription implements Serializable, Cloneable {
      * appears as a folder in the S3 bucket. For more information, see <a href=
      * "http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html"
      * >Amazon S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis
+     * Firehose Developer Guide</a>.
      * </p>
      * 
      * @param prefix
@@ -231,8 +235,8 @@ public class S3DestinationDescription implements Serializable, Cloneable {
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html"
      *        >Amazon S3 Object Name Format</a> in the <a
-     *        href="http://docs.aws.amazon.com/firehose/latest/dev/"
-     *        >guide-fh-dev</a>.
+     *        href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon
+     *        Kinesis Firehose Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

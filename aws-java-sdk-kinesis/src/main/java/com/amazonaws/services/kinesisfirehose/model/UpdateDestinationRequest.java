@@ -51,9 +51,17 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String destinationId;
-
+    /**
+     * <p>
+     * Describes an update for a destination in Amazon S3.
+     * </p>
+     */
     private S3DestinationUpdate s3DestinationUpdate;
-
+    /**
+     * <p>
+     * Describes an update for a destination in Amazon Redshift.
+     * </p>
+     */
     private RedshiftDestinationUpdate redshiftDestinationUpdate;
     /**
      * <p>
@@ -228,7 +236,12 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Describes an update for a destination in Amazon S3.
+     * </p>
+     * 
      * @param s3DestinationUpdate
+     *        Describes an update for a destination in Amazon S3.
      */
 
     public void setS3DestinationUpdate(S3DestinationUpdate s3DestinationUpdate) {
@@ -236,7 +249,11 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * Describes an update for a destination in Amazon S3.
+     * </p>
+     * 
+     * @return Describes an update for a destination in Amazon S3.
      */
 
     public S3DestinationUpdate getS3DestinationUpdate() {
@@ -244,7 +261,12 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Describes an update for a destination in Amazon S3.
+     * </p>
+     * 
      * @param s3DestinationUpdate
+     *        Describes an update for a destination in Amazon S3.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -256,7 +278,12 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Describes an update for a destination in Amazon Redshift.
+     * </p>
+     * 
      * @param redshiftDestinationUpdate
+     *        Describes an update for a destination in Amazon Redshift.
      */
 
     public void setRedshiftDestinationUpdate(
@@ -265,7 +292,11 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * Describes an update for a destination in Amazon Redshift.
+     * </p>
+     * 
+     * @return Describes an update for a destination in Amazon Redshift.
      */
 
     public RedshiftDestinationUpdate getRedshiftDestinationUpdate() {
@@ -273,7 +304,12 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Describes an update for a destination in Amazon Redshift.
+     * </p>
+     * 
      * @param redshiftDestinationUpdate
+     *        Describes an update for a destination in Amazon Redshift.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

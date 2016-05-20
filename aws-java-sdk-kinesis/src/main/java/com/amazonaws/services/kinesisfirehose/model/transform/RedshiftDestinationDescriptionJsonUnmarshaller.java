@@ -74,6 +74,12 @@ public class RedshiftDestinationDescriptionJsonUnmarshaller implements
                     redshiftDestinationDescription.setUsername(context
                             .getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RetryOptions", targetDepth)) {
+                    context.nextToken();
+                    redshiftDestinationDescription
+                            .setRetryOptions(RedshiftRetryOptionsJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("S3DestinationDescription",
                         targetDepth)) {
                     context.nextToken();

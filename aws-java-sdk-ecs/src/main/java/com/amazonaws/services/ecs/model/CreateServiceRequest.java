@@ -53,24 +53,9 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
     private String taskDefinition;
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your
-     * service.
-     * </p>
-     * <p>
-     * For Elastic Load Balancing standard load balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load
-     * balancer. When a task from this service is placed on a container
-     * instance, the container instance is registered with the load balancer
-     * specified here.
-     * </p>
-     * <p>
-     * For Elastic Load Balancing application load balancers, this object must
-     * contain the load balancer target group ARN, the container name (as it
-     * appears in a container definition), and the container port to access from
-     * the load balancer. When a task from this service is placed on a container
-     * instance, the container instance and port combination is registered as a
-     * target in the target group specified here.
+     * A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the
+     * container port to access from the load balancer.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
@@ -91,9 +76,20 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The name or full Amazon Resource Name (ARN) of the IAM role that allows
-     * your Amazon ECS container agent to make calls to your load balancer on
-     * your behalf. This parameter is only required if you are using a load
-     * balancer with your service.
+     * Amazon ECS to make calls to your load balancer on your behalf. This
+     * parameter is required if you are using a load balancer with your service.
+     * If you specify the <code>role</code> parameter, you must also specify a
+     * load balancer object with the <code>loadBalancers</code> parameter.
+     * </p>
+     * <p>
+     * If your specified role has a path other than <code>/</code>, then you
+     * must either specify the full role ARN (this is recommended) or prefix the
+     * role name with the path. For example, if a role with the name
+     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
+     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private String role;
@@ -284,44 +280,15 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your
-     * service.
-     * </p>
-     * <p>
-     * For Elastic Load Balancing standard load balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load
-     * balancer. When a task from this service is placed on a container
-     * instance, the container instance is registered with the load balancer
-     * specified here.
-     * </p>
-     * <p>
-     * For Elastic Load Balancing application load balancers, this object must
-     * contain the load balancer target group ARN, the container name (as it
-     * appears in a container definition), and the container port to access from
-     * the load balancer. When a task from this service is placed on a container
-     * instance, the container instance and port combination is registered as a
-     * target in the target group specified here.
+     * A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the
+     * container port to access from the load balancer.
      * </p>
      * 
-     * @return A load balancer object representing the load balancer to use with
-     *         your service.</p>
-     *         <p>
-     *         For Elastic Load Balancing standard load balancers, this object
-     *         must contain the load balancer name, the container name (as it
-     *         appears in a container definition), and the container port to
-     *         access from the load balancer. When a task from this service is
-     *         placed on a container instance, the container instance is
-     *         registered with the load balancer specified here.
-     *         </p>
-     *         <p>
-     *         For Elastic Load Balancing application load balancers, this
-     *         object must contain the load balancer target group ARN, the
-     *         container name (as it appears in a container definition), and the
-     *         container port to access from the load balancer. When a task from
-     *         this service is placed on a container instance, the container
-     *         instance and port combination is registered as a target in the
-     *         target group specified here.
+     * @return A list of load balancer objects, containing the load balancer
+     *         name, the container name (as it appears in a container
+     *         definition), and the container port to access from the load
+     *         balancer.
      */
 
     public java.util.List<LoadBalancer> getLoadBalancers() {
@@ -333,45 +300,16 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your
-     * service.
-     * </p>
-     * <p>
-     * For Elastic Load Balancing standard load balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load
-     * balancer. When a task from this service is placed on a container
-     * instance, the container instance is registered with the load balancer
-     * specified here.
-     * </p>
-     * <p>
-     * For Elastic Load Balancing application load balancers, this object must
-     * contain the load balancer target group ARN, the container name (as it
-     * appears in a container definition), and the container port to access from
-     * the load balancer. When a task from this service is placed on a container
-     * instance, the container instance and port combination is registered as a
-     * target in the target group specified here.
+     * A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the
+     * container port to access from the load balancer.
      * </p>
      * 
      * @param loadBalancers
-     *        A load balancer object representing the load balancer to use with
-     *        your service.</p>
-     *        <p>
-     *        For Elastic Load Balancing standard load balancers, this object
-     *        must contain the load balancer name, the container name (as it
-     *        appears in a container definition), and the container port to
-     *        access from the load balancer. When a task from this service is
-     *        placed on a container instance, the container instance is
-     *        registered with the load balancer specified here.
-     *        </p>
-     *        <p>
-     *        For Elastic Load Balancing application load balancers, this object
-     *        must contain the load balancer target group ARN, the container
-     *        name (as it appears in a container definition), and the container
-     *        port to access from the load balancer. When a task from this
-     *        service is placed on a container instance, the container instance
-     *        and port combination is registered as a target in the target group
-     *        specified here.
+     *        A list of load balancer objects, containing the load balancer
+     *        name, the container name (as it appears in a container
+     *        definition), and the container port to access from the load
+     *        balancer.
      */
 
     public void setLoadBalancers(
@@ -387,24 +325,9 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your
-     * service.
-     * </p>
-     * <p>
-     * For Elastic Load Balancing standard load balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load
-     * balancer. When a task from this service is placed on a container
-     * instance, the container instance is registered with the load balancer
-     * specified here.
-     * </p>
-     * <p>
-     * For Elastic Load Balancing application load balancers, this object must
-     * contain the load balancer target group ARN, the container name (as it
-     * appears in a container definition), and the container port to access from
-     * the load balancer. When a task from this service is placed on a container
-     * instance, the container instance and port combination is registered as a
-     * target in the target group specified here.
+     * A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the
+     * container port to access from the load balancer.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -414,24 +337,10 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param loadBalancers
-     *        A load balancer object representing the load balancer to use with
-     *        your service.</p>
-     *        <p>
-     *        For Elastic Load Balancing standard load balancers, this object
-     *        must contain the load balancer name, the container name (as it
-     *        appears in a container definition), and the container port to
-     *        access from the load balancer. When a task from this service is
-     *        placed on a container instance, the container instance is
-     *        registered with the load balancer specified here.
-     *        </p>
-     *        <p>
-     *        For Elastic Load Balancing application load balancers, this object
-     *        must contain the load balancer target group ARN, the container
-     *        name (as it appears in a container definition), and the container
-     *        port to access from the load balancer. When a task from this
-     *        service is placed on a container instance, the container instance
-     *        and port combination is registered as a target in the target group
-     *        specified here.
+     *        A list of load balancer objects, containing the load balancer
+     *        name, the container name (as it appears in a container
+     *        definition), and the container port to access from the load
+     *        balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -449,45 +358,16 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your
-     * service.
-     * </p>
-     * <p>
-     * For Elastic Load Balancing standard load balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load
-     * balancer. When a task from this service is placed on a container
-     * instance, the container instance is registered with the load balancer
-     * specified here.
-     * </p>
-     * <p>
-     * For Elastic Load Balancing application load balancers, this object must
-     * contain the load balancer target group ARN, the container name (as it
-     * appears in a container definition), and the container port to access from
-     * the load balancer. When a task from this service is placed on a container
-     * instance, the container instance and port combination is registered as a
-     * target in the target group specified here.
+     * A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the
+     * container port to access from the load balancer.
      * </p>
      * 
      * @param loadBalancers
-     *        A load balancer object representing the load balancer to use with
-     *        your service.</p>
-     *        <p>
-     *        For Elastic Load Balancing standard load balancers, this object
-     *        must contain the load balancer name, the container name (as it
-     *        appears in a container definition), and the container port to
-     *        access from the load balancer. When a task from this service is
-     *        placed on a container instance, the container instance is
-     *        registered with the load balancer specified here.
-     *        </p>
-     *        <p>
-     *        For Elastic Load Balancing application load balancers, this object
-     *        must contain the load balancer target group ARN, the container
-     *        name (as it appears in a container definition), and the container
-     *        port to access from the load balancer. When a task from this
-     *        service is placed on a container instance, the container instance
-     *        and port combination is registered as a target in the target group
-     *        specified here.
+     *        A list of load balancer objects, containing the load balancer
+     *        name, the container name (as it appears in a container
+     *        definition), and the container port to access from the load
+     *        balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -596,16 +476,38 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The name or full Amazon Resource Name (ARN) of the IAM role that allows
-     * your Amazon ECS container agent to make calls to your load balancer on
-     * your behalf. This parameter is only required if you are using a load
-     * balancer with your service.
+     * Amazon ECS to make calls to your load balancer on your behalf. This
+     * parameter is required if you are using a load balancer with your service.
+     * If you specify the <code>role</code> parameter, you must also specify a
+     * load balancer object with the <code>loadBalancers</code> parameter.
+     * </p>
+     * <p>
+     * If your specified role has a path other than <code>/</code>, then you
+     * must either specify the full role ARN (this is recommended) or prefix the
+     * role name with the path. For example, if a role with the name
+     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
+     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param role
      *        The name or full Amazon Resource Name (ARN) of the IAM role that
-     *        allows your Amazon ECS container agent to make calls to your load
-     *        balancer on your behalf. This parameter is only required if you
-     *        are using a load balancer with your service.
+     *        allows Amazon ECS to make calls to your load balancer on your
+     *        behalf. This parameter is required if you are using a load
+     *        balancer with your service. If you specify the <code>role</code>
+     *        parameter, you must also specify a load balancer object with the
+     *        <code>loadBalancers</code> parameter.</p>
+     *        <p>
+     *        If your specified role has a path other than <code>/</code>, then
+     *        you must either specify the full role ARN (this is recommended) or
+     *        prefix the role name with the path. For example, if a role with
+     *        the name <code>bar</code> has a path of <code>/foo/</code> then
+     *        you would specify <code>/foo/bar</code> as the role name. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     *        >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      */
 
     public void setRole(String role) {
@@ -615,15 +517,37 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The name or full Amazon Resource Name (ARN) of the IAM role that allows
-     * your Amazon ECS container agent to make calls to your load balancer on
-     * your behalf. This parameter is only required if you are using a load
-     * balancer with your service.
+     * Amazon ECS to make calls to your load balancer on your behalf. This
+     * parameter is required if you are using a load balancer with your service.
+     * If you specify the <code>role</code> parameter, you must also specify a
+     * load balancer object with the <code>loadBalancers</code> parameter.
+     * </p>
+     * <p>
+     * If your specified role has a path other than <code>/</code>, then you
+     * must either specify the full role ARN (this is recommended) or prefix the
+     * role name with the path. For example, if a role with the name
+     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
+     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The name or full Amazon Resource Name (ARN) of the IAM role that
-     *         allows your Amazon ECS container agent to make calls to your load
-     *         balancer on your behalf. This parameter is only required if you
-     *         are using a load balancer with your service.
+     *         allows Amazon ECS to make calls to your load balancer on your
+     *         behalf. This parameter is required if you are using a load
+     *         balancer with your service. If you specify the <code>role</code>
+     *         parameter, you must also specify a load balancer object with the
+     *         <code>loadBalancers</code> parameter.</p>
+     *         <p>
+     *         If your specified role has a path other than <code>/</code>, then
+     *         you must either specify the full role ARN (this is recommended)
+     *         or prefix the role name with the path. For example, if a role
+     *         with the name <code>bar</code> has a path of <code>/foo/</code>
+     *         then you would specify <code>/foo/bar</code> as the role name.
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     *         >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      */
 
     public String getRole() {
@@ -633,16 +557,38 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The name or full Amazon Resource Name (ARN) of the IAM role that allows
-     * your Amazon ECS container agent to make calls to your load balancer on
-     * your behalf. This parameter is only required if you are using a load
-     * balancer with your service.
+     * Amazon ECS to make calls to your load balancer on your behalf. This
+     * parameter is required if you are using a load balancer with your service.
+     * If you specify the <code>role</code> parameter, you must also specify a
+     * load balancer object with the <code>loadBalancers</code> parameter.
+     * </p>
+     * <p>
+     * If your specified role has a path other than <code>/</code>, then you
+     * must either specify the full role ARN (this is recommended) or prefix the
+     * role name with the path. For example, if a role with the name
+     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
+     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param role
      *        The name or full Amazon Resource Name (ARN) of the IAM role that
-     *        allows your Amazon ECS container agent to make calls to your load
-     *        balancer on your behalf. This parameter is only required if you
-     *        are using a load balancer with your service.
+     *        allows Amazon ECS to make calls to your load balancer on your
+     *        behalf. This parameter is required if you are using a load
+     *        balancer with your service. If you specify the <code>role</code>
+     *        parameter, you must also specify a load balancer object with the
+     *        <code>loadBalancers</code> parameter.</p>
+     *        <p>
+     *        If your specified role has a path other than <code>/</code>, then
+     *        you must either specify the full role ARN (this is recommended) or
+     *        prefix the role name with the path. For example, if a role with
+     *        the name <code>bar</code> has a path of <code>/foo/</code> then
+     *        you would specify <code>/foo/bar</code> as the role name. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     *        >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

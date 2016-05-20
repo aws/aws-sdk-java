@@ -5794,12 +5794,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5936,12 +5936,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -23194,12 +23194,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,IdentityVerificationAttributes>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityVerificationAttributes>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, IdentityVerificationAttributes>",
-          "templateType" : "java.util.Map<String,IdentityVerificationAttributes>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityVerificationAttributes>"
+          "entryType" : "Map.Entry<String, IdentityVerificationAttributes>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -23336,12 +23336,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,IdentityVerificationAttributes>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityVerificationAttributes>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, IdentityVerificationAttributes>",
-            "templateType" : "java.util.Map<String,IdentityVerificationAttributes>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityVerificationAttributes>"
+            "entryType" : "Map.Entry<String, IdentityVerificationAttributes>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -27554,12 +27554,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,IdentityMailFromDomainAttributes>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityMailFromDomainAttributes>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, IdentityMailFromDomainAttributes>",
-          "templateType" : "java.util.Map<String,IdentityMailFromDomainAttributes>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityMailFromDomainAttributes>"
+          "entryType" : "Map.Entry<String, IdentityMailFromDomainAttributes>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -27696,12 +27696,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,IdentityMailFromDomainAttributes>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityMailFromDomainAttributes>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, IdentityMailFromDomainAttributes>",
-            "templateType" : "java.util.Map<String,IdentityMailFromDomainAttributes>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityMailFromDomainAttributes>"
+            "entryType" : "Map.Entry<String, IdentityMailFromDomainAttributes>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -27864,12 +27864,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,IdentityNotificationAttributes>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityNotificationAttributes>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, IdentityNotificationAttributes>",
-          "templateType" : "java.util.Map<String,IdentityNotificationAttributes>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityNotificationAttributes>"
+          "entryType" : "Map.Entry<String, IdentityNotificationAttributes>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -28006,12 +28006,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,IdentityNotificationAttributes>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityNotificationAttributes>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, IdentityNotificationAttributes>",
-            "templateType" : "java.util.Map<String,IdentityNotificationAttributes>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityNotificationAttributes>"
+            "entryType" : "Map.Entry<String, IdentityNotificationAttributes>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -28920,12 +28920,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,IdentityDkimAttributes>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityDkimAttributes>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, IdentityDkimAttributes>",
-          "templateType" : "java.util.Map<String,IdentityDkimAttributes>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityDkimAttributes>"
+          "entryType" : "Map.Entry<String, IdentityDkimAttributes>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -29062,12 +29062,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,IdentityDkimAttributes>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityDkimAttributes>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, IdentityDkimAttributes>",
-            "templateType" : "java.util.Map<String,IdentityDkimAttributes>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,IdentityDkimAttributes>"
+            "entryType" : "Map.Entry<String, IdentityDkimAttributes>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

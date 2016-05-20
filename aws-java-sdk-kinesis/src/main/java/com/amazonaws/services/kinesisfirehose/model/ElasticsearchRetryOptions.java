@@ -29,9 +29,10 @@ public class ElasticsearchRetryOptions implements Serializable, Cloneable {
     /**
      * <p>
      * After an initial failure to deliver to Amazon ES, the total amount of
-     * time during which Firehose re-attempts delivery. After this time has
-     * elapsed, the failed documents are written to Amazon S3. Default value is
-     * 300 seconds. A value of 0 (zero) results in no retries.
+     * time during which Firehose re-attempts delivery (including the first
+     * attempt). After this time has elapsed, the failed documents are written
+     * to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0
+     * (zero) results in no retries.
      * </p>
      */
     private Integer durationInSeconds;
@@ -39,17 +40,18 @@ public class ElasticsearchRetryOptions implements Serializable, Cloneable {
     /**
      * <p>
      * After an initial failure to deliver to Amazon ES, the total amount of
-     * time during which Firehose re-attempts delivery. After this time has
-     * elapsed, the failed documents are written to Amazon S3. Default value is
-     * 300 seconds. A value of 0 (zero) results in no retries.
+     * time during which Firehose re-attempts delivery (including the first
+     * attempt). After this time has elapsed, the failed documents are written
+     * to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0
+     * (zero) results in no retries.
      * </p>
      * 
      * @param durationInSeconds
      *        After an initial failure to deliver to Amazon ES, the total amount
-     *        of time during which Firehose re-attempts delivery. After this
-     *        time has elapsed, the failed documents are written to Amazon S3.
-     *        Default value is 300 seconds. A value of 0 (zero) results in no
-     *        retries.
+     *        of time during which Firehose re-attempts delivery (including the
+     *        first attempt). After this time has elapsed, the failed documents
+     *        are written to Amazon S3. Default value is 300 seconds (5
+     *        minutes). A value of 0 (zero) results in no retries.
      */
 
     public void setDurationInSeconds(Integer durationInSeconds) {
@@ -59,16 +61,17 @@ public class ElasticsearchRetryOptions implements Serializable, Cloneable {
     /**
      * <p>
      * After an initial failure to deliver to Amazon ES, the total amount of
-     * time during which Firehose re-attempts delivery. After this time has
-     * elapsed, the failed documents are written to Amazon S3. Default value is
-     * 300 seconds. A value of 0 (zero) results in no retries.
+     * time during which Firehose re-attempts delivery (including the first
+     * attempt). After this time has elapsed, the failed documents are written
+     * to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0
+     * (zero) results in no retries.
      * </p>
      * 
      * @return After an initial failure to deliver to Amazon ES, the total
-     *         amount of time during which Firehose re-attempts delivery. After
-     *         this time has elapsed, the failed documents are written to Amazon
-     *         S3. Default value is 300 seconds. A value of 0 (zero) results in
-     *         no retries.
+     *         amount of time during which Firehose re-attempts delivery
+     *         (including the first attempt). After this time has elapsed, the
+     *         failed documents are written to Amazon S3. Default value is 300
+     *         seconds (5 minutes). A value of 0 (zero) results in no retries.
      */
 
     public Integer getDurationInSeconds() {
@@ -78,17 +81,18 @@ public class ElasticsearchRetryOptions implements Serializable, Cloneable {
     /**
      * <p>
      * After an initial failure to deliver to Amazon ES, the total amount of
-     * time during which Firehose re-attempts delivery. After this time has
-     * elapsed, the failed documents are written to Amazon S3. Default value is
-     * 300 seconds. A value of 0 (zero) results in no retries.
+     * time during which Firehose re-attempts delivery (including the first
+     * attempt). After this time has elapsed, the failed documents are written
+     * to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0
+     * (zero) results in no retries.
      * </p>
      * 
      * @param durationInSeconds
      *        After an initial failure to deliver to Amazon ES, the total amount
-     *        of time during which Firehose re-attempts delivery. After this
-     *        time has elapsed, the failed documents are written to Amazon S3.
-     *        Default value is 300 seconds. A value of 0 (zero) results in no
-     *        retries.
+     *        of time during which Firehose re-attempts delivery (including the
+     *        first attempt). After this time has elapsed, the failed documents
+     *        are written to Amazon S3. Default value is 300 seconds (5
+     *        minutes). A value of 0 (zero) results in no retries.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

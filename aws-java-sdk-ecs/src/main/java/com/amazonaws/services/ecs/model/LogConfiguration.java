@@ -27,10 +27,27 @@ public class LogConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The log driver to use for the container. This parameter requires version
-     * 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into
-     * your container instance and run the following command:
+     * The log driver to use for the container. The valid values listed for this
+     * parameter are log drivers that the Amazon ECS container agent can
+     * communicate with by default.
+     * </p>
+     * <note>
+     * <p>
+     * If you have a custom driver that is not listed above that you would like
+     * to work with the Amazon ECS container agent, you can fork the Amazon ECS
+     * container agent project that is <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a>
+     * and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However,
+     * Amazon Web Services does not currently provide support for running
+     * modified copies of this software.
+     * </p>
+     * </note>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater
+     * on your container instance. To check the Docker Remote API version on
+     * your container instance, log into your container instance and run the
+     * following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      */
@@ -49,19 +66,50 @@ public class LogConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The log driver to use for the container. This parameter requires version
-     * 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into
-     * your container instance and run the following command:
+     * The log driver to use for the container. The valid values listed for this
+     * parameter are log drivers that the Amazon ECS container agent can
+     * communicate with by default.
+     * </p>
+     * <note>
+     * <p>
+     * If you have a custom driver that is not listed above that you would like
+     * to work with the Amazon ECS container agent, you can fork the Amazon ECS
+     * container agent project that is <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a>
+     * and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However,
+     * Amazon Web Services does not currently provide support for running
+     * modified copies of this software.
+     * </p>
+     * </note>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater
+     * on your container instance. To check the Docker Remote API version on
+     * your container instance, log into your container instance and run the
+     * following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @param logDriver
-     *        The log driver to use for the container. This parameter requires
-     *        version 1.18 of the Docker Remote API or greater on your container
-     *        instance. To check the Docker Remote API version on your container
-     *        instance, log into your container instance and run the following
-     *        command:
+     *        The log driver to use for the container. The valid values listed
+     *        for this parameter are log drivers that the Amazon ECS container
+     *        agent can communicate with by default. </p> <note>
+     *        <p>
+     *        If you have a custom driver that is not listed above that you
+     *        would like to work with the Amazon ECS container agent, you can
+     *        fork the Amazon ECS container agent project that is <a
+     *        href="https://github.com/aws/amazon-ecs-agent">available on
+     *        GitHub</a> and customize it to work with that driver. We encourage
+     *        you to submit pull requests for changes that you would like to
+     *        have included. However, Amazon Web Services does not currently
+     *        provide support for running modified copies of this software.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        This parameter requires version 1.18 of the Docker Remote API or
+     *        greater on your container instance. To check the Docker Remote API
+     *        version on your container instance, log into your container
+     *        instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      * @see LogDriver
      */
@@ -72,18 +120,50 @@ public class LogConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The log driver to use for the container. This parameter requires version
-     * 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into
-     * your container instance and run the following command:
+     * The log driver to use for the container. The valid values listed for this
+     * parameter are log drivers that the Amazon ECS container agent can
+     * communicate with by default.
+     * </p>
+     * <note>
+     * <p>
+     * If you have a custom driver that is not listed above that you would like
+     * to work with the Amazon ECS container agent, you can fork the Amazon ECS
+     * container agent project that is <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a>
+     * and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However,
+     * Amazon Web Services does not currently provide support for running
+     * modified copies of this software.
+     * </p>
+     * </note>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater
+     * on your container instance. To check the Docker Remote API version on
+     * your container instance, log into your container instance and run the
+     * following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
-     * @return The log driver to use for the container. This parameter requires
-     *         version 1.18 of the Docker Remote API or greater on your
-     *         container instance. To check the Docker Remote API version on
-     *         your container instance, log into your container instance and run
-     *         the following command:
+     * @return The log driver to use for the container. The valid values listed
+     *         for this parameter are log drivers that the Amazon ECS container
+     *         agent can communicate with by default. </p> <note>
+     *         <p>
+     *         If you have a custom driver that is not listed above that you
+     *         would like to work with the Amazon ECS container agent, you can
+     *         fork the Amazon ECS container agent project that is <a
+     *         href="https://github.com/aws/amazon-ecs-agent">available on
+     *         GitHub</a> and customize it to work with that driver. We
+     *         encourage you to submit pull requests for changes that you would
+     *         like to have included. However, Amazon Web Services does not
+     *         currently provide support for running modified copies of this
+     *         software.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         This parameter requires version 1.18 of the Docker Remote API or
+     *         greater on your container instance. To check the Docker Remote
+     *         API version on your container instance, log into your container
+     *         instance and run the following command:
      *         <code>sudo docker version | grep "Server API version"</code>
      * @see LogDriver
      */
@@ -94,19 +174,50 @@ public class LogConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The log driver to use for the container. This parameter requires version
-     * 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into
-     * your container instance and run the following command:
+     * The log driver to use for the container. The valid values listed for this
+     * parameter are log drivers that the Amazon ECS container agent can
+     * communicate with by default.
+     * </p>
+     * <note>
+     * <p>
+     * If you have a custom driver that is not listed above that you would like
+     * to work with the Amazon ECS container agent, you can fork the Amazon ECS
+     * container agent project that is <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a>
+     * and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However,
+     * Amazon Web Services does not currently provide support for running
+     * modified copies of this software.
+     * </p>
+     * </note>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater
+     * on your container instance. To check the Docker Remote API version on
+     * your container instance, log into your container instance and run the
+     * following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @param logDriver
-     *        The log driver to use for the container. This parameter requires
-     *        version 1.18 of the Docker Remote API or greater on your container
-     *        instance. To check the Docker Remote API version on your container
-     *        instance, log into your container instance and run the following
-     *        command:
+     *        The log driver to use for the container. The valid values listed
+     *        for this parameter are log drivers that the Amazon ECS container
+     *        agent can communicate with by default. </p> <note>
+     *        <p>
+     *        If you have a custom driver that is not listed above that you
+     *        would like to work with the Amazon ECS container agent, you can
+     *        fork the Amazon ECS container agent project that is <a
+     *        href="https://github.com/aws/amazon-ecs-agent">available on
+     *        GitHub</a> and customize it to work with that driver. We encourage
+     *        you to submit pull requests for changes that you would like to
+     *        have included. However, Amazon Web Services does not currently
+     *        provide support for running modified copies of this software.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        This parameter requires version 1.18 of the Docker Remote API or
+     *        greater on your container instance. To check the Docker Remote API
+     *        version on your container instance, log into your container
+     *        instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -120,19 +231,50 @@ public class LogConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The log driver to use for the container. This parameter requires version
-     * 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into
-     * your container instance and run the following command:
+     * The log driver to use for the container. The valid values listed for this
+     * parameter are log drivers that the Amazon ECS container agent can
+     * communicate with by default.
+     * </p>
+     * <note>
+     * <p>
+     * If you have a custom driver that is not listed above that you would like
+     * to work with the Amazon ECS container agent, you can fork the Amazon ECS
+     * container agent project that is <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a>
+     * and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However,
+     * Amazon Web Services does not currently provide support for running
+     * modified copies of this software.
+     * </p>
+     * </note>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater
+     * on your container instance. To check the Docker Remote API version on
+     * your container instance, log into your container instance and run the
+     * following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @param logDriver
-     *        The log driver to use for the container. This parameter requires
-     *        version 1.18 of the Docker Remote API or greater on your container
-     *        instance. To check the Docker Remote API version on your container
-     *        instance, log into your container instance and run the following
-     *        command:
+     *        The log driver to use for the container. The valid values listed
+     *        for this parameter are log drivers that the Amazon ECS container
+     *        agent can communicate with by default. </p> <note>
+     *        <p>
+     *        If you have a custom driver that is not listed above that you
+     *        would like to work with the Amazon ECS container agent, you can
+     *        fork the Amazon ECS container agent project that is <a
+     *        href="https://github.com/aws/amazon-ecs-agent">available on
+     *        GitHub</a> and customize it to work with that driver. We encourage
+     *        you to submit pull requests for changes that you would like to
+     *        have included. However, Amazon Web Services does not currently
+     *        provide support for running modified copies of this software.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        This parameter requires version 1.18 of the Docker Remote API or
+     *        greater on your container instance. To check the Docker Remote API
+     *        version on your container instance, log into your container
+     *        instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      * @see LogDriver
      */
@@ -143,19 +285,50 @@ public class LogConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The log driver to use for the container. This parameter requires version
-     * 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into
-     * your container instance and run the following command:
+     * The log driver to use for the container. The valid values listed for this
+     * parameter are log drivers that the Amazon ECS container agent can
+     * communicate with by default.
+     * </p>
+     * <note>
+     * <p>
+     * If you have a custom driver that is not listed above that you would like
+     * to work with the Amazon ECS container agent, you can fork the Amazon ECS
+     * container agent project that is <a
+     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a>
+     * and customize it to work with that driver. We encourage you to submit
+     * pull requests for changes that you would like to have included. However,
+     * Amazon Web Services does not currently provide support for running
+     * modified copies of this software.
+     * </p>
+     * </note>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater
+     * on your container instance. To check the Docker Remote API version on
+     * your container instance, log into your container instance and run the
+     * following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @param logDriver
-     *        The log driver to use for the container. This parameter requires
-     *        version 1.18 of the Docker Remote API or greater on your container
-     *        instance. To check the Docker Remote API version on your container
-     *        instance, log into your container instance and run the following
-     *        command:
+     *        The log driver to use for the container. The valid values listed
+     *        for this parameter are log drivers that the Amazon ECS container
+     *        agent can communicate with by default. </p> <note>
+     *        <p>
+     *        If you have a custom driver that is not listed above that you
+     *        would like to work with the Amazon ECS container agent, you can
+     *        fork the Amazon ECS container agent project that is <a
+     *        href="https://github.com/aws/amazon-ecs-agent">available on
+     *        GitHub</a> and customize it to work with that driver. We encourage
+     *        you to submit pull requests for changes that you would like to
+     *        have included. However, Amazon Web Services does not currently
+     *        provide support for running modified copies of this software.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        This parameter requires version 1.18 of the Docker Remote API or
+     *        greater on your container instance. To check the Docker Remote API
+     *        version on your container instance, log into your container
+     *        instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

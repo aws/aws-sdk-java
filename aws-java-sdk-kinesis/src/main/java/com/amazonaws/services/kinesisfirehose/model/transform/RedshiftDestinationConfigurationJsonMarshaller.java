@@ -70,6 +70,12 @@ public class RedshiftDestinationConfigurationJsonMarshaller {
                 jsonGenerator.writeFieldName("Password").writeValue(
                         redshiftDestinationConfiguration.getPassword());
             }
+            if (redshiftDestinationConfiguration.getRetryOptions() != null) {
+                jsonGenerator.writeFieldName("RetryOptions");
+                RedshiftRetryOptionsJsonMarshaller.getInstance().marshall(
+                        redshiftDestinationConfiguration.getRetryOptions(),
+                        jsonGenerator);
+            }
             if (redshiftDestinationConfiguration.getS3Configuration() != null) {
                 jsonGenerator.writeFieldName("S3Configuration");
                 S3DestinationConfigurationJsonMarshaller

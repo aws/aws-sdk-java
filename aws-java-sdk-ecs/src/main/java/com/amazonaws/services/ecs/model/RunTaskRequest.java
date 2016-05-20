@@ -80,7 +80,8 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      * a unique identifier for that job to your task with the
      * <code>startedBy</code> parameter. You can then identify which tasks
      * belong to that job by filtering the results of a <a>ListTasks</a> call
-     * with the <code>startedBy</code> value.
+     * with the <code>startedBy</code> value. Up to 36 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the
@@ -397,7 +398,8 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      * a unique identifier for that job to your task with the
      * <code>startedBy</code> parameter. You can then identify which tasks
      * belong to that job by filtering the results of a <a>ListTasks</a> call
-     * with the <code>startedBy</code> value.
+     * with the <code>startedBy</code> value. Up to 36 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the
@@ -411,7 +413,9 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *        could apply a unique identifier for that job to your task with the
      *        <code>startedBy</code> parameter. You can then identify which
      *        tasks belong to that job by filtering the results of a
-     *        <a>ListTasks</a> call with the <code>startedBy</code> value.</p>
+     *        <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
+     *        36 letters (uppercase and lowercase), numbers, hyphens, and
+     *        underscores are allowed.</p>
      *        <p>
      *        If a task is started by an Amazon ECS service, then the
      *        <code>startedBy</code> parameter contains the deployment ID of the
@@ -429,7 +433,8 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      * a unique identifier for that job to your task with the
      * <code>startedBy</code> parameter. You can then identify which tasks
      * belong to that job by filtering the results of a <a>ListTasks</a> call
-     * with the <code>startedBy</code> value.
+     * with the <code>startedBy</code> value. Up to 36 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the
@@ -442,7 +447,9 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *         could apply a unique identifier for that job to your task with
      *         the <code>startedBy</code> parameter. You can then identify which
      *         tasks belong to that job by filtering the results of a
-     *         <a>ListTasks</a> call with the <code>startedBy</code> value.</p>
+     *         <a>ListTasks</a> call with the <code>startedBy</code> value. Up
+     *         to 36 letters (uppercase and lowercase), numbers, hyphens, and
+     *         underscores are allowed.</p>
      *         <p>
      *         If a task is started by an Amazon ECS service, then the
      *         <code>startedBy</code> parameter contains the deployment ID of
@@ -460,7 +467,8 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      * a unique identifier for that job to your task with the
      * <code>startedBy</code> parameter. You can then identify which tasks
      * belong to that job by filtering the results of a <a>ListTasks</a> call
-     * with the <code>startedBy</code> value.
+     * with the <code>startedBy</code> value. Up to 36 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the
@@ -474,7 +482,9 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *        could apply a unique identifier for that job to your task with the
      *        <code>startedBy</code> parameter. You can then identify which
      *        tasks belong to that job by filtering the results of a
-     *        <a>ListTasks</a> call with the <code>startedBy</code> value.</p>
+     *        <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
+     *        36 letters (uppercase and lowercase), numbers, hyphens, and
+     *        underscores are allowed.</p>
      *        <p>
      *        If a task is started by an Amazon ECS service, then the
      *        <code>startedBy</code> parameter contains the deployment ID of the

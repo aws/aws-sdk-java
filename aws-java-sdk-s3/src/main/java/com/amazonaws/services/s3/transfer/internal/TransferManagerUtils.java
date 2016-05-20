@@ -204,9 +204,8 @@ public class TransferManagerUtils {
         ValidationUtils.assertNotNull(s3, "S3 client");
         ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
 
-        if (s3 instanceof AmazonS3Encryption || getObjectRequest.getSSECustomerKey() != null
-                || getObjectRequest.getRange() != null || getObjectRequest.getPartNumber() != null
-                || partCount == null) {
+        if (s3 instanceof AmazonS3Encryption || getObjectRequest.getRange() != null
+                || getObjectRequest.getPartNumber() != null || partCount == null) {
             return false;
         }
         return true;

@@ -79,6 +79,12 @@ public class RedshiftDestinationUpdateJsonUnmarshaller implements
                     redshiftDestinationUpdate.setPassword(context
                             .getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RetryOptions", targetDepth)) {
+                    context.nextToken();
+                    redshiftDestinationUpdate
+                            .setRetryOptions(RedshiftRetryOptionsJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("S3Update", targetDepth)) {
                     context.nextToken();
                     redshiftDestinationUpdate

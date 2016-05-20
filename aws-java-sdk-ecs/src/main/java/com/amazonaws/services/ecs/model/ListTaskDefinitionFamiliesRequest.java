@@ -36,6 +36,21 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
     private String familyPrefix;
     /**
      * <p>
+     * The task definition family status with which to filter the
+     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families
+     * are listed. If this parameter is set to <code>ACTIVE</code>, only task
+     * definition families that have an <code>ACTIVE</code> task definition
+     * revision are returned. If this parameter is set to <code>INACTIVE</code>,
+     * only task definition families that do not have any <code>ACTIVE</code>
+     * task definition revisions are returned. If you paginate the resulting
+     * output, be sure to keep the <code>status</code> value constant in each
+     * subsequent request.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
      * The <code>nextToken</code> value returned from a previous paginated
      * <code>ListTaskDefinitionFamilies</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of
@@ -43,6 +58,13 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      * that returned the <code>nextToken</code> value. This value is
      * <code>null</code> when there are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      */
     private String nextToken;
     /**
@@ -127,6 +149,177 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
+     * The task definition family status with which to filter the
+     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families
+     * are listed. If this parameter is set to <code>ACTIVE</code>, only task
+     * definition families that have an <code>ACTIVE</code> task definition
+     * revision are returned. If this parameter is set to <code>INACTIVE</code>,
+     * only task definition families that do not have any <code>ACTIVE</code>
+     * task definition revisions are returned. If you paginate the resulting
+     * output, be sure to keep the <code>status</code> value constant in each
+     * subsequent request.
+     * </p>
+     * 
+     * @param status
+     *        The task definition family status with which to filter the
+     *        <code>ListTaskDefinitionFamilies</code> results. By default, both
+     *        <code>ACTIVE</code> and <code>INACTIVE</code> task definition
+     *        families are listed. If this parameter is set to
+     *        <code>ACTIVE</code>, only task definition families that have an
+     *        <code>ACTIVE</code> task definition revision are returned. If this
+     *        parameter is set to <code>INACTIVE</code>, only task definition
+     *        families that do not have any <code>ACTIVE</code> task definition
+     *        revisions are returned. If you paginate the resulting output, be
+     *        sure to keep the <code>status</code> value constant in each
+     *        subsequent request.
+     * @see TaskDefinitionFamilyStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The task definition family status with which to filter the
+     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families
+     * are listed. If this parameter is set to <code>ACTIVE</code>, only task
+     * definition families that have an <code>ACTIVE</code> task definition
+     * revision are returned. If this parameter is set to <code>INACTIVE</code>,
+     * only task definition families that do not have any <code>ACTIVE</code>
+     * task definition revisions are returned. If you paginate the resulting
+     * output, be sure to keep the <code>status</code> value constant in each
+     * subsequent request.
+     * </p>
+     * 
+     * @return The task definition family status with which to filter the
+     *         <code>ListTaskDefinitionFamilies</code> results. By default, both
+     *         <code>ACTIVE</code> and <code>INACTIVE</code> task definition
+     *         families are listed. If this parameter is set to
+     *         <code>ACTIVE</code>, only task definition families that have an
+     *         <code>ACTIVE</code> task definition revision are returned. If
+     *         this parameter is set to <code>INACTIVE</code>, only task
+     *         definition families that do not have any <code>ACTIVE</code> task
+     *         definition revisions are returned. If you paginate the resulting
+     *         output, be sure to keep the <code>status</code> value constant in
+     *         each subsequent request.
+     * @see TaskDefinitionFamilyStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The task definition family status with which to filter the
+     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families
+     * are listed. If this parameter is set to <code>ACTIVE</code>, only task
+     * definition families that have an <code>ACTIVE</code> task definition
+     * revision are returned. If this parameter is set to <code>INACTIVE</code>,
+     * only task definition families that do not have any <code>ACTIVE</code>
+     * task definition revisions are returned. If you paginate the resulting
+     * output, be sure to keep the <code>status</code> value constant in each
+     * subsequent request.
+     * </p>
+     * 
+     * @param status
+     *        The task definition family status with which to filter the
+     *        <code>ListTaskDefinitionFamilies</code> results. By default, both
+     *        <code>ACTIVE</code> and <code>INACTIVE</code> task definition
+     *        families are listed. If this parameter is set to
+     *        <code>ACTIVE</code>, only task definition families that have an
+     *        <code>ACTIVE</code> task definition revision are returned. If this
+     *        parameter is set to <code>INACTIVE</code>, only task definition
+     *        families that do not have any <code>ACTIVE</code> task definition
+     *        revisions are returned. If you paginate the resulting output, be
+     *        sure to keep the <code>status</code> value constant in each
+     *        subsequent request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see TaskDefinitionFamilyStatus
+     */
+
+    public ListTaskDefinitionFamiliesRequest withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The task definition family status with which to filter the
+     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families
+     * are listed. If this parameter is set to <code>ACTIVE</code>, only task
+     * definition families that have an <code>ACTIVE</code> task definition
+     * revision are returned. If this parameter is set to <code>INACTIVE</code>,
+     * only task definition families that do not have any <code>ACTIVE</code>
+     * task definition revisions are returned. If you paginate the resulting
+     * output, be sure to keep the <code>status</code> value constant in each
+     * subsequent request.
+     * </p>
+     * 
+     * @param status
+     *        The task definition family status with which to filter the
+     *        <code>ListTaskDefinitionFamilies</code> results. By default, both
+     *        <code>ACTIVE</code> and <code>INACTIVE</code> task definition
+     *        families are listed. If this parameter is set to
+     *        <code>ACTIVE</code>, only task definition families that have an
+     *        <code>ACTIVE</code> task definition revision are returned. If this
+     *        parameter is set to <code>INACTIVE</code>, only task definition
+     *        families that do not have any <code>ACTIVE</code> task definition
+     *        revisions are returned. If you paginate the resulting output, be
+     *        sure to keep the <code>status</code> value constant in each
+     *        subsequent request.
+     * @see TaskDefinitionFamilyStatus
+     */
+
+    public void setStatus(TaskDefinitionFamilyStatus status) {
+        this.status = status.toString();
+    }
+
+    /**
+     * <p>
+     * The task definition family status with which to filter the
+     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families
+     * are listed. If this parameter is set to <code>ACTIVE</code>, only task
+     * definition families that have an <code>ACTIVE</code> task definition
+     * revision are returned. If this parameter is set to <code>INACTIVE</code>,
+     * only task definition families that do not have any <code>ACTIVE</code>
+     * task definition revisions are returned. If you paginate the resulting
+     * output, be sure to keep the <code>status</code> value constant in each
+     * subsequent request.
+     * </p>
+     * 
+     * @param status
+     *        The task definition family status with which to filter the
+     *        <code>ListTaskDefinitionFamilies</code> results. By default, both
+     *        <code>ACTIVE</code> and <code>INACTIVE</code> task definition
+     *        families are listed. If this parameter is set to
+     *        <code>ACTIVE</code>, only task definition families that have an
+     *        <code>ACTIVE</code> task definition revision are returned. If this
+     *        parameter is set to <code>INACTIVE</code>, only task definition
+     *        families that do not have any <code>ACTIVE</code> task definition
+     *        revisions are returned. If you paginate the resulting output, be
+     *        sure to keep the <code>status</code> value constant in each
+     *        subsequent request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see TaskDefinitionFamilyStatus
+     */
+
+    public ListTaskDefinitionFamiliesRequest withStatus(
+            TaskDefinitionFamilyStatus status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
      * The <code>nextToken</code> value returned from a previous paginated
      * <code>ListTaskDefinitionFamilies</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of
@@ -134,6 +327,13 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      * that returned the <code>nextToken</code> value. This value is
      * <code>null</code> when there are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous
@@ -142,7 +342,12 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      *        value of that parameter. Pagination continues from the end of the
      *        previous results that returned the <code>nextToken</code> value.
      *        This value is <code>null</code> when there are no more results to
-     *        return.
+     *        return.</p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is only
+     *        used to retrieve the next items in a list and not for other
+     *        programmatic purposes.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -158,6 +363,13 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      * that returned the <code>nextToken</code> value. This value is
      * <code>null</code> when there are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      * 
      * @return The <code>nextToken</code> value returned from a previous
      *         paginated <code>ListTaskDefinitionFamilies</code> request where
@@ -165,7 +377,12 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      *         value of that parameter. Pagination continues from the end of the
      *         previous results that returned the <code>nextToken</code> value.
      *         This value is <code>null</code> when there are no more results to
-     *         return.
+     *         return.</p> <note>
+     *         <p>
+     *         This token should be treated as an opaque identifier that is only
+     *         used to retrieve the next items in a list and not for other
+     *         programmatic purposes.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -181,6 +398,13 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      * that returned the <code>nextToken</code> value. This value is
      * <code>null</code> when there are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous
@@ -189,7 +413,12 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      *        value of that parameter. Pagination continues from the end of the
      *        previous results that returned the <code>nextToken</code> value.
      *        This value is <code>null</code> when there are no more results to
-     *        return.
+     *        return.</p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is only
+     *        used to retrieve the next items in a list and not for other
+     *        programmatic purposes.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -314,6 +543,8 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
         sb.append("{");
         if (getFamilyPrefix() != null)
             sb.append("FamilyPrefix: " + getFamilyPrefix() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus() + ",");
         if (getNextToken() != null)
             sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxResults() != null)
@@ -337,6 +568,11 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
         if (other.getFamilyPrefix() != null
                 && other.getFamilyPrefix().equals(this.getFamilyPrefix()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null
+                && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null
@@ -359,6 +595,8 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getFamilyPrefix() == null) ? 0 : getFamilyPrefix()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode
                 + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode

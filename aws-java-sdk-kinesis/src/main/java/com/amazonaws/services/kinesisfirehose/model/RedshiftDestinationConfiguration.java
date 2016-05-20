@@ -58,6 +58,13 @@ public class RedshiftDestinationConfiguration implements Serializable,
     private String password;
     /**
      * <p>
+     * Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * </p>
+     */
+    private RedshiftRetryOptions retryOptions;
+    /**
+     * <p>
      * The S3 configuration for the intermediate location from which Amazon
      * Redshift obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.
@@ -286,6 +293,57 @@ public class RedshiftDestinationConfiguration implements Serializable,
 
     /**
      * <p>
+     * Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * </p>
+     * 
+     * @param retryOptions
+     *        Configures retry behavior in the event that Firehose is unable to
+     *        deliver documents to Amazon Redshift. Default value is 3600 (60
+     *        minutes).
+     */
+
+    public void setRetryOptions(RedshiftRetryOptions retryOptions) {
+        this.retryOptions = retryOptions;
+    }
+
+    /**
+     * <p>
+     * Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * </p>
+     * 
+     * @return Configures retry behavior in the event that Firehose is unable to
+     *         deliver documents to Amazon Redshift. Default value is 3600 (60
+     *         minutes).
+     */
+
+    public RedshiftRetryOptions getRetryOptions() {
+        return this.retryOptions;
+    }
+
+    /**
+     * <p>
+     * Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * </p>
+     * 
+     * @param retryOptions
+     *        Configures retry behavior in the event that Firehose is unable to
+     *        deliver documents to Amazon Redshift. Default value is 3600 (60
+     *        minutes).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RedshiftDestinationConfiguration withRetryOptions(
+            RedshiftRetryOptions retryOptions) {
+        setRetryOptions(retryOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * The S3 configuration for the intermediate location from which Amazon
      * Redshift obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.
@@ -439,6 +497,8 @@ public class RedshiftDestinationConfiguration implements Serializable,
             sb.append("Username: " + getUsername() + ",");
         if (getPassword() != null)
             sb.append("Password: " + getPassword() + ",");
+        if (getRetryOptions() != null)
+            sb.append("RetryOptions: " + getRetryOptions() + ",");
         if (getS3Configuration() != null)
             sb.append("S3Configuration: " + getS3Configuration() + ",");
         if (getCloudWatchLoggingOptions() != null)
@@ -484,6 +544,11 @@ public class RedshiftDestinationConfiguration implements Serializable,
         if (other.getPassword() != null
                 && other.getPassword().equals(this.getPassword()) == false)
             return false;
+        if (other.getRetryOptions() == null ^ this.getRetryOptions() == null)
+            return false;
+        if (other.getRetryOptions() != null
+                && other.getRetryOptions().equals(this.getRetryOptions()) == false)
+            return false;
         if (other.getS3Configuration() == null
                 ^ this.getS3Configuration() == null)
             return false;
@@ -518,6 +583,10 @@ public class RedshiftDestinationConfiguration implements Serializable,
                 + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode
                 + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRetryOptions() == null) ? 0 : getRetryOptions()
+                        .hashCode());
         hashCode = prime
                 * hashCode
                 + ((getS3Configuration() == null) ? 0 : getS3Configuration()

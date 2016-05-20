@@ -21,12 +21,12 @@
     "endpointPrefix" : "ds",
     "signingName" : "ds",
     "xmlProtocol" : false,
+    "jsonProtocol" : true,
     "serviceName" : "Directory Service",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "ConnectDirectory" : {

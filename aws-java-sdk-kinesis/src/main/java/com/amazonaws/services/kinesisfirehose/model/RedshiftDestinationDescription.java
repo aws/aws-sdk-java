@@ -51,6 +51,13 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
     private String username;
     /**
      * <p>
+     * Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * </p>
+     */
+    private RedshiftRetryOptions retryOptions;
+    /**
+     * <p>
      * The Amazon S3 destination.
      * </p>
      */
@@ -230,6 +237,57 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * </p>
+     * 
+     * @param retryOptions
+     *        Configures retry behavior in the event that Firehose is unable to
+     *        deliver documents to Amazon Redshift. Default value is 3600 (60
+     *        minutes).
+     */
+
+    public void setRetryOptions(RedshiftRetryOptions retryOptions) {
+        this.retryOptions = retryOptions;
+    }
+
+    /**
+     * <p>
+     * Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * </p>
+     * 
+     * @return Configures retry behavior in the event that Firehose is unable to
+     *         deliver documents to Amazon Redshift. Default value is 3600 (60
+     *         minutes).
+     */
+
+    public RedshiftRetryOptions getRetryOptions() {
+        return this.retryOptions;
+    }
+
+    /**
+     * <p>
+     * Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).
+     * </p>
+     * 
+     * @param retryOptions
+     *        Configures retry behavior in the event that Firehose is unable to
+     *        deliver documents to Amazon Redshift. Default value is 3600 (60
+     *        minutes).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RedshiftDestinationDescription withRetryOptions(
+            RedshiftRetryOptions retryOptions) {
+        setRetryOptions(retryOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon S3 destination.
      * </p>
      * 
@@ -334,6 +392,8 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
             sb.append("CopyCommand: " + getCopyCommand() + ",");
         if (getUsername() != null)
             sb.append("Username: " + getUsername() + ",");
+        if (getRetryOptions() != null)
+            sb.append("RetryOptions: " + getRetryOptions() + ",");
         if (getS3DestinationDescription() != null)
             sb.append("S3DestinationDescription: "
                     + getS3DestinationDescription() + ",");
@@ -375,6 +435,11 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
         if (other.getUsername() != null
                 && other.getUsername().equals(this.getUsername()) == false)
             return false;
+        if (other.getRetryOptions() == null ^ this.getRetryOptions() == null)
+            return false;
+        if (other.getRetryOptions() != null
+                && other.getRetryOptions().equals(this.getRetryOptions()) == false)
+            return false;
         if (other.getS3DestinationDescription() == null
                 ^ this.getS3DestinationDescription() == null)
             return false;
@@ -408,6 +473,10 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
                 + ((getCopyCommand() == null) ? 0 : getCopyCommand().hashCode());
         hashCode = prime * hashCode
                 + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRetryOptions() == null) ? 0 : getRetryOptions()
+                        .hashCode());
         hashCode = prime
                 * hashCode
                 + ((getS3DestinationDescription() == null) ? 0

@@ -26,13 +26,16 @@ import java.util.regex.Pattern;
 public class AmazonS3URI {
 
     private static final Pattern ENDPOINT_PATTERN =
-        Pattern.compile("^(.+\\.)?s3[.-]([a-z0-9-]+)\\.");
+            Pattern.compile("^(.+\\.)?s3[.-]([a-z0-9-]+)\\.");
+
+    private static final Pattern VERSION_ID_PATTERN = Pattern.compile("[&;]");
 
     private final URI uri;
 
     private final boolean isPathStyle;
     private final String bucket;
     private final String key;
+    private final String versionId;
     private final String region;
 
     /**
@@ -77,6 +80,7 @@ public class AmazonS3URI {
         // s3://*
         if ("s3".equalsIgnoreCase(uri.getScheme())) {
             this.region = null;
+            this.versionId = null;
             this.isPathStyle = false;
             this.bucket = uri.getAuthority();
 
@@ -100,14 +104,14 @@ public class AmazonS3URI {
         String host = uri.getHost();
         if (host == null) {
             throw new IllegalArgumentException("Invalid S3 URI: no hostname: "
-                                               + uri);
+                    + uri);
         }
 
         Matcher matcher = ENDPOINT_PATTERN.matcher(host);
         if (!matcher.find()) {
             throw new IllegalArgumentException(
-                "Invalid S3 URI: hostname does not appear to be a valid S3 "
-                + "endpoint: " + uri);
+                    "Invalid S3 URI: hostname does not appear to be a valid S3 "
+                            + "endpoint: " + uri);
         }
 
         String prefix = matcher.group(1);
@@ -164,12 +168,33 @@ public class AmazonS3URI {
             }
         }
 
+        this.versionId = parseVersionId(uri.getRawQuery());
+
         if ("amazonaws".equals(matcher.group(2))) {
             // No region specified
             this.region = null;
         } else {
             this.region = matcher.group(2);
         }
+    }
+
+    /**
+     * Attempts to parse a versionId parameter from the query
+     * string.
+     *
+     * @param query the query string to parse (possibly null)
+     * @return the versionId (possibly null)
+     */
+    private static String parseVersionId(String query) {
+        if (query != null) {
+            String[] params = VERSION_ID_PATTERN.split(query);
+            for (String param : params) {
+                if (param.startsWith("versionId=")) {
+                    return decode(param.substring(10));
+                }
+            }
+        }
+        return null;
     }
 
     /**
@@ -200,6 +225,13 @@ public class AmazonS3URI {
      */
     public String getKey() {
         return key;
+    }
+
+    /**
+     * @return the version id parsed from the URI (or null if no version specified)
+     */
+    public String getVersionId() {
+        return versionId;
     }
 
     /**
@@ -299,7 +331,7 @@ public class AmazonS3URI {
 
         if (index > str.length() - 3) {
             throw new IllegalStateException("Invalid percent-encoded string:"
-                                            + "\"" + str + "\".");
+                    + "\"" + str + "\".");
         }
 
         char first = str.charAt(index + 1);
@@ -318,8 +350,8 @@ public class AmazonS3URI {
     private static int fromHex(final char c) {
         if (c < '0') {
             throw new IllegalStateException(
-                "Invalid percent-encoded string: bad character '" + c + "' in "
-                + "escape sequence.");
+                    "Invalid percent-encoded string: bad character '" + c + "' in "
+                            + "escape sequence.");
         }
         if (c <= '9') {
             return (c - '0');
@@ -327,8 +359,8 @@ public class AmazonS3URI {
 
         if (c < 'A') {
             throw new IllegalStateException(
-                "Invalid percent-encoded string: bad character '" + c + "' in "
-                + "escape sequence.");
+                    "Invalid percent-encoded string: bad character '" + c + "' in "
+                            + "escape sequence.");
         }
         if (c <= 'F') {
             return (c - 'A') + 10;
@@ -336,16 +368,16 @@ public class AmazonS3URI {
 
         if (c < 'a') {
             throw new IllegalStateException(
-                "Invalid percent-encoded string: bad character '" + c + "' in "
-                + "escape sequence.");
+                    "Invalid percent-encoded string: bad character '" + c + "' in "
+                            + "escape sequence.");
         }
         if (c <= 'f') {
             return (c - 'a') + 10;
         }
 
         throw new IllegalStateException(
-            "Invalid percent-encoded string: bad character '" + c + "' in "
-            + "escape sequence.");
+                "Invalid percent-encoded string: bad character '" + c + "' in "
+                        + "escape sequence.");
     }
 
     @Override
@@ -359,6 +391,7 @@ public class AmazonS3URI {
         if (!uri.equals(that.uri)) return false;
         if (bucket != null ? !bucket.equals(that.bucket) : that.bucket != null) return false;
         if (key != null ? !key.equals(that.key) : that.key != null) return false;
+        if (versionId != null ? !versionId.equals(that.versionId) : that.versionId != null) return false;
         return region != null ? region.equals(that.region) : that.region == null;
     }
 
@@ -368,6 +401,7 @@ public class AmazonS3URI {
         result = 31 * result + (isPathStyle ? 1 : 0);
         result = 31 * result + (bucket != null ? bucket.hashCode() : 0);
         result = 31 * result + (key != null ? key.hashCode() : 0);
+        result = 31 * result + (versionId != null ? versionId.hashCode() : 0);
         result = 31 * result + (region != null ? region.hashCode() : 0);
         return result;
     }

@@ -475,6 +475,7 @@ public class ServiceUtils {
         ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
 
         ObjectMetadata metadata = s3.getObjectMetadata(new GetObjectMetadataRequest(getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest.getVersionId())
+                .withSSECustomerKey(getObjectRequest.getSSECustomerKey())
                 .withPartNumber(1));
         return metadata.getPartCount();
     }
@@ -497,6 +498,7 @@ public class ServiceUtils {
         ValidationUtils.assertNotNull(partNumber, "partNumber");
 
         ObjectMetadata metadata = s3.getObjectMetadata(new GetObjectMetadataRequest(getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest.getVersionId())
+                .withSSECustomerKey(getObjectRequest.getSSECustomerKey())
                 .withPartNumber(partNumber));
         return metadata.getContentRange()[1];
     }

@@ -66,6 +66,12 @@ public class RedshiftDestinationDescriptionJsonMarshaller {
                 jsonGenerator.writeFieldName("Username").writeValue(
                         redshiftDestinationDescription.getUsername());
             }
+            if (redshiftDestinationDescription.getRetryOptions() != null) {
+                jsonGenerator.writeFieldName("RetryOptions");
+                RedshiftRetryOptionsJsonMarshaller.getInstance().marshall(
+                        redshiftDestinationDescription.getRetryOptions(),
+                        jsonGenerator);
+            }
             if (redshiftDestinationDescription.getS3DestinationDescription() != null) {
                 jsonGenerator.writeFieldName("S3DestinationDescription");
                 S3DestinationDescriptionJsonMarshaller
