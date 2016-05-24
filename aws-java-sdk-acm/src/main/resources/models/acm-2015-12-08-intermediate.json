@@ -60,12 +60,12 @@
         "documentation" : "<p>The request contains too many tags. Try the request again with fewer tags.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AddTagsToCertificateResult",
       "asyncReturnType" : "AddTagsToCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, AddTagsToCertificateResult>",
+      "authenticated" : true,
       "methodName" : "addTagsToCertificate"
     },
     "DeleteCertificate" : {
@@ -96,12 +96,12 @@
         "documentation" : "<p> The requested Amazon Resource Name (ARN) does not refer to an existing resource. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteCertificateResult",
       "asyncReturnType" : "DeleteCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult>",
+      "authenticated" : true,
       "methodName" : "deleteCertificate"
     },
     "DescribeCertificate" : {
@@ -129,12 +129,12 @@
         "documentation" : "<p> The requested Amazon Resource Name (ARN) does not refer to an existing resource. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeCertificateResult",
       "asyncReturnType" : "DescribeCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult>",
+      "authenticated" : true,
       "methodName" : "describeCertificate"
     },
     "GetCertificate" : {
@@ -165,12 +165,12 @@
         "documentation" : "<p> The requested Amazon Resource Name (ARN) does not refer to an existing resource. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetCertificateResult",
       "asyncReturnType" : "GetCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCertificateRequest, GetCertificateResult>",
+      "authenticated" : true,
       "methodName" : "getCertificate"
     },
     "ListCertificates" : {
@@ -192,12 +192,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListCertificatesResult",
       "asyncReturnType" : "ListCertificatesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCertificatesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCertificatesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult>",
+      "authenticated" : true,
       "methodName" : "listCertificates"
     },
     "ListTagsForCertificate" : {
@@ -225,12 +225,12 @@
         "documentation" : "<p> The requested Amazon Resource Name (ARN) does not refer to an existing resource. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTagsForCertificateResult",
       "asyncReturnType" : "ListTagsForCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForCertificateRequest, ListTagsForCertificateResult>",
+      "authenticated" : true,
       "methodName" : "listTagsForCertificate"
     },
     "RemoveTagsFromCertificate" : {
@@ -261,12 +261,12 @@
         "documentation" : "<p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromCertificateResult",
       "asyncReturnType" : "RemoveTagsFromCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, RemoveTagsFromCertificateResult>",
+      "authenticated" : true,
       "methodName" : "removeTagsFromCertificate"
     },
     "RequestCertificate" : {
@@ -294,12 +294,12 @@
         "documentation" : "<p> One or more values in the <a>DomainValidationOption</a> structure is incorrect. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RequestCertificateResult",
       "asyncReturnType" : "RequestCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<RequestCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RequestCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RequestCertificateRequest, RequestCertificateResult>",
+      "authenticated" : true,
       "methodName" : "requestCertificate"
     },
     "ResendValidationEmail" : {
@@ -333,12 +333,12 @@
         "documentation" : "<p> One or more values in the <a>DomainValidationOption</a> structure is incorrect. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ResendValidationEmailResult",
       "asyncReturnType" : "ResendValidationEmailResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResendValidationEmailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResendValidationEmailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, ResendValidationEmailResult>",
+      "authenticated" : true,
       "methodName" : "resendValidationEmail"
     }
   },
@@ -747,11 +747,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -892,11 +892,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1129,11 +1129,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1274,11 +1274,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1459,11 +1459,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1600,11 +1600,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2450,11 +2450,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2620,11 +2620,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "DomainValidationOption",
           "templateType" : "java.util.List<DomainValidationOption>",
-          "templateImplType" : "java.util.ArrayList<DomainValidationOption>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<DomainValidationOption>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2818,11 +2818,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "DomainValidationOption",
             "templateType" : "java.util.List<DomainValidationOption>",
-            "templateImplType" : "java.util.ArrayList<DomainValidationOption>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<DomainValidationOption>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2990,11 +2990,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3682,11 +3682,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3800,11 +3800,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "DomainValidation",
           "templateType" : "java.util.List<DomainValidation>",
-          "templateImplType" : "java.util.ArrayList<DomainValidation>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<DomainValidation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4542,11 +4542,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4948,11 +4948,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5120,11 +5120,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5557,11 +5557,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "DomainValidation",
             "templateType" : "java.util.List<DomainValidation>",
-            "templateImplType" : "java.util.ArrayList<DomainValidation>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<DomainValidation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5879,11 +5879,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CertificateSummary",
           "templateType" : "java.util.List<CertificateSummary>",
-          "templateImplType" : "java.util.ArrayList<CertificateSummary>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<CertificateSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6073,11 +6073,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CertificateSummary",
             "templateType" : "java.util.List<CertificateSummary>",
-            "templateImplType" : "java.util.ArrayList<CertificateSummary>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<CertificateSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6771,11 +6771,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6964,11 +6964,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7807,11 +7807,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : "CertificateStatus",
@@ -8056,11 +8056,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : "CertificateStatus",

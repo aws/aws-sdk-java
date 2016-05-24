@@ -446,8 +446,14 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates a new Amazon Aurora DB cluster. For more information on Amazon
-     * Aurora, see <a href=
+     * Creates a new Amazon Aurora DB cluster.
+     * </p>
+     * <p>
+     * You can use the <code>ReplicationSourceIdentifier</code> parameter to
+     * create the DB cluster as a Read Replica of another DB cluster.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"
      * >Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -462,8 +468,14 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates a new Amazon Aurora DB cluster. For more information on Amazon
-     * Aurora, see <a href=
+     * Creates a new Amazon Aurora DB cluster.
+     * </p>
+     * <p>
+     * You can use the <code>ReplicationSourceIdentifier</code> parameter to
+     * create the DB cluster as a Read Replica of another DB cluster.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"
      * >Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1008,12 +1020,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * The DeleteDBCluster action deletes a previously provisioned DB cluster. A
-     * successful response from the web service indicates the request was
-     * received correctly. When you delete a DB cluster, all automated backups
-     * for that DB cluster are deleted and cannot be recovered. Manual DB
-     * cluster snapshots of the DB cluster to be deleted are not deleted.
+     * The DeleteDBCluster action deletes a previously provisioned DB cluster.
+     * When you delete a DB cluster, all automated backups for that DB cluster
+     * are deleted and cannot be recovered. Manual DB cluster snapshots of the
+     * specified DB cluster are not deleted.
      * </p>
+     * <p/>
      * <p>
      * For more information on Amazon Aurora, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"
@@ -1030,12 +1042,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * The DeleteDBCluster action deletes a previously provisioned DB cluster. A
-     * successful response from the web service indicates the request was
-     * received correctly. When you delete a DB cluster, all automated backups
-     * for that DB cluster are deleted and cannot be recovered. Manual DB
-     * cluster snapshots of the DB cluster to be deleted are not deleted.
+     * The DeleteDBCluster action deletes a previously provisioned DB cluster.
+     * When you delete a DB cluster, all automated backups for that DB cluster
+     * are deleted and cannot be recovered. Manual DB cluster snapshots of the
+     * specified DB cluster are not deleted.
      * </p>
+     * <p/>
      * <p>
      * For more information on Amazon Aurora, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"
@@ -1105,8 +1117,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
      * operation is terminated.
      * </p>
-     * <note>The DB cluster snapshot must be in the <code>available</code> state
-     * to be deleted.</note>
+     * <note>
+     * <p>
+     * The DB cluster snapshot must be in the <code>available</code> state to be
+     * deleted.
+     * </p>
+     * </note>
      * <p>
      * For more information on Amazon Aurora, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"
@@ -1126,8 +1142,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
      * operation is terminated.
      * </p>
-     * <note>The DB cluster snapshot must be in the <code>available</code> state
-     * to be deleted.</note>
+     * <note>
+     * <p>
+     * The DB cluster snapshot must be in the <code>available</code> state to be
+     * deleted.
+     * </p>
+     * </note>
      * <p>
      * For more information on Amazon Aurora, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"
@@ -1151,21 +1171,21 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * The DeleteDBInstance action deletes a previously provisioned DB instance.
-     * A successful response from the web service indicates the request was
-     * received correctly. When you delete a DB instance, all automated backups
-     * for that instance are deleted and cannot be recovered. Manual DB
-     * snapshots of the DB instance to be deleted are not deleted.
+     * When you delete a DB instance, all automated backups for that instance
+     * are deleted and cannot be recovered. Manual DB snapshots of the DB
+     * instance to be deleted are not deleted.
      * </p>
      * <p>
      * If a final DB snapshot is requested the status of the RDS instance will
-     * be "deleting" until the DB snapshot is created. The API action
+     * be <code>deleting</code> until the DB snapshot is created. The API action
      * <code>DescribeDBInstance</code> is used to monitor the status of this
      * operation. The action cannot be canceled or reverted once submitted.
      * </p>
      * <p>
      * Note that when a DB instance is in a failure state and has a status of
-     * 'failed', 'incompatible-restore', or 'incompatible-network', it can only
-     * be deleted when the SkipFinalSnapshot parameter is set to "true".
+     * <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, it can only be deleted when the
+     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * 
      * @param deleteDBInstanceRequest
@@ -1179,21 +1199,21 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * The DeleteDBInstance action deletes a previously provisioned DB instance.
-     * A successful response from the web service indicates the request was
-     * received correctly. When you delete a DB instance, all automated backups
-     * for that instance are deleted and cannot be recovered. Manual DB
-     * snapshots of the DB instance to be deleted are not deleted.
+     * When you delete a DB instance, all automated backups for that instance
+     * are deleted and cannot be recovered. Manual DB snapshots of the DB
+     * instance to be deleted are not deleted.
      * </p>
      * <p>
      * If a final DB snapshot is requested the status of the RDS instance will
-     * be "deleting" until the DB snapshot is created. The API action
+     * be <code>deleting</code> until the DB snapshot is created. The API action
      * <code>DescribeDBInstance</code> is used to monitor the status of this
      * operation. The action cannot be canceled or reverted once submitted.
      * </p>
      * <p>
      * Note that when a DB instance is in a failure state and has a status of
-     * 'failed', 'incompatible-restore', or 'incompatible-network', it can only
-     * be deleted when the SkipFinalSnapshot parameter is set to "true".
+     * <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, it can only be deleted when the
+     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * 
      * @param deleteDBInstanceRequest
@@ -1248,8 +1268,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Deletes a DB security group.
      * </p>
-     * <note>The specified DB security group must not be associated with any DB
-     * instances.</note>
+     * <note>
+     * <p>
+     * The specified DB security group must not be associated with any DB
+     * instances.
+     * </p>
+     * </note>
      * 
      * @param deleteDBSecurityGroupRequest
      * @return A Java Future containing the result of the DeleteDBSecurityGroup
@@ -1263,8 +1287,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Deletes a DB security group.
      * </p>
-     * <note>The specified DB security group must not be associated with any DB
-     * instances.</note>
+     * <note>
+     * <p>
+     * The specified DB security group must not be associated with any DB
+     * instances.
+     * </p>
+     * </note>
      * 
      * @param deleteDBSecurityGroupRequest
      * @param asyncHandler
@@ -1285,8 +1313,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Deletes a DBSnapshot. If the snapshot is being copied, the copy operation
      * is terminated.
      * </p>
-     * <note>The DBSnapshot must be in the <code>available</code> state to be
-     * deleted.</note>
+     * <note>
+     * <p>
+     * The DBSnapshot must be in the <code>available</code> state to be deleted.
+     * </p>
+     * </note>
      * 
      * @param deleteDBSnapshotRequest
      * @return A Java Future containing the result of the DeleteDBSnapshot
@@ -1301,8 +1332,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Deletes a DBSnapshot. If the snapshot is being copied, the copy operation
      * is terminated.
      * </p>
-     * <note>The DBSnapshot must be in the <code>available</code> state to be
-     * deleted.</note>
+     * <note>
+     * <p>
+     * The DBSnapshot must be in the <code>available</code> state to be deleted.
+     * </p>
+     * </note>
      * 
      * @param deleteDBSnapshotRequest
      * @param asyncHandler
@@ -1322,8 +1356,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Deletes a DB subnet group.
      * </p>
-     * <note>The specified database subnet group must not be associated with any
-     * DB instances.</note>
+     * <note>
+     * <p>
+     * The specified database subnet group must not be associated with any DB
+     * instances.
+     * </p>
+     * </note>
      * 
      * @param deleteDBSubnetGroupRequest
      * @return A Java Future containing the result of the DeleteDBSubnetGroup
@@ -1337,8 +1375,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Deletes a DB subnet group.
      * </p>
-     * <note>The specified database subnet group must not be associated with any
-     * DB instances.</note>
+     * <note>
+     * <p>
+     * The specified database subnet group must not be associated with any DB
+     * instances.
+     * </p>
+     * </note>
      * 
      * @param deleteDBSubnetGroupRequest
      * @param asyncHandler
@@ -1645,7 +1687,71 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns information about DB cluster snapshots. This API supports
+     * Returns a list of DB cluster snapshot attribute names and values for a
+     * manual DB cluster snapshot.
+     * </p>
+     * <p>
+     * When sharing snapshots with other AWS accounts,
+     * <code>DescribeDBClusterSnapshotAttributes</code> returns the
+     * <code>restore</code> attribute and a list of IDs for the AWS accounts
+     * that are authorized to copy or restore the manual DB cluster snapshot. If
+     * <code>all</code> is included in the list of values for the
+     * <code>restore</code> attribute, then the manual DB cluster snapshot is
+     * public and can be copied or restored by all AWS accounts.
+     * </p>
+     * <p>
+     * To add or remove access for an AWS account to copy or restore a manual DB
+     * cluster snapshot, or to make the manual DB cluster snapshot public or
+     * private, use the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     * </p>
+     * 
+     * @param describeDBClusterSnapshotAttributesRequest
+     * @return A Java Future containing the result of the
+     *         DescribeDBClusterSnapshotAttributes operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.DescribeDBClusterSnapshotAttributes
+     */
+    java.util.concurrent.Future<DBClusterSnapshotAttributesResult> describeDBClusterSnapshotAttributesAsync(
+            DescribeDBClusterSnapshotAttributesRequest describeDBClusterSnapshotAttributesRequest);
+
+    /**
+     * <p>
+     * Returns a list of DB cluster snapshot attribute names and values for a
+     * manual DB cluster snapshot.
+     * </p>
+     * <p>
+     * When sharing snapshots with other AWS accounts,
+     * <code>DescribeDBClusterSnapshotAttributes</code> returns the
+     * <code>restore</code> attribute and a list of IDs for the AWS accounts
+     * that are authorized to copy or restore the manual DB cluster snapshot. If
+     * <code>all</code> is included in the list of values for the
+     * <code>restore</code> attribute, then the manual DB cluster snapshot is
+     * public and can be copied or restored by all AWS accounts.
+     * </p>
+     * <p>
+     * To add or remove access for an AWS account to copy or restore a manual DB
+     * cluster snapshot, or to make the manual DB cluster snapshot public or
+     * private, use the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     * </p>
+     * 
+     * @param describeDBClusterSnapshotAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeDBClusterSnapshotAttributes operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.DescribeDBClusterSnapshotAttributes
+     */
+    java.util.concurrent.Future<DBClusterSnapshotAttributesResult> describeDBClusterSnapshotAttributesAsync(
+            DescribeDBClusterSnapshotAttributesRequest describeDBClusterSnapshotAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBClusterSnapshotAttributesRequest, DBClusterSnapshotAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about DB cluster snapshots. This API action supports
      * pagination.
      * </p>
      * <p>
@@ -1664,7 +1770,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns information about DB cluster snapshots. This API supports
+     * Returns information about DB cluster snapshots. This API action supports
      * pagination.
      * </p>
      * <p>
@@ -2047,16 +2153,16 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * When sharing snapshots with other AWS accounts,
      * <code>DescribeDBSnapshotAttributes</code> returns the
-     * <code>restore</code> attribute and a list of the AWS account ids that are
-     * authorized to copy or restore the manual DB snapshot. If <code>all</code>
-     * is included in the list of values for the <code>restore</code> attribute,
-     * then the manual DB snapshot is public and can be copied or restored by
-     * all AWS accounts.
+     * <code>restore</code> attribute and a list of IDs for the AWS accounts
+     * that are authorized to copy or restore the manual DB snapshot. If
+     * <code>all</code> is included in the list of values for the
+     * <code>restore</code> attribute, then the manual DB snapshot is public and
+     * can be copied or restored by all AWS accounts.
      * </p>
      * <p>
      * To add or remove access for an AWS account to copy or restore a manual DB
      * snapshot, or to make the manual DB snapshot public or private, use the
-     * <a>ModifyDBSnapshotAttribute</a> API.
+     * <a>ModifyDBSnapshotAttribute</a> API action.
      * </p>
      * 
      * @param describeDBSnapshotAttributesRequest
@@ -2075,16 +2181,16 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * When sharing snapshots with other AWS accounts,
      * <code>DescribeDBSnapshotAttributes</code> returns the
-     * <code>restore</code> attribute and a list of the AWS account ids that are
-     * authorized to copy or restore the manual DB snapshot. If <code>all</code>
-     * is included in the list of values for the <code>restore</code> attribute,
-     * then the manual DB snapshot is public and can be copied or restored by
-     * all AWS accounts.
+     * <code>restore</code> attribute and a list of IDs for the AWS accounts
+     * that are authorized to copy or restore the manual DB snapshot. If
+     * <code>all</code> is included in the list of values for the
+     * <code>restore</code> attribute, then the manual DB snapshot is public and
+     * can be copied or restored by all AWS accounts.
      * </p>
      * <p>
      * To add or remove access for an AWS account to copy or restore a manual DB
      * snapshot, or to make the manual DB snapshot public or private, use the
-     * <a>ModifyDBSnapshotAttribute</a> API.
+     * <a>ModifyDBSnapshotAttribute</a> API action.
      * </p>
      * 
      * @param describeDBSnapshotAttributesRequest
@@ -2121,7 +2227,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns information about DB snapshots. This API supports pagination.
+     * Returns information about DB snapshots. This API action supports
+     * pagination.
      * </p>
      * 
      * @param describeDBSnapshotsRequest
@@ -2134,7 +2241,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns information about DB snapshots. This API supports pagination.
+     * Returns information about DB snapshots. This API action supports
+     * pagination.
      * </p>
      * 
      * @param describeDBSnapshotsRequest
@@ -3060,6 +3168,80 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Adds an attribute and values to, or removes an attribute and values from,
+     * a manual DB cluster snapshot.
+     * </p>
+     * <p>
+     * To share a manual DB cluster snapshot with other AWS accounts, specify
+     * <code>restore</code> as the <code>AttributeName</code> and use the
+     * <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
+     * accounts that are authorized to restore the manual DB cluster snapshot.
+     * Use the value <code>all</code> to make the manual DB cluster snapshot
+     * public, which means that it can be copied or restored by all AWS
+     * accounts. Do not add the <code>all</code> value for any manual DB cluster
+     * snapshots that contain private information that you don't want available
+     * to all AWS accounts.
+     * </p>
+     * <p>
+     * To view which AWS accounts have access to copy or restore a manual DB
+     * cluster snapshot, or whether a manual DB cluster snapshot public or
+     * private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.
+     * </p>
+     * <p>
+     * If a manual DB cluster snapshot is encrypted, it cannot be shared.
+     * </p>
+     * 
+     * @param modifyDBClusterSnapshotAttributeRequest
+     * @return A Java Future containing the result of the
+     *         ModifyDBClusterSnapshotAttribute operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.ModifyDBClusterSnapshotAttribute
+     */
+    java.util.concurrent.Future<DBClusterSnapshotAttributesResult> modifyDBClusterSnapshotAttributeAsync(
+            ModifyDBClusterSnapshotAttributeRequest modifyDBClusterSnapshotAttributeRequest);
+
+    /**
+     * <p>
+     * Adds an attribute and values to, or removes an attribute and values from,
+     * a manual DB cluster snapshot.
+     * </p>
+     * <p>
+     * To share a manual DB cluster snapshot with other AWS accounts, specify
+     * <code>restore</code> as the <code>AttributeName</code> and use the
+     * <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
+     * accounts that are authorized to restore the manual DB cluster snapshot.
+     * Use the value <code>all</code> to make the manual DB cluster snapshot
+     * public, which means that it can be copied or restored by all AWS
+     * accounts. Do not add the <code>all</code> value for any manual DB cluster
+     * snapshots that contain private information that you don't want available
+     * to all AWS accounts.
+     * </p>
+     * <p>
+     * To view which AWS accounts have access to copy or restore a manual DB
+     * cluster snapshot, or whether a manual DB cluster snapshot public or
+     * private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.
+     * </p>
+     * <p>
+     * If a manual DB cluster snapshot is encrypted, it cannot be shared.
+     * </p>
+     * 
+     * @param modifyDBClusterSnapshotAttributeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ModifyDBClusterSnapshotAttribute operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.ModifyDBClusterSnapshotAttribute
+     */
+    java.util.concurrent.Future<DBClusterSnapshotAttributesResult> modifyDBClusterSnapshotAttributeAsync(
+            ModifyDBClusterSnapshotAttributeRequest modifyDBClusterSnapshotAttributeRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyDBClusterSnapshotAttributeRequest, DBClusterSnapshotAttributesResult> asyncHandler);
+
+    /**
+     * <p>
      * Modify settings for a DB instance. You can change one or more database
      * configuration parameters by specifying these parameters and the new
      * values in the request.
@@ -3178,23 +3360,23 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Adds an attribute and values to, or removes an attribute and values from
+     * Adds an attribute and values to, or removes an attribute and values from,
      * a manual DB snapshot.
      * </p>
      * <p>
      * To share a manual DB snapshot with other AWS accounts, specify
      * <code>restore</code> as the <code>AttributeName</code> and use the
-     * <code>ValuesToAdd</code> parameter to add a list of the AWS account ids
-     * that are authorized to restore the manual DB snapshot. Uses the value
-     * <code>all</code> to make the manual DB snapshot public and can by copied
-     * or restored by all AWS accounts. Do not add the <code>all</code> value
-     * for any manual DB snapshots that contain private information that you do
-     * not want to be available to all AWS accounts.
+     * <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
+     * accounts that are authorized to restore the manual DB snapshot. Uses the
+     * value <code>all</code> to make the manual DB snapshot public, which means
+     * it can be copied or restored by all AWS accounts. Do not add the
+     * <code>all</code> value for any manual DB snapshots that contain private
+     * information that you don't want available to all AWS accounts.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB
      * snapshot, or whether a manual DB snapshot public or private, use the
-     * <a>DescribeDBSnapshotAttributes</a> API.
+     * <a>DescribeDBSnapshotAttributes</a> API action.
      * </p>
      * <p>
      * If the manual DB snapshot is encrypted, it cannot be shared.
@@ -3210,23 +3392,23 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Adds an attribute and values to, or removes an attribute and values from
+     * Adds an attribute and values to, or removes an attribute and values from,
      * a manual DB snapshot.
      * </p>
      * <p>
      * To share a manual DB snapshot with other AWS accounts, specify
      * <code>restore</code> as the <code>AttributeName</code> and use the
-     * <code>ValuesToAdd</code> parameter to add a list of the AWS account ids
-     * that are authorized to restore the manual DB snapshot. Uses the value
-     * <code>all</code> to make the manual DB snapshot public and can by copied
-     * or restored by all AWS accounts. Do not add the <code>all</code> value
-     * for any manual DB snapshots that contain private information that you do
-     * not want to be available to all AWS accounts.
+     * <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
+     * accounts that are authorized to restore the manual DB snapshot. Uses the
+     * value <code>all</code> to make the manual DB snapshot public, which means
+     * it can be copied or restored by all AWS accounts. Do not add the
+     * <code>all</code> value for any manual DB snapshots that contain private
+     * information that you don't want available to all AWS accounts.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB
      * snapshot, or whether a manual DB snapshot public or private, use the
-     * <a>DescribeDBSnapshotAttributes</a> API.
+     * <a>DescribeDBSnapshotAttributes</a> API action.
      * </p>
      * <p>
      * If the manual DB snapshot is encrypted, it cannot be shared.

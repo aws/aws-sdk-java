@@ -35,9 +35,21 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBClusterIdentifier;
@@ -82,22 +94,46 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
      *        The user-supplied DB cluster identifier. If this parameter is
      *        specified, information from only the specific DB cluster is
-     *        returned. This parameter isn't case-sensitive. </p>
+     *        returned. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBClusterIdentifier(String dBClusterIdentifier) {
@@ -114,21 +150,45 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The user-supplied DB cluster identifier. If this parameter is
      *         specified, information from only the specific DB cluster is
-     *         returned. This parameter isn't case-sensitive. </p>
+     *         returned. This parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBClusterIdentifier() {
@@ -145,22 +205,46 @@ public class DescribeDBClustersRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
      *        The user-supplied DB cluster identifier. If this parameter is
      *        specified, information from only the specific DB cluster is
-     *        returned. This parameter isn't case-sensitive. </p>
+     *        returned. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

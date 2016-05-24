@@ -24,10 +24,14 @@ import java.io.Serializable;
  * </p>
  * <p>
  * This data type is used as an element in the following data type:
- * <ul>
- * <li><a>OrderableDBInstanceOption</a></li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>OrderableDBInstanceOption</a>
+ * </p>
+ * </li>
+ * </ul>
  */
 public class AvailabilityZone implements Serializable, Cloneable {
 

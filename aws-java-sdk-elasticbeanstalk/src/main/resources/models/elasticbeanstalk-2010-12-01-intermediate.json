@@ -20,13 +20,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "elasticbeanstalk",
     "signingName" : "elasticbeanstalk",
+    "xmlProtocol" : true,
     "jsonProtocol" : false,
     "serviceName" : "Elastic Beanstalk",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
-    "xmlProtocol" : true
+    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "AbortEnvironmentUpdate" : {

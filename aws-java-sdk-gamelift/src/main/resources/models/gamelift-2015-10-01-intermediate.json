@@ -23,10 +23,10 @@
     "jsonProtocol" : true,
     "serviceName" : "Amazon GameLift",
     "cborProtocol" : false,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "xmlProtocol" : false
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "CreateAlias" : {

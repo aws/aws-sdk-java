@@ -33,9 +33,21 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBParameterGroupName;
@@ -96,15 +108,27 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param dBParameterGroupName
-     *        The name of a specific DB parameter group to return details for.
-     *        </p>
+     *        The name of a specific DB parameter group to return details
+     *        for.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
     public DescribeDBParametersRequest(String dBParameterGroupName) {
         setDBParameterGroupName(dBParameterGroupName);
@@ -118,21 +142,45 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of a specific DB parameter group to return details for.
-     *        </p>
+     *        The name of a specific DB parameter group to return details
+     *        for.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBParameterGroupName(String dBParameterGroupName) {
@@ -147,20 +195,44 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The name of a specific DB parameter group to return details for.
-     *         </p>
+     * @return The name of a specific DB parameter group to return details
+     *         for.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBParameterGroupName() {
@@ -175,21 +247,45 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of a specific DB parameter group to return details for.
-     *        </p>
+     *        The name of a specific DB parameter group to return details
+     *        for.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -212,7 +308,7 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param source
-     *        The parameter types to return. </p>
+     *        The parameter types to return.</p>
      *        <p>
      *        Default: All parameter types returned
      *        </p>
@@ -235,7 +331,7 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest
      * Valid Values: <code>user | system | engine-default</code>
      * </p>
      * 
-     * @return The parameter types to return. </p>
+     * @return The parameter types to return.</p>
      *         <p>
      *         Default: All parameter types returned
      *         </p>
@@ -259,7 +355,7 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param source
-     *        The parameter types to return. </p>
+     *        The parameter types to return.</p>
      *        <p>
      *        Default: All parameter types returned
      *        </p>

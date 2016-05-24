@@ -242,6 +242,12 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBClusterSnapshotAttributesResult describeDBClusterSnapshotAttributes(
+            DescribeDBClusterSnapshotAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDBClusterSnapshotsResult describeDBClusterSnapshots(
             DescribeDBClusterSnapshotsRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -482,6 +488,12 @@ public class AbstractAmazonRDS implements AmazonRDS {
     @Override
     public ModifyDBClusterParameterGroupResult modifyDBClusterParameterGroup(
             ModifyDBClusterParameterGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DBClusterSnapshotAttributesResult modifyDBClusterSnapshotAttribute(
+            ModifyDBClusterSnapshotAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

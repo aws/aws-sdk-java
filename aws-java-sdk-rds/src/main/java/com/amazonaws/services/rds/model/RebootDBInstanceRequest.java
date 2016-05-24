@@ -34,9 +34,21 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBInstanceIdentifier;
@@ -67,14 +79,26 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param dBInstanceIdentifier
      *        The DB instance identifier. This parameter is stored as a
-     *        lowercase string. </p>
+     *        lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
     public RebootDBInstanceRequest(String dBInstanceIdentifier) {
         setDBInstanceIdentifier(dBInstanceIdentifier);
@@ -89,21 +113,45 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBInstanceIdentifier
      *        The DB instance identifier. This parameter is stored as a
-     *        lowercase string. </p>
+     *        lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -119,20 +167,44 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The DB instance identifier. This parameter is stored as a
-     *         lowercase string. </p>
+     *         lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBInstanceIdentifier() {
@@ -148,21 +220,45 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBInstanceIdentifier
      *        The DB instance identifier. This parameter is stored as a
-     *        lowercase string. </p>
+     *        lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -34,9 +34,21 @@ public class FailoverDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBClusterIdentifier;
@@ -50,21 +62,45 @@ public class FailoverDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
      *        A DB cluster identifier to force a failover for. This parameter is
-     *        not case-sensitive. </p>
+     *        not case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBClusterIdentifier(String dBClusterIdentifier) {
@@ -80,20 +116,44 @@ public class FailoverDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A DB cluster identifier to force a failover for. This parameter
-     *         is not case-sensitive. </p>
+     *         is not case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBClusterIdentifier() {
@@ -109,21 +169,45 @@ public class FailoverDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
      *        A DB cluster identifier to force a failover for. This parameter is
-     *        not case-sensitive. </p>
+     *        not case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -20,7 +20,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The supplied value is not a valid DB cluster state.
+ * The DB cluster is not in a valid state.
  * </p>
  */
 public class InvalidDBClusterStateException extends AmazonServiceException {

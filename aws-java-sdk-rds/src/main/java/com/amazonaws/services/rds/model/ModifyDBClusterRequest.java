@@ -34,10 +34,26 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for an existing DB cluster.</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for an existing DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBClusterIdentifier;
@@ -50,9 +66,21 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster2</code>
@@ -93,7 +121,11 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 1 to 35</li>
+     * <li>
+     * <p>
+     * Must be a value from 1 to 35
+     * </p>
+     * </li>
      * </ul>
      */
     private Integer backupRetentionPeriod;
@@ -166,10 +198,26 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      */
     private String preferredBackupWindow;
@@ -207,23 +255,55 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for an existing DB cluster.</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for an existing DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
      *        The DB cluster identifier for the cluster being modified. This
-     *        parameter is not case-sensitive. </p>
+     *        parameter is not case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier for an existing DB cluster.</li>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must be the identifier for an existing DB cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      */
 
     public void setDBClusterIdentifier(String dBClusterIdentifier) {
@@ -239,23 +319,54 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for an existing DB cluster.</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for an existing DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The DB cluster identifier for the cluster being modified. This
-     *         parameter is not case-sensitive. </p>
+     *         parameter is not case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be the identifier for an existing DB cluster.</li>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must be the identifier for an existing DB cluster.
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      */
 
     public String getDBClusterIdentifier() {
@@ -271,23 +382,55 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for an existing DB cluster.</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must be the identifier for an existing DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
      *        The DB cluster identifier for the cluster being modified. This
-     *        parameter is not case-sensitive. </p>
+     *        parameter is not case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier for an existing DB cluster.</li>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must be the identifier for an existing DB cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -307,9 +450,21 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster2</code>
@@ -317,14 +472,26 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param newDBClusterIdentifier
      *        The new DB cluster identifier for the DB cluster when renaming a
-     *        DB cluster. This value is stored as a lowercase string. </p>
+     *        DB cluster. This value is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster2</code>
@@ -343,23 +510,47 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster2</code>
      * </p>
      * 
      * @return The new DB cluster identifier for the DB cluster when renaming a
-     *         DB cluster. This value is stored as a lowercase string. </p>
+     *         DB cluster. This value is stored as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>my-cluster2</code>
@@ -378,9 +569,21 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster2</code>
@@ -388,14 +591,26 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param newDBClusterIdentifier
      *        The new DB cluster identifier for the DB cluster when renaming a
-     *        DB cluster. This value is stored as a lowercase string. </p>
+     *        DB cluster. This value is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster2</code>
@@ -614,12 +829,16 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 1 to 35</li>
+     * <li>
+     * <p>
+     * Must be a value from 1 to 35
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param backupRetentionPeriod
      *        The number of days for which automated backups are retained. You
-     *        must specify a minimum value of 1. </p>
+     *        must specify a minimum value of 1.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -627,7 +846,11 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be a value from 1 to 35</li>
+     *        <li>
+     *        <p>
+     *        Must be a value from 1 to 35
+     *        </p>
+     *        </li>
      */
 
     public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
@@ -646,11 +869,15 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 1 to 35</li>
+     * <li>
+     * <p>
+     * Must be a value from 1 to 35
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The number of days for which automated backups are retained. You
-     *         must specify a minimum value of 1. </p>
+     *         must specify a minimum value of 1.</p>
      *         <p>
      *         Default: 1
      *         </p>
@@ -658,7 +885,11 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be a value from 1 to 35</li>
+     *         <li>
+     *         <p>
+     *         Must be a value from 1 to 35
+     *         </p>
+     *         </li>
      */
 
     public Integer getBackupRetentionPeriod() {
@@ -677,12 +908,16 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 1 to 35</li>
+     * <li>
+     * <p>
+     * Must be a value from 1 to 35
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param backupRetentionPeriod
      *        The number of days for which automated backups are retained. You
-     *        must specify a minimum value of 1. </p>
+     *        must specify a minimum value of 1.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -690,7 +925,11 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be a value from 1 to 35</li>
+     *        <li>
+     *        <p>
+     *        Must be a value from 1 to 35
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -840,7 +1079,7 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param port
-     *        The port number on which the DB cluster accepts connections. </p>
+     *        The port number on which the DB cluster accepts connections.</p>
      *        <p>
      *        Constraints: Value must be <code>1150-65535</code>
      *        </p>
@@ -863,7 +1102,7 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Default: The same port as the original DB cluster.
      * </p>
      * 
-     * @return The port number on which the DB cluster accepts connections. </p>
+     * @return The port number on which the DB cluster accepts connections.</p>
      *         <p>
      *         Constraints: Value must be <code>1150-65535</code>
      *         </p>
@@ -887,7 +1126,7 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param port
-     *        The port number on which the DB cluster accepts connections. </p>
+     *        The port number on which the DB cluster accepts connections.</p>
      *        <p>
      *        Constraints: Value must be <code>1150-65535</code>
      *        </p>
@@ -913,8 +1152,7 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param masterUserPassword
      *        The new password for the master database user. This password can
-     *        contain any printable ASCII character except "/", """, or "@".
-     *        </p>
+     *        contain any printable ASCII character except "/", """, or "@".</p>
      *        <p>
      *        Constraints: Must contain from 8 to 41 characters.
      */
@@ -933,8 +1171,8 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return The new password for the master database user. This password can
-     *         contain any printable ASCII character except "/", """, or "@".
-     *         </p>
+     *         contain any printable ASCII character except "/",
+     *         """, or "@".</p>
      *         <p>
      *         Constraints: Must contain from 8 to 41 characters.
      */
@@ -954,8 +1192,7 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param masterUserPassword
      *        The new password for the master database user. This password can
-     *        contain any printable ASCII character except "/", """, or "@".
-     *        </p>
+     *        contain any printable ASCII character except "/", """, or "@".</p>
      *        <p>
      *        Constraints: Must contain from 8 to 41 characters.
      * @return Returns a reference to this object so that method calls can be
@@ -1098,10 +1335,26 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param preferredBackupWindow
@@ -1120,10 +1373,26 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     *        <li>Times should be in Universal Coordinated Time (UTC).</li>
-     *        <li>Must not conflict with the preferred maintenance window.</li>
-     *        <li>Must be at least 30 minutes.</li>
+     *        <li>
+     *        <p>
+     *        Must be in the format <code>hh24:mi-hh24:mi</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Times should be in Universal Coordinated Time (UTC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not conflict with the preferred maintenance window.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 30 minutes.
+     *        </p>
+     *        </li>
      */
 
     public void setPreferredBackupWindow(String preferredBackupWindow) {
@@ -1147,10 +1416,26 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The daily time range during which automated backups are created
@@ -1168,10 +1453,26 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     *         <li>Times should be in Universal Coordinated Time (UTC).</li>
-     *         <li>Must not conflict with the preferred maintenance window.</li>
-     *         <li>Must be at least 30 minutes.</li>
+     *         <li>
+     *         <p>
+     *         Must be in the format <code>hh24:mi-hh24:mi</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Times should be in Universal Coordinated Time (UTC).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must not conflict with the preferred maintenance window.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be at least 30 minutes.
+     *         </p>
+     *         </li>
      */
 
     public String getPreferredBackupWindow() {
@@ -1195,10 +1496,26 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param preferredBackupWindow
@@ -1217,10 +1534,26 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     *        <li>Times should be in Universal Coordinated Time (UTC).</li>
-     *        <li>Must not conflict with the preferred maintenance window.</li>
-     *        <li>Must be at least 30 minutes.</li>
+     *        <li>
+     *        <p>
+     *        Must be in the format <code>hh24:mi-hh24:mi</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Times should be in Universal Coordinated Time (UTC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not conflict with the preferred maintenance window.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 30 minutes.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1256,7 +1589,7 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param preferredMaintenanceWindow
      *        The weekly time range during which system maintenance can occur,
-     *        in Universal Coordinated Time (UTC). </p>
+     *        in Universal Coordinated Time (UTC).</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
@@ -1303,7 +1636,7 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return The weekly time range during which system maintenance can occur,
-     *         in Universal Coordinated Time (UTC). </p>
+     *         in Universal Coordinated Time (UTC).</p>
      *         <p>
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
@@ -1351,7 +1684,7 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param preferredMaintenanceWindow
      *        The weekly time range during which system maintenance can occur,
-     *        in Universal Coordinated Time (UTC). </p>
+     *        in Universal Coordinated Time (UTC).</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>

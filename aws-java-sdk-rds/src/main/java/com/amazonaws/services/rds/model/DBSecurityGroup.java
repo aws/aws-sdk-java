@@ -23,10 +23,26 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the following actions:
  * </p>
  * <ul>
- * <li><a>DescribeDBSecurityGroups</a></li>
- * <li><a>AuthorizeDBSecurityGroupIngress</a></li>
- * <li><a>CreateDBSecurityGroup</a></li>
- * <li><a>RevokeDBSecurityGroupIngress</a></li>
+ * <li>
+ * <p>
+ * <a>DescribeDBSecurityGroups</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>AuthorizeDBSecurityGroupIngress</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateDBSecurityGroup</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>RevokeDBSecurityGroupIngress</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * This data type is used as a response element in the

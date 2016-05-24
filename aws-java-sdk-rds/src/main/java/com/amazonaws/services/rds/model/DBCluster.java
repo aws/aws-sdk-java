@@ -23,11 +23,36 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the following actions:
  * </p>
  * <ul>
- * <li><a>CreateDBCluster</a></li>
- * <li><a>DeleteDBCluster</a></li>
- * <li><a>FailoverDBCluster</a></li>
- * <li><a>ModifyDBCluster</a></li>
- * <li><a>RestoreDBClusterFromSnapshot</a></li>
+ * <li>
+ * <p>
+ * <a>CreateDBCluster</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteDBCluster</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>FailoverDBCluster</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ModifyDBCluster</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>RestoreDBClusterFromSnapshot</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>RestoreDBClusterToPointInTime</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * This data type is used as a response element in the <a>DescribeDBClusters</a>

@@ -158,6 +158,12 @@ public class CreateDBClusterRequestMarshaller implements
                             .getPreferredMaintenanceWindow()));
         }
 
+        if (createDBClusterRequest.getReplicationSourceIdentifier() != null) {
+            request.addParameter("ReplicationSourceIdentifier", StringUtils
+                    .fromString(createDBClusterRequest
+                            .getReplicationSourceIdentifier()));
+        }
+
         com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBClusterRequest
                 .getTags();
         if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {

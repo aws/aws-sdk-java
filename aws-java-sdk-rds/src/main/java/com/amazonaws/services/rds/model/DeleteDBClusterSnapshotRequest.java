@@ -46,7 +46,7 @@ public class DeleteDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier of the DB cluster snapshot to delete. </p>
+     *        The identifier of the DB cluster snapshot to delete.</p>
      *        <p>
      *        Constraints: Must be the name of an existing DB cluster snapshot
      *        in the <code>available</code> state.
@@ -66,7 +66,7 @@ public class DeleteDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * <code>available</code> state.
      * </p>
      * 
-     * @return The identifier of the DB cluster snapshot to delete. </p>
+     * @return The identifier of the DB cluster snapshot to delete.</p>
      *         <p>
      *         Constraints: Must be the name of an existing DB cluster snapshot
      *         in the <code>available</code> state.
@@ -86,7 +86,7 @@ public class DeleteDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier of the DB cluster snapshot to delete. </p>
+     *        The identifier of the DB cluster snapshot to delete.</p>
      *        <p>
      *        Constraints: Must be the name of an existing DB cluster snapshot
      *        in the <code>available</code> state.

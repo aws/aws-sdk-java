@@ -23,9 +23,21 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the following actions:
  * </p>
  * <ul>
- * <li><a>CreateDBInstance</a></li>
- * <li><a>DeleteDBInstance</a></li>
- * <li><a>ModifyDBInstance</a></li>
+ * <li>
+ * <p>
+ * <a>CreateDBInstance</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteDBInstance</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ModifyDBInstance</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * This data type is used as a response element in the
@@ -262,8 +274,16 @@ public class DBInstance implements Serializable, Cloneable {
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b>true</li>
-     * <li><b>VPC:</b>false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b>true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b>false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -2083,8 +2103,16 @@ public class DBInstance implements Serializable, Cloneable {
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b>true</li>
-     * <li><b>VPC:</b>false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b>true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b>false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -2099,15 +2127,23 @@ public class DBInstance implements Serializable, Cloneable {
      *        of true specifies an Internet-facing instance with a publicly
      *        resolvable DNS name, which resolves to a public IP address. A
      *        value of false specifies an internal instance with a DNS name that
-     *        resolves to a private IP address. </p>
+     *        resolves to a private IP address.</p>
      *        <p>
      *        Default: The default behavior varies depending on whether a VPC
      *        has been requested or not. The following list shows the default
      *        behavior in each case.
      *        </p>
      *        <ul>
-     *        <li><b>Default VPC:</b>true</li>
-     *        <li><b>VPC:</b>false</li>
+     *        <li>
+     *        <p>
+     *        <b>Default VPC:</b>true
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>VPC:</b>false
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request
@@ -2135,8 +2171,16 @@ public class DBInstance implements Serializable, Cloneable {
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b>true</li>
-     * <li><b>VPC:</b>false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b>true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b>false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -2150,15 +2194,23 @@ public class DBInstance implements Serializable, Cloneable {
      *         of true specifies an Internet-facing instance with a publicly
      *         resolvable DNS name, which resolves to a public IP address. A
      *         value of false specifies an internal instance with a DNS name
-     *         that resolves to a private IP address. </p>
+     *         that resolves to a private IP address.</p>
      *         <p>
      *         Default: The default behavior varies depending on whether a VPC
      *         has been requested or not. The following list shows the default
      *         behavior in each case.
      *         </p>
      *         <ul>
-     *         <li><b>Default VPC:</b>true</li>
-     *         <li><b>VPC:</b>false</li>
+     *         <li>
+     *         <p>
+     *         <b>Default VPC:</b>true
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>VPC:</b>false
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request
@@ -2187,8 +2239,16 @@ public class DBInstance implements Serializable, Cloneable {
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b>true</li>
-     * <li><b>VPC:</b>false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b>true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b>false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -2203,15 +2263,23 @@ public class DBInstance implements Serializable, Cloneable {
      *        of true specifies an Internet-facing instance with a publicly
      *        resolvable DNS name, which resolves to a public IP address. A
      *        value of false specifies an internal instance with a DNS name that
-     *        resolves to a private IP address. </p>
+     *        resolves to a private IP address.</p>
      *        <p>
      *        Default: The default behavior varies depending on whether a VPC
      *        has been requested or not. The following list shows the default
      *        behavior in each case.
      *        </p>
      *        <ul>
-     *        <li><b>Default VPC:</b>true</li>
-     *        <li><b>VPC:</b>false</li>
+     *        <li>
+     *        <p>
+     *        <b>Default VPC:</b>true
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>VPC:</b>false
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request
@@ -2242,8 +2310,16 @@ public class DBInstance implements Serializable, Cloneable {
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b>true</li>
-     * <li><b>VPC:</b>false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b>true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b>false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -2257,15 +2333,23 @@ public class DBInstance implements Serializable, Cloneable {
      *         of true specifies an Internet-facing instance with a publicly
      *         resolvable DNS name, which resolves to a public IP address. A
      *         value of false specifies an internal instance with a DNS name
-     *         that resolves to a private IP address. </p>
+     *         that resolves to a private IP address.</p>
      *         <p>
      *         Default: The default behavior varies depending on whether a VPC
      *         has been requested or not. The following list shows the default
      *         behavior in each case.
      *         </p>
      *         <ul>
-     *         <li><b>Default VPC:</b>true</li>
-     *         <li><b>VPC:</b>false</li>
+     *         <li>
+     *         <p>
+     *         <b>Default VPC:</b>true
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>VPC:</b>false
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request

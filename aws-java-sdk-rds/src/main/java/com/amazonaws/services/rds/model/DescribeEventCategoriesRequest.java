@@ -52,7 +52,7 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sourceType
-     *        The type of source that will be generating the events. </p>
+     *        The type of source that will be generating the events.</p>
      *        <p>
      *        Valid values: db-instance | db-parameter-group | db-security-group
      *        | db-snapshot
@@ -71,7 +71,7 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest
      * db-snapshot
      * </p>
      * 
-     * @return The type of source that will be generating the events. </p>
+     * @return The type of source that will be generating the events.</p>
      *         <p>
      *         Valid values: db-instance | db-parameter-group |
      *         db-security-group | db-snapshot
@@ -91,7 +91,7 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sourceType
-     *        The type of source that will be generating the events. </p>
+     *        The type of source that will be generating the events.</p>
      *        <p>
      *        Valid values: db-instance | db-parameter-group | db-security-group
      *        | db-snapshot

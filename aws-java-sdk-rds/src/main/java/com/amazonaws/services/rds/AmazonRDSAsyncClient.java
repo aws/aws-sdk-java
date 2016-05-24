@@ -1573,6 +1573,42 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DBClusterSnapshotAttributesResult> describeDBClusterSnapshotAttributesAsync(
+            DescribeDBClusterSnapshotAttributesRequest request) {
+
+        return describeDBClusterSnapshotAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBClusterSnapshotAttributesResult> describeDBClusterSnapshotAttributesAsync(
+            final DescribeDBClusterSnapshotAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDBClusterSnapshotAttributesRequest, DBClusterSnapshotAttributesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DBClusterSnapshotAttributesResult>() {
+                    @Override
+                    public DBClusterSnapshotAttributesResult call()
+                            throws Exception {
+                        DBClusterSnapshotAttributesResult result;
+
+                        try {
+                            result = describeDBClusterSnapshotAttributes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDBClusterSnapshotsResult> describeDBClusterSnapshotsAsync(
             DescribeDBClusterSnapshotsRequest request) {
 
@@ -2949,6 +2985,42 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements
 
                         try {
                             result = modifyDBClusterParameterGroup(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBClusterSnapshotAttributesResult> modifyDBClusterSnapshotAttributeAsync(
+            ModifyDBClusterSnapshotAttributeRequest request) {
+
+        return modifyDBClusterSnapshotAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBClusterSnapshotAttributesResult> modifyDBClusterSnapshotAttributeAsync(
+            final ModifyDBClusterSnapshotAttributeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyDBClusterSnapshotAttributeRequest, DBClusterSnapshotAttributesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DBClusterSnapshotAttributesResult>() {
+                    @Override
+                    public DBClusterSnapshotAttributesResult call()
+                            throws Exception {
+                        DBClusterSnapshotAttributesResult result;
+
+                        try {
+                            result = modifyDBClusterSnapshotAttribute(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

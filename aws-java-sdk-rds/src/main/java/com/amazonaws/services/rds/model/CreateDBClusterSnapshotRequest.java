@@ -34,9 +34,21 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1-snapshot1</code>
@@ -52,9 +64,21 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1</code>
@@ -77,9 +101,21 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1-snapshot1</code>
@@ -87,14 +123,26 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * 
      * @param dBClusterSnapshotIdentifier
      *        The identifier of the DB cluster snapshot. This parameter is
-     *        stored as a lowercase string. </p>
+     *        stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster1-snapshot1</code>
@@ -114,24 +162,47 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1-snapshot1</code>
      * </p>
      * 
      * @return The identifier of the DB cluster snapshot. This parameter is
-     *         stored as a lowercase string. </p>
+     *         stored as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>my-cluster1-snapshot1</code>
@@ -150,9 +221,21 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1-snapshot1</code>
@@ -160,14 +243,26 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * 
      * @param dBClusterSnapshotIdentifier
      *        The identifier of the DB cluster snapshot. This parameter is
-     *        stored as a lowercase string. </p>
+     *        stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster1-snapshot1</code>
@@ -190,9 +285,21 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1</code>
@@ -200,14 +307,26 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * 
      * @param dBClusterIdentifier
      *        The identifier of the DB cluster to create a snapshot for. This
-     *        parameter is not case-sensitive. </p>
+     *        parameter is not case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster1</code>
@@ -226,24 +345,47 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1</code>
      * </p>
      * 
      * @return The identifier of the DB cluster to create a snapshot for. This
-     *         parameter is not case-sensitive. </p>
+     *         parameter is not case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>my-cluster1</code>
@@ -262,9 +404,21 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1</code>
@@ -272,14 +426,26 @@ public class CreateDBClusterSnapshotRequest extends AmazonWebServiceRequest
      * 
      * @param dBClusterIdentifier
      *        The identifier of the DB cluster to create a snapshot for. This
-     *        parameter is not case-sensitive. </p>
+     *        parameter is not case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster1</code>

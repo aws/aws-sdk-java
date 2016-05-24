@@ -21,12 +21,12 @@
     "endpointPrefix" : "route53domains",
     "signingName" : "route53domains",
     "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "serviceName" : "Amazon Route 53 Domains",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "xmlProtocol" : false
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "CheckDomainAvailability" : {

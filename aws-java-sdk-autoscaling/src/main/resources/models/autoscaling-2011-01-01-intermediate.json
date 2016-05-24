@@ -20,13 +20,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "autoscaling",
     "signingName" : "autoscaling",
+    "jsonProtocol" : false,
+    "xmlProtocol" : true,
     "serviceName" : "Auto Scaling",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
-    "xmlProtocol" : true,
-    "jsonProtocol" : false
+    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "AttachInstances" : {

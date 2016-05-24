@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "storagegateway",
     "signingName" : "storagegateway",
-    "jsonProtocol" : true,
-    "serviceName" : "AWS Storage Gateway",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "xmlProtocol" : false,
+    "jsonProtocol" : true,
+    "serviceName" : "AWS Storage Gateway"
   },
   "operations" : {
     "ActivateGateway" : {
@@ -54,12 +54,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ActivateGatewayResult",
       "asyncReturnType" : "ActivateGatewayResult",
       "asyncFutureType" : "java.util.concurrent.Future<ActivateGatewayResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ActivateGatewayResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ActivateGatewayRequest, ActivateGatewayResult>",
-      "authenticated" : true,
       "methodName" : "activateGateway"
     },
     "AddCache" : {
@@ -87,12 +87,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddCacheResult",
       "asyncReturnType" : "AddCacheResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddCacheResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddCacheResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddCacheRequest, AddCacheResult>",
-      "authenticated" : true,
       "methodName" : "addCache"
     },
     "AddTagsToResource" : {
@@ -120,12 +120,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddTagsToResourceResult",
       "asyncReturnType" : "AddTagsToResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>",
-      "authenticated" : true,
       "methodName" : "addTagsToResource"
     },
     "AddUploadBuffer" : {
@@ -153,12 +153,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddUploadBufferResult",
       "asyncReturnType" : "AddUploadBufferResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddUploadBufferResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddUploadBufferResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddUploadBufferRequest, AddUploadBufferResult>",
-      "authenticated" : true,
       "methodName" : "addUploadBuffer"
     },
     "AddWorkingStorage" : {
@@ -186,12 +186,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddWorkingStorageResult",
       "asyncReturnType" : "AddWorkingStorageResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddWorkingStorageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddWorkingStorageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddWorkingStorageRequest, AddWorkingStorageResult>",
-      "authenticated" : true,
       "methodName" : "addWorkingStorage"
     },
     "CancelArchival" : {
@@ -219,12 +219,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CancelArchivalResult",
       "asyncReturnType" : "CancelArchivalResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelArchivalResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelArchivalResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelArchivalRequest, CancelArchivalResult>",
-      "authenticated" : true,
       "methodName" : "cancelArchival"
     },
     "CancelRetrieval" : {
@@ -252,12 +252,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CancelRetrievalResult",
       "asyncReturnType" : "CancelRetrievalResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelRetrievalResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelRetrievalResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelRetrievalRequest, CancelRetrievalResult>",
-      "authenticated" : true,
       "methodName" : "cancelRetrieval"
     },
     "CreateCachediSCSIVolume" : {
@@ -285,12 +285,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateCachediSCSIVolumeResult",
       "asyncReturnType" : "CreateCachediSCSIVolumeResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateCachediSCSIVolumeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateCachediSCSIVolumeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCachediSCSIVolumeRequest, CreateCachediSCSIVolumeResult>",
-      "authenticated" : true,
       "methodName" : "createCachediSCSIVolume"
     },
     "CreateSnapshot" : {
@@ -318,12 +318,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateSnapshotResult",
       "asyncReturnType" : "CreateSnapshotResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateSnapshotResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateSnapshotResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResult>",
-      "authenticated" : true,
       "methodName" : "createSnapshot"
     },
     "CreateSnapshotFromVolumeRecoveryPoint" : {
@@ -351,12 +351,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateSnapshotFromVolumeRecoveryPointResult",
       "asyncReturnType" : "CreateSnapshotFromVolumeRecoveryPointResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateSnapshotFromVolumeRecoveryPointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateSnapshotFromVolumeRecoveryPointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSnapshotFromVolumeRecoveryPointRequest, CreateSnapshotFromVolumeRecoveryPointResult>",
-      "authenticated" : true,
       "methodName" : "createSnapshotFromVolumeRecoveryPoint"
     },
     "CreateStorediSCSIVolume" : {
@@ -384,12 +384,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateStorediSCSIVolumeResult",
       "asyncReturnType" : "CreateStorediSCSIVolumeResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateStorediSCSIVolumeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateStorediSCSIVolumeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStorediSCSIVolumeRequest, CreateStorediSCSIVolumeResult>",
-      "authenticated" : true,
       "methodName" : "createStorediSCSIVolume"
     },
     "CreateTapeWithBarcode" : {
@@ -417,12 +417,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateTapeWithBarcodeResult",
       "asyncReturnType" : "CreateTapeWithBarcodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTapeWithBarcodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTapeWithBarcodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTapeWithBarcodeRequest, CreateTapeWithBarcodeResult>",
-      "authenticated" : true,
       "methodName" : "createTapeWithBarcode"
     },
     "CreateTapes" : {
@@ -450,12 +450,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateTapesResult",
       "asyncReturnType" : "CreateTapesResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTapesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTapesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTapesRequest, CreateTapesResult>",
-      "authenticated" : true,
       "methodName" : "createTapes"
     },
     "DeleteBandwidthRateLimit" : {
@@ -483,12 +483,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteBandwidthRateLimitResult",
       "asyncReturnType" : "DeleteBandwidthRateLimitResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteBandwidthRateLimitResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteBandwidthRateLimitResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteBandwidthRateLimitRequest, DeleteBandwidthRateLimitResult>",
-      "authenticated" : true,
       "methodName" : "deleteBandwidthRateLimit"
     },
     "DeleteChapCredentials" : {
@@ -516,12 +516,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteChapCredentialsResult",
       "asyncReturnType" : "DeleteChapCredentialsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteChapCredentialsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteChapCredentialsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteChapCredentialsRequest, DeleteChapCredentialsResult>",
-      "authenticated" : true,
       "methodName" : "deleteChapCredentials"
     },
     "DeleteGateway" : {
@@ -549,12 +549,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteGatewayResult",
       "asyncReturnType" : "DeleteGatewayResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteGatewayResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteGatewayResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteGatewayRequest, DeleteGatewayResult>",
-      "authenticated" : true,
       "methodName" : "deleteGateway"
     },
     "DeleteSnapshotSchedule" : {
@@ -582,12 +582,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteSnapshotScheduleResult",
       "asyncReturnType" : "DeleteSnapshotScheduleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteSnapshotScheduleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteSnapshotScheduleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResult>",
-      "authenticated" : true,
       "methodName" : "deleteSnapshotSchedule"
     },
     "DeleteTape" : {
@@ -615,12 +615,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteTapeResult",
       "asyncReturnType" : "DeleteTapeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTapeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTapeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTapeRequest, DeleteTapeResult>",
-      "authenticated" : true,
       "methodName" : "deleteTape"
     },
     "DeleteTapeArchive" : {
@@ -648,12 +648,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteTapeArchiveResult",
       "asyncReturnType" : "DeleteTapeArchiveResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTapeArchiveResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTapeArchiveResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTapeArchiveRequest, DeleteTapeArchiveResult>",
-      "authenticated" : true,
       "methodName" : "deleteTapeArchive"
     },
     "DeleteVolume" : {
@@ -681,12 +681,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteVolumeResult",
       "asyncReturnType" : "DeleteVolumeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteVolumeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteVolumeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteVolumeRequest, DeleteVolumeResult>",
-      "authenticated" : true,
       "methodName" : "deleteVolume"
     },
     "DescribeBandwidthRateLimit" : {
@@ -714,12 +714,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeBandwidthRateLimitResult",
       "asyncReturnType" : "DescribeBandwidthRateLimitResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeBandwidthRateLimitResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeBandwidthRateLimitResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeBandwidthRateLimitRequest, DescribeBandwidthRateLimitResult>",
-      "authenticated" : true,
       "methodName" : "describeBandwidthRateLimit"
     },
     "DescribeCache" : {
@@ -747,12 +747,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeCacheResult",
       "asyncReturnType" : "DescribeCacheResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheRequest, DescribeCacheResult>",
-      "authenticated" : true,
       "methodName" : "describeCache"
     },
     "DescribeCachediSCSIVolumes" : {
@@ -780,12 +780,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeCachediSCSIVolumesResult",
       "asyncReturnType" : "DescribeCachediSCSIVolumesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCachediSCSIVolumesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCachediSCSIVolumesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCachediSCSIVolumesRequest, DescribeCachediSCSIVolumesResult>",
-      "authenticated" : true,
       "methodName" : "describeCachediSCSIVolumes"
     },
     "DescribeChapCredentials" : {
@@ -813,12 +813,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeChapCredentialsResult",
       "asyncReturnType" : "DescribeChapCredentialsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeChapCredentialsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeChapCredentialsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeChapCredentialsRequest, DescribeChapCredentialsResult>",
-      "authenticated" : true,
       "methodName" : "describeChapCredentials"
     },
     "DescribeGatewayInformation" : {
@@ -846,12 +846,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeGatewayInformationResult",
       "asyncReturnType" : "DescribeGatewayInformationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeGatewayInformationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeGatewayInformationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeGatewayInformationRequest, DescribeGatewayInformationResult>",
-      "authenticated" : true,
       "methodName" : "describeGatewayInformation"
     },
     "DescribeMaintenanceStartTime" : {
@@ -879,12 +879,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeMaintenanceStartTimeResult",
       "asyncReturnType" : "DescribeMaintenanceStartTimeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMaintenanceStartTimeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMaintenanceStartTimeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceStartTimeRequest, DescribeMaintenanceStartTimeResult>",
-      "authenticated" : true,
       "methodName" : "describeMaintenanceStartTime"
     },
     "DescribeSnapshotSchedule" : {
@@ -912,12 +912,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeSnapshotScheduleResult",
       "asyncReturnType" : "DescribeSnapshotScheduleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSnapshotScheduleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSnapshotScheduleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSnapshotScheduleRequest, DescribeSnapshotScheduleResult>",
-      "authenticated" : true,
       "methodName" : "describeSnapshotSchedule"
     },
     "DescribeStorediSCSIVolumes" : {
@@ -945,12 +945,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeStorediSCSIVolumesResult",
       "asyncReturnType" : "DescribeStorediSCSIVolumesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStorediSCSIVolumesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStorediSCSIVolumesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStorediSCSIVolumesRequest, DescribeStorediSCSIVolumesResult>",
-      "authenticated" : true,
       "methodName" : "describeStorediSCSIVolumes"
     },
     "DescribeTapeArchives" : {
@@ -978,12 +978,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeTapeArchivesResult",
       "asyncReturnType" : "DescribeTapeArchivesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTapeArchivesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTapeArchivesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTapeArchivesRequest, DescribeTapeArchivesResult>",
-      "authenticated" : true,
       "methodName" : "describeTapeArchives"
     },
     "DescribeTapeRecoveryPoints" : {
@@ -1011,12 +1011,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeTapeRecoveryPointsResult",
       "asyncReturnType" : "DescribeTapeRecoveryPointsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTapeRecoveryPointsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTapeRecoveryPointsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTapeRecoveryPointsRequest, DescribeTapeRecoveryPointsResult>",
-      "authenticated" : true,
       "methodName" : "describeTapeRecoveryPoints"
     },
     "DescribeTapes" : {
@@ -1044,12 +1044,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeTapesResult",
       "asyncReturnType" : "DescribeTapesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTapesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTapesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTapesRequest, DescribeTapesResult>",
-      "authenticated" : true,
       "methodName" : "describeTapes"
     },
     "DescribeUploadBuffer" : {
@@ -1077,12 +1077,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeUploadBufferResult",
       "asyncReturnType" : "DescribeUploadBufferResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeUploadBufferResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeUploadBufferResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeUploadBufferRequest, DescribeUploadBufferResult>",
-      "authenticated" : true,
       "methodName" : "describeUploadBuffer"
     },
     "DescribeVTLDevices" : {
@@ -1110,12 +1110,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeVTLDevicesResult",
       "asyncReturnType" : "DescribeVTLDevicesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeVTLDevicesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeVTLDevicesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeVTLDevicesRequest, DescribeVTLDevicesResult>",
-      "authenticated" : true,
       "methodName" : "describeVTLDevices"
     },
     "DescribeWorkingStorage" : {
@@ -1143,12 +1143,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeWorkingStorageResult",
       "asyncReturnType" : "DescribeWorkingStorageResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkingStorageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeWorkingStorageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeWorkingStorageRequest, DescribeWorkingStorageResult>",
-      "authenticated" : true,
       "methodName" : "describeWorkingStorage"
     },
     "DisableGateway" : {
@@ -1176,12 +1176,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DisableGatewayResult",
       "asyncReturnType" : "DisableGatewayResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableGatewayResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableGatewayResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableGatewayRequest, DisableGatewayResult>",
-      "authenticated" : true,
       "methodName" : "disableGateway"
     },
     "ListGateways" : {
@@ -1209,12 +1209,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListGatewaysResult",
       "asyncReturnType" : "ListGatewaysResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListGatewaysResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListGatewaysResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult>",
-      "authenticated" : true,
       "methodName" : "listGateways"
     },
     "ListLocalDisks" : {
@@ -1242,12 +1242,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListLocalDisksResult",
       "asyncReturnType" : "ListLocalDisksResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListLocalDisksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListLocalDisksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListLocalDisksRequest, ListLocalDisksResult>",
-      "authenticated" : true,
       "methodName" : "listLocalDisks"
     },
     "ListTagsForResource" : {
@@ -1275,12 +1275,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
-      "authenticated" : true,
       "methodName" : "listTagsForResource"
     },
     "ListTapes" : {
@@ -1308,12 +1308,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTapesResult",
       "asyncReturnType" : "ListTapesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTapesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTapesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTapesRequest, ListTapesResult>",
-      "authenticated" : true,
       "methodName" : "listTapes"
     },
     "ListVolumeInitiators" : {
@@ -1341,12 +1341,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListVolumeInitiatorsResult",
       "asyncReturnType" : "ListVolumeInitiatorsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListVolumeInitiatorsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListVolumeInitiatorsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListVolumeInitiatorsRequest, ListVolumeInitiatorsResult>",
-      "authenticated" : true,
       "methodName" : "listVolumeInitiators"
     },
     "ListVolumeRecoveryPoints" : {
@@ -1374,12 +1374,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListVolumeRecoveryPointsResult",
       "asyncReturnType" : "ListVolumeRecoveryPointsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListVolumeRecoveryPointsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListVolumeRecoveryPointsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListVolumeRecoveryPointsRequest, ListVolumeRecoveryPointsResult>",
-      "authenticated" : true,
       "methodName" : "listVolumeRecoveryPoints"
     },
     "ListVolumes" : {
@@ -1407,12 +1407,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListVolumesResult",
       "asyncReturnType" : "ListVolumesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListVolumesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListVolumesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListVolumesRequest, ListVolumesResult>",
-      "authenticated" : true,
       "methodName" : "listVolumes"
     },
     "RemoveTagsFromResource" : {
@@ -1440,12 +1440,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromResourceResult",
       "asyncReturnType" : "RemoveTagsFromResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>",
-      "authenticated" : true,
       "methodName" : "removeTagsFromResource"
     },
     "ResetCache" : {
@@ -1473,12 +1473,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ResetCacheResult",
       "asyncReturnType" : "ResetCacheResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResetCacheResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResetCacheResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResetCacheRequest, ResetCacheResult>",
-      "authenticated" : true,
       "methodName" : "resetCache"
     },
     "RetrieveTapeArchive" : {
@@ -1506,12 +1506,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RetrieveTapeArchiveResult",
       "asyncReturnType" : "RetrieveTapeArchiveResult",
       "asyncFutureType" : "java.util.concurrent.Future<RetrieveTapeArchiveResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RetrieveTapeArchiveResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RetrieveTapeArchiveRequest, RetrieveTapeArchiveResult>",
-      "authenticated" : true,
       "methodName" : "retrieveTapeArchive"
     },
     "RetrieveTapeRecoveryPoint" : {
@@ -1539,12 +1539,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RetrieveTapeRecoveryPointResult",
       "asyncReturnType" : "RetrieveTapeRecoveryPointResult",
       "asyncFutureType" : "java.util.concurrent.Future<RetrieveTapeRecoveryPointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RetrieveTapeRecoveryPointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RetrieveTapeRecoveryPointRequest, RetrieveTapeRecoveryPointResult>",
-      "authenticated" : true,
       "methodName" : "retrieveTapeRecoveryPoint"
     },
     "SetLocalConsolePassword" : {
@@ -1572,12 +1572,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SetLocalConsolePasswordResult",
       "asyncReturnType" : "SetLocalConsolePasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetLocalConsolePasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetLocalConsolePasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetLocalConsolePasswordRequest, SetLocalConsolePasswordResult>",
-      "authenticated" : true,
       "methodName" : "setLocalConsolePassword"
     },
     "ShutdownGateway" : {
@@ -1605,12 +1605,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ShutdownGatewayResult",
       "asyncReturnType" : "ShutdownGatewayResult",
       "asyncFutureType" : "java.util.concurrent.Future<ShutdownGatewayResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ShutdownGatewayResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ShutdownGatewayRequest, ShutdownGatewayResult>",
-      "authenticated" : true,
       "methodName" : "shutdownGateway"
     },
     "StartGateway" : {
@@ -1638,12 +1638,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "StartGatewayResult",
       "asyncReturnType" : "StartGatewayResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartGatewayResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartGatewayResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartGatewayRequest, StartGatewayResult>",
-      "authenticated" : true,
       "methodName" : "startGateway"
     },
     "UpdateBandwidthRateLimit" : {
@@ -1671,12 +1671,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateBandwidthRateLimitResult",
       "asyncReturnType" : "UpdateBandwidthRateLimitResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateBandwidthRateLimitResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateBandwidthRateLimitResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateBandwidthRateLimitRequest, UpdateBandwidthRateLimitResult>",
-      "authenticated" : true,
       "methodName" : "updateBandwidthRateLimit"
     },
     "UpdateChapCredentials" : {
@@ -1704,12 +1704,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateChapCredentialsResult",
       "asyncReturnType" : "UpdateChapCredentialsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateChapCredentialsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateChapCredentialsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateChapCredentialsRequest, UpdateChapCredentialsResult>",
-      "authenticated" : true,
       "methodName" : "updateChapCredentials"
     },
     "UpdateGatewayInformation" : {
@@ -1737,12 +1737,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateGatewayInformationResult",
       "asyncReturnType" : "UpdateGatewayInformationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateGatewayInformationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateGatewayInformationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateGatewayInformationRequest, UpdateGatewayInformationResult>",
-      "authenticated" : true,
       "methodName" : "updateGatewayInformation"
     },
     "UpdateGatewaySoftwareNow" : {
@@ -1770,12 +1770,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateGatewaySoftwareNowResult",
       "asyncReturnType" : "UpdateGatewaySoftwareNowResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateGatewaySoftwareNowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateGatewaySoftwareNowResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateGatewaySoftwareNowRequest, UpdateGatewaySoftwareNowResult>",
-      "authenticated" : true,
       "methodName" : "updateGatewaySoftwareNow"
     },
     "UpdateMaintenanceStartTime" : {
@@ -1803,12 +1803,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateMaintenanceStartTimeResult",
       "asyncReturnType" : "UpdateMaintenanceStartTimeResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateMaintenanceStartTimeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateMaintenanceStartTimeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceStartTimeRequest, UpdateMaintenanceStartTimeResult>",
-      "authenticated" : true,
       "methodName" : "updateMaintenanceStartTime"
     },
     "UpdateSnapshotSchedule" : {
@@ -1836,12 +1836,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateSnapshotScheduleResult",
       "asyncReturnType" : "UpdateSnapshotScheduleResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateSnapshotScheduleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateSnapshotScheduleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateSnapshotScheduleRequest, UpdateSnapshotScheduleResult>",
-      "authenticated" : true,
       "methodName" : "updateSnapshotSchedule"
     },
     "UpdateVTLDeviceType" : {
@@ -1869,12 +1869,12 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateVTLDeviceTypeResult",
       "asyncReturnType" : "UpdateVTLDeviceTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateVTLDeviceTypeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateVTLDeviceTypeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateVTLDeviceTypeRequest, UpdateVTLDeviceTypeResult>",
-      "authenticated" : true,
       "methodName" : "updateVTLDeviceType"
     }
   },
@@ -2095,11 +2095,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "VolumeInfo",
           "templateType" : "java.util.List<VolumeInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeInfo>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeInfo>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2289,11 +2289,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "VolumeInfo",
             "templateType" : "java.util.List<VolumeInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeInfo>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeInfo>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2615,11 +2615,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "CachediSCSIVolume",
           "templateType" : "java.util.List<CachediSCSIVolume>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CachediSCSIVolume>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CachediSCSIVolume>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2756,11 +2756,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "CachediSCSIVolume",
             "templateType" : "java.util.List<CachediSCSIVolume>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CachediSCSIVolume>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CachediSCSIVolume>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2940,11 +2940,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "TapeRecoveryPointInfo",
           "templateType" : "java.util.List<TapeRecoveryPointInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeRecoveryPointInfo>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeRecoveryPointInfo>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3186,11 +3186,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "TapeRecoveryPointInfo",
             "templateType" : "java.util.List<TapeRecoveryPointInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeRecoveryPointInfo>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeRecoveryPointInfo>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3423,11 +3423,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3568,11 +3568,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4055,11 +4055,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4200,11 +4200,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4687,11 +4687,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4832,11 +4832,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5601,11 +5601,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5746,11 +5746,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5983,11 +5983,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6437,11 +6437,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8673,11 +8673,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8814,11 +8814,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9050,11 +9050,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9191,11 +9191,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15758,11 +15758,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Tape",
           "templateType" : "java.util.List<Tape>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tape>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tape>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15951,11 +15951,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Tape",
             "templateType" : "java.util.List<Tape>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tape>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tape>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16188,11 +16188,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16437,11 +16437,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18353,11 +18353,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ChapInfo",
           "templateType" : "java.util.List<ChapInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ChapInfo>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ChapInfo>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18494,11 +18494,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ChapInfo",
             "templateType" : "java.util.List<ChapInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ChapInfo>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ChapInfo>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19174,11 +19174,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19319,11 +19319,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19794,11 +19794,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "TapeInfo",
           "templateType" : "java.util.List<TapeInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeInfo>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeInfo>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19987,11 +19987,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "TapeInfo",
             "templateType" : "java.util.List<TapeInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeInfo>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeInfo>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20827,11 +20827,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "NetworkInterface",
           "templateType" : "java.util.List<NetworkInterface>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkInterface>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkInterface>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21389,11 +21389,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "NetworkInterface",
             "templateType" : "java.util.List<NetworkInterface>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkInterface>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkInterface>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22140,11 +22140,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22285,11 +22285,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25487,11 +25487,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "GatewayInfo",
           "templateType" : "java.util.List<GatewayInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<GatewayInfo>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<GatewayInfo>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25680,11 +25680,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "GatewayInfo",
             "templateType" : "java.util.List<GatewayInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<GatewayInfo>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<GatewayInfo>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29959,11 +29959,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30100,11 +30100,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30232,11 +30232,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "StorediSCSIVolume",
           "templateType" : "java.util.List<StorediSCSIVolume>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<StorediSCSIVolume>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<StorediSCSIVolume>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30373,11 +30373,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "StorediSCSIVolume",
             "templateType" : "java.util.List<StorediSCSIVolume>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<StorediSCSIVolume>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<StorediSCSIVolume>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32163,11 +32163,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32412,11 +32412,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32791,11 +32791,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "TapeArchive",
           "templateType" : "java.util.List<TapeArchive>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeArchive>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeArchive>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32984,11 +32984,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "TapeArchive",
             "templateType" : "java.util.List<TapeArchive>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeArchive>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeArchive>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34177,11 +34177,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -34422,11 +34422,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -35366,11 +35366,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35668,11 +35668,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -36999,11 +36999,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -37248,11 +37248,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -37538,11 +37538,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "VTLDevice",
           "templateType" : "java.util.List<VTLDevice>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VTLDevice>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VTLDevice>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -37784,11 +37784,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "VTLDevice",
             "templateType" : "java.util.List<VTLDevice>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VTLDevice>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VTLDevice>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -39070,11 +39070,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -39368,11 +39368,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -40194,11 +40194,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Disk",
           "templateType" : "java.util.List<Disk>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Disk>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Disk>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -40388,11 +40388,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Disk",
             "templateType" : "java.util.List<Disk>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Disk>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Disk>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -42105,11 +42105,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -42250,11 +42250,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -43806,11 +43806,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "VolumeRecoveryPointInfo",
           "templateType" : "java.util.List<VolumeRecoveryPointInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -43947,11 +43947,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "VolumeRecoveryPointInfo",
             "templateType" : "java.util.List<VolumeRecoveryPointInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,

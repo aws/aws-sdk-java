@@ -119,7 +119,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends
      * @param reservedDBInstancesOfferingId
      *        The offering identifier filter value. Specify this parameter to
      *        show only the available offering that matches the specified
-     *        reservation identifier. </p>
+     *        reservation identifier.</p>
      *        <p>
      *        Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      */
@@ -140,7 +140,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends
      * 
      * @return The offering identifier filter value. Specify this parameter to
      *         show only the available offering that matches the specified
-     *         reservation identifier. </p>
+     *         reservation identifier.</p>
      *         <p>
      *         Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      */
@@ -161,7 +161,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends
      * @param reservedDBInstancesOfferingId
      *        The offering identifier filter value. Specify this parameter to
      *        show only the available offering that matches the specified
-     *        reservation identifier. </p>
+     *        reservation identifier.</p>
      *        <p>
      *        Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      * @return Returns a reference to this object so that method calls can be
@@ -236,7 +236,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends
      * 
      * @param duration
      *        Duration filter value, specified in years or seconds. Specify this
-     *        parameter to show only reservations for this duration. </p>
+     *        parameter to show only reservations for this duration.</p>
      *        <p>
      *        Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
@@ -255,7 +255,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends
      * </p>
      * 
      * @return Duration filter value, specified in years or seconds. Specify
-     *         this parameter to show only reservations for this duration. </p>
+     *         this parameter to show only reservations for this duration.</p>
      *         <p>
      *         Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
@@ -275,7 +275,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends
      * 
      * @param duration
      *        Duration filter value, specified in years or seconds. Specify this
-     *        parameter to show only reservations for this duration. </p>
+     *        parameter to show only reservations for this duration.</p>
      *        <p>
      *        Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
      * @return Returns a reference to this object so that method calls can be
@@ -351,8 +351,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends
      * 
      * @param offeringType
      *        The offering type filter value. Specify this parameter to show
-     *        only the available offerings matching the specified offering type.
-     *        </p>
+     *        only the available offerings matching the specified offering
+     *        type.</p>
      *        <p>
      *        Valid Values:
      *        <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
@@ -374,7 +374,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends
      * 
      * @return The offering type filter value. Specify this parameter to show
      *         only the available offerings matching the specified offering
-     *         type. </p>
+     *         type.</p>
      *         <p>
      *         Valid Values:
      *         <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
@@ -396,8 +396,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends
      * 
      * @param offeringType
      *        The offering type filter value. Specify this parameter to show
-     *        only the available offerings matching the specified offering type.
-     *        </p>
+     *        only the available offerings matching the specified offering
+     *        type.</p>
      *        <p>
      *        Valid Values:
      *        <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>

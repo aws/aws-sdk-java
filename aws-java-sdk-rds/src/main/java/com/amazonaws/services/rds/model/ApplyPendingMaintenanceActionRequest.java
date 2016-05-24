@@ -54,11 +54,23 @@ public class ApplyPendingMaintenanceActionRequest extends
      * Valid values:
      * </p>
      * <ul>
-     * <li> <code>immediate</code> - Apply the maintenance action immediately.</li>
-     * <li> <code>next-maintenance</code> - Apply the maintenance action during
-     * the next maintenance window for the resource.</li>
-     * <li> <code>undo-opt-in</code> - Cancel any existing
-     * <code>next-maintenance</code> opt-in requests.</li>
+     * <li>
+     * <p>
+     * <code>immediate</code> - Apply the maintenance action immediately.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>next-maintenance</code> - Apply the maintenance action during the
+     * next maintenance window for the resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.
+     * </p>
+     * </li>
      * </ul>
      */
     private String optInType;
@@ -196,11 +208,23 @@ public class ApplyPendingMaintenanceActionRequest extends
      * Valid values:
      * </p>
      * <ul>
-     * <li> <code>immediate</code> - Apply the maintenance action immediately.</li>
-     * <li> <code>next-maintenance</code> - Apply the maintenance action during
-     * the next maintenance window for the resource.</li>
-     * <li> <code>undo-opt-in</code> - Cancel any existing
-     * <code>next-maintenance</code> opt-in requests.</li>
+     * <li>
+     * <p>
+     * <code>immediate</code> - Apply the maintenance action immediately.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>next-maintenance</code> - Apply the maintenance action during the
+     * next maintenance window for the resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param optInType
@@ -211,12 +235,23 @@ public class ApplyPendingMaintenanceActionRequest extends
      *        Valid values:
      *        </p>
      *        <ul>
-     *        <li> <code>immediate</code> - Apply the maintenance action
-     *        immediately.</li>
-     *        <li> <code>next-maintenance</code> - Apply the maintenance action
-     *        during the next maintenance window for the resource.</li>
-     *        <li> <code>undo-opt-in</code> - Cancel any existing
-     *        <code>next-maintenance</code> opt-in requests.</li>
+     *        <li>
+     *        <p>
+     *        <code>immediate</code> - Apply the maintenance action immediately.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>next-maintenance</code> - Apply the maintenance action
+     *        during the next maintenance window for the resource.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>undo-opt-in</code> - Cancel any existing
+     *        <code>next-maintenance</code> opt-in requests.
+     *        </p>
+     *        </li>
      */
 
     public void setOptInType(String optInType) {
@@ -233,11 +268,23 @@ public class ApplyPendingMaintenanceActionRequest extends
      * Valid values:
      * </p>
      * <ul>
-     * <li> <code>immediate</code> - Apply the maintenance action immediately.</li>
-     * <li> <code>next-maintenance</code> - Apply the maintenance action during
-     * the next maintenance window for the resource.</li>
-     * <li> <code>undo-opt-in</code> - Cancel any existing
-     * <code>next-maintenance</code> opt-in requests.</li>
+     * <li>
+     * <p>
+     * <code>immediate</code> - Apply the maintenance action immediately.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>next-maintenance</code> - Apply the maintenance action during the
+     * next maintenance window for the resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A value that specifies the type of opt-in request, or undoes an
@@ -247,12 +294,24 @@ public class ApplyPendingMaintenanceActionRequest extends
      *         Valid values:
      *         </p>
      *         <ul>
-     *         <li> <code>immediate</code> - Apply the maintenance action
-     *         immediately.</li>
-     *         <li> <code>next-maintenance</code> - Apply the maintenance action
-     *         during the next maintenance window for the resource.</li>
-     *         <li> <code>undo-opt-in</code> - Cancel any existing
-     *         <code>next-maintenance</code> opt-in requests.</li>
+     *         <li>
+     *         <p>
+     *         <code>immediate</code> - Apply the maintenance action
+     *         immediately.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>next-maintenance</code> - Apply the maintenance action
+     *         during the next maintenance window for the resource.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>undo-opt-in</code> - Cancel any existing
+     *         <code>next-maintenance</code> opt-in requests.
+     *         </p>
+     *         </li>
      */
 
     public String getOptInType() {
@@ -269,11 +328,23 @@ public class ApplyPendingMaintenanceActionRequest extends
      * Valid values:
      * </p>
      * <ul>
-     * <li> <code>immediate</code> - Apply the maintenance action immediately.</li>
-     * <li> <code>next-maintenance</code> - Apply the maintenance action during
-     * the next maintenance window for the resource.</li>
-     * <li> <code>undo-opt-in</code> - Cancel any existing
-     * <code>next-maintenance</code> opt-in requests.</li>
+     * <li>
+     * <p>
+     * <code>immediate</code> - Apply the maintenance action immediately.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>next-maintenance</code> - Apply the maintenance action during the
+     * next maintenance window for the resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param optInType
@@ -284,12 +355,23 @@ public class ApplyPendingMaintenanceActionRequest extends
      *        Valid values:
      *        </p>
      *        <ul>
-     *        <li> <code>immediate</code> - Apply the maintenance action
-     *        immediately.</li>
-     *        <li> <code>next-maintenance</code> - Apply the maintenance action
-     *        during the next maintenance window for the resource.</li>
-     *        <li> <code>undo-opt-in</code> - Cancel any existing
-     *        <code>next-maintenance</code> opt-in requests.</li>
+     *        <li>
+     *        <p>
+     *        <code>immediate</code> - Apply the maintenance action immediately.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>next-maintenance</code> - Apply the maintenance action
+     *        during the next maintenance window for the resource.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>undo-opt-in</code> - Cancel any existing
+     *        <code>next-maintenance</code> opt-in requests.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

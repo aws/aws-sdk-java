@@ -23,9 +23,21 @@ import java.io.Serializable;
  * This data type is used as a response element in the following actions:
  * </p>
  * <ul>
- * <li><a>CreateDBInstance</a></li>
- * <li><a>DescribeDBInstances</a></li>
- * <li><a>DeleteDBInstance</a></li>
+ * <li>
+ * <p>
+ * <a>CreateDBInstance</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeDBInstances</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteDBInstance</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class Endpoint implements Serializable, Cloneable {

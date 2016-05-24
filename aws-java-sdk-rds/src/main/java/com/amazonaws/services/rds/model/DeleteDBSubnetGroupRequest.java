@@ -29,7 +29,11 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the database subnet group to delete.
      * </p>
-     * <note>You cannot delete the default subnet group.</note>
+     * <note>
+     * <p>
+     * You cannot delete the default subnet group.
+     * </p>
+     * </note>
      * <p>
      * Constraints:
      * </p>
@@ -47,7 +51,11 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the database subnet group to delete.
      * </p>
-     * <note>You cannot delete the default subnet group.</note>
+     * <note>
+     * <p>
+     * You cannot delete the default subnet group.
+     * </p>
+     * </note>
      * <p>
      * Constraints:
      * </p>
@@ -60,8 +68,11 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name of the database subnet group to delete. </p> <note>You
-     *        cannot delete the default subnet group.</note>
+     *        The name of the database subnet group to delete.</p> <note>
+     *        <p>
+     *        You cannot delete the default subnet group.
+     *        </p>
+     *        </note>
      *        <p>
      *        Constraints:
      *        </p>
@@ -82,7 +93,11 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the database subnet group to delete.
      * </p>
-     * <note>You cannot delete the default subnet group.</note>
+     * <note>
+     * <p>
+     * You cannot delete the default subnet group.
+     * </p>
+     * </note>
      * <p>
      * Constraints:
      * </p>
@@ -94,8 +109,11 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return The name of the database subnet group to delete. </p> <note>You
-     *         cannot delete the default subnet group.</note>
+     * @return The name of the database subnet group to delete.</p> <note>
+     *         <p>
+     *         You cannot delete the default subnet group.
+     *         </p>
+     *         </note>
      *         <p>
      *         Constraints:
      *         </p>
@@ -116,7 +134,11 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the database subnet group to delete.
      * </p>
-     * <note>You cannot delete the default subnet group.</note>
+     * <note>
+     * <p>
+     * You cannot delete the default subnet group.
+     * </p>
+     * </note>
      * <p>
      * Constraints:
      * </p>
@@ -129,8 +151,11 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name of the database subnet group to delete. </p> <note>You
-     *        cannot delete the default subnet group.</note>
+     *        The name of the database subnet group to delete.</p> <note>
+     *        <p>
+     *        You cannot delete the default subnet group.
+     *        </p>
+     *        </note>
      *        <p>
      *        Constraints:
      *        </p>

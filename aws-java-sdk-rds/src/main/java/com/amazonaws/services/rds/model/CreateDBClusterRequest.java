@@ -47,7 +47,11 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 1 to 35</li>
+     * <li>
+     * <p>
+     * Must be a value from 1 to 35
+     * </p>
+     * </li>
      * </ul>
      */
     private Integer backupRetentionPeriod;
@@ -75,9 +79,21 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1</code>
@@ -94,9 +110,21 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBClusterParameterGroupName;
@@ -158,9 +186,21 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      */
     private String masterUsername;
@@ -203,10 +243,26 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      */
     private String preferredBackupWindow;
@@ -234,6 +290,13 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String preferredMaintenanceWindow;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source DB cluster if this DB
+     * cluster is created as a Read Replica.
+     * </p>
+     */
+    private String replicationSourceIdentifier;
 
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
@@ -388,12 +451,16 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 1 to 35</li>
+     * <li>
+     * <p>
+     * Must be a value from 1 to 35
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param backupRetentionPeriod
      *        The number of days for which automated backups are retained. You
-     *        must specify a minimum value of 1. </p>
+     *        must specify a minimum value of 1.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -401,7 +468,11 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be a value from 1 to 35</li>
+     *        <li>
+     *        <p>
+     *        Must be a value from 1 to 35
+     *        </p>
+     *        </li>
      */
 
     public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
@@ -420,11 +491,15 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 1 to 35</li>
+     * <li>
+     * <p>
+     * Must be a value from 1 to 35
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The number of days for which automated backups are retained. You
-     *         must specify a minimum value of 1. </p>
+     *         must specify a minimum value of 1.</p>
      *         <p>
      *         Default: 1
      *         </p>
@@ -432,7 +507,11 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be a value from 1 to 35</li>
+     *         <li>
+     *         <p>
+     *         Must be a value from 1 to 35
+     *         </p>
+     *         </li>
      */
 
     public Integer getBackupRetentionPeriod() {
@@ -451,12 +530,16 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 1 to 35</li>
+     * <li>
+     * <p>
+     * Must be a value from 1 to 35
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param backupRetentionPeriod
      *        The number of days for which automated backups are retained. You
-     *        must specify a minimum value of 1. </p>
+     *        must specify a minimum value of 1.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -464,7 +547,11 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be a value from 1 to 35</li>
+     *        <li>
+     *        <p>
+     *        Must be a value from 1 to 35
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -584,9 +671,21 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1</code>
@@ -594,14 +693,26 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param dBClusterIdentifier
      *        The DB cluster identifier. This parameter is stored as a lowercase
-     *        string. </p>
+     *        string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster1</code>
@@ -620,24 +731,47 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1</code>
      * </p>
      * 
      * @return The DB cluster identifier. This parameter is stored as a
-     *         lowercase string. </p>
+     *         lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>my-cluster1</code>
@@ -656,9 +790,21 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster1</code>
@@ -666,14 +812,26 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param dBClusterIdentifier
      *        The DB cluster identifier. This parameter is stored as a lowercase
-     *        string. </p>
+     *        string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster1</code>
@@ -697,9 +855,21 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterParameterGroupName
@@ -711,9 +881,21 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBClusterParameterGroupName(
@@ -731,9 +913,21 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The name of the DB cluster parameter group to associate with this
@@ -744,9 +938,21 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBClusterParameterGroupName() {
@@ -763,9 +969,21 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterParameterGroupName
@@ -777,9 +995,21 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -888,7 +1118,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        A DB subnet group to associate with this DB cluster. </p>
+     *        A DB subnet group to associate with this DB cluster.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, underscores, spaces, or hyphens. Must not be
@@ -914,7 +1144,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return A DB subnet group to associate with this DB cluster. </p>
+     * @return A DB subnet group to associate with this DB cluster.</p>
      *         <p>
      *         Constraints: Must contain no more than 255 alphanumeric
      *         characters, periods, underscores, spaces, or hyphens. Must not be
@@ -941,7 +1171,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        A DB subnet group to associate with this DB cluster. </p>
+     *        A DB subnet group to associate with this DB cluster.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, underscores, spaces, or hyphens. Must not be
@@ -967,8 +1197,8 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for this DB cluster.
-     *        </p>
+     *        The name of the database engine to be used for this DB
+     *        cluster.</p>
      *        <p>
      *        Valid Values: <code>aurora</code>
      */
@@ -985,8 +1215,8 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Valid Values: <code>aurora</code>
      * </p>
      * 
-     * @return The name of the database engine to be used for this DB cluster.
-     *         </p>
+     * @return The name of the database engine to be used for this DB
+     *         cluster.</p>
      *         <p>
      *         Valid Values: <code>aurora</code>
      */
@@ -1004,8 +1234,8 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for this DB cluster.
-     *        </p>
+     *        The name of the database engine to be used for this DB
+     *        cluster.</p>
      *        <p>
      *        Valid Values: <code>aurora</code>
      * @return Returns a reference to this object so that method calls can be
@@ -1029,7 +1259,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use. </p>
+     *        The version number of the database engine to use.</p>
      *        <p>
      *        <b>Aurora</b>
      *        </p>
@@ -1052,7 +1282,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Example: <code>5.6.10a</code>
      * </p>
      * 
-     * @return The version number of the database engine to use. </p>
+     * @return The version number of the database engine to use.</p>
      *         <p>
      *         <b>Aurora</b>
      *         </p>
@@ -1076,7 +1306,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use. </p>
+     *        The version number of the database engine to use.</p>
      *        <p>
      *        <b>Aurora</b>
      *        </p>
@@ -1102,7 +1332,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param port
      *        The port number on which the instances in the DB cluster accept
-     *        connections. </p>
+     *        connections.</p>
      *        <p>
      *        Default: <code>3306</code>
      */
@@ -1121,7 +1351,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return The port number on which the instances in the DB cluster accept
-     *         connections. </p>
+     *         connections.</p>
      *         <p>
      *         Default: <code>3306</code>
      */
@@ -1141,7 +1371,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param port
      *        The port number on which the instances in the DB cluster accept
-     *        connections. </p>
+     *        connections.</p>
      *        <p>
      *        Default: <code>3306</code>
      * @return Returns a reference to this object so that method calls can be
@@ -1161,20 +1391,44 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param masterUsername
-     *        The name of the master user for the client DB cluster. </p>
+     *        The name of the master user for the client DB cluster.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 16 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -1189,19 +1443,43 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The name of the master user for the client DB cluster. </p>
+     * @return The name of the master user for the client DB cluster.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 16 alphanumeric characters.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot be a reserved word for the chosen database engine.</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 16 alphanumeric characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a reserved word for the chosen database engine.
+     *         </p>
+     *         </li>
      */
 
     public String getMasterUsername() {
@@ -1216,20 +1494,44 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param masterUsername
-     *        The name of the master user for the client DB cluster. </p>
+     *        The name of the master user for the client DB cluster.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 16 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1250,8 +1552,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param masterUserPassword
      *        The password for the master database user. This password can
-     *        contain any printable ASCII character except "/", """, or "@".
-     *        </p>
+     *        contain any printable ASCII character except "/", """, or "@".</p>
      *        <p>
      *        Constraints: Must contain from 8 to 41 characters.
      */
@@ -1270,8 +1571,8 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return The password for the master database user. This password can
-     *         contain any printable ASCII character except "/", """, or "@".
-     *         </p>
+     *         contain any printable ASCII character except "/",
+     *         """, or "@".</p>
      *         <p>
      *         Constraints: Must contain from 8 to 41 characters.
      */
@@ -1291,8 +1592,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param masterUserPassword
      *        The password for the master database user. This password can
-     *        contain any printable ASCII character except "/", """, or "@".
-     *        </p>
+     *        contain any printable ASCII character except "/", """, or "@".</p>
      *        <p>
      *        Constraints: Must contain from 8 to 41 characters.
      * @return Returns a reference to this object so that method calls can be
@@ -1318,7 +1618,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param optionGroupName
      *        A value that indicates that the DB cluster should be associated
-     *        with the specified option group. </p>
+     *        with the specified option group.</p>
      *        <p>
      *        Permanent options cannot be removed from an option group. The
      *        option group cannot be removed from a DB cluster once it is
@@ -1341,7 +1641,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return A value that indicates that the DB cluster should be associated
-     *         with the specified option group. </p>
+     *         with the specified option group.</p>
      *         <p>
      *         Permanent options cannot be removed from an option group. The
      *         option group cannot be removed from a DB cluster once it is
@@ -1365,7 +1665,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param optionGroupName
      *        A value that indicates that the DB cluster should be associated
-     *        with the specified option group. </p>
+     *        with the specified option group.</p>
      *        <p>
      *        Permanent options cannot be removed from an option group. The
      *        option group cannot be removed from a DB cluster once it is
@@ -1396,10 +1696,26 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param preferredBackupWindow
@@ -1418,10 +1734,26 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     *        <li>Times should be in Universal Coordinated Time (UTC).</li>
-     *        <li>Must not conflict with the preferred maintenance window.</li>
-     *        <li>Must be at least 30 minutes.</li>
+     *        <li>
+     *        <p>
+     *        Must be in the format <code>hh24:mi-hh24:mi</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Times should be in Universal Coordinated Time (UTC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not conflict with the preferred maintenance window.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 30 minutes.
+     *        </p>
+     *        </li>
      */
 
     public void setPreferredBackupWindow(String preferredBackupWindow) {
@@ -1445,10 +1777,26 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The daily time range during which automated backups are created
@@ -1466,10 +1814,26 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     *         <li>Times should be in Universal Coordinated Time (UTC).</li>
-     *         <li>Must not conflict with the preferred maintenance window.</li>
-     *         <li>Must be at least 30 minutes.</li>
+     *         <li>
+     *         <p>
+     *         Must be in the format <code>hh24:mi-hh24:mi</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Times should be in Universal Coordinated Time (UTC).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must not conflict with the preferred maintenance window.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be at least 30 minutes.
+     *         </p>
+     *         </li>
      */
 
     public String getPreferredBackupWindow() {
@@ -1493,10 +1857,26 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param preferredBackupWindow
@@ -1515,10 +1895,26 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     *        <li>Times should be in Universal Coordinated Time (UTC).</li>
-     *        <li>Must not conflict with the preferred maintenance window.</li>
-     *        <li>Must be at least 30 minutes.</li>
+     *        <li>
+     *        <p>
+     *        Must be in the format <code>hh24:mi-hh24:mi</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Times should be in Universal Coordinated Time (UTC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not conflict with the preferred maintenance window.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 30 minutes.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1554,7 +1950,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param preferredMaintenanceWindow
      *        The weekly time range during which system maintenance can occur,
-     *        in Universal Coordinated Time (UTC). </p>
+     *        in Universal Coordinated Time (UTC).</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
@@ -1601,7 +1997,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return The weekly time range during which system maintenance can occur,
-     *         in Universal Coordinated Time (UTC). </p>
+     *         in Universal Coordinated Time (UTC).</p>
      *         <p>
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
@@ -1649,7 +2045,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @param preferredMaintenanceWindow
      *        The weekly time range during which system maintenance can occur,
-     *        in Universal Coordinated Time (UTC). </p>
+     *        in Universal Coordinated Time (UTC).</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
@@ -1673,6 +2069,55 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
     public CreateDBClusterRequest withPreferredMaintenanceWindow(
             String preferredMaintenanceWindow) {
         setPreferredMaintenanceWindow(preferredMaintenanceWindow);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source DB cluster if this DB
+     * cluster is created as a Read Replica.
+     * </p>
+     * 
+     * @param replicationSourceIdentifier
+     *        The Amazon Resource Name (ARN) of the source DB cluster if this DB
+     *        cluster is created as a Read Replica.
+     */
+
+    public void setReplicationSourceIdentifier(
+            String replicationSourceIdentifier) {
+        this.replicationSourceIdentifier = replicationSourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source DB cluster if this DB
+     * cluster is created as a Read Replica.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the source DB cluster if this
+     *         DB cluster is created as a Read Replica.
+     */
+
+    public String getReplicationSourceIdentifier() {
+        return this.replicationSourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source DB cluster if this DB
+     * cluster is created as a Read Replica.
+     * </p>
+     * 
+     * @param replicationSourceIdentifier
+     *        The Amazon Resource Name (ARN) of the source DB cluster if this DB
+     *        cluster is created as a Read Replica.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDBClusterRequest withReplicationSourceIdentifier(
+            String replicationSourceIdentifier) {
+        setReplicationSourceIdentifier(replicationSourceIdentifier);
         return this;
     }
 
@@ -1958,6 +2403,9 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
         if (getPreferredMaintenanceWindow() != null)
             sb.append("PreferredMaintenanceWindow: "
                     + getPreferredMaintenanceWindow() + ",");
+        if (getReplicationSourceIdentifier() != null)
+            sb.append("ReplicationSourceIdentifier: "
+                    + getReplicationSourceIdentifier() + ",");
         if (getTags() != null)
             sb.append("Tags: " + getTags() + ",");
         if (getStorageEncrypted() != null)
@@ -2080,6 +2528,13 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
                 && other.getPreferredMaintenanceWindow().equals(
                         this.getPreferredMaintenanceWindow()) == false)
             return false;
+        if (other.getReplicationSourceIdentifier() == null
+                ^ this.getReplicationSourceIdentifier() == null)
+            return false;
+        if (other.getReplicationSourceIdentifier() != null
+                && other.getReplicationSourceIdentifier().equals(
+                        this.getReplicationSourceIdentifier()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null
@@ -2165,6 +2620,10 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getPreferredMaintenanceWindow() == null) ? 0
                         : getPreferredMaintenanceWindow().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReplicationSourceIdentifier() == null) ? 0
+                        : getReplicationSourceIdentifier().hashCode());
         hashCode = prime * hashCode
                 + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime

@@ -37,13 +37,25 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must specify a valid system snapshot in the "available" state.</li>
-     * <li>If the source snapshot is in the same region as the copy, specify a
-     * valid DB snapshot identifier.</li>
-     * <li>If the source snapshot is in a different region than the copy,
-     * specify a valid DB snapshot ARN. For more information, go to <a href=
+     * <li>
+     * <p>
+     * Must specify a valid system snapshot in the "available" state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in the same region as the copy, specify a valid
+     * DB snapshot identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in a different region than the copy, specify a
+     * valid DB snapshot ARN. For more information, go to <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"
-     * > Copying a DB Snapshot</a>.</li>
+     * > Copying a DB Snapshot</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>rds:mydb-2012-04-02-00-01</code>
@@ -62,10 +74,26 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-db-snapshot</code>
@@ -118,13 +146,25 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must specify a valid system snapshot in the "available" state.</li>
-     * <li>If the source snapshot is in the same region as the copy, specify a
-     * valid DB snapshot identifier.</li>
-     * <li>If the source snapshot is in a different region than the copy,
-     * specify a valid DB snapshot ARN. For more information, go to <a href=
+     * <li>
+     * <p>
+     * Must specify a valid system snapshot in the "available" state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in the same region as the copy, specify a valid
+     * DB snapshot identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in a different region than the copy, specify a
+     * valid DB snapshot ARN. For more information, go to <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"
-     * > Copying a DB Snapshot</a>.</li>
+     * > Copying a DB Snapshot</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>rds:mydb-2012-04-02-00-01</code>
@@ -135,7 +175,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param sourceDBSnapshotIdentifier
-     *        The identifier for the source DB snapshot. </p>
+     *        The identifier for the source DB snapshot.</p>
      *        <p>
      *        If you are copying from a shared manual DB snapshot, this must be
      *        the ARN of the shared DB snapshot.
@@ -144,15 +184,26 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must specify a valid system snapshot in the "available" state.
+     *        <li>
+     *        <p>
+     *        Must specify a valid system snapshot in the "available" state.
+     *        </p>
      *        </li>
-     *        <li>If the source snapshot is in the same region as the copy,
-     *        specify a valid DB snapshot identifier.</li>
-     *        <li>If the source snapshot is in a different region than the copy,
+     *        <li>
+     *        <p>
+     *        If the source snapshot is in the same region as the copy, specify
+     *        a valid DB snapshot identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source snapshot is in a different region than the copy,
      *        specify a valid DB snapshot ARN. For more information, go to <a
      *        href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"
-     *        > Copying a DB Snapshot</a>.</li>
+     *        > Copying a DB Snapshot</a>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>rds:mydb-2012-04-02-00-01</code>
@@ -178,13 +229,25 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must specify a valid system snapshot in the "available" state.</li>
-     * <li>If the source snapshot is in the same region as the copy, specify a
-     * valid DB snapshot identifier.</li>
-     * <li>If the source snapshot is in a different region than the copy,
-     * specify a valid DB snapshot ARN. For more information, go to <a href=
+     * <li>
+     * <p>
+     * Must specify a valid system snapshot in the "available" state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in the same region as the copy, specify a valid
+     * DB snapshot identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in a different region than the copy, specify a
+     * valid DB snapshot ARN. For more information, go to <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"
-     * > Copying a DB Snapshot</a>.</li>
+     * > Copying a DB Snapshot</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>rds:mydb-2012-04-02-00-01</code>
@@ -194,7 +257,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      * </p>
      * 
-     * @return The identifier for the source DB snapshot. </p>
+     * @return The identifier for the source DB snapshot.</p>
      *         <p>
      *         If you are copying from a shared manual DB snapshot, this must be
      *         the ARN of the shared DB snapshot.
@@ -203,15 +266,26 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must specify a valid system snapshot in the "available"
-     *         state.</li>
-     *         <li>If the source snapshot is in the same region as the copy,
-     *         specify a valid DB snapshot identifier.</li>
-     *         <li>If the source snapshot is in a different region than the
-     *         copy, specify a valid DB snapshot ARN. For more information, go
-     *         to <a href=
+     *         <li>
+     *         <p>
+     *         Must specify a valid system snapshot in the "available" state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source snapshot is in the same region as the copy, specify
+     *         a valid DB snapshot identifier.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source snapshot is in a different region than the copy,
+     *         specify a valid DB snapshot ARN. For more information, go to <a
+     *         href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"
-     *         > Copying a DB Snapshot</a>.</li>
+     *         > Copying a DB Snapshot</a>.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>rds:mydb-2012-04-02-00-01</code>
@@ -237,13 +311,25 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must specify a valid system snapshot in the "available" state.</li>
-     * <li>If the source snapshot is in the same region as the copy, specify a
-     * valid DB snapshot identifier.</li>
-     * <li>If the source snapshot is in a different region than the copy,
-     * specify a valid DB snapshot ARN. For more information, go to <a href=
+     * <li>
+     * <p>
+     * Must specify a valid system snapshot in the "available" state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in the same region as the copy, specify a valid
+     * DB snapshot identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in a different region than the copy, specify a
+     * valid DB snapshot ARN. For more information, go to <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"
-     * > Copying a DB Snapshot</a>.</li>
+     * > Copying a DB Snapshot</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>rds:mydb-2012-04-02-00-01</code>
@@ -254,7 +340,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param sourceDBSnapshotIdentifier
-     *        The identifier for the source DB snapshot. </p>
+     *        The identifier for the source DB snapshot.</p>
      *        <p>
      *        If you are copying from a shared manual DB snapshot, this must be
      *        the ARN of the shared DB snapshot.
@@ -263,15 +349,26 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must specify a valid system snapshot in the "available" state.
+     *        <li>
+     *        <p>
+     *        Must specify a valid system snapshot in the "available" state.
+     *        </p>
      *        </li>
-     *        <li>If the source snapshot is in the same region as the copy,
-     *        specify a valid DB snapshot identifier.</li>
-     *        <li>If the source snapshot is in a different region than the copy,
+     *        <li>
+     *        <p>
+     *        If the source snapshot is in the same region as the copy, specify
+     *        a valid DB snapshot identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source snapshot is in a different region than the copy,
      *        specify a valid DB snapshot ARN. For more information, go to <a
      *        href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"
-     *        > Copying a DB Snapshot</a>.</li>
+     *        > Copying a DB Snapshot</a>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>rds:mydb-2012-04-02-00-01</code>
@@ -297,25 +394,57 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-db-snapshot</code>
      * </p>
      * 
      * @param targetDBSnapshotIdentifier
-     *        The identifier for the copied snapshot. </p>
+     *        The identifier for the copied snapshot.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-db-snapshot</code>
@@ -333,25 +462,56 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-db-snapshot</code>
      * </p>
      * 
-     * @return The identifier for the copied snapshot. </p>
+     * @return The identifier for the copied snapshot.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Cannot be null, empty, or blank</li>
-     *         <li>Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         <li>
+     *         <p>
+     *         Cannot be null, empty, or blank
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>my-db-snapshot</code>
@@ -369,25 +529,57 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-db-snapshot</code>
      * </p>
      * 
      * @param targetDBSnapshotIdentifier
-     *        The identifier for the copied snapshot. </p>
+     *        The identifier for the copied snapshot.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-db-snapshot</code>
@@ -428,7 +620,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      *        The AWS Key Management Service (AWS KMS) key identifier for an
      *        encrypted DB snapshot. The KMS key identifier is the Amazon
      *        Resource Name (ARN) or the KMS key alias for the KMS encryption
-     *        key. </p>
+     *        key.</p>
      *        <p>
      *        If you copy an unencrypted DB snapshot and specify a value for the
      *        <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
@@ -477,7 +669,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      * @return The AWS Key Management Service (AWS KMS) key identifier for an
      *         encrypted DB snapshot. The KMS key identifier is the Amazon
      *         Resource Name (ARN) or the KMS key alias for the KMS encryption
-     *         key. </p>
+     *         key.</p>
      *         <p>
      *         If you copy an unencrypted DB snapshot and specify a value for
      *         the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the
@@ -527,7 +719,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements
      *        The AWS Key Management Service (AWS KMS) key identifier for an
      *        encrypted DB snapshot. The KMS key identifier is the Amazon
      *        Resource Name (ARN) or the KMS key alias for the KMS encryption
-     *        key. </p>
+     *        key.</p>
      *        <p>
      *        If you copy an unencrypted DB snapshot and specify a value for the
      *        <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB

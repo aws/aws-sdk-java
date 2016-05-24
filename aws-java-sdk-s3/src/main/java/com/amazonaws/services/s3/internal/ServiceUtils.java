@@ -160,7 +160,29 @@ public class ServiceUtils {
      *             If the request cannot be converted to a well formed URL.
      */
     public static URL convertRequestToUrl(Request<?> request, boolean removeLeadingSlashInResourcePath) {
-        String resourcePath = SdkHttpUtils.urlEncode(request.getResourcePath(), true);
+        return convertRequestToUrl(request, removeLeadingSlashInResourcePath, true);
+    }
+
+    /**
+     * Converts the specified request object into a URL, containing all the
+     * specified parameters, the specified request endpoint, etc.
+     *
+     * @param request
+     *            The request to convert into a URL.
+     * @param removeLeadingSlashInResourcePath
+     *            Whether the leading slash in resource-path should be removed
+     *            before appending to the endpoint.
+     * @param urlEncode True if request resource path should be URL encoded
+     * @return A new URL representing the specified request.
+     *
+     * @throws AmazonClientException
+     *             If the request cannot be converted to a well formed URL.
+     */
+    public static URL convertRequestToUrl(Request<?> request, boolean removeLeadingSlashInResourcePath,
+                                          boolean urlEncode) {
+        String resourcePath = urlEncode ?
+                SdkHttpUtils.urlEncode(request.getResourcePath(), true)
+                : request.getResourcePath();
 
         // Removed the padding "/" that was already added into the request's resource path.
         if (removeLeadingSlashInResourcePath

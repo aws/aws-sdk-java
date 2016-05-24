@@ -45,8 +45,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
@@ -60,8 +68,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>PostgreSQL</b>
@@ -75,10 +91,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 63 alphanumeric characters</li>
-     * <li>Must begin with a letter or an underscore. Subsequent characters can
-     * be letters, underscores, or digits (0-9).</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 63 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with a letter or an underscore. Subsequent characters can be
+     * letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Oracle</b>
@@ -93,7 +121,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be longer than 8 characters</li>
+     * <li>
+     * <p>
+     * Cannot be longer than 8 characters
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SQL Server</b>
@@ -113,8 +145,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBName;
@@ -127,10 +167,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15
-     * for SQL Server).</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
+     * SQL Server).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>mydbinstance</code>
@@ -215,9 +267,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
@@ -226,8 +290,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Type: String
@@ -239,9 +311,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 30 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 30 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SQL Server</b>
@@ -250,9 +334,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 128 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 128 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>PostgreSQL</b>
@@ -261,9 +357,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 63 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 63 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      */
     private String masterUsername;
@@ -398,9 +506,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBParameterGroupName;
@@ -417,8 +537,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 0 to 35</li>
-     * <li>Cannot be set to 0 if the DB instance is a source to Read Replicas</li>
+     * <li>
+     * <p>
+     * Must be a value from 0 to 35
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be set to 0 if the DB instance is a source to Read Replicas
+     * </p>
+     * </li>
      * </ul>
      */
     private Integer backupRetentionPeriod;
@@ -442,10 +570,26 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      */
     private String preferredBackupWindow;
@@ -543,143 +687,368 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * every AWS region.
      * </p>
      * <p>
-     * <b>MySQL</b>
+     * <b>Amazon Aurora</b>
      * </p>
      * <ul>
-     * <li><b>Version 5.1 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 5.1.73a | 5.1.73b</code></li>
-     * <li><b>Version 5.5 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code></li>
-     * <li><b>Version 5.5 (Available in all regions):</b>
-     * <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
-     * <li><b>Version 5.6 (Available in all regions):</b>
-     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (only available in AWS regions ap-northeast-1,
+     * ap-northeast-2, ap-southeast-2, eu-west-1, us-east-1, us-west-2):</b>
+     * <code> 5.6.10a</code>
+     * </p>
      * </li>
-     * <li><b>Version 5.7 (Available in all regions):</b> <code> 5.7.10</code></li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.0 (Available in all regions except AWS GovCloud (US)
-     * Region (us-gov-west-1)):</b> <code> 10.0.17 </code></li>
-     * </ul>
+     * <li>
      * <p>
-     * <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     * <b>Version 10.0 (available in all AWS regions):</b>
+     * <code> 10.0.17 | 10.0.24</code>
      * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
      * </li>
-     * <li><b>Version 11.2 (Available in all regions):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Available in all regions):</b>
-     * <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1 </code></li>
-     * </ul>
-     * <p>
-     * <b>Oracle Database Standard Edition (oracle-se)</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * us-west-1):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     * </li>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     * </ul>
-     * <p>
-     * <b>Oracle Database Standard Edition One (oracle-se1)</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * us-west-1):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     * </li>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 9.3 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code></li>
-     * <li><b>Version 9.3 (Available in all regions):</b>
-     * <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
-     * <li><b>Version 9.4 (Available in all regions):</b>
-     * <code> 9.4.1 | 9.4.4 | 9.4.5</code></li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Express Edition (sqlserver-ex)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Web Edition (sqlserver-web)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 5.7 (available in all AWS regions):</b>
+     * <code> 5.7.10 | 5.7.11</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (available in all AWS regions):</b>
+     * <code> 5.6.23 | 5.6.27 | 5.6.29</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 5.5.40 | 5.5.40a</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 5.5.40b | 5.5.41</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions):</b>
+     * <code> 5.5.42 | 5.5.46</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.1 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions):</b>
+     * <code> 12.1.0.2.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition (oracle-se)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition One (oracle-se1)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition Two (oracle-se2)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 9.5.2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.4 (available in all AWS regions):</b>
+     * <code> 9.4.1 | 9.4.4 | 9.4.5</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 9.4.7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 9.3.1 | 9.3.2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 9.3.12</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String engineVersion;
@@ -749,8 +1118,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b> true</li>
-     * <li><b>VPC:</b> false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b> false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -852,7 +1229,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -917,15 +1294,27 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param dBInstanceIdentifier
      *        The DB instance identifier. This parameter is stored as a
-     *        lowercase string. </p>
+     *        lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        (1 to 15 for SQL Server).</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to
+     *        15 for SQL Server).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>mydbinstance</code>
@@ -996,9 +1385,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 16 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>MariaDB</b>
@@ -1007,8 +1408,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 16 alphanumeric characters.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Type: String
@@ -1020,9 +1429,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 30 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 30 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>SQL Server</b>
@@ -1031,9 +1452,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 128 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 128 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>PostgreSQL</b>
@@ -1042,12 +1475,24 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 63 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 63 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      * @param masterUserPassword
      *        The password for the master database user. Can be any printable
-     *        ASCII character except "/", """, or "@". </p>
+     *        ASCII character except "/", """, or "@".</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -1118,8 +1563,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
@@ -1133,8 +1586,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>PostgreSQL</b>
@@ -1148,10 +1609,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 63 alphanumeric characters</li>
-     * <li>Must begin with a letter or an underscore. Subsequent characters can
-     * be letters, underscores, or digits (0-9).</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 63 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with a letter or an underscore. Subsequent characters can be
+     * letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Oracle</b>
@@ -1166,7 +1639,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be longer than 8 characters</li>
+     * <li>
+     * <p>
+     * Cannot be longer than 8 characters
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SQL Server</b>
@@ -1186,8 +1663,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBName
@@ -1208,8 +1693,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain 1 to 64 alphanumeric characters</li>
-     *        <li>Cannot be a word reserved by the specified database engine</li>
+     *        <li>
+     *        <p>
+     *        Must contain 1 to 64 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a word reserved by the specified database engine
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>MariaDB</b>
@@ -1223,8 +1716,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain 1 to 64 alphanumeric characters</li>
-     *        <li>Cannot be a word reserved by the specified database engine</li>
+     *        <li>
+     *        <p>
+     *        Must contain 1 to 64 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a word reserved by the specified database engine
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>PostgreSQL</b>
@@ -1238,10 +1739,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain 1 to 63 alphanumeric characters</li>
-     *        <li>Must begin with a letter or an underscore. Subsequent
-     *        characters can be letters, underscores, or digits (0-9).</li>
-     *        <li>Cannot be a word reserved by the specified database engine</li>
+     *        <li>
+     *        <p>
+     *        Must contain 1 to 63 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must begin with a letter or an underscore. Subsequent characters
+     *        can be letters, underscores, or digits (0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a word reserved by the specified database engine
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Oracle</b>
@@ -1256,7 +1769,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be longer than 8 characters</li>
+     *        <li>
+     *        <p>
+     *        Cannot be longer than 8 characters
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>SQL Server</b>
@@ -1276,8 +1793,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain 1 to 64 alphanumeric characters</li>
-     *        <li>Cannot be a word reserved by the specified database engine</li>
+     *        <li>
+     *        <p>
+     *        Must contain 1 to 64 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a word reserved by the specified database engine
+     *        </p>
+     *        </li>
      */
 
     public void setDBName(String dBName) {
@@ -1304,8 +1829,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
@@ -1319,8 +1852,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>PostgreSQL</b>
@@ -1334,10 +1875,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 63 alphanumeric characters</li>
-     * <li>Must begin with a letter or an underscore. Subsequent characters can
-     * be letters, underscores, or digits (0-9).</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 63 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with a letter or an underscore. Subsequent characters can be
+     * letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Oracle</b>
@@ -1352,7 +1905,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be longer than 8 characters</li>
+     * <li>
+     * <p>
+     * Cannot be longer than 8 characters
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SQL Server</b>
@@ -1372,8 +1929,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The meaning of this parameter differs according to the database
@@ -1393,8 +1958,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain 1 to 64 alphanumeric characters</li>
-     *         <li>Cannot be a word reserved by the specified database engine</li>
+     *         <li>
+     *         <p>
+     *         Must contain 1 to 64 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a word reserved by the specified database engine
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>MariaDB</b>
@@ -1408,8 +1981,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain 1 to 64 alphanumeric characters</li>
-     *         <li>Cannot be a word reserved by the specified database engine</li>
+     *         <li>
+     *         <p>
+     *         Must contain 1 to 64 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a word reserved by the specified database engine
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>PostgreSQL</b>
@@ -1423,10 +2004,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain 1 to 63 alphanumeric characters</li>
-     *         <li>Must begin with a letter or an underscore. Subsequent
-     *         characters can be letters, underscores, or digits (0-9).</li>
-     *         <li>Cannot be a word reserved by the specified database engine</li>
+     *         <li>
+     *         <p>
+     *         Must contain 1 to 63 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must begin with a letter or an underscore. Subsequent characters
+     *         can be letters, underscores, or digits (0-9).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a word reserved by the specified database engine
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>Oracle</b>
@@ -1441,7 +2034,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Cannot be longer than 8 characters</li>
+     *         <li>
+     *         <p>
+     *         Cannot be longer than 8 characters
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>SQL Server</b>
@@ -1461,8 +2058,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain 1 to 64 alphanumeric characters</li>
-     *         <li>Cannot be a word reserved by the specified database engine</li>
+     *         <li>
+     *         <p>
+     *         Must contain 1 to 64 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a word reserved by the specified database engine
+     *         </p>
+     *         </li>
      */
 
     public String getDBName() {
@@ -1489,8 +2094,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
@@ -1504,8 +2117,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>PostgreSQL</b>
@@ -1519,10 +2140,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 63 alphanumeric characters</li>
-     * <li>Must begin with a letter or an underscore. Subsequent characters can
-     * be letters, underscores, or digits (0-9).</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 63 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with a letter or an underscore. Subsequent characters can be
+     * letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Oracle</b>
@@ -1537,7 +2170,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be longer than 8 characters</li>
+     * <li>
+     * <p>
+     * Cannot be longer than 8 characters
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SQL Server</b>
@@ -1557,8 +2194,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain 1 to 64 alphanumeric characters</li>
-     * <li>Cannot be a word reserved by the specified database engine</li>
+     * <li>
+     * <p>
+     * Must contain 1 to 64 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a word reserved by the specified database engine
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBName
@@ -1579,8 +2224,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain 1 to 64 alphanumeric characters</li>
-     *        <li>Cannot be a word reserved by the specified database engine</li>
+     *        <li>
+     *        <p>
+     *        Must contain 1 to 64 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a word reserved by the specified database engine
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>MariaDB</b>
@@ -1594,8 +2247,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain 1 to 64 alphanumeric characters</li>
-     *        <li>Cannot be a word reserved by the specified database engine</li>
+     *        <li>
+     *        <p>
+     *        Must contain 1 to 64 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a word reserved by the specified database engine
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>PostgreSQL</b>
@@ -1609,10 +2270,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain 1 to 63 alphanumeric characters</li>
-     *        <li>Must begin with a letter or an underscore. Subsequent
-     *        characters can be letters, underscores, or digits (0-9).</li>
-     *        <li>Cannot be a word reserved by the specified database engine</li>
+     *        <li>
+     *        <p>
+     *        Must contain 1 to 63 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must begin with a letter or an underscore. Subsequent characters
+     *        can be letters, underscores, or digits (0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a word reserved by the specified database engine
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Oracle</b>
@@ -1627,7 +2300,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be longer than 8 characters</li>
+     *        <li>
+     *        <p>
+     *        Cannot be longer than 8 characters
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>SQL Server</b>
@@ -1647,8 +2324,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain 1 to 64 alphanumeric characters</li>
-     *        <li>Cannot be a word reserved by the specified database engine</li>
+     *        <li>
+     *        <p>
+     *        Must contain 1 to 64 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a word reserved by the specified database engine
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1667,10 +2352,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15
-     * for SQL Server).</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
+     * SQL Server).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>mydbinstance</code>
@@ -1678,15 +2375,27 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param dBInstanceIdentifier
      *        The DB instance identifier. This parameter is stored as a
-     *        lowercase string. </p>
+     *        lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        (1 to 15 for SQL Server).</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to
+     *        15 for SQL Server).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>mydbinstance</code>
@@ -1705,25 +2414,49 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15
-     * for SQL Server).</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
+     * SQL Server).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>mydbinstance</code>
      * </p>
      * 
      * @return The DB instance identifier. This parameter is stored as a
-     *         lowercase string. </p>
+     *         lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         (1 to 15 for SQL Server).</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens (1
+     *         to 15 for SQL Server).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>mydbinstance</code>
@@ -1742,10 +2475,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15
-     * for SQL Server).</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
+     * SQL Server).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>mydbinstance</code>
@@ -1753,15 +2498,27 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param dBInstanceIdentifier
      *        The DB instance identifier. This parameter is stored as a
-     *        lowercase string. </p>
+     *        lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        (1 to 15 for SQL Server).</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to
+     *        15 for SQL Server).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>mydbinstance</code>
@@ -1817,7 +2574,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param allocatedStorage
      *        The amount of storage (in gigabytes) to be initially allocated for
-     *        the database instance. </p>
+     *        the database instance.</p>
      *        <p>
      *        Type: Integer
      *        </p>
@@ -1899,7 +2656,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return The amount of storage (in gigabytes) to be initially allocated
-     *         for the database instance. </p>
+     *         for the database instance.</p>
      *         <p>
      *         Type: Integer
      *         </p>
@@ -1982,7 +2739,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param allocatedStorage
      *        The amount of storage (in gigabytes) to be initially allocated for
-     *        the database instance. </p>
+     *        the database instance.</p>
      *        <p>
      *        Type: Integer
      *        </p>
@@ -2036,7 +2793,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the DB instance. </p>
+     *        The compute and memory capacity of the DB instance.</p>
      *        <p>
      *        Valid Values:
      *        <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
@@ -2055,7 +2812,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
      * </p>
      * 
-     * @return The compute and memory capacity of the DB instance. </p>
+     * @return The compute and memory capacity of the DB instance.</p>
      *         <p>
      *         Valid Values:
      *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
@@ -2075,7 +2832,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the DB instance. </p>
+     *        The compute and memory capacity of the DB instance.</p>
      *        <p>
      *        Valid Values:
      *        <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
@@ -2104,7 +2861,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for this instance. </p>
+     *        The name of the database engine to be used for this instance.</p>
      *        <p>
      *        Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      *        <code>oracle-se1</code> | <code>oracle-se</code> |
@@ -2136,8 +2893,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Not every database engine is available for every AWS region.
      * </p>
      * 
-     * @return The name of the database engine to be used for this instance.
-     *         </p>
+     * @return The name of the database engine to be used for this instance.</p>
      *         <p>
      *         Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      *         <code>oracle-se1</code> | <code>oracle-se</code> |
@@ -2170,7 +2926,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for this instance. </p>
+     *        The name of the database engine to be used for this instance.</p>
      *        <p>
      *        Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      *        <code>oracle-se1</code> | <code>oracle-se</code> |
@@ -2201,9 +2957,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
@@ -2212,8 +2980,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Type: String
@@ -2225,9 +3001,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 30 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 30 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SQL Server</b>
@@ -2236,9 +3024,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 128 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 128 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>PostgreSQL</b>
@@ -2247,13 +3047,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 63 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 63 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param masterUsername
-     *        The name of master user for the client DB instance. </p>
+     *        The name of master user for the client DB instance.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>
@@ -2261,9 +3073,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 16 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>MariaDB</b>
@@ -2272,8 +3096,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 16 alphanumeric characters.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Type: String
@@ -2285,9 +3117,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 30 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 30 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>SQL Server</b>
@@ -2296,9 +3140,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 128 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 128 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>PostgreSQL</b>
@@ -2307,9 +3163,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 63 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 63 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -2327,9 +3195,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
@@ -2338,8 +3218,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Type: String
@@ -2351,9 +3239,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 30 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 30 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SQL Server</b>
@@ -2362,9 +3262,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 128 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 128 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>PostgreSQL</b>
@@ -2373,12 +3285,24 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 63 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 63 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The name of master user for the client DB instance. </p>
+     * @return The name of master user for the client DB instance.</p>
      *         <p>
      *         <b>MySQL</b>
      *         </p>
@@ -2386,9 +3310,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 16 alphanumeric characters.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot be a reserved word for the chosen database engine.</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 16 alphanumeric characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a reserved word for the chosen database engine.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>MariaDB</b>
@@ -2397,8 +3333,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 16 alphanumeric characters.</li>
-     *         <li>Cannot be a reserved word for the chosen database engine.</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 16 alphanumeric characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a reserved word for the chosen database engine.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Type: String
@@ -2410,9 +3354,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 30 alphanumeric characters.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot be a reserved word for the chosen database engine.</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 30 alphanumeric characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a reserved word for the chosen database engine.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>SQL Server</b>
@@ -2421,9 +3377,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 128 alphanumeric characters.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot be a reserved word for the chosen database engine.</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 128 alphanumeric characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a reserved word for the chosen database engine.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>PostgreSQL</b>
@@ -2432,9 +3400,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 63 alphanumeric characters.</li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot be a reserved word for the chosen database engine.</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 63 alphanumeric characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a reserved word for the chosen database engine.
+     *         </p>
+     *         </li>
      */
 
     public String getMasterUsername() {
@@ -2452,9 +3432,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
@@ -2463,8 +3455,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 16 alphanumeric characters.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Type: String
@@ -2476,9 +3476,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 30 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 30 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SQL Server</b>
@@ -2487,9 +3499,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 128 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 128 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>PostgreSQL</b>
@@ -2498,13 +3522,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 63 alphanumeric characters.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot be a reserved word for the chosen database engine.</li>
+     * <li>
+     * <p>
+     * Must be 1 to 63 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word for the chosen database engine.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param masterUsername
-     *        The name of master user for the client DB instance. </p>
+     *        The name of master user for the client DB instance.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>
@@ -2512,9 +3548,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 16 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>MariaDB</b>
@@ -2523,8 +3571,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 16 alphanumeric characters.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Type: String
@@ -2536,9 +3592,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 30 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 30 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>SQL Server</b>
@@ -2547,9 +3615,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 128 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 128 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>PostgreSQL</b>
@@ -2558,9 +3638,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 63 alphanumeric characters.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot be a reserved word for the chosen database engine.</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 63 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word for the chosen database engine.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2617,7 +3709,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param masterUserPassword
      *        The password for the master database user. Can be any printable
-     *        ASCII character except "/", """, or "@". </p>
+     *        ASCII character except "/", """, or "@".</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -2708,7 +3800,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return The password for the master database user. Can be any printable
-     *         ASCII character except "/", """, or "@". </p>
+     *         ASCII character except "/", """, or "@".</p>
      *         <p>
      *         Type: String
      *         </p>
@@ -2800,7 +3892,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param masterUserPassword
      *        The password for the master database user. Can be any printable
-     *        ASCII character except "/", """, or "@". </p>
+     *        ASCII character except "/", """, or "@".</p>
      *        <p>
      *        Type: String
      *        </p>
@@ -2857,8 +3949,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Default: The default DB security group for the database engine.
      * </p>
      * 
-     * @return A list of DB security groups to associate with this DB instance.
-     *         </p>
+     * @return A list of DB security groups to associate with this DB
+     *         instance.</p>
      *         <p>
      *         Default: The default DB security group for the database engine.
      */
@@ -2879,8 +3971,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBSecurityGroups
-     *        A list of DB security groups to associate with this DB instance.
-     *        </p>
+     *        A list of DB security groups to associate with this DB
+     *        instance.</p>
      *        <p>
      *        Default: The default DB security group for the database engine.
      */
@@ -2911,8 +4003,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBSecurityGroups
-     *        A list of DB security groups to associate with this DB instance.
-     *        </p>
+     *        A list of DB security groups to associate with this DB
+     *        instance.</p>
      *        <p>
      *        Default: The default DB security group for the database engine.
      * @return Returns a reference to this object so that method calls can be
@@ -2940,8 +4032,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBSecurityGroups
-     *        A list of DB security groups to associate with this DB instance.
-     *        </p>
+     *        A list of DB security groups to associate with this DB
+     *        instance.</p>
      *        <p>
      *        Default: The default DB security group for the database engine.
      * @return Returns a reference to this object so that method calls can be
@@ -2964,7 +4056,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return A list of EC2 VPC security groups to associate with this DB
-     *         instance. </p>
+     *         instance.</p>
      *         <p>
      *         Default: The default EC2 VPC security group for the DB subnet
      *         group's VPC.
@@ -2988,7 +4080,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param vpcSecurityGroupIds
      *        A list of EC2 VPC security groups to associate with this DB
-     *        instance. </p>
+     *        instance.</p>
      *        <p>
      *        Default: The default EC2 VPC security group for the DB subnet
      *        group's VPC.
@@ -3022,7 +4114,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param vpcSecurityGroupIds
      *        A list of EC2 VPC security groups to associate with this DB
-     *        instance. </p>
+     *        instance.</p>
      *        <p>
      *        Default: The default EC2 VPC security group for the DB subnet
      *        group's VPC.
@@ -3053,7 +4145,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param vpcSecurityGroupIds
      *        A list of EC2 VPC security groups to associate with this DB
-     *        instance. </p>
+     *        instance.</p>
      *        <p>
      *        Default: The default EC2 VPC security group for the DB subnet
      *        group's VPC.
@@ -3210,7 +4302,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        A DB subnet group to associate with this DB instance. </p>
+     *        A DB subnet group to associate with this DB instance.</p>
      *        <p>
      *        If there is no DB subnet group, then it is a non-VPC DB instance.
      */
@@ -3227,7 +4319,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * If there is no DB subnet group, then it is a non-VPC DB instance.
      * </p>
      * 
-     * @return A DB subnet group to associate with this DB instance. </p>
+     * @return A DB subnet group to associate with this DB instance.</p>
      *         <p>
      *         If there is no DB subnet group, then it is a non-VPC DB instance.
      */
@@ -3245,7 +4337,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        A DB subnet group to associate with this DB instance. </p>
+     *        A DB subnet group to associate with this DB instance.</p>
      *        <p>
      *        If there is no DB subnet group, then it is a non-VPC DB instance.
      * @return Returns a reference to this object so that method calls can be
@@ -3430,22 +4522,46 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBParameterGroupName
      *        The name of the DB parameter group to associate with this DB
      *        instance. If this argument is omitted, the default
-     *        DBParameterGroup for the specified engine will be used. </p>
+     *        DBParameterGroup for the specified engine will be used.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBParameterGroupName(String dBParameterGroupName) {
@@ -3462,21 +4578,45 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The name of the DB parameter group to associate with this DB
      *         instance. If this argument is omitted, the default
-     *         DBParameterGroup for the specified engine will be used. </p>
+     *         DBParameterGroup for the specified engine will be used.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBParameterGroupName() {
@@ -3493,22 +4633,46 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBParameterGroupName
      *        The name of the DB parameter group to associate with this DB
      *        instance. If this argument is omitted, the default
-     *        DBParameterGroup for the specified engine will be used. </p>
+     *        DBParameterGroup for the specified engine will be used.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -3532,14 +4696,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 0 to 35</li>
-     * <li>Cannot be set to 0 if the DB instance is a source to Read Replicas</li>
+     * <li>
+     * <p>
+     * Must be a value from 0 to 35
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be set to 0 if the DB instance is a source to Read Replicas
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param backupRetentionPeriod
      *        The number of days for which automated backups are retained.
      *        Setting this parameter to a positive number enables backups.
-     *        Setting this parameter to 0 disables automated backups. </p>
+     *        Setting this parameter to 0 disables automated backups.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -3547,9 +4719,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be a value from 0 to 35</li>
-     *        <li>Cannot be set to 0 if the DB instance is a source to Read
-     *        Replicas</li>
+     *        <li>
+     *        <p>
+     *        Must be a value from 0 to 35
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be set to 0 if the DB instance is a source to Read Replicas
+     *        </p>
+     *        </li>
      */
 
     public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
@@ -3569,13 +4748,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 0 to 35</li>
-     * <li>Cannot be set to 0 if the DB instance is a source to Read Replicas</li>
+     * <li>
+     * <p>
+     * Must be a value from 0 to 35
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be set to 0 if the DB instance is a source to Read Replicas
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The number of days for which automated backups are retained.
      *         Setting this parameter to a positive number enables backups.
-     *         Setting this parameter to 0 disables automated backups. </p>
+     *         Setting this parameter to 0 disables automated backups.</p>
      *         <p>
      *         Default: 1
      *         </p>
@@ -3583,9 +4770,17 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be a value from 0 to 35</li>
-     *         <li>Cannot be set to 0 if the DB instance is a source to Read
-     *         Replicas</li>
+     *         <li>
+     *         <p>
+     *         Must be a value from 0 to 35
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be set to 0 if the DB instance is a source to Read
+     *         Replicas
+     *         </p>
+     *         </li>
      */
 
     public Integer getBackupRetentionPeriod() {
@@ -3605,14 +4800,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 0 to 35</li>
-     * <li>Cannot be set to 0 if the DB instance is a source to Read Replicas</li>
+     * <li>
+     * <p>
+     * Must be a value from 0 to 35
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be set to 0 if the DB instance is a source to Read Replicas
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param backupRetentionPeriod
      *        The number of days for which automated backups are retained.
      *        Setting this parameter to a positive number enables backups.
-     *        Setting this parameter to 0 disables automated backups. </p>
+     *        Setting this parameter to 0 disables automated backups.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -3620,9 +4823,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be a value from 0 to 35</li>
-     *        <li>Cannot be set to 0 if the DB instance is a source to Read
-     *        Replicas</li>
+     *        <li>
+     *        <p>
+     *        Must be a value from 0 to 35
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be set to 0 if the DB instance is a source to Read Replicas
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -3653,10 +4863,26 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param preferredBackupWindow
@@ -3678,10 +4904,26 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     *        <li>Times should be in Universal Coordinated Time (UTC).</li>
-     *        <li>Must not conflict with the preferred maintenance window.</li>
-     *        <li>Must be at least 30 minutes.</li>
+     *        <li>
+     *        <p>
+     *        Must be in the format <code>hh24:mi-hh24:mi</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Times should be in Universal Coordinated Time (UTC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not conflict with the preferred maintenance window.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 30 minutes.
+     *        </p>
+     *        </li>
      */
 
     public void setPreferredBackupWindow(String preferredBackupWindow) {
@@ -3708,10 +4950,26 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The daily time range during which automated backups are created
@@ -3732,10 +4990,26 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     *         <li>Times should be in Universal Coordinated Time (UTC).</li>
-     *         <li>Must not conflict with the preferred maintenance window.</li>
-     *         <li>Must be at least 30 minutes.</li>
+     *         <li>
+     *         <p>
+     *         Must be in the format <code>hh24:mi-hh24:mi</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Times should be in Universal Coordinated Time (UTC).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must not conflict with the preferred maintenance window.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be at least 30 minutes.
+     *         </p>
+     *         </li>
      */
 
     public String getPreferredBackupWindow() {
@@ -3762,10 +5036,26 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     * <li>Times should be in Universal Coordinated Time (UTC).</li>
-     * <li>Must not conflict with the preferred maintenance window.</li>
-     * <li>Must be at least 30 minutes.</li>
+     * <li>
+     * <p>
+     * Must be in the format <code>hh24:mi-hh24:mi</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Coordinated Time (UTC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param preferredBackupWindow
@@ -3787,10 +5077,26 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li>
-     *        <li>Times should be in Universal Coordinated Time (UTC).</li>
-     *        <li>Must not conflict with the preferred maintenance window.</li>
-     *        <li>Must be at least 30 minutes.</li>
+     *        <li>
+     *        <p>
+     *        Must be in the format <code>hh24:mi-hh24:mi</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Times should be in Universal Coordinated Time (UTC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not conflict with the preferred maintenance window.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 30 minutes.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -3875,7 +5181,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param port
-     *        The port number on which the database accepts connections. </p>
+     *        The port number on which the database accepts connections.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>
@@ -4021,7 +5327,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Type: Integer
      * </p>
      * 
-     * @return The port number on which the database accepts connections. </p>
+     * @return The port number on which the database accepts connections.</p>
      *         <p>
      *         <b>MySQL</b>
      *         </p>
@@ -4170,7 +5476,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param port
-     *        The port number on which the database accepts connections. </p>
+     *        The port number on which the database accepts connections.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>
@@ -4341,295 +5647,751 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * every AWS region.
      * </p>
      * <p>
-     * <b>MySQL</b>
+     * <b>Amazon Aurora</b>
      * </p>
      * <ul>
-     * <li><b>Version 5.1 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 5.1.73a | 5.1.73b</code></li>
-     * <li><b>Version 5.5 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code></li>
-     * <li><b>Version 5.5 (Available in all regions):</b>
-     * <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
-     * <li><b>Version 5.6 (Available in all regions):</b>
-     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (only available in AWS regions ap-northeast-1,
+     * ap-northeast-2, ap-southeast-2, eu-west-1, us-east-1, us-west-2):</b>
+     * <code> 5.6.10a</code>
+     * </p>
      * </li>
-     * <li><b>Version 5.7 (Available in all regions):</b> <code> 5.7.10</code></li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.0 (Available in all regions except AWS GovCloud (US)
-     * Region (us-gov-west-1)):</b> <code> 10.0.17 </code></li>
-     * </ul>
+     * <li>
      * <p>
-     * <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     * <b>Version 10.0 (available in all AWS regions):</b>
+     * <code> 10.0.17 | 10.0.24</code>
      * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
      * </li>
-     * <li><b>Version 11.2 (Available in all regions):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Available in all regions):</b>
-     * <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1 </code></li>
-     * </ul>
-     * <p>
-     * <b>Oracle Database Standard Edition (oracle-se)</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * us-west-1):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     * </li>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     * </ul>
-     * <p>
-     * <b>Oracle Database Standard Edition One (oracle-se1)</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * us-west-1):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     * </li>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 9.3 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code></li>
-     * <li><b>Version 9.3 (Available in all regions):</b>
-     * <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
-     * <li><b>Version 9.4 (Available in all regions):</b>
-     * <code> 9.4.1 | 9.4.4 | 9.4.5</code></li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Express Edition (sqlserver-ex)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Web Edition (sqlserver-web)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 5.7 (available in all AWS regions):</b>
+     * <code> 5.7.10 | 5.7.11</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (available in all AWS regions):</b>
+     * <code> 5.6.23 | 5.6.27 | 5.6.29</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 5.5.40 | 5.5.40a</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 5.5.40b | 5.5.41</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions):</b>
+     * <code> 5.5.42 | 5.5.46</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.1 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions):</b>
+     * <code> 12.1.0.2.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition (oracle-se)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition One (oracle-se1)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition Two (oracle-se2)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 9.5.2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.4 (available in all AWS regions):</b>
+     * <code> 9.4.1 | 9.4.4 | 9.4.5</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 9.4.7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 9.3.1 | 9.3.2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 9.3.12</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use. </p>
+     *        The version number of the database engine to use.</p>
      *        <p>
      *        The following are the database engines and major and minor
      *        versions that are available with Amazon RDS. Not every database
      *        engine is available for every AWS region.
      *        </p>
      *        <p>
-     *        <b>MySQL</b>
+     *        <b>Amazon Aurora</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 5.1 (Only available in the following regions:
-     *        ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *        sa-east-1, us-west-1, us-west-2):</b>
-     *        <code> 5.1.73a | 5.1.73b</code></li>
-     *        <li><b>Version 5.5 (Only available in the following regions:
-     *        ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *        sa-east-1, us-west-1, us-west-2):</b>
-     *        <code> 5.5.40 | 5.5.40a</code></li>
-     *        <li><b>Version 5.5 (Available in all regions):</b>
-     *        <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
-     *        <li><b>Version 5.6 (Available in all regions):</b>
-     *        <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.6 (only available in AWS regions ap-northeast-1,
+     *        ap-northeast-2, ap-southeast-2, eu-west-1, us-east-1,
+     *        us-west-2):</b> <code> 5.6.10a</code>
+     *        </p>
      *        </li>
-     *        <li><b>Version 5.7 (Available in all regions):</b>
-     *        <code> 5.7.10</code></li>
      *        </ul>
      *        <p>
      *        <b>MariaDB</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 10.0 (Available in all regions except AWS GovCloud
-     *        (US) Region (us-gov-west-1)):</b> <code> 10.0.17 </code></li>
-     *        </ul>
+     *        <li>
      *        <p>
-     *        <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     *        <b>Version 10.0 (available in all AWS regions):</b>
+     *        <code> 10.0.17 | 10.0.24</code>
      *        </p>
-     *        <ul>
-     *        <li><b>Version 11.2 (Only available in the following regions:
-     *        ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *        sa-east-1, us-west-1, us-west-2):</b>
-     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
      *        </li>
-     *        <li><b>Version 11.2 (Available in all regions):</b>
-     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     *        </li>
-     *        <li><b>Version 12.1 (Available in all regions):</b>
-     *        <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1 </code></li>
-     *        </ul>
-     *        <p>
-     *        <b>Oracle Database Standard Edition (oracle-se)</b>
-     *        </p>
-     *        <ul>
-     *        <li><b>Version 11.2 (Only available in the following regions:
-     *        us-west-1):</b>
-     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     *        </li>
-     *        <li><b>Version 11.2 (Only available in the following regions:
-     *        eu-central-1, us-west-1):</b>
-     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     *        </li>
-     *        <li><b>Version 12.1 (Only available in the following regions:
-     *        eu-central-1, us-west-1):</b>
-     *        <code>12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     *        </ul>
-     *        <p>
-     *        <b>Oracle Database Standard Edition One (oracle-se1)</b>
-     *        </p>
-     *        <ul>
-     *        <li><b>Version 11.2 (Only available in the following regions:
-     *        us-west-1):</b>
-     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     *        </li>
-     *        <li><b>Version 11.2 (Only available in the following regions:
-     *        eu-central-1, us-west-1):</b>
-     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     *        </li>
-     *        <li><b>Version 12.1 (Only available in the following regions:
-     *        eu-central-1, us-west-1):</b>
-     *        <code> 12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     *        </ul>
-     *        <p>
-     *        <b>PostgreSQL</b>
-     *        </p>
-     *        <ul>
-     *        <li><b>Version 9.3 (Only available in the following regions:
-     *        ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *        sa-east-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code></li>
-     *        <li><b>Version 9.3 (Available in all regions):</b>
-     *        <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
-     *        <li><b>Version 9.4 (Available in all regions):</b>
-     *        <code> 9.4.1 | 9.4.4 | 9.4.5</code></li>
      *        </ul>
      *        <p>
      *        <b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.2789.0.v1</code></li>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.6000.34.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.2100.60.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.5058.0.v1</code></li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.00 (available in all AWS regions):</b>
+     *        <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 10.50 (available in all AWS regions):</b>
+     *        <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Microsoft SQL Server Express Edition (sqlserver-ex)</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.2789.0.v1</code></li>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.6000.34.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.2100.60.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.5058.0.v1</code></li>
-     *        <li><b>Version 12.00 (Available in all regions):</b>
-     *        <code> 12.00.4422.0.v1</code></li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.00 (available in all AWS regions):</b>
+     *        <code> 12.00.4422.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.00 (available in all AWS regions):</b>
+     *        <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 10.50 (available in all AWS regions):</b>
+     *        <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.2789.0.v1</code></li>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.6000.34.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.2100.60.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.5058.0.v1</code></li>
-     *        <li><b>Version 12.00 (Available in all regions):</b>
-     *        <code> 12.00.4422.0.v1</code></li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.00 (available in all AWS regions):</b>
+     *        <code> 12.00.4422.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.00 (available in all AWS regions):</b>
+     *        <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 10.50 (available in all AWS regions):</b>
+     *        <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Microsoft SQL Server Web Edition (sqlserver-web)</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.2789.0.v1</code></li>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.6000.34.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.2100.60.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.5058.0.v1</code></li>
-     *        <li><b>Version 12.00 (Available in all regions):</b>
-     *        <code> 12.00.4422.0.v1</code></li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.00 (available in all AWS regions):</b>
+     *        <code> 12.00.4422.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.00 (available in all AWS regions):</b>
+     *        <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 10.50 (available in all AWS regions):</b>
+     *        <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>MySQL</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.7 (available in all AWS regions):</b>
+     *        <code> 5.7.10 | 5.7.11</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.6 (available in all AWS regions except
+     *        ap-northeast-2):</b>
+     *        <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.6 (available in all AWS regions):</b>
+     *        <code> 5.6.23 | 5.6.27 | 5.6.29</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.5 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b> <code> 5.5.40 | 5.5.40a</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.5 (available in all AWS regions except
+     *        ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.5 (available in all AWS regions):</b>
+     *        <code> 5.5.42 | 5.5.46</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.1 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b>
+     *        <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions):</b>
+     *        <code> 12.1.0.2.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions):</b>
+     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        us-gov-west-1):</b>
+     *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Oracle Database Standard Edition (oracle-se)</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b>
+     *        <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions):</b>
+     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        us-gov-west-1):</b>
+     *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Oracle Database Standard Edition One (oracle-se1)</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b>
+     *        <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions):</b>
+     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        us-gov-west-1):</b>
+     *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Oracle Database Standard Edition Two (oracle-se2)</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.5 (available in all AWS regions except
+     *        us-gov-west-1):</b> <code> 9.5.2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.4 (available in all AWS regions):</b>
+     *        <code> 9.4.1 | 9.4.4 | 9.4.5</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.4 (available in all AWS regions except
+     *        us-gov-west-1):</b> <code> 9.4.7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.3 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b> <code> 9.3.1 | 9.3.2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.3 (available in all AWS regions except
+     *        ap-northeast-2):</b>
+     *        <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.3 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b> <code> 9.3.12</code>
+     *        </p>
+     *        </li>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -4646,295 +6408,750 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * every AWS region.
      * </p>
      * <p>
-     * <b>MySQL</b>
+     * <b>Amazon Aurora</b>
      * </p>
      * <ul>
-     * <li><b>Version 5.1 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 5.1.73a | 5.1.73b</code></li>
-     * <li><b>Version 5.5 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code></li>
-     * <li><b>Version 5.5 (Available in all regions):</b>
-     * <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
-     * <li><b>Version 5.6 (Available in all regions):</b>
-     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (only available in AWS regions ap-northeast-1,
+     * ap-northeast-2, ap-southeast-2, eu-west-1, us-east-1, us-west-2):</b>
+     * <code> 5.6.10a</code>
+     * </p>
      * </li>
-     * <li><b>Version 5.7 (Available in all regions):</b> <code> 5.7.10</code></li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.0 (Available in all regions except AWS GovCloud (US)
-     * Region (us-gov-west-1)):</b> <code> 10.0.17 </code></li>
-     * </ul>
+     * <li>
      * <p>
-     * <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     * <b>Version 10.0 (available in all AWS regions):</b>
+     * <code> 10.0.17 | 10.0.24</code>
      * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
      * </li>
-     * <li><b>Version 11.2 (Available in all regions):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Available in all regions):</b>
-     * <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1 </code></li>
-     * </ul>
-     * <p>
-     * <b>Oracle Database Standard Edition (oracle-se)</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * us-west-1):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     * </li>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     * </ul>
-     * <p>
-     * <b>Oracle Database Standard Edition One (oracle-se1)</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * us-west-1):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     * </li>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 9.3 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code></li>
-     * <li><b>Version 9.3 (Available in all regions):</b>
-     * <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
-     * <li><b>Version 9.4 (Available in all regions):</b>
-     * <code> 9.4.1 | 9.4.4 | 9.4.5</code></li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Express Edition (sqlserver-ex)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Web Edition (sqlserver-web)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 5.7 (available in all AWS regions):</b>
+     * <code> 5.7.10 | 5.7.11</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (available in all AWS regions):</b>
+     * <code> 5.6.23 | 5.6.27 | 5.6.29</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 5.5.40 | 5.5.40a</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 5.5.40b | 5.5.41</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions):</b>
+     * <code> 5.5.42 | 5.5.46</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.1 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions):</b>
+     * <code> 12.1.0.2.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition (oracle-se)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition One (oracle-se1)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition Two (oracle-se2)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 9.5.2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.4 (available in all AWS regions):</b>
+     * <code> 9.4.1 | 9.4.4 | 9.4.5</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 9.4.7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 9.3.1 | 9.3.2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 9.3.12</code>
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The version number of the database engine to use. </p>
+     * @return The version number of the database engine to use.</p>
      *         <p>
      *         The following are the database engines and major and minor
      *         versions that are available with Amazon RDS. Not every database
      *         engine is available for every AWS region.
      *         </p>
      *         <p>
-     *         <b>MySQL</b>
+     *         <b>Amazon Aurora</b>
      *         </p>
      *         <ul>
-     *         <li><b>Version 5.1 (Only available in the following regions:
-     *         ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *         sa-east-1, us-west-1, us-west-2):</b>
-     *         <code> 5.1.73a | 5.1.73b</code></li>
-     *         <li><b>Version 5.5 (Only available in the following regions:
-     *         ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *         sa-east-1, us-west-1, us-west-2):</b>
-     *         <code> 5.5.40 | 5.5.40a</code></li>
-     *         <li><b>Version 5.5 (Available in all regions):</b>
-     *         <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
-     *         <li><b>Version 5.6 (Available in all regions):</b>
-     *         <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code>
+     *         <li>
+     *         <p>
+     *         <b>Version 5.6 (only available in AWS regions ap-northeast-1,
+     *         ap-northeast-2, ap-southeast-2, eu-west-1, us-east-1,
+     *         us-west-2):</b> <code> 5.6.10a</code>
+     *         </p>
      *         </li>
-     *         <li><b>Version 5.7 (Available in all regions):</b>
-     *         <code> 5.7.10</code></li>
      *         </ul>
      *         <p>
      *         <b>MariaDB</b>
      *         </p>
      *         <ul>
-     *         <li><b>Version 10.0 (Available in all regions except AWS GovCloud
-     *         (US) Region (us-gov-west-1)):</b> <code> 10.0.17 </code></li>
-     *         </ul>
+     *         <li>
      *         <p>
-     *         <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     *         <b>Version 10.0 (available in all AWS regions):</b>
+     *         <code> 10.0.17 | 10.0.24</code>
      *         </p>
-     *         <ul>
-     *         <li><b>Version 11.2 (Only available in the following regions:
-     *         ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *         sa-east-1, us-west-1, us-west-2):</b>
-     *         <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
      *         </li>
-     *         <li><b>Version 11.2 (Available in all regions):</b>
-     *         <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     *         </li>
-     *         <li><b>Version 12.1 (Available in all regions):</b>
-     *         <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1 </code></li>
-     *         </ul>
-     *         <p>
-     *         <b>Oracle Database Standard Edition (oracle-se)</b>
-     *         </p>
-     *         <ul>
-     *         <li><b>Version 11.2 (Only available in the following regions:
-     *         us-west-1):</b>
-     *         <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     *         </li>
-     *         <li><b>Version 11.2 (Only available in the following regions:
-     *         eu-central-1, us-west-1):</b>
-     *         <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     *         </li>
-     *         <li><b>Version 12.1 (Only available in the following regions:
-     *         eu-central-1, us-west-1):</b>
-     *         <code>12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     *         </ul>
-     *         <p>
-     *         <b>Oracle Database Standard Edition One (oracle-se1)</b>
-     *         </p>
-     *         <ul>
-     *         <li><b>Version 11.2 (Only available in the following regions:
-     *         us-west-1):</b>
-     *         <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     *         </li>
-     *         <li><b>Version 11.2 (Only available in the following regions:
-     *         eu-central-1, us-west-1):</b>
-     *         <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     *         </li>
-     *         <li><b>Version 12.1 (Only available in the following regions:
-     *         eu-central-1, us-west-1):</b>
-     *         <code> 12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     *         </ul>
-     *         <p>
-     *         <b>PostgreSQL</b>
-     *         </p>
-     *         <ul>
-     *         <li><b>Version 9.3 (Only available in the following regions:
-     *         ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *         sa-east-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code>
-     *         </li>
-     *         <li><b>Version 9.3 (Available in all regions):</b>
-     *         <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
-     *         <li><b>Version 9.4 (Available in all regions):</b>
-     *         <code> 9.4.1 | 9.4.4 | 9.4.5</code></li>
      *         </ul>
      *         <p>
      *         <b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b>
      *         </p>
      *         <ul>
-     *         <li><b>Version 10.50 (Available in all regions):</b>
-     *         <code> 10.50.2789.0.v1</code></li>
-     *         <li><b>Version 10.50 (Available in all regions):</b>
-     *         <code> 10.50.6000.34.v1</code></li>
-     *         <li><b>Version 11.00 (Available in all regions):</b>
-     *         <code> 11.00.2100.60.v1</code></li>
-     *         <li><b>Version 11.00 (Available in all regions):</b>
-     *         <code> 11.00.5058.0.v1</code></li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.00 (available in all AWS regions):</b>
+     *         <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 10.50 (available in all AWS regions):</b>
+     *         <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>Microsoft SQL Server Express Edition (sqlserver-ex)</b>
      *         </p>
      *         <ul>
-     *         <li><b>Version 10.50 (Available in all regions):</b>
-     *         <code> 10.50.2789.0.v1</code></li>
-     *         <li><b>Version 10.50 (Available in all regions):</b>
-     *         <code> 10.50.6000.34.v1</code></li>
-     *         <li><b>Version 11.00 (Available in all regions):</b>
-     *         <code> 11.00.2100.60.v1</code></li>
-     *         <li><b>Version 11.00 (Available in all regions):</b>
-     *         <code> 11.00.5058.0.v1</code></li>
-     *         <li><b>Version 12.00 (Available in all regions):</b>
-     *         <code> 12.00.4422.0.v1</code></li>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.00 (available in all AWS regions):</b>
+     *         <code> 12.00.4422.0.v1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.00 (available in all AWS regions):</b>
+     *         <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 10.50 (available in all AWS regions):</b>
+     *         <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
      *         </p>
      *         <ul>
-     *         <li><b>Version 10.50 (Available in all regions):</b>
-     *         <code> 10.50.2789.0.v1</code></li>
-     *         <li><b>Version 10.50 (Available in all regions):</b>
-     *         <code> 10.50.6000.34.v1</code></li>
-     *         <li><b>Version 11.00 (Available in all regions):</b>
-     *         <code> 11.00.2100.60.v1</code></li>
-     *         <li><b>Version 11.00 (Available in all regions):</b>
-     *         <code> 11.00.5058.0.v1</code></li>
-     *         <li><b>Version 12.00 (Available in all regions):</b>
-     *         <code> 12.00.4422.0.v1</code></li>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.00 (available in all AWS regions):</b>
+     *         <code> 12.00.4422.0.v1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.00 (available in all AWS regions):</b>
+     *         <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 10.50 (available in all AWS regions):</b>
+     *         <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>Microsoft SQL Server Web Edition (sqlserver-web)</b>
      *         </p>
      *         <ul>
-     *         <li><b>Version 10.50 (Available in all regions):</b>
-     *         <code> 10.50.2789.0.v1</code></li>
-     *         <li><b>Version 10.50 (Available in all regions):</b>
-     *         <code> 10.50.6000.34.v1</code></li>
-     *         <li><b>Version 11.00 (Available in all regions):</b>
-     *         <code> 11.00.2100.60.v1</code></li>
-     *         <li><b>Version 11.00 (Available in all regions):</b>
-     *         <code> 11.00.5058.0.v1</code></li>
-     *         <li><b>Version 12.00 (Available in all regions):</b>
-     *         <code> 12.00.4422.0.v1</code></li>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.00 (available in all AWS regions):</b>
+     *         <code> 12.00.4422.0.v1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.00 (available in all AWS regions):</b>
+     *         <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 10.50 (available in all AWS regions):</b>
+     *         <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>MySQL</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Version 5.7 (available in all AWS regions):</b>
+     *         <code> 5.7.10 | 5.7.11</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 5.6 (available in all AWS regions except
+     *         ap-northeast-2):</b>
+     *         <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 5.6 (available in all AWS regions):</b>
+     *         <code> 5.6.23 | 5.6.27 | 5.6.29</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 5.5 (available in all AWS regions except eu-central-1,
+     *         ap-northeast-2):</b> <code> 5.5.40 | 5.5.40a</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 5.5 (available in all AWS regions except
+     *         ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 5.5 (available in all AWS regions):</b>
+     *         <code> 5.5.42 | 5.5.46</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 5.1 (available in all AWS regions except eu-central-1,
+     *         ap-northeast-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.1 (available in all AWS regions except
+     *         ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.1 (available in all AWS regions except
+     *         ap-northeast-2, us-gov-west-1):</b>
+     *         <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.1 (available in all AWS regions):</b>
+     *         <code> 12.1.0.2.v1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.1 (available in all AWS regions except
+     *         us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         eu-central-1, ap-northeast-2):</b>
+     *         <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         ap-northeast-2):</b>
+     *         <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         ap-northeast-2, us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions):</b>
+     *         <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         us-gov-west-1):</b>
+     *         <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Oracle Database Standard Edition (oracle-se)</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.1 (available in all AWS regions except
+     *         ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.1 (available in all AWS regions except
+     *         ap-northeast-2, us-gov-west-1):</b>
+     *         <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         eu-central-1, ap-northeast-2):</b>
+     *         <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         ap-northeast-2):</b>
+     *         <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         ap-northeast-2, us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions):</b>
+     *         <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         us-gov-west-1):</b>
+     *         <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Oracle Database Standard Edition One (oracle-se1)</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.1 (available in all AWS regions except
+     *         ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.1 (available in all AWS regions except
+     *         ap-northeast-2, us-gov-west-1):</b>
+     *         <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         eu-central-1, ap-northeast-2):</b>
+     *         <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         ap-northeast-2):</b>
+     *         <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         ap-northeast-2, us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions):</b>
+     *         <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 11.2 (available in all AWS regions except
+     *         us-gov-west-1):</b>
+     *         <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Oracle Database Standard Edition Two (oracle-se2)</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Version 12.1 (available in all AWS regions except
+     *         us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>PostgreSQL</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Version 9.5 (available in all AWS regions except
+     *         us-gov-west-1):</b> <code> 9.5.2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 9.4 (available in all AWS regions):</b>
+     *         <code> 9.4.1 | 9.4.4 | 9.4.5</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 9.4 (available in all AWS regions except
+     *         us-gov-west-1):</b> <code> 9.4.7</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 9.3 (available in all AWS regions except eu-central-1,
+     *         ap-northeast-2):</b> <code> 9.3.1 | 9.3.2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 9.3 (available in all AWS regions except
+     *         ap-northeast-2):</b>
+     *         <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 9.3 (available in all AWS regions except
+     *         ap-northeast-2, us-gov-west-1):</b> <code> 9.3.12</code>
+     *         </p>
+     *         </li>
      */
 
     public String getEngineVersion() {
@@ -4951,295 +7168,751 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * every AWS region.
      * </p>
      * <p>
-     * <b>MySQL</b>
+     * <b>Amazon Aurora</b>
      * </p>
      * <ul>
-     * <li><b>Version 5.1 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 5.1.73a | 5.1.73b</code></li>
-     * <li><b>Version 5.5 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 5.5.40 | 5.5.40a</code></li>
-     * <li><b>Version 5.5 (Available in all regions):</b>
-     * <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
-     * <li><b>Version 5.6 (Available in all regions):</b>
-     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (only available in AWS regions ap-northeast-1,
+     * ap-northeast-2, ap-southeast-2, eu-west-1, us-east-1, us-west-2):</b>
+     * <code> 5.6.10a</code>
+     * </p>
      * </li>
-     * <li><b>Version 5.7 (Available in all regions):</b> <code> 5.7.10</code></li>
      * </ul>
      * <p>
      * <b>MariaDB</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.0 (Available in all regions except AWS GovCloud (US)
-     * Region (us-gov-west-1)):</b> <code> 10.0.17 </code></li>
-     * </ul>
+     * <li>
      * <p>
-     * <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     * <b>Version 10.0 (available in all AWS regions):</b>
+     * <code> 10.0.17 | 10.0.24</code>
      * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
      * </li>
-     * <li><b>Version 11.2 (Available in all regions):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Available in all regions):</b>
-     * <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1 </code></li>
-     * </ul>
-     * <p>
-     * <b>Oracle Database Standard Edition (oracle-se)</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * us-west-1):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     * </li>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     * </ul>
-     * <p>
-     * <b>Oracle Database Standard Edition One (oracle-se1)</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * us-west-1):</b>
-     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     * </li>
-     * <li><b>Version 11.2 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b>
-     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     * </li>
-     * <li><b>Version 12.1 (Only available in the following regions:
-     * eu-central-1, us-west-1):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <ul>
-     * <li><b>Version 9.3 (Only available in the following regions:
-     * ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code></li>
-     * <li><b>Version 9.3 (Available in all regions):</b>
-     * <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
-     * <li><b>Version 9.4 (Available in all regions):</b>
-     * <code> 9.4.1 | 9.4.4 | 9.4.5</code></li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Express Edition (sqlserver-ex)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Microsoft SQL Server Web Edition (sqlserver-web)</b>
      * </p>
      * <ul>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.2789.0.v1</code></li>
-     * <li><b>Version 10.50 (Available in all regions):</b>
-     * <code> 10.50.6000.34.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.2100.60.v1</code></li>
-     * <li><b>Version 11.00 (Available in all regions):</b>
-     * <code> 11.00.5058.0.v1</code></li>
-     * <li><b>Version 12.00 (Available in all regions):</b>
-     * <code> 12.00.4422.0.v1</code></li>
+     * <li>
+     * <p>
+     * <b>Version 12.00 (available in all AWS regions):</b>
+     * <code> 12.00.4422.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.00 (available in all AWS regions):</b>
+     * <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 10.50 (available in all AWS regions):</b>
+     * <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 5.7 (available in all AWS regions):</b>
+     * <code> 5.7.10 | 5.7.11</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.6 (available in all AWS regions):</b>
+     * <code> 5.6.23 | 5.6.27 | 5.6.29</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 5.5.40 | 5.5.40a</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 5.5.40b | 5.5.41</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.5 (available in all AWS regions):</b>
+     * <code> 5.5.42 | 5.5.46</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 5.1 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions):</b>
+     * <code> 12.1.0.2.v1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition (oracle-se)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition One (oracle-se1)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b>
+     * <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions):</b>
+     * <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle Database Standard Edition Two (oracle-se2)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 9.5.2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.4 (available in all AWS regions):</b>
+     * <code> 9.4.1 | 9.4.4 | 9.4.5</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.4 (available in all AWS regions except us-gov-west-1):</b>
+     * <code> 9.4.7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except eu-central-1,
+     * ap-northeast-2):</b> <code> 9.3.1 | 9.3.2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except ap-northeast-2):</b>
+     * <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.3 (available in all AWS regions except ap-northeast-2,
+     * us-gov-west-1):</b> <code> 9.3.12</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use. </p>
+     *        The version number of the database engine to use.</p>
      *        <p>
      *        The following are the database engines and major and minor
      *        versions that are available with Amazon RDS. Not every database
      *        engine is available for every AWS region.
      *        </p>
      *        <p>
-     *        <b>MySQL</b>
+     *        <b>Amazon Aurora</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 5.1 (Only available in the following regions:
-     *        ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *        sa-east-1, us-west-1, us-west-2):</b>
-     *        <code> 5.1.73a | 5.1.73b</code></li>
-     *        <li><b>Version 5.5 (Only available in the following regions:
-     *        ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *        sa-east-1, us-west-1, us-west-2):</b>
-     *        <code> 5.5.40 | 5.5.40a</code></li>
-     *        <li><b>Version 5.5 (Available in all regions):</b>
-     *        <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
-     *        <li><b>Version 5.6 (Available in all regions):</b>
-     *        <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.6 (only available in AWS regions ap-northeast-1,
+     *        ap-northeast-2, ap-southeast-2, eu-west-1, us-east-1,
+     *        us-west-2):</b> <code> 5.6.10a</code>
+     *        </p>
      *        </li>
-     *        <li><b>Version 5.7 (Available in all regions):</b>
-     *        <code> 5.7.10</code></li>
      *        </ul>
      *        <p>
      *        <b>MariaDB</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 10.0 (Available in all regions except AWS GovCloud
-     *        (US) Region (us-gov-west-1)):</b> <code> 10.0.17 </code></li>
-     *        </ul>
+     *        <li>
      *        <p>
-     *        <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     *        <b>Version 10.0 (available in all AWS regions):</b>
+     *        <code> 10.0.17 | 10.0.24</code>
      *        </p>
-     *        <ul>
-     *        <li><b>Version 11.2 (Only available in the following regions:
-     *        ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *        sa-east-1, us-west-1, us-west-2):</b>
-     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
      *        </li>
-     *        <li><b>Version 11.2 (Available in all regions):</b>
-     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     *        </li>
-     *        <li><b>Version 12.1 (Available in all regions):</b>
-     *        <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1 </code></li>
-     *        </ul>
-     *        <p>
-     *        <b>Oracle Database Standard Edition (oracle-se)</b>
-     *        </p>
-     *        <ul>
-     *        <li><b>Version 11.2 (Only available in the following regions:
-     *        us-west-1):</b>
-     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     *        </li>
-     *        <li><b>Version 11.2 (Only available in the following regions:
-     *        eu-central-1, us-west-1):</b>
-     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     *        </li>
-     *        <li><b>Version 12.1 (Only available in the following regions:
-     *        eu-central-1, us-west-1):</b>
-     *        <code>12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     *        </ul>
-     *        <p>
-     *        <b>Oracle Database Standard Edition One (oracle-se1)</b>
-     *        </p>
-     *        <ul>
-     *        <li><b>Version 11.2 (Only available in the following regions:
-     *        us-west-1):</b>
-     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-     *        </li>
-     *        <li><b>Version 11.2 (Only available in the following regions:
-     *        eu-central-1, us-west-1):</b>
-     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
-     *        </li>
-     *        <li><b>Version 12.1 (Only available in the following regions:
-     *        eu-central-1, us-west-1):</b>
-     *        <code> 12.1.0.1.v1 | 12.1.0.1.v2</code></li>
-     *        </ul>
-     *        <p>
-     *        <b>PostgreSQL</b>
-     *        </p>
-     *        <ul>
-     *        <li><b>Version 9.3 (Only available in the following regions:
-     *        ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *        sa-east-1, us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code></li>
-     *        <li><b>Version 9.3 (Available in all regions):</b>
-     *        <code> 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li>
-     *        <li><b>Version 9.4 (Available in all regions):</b>
-     *        <code> 9.4.1 | 9.4.4 | 9.4.5</code></li>
      *        </ul>
      *        <p>
      *        <b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.2789.0.v1</code></li>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.6000.34.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.2100.60.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.5058.0.v1</code></li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.00 (available in all AWS regions):</b>
+     *        <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 10.50 (available in all AWS regions):</b>
+     *        <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Microsoft SQL Server Express Edition (sqlserver-ex)</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.2789.0.v1</code></li>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.6000.34.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.2100.60.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.5058.0.v1</code></li>
-     *        <li><b>Version 12.00 (Available in all regions):</b>
-     *        <code> 12.00.4422.0.v1</code></li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.00 (available in all AWS regions):</b>
+     *        <code> 12.00.4422.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.00 (available in all AWS regions):</b>
+     *        <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 10.50 (available in all AWS regions):</b>
+     *        <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.2789.0.v1</code></li>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.6000.34.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.2100.60.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.5058.0.v1</code></li>
-     *        <li><b>Version 12.00 (Available in all regions):</b>
-     *        <code> 12.00.4422.0.v1</code></li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.00 (available in all AWS regions):</b>
+     *        <code> 12.00.4422.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.00 (available in all AWS regions):</b>
+     *        <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 10.50 (available in all AWS regions):</b>
+     *        <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Microsoft SQL Server Web Edition (sqlserver-web)</b>
      *        </p>
      *        <ul>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.2789.0.v1</code></li>
-     *        <li><b>Version 10.50 (Available in all regions):</b>
-     *        <code> 10.50.6000.34.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.2100.60.v1</code></li>
-     *        <li><b>Version 11.00 (Available in all regions):</b>
-     *        <code> 11.00.5058.0.v1</code></li>
-     *        <li><b>Version 12.00 (Available in all regions):</b>
-     *        <code> 12.00.4422.0.v1</code></li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.00 (available in all AWS regions):</b>
+     *        <code> 12.00.4422.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.00 (available in all AWS regions):</b>
+     *        <code> 11.00.2100.60.v1 | 11.00.5058.0.v1 | 11.00.6020.0.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 10.50 (available in all AWS regions):</b>
+     *        <code> 10.50.2789.0.v1 | 10.50.6000.34.v1 | 10.50.6529.0.v1</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>MySQL</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.7 (available in all AWS regions):</b>
+     *        <code> 5.7.10 | 5.7.11</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.6 (available in all AWS regions except
+     *        ap-northeast-2):</b>
+     *        <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.6 (available in all AWS regions):</b>
+     *        <code> 5.6.23 | 5.6.27 | 5.6.29</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.5 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b> <code> 5.5.40 | 5.5.40a</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.5 (available in all AWS regions except
+     *        ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.5 (available in all AWS regions):</b>
+     *        <code> 5.5.42 | 5.5.46</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 5.1 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Oracle Database Enterprise Edition (oracle-ee)</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b>
+     *        <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions):</b>
+     *        <code> 12.1.0.2.v1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions):</b>
+     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        us-gov-west-1):</b>
+     *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Oracle Database Standard Edition (oracle-se)</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b>
+     *        <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions):</b>
+     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        us-gov-west-1):</b>
+     *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Oracle Database Standard Edition One (oracle-se1)</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b>
+     *        <code> 12.1.0.1.v3 | 12.1.0.1.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2):</b>
+     *        <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b> <code> 11.2.0.3.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions):</b>
+     *        <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 11.2 (available in all AWS regions except
+     *        us-gov-west-1):</b>
+     *        <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Oracle Database Standard Edition Two (oracle-se2)</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 12.1 (available in all AWS regions except
+     *        us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.5 (available in all AWS regions except
+     *        us-gov-west-1):</b> <code> 9.5.2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.4 (available in all AWS regions):</b>
+     *        <code> 9.4.1 | 9.4.4 | 9.4.5</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.4 (available in all AWS regions except
+     *        us-gov-west-1):</b> <code> 9.4.7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.3 (available in all AWS regions except eu-central-1,
+     *        ap-northeast-2):</b> <code> 9.3.1 | 9.3.2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.3 (available in all AWS regions except
+     *        ap-northeast-2):</b>
+     *        <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.3 (available in all AWS regions except
+     *        ap-northeast-2, us-gov-west-1):</b> <code> 9.3.12</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -5260,7 +7933,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param autoMinorVersionUpgrade
      *        Indicates that minor engine upgrades will be applied automatically
-     *        to the DB instance during the maintenance window. </p>
+     *        to the DB instance during the maintenance window.</p>
      *        <p>
      *        Default: <code>true</code>
      */
@@ -5279,8 +7952,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return Indicates that minor engine upgrades will be applied
-     *         automatically to the DB instance during the maintenance window.
-     *         </p>
+     *         automatically to the DB instance during the maintenance
+     *         window.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -5300,7 +7973,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param autoMinorVersionUpgrade
      *        Indicates that minor engine upgrades will be applied automatically
-     *        to the DB instance during the maintenance window. </p>
+     *        to the DB instance during the maintenance window.</p>
      *        <p>
      *        Default: <code>true</code>
      * @return Returns a reference to this object so that method calls can be
@@ -5323,8 +7996,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return Indicates that minor engine upgrades will be applied
-     *         automatically to the DB instance during the maintenance window.
-     *         </p>
+     *         automatically to the DB instance during the maintenance
+     *         window.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -5343,7 +8016,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param licenseModel
-     *        License model information for this DB instance. </p>
+     *        License model information for this DB instance.</p>
      *        <p>
      *        Valid values: <code>license-included</code> |
      *        <code>bring-your-own-license</code> |
@@ -5363,7 +8036,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * <code>bring-your-own-license</code> | <code>general-public-license</code>
      * </p>
      * 
-     * @return License model information for this DB instance. </p>
+     * @return License model information for this DB instance.</p>
      *         <p>
      *         Valid values: <code>license-included</code> |
      *         <code>bring-your-own-license</code> |
@@ -5384,7 +8057,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param licenseModel
-     *        License model information for this DB instance. </p>
+     *        License model information for this DB instance.</p>
      *        <p>
      *        Valid values: <code>license-included</code> |
      *        <code>bring-your-own-license</code> |
@@ -5412,7 +8085,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param iops
      *        The amount of Provisioned IOPS (input/output operations per
-     *        second) to be initially allocated for the DB instance. </p>
+     *        second) to be initially allocated for the DB instance.</p>
      *        <p>
      *        Constraints: Must be a multiple between 3 and 10 of the storage
      *        amount for the DB instance. Must also be an integer multiple of
@@ -5437,7 +8110,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return The amount of Provisioned IOPS (input/output operations per
-     *         second) to be initially allocated for the DB instance. </p>
+     *         second) to be initially allocated for the DB instance.</p>
      *         <p>
      *         Constraints: Must be a multiple between 3 and 10 of the storage
      *         amount for the DB instance. Must also be an integer multiple of
@@ -5464,7 +8137,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param iops
      *        The amount of Provisioned IOPS (input/output operations per
-     *        second) to be initially allocated for the DB instance. </p>
+     *        second) to be initially allocated for the DB instance.</p>
      *        <p>
      *        Constraints: Must be a multiple between 3 and 10 of the storage
      *        amount for the DB instance. Must also be an integer multiple of
@@ -5492,7 +8165,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param optionGroupName
      *        Indicates that the DB instance should be associated with the
-     *        specified option group. </p>
+     *        specified option group.</p>
      *        <p>
      *        Permanent options, such as the TDE option for Oracle Advanced
      *        Security TDE, cannot be removed from an option group, and that
@@ -5516,7 +8189,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return Indicates that the DB instance should be associated with the
-     *         specified option group. </p>
+     *         specified option group.</p>
      *         <p>
      *         Permanent options, such as the TDE option for Oracle Advanced
      *         Security TDE, cannot be removed from an option group, and that
@@ -5541,7 +8214,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param optionGroupName
      *        Indicates that the DB instance should be associated with the
-     *        specified option group. </p>
+     *        specified option group.</p>
      *        <p>
      *        Permanent options, such as the TDE option for Oracle Advanced
      *        Security TDE, cannot be removed from an option group, and that
@@ -5617,8 +8290,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b> true</li>
-     * <li><b>VPC:</b> false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b> false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -5633,15 +8314,23 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        of true specifies an Internet-facing instance with a publicly
      *        resolvable DNS name, which resolves to a public IP address. A
      *        value of false specifies an internal instance with a DNS name that
-     *        resolves to a private IP address. </p>
+     *        resolves to a private IP address.</p>
      *        <p>
      *        Default: The default behavior varies depending on whether a VPC
      *        has been requested or not. The following list shows the default
      *        behavior in each case.
      *        </p>
      *        <ul>
-     *        <li><b>Default VPC:</b> true</li>
-     *        <li><b>VPC:</b> false</li>
+     *        <li>
+     *        <p>
+     *        <b>Default VPC:</b> true
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>VPC:</b> false
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request
@@ -5669,8 +8358,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b> true</li>
-     * <li><b>VPC:</b> false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b> false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -5684,15 +8381,23 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         of true specifies an Internet-facing instance with a publicly
      *         resolvable DNS name, which resolves to a public IP address. A
      *         value of false specifies an internal instance with a DNS name
-     *         that resolves to a private IP address. </p>
+     *         that resolves to a private IP address.</p>
      *         <p>
      *         Default: The default behavior varies depending on whether a VPC
      *         has been requested or not. The following list shows the default
      *         behavior in each case.
      *         </p>
      *         <ul>
-     *         <li><b>Default VPC:</b> true</li>
-     *         <li><b>VPC:</b> false</li>
+     *         <li>
+     *         <p>
+     *         <b>Default VPC:</b> true
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>VPC:</b> false
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request
@@ -5721,8 +8426,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b> true</li>
-     * <li><b>VPC:</b> false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b> false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -5737,15 +8450,23 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *        of true specifies an Internet-facing instance with a publicly
      *        resolvable DNS name, which resolves to a public IP address. A
      *        value of false specifies an internal instance with a DNS name that
-     *        resolves to a private IP address. </p>
+     *        resolves to a private IP address.</p>
      *        <p>
      *        Default: The default behavior varies depending on whether a VPC
      *        has been requested or not. The following list shows the default
      *        behavior in each case.
      *        </p>
      *        <ul>
-     *        <li><b>Default VPC:</b> true</li>
-     *        <li><b>VPC:</b> false</li>
+     *        <li>
+     *        <p>
+     *        <b>Default VPC:</b> true
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>VPC:</b> false
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request
@@ -5777,8 +8498,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b> true</li>
-     * <li><b>VPC:</b> false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b> false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -5792,15 +8521,23 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      *         of true specifies an Internet-facing instance with a publicly
      *         resolvable DNS name, which resolves to a public IP address. A
      *         value of false specifies an internal instance with a DNS name
-     *         that resolves to a private IP address. </p>
+     *         that resolves to a private IP address.</p>
      *         <p>
      *         Default: The default behavior varies depending on whether a VPC
      *         has been requested or not. The following list shows the default
      *         behavior in each case.
      *         </p>
      *         <ul>
-     *         <li><b>Default VPC:</b> true</li>
-     *         <li><b>VPC:</b> false</li>
+     *         <li>
+     *         <p>
+     *         <b>Default VPC:</b> true
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>VPC:</b> false
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request
@@ -5971,8 +8708,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB instance.
-     *        </p>
+     *        Specifies the storage type to be associated with the DB
+     *        instance.</p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
      *        </p>
@@ -6005,8 +8742,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * specified; otherwise <code>standard</code>
      * </p>
      * 
-     * @return Specifies the storage type to be associated with the DB instance.
-     *         </p>
+     * @return Specifies the storage type to be associated with the DB
+     *         instance.</p>
      *         <p>
      *         Valid values: <code>standard | gp2 | io1</code>
      *         </p>
@@ -6040,8 +8777,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB instance.
-     *        </p>
+     *        Specifies the storage type to be associated with the DB
+     *        instance.</p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
      *        </p>
@@ -6165,7 +8902,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB instance is encrypted. </p>
+     *        Specifies whether the DB instance is encrypted.</p>
      *        <p>
      *        Default: false
      */
@@ -6182,7 +8919,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Default: false
      * </p>
      * 
-     * @return Specifies whether the DB instance is encrypted. </p>
+     * @return Specifies whether the DB instance is encrypted.</p>
      *         <p>
      *         Default: false
      */
@@ -6200,7 +8937,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB instance is encrypted. </p>
+     *        Specifies whether the DB instance is encrypted.</p>
      *        <p>
      *        Default: false
      * @return Returns a reference to this object so that method calls can be
@@ -6220,7 +8957,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * Default: false
      * </p>
      * 
-     * @return Specifies whether the DB instance is encrypted. </p>
+     * @return Specifies whether the DB instance is encrypted.</p>
      *         <p>
      *         Default: false
      */
@@ -6249,7 +8986,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier for an encrypted DB instance. </p>
+     *        The KMS key identifier for an encrypted DB instance.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the
      *        KMS encryption key. If you are creating a DB instance with the
@@ -6288,7 +9025,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * default encryption key for each AWS region.
      * </p>
      * 
-     * @return The KMS key identifier for an encrypted DB instance. </p>
+     * @return The KMS key identifier for an encrypted DB instance.</p>
      *         <p>
      *         The KMS key identifier is the Amazon Resource Name (ARN) for the
      *         KMS encryption key. If you are creating a DB instance with the
@@ -6329,7 +9066,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier for an encrypted DB instance. </p>
+     *        The KMS key identifier for an encrypted DB instance.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the
      *        KMS encryption key. If you are creating a DB instance with the
@@ -6459,7 +9196,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -6472,7 +9209,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * @param monitoringInterval
      *        The interval, in seconds, between points when Enhanced Monitoring
      *        metrics are collected for the DB instance. To disable collecting
-     *        Enhanced Monitoring metrics, specify 0. The default is 60.</p>
+     *        Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *        <p>
      *        If <code>MonitoringRoleArn</code> is specified, then you must also
      *        set <code>MonitoringInterval</code> to a value other than 0.
@@ -6489,7 +9226,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -6501,7 +9238,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The interval, in seconds, between points when Enhanced Monitoring
      *         metrics are collected for the DB instance. To disable collecting
-     *         Enhanced Monitoring metrics, specify 0. The default is 60.</p>
+     *         Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *         <p>
      *         If <code>MonitoringRoleArn</code> is specified, then you must
      *         also set <code>MonitoringInterval</code> to a value other than 0.
@@ -6518,7 +9255,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -6531,7 +9268,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
      * @param monitoringInterval
      *        The interval, in seconds, between points when Enhanced Monitoring
      *        metrics are collected for the DB instance. To disable collecting
-     *        Enhanced Monitoring metrics, specify 0. The default is 60.</p>
+     *        Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *        <p>
      *        If <code>MonitoringRoleArn</code> is specified, then you must also
      *        set <code>MonitoringInterval</code> to a value other than 0.

@@ -19,7 +19,9 @@ package com.amazonaws.services.rds.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * This type is not currently supported.
+ * </p>
  */
 public class Filter implements Serializable, Cloneable {
 

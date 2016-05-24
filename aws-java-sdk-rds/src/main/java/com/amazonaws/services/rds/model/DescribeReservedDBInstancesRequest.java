@@ -274,7 +274,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param duration
      *        The duration filter value, specified in years or seconds. Specify
-     *        this parameter to show only reservations for this duration. </p>
+     *        this parameter to show only reservations for this duration.</p>
      *        <p>
      *        Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
@@ -293,7 +293,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return The duration filter value, specified in years or seconds. Specify
-     *         this parameter to show only reservations for this duration. </p>
+     *         this parameter to show only reservations for this duration.</p>
      *         <p>
      *         Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
@@ -313,7 +313,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param duration
      *        The duration filter value, specified in years or seconds. Specify
-     *        this parameter to show only reservations for this duration. </p>
+     *        this parameter to show only reservations for this duration.</p>
      *        <p>
      *        Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
      * @return Returns a reference to this object so that method calls can be
@@ -388,8 +388,8 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param offeringType
      *        The offering type filter value. Specify this parameter to show
-     *        only the available offerings matching the specified offering type.
-     *        </p>
+     *        only the available offerings matching the specified offering
+     *        type.</p>
      *        <p>
      *        Valid Values:
      *        <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
@@ -411,7 +411,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The offering type filter value. Specify this parameter to show
      *         only the available offerings matching the specified offering
-     *         type. </p>
+     *         type.</p>
      *         <p>
      *         Valid Values:
      *         <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
@@ -433,8 +433,8 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest
      * 
      * @param offeringType
      *        The offering type filter value. Specify this parameter to show
-     *        only the available offerings matching the specified offering type.
-     *        </p>
+     *        only the available offerings matching the specified offering
+     *        type.</p>
      *        <p>
      *        Valid Values:
      *        <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>

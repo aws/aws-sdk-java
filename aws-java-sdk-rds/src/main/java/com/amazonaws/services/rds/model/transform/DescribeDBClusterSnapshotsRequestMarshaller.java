@@ -112,6 +112,18 @@ public class DescribeDBClusterSnapshotsRequestMarshaller
                     .fromString(describeDBClusterSnapshotsRequest.getMarker()));
         }
 
+        if (describeDBClusterSnapshotsRequest.getIncludeShared() != null) {
+            request.addParameter("IncludeShared", StringUtils
+                    .fromBoolean(describeDBClusterSnapshotsRequest
+                            .getIncludeShared()));
+        }
+
+        if (describeDBClusterSnapshotsRequest.getIncludePublic() != null) {
+            request.addParameter("IncludePublic", StringUtils
+                    .fromBoolean(describeDBClusterSnapshotsRequest
+                            .getIncludePublic()));
+        }
+
         return request;
     }
 

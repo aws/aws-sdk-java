@@ -23,10 +23,26 @@ import java.io.Serializable;
  * This data type is used as a response element in the following actions:
  * </p>
  * <ul>
- * <li><a>ModifyDBInstance</a></li>
- * <li><a>RebootDBInstance</a></li>
- * <li><a>RestoreDBInstanceFromDBSnapshot</a></li>
- * <li><a>RestoreDBInstanceToPointInTime</a></li>
+ * <li>
+ * <p>
+ * <a>ModifyDBInstance</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>RebootDBInstance</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>RestoreDBInstanceFromDBSnapshot</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>RestoreDBInstanceToPointInTime</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class DBSecurityGroupMembership implements Serializable, Cloneable {

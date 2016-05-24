@@ -34,9 +34,21 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBClusterIdentifier;
@@ -47,8 +59,12 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * snapshot is created. If <code>false</code> is specified, a DB cluster
      * snapshot is created before the DB cluster is deleted.
      * </p>
-     * <note>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter
-     * if <code>SkipFinalSnapshot</code> is <code>false</code>.</note>
+     * <note>
+     * <p>
+     * You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
@@ -59,16 +75,31 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * The DB cluster snapshot identifier of the new DB cluster snapshot created
      * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.
      * </p>
-     * <note> Specifying this parameter and also setting the
+     * <note>
+     * <p>
+     * Specifying this parameter and also setting the
      * <code>SkipFinalShapshot</code> parameter to true results in an error.
+     * </p>
      * </note>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String finalDBSnapshotIdentifier;
@@ -82,21 +113,45 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
      *        The DB cluster identifier for the DB cluster to be deleted. This
-     *        parameter isn't case-sensitive. </p>
+     *        parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBClusterIdentifier(String dBClusterIdentifier) {
@@ -112,20 +167,44 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The DB cluster identifier for the DB cluster to be deleted. This
-     *         parameter isn't case-sensitive. </p>
+     *         parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBClusterIdentifier() {
@@ -141,21 +220,45 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
      *        The DB cluster identifier for the DB cluster to be deleted. This
-     *        parameter isn't case-sensitive. </p>
+     *        parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -173,8 +276,12 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * snapshot is created. If <code>false</code> is specified, a DB cluster
      * snapshot is created before the DB cluster is deleted.
      * </p>
-     * <note>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter
-     * if <code>SkipFinalSnapshot</code> is <code>false</code>.</note>
+     * <note>
+     * <p>
+     * You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
@@ -184,9 +291,12 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      *        the DB cluster is deleted. If <code>true</code> is specified, no
      *        DB cluster snapshot is created. If <code>false</code> is
      *        specified, a DB cluster snapshot is created before the DB cluster
-     *        is deleted. </p> <note>You must specify a
-     *        <code>FinalDBSnapshotIdentifier</code> parameter if
-     *        <code>SkipFinalSnapshot</code> is <code>false</code>.</note>
+     *        is deleted. </p> <note>
+     *        <p>
+     *        You must specify a <code>FinalDBSnapshotIdentifier</code>
+     *        parameter if <code>SkipFinalSnapshot</code> is <code>false</code>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -202,8 +312,12 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * snapshot is created. If <code>false</code> is specified, a DB cluster
      * snapshot is created before the DB cluster is deleted.
      * </p>
-     * <note>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter
-     * if <code>SkipFinalSnapshot</code> is <code>false</code>.</note>
+     * <note>
+     * <p>
+     * You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
@@ -212,9 +326,13 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      *         the DB cluster is deleted. If <code>true</code> is specified, no
      *         DB cluster snapshot is created. If <code>false</code> is
      *         specified, a DB cluster snapshot is created before the DB cluster
-     *         is deleted. </p> <note>You must specify a
-     *         <code>FinalDBSnapshotIdentifier</code> parameter if
-     *         <code>SkipFinalSnapshot</code> is <code>false</code>.</note>
+     *         is deleted. </p> <note>
+     *         <p>
+     *         You must specify a <code>FinalDBSnapshotIdentifier</code>
+     *         parameter if <code>SkipFinalSnapshot</code> is <code>false</code>
+     *         .
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -230,8 +348,12 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * snapshot is created. If <code>false</code> is specified, a DB cluster
      * snapshot is created before the DB cluster is deleted.
      * </p>
-     * <note>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter
-     * if <code>SkipFinalSnapshot</code> is <code>false</code>.</note>
+     * <note>
+     * <p>
+     * You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
@@ -241,9 +363,12 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      *        the DB cluster is deleted. If <code>true</code> is specified, no
      *        DB cluster snapshot is created. If <code>false</code> is
      *        specified, a DB cluster snapshot is created before the DB cluster
-     *        is deleted. </p> <note>You must specify a
-     *        <code>FinalDBSnapshotIdentifier</code> parameter if
-     *        <code>SkipFinalSnapshot</code> is <code>false</code>.</note>
+     *        is deleted. </p> <note>
+     *        <p>
+     *        You must specify a <code>FinalDBSnapshotIdentifier</code>
+     *        parameter if <code>SkipFinalSnapshot</code> is <code>false</code>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be
@@ -263,8 +388,12 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * snapshot is created. If <code>false</code> is specified, a DB cluster
      * snapshot is created before the DB cluster is deleted.
      * </p>
-     * <note>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter
-     * if <code>SkipFinalSnapshot</code> is <code>false</code>.</note>
+     * <note>
+     * <p>
+     * You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: <code>false</code>
      * </p>
@@ -273,9 +402,13 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      *         the DB cluster is deleted. If <code>true</code> is specified, no
      *         DB cluster snapshot is created. If <code>false</code> is
      *         specified, a DB cluster snapshot is created before the DB cluster
-     *         is deleted. </p> <note>You must specify a
-     *         <code>FinalDBSnapshotIdentifier</code> parameter if
-     *         <code>SkipFinalSnapshot</code> is <code>false</code>.</note>
+     *         is deleted. </p> <note>
+     *         <p>
+     *         You must specify a <code>FinalDBSnapshotIdentifier</code>
+     *         parameter if <code>SkipFinalSnapshot</code> is <code>false</code>
+     *         .
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -289,31 +422,62 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * The DB cluster snapshot identifier of the new DB cluster snapshot created
      * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.
      * </p>
-     * <note> Specifying this parameter and also setting the
+     * <note>
+     * <p>
+     * Specifying this parameter and also setting the
      * <code>SkipFinalShapshot</code> parameter to true results in an error.
+     * </p>
      * </note>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param finalDBSnapshotIdentifier
      *        The DB cluster snapshot identifier of the new DB cluster snapshot
      *        created when <code>SkipFinalSnapshot</code> is set to
-     *        <code>false</code>. </p> <note> Specifying this parameter and also
-     *        setting the <code>SkipFinalShapshot</code> parameter to true
-     *        results in an error. </note>
+     *        <code>false</code>. </p> <note>
+     *        <p>
+     *        Specifying this parameter and also setting the
+     *        <code>SkipFinalShapshot</code> parameter to true results in an
+     *        error.
+     *        </p>
+     *        </note>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setFinalDBSnapshotIdentifier(String finalDBSnapshotIdentifier) {
@@ -325,30 +489,61 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * The DB cluster snapshot identifier of the new DB cluster snapshot created
      * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.
      * </p>
-     * <note> Specifying this parameter and also setting the
+     * <note>
+     * <p>
+     * Specifying this parameter and also setting the
      * <code>SkipFinalShapshot</code> parameter to true results in an error.
+     * </p>
      * </note>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The DB cluster snapshot identifier of the new DB cluster snapshot
      *         created when <code>SkipFinalSnapshot</code> is set to
-     *         <code>false</code>. </p> <note> Specifying this parameter and
-     *         also setting the <code>SkipFinalShapshot</code> parameter to true
-     *         results in an error. </note>
+     *         <code>false</code>. </p> <note>
+     *         <p>
+     *         Specifying this parameter and also setting the
+     *         <code>SkipFinalShapshot</code> parameter to true results in an
+     *         error.
+     *         </p>
+     *         </note>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getFinalDBSnapshotIdentifier() {
@@ -360,31 +555,62 @@ public class DeleteDBClusterRequest extends AmazonWebServiceRequest implements
      * The DB cluster snapshot identifier of the new DB cluster snapshot created
      * when <code>SkipFinalSnapshot</code> is set to <code>false</code>.
      * </p>
-     * <note> Specifying this parameter and also setting the
+     * <note>
+     * <p>
+     * Specifying this parameter and also setting the
      * <code>SkipFinalShapshot</code> parameter to true results in an error.
+     * </p>
      * </note>
      * <p>
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param finalDBSnapshotIdentifier
      *        The DB cluster snapshot identifier of the new DB cluster snapshot
      *        created when <code>SkipFinalSnapshot</code> is set to
-     *        <code>false</code>. </p> <note> Specifying this parameter and also
-     *        setting the <code>SkipFinalShapshot</code> parameter to true
-     *        results in an error. </note>
+     *        <code>false</code>. </p> <note>
+     *        <p>
+     *        Specifying this parameter and also setting the
+     *        <code>SkipFinalShapshot</code> parameter to true results in an
+     *        error.
+     *        </p>
+     *        </note>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

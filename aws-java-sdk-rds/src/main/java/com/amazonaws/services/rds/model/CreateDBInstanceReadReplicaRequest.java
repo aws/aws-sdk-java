@@ -42,21 +42,44 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL
-     * DB instance.</li>
-     * <li>Can specify a DB instance that is a MySQL Read Replica only if the
-     * source is running MySQL 5.6.</li>
-     * <li>Can specify a DB instance that is a PostgreSQL Read Replica only if
-     * the source is running PostgreSQL 9.3.5.</li>
-     * <li>The specified DB instance must have automatic backups enabled, its
-     * backup retention period must be greater than 0.</li>
-     * <li>If the source DB instance is in the same region as the Read Replica,
-     * specify a valid DB instance identifier.</li>
-     * <li>If the source DB instance is in a different region than the Read
-     * Replica, specify a valid DB instance ARN. For more information, go to <a
-     * href=
+     * <li>
+     * <p>
+     * Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can specify a DB instance that is a MySQL Read Replica only if the source
+     * is running MySQL 5.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can specify a DB instance that is a PostgreSQL Read Replica only if the
+     * source is running PostgreSQL 9.3.5.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The specified DB instance must have automatic backups enabled, its backup
+     * retention period must be greater than 0.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source DB instance is in the same region as the Read Replica,
+     * specify a valid DB instance identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source DB instance is in a different region than the Read Replica,
+     * specify a valid DB instance ARN. For more information, go to <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
-     * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li>
+     * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String sourceDBInstanceIdentifier;
@@ -137,8 +160,16 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b>true</li>
-     * <li><b>VPC:</b>false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b>true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b>false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -162,17 +193,36 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Can only be specified if the source DB instance identifier specifies
-     * a DB instance in another region.</li>
-     * <li>The specified DB subnet group must be in the same region in which the
-     * operation is running.</li>
-     * <li>All Read Replicas in one region that are created from the same source
-     * DB instance must either:
+     * <li>
+     * <p>
+     * Can only be specified if the source DB instance identifier specifies a DB
+     * instance in another region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The specified DB subnet group must be in the same region in which the
+     * operation is running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All Read Replicas in one region that are created from the same source DB
+     * instance must either:&gt;
+     * </p>
      * <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these Read Replicas
-     * will be created in the same VPC.</li>
-     * <li>Not specify a DB subnet group. All these Read Replicas will be
-     * created outside of any VPC.</li>
+     * <li>
+     * <p>
+     * Specify DB subnet groups from the same VPC. All these Read Replicas will
+     * be created in the same VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not specify a DB subnet group. All these Read Replicas will be created
+     * outside of any VPC.
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -213,7 +263,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the Read Replica. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -260,26 +310,50 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * @param sourceDBInstanceIdentifier
      *        The identifier of the DB instance that will act as the source for
      *        the Read Replica. Each DB instance can have up to five Read
-     *        Replicas. </p>
+     *        Replicas.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier of an existing MySQL, MariaDB, or
-     *        PostgreSQL DB instance.</li>
-     *        <li>Can specify a DB instance that is a MySQL Read Replica only if
-     *        the source is running MySQL 5.6.</li>
-     *        <li>Can specify a DB instance that is a PostgreSQL Read Replica
-     *        only if the source is running PostgreSQL 9.3.5.</li>
-     *        <li>The specified DB instance must have automatic backups enabled,
-     *        its backup retention period must be greater than 0.</li>
-     *        <li>If the source DB instance is in the same region as the Read
-     *        Replica, specify a valid DB instance identifier.</li>
-     *        <li>If the source DB instance is in a different region than the
-     *        Read Replica, specify a valid DB instance ARN. For more
-     *        information, go to <a href=
+     *        <li>
+     *        <p>
+     *        Must be the identifier of an existing MySQL, MariaDB, or
+     *        PostgreSQL DB instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can specify a DB instance that is a MySQL Read Replica only if the
+     *        source is running MySQL 5.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can specify a DB instance that is a PostgreSQL Read Replica only
+     *        if the source is running PostgreSQL 9.3.5.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The specified DB instance must have automatic backups enabled, its
+     *        backup retention period must be greater than 0.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source DB instance is in the same region as the Read
+     *        Replica, specify a valid DB instance identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source DB instance is in a different region than the Read
+     *        Replica, specify a valid DB instance ARN. For more information, go
+     *        to <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
-     *        > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li>
+     *        > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
+     *        </p>
+     *        </li>
      */
     public CreateDBInstanceReadReplicaRequest(String dBInstanceIdentifier,
             String sourceDBInstanceIdentifier) {
@@ -350,46 +424,93 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL
-     * DB instance.</li>
-     * <li>Can specify a DB instance that is a MySQL Read Replica only if the
-     * source is running MySQL 5.6.</li>
-     * <li>Can specify a DB instance that is a PostgreSQL Read Replica only if
-     * the source is running PostgreSQL 9.3.5.</li>
-     * <li>The specified DB instance must have automatic backups enabled, its
-     * backup retention period must be greater than 0.</li>
-     * <li>If the source DB instance is in the same region as the Read Replica,
-     * specify a valid DB instance identifier.</li>
-     * <li>If the source DB instance is in a different region than the Read
-     * Replica, specify a valid DB instance ARN. For more information, go to <a
-     * href=
+     * <li>
+     * <p>
+     * Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can specify a DB instance that is a MySQL Read Replica only if the source
+     * is running MySQL 5.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can specify a DB instance that is a PostgreSQL Read Replica only if the
+     * source is running PostgreSQL 9.3.5.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The specified DB instance must have automatic backups enabled, its backup
+     * retention period must be greater than 0.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source DB instance is in the same region as the Read Replica,
+     * specify a valid DB instance identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source DB instance is in a different region than the Read Replica,
+     * specify a valid DB instance ARN. For more information, go to <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
-     * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li>
+     * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceDBInstanceIdentifier
      *        The identifier of the DB instance that will act as the source for
      *        the Read Replica. Each DB instance can have up to five Read
-     *        Replicas. </p>
+     *        Replicas.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier of an existing MySQL, MariaDB, or
-     *        PostgreSQL DB instance.</li>
-     *        <li>Can specify a DB instance that is a MySQL Read Replica only if
-     *        the source is running MySQL 5.6.</li>
-     *        <li>Can specify a DB instance that is a PostgreSQL Read Replica
-     *        only if the source is running PostgreSQL 9.3.5.</li>
-     *        <li>The specified DB instance must have automatic backups enabled,
-     *        its backup retention period must be greater than 0.</li>
-     *        <li>If the source DB instance is in the same region as the Read
-     *        Replica, specify a valid DB instance identifier.</li>
-     *        <li>If the source DB instance is in a different region than the
-     *        Read Replica, specify a valid DB instance ARN. For more
-     *        information, go to <a href=
+     *        <li>
+     *        <p>
+     *        Must be the identifier of an existing MySQL, MariaDB, or
+     *        PostgreSQL DB instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can specify a DB instance that is a MySQL Read Replica only if the
+     *        source is running MySQL 5.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can specify a DB instance that is a PostgreSQL Read Replica only
+     *        if the source is running PostgreSQL 9.3.5.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The specified DB instance must have automatic backups enabled, its
+     *        backup retention period must be greater than 0.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source DB instance is in the same region as the Read
+     *        Replica, specify a valid DB instance identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source DB instance is in a different region than the Read
+     *        Replica, specify a valid DB instance ARN. For more information, go
+     *        to <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
-     *        > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li>
+     *        > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
+     *        </p>
+     *        </li>
      */
 
     public void setSourceDBInstanceIdentifier(String sourceDBInstanceIdentifier) {
@@ -405,45 +526,92 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL
-     * DB instance.</li>
-     * <li>Can specify a DB instance that is a MySQL Read Replica only if the
-     * source is running MySQL 5.6.</li>
-     * <li>Can specify a DB instance that is a PostgreSQL Read Replica only if
-     * the source is running PostgreSQL 9.3.5.</li>
-     * <li>The specified DB instance must have automatic backups enabled, its
-     * backup retention period must be greater than 0.</li>
-     * <li>If the source DB instance is in the same region as the Read Replica,
-     * specify a valid DB instance identifier.</li>
-     * <li>If the source DB instance is in a different region than the Read
-     * Replica, specify a valid DB instance ARN. For more information, go to <a
-     * href=
+     * <li>
+     * <p>
+     * Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can specify a DB instance that is a MySQL Read Replica only if the source
+     * is running MySQL 5.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can specify a DB instance that is a PostgreSQL Read Replica only if the
+     * source is running PostgreSQL 9.3.5.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The specified DB instance must have automatic backups enabled, its backup
+     * retention period must be greater than 0.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source DB instance is in the same region as the Read Replica,
+     * specify a valid DB instance identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source DB instance is in a different region than the Read Replica,
+     * specify a valid DB instance ARN. For more information, go to <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
-     * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li>
+     * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the DB instance that will act as the source for
      *         the Read Replica. Each DB instance can have up to five Read
-     *         Replicas. </p>
+     *         Replicas.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be the identifier of an existing MySQL, MariaDB, or
-     *         PostgreSQL DB instance.</li>
-     *         <li>Can specify a DB instance that is a MySQL Read Replica only
-     *         if the source is running MySQL 5.6.</li>
-     *         <li>Can specify a DB instance that is a PostgreSQL Read Replica
-     *         only if the source is running PostgreSQL 9.3.5.</li>
-     *         <li>The specified DB instance must have automatic backups
-     *         enabled, its backup retention period must be greater than 0.</li>
-     *         <li>If the source DB instance is in the same region as the Read
-     *         Replica, specify a valid DB instance identifier.</li>
-     *         <li>If the source DB instance is in a different region than the
-     *         Read Replica, specify a valid DB instance ARN. For more
-     *         information, go to <a href=
+     *         <li>
+     *         <p>
+     *         Must be the identifier of an existing MySQL, MariaDB, or
+     *         PostgreSQL DB instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can specify a DB instance that is a MySQL Read Replica only if
+     *         the source is running MySQL 5.6.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can specify a DB instance that is a PostgreSQL Read Replica only
+     *         if the source is running PostgreSQL 9.3.5.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The specified DB instance must have automatic backups enabled,
+     *         its backup retention period must be greater than 0.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source DB instance is in the same region as the Read
+     *         Replica, specify a valid DB instance identifier.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source DB instance is in a different region than the Read
+     *         Replica, specify a valid DB instance ARN. For more information,
+     *         go to <a href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
-     *         > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li>
+     *         > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
+     *         </p>
+     *         </li>
      */
 
     public String getSourceDBInstanceIdentifier() {
@@ -459,46 +627,93 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL
-     * DB instance.</li>
-     * <li>Can specify a DB instance that is a MySQL Read Replica only if the
-     * source is running MySQL 5.6.</li>
-     * <li>Can specify a DB instance that is a PostgreSQL Read Replica only if
-     * the source is running PostgreSQL 9.3.5.</li>
-     * <li>The specified DB instance must have automatic backups enabled, its
-     * backup retention period must be greater than 0.</li>
-     * <li>If the source DB instance is in the same region as the Read Replica,
-     * specify a valid DB instance identifier.</li>
-     * <li>If the source DB instance is in a different region than the Read
-     * Replica, specify a valid DB instance ARN. For more information, go to <a
-     * href=
+     * <li>
+     * <p>
+     * Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can specify a DB instance that is a MySQL Read Replica only if the source
+     * is running MySQL 5.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can specify a DB instance that is a PostgreSQL Read Replica only if the
+     * source is running PostgreSQL 9.3.5.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The specified DB instance must have automatic backups enabled, its backup
+     * retention period must be greater than 0.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source DB instance is in the same region as the Read Replica,
+     * specify a valid DB instance identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source DB instance is in a different region than the Read Replica,
+     * specify a valid DB instance ARN. For more information, go to <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
-     * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li>
+     * > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceDBInstanceIdentifier
      *        The identifier of the DB instance that will act as the source for
      *        the Read Replica. Each DB instance can have up to five Read
-     *        Replicas. </p>
+     *        Replicas.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier of an existing MySQL, MariaDB, or
-     *        PostgreSQL DB instance.</li>
-     *        <li>Can specify a DB instance that is a MySQL Read Replica only if
-     *        the source is running MySQL 5.6.</li>
-     *        <li>Can specify a DB instance that is a PostgreSQL Read Replica
-     *        only if the source is running PostgreSQL 9.3.5.</li>
-     *        <li>The specified DB instance must have automatic backups enabled,
-     *        its backup retention period must be greater than 0.</li>
-     *        <li>If the source DB instance is in the same region as the Read
-     *        Replica, specify a valid DB instance identifier.</li>
-     *        <li>If the source DB instance is in a different region than the
-     *        Read Replica, specify a valid DB instance ARN. For more
-     *        information, go to <a href=
+     *        <li>
+     *        <p>
+     *        Must be the identifier of an existing MySQL, MariaDB, or
+     *        PostgreSQL DB instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can specify a DB instance that is a MySQL Read Replica only if the
+     *        source is running MySQL 5.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can specify a DB instance that is a PostgreSQL Read Replica only
+     *        if the source is running PostgreSQL 9.3.5.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The specified DB instance must have automatic backups enabled, its
+     *        backup retention period must be greater than 0.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source DB instance is in the same region as the Read
+     *        Replica, specify a valid DB instance identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source DB instance is in a different region than the Read
+     *        Replica, specify a valid DB instance ARN. For more information, go
+     *        to <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"
-     *        > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li>
+     *        > Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -522,7 +737,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the Read Replica. </p>
+     *        The compute and memory capacity of the Read Replica.</p>
      *        <p>
      *        Valid Values:
      *        <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
@@ -547,7 +762,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * Default: Inherits from the source DB instance.
      * </p>
      * 
-     * @return The compute and memory capacity of the Read Replica. </p>
+     * @return The compute and memory capacity of the Read Replica.</p>
      *         <p>
      *         Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
@@ -573,7 +788,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the Read Replica. </p>
+     *        The compute and memory capacity of the Read Replica.</p>
      *        <p>
      *        Valid Values:
      *        <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
@@ -605,7 +820,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * 
      * @param availabilityZone
      *        The Amazon EC2 Availability Zone that the Read Replica will be
-     *        created in. </p>
+     *        created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the
      *        endpoint's region.
@@ -632,7 +847,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return The Amazon EC2 Availability Zone that the Read Replica will be
-     *         created in. </p>
+     *         created in.</p>
      *         <p>
      *         Default: A random, system-chosen Availability Zone in the
      *         endpoint's region.
@@ -660,7 +875,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * 
      * @param availabilityZone
      *        The Amazon EC2 Availability Zone that the Read Replica will be
-     *        created in. </p>
+     *        created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the
      *        endpoint's region.
@@ -689,7 +904,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param port
-     *        The port number that the DB instance uses for connections. </p>
+     *        The port number that the DB instance uses for connections.</p>
      *        <p>
      *        Default: Inherits from the source DB instance
      *        </p>
@@ -712,7 +927,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * Valid Values: <code>1150-65535</code>
      * </p>
      * 
-     * @return The port number that the DB instance uses for connections. </p>
+     * @return The port number that the DB instance uses for connections.</p>
      *         <p>
      *         Default: Inherits from the source DB instance
      *         </p>
@@ -736,7 +951,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param port
-     *        The port number that the DB instance uses for connections. </p>
+     *        The port number that the DB instance uses for connections.</p>
      *        <p>
      *        Default: Inherits from the source DB instance
      *        </p>
@@ -762,7 +977,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * 
      * @param autoMinorVersionUpgrade
      *        Indicates that minor engine upgrades will be applied automatically
-     *        to the Read Replica during the maintenance window. </p>
+     *        to the Read Replica during the maintenance window.</p>
      *        <p>
      *        Default: Inherits from the source DB instance
      */
@@ -781,8 +996,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return Indicates that minor engine upgrades will be applied
-     *         automatically to the Read Replica during the maintenance window.
-     *         </p>
+     *         automatically to the Read Replica during the maintenance
+     *         window.</p>
      *         <p>
      *         Default: Inherits from the source DB instance
      */
@@ -802,7 +1017,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * 
      * @param autoMinorVersionUpgrade
      *        Indicates that minor engine upgrades will be applied automatically
-     *        to the Read Replica during the maintenance window. </p>
+     *        to the Read Replica during the maintenance window.</p>
      *        <p>
      *        Default: Inherits from the source DB instance
      * @return Returns a reference to this object so that method calls can be
@@ -825,8 +1040,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return Indicates that minor engine upgrades will be applied
-     *         automatically to the Read Replica during the maintenance window.
-     *         </p>
+     *         automatically to the Read Replica during the maintenance
+     *         window.</p>
      *         <p>
      *         Default: Inherits from the source DB instance
      */
@@ -947,8 +1162,16 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b>true</li>
-     * <li><b>VPC:</b>false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b>true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b>false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -963,15 +1186,23 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      *        of true specifies an Internet-facing instance with a publicly
      *        resolvable DNS name, which resolves to a public IP address. A
      *        value of false specifies an internal instance with a DNS name that
-     *        resolves to a private IP address. </p>
+     *        resolves to a private IP address.</p>
      *        <p>
      *        Default: The default behavior varies depending on whether a VPC
      *        has been requested or not. The following list shows the default
      *        behavior in each case.
      *        </p>
      *        <ul>
-     *        <li><b>Default VPC:</b>true</li>
-     *        <li><b>VPC:</b>false</li>
+     *        <li>
+     *        <p>
+     *        <b>Default VPC:</b>true
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>VPC:</b>false
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request
@@ -999,8 +1230,16 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b>true</li>
-     * <li><b>VPC:</b>false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b>true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b>false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -1014,15 +1253,23 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      *         of true specifies an Internet-facing instance with a publicly
      *         resolvable DNS name, which resolves to a public IP address. A
      *         value of false specifies an internal instance with a DNS name
-     *         that resolves to a private IP address. </p>
+     *         that resolves to a private IP address.</p>
      *         <p>
      *         Default: The default behavior varies depending on whether a VPC
      *         has been requested or not. The following list shows the default
      *         behavior in each case.
      *         </p>
      *         <ul>
-     *         <li><b>Default VPC:</b>true</li>
-     *         <li><b>VPC:</b>false</li>
+     *         <li>
+     *         <p>
+     *         <b>Default VPC:</b>true
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>VPC:</b>false
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request
@@ -1051,8 +1298,16 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b>true</li>
-     * <li><b>VPC:</b>false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b>true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b>false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -1067,15 +1322,23 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      *        of true specifies an Internet-facing instance with a publicly
      *        resolvable DNS name, which resolves to a public IP address. A
      *        value of false specifies an internal instance with a DNS name that
-     *        resolves to a private IP address. </p>
+     *        resolves to a private IP address.</p>
      *        <p>
      *        Default: The default behavior varies depending on whether a VPC
      *        has been requested or not. The following list shows the default
      *        behavior in each case.
      *        </p>
      *        <ul>
-     *        <li><b>Default VPC:</b>true</li>
-     *        <li><b>VPC:</b>false</li>
+     *        <li>
+     *        <p>
+     *        <b>Default VPC:</b>true
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>VPC:</b>false
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request
@@ -1107,8 +1370,16 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b>true</li>
-     * <li><b>VPC:</b>false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b>true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b>false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -1122,15 +1393,23 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      *         of true specifies an Internet-facing instance with a publicly
      *         resolvable DNS name, which resolves to a public IP address. A
      *         value of false specifies an internal instance with a DNS name
-     *         that resolves to a private IP address. </p>
+     *         that resolves to a private IP address.</p>
      *         <p>
      *         Default: The default behavior varies depending on whether a VPC
      *         has been requested or not. The following list shows the default
      *         behavior in each case.
      *         </p>
      *         <ul>
-     *         <li><b>Default VPC:</b>true</li>
-     *         <li><b>VPC:</b>false</li>
+     *         <li>
+     *         <p>
+     *         <b>Default VPC:</b>true
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>VPC:</b>false
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request
@@ -1215,17 +1494,36 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Can only be specified if the source DB instance identifier specifies
-     * a DB instance in another region.</li>
-     * <li>The specified DB subnet group must be in the same region in which the
-     * operation is running.</li>
-     * <li>All Read Replicas in one region that are created from the same source
-     * DB instance must either:
+     * <li>
+     * <p>
+     * Can only be specified if the source DB instance identifier specifies a DB
+     * instance in another region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The specified DB subnet group must be in the same region in which the
+     * operation is running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All Read Replicas in one region that are created from the same source DB
+     * instance must either:&gt;
+     * </p>
      * <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these Read Replicas
-     * will be created in the same VPC.</li>
-     * <li>Not specify a DB subnet group. All these Read Replicas will be
-     * created outside of any VPC.</li>
+     * <li>
+     * <p>
+     * Specify DB subnet groups from the same VPC. All these Read Replicas will
+     * be created in the same VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not specify a DB subnet group. All these Read Replicas will be created
+     * outside of any VPC.
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -1241,22 +1539,41 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      *        Specifies a DB subnet group for the DB instance. The new DB
      *        instance will be created in the VPC associated with the DB subnet
      *        group. If no DB subnet group is specified, then the new DB
-     *        instance is not created in a VPC. </p>
+     *        instance is not created in a VPC.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Can only be specified if the source DB instance identifier
-     *        specifies a DB instance in another region.</li>
-     *        <li>The specified DB subnet group must be in the same region in
-     *        which the operation is running.</li>
-     *        <li>All Read Replicas in one region that are created from the same
-     *        source DB instance must either:
+     *        <li>
+     *        <p>
+     *        Can only be specified if the source DB instance identifier
+     *        specifies a DB instance in another region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The specified DB subnet group must be in the same region in which
+     *        the operation is running.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        All Read Replicas in one region that are created from the same
+     *        source DB instance must either:&gt;
+     *        </p>
      *        <ul>
-     *        <li>Specify DB subnet groups from the same VPC. All these Read
-     *        Replicas will be created in the same VPC.</li>
-     *        <li>Not specify a DB subnet group. All these Read Replicas will be
-     *        created outside of any VPC.</li>
+     *        <li>
+     *        <p>
+     *        Specify DB subnet groups from the same VPC. All these Read
+     *        Replicas will be created in the same VPC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not specify a DB subnet group. All these Read Replicas will be
+     *        created outside of any VPC.
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        </ul>
@@ -1284,17 +1601,36 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Can only be specified if the source DB instance identifier specifies
-     * a DB instance in another region.</li>
-     * <li>The specified DB subnet group must be in the same region in which the
-     * operation is running.</li>
-     * <li>All Read Replicas in one region that are created from the same source
-     * DB instance must either:
+     * <li>
+     * <p>
+     * Can only be specified if the source DB instance identifier specifies a DB
+     * instance in another region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The specified DB subnet group must be in the same region in which the
+     * operation is running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All Read Replicas in one region that are created from the same source DB
+     * instance must either:&gt;
+     * </p>
      * <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these Read Replicas
-     * will be created in the same VPC.</li>
-     * <li>Not specify a DB subnet group. All these Read Replicas will be
-     * created outside of any VPC.</li>
+     * <li>
+     * <p>
+     * Specify DB subnet groups from the same VPC. All these Read Replicas will
+     * be created in the same VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not specify a DB subnet group. All these Read Replicas will be created
+     * outside of any VPC.
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -1309,22 +1645,41 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * @return Specifies a DB subnet group for the DB instance. The new DB
      *         instance will be created in the VPC associated with the DB subnet
      *         group. If no DB subnet group is specified, then the new DB
-     *         instance is not created in a VPC. </p>
+     *         instance is not created in a VPC.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Can only be specified if the source DB instance identifier
-     *         specifies a DB instance in another region.</li>
-     *         <li>The specified DB subnet group must be in the same region in
-     *         which the operation is running.</li>
-     *         <li>All Read Replicas in one region that are created from the
-     *         same source DB instance must either:
+     *         <li>
+     *         <p>
+     *         Can only be specified if the source DB instance identifier
+     *         specifies a DB instance in another region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The specified DB subnet group must be in the same region in which
+     *         the operation is running.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         All Read Replicas in one region that are created from the same
+     *         source DB instance must either:&gt;
+     *         </p>
      *         <ul>
-     *         <li>Specify DB subnet groups from the same VPC. All these Read
-     *         Replicas will be created in the same VPC.</li>
-     *         <li>Not specify a DB subnet group. All these Read Replicas will
-     *         be created outside of any VPC.</li>
+     *         <li>
+     *         <p>
+     *         Specify DB subnet groups from the same VPC. All these Read
+     *         Replicas will be created in the same VPC.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not specify a DB subnet group. All these Read Replicas will be
+     *         created outside of any VPC.
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
      *         </ul>
@@ -1352,17 +1707,36 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Can only be specified if the source DB instance identifier specifies
-     * a DB instance in another region.</li>
-     * <li>The specified DB subnet group must be in the same region in which the
-     * operation is running.</li>
-     * <li>All Read Replicas in one region that are created from the same source
-     * DB instance must either:
+     * <li>
+     * <p>
+     * Can only be specified if the source DB instance identifier specifies a DB
+     * instance in another region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The specified DB subnet group must be in the same region in which the
+     * operation is running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All Read Replicas in one region that are created from the same source DB
+     * instance must either:&gt;
+     * </p>
      * <ul>
-     * <li>Specify DB subnet groups from the same VPC. All these Read Replicas
-     * will be created in the same VPC.</li>
-     * <li>Not specify a DB subnet group. All these Read Replicas will be
-     * created outside of any VPC.</li>
+     * <li>
+     * <p>
+     * Specify DB subnet groups from the same VPC. All these Read Replicas will
+     * be created in the same VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not specify a DB subnet group. All these Read Replicas will be created
+     * outside of any VPC.
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -1378,22 +1752,41 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      *        Specifies a DB subnet group for the DB instance. The new DB
      *        instance will be created in the VPC associated with the DB subnet
      *        group. If no DB subnet group is specified, then the new DB
-     *        instance is not created in a VPC. </p>
+     *        instance is not created in a VPC.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Can only be specified if the source DB instance identifier
-     *        specifies a DB instance in another region.</li>
-     *        <li>The specified DB subnet group must be in the same region in
-     *        which the operation is running.</li>
-     *        <li>All Read Replicas in one region that are created from the same
-     *        source DB instance must either:
+     *        <li>
+     *        <p>
+     *        Can only be specified if the source DB instance identifier
+     *        specifies a DB instance in another region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The specified DB subnet group must be in the same region in which
+     *        the operation is running.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        All Read Replicas in one region that are created from the same
+     *        source DB instance must either:&gt;
+     *        </p>
      *        <ul>
-     *        <li>Specify DB subnet groups from the same VPC. All these Read
-     *        Replicas will be created in the same VPC.</li>
-     *        <li>Not specify a DB subnet group. All these Read Replicas will be
-     *        created outside of any VPC.</li>
+     *        <li>
+     *        <p>
+     *        Specify DB subnet groups from the same VPC. All these Read
+     *        Replicas will be created in the same VPC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not specify a DB subnet group. All these Read Replicas will be
+     *        created outside of any VPC.
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        </ul>
@@ -1431,8 +1824,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the Read Replica.
-     *        </p>
+     *        Specifies the storage type to be associated with the Read
+     *        Replica.</p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
      *        </p>
@@ -1466,7 +1859,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return Specifies the storage type to be associated with the Read
-     *         Replica. </p>
+     *         Replica.</p>
      *         <p>
      *         Valid values: <code>standard | gp2 | io1</code>
      *         </p>
@@ -1500,8 +1893,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the Read Replica.
-     *        </p>
+     *        Specifies the storage type to be associated with the Read
+     *        Replica.</p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
      *        </p>
@@ -1587,7 +1980,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the Read Replica. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -1600,7 +1993,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * @param monitoringInterval
      *        The interval, in seconds, between points when Enhanced Monitoring
      *        metrics are collected for the Read Replica. To disable collecting
-     *        Enhanced Monitoring metrics, specify 0. The default is 60.</p>
+     *        Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *        <p>
      *        If <code>MonitoringRoleArn</code> is specified, then you must also
      *        set <code>MonitoringInterval</code> to a value other than 0.
@@ -1617,7 +2010,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the Read Replica. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -1629,7 +2022,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * 
      * @return The interval, in seconds, between points when Enhanced Monitoring
      *         metrics are collected for the Read Replica. To disable collecting
-     *         Enhanced Monitoring metrics, specify 0. The default is 60.</p>
+     *         Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *         <p>
      *         If <code>MonitoringRoleArn</code> is specified, then you must
      *         also set <code>MonitoringInterval</code> to a value other than 0.
@@ -1646,7 +2039,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the Read Replica. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -1659,7 +2052,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest
      * @param monitoringInterval
      *        The interval, in seconds, between points when Enhanced Monitoring
      *        metrics are collected for the Read Replica. To disable collecting
-     *        Enhanced Monitoring metrics, specify 0. The default is 60.</p>
+     *        Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *        <p>
      *        If <code>MonitoringRoleArn</code> is specified, then you must also
      *        set <code>MonitoringInterval</code> to a value other than 0.

@@ -33,10 +33,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for an existing DB instance</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the identifier for an existing DB instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBInstanceIdentifier;
@@ -167,9 +183,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> dBSecurityGroups;
@@ -182,9 +210,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
@@ -232,10 +272,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Amazon Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
      * alphanumeric characters (SQL Server).
      * </p>
-     * <note> Amazon RDS API actions never return the password, so this action
-     * provides a way to regain access to a primary instance user if the
-     * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked. </note>
+     * <note>
+     * <p>
+     * Amazon RDS API actions never return the password, so this action provides
+     * a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been
+     * accidentally revoked.
+     * </p>
+     * </note>
      */
     private String masterUserPassword;
     /**
@@ -278,12 +322,28 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 0 to 35</li>
-     * <li>Can be specified for a MySQL Read Replica only if the source is
-     * running MySQL 5.6</li>
-     * <li>Can be specified for a PostgreSQL Read Replica only if the source is
-     * running PostgreSQL 9.3.5</li>
-     * <li>Cannot be set to 0 if the DB instance is a source to Read Replicas</li>
+     * <li>
+     * <p>
+     * Must be a value from 0 to 35
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be specified for a MySQL Read Replica only if the source is running
+     * MySQL 5.6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be specified for a PostgreSQL Read Replica only if the source is
+     * running PostgreSQL 9.3.5
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be set to 0 if the DB instance is a source to Read Replicas
+     * </p>
+     * </li>
      * </ul>
      */
     private Integer backupRetentionPeriod;
@@ -299,10 +359,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format hh24:mi-hh24:mi</li>
-     * <li>Times should be in Universal Time Coordinated (UTC)</li>
-     * <li>Must not conflict with the preferred maintenance window</li>
-     * <li>Must be at least 30 minutes</li>
+     * <li>
+     * <p>
+     * Must be in the format hh24:mi-hh24:mi
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Time Coordinated (UTC)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes
+     * </p>
+     * </li>
      * </ul>
      */
     private String preferredBackupWindow;
@@ -468,9 +544,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String newDBInstanceIdentifier;
@@ -533,7 +621,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -697,15 +785,31 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param dBInstanceIdentifier
      *        The DB instance identifier. This value is stored as a lowercase
-     *        string. </p>
+     *        string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier for an existing DB instance</li>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be the identifier for an existing DB instance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
     public ModifyDBInstanceRequest(String dBInstanceIdentifier) {
         setDBInstanceIdentifier(dBInstanceIdentifier);
@@ -719,23 +823,55 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for an existing DB instance</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the identifier for an existing DB instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBInstanceIdentifier
      *        The DB instance identifier. This value is stored as a lowercase
-     *        string. </p>
+     *        string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier for an existing DB instance</li>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be the identifier for an existing DB instance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -750,22 +886,54 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for an existing DB instance</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the identifier for an existing DB instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The DB instance identifier. This value is stored as a lowercase
-     *         string. </p>
+     *         string.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be the identifier for an existing DB instance</li>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be the identifier for an existing DB instance
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBInstanceIdentifier() {
@@ -780,23 +948,55 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier for an existing DB instance</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the identifier for an existing DB instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBInstanceIdentifier
      *        The DB instance identifier. This value is stored as a lowercase
-     *        string. </p>
+     *        string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier for an existing DB instance</li>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be the identifier for an existing DB instance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1544,21 +1744,45 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A list of DB security groups to authorize on this DB instance.
      *         Changing this setting does not result in an outage and the change
-     *         is asynchronously applied as soon as possible. </p>
+     *         is asynchronously applied as soon as possible.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getDBSecurityGroups() {
@@ -1578,22 +1802,46 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBSecurityGroups
      *        A list of DB security groups to authorize on this DB instance.
      *        Changing this setting does not result in an outage and the change
-     *        is asynchronously applied as soon as possible. </p>
+     *        is asynchronously applied as soon as possible.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBSecurityGroups(
@@ -1617,9 +1865,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1631,14 +1891,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * @param dBSecurityGroups
      *        A list of DB security groups to authorize on this DB instance.
      *        Changing this setting does not result in an outage and the change
-     *        is asynchronously applied as soon as possible. </p>
+     *        is asynchronously applied as soon as possible.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1665,22 +1937,46 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBSecurityGroups
      *        A list of DB security groups to authorize on this DB instance.
      *        Changing this setting does not result in an outage and the change
-     *        is asynchronously applied as soon as possible. </p>
+     *        is asynchronously applied as soon as possible.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1700,21 +1996,45 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A list of EC2 VPC security groups to authorize on this DB
      *         instance. This change is asynchronously applied as soon as
-     *         possible. </p>
+     *         possible.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getVpcSecurityGroupIds() {
@@ -1733,22 +2053,46 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param vpcSecurityGroupIds
      *        A list of EC2 VPC security groups to authorize on this DB
      *        instance. This change is asynchronously applied as soon as
-     *        possible. </p>
+     *        possible.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setVpcSecurityGroupIds(
@@ -1771,9 +2115,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1785,14 +2141,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * @param vpcSecurityGroupIds
      *        A list of EC2 VPC security groups to authorize on this DB
      *        instance. This change is asynchronously applied as soon as
-     *        possible. </p>
+     *        possible.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1818,22 +2186,46 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param vpcSecurityGroupIds
      *        A list of EC2 VPC security groups to authorize on this DB
      *        instance. This change is asynchronously applied as soon as
-     *        possible. </p>
+     *        possible.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2065,10 +2457,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Amazon Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
      * alphanumeric characters (SQL Server).
      * </p>
-     * <note> Amazon RDS API actions never return the password, so this action
-     * provides a way to regain access to a primary instance user if the
-     * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked. </note>
+     * <note>
+     * <p>
+     * Amazon RDS API actions never return the password, so this action provides
+     * a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been
+     * accidentally revoked.
+     * </p>
+     * </note>
      * 
      * @param masterUserPassword
      *        The new password for the DB instance master user. Can be any
@@ -2089,10 +2485,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        MariaDB, and Amazon Aurora), 8 to 30 alphanumeric characters
      *        (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *        </p>
-     *        <note> Amazon RDS API actions never return the password, so this
-     *        action provides a way to regain access to a primary instance user
-     *        if the password is lost. This includes restoring privileges that
-     *        might have been accidentally revoked.
+     *        <note>
+     *        <p>
+     *        Amazon RDS API actions never return the password, so this action
+     *        provides a way to regain access to a primary instance user if the
+     *        password is lost. This includes restoring privileges that might
+     *        have been accidentally revoked.
+     *        </p>
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -2119,10 +2518,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Amazon Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
      * alphanumeric characters (SQL Server).
      * </p>
-     * <note> Amazon RDS API actions never return the password, so this action
-     * provides a way to regain access to a primary instance user if the
-     * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked. </note>
+     * <note>
+     * <p>
+     * Amazon RDS API actions never return the password, so this action provides
+     * a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been
+     * accidentally revoked.
+     * </p>
+     * </note>
      * 
      * @return The new password for the DB instance master user. Can be any
      *         printable ASCII character except "/", """, or "@".</p>
@@ -2142,10 +2545,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *         MariaDB, and Amazon Aurora), 8 to 30 alphanumeric characters
      *         (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *         </p>
-     *         <note> Amazon RDS API actions never return the password, so this
-     *         action provides a way to regain access to a primary instance user
-     *         if the password is lost. This includes restoring privileges that
-     *         might have been accidentally revoked.
+     *         <note>
+     *         <p>
+     *         Amazon RDS API actions never return the password, so this action
+     *         provides a way to regain access to a primary instance user if the
+     *         password is lost. This includes restoring privileges that might
+     *         have been accidentally revoked.
+     *         </p>
      */
 
     public String getMasterUserPassword() {
@@ -2172,10 +2578,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Amazon Aurora), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
      * alphanumeric characters (SQL Server).
      * </p>
-     * <note> Amazon RDS API actions never return the password, so this action
-     * provides a way to regain access to a primary instance user if the
-     * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked. </note>
+     * <note>
+     * <p>
+     * Amazon RDS API actions never return the password, so this action provides
+     * a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been
+     * accidentally revoked.
+     * </p>
+     * </note>
      * 
      * @param masterUserPassword
      *        The new password for the DB instance master user. Can be any
@@ -2196,10 +2606,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        MariaDB, and Amazon Aurora), 8 to 30 alphanumeric characters
      *        (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
      *        </p>
-     *        <note> Amazon RDS API actions never return the password, so this
-     *        action provides a way to regain access to a primary instance user
-     *        if the password is lost. This includes restoring privileges that
-     *        might have been accidentally revoked.
+     *        <note>
+     *        <p>
+     *        Amazon RDS API actions never return the password, so this action
+     *        provides a way to regain access to a primary instance user if the
+     *        password is lost. This includes restoring privileges that might
+     *        have been accidentally revoked.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2234,7 +2647,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        changes are not applied until you reboot the instance without
      *        failover. The db instance will NOT be rebooted automatically and
      *        the parameter changes will NOT be applied during the next
-     *        maintenance window. </p>
+     *        maintenance window.</p>
      *        <p>
      *        Default: Uses existing setting
      *        </p>
@@ -2270,7 +2683,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *         parameter changes are not applied until you reboot the instance
      *         without failover. The db instance will NOT be rebooted
      *         automatically and the parameter changes will NOT be applied
-     *         during the next maintenance window. </p>
+     *         during the next maintenance window.</p>
      *         <p>
      *         Default: Uses existing setting
      *         </p>
@@ -2307,7 +2720,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        changes are not applied until you reboot the instance without
      *        failover. The db instance will NOT be rebooted automatically and
      *        the parameter changes will NOT be applied during the next
-     *        maintenance window. </p>
+     *        maintenance window.</p>
      *        <p>
      *        Default: Uses existing setting
      *        </p>
@@ -2346,18 +2759,34 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 0 to 35</li>
-     * <li>Can be specified for a MySQL Read Replica only if the source is
-     * running MySQL 5.6</li>
-     * <li>Can be specified for a PostgreSQL Read Replica only if the source is
-     * running PostgreSQL 9.3.5</li>
-     * <li>Cannot be set to 0 if the DB instance is a source to Read Replicas</li>
+     * <li>
+     * <p>
+     * Must be a value from 0 to 35
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be specified for a MySQL Read Replica only if the source is running
+     * MySQL 5.6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be specified for a PostgreSQL Read Replica only if the source is
+     * running PostgreSQL 9.3.5
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be set to 0 if the DB instance is a source to Read Replicas
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param backupRetentionPeriod
      *        The number of days to retain automated backups. Setting this
      *        parameter to a positive number enables backups. Setting this
-     *        parameter to 0 disables automated backups. </p>
+     *        parameter to 0 disables automated backups.</p>
      *        <p>
      *        Changing this parameter can result in an outage if you change from
      *        0 to a non-zero value or from a non-zero value to 0. These changes
@@ -2374,13 +2803,28 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be a value from 0 to 35</li>
-     *        <li>Can be specified for a MySQL Read Replica only if the source
-     *        is running MySQL 5.6</li>
-     *        <li>Can be specified for a PostgreSQL Read Replica only if the
-     *        source is running PostgreSQL 9.3.5</li>
-     *        <li>Cannot be set to 0 if the DB instance is a source to Read
-     *        Replicas</li>
+     *        <li>
+     *        <p>
+     *        Must be a value from 0 to 35
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can be specified for a MySQL Read Replica only if the source is
+     *        running MySQL 5.6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can be specified for a PostgreSQL Read Replica only if the source
+     *        is running PostgreSQL 9.3.5
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be set to 0 if the DB instance is a source to Read Replicas
+     *        </p>
+     *        </li>
      */
 
     public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
@@ -2409,17 +2853,33 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 0 to 35</li>
-     * <li>Can be specified for a MySQL Read Replica only if the source is
-     * running MySQL 5.6</li>
-     * <li>Can be specified for a PostgreSQL Read Replica only if the source is
-     * running PostgreSQL 9.3.5</li>
-     * <li>Cannot be set to 0 if the DB instance is a source to Read Replicas</li>
+     * <li>
+     * <p>
+     * Must be a value from 0 to 35
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be specified for a MySQL Read Replica only if the source is running
+     * MySQL 5.6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be specified for a PostgreSQL Read Replica only if the source is
+     * running PostgreSQL 9.3.5
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be set to 0 if the DB instance is a source to Read Replicas
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The number of days to retain automated backups. Setting this
      *         parameter to a positive number enables backups. Setting this
-     *         parameter to 0 disables automated backups. </p>
+     *         parameter to 0 disables automated backups.</p>
      *         <p>
      *         Changing this parameter can result in an outage if you change
      *         from 0 to a non-zero value or from a non-zero value to 0. These
@@ -2436,13 +2896,29 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be a value from 0 to 35</li>
-     *         <li>Can be specified for a MySQL Read Replica only if the source
-     *         is running MySQL 5.6</li>
-     *         <li>Can be specified for a PostgreSQL Read Replica only if the
-     *         source is running PostgreSQL 9.3.5</li>
-     *         <li>Cannot be set to 0 if the DB instance is a source to Read
-     *         Replicas</li>
+     *         <li>
+     *         <p>
+     *         Must be a value from 0 to 35
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can be specified for a MySQL Read Replica only if the source is
+     *         running MySQL 5.6
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can be specified for a PostgreSQL Read Replica only if the source
+     *         is running PostgreSQL 9.3.5
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be set to 0 if the DB instance is a source to Read
+     *         Replicas
+     *         </p>
+     *         </li>
      */
 
     public Integer getBackupRetentionPeriod() {
@@ -2471,18 +2947,34 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be a value from 0 to 35</li>
-     * <li>Can be specified for a MySQL Read Replica only if the source is
-     * running MySQL 5.6</li>
-     * <li>Can be specified for a PostgreSQL Read Replica only if the source is
-     * running PostgreSQL 9.3.5</li>
-     * <li>Cannot be set to 0 if the DB instance is a source to Read Replicas</li>
+     * <li>
+     * <p>
+     * Must be a value from 0 to 35
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be specified for a MySQL Read Replica only if the source is running
+     * MySQL 5.6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can be specified for a PostgreSQL Read Replica only if the source is
+     * running PostgreSQL 9.3.5
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be set to 0 if the DB instance is a source to Read Replicas
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param backupRetentionPeriod
      *        The number of days to retain automated backups. Setting this
      *        parameter to a positive number enables backups. Setting this
-     *        parameter to 0 disables automated backups. </p>
+     *        parameter to 0 disables automated backups.</p>
      *        <p>
      *        Changing this parameter can result in an outage if you change from
      *        0 to a non-zero value or from a non-zero value to 0. These changes
@@ -2499,13 +2991,28 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be a value from 0 to 35</li>
-     *        <li>Can be specified for a MySQL Read Replica only if the source
-     *        is running MySQL 5.6</li>
-     *        <li>Can be specified for a PostgreSQL Read Replica only if the
-     *        source is running PostgreSQL 9.3.5</li>
-     *        <li>Cannot be set to 0 if the DB instance is a source to Read
-     *        Replicas</li>
+     *        <li>
+     *        <p>
+     *        Must be a value from 0 to 35
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can be specified for a MySQL Read Replica only if the source is
+     *        running MySQL 5.6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can be specified for a PostgreSQL Read Replica only if the source
+     *        is running PostgreSQL 9.3.5
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be set to 0 if the DB instance is a source to Read Replicas
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2528,10 +3035,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format hh24:mi-hh24:mi</li>
-     * <li>Times should be in Universal Time Coordinated (UTC)</li>
-     * <li>Must not conflict with the preferred maintenance window</li>
-     * <li>Must be at least 30 minutes</li>
+     * <li>
+     * <p>
+     * Must be in the format hh24:mi-hh24:mi
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Time Coordinated (UTC)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param preferredBackupWindow
@@ -2544,10 +3067,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be in the format hh24:mi-hh24:mi</li>
-     *        <li>Times should be in Universal Time Coordinated (UTC)</li>
-     *        <li>Must not conflict with the preferred maintenance window</li>
-     *        <li>Must be at least 30 minutes</li>
+     *        <li>
+     *        <p>
+     *        Must be in the format hh24:mi-hh24:mi
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Times should be in Universal Time Coordinated (UTC)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not conflict with the preferred maintenance window
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 30 minutes
+     *        </p>
+     *        </li>
      */
 
     public void setPreferredBackupWindow(String preferredBackupWindow) {
@@ -2566,10 +3105,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format hh24:mi-hh24:mi</li>
-     * <li>Times should be in Universal Time Coordinated (UTC)</li>
-     * <li>Must not conflict with the preferred maintenance window</li>
-     * <li>Must be at least 30 minutes</li>
+     * <li>
+     * <p>
+     * Must be in the format hh24:mi-hh24:mi
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Time Coordinated (UTC)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The daily time range during which automated backups are created
@@ -2581,10 +3136,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be in the format hh24:mi-hh24:mi</li>
-     *         <li>Times should be in Universal Time Coordinated (UTC)</li>
-     *         <li>Must not conflict with the preferred maintenance window</li>
-     *         <li>Must be at least 30 minutes</li>
+     *         <li>
+     *         <p>
+     *         Must be in the format hh24:mi-hh24:mi
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Times should be in Universal Time Coordinated (UTC)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must not conflict with the preferred maintenance window
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be at least 30 minutes
+     *         </p>
+     *         </li>
      */
 
     public String getPreferredBackupWindow() {
@@ -2603,10 +3174,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be in the format hh24:mi-hh24:mi</li>
-     * <li>Times should be in Universal Time Coordinated (UTC)</li>
-     * <li>Must not conflict with the preferred maintenance window</li>
-     * <li>Must be at least 30 minutes</li>
+     * <li>
+     * <p>
+     * Must be in the format hh24:mi-hh24:mi
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Times should be in Universal Time Coordinated (UTC)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not conflict with the preferred maintenance window
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 30 minutes
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param preferredBackupWindow
@@ -2619,10 +3206,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be in the format hh24:mi-hh24:mi</li>
-     *        <li>Times should be in Universal Time Coordinated (UTC)</li>
-     *        <li>Must not conflict with the preferred maintenance window</li>
-     *        <li>Must be at least 30 minutes</li>
+     *        <li>
+     *        <p>
+     *        Must be in the format hh24:mi-hh24:mi
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Times should be in Universal Time Coordinated (UTC)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not conflict with the preferred maintenance window
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 30 minutes
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2668,7 +3271,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        parameter will cause a reboot of the DB instance. If moving this
      *        window to the current time, there must be at least 30 minutes
      *        between the current time and end of the window to ensure pending
-     *        changes are applied. </p>
+     *        changes are applied.</p>
      *        <p>
      *        Default: Uses existing setting
      *        </p>
@@ -2720,7 +3323,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *         then changing this parameter will cause a reboot of the DB
      *         instance. If moving this window to the current time, there must
      *         be at least 30 minutes between the current time and end of the
-     *         window to ensure pending changes are applied. </p>
+     *         window to ensure pending changes are applied.</p>
      *         <p>
      *         Default: Uses existing setting
      *         </p>
@@ -2773,7 +3376,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        parameter will cause a reboot of the DB instance. If moving this
      *        window to the current time, there must be at least 30 minutes
      *        between the current time and end of the window to ensure pending
-     *        changes are applied. </p>
+     *        changes are applied.</p>
      *        <p>
      *        Default: Uses existing setting
      *        </p>
@@ -3055,7 +3658,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * @param allowMajorVersionUpgrade
      *        Indicates that major version upgrades are allowed. Changing this
      *        parameter does not result in an outage and the change is
-     *        asynchronously applied as soon as possible. </p>
+     *        asynchronously applied as soon as possible.</p>
      *        <p>
      *        Constraints: This parameter must be set to true when specifying a
      *        value for the EngineVersion parameter that is a different major
@@ -3080,7 +3683,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return Indicates that major version upgrades are allowed. Changing this
      *         parameter does not result in an outage and the change is
-     *         asynchronously applied as soon as possible. </p>
+     *         asynchronously applied as soon as possible.</p>
      *         <p>
      *         Constraints: This parameter must be set to true when specifying a
      *         value for the EngineVersion parameter that is a different major
@@ -3106,7 +3709,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * @param allowMajorVersionUpgrade
      *        Indicates that major version upgrades are allowed. Changing this
      *        parameter does not result in an outage and the change is
-     *        asynchronously applied as soon as possible. </p>
+     *        asynchronously applied as soon as possible.</p>
      *        <p>
      *        Constraints: This parameter must be set to true when specifying a
      *        value for the EngineVersion parameter that is a different major
@@ -3135,7 +3738,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return Indicates that major version upgrades are allowed. Changing this
      *         parameter does not result in an outage and the change is
-     *         asynchronously applied as soon as possible. </p>
+     *         asynchronously applied as soon as possible.</p>
      *         <p>
      *         Constraints: This parameter must be set to true when specifying a
      *         value for the EngineVersion parameter that is a different major
@@ -3668,9 +4271,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newDBInstanceIdentifier
@@ -3684,9 +4299,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setNewDBInstanceIdentifier(String newDBInstanceIdentifier) {
@@ -3706,9 +4333,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The new DB instance identifier for the DB instance when renaming
@@ -3721,9 +4360,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getNewDBInstanceIdentifier() {
@@ -3743,9 +4394,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newDBInstanceIdentifier
@@ -3759,9 +4422,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -3789,8 +4464,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB instance.
-     *        </p>
+     *        Specifies the storage type to be associated with the DB
+     *        instance.</p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
      *        </p>
@@ -3823,8 +4498,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * specified; otherwise <code>standard</code>
      * </p>
      * 
-     * @return Specifies the storage type to be associated with the DB instance.
-     *         </p>
+     * @return Specifies the storage type to be associated with the DB
+     *         instance.</p>
      *         <p>
      *         Valid values: <code>standard | gp2 | io1</code>
      *         </p>
@@ -3858,8 +4533,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB instance.
-     *        </p>
+     *        Specifies the storage type to be associated with the DB
+     *        instance.</p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
      *        </p>
@@ -4030,7 +4705,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param domain
-     *        Specify the Active Directory Domain to move the instance to. </p>
+     *        Specify the Active Directory Domain to move the instance to.</p>
      *        <p>
      *        The specified Active Directory Domain must be created prior to
      *        this operation. Currently only a SQL Server instance can be
@@ -4051,7 +4726,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Active Directory Domain.
      * </p>
      * 
-     * @return Specify the Active Directory Domain to move the instance to. </p>
+     * @return Specify the Active Directory Domain to move the instance to.</p>
      *         <p>
      *         The specified Active Directory Domain must be created prior to
      *         this operation. Currently only a SQL Server instance can be
@@ -4073,7 +4748,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param domain
-     *        Specify the Active Directory Domain to move the instance to. </p>
+     *        Specify the Active Directory Domain to move the instance to.</p>
      *        <p>
      *        The specified Active Directory Domain must be created prior to
      *        this operation. Currently only a SQL Server instance can be
@@ -4153,7 +4828,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -4166,7 +4841,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * @param monitoringInterval
      *        The interval, in seconds, between points when Enhanced Monitoring
      *        metrics are collected for the DB instance. To disable collecting
-     *        Enhanced Monitoring metrics, specify 0. The default is 60.</p>
+     *        Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *        <p>
      *        If <code>MonitoringRoleArn</code> is specified, then you must also
      *        set <code>MonitoringInterval</code> to a value other than 0.
@@ -4183,7 +4858,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -4195,7 +4870,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The interval, in seconds, between points when Enhanced Monitoring
      *         metrics are collected for the DB instance. To disable collecting
-     *         Enhanced Monitoring metrics, specify 0. The default is 60.</p>
+     *         Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *         <p>
      *         If <code>MonitoringRoleArn</code> is specified, then you must
      *         also set <code>MonitoringInterval</code> to a value other than 0.
@@ -4212,7 +4887,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * <p>
      * The interval, in seconds, between points when Enhanced Monitoring metrics
      * are collected for the DB instance. To disable collecting Enhanced
-     * Monitoring metrics, specify 0. The default is 60.
+     * Monitoring metrics, specify 0. The default is 0.
      * </p>
      * <p>
      * If <code>MonitoringRoleArn</code> is specified, then you must also set
@@ -4225,7 +4900,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * @param monitoringInterval
      *        The interval, in seconds, between points when Enhanced Monitoring
      *        metrics are collected for the DB instance. To disable collecting
-     *        Enhanced Monitoring metrics, specify 0. The default is 60.</p>
+     *        Enhanced Monitoring metrics, specify 0. The default is 0.</p>
      *        <p>
      *        If <code>MonitoringRoleArn</code> is specified, then you must also
      *        set <code>MonitoringInterval</code> to a value other than 0.
@@ -4317,7 +4992,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBPortNumber
-     *        The port number on which the database accepts connections. </p>
+     *        The port number on which the database accepts connections.</p>
      *        <p>
      *        The value of the <code>DBPortNumber</code> parameter must not
      *        match any of the port values specified for options in the option
@@ -4465,7 +5140,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * Valid Values: <code>1150-65535</code>
      * </p>
      * 
-     * @return The port number on which the database accepts connections. </p>
+     * @return The port number on which the database accepts connections.</p>
      *         <p>
      *         The value of the <code>DBPortNumber</code> parameter must not
      *         match any of the port values specified for options in the option
@@ -4616,7 +5291,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBPortNumber
-     *        The port number on which the database accepts connections. </p>
+     *        The port number on which the database accepts connections.</p>
      *        <p>
      *        The value of the <code>DBPortNumber</code> parameter must not
      *        match any of the port values specified for options in the option

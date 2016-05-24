@@ -23,9 +23,21 @@ import java.io.Serializable;
  * This data type is used as a response element in the following actions:
  * </p>
  * <ul>
- * <li><a>AuthorizeDBSecurityGroupIngress</a></li>
- * <li><a>DescribeDBSecurityGroups</a></li>
- * <li><a>RevokeDBSecurityGroupIngress</a></li>
+ * <li>
+ * <p>
+ * <a>AuthorizeDBSecurityGroupIngress</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeDBSecurityGroups</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>RevokeDBSecurityGroupIngress</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class EC2SecurityGroup implements Serializable, Cloneable {

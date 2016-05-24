@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "dms",
     "signingName" : "dms",
-    "jsonProtocol" : true,
-    "serviceName" : "AWS Database Migration Service",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "jsonProtocol" : true,
+    "serviceName" : "AWS Database Migration Service"
   },
   "operations" : {
     "AddTagsToResource" : {

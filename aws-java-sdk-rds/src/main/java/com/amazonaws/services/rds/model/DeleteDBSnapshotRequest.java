@@ -50,7 +50,7 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest implements
      * object members.
      * 
      * @param dBSnapshotIdentifier
-     *        The DBSnapshot identifier. </p>
+     *        The DBSnapshot identifier.</p>
      *        <p>
      *        Constraints: Must be the name of an existing DB snapshot in the
      *        <code>available</code> state.
@@ -69,7 +69,7 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBSnapshotIdentifier
-     *        The DBSnapshot identifier. </p>
+     *        The DBSnapshot identifier.</p>
      *        <p>
      *        Constraints: Must be the name of an existing DB snapshot in the
      *        <code>available</code> state.
@@ -88,7 +88,7 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest implements
      * <code>available</code> state.
      * </p>
      * 
-     * @return The DBSnapshot identifier. </p>
+     * @return The DBSnapshot identifier.</p>
      *         <p>
      *         Constraints: Must be the name of an existing DB snapshot in the
      *         <code>available</code> state.
@@ -108,7 +108,7 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param dBSnapshotIdentifier
-     *        The DBSnapshot identifier. </p>
+     *        The DBSnapshot identifier.</p>
      *        <p>
      *        Constraints: Must be the name of an existing DB snapshot in the
      *        <code>available</code> state.

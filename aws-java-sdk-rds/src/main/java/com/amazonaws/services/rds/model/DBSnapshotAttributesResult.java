@@ -21,12 +21,12 @@ import java.io.Serializable;
 /**
  * <p>
  * Contains the results of a successful call to the
- * <a>DescribeDBSnapshotAttributes</a> API.
+ * <a>DescribeDBSnapshotAttributes</a> API action.
  * </p>
  * <p>
  * Manual DB snapshot attributes are used to authorize other AWS accounts to
  * copy or restore a manual DB snapshot. For more information, see the
- * <a>ModifyDBSnapshotAttribute</a> API.
+ * <a>ModifyDBSnapshotAttribute</a> API action.
  * </p>
  */
 public class DBSnapshotAttributesResult implements Serializable, Cloneable {

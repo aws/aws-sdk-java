@@ -33,10 +33,26 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing DB parameter group</li>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing DB parameter group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBParameterGroupName;
@@ -51,9 +67,12 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest
      * Valid Values (for the application method):
      * <code>immediate | pending-reboot</code>
      * </p>
-     * <note>You can use the immediate value with dynamic parameters only. You
-     * can use the pending-reboot value for both dynamic and static parameters,
-     * and changes are applied when you reboot the DB instance without failover.
+     * <note>
+     * <p>
+     * You can use the immediate value with dynamic parameters only. You can use
+     * the pending-reboot value for both dynamic and static parameters, and
+     * changes are applied when you reboot the DB instance without failover.
+     * </p>
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
@@ -72,28 +91,47 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group. </p>
+     *        The name of the DB parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the name of an existing DB parameter group</li>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be the name of an existing DB parameter group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @param parameters
      *        An array of parameter names, values, and the apply method for the
      *        parameter update. At least one parameter name, value, and apply
      *        method must be supplied; subsequent arguments are optional. A
-     *        maximum of 20 parameters can be modified in a single request. </p>
+     *        maximum of 20 parameters can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method): <code>immediate |
      *        pending-reboot</code>
      *        </p>
-     *        <note>You can use the immediate value with dynamic parameters
-     *        only. You can use the pending-reboot value for both dynamic and
-     *        static parameters, and changes are applied when you reboot the DB
+     *        <note>
+     *        <p>
+     *        You can use the immediate value with dynamic parameters only. You
+     *        can use the pending-reboot value for both dynamic and static
+     *        parameters, and changes are applied when you reboot the DB
      *        instance without failover.
+     *        </p>
      */
     public ModifyDBParameterGroupRequest(String dBParameterGroupName,
             java.util.List<Parameter> parameters) {
@@ -109,22 +147,54 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing DB parameter group</li>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing DB parameter group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group. </p>
+     *        The name of the DB parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the name of an existing DB parameter group</li>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be the name of an existing DB parameter group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBParameterGroupName(String dBParameterGroupName) {
@@ -139,21 +209,53 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing DB parameter group</li>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing DB parameter group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The name of the DB parameter group. </p>
+     * @return The name of the DB parameter group.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be the name of an existing DB parameter group</li>
-     *         <li>Must be 1 to 255 alphanumeric characters</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be the name of an existing DB parameter group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBParameterGroupName() {
@@ -168,22 +270,54 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing DB parameter group</li>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing DB parameter group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group. </p>
+     *        The name of the DB parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the name of an existing DB parameter group</li>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be the name of an existing DB parameter group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -205,24 +339,29 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest
      * Valid Values (for the application method):
      * <code>immediate | pending-reboot</code>
      * </p>
-     * <note>You can use the immediate value with dynamic parameters only. You
-     * can use the pending-reboot value for both dynamic and static parameters,
-     * and changes are applied when you reboot the DB instance without failover.
+     * <note>
+     * <p>
+     * You can use the immediate value with dynamic parameters only. You can use
+     * the pending-reboot value for both dynamic and static parameters, and
+     * changes are applied when you reboot the DB instance without failover.
+     * </p>
      * </note>
      * 
      * @return An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply
      *         method must be supplied; subsequent arguments are optional. A
-     *         maximum of 20 parameters can be modified in a single request.
-     *         </p>
+     *         maximum of 20 parameters can be modified in a single request.</p>
      *         <p>
      *         Valid Values (for the application method):
      *         <code>immediate | pending-reboot</code>
      *         </p>
-     *         <note>You can use the immediate value with dynamic parameters
-     *         only. You can use the pending-reboot value for both dynamic and
-     *         static parameters, and changes are applied when you reboot the DB
+     *         <note>
+     *         <p>
+     *         You can use the immediate value with dynamic parameters only. You
+     *         can use the pending-reboot value for both dynamic and static
+     *         parameters, and changes are applied when you reboot the DB
      *         instance without failover.
+     *         </p>
      */
 
     public java.util.List<Parameter> getParameters() {
@@ -243,24 +382,30 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest
      * Valid Values (for the application method):
      * <code>immediate | pending-reboot</code>
      * </p>
-     * <note>You can use the immediate value with dynamic parameters only. You
-     * can use the pending-reboot value for both dynamic and static parameters,
-     * and changes are applied when you reboot the DB instance without failover.
+     * <note>
+     * <p>
+     * You can use the immediate value with dynamic parameters only. You can use
+     * the pending-reboot value for both dynamic and static parameters, and
+     * changes are applied when you reboot the DB instance without failover.
+     * </p>
      * </note>
      * 
      * @param parameters
      *        An array of parameter names, values, and the apply method for the
      *        parameter update. At least one parameter name, value, and apply
      *        method must be supplied; subsequent arguments are optional. A
-     *        maximum of 20 parameters can be modified in a single request. </p>
+     *        maximum of 20 parameters can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method):
      *        <code>immediate | pending-reboot</code>
      *        </p>
-     *        <note>You can use the immediate value with dynamic parameters
-     *        only. You can use the pending-reboot value for both dynamic and
-     *        static parameters, and changes are applied when you reboot the DB
+     *        <note>
+     *        <p>
+     *        You can use the immediate value with dynamic parameters only. You
+     *        can use the pending-reboot value for both dynamic and static
+     *        parameters, and changes are applied when you reboot the DB
      *        instance without failover.
+     *        </p>
      */
 
     public void setParameters(java.util.Collection<Parameter> parameters) {
@@ -284,9 +429,12 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest
      * Valid Values (for the application method):
      * <code>immediate | pending-reboot</code>
      * </p>
-     * <note>You can use the immediate value with dynamic parameters only. You
-     * can use the pending-reboot value for both dynamic and static parameters,
-     * and changes are applied when you reboot the DB instance without failover.
+     * <note>
+     * <p>
+     * You can use the immediate value with dynamic parameters only. You can use
+     * the pending-reboot value for both dynamic and static parameters, and
+     * changes are applied when you reboot the DB instance without failover.
+     * </p>
      * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -299,15 +447,18 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest
      *        An array of parameter names, values, and the apply method for the
      *        parameter update. At least one parameter name, value, and apply
      *        method must be supplied; subsequent arguments are optional. A
-     *        maximum of 20 parameters can be modified in a single request. </p>
+     *        maximum of 20 parameters can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method):
      *        <code>immediate | pending-reboot</code>
      *        </p>
-     *        <note>You can use the immediate value with dynamic parameters
-     *        only. You can use the pending-reboot value for both dynamic and
-     *        static parameters, and changes are applied when you reboot the DB
+     *        <note>
+     *        <p>
+     *        You can use the immediate value with dynamic parameters only. You
+     *        can use the pending-reboot value for both dynamic and static
+     *        parameters, and changes are applied when you reboot the DB
      *        instance without failover.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -334,24 +485,30 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest
      * Valid Values (for the application method):
      * <code>immediate | pending-reboot</code>
      * </p>
-     * <note>You can use the immediate value with dynamic parameters only. You
-     * can use the pending-reboot value for both dynamic and static parameters,
-     * and changes are applied when you reboot the DB instance without failover.
+     * <note>
+     * <p>
+     * You can use the immediate value with dynamic parameters only. You can use
+     * the pending-reboot value for both dynamic and static parameters, and
+     * changes are applied when you reboot the DB instance without failover.
+     * </p>
      * </note>
      * 
      * @param parameters
      *        An array of parameter names, values, and the apply method for the
      *        parameter update. At least one parameter name, value, and apply
      *        method must be supplied; subsequent arguments are optional. A
-     *        maximum of 20 parameters can be modified in a single request. </p>
+     *        maximum of 20 parameters can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method):
      *        <code>immediate | pending-reboot</code>
      *        </p>
-     *        <note>You can use the immediate value with dynamic parameters
-     *        only. You can use the pending-reboot value for both dynamic and
-     *        static parameters, and changes are applied when you reboot the DB
+     *        <note>
+     *        <p>
+     *        You can use the immediate value with dynamic parameters only. You
+     *        can use the pending-reboot value for both dynamic and static
+     *        parameters, and changes are applied when you reboot the DB
      *        instance without failover.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

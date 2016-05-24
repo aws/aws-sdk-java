@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -37,7 +37,7 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * To manage authorization for other AWS accounts to copy or restore a
-     * manual DB snapshot, this value is <code>restore</code>.
+     * manual DB snapshot, set this value to <code>restore</code>.
      * </p>
      */
     private String attributeName;
@@ -47,11 +47,11 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * <code>AttributeName</code>.
      * </p>
      * <p>
-     * To authorize other AWS Accounts to copy or restore a manual snapshot,
-     * this is one or more AWS account identifiers, or <code>all</code> to make
-     * the manual DB snapshot restorable by any AWS account. Do not add the
+     * To authorize other AWS accounts to copy or restore a manual snapshot, set
+     * this list to include one or more AWS account IDs, or <code>all</code> to
+     * make the manual DB snapshot restorable by any AWS account. Do not add the
      * <code>all</code> value for any manual DB snapshots that contain private
-     * information that you do not want to be available to all AWS accounts.
+     * information that you don't want available to all AWS accounts.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> valuesToAdd;
@@ -61,13 +61,13 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To remove authorization for other AWS Accounts to copy or restore a
-     * manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to remove authorization for any AWS account to copy or
-     * restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the
-     * <code>restore</code> attribute can still copy or restore the manual DB
-     * snapshot.
+     * To remove authorization for other AWS accounts to copy or restore a
+     * manual snapshot, set this list to include one or more AWS account
+     * identifiers, or <code>all</code> to remove authorization for any AWS
+     * account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to
+     * the <code>restore</code> attribute can still copy or restore the manual
+     * DB snapshot.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> valuesToRemove;
@@ -120,14 +120,14 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * To manage authorization for other AWS accounts to copy or restore a
-     * manual DB snapshot, this value is <code>restore</code>.
+     * manual DB snapshot, set this value to <code>restore</code>.
      * </p>
      * 
      * @param attributeName
      *        The name of the DB snapshot attribute to modify.</p>
      *        <p>
      *        To manage authorization for other AWS accounts to copy or restore
-     *        a manual DB snapshot, this value is <code>restore</code>.
+     *        a manual DB snapshot, set this value to <code>restore</code>.
      */
 
     public void setAttributeName(String attributeName) {
@@ -140,13 +140,13 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * To manage authorization for other AWS accounts to copy or restore a
-     * manual DB snapshot, this value is <code>restore</code>.
+     * manual DB snapshot, set this value to <code>restore</code>.
      * </p>
      * 
      * @return The name of the DB snapshot attribute to modify.</p>
      *         <p>
      *         To manage authorization for other AWS accounts to copy or restore
-     *         a manual DB snapshot, this value is <code>restore</code>.
+     *         a manual DB snapshot, set this value to <code>restore</code>.
      */
 
     public String getAttributeName() {
@@ -159,14 +159,14 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * To manage authorization for other AWS accounts to copy or restore a
-     * manual DB snapshot, this value is <code>restore</code>.
+     * manual DB snapshot, set this value to <code>restore</code>.
      * </p>
      * 
      * @param attributeName
      *        The name of the DB snapshot attribute to modify.</p>
      *        <p>
      *        To manage authorization for other AWS accounts to copy or restore
-     *        a manual DB snapshot, this value is <code>restore</code>.
+     *        a manual DB snapshot, set this value to <code>restore</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -183,22 +183,22 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * <code>AttributeName</code>.
      * </p>
      * <p>
-     * To authorize other AWS Accounts to copy or restore a manual snapshot,
-     * this is one or more AWS account identifiers, or <code>all</code> to make
-     * the manual DB snapshot restorable by any AWS account. Do not add the
+     * To authorize other AWS accounts to copy or restore a manual snapshot, set
+     * this list to include one or more AWS account IDs, or <code>all</code> to
+     * make the manual DB snapshot restorable by any AWS account. Do not add the
      * <code>all</code> value for any manual DB snapshots that contain private
-     * information that you do not want to be available to all AWS accounts.
+     * information that you don't want available to all AWS accounts.
      * </p>
      * 
      * @return A list of DB snapshot attributes to add to the attribute
      *         specified by <code>AttributeName</code>.</p>
      *         <p>
-     *         To authorize other AWS Accounts to copy or restore a manual
-     *         snapshot, this is one or more AWS account identifiers, or
-     *         <code>all</code> to make the manual DB snapshot restorable by any
-     *         AWS account. Do not add the <code>all</code> value for any manual
-     *         DB snapshots that contain private information that you do not
-     *         want to be available to all AWS accounts.
+     *         To authorize other AWS accounts to copy or restore a manual
+     *         snapshot, set this list to include one or more AWS account IDs,
+     *         or <code>all</code> to make the manual DB snapshot restorable by
+     *         any AWS account. Do not add the <code>all</code> value for any
+     *         manual DB snapshots that contain private information that you
+     *         don't want available to all AWS accounts.
      */
 
     public java.util.List<String> getValuesToAdd() {
@@ -214,23 +214,23 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * <code>AttributeName</code>.
      * </p>
      * <p>
-     * To authorize other AWS Accounts to copy or restore a manual snapshot,
-     * this is one or more AWS account identifiers, or <code>all</code> to make
-     * the manual DB snapshot restorable by any AWS account. Do not add the
+     * To authorize other AWS accounts to copy or restore a manual snapshot, set
+     * this list to include one or more AWS account IDs, or <code>all</code> to
+     * make the manual DB snapshot restorable by any AWS account. Do not add the
      * <code>all</code> value for any manual DB snapshots that contain private
-     * information that you do not want to be available to all AWS accounts.
+     * information that you don't want available to all AWS accounts.
      * </p>
      * 
      * @param valuesToAdd
      *        A list of DB snapshot attributes to add to the attribute specified
      *        by <code>AttributeName</code>.</p>
      *        <p>
-     *        To authorize other AWS Accounts to copy or restore a manual
-     *        snapshot, this is one or more AWS account identifiers, or
+     *        To authorize other AWS accounts to copy or restore a manual
+     *        snapshot, set this list to include one or more AWS account IDs, or
      *        <code>all</code> to make the manual DB snapshot restorable by any
      *        AWS account. Do not add the <code>all</code> value for any manual
-     *        DB snapshots that contain private information that you do not want
-     *        to be available to all AWS accounts.
+     *        DB snapshots that contain private information that you don't want
+     *        available to all AWS accounts.
      */
 
     public void setValuesToAdd(java.util.Collection<String> valuesToAdd) {
@@ -249,11 +249,11 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * <code>AttributeName</code>.
      * </p>
      * <p>
-     * To authorize other AWS Accounts to copy or restore a manual snapshot,
-     * this is one or more AWS account identifiers, or <code>all</code> to make
-     * the manual DB snapshot restorable by any AWS account. Do not add the
+     * To authorize other AWS accounts to copy or restore a manual snapshot, set
+     * this list to include one or more AWS account IDs, or <code>all</code> to
+     * make the manual DB snapshot restorable by any AWS account. Do not add the
      * <code>all</code> value for any manual DB snapshots that contain private
-     * information that you do not want to be available to all AWS accounts.
+     * information that you don't want available to all AWS accounts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -266,12 +266,12 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      *        A list of DB snapshot attributes to add to the attribute specified
      *        by <code>AttributeName</code>.</p>
      *        <p>
-     *        To authorize other AWS Accounts to copy or restore a manual
-     *        snapshot, this is one or more AWS account identifiers, or
+     *        To authorize other AWS accounts to copy or restore a manual
+     *        snapshot, set this list to include one or more AWS account IDs, or
      *        <code>all</code> to make the manual DB snapshot restorable by any
      *        AWS account. Do not add the <code>all</code> value for any manual
-     *        DB snapshots that contain private information that you do not want
-     *        to be available to all AWS accounts.
+     *        DB snapshots that contain private information that you don't want
+     *        available to all AWS accounts.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -294,23 +294,23 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * <code>AttributeName</code>.
      * </p>
      * <p>
-     * To authorize other AWS Accounts to copy or restore a manual snapshot,
-     * this is one or more AWS account identifiers, or <code>all</code> to make
-     * the manual DB snapshot restorable by any AWS account. Do not add the
+     * To authorize other AWS accounts to copy or restore a manual snapshot, set
+     * this list to include one or more AWS account IDs, or <code>all</code> to
+     * make the manual DB snapshot restorable by any AWS account. Do not add the
      * <code>all</code> value for any manual DB snapshots that contain private
-     * information that you do not want to be available to all AWS accounts.
+     * information that you don't want available to all AWS accounts.
      * </p>
      * 
      * @param valuesToAdd
      *        A list of DB snapshot attributes to add to the attribute specified
      *        by <code>AttributeName</code>.</p>
      *        <p>
-     *        To authorize other AWS Accounts to copy or restore a manual
-     *        snapshot, this is one or more AWS account identifiers, or
+     *        To authorize other AWS accounts to copy or restore a manual
+     *        snapshot, set this list to include one or more AWS account IDs, or
      *        <code>all</code> to make the manual DB snapshot restorable by any
      *        AWS account. Do not add the <code>all</code> value for any manual
-     *        DB snapshots that contain private information that you do not want
-     *        to be available to all AWS accounts.
+     *        DB snapshots that contain private information that you don't want
+     *        available to all AWS accounts.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -327,23 +327,23 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To remove authorization for other AWS Accounts to copy or restore a
-     * manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to remove authorization for any AWS account to copy or
-     * restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the
-     * <code>restore</code> attribute can still copy or restore the manual DB
-     * snapshot.
+     * To remove authorization for other AWS accounts to copy or restore a
+     * manual snapshot, set this list to include one or more AWS account
+     * identifiers, or <code>all</code> to remove authorization for any AWS
+     * account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to
+     * the <code>restore</code> attribute can still copy or restore the manual
+     * DB snapshot.
      * </p>
      * 
      * @return A list of DB snapshot attributes to remove from the attribute
      *         specified by <code>AttributeName</code>.</p>
      *         <p>
-     *         To remove authorization for other AWS Accounts to copy or restore
-     *         a manual snapshot, this is one or more AWS account identifiers,
-     *         or <code>all</code> to remove authorization for any AWS account
-     *         to copy or restore the DB snapshot. If you specify
-     *         <code>all</code>, AWS accounts that have their account identifier
+     *         To remove authorization for other AWS accounts to copy or restore
+     *         a manual snapshot, set this list to include one or more AWS
+     *         account identifiers, or <code>all</code> to remove authorization
+     *         for any AWS account to copy or restore the DB snapshot. If you
+     *         specify <code>all</code>, an AWS account whose account ID is
      *         explicitly added to the <code>restore</code> attribute can still
      *         copy or restore the manual DB snapshot.
      */
@@ -361,26 +361,26 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To remove authorization for other AWS Accounts to copy or restore a
-     * manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to remove authorization for any AWS account to copy or
-     * restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the
-     * <code>restore</code> attribute can still copy or restore the manual DB
-     * snapshot.
+     * To remove authorization for other AWS accounts to copy or restore a
+     * manual snapshot, set this list to include one or more AWS account
+     * identifiers, or <code>all</code> to remove authorization for any AWS
+     * account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to
+     * the <code>restore</code> attribute can still copy or restore the manual
+     * DB snapshot.
      * </p>
      * 
      * @param valuesToRemove
      *        A list of DB snapshot attributes to remove from the attribute
      *        specified by <code>AttributeName</code>.</p>
      *        <p>
-     *        To remove authorization for other AWS Accounts to copy or restore
-     *        a manual snapshot, this is one or more AWS account identifiers, or
-     *        <code>all</code> to remove authorization for any AWS account to
-     *        copy or restore the DB snapshot. If you specify <code>all</code>,
-     *        AWS accounts that have their account identifier explicitly added
-     *        to the <code>restore</code> attribute can still copy or restore
-     *        the manual DB snapshot.
+     *        To remove authorization for other AWS accounts to copy or restore
+     *        a manual snapshot, set this list to include one or more AWS
+     *        account identifiers, or <code>all</code> to remove authorization
+     *        for any AWS account to copy or restore the DB snapshot. If you
+     *        specify <code>all</code>, an AWS account whose account ID is
+     *        explicitly added to the <code>restore</code> attribute can still
+     *        copy or restore the manual DB snapshot.
      */
 
     public void setValuesToRemove(java.util.Collection<String> valuesToRemove) {
@@ -399,13 +399,13 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To remove authorization for other AWS Accounts to copy or restore a
-     * manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to remove authorization for any AWS account to copy or
-     * restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the
-     * <code>restore</code> attribute can still copy or restore the manual DB
-     * snapshot.
+     * To remove authorization for other AWS accounts to copy or restore a
+     * manual snapshot, set this list to include one or more AWS account
+     * identifiers, or <code>all</code> to remove authorization for any AWS
+     * account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to
+     * the <code>restore</code> attribute can still copy or restore the manual
+     * DB snapshot.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -418,13 +418,13 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      *        A list of DB snapshot attributes to remove from the attribute
      *        specified by <code>AttributeName</code>.</p>
      *        <p>
-     *        To remove authorization for other AWS Accounts to copy or restore
-     *        a manual snapshot, this is one or more AWS account identifiers, or
-     *        <code>all</code> to remove authorization for any AWS account to
-     *        copy or restore the DB snapshot. If you specify <code>all</code>,
-     *        AWS accounts that have their account identifier explicitly added
-     *        to the <code>restore</code> attribute can still copy or restore
-     *        the manual DB snapshot.
+     *        To remove authorization for other AWS accounts to copy or restore
+     *        a manual snapshot, set this list to include one or more AWS
+     *        account identifiers, or <code>all</code> to remove authorization
+     *        for any AWS account to copy or restore the DB snapshot. If you
+     *        specify <code>all</code>, an AWS account whose account ID is
+     *        explicitly added to the <code>restore</code> attribute can still
+     *        copy or restore the manual DB snapshot.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -447,26 +447,26 @@ public class ModifyDBSnapshotAttributeRequest extends AmazonWebServiceRequest
      * by <code>AttributeName</code>.
      * </p>
      * <p>
-     * To remove authorization for other AWS Accounts to copy or restore a
-     * manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to remove authorization for any AWS account to copy or
-     * restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the
-     * <code>restore</code> attribute can still copy or restore the manual DB
-     * snapshot.
+     * To remove authorization for other AWS accounts to copy or restore a
+     * manual snapshot, set this list to include one or more AWS account
+     * identifiers, or <code>all</code> to remove authorization for any AWS
+     * account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to
+     * the <code>restore</code> attribute can still copy or restore the manual
+     * DB snapshot.
      * </p>
      * 
      * @param valuesToRemove
      *        A list of DB snapshot attributes to remove from the attribute
      *        specified by <code>AttributeName</code>.</p>
      *        <p>
-     *        To remove authorization for other AWS Accounts to copy or restore
-     *        a manual snapshot, this is one or more AWS account identifiers, or
-     *        <code>all</code> to remove authorization for any AWS account to
-     *        copy or restore the DB snapshot. If you specify <code>all</code>,
-     *        AWS accounts that have their account identifier explicitly added
-     *        to the <code>restore</code> attribute can still copy or restore
-     *        the manual DB snapshot.
+     *        To remove authorization for other AWS accounts to copy or restore
+     *        a manual snapshot, set this list to include one or more AWS
+     *        account identifiers, or <code>all</code> to remove authorization
+     *        for any AWS account to copy or restore the DB snapshot. If you
+     *        specify <code>all</code>, an AWS account whose account ID is
+     *        explicitly added to the <code>restore</code> attribute can still
+     *        copy or restore the manual DB snapshot.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

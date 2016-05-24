@@ -42,14 +42,30 @@ public class AddSourceIdentifierToSubscriptionRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li>
-     * <li>If the source type is a DB security group, a
-     * <code>DBSecurityGroupName</code> must be supplied.</li>
-     * <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li>
-     * <li>If the source type is a DB snapshot, a
-     * <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     * <li>
+     * <p>
+     * If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB security group, a
+     * <code>DBSecurityGroupName</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * must be supplied.
+     * </p>
+     * </li>
      * </ul>
      */
     private String sourceIdentifier;
@@ -112,33 +128,65 @@ public class AddSourceIdentifierToSubscriptionRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li>
-     * <li>If the source type is a DB security group, a
-     * <code>DBSecurityGroupName</code> must be supplied.</li>
-     * <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li>
-     * <li>If the source type is a DB snapshot, a
-     * <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     * <li>
+     * <p>
+     * If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB security group, a
+     * <code>DBSecurityGroupName</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * must be supplied.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceIdentifier
      *        The identifier of the event source to be added. An identifier must
      *        begin with a letter and must contain only ASCII letters, digits,
      *        and hyphens; it cannot end with a hyphen or contain two
-     *        consecutive hyphens. </p>
+     *        consecutive hyphens.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>If the source type is a DB instance, then a
-     *        <code>DBInstanceIdentifier</code> must be supplied.</li>
-     *        <li>If the source type is a DB security group, a
-     *        <code>DBSecurityGroupName</code> must be supplied.</li>
-     *        <li>If the source type is a DB parameter group, a
-     *        <code>DBParameterGroupName</code> must be supplied.</li>
-     *        <li>If the source type is a DB snapshot, a
-     *        <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB instance, then a
+     *        <code>DBInstanceIdentifier</code> must be supplied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB security group, a
+     *        <code>DBSecurityGroupName</code> must be supplied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB parameter group, a
+     *        <code>DBParameterGroupName</code> must be supplied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB snapshot, a
+     *        <code>DBSnapshotIdentifier</code> must be supplied.
+     *        </p>
+     *        </li>
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -155,32 +203,64 @@ public class AddSourceIdentifierToSubscriptionRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li>
-     * <li>If the source type is a DB security group, a
-     * <code>DBSecurityGroupName</code> must be supplied.</li>
-     * <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li>
-     * <li>If the source type is a DB snapshot, a
-     * <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     * <li>
+     * <p>
+     * If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB security group, a
+     * <code>DBSecurityGroupName</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * must be supplied.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the event source to be added. An identifier
      *         must begin with a letter and must contain only ASCII letters,
      *         digits, and hyphens; it cannot end with a hyphen or contain two
-     *         consecutive hyphens. </p>
+     *         consecutive hyphens.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>If the source type is a DB instance, then a
-     *         <code>DBInstanceIdentifier</code> must be supplied.</li>
-     *         <li>If the source type is a DB security group, a
-     *         <code>DBSecurityGroupName</code> must be supplied.</li>
-     *         <li>If the source type is a DB parameter group, a
-     *         <code>DBParameterGroupName</code> must be supplied.</li>
-     *         <li>If the source type is a DB snapshot, a
-     *         <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     *         <li>
+     *         <p>
+     *         If the source type is a DB instance, then a
+     *         <code>DBInstanceIdentifier</code> must be supplied.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source type is a DB security group, a
+     *         <code>DBSecurityGroupName</code> must be supplied.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source type is a DB parameter group, a
+     *         <code>DBParameterGroupName</code> must be supplied.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source type is a DB snapshot, a
+     *         <code>DBSnapshotIdentifier</code> must be supplied.
+     *         </p>
+     *         </li>
      */
 
     public String getSourceIdentifier() {
@@ -197,33 +277,65 @@ public class AddSourceIdentifierToSubscriptionRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li>
-     * <li>If the source type is a DB security group, a
-     * <code>DBSecurityGroupName</code> must be supplied.</li>
-     * <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li>
-     * <li>If the source type is a DB snapshot, a
-     * <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     * <li>
+     * <p>
+     * If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB security group, a
+     * <code>DBSecurityGroupName</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * must be supplied.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceIdentifier
      *        The identifier of the event source to be added. An identifier must
      *        begin with a letter and must contain only ASCII letters, digits,
      *        and hyphens; it cannot end with a hyphen or contain two
-     *        consecutive hyphens. </p>
+     *        consecutive hyphens.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>If the source type is a DB instance, then a
-     *        <code>DBInstanceIdentifier</code> must be supplied.</li>
-     *        <li>If the source type is a DB security group, a
-     *        <code>DBSecurityGroupName</code> must be supplied.</li>
-     *        <li>If the source type is a DB parameter group, a
-     *        <code>DBParameterGroupName</code> must be supplied.</li>
-     *        <li>If the source type is a DB snapshot, a
-     *        <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB instance, then a
+     *        <code>DBInstanceIdentifier</code> must be supplied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB security group, a
+     *        <code>DBSecurityGroupName</code> must be supplied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB parameter group, a
+     *        <code>DBParameterGroupName</code> must be supplied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB snapshot, a
+     *        <code>DBSnapshotIdentifier</code> must be supplied.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

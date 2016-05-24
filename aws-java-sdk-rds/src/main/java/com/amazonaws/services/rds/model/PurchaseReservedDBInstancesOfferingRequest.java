@@ -69,7 +69,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends
      * initialize any additional object members.
      * 
      * @param reservedDBInstancesOfferingId
-     *        The ID of the Reserved DB instance offering to purchase. </p>
+     *        The ID of the Reserved DB instance offering to purchase.</p>
      *        <p>
      *        Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
      */
@@ -87,7 +87,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends
      * </p>
      * 
      * @param reservedDBInstancesOfferingId
-     *        The ID of the Reserved DB instance offering to purchase. </p>
+     *        The ID of the Reserved DB instance offering to purchase.</p>
      *        <p>
      *        Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
      */
@@ -105,7 +105,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends
      * Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
      * </p>
      * 
-     * @return The ID of the Reserved DB instance offering to purchase. </p>
+     * @return The ID of the Reserved DB instance offering to purchase.</p>
      *         <p>
      *         Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
      */
@@ -123,7 +123,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends
      * </p>
      * 
      * @param reservedDBInstancesOfferingId
-     *        The ID of the Reserved DB instance offering to purchase. </p>
+     *        The ID of the Reserved DB instance offering to purchase.</p>
      *        <p>
      *        Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
      * @return Returns a reference to this object so that method calls can be
@@ -145,7 +145,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends
      * </p>
      * 
      * @param reservedDBInstanceId
-     *        Customer-specified identifier to track this reservation. </p>
+     *        Customer-specified identifier to track this reservation.</p>
      *        <p>
      *        Example: myreservationID
      */
@@ -162,7 +162,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends
      * Example: myreservationID
      * </p>
      * 
-     * @return Customer-specified identifier to track this reservation. </p>
+     * @return Customer-specified identifier to track this reservation.</p>
      *         <p>
      *         Example: myreservationID
      */
@@ -180,7 +180,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends
      * </p>
      * 
      * @param reservedDBInstanceId
-     *        Customer-specified identifier to track this reservation. </p>
+     *        Customer-specified identifier to track this reservation.</p>
      *        <p>
      *        Example: myreservationID
      * @return Returns a reference to this object so that method calls can be
@@ -202,7 +202,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends
      * </p>
      * 
      * @param dBInstanceCount
-     *        The number of instances to reserve. </p>
+     *        The number of instances to reserve.</p>
      *        <p>
      *        Default: <code>1</code>
      */
@@ -219,7 +219,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends
      * Default: <code>1</code>
      * </p>
      * 
-     * @return The number of instances to reserve. </p>
+     * @return The number of instances to reserve.</p>
      *         <p>
      *         Default: <code>1</code>
      */
@@ -237,7 +237,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends
      * </p>
      * 
      * @param dBInstanceCount
-     *        The number of instances to reserve. </p>
+     *        The number of instances to reserve.</p>
      *        <p>
      *        Default: <code>1</code>
      * @return Returns a reference to this object so that method calls can be

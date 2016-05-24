@@ -2494,6 +2494,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<GeneratePresignedUrlRequest> request = createRequest(
                 bucketName, key, req, httpMethod);
 
+        request.setResourcePath(SdkHttpUtils.urlEncode(request.getResourcePath(), true));
+
         if (req.isZeroByteContent())
             request.setContent(new ByteArrayInputStream(new byte[0]));
 
@@ -2548,7 +2550,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         // Remove the leading slash (if any) in the resource-path
-        return ServiceUtils.convertRequestToUrl(request, true);
+        return ServiceUtils.convertRequestToUrl(request, true, false);
     }
 
     @Override
@@ -3772,7 +3774,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 credentials = originalRequest.getRequestCredentials();
             }
             Signer signer = createSigner(request, bucket, key);
-            executionContext.setSigner(createSigner(request, bucket, key));
+            executionContext.setSigner(signer);
 
             if (!(signer instanceof AWSS3V4Signer)) {
                 // Retry V4 auth errors if SigV4 signer is not used

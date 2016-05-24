@@ -33,9 +33,21 @@ public class DeleteDBClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing DB cluster parameter group.</li>
-     * <li>You cannot delete a default DB cluster parameter group.</li>
-     * <li>Cannot be associated with any DB clusters.</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot delete a default DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be associated with any DB clusters.
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBClusterParameterGroupName;
@@ -48,20 +60,44 @@ public class DeleteDBClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing DB cluster parameter group.</li>
-     * <li>You cannot delete a default DB cluster parameter group.</li>
-     * <li>Cannot be associated with any DB clusters.</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot delete a default DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be associated with any DB clusters.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group. </p>
+     *        The name of the DB cluster parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the name of an existing DB cluster parameter group.</li>
-     *        <li>You cannot delete a default DB cluster parameter group.</li>
-     *        <li>Cannot be associated with any DB clusters.</li>
+     *        <li>
+     *        <p>
+     *        Must be the name of an existing DB cluster parameter group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You cannot delete a default DB cluster parameter group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be associated with any DB clusters.
+     *        </p>
+     *        </li>
      */
 
     public void setDBClusterParameterGroupName(
@@ -77,19 +113,43 @@ public class DeleteDBClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing DB cluster parameter group.</li>
-     * <li>You cannot delete a default DB cluster parameter group.</li>
-     * <li>Cannot be associated with any DB clusters.</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot delete a default DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be associated with any DB clusters.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The name of the DB cluster parameter group. </p>
+     * @return The name of the DB cluster parameter group.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be the name of an existing DB cluster parameter group.</li>
-     *         <li>You cannot delete a default DB cluster parameter group.</li>
-     *         <li>Cannot be associated with any DB clusters.</li>
+     *         <li>
+     *         <p>
+     *         Must be the name of an existing DB cluster parameter group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You cannot delete a default DB cluster parameter group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be associated with any DB clusters.
+     *         </p>
+     *         </li>
      */
 
     public String getDBClusterParameterGroupName() {
@@ -104,20 +164,44 @@ public class DeleteDBClusterParameterGroupRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the name of an existing DB cluster parameter group.</li>
-     * <li>You cannot delete a default DB cluster parameter group.</li>
-     * <li>Cannot be associated with any DB clusters.</li>
+     * <li>
+     * <p>
+     * Must be the name of an existing DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot delete a default DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be associated with any DB clusters.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group. </p>
+     *        The name of the DB cluster parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the name of an existing DB cluster parameter group.</li>
-     *        <li>You cannot delete a default DB cluster parameter group.</li>
-     *        <li>Cannot be associated with any DB clusters.</li>
+     *        <li>
+     *        <p>
+     *        Must be the name of an existing DB cluster parameter group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You cannot delete a default DB cluster parameter group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be associated with any DB clusters.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

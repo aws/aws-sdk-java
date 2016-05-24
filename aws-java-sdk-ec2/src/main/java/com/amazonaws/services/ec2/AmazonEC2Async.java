@@ -9202,6 +9202,50 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Retrieve a JPG-format screenshot of an instance to help with
+     * troubleshooting.
+     * </p>
+     * <p>
+     * For API calls, the returned content is base64-encoded. For command line
+     * tools, the decoding is performed for you.
+     * </p>
+     * 
+     * @param getConsoleScreenshotRequest
+     *        Contains the parameters for the request.
+     * @return A Java Future containing the result of the GetConsoleScreenshot
+     *         operation returned by the service.
+     * @sample AmazonEC2Async.GetConsoleScreenshot
+     */
+    java.util.concurrent.Future<GetConsoleScreenshotResult> getConsoleScreenshotAsync(
+            GetConsoleScreenshotRequest getConsoleScreenshotRequest);
+
+    /**
+     * <p>
+     * Retrieve a JPG-format screenshot of an instance to help with
+     * troubleshooting.
+     * </p>
+     * <p>
+     * For API calls, the returned content is base64-encoded. For command line
+     * tools, the decoding is performed for you.
+     * </p>
+     * 
+     * @param getConsoleScreenshotRequest
+     *        Contains the parameters for the request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConsoleScreenshot
+     *         operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.GetConsoleScreenshot
+     */
+    java.util.concurrent.Future<GetConsoleScreenshotResult> getConsoleScreenshotAsync(
+            GetConsoleScreenshotRequest getConsoleScreenshotRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConsoleScreenshotRequest, GetConsoleScreenshotResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the encrypted administrator password for an instance running
      * Windows.
      * </p>
@@ -10387,9 +10431,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * EC2-Classic platform, unless you move it back using the
      * <a>RestoreAddressToClassic</a> request. You cannot move an Elastic IP
      * address that was originally allocated for use in the EC2-VPC platform to
-     * the EC2-Classic platform. You cannot migrate an Elastic IP address that's
-     * associated with a reverse DNS record. Contact AWS account and billing
-     * support to remove the reverse DNS record.
+     * the EC2-Classic platform.
      * </p>
      * 
      * @param moveAddressToVpcRequest
@@ -10410,9 +10452,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * EC2-Classic platform, unless you move it back using the
      * <a>RestoreAddressToClassic</a> request. You cannot move an Elastic IP
      * address that was originally allocated for use in the EC2-VPC platform to
-     * the EC2-Classic platform. You cannot migrate an Elastic IP address that's
-     * associated with a reverse DNS record. Contact AWS account and billing
-     * support to remove the reverse DNS record.
+     * the EC2-Classic platform.
      * </p>
      * 
      * @param moveAddressToVpcRequest
@@ -11485,10 +11525,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Restores an Elastic IP address that was previously moved to the EC2-VPC
      * platform back to the EC2-Classic platform. You cannot move an Elastic IP
      * address that was originally allocated for use in EC2-VPC. The Elastic IP
-     * address must not be associated with an instance or network interface. You
-     * cannot restore an Elastic IP address that's associated with a reverse DNS
-     * record. Contact AWS account and billing support to remove the reverse DNS
-     * record.
+     * address must not be associated with an instance or network interface.
      * </p>
      * 
      * @param restoreAddressToClassicRequest
@@ -11505,10 +11542,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Restores an Elastic IP address that was previously moved to the EC2-VPC
      * platform back to the EC2-Classic platform. You cannot move an Elastic IP
      * address that was originally allocated for use in EC2-VPC. The Elastic IP
-     * address must not be associated with an instance or network interface. You
-     * cannot restore an Elastic IP address that's associated with a reverse DNS
-     * record. Contact AWS account and billing support to remove the reverse DNS
-     * record.
+     * address must not be associated with an instance or network interface.
      * </p>
      * 
      * @param restoreAddressToClassicRequest
@@ -11681,6 +11715,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * instances each instead of one launch request for 500 instances.
      * </p>
      * <p>
+     * To tag your instance, ensure that it is <code>running</code> as
+     * <a>CreateTags</a> requires a resource ID. For more information about
+     * tagging, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"
+     * >Tagging Your Amazon EC2 Resources</a>.
+     * </p>
+     * <p>
      * If you don't specify a security group when launching an instance, Amazon
      * EC2 uses the default security group. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"
@@ -11754,6 +11795,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * To ensure faster instance launches, break up large requests into smaller
      * batches. For example, create five separate launch requests for 100
      * instances each instead of one launch request for 500 instances.
+     * </p>
+     * <p>
+     * To tag your instance, ensure that it is <code>running</code> as
+     * <a>CreateTags</a> requires a resource ID. For more information about
+     * tagging, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"
+     * >Tagging Your Amazon EC2 Resources</a>.
      * </p>
      * <p>
      * If you don't specify a security group when launching an instance, Amazon

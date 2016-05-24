@@ -40,10 +40,14 @@ public class DescribePendingMaintenanceActionsRequest extends
      * Supported filters:
      * </p>
      * <ul>
-     * <li> <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB
      * instance Amazon Resource Names (ARNs). The results list will only include
      * pending maintenance actions for the DB instances identified by these
-     * ARNs.</li>
+     * ARNs.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
@@ -123,10 +127,14 @@ public class DescribePendingMaintenanceActionsRequest extends
      * Supported filters:
      * </p>
      * <ul>
-     * <li> <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB
      * instance Amazon Resource Names (ARNs). The results list will only include
      * pending maintenance actions for the DB instances identified by these
-     * ARNs.</li>
+     * ARNs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A filter that specifies one or more resources to return pending
@@ -135,10 +143,14 @@ public class DescribePendingMaintenanceActionsRequest extends
      *         Supported filters:
      *         </p>
      *         <ul>
-     *         <li> <code>db-instance-id</code> - Accepts DB instance identifiers
-     *         and DB instance Amazon Resource Names (ARNs). The results list
-     *         will only include pending maintenance actions for the DB
-     *         instances identified by these ARNs.</li>
+     *         <li>
+     *         <p>
+     *         <code>db-instance-id</code> - Accepts DB instance identifiers and
+     *         DB instance Amazon Resource Names (ARNs). The results list will
+     *         only include pending maintenance actions for the DB instances
+     *         identified by these ARNs.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -157,10 +169,14 @@ public class DescribePendingMaintenanceActionsRequest extends
      * Supported filters:
      * </p>
      * <ul>
-     * <li> <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB
      * instance Amazon Resource Names (ARNs). The results list will only include
      * pending maintenance actions for the DB instances identified by these
-     * ARNs.</li>
+     * ARNs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filters
@@ -170,10 +186,14 @@ public class DescribePendingMaintenanceActionsRequest extends
      *        Supported filters:
      *        </p>
      *        <ul>
-     *        <li> <code>db-instance-id</code> - Accepts DB instance identifiers
-     *        and DB instance Amazon Resource Names (ARNs). The results list
-     *        will only include pending maintenance actions for the DB instances
-     *        identified by these ARNs.</li>
+     *        <li>
+     *        <p>
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and
+     *        DB instance Amazon Resource Names (ARNs). The results list will
+     *        only include pending maintenance actions for the DB instances
+     *        identified by these ARNs.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -195,10 +215,14 @@ public class DescribePendingMaintenanceActionsRequest extends
      * Supported filters:
      * </p>
      * <ul>
-     * <li> <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB
      * instance Amazon Resource Names (ARNs). The results list will only include
      * pending maintenance actions for the DB instances identified by these
-     * ARNs.</li>
+     * ARNs.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -214,10 +238,14 @@ public class DescribePendingMaintenanceActionsRequest extends
      *        Supported filters:
      *        </p>
      *        <ul>
-     *        <li> <code>db-instance-id</code> - Accepts DB instance identifiers
-     *        and DB instance Amazon Resource Names (ARNs). The results list
-     *        will only include pending maintenance actions for the DB instances
-     *        identified by these ARNs.</li>
+     *        <li>
+     *        <p>
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and
+     *        DB instance Amazon Resource Names (ARNs). The results list will
+     *        only include pending maintenance actions for the DB instances
+     *        identified by these ARNs.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -243,10 +271,14 @@ public class DescribePendingMaintenanceActionsRequest extends
      * Supported filters:
      * </p>
      * <ul>
-     * <li> <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB
      * instance Amazon Resource Names (ARNs). The results list will only include
      * pending maintenance actions for the DB instances identified by these
-     * ARNs.</li>
+     * ARNs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filters
@@ -256,10 +288,14 @@ public class DescribePendingMaintenanceActionsRequest extends
      *        Supported filters:
      *        </p>
      *        <ul>
-     *        <li> <code>db-instance-id</code> - Accepts DB instance identifiers
-     *        and DB instance Amazon Resource Names (ARNs). The results list
-     *        will only include pending maintenance actions for the DB instances
-     *        identified by these ARNs.</li>
+     *        <li>
+     *        <p>
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and
+     *        DB instance Amazon Resource Names (ARNs). The results list will
+     *        only include pending maintenance actions for the DB instances
+     *        identified by these ARNs.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

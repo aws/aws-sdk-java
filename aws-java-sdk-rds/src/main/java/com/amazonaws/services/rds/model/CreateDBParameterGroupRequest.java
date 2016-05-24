@@ -33,11 +33,27 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
-     * <note>This value is stored as a lowercase string.</note>
+     * <note>
+     * <p>
+     * This value is stored as a lowercase string.
+     * </p>
+     * </note>
      */
     private String dBParameterGroupName;
     /**
@@ -72,16 +88,31 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group. </p>
+     *        The name of the DB parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <note>This value is stored as a lowercase string.
+     *        <note>
+     *        <p>
+     *        This value is stored as a lowercase string.
+     *        </p>
      * @param dBParameterGroupFamily
      *        The DB parameter group family name. A DB parameter group can be
      *        associated with one and only one DB parameter group family, and
@@ -105,23 +136,54 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
-     * <note>This value is stored as a lowercase string.</note>
+     * <note>
+     * <p>
+     * This value is stored as a lowercase string.
+     * </p>
+     * </note>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group. </p>
+     *        The name of the DB parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <note>This value is stored as a lowercase string.
+     *        <note>
+     *        <p>
+     *        This value is stored as a lowercase string.
+     *        </p>
      */
 
     public void setDBParameterGroupName(String dBParameterGroupName) {
@@ -136,22 +198,53 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
-     * <note>This value is stored as a lowercase string.</note>
+     * <note>
+     * <p>
+     * This value is stored as a lowercase string.
+     * </p>
+     * </note>
      * 
-     * @return The name of the DB parameter group. </p>
+     * @return The name of the DB parameter group.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      *         </ul>
-     *         <note>This value is stored as a lowercase string.
+     *         <note>
+     *         <p>
+     *         This value is stored as a lowercase string.
+     *         </p>
      */
 
     public String getDBParameterGroupName() {
@@ -166,23 +259,54 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
-     * <note>This value is stored as a lowercase string.</note>
+     * <note>
+     * <p>
+     * This value is stored as a lowercase string.
+     * </p>
+     * </note>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group. </p>
+     *        The name of the DB parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <note>This value is stored as a lowercase string.
+     *        <note>
+     *        <p>
+     *        This value is stored as a lowercase string.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -93,6 +93,9 @@ public enum RDSActions implements Action {
     DescribeDBClusterParameterGroups("rds:DescribeDBClusterParameterGroups"),
     /** Action for the DescribeDBClusterParameters operation. */
     DescribeDBClusterParameters("rds:DescribeDBClusterParameters"),
+    /** Action for the DescribeDBClusterSnapshotAttributes operation. */
+    DescribeDBClusterSnapshotAttributes(
+            "rds:DescribeDBClusterSnapshotAttributes"),
     /** Action for the DescribeDBClusterSnapshots operation. */
     DescribeDBClusterSnapshots("rds:DescribeDBClusterSnapshots"),
     /** Action for the DescribeDBClusters operation. */
@@ -149,6 +152,8 @@ public enum RDSActions implements Action {
     ModifyDBCluster("rds:ModifyDBCluster"),
     /** Action for the ModifyDBClusterParameterGroup operation. */
     ModifyDBClusterParameterGroup("rds:ModifyDBClusterParameterGroup"),
+    /** Action for the ModifyDBClusterSnapshotAttribute operation. */
+    ModifyDBClusterSnapshotAttribute("rds:ModifyDBClusterSnapshotAttribute"),
     /** Action for the ModifyDBInstance operation. */
     ModifyDBInstance("rds:ModifyDBInstance"),
     /** Action for the ModifyDBParameterGroup operation. */

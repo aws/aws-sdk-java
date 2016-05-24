@@ -695,9 +695,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @throws DBClusterSnapshotAlreadyExistsException
      *         User already has a DB cluster snapshot with the given identifier.
      * @throws DBClusterSnapshotNotFoundException
-     *         DBClusterSnapshotIdentifier
+     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing
+     *         DB cluster snapshot.
      * @throws InvalidDBClusterStateException
-     *         The supplied value is not a valid DB cluster state.
+     *         The DB cluster is not in a valid state.
      * @sample AmazonRDS.CopyDBClusterSnapshot
      */
     @Override
@@ -896,8 +897,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a new Amazon Aurora DB cluster. For more information on Amazon
-     * Aurora, see <a href=
+     * Creates a new Amazon Aurora DB cluster.
+     * </p>
+     * <p>
+     * You can use the <code>ReplicationSourceIdentifier</code> parameter to
+     * create the DB cluster as a Read Replica of another DB cluster.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"
      * >Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -924,7 +931,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         DB subnet group does not cover all Availability Zones after it is
      *         created because users' change.
      * @throws InvalidDBClusterStateException
-     *         The supplied value is not a valid DB cluster state.
+     *         The DB cluster is not in a valid state.
      * @throws InvalidDBSubnetGroupStateException
      *         The DB subnet group cannot be deleted because it is in use.
      * @throws InvalidSubnetException
@@ -936,7 +943,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @throws KMSKeyNotAccessibleException
      *         Error accessing KMS key.
      * @throws DBClusterNotFoundException
-     *         DBClusterIdentifier
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB
+     *         cluster.
      * @sample AmazonRDS.CreateDBCluster
      */
     @Override
@@ -1071,9 +1079,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @throws DBClusterSnapshotAlreadyExistsException
      *         User already has a DB cluster snapshot with the given identifier.
      * @throws InvalidDBClusterStateException
-     *         The supplied value is not a valid DB cluster state.
+     *         The DB cluster is not in a valid state.
      * @throws DBClusterNotFoundException
-     *         DBClusterIdentifier
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB
+     *         cluster.
      * @throws SnapshotQuotaExceededException
      *         Request would result in user exceeding the allowed number of DB
      *         snapshots.
@@ -1146,7 +1155,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         Subnets in the DB subnet group should cover at least two
      *         Availability Zones unless there is only one Availability Zone.
      * @throws InvalidDBClusterStateException
-     *         The supplied value is not a valid DB cluster state.
+     *         The DB cluster is not in a valid state.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were
      *         requested that are not all in a common VPC.
@@ -1159,19 +1168,22 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws DBClusterNotFoundException
-     *         DBClusterIdentifier
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB
+     *         cluster.
      * @throws StorageTypeNotSupportedException
      *         <i>StorageType</i> specified cannot be associated with the DB
      *         Instance.
      * @throws AuthorizationNotFoundException
      *         Specified CIDRIP or EC2 security group is not authorized for the
-     *         specified DB security group. </p>
+     *         specified DB security group.</p>
      *         <p>
      *         RDS may not also be authorized via IAM to perform necessary
      *         actions on your behalf.
      * @throws KMSKeyNotAccessibleException
      *         Error accessing KMS key.
      * @throws DomainNotFoundException
+     *         <i>Domain</i> does not refer to an existing Active Directory
+     *         Domain.
      * @sample AmazonRDS.CreateDBInstance
      */
     @Override
@@ -1690,12 +1702,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * The DeleteDBCluster action deletes a previously provisioned DB cluster. A
-     * successful response from the web service indicates the request was
-     * received correctly. When you delete a DB cluster, all automated backups
-     * for that DB cluster are deleted and cannot be recovered. Manual DB
-     * cluster snapshots of the DB cluster to be deleted are not deleted.
+     * The DeleteDBCluster action deletes a previously provisioned DB cluster.
+     * When you delete a DB cluster, all automated backups for that DB cluster
+     * are deleted and cannot be recovered. Manual DB cluster snapshots of the
+     * specified DB cluster are not deleted.
      * </p>
+     * <p/>
      * <p>
      * For more information on Amazon Aurora, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"
@@ -1705,9 +1717,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @param deleteDBClusterRequest
      * @return Result of the DeleteDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         DBClusterIdentifier
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB
+     *         cluster.
      * @throws InvalidDBClusterStateException
-     *         The supplied value is not a valid DB cluster state.
+     *         The DB cluster is not in a valid state.
      * @throws DBClusterSnapshotAlreadyExistsException
      *         User already has a DB cluster snapshot with the given identifier.
      * @throws SnapshotQuotaExceededException
@@ -1810,8 +1823,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
      * operation is terminated.
      * </p>
-     * <note>The DB cluster snapshot must be in the <code>available</code> state
-     * to be deleted.</note>
+     * <note>
+     * <p>
+     * The DB cluster snapshot must be in the <code>available</code> state to be
+     * deleted.
+     * </p>
+     * </note>
      * <p>
      * For more information on Amazon Aurora, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"
@@ -1824,7 +1841,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value is not a valid DB cluster snapshot state.
      * @throws DBClusterSnapshotNotFoundException
-     *         DBClusterSnapshotIdentifier
+     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing
+     *         DB cluster snapshot.
      * @sample AmazonRDS.DeleteDBClusterSnapshot
      */
     @Override
@@ -1864,21 +1882,21 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * The DeleteDBInstance action deletes a previously provisioned DB instance.
-     * A successful response from the web service indicates the request was
-     * received correctly. When you delete a DB instance, all automated backups
-     * for that instance are deleted and cannot be recovered. Manual DB
-     * snapshots of the DB instance to be deleted are not deleted.
+     * When you delete a DB instance, all automated backups for that instance
+     * are deleted and cannot be recovered. Manual DB snapshots of the DB
+     * instance to be deleted are not deleted.
      * </p>
      * <p>
      * If a final DB snapshot is requested the status of the RDS instance will
-     * be "deleting" until the DB snapshot is created. The API action
+     * be <code>deleting</code> until the DB snapshot is created. The API action
      * <code>DescribeDBInstance</code> is used to monitor the status of this
      * operation. The action cannot be canceled or reverted once submitted.
      * </p>
      * <p>
      * Note that when a DB instance is in a failure state and has a status of
-     * 'failed', 'incompatible-restore', or 'incompatible-network', it can only
-     * be deleted when the SkipFinalSnapshot parameter is set to "true".
+     * <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, it can only be deleted when the
+     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * 
      * @param deleteDBInstanceRequest
@@ -1895,7 +1913,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         Request would result in user exceeding the allowed number of DB
      *         snapshots.
      * @throws InvalidDBClusterStateException
-     *         The supplied value is not a valid DB cluster state.
+     *         The DB cluster is not in a valid state.
      * @sample AmazonRDS.DeleteDBInstance
      */
     @Override
@@ -1986,8 +2004,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * <p>
      * Deletes a DB security group.
      * </p>
-     * <note>The specified DB security group must not be associated with any DB
-     * instances.</note>
+     * <note>
+     * <p>
+     * The specified DB security group must not be associated with any DB
+     * instances.
+     * </p>
+     * </note>
      * 
      * @param deleteDBSecurityGroupRequest
      * @return Result of the DeleteDBSecurityGroup operation returned by the
@@ -2038,8 +2060,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * Deletes a DBSnapshot. If the snapshot is being copied, the copy operation
      * is terminated.
      * </p>
-     * <note>The DBSnapshot must be in the <code>available</code> state to be
-     * deleted.</note>
+     * <note>
+     * <p>
+     * The DBSnapshot must be in the <code>available</code> state to be deleted.
+     * </p>
+     * </note>
      * 
      * @param deleteDBSnapshotRequest
      * @return Result of the DeleteDBSnapshot operation returned by the service.
@@ -2088,8 +2113,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * <p>
      * Deletes a DB subnet group.
      * </p>
-     * <note>The specified database subnet group must not be associated with any
-     * DB instances.</note>
+     * <note>
+     * <p>
+     * The specified database subnet group must not be associated with any DB
+     * instances.
+     * </p>
+     * </note>
      * 
      * @param deleteDBSubnetGroupRequest
      * @return Result of the DeleteDBSubnetGroup operation returned by the
@@ -2299,7 +2328,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @return Result of the DescribeCertificates operation returned by the
      *         service.
      * @throws CertificateNotFoundException
-     *         CertificateIdentifier
+     *         <i>CertificateIdentifier</i> does not refer to an existing
+     *         certificate.
      * @sample AmazonRDS.DescribeCertificates
      */
     @Override
@@ -2456,7 +2486,69 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Returns information about DB cluster snapshots. This API supports
+     * Returns a list of DB cluster snapshot attribute names and values for a
+     * manual DB cluster snapshot.
+     * </p>
+     * <p>
+     * When sharing snapshots with other AWS accounts,
+     * <code>DescribeDBClusterSnapshotAttributes</code> returns the
+     * <code>restore</code> attribute and a list of IDs for the AWS accounts
+     * that are authorized to copy or restore the manual DB cluster snapshot. If
+     * <code>all</code> is included in the list of values for the
+     * <code>restore</code> attribute, then the manual DB cluster snapshot is
+     * public and can be copied or restored by all AWS accounts.
+     * </p>
+     * <p>
+     * To add or remove access for an AWS account to copy or restore a manual DB
+     * cluster snapshot, or to make the manual DB cluster snapshot public or
+     * private, use the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     * </p>
+     * 
+     * @param describeDBClusterSnapshotAttributesRequest
+     * @return Result of the DescribeDBClusterSnapshotAttributes operation
+     *         returned by the service.
+     * @throws DBClusterSnapshotNotFoundException
+     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing
+     *         DB cluster snapshot.
+     * @sample AmazonRDS.DescribeDBClusterSnapshotAttributes
+     */
+    @Override
+    public DBClusterSnapshotAttributesResult describeDBClusterSnapshotAttributes(
+            DescribeDBClusterSnapshotAttributesRequest describeDBClusterSnapshotAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDBClusterSnapshotAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDBClusterSnapshotAttributesRequest> request = null;
+        Response<DBClusterSnapshotAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDBClusterSnapshotAttributesRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeDBClusterSnapshotAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBClusterSnapshotAttributesResult> responseHandler = new StaxResponseHandler<DBClusterSnapshotAttributesResult>(
+                    new DBClusterSnapshotAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about DB cluster snapshots. This API action supports
      * pagination.
      * </p>
      * <p>
@@ -2469,7 +2561,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @return Result of the DescribeDBClusterSnapshots operation returned by
      *         the service.
      * @throws DBClusterSnapshotNotFoundException
-     *         DBClusterSnapshotIdentifier
+     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing
+     *         DB cluster snapshot.
      * @sample AmazonRDS.DescribeDBClusterSnapshots
      */
     @Override
@@ -2526,7 +2619,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @return Result of the DescribeDBClusters operation returned by the
      *         service.
      * @throws DBClusterNotFoundException
-     *         DBClusterIdentifier
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB
+     *         cluster.
      * @sample AmazonRDS.DescribeDBClusters
      */
     @Override
@@ -2880,16 +2974,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * <p>
      * When sharing snapshots with other AWS accounts,
      * <code>DescribeDBSnapshotAttributes</code> returns the
-     * <code>restore</code> attribute and a list of the AWS account ids that are
-     * authorized to copy or restore the manual DB snapshot. If <code>all</code>
-     * is included in the list of values for the <code>restore</code> attribute,
-     * then the manual DB snapshot is public and can be copied or restored by
-     * all AWS accounts.
+     * <code>restore</code> attribute and a list of IDs for the AWS accounts
+     * that are authorized to copy or restore the manual DB snapshot. If
+     * <code>all</code> is included in the list of values for the
+     * <code>restore</code> attribute, then the manual DB snapshot is public and
+     * can be copied or restored by all AWS accounts.
      * </p>
      * <p>
      * To add or remove access for an AWS account to copy or restore a manual DB
      * snapshot, or to make the manual DB snapshot public or private, use the
-     * <a>ModifyDBSnapshotAttribute</a> API.
+     * <a>ModifyDBSnapshotAttribute</a> API action.
      * </p>
      * 
      * @param describeDBSnapshotAttributesRequest
@@ -2941,7 +3035,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Returns information about DB snapshots. This API supports pagination.
+     * Returns information about DB snapshots. This API action supports
+     * pagination.
      * </p>
      * 
      * @param describeDBSnapshotsRequest
@@ -3612,7 +3707,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         <i>DBInstanceIdentifier</i> does not refer to an existing DB
      *         instance.
      * @throws DBLogFileNotFoundException
-     *         LogFileName
+     *         <i>LogFileName</i> does not refer to an existing DB log file.
      * @sample AmazonRDS.DownloadDBLogFilePortion
      */
     @Override
@@ -3676,9 +3771,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @return Result of the FailoverDBCluster operation returned by the
      *         service.
      * @throws DBClusterNotFoundException
-     *         DBClusterIdentifier
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB
+     *         cluster.
      * @throws InvalidDBClusterStateException
-     *         The supplied value is not a valid DB cluster state.
+     *         The DB cluster is not in a valid state.
      * @sample AmazonRDS.FailoverDBCluster
      */
     @Override
@@ -3788,9 +3884,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @param modifyDBClusterRequest
      * @return Result of the ModifyDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         DBClusterIdentifier
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB
+     *         cluster.
      * @throws InvalidDBClusterStateException
-     *         The supplied value is not a valid DB cluster state.
+     *         The DB cluster is not in a valid state.
      * @throws StorageQuotaExceededException
      *         Request would result in user exceeding the allowed amount of
      *         storage available across all DB instances.
@@ -3931,6 +4028,78 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Adds an attribute and values to, or removes an attribute and values from,
+     * a manual DB cluster snapshot.
+     * </p>
+     * <p>
+     * To share a manual DB cluster snapshot with other AWS accounts, specify
+     * <code>restore</code> as the <code>AttributeName</code> and use the
+     * <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
+     * accounts that are authorized to restore the manual DB cluster snapshot.
+     * Use the value <code>all</code> to make the manual DB cluster snapshot
+     * public, which means that it can be copied or restored by all AWS
+     * accounts. Do not add the <code>all</code> value for any manual DB cluster
+     * snapshots that contain private information that you don't want available
+     * to all AWS accounts.
+     * </p>
+     * <p>
+     * To view which AWS accounts have access to copy or restore a manual DB
+     * cluster snapshot, or whether a manual DB cluster snapshot public or
+     * private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.
+     * </p>
+     * <p>
+     * If a manual DB cluster snapshot is encrypted, it cannot be shared.
+     * </p>
+     * 
+     * @param modifyDBClusterSnapshotAttributeRequest
+     * @return Result of the ModifyDBClusterSnapshotAttribute operation returned
+     *         by the service.
+     * @throws DBClusterSnapshotNotFoundException
+     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing
+     *         DB cluster snapshot.
+     * @throws InvalidDBClusterSnapshotStateException
+     *         The supplied value is not a valid DB cluster snapshot state.
+     * @throws SharedSnapshotQuotaExceededException
+     *         You have exceeded the maximum number of accounts that you can
+     *         share a manual DB snapshot with.
+     * @sample AmazonRDS.ModifyDBClusterSnapshotAttribute
+     */
+    @Override
+    public DBClusterSnapshotAttributesResult modifyDBClusterSnapshotAttribute(
+            ModifyDBClusterSnapshotAttributeRequest modifyDBClusterSnapshotAttributeRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyDBClusterSnapshotAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyDBClusterSnapshotAttributeRequest> request = null;
+        Response<DBClusterSnapshotAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyDBClusterSnapshotAttributeRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(modifyDBClusterSnapshotAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBClusterSnapshotAttributesResult> responseHandler = new StaxResponseHandler<DBClusterSnapshotAttributesResult>(
+                    new DBClusterSnapshotAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modify settings for a DB instance. You can change one or more database
      * configuration parameters by specifying these parameters and the new
      * values in the request.
@@ -3975,13 +4144,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         Instance.
      * @throws AuthorizationNotFoundException
      *         Specified CIDRIP or EC2 security group is not authorized for the
-     *         specified DB security group. </p>
+     *         specified DB security group.</p>
      *         <p>
      *         RDS may not also be authorized via IAM to perform necessary
      *         actions on your behalf.
      * @throws CertificateNotFoundException
-     *         CertificateIdentifier
+     *         <i>CertificateIdentifier</i> does not refer to an existing
+     *         certificate.
      * @throws DomainNotFoundException
+     *         <i>Domain</i> does not refer to an existing Active Directory
+     *         Domain.
      * @sample AmazonRDS.ModifyDBInstance
      */
     @Override
@@ -4094,23 +4266,23 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Adds an attribute and values to, or removes an attribute and values from
+     * Adds an attribute and values to, or removes an attribute and values from,
      * a manual DB snapshot.
      * </p>
      * <p>
      * To share a manual DB snapshot with other AWS accounts, specify
      * <code>restore</code> as the <code>AttributeName</code> and use the
-     * <code>ValuesToAdd</code> parameter to add a list of the AWS account ids
-     * that are authorized to restore the manual DB snapshot. Uses the value
-     * <code>all</code> to make the manual DB snapshot public and can by copied
-     * or restored by all AWS accounts. Do not add the <code>all</code> value
-     * for any manual DB snapshots that contain private information that you do
-     * not want to be available to all AWS accounts.
+     * <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
+     * accounts that are authorized to restore the manual DB snapshot. Uses the
+     * value <code>all</code> to make the manual DB snapshot public, which means
+     * it can be copied or restored by all AWS accounts. Do not add the
+     * <code>all</code> value for any manual DB snapshots that contain private
+     * information that you don't want available to all AWS accounts.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB
      * snapshot, or whether a manual DB snapshot public or private, use the
-     * <a>DescribeDBSnapshotAttributes</a> API.
+     * <a>DescribeDBSnapshotAttributes</a> API action.
      * </p>
      * <p>
      * If the manual DB snapshot is encrypted, it cannot be shared.
@@ -4125,7 +4297,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @throws InvalidDBSnapshotStateException
      *         The state of the DB snapshot does not allow deletion.
      * @throws SharedSnapshotQuotaExceededException
-     *         You have exceeded the maximum number of account ids that you can
+     *         You have exceeded the maximum number of accounts that you can
      *         share a manual DB snapshot with.
      * @sample AmazonRDS.ModifyDBSnapshotAttribute
      */
@@ -4769,7 +4941,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB
      *         snapshot.
      * @throws DBClusterSnapshotNotFoundException
-     *         DBClusterSnapshotIdentifier
+     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing
+     *         DB cluster snapshot.
      * @throws InsufficientDBClusterCapacityException
      *         The DB cluster does not have enough capacity for the current
      *         operation.
@@ -4866,9 +5039,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet
      *         group.
      * @throws DBClusterNotFoundException
-     *         DBClusterIdentifier
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB
+     *         cluster.
      * @throws DBClusterSnapshotNotFoundException
-     *         DBClusterSnapshotIdentifier
+     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing
+     *         DB cluster snapshot.
      * @throws InsufficientDBClusterCapacityException
      *         The DB cluster does not have enough capacity for the current
      *         operation.
@@ -5001,7 +5176,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         Instance.
      * @throws AuthorizationNotFoundException
      *         Specified CIDRIP or EC2 security group is not authorized for the
-     *         specified DB security group. </p>
+     *         specified DB security group.</p>
      *         <p>
      *         RDS may not also be authorized via IAM to perform necessary
      *         actions on your behalf.
@@ -5011,6 +5186,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         <i>DBSecurityGroupName</i> does not refer to an existing DB
      *         security group.
      * @throws DomainNotFoundException
+     *         <i>Domain</i> does not refer to an existing Active Directory
+     *         Domain.
      * @sample AmazonRDS.RestoreDBInstanceFromDBSnapshot
      */
     @Override
@@ -5110,7 +5287,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         Instance.
      * @throws AuthorizationNotFoundException
      *         Specified CIDRIP or EC2 security group is not authorized for the
-     *         specified DB security group. </p>
+     *         specified DB security group.</p>
      *         <p>
      *         RDS may not also be authorized via IAM to perform necessary
      *         actions on your behalf.
@@ -5120,6 +5297,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         <i>DBSecurityGroupName</i> does not refer to an existing DB
      *         security group.
      * @throws DomainNotFoundException
+     *         <i>Domain</i> does not refer to an existing Active Directory
+     *         Domain.
      * @sample AmazonRDS.RestoreDBInstanceToPointInTime
      */
     @Override
@@ -5173,7 +5352,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         security group.
      * @throws AuthorizationNotFoundException
      *         Specified CIDRIP or EC2 security group is not authorized for the
-     *         specified DB security group. </p>
+     *         specified DB security group.</p>
      *         <p>
      *         RDS may not also be authorized via IAM to perform necessary
      *         actions on your behalf.

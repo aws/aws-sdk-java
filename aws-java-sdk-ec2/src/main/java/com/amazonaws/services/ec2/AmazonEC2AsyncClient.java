@@ -7009,6 +7009,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetConsoleScreenshotResult> getConsoleScreenshotAsync(
+            GetConsoleScreenshotRequest request) {
+
+        return getConsoleScreenshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConsoleScreenshotResult> getConsoleScreenshotAsync(
+            final GetConsoleScreenshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConsoleScreenshotRequest, GetConsoleScreenshotResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetConsoleScreenshotResult>() {
+                    @Override
+                    public GetConsoleScreenshotResult call() throws Exception {
+                        GetConsoleScreenshotResult result;
+
+                        try {
+                            result = getConsoleScreenshot(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPasswordDataResult> getPasswordDataAsync(
             GetPasswordDataRequest request) {
 

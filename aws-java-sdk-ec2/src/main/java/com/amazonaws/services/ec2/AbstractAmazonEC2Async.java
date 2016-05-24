@@ -3666,6 +3666,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetConsoleScreenshotResult> getConsoleScreenshotAsync(
+            GetConsoleScreenshotRequest request) {
+
+        return getConsoleScreenshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConsoleScreenshotResult> getConsoleScreenshotAsync(
+            GetConsoleScreenshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetConsoleScreenshotRequest, GetConsoleScreenshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPasswordDataResult> getPasswordDataAsync(
             GetPasswordDataRequest request) {
 

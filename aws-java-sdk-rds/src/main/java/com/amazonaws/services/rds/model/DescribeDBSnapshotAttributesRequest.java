@@ -20,25 +20,25 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DescribeDBSnapshotAttributesRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the DB snapshot to modify the attributes for.
+     * The identifier for the DB snapshot to describe the attributes for.
      * </p>
      */
     private String dBSnapshotIdentifier;
 
     /**
      * <p>
-     * The identifier for the DB snapshot to modify the attributes for.
+     * The identifier for the DB snapshot to describe the attributes for.
      * </p>
      * 
      * @param dBSnapshotIdentifier
-     *        The identifier for the DB snapshot to modify the attributes for.
+     *        The identifier for the DB snapshot to describe the attributes for.
      */
 
     public void setDBSnapshotIdentifier(String dBSnapshotIdentifier) {
@@ -47,10 +47,11 @@ public class DescribeDBSnapshotAttributesRequest extends
 
     /**
      * <p>
-     * The identifier for the DB snapshot to modify the attributes for.
+     * The identifier for the DB snapshot to describe the attributes for.
      * </p>
      * 
-     * @return The identifier for the DB snapshot to modify the attributes for.
+     * @return The identifier for the DB snapshot to describe the attributes
+     *         for.
      */
 
     public String getDBSnapshotIdentifier() {
@@ -59,11 +60,11 @@ public class DescribeDBSnapshotAttributesRequest extends
 
     /**
      * <p>
-     * The identifier for the DB snapshot to modify the attributes for.
+     * The identifier for the DB snapshot to describe the attributes for.
      * </p>
      * 
      * @param dBSnapshotIdentifier
-     *        The identifier for the DB snapshot to modify the attributes for.
+     *        The identifier for the DB snapshot to describe the attributes for.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -23,10 +23,26 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the following actions:
  * </p>
  * <ul>
- * <li><a>CreateDBSubnetGroup</a></li>
- * <li><a>ModifyDBSubnetGroup</a></li>
- * <li><a>DescribeDBSubnetGroups</a></li>
- * <li><a>DeleteDBSubnetGroup</a></li>
+ * <li>
+ * <p>
+ * <a>CreateDBSubnetGroup</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ModifyDBSubnetGroup</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeDBSubnetGroups</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteDBSubnetGroup</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * This data type is used as a response element in the

@@ -20,8 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * You have exceeded the maximum number of account ids that you can share a
- * manual DB snapshot with.
+ * You have exceeded the maximum number of accounts that you can share a manual
+ * DB snapshot with.
  * </p>
  */
 public class SharedSnapshotQuotaExceededException extends

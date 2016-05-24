@@ -34,10 +34,22 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15
-     * for SQL Server)</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
+     * SQL Server)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
@@ -52,9 +64,21 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you are restoring from a shared manual DB snapshot, the
@@ -138,8 +162,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b> true</li>
-     * <li><b>VPC:</b> false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b> false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -301,15 +333,27 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * 
      * @param dBInstanceIdentifier
      *        Name of the DB instance to create from the DB snapshot. This
-     *        parameter isn't case-sensitive. </p>
+     *        parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        (1 to 15 for SQL Server)</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to
+     *        15 for SQL Server)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
@@ -320,9 +364,21 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If you are restoring from a shared manual DB snapshot, the
@@ -344,10 +400,22 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15
-     * for SQL Server)</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
+     * SQL Server)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
@@ -355,15 +423,27 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * 
      * @param dBInstanceIdentifier
      *        Name of the DB instance to create from the DB snapshot. This
-     *        parameter isn't case-sensitive. </p>
+     *        parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        (1 to 15 for SQL Server)</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to
+     *        15 for SQL Server)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
@@ -382,25 +462,49 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15
-     * for SQL Server)</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
+     * SQL Server)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
      * </p>
      * 
      * @return Name of the DB instance to create from the DB snapshot. This
-     *         parameter isn't case-sensitive. </p>
+     *         parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         (1 to 15 for SQL Server)</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens (1
+     *         to 15 for SQL Server)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>my-snapshot-id</code>
@@ -419,10 +523,22 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15
-     * for SQL Server)</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for
+     * SQL Server)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
@@ -430,15 +546,27 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * 
      * @param dBInstanceIdentifier
      *        Name of the DB instance to create from the DB snapshot. This
-     *        parameter isn't case-sensitive. </p>
+     *        parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        (1 to 15 for SQL Server)</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to
+     *        15 for SQL Server)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
@@ -460,9 +588,21 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you are restoring from a shared manual DB snapshot, the
@@ -471,14 +611,26 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param dBSnapshotIdentifier
-     *        The identifier for the DB snapshot to restore from. </p>
+     *        The identifier for the DB snapshot to restore from.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If you are restoring from a shared manual DB snapshot, the
@@ -498,9 +650,21 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you are restoring from a shared manual DB snapshot, the
@@ -508,15 +672,26 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * snapshot.
      * </p>
      * 
-     * @return The identifier for the DB snapshot to restore from. </p>
+     * @return The identifier for the DB snapshot to restore from.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If you are restoring from a shared manual DB snapshot, the
@@ -536,9 +711,21 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you are restoring from a shared manual DB snapshot, the
@@ -547,14 +734,26 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param dBSnapshotIdentifier
-     *        The identifier for the DB snapshot to restore from. </p>
+     *        The identifier for the DB snapshot to restore from.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If you are restoring from a shared manual DB snapshot, the
@@ -580,8 +779,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the Amazon RDS DB instance.
-     *        </p>
+     *        The compute and memory capacity of the Amazon RDS DB instance.</p>
      *        <p>
      *        Valid Values:
      *        <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
@@ -600,8 +798,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
      * </p>
      * 
-     * @return The compute and memory capacity of the Amazon RDS DB instance.
-     *         </p>
+     * @return The compute and memory capacity of the Amazon RDS DB
+     *         instance.</p>
      *         <p>
      *         Valid Values:
      *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
@@ -621,8 +819,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the Amazon RDS DB instance.
-     *        </p>
+     *        The compute and memory capacity of the Amazon RDS DB instance.</p>
      *        <p>
      *        Valid Values:
      *        <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
@@ -648,7 +845,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param port
-     *        The port number on which the database accepts connections. </p>
+     *        The port number on which the database accepts connections.</p>
      *        <p>
      *        Default: The same port as the original DB instance
      *        </p>
@@ -671,7 +868,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * Constraints: Value must be <code>1150-65535</code>
      * </p>
      * 
-     * @return The port number on which the database accepts connections. </p>
+     * @return The port number on which the database accepts connections.</p>
      *         <p>
      *         Default: The same port as the original DB instance
      *         </p>
@@ -695,7 +892,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param port
-     *        The port number on which the database accepts connections. </p>
+     *        The port number on which the database accepts connections.</p>
      *        <p>
      *        Default: The same port as the original DB instance
      *        </p>
@@ -727,7 +924,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * 
      * @param availabilityZone
      *        The EC2 Availability Zone that the database instance will be
-     *        created in. </p>
+     *        created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone.
      *        </p>
@@ -759,7 +956,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @return The EC2 Availability Zone that the database instance will be
-     *         created in. </p>
+     *         created in.</p>
      *         <p>
      *         Default: A random, system-chosen Availability Zone.
      *         </p>
@@ -792,7 +989,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * 
      * @param availabilityZone
      *        The EC2 Availability Zone that the database instance will be
-     *        created in. </p>
+     *        created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone.
      *        </p>
@@ -825,7 +1022,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The DB subnet group name to use for the new instance. </p>
+     *        The DB subnet group name to use for the new instance.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, underscores, spaces, or hyphens. Must not be
@@ -851,7 +1048,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return The DB subnet group name to use for the new instance. </p>
+     * @return The DB subnet group name to use for the new instance.</p>
      *         <p>
      *         Constraints: Must contain no more than 255 alphanumeric
      *         characters, periods, underscores, spaces, or hyphens. Must not be
@@ -878,7 +1075,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The DB subnet group name to use for the new instance. </p>
+     *        The DB subnet group name to use for the new instance.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, underscores, spaces, or hyphens. Must not be
@@ -906,7 +1103,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the DB instance is a Multi-AZ deployment. </p>
+     *        Specifies if the DB instance is a Multi-AZ deployment.</p>
      *        <p>
      *        Constraint: You cannot specify the AvailabilityZone parameter if
      *        the MultiAZ parameter is set to <code>true</code>.
@@ -925,7 +1122,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * MultiAZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the DB instance is a Multi-AZ deployment. </p>
+     * @return Specifies if the DB instance is a Multi-AZ deployment.</p>
      *         <p>
      *         Constraint: You cannot specify the AvailabilityZone parameter if
      *         the MultiAZ parameter is set to <code>true</code>.
@@ -945,7 +1142,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param multiAZ
-     *        Specifies if the DB instance is a Multi-AZ deployment. </p>
+     *        Specifies if the DB instance is a Multi-AZ deployment.</p>
      *        <p>
      *        Constraint: You cannot specify the AvailabilityZone parameter if
      *        the MultiAZ parameter is set to <code>true</code>.
@@ -967,7 +1164,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * MultiAZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies if the DB instance is a Multi-AZ deployment. </p>
+     * @return Specifies if the DB instance is a Multi-AZ deployment.</p>
      *         <p>
      *         Constraint: You cannot specify the AvailabilityZone parameter if
      *         the MultiAZ parameter is set to <code>true</code>.
@@ -991,8 +1188,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b> true</li>
-     * <li><b>VPC:</b> false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b> false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -1007,15 +1212,23 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      *        of true specifies an Internet-facing instance with a publicly
      *        resolvable DNS name, which resolves to a public IP address. A
      *        value of false specifies an internal instance with a DNS name that
-     *        resolves to a private IP address. </p>
+     *        resolves to a private IP address.</p>
      *        <p>
      *        Default: The default behavior varies depending on whether a VPC
      *        has been requested or not. The following list shows the default
      *        behavior in each case.
      *        </p>
      *        <ul>
-     *        <li><b>Default VPC:</b> true</li>
-     *        <li><b>VPC:</b> false</li>
+     *        <li>
+     *        <p>
+     *        <b>Default VPC:</b> true
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>VPC:</b> false
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request
@@ -1043,8 +1256,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b> true</li>
-     * <li><b>VPC:</b> false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b> false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -1058,15 +1279,23 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      *         of true specifies an Internet-facing instance with a publicly
      *         resolvable DNS name, which resolves to a public IP address. A
      *         value of false specifies an internal instance with a DNS name
-     *         that resolves to a private IP address. </p>
+     *         that resolves to a private IP address.</p>
      *         <p>
      *         Default: The default behavior varies depending on whether a VPC
      *         has been requested or not. The following list shows the default
      *         behavior in each case.
      *         </p>
      *         <ul>
-     *         <li><b>Default VPC:</b> true</li>
-     *         <li><b>VPC:</b> false</li>
+     *         <li>
+     *         <p>
+     *         <b>Default VPC:</b> true
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>VPC:</b> false
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request
@@ -1095,8 +1324,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b> true</li>
-     * <li><b>VPC:</b> false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b> false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -1111,15 +1348,23 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      *        of true specifies an Internet-facing instance with a publicly
      *        resolvable DNS name, which resolves to a public IP address. A
      *        value of false specifies an internal instance with a DNS name that
-     *        resolves to a private IP address. </p>
+     *        resolves to a private IP address.</p>
      *        <p>
      *        Default: The default behavior varies depending on whether a VPC
      *        has been requested or not. The following list shows the default
      *        behavior in each case.
      *        </p>
      *        <ul>
-     *        <li><b>Default VPC:</b> true</li>
-     *        <li><b>VPC:</b> false</li>
+     *        <li>
+     *        <p>
+     *        <b>Default VPC:</b> true
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>VPC:</b> false
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request
@@ -1151,8 +1396,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * case.
      * </p>
      * <ul>
-     * <li><b>Default VPC:</b> true</li>
-     * <li><b>VPC:</b> false</li>
+     * <li>
+     * <p>
+     * <b>Default VPC:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>VPC:</b> false
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the
@@ -1166,15 +1419,23 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      *         of true specifies an Internet-facing instance with a publicly
      *         resolvable DNS name, which resolves to a public IP address. A
      *         value of false specifies an internal instance with a DNS name
-     *         that resolves to a private IP address. </p>
+     *         that resolves to a private IP address.</p>
      *         <p>
      *         Default: The default behavior varies depending on whether a VPC
      *         has been requested or not. The following list shows the default
      *         behavior in each case.
      *         </p>
      *         <ul>
-     *         <li><b>Default VPC:</b> true</li>
-     *         <li><b>VPC:</b> false</li>
+     *         <li>
+     *         <p>
+     *         <b>Default VPC:</b> true
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>VPC:</b> false
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request
@@ -1264,7 +1525,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param licenseModel
-     *        License model information for the restored DB instance. </p>
+     *        License model information for the restored DB instance.</p>
      *        <p>
      *        Default: Same as source.
      *        </p>
@@ -1290,7 +1551,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * <code>bring-your-own-license</code> | <code>general-public-license</code>
      * </p>
      * 
-     * @return License model information for the restored DB instance. </p>
+     * @return License model information for the restored DB instance.</p>
      *         <p>
      *         Default: Same as source.
      *         </p>
@@ -1317,7 +1578,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param licenseModel
-     *        License model information for the restored DB instance. </p>
+     *        License model information for the restored DB instance.</p>
      *        <p>
      *        Default: Same as source.
      *        </p>
@@ -1346,7 +1607,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </note>
      * 
      * @param dBName
-     *        The database name for the restored DB instance. </p> <note>
+     *        The database name for the restored DB instance.</p> <note>
      *        <p>
      *        This parameter doesn't apply to the MySQL or MariaDB engines.
      *        </p>
@@ -1366,7 +1627,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * </note>
      * 
-     * @return The database name for the restored DB instance. </p> <note>
+     * @return The database name for the restored DB instance.</p> <note>
      *         <p>
      *         This parameter doesn't apply to the MySQL or MariaDB engines.
      *         </p>
@@ -1387,7 +1648,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </note>
      * 
      * @param dBName
-     *        The database name for the restored DB instance. </p> <note>
+     *        The database name for the restored DB instance.</p> <note>
      *        <p>
      *        This parameter doesn't apply to the MySQL or MariaDB engines.
      *        </p>
@@ -1419,7 +1680,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param engine
-     *        The database engine to use for the new instance. </p>
+     *        The database engine to use for the new instance.</p>
      *        <p>
      *        Default: The same as source
      *        </p>
@@ -1457,7 +1718,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * <code>postgres</code> | <code>aurora</code>
      * </p>
      * 
-     * @return The database engine to use for the new instance. </p>
+     * @return The database engine to use for the new instance.</p>
      *         <p>
      *         Default: The same as source
      *         </p>
@@ -1496,7 +1757,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param engine
-     *        The database engine to use for the new instance. </p>
+     *        The database engine to use for the new instance.</p>
      *        <p>
      *        Default: The same as source
      *        </p>
@@ -1546,7 +1807,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      *        parameter is set to 0, the new instance will be converted to a
      *        non-PIOPS instance, which will take additional time, though your
      *        DB instance will be available for connections before the
-     *        conversion starts. </p>
+     *        conversion starts.</p>
      *        <p>
      *        Constraints: Must be an integer greater than 1000.
      *        </p>
@@ -1588,7 +1849,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      *         parameter is set to 0, the new instance will be converted to a
      *         non-PIOPS instance, which will take additional time, though your
      *         DB instance will be available for connections before the
-     *         conversion starts. </p>
+     *         conversion starts.</p>
      *         <p>
      *         Constraints: Must be an integer greater than 1000.
      *         </p>
@@ -1631,7 +1892,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      *        parameter is set to 0, the new instance will be converted to a
      *        non-PIOPS instance, which will take additional time, though your
      *        DB instance will be available for connections before the
-     *        conversion starts. </p>
+     *        conversion starts.</p>
      *        <p>
      *        Constraints: Must be an integer greater than 1000.
      *        </p>
@@ -1801,8 +2062,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB instance.
-     *        </p>
+     *        Specifies the storage type to be associated with the DB
+     *        instance.</p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
      *        </p>
@@ -1835,8 +2096,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * specified; otherwise <code>standard</code>
      * </p>
      * 
-     * @return Specifies the storage type to be associated with the DB instance.
-     *         </p>
+     * @return Specifies the storage type to be associated with the DB
+     *         instance.</p>
      *         <p>
      *         Valid values: <code>standard | gp2 | io1</code>
      *         </p>
@@ -1870,8 +2131,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB instance.
-     *        </p>
+     *        Specifies the storage type to be associated with the DB
+     *        instance.</p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
      *        </p>

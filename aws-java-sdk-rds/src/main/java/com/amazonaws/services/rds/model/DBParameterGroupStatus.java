@@ -26,12 +26,36 @@ import java.io.Serializable;
  * This data type is used as a response element in the following actions:
  * </p>
  * <ul>
- * <li><a>CreateDBInstance</a></li>
- * <li><a>CreateDBInstanceReadReplica</a></li>
- * <li><a>DeleteDBInstance</a></li>
- * <li><a>ModifyDBInstance</a></li>
- * <li><a>RebootDBInstance</a></li>
- * <li><a>RestoreDBInstanceFromDBSnapshot</a></li>
+ * <li>
+ * <p>
+ * <a>CreateDBInstance</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateDBInstanceReadReplica</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteDBInstance</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ModifyDBInstance</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>RebootDBInstance</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>RestoreDBInstanceFromDBSnapshot</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class DBParameterGroupStatus implements Serializable, Cloneable {

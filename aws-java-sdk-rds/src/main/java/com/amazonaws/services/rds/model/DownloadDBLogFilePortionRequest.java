@@ -34,9 +34,21 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBInstanceIdentifier;
@@ -63,6 +75,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * If the NumberOfLines parameter is specified, then the block of lines
      * returned can be from the beginning or the end of the log file, depending
      * on the value of the Marker parameter.
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -94,7 +107,6 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      */
     private Integer numberOfLines;
 
@@ -107,21 +119,45 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBInstanceIdentifier
      *        The customer-assigned name of the DB instance that contains the
-     *        log files you want to list. </p>
+     *        log files you want to list.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -137,20 +173,44 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The customer-assigned name of the DB instance that contains the
-     *         log files you want to list. </p>
+     *         log files you want to list.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBInstanceIdentifier() {
@@ -166,21 +226,45 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBInstanceIdentifier
      *        The customer-assigned name of the DB instance that contains the
-     *        log files you want to list. </p>
+     *        log files you want to list.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -297,6 +381,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * If the NumberOfLines parameter is specified, then the block of lines
      * returned can be from the beginning or the end of the log file, depending
      * on the value of the Marker parameter.
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -328,16 +413,16 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param numberOfLines
      *        The number of lines to download. If the number of lines specified
      *        results in a file over 1 MB in size, the file will be truncated at
-     *        1 MB in size. </p>
+     *        1 MB in size.</p>
      *        <p>
      *        If the NumberOfLines parameter is specified, then the block of
      *        lines returned can be from the beginning or the end of the log
      *        file, depending on the value of the Marker parameter.
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -368,7 +453,6 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      *        AdditionalDataPending response element returns false.
      *        </p>
      *        </li>
-     *        </ul>
      */
 
     public void setNumberOfLines(Integer numberOfLines) {
@@ -384,6 +468,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * If the NumberOfLines parameter is specified, then the block of lines
      * returned can be from the beginning or the end of the log file, depending
      * on the value of the Marker parameter.
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -415,15 +500,15 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @return The number of lines to download. If the number of lines specified
      *         results in a file over 1 MB in size, the file will be truncated
-     *         at 1 MB in size. </p>
+     *         at 1 MB in size.</p>
      *         <p>
      *         If the NumberOfLines parameter is specified, then the block of
      *         lines returned can be from the beginning or the end of the log
      *         file, depending on the value of the Marker parameter.
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -454,7 +539,6 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      *         AdditionalDataPending response element returns false.
      *         </p>
      *         </li>
-     *         </ul>
      */
 
     public Integer getNumberOfLines() {
@@ -470,6 +554,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * If the NumberOfLines parameter is specified, then the block of lines
      * returned can be from the beginning or the end of the log file, depending
      * on the value of the Marker parameter.
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -501,16 +586,16 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param numberOfLines
      *        The number of lines to download. If the number of lines specified
      *        results in a file over 1 MB in size, the file will be truncated at
-     *        1 MB in size. </p>
+     *        1 MB in size.</p>
      *        <p>
      *        If the NumberOfLines parameter is specified, then the block of
      *        lines returned can be from the beginning or the end of the log
      *        file, depending on the value of the Marker parameter.
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -541,7 +626,6 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest
      *        AdditionalDataPending response element returns false.
      *        </p>
      *        </li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

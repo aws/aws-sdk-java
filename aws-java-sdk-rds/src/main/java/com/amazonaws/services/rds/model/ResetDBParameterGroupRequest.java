@@ -33,9 +33,21 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBParameterGroupName;
@@ -103,14 +115,26 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group. </p>
+     *        The name of the DB parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
     public ResetDBParameterGroupRequest(String dBParameterGroupName) {
         setDBParameterGroupName(dBParameterGroupName);
@@ -124,20 +148,44 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group. </p>
+     *        The name of the DB parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBParameterGroupName(String dBParameterGroupName) {
@@ -152,19 +200,43 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The name of the DB parameter group. </p>
+     * @return The name of the DB parameter group.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBParameterGroupName() {
@@ -179,20 +251,44 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group. </p>
+     *        The name of the DB parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -330,8 +426,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest
      * @return An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply
      *         method must be supplied; subsequent arguments are optional. A
-     *         maximum of 20 parameters can be modified in a single request.
-     *         </p>
+     *         maximum of 20 parameters can be modified in a single request.</p>
      *         <p>
      *         <b>MySQL</b>
      *         </p>
@@ -414,7 +509,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest
      *        An array of parameter names, values, and the apply method for the
      *        parameter update. At least one parameter name, value, and apply
      *        method must be supplied; subsequent arguments are optional. A
-     *        maximum of 20 parameters can be modified in a single request. </p>
+     *        maximum of 20 parameters can be modified in a single request.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>
@@ -506,7 +601,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest
      *        An array of parameter names, values, and the apply method for the
      *        parameter update. At least one parameter name, value, and apply
      *        method must be supplied; subsequent arguments are optional. A
-     *        maximum of 20 parameters can be modified in a single request. </p>
+     *        maximum of 20 parameters can be modified in a single request.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>
@@ -595,7 +690,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest
      *        An array of parameter names, values, and the apply method for the
      *        parameter update. At least one parameter name, value, and apply
      *        method must be supplied; subsequent arguments are optional. A
-     *        maximum of 20 parameters can be modified in a single request. </p>
+     *        maximum of 20 parameters can be modified in a single request.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>

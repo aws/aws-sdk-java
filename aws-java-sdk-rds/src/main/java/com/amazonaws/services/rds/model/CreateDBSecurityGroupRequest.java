@@ -34,11 +34,31 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * <li>Must not be "Default"</li>
-     * <li>Cannot contain spaces</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain spaces
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>mysecuritygroup</code>
@@ -69,16 +89,36 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      * 
      * @param dBSecurityGroupName
      *        The name for the DB security group. This value is stored as a
-     *        lowercase string. </p>
+     *        lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *        <li>Must not be "Default"</li>
-     *        <li>Cannot contain spaces</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not be "Default"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain spaces
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>mysecuritygroup</code>
@@ -100,11 +140,31 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * <li>Must not be "Default"</li>
-     * <li>Cannot contain spaces</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain spaces
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>mysecuritygroup</code>
@@ -112,16 +172,36 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      * 
      * @param dBSecurityGroupName
      *        The name for the DB security group. This value is stored as a
-     *        lowercase string. </p>
+     *        lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *        <li>Must not be "Default"</li>
-     *        <li>Cannot contain spaces</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not be "Default"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain spaces
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>mysecuritygroup</code>
@@ -140,27 +220,67 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * <li>Must not be "Default"</li>
-     * <li>Cannot contain spaces</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain spaces
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>mysecuritygroup</code>
      * </p>
      * 
      * @return The name for the DB security group. This value is stored as a
-     *         lowercase string. </p>
+     *         lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be 1 to 255 alphanumeric characters</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         <li>Must not be "Default"</li>
-     *         <li>Cannot contain spaces</li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 alphanumeric characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must not be "Default"
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot contain spaces
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>mysecuritygroup</code>
@@ -179,11 +299,31 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * <li>Must not be "Default"</li>
-     * <li>Cannot contain spaces</li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 alphanumeric characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not be "Default"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain spaces
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>mysecuritygroup</code>
@@ -191,16 +331,36 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      * 
      * @param dBSecurityGroupName
      *        The name for the DB security group. This value is stored as a
-     *        lowercase string. </p>
+     *        lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be 1 to 255 alphanumeric characters</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *        <li>Must not be "Default"</li>
-     *        <li>Cannot contain spaces</li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 alphanumeric characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not be "Default"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain spaces
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>mysecuritygroup</code>

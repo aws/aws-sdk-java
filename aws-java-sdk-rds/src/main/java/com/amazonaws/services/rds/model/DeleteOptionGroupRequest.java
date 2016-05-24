@@ -29,7 +29,11 @@ public class DeleteOptionGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the option group to be deleted.
      * </p>
-     * <note>You cannot delete default option groups.</note>
+     * <note>
+     * <p>
+     * You cannot delete default option groups.
+     * </p>
+     * </note>
      */
     private String optionGroupName;
 
@@ -37,11 +41,17 @@ public class DeleteOptionGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the option group to be deleted.
      * </p>
-     * <note>You cannot delete default option groups.</note>
+     * <note>
+     * <p>
+     * You cannot delete default option groups.
+     * </p>
+     * </note>
      * 
      * @param optionGroupName
-     *        The name of the option group to be deleted. </p> <note>You cannot
-     *        delete default option groups.
+     *        The name of the option group to be deleted.</p> <note>
+     *        <p>
+     *        You cannot delete default option groups.
+     *        </p>
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -52,10 +62,16 @@ public class DeleteOptionGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the option group to be deleted.
      * </p>
-     * <note>You cannot delete default option groups.</note>
+     * <note>
+     * <p>
+     * You cannot delete default option groups.
+     * </p>
+     * </note>
      * 
-     * @return The name of the option group to be deleted. </p> <note>You cannot
-     *         delete default option groups.
+     * @return The name of the option group to be deleted.</p> <note>
+     *         <p>
+     *         You cannot delete default option groups.
+     *         </p>
      */
 
     public String getOptionGroupName() {
@@ -66,11 +82,17 @@ public class DeleteOptionGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the option group to be deleted.
      * </p>
-     * <note>You cannot delete default option groups.</note>
+     * <note>
+     * <p>
+     * You cannot delete default option groups.
+     * </p>
+     * </note>
      * 
      * @param optionGroupName
-     *        The name of the option group to be deleted. </p> <note>You cannot
-     *        delete default option groups.
+     *        The name of the option group to be deleted.</p> <note>
+     *        <p>
+     *        You cannot delete default option groups.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

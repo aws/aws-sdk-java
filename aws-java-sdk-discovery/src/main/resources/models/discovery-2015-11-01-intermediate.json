@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "discovery",
     "signingName" : "discovery",
+    "jsonProtocol" : true,
     "serviceName" : "AWS Application Discovery Service",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "CreateTags" : {
@@ -38,8 +38,8 @@
         "variableType" : "CreateTagsRequest",
         "variableDeclarationType" : "CreateTagsRequest",
         "documentation" : "",
-        "variableSetterType" : "CreateTagsRequest",
-        "simpleType" : "CreateTagsRequest"
+        "simpleType" : "CreateTagsRequest",
+        "variableSetterType" : "CreateTagsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -80,8 +80,8 @@
         "variableType" : "DeleteTagsRequest",
         "variableDeclarationType" : "DeleteTagsRequest",
         "documentation" : "",
-        "variableSetterType" : "DeleteTagsRequest",
-        "simpleType" : "DeleteTagsRequest"
+        "simpleType" : "DeleteTagsRequest",
+        "variableSetterType" : "DeleteTagsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -122,8 +122,8 @@
         "variableType" : "DescribeAgentsRequest",
         "variableDeclarationType" : "DescribeAgentsRequest",
         "documentation" : "",
-        "variableSetterType" : "DescribeAgentsRequest",
-        "simpleType" : "DescribeAgentsRequest"
+        "simpleType" : "DescribeAgentsRequest",
+        "variableSetterType" : "DescribeAgentsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -161,8 +161,8 @@
         "variableType" : "DescribeConfigurationsRequest",
         "variableDeclarationType" : "DescribeConfigurationsRequest",
         "documentation" : "",
-        "variableSetterType" : "DescribeConfigurationsRequest",
-        "simpleType" : "DescribeConfigurationsRequest"
+        "simpleType" : "DescribeConfigurationsRequest",
+        "variableSetterType" : "DescribeConfigurationsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -200,8 +200,8 @@
         "variableType" : "DescribeExportConfigurationsRequest",
         "variableDeclarationType" : "DescribeExportConfigurationsRequest",
         "documentation" : "",
-        "variableSetterType" : "DescribeExportConfigurationsRequest",
-        "simpleType" : "DescribeExportConfigurationsRequest"
+        "simpleType" : "DescribeExportConfigurationsRequest",
+        "variableSetterType" : "DescribeExportConfigurationsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -242,8 +242,8 @@
         "variableType" : "DescribeTagsRequest",
         "variableDeclarationType" : "DescribeTagsRequest",
         "documentation" : "",
-        "variableSetterType" : "DescribeTagsRequest",
-        "simpleType" : "DescribeTagsRequest"
+        "simpleType" : "DescribeTagsRequest",
+        "variableSetterType" : "DescribeTagsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -284,8 +284,8 @@
         "variableType" : "ExportConfigurationsRequest",
         "variableDeclarationType" : "ExportConfigurationsRequest",
         "documentation" : null,
-        "variableSetterType" : "ExportConfigurationsRequest",
-        "simpleType" : "ExportConfigurationsRequest"
+        "simpleType" : "ExportConfigurationsRequest",
+        "variableSetterType" : "ExportConfigurationsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -326,8 +326,8 @@
         "variableType" : "ListConfigurationsRequest",
         "variableDeclarationType" : "ListConfigurationsRequest",
         "documentation" : "",
-        "variableSetterType" : "ListConfigurationsRequest",
-        "simpleType" : "ListConfigurationsRequest"
+        "simpleType" : "ListConfigurationsRequest",
+        "variableSetterType" : "ListConfigurationsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -368,8 +368,8 @@
         "variableType" : "StartDataCollectionByAgentIdsRequest",
         "variableDeclarationType" : "StartDataCollectionByAgentIdsRequest",
         "documentation" : "",
-        "variableSetterType" : "StartDataCollectionByAgentIdsRequest",
-        "simpleType" : "StartDataCollectionByAgentIdsRequest"
+        "simpleType" : "StartDataCollectionByAgentIdsRequest",
+        "variableSetterType" : "StartDataCollectionByAgentIdsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -407,8 +407,8 @@
         "variableType" : "StopDataCollectionByAgentIdsRequest",
         "variableDeclarationType" : "StopDataCollectionByAgentIdsRequest",
         "documentation" : "",
-        "variableSetterType" : "StopDataCollectionByAgentIdsRequest",
-        "simpleType" : "StopDataCollectionByAgentIdsRequest"
+        "simpleType" : "StopDataCollectionByAgentIdsRequest",
+        "variableSetterType" : "StopDataCollectionByAgentIdsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -460,16 +460,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The IP address for the host where the agent resides.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "ipAddress",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -512,16 +512,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The MAC address for the host where the agent resides.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "macAddress",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -561,8 +561,8 @@
         "variableType" : "AgentNetworkInfo",
         "variableDeclarationType" : "AgentNetworkInfo",
         "documentation" : null,
-        "variableSetterType" : "AgentNetworkInfo",
-        "simpleType" : "AgentNetworkInfo"
+        "simpleType" : "AgentNetworkInfo",
+        "variableSetterType" : "AgentNetworkInfo"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -587,16 +587,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The IP address for the host where the agent resides.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "ipAddress",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -640,16 +640,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The MAC address for the host where the agent resides.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "macAddress",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -706,16 +706,16 @@
           "variableType" : "java.util.List<TagFilter>",
           "variableDeclarationType" : "java.util.List<TagFilter>",
           "documentation" : "<p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>",
-          "variableSetterType" : "java.util.Collection<TagFilter>",
-          "simpleType" : "List<TagFilter>"
+          "simpleType" : "List<TagFilter>",
+          "variableSetterType" : "java.util.Collection<TagFilter>"
         },
         "setterModel" : {
           "variableName" : "filters",
           "variableType" : "java.util.List<TagFilter>",
           "variableDeclarationType" : "java.util.List<TagFilter>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<TagFilter>",
-          "simpleType" : "List<TagFilter>"
+          "simpleType" : "List<TagFilter>",
+          "variableSetterType" : "java.util.Collection<TagFilter>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<TagFilter>",
@@ -751,16 +751,16 @@
               "variableType" : "TagFilter",
               "variableDeclarationType" : "TagFilter",
               "documentation" : "",
-              "variableSetterType" : "TagFilter",
-              "simpleType" : "TagFilter"
+              "simpleType" : "TagFilter",
+              "variableSetterType" : "TagFilter"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "TagFilter",
               "variableDeclarationType" : "TagFilter",
               "documentation" : "",
-              "variableSetterType" : "TagFilter",
-              "simpleType" : "TagFilter"
+              "simpleType" : "TagFilter",
+              "variableSetterType" : "TagFilter"
             },
             "getterModel" : {
               "returnType" : "TagFilter",
@@ -798,8 +798,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : false,
           "simpleType" : "TagFilter",
+          "map" : false,
           "templateType" : "java.util.List<TagFilter>",
           "templateImplType" : "java.util.ArrayList<TagFilter>"
         },
@@ -824,16 +824,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The total number of items to return. The maximum value is 100.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "maxResults",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -876,16 +876,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A token to start the list. Use this token to get the next set of results.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -925,8 +925,8 @@
         "variableType" : "DescribeTagsRequest",
         "variableDeclarationType" : "DescribeTagsRequest",
         "documentation" : null,
-        "variableSetterType" : "DescribeTagsRequest",
-        "simpleType" : "DescribeTagsRequest"
+        "simpleType" : "DescribeTagsRequest",
+        "variableSetterType" : "DescribeTagsRequest"
       },
       "marshaller" : {
         "action" : "DescribeTags",
@@ -955,16 +955,16 @@
             "variableType" : "java.util.List<TagFilter>",
             "variableDeclarationType" : "java.util.List<TagFilter>",
             "documentation" : "<p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>",
-            "variableSetterType" : "java.util.Collection<TagFilter>",
-            "simpleType" : "List<TagFilter>"
+            "simpleType" : "List<TagFilter>",
+            "variableSetterType" : "java.util.Collection<TagFilter>"
           },
           "setterModel" : {
             "variableName" : "filters",
             "variableType" : "java.util.List<TagFilter>",
             "variableDeclarationType" : "java.util.List<TagFilter>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<TagFilter>",
-            "simpleType" : "List<TagFilter>"
+            "simpleType" : "List<TagFilter>",
+            "variableSetterType" : "java.util.Collection<TagFilter>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<TagFilter>",
@@ -1000,16 +1000,16 @@
                 "variableType" : "TagFilter",
                 "variableDeclarationType" : "TagFilter",
                 "documentation" : "",
-                "variableSetterType" : "TagFilter",
-                "simpleType" : "TagFilter"
+                "simpleType" : "TagFilter",
+                "variableSetterType" : "TagFilter"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "TagFilter",
                 "variableDeclarationType" : "TagFilter",
                 "documentation" : "",
-                "variableSetterType" : "TagFilter",
-                "simpleType" : "TagFilter"
+                "simpleType" : "TagFilter",
+                "variableSetterType" : "TagFilter"
               },
               "getterModel" : {
                 "returnType" : "TagFilter",
@@ -1047,8 +1047,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : false,
             "simpleType" : "TagFilter",
+            "map" : false,
             "templateType" : "java.util.List<TagFilter>",
             "templateImplType" : "java.util.ArrayList<TagFilter>"
           },
@@ -1074,16 +1074,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A token to start the list. Use this token to get the next set of results.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1127,16 +1127,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The total number of items to return. The maximum value is 100.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "maxResults",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -1193,16 +1193,16 @@
           "variableType" : "java.util.List<ConfigurationTag>",
           "variableDeclarationType" : "java.util.List<ConfigurationTag>",
           "documentation" : "<p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>",
-          "variableSetterType" : "java.util.Collection<ConfigurationTag>",
-          "simpleType" : "List<ConfigurationTag>"
+          "simpleType" : "List<ConfigurationTag>",
+          "variableSetterType" : "java.util.Collection<ConfigurationTag>"
         },
         "setterModel" : {
           "variableName" : "tags",
           "variableType" : "java.util.List<ConfigurationTag>",
           "variableDeclarationType" : "java.util.List<ConfigurationTag>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<ConfigurationTag>",
-          "simpleType" : "List<ConfigurationTag>"
+          "simpleType" : "List<ConfigurationTag>",
+          "variableSetterType" : "java.util.Collection<ConfigurationTag>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<ConfigurationTag>",
@@ -1238,16 +1238,16 @@
               "variableType" : "ConfigurationTag",
               "variableDeclarationType" : "ConfigurationTag",
               "documentation" : "",
-              "variableSetterType" : "ConfigurationTag",
-              "simpleType" : "ConfigurationTag"
+              "simpleType" : "ConfigurationTag",
+              "variableSetterType" : "ConfigurationTag"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "ConfigurationTag",
               "variableDeclarationType" : "ConfigurationTag",
               "documentation" : "",
-              "variableSetterType" : "ConfigurationTag",
-              "simpleType" : "ConfigurationTag"
+              "simpleType" : "ConfigurationTag",
+              "variableSetterType" : "ConfigurationTag"
             },
             "getterModel" : {
               "returnType" : "ConfigurationTag",
@@ -1285,8 +1285,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : false,
           "simpleType" : "ConfigurationTag",
+          "map" : false,
           "templateType" : "java.util.List<ConfigurationTag>",
           "templateImplType" : "java.util.ArrayList<ConfigurationTag>"
         },
@@ -1311,16 +1311,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The call returns a token. Use this token to get the next set of results.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1360,8 +1360,8 @@
         "variableType" : "DescribeTagsResult",
         "variableDeclarationType" : "DescribeTagsResult",
         "documentation" : null,
-        "variableSetterType" : "DescribeTagsResult",
-        "simpleType" : "DescribeTagsResult"
+        "simpleType" : "DescribeTagsResult",
+        "variableSetterType" : "DescribeTagsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1386,16 +1386,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The call returns a token. Use this token to get the next set of results.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1439,16 +1439,16 @@
             "variableType" : "java.util.List<ConfigurationTag>",
             "variableDeclarationType" : "java.util.List<ConfigurationTag>",
             "documentation" : "<p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>",
-            "variableSetterType" : "java.util.Collection<ConfigurationTag>",
-            "simpleType" : "List<ConfigurationTag>"
+            "simpleType" : "List<ConfigurationTag>",
+            "variableSetterType" : "java.util.Collection<ConfigurationTag>"
           },
           "setterModel" : {
             "variableName" : "tags",
             "variableType" : "java.util.List<ConfigurationTag>",
             "variableDeclarationType" : "java.util.List<ConfigurationTag>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<ConfigurationTag>",
-            "simpleType" : "List<ConfigurationTag>"
+            "simpleType" : "List<ConfigurationTag>",
+            "variableSetterType" : "java.util.Collection<ConfigurationTag>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<ConfigurationTag>",
@@ -1484,16 +1484,16 @@
                 "variableType" : "ConfigurationTag",
                 "variableDeclarationType" : "ConfigurationTag",
                 "documentation" : "",
-                "variableSetterType" : "ConfigurationTag",
-                "simpleType" : "ConfigurationTag"
+                "simpleType" : "ConfigurationTag",
+                "variableSetterType" : "ConfigurationTag"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "ConfigurationTag",
                 "variableDeclarationType" : "ConfigurationTag",
                 "documentation" : "",
-                "variableSetterType" : "ConfigurationTag",
-                "simpleType" : "ConfigurationTag"
+                "simpleType" : "ConfigurationTag",
+                "variableSetterType" : "ConfigurationTag"
               },
               "getterModel" : {
                 "returnType" : "ConfigurationTag",
@@ -1531,8 +1531,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : false,
             "simpleType" : "ConfigurationTag",
+            "map" : false,
             "templateType" : "java.util.List<ConfigurationTag>",
             "templateImplType" : "java.util.ArrayList<ConfigurationTag>"
           },
@@ -1571,16 +1571,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A name of a tag filter.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1623,16 +1623,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>Values of a tag filter.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "values",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -1668,16 +1668,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -1715,8 +1715,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
-          "map" : false,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -1738,8 +1738,8 @@
         "variableType" : "TagFilter",
         "variableDeclarationType" : "TagFilter",
         "documentation" : null,
-        "variableSetterType" : "TagFilter",
-        "simpleType" : "TagFilter"
+        "simpleType" : "TagFilter",
+        "variableSetterType" : "TagFilter"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1764,16 +1764,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>Values of a tag filter.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "values",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -1809,16 +1809,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -1856,8 +1856,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
-            "map" : false,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -1883,16 +1883,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A name of a tag filter.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1955,8 +1955,8 @@
         "variableType" : "ExportStatus",
         "variableDeclarationType" : "ExportStatus",
         "documentation" : null,
-        "variableSetterType" : "ExportStatus",
-        "simpleType" : "ExportStatus"
+        "simpleType" : "ExportStatus",
+        "variableSetterType" : "ExportStatus"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1990,8 +1990,8 @@
         "variableType" : "ServerInternalErrorException",
         "variableDeclarationType" : "ServerInternalErrorException",
         "documentation" : null,
-        "variableSetterType" : "ServerInternalErrorException",
-        "simpleType" : "ServerInternalErrorException"
+        "simpleType" : "ServerInternalErrorException",
+        "variableSetterType" : "ServerInternalErrorException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -2022,8 +2022,8 @@
         "variableType" : "DeleteTagsResult",
         "variableDeclarationType" : "DeleteTagsResult",
         "documentation" : null,
-        "variableSetterType" : "DeleteTagsResult",
-        "simpleType" : "DeleteTagsResult"
+        "simpleType" : "DeleteTagsResult",
+        "variableSetterType" : "DeleteTagsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2060,16 +2060,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>The IDs of the agents that you want to stop collecting data.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "agentIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -2105,16 +2105,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -2152,8 +2152,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
-          "map" : false,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -2175,8 +2175,8 @@
         "variableType" : "StopDataCollectionByAgentIdsRequest",
         "variableDeclarationType" : "StopDataCollectionByAgentIdsRequest",
         "documentation" : null,
-        "variableSetterType" : "StopDataCollectionByAgentIdsRequest",
-        "simpleType" : "StopDataCollectionByAgentIdsRequest"
+        "simpleType" : "StopDataCollectionByAgentIdsRequest",
+        "variableSetterType" : "StopDataCollectionByAgentIdsRequest"
       },
       "marshaller" : {
         "action" : "StopDataCollectionByAgentIds",
@@ -2205,16 +2205,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>The IDs of the agents that you want to stop collecting data.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "agentIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -2250,16 +2250,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -2297,8 +2297,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
-            "map" : false,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -2337,16 +2337,16 @@
           "variableType" : "java.util.List<AgentConfigurationStatus>",
           "variableDeclarationType" : "java.util.List<AgentConfigurationStatus>",
           "documentation" : "<p>Information about agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether or not the agent configuration was updated.</p>",
-          "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>",
-          "simpleType" : "List<AgentConfigurationStatus>"
+          "simpleType" : "List<AgentConfigurationStatus>",
+          "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>"
         },
         "setterModel" : {
           "variableName" : "agentsConfigurationStatus",
           "variableType" : "java.util.List<AgentConfigurationStatus>",
           "variableDeclarationType" : "java.util.List<AgentConfigurationStatus>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>",
-          "simpleType" : "List<AgentConfigurationStatus>"
+          "simpleType" : "List<AgentConfigurationStatus>",
+          "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<AgentConfigurationStatus>",
@@ -2382,16 +2382,16 @@
               "variableType" : "AgentConfigurationStatus",
               "variableDeclarationType" : "AgentConfigurationStatus",
               "documentation" : "",
-              "variableSetterType" : "AgentConfigurationStatus",
-              "simpleType" : "AgentConfigurationStatus"
+              "simpleType" : "AgentConfigurationStatus",
+              "variableSetterType" : "AgentConfigurationStatus"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "AgentConfigurationStatus",
               "variableDeclarationType" : "AgentConfigurationStatus",
               "documentation" : "",
-              "variableSetterType" : "AgentConfigurationStatus",
-              "simpleType" : "AgentConfigurationStatus"
+              "simpleType" : "AgentConfigurationStatus",
+              "variableSetterType" : "AgentConfigurationStatus"
             },
             "getterModel" : {
               "returnType" : "AgentConfigurationStatus",
@@ -2429,8 +2429,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : false,
           "simpleType" : "AgentConfigurationStatus",
+          "map" : false,
           "templateType" : "java.util.List<AgentConfigurationStatus>",
           "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>"
         },
@@ -2452,8 +2452,8 @@
         "variableType" : "StopDataCollectionByAgentIdsResult",
         "variableDeclarationType" : "StopDataCollectionByAgentIdsResult",
         "documentation" : null,
-        "variableSetterType" : "StopDataCollectionByAgentIdsResult",
-        "simpleType" : "StopDataCollectionByAgentIdsResult"
+        "simpleType" : "StopDataCollectionByAgentIdsResult",
+        "variableSetterType" : "StopDataCollectionByAgentIdsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2478,16 +2478,16 @@
             "variableType" : "java.util.List<AgentConfigurationStatus>",
             "variableDeclarationType" : "java.util.List<AgentConfigurationStatus>",
             "documentation" : "<p>Information about agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether or not the agent configuration was updated.</p>",
-            "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>",
-            "simpleType" : "List<AgentConfigurationStatus>"
+            "simpleType" : "List<AgentConfigurationStatus>",
+            "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>"
           },
           "setterModel" : {
             "variableName" : "agentsConfigurationStatus",
             "variableType" : "java.util.List<AgentConfigurationStatus>",
             "variableDeclarationType" : "java.util.List<AgentConfigurationStatus>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>",
-            "simpleType" : "List<AgentConfigurationStatus>"
+            "simpleType" : "List<AgentConfigurationStatus>",
+            "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<AgentConfigurationStatus>",
@@ -2523,16 +2523,16 @@
                 "variableType" : "AgentConfigurationStatus",
                 "variableDeclarationType" : "AgentConfigurationStatus",
                 "documentation" : "",
-                "variableSetterType" : "AgentConfigurationStatus",
-                "simpleType" : "AgentConfigurationStatus"
+                "simpleType" : "AgentConfigurationStatus",
+                "variableSetterType" : "AgentConfigurationStatus"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "AgentConfigurationStatus",
                 "variableDeclarationType" : "AgentConfigurationStatus",
                 "documentation" : "",
-                "variableSetterType" : "AgentConfigurationStatus",
-                "simpleType" : "AgentConfigurationStatus"
+                "simpleType" : "AgentConfigurationStatus",
+                "variableSetterType" : "AgentConfigurationStatus"
               },
               "getterModel" : {
                 "returnType" : "AgentConfigurationStatus",
@@ -2570,8 +2570,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : false,
             "simpleType" : "AgentConfigurationStatus",
+            "map" : false,
             "templateType" : "java.util.List<AgentConfigurationStatus>",
             "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>"
           },
@@ -2616,8 +2616,8 @@
         "variableType" : "ConfigurationItemType",
         "variableDeclarationType" : "ConfigurationItemType",
         "documentation" : null,
-        "variableSetterType" : "ConfigurationItemType",
-        "simpleType" : "ConfigurationItemType"
+        "simpleType" : "ConfigurationItemType",
+        "variableSetterType" : "ConfigurationItemType"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2651,8 +2651,8 @@
         "variableType" : "InvalidParameterException",
         "variableDeclarationType" : "InvalidParameterException",
         "documentation" : null,
-        "variableSetterType" : "InvalidParameterException",
-        "simpleType" : "InvalidParameterException"
+        "simpleType" : "InvalidParameterException",
+        "variableSetterType" : "InvalidParameterException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -2683,8 +2683,8 @@
         "variableType" : "CreateTagsResult",
         "variableDeclarationType" : "CreateTagsResult",
         "documentation" : null,
-        "variableSetterType" : "CreateTagsResult",
-        "simpleType" : "CreateTagsResult"
+        "simpleType" : "CreateTagsResult",
+        "variableSetterType" : "CreateTagsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2736,8 +2736,8 @@
         "variableType" : "AgentStatus",
         "variableDeclarationType" : "AgentStatus",
         "documentation" : null,
-        "variableSetterType" : "AgentStatus",
-        "simpleType" : "AgentStatus"
+        "simpleType" : "AgentStatus",
+        "variableSetterType" : "AgentStatus"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2771,8 +2771,8 @@
         "variableType" : "InvalidParameterValueException",
         "variableDeclarationType" : "InvalidParameterValueException",
         "documentation" : null,
-        "variableSetterType" : "InvalidParameterValueException",
-        "simpleType" : "InvalidParameterValueException"
+        "simpleType" : "InvalidParameterValueException",
+        "variableSetterType" : "InvalidParameterValueException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -2803,8 +2803,8 @@
         "variableType" : "ExportConfigurationsRequest",
         "variableDeclarationType" : "ExportConfigurationsRequest",
         "documentation" : null,
-        "variableSetterType" : "ExportConfigurationsRequest",
-        "simpleType" : "ExportConfigurationsRequest"
+        "simpleType" : "ExportConfigurationsRequest",
+        "variableSetterType" : "ExportConfigurationsRequest"
       },
       "marshaller" : {
         "action" : "ExportConfigurations",
@@ -2845,16 +2845,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>The IDs of the agents that you want to start collecting data. If you send a request to an AWS agent ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "agentIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -2890,16 +2890,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -2937,8 +2937,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
-          "map" : false,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -2960,8 +2960,8 @@
         "variableType" : "StartDataCollectionByAgentIdsRequest",
         "variableDeclarationType" : "StartDataCollectionByAgentIdsRequest",
         "documentation" : null,
-        "variableSetterType" : "StartDataCollectionByAgentIdsRequest",
-        "simpleType" : "StartDataCollectionByAgentIdsRequest"
+        "simpleType" : "StartDataCollectionByAgentIdsRequest",
+        "variableSetterType" : "StartDataCollectionByAgentIdsRequest"
       },
       "marshaller" : {
         "action" : "StartDataCollectionByAgentIds",
@@ -2990,16 +2990,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>The IDs of the agents that you want to start collecting data. If you send a request to an AWS agent ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "agentIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -3035,16 +3035,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -3082,8 +3082,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
-            "map" : false,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -3122,16 +3122,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A valid configuration identified by the Discovery Service. </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "configurationType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3174,16 +3174,16 @@
           "variableType" : "java.util.List<Filter>",
           "variableDeclarationType" : "java.util.List<Filter>",
           "documentation" : "<p>You can filter the list using a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p> <p>You can separate these items by using logical operators. </p>",
-          "variableSetterType" : "java.util.Collection<Filter>",
-          "simpleType" : "List<Filter>"
+          "simpleType" : "List<Filter>",
+          "variableSetterType" : "java.util.Collection<Filter>"
         },
         "setterModel" : {
           "variableName" : "filters",
           "variableType" : "java.util.List<Filter>",
           "variableDeclarationType" : "java.util.List<Filter>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<Filter>",
-          "simpleType" : "List<Filter>"
+          "simpleType" : "List<Filter>",
+          "variableSetterType" : "java.util.Collection<Filter>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Filter>",
@@ -3219,16 +3219,16 @@
               "variableType" : "Filter",
               "variableDeclarationType" : "Filter",
               "documentation" : "",
-              "variableSetterType" : "Filter",
-              "simpleType" : "Filter"
+              "simpleType" : "Filter",
+              "variableSetterType" : "Filter"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Filter",
               "variableDeclarationType" : "Filter",
               "documentation" : "",
-              "variableSetterType" : "Filter",
-              "simpleType" : "Filter"
+              "simpleType" : "Filter",
+              "variableSetterType" : "Filter"
             },
             "getterModel" : {
               "returnType" : "Filter",
@@ -3266,8 +3266,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : false,
           "simpleType" : "Filter",
+          "map" : false,
           "templateType" : "java.util.List<Filter>",
           "templateImplType" : "java.util.ArrayList<Filter>"
         },
@@ -3292,16 +3292,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The total number of items to return. The maximum value is 100.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "maxResults",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -3344,16 +3344,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A token to start the list. Use this token to get the next set of results.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3393,8 +3393,8 @@
         "variableType" : "ListConfigurationsRequest",
         "variableDeclarationType" : "ListConfigurationsRequest",
         "documentation" : null,
-        "variableSetterType" : "ListConfigurationsRequest",
-        "simpleType" : "ListConfigurationsRequest"
+        "simpleType" : "ListConfigurationsRequest",
+        "variableSetterType" : "ListConfigurationsRequest"
       },
       "marshaller" : {
         "action" : "ListConfigurations",
@@ -3423,16 +3423,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A valid configuration identified by the Discovery Service. </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "configurationType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3476,16 +3476,16 @@
             "variableType" : "java.util.List<Filter>",
             "variableDeclarationType" : "java.util.List<Filter>",
             "documentation" : "<p>You can filter the list using a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p> <p>You can separate these items by using logical operators. </p>",
-            "variableSetterType" : "java.util.Collection<Filter>",
-            "simpleType" : "List<Filter>"
+            "simpleType" : "List<Filter>",
+            "variableSetterType" : "java.util.Collection<Filter>"
           },
           "setterModel" : {
             "variableName" : "filters",
             "variableType" : "java.util.List<Filter>",
             "variableDeclarationType" : "java.util.List<Filter>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<Filter>",
-            "simpleType" : "List<Filter>"
+            "simpleType" : "List<Filter>",
+            "variableSetterType" : "java.util.Collection<Filter>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Filter>",
@@ -3521,16 +3521,16 @@
                 "variableType" : "Filter",
                 "variableDeclarationType" : "Filter",
                 "documentation" : "",
-                "variableSetterType" : "Filter",
-                "simpleType" : "Filter"
+                "simpleType" : "Filter",
+                "variableSetterType" : "Filter"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Filter",
                 "variableDeclarationType" : "Filter",
                 "documentation" : "",
-                "variableSetterType" : "Filter",
-                "simpleType" : "Filter"
+                "simpleType" : "Filter",
+                "variableSetterType" : "Filter"
               },
               "getterModel" : {
                 "returnType" : "Filter",
@@ -3568,8 +3568,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : false,
             "simpleType" : "Filter",
+            "map" : false,
             "templateType" : "java.util.List<Filter>",
             "templateImplType" : "java.util.ArrayList<Filter>"
           },
@@ -3595,16 +3595,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A token to start the list. Use this token to get the next set of results.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3648,16 +3648,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The total number of items to return. The maximum value is 100.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "maxResults",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -3714,16 +3714,16 @@
           "variableType" : "java.util.List<AgentConfigurationStatus>",
           "variableDeclarationType" : "java.util.List<AgentConfigurationStatus>",
           "documentation" : "<p>Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation performed, and whether or not the agent configuration was updated.</p>",
-          "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>",
-          "simpleType" : "List<AgentConfigurationStatus>"
+          "simpleType" : "List<AgentConfigurationStatus>",
+          "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>"
         },
         "setterModel" : {
           "variableName" : "agentsConfigurationStatus",
           "variableType" : "java.util.List<AgentConfigurationStatus>",
           "variableDeclarationType" : "java.util.List<AgentConfigurationStatus>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>",
-          "simpleType" : "List<AgentConfigurationStatus>"
+          "simpleType" : "List<AgentConfigurationStatus>",
+          "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<AgentConfigurationStatus>",
@@ -3759,16 +3759,16 @@
               "variableType" : "AgentConfigurationStatus",
               "variableDeclarationType" : "AgentConfigurationStatus",
               "documentation" : "",
-              "variableSetterType" : "AgentConfigurationStatus",
-              "simpleType" : "AgentConfigurationStatus"
+              "simpleType" : "AgentConfigurationStatus",
+              "variableSetterType" : "AgentConfigurationStatus"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "AgentConfigurationStatus",
               "variableDeclarationType" : "AgentConfigurationStatus",
               "documentation" : "",
-              "variableSetterType" : "AgentConfigurationStatus",
-              "simpleType" : "AgentConfigurationStatus"
+              "simpleType" : "AgentConfigurationStatus",
+              "variableSetterType" : "AgentConfigurationStatus"
             },
             "getterModel" : {
               "returnType" : "AgentConfigurationStatus",
@@ -3806,8 +3806,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : false,
           "simpleType" : "AgentConfigurationStatus",
+          "map" : false,
           "templateType" : "java.util.List<AgentConfigurationStatus>",
           "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>"
         },
@@ -3829,8 +3829,8 @@
         "variableType" : "StartDataCollectionByAgentIdsResult",
         "variableDeclarationType" : "StartDataCollectionByAgentIdsResult",
         "documentation" : null,
-        "variableSetterType" : "StartDataCollectionByAgentIdsResult",
-        "simpleType" : "StartDataCollectionByAgentIdsResult"
+        "simpleType" : "StartDataCollectionByAgentIdsResult",
+        "variableSetterType" : "StartDataCollectionByAgentIdsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3855,16 +3855,16 @@
             "variableType" : "java.util.List<AgentConfigurationStatus>",
             "variableDeclarationType" : "java.util.List<AgentConfigurationStatus>",
             "documentation" : "<p>Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation performed, and whether or not the agent configuration was updated.</p>",
-            "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>",
-            "simpleType" : "List<AgentConfigurationStatus>"
+            "simpleType" : "List<AgentConfigurationStatus>",
+            "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>"
           },
           "setterModel" : {
             "variableName" : "agentsConfigurationStatus",
             "variableType" : "java.util.List<AgentConfigurationStatus>",
             "variableDeclarationType" : "java.util.List<AgentConfigurationStatus>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>",
-            "simpleType" : "List<AgentConfigurationStatus>"
+            "simpleType" : "List<AgentConfigurationStatus>",
+            "variableSetterType" : "java.util.Collection<AgentConfigurationStatus>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<AgentConfigurationStatus>",
@@ -3900,16 +3900,16 @@
                 "variableType" : "AgentConfigurationStatus",
                 "variableDeclarationType" : "AgentConfigurationStatus",
                 "documentation" : "",
-                "variableSetterType" : "AgentConfigurationStatus",
-                "simpleType" : "AgentConfigurationStatus"
+                "simpleType" : "AgentConfigurationStatus",
+                "variableSetterType" : "AgentConfigurationStatus"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "AgentConfigurationStatus",
                 "variableDeclarationType" : "AgentConfigurationStatus",
                 "documentation" : "",
-                "variableSetterType" : "AgentConfigurationStatus",
-                "simpleType" : "AgentConfigurationStatus"
+                "simpleType" : "AgentConfigurationStatus",
+                "variableSetterType" : "AgentConfigurationStatus"
               },
               "getterModel" : {
                 "returnType" : "AgentConfigurationStatus",
@@ -3947,8 +3947,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : false,
             "simpleType" : "AgentConfigurationStatus",
+            "map" : false,
             "templateType" : "java.util.List<AgentConfigurationStatus>",
             "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>"
           },
@@ -3984,8 +3984,8 @@
         "variableType" : "ResourceNotFoundException",
         "variableDeclarationType" : "ResourceNotFoundException",
         "documentation" : null,
-        "variableSetterType" : "ResourceNotFoundException",
-        "simpleType" : "ResourceNotFoundException"
+        "simpleType" : "ResourceNotFoundException",
+        "variableSetterType" : "ResourceNotFoundException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -4016,8 +4016,8 @@
         "variableType" : "OperationNotPermittedException",
         "variableDeclarationType" : "OperationNotPermittedException",
         "documentation" : null,
-        "variableSetterType" : "OperationNotPermittedException",
-        "simpleType" : "OperationNotPermittedException"
+        "simpleType" : "OperationNotPermittedException",
+        "variableSetterType" : "OperationNotPermittedException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -4051,16 +4051,16 @@
           "variableType" : "java.util.List<java.util.Map<String,String>>",
           "variableDeclarationType" : "java.util.List<java.util.Map<String,String>>",
           "documentation" : "<p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>",
-          "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>",
-          "simpleType" : "Map<String,String>>"
+          "simpleType" : "Map<String,String>>",
+          "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
         },
         "setterModel" : {
           "variableName" : "configurations",
           "variableType" : "java.util.List<java.util.Map<String,String>>",
           "variableDeclarationType" : "java.util.List<java.util.Map<String,String>>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>",
-          "simpleType" : "Map<String,String>>"
+          "simpleType" : "Map<String,String>>",
+          "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<java.util.Map<String,String>>",
@@ -4096,16 +4096,16 @@
               "variableType" : "java.util.Map<String,String>",
               "variableDeclarationType" : "java.util.Map<String,String>",
               "documentation" : "",
-              "variableSetterType" : "java.util.Map<String,String>",
-              "simpleType" : "Map<String,String>"
+              "simpleType" : "Map<String,String>",
+              "variableSetterType" : "java.util.Map<String,String>"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "java.util.Map<String,String>",
               "variableDeclarationType" : "java.util.Map<String,String>",
               "documentation" : "",
-              "variableSetterType" : "java.util.Map<String,String>",
-              "simpleType" : "Map<String,String>"
+              "simpleType" : "Map<String,String>",
+              "variableSetterType" : "java.util.Map<String,String>"
             },
             "getterModel" : {
               "returnType" : "java.util.Map<String,String>",
@@ -4145,16 +4145,16 @@
                   "variableType" : "String",
                   "variableDeclarationType" : "String",
                   "documentation" : "",
-                  "variableSetterType" : "String",
-                  "simpleType" : "String"
+                  "simpleType" : "String",
+                  "variableSetterType" : "String"
                 },
                 "setterModel" : {
                   "variableName" : "value",
                   "variableType" : "String",
                   "variableDeclarationType" : "String",
                   "documentation" : "",
-                  "variableSetterType" : "String",
-                  "simpleType" : "String"
+                  "simpleType" : "String",
+                  "variableSetterType" : "String"
                 },
                 "getterModel" : {
                   "returnType" : "String",
@@ -4210,8 +4210,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : true,
           "simpleType" : "Map<String,String>",
+          "map" : true,
           "templateType" : "java.util.List<java.util.Map<String,String>>",
           "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>"
         },
@@ -4236,16 +4236,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The call returns a token. Use this token to get the next set of results.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4285,8 +4285,8 @@
         "variableType" : "ListConfigurationsResult",
         "variableDeclarationType" : "ListConfigurationsResult",
         "documentation" : null,
-        "variableSetterType" : "ListConfigurationsResult",
-        "simpleType" : "ListConfigurationsResult"
+        "simpleType" : "ListConfigurationsResult",
+        "variableSetterType" : "ListConfigurationsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4311,16 +4311,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The call returns a token. Use this token to get the next set of results.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4364,16 +4364,16 @@
             "variableType" : "java.util.List<java.util.Map<String,String>>",
             "variableDeclarationType" : "java.util.List<java.util.Map<String,String>>",
             "documentation" : "<p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>",
-            "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>",
-            "simpleType" : "Map<String,String>>"
+            "simpleType" : "Map<String,String>>",
+            "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
           },
           "setterModel" : {
             "variableName" : "configurations",
             "variableType" : "java.util.List<java.util.Map<String,String>>",
             "variableDeclarationType" : "java.util.List<java.util.Map<String,String>>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>",
-            "simpleType" : "Map<String,String>>"
+            "simpleType" : "Map<String,String>>",
+            "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<java.util.Map<String,String>>",
@@ -4409,16 +4409,16 @@
                 "variableType" : "java.util.Map<String,String>",
                 "variableDeclarationType" : "java.util.Map<String,String>",
                 "documentation" : "",
-                "variableSetterType" : "java.util.Map<String,String>",
-                "simpleType" : "Map<String,String>"
+                "simpleType" : "Map<String,String>",
+                "variableSetterType" : "java.util.Map<String,String>"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "java.util.Map<String,String>",
                 "variableDeclarationType" : "java.util.Map<String,String>",
                 "documentation" : "",
-                "variableSetterType" : "java.util.Map<String,String>",
-                "simpleType" : "Map<String,String>"
+                "simpleType" : "Map<String,String>",
+                "variableSetterType" : "java.util.Map<String,String>"
               },
               "getterModel" : {
                 "returnType" : "java.util.Map<String,String>",
@@ -4458,16 +4458,16 @@
                     "variableType" : "String",
                     "variableDeclarationType" : "String",
                     "documentation" : "",
-                    "variableSetterType" : "String",
-                    "simpleType" : "String"
+                    "simpleType" : "String",
+                    "variableSetterType" : "String"
                   },
                   "setterModel" : {
                     "variableName" : "value",
                     "variableType" : "String",
                     "variableDeclarationType" : "String",
                     "documentation" : "",
-                    "variableSetterType" : "String",
-                    "simpleType" : "String"
+                    "simpleType" : "String",
+                    "variableSetterType" : "String"
                   },
                   "getterModel" : {
                     "returnType" : "String",
@@ -4523,8 +4523,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : true,
             "simpleType" : "Map<String,String>",
+            "map" : true,
             "templateType" : "java.util.List<java.util.Map<String,String>>",
             "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>"
           },
@@ -4563,16 +4563,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A unique identifier that you can use to query the export status.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "exportId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4612,8 +4612,8 @@
         "variableType" : "ExportConfigurationsResult",
         "variableDeclarationType" : "ExportConfigurationsResult",
         "documentation" : null,
-        "variableSetterType" : "ExportConfigurationsResult",
-        "simpleType" : "ExportConfigurationsResult"
+        "simpleType" : "ExportConfigurationsResult",
+        "variableSetterType" : "ExportConfigurationsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4638,16 +4638,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A unique identifier that you can use to query the export status.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "exportId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4704,16 +4704,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A unique identifier that you can use to query the export.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "exportId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4756,16 +4756,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The status of the configuration data export. The status can succeed, fail, or be in-progress.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "exportStatus",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4808,16 +4808,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Helpful status messages for API callers. For example: Too many exports in the last 6 hours. Export in progress. Export was successful.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "statusMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4860,16 +4860,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A URL for an Amazon S3 bucket where you can review the configuration data. The URL is displayed only if the export succeeded.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "configurationsDownloadUrl",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4912,16 +4912,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The time the configuration data export was initiated.</p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "exportRequestTime",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -4961,8 +4961,8 @@
         "variableType" : "ExportInfo",
         "variableDeclarationType" : "ExportInfo",
         "documentation" : null,
-        "variableSetterType" : "ExportInfo",
-        "simpleType" : "ExportInfo"
+        "simpleType" : "ExportInfo",
+        "variableSetterType" : "ExportInfo"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4987,16 +4987,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A URL for an Amazon S3 bucket where you can review the configuration data. The URL is displayed only if the export succeeded.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "configurationsDownloadUrl",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5040,16 +5040,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A unique identifier that you can use to query the export.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "exportId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5093,16 +5093,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The status of the configuration data export. The status can succeed, fail, or be in-progress.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "exportStatus",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5146,16 +5146,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The time the configuration data export was initiated.</p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "exportRequestTime",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -5199,16 +5199,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Helpful status messages for API callers. For example: Too many exports in the last 6 hours. Export in progress. Export was successful.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "statusMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5265,16 +5265,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>The agent IDs for which you want information. If you specify no IDs, the system returns information about all agents associated with your AWS user account.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "agentIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -5310,16 +5310,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -5357,8 +5357,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
-          "map" : false,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -5383,16 +5383,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The total number of agents to return. The maximum value is 100.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "maxResults",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -5435,16 +5435,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A token to start the list. Use this token to get the next set of results.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5484,8 +5484,8 @@
         "variableType" : "DescribeAgentsRequest",
         "variableDeclarationType" : "DescribeAgentsRequest",
         "documentation" : null,
-        "variableSetterType" : "DescribeAgentsRequest",
-        "simpleType" : "DescribeAgentsRequest"
+        "simpleType" : "DescribeAgentsRequest",
+        "variableSetterType" : "DescribeAgentsRequest"
       },
       "marshaller" : {
         "action" : "DescribeAgents",
@@ -5514,16 +5514,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A token to start the list. Use this token to get the next set of results.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5567,16 +5567,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The total number of agents to return. The maximum value is 100.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "maxResults",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -5620,16 +5620,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>The agent IDs for which you want information. If you specify no IDs, the system returns information about all agents associated with your AWS user account.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "agentIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -5665,16 +5665,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -5712,8 +5712,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
-            "map" : false,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -5752,16 +5752,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>A list of configuration items with tags that you want to delete.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "configurationIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -5797,16 +5797,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -5844,8 +5844,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
-          "map" : false,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -5870,16 +5870,16 @@
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "java.util.List<Tag>",
           "documentation" : "<p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p>",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "setterModel" : {
           "variableName" : "tags",
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "java.util.List<Tag>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -5915,16 +5915,16 @@
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "getterModel" : {
               "returnType" : "Tag",
@@ -5962,8 +5962,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
+          "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "java.util.ArrayList<Tag>"
         },
@@ -5985,8 +5985,8 @@
         "variableType" : "DeleteTagsRequest",
         "variableDeclarationType" : "DeleteTagsRequest",
         "documentation" : null,
-        "variableSetterType" : "DeleteTagsRequest",
-        "simpleType" : "DeleteTagsRequest"
+        "simpleType" : "DeleteTagsRequest",
+        "variableSetterType" : "DeleteTagsRequest"
       },
       "marshaller" : {
         "action" : "DeleteTags",
@@ -6015,16 +6015,16 @@
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "java.util.List<Tag>",
             "documentation" : "<p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p>",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "setterModel" : {
             "variableName" : "tags",
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "java.util.List<Tag>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -6060,16 +6060,16 @@
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "getterModel" : {
                 "returnType" : "Tag",
@@ -6107,8 +6107,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
+            "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "java.util.ArrayList<Tag>"
           },
@@ -6134,16 +6134,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>A list of configuration items with tags that you want to delete.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "configurationIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -6179,16 +6179,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -6226,8 +6226,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
-            "map" : false,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -6266,16 +6266,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>A unique identifier that you can use to query the export status.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "exportIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -6311,16 +6311,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -6358,8 +6358,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
-          "map" : false,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -6384,16 +6384,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The maximum number of results that you want to display as a part of the query.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "maxResults",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -6436,16 +6436,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A token to get the next set of results. For example, if you specified 100 IDs for <code>DescribeConfigurationsRequest$configurationIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10. Use the token in the query to get the next set of 10.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6485,8 +6485,8 @@
         "variableType" : "DescribeExportConfigurationsRequest",
         "variableDeclarationType" : "DescribeExportConfigurationsRequest",
         "documentation" : null,
-        "variableSetterType" : "DescribeExportConfigurationsRequest",
-        "simpleType" : "DescribeExportConfigurationsRequest"
+        "simpleType" : "DescribeExportConfigurationsRequest",
+        "variableSetterType" : "DescribeExportConfigurationsRequest"
       },
       "marshaller" : {
         "action" : "DescribeExportConfigurations",
@@ -6515,16 +6515,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A token to get the next set of results. For example, if you specified 100 IDs for <code>DescribeConfigurationsRequest$configurationIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10. Use the token in the query to get the next set of 10.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6568,16 +6568,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The maximum number of results that you want to display as a part of the query.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "maxResults",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -6621,16 +6621,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>A unique identifier that you can use to query the export status.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "exportIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -6666,16 +6666,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -6713,8 +6713,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
-            "map" : false,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -6753,16 +6753,16 @@
           "variableType" : "java.util.List<ExportInfo>",
           "variableDeclarationType" : "java.util.List<ExportInfo>",
           "documentation" : "<p>Returns export details. When the status is complete, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>",
-          "variableSetterType" : "java.util.Collection<ExportInfo>",
-          "simpleType" : "List<ExportInfo>"
+          "simpleType" : "List<ExportInfo>",
+          "variableSetterType" : "java.util.Collection<ExportInfo>"
         },
         "setterModel" : {
           "variableName" : "exportsInfo",
           "variableType" : "java.util.List<ExportInfo>",
           "variableDeclarationType" : "java.util.List<ExportInfo>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<ExportInfo>",
-          "simpleType" : "List<ExportInfo>"
+          "simpleType" : "List<ExportInfo>",
+          "variableSetterType" : "java.util.Collection<ExportInfo>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<ExportInfo>",
@@ -6798,16 +6798,16 @@
               "variableType" : "ExportInfo",
               "variableDeclarationType" : "ExportInfo",
               "documentation" : "",
-              "variableSetterType" : "ExportInfo",
-              "simpleType" : "ExportInfo"
+              "simpleType" : "ExportInfo",
+              "variableSetterType" : "ExportInfo"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "ExportInfo",
               "variableDeclarationType" : "ExportInfo",
               "documentation" : "",
-              "variableSetterType" : "ExportInfo",
-              "simpleType" : "ExportInfo"
+              "simpleType" : "ExportInfo",
+              "variableSetterType" : "ExportInfo"
             },
             "getterModel" : {
               "returnType" : "ExportInfo",
@@ -6845,8 +6845,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : false,
           "simpleType" : "ExportInfo",
+          "map" : false,
           "templateType" : "java.util.List<ExportInfo>",
           "templateImplType" : "java.util.ArrayList<ExportInfo>"
         },
@@ -6871,16 +6871,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A token to get the next set of results. For example, if you specified 100 IDs for <code>DescribeConfigurationsRequest$configurationIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10. Use the token in the query to get the next set of 10.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6920,8 +6920,8 @@
         "variableType" : "DescribeExportConfigurationsResult",
         "variableDeclarationType" : "DescribeExportConfigurationsResult",
         "documentation" : null,
-        "variableSetterType" : "DescribeExportConfigurationsResult",
-        "simpleType" : "DescribeExportConfigurationsResult"
+        "simpleType" : "DescribeExportConfigurationsResult",
+        "variableSetterType" : "DescribeExportConfigurationsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6946,16 +6946,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A token to get the next set of results. For example, if you specified 100 IDs for <code>DescribeConfigurationsRequest$configurationIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10. Use the token in the query to get the next set of 10.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6999,16 +6999,16 @@
             "variableType" : "java.util.List<ExportInfo>",
             "variableDeclarationType" : "java.util.List<ExportInfo>",
             "documentation" : "<p>Returns export details. When the status is complete, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>",
-            "variableSetterType" : "java.util.Collection<ExportInfo>",
-            "simpleType" : "List<ExportInfo>"
+            "simpleType" : "List<ExportInfo>",
+            "variableSetterType" : "java.util.Collection<ExportInfo>"
           },
           "setterModel" : {
             "variableName" : "exportsInfo",
             "variableType" : "java.util.List<ExportInfo>",
             "variableDeclarationType" : "java.util.List<ExportInfo>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<ExportInfo>",
-            "simpleType" : "List<ExportInfo>"
+            "simpleType" : "List<ExportInfo>",
+            "variableSetterType" : "java.util.Collection<ExportInfo>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<ExportInfo>",
@@ -7044,16 +7044,16 @@
                 "variableType" : "ExportInfo",
                 "variableDeclarationType" : "ExportInfo",
                 "documentation" : "",
-                "variableSetterType" : "ExportInfo",
-                "simpleType" : "ExportInfo"
+                "simpleType" : "ExportInfo",
+                "variableSetterType" : "ExportInfo"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "ExportInfo",
                 "variableDeclarationType" : "ExportInfo",
                 "documentation" : "",
-                "variableSetterType" : "ExportInfo",
-                "simpleType" : "ExportInfo"
+                "simpleType" : "ExportInfo",
+                "variableSetterType" : "ExportInfo"
               },
               "getterModel" : {
                 "returnType" : "ExportInfo",
@@ -7091,8 +7091,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : false,
             "simpleType" : "ExportInfo",
+            "map" : false,
             "templateType" : "java.util.List<ExportInfo>",
             "templateImplType" : "java.util.ArrayList<ExportInfo>"
           },
@@ -7131,16 +7131,16 @@
           "variableType" : "java.util.List<java.util.Map<String,String>>",
           "variableDeclarationType" : "java.util.List<java.util.Map<String,String>>",
           "documentation" : "<p>A key in the response map. The value is an array of data.</p>",
-          "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>",
-          "simpleType" : "Map<String,String>>"
+          "simpleType" : "Map<String,String>>",
+          "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
         },
         "setterModel" : {
           "variableName" : "configurations",
           "variableType" : "java.util.List<java.util.Map<String,String>>",
           "variableDeclarationType" : "java.util.List<java.util.Map<String,String>>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>",
-          "simpleType" : "Map<String,String>>"
+          "simpleType" : "Map<String,String>>",
+          "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<java.util.Map<String,String>>",
@@ -7176,16 +7176,16 @@
               "variableType" : "java.util.Map<String,String>",
               "variableDeclarationType" : "java.util.Map<String,String>",
               "documentation" : "",
-              "variableSetterType" : "java.util.Map<String,String>",
-              "simpleType" : "Map<String,String>"
+              "simpleType" : "Map<String,String>",
+              "variableSetterType" : "java.util.Map<String,String>"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "java.util.Map<String,String>",
               "variableDeclarationType" : "java.util.Map<String,String>",
               "documentation" : "",
-              "variableSetterType" : "java.util.Map<String,String>",
-              "simpleType" : "Map<String,String>"
+              "simpleType" : "Map<String,String>",
+              "variableSetterType" : "java.util.Map<String,String>"
             },
             "getterModel" : {
               "returnType" : "java.util.Map<String,String>",
@@ -7225,16 +7225,16 @@
                   "variableType" : "String",
                   "variableDeclarationType" : "String",
                   "documentation" : "",
-                  "variableSetterType" : "String",
-                  "simpleType" : "String"
+                  "simpleType" : "String",
+                  "variableSetterType" : "String"
                 },
                 "setterModel" : {
                   "variableName" : "value",
                   "variableType" : "String",
                   "variableDeclarationType" : "String",
                   "documentation" : "",
-                  "variableSetterType" : "String",
-                  "simpleType" : "String"
+                  "simpleType" : "String",
+                  "variableSetterType" : "String"
                 },
                 "getterModel" : {
                   "returnType" : "String",
@@ -7290,8 +7290,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : true,
           "simpleType" : "Map<String,String>",
+          "map" : true,
           "templateType" : "java.util.List<java.util.Map<String,String>>",
           "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>"
         },
@@ -7313,8 +7313,8 @@
         "variableType" : "DescribeConfigurationsResult",
         "variableDeclarationType" : "DescribeConfigurationsResult",
         "documentation" : null,
-        "variableSetterType" : "DescribeConfigurationsResult",
-        "simpleType" : "DescribeConfigurationsResult"
+        "simpleType" : "DescribeConfigurationsResult",
+        "variableSetterType" : "DescribeConfigurationsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7339,16 +7339,16 @@
             "variableType" : "java.util.List<java.util.Map<String,String>>",
             "variableDeclarationType" : "java.util.List<java.util.Map<String,String>>",
             "documentation" : "<p>A key in the response map. The value is an array of data.</p>",
-            "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>",
-            "simpleType" : "Map<String,String>>"
+            "simpleType" : "Map<String,String>>",
+            "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
           },
           "setterModel" : {
             "variableName" : "configurations",
             "variableType" : "java.util.List<java.util.Map<String,String>>",
             "variableDeclarationType" : "java.util.List<java.util.Map<String,String>>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>",
-            "simpleType" : "Map<String,String>>"
+            "simpleType" : "Map<String,String>>",
+            "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<java.util.Map<String,String>>",
@@ -7384,16 +7384,16 @@
                 "variableType" : "java.util.Map<String,String>",
                 "variableDeclarationType" : "java.util.Map<String,String>",
                 "documentation" : "",
-                "variableSetterType" : "java.util.Map<String,String>",
-                "simpleType" : "Map<String,String>"
+                "simpleType" : "Map<String,String>",
+                "variableSetterType" : "java.util.Map<String,String>"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "java.util.Map<String,String>",
                 "variableDeclarationType" : "java.util.Map<String,String>",
                 "documentation" : "",
-                "variableSetterType" : "java.util.Map<String,String>",
-                "simpleType" : "Map<String,String>"
+                "simpleType" : "Map<String,String>",
+                "variableSetterType" : "java.util.Map<String,String>"
               },
               "getterModel" : {
                 "returnType" : "java.util.Map<String,String>",
@@ -7433,16 +7433,16 @@
                     "variableType" : "String",
                     "variableDeclarationType" : "String",
                     "documentation" : "",
-                    "variableSetterType" : "String",
-                    "simpleType" : "String"
+                    "simpleType" : "String",
+                    "variableSetterType" : "String"
                   },
                   "setterModel" : {
                     "variableName" : "value",
                     "variableType" : "String",
                     "variableDeclarationType" : "String",
                     "documentation" : "",
-                    "variableSetterType" : "String",
-                    "simpleType" : "String"
+                    "simpleType" : "String",
+                    "variableSetterType" : "String"
                   },
                   "getterModel" : {
                     "returnType" : "String",
@@ -7498,8 +7498,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : true,
             "simpleType" : "Map<String,String>",
+            "map" : true,
             "templateType" : "java.util.List<java.util.Map<String,String>>",
             "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>"
           },
@@ -7535,8 +7535,8 @@
         "variableType" : "AuthorizationErrorException",
         "variableDeclarationType" : "AuthorizationErrorException",
         "documentation" : null,
-        "variableSetterType" : "AuthorizationErrorException",
-        "simpleType" : "AuthorizationErrorException"
+        "simpleType" : "AuthorizationErrorException",
+        "variableSetterType" : "AuthorizationErrorException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -7570,16 +7570,16 @@
           "variableType" : "java.util.List<AgentInfo>",
           "variableDeclarationType" : "java.util.List<AgentInfo>",
           "documentation" : "<p>Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an agent ID. The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health, host name where the agent resides, and the version number of each agent.</p>",
-          "variableSetterType" : "java.util.Collection<AgentInfo>",
-          "simpleType" : "List<AgentInfo>"
+          "simpleType" : "List<AgentInfo>",
+          "variableSetterType" : "java.util.Collection<AgentInfo>"
         },
         "setterModel" : {
           "variableName" : "agentsInfo",
           "variableType" : "java.util.List<AgentInfo>",
           "variableDeclarationType" : "java.util.List<AgentInfo>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<AgentInfo>",
-          "simpleType" : "List<AgentInfo>"
+          "simpleType" : "List<AgentInfo>",
+          "variableSetterType" : "java.util.Collection<AgentInfo>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<AgentInfo>",
@@ -7615,16 +7615,16 @@
               "variableType" : "AgentInfo",
               "variableDeclarationType" : "AgentInfo",
               "documentation" : "",
-              "variableSetterType" : "AgentInfo",
-              "simpleType" : "AgentInfo"
+              "simpleType" : "AgentInfo",
+              "variableSetterType" : "AgentInfo"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "AgentInfo",
               "variableDeclarationType" : "AgentInfo",
               "documentation" : "",
-              "variableSetterType" : "AgentInfo",
-              "simpleType" : "AgentInfo"
+              "simpleType" : "AgentInfo",
+              "variableSetterType" : "AgentInfo"
             },
             "getterModel" : {
               "returnType" : "AgentInfo",
@@ -7662,8 +7662,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : false,
           "simpleType" : "AgentInfo",
+          "map" : false,
           "templateType" : "java.util.List<AgentInfo>",
           "templateImplType" : "java.util.ArrayList<AgentInfo>"
         },
@@ -7688,16 +7688,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The call returns a token. Use this token to get the next set of results.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7737,8 +7737,8 @@
         "variableType" : "DescribeAgentsResult",
         "variableDeclarationType" : "DescribeAgentsResult",
         "documentation" : null,
-        "variableSetterType" : "DescribeAgentsResult",
-        "simpleType" : "DescribeAgentsResult"
+        "simpleType" : "DescribeAgentsResult",
+        "variableSetterType" : "DescribeAgentsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7763,16 +7763,16 @@
             "variableType" : "java.util.List<AgentInfo>",
             "variableDeclarationType" : "java.util.List<AgentInfo>",
             "documentation" : "<p>Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an agent ID. The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health, host name where the agent resides, and the version number of each agent.</p>",
-            "variableSetterType" : "java.util.Collection<AgentInfo>",
-            "simpleType" : "List<AgentInfo>"
+            "simpleType" : "List<AgentInfo>",
+            "variableSetterType" : "java.util.Collection<AgentInfo>"
           },
           "setterModel" : {
             "variableName" : "agentsInfo",
             "variableType" : "java.util.List<AgentInfo>",
             "variableDeclarationType" : "java.util.List<AgentInfo>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<AgentInfo>",
-            "simpleType" : "List<AgentInfo>"
+            "simpleType" : "List<AgentInfo>",
+            "variableSetterType" : "java.util.Collection<AgentInfo>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<AgentInfo>",
@@ -7808,16 +7808,16 @@
                 "variableType" : "AgentInfo",
                 "variableDeclarationType" : "AgentInfo",
                 "documentation" : "",
-                "variableSetterType" : "AgentInfo",
-                "simpleType" : "AgentInfo"
+                "simpleType" : "AgentInfo",
+                "variableSetterType" : "AgentInfo"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "AgentInfo",
                 "variableDeclarationType" : "AgentInfo",
                 "documentation" : "",
-                "variableSetterType" : "AgentInfo",
-                "simpleType" : "AgentInfo"
+                "simpleType" : "AgentInfo",
+                "variableSetterType" : "AgentInfo"
               },
               "getterModel" : {
                 "returnType" : "AgentInfo",
@@ -7855,8 +7855,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : false,
             "simpleType" : "AgentInfo",
+            "map" : false,
             "templateType" : "java.util.List<AgentInfo>",
             "templateImplType" : "java.util.ArrayList<AgentInfo>"
           },
@@ -7882,16 +7882,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The call returns a token. Use this token to get the next set of results.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7948,16 +7948,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>A list of configuration items that you want to tag.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "configurationIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -7993,16 +7993,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -8040,8 +8040,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
-          "map" : false,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -8066,16 +8066,16 @@
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "java.util.List<Tag>",
           "documentation" : "<p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p>",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "setterModel" : {
           "variableName" : "tags",
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "java.util.List<Tag>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -8111,16 +8111,16 @@
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "getterModel" : {
               "returnType" : "Tag",
@@ -8158,8 +8158,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
+          "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "java.util.ArrayList<Tag>"
         },
@@ -8181,8 +8181,8 @@
         "variableType" : "CreateTagsRequest",
         "variableDeclarationType" : "CreateTagsRequest",
         "documentation" : null,
-        "variableSetterType" : "CreateTagsRequest",
-        "simpleType" : "CreateTagsRequest"
+        "simpleType" : "CreateTagsRequest",
+        "variableSetterType" : "CreateTagsRequest"
       },
       "marshaller" : {
         "action" : "CreateTags",
@@ -8211,16 +8211,16 @@
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "java.util.List<Tag>",
             "documentation" : "<p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p>",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "setterModel" : {
             "variableName" : "tags",
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "java.util.List<Tag>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -8256,16 +8256,16 @@
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "getterModel" : {
                 "returnType" : "Tag",
@@ -8303,8 +8303,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
+            "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "java.util.ArrayList<Tag>"
           },
@@ -8330,16 +8330,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>A list of configuration items that you want to tag.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "configurationIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -8375,16 +8375,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -8422,8 +8422,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
-            "map" : false,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -8462,16 +8462,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the filter. The following filter names are allowed for <code>SERVER</code> configuration items.</p> <p class=\"title\"> <b>Server</b> </p> <ul> <li> <p> <code>server.hostName</code> </p> </li> <li> <p> <code>server.osName</code> </p> </li> <li> <p> <code>server.osVersion</code> </p> </li> <li> <p> <code>server.configurationid</code> </p> </li> <li> <p> <code>server.agentid</code> </p> </li> </ul> <p>The name of the filter. The following filter names are allowed for <code>PROCESS</code> configuration items.</p> <p class=\"title\"> <b>Process</b> </p> <ul> <li> <p> <code>process.configurationid</code> </p> </li> <li> <p> <code>process.name</code> </p> </li> <li> <p> <code>process.commandLine</code> </p> </li> <li> <p> <code>server.configurationid</code> </p> </li> <li> <p> <code>server.hostName</code> </p> </li> <li> <p> <code>server.osName</code> </p> </li> <li> <p> <code>server.osVersion</code> </p> </li> <li> <p> <code>server.agentId</code> </p> </li> </ul> <p>The name of the filter. The following filter names are allowed for <code>CONNECTION</code> configuration items.</p> <p class=\"title\"> <b>Connection</b> </p> <ul> <li> <p> <code>connection.sourceIp</code> </p> </li> <li> <p> <code>connection.destinationIp</code> </p> </li> <li> <p> <code>connection.destinationPort</code> </p> </li> <li> <p> <code>sourceProcess.configurationId</code> </p> </li> <li> <p> <code>sourceProcess.name</code> </p> </li> <li> <p> <code>sourceProcess.commandLine</code> </p> </li> <li> <p> <code>destinationProcess.configurationId</code> </p> </li> <li> <p> <code>destinationProcess.name</code> </p> </li> <li> <p> <code>destinationProcess.commandLine</code> </p> </li> <li> <p> <code>sourceServer.configurationId</code> </p> </li> <li> <p> <code>sourceServer.hostName</code> </p> </li> <li> <p> <code>sourceServer.osName</code> </p> </li> <li> <p> <code>sourceServer.osVersion</code> </p> </li> <li> <p> <code>sourceServer.agentId</code> </p> </li> <li> <p> <code>destinationServer.configurationId</code> </p> </li> <li> <p> <code>destinationServer.hostName</code> </p> </li> <li> <p> <code>destinationServer.osName</code> </p> </li> <li> <p> <code>destinationServer.osVersion</code> </p> </li> <li> <p> <code>destinationServer.agentId</code> </p> </li> </ul>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8514,16 +8514,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>A string value that you want to filter on. For example, if you choose the <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "values",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -8559,16 +8559,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -8606,8 +8606,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
-          "map" : false,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -8632,16 +8632,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "condition",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8681,8 +8681,8 @@
         "variableType" : "Filter",
         "variableDeclarationType" : "Filter",
         "documentation" : null,
-        "variableSetterType" : "Filter",
-        "simpleType" : "Filter"
+        "simpleType" : "Filter",
+        "variableSetterType" : "Filter"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8707,16 +8707,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "condition",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8760,16 +8760,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>A string value that you want to filter on. For example, if you choose the <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "values",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -8805,16 +8805,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -8852,8 +8852,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
-            "map" : false,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -8879,16 +8879,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the filter. The following filter names are allowed for <code>SERVER</code> configuration items.</p> <p class=\"title\"> <b>Server</b> </p> <ul> <li> <p> <code>server.hostName</code> </p> </li> <li> <p> <code>server.osName</code> </p> </li> <li> <p> <code>server.osVersion</code> </p> </li> <li> <p> <code>server.configurationid</code> </p> </li> <li> <p> <code>server.agentid</code> </p> </li> </ul> <p>The name of the filter. The following filter names are allowed for <code>PROCESS</code> configuration items.</p> <p class=\"title\"> <b>Process</b> </p> <ul> <li> <p> <code>process.configurationid</code> </p> </li> <li> <p> <code>process.name</code> </p> </li> <li> <p> <code>process.commandLine</code> </p> </li> <li> <p> <code>server.configurationid</code> </p> </li> <li> <p> <code>server.hostName</code> </p> </li> <li> <p> <code>server.osName</code> </p> </li> <li> <p> <code>server.osVersion</code> </p> </li> <li> <p> <code>server.agentId</code> </p> </li> </ul> <p>The name of the filter. The following filter names are allowed for <code>CONNECTION</code> configuration items.</p> <p class=\"title\"> <b>Connection</b> </p> <ul> <li> <p> <code>connection.sourceIp</code> </p> </li> <li> <p> <code>connection.destinationIp</code> </p> </li> <li> <p> <code>connection.destinationPort</code> </p> </li> <li> <p> <code>sourceProcess.configurationId</code> </p> </li> <li> <p> <code>sourceProcess.name</code> </p> </li> <li> <p> <code>sourceProcess.commandLine</code> </p> </li> <li> <p> <code>destinationProcess.configurationId</code> </p> </li> <li> <p> <code>destinationProcess.name</code> </p> </li> <li> <p> <code>destinationProcess.commandLine</code> </p> </li> <li> <p> <code>sourceServer.configurationId</code> </p> </li> <li> <p> <code>sourceServer.hostName</code> </p> </li> <li> <p> <code>sourceServer.osName</code> </p> </li> <li> <p> <code>sourceServer.osVersion</code> </p> </li> <li> <p> <code>sourceServer.agentId</code> </p> </li> <li> <p> <code>destinationServer.configurationId</code> </p> </li> <li> <p> <code>destinationServer.hostName</code> </p> </li> <li> <p> <code>destinationServer.osName</code> </p> </li> <li> <p> <code>destinationServer.osVersion</code> </p> </li> <li> <p> <code>destinationServer.agentId</code> </p> </li> </ul>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8945,16 +8945,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The agent ID.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "agentId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8997,16 +8997,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "<p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command. </p>",
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "operationSucceeded",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -9049,16 +9049,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A description of the operation performed.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "description",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9098,8 +9098,8 @@
         "variableType" : "AgentConfigurationStatus",
         "variableDeclarationType" : "AgentConfigurationStatus",
         "documentation" : null,
-        "variableSetterType" : "AgentConfigurationStatus",
-        "simpleType" : "AgentConfigurationStatus"
+        "simpleType" : "AgentConfigurationStatus",
+        "variableSetterType" : "AgentConfigurationStatus"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -9124,16 +9124,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A description of the operation performed.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "description",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9177,16 +9177,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The agent ID.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "agentId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9230,16 +9230,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "<p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command. </p>",
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "operationSucceeded",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -9296,16 +9296,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A type of IT asset that you want to tag.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "configurationType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9348,16 +9348,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The configuration ID for the item you want to tag. You can specify a list of keys and values.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "configurationId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9400,16 +9400,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A type of tag to filter on. For example, <i>serverType</i>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "key",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9452,16 +9452,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A value to filter on. For example <i>key = serverType</i> and <i>value = web server</i>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "value",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9504,16 +9504,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "timeOfCreation",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -9553,8 +9553,8 @@
         "variableType" : "ConfigurationTag",
         "variableDeclarationType" : "ConfigurationTag",
         "documentation" : null,
-        "variableSetterType" : "ConfigurationTag",
-        "simpleType" : "ConfigurationTag"
+        "simpleType" : "ConfigurationTag",
+        "variableSetterType" : "ConfigurationTag"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -9579,16 +9579,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A type of IT asset that you want to tag.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "configurationType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9632,16 +9632,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A value to filter on. For example <i>key = serverType</i> and <i>value = web server</i>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "value",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9685,16 +9685,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "timeOfCreation",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -9738,16 +9738,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The configuration ID for the item you want to tag. You can specify a list of keys and values.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "configurationId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9791,16 +9791,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A type of tag to filter on. For example, <i>serverType</i>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "key",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9857,16 +9857,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The agent ID.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "agentId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9909,16 +9909,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the host where the agent resides. The host can be a server or virtual machine.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "hostName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9961,16 +9961,16 @@
           "variableType" : "java.util.List<AgentNetworkInfo>",
           "variableDeclarationType" : "java.util.List<AgentNetworkInfo>",
           "documentation" : "<p>Network details about the host where the agent resides.</p>",
-          "variableSetterType" : "java.util.Collection<AgentNetworkInfo>",
-          "simpleType" : "List<AgentNetworkInfo>"
+          "simpleType" : "List<AgentNetworkInfo>",
+          "variableSetterType" : "java.util.Collection<AgentNetworkInfo>"
         },
         "setterModel" : {
           "variableName" : "agentNetworkInfoList",
           "variableType" : "java.util.List<AgentNetworkInfo>",
           "variableDeclarationType" : "java.util.List<AgentNetworkInfo>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<AgentNetworkInfo>",
-          "simpleType" : "List<AgentNetworkInfo>"
+          "simpleType" : "List<AgentNetworkInfo>",
+          "variableSetterType" : "java.util.Collection<AgentNetworkInfo>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<AgentNetworkInfo>",
@@ -10006,16 +10006,16 @@
               "variableType" : "AgentNetworkInfo",
               "variableDeclarationType" : "AgentNetworkInfo",
               "documentation" : "",
-              "variableSetterType" : "AgentNetworkInfo",
-              "simpleType" : "AgentNetworkInfo"
+              "simpleType" : "AgentNetworkInfo",
+              "variableSetterType" : "AgentNetworkInfo"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "AgentNetworkInfo",
               "variableDeclarationType" : "AgentNetworkInfo",
               "documentation" : "",
-              "variableSetterType" : "AgentNetworkInfo",
-              "simpleType" : "AgentNetworkInfo"
+              "simpleType" : "AgentNetworkInfo",
+              "variableSetterType" : "AgentNetworkInfo"
             },
             "getterModel" : {
               "returnType" : "AgentNetworkInfo",
@@ -10053,8 +10053,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "map" : false,
           "simpleType" : "AgentNetworkInfo",
+          "map" : false,
           "templateType" : "java.util.List<AgentNetworkInfo>",
           "templateImplType" : "java.util.ArrayList<AgentNetworkInfo>"
         },
@@ -10079,16 +10079,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>This data type is currently not valid.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "connectorId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10131,16 +10131,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The agent version.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "version",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10183,16 +10183,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The health of the agent.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "health",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10232,8 +10232,8 @@
         "variableType" : "AgentInfo",
         "variableDeclarationType" : "AgentInfo",
         "documentation" : null,
-        "variableSetterType" : "AgentInfo",
-        "simpleType" : "AgentInfo"
+        "simpleType" : "AgentInfo",
+        "variableSetterType" : "AgentInfo"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -10258,16 +10258,16 @@
             "variableType" : "java.util.List<AgentNetworkInfo>",
             "variableDeclarationType" : "java.util.List<AgentNetworkInfo>",
             "documentation" : "<p>Network details about the host where the agent resides.</p>",
-            "variableSetterType" : "java.util.Collection<AgentNetworkInfo>",
-            "simpleType" : "List<AgentNetworkInfo>"
+            "simpleType" : "List<AgentNetworkInfo>",
+            "variableSetterType" : "java.util.Collection<AgentNetworkInfo>"
           },
           "setterModel" : {
             "variableName" : "agentNetworkInfoList",
             "variableType" : "java.util.List<AgentNetworkInfo>",
             "variableDeclarationType" : "java.util.List<AgentNetworkInfo>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<AgentNetworkInfo>",
-            "simpleType" : "List<AgentNetworkInfo>"
+            "simpleType" : "List<AgentNetworkInfo>",
+            "variableSetterType" : "java.util.Collection<AgentNetworkInfo>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<AgentNetworkInfo>",
@@ -10303,16 +10303,16 @@
                 "variableType" : "AgentNetworkInfo",
                 "variableDeclarationType" : "AgentNetworkInfo",
                 "documentation" : "",
-                "variableSetterType" : "AgentNetworkInfo",
-                "simpleType" : "AgentNetworkInfo"
+                "simpleType" : "AgentNetworkInfo",
+                "variableSetterType" : "AgentNetworkInfo"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "AgentNetworkInfo",
                 "variableDeclarationType" : "AgentNetworkInfo",
                 "documentation" : "",
-                "variableSetterType" : "AgentNetworkInfo",
-                "simpleType" : "AgentNetworkInfo"
+                "simpleType" : "AgentNetworkInfo",
+                "variableSetterType" : "AgentNetworkInfo"
               },
               "getterModel" : {
                 "returnType" : "AgentNetworkInfo",
@@ -10350,8 +10350,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "map" : false,
             "simpleType" : "AgentNetworkInfo",
+            "map" : false,
             "templateType" : "java.util.List<AgentNetworkInfo>",
             "templateImplType" : "java.util.ArrayList<AgentNetworkInfo>"
           },
@@ -10377,16 +10377,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The agent version.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "version",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10430,16 +10430,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The health of the agent.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "health",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10483,16 +10483,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The agent ID.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "agentId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10536,16 +10536,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the host where the agent resides. The host can be a server or virtual machine.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "hostName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10589,16 +10589,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>This data type is currently not valid.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "connectorId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10655,16 +10655,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>One or more configuration IDs.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "configurationIds",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -10700,16 +10700,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -10747,8 +10747,8 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
-          "map" : false,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -10770,8 +10770,8 @@
         "variableType" : "DescribeConfigurationsRequest",
         "variableDeclarationType" : "DescribeConfigurationsRequest",
         "documentation" : null,
-        "variableSetterType" : "DescribeConfigurationsRequest",
-        "simpleType" : "DescribeConfigurationsRequest"
+        "simpleType" : "DescribeConfigurationsRequest",
+        "variableSetterType" : "DescribeConfigurationsRequest"
       },
       "marshaller" : {
         "action" : "DescribeConfigurations",
@@ -10800,16 +10800,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>One or more configuration IDs.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "configurationIds",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -10845,16 +10845,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -10892,8 +10892,8 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
-            "map" : false,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -10932,16 +10932,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A type of tag to filter on.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "key",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10984,16 +10984,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A value for a tag key to filter on.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "value",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -11033,8 +11033,8 @@
         "variableType" : "Tag",
         "variableDeclarationType" : "Tag",
         "documentation" : null,
-        "variableSetterType" : "Tag",
-        "simpleType" : "Tag"
+        "simpleType" : "Tag",
+        "variableSetterType" : "Tag"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -11059,16 +11059,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A value for a tag key to filter on.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "value",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -11112,16 +11112,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A type of tag to filter on.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "key",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",

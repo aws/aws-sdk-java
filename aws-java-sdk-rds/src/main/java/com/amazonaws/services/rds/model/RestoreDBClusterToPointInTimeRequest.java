@@ -33,9 +33,21 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String dBClusterIdentifier;
@@ -47,10 +59,26 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier of an existing database instance</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the identifier of an existing database instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String sourceDBClusterIdentifier;
@@ -66,9 +94,17 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be before the latest restorable time for the DB instance</li>
-     * <li>Cannot be specified if <code>UseLatestRestorableTime</code> parameter
-     * is true</li>
+     * <li>
+     * <p>
+     * Must be before the latest restorable time for the DB instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>2015-03-07T23:45:00Z</code>
@@ -151,12 +187,19 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * then the following will occur:
      * </p>
      * <ul>
-     * <li>If the DB cluster is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the source DB
-     * cluster.</li>
+     * <li>
+     * <p>
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the DB cluster is not encrypted, then the restored DB cluster is not
+     * encrypted.
+     * </p>
+     * </li>
      * </ul>
-     * <li>If the DB cluster is not encrypted, then the restored DB cluster is
-     * not encrypted.</li>
      * <p>
      * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note
      * encrypted, then the restore request is rejected.
@@ -172,20 +215,44 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The name of the new DB cluster to be created. </p>
+     *        The name of the new DB cluster to be created.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setDBClusterIdentifier(String dBClusterIdentifier) {
@@ -200,19 +267,43 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The name of the new DB cluster to be created. </p>
+     * @return The name of the new DB cluster to be created.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getDBClusterIdentifier() {
@@ -227,20 +318,44 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The name of the new DB cluster to be created. </p>
+     *        The name of the new DB cluster to be created.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -259,23 +374,54 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier of an existing database instance</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the identifier of an existing database instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceDBClusterIdentifier
-     *        The identifier of the source DB cluster from which to restore.
-     *        </p>
+     *        The identifier of the source DB cluster from which to restore.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier of an existing database instance</li>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be the identifier of an existing database instance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setSourceDBClusterIdentifier(String sourceDBClusterIdentifier) {
@@ -290,22 +436,54 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier of an existing database instance</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the identifier of an existing database instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The identifier of the source DB cluster from which to restore.
-     *         </p>
+     * @return The identifier of the source DB cluster from which to
+     *         restore.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be the identifier of an existing database instance</li>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must be the identifier of an existing database instance
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getSourceDBClusterIdentifier() {
@@ -320,23 +498,54 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be the identifier of an existing database instance</li>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must be the identifier of an existing database instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceDBClusterIdentifier
-     *        The identifier of the source DB cluster from which to restore.
-     *        </p>
+     *        The identifier of the source DB cluster from which to restore.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be the identifier of an existing database instance</li>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must be the identifier of an existing database instance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -359,16 +568,24 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be before the latest restorable time for the DB instance</li>
-     * <li>Cannot be specified if <code>UseLatestRestorableTime</code> parameter
-     * is true</li>
+     * <li>
+     * <p>
+     * Must be before the latest restorable time for the DB instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>2015-03-07T23:45:00Z</code>
      * </p>
      * 
      * @param restoreToTime
-     *        The date and time to restore the DB cluster to. </p>
+     *        The date and time to restore the DB cluster to.</p>
      *        <p>
      *        Valid Values: Value must be a time in Universal Coordinated Time
      *        (UTC) format
@@ -377,9 +594,17 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be before the latest restorable time for the DB instance</li>
-     *        <li>Cannot be specified if <code>UseLatestRestorableTime</code>
-     *        parameter is true</li>
+     *        <li>
+     *        <p>
+     *        Must be before the latest restorable time for the DB instance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be specified if <code>UseLatestRestorableTime</code>
+     *        parameter is true
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>2015-03-07T23:45:00Z</code>
@@ -401,15 +626,23 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be before the latest restorable time for the DB instance</li>
-     * <li>Cannot be specified if <code>UseLatestRestorableTime</code> parameter
-     * is true</li>
+     * <li>
+     * <p>
+     * Must be before the latest restorable time for the DB instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>2015-03-07T23:45:00Z</code>
      * </p>
      * 
-     * @return The date and time to restore the DB cluster to. </p>
+     * @return The date and time to restore the DB cluster to.</p>
      *         <p>
      *         Valid Values: Value must be a time in Universal Coordinated Time
      *         (UTC) format
@@ -418,10 +651,17 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must be before the latest restorable time for the DB instance
+     *         <li>
+     *         <p>
+     *         Must be before the latest restorable time for the DB instance
+     *         </p>
      *         </li>
-     *         <li>Cannot be specified if <code>UseLatestRestorableTime</code>
-     *         parameter is true</li>
+     *         <li>
+     *         <p>
+     *         Cannot be specified if <code>UseLatestRestorableTime</code>
+     *         parameter is true
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>2015-03-07T23:45:00Z</code>
@@ -443,16 +683,24 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must be before the latest restorable time for the DB instance</li>
-     * <li>Cannot be specified if <code>UseLatestRestorableTime</code> parameter
-     * is true</li>
+     * <li>
+     * <p>
+     * Must be before the latest restorable time for the DB instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>2015-03-07T23:45:00Z</code>
      * </p>
      * 
      * @param restoreToTime
-     *        The date and time to restore the DB cluster to. </p>
+     *        The date and time to restore the DB cluster to.</p>
      *        <p>
      *        Valid Values: Value must be a time in Universal Coordinated Time
      *        (UTC) format
@@ -461,9 +709,17 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must be before the latest restorable time for the DB instance</li>
-     *        <li>Cannot be specified if <code>UseLatestRestorableTime</code>
-     *        parameter is true</li>
+     *        <li>
+     *        <p>
+     *        Must be before the latest restorable time for the DB instance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be specified if <code>UseLatestRestorableTime</code>
+     *        parameter is true
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>2015-03-07T23:45:00Z</code>
@@ -607,8 +863,8 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * </p>
      * 
      * @param port
-     *        The port number on which the new DB cluster accepts connections.
-     *        </p>
+     *        The port number on which the new DB cluster accepts
+     *        connections.</p>
      *        <p>
      *        Constraints: Value must be <code>1150-65535</code>
      *        </p>
@@ -631,8 +887,8 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Default: The same port as the original DB cluster.
      * </p>
      * 
-     * @return The port number on which the new DB cluster accepts connections.
-     *         </p>
+     * @return The port number on which the new DB cluster accepts
+     *         connections.</p>
      *         <p>
      *         Constraints: Value must be <code>1150-65535</code>
      *         </p>
@@ -656,8 +912,8 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * </p>
      * 
      * @param port
-     *        The port number on which the new DB cluster accepts connections.
-     *        </p>
+     *        The port number on which the new DB cluster accepts
+     *        connections.</p>
      *        <p>
      *        Constraints: Value must be <code>1150-65535</code>
      *        </p>
@@ -685,7 +941,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The DB subnet group name to use for the new DB cluster. </p>
+     *        The DB subnet group name to use for the new DB cluster.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, underscores, spaces, or hyphens. Must not be
@@ -711,7 +967,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return The DB subnet group name to use for the new DB cluster. </p>
+     * @return The DB subnet group name to use for the new DB cluster.</p>
      *         <p>
      *         Constraints: Must contain no more than 255 alphanumeric
      *         characters, periods, underscores, spaces, or hyphens. Must not be
@@ -738,7 +994,7 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The DB subnet group name to use for the new DB cluster. </p>
+     *        The DB subnet group name to use for the new DB cluster.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, underscores, spaces, or hyphens. Must not be
@@ -961,12 +1217,19 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * then the following will occur:
      * </p>
      * <ul>
-     * <li>If the DB cluster is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the source DB
-     * cluster.</li>
+     * <li>
+     * <p>
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the DB cluster is not encrypted, then the restored DB cluster is not
+     * encrypted.
+     * </p>
+     * </li>
      * </ul>
-     * <li>If the DB cluster is not encrypted, then the restored DB cluster is
-     * not encrypted.</li>
      * <p>
      * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note
      * encrypted, then the restore request is rejected.
@@ -993,12 +1256,20 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *        parameter, then the following will occur:
      *        </p>
      *        <ul>
-     *        <li>If the DB cluster is encrypted, then the restored DB cluster
-     *        is encrypted using the KMS key that was used to encrypt the source
-     *        DB cluster.</li>
+     *        <li>
+     *        <p>
+     *        If the DB cluster is encrypted, then the restored DB cluster is
+     *        encrypted using the KMS key that was used to encrypt the source DB
+     *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the DB cluster is not encrypted, then the restored DB cluster
+     *        is not encrypted.
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <li>If the DB cluster is not encrypted, then the restored DB
-     *        cluster is not encrypted.</li>
      *        <p>
      *        If <code>DBClusterIdentifier</code> refers to a DB cluster that is
      *        note encrypted, then the restore request is rejected.
@@ -1031,12 +1302,19 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * then the following will occur:
      * </p>
      * <ul>
-     * <li>If the DB cluster is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the source DB
-     * cluster.</li>
+     * <li>
+     * <p>
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the DB cluster is not encrypted, then the restored DB cluster is not
+     * encrypted.
+     * </p>
+     * </li>
      * </ul>
-     * <li>If the DB cluster is not encrypted, then the restored DB cluster is
-     * not encrypted.</li>
      * <p>
      * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note
      * encrypted, then the restore request is rejected.
@@ -1063,12 +1341,20 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *         parameter, then the following will occur:
      *         </p>
      *         <ul>
-     *         <li>If the DB cluster is encrypted, then the restored DB cluster
-     *         is encrypted using the KMS key that was used to encrypt the
-     *         source DB cluster.</li>
+     *         <li>
+     *         <p>
+     *         If the DB cluster is encrypted, then the restored DB cluster is
+     *         encrypted using the KMS key that was used to encrypt the source
+     *         DB cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the DB cluster is not encrypted, then the restored DB cluster
+     *         is not encrypted.
+     *         </p>
+     *         </li>
      *         </ul>
-     *         <li>If the DB cluster is not encrypted, then the restored DB
-     *         cluster is not encrypted.</li>
      *         <p>
      *         If <code>DBClusterIdentifier</code> refers to a DB cluster that
      *         is note encrypted, then the restore request is rejected.
@@ -1101,12 +1387,19 @@ public class RestoreDBClusterToPointInTimeRequest extends
      * then the following will occur:
      * </p>
      * <ul>
-     * <li>If the DB cluster is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the source DB
-     * cluster.</li>
+     * <li>
+     * <p>
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the DB cluster is not encrypted, then the restored DB cluster is not
+     * encrypted.
+     * </p>
+     * </li>
      * </ul>
-     * <li>If the DB cluster is not encrypted, then the restored DB cluster is
-     * not encrypted.</li>
      * <p>
      * If <code>DBClusterIdentifier</code> refers to a DB cluster that is note
      * encrypted, then the restore request is rejected.
@@ -1133,12 +1426,20 @@ public class RestoreDBClusterToPointInTimeRequest extends
      *        parameter, then the following will occur:
      *        </p>
      *        <ul>
-     *        <li>If the DB cluster is encrypted, then the restored DB cluster
-     *        is encrypted using the KMS key that was used to encrypt the source
-     *        DB cluster.</li>
+     *        <li>
+     *        <p>
+     *        If the DB cluster is encrypted, then the restored DB cluster is
+     *        encrypted using the KMS key that was used to encrypt the source DB
+     *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the DB cluster is not encrypted, then the restored DB cluster
+     *        is not encrypted.
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <li>If the DB cluster is not encrypted, then the restored DB
-     *        cluster is not encrypted.</li>
      *        <p>
      *        If <code>DBClusterIdentifier</code> refers to a DB cluster that is
      *        note encrypted, then the restore request is rejected.

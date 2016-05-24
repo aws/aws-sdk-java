@@ -41,9 +41,21 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
@@ -58,9 +70,21 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      */
     private String snapshotIdentifier;
@@ -148,11 +172,19 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * then the following will occur:
      * </p>
      * <ul>
-     * <li>If the DB cluster snapshot is encrypted, then the restored DB cluster
-     * is encrypted using the KMS key that was used to encrypt the DB cluster
-     * snapshot.</li>
-     * <li>If the DB cluster snapshot is not encrypted, then the restored DB
-     * cluster is not encrypted.</li>
+     * <li>
+     * <p>
+     * If the DB cluster snapshot is encrypted, then the restored DB cluster is
+     * encrypted using the KMS key that was used to encrypt the DB cluster
+     * snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the DB cluster snapshot is not encrypted, then the restored DB cluster
+     * is not encrypted.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot that
@@ -260,9 +292,21 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
@@ -270,14 +314,26 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * 
      * @param dBClusterIdentifier
      *        The name of the DB cluster to create from the DB cluster snapshot.
-     *        This parameter isn't case-sensitive. </p>
+     *        This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
@@ -296,24 +352,47 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
      * </p>
      * 
      * @return The name of the DB cluster to create from the DB cluster
-     *         snapshot. This parameter isn't case-sensitive. </p>
+     *         snapshot. This parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>my-snapshot-id</code>
@@ -332,9 +411,21 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-snapshot-id</code>
@@ -342,14 +433,26 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * 
      * @param dBClusterIdentifier
      *        The name of the DB cluster to create from the DB cluster snapshot.
-     *        This parameter isn't case-sensitive. </p>
+     *        This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
@@ -371,20 +474,44 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param snapshotIdentifier
-     *        The identifier for the DB cluster snapshot to restore from. </p>
+     *        The identifier for the DB cluster snapshot to restore from.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      */
 
     public void setSnapshotIdentifier(String snapshotIdentifier) {
@@ -399,19 +526,43 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The identifier for the DB cluster snapshot to restore from. </p>
+     * @return The identifier for the DB cluster snapshot to restore from.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      */
 
     public String getSnapshotIdentifier() {
@@ -426,20 +577,44 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param snapshotIdentifier
-     *        The identifier for the DB cluster snapshot to restore from. </p>
+     *        The identifier for the DB cluster snapshot to restore from.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -462,7 +637,7 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * </p>
      * 
      * @param engine
-     *        The database engine to use for the new DB cluster. </p>
+     *        The database engine to use for the new DB cluster.</p>
      *        <p>
      *        Default: The same as source
      *        </p>
@@ -485,7 +660,7 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * Constraint: Must be compatible with the engine of the source
      * </p>
      * 
-     * @return The database engine to use for the new DB cluster. </p>
+     * @return The database engine to use for the new DB cluster.</p>
      *         <p>
      *         Default: The same as source
      *         </p>
@@ -509,7 +684,7 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * </p>
      * 
      * @param engine
-     *        The database engine to use for the new DB cluster. </p>
+     *        The database engine to use for the new DB cluster.</p>
      *        <p>
      *        Default: The same as source
      *        </p>
@@ -578,8 +753,8 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * </p>
      * 
      * @param port
-     *        The port number on which the new DB cluster accepts connections.
-     *        </p>
+     *        The port number on which the new DB cluster accepts
+     *        connections.</p>
      *        <p>
      *        Constraints: Value must be <code>1150-65535</code>
      *        </p>
@@ -602,8 +777,8 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * Default: The same port as the original DB cluster.
      * </p>
      * 
-     * @return The port number on which the new DB cluster accepts connections.
-     *         </p>
+     * @return The port number on which the new DB cluster accepts
+     *         connections.</p>
      *         <p>
      *         Constraints: Value must be <code>1150-65535</code>
      *         </p>
@@ -627,8 +802,8 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * </p>
      * 
      * @param port
-     *        The port number on which the new DB cluster accepts connections.
-     *        </p>
+     *        The port number on which the new DB cluster accepts
+     *        connections.</p>
      *        <p>
      *        Constraints: Value must be <code>1150-65535</code>
      *        </p>
@@ -656,8 +831,7 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name of the DB subnet group to use for the new DB cluster.
-     *        </p>
+     *        The name of the DB subnet group to use for the new DB cluster.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, underscores, spaces, or hyphens. Must not be
@@ -683,8 +857,8 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return The name of the DB subnet group to use for the new DB cluster.
-     *         </p>
+     * @return The name of the DB subnet group to use for the new DB
+     *         cluster.</p>
      *         <p>
      *         Constraints: Must contain no more than 255 alphanumeric
      *         characters, periods, underscores, spaces, or hyphens. Must not be
@@ -711,8 +885,7 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name of the DB subnet group to use for the new DB cluster.
-     *        </p>
+     *        The name of the DB subnet group to use for the new DB cluster.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, underscores, spaces, or hyphens. Must not be
@@ -993,11 +1166,19 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * then the following will occur:
      * </p>
      * <ul>
-     * <li>If the DB cluster snapshot is encrypted, then the restored DB cluster
-     * is encrypted using the KMS key that was used to encrypt the DB cluster
-     * snapshot.</li>
-     * <li>If the DB cluster snapshot is not encrypted, then the restored DB
-     * cluster is not encrypted.</li>
+     * <li>
+     * <p>
+     * If the DB cluster snapshot is encrypted, then the restored DB cluster is
+     * encrypted using the KMS key that was used to encrypt the DB cluster
+     * snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the DB cluster snapshot is not encrypted, then the restored DB cluster
+     * is not encrypted.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot that
@@ -1020,11 +1201,19 @@ public class RestoreDBClusterFromSnapshotRequest extends
      *        parameter, then the following will occur:
      *        </p>
      *        <ul>
-     *        <li>If the DB cluster snapshot is encrypted, then the restored DB
+     *        <li>
+     *        <p>
+     *        If the DB cluster snapshot is encrypted, then the restored DB
      *        cluster is encrypted using the KMS key that was used to encrypt
-     *        the DB cluster snapshot.</li>
-     *        <li>If the DB cluster snapshot is not encrypted, then the restored
-     *        DB cluster is not encrypted.</li>
+     *        the DB cluster snapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the DB cluster snapshot is not encrypted, then the restored DB
+     *        cluster is not encrypted.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot
@@ -1054,11 +1243,19 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * then the following will occur:
      * </p>
      * <ul>
-     * <li>If the DB cluster snapshot is encrypted, then the restored DB cluster
-     * is encrypted using the KMS key that was used to encrypt the DB cluster
-     * snapshot.</li>
-     * <li>If the DB cluster snapshot is not encrypted, then the restored DB
-     * cluster is not encrypted.</li>
+     * <li>
+     * <p>
+     * If the DB cluster snapshot is encrypted, then the restored DB cluster is
+     * encrypted using the KMS key that was used to encrypt the DB cluster
+     * snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the DB cluster snapshot is not encrypted, then the restored DB cluster
+     * is not encrypted.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot that
@@ -1080,11 +1277,19 @@ public class RestoreDBClusterFromSnapshotRequest extends
      *         parameter, then the following will occur:
      *         </p>
      *         <ul>
-     *         <li>If the DB cluster snapshot is encrypted, then the restored DB
+     *         <li>
+     *         <p>
+     *         If the DB cluster snapshot is encrypted, then the restored DB
      *         cluster is encrypted using the KMS key that was used to encrypt
-     *         the DB cluster snapshot.</li>
-     *         <li>If the DB cluster snapshot is not encrypted, then the
-     *         restored DB cluster is not encrypted.</li>
+     *         the DB cluster snapshot.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the DB cluster snapshot is not encrypted, then the restored DB
+     *         cluster is not encrypted.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If <code>SnapshotIdentifier</code> refers to a DB cluster
@@ -1114,11 +1319,19 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * then the following will occur:
      * </p>
      * <ul>
-     * <li>If the DB cluster snapshot is encrypted, then the restored DB cluster
-     * is encrypted using the KMS key that was used to encrypt the DB cluster
-     * snapshot.</li>
-     * <li>If the DB cluster snapshot is not encrypted, then the restored DB
-     * cluster is not encrypted.</li>
+     * <li>
+     * <p>
+     * If the DB cluster snapshot is encrypted, then the restored DB cluster is
+     * encrypted using the KMS key that was used to encrypt the DB cluster
+     * snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the DB cluster snapshot is not encrypted, then the restored DB cluster
+     * is not encrypted.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot that
@@ -1141,11 +1354,19 @@ public class RestoreDBClusterFromSnapshotRequest extends
      *        parameter, then the following will occur:
      *        </p>
      *        <ul>
-     *        <li>If the DB cluster snapshot is encrypted, then the restored DB
+     *        <li>
+     *        <p>
+     *        If the DB cluster snapshot is encrypted, then the restored DB
      *        cluster is encrypted using the KMS key that was used to encrypt
-     *        the DB cluster snapshot.</li>
-     *        <li>If the DB cluster snapshot is not encrypted, then the restored
-     *        DB cluster is not encrypted.</li>
+     *        the DB cluster snapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the DB cluster snapshot is not encrypted, then the restored DB
+     *        cluster is not encrypted.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot

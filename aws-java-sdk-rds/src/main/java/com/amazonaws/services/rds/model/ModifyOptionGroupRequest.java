@@ -70,7 +70,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param optionGroupName
-     *        The name of the option group to be modified. </p>
+     *        The name of the option group to be modified.</p>
      *        <p>
      *        Permanent options, such as the TDE option for Oracle Advanced
      *        Security TDE, cannot be removed from an option group, and that
@@ -92,7 +92,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
      * be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
-     * @return The name of the option group to be modified. </p>
+     * @return The name of the option group to be modified.</p>
      *         <p>
      *         Permanent options, such as the TDE option for Oracle Advanced
      *         Security TDE, cannot be removed from an option group, and that
@@ -115,7 +115,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param optionGroupName
-     *        The name of the option group to be modified. </p>
+     *        The name of the option group to be modified.</p>
      *        <p>
      *        Permanent options, such as the TDE option for Oracle Advanced
      *        Security TDE, cannot be removed from an option group, and that

@@ -601,6 +601,21 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements
     }
 
     @Override
+    public java.util.concurrent.Future<DBClusterSnapshotAttributesResult> describeDBClusterSnapshotAttributesAsync(
+            DescribeDBClusterSnapshotAttributesRequest request) {
+
+        return describeDBClusterSnapshotAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBClusterSnapshotAttributesResult> describeDBClusterSnapshotAttributesAsync(
+            DescribeDBClusterSnapshotAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBClusterSnapshotAttributesRequest, DBClusterSnapshotAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDBClusterSnapshotsResult> describeDBClusterSnapshotsAsync(
             DescribeDBClusterSnapshotsRequest request) {
 
@@ -1435,6 +1450,21 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements
     public java.util.concurrent.Future<ModifyDBClusterParameterGroupResult> modifyDBClusterParameterGroupAsync(
             ModifyDBClusterParameterGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyDBClusterParameterGroupRequest, ModifyDBClusterParameterGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBClusterSnapshotAttributesResult> modifyDBClusterSnapshotAttributeAsync(
+            ModifyDBClusterSnapshotAttributeRequest request) {
+
+        return modifyDBClusterSnapshotAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBClusterSnapshotAttributesResult> modifyDBClusterSnapshotAttributeAsync(
+            ModifyDBClusterSnapshotAttributeRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyDBClusterSnapshotAttributeRequest, DBClusterSnapshotAttributesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

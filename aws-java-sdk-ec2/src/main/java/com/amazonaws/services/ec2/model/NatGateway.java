@@ -158,6 +158,15 @@ public class NatGateway implements Serializable, Cloneable {
      * </ul>
      */
     private String failureMessage;
+    /**
+     * <p>
+     * Reserved. If you need to sustain traffic greater than the <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html"
+     * >documented limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * </p>
+     */
+    private ProvisionedBandwidth provisionedBandwidth;
 
     /**
      * <p>
@@ -1210,6 +1219,71 @@ public class NatGateway implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Reserved. If you need to sustain traffic greater than the <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html"
+     * >documented limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * </p>
+     * 
+     * @param provisionedBandwidth
+     *        Reserved. If you need to sustain traffic greater than the <a href=
+     *        "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html"
+     *        >documented limits</a>, contact us through the <a
+     *        href="https://console.aws.amazon.com/support/home?">Support
+     *        Center</a>.
+     */
+
+    public void setProvisionedBandwidth(
+            ProvisionedBandwidth provisionedBandwidth) {
+        this.provisionedBandwidth = provisionedBandwidth;
+    }
+
+    /**
+     * <p>
+     * Reserved. If you need to sustain traffic greater than the <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html"
+     * >documented limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * </p>
+     * 
+     * @return Reserved. If you need to sustain traffic greater than the <a
+     *         href=
+     *         "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html"
+     *         >documented limits</a>, contact us through the <a
+     *         href="https://console.aws.amazon.com/support/home?">Support
+     *         Center</a>.
+     */
+
+    public ProvisionedBandwidth getProvisionedBandwidth() {
+        return this.provisionedBandwidth;
+    }
+
+    /**
+     * <p>
+     * Reserved. If you need to sustain traffic greater than the <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html"
+     * >documented limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * </p>
+     * 
+     * @param provisionedBandwidth
+     *        Reserved. If you need to sustain traffic greater than the <a href=
+     *        "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html"
+     *        >documented limits</a>, contact us through the <a
+     *        href="https://console.aws.amazon.com/support/home?">Support
+     *        Center</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public NatGateway withProvisionedBandwidth(
+            ProvisionedBandwidth provisionedBandwidth) {
+        setProvisionedBandwidth(provisionedBandwidth);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1238,7 +1312,9 @@ public class NatGateway implements Serializable, Cloneable {
         if (getFailureCode() != null)
             sb.append("FailureCode: " + getFailureCode() + ",");
         if (getFailureMessage() != null)
-            sb.append("FailureMessage: " + getFailureMessage());
+            sb.append("FailureMessage: " + getFailureMessage() + ",");
+        if (getProvisionedBandwidth() != null)
+            sb.append("ProvisionedBandwidth: " + getProvisionedBandwidth());
         sb.append("}");
         return sb.toString();
     }
@@ -1301,6 +1377,13 @@ public class NatGateway implements Serializable, Cloneable {
         if (other.getFailureMessage() != null
                 && other.getFailureMessage().equals(this.getFailureMessage()) == false)
             return false;
+        if (other.getProvisionedBandwidth() == null
+                ^ this.getProvisionedBandwidth() == null)
+            return false;
+        if (other.getProvisionedBandwidth() != null
+                && other.getProvisionedBandwidth().equals(
+                        this.getProvisionedBandwidth()) == false)
+            return false;
         return true;
     }
 
@@ -1334,6 +1417,10 @@ public class NatGateway implements Serializable, Cloneable {
                 * hashCode
                 + ((getFailureMessage() == null) ? 0 : getFailureMessage()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getProvisionedBandwidth() == null) ? 0
+                        : getProvisionedBandwidth().hashCode());
         return hashCode;
     }
 

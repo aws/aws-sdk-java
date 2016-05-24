@@ -36,13 +36,25 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must specify a valid option group.</li>
-     * <li>If the source option group is in the same region as the copy, specify
-     * a valid option group identifier, for example <code>my-option-group</code>
-     * , or a valid ARN.</li>
-     * <li>If the source option group is in a different region than the copy,
+     * <li>
+     * <p>
+     * Must specify a valid option group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source option group is in the same region as the copy, specify a
+     * valid option group identifier, for example <code>my-option-group</code>,
+     * or a valid ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source option group is in a different region than the copy,
      * specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
+     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String sourceOptionGroupIdentifier;
@@ -54,10 +66,26 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-option-group</code>
@@ -84,13 +112,25 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must specify a valid option group.</li>
-     * <li>If the source option group is in the same region as the copy, specify
-     * a valid option group identifier, for example <code>my-option-group</code>
-     * , or a valid ARN.</li>
-     * <li>If the source option group is in a different region than the copy,
+     * <li>
+     * <p>
+     * Must specify a valid option group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source option group is in the same region as the copy, specify a
+     * valid option group identifier, for example <code>my-option-group</code>,
+     * or a valid ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source option group is in a different region than the copy,
      * specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
+     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceOptionGroupIdentifier
@@ -102,14 +142,26 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must specify a valid option group.</li>
-     *        <li>If the source option group is in the same region as the copy,
+     *        <li>
+     *        <p>
+     *        Must specify a valid option group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source option group is in the same region as the copy,
      *        specify a valid option group identifier, for example
-     *        <code>my-option-group</code>, or a valid ARN.</li>
-     *        <li>If the source option group is in a different region than the
-     *        copy, specify a valid option group ARN, for example
+     *        <code>my-option-group</code>, or a valid ARN.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source option group is in a different region than the copy,
+     *        specify a valid option group ARN, for example
      *        <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>
-     *        .</li>
+     *        .
+     *        </p>
+     *        </li>
      */
 
     public void setSourceOptionGroupIdentifier(
@@ -128,13 +180,25 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must specify a valid option group.</li>
-     * <li>If the source option group is in the same region as the copy, specify
-     * a valid option group identifier, for example <code>my-option-group</code>
-     * , or a valid ARN.</li>
-     * <li>If the source option group is in a different region than the copy,
+     * <li>
+     * <p>
+     * Must specify a valid option group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source option group is in the same region as the copy, specify a
+     * valid option group identifier, for example <code>my-option-group</code>,
+     * or a valid ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source option group is in a different region than the copy,
      * specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
+     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier or ARN for the source option group. For
@@ -145,14 +209,26 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must specify a valid option group.</li>
-     *         <li>If the source option group is in the same region as the copy,
+     *         <li>
+     *         <p>
+     *         Must specify a valid option group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source option group is in the same region as the copy,
      *         specify a valid option group identifier, for example
-     *         <code>my-option-group</code>, or a valid ARN.</li>
-     *         <li>If the source option group is in a different region than the
+     *         <code>my-option-group</code>, or a valid ARN.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source option group is in a different region than the
      *         copy, specify a valid option group ARN, for example
      *         <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>
-     *         .</li>
+     *         .
+     *         </p>
+     *         </li>
      */
 
     public String getSourceOptionGroupIdentifier() {
@@ -170,13 +246,25 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must specify a valid option group.</li>
-     * <li>If the source option group is in the same region as the copy, specify
-     * a valid option group identifier, for example <code>my-option-group</code>
-     * , or a valid ARN.</li>
-     * <li>If the source option group is in a different region than the copy,
+     * <li>
+     * <p>
+     * Must specify a valid option group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source option group is in the same region as the copy, specify a
+     * valid option group identifier, for example <code>my-option-group</code>,
+     * or a valid ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source option group is in a different region than the copy,
      * specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li>
+     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sourceOptionGroupIdentifier
@@ -188,14 +276,26 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must specify a valid option group.</li>
-     *        <li>If the source option group is in the same region as the copy,
+     *        <li>
+     *        <p>
+     *        Must specify a valid option group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source option group is in the same region as the copy,
      *        specify a valid option group identifier, for example
-     *        <code>my-option-group</code>, or a valid ARN.</li>
-     *        <li>If the source option group is in a different region than the
-     *        copy, specify a valid option group ARN, for example
+     *        <code>my-option-group</code>, or a valid ARN.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source option group is in a different region than the copy,
+     *        specify a valid option group ARN, for example
      *        <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>
-     *        .</li>
+     *        .
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -214,25 +314,57 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-option-group</code>
      * </p>
      * 
      * @param targetOptionGroupIdentifier
-     *        The identifier for the copied option group. </p>
+     *        The identifier for the copied option group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-option-group</code>
@@ -251,25 +383,56 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-option-group</code>
      * </p>
      * 
-     * @return The identifier for the copied option group. </p>
+     * @return The identifier for the copied option group.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Cannot be null, empty, or blank</li>
-     *         <li>Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         <li>
+     *         <p>
+     *         Cannot be null, empty, or blank
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>my-option-group</code>
@@ -287,25 +450,57 @@ public class CopyOptionGroupRequest extends AmazonWebServiceRequest implements
      * Constraints:
      * </p>
      * <ul>
-     * <li>Cannot be null, empty, or blank</li>
-     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * <li>
+     * <p>
+     * Cannot be null, empty, or blank
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-option-group</code>
      * </p>
      * 
      * @param targetOptionGroupIdentifier
-     *        The identifier for the copied option group. </p>
+     *        The identifier for the copied option group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Cannot be null, empty, or blank</li>
-     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
-     *        <li>First character must be a letter</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        <li>
+     *        <p>
+     *        Cannot be null, empty, or blank
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-option-group</code>

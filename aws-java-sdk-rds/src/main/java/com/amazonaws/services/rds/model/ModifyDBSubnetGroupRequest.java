@@ -67,7 +67,7 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest
      * 
      * @param dBSubnetGroupName
      *        The name for the DB subnet group. This value is stored as a
-     *        lowercase string. </p>
+     *        lowercase string.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, underscores, spaces, or hyphens. Must not be
@@ -95,7 +95,7 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return The name for the DB subnet group. This value is stored as a
-     *         lowercase string. </p>
+     *         lowercase string.</p>
      *         <p>
      *         Constraints: Must contain no more than 255 alphanumeric
      *         characters, periods, underscores, spaces, or hyphens. Must not be
@@ -124,7 +124,7 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest
      * 
      * @param dBSubnetGroupName
      *        The name for the DB subnet group. This value is stored as a
-     *        lowercase string. </p>
+     *        lowercase string.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, underscores, spaces, or hyphens. Must not be

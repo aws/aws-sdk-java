@@ -1189,6 +1189,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public GetConsoleScreenshotResult getConsoleScreenshot(
+            GetConsoleScreenshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPasswordDataResult getPasswordData(GetPasswordDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

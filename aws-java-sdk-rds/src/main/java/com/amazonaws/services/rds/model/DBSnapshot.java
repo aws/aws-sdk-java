@@ -23,8 +23,16 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the following actions:
  * </p>
  * <ul>
- * <li><a>CreateDBSnapshot</a></li>
- * <li><a>DeleteDBSnapshot</a></li>
+ * <li>
+ * <p>
+ * <a>CreateDBSnapshot</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteDBSnapshot</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * This data type is used as a response element in the
