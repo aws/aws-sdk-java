@@ -144,6 +144,10 @@ public class TransferManagerConfiguration {
         this.multipartUploadThreshold = multipartUploadThreshold;
     }
 
+    public void setMultipartUploadThreshold(int multipartUploadThreshold) {
+        setMultipartUploadThreshold((long) multipartUploadThreshold);
+    }
+
     /**
      * Returns the minimum size in bytes of each part in a multi-part copy
      * request. Decreasing this size will result in increase in the number of
