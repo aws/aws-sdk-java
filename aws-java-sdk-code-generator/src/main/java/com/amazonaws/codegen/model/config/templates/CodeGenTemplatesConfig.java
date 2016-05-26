@@ -42,6 +42,7 @@ public class CodeGenTemplatesConfig {
     private TopLevelTemplate exceptionClass;
     private TopLevelTemplate exceptionUnmarshaller;
     private TopLevelTemplate policyActionClass;
+    private TopLevelTemplate packageInfo;
     private List<ChildTemplate> commonChildTemplates;
 
     public static CodeGenTemplatesConfig load(Protocol protocol) {
@@ -113,6 +114,9 @@ public class CodeGenTemplatesConfig {
                 config.getPolicyActionClass(),
                 override.getPolicyActionClass()));
 
+        merged.setPackageInfo(TopLevelTemplate.merge(
+                config.getPackageInfo(), override.getPackageInfo()));
+
         List<ChildTemplate> commonChildTemplates = new LinkedList<ChildTemplate>();
         if (config.getCommonChildTemplates() != null) {
             commonChildTemplates.addAll(config.getCommonChildTemplates());
@@ -121,6 +125,7 @@ public class CodeGenTemplatesConfig {
             commonChildTemplates.addAll(override.getCommonChildTemplates());
         }
         merged.setCommonChildTemplates(commonChildTemplates);
+
 
         return merged;
     }
@@ -253,5 +258,13 @@ public class CodeGenTemplatesConfig {
 
     public void setPolicyActionClass(TopLevelTemplate policyActionClass) {
         this.policyActionClass = policyActionClass;
+    }
+
+    public TopLevelTemplate getPackageInfo() {
+        return packageInfo;
+    }
+
+    public void setPackageInfo(TopLevelTemplate packageInfo) {
+        this.packageInfo = packageInfo;
     }
 }

@@ -76,6 +76,17 @@ public class Parameter implements Serializable, Cloneable {
      * </p>
      */
     private String minimumEngineVersion;
+    /**
+     * <p>
+     * ChangeType indicates whether a change to the parameter will be applied
+     * immediately or requires a reboot for the change to be applied. You can
+     * force a reboot or wait until the next maintenance window's reboot. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
+     * >Rebooting a Cluster</a>.
+     * </p>
+     */
+    private String changeType;
 
     /**
      * <p>
@@ -437,6 +448,131 @@ public class Parameter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * ChangeType indicates whether a change to the parameter will be applied
+     * immediately or requires a reboot for the change to be applied. You can
+     * force a reboot or wait until the next maintenance window's reboot. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
+     * >Rebooting a Cluster</a>.
+     * </p>
+     * 
+     * @param changeType
+     *        ChangeType indicates whether a change to the parameter will be
+     *        applied immediately or requires a reboot for the change to be
+     *        applied. You can force a reboot or wait until the next maintenance
+     *        window's reboot. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
+     *        >Rebooting a Cluster</a>.
+     * @see ChangeType
+     */
+
+    public void setChangeType(String changeType) {
+        this.changeType = changeType;
+    }
+
+    /**
+     * <p>
+     * ChangeType indicates whether a change to the parameter will be applied
+     * immediately or requires a reboot for the change to be applied. You can
+     * force a reboot or wait until the next maintenance window's reboot. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
+     * >Rebooting a Cluster</a>.
+     * </p>
+     * 
+     * @return ChangeType indicates whether a change to the parameter will be
+     *         applied immediately or requires a reboot for the change to be
+     *         applied. You can force a reboot or wait until the next
+     *         maintenance window's reboot. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
+     *         >Rebooting a Cluster</a>.
+     * @see ChangeType
+     */
+
+    public String getChangeType() {
+        return this.changeType;
+    }
+
+    /**
+     * <p>
+     * ChangeType indicates whether a change to the parameter will be applied
+     * immediately or requires a reboot for the change to be applied. You can
+     * force a reboot or wait until the next maintenance window's reboot. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
+     * >Rebooting a Cluster</a>.
+     * </p>
+     * 
+     * @param changeType
+     *        ChangeType indicates whether a change to the parameter will be
+     *        applied immediately or requires a reboot for the change to be
+     *        applied. You can force a reboot or wait until the next maintenance
+     *        window's reboot. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
+     *        >Rebooting a Cluster</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ChangeType
+     */
+
+    public Parameter withChangeType(String changeType) {
+        setChangeType(changeType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * ChangeType indicates whether a change to the parameter will be applied
+     * immediately or requires a reboot for the change to be applied. You can
+     * force a reboot or wait until the next maintenance window's reboot. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
+     * >Rebooting a Cluster</a>.
+     * </p>
+     * 
+     * @param changeType
+     *        ChangeType indicates whether a change to the parameter will be
+     *        applied immediately or requires a reboot for the change to be
+     *        applied. You can force a reboot or wait until the next maintenance
+     *        window's reboot. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
+     *        >Rebooting a Cluster</a>.
+     * @see ChangeType
+     */
+
+    public void setChangeType(ChangeType changeType) {
+        this.changeType = changeType.toString();
+    }
+
+    /**
+     * <p>
+     * ChangeType indicates whether a change to the parameter will be applied
+     * immediately or requires a reboot for the change to be applied. You can
+     * force a reboot or wait until the next maintenance window's reboot. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
+     * >Rebooting a Cluster</a>.
+     * </p>
+     * 
+     * @param changeType
+     *        ChangeType indicates whether a change to the parameter will be
+     *        applied immediately or requires a reboot for the change to be
+     *        applied. You can force a reboot or wait until the next maintenance
+     *        window's reboot. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html"
+     *        >Rebooting a Cluster</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ChangeType
+     */
+
+    public Parameter withChangeType(ChangeType changeType) {
+        setChangeType(changeType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -463,7 +599,10 @@ public class Parameter implements Serializable, Cloneable {
         if (getIsModifiable() != null)
             sb.append("IsModifiable: " + getIsModifiable() + ",");
         if (getMinimumEngineVersion() != null)
-            sb.append("MinimumEngineVersion: " + getMinimumEngineVersion());
+            sb.append("MinimumEngineVersion: " + getMinimumEngineVersion()
+                    + ",");
+        if (getChangeType() != null)
+            sb.append("ChangeType: " + getChangeType());
         sb.append("}");
         return sb.toString();
     }
@@ -521,6 +660,11 @@ public class Parameter implements Serializable, Cloneable {
                 && other.getMinimumEngineVersion().equals(
                         this.getMinimumEngineVersion()) == false)
             return false;
+        if (other.getChangeType() == null ^ this.getChangeType() == null)
+            return false;
+        if (other.getChangeType() != null
+                && other.getChangeType().equals(this.getChangeType()) == false)
+            return false;
         return true;
     }
 
@@ -556,6 +700,8 @@ public class Parameter implements Serializable, Cloneable {
                 * hashCode
                 + ((getMinimumEngineVersion() == null) ? 0
                         : getMinimumEngineVersion().hashCode());
+        hashCode = prime * hashCode
+                + ((getChangeType() == null) ? 0 : getChangeType().hashCode());
         return hashCode;
     }
 

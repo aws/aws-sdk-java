@@ -57,7 +57,8 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * to organize your costs across multiple services. For more information,
      * see <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html"
-     * >Using Cost Allocation Tags in Amazon ElastiCache</a>.
+     * >Using Cost Allocation Tags in Amazon ElastiCache</a> in the
+     * <i>ElastiCache User Guide</i>.
      * </p>
      * 
      * @param addTagsToResourceRequest
@@ -84,7 +85,8 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * to organize your costs across multiple services. For more information,
      * see <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html"
-     * >Using Cost Allocation Tags in Amazon ElastiCache</a>.
+     * >Using Cost Allocation Tags in Amazon ElastiCache</a> in the
+     * <i>ElastiCache User Guide</i>.
      * </p>
      * 
      * @param addTagsToResourceRequest
@@ -109,8 +111,12 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * running on Amazon EC2, and Amazon EC2 security groups are used as the
      * authorization mechanism.
      * </p>
-     * <note>You cannot authorize ingress from an Amazon EC2 security group in
-     * one region to an ElastiCache cluster in another region. </note>
+     * <note>
+     * <p>
+     * You cannot authorize ingress from an Amazon EC2 security group in one
+     * region to an ElastiCache cluster in another region.
+     * </p>
+     * </note>
      * 
      * @param authorizeCacheSecurityGroupIngressRequest
      *        Represents the input of an
@@ -130,8 +136,12 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * running on Amazon EC2, and Amazon EC2 security groups are used as the
      * authorization mechanism.
      * </p>
-     * <note>You cannot authorize ingress from an Amazon EC2 security group in
-     * one region to an ElastiCache cluster in another region. </note>
+     * <note>
+     * <p>
+     * You cannot authorize ingress from an Amazon EC2 security group in one
+     * region to an ElastiCache cluster in another region.
+     * </p>
+     * </note>
      * 
      * @param authorizeCacheSecurityGroupIngressRequest
      *        Represents the input of an
@@ -154,6 +164,34 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * <p>
      * The <i>CopySnapshot</i> action makes a copy of an existing snapshot.
      * </p>
+     * <important>
+     * <p>
+     * Users or groups that have permissions to use the <i>CopySnapshot</i> API
+     * can create their own Amazon S3 buckets and copy snapshots to it. To
+     * control access to your snapshots, use an IAM policy to control who has
+     * the ability to use the <i>CopySnapshot</i> API. For more information
+     * about using IAM to control the use of ElastiCache APIs, see <a href=
+     * "http://docs.aws.amazon.com/ElastiCache/latest/Snapshots.Exporting.html"
+     * >Exporting Snapshots</a> and <a
+     * href="http://docs.aws.amazon.com/ElastiCache/latest/IAM.html"
+     * >Authentication &amp; Access Control</a>.
+     * </p>
+     * </important>
+     * <p class="title">
+     * <b>Erorr Message:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Error Message:</b> The authenticated user does not have sufficient
+     * permissions to perform the desired activity.
+     * </p>
+     * <p>
+     * <b>Solution:</b> Contact your system administrator to get the needed
+     * permissions.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param copySnapshotRequest
      *        Represents the input of a <i>CopySnapshotMessage</i> action.
@@ -168,6 +206,34 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * <p>
      * The <i>CopySnapshot</i> action makes a copy of an existing snapshot.
      * </p>
+     * <important>
+     * <p>
+     * Users or groups that have permissions to use the <i>CopySnapshot</i> API
+     * can create their own Amazon S3 buckets and copy snapshots to it. To
+     * control access to your snapshots, use an IAM policy to control who has
+     * the ability to use the <i>CopySnapshot</i> API. For more information
+     * about using IAM to control the use of ElastiCache APIs, see <a href=
+     * "http://docs.aws.amazon.com/ElastiCache/latest/Snapshots.Exporting.html"
+     * >Exporting Snapshots</a> and <a
+     * href="http://docs.aws.amazon.com/ElastiCache/latest/IAM.html"
+     * >Authentication &amp; Access Control</a>.
+     * </p>
+     * </important>
+     * <p class="title">
+     * <b>Erorr Message:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Error Message:</b> The authenticated user does not have sufficient
+     * permissions to perform the desired activity.
+     * </p>
+     * <p>
+     * <b>Solution:</b> Contact your system administrator to get the needed
+     * permissions.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param copySnapshotRequest
      *        Represents the input of a <i>CopySnapshotMessage</i> action.
@@ -372,9 +438,11 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * successfully created, you can add one or more read replica replicas to
      * it, up to a total of five read replicas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This action is valid only for Redis.
+     * This action is valid only for Redis.
      * </p>
+     * </note>
      * 
      * @param createReplicationGroupRequest
      *        Represents the input of a <i>CreateReplicationGroup</i> action.
@@ -399,9 +467,11 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * successfully created, you can add one or more read replica replicas to
      * it, up to a total of five read replicas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This action is valid only for Redis.
+     * This action is valid only for Redis.
      * </p>
+     * </note>
      * 
      * @param createReplicationGroupRequest
      *        Represents the input of a <i>CreateReplicationGroup</i> action.
@@ -549,8 +619,12 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * The <i>DeleteCacheSecurityGroup</i> action deletes a cache security
      * group.
      * </p>
-     * <note>You cannot delete a cache security group if it is associated with
-     * any cache clusters.</note>
+     * <note>
+     * <p>
+     * You cannot delete a cache security group if it is associated with any
+     * cache clusters.
+     * </p>
+     * </note>
      * 
      * @param deleteCacheSecurityGroupRequest
      *        Represents the input of a <i>DeleteCacheSecurityGroup</i> action.
@@ -566,8 +640,12 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * The <i>DeleteCacheSecurityGroup</i> action deletes a cache security
      * group.
      * </p>
-     * <note>You cannot delete a cache security group if it is associated with
-     * any cache clusters.</note>
+     * <note>
+     * <p>
+     * You cannot delete a cache security group if it is associated with any
+     * cache clusters.
+     * </p>
+     * </note>
      * 
      * @param deleteCacheSecurityGroupRequest
      *        Represents the input of a <i>DeleteCacheSecurityGroup</i> action.
@@ -588,8 +666,12 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * <p>
      * The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.
      * </p>
-     * <note>You cannot delete a cache subnet group if it is associated with any
-     * cache clusters.</note>
+     * <note>
+     * <p>
+     * You cannot delete a cache subnet group if it is associated with any cache
+     * clusters.
+     * </p>
+     * </note>
      * 
      * @param deleteCacheSubnetGroupRequest
      *        Represents the input of a <i>DeleteCacheSubnetGroup</i> action.
@@ -604,8 +686,12 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * <p>
      * The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.
      * </p>
-     * <note>You cannot delete a cache subnet group if it is associated with any
-     * cache clusters.</note>
+     * <note>
+     * <p>
+     * You cannot delete a cache subnet group if it is associated with any cache
+     * clusters.
+     * </p>
+     * </note>
      * 
      * @param deleteCacheSubnetGroupRequest
      *        Represents the input of a <i>DeleteCacheSubnetGroup</i> action.

@@ -35,7 +35,7 @@ public class Tag implements Serializable, Cloneable {
     private String key;
     /**
      * <p>
-     * The tag&apos;s value. May not be null.
+     * The tag's value. May not be null.
      * </p>
      */
     private String value;
@@ -83,11 +83,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag&apos;s value. May not be null.
+     * The tag's value. May not be null.
      * </p>
      * 
      * @param value
-     *        The tag&apos;s value. May not be null.
+     *        The tag's value. May not be null.
      */
 
     public void setValue(String value) {
@@ -96,10 +96,10 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag&apos;s value. May not be null.
+     * The tag's value. May not be null.
      * </p>
      * 
-     * @return The tag&apos;s value. May not be null.
+     * @return The tag's value. May not be null.
      */
 
     public String getValue() {
@@ -108,11 +108,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag&apos;s value. May not be null.
+     * The tag's value. May not be null.
      * </p>
      * 
      * @param value
-     *        The tag&apos;s value. May not be null.
+     *        The tag's value. May not be null.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

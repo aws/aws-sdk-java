@@ -50,9 +50,29 @@ public class AwsHostNameUtils {
      * @param serviceHint  an optional hint about the service for the endpoint
      * @return             the region parsed from the hostname, or
      *                     &quot;us-east-1&quot; if no region information
-     *                     could be found
+     *                     could be found.
+     * @deprecated	in favor of {@link #parseRegion(String, String)}.
      */
+    @Deprecated
     public static String parseRegionName(final String host,
+                                         final String serviceHint) {
+        String region = parseRegion(host, serviceHint);
+
+        // If region is null, then endpoint is totally non-standard;
+        // guess us-east-1 for lack of a better option.
+        return region == null ? "us-east-1" : region;
+    }
+
+    /**
+     * Attempts to parse the region name from an endpoint based on conventions
+     * about the endpoint format.
+     *
+     * @param host         the hostname to parse
+     * @param serviceHint  an optional hint about the service for the endpoint
+     * @return             the region parsed from the hostname, or
+     *                     null if no region information could be found.
+     */
+    public static String parseRegion(final String host,
                                          final String serviceHint) {
 
         if (host == null) {
@@ -97,10 +117,8 @@ public class AwsHostNameUtils {
             }
         }
 
-        // Endpoint is totally non-standard; guess us-east-1 for lack of a
-        // better option.
-
-        return "us-east-1";
+        // Endpoint is non-standard
+        return null;
     }
 
     /**

@@ -63,25 +63,51 @@ public class Snapshot implements Serializable, Cloneable {
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -89,11 +115,22 @@ public class Snapshot implements Serializable, Cloneable {
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -151,13 +188,41 @@ public class Snapshot implements Serializable, Cloneable {
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -217,9 +282,8 @@ public class Snapshot implements Serializable, Cloneable {
      * action.
      * </p>
      * <p>
-     * <b>Important</b><br/>
-     * If the value of SnapshotRetentionLimit is set to zero (0), backups are
-     * turned off.
+     * <b>Important</b> If the value of SnapshotRetentionLimit is set to zero
+     * (0), backups are turned off.
      * </p>
      */
     private Integer snapshotRetentionLimit;
@@ -440,25 +504,51 @@ public class Snapshot implements Serializable, Cloneable {
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -466,11 +556,22 @@ public class Snapshot implements Serializable, Cloneable {
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -489,25 +590,51 @@ public class Snapshot implements Serializable, Cloneable {
      *        Valid node types are as follows:
      *        </p>
      *        <ul>
-     *        <li>General purpose:
+     *        <li>
+     *        <p>
+     *        General purpose:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.t2.micro</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.t2.micro</code>,
      *        <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *        <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *        <li>Previous generation: <code>cache.t1.micro</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.t1.micro</code>,
      *        <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *        <li>Memory optimized
+     *        <li>
+     *        <p>
+     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Memory optimized:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.r3.large</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.r3.large</code>,
      *        <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *        <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.m2.xlarge</code>,
+     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        </ul>
@@ -515,11 +642,23 @@ public class Snapshot implements Serializable, Cloneable {
      *        <b>Notes:</b>
      *        </p>
      *        <ul>
-     *        <li>All t2 instances are created in an Amazon Virtual Private
-     *        Cloud (VPC).</li>
-     *        <li>Redis backup/restore is not supported for t2 instances.</li>
-     *        <li>Redis Append-only files (AOF) functionality is not supported
-     *        for t1 or t2 instances.</li>
+     *        <li>
+     *        <p>
+     *        All t2 instances are created in an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis backup/restore is not supported for t2 instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis Append-only files (AOF) functionality is not supported for
+     *        t1 or t2 instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For a complete listing of cache node types and specifications, see
@@ -544,25 +683,51 @@ public class Snapshot implements Serializable, Cloneable {
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -570,11 +735,22 @@ public class Snapshot implements Serializable, Cloneable {
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -592,25 +768,51 @@ public class Snapshot implements Serializable, Cloneable {
      *         Valid node types are as follows:
      *         </p>
      *         <ul>
-     *         <li>General purpose:
+     *         <li>
+     *         <p>
+     *         General purpose:
+     *         </p>
      *         <ul>
-     *         <li>Current generation: <code>cache.t2.micro</code>,
+     *         <li>
+     *         <p>
+     *         Current generation: <code>cache.t2.micro</code>,
      *         <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *         <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *         <li>Previous generation: <code>cache.t1.micro</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Previous generation: <code>cache.t1.micro</code>,
      *         <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
-     *         <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *         <li>Memory optimized
+     *         <li>
+     *         <p>
+     *         Compute optimized: <code>cache.c1.xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Memory optimized:
+     *         </p>
      *         <ul>
-     *         <li>Current generation: <code>cache.r3.large</code>,
+     *         <li>
+     *         <p>
+     *         Current generation: <code>cache.r3.large</code>,
      *         <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *         <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Previous generation: <code>cache.m2.xlarge</code>,
+     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
      *         </ul>
@@ -618,11 +820,23 @@ public class Snapshot implements Serializable, Cloneable {
      *         <b>Notes:</b>
      *         </p>
      *         <ul>
-     *         <li>All t2 instances are created in an Amazon Virtual Private
-     *         Cloud (VPC).</li>
-     *         <li>Redis backup/restore is not supported for t2 instances.</li>
-     *         <li>Redis Append-only files (AOF) functionality is not supported
-     *         for t1 or t2 instances.</li>
+     *         <li>
+     *         <p>
+     *         All t2 instances are created in an Amazon Virtual Private Cloud
+     *         (VPC).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Redis backup/restore is not supported for t2 instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Redis Append-only files (AOF) functionality is not supported for
+     *         t1 or t2 instances.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For a complete listing of cache node types and specifications,
@@ -648,25 +862,51 @@ public class Snapshot implements Serializable, Cloneable {
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -674,11 +914,22 @@ public class Snapshot implements Serializable, Cloneable {
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -697,25 +948,51 @@ public class Snapshot implements Serializable, Cloneable {
      *        Valid node types are as follows:
      *        </p>
      *        <ul>
-     *        <li>General purpose:
+     *        <li>
+     *        <p>
+     *        General purpose:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.t2.micro</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.t2.micro</code>,
      *        <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *        <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *        <li>Previous generation: <code>cache.t1.micro</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.t1.micro</code>,
      *        <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *        <li>Memory optimized
+     *        <li>
+     *        <p>
+     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Memory optimized:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.r3.large</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.r3.large</code>,
      *        <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *        <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.m2.xlarge</code>,
+     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        </ul>
@@ -723,11 +1000,23 @@ public class Snapshot implements Serializable, Cloneable {
      *        <b>Notes:</b>
      *        </p>
      *        <ul>
-     *        <li>All t2 instances are created in an Amazon Virtual Private
-     *        Cloud (VPC).</li>
-     *        <li>Redis backup/restore is not supported for t2 instances.</li>
-     *        <li>Redis Append-only files (AOF) functionality is not supported
-     *        for t1 or t2 instances.</li>
+     *        <li>
+     *        <p>
+     *        All t2 instances are created in an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis backup/restore is not supported for t2 instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis Append-only files (AOF) functionality is not supported for
+     *        t1 or t2 instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For a complete listing of cache node types and specifications, see
@@ -1000,13 +1289,41 @@ public class Snapshot implements Serializable, Cloneable {
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -1019,13 +1336,41 @@ public class Snapshot implements Serializable, Cloneable {
      *        maintenance window is a 60 minute period. Valid values for
      *        <code>ddd</code> are:</p>
      *        <ul>
-     *        <li><code>sun</code></li>
-     *        <li><code>mon</code></li>
-     *        <li><code>tue</code></li>
-     *        <li><code>wed</code></li>
-     *        <li><code>thu</code></li>
-     *        <li><code>fri</code></li>
-     *        <li><code>sat</code></li>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>sun:05:00-sun:09:00</code>
@@ -1043,13 +1388,41 @@ public class Snapshot implements Serializable, Cloneable {
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -1061,13 +1434,41 @@ public class Snapshot implements Serializable, Cloneable {
      *         maintenance window is a 60 minute period. Valid values for
      *         <code>ddd</code> are:</p>
      *         <ul>
-     *         <li><code>sun</code></li>
-     *         <li><code>mon</code></li>
-     *         <li><code>tue</code></li>
-     *         <li><code>wed</code></li>
-     *         <li><code>thu</code></li>
-     *         <li><code>fri</code></li>
-     *         <li><code>sat</code></li>
+     *         <li>
+     *         <p>
+     *         <code>sun</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>mon</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tue</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>wed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>thu</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>fri</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sat</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>sun:05:00-sun:09:00</code>
@@ -1085,13 +1486,41 @@ public class Snapshot implements Serializable, Cloneable {
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -1104,13 +1533,41 @@ public class Snapshot implements Serializable, Cloneable {
      *        maintenance window is a 60 minute period. Valid values for
      *        <code>ddd</code> are:</p>
      *        <ul>
-     *        <li><code>sun</code></li>
-     *        <li><code>mon</code></li>
-     *        <li><code>tue</code></li>
-     *        <li><code>wed</code></li>
-     *        <li><code>thu</code></li>
-     *        <li><code>fri</code></li>
-     *        <li><code>sat</code></li>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>sun:05:00-sun:09:00</code>
@@ -1422,9 +1879,8 @@ public class Snapshot implements Serializable, Cloneable {
      * action.
      * </p>
      * <p>
-     * <b>Important</b><br/>
-     * If the value of SnapshotRetentionLimit is set to zero (0), backups are
-     * turned off.
+     * <b>Important</b> If the value of SnapshotRetentionLimit is set to zero
+     * (0), backups are turned off.
      * </p>
      * 
      * @param snapshotRetentionLimit
@@ -1438,9 +1894,8 @@ public class Snapshot implements Serializable, Cloneable {
      *        <i>DeleteSnapshot</i> action.
      *        </p>
      *        <p>
-     *        <b>Important</b><br/>
-     *        If the value of SnapshotRetentionLimit is set to zero (0), backups
-     *        are turned off.
+     *        <b>Important</b> If the value of SnapshotRetentionLimit is set to
+     *        zero (0), backups are turned off.
      */
 
     public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
@@ -1460,9 +1915,8 @@ public class Snapshot implements Serializable, Cloneable {
      * action.
      * </p>
      * <p>
-     * <b>Important</b><br/>
-     * If the value of SnapshotRetentionLimit is set to zero (0), backups are
-     * turned off.
+     * <b>Important</b> If the value of SnapshotRetentionLimit is set to zero
+     * (0), backups are turned off.
      * </p>
      * 
      * @return For an automatic snapshot, the number of days for which
@@ -1475,9 +1929,8 @@ public class Snapshot implements Serializable, Cloneable {
      *         <i>DeleteSnapshot</i> action.
      *         </p>
      *         <p>
-     *         <b>Important</b><br/>
-     *         If the value of SnapshotRetentionLimit is set to zero (0),
-     *         backups are turned off.
+     *         <b>Important</b> If the value of SnapshotRetentionLimit is set to
+     *         zero (0), backups are turned off.
      */
 
     public Integer getSnapshotRetentionLimit() {
@@ -1497,9 +1950,8 @@ public class Snapshot implements Serializable, Cloneable {
      * action.
      * </p>
      * <p>
-     * <b>Important</b><br/>
-     * If the value of SnapshotRetentionLimit is set to zero (0), backups are
-     * turned off.
+     * <b>Important</b> If the value of SnapshotRetentionLimit is set to zero
+     * (0), backups are turned off.
      * </p>
      * 
      * @param snapshotRetentionLimit
@@ -1513,9 +1965,8 @@ public class Snapshot implements Serializable, Cloneable {
      *        <i>DeleteSnapshot</i> action.
      *        </p>
      *        <p>
-     *        <b>Important</b><br/>
-     *        If the value of SnapshotRetentionLimit is set to zero (0), backups
-     *        are turned off.
+     *        <b>Important</b> If the value of SnapshotRetentionLimit is set to
+     *        zero (0), backups are turned off.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

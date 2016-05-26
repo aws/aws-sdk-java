@@ -20,13 +20,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "route53",
     "signingName" : "route53",
-    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
     "jsonProtocol" : false,
     "serviceName" : "Route 53",
     "cborProtocol" : false,
-    "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
-    "unmarshallerClassSuffix" : "StaxUnmarshaller"
+    "unmarshallerClassSuffix" : "StaxUnmarshaller",
+    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
+    "xmlProtocol" : true
   },
   "operations" : {
     "AssociateVPCWithHostedZone" : {

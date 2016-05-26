@@ -52,10 +52,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * For clusters running Redis, this value must be 1. For clusters running
      * Memcached, this value must be between 1 and 20.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b><br/>
      * Adding or removing Memcached cache nodes can be applied immediately or as
-     * a pending action. See <code>ApplyImmediately</code>.<br/>
+     * a pending action. See <code>ApplyImmediately</code>.
+     * </p>
+     * <p>
      * A pending action to modify the number of cache nodes in a cluster during
      * its maintenance window, whether by adding or removing nodes in accordance
      * with the scale out architecture, is not queued. The customer's latest
@@ -74,6 +76,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <i>NumCacheNodes</i> equal to the number of cache nodes currently in the
      * cache cluster.
      * </p>
+     * </note>
      */
     private Integer numCacheNodes;
     /**
@@ -140,18 +143,30 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Scenarios:
-     * <ul>
-     * <li><b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.<br/>
-     * Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two
-     * Availability Zones for the two new nodes.</li>
-     * <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
-     * creation (from the scenario 1 call) and want to add 1 more node.<br/>
-     * Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and optionally
-     * specify an Availability Zone for the new node.
-     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     * Specify <code>NumCacheNodes=3</code> to cancel all pending actions.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.
+     * Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two
+     * Availability Zones for the two new nodes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation
+     * (from the scenario 1 call) and want to add 1 more node. Specify
+     * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
+     * Availability Zone for the new node.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Scenario 3:</b> You want to cancel all pending actions. Specify
+     * <code>NumCacheNodes=3</code> to cancel all pending actions.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The Availability Zone placement of nodes pending creation cannot be
      * modified. If you wish to cancel any nodes pending creation, add 0 nodes
@@ -170,46 +185,109 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <b>Impact of new add/remove requests upon pending requests</b>
      * </p>
      * <ul>
-     * <li>Scenario-1
+     * <li>
+     * <p>
+     * Scenario-1
+     * </p>
      * <ul>
-     * <li>Pending Action: Delete</li>
-     * <li>New Request: Delete</li>
-     * <li>Result: The new delete, pending or immediate, replaces the pending
-     * delete.</li>
+     * <li>
+     * <p>
+     * Pending Action: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new delete, pending or immediate, replaces the pending
+     * delete.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-2
+     * <li>
+     * <p>
+     * Scenario-2
+     * </p>
      * <ul>
-     * <li>Pending Action: Delete</li>
-     * <li>New Request: Create</li>
-     * <li>Result: The new create, pending or immediate, replaces the pending
-     * delete.</li>
+     * <li>
+     * <p>
+     * Pending Action: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new create, pending or immediate, replaces the pending
+     * delete.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-3
+     * <li>
+     * <p>
+     * Scenario-3
+     * </p>
      * <ul>
-     * <li>Pending Action: Create</li>
-     * <li>New Request: Delete</li>
-     * <li>Result: The new delete, pending or immediate, replaces the pending
-     * create.</li>
+     * <li>
+     * <p>
+     * Pending Action: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new delete, pending or immediate, replaces the pending
+     * create.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-4
+     * <li>
+     * <p>
+     * Scenario-4
+     * </p>
      * <ul>
-     * <li>Pending Action: Create</li>
-     * <li>New Request: Create</li>
-     * <li>Result: The new create is added to the pending create.
-     * <b>Important:</b><br/>
-     * If the new create request is <b>Apply Immediately - Yes</b>, all creates
-     * are performed immediately.<br/>
-     * If the new create request is <b>Apply Immediately - No</b>, all creates
-     * are pending.</li>
+     * <li>
+     * <p>
+     * Pending Action: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new create is added to the pending create.
+     * </p>
+     * <important>
+     * <p>
+     * <b>Important:</b> If the new create request is <b>Apply Immediately -
+     * Yes</b>, all creates are performed immediately. If the new create request
+     * is <b>Apply Immediately - No</b>, all creates are pending.
+     * </p>
+     * </important></li>
      * </ul>
      * </li>
      * </ul>
      * <p>
      * Example:
-     * <code><![CDATA[NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c]]></code>
+     * </p>
+     * <p>
+     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> newAvailabilityZones;
@@ -224,7 +302,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must
-     * not be &quot;Default".
+     * not be "Default".
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNames;
@@ -246,13 +324,41 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -264,7 +370,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
      * notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be same as the cache cluster owner.
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be same as the cache cluster owner.
+     * </p>
      * </note>
      */
     private String notificationTopicArn;
@@ -299,9 +408,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * the next maintenance reboot, or the next failure reboot, whichever occurs
      * first.
      * </p>
-     * <important>If you perform a <code>ModifyCacheCluster</code> before a
-     * pending modification is applied, the pending modification is replaced by
-     * the newer modification.</important>
+     * <important>
+     * <p>
+     * If you perform a <code>ModifyCacheCluster</code> before a pending
+     * modification is applied, the pending modification is replaced by the
+     * newer modification.
+     * </p>
+     * </important>
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
@@ -337,11 +450,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
      * will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Important</b><br/>
      * If the value of SnapshotRetentionLimit is set to zero (0), backups are
      * turned off.
      * </p>
+     * </note>
      */
     private Integer snapshotRetentionLimit;
     /**
@@ -445,10 +559,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * For clusters running Redis, this value must be 1. For clusters running
      * Memcached, this value must be between 1 and 20.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b><br/>
      * Adding or removing Memcached cache nodes can be applied immediately or as
-     * a pending action. See <code>ApplyImmediately</code>.<br/>
+     * a pending action. See <code>ApplyImmediately</code>.
+     * </p>
+     * <p>
      * A pending action to modify the number of cache nodes in a cluster during
      * its maintenance window, whether by adding or removing nodes in accordance
      * with the scale out architecture, is not queued. The customer's latest
@@ -467,6 +583,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <i>NumCacheNodes</i> equal to the number of cache nodes currently in the
      * cache cluster.
      * </p>
+     * </note>
      * 
      * @param numCacheNodes
      *        The number of cache nodes that the cache cluster should have. If
@@ -486,11 +603,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        For clusters running Redis, this value must be 1. For clusters
      *        running Memcached, this value must be between 1 and 20.
      *        </p>
+     *        <note>
      *        <p>
-     *        <b>Note:</b><br/>
      *        Adding or removing Memcached cache nodes can be applied
      *        immediately or as a pending action. See
-     *        <code>ApplyImmediately</code>.<br/>
+     *        <code>ApplyImmediately</code>.
+     *        </p>
+     *        <p>
      *        A pending action to modify the number of cache nodes in a cluster
      *        during its maintenance window, whether by adding or removing nodes
      *        in accordance with the scale out architecture, is not queued. The
@@ -509,6 +628,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        nodes in a cluster, use the <code>ModifyCacheCluster</code>
      *        request and set <i>NumCacheNodes</i> equal to the number of cache
      *        nodes currently in the cache cluster.
+     *        </p>
      */
 
     public void setNumCacheNodes(Integer numCacheNodes) {
@@ -534,10 +654,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * For clusters running Redis, this value must be 1. For clusters running
      * Memcached, this value must be between 1 and 20.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b><br/>
      * Adding or removing Memcached cache nodes can be applied immediately or as
-     * a pending action. See <code>ApplyImmediately</code>.<br/>
+     * a pending action. See <code>ApplyImmediately</code>.
+     * </p>
+     * <p>
      * A pending action to modify the number of cache nodes in a cluster during
      * its maintenance window, whether by adding or removing nodes in accordance
      * with the scale out architecture, is not queued. The customer's latest
@@ -556,6 +678,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <i>NumCacheNodes</i> equal to the number of cache nodes currently in the
      * cache cluster.
      * </p>
+     * </note>
      * 
      * @return The number of cache nodes that the cache cluster should have. If
      *         the value for <code>NumCacheNodes</code> is greater than the sum
@@ -574,11 +697,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *         For clusters running Redis, this value must be 1. For clusters
      *         running Memcached, this value must be between 1 and 20.
      *         </p>
+     *         <note>
      *         <p>
-     *         <b>Note:</b><br/>
      *         Adding or removing Memcached cache nodes can be applied
      *         immediately or as a pending action. See
-     *         <code>ApplyImmediately</code>.<br/>
+     *         <code>ApplyImmediately</code>.
+     *         </p>
+     *         <p>
      *         A pending action to modify the number of cache nodes in a cluster
      *         during its maintenance window, whether by adding or removing
      *         nodes in accordance with the scale out architecture, is not
@@ -598,6 +723,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *         <code>ModifyCacheCluster</code> request and set
      *         <i>NumCacheNodes</i> equal to the number of cache nodes currently
      *         in the cache cluster.
+     *         </p>
      */
 
     public Integer getNumCacheNodes() {
@@ -623,10 +749,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * For clusters running Redis, this value must be 1. For clusters running
      * Memcached, this value must be between 1 and 20.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b><br/>
      * Adding or removing Memcached cache nodes can be applied immediately or as
-     * a pending action. See <code>ApplyImmediately</code>.<br/>
+     * a pending action. See <code>ApplyImmediately</code>.
+     * </p>
+     * <p>
      * A pending action to modify the number of cache nodes in a cluster during
      * its maintenance window, whether by adding or removing nodes in accordance
      * with the scale out architecture, is not queued. The customer's latest
@@ -645,6 +773,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <i>NumCacheNodes</i> equal to the number of cache nodes currently in the
      * cache cluster.
      * </p>
+     * </note>
      * 
      * @param numCacheNodes
      *        The number of cache nodes that the cache cluster should have. If
@@ -664,11 +793,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        For clusters running Redis, this value must be 1. For clusters
      *        running Memcached, this value must be between 1 and 20.
      *        </p>
+     *        <note>
      *        <p>
-     *        <b>Note:</b><br/>
      *        Adding or removing Memcached cache nodes can be applied
      *        immediately or as a pending action. See
-     *        <code>ApplyImmediately</code>.<br/>
+     *        <code>ApplyImmediately</code>.
+     *        </p>
+     *        <p>
      *        A pending action to modify the number of cache nodes in a cluster
      *        during its maintenance window, whether by adding or removing nodes
      *        in accordance with the scale out architecture, is not queued. The
@@ -687,6 +818,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        nodes in a cluster, use the <code>ModifyCacheCluster</code>
      *        request and set <i>NumCacheNodes</i> equal to the number of cache
      *        nodes currently in the cache cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1193,18 +1325,30 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Scenarios:
-     * <ul>
-     * <li><b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.<br/>
-     * Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two
-     * Availability Zones for the two new nodes.</li>
-     * <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
-     * creation (from the scenario 1 call) and want to add 1 more node.<br/>
-     * Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and optionally
-     * specify an Availability Zone for the new node.
-     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     * Specify <code>NumCacheNodes=3</code> to cancel all pending actions.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.
+     * Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two
+     * Availability Zones for the two new nodes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation
+     * (from the scenario 1 call) and want to add 1 more node. Specify
+     * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
+     * Availability Zone for the new node.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Scenario 3:</b> You want to cancel all pending actions. Specify
+     * <code>NumCacheNodes=3</code> to cancel all pending actions.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The Availability Zone placement of nodes pending creation cannot be
      * modified. If you wish to cancel any nodes pending creation, add 0 nodes
@@ -1223,46 +1367,109 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <b>Impact of new add/remove requests upon pending requests</b>
      * </p>
      * <ul>
-     * <li>Scenario-1
+     * <li>
+     * <p>
+     * Scenario-1
+     * </p>
      * <ul>
-     * <li>Pending Action: Delete</li>
-     * <li>New Request: Delete</li>
-     * <li>Result: The new delete, pending or immediate, replaces the pending
-     * delete.</li>
+     * <li>
+     * <p>
+     * Pending Action: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new delete, pending or immediate, replaces the pending
+     * delete.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-2
+     * <li>
+     * <p>
+     * Scenario-2
+     * </p>
      * <ul>
-     * <li>Pending Action: Delete</li>
-     * <li>New Request: Create</li>
-     * <li>Result: The new create, pending or immediate, replaces the pending
-     * delete.</li>
+     * <li>
+     * <p>
+     * Pending Action: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new create, pending or immediate, replaces the pending
+     * delete.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-3
+     * <li>
+     * <p>
+     * Scenario-3
+     * </p>
      * <ul>
-     * <li>Pending Action: Create</li>
-     * <li>New Request: Delete</li>
-     * <li>Result: The new delete, pending or immediate, replaces the pending
-     * create.</li>
+     * <li>
+     * <p>
+     * Pending Action: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new delete, pending or immediate, replaces the pending
+     * create.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-4
+     * <li>
+     * <p>
+     * Scenario-4
+     * </p>
      * <ul>
-     * <li>Pending Action: Create</li>
-     * <li>New Request: Create</li>
-     * <li>Result: The new create is added to the pending create.
-     * <b>Important:</b><br/>
-     * If the new create request is <b>Apply Immediately - Yes</b>, all creates
-     * are performed immediately.<br/>
-     * If the new create request is <b>Apply Immediately - No</b>, all creates
-     * are pending.</li>
+     * <li>
+     * <p>
+     * Pending Action: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new create is added to the pending create.
+     * </p>
+     * <important>
+     * <p>
+     * <b>Important:</b> If the new create request is <b>Apply Immediately -
+     * Yes</b>, all creates are performed immediately. If the new create request
+     * is <b>Apply Immediately - No</b>, all creates are pending.
+     * </p>
+     * </important></li>
      * </ul>
      * </li>
      * </ul>
      * <p>
      * Example:
-     * <code><![CDATA[NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c]]></code>
+     * </p>
+     * <p>
+     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * 
      * @return The list of Availability Zones where the new Memcached cache
@@ -1279,21 +1486,31 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *         </p>
      *         <p>
      *         Scenarios:
-     *         <ul>
-     *         <li><b>Scenario 1:</b> You have 3 active nodes and wish to add 2
-     *         nodes.<br/>
-     *         Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     *         specify two Availability Zones for the two new nodes.</li>
-     *         <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
-     *         pending creation (from the scenario 1 call) and want to add 1
-     *         more node.<br/>
-     *         Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     *         optionally specify an Availability Zone for the new node.
-     *         <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     *         Specify <code>NumCacheNodes=3</code> to cancel all pending
-     *         actions.</li>
-     *         </ul>
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Scenario 1:</b> You have 3 active nodes and wish to add 2
+     *         nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and
+     *         optionally specify two Availability Zones for the two new nodes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     *         creation (from the scenario 1 call) and want to add 1 more node.
+     *         Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally
+     *         specify an Availability Zone for the new node.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Scenario 3:</b> You want to cancel all pending actions.
+     *         Specify <code>NumCacheNodes=3</code> to cancel all pending
+     *         actions.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         The Availability Zone placement of nodes pending creation cannot
      *         be modified. If you wish to cancel any nodes pending creation,
@@ -1314,46 +1531,110 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *         <b>Impact of new add/remove requests upon pending requests</b>
      *         </p>
      *         <ul>
-     *         <li>Scenario-1
+     *         <li>
+     *         <p>
+     *         Scenario-1
+     *         </p>
      *         <ul>
-     *         <li>Pending Action: Delete</li>
-     *         <li>New Request: Delete</li>
-     *         <li>Result: The new delete, pending or immediate, replaces the
-     *         pending delete.</li>
+     *         <li>
+     *         <p>
+     *         Pending Action: Delete
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         New Request: Delete
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Result: The new delete, pending or immediate, replaces the
+     *         pending delete.
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
-     *         <li>Scenario-2
+     *         <li>
+     *         <p>
+     *         Scenario-2
+     *         </p>
      *         <ul>
-     *         <li>Pending Action: Delete</li>
-     *         <li>New Request: Create</li>
-     *         <li>Result: The new create, pending or immediate, replaces the
-     *         pending delete.</li>
+     *         <li>
+     *         <p>
+     *         Pending Action: Delete
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         New Request: Create
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Result: The new create, pending or immediate, replaces the
+     *         pending delete.
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
-     *         <li>Scenario-3
+     *         <li>
+     *         <p>
+     *         Scenario-3
+     *         </p>
      *         <ul>
-     *         <li>Pending Action: Create</li>
-     *         <li>New Request: Delete</li>
-     *         <li>Result: The new delete, pending or immediate, replaces the
-     *         pending create.</li>
+     *         <li>
+     *         <p>
+     *         Pending Action: Create
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         New Request: Delete
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Result: The new delete, pending or immediate, replaces the
+     *         pending create.
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
-     *         <li>Scenario-4
+     *         <li>
+     *         <p>
+     *         Scenario-4
+     *         </p>
      *         <ul>
-     *         <li>Pending Action: Create</li>
-     *         <li>New Request: Create</li>
-     *         <li>Result: The new create is added to the pending create.
-     *         <b>Important:</b><br/>
-     *         If the new create request is <b>Apply Immediately - Yes</b>, all
-     *         creates are performed immediately.<br/>
-     *         If the new create request is <b>Apply Immediately - No</b>, all
-     *         creates are pending.</li>
+     *         <li>
+     *         <p>
+     *         Pending Action: Create
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         New Request: Create
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Result: The new create is added to the pending create.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         <b>Important:</b> If the new create request is <b>Apply
+     *         Immediately - Yes</b>, all creates are performed immediately. If
+     *         the new create request is <b>Apply Immediately - No</b>, all
+     *         creates are pending.
+     *         </p>
+     *         </important></li>
      *         </ul>
      *         </li>
      *         </ul>
      *         <p>
      *         Example:
-     *         <code><![CDATA[NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c]]></code>
+     *         </p>
+     *         <p>
+     *         <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      */
 
     public java.util.List<String> getNewAvailabilityZones() {
@@ -1380,18 +1661,30 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Scenarios:
-     * <ul>
-     * <li><b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.<br/>
-     * Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two
-     * Availability Zones for the two new nodes.</li>
-     * <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
-     * creation (from the scenario 1 call) and want to add 1 more node.<br/>
-     * Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and optionally
-     * specify an Availability Zone for the new node.
-     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     * Specify <code>NumCacheNodes=3</code> to cancel all pending actions.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.
+     * Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two
+     * Availability Zones for the two new nodes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation
+     * (from the scenario 1 call) and want to add 1 more node. Specify
+     * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
+     * Availability Zone for the new node.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Scenario 3:</b> You want to cancel all pending actions. Specify
+     * <code>NumCacheNodes=3</code> to cancel all pending actions.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The Availability Zone placement of nodes pending creation cannot be
      * modified. If you wish to cancel any nodes pending creation, add 0 nodes
@@ -1410,46 +1703,109 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <b>Impact of new add/remove requests upon pending requests</b>
      * </p>
      * <ul>
-     * <li>Scenario-1
+     * <li>
+     * <p>
+     * Scenario-1
+     * </p>
      * <ul>
-     * <li>Pending Action: Delete</li>
-     * <li>New Request: Delete</li>
-     * <li>Result: The new delete, pending or immediate, replaces the pending
-     * delete.</li>
+     * <li>
+     * <p>
+     * Pending Action: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new delete, pending or immediate, replaces the pending
+     * delete.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-2
+     * <li>
+     * <p>
+     * Scenario-2
+     * </p>
      * <ul>
-     * <li>Pending Action: Delete</li>
-     * <li>New Request: Create</li>
-     * <li>Result: The new create, pending or immediate, replaces the pending
-     * delete.</li>
+     * <li>
+     * <p>
+     * Pending Action: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new create, pending or immediate, replaces the pending
+     * delete.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-3
+     * <li>
+     * <p>
+     * Scenario-3
+     * </p>
      * <ul>
-     * <li>Pending Action: Create</li>
-     * <li>New Request: Delete</li>
-     * <li>Result: The new delete, pending or immediate, replaces the pending
-     * create.</li>
+     * <li>
+     * <p>
+     * Pending Action: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new delete, pending or immediate, replaces the pending
+     * create.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-4
+     * <li>
+     * <p>
+     * Scenario-4
+     * </p>
      * <ul>
-     * <li>Pending Action: Create</li>
-     * <li>New Request: Create</li>
-     * <li>Result: The new create is added to the pending create.
-     * <b>Important:</b><br/>
-     * If the new create request is <b>Apply Immediately - Yes</b>, all creates
-     * are performed immediately.<br/>
-     * If the new create request is <b>Apply Immediately - No</b>, all creates
-     * are pending.</li>
+     * <li>
+     * <p>
+     * Pending Action: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new create is added to the pending create.
+     * </p>
+     * <important>
+     * <p>
+     * <b>Important:</b> If the new create request is <b>Apply Immediately -
+     * Yes</b>, all creates are performed immediately. If the new create request
+     * is <b>Apply Immediately - No</b>, all creates are pending.
+     * </p>
+     * </important></li>
      * </ul>
      * </li>
      * </ul>
      * <p>
      * Example:
-     * <code><![CDATA[NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c]]></code>
+     * </p>
+     * <p>
+     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * 
      * @param newAvailabilityZones
@@ -1467,20 +1823,30 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Scenarios:
-     *        <ul>
-     *        <li><b>Scenario 1:</b> You have 3 active nodes and wish to add 2
-     *        nodes.<br/>
-     *        Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     *        specify two Availability Zones for the two new nodes.</li>
-     *        <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
-     *        creation (from the scenario 1 call) and want to add 1 more node.<br/>
-     *        Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     *        optionally specify an Availability Zone for the new node.
-     *        <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     *        Specify <code>NumCacheNodes=3</code> to cancel all pending
-     *        actions.</li>
-     *        </ul>
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Scenario 1:</b> You have 3 active nodes and wish to add 2
+     *        nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
+     *        specify two Availability Zones for the two new nodes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     *        creation (from the scenario 1 call) and want to add 1 more node.
+     *        Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally
+     *        specify an Availability Zone for the new node.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Scenario 3:</b> You want to cancel all pending actions. Specify
+     *        <code>NumCacheNodes=3</code> to cancel all pending actions.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The Availability Zone placement of nodes pending creation cannot
      *        be modified. If you wish to cancel any nodes pending creation, add
@@ -1501,46 +1867,110 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        <b>Impact of new add/remove requests upon pending requests</b>
      *        </p>
      *        <ul>
-     *        <li>Scenario-1
+     *        <li>
+     *        <p>
+     *        Scenario-1
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Delete</li>
-     *        <li>New Request: Delete</li>
-     *        <li>Result: The new delete, pending or immediate, replaces the
-     *        pending delete.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new delete, pending or immediate, replaces the pending
+     *        delete.
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Scenario-2
+     *        <li>
+     *        <p>
+     *        Scenario-2
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Delete</li>
-     *        <li>New Request: Create</li>
-     *        <li>Result: The new create, pending or immediate, replaces the
-     *        pending delete.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new create, pending or immediate, replaces the pending
+     *        delete.
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Scenario-3
+     *        <li>
+     *        <p>
+     *        Scenario-3
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Create</li>
-     *        <li>New Request: Delete</li>
-     *        <li>Result: The new delete, pending or immediate, replaces the
-     *        pending create.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new delete, pending or immediate, replaces the pending
+     *        create.
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Scenario-4
+     *        <li>
+     *        <p>
+     *        Scenario-4
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Create</li>
-     *        <li>New Request: Create</li>
-     *        <li>Result: The new create is added to the pending create.
-     *        <b>Important:</b><br/>
-     *        If the new create request is <b>Apply Immediately - Yes</b>, all
-     *        creates are performed immediately.<br/>
-     *        If the new create request is <b>Apply Immediately - No</b>, all
-     *        creates are pending.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new create is added to the pending create.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        <b>Important:</b> If the new create request is <b>Apply
+     *        Immediately - Yes</b>, all creates are performed immediately. If
+     *        the new create request is <b>Apply Immediately - No</b>, all
+     *        creates are pending.
+     *        </p>
+     *        </important></li>
      *        </ul>
      *        </li>
      *        </ul>
      *        <p>
      *        Example:
-     *        <code><![CDATA[NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c]]></code>
+     *        </p>
+     *        <p>
+     *        <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      */
 
     public void setNewAvailabilityZones(
@@ -1571,18 +2001,30 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Scenarios:
-     * <ul>
-     * <li><b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.<br/>
-     * Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two
-     * Availability Zones for the two new nodes.</li>
-     * <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
-     * creation (from the scenario 1 call) and want to add 1 more node.<br/>
-     * Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and optionally
-     * specify an Availability Zone for the new node.
-     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     * Specify <code>NumCacheNodes=3</code> to cancel all pending actions.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.
+     * Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two
+     * Availability Zones for the two new nodes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation
+     * (from the scenario 1 call) and want to add 1 more node. Specify
+     * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
+     * Availability Zone for the new node.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Scenario 3:</b> You want to cancel all pending actions. Specify
+     * <code>NumCacheNodes=3</code> to cancel all pending actions.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The Availability Zone placement of nodes pending creation cannot be
      * modified. If you wish to cancel any nodes pending creation, add 0 nodes
@@ -1601,46 +2043,109 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <b>Impact of new add/remove requests upon pending requests</b>
      * </p>
      * <ul>
-     * <li>Scenario-1
+     * <li>
+     * <p>
+     * Scenario-1
+     * </p>
      * <ul>
-     * <li>Pending Action: Delete</li>
-     * <li>New Request: Delete</li>
-     * <li>Result: The new delete, pending or immediate, replaces the pending
-     * delete.</li>
+     * <li>
+     * <p>
+     * Pending Action: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new delete, pending or immediate, replaces the pending
+     * delete.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-2
+     * <li>
+     * <p>
+     * Scenario-2
+     * </p>
      * <ul>
-     * <li>Pending Action: Delete</li>
-     * <li>New Request: Create</li>
-     * <li>Result: The new create, pending or immediate, replaces the pending
-     * delete.</li>
+     * <li>
+     * <p>
+     * Pending Action: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new create, pending or immediate, replaces the pending
+     * delete.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-3
+     * <li>
+     * <p>
+     * Scenario-3
+     * </p>
      * <ul>
-     * <li>Pending Action: Create</li>
-     * <li>New Request: Delete</li>
-     * <li>Result: The new delete, pending or immediate, replaces the pending
-     * create.</li>
+     * <li>
+     * <p>
+     * Pending Action: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new delete, pending or immediate, replaces the pending
+     * create.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-4
+     * <li>
+     * <p>
+     * Scenario-4
+     * </p>
      * <ul>
-     * <li>Pending Action: Create</li>
-     * <li>New Request: Create</li>
-     * <li>Result: The new create is added to the pending create.
-     * <b>Important:</b><br/>
-     * If the new create request is <b>Apply Immediately - Yes</b>, all creates
-     * are performed immediately.<br/>
-     * If the new create request is <b>Apply Immediately - No</b>, all creates
-     * are pending.</li>
+     * <li>
+     * <p>
+     * Pending Action: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new create is added to the pending create.
+     * </p>
+     * <important>
+     * <p>
+     * <b>Important:</b> If the new create request is <b>Apply Immediately -
+     * Yes</b>, all creates are performed immediately. If the new create request
+     * is <b>Apply Immediately - No</b>, all creates are pending.
+     * </p>
+     * </important></li>
      * </ul>
      * </li>
      * </ul>
      * <p>
      * Example:
-     * <code><![CDATA[NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c]]></code>
+     * </p>
+     * <p>
+     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1664,20 +2169,30 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Scenarios:
-     *        <ul>
-     *        <li><b>Scenario 1:</b> You have 3 active nodes and wish to add 2
-     *        nodes.<br/>
-     *        Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     *        specify two Availability Zones for the two new nodes.</li>
-     *        <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
-     *        creation (from the scenario 1 call) and want to add 1 more node.<br/>
-     *        Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     *        optionally specify an Availability Zone for the new node.
-     *        <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     *        Specify <code>NumCacheNodes=3</code> to cancel all pending
-     *        actions.</li>
-     *        </ul>
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Scenario 1:</b> You have 3 active nodes and wish to add 2
+     *        nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
+     *        specify two Availability Zones for the two new nodes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     *        creation (from the scenario 1 call) and want to add 1 more node.
+     *        Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally
+     *        specify an Availability Zone for the new node.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Scenario 3:</b> You want to cancel all pending actions. Specify
+     *        <code>NumCacheNodes=3</code> to cancel all pending actions.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The Availability Zone placement of nodes pending creation cannot
      *        be modified. If you wish to cancel any nodes pending creation, add
@@ -1698,46 +2213,110 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        <b>Impact of new add/remove requests upon pending requests</b>
      *        </p>
      *        <ul>
-     *        <li>Scenario-1
+     *        <li>
+     *        <p>
+     *        Scenario-1
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Delete</li>
-     *        <li>New Request: Delete</li>
-     *        <li>Result: The new delete, pending or immediate, replaces the
-     *        pending delete.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new delete, pending or immediate, replaces the pending
+     *        delete.
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Scenario-2
+     *        <li>
+     *        <p>
+     *        Scenario-2
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Delete</li>
-     *        <li>New Request: Create</li>
-     *        <li>Result: The new create, pending or immediate, replaces the
-     *        pending delete.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new create, pending or immediate, replaces the pending
+     *        delete.
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Scenario-3
+     *        <li>
+     *        <p>
+     *        Scenario-3
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Create</li>
-     *        <li>New Request: Delete</li>
-     *        <li>Result: The new delete, pending or immediate, replaces the
-     *        pending create.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new delete, pending or immediate, replaces the pending
+     *        create.
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Scenario-4
+     *        <li>
+     *        <p>
+     *        Scenario-4
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Create</li>
-     *        <li>New Request: Create</li>
-     *        <li>Result: The new create is added to the pending create.
-     *        <b>Important:</b><br/>
-     *        If the new create request is <b>Apply Immediately - Yes</b>, all
-     *        creates are performed immediately.<br/>
-     *        If the new create request is <b>Apply Immediately - No</b>, all
-     *        creates are pending.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new create is added to the pending create.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        <b>Important:</b> If the new create request is <b>Apply
+     *        Immediately - Yes</b>, all creates are performed immediately. If
+     *        the new create request is <b>Apply Immediately - No</b>, all
+     *        creates are pending.
+     *        </p>
+     *        </important></li>
      *        </ul>
      *        </li>
      *        </ul>
      *        <p>
      *        Example:
-     *        <code><![CDATA[NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c]]></code>
+     *        </p>
+     *        <p>
+     *        <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1771,18 +2350,30 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Scenarios:
-     * <ul>
-     * <li><b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.<br/>
-     * Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two
-     * Availability Zones for the two new nodes.</li>
-     * <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
-     * creation (from the scenario 1 call) and want to add 1 more node.<br/>
-     * Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and optionally
-     * specify an Availability Zone for the new node.
-     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     * Specify <code>NumCacheNodes=3</code> to cancel all pending actions.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.
+     * Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two
+     * Availability Zones for the two new nodes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation
+     * (from the scenario 1 call) and want to add 1 more node. Specify
+     * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
+     * Availability Zone for the new node.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Scenario 3:</b> You want to cancel all pending actions. Specify
+     * <code>NumCacheNodes=3</code> to cancel all pending actions.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The Availability Zone placement of nodes pending creation cannot be
      * modified. If you wish to cancel any nodes pending creation, add 0 nodes
@@ -1801,46 +2392,109 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <b>Impact of new add/remove requests upon pending requests</b>
      * </p>
      * <ul>
-     * <li>Scenario-1
+     * <li>
+     * <p>
+     * Scenario-1
+     * </p>
      * <ul>
-     * <li>Pending Action: Delete</li>
-     * <li>New Request: Delete</li>
-     * <li>Result: The new delete, pending or immediate, replaces the pending
-     * delete.</li>
+     * <li>
+     * <p>
+     * Pending Action: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new delete, pending or immediate, replaces the pending
+     * delete.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-2
+     * <li>
+     * <p>
+     * Scenario-2
+     * </p>
      * <ul>
-     * <li>Pending Action: Delete</li>
-     * <li>New Request: Create</li>
-     * <li>Result: The new create, pending or immediate, replaces the pending
-     * delete.</li>
+     * <li>
+     * <p>
+     * Pending Action: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new create, pending or immediate, replaces the pending
+     * delete.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-3
+     * <li>
+     * <p>
+     * Scenario-3
+     * </p>
      * <ul>
-     * <li>Pending Action: Create</li>
-     * <li>New Request: Delete</li>
-     * <li>Result: The new delete, pending or immediate, replaces the pending
-     * create.</li>
+     * <li>
+     * <p>
+     * Pending Action: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Delete
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new delete, pending or immediate, replaces the pending
+     * create.
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Scenario-4
+     * <li>
+     * <p>
+     * Scenario-4
+     * </p>
      * <ul>
-     * <li>Pending Action: Create</li>
-     * <li>New Request: Create</li>
-     * <li>Result: The new create is added to the pending create.
-     * <b>Important:</b><br/>
-     * If the new create request is <b>Apply Immediately - Yes</b>, all creates
-     * are performed immediately.<br/>
-     * If the new create request is <b>Apply Immediately - No</b>, all creates
-     * are pending.</li>
+     * <li>
+     * <p>
+     * Pending Action: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New Request: Create
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Result: The new create is added to the pending create.
+     * </p>
+     * <important>
+     * <p>
+     * <b>Important:</b> If the new create request is <b>Apply Immediately -
+     * Yes</b>, all creates are performed immediately. If the new create request
+     * is <b>Apply Immediately - No</b>, all creates are pending.
+     * </p>
+     * </important></li>
      * </ul>
      * </li>
      * </ul>
      * <p>
      * Example:
-     * <code><![CDATA[NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c]]></code>
+     * </p>
+     * <p>
+     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * 
      * @param newAvailabilityZones
@@ -1858,20 +2512,30 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Scenarios:
-     *        <ul>
-     *        <li><b>Scenario 1:</b> You have 3 active nodes and wish to add 2
-     *        nodes.<br/>
-     *        Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
-     *        specify two Availability Zones for the two new nodes.</li>
-     *        <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
-     *        creation (from the scenario 1 call) and want to add 1 more node.<br/>
-     *        Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     *        optionally specify an Availability Zone for the new node.
-     *        <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     *        Specify <code>NumCacheNodes=3</code> to cancel all pending
-     *        actions.</li>
-     *        </ul>
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Scenario 1:</b> You have 3 active nodes and wish to add 2
+     *        nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally
+     *        specify two Availability Zones for the two new nodes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending
+     *        creation (from the scenario 1 call) and want to add 1 more node.
+     *        Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally
+     *        specify an Availability Zone for the new node.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Scenario 3:</b> You want to cancel all pending actions. Specify
+     *        <code>NumCacheNodes=3</code> to cancel all pending actions.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The Availability Zone placement of nodes pending creation cannot
      *        be modified. If you wish to cancel any nodes pending creation, add
@@ -1892,46 +2556,110 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        <b>Impact of new add/remove requests upon pending requests</b>
      *        </p>
      *        <ul>
-     *        <li>Scenario-1
+     *        <li>
+     *        <p>
+     *        Scenario-1
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Delete</li>
-     *        <li>New Request: Delete</li>
-     *        <li>Result: The new delete, pending or immediate, replaces the
-     *        pending delete.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new delete, pending or immediate, replaces the pending
+     *        delete.
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Scenario-2
+     *        <li>
+     *        <p>
+     *        Scenario-2
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Delete</li>
-     *        <li>New Request: Create</li>
-     *        <li>Result: The new create, pending or immediate, replaces the
-     *        pending delete.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new create, pending or immediate, replaces the pending
+     *        delete.
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Scenario-3
+     *        <li>
+     *        <p>
+     *        Scenario-3
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Create</li>
-     *        <li>New Request: Delete</li>
-     *        <li>Result: The new delete, pending or immediate, replaces the
-     *        pending create.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Delete
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new delete, pending or immediate, replaces the pending
+     *        create.
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Scenario-4
+     *        <li>
+     *        <p>
+     *        Scenario-4
+     *        </p>
      *        <ul>
-     *        <li>Pending Action: Create</li>
-     *        <li>New Request: Create</li>
-     *        <li>Result: The new create is added to the pending create.
-     *        <b>Important:</b><br/>
-     *        If the new create request is <b>Apply Immediately - Yes</b>, all
-     *        creates are performed immediately.<br/>
-     *        If the new create request is <b>Apply Immediately - No</b>, all
-     *        creates are pending.</li>
+     *        <li>
+     *        <p>
+     *        Pending Action: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        New Request: Create
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Result: The new create is added to the pending create.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        <b>Important:</b> If the new create request is <b>Apply
+     *        Immediately - Yes</b>, all creates are performed immediately. If
+     *        the new create request is <b>Apply Immediately - No</b>, all
+     *        creates are pending.
+     *        </p>
+     *        </important></li>
      *        </ul>
      *        </li>
      *        </ul>
      *        <p>
      *        Example:
-     *        <code><![CDATA[NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c]]></code>
+     *        </p>
+     *        <p>
+     *        <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1953,7 +2681,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must
-     * not be &quot;Default".
+     * not be "Default".
      * </p>
      * 
      * @return A list of cache security group names to authorize on this cache
@@ -1965,7 +2693,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *         </p>
      *         <p>
      *         Constraints: Must contain no more than 255 alphanumeric
-     *         characters. Must not be &quot;Default".
+     *         characters. Must not be "Default".
      */
 
     public java.util.List<String> getCacheSecurityGroupNames() {
@@ -1986,7 +2714,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must
-     * not be &quot;Default".
+     * not be "Default".
      * </p>
      * 
      * @param cacheSecurityGroupNames
@@ -1999,7 +2727,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters. Must not be &quot;Default".
+     *        characters. Must not be "Default".
      */
 
     public void setCacheSecurityGroupNames(
@@ -2024,7 +2752,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must
-     * not be &quot;Default".
+     * not be "Default".
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -2043,7 +2771,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters. Must not be &quot;Default".
+     *        characters. Must not be "Default".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2071,7 +2799,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must
-     * not be &quot;Default".
+     * not be "Default".
      * </p>
      * 
      * @param cacheSecurityGroupNames
@@ -2084,7 +2812,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters. Must not be &quot;Default".
+     *        characters. Must not be "Default".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2216,13 +2944,41 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -2235,13 +2991,41 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        maintenance window is a 60 minute period. Valid values for
      *        <code>ddd</code> are:</p>
      *        <ul>
-     *        <li><code>sun</code></li>
-     *        <li><code>mon</code></li>
-     *        <li><code>tue</code></li>
-     *        <li><code>wed</code></li>
-     *        <li><code>thu</code></li>
-     *        <li><code>fri</code></li>
-     *        <li><code>sat</code></li>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>sun:05:00-sun:09:00</code>
@@ -2259,13 +3043,41 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -2277,13 +3089,41 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *         maintenance window is a 60 minute period. Valid values for
      *         <code>ddd</code> are:</p>
      *         <ul>
-     *         <li><code>sun</code></li>
-     *         <li><code>mon</code></li>
-     *         <li><code>tue</code></li>
-     *         <li><code>wed</code></li>
-     *         <li><code>thu</code></li>
-     *         <li><code>fri</code></li>
-     *         <li><code>sat</code></li>
+     *         <li>
+     *         <p>
+     *         <code>sun</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>mon</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tue</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>wed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>thu</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>fri</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sat</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>sun:05:00-sun:09:00</code>
@@ -2301,13 +3141,41 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -2320,13 +3188,41 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        maintenance window is a 60 minute period. Valid values for
      *        <code>ddd</code> are:</p>
      *        <ul>
-     *        <li><code>sun</code></li>
-     *        <li><code>mon</code></li>
-     *        <li><code>tue</code></li>
-     *        <li><code>wed</code></li>
-     *        <li><code>thu</code></li>
-     *        <li><code>fri</code></li>
-     *        <li><code>sat</code></li>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>sun:05:00-sun:09:00</code>
@@ -2345,13 +3241,19 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
      * notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be same as the cache cluster owner.
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be same as the cache cluster owner.
+     * </p>
      * </note>
      * 
      * @param notificationTopicArn
      *        The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-     *        notifications will be sent.</p> <note>The Amazon SNS topic owner
-     *        must be same as the cache cluster owner.
+     *        notifications will be sent.</p> <note>
+     *        <p>
+     *        The Amazon SNS topic owner must be same as the cache cluster
+     *        owner.
+     *        </p>
      */
 
     public void setNotificationTopicArn(String notificationTopicArn) {
@@ -2363,12 +3265,18 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
      * notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be same as the cache cluster owner.
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be same as the cache cluster owner.
+     * </p>
      * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-     *         notifications will be sent.</p> <note>The Amazon SNS topic owner
-     *         must be same as the cache cluster owner.
+     *         notifications will be sent.</p> <note>
+     *         <p>
+     *         The Amazon SNS topic owner must be same as the cache cluster
+     *         owner.
+     *         </p>
      */
 
     public String getNotificationTopicArn() {
@@ -2380,13 +3288,19 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
      * notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be same as the cache cluster owner.
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be same as the cache cluster owner.
+     * </p>
      * </note>
      * 
      * @param notificationTopicArn
      *        The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-     *        notifications will be sent.</p> <note>The Amazon SNS topic owner
-     *        must be same as the cache cluster owner.
+     *        notifications will be sent.</p> <note>
+     *        <p>
+     *        The Amazon SNS topic owner must be same as the cache cluster
+     *        owner.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2532,9 +3446,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * the next maintenance reboot, or the next failure reboot, whichever occurs
      * first.
      * </p>
-     * <important>If you perform a <code>ModifyCacheCluster</code> before a
-     * pending modification is applied, the pending modification is replaced by
-     * the newer modification.</important>
+     * <important>
+     * <p>
+     * If you perform a <code>ModifyCacheCluster</code> before a pending
+     * modification is applied, the pending modification is replaced by the
+     * newer modification.
+     * </p>
+     * </important>
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
@@ -2553,9 +3471,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        applied on the next maintenance reboot, or the next failure
      *        reboot, whichever occurs first.
      *        </p>
-     *        <important>If you perform a <code>ModifyCacheCluster</code> before
-     *        a pending modification is applied, the pending modification is
-     *        replaced by the newer modification.</important>
+     *        <important>
+     *        <p>
+     *        If you perform a <code>ModifyCacheCluster</code> before a pending
+     *        modification is applied, the pending modification is replaced by
+     *        the newer modification.
+     *        </p>
+     *        </important>
      *        <p>
      *        Valid values: <code>true</code> | <code>false</code>
      *        </p>
@@ -2579,9 +3501,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * the next maintenance reboot, or the next failure reboot, whichever occurs
      * first.
      * </p>
-     * <important>If you perform a <code>ModifyCacheCluster</code> before a
-     * pending modification is applied, the pending modification is replaced by
-     * the newer modification.</important>
+     * <important>
+     * <p>
+     * If you perform a <code>ModifyCacheCluster</code> before a pending
+     * modification is applied, the pending modification is replaced by the
+     * newer modification.
+     * </p>
+     * </important>
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
@@ -2599,9 +3525,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *         applied on the next maintenance reboot, or the next failure
      *         reboot, whichever occurs first.
      *         </p>
-     *         <important>If you perform a <code>ModifyCacheCluster</code>
-     *         before a pending modification is applied, the pending
-     *         modification is replaced by the newer modification.</important>
+     *         <important>
+     *         <p>
+     *         If you perform a <code>ModifyCacheCluster</code> before a pending
+     *         modification is applied, the pending modification is replaced by
+     *         the newer modification.
+     *         </p>
+     *         </important>
      *         <p>
      *         Valid values: <code>true</code> | <code>false</code>
      *         </p>
@@ -2625,9 +3555,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * the next maintenance reboot, or the next failure reboot, whichever occurs
      * first.
      * </p>
-     * <important>If you perform a <code>ModifyCacheCluster</code> before a
-     * pending modification is applied, the pending modification is replaced by
-     * the newer modification.</important>
+     * <important>
+     * <p>
+     * If you perform a <code>ModifyCacheCluster</code> before a pending
+     * modification is applied, the pending modification is replaced by the
+     * newer modification.
+     * </p>
+     * </important>
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
@@ -2646,9 +3580,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *        applied on the next maintenance reboot, or the next failure
      *        reboot, whichever occurs first.
      *        </p>
-     *        <important>If you perform a <code>ModifyCacheCluster</code> before
-     *        a pending modification is applied, the pending modification is
-     *        replaced by the newer modification.</important>
+     *        <important>
+     *        <p>
+     *        If you perform a <code>ModifyCacheCluster</code> before a pending
+     *        modification is applied, the pending modification is replaced by
+     *        the newer modification.
+     *        </p>
+     *        </important>
      *        <p>
      *        Valid values: <code>true</code> | <code>false</code>
      *        </p>
@@ -2676,9 +3614,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * the next maintenance reboot, or the next failure reboot, whichever occurs
      * first.
      * </p>
-     * <important>If you perform a <code>ModifyCacheCluster</code> before a
-     * pending modification is applied, the pending modification is replaced by
-     * the newer modification.</important>
+     * <important>
+     * <p>
+     * If you perform a <code>ModifyCacheCluster</code> before a pending
+     * modification is applied, the pending modification is replaced by the
+     * newer modification.
+     * </p>
+     * </important>
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
@@ -2696,9 +3638,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      *         applied on the next maintenance reboot, or the next failure
      *         reboot, whichever occurs first.
      *         </p>
-     *         <important>If you perform a <code>ModifyCacheCluster</code>
-     *         before a pending modification is applied, the pending
-     *         modification is replaced by the newer modification.</important>
+     *         <important>
+     *         <p>
+     *         If you perform a <code>ModifyCacheCluster</code> before a pending
+     *         modification is applied, the pending modification is replaced by
+     *         the newer modification.
+     *         </p>
+     *         </important>
      *         <p>
      *         Valid values: <code>true</code> | <code>false</code>
      *         </p>
@@ -2863,21 +3809,23 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
      * will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Important</b><br/>
      * If the value of SnapshotRetentionLimit is set to zero (0), backups are
      * turned off.
      * </p>
+     * </note>
      * 
      * @param snapshotRetentionLimit
      *        The number of days for which ElastiCache will retain automatic
      *        cache cluster snapshots before deleting them. For example, if you
      *        set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was
      *        taken today will be retained for 5 days before being deleted.</p>
+     *        <note>
      *        <p>
-     *        <b>Important</b><br/>
      *        If the value of SnapshotRetentionLimit is set to zero (0), backups
      *        are turned off.
+     *        </p>
      */
 
     public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
@@ -2891,20 +3839,22 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
      * will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Important</b><br/>
      * If the value of SnapshotRetentionLimit is set to zero (0), backups are
      * turned off.
      * </p>
+     * </note>
      * 
      * @return The number of days for which ElastiCache will retain automatic
      *         cache cluster snapshots before deleting them. For example, if you
      *         set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was
      *         taken today will be retained for 5 days before being deleted.</p>
+     *         <note>
      *         <p>
-     *         <b>Important</b><br/>
      *         If the value of SnapshotRetentionLimit is set to zero (0),
      *         backups are turned off.
+     *         </p>
      */
 
     public Integer getSnapshotRetentionLimit() {
@@ -2918,21 +3868,23 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
      * will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Important</b><br/>
      * If the value of SnapshotRetentionLimit is set to zero (0), backups are
      * turned off.
      * </p>
+     * </note>
      * 
      * @param snapshotRetentionLimit
      *        The number of days for which ElastiCache will retain automatic
      *        cache cluster snapshots before deleting them. For example, if you
      *        set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was
      *        taken today will be retained for 5 days before being deleted.</p>
+     *        <note>
      *        <p>
-     *        <b>Important</b><br/>
      *        If the value of SnapshotRetentionLimit is set to zero (0), backups
      *        are turned off.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

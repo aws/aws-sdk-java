@@ -36,9 +36,21 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li>
-     * <li>The first character must be a letter.</li>
-     * <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A name cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      */
     private String replicationGroupId;
@@ -76,8 +88,16 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * ElastiCache Multi-AZ replication groups is not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      */
@@ -105,9 +125,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * clusters will be created. The order of the availability zones in the list
      * is not important.
      * </p>
-     * <note>If you are creating your replication group in an Amazon VPC
+     * <note>
+     * <p>
+     * If you are creating your replication group in an Amazon VPC
      * (recommended), you can only locate cache clusters in availability zones
      * associated with the subnets in the selected subnet group.
+     * </p>
      * <p>
      * The number of availability zones listed must equal the value of
      * <i>NumCacheClusters</i>.
@@ -118,9 +141,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Example: One Redis cache cluster in each of three availability zones.
-     * <![CDATA[PreferredAvailabilityZones.member.1=us-west-2a
-     * PreferredAvailabilityZones.member.2=us-west-2c
-     * PreferredAvailabilityZones.member.3=us-west-2c]]>
+     * </p>
+     * <p>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> preferredCacheClusterAZs;
@@ -132,25 +155,51 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -158,11 +207,22 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -194,10 +254,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to
-     * an earlier engine version. If you want to use an earlier engine version,
-     * you must delete the existing cache cluster or replication group and
-     * create it anew with the earlier engine version.
+     * >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User
+     * Guide</i>, but you cannot downgrade to an earlier engine version. If you
+     * want to use an earlier engine version, you must delete the existing cache
+     * cluster or replication group and create it anew with the earlier engine
+     * version.
      * </p>
      */
     private String engineVersion;
@@ -247,10 +308,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * The snapshot file will be used to populate the node group. The Amazon S3
      * object name in the ARN cannot contain any commas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -263,10 +326,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * group. The snapshot status changes to <code>restoring</code> while the
      * new node group is being created.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      */
     private String snapshotName;
     /**
@@ -277,13 +342,41 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -302,8 +395,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) topic to which notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be the same as the cache cluster
-     * owner.</note>
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * </p>
+     * </note>
      */
     private String notificationTopicArn;
     /**
@@ -319,10 +415,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
@@ -340,10 +438,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * If you do not specify this parameter, then ElastiCache will automatically
      * choose an appropriate time range.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      */
     private String snapshotWindow;
 
@@ -356,9 +456,21 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li>
-     * <li>The first character must be a letter.</li>
-     * <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A name cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param replicationGroupId
@@ -368,11 +480,23 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>A name must contain from 1 to 20 alphanumeric characters or
-     *        hyphens.</li>
-     *        <li>The first character must be a letter.</li>
-     *        <li>A name cannot end with a hyphen or contain two consecutive
-     *        hyphens.</li>
+     *        <li>
+     *        <p>
+     *        A name must contain from 1 to 20 alphanumeric characters or
+     *        hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The first character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A name cannot end with a hyphen or contain two consecutive
+     *        hyphens.
+     *        </p>
+     *        </li>
      */
 
     public void setReplicationGroupId(String replicationGroupId) {
@@ -388,9 +512,21 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li>
-     * <li>The first character must be a letter.</li>
-     * <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A name cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The replication group identifier. This parameter is stored as a
@@ -399,11 +535,23 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>A name must contain from 1 to 20 alphanumeric characters or
-     *         hyphens.</li>
-     *         <li>The first character must be a letter.</li>
-     *         <li>A name cannot end with a hyphen or contain two consecutive
-     *         hyphens.</li>
+     *         <li>
+     *         <p>
+     *         A name must contain from 1 to 20 alphanumeric characters or
+     *         hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The first character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A name cannot end with a hyphen or contain two consecutive
+     *         hyphens.
+     *         </p>
+     *         </li>
      */
 
     public String getReplicationGroupId() {
@@ -419,9 +567,21 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li>
-     * <li>The first character must be a letter.</li>
-     * <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A name cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param replicationGroupId
@@ -431,11 +591,23 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>A name must contain from 1 to 20 alphanumeric characters or
-     *        hyphens.</li>
-     *        <li>The first character must be a letter.</li>
-     *        <li>A name cannot end with a hyphen or contain two consecutive
-     *        hyphens.</li>
+     *        <li>
+     *        <p>
+     *        A name must contain from 1 to 20 alphanumeric characters or
+     *        hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The first character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A name cannot end with a hyphen or contain two consecutive
+     *        hyphens.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -578,8 +750,16 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * ElastiCache Multi-AZ replication groups is not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -599,8 +779,16 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        ElastiCache Multi-AZ replication groups is not supported on:
      *        </p>
      *        <ul>
-     *        <li>Redis versions earlier than 2.8.6.</li>
-     *        <li>T1 and T2 cache node types.</li>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        T1 and T2 cache node types.
+     *        </p>
+     *        </li>
      *        </ul>
      */
 
@@ -625,8 +813,16 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * ElastiCache Multi-AZ replication groups is not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -645,8 +841,16 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *         ElastiCache Multi-AZ replication groups is not supported on:
      *         </p>
      *         <ul>
-     *         <li>Redis versions earlier than 2.8.6.</li>
-     *         <li>T1 and T2 cache node types.</li>
+     *         <li>
+     *         <p>
+     *         Redis versions earlier than 2.8.6.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         T1 and T2 cache node types.
+     *         </p>
+     *         </li>
      *         </ul>
      */
 
@@ -671,8 +875,16 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * ElastiCache Multi-AZ replication groups is not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -692,8 +904,16 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        ElastiCache Multi-AZ replication groups is not supported on:
      *        </p>
      *        <ul>
-     *        <li>Redis versions earlier than 2.8.6.</li>
-     *        <li>T1 and T2 cache node types.</li>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        T1 and T2 cache node types.
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -722,8 +942,16 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * ElastiCache Multi-AZ replication groups is not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -742,8 +970,16 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *         ElastiCache Multi-AZ replication groups is not supported on:
      *         </p>
      *         <ul>
-     *         <li>Redis versions earlier than 2.8.6.</li>
-     *         <li>T1 and T2 cache node types.</li>
+     *         <li>
+     *         <p>
+     *         Redis versions earlier than 2.8.6.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         T1 and T2 cache node types.
+     *         </p>
+     *         </li>
      *         </ul>
      */
 
@@ -871,9 +1107,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * clusters will be created. The order of the availability zones in the list
      * is not important.
      * </p>
-     * <note>If you are creating your replication group in an Amazon VPC
+     * <note>
+     * <p>
+     * If you are creating your replication group in an Amazon VPC
      * (recommended), you can only locate cache clusters in availability zones
      * associated with the subnets in the selected subnet group.
+     * </p>
      * <p>
      * The number of availability zones listed must equal the value of
      * <i>NumCacheClusters</i>.
@@ -884,17 +1123,19 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Example: One Redis cache cluster in each of three availability zones.
-     * <![CDATA[PreferredAvailabilityZones.member.1=us-west-2a
-     * PreferredAvailabilityZones.member.2=us-west-2c
-     * PreferredAvailabilityZones.member.3=us-west-2c]]>
+     * </p>
+     * <p>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * 
      * @return A list of EC2 availability zones in which the replication group's
      *         cache clusters will be created. The order of the availability
-     *         zones in the list is not important.</p> <note>If you are creating
-     *         your replication group in an Amazon VPC (recommended), you can
-     *         only locate cache clusters in availability zones associated with
-     *         the subnets in the selected subnet group.
+     *         zones in the list is not important.</p> <note>
+     *         <p>
+     *         If you are creating your replication group in an Amazon VPC
+     *         (recommended), you can only locate cache clusters in availability
+     *         zones associated with the subnets in the selected subnet group.
+     *         </p>
      *         <p>
      *         The number of availability zones listed must equal the value of
      *         <i>NumCacheClusters</i>.
@@ -905,9 +1146,10 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *         </p>
      *         <p>
      *         Example: One Redis cache cluster in each of three availability
-     *         zones. <![CDATA[PreferredAvailabilityZones.member.1=us-west-2a
-     *         PreferredAvailabilityZones.member.2=us-west-2c
-     *         PreferredAvailabilityZones.member.3=us-west-2c]]>
+     *         zones.
+     *         </p>
+     *         <p>
+     *         <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
      */
 
     public java.util.List<String> getPreferredCacheClusterAZs() {
@@ -923,9 +1165,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * clusters will be created. The order of the availability zones in the list
      * is not important.
      * </p>
-     * <note>If you are creating your replication group in an Amazon VPC
+     * <note>
+     * <p>
+     * If you are creating your replication group in an Amazon VPC
      * (recommended), you can only locate cache clusters in availability zones
      * associated with the subnets in the selected subnet group.
+     * </p>
      * <p>
      * The number of availability zones listed must equal the value of
      * <i>NumCacheClusters</i>.
@@ -936,18 +1181,20 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Example: One Redis cache cluster in each of three availability zones.
-     * <![CDATA[PreferredAvailabilityZones.member.1=us-west-2a
-     * PreferredAvailabilityZones.member.2=us-west-2c
-     * PreferredAvailabilityZones.member.3=us-west-2c]]>
+     * </p>
+     * <p>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * 
      * @param preferredCacheClusterAZs
      *        A list of EC2 availability zones in which the replication group's
      *        cache clusters will be created. The order of the availability
-     *        zones in the list is not important.</p> <note>If you are creating
-     *        your replication group in an Amazon VPC (recommended), you can
-     *        only locate cache clusters in availability zones associated with
-     *        the subnets in the selected subnet group.
+     *        zones in the list is not important.</p> <note>
+     *        <p>
+     *        If you are creating your replication group in an Amazon VPC
+     *        (recommended), you can only locate cache clusters in availability
+     *        zones associated with the subnets in the selected subnet group.
+     *        </p>
      *        <p>
      *        The number of availability zones listed must equal the value of
      *        <i>NumCacheClusters</i>.
@@ -958,9 +1205,10 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Example: One Redis cache cluster in each of three availability
-     *        zones. <![CDATA[PreferredAvailabilityZones.member.1=us-west-2a
-     *        PreferredAvailabilityZones.member.2=us-west-2c
-     *        PreferredAvailabilityZones.member.3=us-west-2c]]>
+     *        zones.
+     *        </p>
+     *        <p>
+     *        <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
      */
 
     public void setPreferredCacheClusterAZs(
@@ -980,9 +1228,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * clusters will be created. The order of the availability zones in the list
      * is not important.
      * </p>
-     * <note>If you are creating your replication group in an Amazon VPC
+     * <note>
+     * <p>
+     * If you are creating your replication group in an Amazon VPC
      * (recommended), you can only locate cache clusters in availability zones
      * associated with the subnets in the selected subnet group.
+     * </p>
      * <p>
      * The number of availability zones listed must equal the value of
      * <i>NumCacheClusters</i>.
@@ -993,9 +1244,9 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Example: One Redis cache cluster in each of three availability zones.
-     * <![CDATA[PreferredAvailabilityZones.member.1=us-west-2a
-     * PreferredAvailabilityZones.member.2=us-west-2c
-     * PreferredAvailabilityZones.member.3=us-west-2c]]>
+     * </p>
+     * <p>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1007,10 +1258,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * @param preferredCacheClusterAZs
      *        A list of EC2 availability zones in which the replication group's
      *        cache clusters will be created. The order of the availability
-     *        zones in the list is not important.</p> <note>If you are creating
-     *        your replication group in an Amazon VPC (recommended), you can
-     *        only locate cache clusters in availability zones associated with
-     *        the subnets in the selected subnet group.
+     *        zones in the list is not important.</p> <note>
+     *        <p>
+     *        If you are creating your replication group in an Amazon VPC
+     *        (recommended), you can only locate cache clusters in availability
+     *        zones associated with the subnets in the selected subnet group.
+     *        </p>
      *        <p>
      *        The number of availability zones listed must equal the value of
      *        <i>NumCacheClusters</i>.
@@ -1021,9 +1274,10 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Example: One Redis cache cluster in each of three availability
-     *        zones. <![CDATA[PreferredAvailabilityZones.member.1=us-west-2a
-     *        PreferredAvailabilityZones.member.2=us-west-2c
-     *        PreferredAvailabilityZones.member.3=us-west-2c]]>
+     *        zones.
+     *        </p>
+     *        <p>
+     *        <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1046,9 +1300,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * clusters will be created. The order of the availability zones in the list
      * is not important.
      * </p>
-     * <note>If you are creating your replication group in an Amazon VPC
+     * <note>
+     * <p>
+     * If you are creating your replication group in an Amazon VPC
      * (recommended), you can only locate cache clusters in availability zones
      * associated with the subnets in the selected subnet group.
+     * </p>
      * <p>
      * The number of availability zones listed must equal the value of
      * <i>NumCacheClusters</i>.
@@ -1059,18 +1316,20 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Example: One Redis cache cluster in each of three availability zones.
-     * <![CDATA[PreferredAvailabilityZones.member.1=us-west-2a
-     * PreferredAvailabilityZones.member.2=us-west-2c
-     * PreferredAvailabilityZones.member.3=us-west-2c]]>
+     * </p>
+     * <p>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * 
      * @param preferredCacheClusterAZs
      *        A list of EC2 availability zones in which the replication group's
      *        cache clusters will be created. The order of the availability
-     *        zones in the list is not important.</p> <note>If you are creating
-     *        your replication group in an Amazon VPC (recommended), you can
-     *        only locate cache clusters in availability zones associated with
-     *        the subnets in the selected subnet group.
+     *        zones in the list is not important.</p> <note>
+     *        <p>
+     *        If you are creating your replication group in an Amazon VPC
+     *        (recommended), you can only locate cache clusters in availability
+     *        zones associated with the subnets in the selected subnet group.
+     *        </p>
      *        <p>
      *        The number of availability zones listed must equal the value of
      *        <i>NumCacheClusters</i>.
@@ -1081,9 +1340,10 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Example: One Redis cache cluster in each of three availability
-     *        zones. <![CDATA[PreferredAvailabilityZones.member.1=us-west-2a
-     *        PreferredAvailabilityZones.member.2=us-west-2c
-     *        PreferredAvailabilityZones.member.3=us-west-2c]]>
+     *        zones.
+     *        </p>
+     *        <p>
+     *        <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1102,25 +1362,51 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -1128,11 +1414,22 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -1151,25 +1448,51 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        Valid node types are as follows:
      *        </p>
      *        <ul>
-     *        <li>General purpose:
+     *        <li>
+     *        <p>
+     *        General purpose:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.t2.micro</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.t2.micro</code>,
      *        <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *        <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *        <li>Previous generation: <code>cache.t1.micro</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.t1.micro</code>,
      *        <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *        <li>Memory optimized
+     *        <li>
+     *        <p>
+     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Memory optimized:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.r3.large</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.r3.large</code>,
      *        <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *        <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.m2.xlarge</code>,
+     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        </ul>
@@ -1177,11 +1500,23 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        <b>Notes:</b>
      *        </p>
      *        <ul>
-     *        <li>All t2 instances are created in an Amazon Virtual Private
-     *        Cloud (VPC).</li>
-     *        <li>Redis backup/restore is not supported for t2 instances.</li>
-     *        <li>Redis Append-only files (AOF) functionality is not supported
-     *        for t1 or t2 instances.</li>
+     *        <li>
+     *        <p>
+     *        All t2 instances are created in an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis backup/restore is not supported for t2 instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis Append-only files (AOF) functionality is not supported for
+     *        t1 or t2 instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For a complete listing of cache node types and specifications, see
@@ -1205,25 +1540,51 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -1231,11 +1592,22 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -1253,25 +1625,51 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *         Valid node types are as follows:
      *         </p>
      *         <ul>
-     *         <li>General purpose:
+     *         <li>
+     *         <p>
+     *         General purpose:
+     *         </p>
      *         <ul>
-     *         <li>Current generation: <code>cache.t2.micro</code>,
+     *         <li>
+     *         <p>
+     *         Current generation: <code>cache.t2.micro</code>,
      *         <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *         <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *         <li>Previous generation: <code>cache.t1.micro</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Previous generation: <code>cache.t1.micro</code>,
      *         <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
-     *         <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *         <li>Memory optimized
+     *         <li>
+     *         <p>
+     *         Compute optimized: <code>cache.c1.xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Memory optimized:
+     *         </p>
      *         <ul>
-     *         <li>Current generation: <code>cache.r3.large</code>,
+     *         <li>
+     *         <p>
+     *         Current generation: <code>cache.r3.large</code>,
      *         <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *         <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Previous generation: <code>cache.m2.xlarge</code>,
+     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
      *         </ul>
@@ -1279,11 +1677,23 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *         <b>Notes:</b>
      *         </p>
      *         <ul>
-     *         <li>All t2 instances are created in an Amazon Virtual Private
-     *         Cloud (VPC).</li>
-     *         <li>Redis backup/restore is not supported for t2 instances.</li>
-     *         <li>Redis Append-only files (AOF) functionality is not supported
-     *         for t1 or t2 instances.</li>
+     *         <li>
+     *         <p>
+     *         All t2 instances are created in an Amazon Virtual Private Cloud
+     *         (VPC).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Redis backup/restore is not supported for t2 instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Redis Append-only files (AOF) functionality is not supported for
+     *         t1 or t2 instances.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For a complete listing of cache node types and specifications,
@@ -1308,25 +1718,51 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -1334,11 +1770,22 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -1357,25 +1804,51 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        Valid node types are as follows:
      *        </p>
      *        <ul>
-     *        <li>General purpose:
+     *        <li>
+     *        <p>
+     *        General purpose:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.t2.micro</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.t2.micro</code>,
      *        <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *        <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *        <li>Previous generation: <code>cache.t1.micro</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.t1.micro</code>,
      *        <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *        <li>Memory optimized
+     *        <li>
+     *        <p>
+     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Memory optimized:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.r3.large</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.r3.large</code>,
      *        <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *        <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.m2.xlarge</code>,
+     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        </ul>
@@ -1383,11 +1856,23 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        <b>Notes:</b>
      *        </p>
      *        <ul>
-     *        <li>All t2 instances are created in an Amazon Virtual Private
-     *        Cloud (VPC).</li>
-     *        <li>Redis backup/restore is not supported for t2 instances.</li>
-     *        <li>Redis Append-only files (AOF) functionality is not supported
-     *        for t1 or t2 instances.</li>
+     *        <li>
+     *        <p>
+     *        All t2 instances are created in an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis backup/restore is not supported for t2 instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis Append-only files (AOF) functionality is not supported for
+     *        t1 or t2 instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For a complete listing of cache node types and specifications, see
@@ -1477,10 +1962,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to
-     * an earlier engine version. If you want to use an earlier engine version,
-     * you must delete the existing cache cluster or replication group and
-     * create it anew with the earlier engine version.
+     * >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User
+     * Guide</i>, but you cannot downgrade to an earlier engine version. If you
+     * want to use an earlier engine version, you must delete the existing cache
+     * cluster or replication group and create it anew with the earlier engine
+     * version.
      * </p>
      * 
      * @param engineVersion
@@ -1492,11 +1978,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        <b>Important:</b> You can upgrade to a newer engine version (see
      *        <a href=
      *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     *        >Selecting a Cache Engine and Version</a>), but you cannot
-     *        downgrade to an earlier engine version. If you want to use an
-     *        earlier engine version, you must delete the existing cache cluster
-     *        or replication group and create it anew with the earlier engine
-     *        version.
+     *        >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache
+     *        User Guide</i>, but you cannot downgrade to an earlier engine
+     *        version. If you want to use an earlier engine version, you must
+     *        delete the existing cache cluster or replication group and create
+     *        it anew with the earlier engine version.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1512,10 +1998,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to
-     * an earlier engine version. If you want to use an earlier engine version,
-     * you must delete the existing cache cluster or replication group and
-     * create it anew with the earlier engine version.
+     * >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User
+     * Guide</i>, but you cannot downgrade to an earlier engine version. If you
+     * want to use an earlier engine version, you must delete the existing cache
+     * cluster or replication group and create it anew with the earlier engine
+     * version.
      * </p>
      * 
      * @return The version number of the cache engine to be used for the cache
@@ -1526,11 +2013,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *         <b>Important:</b> You can upgrade to a newer engine version (see
      *         <a href=
      *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     *         >Selecting a Cache Engine and Version</a>), but you cannot
-     *         downgrade to an earlier engine version. If you want to use an
-     *         earlier engine version, you must delete the existing cache
-     *         cluster or replication group and create it anew with the earlier
-     *         engine version.
+     *         >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache
+     *         User Guide</i>, but you cannot downgrade to an earlier engine
+     *         version. If you want to use an earlier engine version, you must
+     *         delete the existing cache cluster or replication group and create
+     *         it anew with the earlier engine version.
      */
 
     public String getEngineVersion() {
@@ -1546,10 +2033,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a href=
      * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to
-     * an earlier engine version. If you want to use an earlier engine version,
-     * you must delete the existing cache cluster or replication group and
-     * create it anew with the earlier engine version.
+     * >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User
+     * Guide</i>, but you cannot downgrade to an earlier engine version. If you
+     * want to use an earlier engine version, you must delete the existing cache
+     * cluster or replication group and create it anew with the earlier engine
+     * version.
      * </p>
      * 
      * @param engineVersion
@@ -1561,11 +2049,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        <b>Important:</b> You can upgrade to a newer engine version (see
      *        <a href=
      *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     *        >Selecting a Cache Engine and Version</a>), but you cannot
-     *        downgrade to an earlier engine version. If you want to use an
-     *        earlier engine version, you must delete the existing cache cluster
-     *        or replication group and create it anew with the earlier engine
-     *        version.
+     *        >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache
+     *        User Guide</i>, but you cannot downgrade to an earlier engine
+     *        version. If you want to use an earlier engine version, you must
+     *        delete the existing cache cluster or replication group and create
+     *        it anew with the earlier engine version.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1972,10 +2460,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * The snapshot file will be used to populate the node group. The Amazon S3
      * object name in the ARN cannot contain any commas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -1985,11 +2475,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *         (ARN) that uniquely identifies a Redis RDB snapshot file stored
      *         in Amazon S3. The snapshot file will be used to populate the node
      *         group. The Amazon S3 object name in the ARN cannot contain any
-     *         commas.</p>
+     *         commas.</p> <note>
      *         <p>
-     *         <b>Note:</b> This parameter is only valid if the
-     *         <code>Engine</code> parameter is <code>redis</code>.
+     *         This parameter is only valid if the <code>Engine</code> parameter
+     *         is <code>redis</code>.
      *         </p>
+     *         </note>
      *         <p>
      *         Example of an Amazon S3 ARN:
      *         <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2009,10 +2500,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * The snapshot file will be used to populate the node group. The Amazon S3
      * object name in the ARN cannot contain any commas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2023,11 +2516,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        (ARN) that uniquely identifies a Redis RDB snapshot file stored in
      *        Amazon S3. The snapshot file will be used to populate the node
      *        group. The Amazon S3 object name in the ARN cannot contain any
-     *        commas.</p>
+     *        commas.</p> <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
      *        </p>
+     *        </note>
      *        <p>
      *        Example of an Amazon S3 ARN:
      *        <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2050,10 +2544,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * The snapshot file will be used to populate the node group. The Amazon S3
      * object name in the ARN cannot contain any commas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2070,11 +2566,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        (ARN) that uniquely identifies a Redis RDB snapshot file stored in
      *        Amazon S3. The snapshot file will be used to populate the node
      *        group. The Amazon S3 object name in the ARN cannot contain any
-     *        commas.</p>
+     *        commas.</p> <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
      *        </p>
+     *        </note>
      *        <p>
      *        Example of an Amazon S3 ARN:
      *        <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2101,10 +2598,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * The snapshot file will be used to populate the node group. The Amazon S3
      * object name in the ARN cannot contain any commas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2115,11 +2614,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        (ARN) that uniquely identifies a Redis RDB snapshot file stored in
      *        Amazon S3. The snapshot file will be used to populate the node
      *        group. The Amazon S3 object name in the ARN cannot contain any
-     *        commas.</p>
+     *        commas.</p> <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
      *        </p>
+     *        </note>
      *        <p>
      *        Example of an Amazon S3 ARN:
      *        <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2139,18 +2639,21 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * group. The snapshot status changes to <code>restoring</code> while the
      * new node group is being created.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @param snapshotName
      *        The name of a snapshot from which to restore data into the new
      *        node group. The snapshot status changes to <code>restoring</code>
-     *        while the new node group is being created.</p>
+     *        while the new node group is being created.</p> <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
+     *        </p>
      */
 
     public void setSnapshotName(String snapshotName) {
@@ -2163,17 +2666,20 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * group. The snapshot status changes to <code>restoring</code> while the
      * new node group is being created.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @return The name of a snapshot from which to restore data into the new
      *         node group. The snapshot status changes to <code>restoring</code>
-     *         while the new node group is being created.</p>
+     *         while the new node group is being created.</p> <note>
      *         <p>
-     *         <b>Note:</b> This parameter is only valid if the
-     *         <code>Engine</code> parameter is <code>redis</code>.
+     *         This parameter is only valid if the <code>Engine</code> parameter
+     *         is <code>redis</code>.
+     *         </p>
      */
 
     public String getSnapshotName() {
@@ -2186,18 +2692,21 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * group. The snapshot status changes to <code>restoring</code> while the
      * new node group is being created.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @param snapshotName
      *        The name of a snapshot from which to restore data into the new
      *        node group. The snapshot status changes to <code>restoring</code>
-     *        while the new node group is being created.</p>
+     *        while the new node group is being created.</p> <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2215,13 +2724,41 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -2234,13 +2771,41 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        maintenance window is a 60 minute period. Valid values for
      *        <code>ddd</code> are:</p>
      *        <ul>
-     *        <li><code>sun</code></li>
-     *        <li><code>mon</code></li>
-     *        <li><code>tue</code></li>
-     *        <li><code>wed</code></li>
-     *        <li><code>thu</code></li>
-     *        <li><code>fri</code></li>
-     *        <li><code>sat</code></li>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>sun:05:00-sun:09:00</code>
@@ -2258,13 +2823,41 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -2276,13 +2869,41 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *         maintenance window is a 60 minute period. Valid values for
      *         <code>ddd</code> are:</p>
      *         <ul>
-     *         <li><code>sun</code></li>
-     *         <li><code>mon</code></li>
-     *         <li><code>tue</code></li>
-     *         <li><code>wed</code></li>
-     *         <li><code>thu</code></li>
-     *         <li><code>fri</code></li>
-     *         <li><code>sat</code></li>
+     *         <li>
+     *         <p>
+     *         <code>sun</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>mon</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tue</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>wed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>thu</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>fri</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sat</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>sun:05:00-sun:09:00</code>
@@ -2300,13 +2921,41 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -2319,13 +2968,41 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        maintenance window is a 60 minute period. Valid values for
      *        <code>ddd</code> are:</p>
      *        <ul>
-     *        <li><code>sun</code></li>
-     *        <li><code>mon</code></li>
-     *        <li><code>tue</code></li>
-     *        <li><code>wed</code></li>
-     *        <li><code>thu</code></li>
-     *        <li><code>fri</code></li>
-     *        <li><code>sat</code></li>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>sun:05:00-sun:09:00</code>
@@ -2391,14 +3068,20 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) topic to which notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be the same as the cache cluster
-     * owner.</note>
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * </p>
+     * </note>
      * 
      * @param notificationTopicArn
      *        The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *        Service (SNS) topic to which notifications will be sent.</p>
-     *        <note>The Amazon SNS topic owner must be the same as the cache
-     *        cluster owner.
+     *        <note>
+     *        <p>
+     *        The Amazon SNS topic owner must be the same as the cache cluster
+     *        owner.
+     *        </p>
      */
 
     public void setNotificationTopicArn(String notificationTopicArn) {
@@ -2410,13 +3093,19 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) topic to which notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be the same as the cache cluster
-     * owner.</note>
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * </p>
+     * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic to which notifications will be sent.</p>
-     *         <note>The Amazon SNS topic owner must be the same as the cache
-     *         cluster owner.
+     *         <note>
+     *         <p>
+     *         The Amazon SNS topic owner must be the same as the cache cluster
+     *         owner.
+     *         </p>
      */
 
     public String getNotificationTopicArn() {
@@ -2428,14 +3117,20 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) topic to which notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be the same as the cache cluster
-     * owner.</note>
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * </p>
+     * </note>
      * 
      * @param notificationTopicArn
      *        The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *        Service (SNS) topic to which notifications will be sent.</p>
-     *        <note>The Amazon SNS topic owner must be the same as the cache
-     *        cluster owner.
+     *        <note>
+     *        <p>
+     *        The Amazon SNS topic owner must be the same as the cache cluster
+     *        owner.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2507,10 +3202,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
@@ -2520,10 +3217,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        snapshots before deleting them. For example, if you set
      *        <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was
      *        taken today will be retained for 5 days before being deleted.</p>
+     *        <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
      *        </p>
+     *        </note>
      *        <p>
      *        Default: 0 (i.e., automatic backups are disabled for this cache
      *        cluster).
@@ -2540,10 +3239,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
@@ -2552,11 +3253,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *         snapshots before deleting them. For example, if you set
      *         <code>SnapshotRetentionLimit</code> to 5, then a snapshot that
      *         was taken today will be retained for 5 days before being
-     *         deleted.</p>
+     *         deleted.</p> <note>
      *         <p>
-     *         <b>Note:</b> This parameter is only valid if the
-     *         <code>Engine</code> parameter is <code>redis</code>.
+     *         This parameter is only valid if the <code>Engine</code> parameter
+     *         is <code>redis</code>.
      *         </p>
+     *         </note>
      *         <p>
      *         Default: 0 (i.e., automatic backups are disabled for this cache
      *         cluster).
@@ -2573,10 +3275,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
@@ -2586,10 +3290,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        snapshots before deleting them. For example, if you set
      *        <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was
      *        taken today will be retained for 5 days before being deleted.</p>
+     *        <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
      *        </p>
+     *        </note>
      *        <p>
      *        Default: 0 (i.e., automatic backups are disabled for this cache
      *        cluster).
@@ -2615,10 +3321,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * If you do not specify this parameter, then ElastiCache will automatically
      * choose an appropriate time range.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @param snapshotWindow
      *        The daily time range (in UTC) during which ElastiCache will begin
@@ -2630,9 +3338,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        If you do not specify this parameter, then ElastiCache will
      *        automatically choose an appropriate time range.
      *        </p>
+     *        <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
+     *        </p>
      */
 
     public void setSnapshotWindow(String snapshotWindow) {
@@ -2651,10 +3361,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * If you do not specify this parameter, then ElastiCache will automatically
      * choose an appropriate time range.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @return The daily time range (in UTC) during which ElastiCache will begin
      *         taking a daily snapshot of your node group.</p>
@@ -2665,9 +3377,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *         If you do not specify this parameter, then ElastiCache will
      *         automatically choose an appropriate time range.
      *         </p>
+     *         <note>
      *         <p>
-     *         <b>Note:</b> This parameter is only valid if the
-     *         <code>Engine</code> parameter is <code>redis</code>.
+     *         This parameter is only valid if the <code>Engine</code> parameter
+     *         is <code>redis</code>.
+     *         </p>
      */
 
     public String getSnapshotWindow() {
@@ -2686,10 +3400,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      * If you do not specify this parameter, then ElastiCache will automatically
      * choose an appropriate time range.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @param snapshotWindow
      *        The daily time range (in UTC) during which ElastiCache will begin
@@ -2701,9 +3417,11 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest
      *        If you do not specify this parameter, then ElastiCache will
      *        automatically choose an appropriate time range.
      *        </p>
+     *        <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

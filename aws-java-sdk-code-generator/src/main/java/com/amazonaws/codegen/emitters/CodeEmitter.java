@@ -96,6 +96,7 @@ public class CodeEmitter implements AutoCloseable {
         emitMarshallerClasses();
         emitUnmarshallerClasses();
         emitPolicyActionEnumClass();
+        emitPackageInfoFile();
 
         waitForCompletion();
     }
@@ -103,6 +104,11 @@ public class CodeEmitter implements AutoCloseable {
     @Override
     public void close() {
         executors.shutdown();
+    }
+
+    private void emitPackageInfoFile() throws IOException {
+        submitTask(new ClassGeneratorTask(baseDirectory, "package-info.java", freemarker
+                .getPackageInfoTemplate(), model));
     }
 
     /**

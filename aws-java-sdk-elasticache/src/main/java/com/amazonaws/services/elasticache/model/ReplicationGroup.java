@@ -81,8 +81,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      */
@@ -497,8 +505,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -509,8 +525,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
      *        <ul>
-     *        <li>Redis versions earlier than 2.8.6.</li>
-     *        <li>T1 and T2 cache node types.</li>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        T1 and T2 cache node types.
+     *        </p>
+     *        </li>
      *        </ul>
      * @see AutomaticFailoverStatus
      */
@@ -528,8 +552,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -539,8 +571,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *         ElastiCache Multi-AZ replication groups are not supported on:
      *         </p>
      *         <ul>
-     *         <li>Redis versions earlier than 2.8.6.</li>
-     *         <li>T1 and T2 cache node types.</li>
+     *         <li>
+     *         <p>
+     *         Redis versions earlier than 2.8.6.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         T1 and T2 cache node types.
+     *         </p>
+     *         </li>
      *         </ul>
      * @see AutomaticFailoverStatus
      */
@@ -558,8 +598,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -570,8 +618,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
      *        <ul>
-     *        <li>Redis versions earlier than 2.8.6.</li>
-     *        <li>T1 and T2 cache node types.</li>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        T1 and T2 cache node types.
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -592,8 +648,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -604,8 +668,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
      *        <ul>
-     *        <li>Redis versions earlier than 2.8.6.</li>
-     *        <li>T1 and T2 cache node types.</li>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        T1 and T2 cache node types.
+     *        </p>
+     *        </li>
      *        </ul>
      * @see AutomaticFailoverStatus
      */
@@ -623,8 +695,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -635,8 +715,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
      *        <ul>
-     *        <li>Redis versions earlier than 2.8.6.</li>
-     *        <li>T1 and T2 cache node types.</li>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        T1 and T2 cache node types.
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

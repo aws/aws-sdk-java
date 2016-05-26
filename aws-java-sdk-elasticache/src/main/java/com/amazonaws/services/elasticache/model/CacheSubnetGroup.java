@@ -23,8 +23,16 @@ import java.io.Serializable;
  * Represents the output of one of the following actions:
  * </p>
  * <ul>
- * <li><i>CreateCacheSubnetGroup</i></li>
- * <li><i>ModifyCacheSubnetGroup</i></li>
+ * <li>
+ * <p>
+ * <i>CreateCacheSubnetGroup</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <i>ModifyCacheSubnetGroup</i>
+ * </p>
+ * </li>
  * </ul>
  */
 public class CacheSubnetGroup implements Serializable, Cloneable {

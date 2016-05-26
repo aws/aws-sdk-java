@@ -154,4 +154,8 @@ public class Freemarker {
                             + shape.getShapeName());
         }
     }
+
+    public Template getPackageInfoTemplate() throws IOException {
+        return getTemplate(templateConfig.getPackageInfo());
+    }
 }

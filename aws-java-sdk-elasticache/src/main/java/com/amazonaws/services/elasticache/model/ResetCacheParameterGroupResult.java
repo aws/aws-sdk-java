@@ -23,8 +23,16 @@ import java.io.Serializable;
  * Represents the output of one of the following actions:
  * </p>
  * <ul>
- * <li><i>ModifyCacheParameterGroup</i></li>
- * <li><i>ResetCacheParameterGroup</i></li>
+ * <li>
+ * <p>
+ * <i>ModifyCacheParameterGroup</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <i>ResetCacheParameterGroup</i>
+ * </p>
+ * </li>
  * </ul>
  */
 public class ResetCacheParameterGroupResult implements Serializable, Cloneable {

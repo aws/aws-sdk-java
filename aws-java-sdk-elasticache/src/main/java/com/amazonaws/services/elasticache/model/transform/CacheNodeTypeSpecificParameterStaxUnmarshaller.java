@@ -110,6 +110,12 @@ public class CacheNodeTypeSpecificParameterStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("ChangeType", targetDepth)) {
+                    cacheNodeTypeSpecificParameter
+                            .setChangeType(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheNodeTypeSpecificParameter;

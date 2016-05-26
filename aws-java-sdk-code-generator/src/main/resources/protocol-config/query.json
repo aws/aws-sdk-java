@@ -131,6 +131,9 @@
   "policyActionClass" : {
     "mainTemplate" : "/templates/common/auth-policy-action-class.ftl"
   },
+  "packageInfo" : {
+    "mainTemplate" : "/templates/common/package-info.ftl"
+  },
   "commonChildTemplates" : [
     {
       "location" : "/macros/common/LicenseCommentBlock.ftl",

@@ -44,8 +44,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable,
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      */
@@ -114,8 +122,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable,
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -126,8 +142,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable,
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
      *        <ul>
-     *        <li>Redis versions earlier than 2.8.6.</li>
-     *        <li>T1 and T2 cache node types.</li>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        T1 and T2 cache node types.
+     *        </p>
+     *        </li>
      *        </ul>
      * @see PendingAutomaticFailoverStatus
      */
@@ -145,8 +169,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable,
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -156,8 +188,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable,
      *         ElastiCache Multi-AZ replication groups are not supported on:
      *         </p>
      *         <ul>
-     *         <li>Redis versions earlier than 2.8.6.</li>
-     *         <li>T1 and T2 cache node types.</li>
+     *         <li>
+     *         <p>
+     *         Redis versions earlier than 2.8.6.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         T1 and T2 cache node types.
+     *         </p>
+     *         </li>
      *         </ul>
      * @see PendingAutomaticFailoverStatus
      */
@@ -175,8 +215,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable,
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -187,8 +235,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable,
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
      *        <ul>
-     *        <li>Redis versions earlier than 2.8.6.</li>
-     *        <li>T1 and T2 cache node types.</li>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        T1 and T2 cache node types.
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -210,8 +266,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable,
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -222,8 +286,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable,
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
      *        <ul>
-     *        <li>Redis versions earlier than 2.8.6.</li>
-     *        <li>T1 and T2 cache node types.</li>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        T1 and T2 cache node types.
+     *        </p>
+     *        </li>
      *        </ul>
      * @see PendingAutomaticFailoverStatus
      */
@@ -242,8 +314,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable,
      * ElastiCache Multi-AZ replication groups are not supported on:
      * </p>
      * <ul>
-     * <li>Redis versions earlier than 2.8.6.</li>
-     * <li>T1 and T2 cache node types.</li>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * T1 and T2 cache node types.
+     * </p>
+     * </li>
      * </ul>
      * </note>
      * 
@@ -254,8 +334,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable,
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
      *        <ul>
-     *        <li>Redis versions earlier than 2.8.6.</li>
-     *        <li>T1 and T2 cache node types.</li>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        T1 and T2 cache node types.
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

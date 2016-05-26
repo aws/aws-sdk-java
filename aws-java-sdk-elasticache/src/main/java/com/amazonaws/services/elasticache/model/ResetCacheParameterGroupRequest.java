@@ -36,7 +36,8 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * If <i>true</i>, all parameters in the cache parameter group will be reset
-     * to default values. If <i>false</i>, no such action occurs.
+     * to their default values. If <i>false</i>, only the parameters listed by
+     * <i>ParameterNameValues</i> are reset to their default values.
      * </p>
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
@@ -45,9 +46,9 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
     private Boolean resetAllParameters;
     /**
      * <p>
-     * An array of parameter names to be reset. If you are not resetting the
-     * entire cache parameter group, you must specify at least one parameter
-     * name.
+     * An array of parameter names to reset to their default values. If
+     * <i>ResetAllParameters</i> is <i>false</i>, you must specify the name of
+     * at least one parameter to reset.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ParameterNameValue> parameterNameValues;
@@ -68,9 +69,9 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
      * @param cacheParameterGroupName
      *        The name of the cache parameter group to reset.
      * @param parameterNameValues
-     *        An array of parameter names to be reset. If you are not resetting
-     *        the entire cache parameter group, you must specify at least one
-     *        parameter name.
+     *        An array of parameter names to reset to their default values. If
+     *        <i>ResetAllParameters</i> is <i>false</i>, you must specify the
+     *        name of at least one parameter to reset.
      */
     public ResetCacheParameterGroupRequest(String cacheParameterGroupName,
             java.util.List<ParameterNameValue> parameterNameValues) {
@@ -123,7 +124,8 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * If <i>true</i>, all parameters in the cache parameter group will be reset
-     * to default values. If <i>false</i>, no such action occurs.
+     * to their default values. If <i>false</i>, only the parameters listed by
+     * <i>ParameterNameValues</i> are reset to their default values.
      * </p>
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
@@ -131,8 +133,9 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
      * 
      * @param resetAllParameters
      *        If <i>true</i>, all parameters in the cache parameter group will
-     *        be reset to default values. If <i>false</i>, no such action
-     *        occurs.</p>
+     *        be reset to their default values. If <i>false</i>, only the
+     *        parameters listed by <i>ParameterNameValues</i> are reset to their
+     *        default values.</p>
      *        <p>
      *        Valid values: <code>true</code> | <code>false</code>
      */
@@ -144,15 +147,17 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * If <i>true</i>, all parameters in the cache parameter group will be reset
-     * to default values. If <i>false</i>, no such action occurs.
+     * to their default values. If <i>false</i>, only the parameters listed by
+     * <i>ParameterNameValues</i> are reset to their default values.
      * </p>
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return If <i>true</i>, all parameters in the cache parameter group will
-     *         be reset to default values. If <i>false</i>, no such action
-     *         occurs.</p>
+     *         be reset to their default values. If <i>false</i>, only the
+     *         parameters listed by <i>ParameterNameValues</i> are reset to
+     *         their default values.</p>
      *         <p>
      *         Valid values: <code>true</code> | <code>false</code>
      */
@@ -164,7 +169,8 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * If <i>true</i>, all parameters in the cache parameter group will be reset
-     * to default values. If <i>false</i>, no such action occurs.
+     * to their default values. If <i>false</i>, only the parameters listed by
+     * <i>ParameterNameValues</i> are reset to their default values.
      * </p>
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
@@ -172,8 +178,9 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
      * 
      * @param resetAllParameters
      *        If <i>true</i>, all parameters in the cache parameter group will
-     *        be reset to default values. If <i>false</i>, no such action
-     *        occurs.</p>
+     *        be reset to their default values. If <i>false</i>, only the
+     *        parameters listed by <i>ParameterNameValues</i> are reset to their
+     *        default values.</p>
      *        <p>
      *        Valid values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be
@@ -189,15 +196,17 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * If <i>true</i>, all parameters in the cache parameter group will be reset
-     * to default values. If <i>false</i>, no such action occurs.
+     * to their default values. If <i>false</i>, only the parameters listed by
+     * <i>ParameterNameValues</i> are reset to their default values.
      * </p>
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return If <i>true</i>, all parameters in the cache parameter group will
-     *         be reset to default values. If <i>false</i>, no such action
-     *         occurs.</p>
+     *         be reset to their default values. If <i>false</i>, only the
+     *         parameters listed by <i>ParameterNameValues</i> are reset to
+     *         their default values.</p>
      *         <p>
      *         Valid values: <code>true</code> | <code>false</code>
      */
@@ -208,14 +217,14 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of parameter names to be reset. If you are not resetting the
-     * entire cache parameter group, you must specify at least one parameter
-     * name.
+     * An array of parameter names to reset to their default values. If
+     * <i>ResetAllParameters</i> is <i>false</i>, you must specify the name of
+     * at least one parameter to reset.
      * </p>
      * 
-     * @return An array of parameter names to be reset. If you are not resetting
-     *         the entire cache parameter group, you must specify at least one
-     *         parameter name.
+     * @return An array of parameter names to reset to their default values. If
+     *         <i>ResetAllParameters</i> is <i>false</i>, you must specify the
+     *         name of at least one parameter to reset.
      */
 
     public java.util.List<ParameterNameValue> getParameterNameValues() {
@@ -227,15 +236,15 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of parameter names to be reset. If you are not resetting the
-     * entire cache parameter group, you must specify at least one parameter
-     * name.
+     * An array of parameter names to reset to their default values. If
+     * <i>ResetAllParameters</i> is <i>false</i>, you must specify the name of
+     * at least one parameter to reset.
      * </p>
      * 
      * @param parameterNameValues
-     *        An array of parameter names to be reset. If you are not resetting
-     *        the entire cache parameter group, you must specify at least one
-     *        parameter name.
+     *        An array of parameter names to reset to their default values. If
+     *        <i>ResetAllParameters</i> is <i>false</i>, you must specify the
+     *        name of at least one parameter to reset.
      */
 
     public void setParameterNameValues(
@@ -251,9 +260,9 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of parameter names to be reset. If you are not resetting the
-     * entire cache parameter group, you must specify at least one parameter
-     * name.
+     * An array of parameter names to reset to their default values. If
+     * <i>ResetAllParameters</i> is <i>false</i>, you must specify the name of
+     * at least one parameter to reset.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -263,9 +272,9 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param parameterNameValues
-     *        An array of parameter names to be reset. If you are not resetting
-     *        the entire cache parameter group, you must specify at least one
-     *        parameter name.
+     *        An array of parameter names to reset to their default values. If
+     *        <i>ResetAllParameters</i> is <i>false</i>, you must specify the
+     *        name of at least one parameter to reset.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -284,15 +293,15 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of parameter names to be reset. If you are not resetting the
-     * entire cache parameter group, you must specify at least one parameter
-     * name.
+     * An array of parameter names to reset to their default values. If
+     * <i>ResetAllParameters</i> is <i>false</i>, you must specify the name of
+     * at least one parameter to reset.
      * </p>
      * 
      * @param parameterNameValues
-     *        An array of parameter names to be reset. If you are not resetting
-     *        the entire cache parameter group, you must specify at least one
-     *        parameter name.
+     *        An array of parameter names to reset to their default values. If
+     *        <i>ResetAllParameters</i> is <i>false</i>, you must specify the
+     *        name of at least one parameter to reset.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

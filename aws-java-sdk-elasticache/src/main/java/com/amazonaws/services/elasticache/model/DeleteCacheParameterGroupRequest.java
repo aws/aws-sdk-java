@@ -31,8 +31,12 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the cache parameter group to delete.
      * </p>
-     * <note>The specified cache security group must not be associated with any
-     * cache clusters.</note>
+     * <note>
+     * <p>
+     * The specified cache security group must not be associated with any cache
+     * clusters.
+     * </p>
+     * </note>
      */
     private String cacheParameterGroupName;
 
@@ -50,9 +54,11 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param cacheParameterGroupName
-     *        The name of the cache parameter group to delete.</p> <note>The
-     *        specified cache security group must not be associated with any
+     *        The name of the cache parameter group to delete.</p> <note>
+     *        <p>
+     *        The specified cache security group must not be associated with any
      *        cache clusters.
+     *        </p>
      */
     public DeleteCacheParameterGroupRequest(String cacheParameterGroupName) {
         setCacheParameterGroupName(cacheParameterGroupName);
@@ -62,13 +68,19 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the cache parameter group to delete.
      * </p>
-     * <note>The specified cache security group must not be associated with any
-     * cache clusters.</note>
+     * <note>
+     * <p>
+     * The specified cache security group must not be associated with any cache
+     * clusters.
+     * </p>
+     * </note>
      * 
      * @param cacheParameterGroupName
-     *        The name of the cache parameter group to delete.</p> <note>The
-     *        specified cache security group must not be associated with any
+     *        The name of the cache parameter group to delete.</p> <note>
+     *        <p>
+     *        The specified cache security group must not be associated with any
      *        cache clusters.
+     *        </p>
      */
 
     public void setCacheParameterGroupName(String cacheParameterGroupName) {
@@ -79,12 +91,18 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the cache parameter group to delete.
      * </p>
-     * <note>The specified cache security group must not be associated with any
-     * cache clusters.</note>
+     * <note>
+     * <p>
+     * The specified cache security group must not be associated with any cache
+     * clusters.
+     * </p>
+     * </note>
      * 
-     * @return The name of the cache parameter group to delete.</p> <note>The
-     *         specified cache security group must not be associated with any
-     *         cache clusters.
+     * @return The name of the cache parameter group to delete.</p> <note>
+     *         <p>
+     *         The specified cache security group must not be associated with
+     *         any cache clusters.
+     *         </p>
      */
 
     public String getCacheParameterGroupName() {
@@ -95,13 +113,19 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the cache parameter group to delete.
      * </p>
-     * <note>The specified cache security group must not be associated with any
-     * cache clusters.</note>
+     * <note>
+     * <p>
+     * The specified cache security group must not be associated with any cache
+     * clusters.
+     * </p>
+     * </note>
      * 
      * @param cacheParameterGroupName
-     *        The name of the cache parameter group to delete.</p> <note>The
-     *        specified cache security group must not be associated with any
+     *        The name of the cache parameter group to delete.</p> <note>
+     *        <p>
+     *        The specified cache security group must not be associated with any
      *        cache clusters.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

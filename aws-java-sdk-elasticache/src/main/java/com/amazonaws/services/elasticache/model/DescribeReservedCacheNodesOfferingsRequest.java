@@ -46,25 +46,51 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -72,11 +98,22 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -113,7 +150,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * </p>
      * <p>
      * Valid Values:
-     * <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy Utilization&quot;</code>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
      * </p>
      */
     private String offeringType;
@@ -217,25 +254,51 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -243,11 +306,22 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -267,25 +341,51 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      *        Valid node types are as follows:
      *        </p>
      *        <ul>
-     *        <li>General purpose:
+     *        <li>
+     *        <p>
+     *        General purpose:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.t2.micro</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.t2.micro</code>,
      *        <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *        <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *        <li>Previous generation: <code>cache.t1.micro</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.t1.micro</code>,
      *        <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *        <li>Memory optimized
+     *        <li>
+     *        <p>
+     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Memory optimized:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.r3.large</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.r3.large</code>,
      *        <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *        <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.m2.xlarge</code>,
+     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        </ul>
@@ -293,11 +393,23 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      *        <b>Notes:</b>
      *        </p>
      *        <ul>
-     *        <li>All t2 instances are created in an Amazon Virtual Private
-     *        Cloud (VPC).</li>
-     *        <li>Redis backup/restore is not supported for t2 instances.</li>
-     *        <li>Redis Append-only files (AOF) functionality is not supported
-     *        for t1 or t2 instances.</li>
+     *        <li>
+     *        <p>
+     *        All t2 instances are created in an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis backup/restore is not supported for t2 instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis Append-only files (AOF) functionality is not supported for
+     *        t1 or t2 instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For a complete listing of cache node types and specifications, see
@@ -322,25 +434,51 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -348,11 +486,22 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -371,25 +520,51 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      *         Valid node types are as follows:
      *         </p>
      *         <ul>
-     *         <li>General purpose:
+     *         <li>
+     *         <p>
+     *         General purpose:
+     *         </p>
      *         <ul>
-     *         <li>Current generation: <code>cache.t2.micro</code>,
+     *         <li>
+     *         <p>
+     *         Current generation: <code>cache.t2.micro</code>,
      *         <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *         <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *         <li>Previous generation: <code>cache.t1.micro</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Previous generation: <code>cache.t1.micro</code>,
      *         <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
-     *         <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *         <li>Memory optimized
+     *         <li>
+     *         <p>
+     *         Compute optimized: <code>cache.c1.xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Memory optimized:
+     *         </p>
      *         <ul>
-     *         <li>Current generation: <code>cache.r3.large</code>,
+     *         <li>
+     *         <p>
+     *         Current generation: <code>cache.r3.large</code>,
      *         <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *         <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Previous generation: <code>cache.m2.xlarge</code>,
+     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
      *         </ul>
@@ -397,11 +572,23 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      *         <b>Notes:</b>
      *         </p>
      *         <ul>
-     *         <li>All t2 instances are created in an Amazon Virtual Private
-     *         Cloud (VPC).</li>
-     *         <li>Redis backup/restore is not supported for t2 instances.</li>
-     *         <li>Redis Append-only files (AOF) functionality is not supported
-     *         for t1 or t2 instances.</li>
+     *         <li>
+     *         <p>
+     *         All t2 instances are created in an Amazon Virtual Private Cloud
+     *         (VPC).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Redis backup/restore is not supported for t2 instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Redis Append-only files (AOF) functionality is not supported for
+     *         t1 or t2 instances.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For a complete listing of cache node types and specifications,
@@ -427,25 +614,51 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -453,11 +666,22 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -477,25 +701,51 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      *        Valid node types are as follows:
      *        </p>
      *        <ul>
-     *        <li>General purpose:
+     *        <li>
+     *        <p>
+     *        General purpose:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.t2.micro</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.t2.micro</code>,
      *        <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *        <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *        <li>Previous generation: <code>cache.t1.micro</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.t1.micro</code>,
      *        <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *        <li>Memory optimized
+     *        <li>
+     *        <p>
+     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Memory optimized:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.r3.large</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.r3.large</code>,
      *        <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *        <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.m2.xlarge</code>,
+     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        </ul>
@@ -503,11 +753,23 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      *        <b>Notes:</b>
      *        </p>
      *        <ul>
-     *        <li>All t2 instances are created in an Amazon Virtual Private
-     *        Cloud (VPC).</li>
-     *        <li>Redis backup/restore is not supported for t2 instances.</li>
-     *        <li>Redis Append-only files (AOF) functionality is not supported
-     *        for t1 or t2 instances.</li>
+     *        <li>
+     *        <p>
+     *        All t2 instances are created in an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis backup/restore is not supported for t2 instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis Append-only files (AOF) functionality is not supported for
+     *        t1 or t2 instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For a complete listing of cache node types and specifications, see
@@ -648,7 +910,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * </p>
      * <p>
      * Valid Values:
-     * <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy Utilization&quot;</code>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
      * </p>
      * 
      * @param offeringType
@@ -656,7 +918,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      *        the available offerings matching the specified offering type.</p>
      *        <p>
      *        Valid Values:
-     *        <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy Utilization&quot;</code>
+     *        <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
      */
 
     public void setOfferingType(String offeringType) {
@@ -670,14 +932,14 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * </p>
      * <p>
      * Valid Values:
-     * <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy Utilization&quot;</code>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
      * </p>
      * 
      * @return The offering type filter value. Use this parameter to show only
      *         the available offerings matching the specified offering type.</p>
      *         <p>
      *         Valid Values:
-     *         <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy Utilization&quot;</code>
+     *         <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
      */
 
     public String getOfferingType() {
@@ -691,7 +953,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      * </p>
      * <p>
      * Valid Values:
-     * <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy Utilization&quot;</code>
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
      * </p>
      * 
      * @param offeringType
@@ -699,7 +961,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends
      *        the available offerings matching the specified offering type.</p>
      *        <p>
      *        Valid Values:
-     *        <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy Utilization&quot;</code>
+     *        <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

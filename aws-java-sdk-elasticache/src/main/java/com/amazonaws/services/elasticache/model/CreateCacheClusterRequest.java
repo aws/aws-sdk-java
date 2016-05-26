@@ -33,12 +33,24 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * string.
      * </p>
      * <p>
-     * Constraints:
+     * <b>Constraints:</b>
      * </p>
      * <ul>
-     * <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li>
-     * <li>The first character must be a letter.</li>
-     * <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A name cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      */
     private String cacheClusterId;
@@ -56,17 +68,19 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * availability zones that provide the best spread of read replicas across
      * availability zones.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      */
     private String replicationGroupId;
     /**
      * <p>
      * Specifies whether the nodes in this Memcached node group are created in a
      * single Availability Zone or created across multiple Availability Zones in
-     * the cluster&apos;s region.
+     * the cluster's region.
      * </p>
      * <p>
      * This parameter is only supported for Memcached cache clusters.
@@ -121,11 +135,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <p>
      * Example: One Memcached node in each of three different Availability
      * Zones:
-     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * <p>
      * Example: All three Memcached nodes in one Availability Zone:
-     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZones;
@@ -153,25 +167,51 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -179,11 +219,22 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -276,10 +327,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * The snapshot file will be used to populate the node group. The Amazon S3
      * object name in the ARN cannot contain any commas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -292,10 +345,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * group. The snapshot status changes to <code>restoring</code> while the
      * new node group is being created.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      */
     private String snapshotName;
     /**
@@ -306,13 +361,41 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -330,8 +413,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) topic to which notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be the same as the cache cluster
-     * owner.</note>
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * </p>
+     * </note>
      */
     private String notificationTopicArn;
     /**
@@ -347,10 +433,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
@@ -392,14 +480,26 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        The node group identifier. This parameter is stored as a lowercase
      *        string.</p>
      *        <p>
-     *        Constraints:
+     *        <b>Constraints:</b>
      *        </p>
      *        <ul>
-     *        <li>A name must contain from 1 to 20 alphanumeric characters or
-     *        hyphens.</li>
-     *        <li>The first character must be a letter.</li>
-     *        <li>A name cannot end with a hyphen or contain two consecutive
-     *        hyphens.</li>
+     *        <li>
+     *        <p>
+     *        A name must contain from 1 to 20 alphanumeric characters or
+     *        hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The first character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A name cannot end with a hyphen or contain two consecutive
+     *        hyphens.
+     *        </p>
+     *        </li>
      * @param numCacheNodes
      *        The initial number of cache nodes that the cache cluster will
      *        have.</p>
@@ -420,25 +520,51 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        Valid node types are as follows:
      *        </p>
      *        <ul>
-     *        <li>General purpose:
+     *        <li>
+     *        <p>
+     *        General purpose:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.t2.micro</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.t2.micro</code>,
      *        <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *        <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *        <li>Previous generation: <code>cache.t1.micro</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.t1.micro</code>,
      *        <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *        <li>Memory optimized
+     *        <li>
+     *        <p>
+     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Memory optimized:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.r3.large</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.r3.large</code>,
      *        <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *        <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.m2.xlarge</code>,
+     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        </ul>
@@ -446,11 +572,23 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        <b>Notes:</b>
      *        </p>
      *        <ul>
-     *        <li>All t2 instances are created in an Amazon Virtual Private
-     *        Cloud (VPC).</li>
-     *        <li>Redis backup/restore is not supported for t2 instances.</li>
-     *        <li>Redis Append-only files (AOF) functionality is not supported
-     *        for t1 or t2 instances.</li>
+     *        <li>
+     *        <p>
+     *        All t2 instances are created in an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis backup/restore is not supported for t2 instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis Append-only files (AOF) functionality is not supported for
+     *        t1 or t2 instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For a complete listing of cache node types and specifications, see
@@ -492,26 +630,50 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * string.
      * </p>
      * <p>
-     * Constraints:
+     * <b>Constraints:</b>
      * </p>
      * <ul>
-     * <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li>
-     * <li>The first character must be a letter.</li>
-     * <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A name cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param cacheClusterId
      *        The node group identifier. This parameter is stored as a lowercase
      *        string.</p>
      *        <p>
-     *        Constraints:
+     *        <b>Constraints:</b>
      *        </p>
      *        <ul>
-     *        <li>A name must contain from 1 to 20 alphanumeric characters or
-     *        hyphens.</li>
-     *        <li>The first character must be a letter.</li>
-     *        <li>A name cannot end with a hyphen or contain two consecutive
-     *        hyphens.</li>
+     *        <li>
+     *        <p>
+     *        A name must contain from 1 to 20 alphanumeric characters or
+     *        hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The first character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A name cannot end with a hyphen or contain two consecutive
+     *        hyphens.
+     *        </p>
+     *        </li>
      */
 
     public void setCacheClusterId(String cacheClusterId) {
@@ -524,25 +686,49 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * string.
      * </p>
      * <p>
-     * Constraints:
+     * <b>Constraints:</b>
      * </p>
      * <ul>
-     * <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li>
-     * <li>The first character must be a letter.</li>
-     * <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A name cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The node group identifier. This parameter is stored as a
      *         lowercase string.</p>
      *         <p>
-     *         Constraints:
+     *         <b>Constraints:</b>
      *         </p>
      *         <ul>
-     *         <li>A name must contain from 1 to 20 alphanumeric characters or
-     *         hyphens.</li>
-     *         <li>The first character must be a letter.</li>
-     *         <li>A name cannot end with a hyphen or contain two consecutive
-     *         hyphens.</li>
+     *         <li>
+     *         <p>
+     *         A name must contain from 1 to 20 alphanumeric characters or
+     *         hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The first character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A name cannot end with a hyphen or contain two consecutive
+     *         hyphens.
+     *         </p>
+     *         </li>
      */
 
     public String getCacheClusterId() {
@@ -555,26 +741,50 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * string.
      * </p>
      * <p>
-     * Constraints:
+     * <b>Constraints:</b>
      * </p>
      * <ul>
-     * <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li>
-     * <li>The first character must be a letter.</li>
-     * <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A name cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param cacheClusterId
      *        The node group identifier. This parameter is stored as a lowercase
      *        string.</p>
      *        <p>
-     *        Constraints:
+     *        <b>Constraints:</b>
      *        </p>
      *        <ul>
-     *        <li>A name must contain from 1 to 20 alphanumeric characters or
-     *        hyphens.</li>
-     *        <li>The first character must be a letter.</li>
-     *        <li>A name cannot end with a hyphen or contain two consecutive
-     *        hyphens.</li>
+     *        <li>
+     *        <p>
+     *        A name must contain from 1 to 20 alphanumeric characters or
+     *        hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The first character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A name cannot end with a hyphen or contain two consecutive
+     *        hyphens.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -598,10 +808,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * availability zones that provide the best spread of read replicas across
      * availability zones.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @param replicationGroupId
      *        The ID of the replication group to which this cache cluster should
@@ -615,9 +827,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        created in availability zones that provide the best spread of read
      *        replicas across availability zones.
      *        </p>
+     *        <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
+     *        </p>
      */
 
     public void setReplicationGroupId(String replicationGroupId) {
@@ -638,10 +852,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * availability zones that provide the best spread of read replicas across
      * availability zones.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @return The ID of the replication group to which this cache cluster
      *         should belong. If this parameter is specified, the cache cluster
@@ -654,9 +870,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *         created in availability zones that provide the best spread of
      *         read replicas across availability zones.
      *         </p>
+     *         <note>
      *         <p>
-     *         <b>Note:</b> This parameter is only valid if the
-     *         <code>Engine</code> parameter is <code>redis</code>.
+     *         This parameter is only valid if the <code>Engine</code> parameter
+     *         is <code>redis</code>.
+     *         </p>
      */
 
     public String getReplicationGroupId() {
@@ -677,10 +895,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * availability zones that provide the best spread of read replicas across
      * availability zones.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @param replicationGroupId
      *        The ID of the replication group to which this cache cluster should
@@ -694,9 +914,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        created in availability zones that provide the best spread of read
      *        replicas across availability zones.
      *        </p>
+     *        <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -711,7 +933,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies whether the nodes in this Memcached node group are created in a
      * single Availability Zone or created across multiple Availability Zones in
-     * the cluster&apos;s region.
+     * the cluster's region.
      * </p>
      * <p>
      * This parameter is only supported for Memcached cache clusters.
@@ -724,7 +946,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * @param aZMode
      *        Specifies whether the nodes in this Memcached node group are
      *        created in a single Availability Zone or created across multiple
-     *        Availability Zones in the cluster&apos;s region.</p>
+     *        Availability Zones in the cluster's region.</p>
      *        <p>
      *        This parameter is only supported for Memcached cache clusters.
      *        </p>
@@ -743,7 +965,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies whether the nodes in this Memcached node group are created in a
      * single Availability Zone or created across multiple Availability Zones in
-     * the cluster&apos;s region.
+     * the cluster's region.
      * </p>
      * <p>
      * This parameter is only supported for Memcached cache clusters.
@@ -755,7 +977,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies whether the nodes in this Memcached node group are
      *         created in a single Availability Zone or created across multiple
-     *         Availability Zones in the cluster&apos;s region.</p>
+     *         Availability Zones in the cluster's region.</p>
      *         <p>
      *         This parameter is only supported for Memcached cache clusters.
      *         </p>
@@ -774,7 +996,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies whether the nodes in this Memcached node group are created in a
      * single Availability Zone or created across multiple Availability Zones in
-     * the cluster&apos;s region.
+     * the cluster's region.
      * </p>
      * <p>
      * This parameter is only supported for Memcached cache clusters.
@@ -787,7 +1009,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * @param aZMode
      *        Specifies whether the nodes in this Memcached node group are
      *        created in a single Availability Zone or created across multiple
-     *        Availability Zones in the cluster&apos;s region.</p>
+     *        Availability Zones in the cluster's region.</p>
      *        <p>
      *        This parameter is only supported for Memcached cache clusters.
      *        </p>
@@ -809,7 +1031,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies whether the nodes in this Memcached node group are created in a
      * single Availability Zone or created across multiple Availability Zones in
-     * the cluster&apos;s region.
+     * the cluster's region.
      * </p>
      * <p>
      * This parameter is only supported for Memcached cache clusters.
@@ -822,7 +1044,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * @param aZMode
      *        Specifies whether the nodes in this Memcached node group are
      *        created in a single Availability Zone or created across multiple
-     *        Availability Zones in the cluster&apos;s region.</p>
+     *        Availability Zones in the cluster's region.</p>
      *        <p>
      *        This parameter is only supported for Memcached cache clusters.
      *        </p>
@@ -841,7 +1063,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <p>
      * Specifies whether the nodes in this Memcached node group are created in a
      * single Availability Zone or created across multiple Availability Zones in
-     * the cluster&apos;s region.
+     * the cluster's region.
      * </p>
      * <p>
      * This parameter is only supported for Memcached cache clusters.
@@ -854,7 +1076,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * @param aZMode
      *        Specifies whether the nodes in this Memcached node group are
      *        created in a single Availability Zone or created across multiple
-     *        Availability Zones in the cluster&apos;s region.</p>
+     *        Availability Zones in the cluster's region.</p>
      *        <p>
      *        This parameter is only supported for Memcached cache clusters.
      *        </p>
@@ -995,11 +1217,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <p>
      * Example: One Memcached node in each of three different Availability
      * Zones:
-     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * <p>
      * Example: All three Memcached nodes in one Availability Zone:
-     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
      * </p>
      * 
      * @return A list of the Availability Zones in which cache nodes will be
@@ -1030,11 +1252,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *         <p>
      *         Example: One Memcached node in each of three different
      *         Availability Zones:
-     *         <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code>
+     *         <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
      *         </p>
      *         <p>
      *         Example: All three Memcached nodes in one Availability Zone:
-     *         <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code>
+     *         <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
      */
 
     public java.util.List<String> getPreferredAvailabilityZones() {
@@ -1074,11 +1296,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <p>
      * Example: One Memcached node in each of three different Availability
      * Zones:
-     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * <p>
      * Example: All three Memcached nodes in one Availability Zone:
-     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
      * </p>
      * 
      * @param preferredAvailabilityZones
@@ -1109,11 +1331,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        <p>
      *        Example: One Memcached node in each of three different
      *        Availability Zones:
-     *        <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code>
+     *        <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
      *        </p>
      *        <p>
      *        Example: All three Memcached nodes in one Availability Zone:
-     *        <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code>
+     *        <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
      */
 
     public void setPreferredAvailabilityZones(
@@ -1157,11 +1379,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <p>
      * Example: One Memcached node in each of three different Availability
      * Zones:
-     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * <p>
      * Example: All three Memcached nodes in one Availability Zone:
-     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1198,11 +1420,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        <p>
      *        Example: One Memcached node in each of three different
      *        Availability Zones:
-     *        <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code>
+     *        <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
      *        </p>
      *        <p>
      *        Example: All three Memcached nodes in one Availability Zone:
-     *        <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code>
+     *        <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1249,11 +1471,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <p>
      * Example: One Memcached node in each of three different Availability
      * Zones:
-     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
      * </p>
      * <p>
      * Example: All three Memcached nodes in one Availability Zone:
-     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code>
+     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
      * </p>
      * 
      * @param preferredAvailabilityZones
@@ -1284,11 +1506,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        <p>
      *        Example: One Memcached node in each of three different
      *        Availability Zones:
-     *        <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code>
+     *        <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
      *        </p>
      *        <p>
      *        Example: All three Memcached nodes in one Availability Zone:
-     *        <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code>
+     *        <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1411,25 +1633,51 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -1437,11 +1685,22 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -1460,25 +1719,51 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        Valid node types are as follows:
      *        </p>
      *        <ul>
-     *        <li>General purpose:
+     *        <li>
+     *        <p>
+     *        General purpose:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.t2.micro</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.t2.micro</code>,
      *        <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *        <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *        <li>Previous generation: <code>cache.t1.micro</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.t1.micro</code>,
      *        <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *        <li>Memory optimized
+     *        <li>
+     *        <p>
+     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Memory optimized:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.r3.large</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.r3.large</code>,
      *        <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *        <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.m2.xlarge</code>,
+     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        </ul>
@@ -1486,11 +1771,23 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        <b>Notes:</b>
      *        </p>
      *        <ul>
-     *        <li>All t2 instances are created in an Amazon Virtual Private
-     *        Cloud (VPC).</li>
-     *        <li>Redis backup/restore is not supported for t2 instances.</li>
-     *        <li>Redis Append-only files (AOF) functionality is not supported
-     *        for t1 or t2 instances.</li>
+     *        <li>
+     *        <p>
+     *        All t2 instances are created in an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis backup/restore is not supported for t2 instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis Append-only files (AOF) functionality is not supported for
+     *        t1 or t2 instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For a complete listing of cache node types and specifications, see
@@ -1514,25 +1811,51 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -1540,11 +1863,22 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -1562,25 +1896,51 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *         Valid node types are as follows:
      *         </p>
      *         <ul>
-     *         <li>General purpose:
+     *         <li>
+     *         <p>
+     *         General purpose:
+     *         </p>
      *         <ul>
-     *         <li>Current generation: <code>cache.t2.micro</code>,
+     *         <li>
+     *         <p>
+     *         Current generation: <code>cache.t2.micro</code>,
      *         <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *         <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *         <li>Previous generation: <code>cache.t1.micro</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Previous generation: <code>cache.t1.micro</code>,
      *         <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
-     *         <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *         <li>Memory optimized
+     *         <li>
+     *         <p>
+     *         Compute optimized: <code>cache.c1.xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Memory optimized:
+     *         </p>
      *         <ul>
-     *         <li>Current generation: <code>cache.r3.large</code>,
+     *         <li>
+     *         <p>
+     *         Current generation: <code>cache.r3.large</code>,
      *         <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *         <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *         <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Previous generation: <code>cache.m2.xlarge</code>,
+     *         <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         </li>
      *         </ul>
@@ -1588,11 +1948,23 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *         <b>Notes:</b>
      *         </p>
      *         <ul>
-     *         <li>All t2 instances are created in an Amazon Virtual Private
-     *         Cloud (VPC).</li>
-     *         <li>Redis backup/restore is not supported for t2 instances.</li>
-     *         <li>Redis Append-only files (AOF) functionality is not supported
-     *         for t1 or t2 instances.</li>
+     *         <li>
+     *         <p>
+     *         All t2 instances are created in an Amazon Virtual Private Cloud
+     *         (VPC).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Redis backup/restore is not supported for t2 instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Redis Append-only files (AOF) functionality is not supported for
+     *         t1 or t2 instances.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For a complete listing of cache node types and specifications,
@@ -1617,25 +1989,51 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * Valid node types are as follows:
      * </p>
      * <ul>
-     * <li>General purpose:
+     * <li>
+     * <p>
+     * General purpose:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.t2.micro</code>,
      * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.t1.micro</code>,
      * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
-     * <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     * <li>Memory optimized
+     * <li>
+     * <p>
+     * Compute optimized: <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Memory optimized:
+     * </p>
      * <ul>
-     * <li>Current generation: <code>cache.r3.large</code>,
+     * <li>
+     * <p>
+     * Current generation: <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     * <li>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Previous generation: <code>cache.m2.xlarge</code>,
+     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -1643,11 +2041,22 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <b>Notes:</b>
      * </p>
      * <ul>
-     * <li>All t2 instances are created in an Amazon Virtual Private Cloud
-     * (VPC).</li>
-     * <li>Redis backup/restore is not supported for t2 instances.</li>
-     * <li>Redis Append-only files (AOF) functionality is not supported for t1
-     * or t2 instances.</li>
+     * <li>
+     * <p>
+     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis backup/restore is not supported for t2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis Append-only files (AOF) functionality is not supported for t1 or t2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For a complete listing of cache node types and specifications, see <a
@@ -1666,25 +2075,51 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        Valid node types are as follows:
      *        </p>
      *        <ul>
-     *        <li>General purpose:
+     *        <li>
+     *        <p>
+     *        General purpose:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.t2.micro</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.t2.micro</code>,
      *        <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      *        <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-     *        <li>Previous generation: <code>cache.t1.micro</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.t1.micro</code>,
      *        <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
-     *        <li>Compute optimized: <code>cache.c1.xlarge</code></li>
-     *        <li>Memory optimized
+     *        <li>
+     *        <p>
+     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Memory optimized:
+     *        </p>
      *        <ul>
-     *        <li>Current generation: <code>cache.r3.large</code>,
+     *        <li>
+     *        <p>
+     *        Current generation: <code>cache.r3.large</code>,
      *        <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-     *        <li>Previous generation: <code>cache.m2.xlarge</code>,
-     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li>
+     *        <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Previous generation: <code>cache.m2.xlarge</code>,
+     *        <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        </li>
      *        </ul>
@@ -1692,11 +2127,23 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        <b>Notes:</b>
      *        </p>
      *        <ul>
-     *        <li>All t2 instances are created in an Amazon Virtual Private
-     *        Cloud (VPC).</li>
-     *        <li>Redis backup/restore is not supported for t2 instances.</li>
-     *        <li>Redis Append-only files (AOF) functionality is not supported
-     *        for t1 or t2 instances.</li>
+     *        <li>
+     *        <p>
+     *        All t2 instances are created in an Amazon Virtual Private Cloud
+     *        (VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis backup/restore is not supported for t2 instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis Append-only files (AOF) functionality is not supported for
+     *        t1 or t2 instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For a complete listing of cache node types and specifications, see
@@ -2332,10 +2779,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * The snapshot file will be used to populate the node group. The Amazon S3
      * object name in the ARN cannot contain any commas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2345,11 +2794,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *         (ARN) that uniquely identifies a Redis RDB snapshot file stored
      *         in Amazon S3. The snapshot file will be used to populate the node
      *         group. The Amazon S3 object name in the ARN cannot contain any
-     *         commas.</p>
+     *         commas.</p> <note>
      *         <p>
-     *         <b>Note:</b> This parameter is only valid if the
-     *         <code>Engine</code> parameter is <code>redis</code>.
+     *         This parameter is only valid if the <code>Engine</code> parameter
+     *         is <code>redis</code>.
      *         </p>
+     *         </note>
      *         <p>
      *         Example of an Amazon S3 ARN:
      *         <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2369,10 +2819,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * The snapshot file will be used to populate the node group. The Amazon S3
      * object name in the ARN cannot contain any commas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2383,11 +2835,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        (ARN) that uniquely identifies a Redis RDB snapshot file stored in
      *        Amazon S3. The snapshot file will be used to populate the node
      *        group. The Amazon S3 object name in the ARN cannot contain any
-     *        commas.</p>
+     *        commas.</p> <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
      *        </p>
+     *        </note>
      *        <p>
      *        Example of an Amazon S3 ARN:
      *        <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2410,10 +2863,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * The snapshot file will be used to populate the node group. The Amazon S3
      * object name in the ARN cannot contain any commas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2430,11 +2885,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        (ARN) that uniquely identifies a Redis RDB snapshot file stored in
      *        Amazon S3. The snapshot file will be used to populate the node
      *        group. The Amazon S3 object name in the ARN cannot contain any
-     *        commas.</p>
+     *        commas.</p> <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
      *        </p>
+     *        </note>
      *        <p>
      *        Example of an Amazon S3 ARN:
      *        <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2460,10 +2916,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * The snapshot file will be used to populate the node group. The Amazon S3
      * object name in the ARN cannot contain any commas.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2474,11 +2932,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        (ARN) that uniquely identifies a Redis RDB snapshot file stored in
      *        Amazon S3. The snapshot file will be used to populate the node
      *        group. The Amazon S3 object name in the ARN cannot contain any
-     *        commas.</p>
+     *        commas.</p> <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
      *        </p>
+     *        </note>
      *        <p>
      *        Example of an Amazon S3 ARN:
      *        <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
@@ -2498,18 +2957,21 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * group. The snapshot status changes to <code>restoring</code> while the
      * new node group is being created.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @param snapshotName
      *        The name of a snapshot from which to restore data into the new
      *        node group. The snapshot status changes to <code>restoring</code>
-     *        while the new node group is being created.</p>
+     *        while the new node group is being created.</p> <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
+     *        </p>
      */
 
     public void setSnapshotName(String snapshotName) {
@@ -2522,17 +2984,20 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * group. The snapshot status changes to <code>restoring</code> while the
      * new node group is being created.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @return The name of a snapshot from which to restore data into the new
      *         node group. The snapshot status changes to <code>restoring</code>
-     *         while the new node group is being created.</p>
+     *         while the new node group is being created.</p> <note>
      *         <p>
-     *         <b>Note:</b> This parameter is only valid if the
-     *         <code>Engine</code> parameter is <code>redis</code>.
+     *         This parameter is only valid if the <code>Engine</code> parameter
+     *         is <code>redis</code>.
+     *         </p>
      */
 
     public String getSnapshotName() {
@@ -2545,18 +3010,21 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * group. The snapshot status changes to <code>restoring</code> while the
      * new node group is being created.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * 
      * @param snapshotName
      *        The name of a snapshot from which to restore data into the new
      *        node group. The snapshot status changes to <code>restoring</code>
-     *        while the new node group is being created.</p>
+     *        while the new node group is being created.</p> <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2574,13 +3042,41 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -2593,13 +3089,41 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        maintenance window is a 60 minute period. Valid values for
      *        <code>ddd</code> are:</p>
      *        <ul>
-     *        <li><code>sun</code></li>
-     *        <li><code>mon</code></li>
-     *        <li><code>tue</code></li>
-     *        <li><code>wed</code></li>
-     *        <li><code>thu</code></li>
-     *        <li><code>fri</code></li>
-     *        <li><code>sat</code></li>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>sun:05:00-sun:09:00</code>
@@ -2617,13 +3141,41 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -2635,13 +3187,41 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *         maintenance window is a 60 minute period. Valid values for
      *         <code>ddd</code> are:</p>
      *         <ul>
-     *         <li><code>sun</code></li>
-     *         <li><code>mon</code></li>
-     *         <li><code>tue</code></li>
-     *         <li><code>wed</code></li>
-     *         <li><code>thu</code></li>
-     *         <li><code>fri</code></li>
-     *         <li><code>sat</code></li>
+     *         <li>
+     *         <p>
+     *         <code>sun</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>mon</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tue</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>wed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>thu</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>fri</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sat</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>sun:05:00-sun:09:00</code>
@@ -2659,13 +3239,41 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * is a 60 minute period. Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
-     * <li><code>sun</code></li>
-     * <li><code>mon</code></li>
-     * <li><code>tue</code></li>
-     * <li><code>wed</code></li>
-     * <li><code>thu</code></li>
-     * <li><code>fri</code></li>
-     * <li><code>sat</code></li>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>sun:05:00-sun:09:00</code>
@@ -2678,13 +3286,41 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        maintenance window is a 60 minute period. Valid values for
      *        <code>ddd</code> are:</p>
      *        <ul>
-     *        <li><code>sun</code></li>
-     *        <li><code>mon</code></li>
-     *        <li><code>tue</code></li>
-     *        <li><code>wed</code></li>
-     *        <li><code>thu</code></li>
-     *        <li><code>fri</code></li>
-     *        <li><code>sat</code></li>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>sun:05:00-sun:09:00</code>
@@ -2747,14 +3383,20 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) topic to which notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be the same as the cache cluster
-     * owner.</note>
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * </p>
+     * </note>
      * 
      * @param notificationTopicArn
      *        The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *        Service (SNS) topic to which notifications will be sent.</p>
-     *        <note>The Amazon SNS topic owner must be the same as the cache
-     *        cluster owner.
+     *        <note>
+     *        <p>
+     *        The Amazon SNS topic owner must be the same as the cache cluster
+     *        owner.
+     *        </p>
      */
 
     public void setNotificationTopicArn(String notificationTopicArn) {
@@ -2766,13 +3408,19 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) topic to which notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be the same as the cache cluster
-     * owner.</note>
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * </p>
+     * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic to which notifications will be sent.</p>
-     *         <note>The Amazon SNS topic owner must be the same as the cache
-     *         cluster owner.
+     *         <note>
+     *         <p>
+     *         The Amazon SNS topic owner must be the same as the cache cluster
+     *         owner.
+     *         </p>
      */
 
     public String getNotificationTopicArn() {
@@ -2784,14 +3432,20 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) topic to which notifications will be sent.
      * </p>
-     * <note>The Amazon SNS topic owner must be the same as the cache cluster
-     * owner.</note>
+     * <note>
+     * <p>
+     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * </p>
+     * </note>
      * 
      * @param notificationTopicArn
      *        The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *        Service (SNS) topic to which notifications will be sent.</p>
-     *        <note>The Amazon SNS topic owner must be the same as the cache
-     *        cluster owner.
+     *        <note>
+     *        <p>
+     *        The Amazon SNS topic owner must be the same as the cache cluster
+     *        owner.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2863,10 +3517,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
@@ -2876,10 +3532,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        snapshots before deleting them. For example, if you set
      *        <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was
      *        taken today will be retained for 5 days before being deleted.</p>
+     *        <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
      *        </p>
+     *        </note>
      *        <p>
      *        Default: 0 (i.e., automatic backups are disabled for this cache
      *        cluster).
@@ -2896,10 +3554,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
@@ -2908,11 +3568,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *         snapshots before deleting them. For example, if you set
      *         <code>SnapshotRetentionLimit</code> to 5, then a snapshot that
      *         was taken today will be retained for 5 days before being
-     *         deleted.</p>
+     *         deleted.</p> <note>
      *         <p>
-     *         <b>Note:</b> This parameter is only valid if the
-     *         <code>Engine</code> parameter is <code>redis</code>.
+     *         This parameter is only valid if the <code>Engine</code> parameter
+     *         is <code>redis</code>.
      *         </p>
+     *         </note>
      *         <p>
      *         Default: 0 (i.e., automatic backups are disabled for this cache
      *         cluster).
@@ -2929,10 +3590,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> This parameter is only valid if the <code>Engine</code>
-     * parameter is <code>redis</code>.
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * </p>
+     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
@@ -2942,10 +3605,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest
      *        snapshots before deleting them. For example, if you set
      *        <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was
      *        taken today will be retained for 5 days before being deleted.</p>
+     *        <note>
      *        <p>
-     *        <b>Note:</b> This parameter is only valid if the
-     *        <code>Engine</code> parameter is <code>redis</code>.
+     *        This parameter is only valid if the <code>Engine</code> parameter
+     *        is <code>redis</code>.
      *        </p>
+     *        </note>
      *        <p>
      *        Default: 0 (i.e., automatic backups are disabled for this cache
      *        cluster).

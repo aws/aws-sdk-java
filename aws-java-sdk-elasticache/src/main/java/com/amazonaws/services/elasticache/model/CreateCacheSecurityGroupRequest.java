@@ -34,7 +34,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters.
-     * Cannot be the word &quot;Default".
+     * Cannot be the word "Default".
      * </p>
      * <p>
      * Example: <code>mysecuritygroup</code>
@@ -66,7 +66,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest
      *        lowercase string.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters. Cannot be the word &quot;Default".
+     *        characters. Cannot be the word "Default".
      *        </p>
      *        <p>
      *        Example: <code>mysecuritygroup</code>
@@ -86,7 +86,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters.
-     * Cannot be the word &quot;Default".
+     * Cannot be the word "Default".
      * </p>
      * <p>
      * Example: <code>mysecuritygroup</code>
@@ -97,7 +97,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest
      *        lowercase string.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters. Cannot be the word &quot;Default".
+     *        characters. Cannot be the word "Default".
      *        </p>
      *        <p>
      *        Example: <code>mysecuritygroup</code>
@@ -114,7 +114,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters.
-     * Cannot be the word &quot;Default".
+     * Cannot be the word "Default".
      * </p>
      * <p>
      * Example: <code>mysecuritygroup</code>
@@ -124,7 +124,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest
      *         lowercase string.</p>
      *         <p>
      *         Constraints: Must contain no more than 255 alphanumeric
-     *         characters. Cannot be the word &quot;Default".
+     *         characters. Cannot be the word "Default".
      *         </p>
      *         <p>
      *         Example: <code>mysecuritygroup</code>
@@ -141,7 +141,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters.
-     * Cannot be the word &quot;Default".
+     * Cannot be the word "Default".
      * </p>
      * <p>
      * Example: <code>mysecuritygroup</code>
@@ -152,7 +152,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest
      *        lowercase string.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters. Cannot be the word &quot;Default".
+     *        characters. Cannot be the word "Default".
      *        </p>
      *        <p>
      *        Example: <code>mysecuritygroup</code>

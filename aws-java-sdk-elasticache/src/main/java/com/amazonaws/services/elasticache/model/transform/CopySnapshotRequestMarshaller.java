@@ -60,6 +60,11 @@ public class CopySnapshotRequestMarshaller implements
                     .fromString(copySnapshotRequest.getTargetSnapshotName()));
         }
 
+        if (copySnapshotRequest.getTargetBucket() != null) {
+            request.addParameter("TargetBucket", StringUtils
+                    .fromString(copySnapshotRequest.getTargetBucket()));
+        }
+
         return request;
     }
 

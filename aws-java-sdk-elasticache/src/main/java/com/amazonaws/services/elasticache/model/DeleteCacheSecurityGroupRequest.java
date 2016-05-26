@@ -31,7 +31,11 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the cache security group to delete.
      * </p>
-     * <note>You cannot delete the default security group.</note>
+     * <note>
+     * <p>
+     * You cannot delete the default security group.
+     * </p>
+     * </note>
      */
     private String cacheSecurityGroupName;
 
@@ -49,8 +53,10 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param cacheSecurityGroupName
-     *        The name of the cache security group to delete.</p> <note>You
-     *        cannot delete the default security group.
+     *        The name of the cache security group to delete.</p> <note>
+     *        <p>
+     *        You cannot delete the default security group.
+     *        </p>
      */
     public DeleteCacheSecurityGroupRequest(String cacheSecurityGroupName) {
         setCacheSecurityGroupName(cacheSecurityGroupName);
@@ -60,11 +66,17 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the cache security group to delete.
      * </p>
-     * <note>You cannot delete the default security group.</note>
+     * <note>
+     * <p>
+     * You cannot delete the default security group.
+     * </p>
+     * </note>
      * 
      * @param cacheSecurityGroupName
-     *        The name of the cache security group to delete.</p> <note>You
-     *        cannot delete the default security group.
+     *        The name of the cache security group to delete.</p> <note>
+     *        <p>
+     *        You cannot delete the default security group.
+     *        </p>
      */
 
     public void setCacheSecurityGroupName(String cacheSecurityGroupName) {
@@ -75,10 +87,16 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the cache security group to delete.
      * </p>
-     * <note>You cannot delete the default security group.</note>
+     * <note>
+     * <p>
+     * You cannot delete the default security group.
+     * </p>
+     * </note>
      * 
-     * @return The name of the cache security group to delete.</p> <note>You
-     *         cannot delete the default security group.
+     * @return The name of the cache security group to delete.</p> <note>
+     *         <p>
+     *         You cannot delete the default security group.
+     *         </p>
      */
 
     public String getCacheSecurityGroupName() {
@@ -89,11 +107,17 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the cache security group to delete.
      * </p>
-     * <note>You cannot delete the default security group.</note>
+     * <note>
+     * <p>
+     * You cannot delete the default security group.
+     * </p>
+     * </note>
      * 
      * @param cacheSecurityGroupName
-     *        The name of the cache security group to delete.</p> <note>You
-     *        cannot delete the default security group.
+     *        The name of the cache security group to delete.</p> <note>
+     *        <p>
+     *        You cannot delete the default security group.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

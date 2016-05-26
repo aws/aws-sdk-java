@@ -21,10 +21,10 @@
     "endpointPrefix" : "storagegateway",
     "signingName" : "storagegateway",
     "cborProtocol" : false,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "xmlProtocol" : false,
     "jsonProtocol" : true,
     "serviceName" : "AWS Storage Gateway"
   },
@@ -54,13 +54,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "activateGateway",
       "syncReturnType" : "ActivateGatewayResult",
       "asyncReturnType" : "ActivateGatewayResult",
       "asyncFutureType" : "java.util.concurrent.Future<ActivateGatewayResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ActivateGatewayResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ActivateGatewayRequest, ActivateGatewayResult>",
-      "methodName" : "activateGateway"
+      "authenticated" : true
     },
     "AddCache" : {
       "documentation" : "<p>Configures one or more gateway local disks as cache for a cached-volume gateway. This operation is supported only for the gateway-cached volume architecture (see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html\">Storage Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add cache, and one or more disk IDs that you want to configure as cache.</p>",
@@ -87,13 +87,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "addCache",
       "syncReturnType" : "AddCacheResult",
       "asyncReturnType" : "AddCacheResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddCacheResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddCacheResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddCacheRequest, AddCacheResult>",
-      "methodName" : "addCache"
+      "authenticated" : true
     },
     "AddTagsToResource" : {
       "documentation" : "<p>Adds one or more tags to the specified resource. You use tags to add metadata to resources, which you can use to categorize these resources. For example, you can categorize resources by purpose, owner, environment, or team. Each tag consists of a key and a value, which you define. You can add tags to the following AWS Storage Gateway resources:</p> <ul> <li> <p>Storage gateways of all types</p> </li> </ul> <ul> <li> <p>Storage Volumes</p> </li> </ul> <ul> <li> <p>Virtual Tapes</p> </li> </ul> <p>You can create a maximum of 10 tags for each resource. Virtual tapes and storage volumes that are recovered to a new gateway maintain their tags.</p>",
@@ -120,13 +120,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "addTagsToResource",
       "syncReturnType" : "AddTagsToResourceResult",
       "asyncReturnType" : "AddTagsToResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>",
-      "methodName" : "addTagsToResource"
+      "authenticated" : true
     },
     "AddUploadBuffer" : {
       "documentation" : "<p>Configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported for both the gateway-stored and gateway-cached volume architectures.</p> <p>In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and one or more disk IDs that you want to configure as upload buffer.</p>",
@@ -153,13 +153,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "addUploadBuffer",
       "syncReturnType" : "AddUploadBufferResult",
       "asyncReturnType" : "AddUploadBufferResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddUploadBufferResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddUploadBufferResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddUploadBufferRequest, AddUploadBufferResult>",
-      "methodName" : "addUploadBuffer"
+      "authenticated" : true
     },
     "AddWorkingStorage" : {
       "documentation" : "<p>Configures one or more gateway local disks as working storage for a gateway. This operation is supported only for the gateway-stored volume architecture. This operation is deprecated in cached-volumes API version 20120630. Use <a>AddUploadBuffer</a> instead.</p> <note> <p>Working storage is also referred to as upload buffer. You can also use the <a>AddUploadBuffer</a> operation to add upload buffer to a stored-volume gateway.</p> </note> <p>In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add working storage, and one or more disk IDs that you want to configure as working storage.</p>",
@@ -186,13 +186,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "addWorkingStorage",
       "syncReturnType" : "AddWorkingStorageResult",
       "asyncReturnType" : "AddWorkingStorageResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddWorkingStorageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddWorkingStorageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddWorkingStorageRequest, AddWorkingStorageResult>",
-      "methodName" : "addWorkingStorage"
+      "authenticated" : true
     },
     "CancelArchival" : {
       "documentation" : "<p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated.</p>",
@@ -219,13 +219,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "cancelArchival",
       "syncReturnType" : "CancelArchivalResult",
       "asyncReturnType" : "CancelArchivalResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelArchivalResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelArchivalResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelArchivalRequest, CancelArchivalResult>",
-      "methodName" : "cancelArchival"
+      "authenticated" : true
     },
     "CancelRetrieval" : {
       "documentation" : "<p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is initiated. The virtual tape is returned to the VTS.</p>",
@@ -252,13 +252,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "cancelRetrieval",
       "syncReturnType" : "CancelRetrievalResult",
       "asyncReturnType" : "CancelRetrievalResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelRetrievalResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelRetrievalResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelRetrievalRequest, CancelRetrievalResult>",
-      "methodName" : "cancelRetrieval"
+      "authenticated" : true
     },
     "CreateCachediSCSIVolume" : {
       "documentation" : "<p>Creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume architecture.</p> <note><p>Cache storage must be allocated to the gateway before you can create a cached volume. Use the <a>AddCache</a> operation to add cache storage to a gateway. </p> </note> <p>In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address on which to expose the target, and a unique client token. In response, AWS Storage Gateway creates the volume and returns information about it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.</p>",
@@ -285,13 +285,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "createCachediSCSIVolume",
       "syncReturnType" : "CreateCachediSCSIVolumeResult",
       "asyncReturnType" : "CreateCachediSCSIVolumeResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateCachediSCSIVolumeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateCachediSCSIVolumeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCachediSCSIVolumeRequest, CreateCachediSCSIVolumeResult>",
-      "methodName" : "createCachediSCSIVolume"
+      "authenticated" : true
     },
     "CreateSnapshot" : {
       "documentation" : "<p>Initiates a snapshot of a volume.</p> <p>AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis. This API enables you to take ad-hoc snapshot. For more information, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html\">Working With Snapshots in the AWS Storage Gateway Console</a>.</p> <p>In the CreateSnapshot request you identify the volume by providing its Amazon Resource Name (ARN). You must also provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to create a volume from a snapshot.</p> <note><p>To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see DescribeSnapshots or DeleteSnapshot in the <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html\">EC2 API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are changing to a longer length ID format. For more information, see the important note on the <a href=\"http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html\">Welcome</a> page.</p> </important>",
@@ -318,13 +318,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "createSnapshot",
       "syncReturnType" : "CreateSnapshotResult",
       "asyncReturnType" : "CreateSnapshotResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateSnapshotResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateSnapshotResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResult>",
-      "methodName" : "createSnapshot"
+      "authenticated" : true
     },
     "CreateSnapshotFromVolumeRecoveryPoint" : {
       "documentation" : "<p>Initiates a snapshot of a gateway from a volume recovery point. This operation is supported only for the gateway-cached volume architecture.</p> <p>A volume recovery point is a point in time at which all data of the volume is consistent and from which you can create a snapshot. To get a list of volume recovery point for gateway-cached volumes, use <a>ListVolumeRecoveryPoints</a>.</p> <p>In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the volume by providing its Amazon Resource Name (ARN). You must also provide a description for the snapshot. When AWS Storage Gateway takes a snapshot of the specified volume, the snapshot and its description appear in the AWS Storage Gateway console. In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to create a volume from a snapshot.</p> <note> <p>To list or delete a snapshot, you must use the Amazon EC2 API. For more information, in <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </note>",
@@ -351,13 +351,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "createSnapshotFromVolumeRecoveryPoint",
       "syncReturnType" : "CreateSnapshotFromVolumeRecoveryPointResult",
       "asyncReturnType" : "CreateSnapshotFromVolumeRecoveryPointResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateSnapshotFromVolumeRecoveryPointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateSnapshotFromVolumeRecoveryPointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSnapshotFromVolumeRecoveryPointRequest, CreateSnapshotFromVolumeRecoveryPointResult>",
-      "methodName" : "createSnapshotFromVolumeRecoveryPoint"
+      "authenticated" : true
     },
     "CreateStorediSCSIVolume" : {
       "documentation" : "<p>Creates a volume on a specified gateway. This operation is supported only for the gateway-stored volume architecture.</p> <p>The size of the volume to create is inferred from the disk size. You can choose to preserve existing data on the disk, create volume from an existing snapshot, or create an empty volume. If you choose to create an empty gateway volume, then any existing data on the disk is erased.</p> <p>In the request you must specify the gateway and the disk information on which you are creating the volume. In response, AWS Storage Gateway creates the volume and returns volume information such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.</p>",
@@ -384,13 +384,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "createStorediSCSIVolume",
       "syncReturnType" : "CreateStorediSCSIVolumeResult",
       "asyncReturnType" : "CreateStorediSCSIVolumeResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateStorediSCSIVolumeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateStorediSCSIVolumeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStorediSCSIVolumeRequest, CreateStorediSCSIVolumeResult>",
-      "methodName" : "createStorediSCSIVolume"
+      "authenticated" : true
     },
     "CreateTapeWithBarcode" : {
       "documentation" : "<p>Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape.</p> <note><p>Cache storage must be allocated to the gateway before you can create a virtual tape. Use the <a>AddCache</a> operation to add cache storage to a gateway.</p> </note>",
@@ -417,13 +417,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "createTapeWithBarcode",
       "syncReturnType" : "CreateTapeWithBarcodeResult",
       "asyncReturnType" : "CreateTapeWithBarcodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTapeWithBarcodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTapeWithBarcodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTapeWithBarcodeRequest, CreateTapeWithBarcodeResult>",
-      "methodName" : "createTapeWithBarcode"
+      "authenticated" : true
     },
     "CreateTapes" : {
       "documentation" : "<p>Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.</p> <note><p>Cache storage must be allocated to the gateway before you can create virtual tapes. Use the <a>AddCache</a> operation to add cache storage to a gateway. </p> </note>",
@@ -450,13 +450,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "createTapes",
       "syncReturnType" : "CreateTapesResult",
       "asyncReturnType" : "CreateTapesResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTapesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTapesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTapesRequest, CreateTapesResult>",
-      "methodName" : "createTapes"
+      "authenticated" : true
     },
     "DeleteBandwidthRateLimit" : {
       "documentation" : "<p>Deletes the bandwidth rate limits of a gateway. You can delete either the upload and download bandwidth rate limit, or you can delete both. If you delete only one of the limits, the other limit remains unchanged. To specify which gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
@@ -483,13 +483,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "deleteBandwidthRateLimit",
       "syncReturnType" : "DeleteBandwidthRateLimitResult",
       "asyncReturnType" : "DeleteBandwidthRateLimitResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteBandwidthRateLimitResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteBandwidthRateLimitResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteBandwidthRateLimitRequest, DeleteBandwidthRateLimitResult>",
-      "methodName" : "deleteBandwidthRateLimit"
+      "authenticated" : true
     },
     "DeleteChapCredentials" : {
       "documentation" : "<p>Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator pair.</p>",
@@ -516,13 +516,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "deleteChapCredentials",
       "syncReturnType" : "DeleteChapCredentialsResult",
       "asyncReturnType" : "DeleteChapCredentialsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteChapCredentialsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteChapCredentialsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteChapCredentialsRequest, DeleteChapCredentialsResult>",
-      "methodName" : "deleteChapCredentials"
+      "authenticated" : true
     },
     "DeleteGateway" : {
       "documentation" : "<p>Deletes a gateway. To specify which gateway to delete, use the Amazon Resource Name (ARN) of the gateway in your request. The operation deletes the gateway; however, it does not delete the gateway virtual machine (VM) from your host computer.</p> <p>After you delete a gateway, you cannot reactivate it. Completed snapshots of the gateway volumes are not deleted upon deleting the gateway, however, pending snapshots will not complete. After you delete a gateway, your next step is to remove it from your environment.</p> <important> <p>You no longer pay software charges after the gateway is deleted; however, your existing Amazon EBS snapshots persist and you will continue to be billed for these snapshots. You can choose to remove all remaining Amazon EBS snapshots by canceling your Amazon EC2 subscription.  If you prefer not to cancel your Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2 console. For more information, see the <a href=\"http://aws.amazon.com/storagegateway\"> AWS Storage Gateway Detail Page</a>. </p> </important>",
@@ -549,13 +549,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "deleteGateway",
       "syncReturnType" : "DeleteGatewayResult",
       "asyncReturnType" : "DeleteGatewayResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteGatewayResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteGatewayResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteGatewayRequest, DeleteGatewayResult>",
-      "methodName" : "deleteGateway"
+      "authenticated" : true
     },
     "DeleteSnapshotSchedule" : {
       "documentation" : "<p>Deletes a snapshot of a volume.</p> <p>You can take snapshots of your gateway volumes on a scheduled or ad hoc basis. This API action enables you to delete a snapshot schedule for a volume. For more information, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html\">Working with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify the volume by providing its Amazon Resource Name (ARN). </p> <note> <p>To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </note>",
@@ -582,13 +582,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "deleteSnapshotSchedule",
       "syncReturnType" : "DeleteSnapshotScheduleResult",
       "asyncReturnType" : "DeleteSnapshotScheduleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteSnapshotScheduleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteSnapshotScheduleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResult>",
-      "methodName" : "deleteSnapshotSchedule"
+      "authenticated" : true
     },
     "DeleteTape" : {
       "documentation" : "<p>Deletes the specified virtual tape.</p>",
@@ -615,13 +615,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "deleteTape",
       "syncReturnType" : "DeleteTapeResult",
       "asyncReturnType" : "DeleteTapeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTapeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTapeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTapeRequest, DeleteTapeResult>",
-      "methodName" : "deleteTape"
+      "authenticated" : true
     },
     "DeleteTapeArchive" : {
       "documentation" : "<p>Deletes the specified virtual tape from the virtual tape shelf (VTS).</p>",
@@ -648,13 +648,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "deleteTapeArchive",
       "syncReturnType" : "DeleteTapeArchiveResult",
       "asyncReturnType" : "DeleteTapeArchiveResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTapeArchiveResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTapeArchiveResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTapeArchiveRequest, DeleteTapeArchiveResult>",
-      "methodName" : "deleteTapeArchive"
+      "authenticated" : true
     },
     "DeleteVolume" : {
       "documentation" : "<p>Deletes the specified gateway volume that you previously created using the <a>CreateCachediSCSIVolume</a> or <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local disk that was configured as the storage volume is not deleted. You can reuse the local disk to create another storage volume. </p> <p>Before you delete a gateway volume, make sure there are no iSCSI connections to the volume you are deleting. You should also make sure there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query snapshots on the volume you are deleting and check the snapshot status. For more information, go to <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html\">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request, you must provide the Amazon Resource Name (ARN) of the storage volume you want to delete.</p>",
@@ -681,13 +681,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "deleteVolume",
       "syncReturnType" : "DeleteVolumeResult",
       "asyncReturnType" : "DeleteVolumeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteVolumeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteVolumeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteVolumeRequest, DeleteVolumeResult>",
-      "methodName" : "deleteVolume"
+      "authenticated" : true
     },
     "DescribeBandwidthRateLimit" : {
       "documentation" : "<p>Returns the bandwidth rate limits of a gateway. By default, these limits are not set, which means no bandwidth rate limiting is in effect.</p> <p>This operation only returns a value for a bandwidth rate limit only if the limit is set. If no limits are set for the gateway, then this operation returns only the gateway ARN in the response body. To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
@@ -714,13 +714,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeBandwidthRateLimit",
       "syncReturnType" : "DescribeBandwidthRateLimitResult",
       "asyncReturnType" : "DescribeBandwidthRateLimitResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeBandwidthRateLimitResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeBandwidthRateLimitResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeBandwidthRateLimitRequest, DescribeBandwidthRateLimitResult>",
-      "methodName" : "describeBandwidthRateLimit"
+      "authenticated" : true
     },
     "DescribeCache" : {
       "documentation" : "<p>Returns information about the cache of a gateway. This operation is supported only for the gateway-cached volume architecture.</p> <p>The response includes disk IDs that are configured as cache, and it includes the amount of cache allocated and used.</p>",
@@ -747,13 +747,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeCache",
       "syncReturnType" : "DescribeCacheResult",
       "asyncReturnType" : "DescribeCacheResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheRequest, DescribeCacheResult>",
-      "methodName" : "describeCache"
+      "authenticated" : true
     },
     "DescribeCachediSCSIVolumes" : {
       "documentation" : "<p>Returns a description of the gateway volumes specified in the request. This operation is supported only for the gateway-cached volume architecture.</p> <p>The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by volume Amazon Resource Name (ARN).</p>",
@@ -780,13 +780,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeCachediSCSIVolumes",
       "syncReturnType" : "DescribeCachediSCSIVolumesResult",
       "asyncReturnType" : "DescribeCachediSCSIVolumesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCachediSCSIVolumesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCachediSCSIVolumesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCachediSCSIVolumesRequest, DescribeCachediSCSIVolumesResult>",
-      "methodName" : "describeCachediSCSIVolumes"
+      "authenticated" : true
     },
     "DescribeChapCredentials" : {
       "documentation" : "<p>Returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI target, one for each target-initiator pair.</p>",
@@ -813,13 +813,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeChapCredentials",
       "syncReturnType" : "DescribeChapCredentialsResult",
       "asyncReturnType" : "DescribeChapCredentialsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeChapCredentialsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeChapCredentialsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeChapCredentialsRequest, DescribeChapCredentialsResult>",
-      "methodName" : "describeChapCredentials"
+      "authenticated" : true
     },
     "DescribeGatewayInformation" : {
       "documentation" : "<p>Returns metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the gateway is running or not). To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
@@ -846,13 +846,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeGatewayInformation",
       "syncReturnType" : "DescribeGatewayInformationResult",
       "asyncReturnType" : "DescribeGatewayInformationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeGatewayInformationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeGatewayInformationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeGatewayInformationRequest, DescribeGatewayInformationResult>",
-      "methodName" : "describeGatewayInformation"
+      "authenticated" : true
     },
     "DescribeMaintenanceStartTime" : {
       "documentation" : "<p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone.</p>",
@@ -879,13 +879,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeMaintenanceStartTime",
       "syncReturnType" : "DescribeMaintenanceStartTimeResult",
       "asyncReturnType" : "DescribeMaintenanceStartTimeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMaintenanceStartTimeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMaintenanceStartTimeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceStartTimeRequest, DescribeMaintenanceStartTimeResult>",
-      "methodName" : "describeMaintenanceStartTime"
+      "authenticated" : true
     },
     "DescribeSnapshotSchedule" : {
       "documentation" : "<p>Describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes intervals at which snapshots are automatically initiated on the volume.</p>",
@@ -912,13 +912,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeSnapshotSchedule",
       "syncReturnType" : "DescribeSnapshotScheduleResult",
       "asyncReturnType" : "DescribeSnapshotScheduleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSnapshotScheduleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSnapshotScheduleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSnapshotScheduleRequest, DescribeSnapshotScheduleResult>",
-      "methodName" : "describeSnapshotSchedule"
+      "authenticated" : true
     },
     "DescribeStorediSCSIVolumes" : {
       "documentation" : "<p>Returns the description of the gateway volumes specified in the request. The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by volume ARNs.</p>",
@@ -945,13 +945,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeStorediSCSIVolumes",
       "syncReturnType" : "DescribeStorediSCSIVolumesResult",
       "asyncReturnType" : "DescribeStorediSCSIVolumesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStorediSCSIVolumesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStorediSCSIVolumesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStorediSCSIVolumesRequest, DescribeStorediSCSIVolumesResult>",
-      "methodName" : "describeStorediSCSIVolumes"
+      "authenticated" : true
     },
     "DescribeTapeArchives" : {
       "documentation" : "<p>Returns a description of specified virtual tapes in the virtual tape shelf (VTS).</p> <p>If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a description of all virtual tapes found in the VTS associated with your account.</p>",
@@ -978,13 +978,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeTapeArchives",
       "syncReturnType" : "DescribeTapeArchivesResult",
       "asyncReturnType" : "DescribeTapeArchivesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTapeArchivesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTapeArchivesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTapeArchivesRequest, DescribeTapeArchivesResult>",
-      "methodName" : "describeTapeArchives"
+      "authenticated" : true
     },
     "DescribeTapeRecoveryPoints" : {
       "documentation" : "<p>Returns a list of virtual tape recovery points that are available for the specified gateway-VTL.</p> <p>A recovery point is a point-in-time view of a virtual tape at which all the data on the virtual tape is consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.</p>",
@@ -1011,13 +1011,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeTapeRecoveryPoints",
       "syncReturnType" : "DescribeTapeRecoveryPointsResult",
       "asyncReturnType" : "DescribeTapeRecoveryPointsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTapeRecoveryPointsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTapeRecoveryPointsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTapeRecoveryPointsRequest, DescribeTapeRecoveryPointsResult>",
-      "methodName" : "describeTapeRecoveryPoints"
+      "authenticated" : true
     },
     "DescribeTapes" : {
       "documentation" : "<p>Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes. If a <code>TapeARN</code> is not specified, returns a description of all virtual tapes associated with the specified gateway.</p>",
@@ -1044,13 +1044,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeTapes",
       "syncReturnType" : "DescribeTapesResult",
       "asyncReturnType" : "DescribeTapesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTapesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTapesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTapesRequest, DescribeTapesResult>",
-      "methodName" : "describeTapes"
+      "authenticated" : true
     },
     "DescribeUploadBuffer" : {
       "documentation" : "<p>Returns information about the upload buffer of a gateway. This operation is supported for both the gateway-stored and gateway-cached volume architectures.</p> <p>The response includes disk IDs that are configured as upload buffer space, and it includes the amount of upload buffer space allocated and used.</p>",
@@ -1077,13 +1077,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeUploadBuffer",
       "syncReturnType" : "DescribeUploadBufferResult",
       "asyncReturnType" : "DescribeUploadBufferResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeUploadBufferResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeUploadBufferResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeUploadBufferRequest, DescribeUploadBufferResult>",
-      "methodName" : "describeUploadBuffer"
+      "authenticated" : true
     },
     "DescribeVTLDevices" : {
       "documentation" : "<p>Returns a description of virtual tape library (VTL) devices for the specified gateway. In the response, AWS Storage Gateway returns VTL device information.</p> <p>The list of VTL devices must be from one gateway.</p>",
@@ -1110,13 +1110,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeVTLDevices",
       "syncReturnType" : "DescribeVTLDevicesResult",
       "asyncReturnType" : "DescribeVTLDevicesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeVTLDevicesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeVTLDevicesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeVTLDevicesRequest, DescribeVTLDevicesResult>",
-      "methodName" : "describeVTLDevices"
+      "authenticated" : true
     },
     "DescribeWorkingStorage" : {
       "documentation" : "<p>Returns information about the working storage of a gateway. This operation is supported only for the gateway-stored volume architecture. This operation is deprecated in cached-volumes API version (20120630). Use DescribeUploadBuffer instead.</p> <note> <p>Working storage is also referred to as upload buffer. You can also use the DescribeUploadBuffer operation to add upload buffer to a stored-volume gateway.</p> </note> <p>The response includes disk IDs that are configured as working storage, and it includes the amount of working storage allocated and used.</p>",
@@ -1143,13 +1143,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "describeWorkingStorage",
       "syncReturnType" : "DescribeWorkingStorageResult",
       "asyncReturnType" : "DescribeWorkingStorageResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkingStorageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeWorkingStorageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeWorkingStorageRequest, DescribeWorkingStorageResult>",
-      "methodName" : "describeWorkingStorage"
+      "authenticated" : true
     },
     "DisableGateway" : {
       "documentation" : "<p>Disables a gateway when the gateway is no longer functioning. For example, if your gateway VM is damaged, you can disable the gateway so you can recover virtual tapes.</p> <p>Use this operation for a gateway-VTL that is not reachable or not functioning.</p> <important><p>Once a gateway is disabled it cannot be enabled.</p> </important>",
@@ -1176,13 +1176,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "disableGateway",
       "syncReturnType" : "DisableGatewayResult",
       "asyncReturnType" : "DisableGatewayResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableGatewayResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableGatewayResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableGatewayRequest, DisableGatewayResult>",
-      "methodName" : "disableGateway"
+      "authenticated" : true
     },
     "ListGateways" : {
       "documentation" : "<p>Lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway Amazon Resource Name (ARN).</p> <p>By default, the operation returns a maximum of 100 gateways. This operation supports pagination that allows you to optionally reduce the number of gateways returned in a response.</p> <p>If you have more gateways than are returned in a response (that is, the response returns only a truncated list of your gateways), the response contains a marker that you can specify in your next request to fetch the next page of gateways.</p>",
@@ -1209,13 +1209,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "listGateways",
       "syncReturnType" : "ListGatewaysResult",
       "asyncReturnType" : "ListGatewaysResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListGatewaysResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListGatewaysResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult>",
-      "methodName" : "listGateways"
+      "authenticated" : true
     },
     "ListLocalDisks" : {
       "documentation" : "<p>Returns a list of the gateway's local disks. To specify which gateway to describe, you use the Amazon Resource Name (ARN) of the gateway in the body of the request.</p> <p>The request returns a list of all disks, specifying which are configured as working storage, cache storage, or stored volume or not configured at all. The response includes a <code>DiskStatus</code> field. This field can have a value of present (the disk is available to use), missing (the disk is no longer connected to the gateway), or mismatch (the disk node is occupied by a disk that has incorrect metadata or the disk content is corrupted). </p>",
@@ -1242,13 +1242,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "listLocalDisks",
       "syncReturnType" : "ListLocalDisksResult",
       "asyncReturnType" : "ListLocalDisksResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListLocalDisksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListLocalDisksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListLocalDisksRequest, ListLocalDisksResult>",
-      "methodName" : "listLocalDisks"
+      "authenticated" : true
     },
     "ListTagsForResource" : {
       "documentation" : "<p>Lists the tags that have been added to the specified resource.</p>",
@@ -1275,13 +1275,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "listTagsForResource",
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
-      "methodName" : "listTagsForResource"
+      "authenticated" : true
     },
     "ListTapes" : {
       "documentation" : "<p>Lists virtual tapes in your virtual tape library (VTL) and your virtual tape shelf (VTS). You specify the tapes to list by specifying one or more tape Amazon Resource Names (ARNs). If you don't specify a tape ARN, the operation lists all virtual tapes in both your VTL and VTS.</p> <p>This operation supports pagination. By default, the operation returns a maximum of up to 100 tapes. You can optionally specify the <code>Limit</code> parameter in the body to limit the number of tapes in the response. If the number of tapes returned in the response is truncated, the response includes a <code>Marker</code> element that you can use in your subsequent request to retrieve the next set of tapes.</p>",
@@ -1308,13 +1308,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "listTapes",
       "syncReturnType" : "ListTapesResult",
       "asyncReturnType" : "ListTapesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTapesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTapesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTapesRequest, ListTapesResult>",
-      "methodName" : "listTapes"
+      "authenticated" : true
     },
     "ListVolumeInitiators" : {
       "documentation" : "<p>Lists iSCSI initiators that are connected to a volume. You can use this operation to determine whether a volume is being used or not.</p>",
@@ -1341,13 +1341,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "listVolumeInitiators",
       "syncReturnType" : "ListVolumeInitiatorsResult",
       "asyncReturnType" : "ListVolumeInitiatorsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListVolumeInitiatorsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListVolumeInitiatorsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListVolumeInitiatorsRequest, ListVolumeInitiatorsResult>",
-      "methodName" : "listVolumeInitiators"
+      "authenticated" : true
     },
     "ListVolumeRecoveryPoints" : {
       "documentation" : "<p>Lists the recovery points for a specified gateway. This operation is supported only for the gateway-cached volume architecture.</p> <p>Each gateway-cached volume has one recovery point. A volume recovery point is a point in time at which all data of the volume is consistent and from which you can create a snapshot. To create a snapshot from a volume recovery point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.</p>",
@@ -1374,13 +1374,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "listVolumeRecoveryPoints",
       "syncReturnType" : "ListVolumeRecoveryPointsResult",
       "asyncReturnType" : "ListVolumeRecoveryPointsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListVolumeRecoveryPointsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListVolumeRecoveryPointsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListVolumeRecoveryPointsRequest, ListVolumeRecoveryPointsResult>",
-      "methodName" : "listVolumeRecoveryPoints"
+      "authenticated" : true
     },
     "ListVolumes" : {
       "documentation" : "<p>Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume ARNs. If you want additional volume information, use the <a>DescribeStorediSCSIVolumes</a> API.</p> <p>The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can optionally specify the <code>Limit</code> field in the body to limit the number of volumes in the response. If the number of volumes returned in the response is truncated, the response includes a Marker field. You can use this Marker value in your subsequent request to retrieve the next set of volumes.</p>",
@@ -1407,13 +1407,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "listVolumes",
       "syncReturnType" : "ListVolumesResult",
       "asyncReturnType" : "ListVolumesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListVolumesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListVolumesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListVolumesRequest, ListVolumesResult>",
-      "methodName" : "listVolumes"
+      "authenticated" : true
     },
     "RemoveTagsFromResource" : {
       "documentation" : "<p>Removes one or more tags from the specified resource.</p>",
@@ -1440,13 +1440,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "removeTagsFromResource",
       "syncReturnType" : "RemoveTagsFromResourceResult",
       "asyncReturnType" : "RemoveTagsFromResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>",
-      "methodName" : "removeTagsFromResource"
+      "authenticated" : true
     },
     "ResetCache" : {
       "documentation" : "<p>Resets all cache disks that have encountered a error and makes the disks available for reconfiguration as cache storage. If your cache disk encounters a error, the gateway prevents read and write operations on virtual tapes in the gateway. For example, an error can occur when a disk is corrupted or removed from the gateway. When a cache is reset, the gateway loses its cache storage. At this point you can reconfigure the disks as cache disks.</p> <important> <p>If the cache disk you are resetting contains data that has not been uploaded to Amazon S3 yet, that data can be lost. After you reset cache disks, there will be no configured cache disks left in the gateway, so you must configure at least one new cache disk for your gateway to function properly.</p> </important>",
@@ -1473,13 +1473,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "resetCache",
       "syncReturnType" : "ResetCacheResult",
       "asyncReturnType" : "ResetCacheResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResetCacheResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResetCacheResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResetCacheRequest, ResetCacheResult>",
-      "methodName" : "resetCache"
+      "authenticated" : true
     },
     "RetrieveTapeArchive" : {
       "documentation" : "<p>Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL. Virtual tapes archived in the VTS are not associated with any gateway. However after a tape is retrieved, it is associated with a gateway, even though it is also listed in the VTS.</p> <p>Once a tape is successfully retrieved to a gateway, it cannot be retrieved again to another gateway. You must archive the tape again before you can retrieve it to another gateway.</p>",
@@ -1506,13 +1506,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "retrieveTapeArchive",
       "syncReturnType" : "RetrieveTapeArchiveResult",
       "asyncReturnType" : "RetrieveTapeArchiveResult",
       "asyncFutureType" : "java.util.concurrent.Future<RetrieveTapeArchiveResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RetrieveTapeArchiveResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RetrieveTapeArchiveRequest, RetrieveTapeArchiveResult>",
-      "methodName" : "retrieveTapeArchive"
+      "authenticated" : true
     },
     "RetrieveTapeRecoveryPoint" : {
       "documentation" : "<p>Retrieves the recovery point for the specified virtual tape.</p> <p>A recovery point is a point in time view of a virtual tape at which all the data on the tape is consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.</p> <note><p>The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only. The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving recovery points.</p> </note>",
@@ -1539,13 +1539,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "retrieveTapeRecoveryPoint",
       "syncReturnType" : "RetrieveTapeRecoveryPointResult",
       "asyncReturnType" : "RetrieveTapeRecoveryPointResult",
       "asyncFutureType" : "java.util.concurrent.Future<RetrieveTapeRecoveryPointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RetrieveTapeRecoveryPointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RetrieveTapeRecoveryPointRequest, RetrieveTapeRecoveryPointResult>",
-      "methodName" : "retrieveTapeRecoveryPoint"
+      "authenticated" : true
     },
     "SetLocalConsolePassword" : {
       "documentation" : "<p>Sets the password for your VM local console. When you log in to the local console for the first time, you log in to the VM with the default credentials. We recommend that you set a new password. You don't need to know the default password to set a new password.</p>",
@@ -1572,13 +1572,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "setLocalConsolePassword",
       "syncReturnType" : "SetLocalConsolePasswordResult",
       "asyncReturnType" : "SetLocalConsolePasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetLocalConsolePasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetLocalConsolePasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetLocalConsolePasswordRequest, SetLocalConsolePasswordResult>",
-      "methodName" : "setLocalConsolePassword"
+      "authenticated" : true
     },
     "ShutdownGateway" : {
       "documentation" : "<p>Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in the body of your request.</p> <p>The operation shuts down the gateway service component running in the storage gateway's virtual machine (VM) and not the VM.</p> <note><p>If you want to shut down the VM, it is recommended that you first shut down the gateway component in the VM to avoid unpredictable conditions.</p> </note> <p>After the gateway is shutdown, you cannot call any other API except <a>StartGateway</a>, <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more information, see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.</p> <note><p>When you make a shutdown request, you will get a <code>200 OK</code> success response immediately. However, it might take some time for the gateway to shut down. You can call the <a>DescribeGatewayInformation</a> API to check the status. For more information, see <a>ActivateGateway</a>.</p> </note> <p>If do not intend to use the gateway again, you must delete the gateway (using <a>DeleteGateway</a>) to no longer pay software charges associated with the gateway.</p>",
@@ -1605,13 +1605,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "shutdownGateway",
       "syncReturnType" : "ShutdownGatewayResult",
       "asyncReturnType" : "ShutdownGatewayResult",
       "asyncFutureType" : "java.util.concurrent.Future<ShutdownGatewayResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ShutdownGatewayResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ShutdownGatewayRequest, ShutdownGatewayResult>",
-      "methodName" : "shutdownGateway"
+      "authenticated" : true
     },
     "StartGateway" : {
       "documentation" : "<p>Starts a gateway that you previously shut down (see <a>ShutdownGateway</a>). After the gateway starts, you can then make other API calls, your applications can read from or write to the gateway's storage volumes and you will be able to take snapshot backups.</p> <note><p>When you make a request, you will get a 200 OK success response immediately. However, it might take some time for the gateway to be ready. You should call <a>DescribeGatewayInformation</a> and check the status before making any additional API calls. For more information, see <a>ActivateGateway</a>.</p> </note> <p>To specify which gateway to start, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
@@ -1638,13 +1638,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "startGateway",
       "syncReturnType" : "StartGatewayResult",
       "asyncReturnType" : "StartGatewayResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartGatewayResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartGatewayResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartGatewayRequest, StartGatewayResult>",
-      "methodName" : "startGateway"
+      "authenticated" : true
     },
     "UpdateBandwidthRateLimit" : {
       "documentation" : "<p>Updates the bandwidth rate limits of a gateway. You can update both the upload and download bandwidth rate limit or specify only one of the two. If you don't set a bandwidth rate limit, the existing rate limit remains.</p> <p>By default, a gateway's bandwidth rate limits are not set. If you don't set any limit, the gateway does not have any limitations on its bandwidth usage and could potentially use the maximum available bandwidth.</p> <p>To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
@@ -1671,13 +1671,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "updateBandwidthRateLimit",
       "syncReturnType" : "UpdateBandwidthRateLimitResult",
       "asyncReturnType" : "UpdateBandwidthRateLimitResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateBandwidthRateLimitResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateBandwidthRateLimitResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateBandwidthRateLimitRequest, UpdateBandwidthRateLimitResult>",
-      "methodName" : "updateBandwidthRateLimit"
+      "authenticated" : true
     },
     "UpdateChapCredentials" : {
       "documentation" : "<p>Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By default, a gateway does not have CHAP enabled; however, for added security, you might use it.</p> <important> <p>When you update CHAP credentials, all existing connections on the target are closed and initiators must reconnect with the new credentials.</p> </important>",
@@ -1704,13 +1704,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "updateChapCredentials",
       "syncReturnType" : "UpdateChapCredentialsResult",
       "asyncReturnType" : "UpdateChapCredentialsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateChapCredentialsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateChapCredentialsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateChapCredentialsRequest, UpdateChapCredentialsResult>",
-      "methodName" : "updateChapCredentials"
+      "authenticated" : true
     },
     "UpdateGatewayInformation" : {
       "documentation" : "<p>Updates a gateway's metadata, which includes the gateway's name and time zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your request.</p> <note><p>For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway name. However, changing the name of the gateway has no effect on the gateway's ARN.</p> </note>",
@@ -1737,13 +1737,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "updateGatewayInformation",
       "syncReturnType" : "UpdateGatewayInformationResult",
       "asyncReturnType" : "UpdateGatewayInformationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateGatewayInformationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateGatewayInformationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateGatewayInformationRequest, UpdateGatewayInformationResult>",
-      "methodName" : "updateGatewayInformation"
+      "authenticated" : true
     },
     "UpdateGatewaySoftwareNow" : {
       "documentation" : "<p>Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.</p> <note><p>When you make this request, you get a <code>200 OK</code> success response immediately. However, it might take some time for the update to complete. You can call <a>DescribeGatewayInformation</a> to verify the gateway is in the <code>STATE_RUNNING</code> state.</p> </note> <important><p>A software update forces a system restart of your gateway. You can minimize the chance of any disruption to your applications by increasing your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator timeouts for Windows and Linux, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings\">Customizing Your Windows iSCSI Settings</a> and <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings\">Customizing Your Linux iSCSI Settings</a>, respectively.</p> </important>",
@@ -1770,13 +1770,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "updateGatewaySoftwareNow",
       "syncReturnType" : "UpdateGatewaySoftwareNowResult",
       "asyncReturnType" : "UpdateGatewaySoftwareNowResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateGatewaySoftwareNowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateGatewaySoftwareNowResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateGatewaySoftwareNowRequest, UpdateGatewaySoftwareNowResult>",
-      "methodName" : "updateGatewaySoftwareNow"
+      "authenticated" : true
     },
     "UpdateMaintenanceStartTime" : {
       "documentation" : "<p>Updates a gateway's weekly maintenance start time information, including day and time of the week. The maintenance time is the time in your gateway's time zone.</p>",
@@ -1803,13 +1803,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "updateMaintenanceStartTime",
       "syncReturnType" : "UpdateMaintenanceStartTimeResult",
       "asyncReturnType" : "UpdateMaintenanceStartTimeResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateMaintenanceStartTimeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateMaintenanceStartTimeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceStartTimeRequest, UpdateMaintenanceStartTimeResult>",
-      "methodName" : "updateMaintenanceStartTime"
+      "authenticated" : true
     },
     "UpdateSnapshotSchedule" : {
       "documentation" : "<p>Updates a snapshot schedule configured for a gateway volume.</p> <p>The default snapshot schedule for volume is once every 24 hours, starting at the creation time of the volume. You can use this API to change the snapshot schedule configured for the volume.</p> <p>In the request you must identify the gateway volume whose snapshot schedule you want to update, and the schedule information, including when you want the snapshot to begin on a day and the frequency (in hours) of snapshots.</p>",
@@ -1836,13 +1836,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "updateSnapshotSchedule",
       "syncReturnType" : "UpdateSnapshotScheduleResult",
       "asyncReturnType" : "UpdateSnapshotScheduleResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateSnapshotScheduleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateSnapshotScheduleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateSnapshotScheduleRequest, UpdateSnapshotScheduleResult>",
-      "methodName" : "updateSnapshotSchedule"
+      "authenticated" : true
     },
     "UpdateVTLDeviceType" : {
       "documentation" : "<p>Updates the type of medium changer in a gateway-VTL. When you activate a gateway-VTL, you select a medium changer type for the gateway-VTL. This operation enables you to select a different type of medium changer after a gateway-VTL is activated.</p>",
@@ -1869,13 +1869,13 @@
         "documentation" : "<p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
+      "methodName" : "updateVTLDeviceType",
       "syncReturnType" : "UpdateVTLDeviceTypeResult",
       "asyncReturnType" : "UpdateVTLDeviceTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateVTLDeviceTypeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateVTLDeviceTypeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateVTLDeviceTypeRequest, UpdateVTLDeviceTypeResult>",
-      "methodName" : "updateVTLDeviceType"
+      "authenticated" : true
     }
   },
   "shapes" : {
@@ -2095,11 +2095,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "VolumeInfo",
           "templateType" : "java.util.List<VolumeInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeInfo>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2289,11 +2289,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "VolumeInfo",
             "templateType" : "java.util.List<VolumeInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeInfo>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2615,11 +2615,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CachediSCSIVolume",
           "templateType" : "java.util.List<CachediSCSIVolume>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CachediSCSIVolume>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CachediSCSIVolume>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2756,11 +2756,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CachediSCSIVolume",
             "templateType" : "java.util.List<CachediSCSIVolume>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CachediSCSIVolume>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CachediSCSIVolume>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2940,11 +2940,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "TapeRecoveryPointInfo",
           "templateType" : "java.util.List<TapeRecoveryPointInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeRecoveryPointInfo>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeRecoveryPointInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3186,11 +3186,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "TapeRecoveryPointInfo",
             "templateType" : "java.util.List<TapeRecoveryPointInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeRecoveryPointInfo>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeRecoveryPointInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3423,11 +3423,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3568,11 +3568,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4055,11 +4055,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4200,11 +4200,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4687,11 +4687,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4832,11 +4832,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5601,11 +5601,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5746,11 +5746,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5983,11 +5983,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6437,11 +6437,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8673,11 +8673,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8814,11 +8814,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9050,11 +9050,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9191,11 +9191,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15758,11 +15758,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tape",
           "templateType" : "java.util.List<Tape>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tape>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tape>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15951,11 +15951,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tape",
             "templateType" : "java.util.List<Tape>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tape>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tape>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16188,11 +16188,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16437,11 +16437,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18353,11 +18353,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "ChapInfo",
           "templateType" : "java.util.List<ChapInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ChapInfo>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ChapInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18494,11 +18494,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "ChapInfo",
             "templateType" : "java.util.List<ChapInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ChapInfo>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ChapInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19174,11 +19174,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19319,11 +19319,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19794,11 +19794,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "TapeInfo",
           "templateType" : "java.util.List<TapeInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeInfo>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19987,11 +19987,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "TapeInfo",
             "templateType" : "java.util.List<TapeInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeInfo>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20827,11 +20827,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "NetworkInterface",
           "templateType" : "java.util.List<NetworkInterface>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkInterface>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkInterface>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21389,11 +21389,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "NetworkInterface",
             "templateType" : "java.util.List<NetworkInterface>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkInterface>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NetworkInterface>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22140,11 +22140,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22285,11 +22285,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25487,11 +25487,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "GatewayInfo",
           "templateType" : "java.util.List<GatewayInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<GatewayInfo>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<GatewayInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25680,11 +25680,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "GatewayInfo",
             "templateType" : "java.util.List<GatewayInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<GatewayInfo>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<GatewayInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29959,11 +29959,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30100,11 +30100,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30232,11 +30232,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "StorediSCSIVolume",
           "templateType" : "java.util.List<StorediSCSIVolume>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<StorediSCSIVolume>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<StorediSCSIVolume>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30373,11 +30373,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "StorediSCSIVolume",
             "templateType" : "java.util.List<StorediSCSIVolume>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<StorediSCSIVolume>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<StorediSCSIVolume>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32163,11 +32163,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32412,11 +32412,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32791,11 +32791,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "TapeArchive",
           "templateType" : "java.util.List<TapeArchive>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeArchive>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeArchive>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32984,11 +32984,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "TapeArchive",
             "templateType" : "java.util.List<TapeArchive>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeArchive>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TapeArchive>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34177,11 +34177,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -34422,11 +34422,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -35366,11 +35366,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35668,11 +35668,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -36999,11 +36999,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -37248,11 +37248,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -37538,11 +37538,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "VTLDevice",
           "templateType" : "java.util.List<VTLDevice>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VTLDevice>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VTLDevice>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -37784,11 +37784,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "VTLDevice",
             "templateType" : "java.util.List<VTLDevice>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VTLDevice>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VTLDevice>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -39070,11 +39070,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -39368,11 +39368,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -40194,11 +40194,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Disk",
           "templateType" : "java.util.List<Disk>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Disk>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Disk>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -40388,11 +40388,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Disk",
             "templateType" : "java.util.List<Disk>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Disk>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Disk>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -42105,11 +42105,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -42250,11 +42250,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -43806,11 +43806,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "VolumeRecoveryPointInfo",
           "templateType" : "java.util.List<VolumeRecoveryPointInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -43947,11 +43947,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "VolumeRecoveryPointInfo",
             "templateType" : "java.util.List<VolumeRecoveryPointInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>"
           },
           "mapModel" : null,
           "enumType" : null,

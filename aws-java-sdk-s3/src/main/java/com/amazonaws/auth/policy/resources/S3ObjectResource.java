@@ -49,8 +49,10 @@ import com.amazonaws.auth.policy.actions.S3Actions;
  */
 public class S3ObjectResource extends Resource {
 
-    /**
+	/**
      * Constructs a new object resource that represents the specified objects.
+     * This constructor defaults to aws partition. Use {@link #S3ObjectResource(String, String, String)}
+     * to specify other partitions if needed.
      * The keyPattern argument may contain the '*' wildcard to match multiple
      * objects. For example, an object resource created for bucket 'mybucket'
      * and key pattern 'foo*' will match any object stored in 'mybucket' with a
@@ -62,8 +64,30 @@ public class S3ObjectResource extends Resource {
      * @param keyPattern
      *            The key or key pattern, which can optionally contain the '*'
      *            wildcard to include multiple objects in the resource.
+     *
+     * @see #S3ObjectResource(String, String, String)
      */
     public S3ObjectResource(String bucketName, String keyPattern) {
-        super("arn:aws:s3:::" + bucketName + "/" + keyPattern);
+        this("aws", bucketName, keyPattern);
+    }
+
+    /**
+     * Constructs a new object resource that represents the specified objects.
+     * The keyPattern argument may contain the '*' wildcard to match multiple
+     * objects. For example, an object resource created for bucket 'mybucket'
+     * and key pattern 'foo*' will match any object stored in 'mybucket' with a
+     * key that starts with 'foo'.
+     *
+     * @param partitionName
+     *            The name of the partition in which the specified bucket is located.
+     * @param bucketName
+     *            The name of the bucket containing the object or objects
+     *            represented by this resource.
+     * @param keyPattern
+     *            The key or key pattern, which can optionally contain the '*'
+     *            wildcard to include multiple objects in the resource.
+     */
+    public S3ObjectResource(String partitionName, String bucketName, String keyPattern) {
+        super(String.format("arn:%s:s3:::%s/%s", partitionName, bucketName, keyPattern));
     }
 }

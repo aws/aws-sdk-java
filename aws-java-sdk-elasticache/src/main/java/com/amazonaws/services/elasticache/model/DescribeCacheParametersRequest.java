@@ -45,9 +45,10 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest
     private String source;
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of brecords to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a marker
+     * is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -197,9 +198,10 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of brecords to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a marker
+     * is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -209,7 +211,7 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
+     *        The maximum number of brecords to include in the response. If more
      *        records exist than the specified <code>MaxRecords</code> value, a
      *        marker is included in the response so that the remaining results
      *        can be retrieved.</p>
@@ -226,9 +228,10 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of brecords to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a marker
+     * is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -237,10 +240,10 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest
      * Constraints: minimum 20; maximum 100.
      * </p>
      * 
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         marker is included in the response so that the remaining results
-     *         can be retrieved.</p>
+     * @return The maximum number of brecords to include in the response. If
+     *         more records exist than the specified <code>MaxRecords</code>
+     *         value, a marker is included in the response so that the remaining
+     *         results can be retrieved.</p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -254,9 +257,10 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a marker is
-     * included in the response so that the remaining results can be retrieved.
+     * The maximum number of brecords to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a marker
+     * is included in the response so that the remaining results can be
+     * retrieved.
      * </p>
      * <p>
      * Default: 100
@@ -266,7 +270,7 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of records to include in the response. If more
+     *        The maximum number of brecords to include in the response. If more
      *        records exist than the specified <code>MaxRecords</code> value, a
      *        marker is included in the response so that the remaining results
      *        can be retrieved.</p>
