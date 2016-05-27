@@ -74,8 +74,11 @@ import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.retry.PredefinedRetryPolicies;
+import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.services.s3.internal.AWSS3V4Signer;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
+import com.amazonaws.services.s3.internal.CompleteMultipartUploadRetryCondition;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.internal.DigestValidationInputStream;
@@ -252,6 +255,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     /** Whether or not this client has an explicit region configured. */
     private boolean hasExplicitRegion;
+
+    private final CompleteMultipartUploadRetryCondition completeMultipartUploadRetryCondition = new CompleteMultipartUploadRetryCondition();
 
     /**
      * Constructs a new client to invoke service methods on Amazon S3. A
@@ -2507,29 +2512,52 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         assertParameterNotNull(completeMultipartUploadRequest.getPartETags(),
             "The part ETags parameter must be specified when completing a multipart upload");
 
-        Request<CompleteMultipartUploadRequest> request = createRequest(bucketName, key, completeMultipartUploadRequest, HttpMethodName.POST);
-        request.addParameter("uploadId", uploadId);
+        int retries = 0;
 
-        byte[] xml = RequestXmlFactory.convertToXmlByteArray(completeMultipartUploadRequest.getPartETags());
-        request.addHeader("Content-Type", "text/plain");
-        request.addHeader("Content-Length", String.valueOf(xml.length));
+        CompleteMultipartUploadHandler handler;
+        do {
+            Request<CompleteMultipartUploadRequest> request = createRequest(bucketName, key,
+                                                                            completeMultipartUploadRequest,
+                                                                            HttpMethodName.POST);
+            request.addParameter("uploadId", uploadId);
 
-        request.setContent(new ByteArrayInputStream(xml));
+            byte[] xml = RequestXmlFactory.convertToXmlByteArray(completeMultipartUploadRequest.getPartETags());
+            request.addHeader("Content-Type", "text/plain");
+            request.addHeader("Content-Length", String.valueOf(xml.length));
 
-        @SuppressWarnings("unchecked")
-        ResponseHeaderHandlerChain<CompleteMultipartUploadHandler> responseHandler = new ResponseHeaderHandlerChain<CompleteMultipartUploadHandler>(
-                new Unmarshallers.CompleteMultipartUploadResultUnmarshaller(),
-                new ServerSideEncryptionHeaderHandler<CompleteMultipartUploadHandler>(),
-                new ObjectExpirationHeaderHandler<CompleteMultipartUploadHandler>());
-        CompleteMultipartUploadHandler handler = invoke(request, responseHandler, bucketName, key);
-        if (handler.getCompleteMultipartUploadResult() != null) {
-            String versionId = responseHandler.getResponseHeaders().get(Headers.S3_VERSION_ID);
-            handler.getCompleteMultipartUploadResult().setVersionId(versionId);
-            return handler.getCompleteMultipartUploadResult();
-        } else {
-            throw handler.getAmazonS3Exception();
-        }
+            request.setContent(new ByteArrayInputStream(xml));
+
+            @SuppressWarnings("unchecked")
+            ResponseHeaderHandlerChain<CompleteMultipartUploadHandler> responseHandler = new ResponseHeaderHandlerChain<CompleteMultipartUploadHandler>(
+                    new Unmarshallers.CompleteMultipartUploadResultUnmarshaller(),
+                    new ServerSideEncryptionHeaderHandler<CompleteMultipartUploadHandler>(),
+                    new ObjectExpirationHeaderHandler<CompleteMultipartUploadHandler>());
+            handler = invoke(request, responseHandler, bucketName,
+                                                            key);
+            if (handler.getCompleteMultipartUploadResult() != null) {
+                String versionId = responseHandler.getResponseHeaders().get(Headers.S3_VERSION_ID);
+                handler.getCompleteMultipartUploadResult().setVersionId(versionId);
+                return handler.getCompleteMultipartUploadResult();
+            }
+        }while (shouldRetryCompleteMultipartUpload(completeMultipartUploadRequest,
+                                                    handler.getAmazonS3Exception(), retries++));
+        throw handler.getAmazonS3Exception();
     }
+
+    private boolean shouldRetryCompleteMultipartUpload(AmazonWebServiceRequest originalRequest,
+                                                       AmazonS3Exception exception,
+                                                       int retriesAttempted) {
+
+        final RetryPolicy retryPolicy = clientConfiguration.getRetryPolicy();
+
+        if (retryPolicy == null || retryPolicy.getRetryCondition() == null) {
+            return false;
+        }
+
+        return completeMultipartUploadRetryCondition
+                .shouldRetry(originalRequest, exception, retriesAttempted);
+    }
+
 
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#initiateMultipartUpload(com.amazonaws.services.s3.model.InitiateMultipartUploadRequest)
