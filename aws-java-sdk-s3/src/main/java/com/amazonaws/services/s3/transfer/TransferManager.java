@@ -1614,6 +1614,49 @@ public class TransferManager {
      */
 
     public Copy copy(final CopyObjectRequest copyObjectRequest,
+                     final TransferStateChangeListener stateChangeListener)
+        throws AmazonServiceException, AmazonClientException {
+        return copy(copyObjectRequest, s3, stateChangeListener);
+    }
+
+    /**
+     * <p>
+     * Schedules a new transfer to copy data from one Amazon S3 location to
+     * another Amazon S3 location. This method is non-blocking and returns
+     * immediately (i.e. before the copy has finished).
+     * </p>
+     * <p>
+     * <code>TransferManager</code> doesn't support copying of encrypted objects whose
+     * encryption materials is stored in instruction file.
+     * </p>
+     * <p>
+     * Use the returned <code>Copy</code> object to check if the copy is
+     * complete.
+     * </p>
+     * <p>
+     * If resources are available, the copy request will begin immediately.
+     * Otherwise, the copy is scheduled and started as soon as resources become
+     * available.
+     * </p>
+     *
+     * @param copyObjectRequest
+     *            The request containing all the parameters for the copy.
+     * @param srcS3
+     *            An AmazonS3 client constructed for the region in which the source object's bucket is located.
+     * @param stateChangeListener
+     *            The transfer state change listener to monitor the copy request
+     * @return A new <code>Copy</code> object to use to check the state of the
+     *         copy request being processed.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Copy copy(final CopyObjectRequest copyObjectRequest,
+            final AmazonS3 srcS3,
             final TransferStateChangeListener stateChangeListener)
             throws AmazonServiceException, AmazonClientException {
 
@@ -1629,6 +1672,8 @@ public class TransferManager {
         assertParameterNotNull(
                 copyObjectRequest.getDestinationKey(),
                 "The destination object key must be specified when a copy request is initiated.");
+        assertParameterNotNull(srcS3,
+                "The srcS3 parameter is mandatory");
 
         String description = "Copying object from "
                 + copyObjectRequest.getSourceBucketName() + "/"
@@ -1642,7 +1687,7 @@ public class TransferManager {
                         copyObjectRequest.getSourceKey())
                         .withSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey());
 
-        ObjectMetadata metadata = s3.getObjectMetadata(getObjectMetadataRequest);
+        ObjectMetadata metadata = srcS3.getObjectMetadata(getObjectMetadataRequest);
 
         TransferProgress transferProgress = new TransferProgress();
         transferProgress.setTotalBytesToTransfer(metadata.getContentLength());
