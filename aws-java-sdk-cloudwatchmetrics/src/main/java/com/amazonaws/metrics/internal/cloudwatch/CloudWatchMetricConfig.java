@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.http.annotation.NotThreadSafe;
 
+import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 
@@ -78,6 +79,9 @@ public class CloudWatchMetricConfig {
 
     /** Credentials for the uploader to communicate with Amazon CloudWatch */
     private AWSCredentialsProvider credentialsProvider;
+    
+    /** ClientConfiguration for connecting to Amazon CloudWatch */
+    private ClientConfiguration clientConfiguration;
 
     /**
      * Number of milliseconds to wait before the polling of the metrics queue
@@ -109,7 +113,28 @@ public class CloudWatchMetricConfig {
         this.credentialsProvider = credentialsProvider;
     }
 
-    public CloudWatchMetricConfig withCredentialsProvider(AWSCredentialsProvider credentialsProvider) {
+    /**
+     * Returns the Client Configuration used to connect to
+     * Amazon CloudWatch.
+     */
+    public ClientConfiguration getClientConfiguration() {
+		return clientConfiguration;
+	}
+
+    /**
+     * Sets the Client Configuration. This client
+     * configuration is used by the uploader thread to connect to Amazon CloudWatch.
+     */
+	public void setClientConfiguration(ClientConfiguration clientConfiguration) {
+		this.clientConfiguration = clientConfiguration;
+	}
+	
+	public CloudWatchMetricConfig withClientConfiguration(ClientConfiguration clientConfiguration) {
+		setClientConfiguration(clientConfiguration);
+        return this;
+    }
+
+	public CloudWatchMetricConfig withCredentialsProvider(AWSCredentialsProvider credentialsProvider) {
         setCredentialsProvider(credentialsProvider);
         return this;
     }

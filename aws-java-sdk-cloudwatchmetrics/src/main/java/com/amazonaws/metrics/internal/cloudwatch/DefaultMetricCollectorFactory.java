@@ -14,6 +14,7 @@
  */
 package com.amazonaws.metrics.internal.cloudwatch;
 
+import com.amazonaws.ClientConfiguration;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
@@ -39,6 +40,7 @@ public class DefaultMetricCollectorFactory
         Integer qSize = AwsSdkMetrics.getMetricQueueSize();
         Long timeoutMilli = AwsSdkMetrics.getQueuePollTimeoutMilli();
         CloudWatchMetricConfig config = new CloudWatchMetricConfig();
+        ClientConfiguration clientConfig = new ClientConfiguration();
         if (provider != null)
             config.setCredentialsProvider(provider);
         if (region != null) {
@@ -49,6 +51,7 @@ public class DefaultMetricCollectorFactory
             config.setMetricQueueSize(qSize.intValue());
         if (timeoutMilli != null)
             config.setQueuePollTimeoutMilli(timeoutMilli.longValue());
+        config.setClientConfiguration(clientConfig);
         MetricCollectorSupport.startSingleton(config);
         return MetricCollectorSupport.getInstance();
     }
