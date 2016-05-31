@@ -74,17 +74,16 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     /**
      * {@inheritDoc}
      *
-     * Aborts the underlying http request without reading any more data and
+     * Aborts the underlying HTTP request without reading any more data and
      * closes the stream.
      * <p>
      * By default Apache {@link HttpClient} tries to reuse http connections by
-     * reading to the end of an attached input stream on
-     * {@link InputStream#close()}. This is efficient from a socket pool
-     * management perspective, but for objects with large payloads can incur
-     * significant overhead while bytes are read from s3 and discarded. It's up
-     * to clients to decide when to take the performance hit implicit in not
-     * reusing an http connection in order to not read unnecessary information
-     * from S3.
+     * reading to the end of an attached input stream on {@link
+     * InputStream#close()}. This is efficient from a socket pool management
+     * perspective, but objects with large payloads can incur significant
+     * overhead while bytes are read from s3 and discarded. It's up to clients
+     * to decide when to take the performance hit implicit in not reusing an
+     * http connection in order to not read unnecessary information from S3.
      *
      * @see EofSensorInputStream
      */
@@ -112,14 +111,14 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     }
 
     /**
-     * Returns super.available() if the value is not zero or else always returns
-     * 1.  This is necessary to get around a GZIPInputStream bug which would
-     * mis-behave in some edge cases upon zero returned from available(),
+     * Returns the value of super.available() if the result is nonzero, or 1
+     * otherwise.
+     * <p>
+     * This is necessary to work around a known bug in
+     * GZIPInputStream.available(), which returns zero in some edge cases,
      * causing file truncation.
      * <p>
-     * http://bugs.java.com/bugdatabase/view_bug.do?bug_id=7036144
-     * <p>
-     * Reference TT: 0034867351
+     * Ref: http://bugs.java.com/bugdatabase/view_bug.do?bug_id=7036144
      */
     @Override
     public int available() throws IOException {
@@ -171,8 +170,8 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     /**
      * {@inheritDoc}
      *
-     * Delegate to {@link S3ObjectInputStream#abort()} if there is data remaining in the stream. If the stream has been
-     * read completely, with no data remaining, safely close the stream.
+     * Delegates to {@link S3ObjectInputStream#abort()} if there is any data
+     * remaining in the stream. Otherwise, it safely closes the stream.
      *
      * @see {@link S3ObjectInputStream#abort()}
      */
