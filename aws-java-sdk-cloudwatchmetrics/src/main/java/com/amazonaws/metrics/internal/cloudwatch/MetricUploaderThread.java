@@ -42,20 +42,22 @@ class MetricUploaderThread extends Thread {
              createCloudWatchClient(config));
     }
 
-	private static AmazonCloudWatchClient createCloudWatchClient(CloudWatchMetricConfig config) {
-		AmazonCloudWatchClient amazonCloudWatchClient = null;
-		if (config.getCredentialsProvider() == null && config.getClientConfiguration() == null) {
-			amazonCloudWatchClient = new AmazonCloudWatchClient();
-		} else if (config.getCredentialsProvider() != null && config.getClientConfiguration() == null) {
-			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider());
-		} else if (config.getClientConfiguration() != null && config.getCredentialsProvider() == null) {
-			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getClientConfiguration());
-		} else if (config.getClientConfiguration() != null && config.getCredentialsProvider() != null) {
-			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider(),
-					config.getClientConfiguration());
-		}
-		return amazonCloudWatchClient;
-	}
+    private static AmazonCloudWatchClient createCloudWatchClient(
+            CloudWatchMetricConfig config) {
+        AmazonCloudWatchClient amazonCloudWatchClient = null;
+        if (config.getCredentialsProvider() == null && config.getClientConfiguration() == null) {
+            amazonCloudWatchClient = new AmazonCloudWatchClient();
+        } else if (config.getCredentialsProvider() != null && config.getClientConfiguration() == null) {
+            amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider());
+        } else if (config.getClientConfiguration() != null && config.getCredentialsProvider() == null) {
+            amazonCloudWatchClient = new AmazonCloudWatchClient(config.getClientConfiguration());
+        } else if (config.getClientConfiguration() != null && config.getCredentialsProvider() != null) {
+            amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider(),
+                    config.getClientConfiguration());
+        }
+        return amazonCloudWatchClient;
+    }
+
 
     MetricUploaderThread(CloudWatchMetricConfig config,
         BlockingQueue<MetricDatum> queue,

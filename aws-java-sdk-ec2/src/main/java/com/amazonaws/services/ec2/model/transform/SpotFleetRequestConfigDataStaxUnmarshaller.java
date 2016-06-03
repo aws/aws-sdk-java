@@ -123,6 +123,19 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements
                                     .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("fulfilledCapacity", targetDepth)) {
+                    spotFleetRequestConfigData
+                            .setFulfilledCapacity(DoubleStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("type", targetDepth)) {
+                    spotFleetRequestConfigData.setType(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotFleetRequestConfigData;

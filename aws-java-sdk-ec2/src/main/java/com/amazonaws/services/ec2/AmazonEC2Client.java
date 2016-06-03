@@ -8811,12 +8811,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Retrieve a JPG-format screenshot of an instance to help with
+     * Retrieve a JPG-format screenshot of a running instance to help with
      * troubleshooting.
      * </p>
      * <p>
-     * For API calls, the returned content is base64-encoded. For command line
-     * tools, the decoding is performed for you.
+     * The returned content is base64-encoded.
      * </p>
      * 
      * @param getConsoleScreenshotRequest

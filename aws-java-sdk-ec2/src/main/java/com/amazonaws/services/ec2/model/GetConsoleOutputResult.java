@@ -39,7 +39,7 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
     private java.util.Date timestamp;
     /**
      * <p>
-     * The console output, Base64 encoded. If using a command line tool, the
+     * The console output, base64-encoded. If using a command line tool, the
      * tools decode the output for you.
      * </p>
      */
@@ -129,12 +129,12 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The console output, Base64 encoded. If using a command line tool, the
+     * The console output, base64-encoded. If using a command line tool, the
      * tools decode the output for you.
      * </p>
      * 
      * @param output
-     *        The console output, Base64 encoded. If using a command line tool,
+     *        The console output, base64-encoded. If using a command line tool,
      *        the tools decode the output for you.
      */
 
@@ -144,11 +144,11 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The console output, Base64 encoded. If using a command line tool, the
+     * The console output, base64-encoded. If using a command line tool, the
      * tools decode the output for you.
      * </p>
      * 
-     * @return The console output, Base64 encoded. If using a command line tool,
+     * @return The console output, base64-encoded. If using a command line tool,
      *         the tools decode the output for you.
      */
 
@@ -158,12 +158,12 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The console output, Base64 encoded. If using a command line tool, the
+     * The console output, base64-encoded. If using a command line tool, the
      * tools decode the output for you.
      * </p>
      * 
      * @param output
-     *        The console output, Base64 encoded. If using a command line tool,
+     *        The console output, base64-encoded. If using a command line tool,
      *        the tools decode the output for you.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

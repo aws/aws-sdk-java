@@ -619,6 +619,18 @@ public class RequestSpotFleetRequestMarshaller implements
                         StringUtils.fromString(spotFleetRequestConfig
                                 .getAllocationStrategy()));
             }
+
+            if (spotFleetRequestConfig.getFulfilledCapacity() != null) {
+                request.addParameter(
+                        "SpotFleetRequestConfig.FulfilledCapacity", StringUtils
+                                .fromDouble(spotFleetRequestConfig
+                                        .getFulfilledCapacity()));
+            }
+
+            if (spotFleetRequestConfig.getType() != null) {
+                request.addParameter("SpotFleetRequestConfig.Type", StringUtils
+                        .fromString(spotFleetRequestConfig.getType()));
+            }
         }
 
         return request;

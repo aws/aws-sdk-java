@@ -26,7 +26,7 @@ import com.amazonaws.regions.Regions;
  * via reflection if the default AWS SDK metrics is enabled via the
  * system property {@link SDKGlobalConfiguration#DEFAULT_METRICS_SYSTEM_PROPERTY}.
  */
-public class DefaultMetricCollectorFactory 
+public class DefaultMetricCollectorFactory
     implements MetricCollector.Factory {
     /**
      * Returns a instance of the Amazon CloudWatch request metric collector either by

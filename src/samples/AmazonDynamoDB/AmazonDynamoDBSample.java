@@ -37,7 +37,7 @@ import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.dynamodbv2.model.TableDescription;
-import com.amazonaws.services.dynamodbv2.util.Tables;
+import com.amazonaws.services.dynamodbv2.util.TableUtils;
 
 /**
  * This sample demonstrates how to perform a few simple operations with the
@@ -98,22 +98,16 @@ public class AmazonDynamoDBSample {
         try {
             String tableName = "my-favorite-movies-table";
 
-            // Create table if it does not exist yet
-            if (Tables.doesTableExist(dynamoDB, tableName)) {
-                System.out.println("Table " + tableName + " is already ACTIVE");
-            } else {
-                // Create a table with a primary hash key named 'name', which holds a string
-                CreateTableRequest createTableRequest = new CreateTableRequest().withTableName(tableName)
-                    .withKeySchema(new KeySchemaElement().withAttributeName("name").withKeyType(KeyType.HASH))
-                    .withAttributeDefinitions(new AttributeDefinition().withAttributeName("name").withAttributeType(ScalarAttributeType.S))
-                    .withProvisionedThroughput(new ProvisionedThroughput().withReadCapacityUnits(1L).withWriteCapacityUnits(1L));
-                    TableDescription createdTableDescription = dynamoDB.createTable(createTableRequest).getTableDescription();
-                System.out.println("Created Table: " + createdTableDescription);
+            // Create a table with a primary hash key named 'name', which holds a string
+            CreateTableRequest createTableRequest = new CreateTableRequest().withTableName(tableName)
+                .withKeySchema(new KeySchemaElement().withAttributeName("name").withKeyType(KeyType.HASH))
+                .withAttributeDefinitions(new AttributeDefinition().withAttributeName("name").withAttributeType(ScalarAttributeType.S))
+                .withProvisionedThroughput(new ProvisionedThroughput().withReadCapacityUnits(1L).withWriteCapacityUnits(1L));
 
-                // Wait for it to become active
-                System.out.println("Waiting for " + tableName + " to become ACTIVE...");
-                Tables.awaitTableToBecomeActive(dynamoDB, tableName);
-            }
+            // Create table if it does not exist yet
+            TableUtils.createTableIfNotExists(dynamoDB, createTableRequest);
+            // wait for the table to move into ACTIVE state
+            TableUtils.waitUntilActive(dynamoDB, tableName);
 
             // Describe our new table
             DescribeTableRequest describeTableRequest = new DescribeTableRequest().withTableName(tableName);

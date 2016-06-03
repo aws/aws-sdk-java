@@ -28,7 +28,7 @@ import com.amazonaws.metrics.AwsSdkMetrics;
  * needs to be customized.
  * <p>
  * Example:
- * 
+ *
  * <pre>
  * /**
  *  * My custom Request Metric Collector by extending from the internal Amazon CloudWatch
@@ -54,7 +54,7 @@ import com.amazonaws.metrics.AwsSdkMetrics;
  * // Enable the AWS SDK level request metric collection with a custom collector
  * AwsSdkMetrics.setRequestMetricCollector(myCollector);
  * </pre>
- * 
+ *
  * @see AwsSdkMetrics
  */
 @NotThreadSafe
@@ -73,13 +73,13 @@ public class CloudWatchMetricConfig {
     public static final int DEFAULT_METRICS_QSIZE = 1000;
     /**
      * Default timeout in millisecond for queue polling.  Set to one-minute
-     * which is the finest granularity of Amazon CloudWatch. 
+     * which is the finest granularity of Amazon CloudWatch.
      */
     public static final int DEFAULT_QUEUE_POLL_TIMEOUT_MILLI = (int)TimeUnit.MINUTES.toMillis(1);
 
     /** Credentials for the uploader to communicate with Amazon CloudWatch */
     private AWSCredentialsProvider credentialsProvider;
-    
+
     /** ClientConfiguration for connecting to Amazon CloudWatch */
     private ClientConfiguration clientConfiguration;
 
@@ -89,12 +89,12 @@ public class CloudWatchMetricConfig {
      */
     private long queuePollTimeoutMilli = DEFAULT_QUEUE_POLL_TIMEOUT_MILLI;
 
-    /** 
+    /**
      * Endpoint for Amazon CloudWatch where the metric data can be uploaded;
      * or null if the default endpoint is to be used.
      */
     private String cloudWatchEndPoint;
-    
+
     private int metricQueueSize = DEFAULT_METRICS_QSIZE;
 
     /**
@@ -113,29 +113,29 @@ public class CloudWatchMetricConfig {
         this.credentialsProvider = credentialsProvider;
     }
 
+    public CloudWatchMetricConfig withCredentialsProvider(AWSCredentialsProvider credentialsProvider) {
+        setCredentialsProvider(credentialsProvider);
+        return this;
+    }
+
     /**
      * Returns the Client Configuration used to connect to
      * Amazon CloudWatch.
      */
     public ClientConfiguration getClientConfiguration() {
-		return clientConfiguration;
-	}
+        return clientConfiguration;
+    }
 
     /**
      * Sets the Client Configuration. This client
      * configuration is used by the uploader thread to connect to Amazon CloudWatch.
      */
-	public void setClientConfiguration(ClientConfiguration clientConfiguration) {
-		this.clientConfiguration = clientConfiguration;
-	}
-	
-	public CloudWatchMetricConfig withClientConfiguration(ClientConfiguration clientConfiguration) {
-		setClientConfiguration(clientConfiguration);
-        return this;
+    public void setClientConfiguration(ClientConfiguration clientConfiguration) {
+        this.clientConfiguration = clientConfiguration;
     }
 
-	public CloudWatchMetricConfig withCredentialsProvider(AWSCredentialsProvider credentialsProvider) {
-        setCredentialsProvider(credentialsProvider);
+    public CloudWatchMetricConfig withClientConfiguration(ClientConfiguration clientConfiguration) {
+        setClientConfiguration(clientConfiguration);
         return this;
     }
 
@@ -185,7 +185,7 @@ public class CloudWatchMetricConfig {
     /**
      * Configure the metric queue size, overriding the default. Must be at
      * least 1.
-     * 
+     *
      * @see #DEFAULT_METRICS_QSIZE
      */
     public void setMetricQueueSize(int metricQueueSize) {

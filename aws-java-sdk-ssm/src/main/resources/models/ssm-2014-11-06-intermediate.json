@@ -25,8 +25,8 @@
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "jsonProtocol" : true,
-    "xmlProtocol" : false
+    "xmlProtocol" : false,
+    "jsonProtocol" : true
   },
   "operations" : {
     "CancelCommand" : {

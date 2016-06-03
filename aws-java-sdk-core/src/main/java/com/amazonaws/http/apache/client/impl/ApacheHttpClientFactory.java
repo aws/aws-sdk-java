@@ -43,13 +43,16 @@ public class ApacheHttpClientFactory implements HttpClientFactory<ConnectionMana
     @Override
     public ConnectionManagerAwareHttpClient create(HttpClientSettings settings) {
         final HttpClientBuilder builder = HttpClients.custom();
-        final HttpClientConnectionManager cm = ClientConnectionManagerFactory.wrap(cmFactory.create(settings));
+        // Note that it is important we register the original connection manager with the
+        // IdleConnectionReaper as it's required for the successful deregistration of managers
+        // from the reaper. See https://github.com/aws/aws-sdk-java/issues/722.
+        final HttpClientConnectionManager cm = cmFactory.create(settings);
 
         builder.setRequestExecutor(new SdkHttpRequestExecutor())
                 .setKeepAliveStrategy(buildKeepAliveStrategy(settings))
                 .disableRedirectHandling()
                 .disableAutomaticRetries()
-                .setConnectionManager(cm);
+                .setConnectionManager(ClientConnectionManagerFactory.wrap(cm));
 
         // By default http client enables Gzip compression. So we disable it
         // here.

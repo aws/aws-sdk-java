@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "lambda",
     "signingName" : "lambda",
-    "xmlProtocol" : false,
+    "serviceName" : "AWS Lambda",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
     "jsonProtocol" : true,
-    "serviceName" : "AWS Lambda"
+    "xmlProtocol" : false
   },
   "operations" : {
     "AddPermission" : {

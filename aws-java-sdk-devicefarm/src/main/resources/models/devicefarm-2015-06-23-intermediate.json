@@ -13827,11 +13827,11 @@
             "list" : true
           },
           "keySimple" : true,
-          "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
           "valueSimple" : false,
           "valueList" : true,
-          "entryType" : "Map.Entry<String, java.util.List<UniqueProblem>>"
+          "entryType" : "Map.Entry<String, java.util.List<UniqueProblem>>",
+          "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -14139,11 +14139,11 @@
               "list" : true
             },
             "keySimple" : true,
-            "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
             "valueSimple" : false,
             "valueList" : true,
-            "entryType" : "Map.Entry<String, java.util.List<UniqueProblem>>"
+            "entryType" : "Map.Entry<String, java.util.List<UniqueProblem>>",
+            "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -18498,11 +18498,11 @@
             "list" : false
           },
           "keySimple" : true,
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>",
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -18693,11 +18693,11 @@
               "list" : false
             },
             "keySimple" : true,
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>",
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -37507,11 +37507,11 @@
             "list" : false
           },
           "keySimple" : true,
-          "templateType" : "java.util.Map<String,Integer>",
-          "templateImplType" : "java.util.HashMap<String,Integer>",
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, Integer>"
+          "entryType" : "Map.Entry<String, Integer>",
+          "templateType" : "java.util.Map<String,Integer>",
+          "templateImplType" : "java.util.HashMap<String,Integer>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -37678,11 +37678,11 @@
             "list" : false
           },
           "keySimple" : true,
-          "templateType" : "java.util.Map<String,Integer>",
-          "templateImplType" : "java.util.HashMap<String,Integer>",
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, Integer>"
+          "entryType" : "Map.Entry<String, Integer>",
+          "templateType" : "java.util.Map<String,Integer>",
+          "templateImplType" : "java.util.HashMap<String,Integer>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -37872,11 +37872,11 @@
               "list" : false
             },
             "keySimple" : true,
-            "templateType" : "java.util.Map<String,Integer>",
-            "templateImplType" : "java.util.HashMap<String,Integer>",
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, Integer>"
+            "entryType" : "Map.Entry<String, Integer>",
+            "templateType" : "java.util.Map<String,Integer>",
+            "templateImplType" : "java.util.HashMap<String,Integer>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -38044,11 +38044,11 @@
               "list" : false
             },
             "keySimple" : true,
-            "templateType" : "java.util.Map<String,Integer>",
-            "templateImplType" : "java.util.HashMap<String,Integer>",
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, Integer>"
+            "entryType" : "Map.Entry<String, Integer>",
+            "templateType" : "java.util.Map<String,Integer>",
+            "templateImplType" : "java.util.HashMap<String,Integer>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -38660,11 +38660,11 @@
             "list" : false
           },
           "keySimple" : true,
-          "templateType" : "java.util.Map<String,OfferingStatus>",
-          "templateImplType" : "java.util.HashMap<String,OfferingStatus>",
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, OfferingStatus>"
+          "entryType" : "Map.Entry<String, OfferingStatus>",
+          "templateType" : "java.util.Map<String,OfferingStatus>",
+          "templateImplType" : "java.util.HashMap<String,OfferingStatus>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -38779,11 +38779,11 @@
             "list" : false
           },
           "keySimple" : true,
-          "templateType" : "java.util.Map<String,OfferingStatus>",
-          "templateImplType" : "java.util.HashMap<String,OfferingStatus>",
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, OfferingStatus>"
+          "entryType" : "Map.Entry<String, OfferingStatus>",
+          "templateType" : "java.util.Map<String,OfferingStatus>",
+          "templateImplType" : "java.util.HashMap<String,OfferingStatus>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -39026,11 +39026,11 @@
               "list" : false
             },
             "keySimple" : true,
-            "templateType" : "java.util.Map<String,OfferingStatus>",
-            "templateImplType" : "java.util.HashMap<String,OfferingStatus>",
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, OfferingStatus>"
+            "entryType" : "Map.Entry<String, OfferingStatus>",
+            "templateType" : "java.util.Map<String,OfferingStatus>",
+            "templateImplType" : "java.util.HashMap<String,OfferingStatus>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -39146,11 +39146,11 @@
               "list" : false
             },
             "keySimple" : true,
-            "templateType" : "java.util.Map<String,OfferingStatus>",
-            "templateImplType" : "java.util.HashMap<String,OfferingStatus>",
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, OfferingStatus>"
+            "entryType" : "Map.Entry<String, OfferingStatus>",
+            "templateType" : "java.util.Map<String,OfferingStatus>",
+            "templateImplType" : "java.util.HashMap<String,OfferingStatus>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

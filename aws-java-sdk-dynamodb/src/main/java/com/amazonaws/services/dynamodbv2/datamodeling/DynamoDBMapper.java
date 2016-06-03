@@ -26,7 +26,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Random;
 import java.util.Set;
 
 import org.apache.commons.logging.Log;
@@ -38,6 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.retry.RetryUtils;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.BatchLoadRetryStrategy;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.BatchWriteRetryStrategy;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.ConsistentReads;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
@@ -1640,25 +1640,22 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             .withRequestMetricCollector(config.getRequestMetricCollector());
         batchGetItemRequest.setRequestItems(requestItems);
 
+        BatchLoadRetryStrategy batchLoadStrategy = config.getBatchLoadRetryStrategy();
+
+        BatchLoadContext batchLoadContext = new BatchLoadContext(batchGetItemRequest);
+
         int retries = 0;
         int noOfItemsInOriginalRequest = requestItems.size();
 
         do {
             if ( batchGetItemResult != null ) {
                 retries++;
-
-                if (noOfItemsInOriginalRequest == batchGetItemResult
-                        .getUnprocessedKeys().size()){
-                    pauseExponentially(retries);
-                    if (retries > BATCH_GET_MAX_RETRY_COUNT_ALL_KEYS) {
-                        throw new AmazonClientException(
-                                "Batch Get Item request to server hasn't received any data. "
-                                + "Please try again later.");
-                    }
-                }
-
-                batchGetItemRequest.setRequestItems(
+                batchLoadContext.setRetriesAttempted(retries);
+                if (batchGetItemResult.getUnprocessedKeys().size() > 0){
+                    pause(batchLoadStrategy.getDelayBeforeNextRetry(batchLoadContext));
+                    batchGetItemRequest.setRequestItems(
                         batchGetItemResult.getUnprocessedKeys());
+                }
             }
 
             batchGetItemResult = db.batchGetItem(
@@ -1683,9 +1680,17 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
                 resultSet.put(tableName, objects);
             }
-            // To see whether there are unprocessed keys.
-        } while ( batchGetItemResult.getUnprocessedKeys() != null && batchGetItemResult.getUnprocessedKeys().size() > 0 );
 
+            batchLoadContext.setBatchGetItemResult(batchGetItemResult);
+
+            // the number of unprocessed keys and  Batch Load Strategy will drive the number of retries
+        } while ( batchLoadStrategy.shouldRetry(batchLoadContext) );
+
+        //We still need to throw Amazon Client Exception when none of the requested keys are processed
+        if(noOfItemsInOriginalRequest == batchGetItemResult.getUnprocessedKeys().size()) {
+            throw new AmazonClientException("Batch Get Item request to server hasn't received any data. Please try again later");
+        }
+        
     }
 
     private final class ValueUpdate {
@@ -2482,20 +2487,6 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                 .with(S3ClientCache.class, s3cc);
 
         return schema.getConverter(params);
-    }
-
-    private void pauseExponentially(int retries) {
-        if (retries == 0) {
-            return;
-        }
-
-        Random random = new Random();
-        long delay = 0;
-        long scaleFactor = 500 + random.nextInt(100);
-        delay = (long) (Math.pow(2, retries) * scaleFactor);
-        delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
-
-        pause(delay);
     }
 
     private void pause(long delay) {

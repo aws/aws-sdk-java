@@ -58,6 +58,26 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  * </li>
  * </ul>
+ * <p>
+ * Application Auto Scaling is available in the following regions:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>us-east-1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>us-west-2</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>eu-west-1</code>
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 public class AWSApplicationAutoScalingAsyncClient extends

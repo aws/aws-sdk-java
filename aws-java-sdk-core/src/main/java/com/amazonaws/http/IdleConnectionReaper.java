@@ -14,11 +14,14 @@
  */
 package com.amazonaws.http;
 
+import com.amazonaws.annotation.SdkTestInternalApi;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.conn.HttpClientConnectionManager;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -100,6 +103,11 @@ public final class IdleConnectionReaper extends Thread {
         if (connectionManagers.isEmpty())
             shutdown();
         return b;
+    }
+
+    @SdkTestInternalApi
+    public static synchronized List<HttpClientConnectionManager> getRegisteredConnectionManagers() {
+        return Collections.unmodifiableList(connectionManagers);
     }
 
     /**
