@@ -52,27 +52,16 @@ public enum ParameterExceptionField {
     public static ParameterExceptionField fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CHANGE_ACTION".equals(value)) {
-            return CHANGE_ACTION;
-        } else if ("WAF_ACTION".equals(value)) {
-            return WAF_ACTION;
-        } else if ("PREDICATE_TYPE".equals(value)) {
-            return PREDICATE_TYPE;
-        } else if ("IPSET_TYPE".equals(value)) {
-            return IPSET_TYPE;
-        } else if ("BYTE_MATCH_FIELD_TYPE".equals(value)) {
-            return BYTE_MATCH_FIELD_TYPE;
-        } else if ("SQL_INJECTION_MATCH_FIELD_TYPE".equals(value)) {
-            return SQL_INJECTION_MATCH_FIELD_TYPE;
-        } else if ("BYTE_MATCH_TEXT_TRANSFORMATION".equals(value)) {
-            return BYTE_MATCH_TEXT_TRANSFORMATION;
-        } else if ("BYTE_MATCH_POSITIONAL_CONSTRAINT".equals(value)) {
-            return BYTE_MATCH_POSITIONAL_CONSTRAINT;
-        } else if ("SIZE_CONSTRAINT_COMPARISON_OPERATOR".equals(value)) {
-            return SIZE_CONSTRAINT_COMPARISON_OPERATOR;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ParameterExceptionField enumEntry : ParameterExceptionField
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -45,13 +45,15 @@ public enum ErrorCode {
     public static ErrorCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("AccessDenied".equals(value)) {
-            return AccessDenied;
-        } else if ("InternalServerError".equals(value)) {
-            return InternalServerError;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ErrorCode enumEntry : ErrorCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -45,13 +45,16 @@ public enum ReturnItemCollectionMetrics {
     public static ReturnItemCollectionMetrics fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SIZE".equals(value)) {
-            return SIZE;
-        } else if ("NONE".equals(value)) {
-            return NONE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ReturnItemCollectionMetrics enumEntry : ReturnItemCollectionMetrics
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -45,13 +45,16 @@ public enum PendingAutomaticFailoverStatus {
     public static PendingAutomaticFailoverStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("enabled".equals(value)) {
-            return Enabled;
-        } else if ("disabled".equals(value)) {
-            return Disabled;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PendingAutomaticFailoverStatus enumEntry : PendingAutomaticFailoverStatus
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

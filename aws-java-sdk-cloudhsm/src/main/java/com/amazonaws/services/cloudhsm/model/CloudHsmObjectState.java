@@ -46,15 +46,15 @@ public enum CloudHsmObjectState {
     public static CloudHsmObjectState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("READY".equals(value)) {
-            return READY;
-        } else if ("UPDATING".equals(value)) {
-            return UPDATING;
-        } else if ("DEGRADED".equals(value)) {
-            return DEGRADED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (CloudHsmObjectState enumEntry : CloudHsmObjectState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

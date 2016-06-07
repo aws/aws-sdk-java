@@ -63,6 +63,10 @@ public class DynamoDBActionJsonMarshaller {
                 jsonGenerator.writeFieldName("hashKeyValue").writeValue(
                         dynamoDBAction.getHashKeyValue());
             }
+            if (dynamoDBAction.getHashKeyType() != null) {
+                jsonGenerator.writeFieldName("hashKeyType").writeValue(
+                        dynamoDBAction.getHashKeyType());
+            }
             if (dynamoDBAction.getRangeKeyField() != null) {
                 jsonGenerator.writeFieldName("rangeKeyField").writeValue(
                         dynamoDBAction.getRangeKeyField());
@@ -70,6 +74,10 @@ public class DynamoDBActionJsonMarshaller {
             if (dynamoDBAction.getRangeKeyValue() != null) {
                 jsonGenerator.writeFieldName("rangeKeyValue").writeValue(
                         dynamoDBAction.getRangeKeyValue());
+            }
+            if (dynamoDBAction.getRangeKeyType() != null) {
+                jsonGenerator.writeFieldName("rangeKeyType").writeValue(
+                        dynamoDBAction.getRangeKeyType());
             }
             if (dynamoDBAction.getPayloadField() != null) {
                 jsonGenerator.writeFieldName("payloadField").writeValue(

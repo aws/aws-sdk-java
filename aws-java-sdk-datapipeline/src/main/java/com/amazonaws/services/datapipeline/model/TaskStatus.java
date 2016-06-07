@@ -46,15 +46,15 @@ public enum TaskStatus {
     public static TaskStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("FINISHED".equals(value)) {
-            return FINISHED;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else if ("FALSE".equals(value)) {
-            return FALSE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (TaskStatus enumEntry : TaskStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

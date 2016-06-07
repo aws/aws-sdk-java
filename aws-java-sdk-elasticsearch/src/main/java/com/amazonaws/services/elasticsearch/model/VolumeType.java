@@ -50,15 +50,15 @@ public enum VolumeType {
     public static VolumeType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("standard".equals(value)) {
-            return Standard;
-        } else if ("gp2".equals(value)) {
-            return Gp2;
-        } else if ("io1".equals(value)) {
-            return Io1;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (VolumeType enumEntry : VolumeType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

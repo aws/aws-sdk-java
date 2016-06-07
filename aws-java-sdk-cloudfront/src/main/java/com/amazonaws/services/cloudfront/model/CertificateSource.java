@@ -46,15 +46,15 @@ public enum CertificateSource {
     public static CertificateSource fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("cloudfront".equals(value)) {
-            return Cloudfront;
-        } else if ("iam".equals(value)) {
-            return Iam;
-        } else if ("acm".equals(value)) {
-            return Acm;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (CertificateSource enumEntry : CertificateSource.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

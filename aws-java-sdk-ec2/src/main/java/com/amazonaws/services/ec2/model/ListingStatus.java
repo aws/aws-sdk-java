@@ -47,17 +47,15 @@ public enum ListingStatus {
     public static ListingStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("active".equals(value)) {
-            return Active;
-        } else if ("pending".equals(value)) {
-            return Pending;
-        } else if ("cancelled".equals(value)) {
-            return Cancelled;
-        } else if ("closed".equals(value)) {
-            return Closed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ListingStatus enumEntry : ListingStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

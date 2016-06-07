@@ -48,19 +48,15 @@ public enum PredicateType {
     public static PredicateType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("IPMatch".equals(value)) {
-            return IPMatch;
-        } else if ("ByteMatch".equals(value)) {
-            return ByteMatch;
-        } else if ("SqlInjectionMatch".equals(value)) {
-            return SqlInjectionMatch;
-        } else if ("SizeConstraint".equals(value)) {
-            return SizeConstraint;
-        } else if ("XssMatch".equals(value)) {
-            return XssMatch;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PredicateType enumEntry : PredicateType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

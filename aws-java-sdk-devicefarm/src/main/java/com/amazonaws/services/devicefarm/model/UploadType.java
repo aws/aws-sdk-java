@@ -59,41 +59,15 @@ public enum UploadType {
     public static UploadType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ANDROID_APP".equals(value)) {
-            return ANDROID_APP;
-        } else if ("IOS_APP".equals(value)) {
-            return IOS_APP;
-        } else if ("WEB_APP".equals(value)) {
-            return WEB_APP;
-        } else if ("EXTERNAL_DATA".equals(value)) {
-            return EXTERNAL_DATA;
-        } else if ("APPIUM_JAVA_JUNIT_TEST_PACKAGE".equals(value)) {
-            return APPIUM_JAVA_JUNIT_TEST_PACKAGE;
-        } else if ("APPIUM_JAVA_TESTNG_TEST_PACKAGE".equals(value)) {
-            return APPIUM_JAVA_TESTNG_TEST_PACKAGE;
-        } else if ("APPIUM_PYTHON_TEST_PACKAGE".equals(value)) {
-            return APPIUM_PYTHON_TEST_PACKAGE;
-        } else if ("APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE".equals(value)) {
-            return APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE;
-        } else if ("APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE".equals(value)) {
-            return APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE;
-        } else if ("APPIUM_WEB_PYTHON_TEST_PACKAGE".equals(value)) {
-            return APPIUM_WEB_PYTHON_TEST_PACKAGE;
-        } else if ("CALABASH_TEST_PACKAGE".equals(value)) {
-            return CALABASH_TEST_PACKAGE;
-        } else if ("INSTRUMENTATION_TEST_PACKAGE".equals(value)) {
-            return INSTRUMENTATION_TEST_PACKAGE;
-        } else if ("UIAUTOMATION_TEST_PACKAGE".equals(value)) {
-            return UIAUTOMATION_TEST_PACKAGE;
-        } else if ("UIAUTOMATOR_TEST_PACKAGE".equals(value)) {
-            return UIAUTOMATOR_TEST_PACKAGE;
-        } else if ("XCTEST_TEST_PACKAGE".equals(value)) {
-            return XCTEST_TEST_PACKAGE;
-        } else if ("XCTEST_UI_TEST_PACKAGE".equals(value)) {
-            return XCTEST_UI_TEST_PACKAGE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (UploadType enumEntry : UploadType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

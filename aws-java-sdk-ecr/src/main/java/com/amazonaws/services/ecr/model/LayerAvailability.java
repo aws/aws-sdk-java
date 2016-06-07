@@ -45,13 +45,15 @@ public enum LayerAvailability {
     public static LayerAvailability fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("AVAILABLE".equals(value)) {
-            return AVAILABLE;
-        } else if ("UNAVAILABLE".equals(value)) {
-            return UNAVAILABLE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LayerAvailability enumEntry : LayerAvailability.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

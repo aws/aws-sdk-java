@@ -47,17 +47,15 @@ public enum LifeCycleState {
     public static LifeCycleState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("creating".equals(value)) {
-            return Creating;
-        } else if ("available".equals(value)) {
-            return Available;
-        } else if ("deleting".equals(value)) {
-            return Deleting;
-        } else if ("deleted".equals(value)) {
-            return Deleted;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LifeCycleState enumEntry : LifeCycleState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "iot",
     "signingName" : "execute-api",
-    "jsonProtocol" : true,
     "serviceName" : "AWS IoT",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "xmlProtocol" : false,
+    "jsonProtocol" : true
   },
   "operations" : {
     "AcceptCertificateTransfer" : {
@@ -219,7 +219,7 @@
       "methodName" : "cancelCertificateTransfer"
     },
     "CreateCertificateFromCsr" : {
-      "documentation" : "<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> <p>You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that directory, and then specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs. </p> <p>Assuming a set of CSRs are located inside of the directory my-csr-directory:</p>&gt; <p>On Linux and OS X, the command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p> This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the aws iot create-certificate-from-csr AWS CLI command to create a certificate for the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the certificate creation process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_} </p> <p> On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\"</p>",
+      "documentation" : "<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> <p>You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that directory, and then specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs. </p> <p>Assuming a set of CSRs are located inside of the directory my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p> This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the aws iot create-certificate-from-csr AWS CLI command to create a certificate for the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the certificate creation process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_} </p> <p> On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\"</p>",
       "operationName" : "CreateCertificateFromCsr",
       "deprecated" : false,
       "input" : {
@@ -900,7 +900,7 @@
       "methodName" : "describeCertificate"
     },
     "DescribeEndpoint" : {
-      "documentation" : "<p>Returns a unique endpoint specific to the AWS account making the call. You specify the following URI when updating state information for your thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.</p>",
+      "documentation" : "<p>Returns a unique endpoint specific to the AWS account making the call.</p>",
       "operationName" : "DescribeEndpoint",
       "deprecated" : false,
       "input" : {
@@ -1303,6 +1303,9 @@
       }, {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p>An unexpected error has occurred.</p>"
+      }, {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>The request is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
@@ -1520,8 +1523,53 @@
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPoliciesRequest, ListPoliciesResult>",
       "methodName" : "listPolicies"
     },
+    "ListPolicyPrincipals" : {
+      "documentation" : "<p>Lists the principals associated with the specified policy.</p>",
+      "operationName" : "ListPolicyPrincipals",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "listPolicyPrincipalsRequest",
+        "variableType" : "ListPolicyPrincipalsRequest",
+        "variableDeclarationType" : "ListPolicyPrincipalsRequest",
+        "documentation" : "<p>The input for the ListPolicyPrincipals operation.</p>",
+        "simpleType" : "ListPolicyPrincipalsRequest",
+        "variableSetterType" : "ListPolicyPrincipalsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "ListPolicyPrincipalsResult",
+        "documentation" : "<p>The output from the ListPolicyPrincipals operation.</p>"
+      },
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource does not exist.</p>"
+      }, {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>The request is not valid.</p>"
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The rate exceeds the limit.</p>"
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : "<p>You are not authorized to perform this operation.</p>"
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The service is temporarily unavailable.</p>"
+      }, {
+        "exceptionName" : "InternalFailureException",
+        "documentation" : "<p>An unexpected error has occurred.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
+      "syncReturnType" : "ListPolicyPrincipalsResult",
+      "asyncReturnType" : "ListPolicyPrincipalsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListPolicyPrincipalsResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<ListPolicyPrincipalsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPolicyPrincipalsRequest, ListPolicyPrincipalsResult>",
+      "methodName" : "listPolicyPrincipals"
+    },
     "ListPolicyVersions" : {
-      "documentation" : "<p>Lists the versions of the specified policy, and identifies the default version.</p>",
+      "documentation" : "<p>Lists the versions of the specified policy and identifies the default version.</p>",
       "operationName" : "ListPolicyVersions",
       "deprecated" : false,
       "input" : {
@@ -3889,38 +3937,6 @@
         }
       }
     },
-    "SqlParseException" : {
-      "c2jName" : "SqlParseException",
-      "documentation" : "<p>The Rule-SQL expression can't be parsed correctly.</p>",
-      "shapeName" : "SqlParseException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "sqlParseException",
-        "variableType" : "SqlParseException",
-        "variableDeclarationType" : "SqlParseException",
-        "documentation" : null,
-        "simpleType" : "SqlParseException",
-        "variableSetterType" : "SqlParseException"
-      },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "SqlParseException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
     "ResourceAlreadyExistsException" : {
       "c2jName" : "ResourceAlreadyExistsException",
       "documentation" : "<p>The resource already exists.</p>",
@@ -3945,6 +3961,38 @@
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "ResourceAlreadyExistsException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "SqlParseException" : {
+      "c2jName" : "SqlParseException",
+      "documentation" : "<p>The Rule-SQL expression can't be parsed correctly.</p>",
+      "shapeName" : "SqlParseException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "sqlParseException",
+        "variableType" : "SqlParseException",
+        "variableDeclarationType" : "SqlParseException",
+        "documentation" : null,
+        "simpleType" : "SqlParseException",
+        "variableSetterType" : "SqlParseException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "SqlParseException",
       "customization" : {
         "artificialResultWrapper" : null,
         "skipGeneratingModelClass" : false,
@@ -4833,8 +4881,8 @@
           "documentation" : null
         },
         "http" : {
-          "unmarshallLocationName" : "certificateId",
-          "marshallLocationName" : "certificateId",
+          "unmarshallLocationName" : "caCertificateId",
+          "marshallLocationName" : "caCertificateId",
           "additionalUnmarshallingPath" : null,
           "additionalMarshallingPath" : null,
           "isPayload" : false,
@@ -4860,7 +4908,7 @@
         "fluentSetterDocumentation" : "/**<p>The CA certificate identifier.</p>\n@param certificateId The CA certificate identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The CA certificate identifier.</p>\n@param certificateId The CA certificate identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The updated status of the CA certificate.</p>",
+        "documentation" : "<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
         "name" : "NewStatus",
         "c2jName" : "newStatus",
         "c2jShape" : "CACertificateStatus",
@@ -4868,7 +4916,7 @@
           "variableName" : "newStatus",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The updated status of the CA certificate.</p>",
+          "documentation" : "<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4907,10 +4955,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The updated status of the CA certificate.</p>\n@param newStatus The updated status of the CA certificate.\n@see CACertificateStatus*/",
-        "getterDocumentation" : "/**<p>The updated status of the CA certificate.</p>\n@return The updated status of the CA certificate.\n@see CACertificateStatus*/",
-        "fluentSetterDocumentation" : "/**<p>The updated status of the CA certificate.</p>\n@param newStatus The updated status of the CA certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/",
-        "varargSetterDocumentation" : "/**<p>The updated status of the CA certificate.</p>\n@param newStatus The updated status of the CA certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/"
+        "setterDocumentation" : "/**<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CACertificateStatus*/",
+        "getterDocumentation" : "/**<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@return The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CACertificateStatus*/",
+        "fluentSetterDocumentation" : "/**<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/",
+        "varargSetterDocumentation" : "/**<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -4925,7 +4973,7 @@
         "action" : "UpdateCACertificate",
         "verb" : "PUT",
         "target" : null,
-        "requestUri" : "/cacertificate/{certificateId}",
+        "requestUri" : "/cacertificate/{caCertificateId}",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -4964,8 +5012,8 @@
             "documentation" : null
           },
           "http" : {
-            "unmarshallLocationName" : "certificateId",
-            "marshallLocationName" : "certificateId",
+            "unmarshallLocationName" : "caCertificateId",
+            "marshallLocationName" : "caCertificateId",
             "additionalUnmarshallingPath" : null,
             "additionalMarshallingPath" : null,
             "isPayload" : false,
@@ -4992,7 +5040,7 @@
           "varargSetterDocumentation" : "/**<p>The CA certificate identifier.</p>\n@param certificateId The CA certificate identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "NewStatus" : {
-          "documentation" : "<p>The updated status of the CA certificate.</p>",
+          "documentation" : "<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
           "name" : "NewStatus",
           "c2jName" : "newStatus",
           "c2jShape" : "CACertificateStatus",
@@ -5000,7 +5048,7 @@
             "variableName" : "newStatus",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The updated status of the CA certificate.</p>",
+            "documentation" : "<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5039,10 +5087,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The updated status of the CA certificate.</p>\n@param newStatus The updated status of the CA certificate.\n@see CACertificateStatus*/",
-          "getterDocumentation" : "/**<p>The updated status of the CA certificate.</p>\n@return The updated status of the CA certificate.\n@see CACertificateStatus*/",
-          "fluentSetterDocumentation" : "/**<p>The updated status of the CA certificate.</p>\n@param newStatus The updated status of the CA certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/",
-          "varargSetterDocumentation" : "/**<p>The updated status of the CA certificate.</p>\n@param newStatus The updated status of the CA certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/"
+          "setterDocumentation" : "/**<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CACertificateStatus*/",
+          "getterDocumentation" : "/**<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@return The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CACertificateStatus*/",
+          "fluentSetterDocumentation" : "/**<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/",
+          "varargSetterDocumentation" : "/**<p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The updated status of the CA certificate.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/"
         }
       }
     },
@@ -5817,7 +5865,7 @@
         "fluentSetterDocumentation" : "/**<p>The ID of the certificate.</p>\n@param certificateId The ID of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The ID of the certificate.</p>\n@param certificateId The ID of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>",
+        "documentation" : "<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
         "name" : "NewStatus",
         "c2jName" : "newStatus",
         "c2jShape" : "CertificateStatus",
@@ -5825,7 +5873,7 @@
           "variableName" : "newStatus",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>",
+          "documentation" : "<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5864,10 +5912,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.\n@see CertificateStatus*/",
-        "getterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>\n@return The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.\n@see CertificateStatus*/",
-        "fluentSetterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
-        "varargSetterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/"
+        "setterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CertificateStatus*/",
+        "getterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@return The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CertificateStatus*/",
+        "fluentSetterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
+        "varargSetterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -5949,7 +5997,7 @@
           "varargSetterDocumentation" : "/**<p>The ID of the certificate.</p>\n@param certificateId The ID of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "NewStatus" : {
-          "documentation" : "<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>",
+          "documentation" : "<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
           "name" : "NewStatus",
           "c2jName" : "newStatus",
           "c2jShape" : "CertificateStatus",
@@ -5957,7 +6005,7 @@
             "variableName" : "newStatus",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>",
+            "documentation" : "<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5996,10 +6044,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.\n@see CertificateStatus*/",
-          "getterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>\n@return The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.\n@see CertificateStatus*/",
-          "fluentSetterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
-          "varargSetterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/"
+          "setterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CertificateStatus*/",
+          "getterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@return The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CertificateStatus*/",
+          "fluentSetterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
+          "varargSetterDocumentation" : "/**<p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param newStatus The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/"
         }
       }
     },
@@ -8503,7 +8551,7 @@
         "fluentSetterDocumentation" : "/**<p>The ID of the certificate.</p>\n@param certificateId The ID of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The ID of the certificate.</p>\n@param certificateId The ID of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The status of the certificate.</p>",
+        "documentation" : "<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
         "name" : "Status",
         "c2jName" : "status",
         "c2jShape" : "CertificateStatus",
@@ -8511,7 +8559,7 @@
           "variableName" : "status",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The status of the certificate.</p>",
+          "documentation" : "<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8550,10 +8598,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The status of the certificate.</p>\n@param status The status of the certificate.\n@see CertificateStatus*/",
-        "getterDocumentation" : "/**<p>The status of the certificate.</p>\n@return The status of the certificate.\n@see CertificateStatus*/",
-        "fluentSetterDocumentation" : "/**<p>The status of the certificate.</p>\n@param status The status of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
-        "varargSetterDocumentation" : "/**<p>The status of the certificate.</p>\n@param status The status of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/"
+        "setterDocumentation" : "/**<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CertificateStatus*/",
+        "getterDocumentation" : "/**<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@return The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CertificateStatus*/",
+        "fluentSetterDocumentation" : "/**<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
+        "varargSetterDocumentation" : "/**<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/"
       }, {
         "documentation" : "<p>The date and time the certificate was created.</p>",
         "name" : "CreationDate",
@@ -8630,7 +8678,7 @@
       },
       "membersAsMap" : {
         "Status" : {
-          "documentation" : "<p>The status of the certificate.</p>",
+          "documentation" : "<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
           "name" : "Status",
           "c2jName" : "status",
           "c2jShape" : "CertificateStatus",
@@ -8638,7 +8686,7 @@
             "variableName" : "status",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The status of the certificate.</p>",
+            "documentation" : "<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8677,10 +8725,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The status of the certificate.</p>\n@param status The status of the certificate.\n@see CertificateStatus*/",
-          "getterDocumentation" : "/**<p>The status of the certificate.</p>\n@return The status of the certificate.\n@see CertificateStatus*/",
-          "fluentSetterDocumentation" : "/**<p>The status of the certificate.</p>\n@param status The status of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
-          "varargSetterDocumentation" : "/**<p>The status of the certificate.</p>\n@param status The status of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/"
+          "setterDocumentation" : "/**<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CertificateStatus*/",
+          "getterDocumentation" : "/**<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@return The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CertificateStatus*/",
+          "fluentSetterDocumentation" : "/**<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
+          "varargSetterDocumentation" : "/**<p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/"
         },
         "CertificateId" : {
           "documentation" : "<p>The ID of the certificate.</p>",
@@ -9376,7 +9424,7 @@
       "documentation" : "<p>Describes an action to write to a DynamoDB table.</p> <p>The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table.</p> <p>The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: ${<i>sql-expression</i>}.</p> <p>You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:</p> <p><code>\"hashKeyValue\": \"${topic(3)}\"</code></p> <p>The following field uses the timestamp:</p> <p><code>\"rangeKeyValue\": \"${timestamp()}\"</code></p>",
       "shapeName" : "DynamoDBAction",
       "deprecated" : false,
-      "required" : [ "tableName", "roleArn", "hashKeyField", "hashKeyValue", "rangeKeyField", "rangeKeyValue" ],
+      "required" : [ "tableName", "roleArn", "hashKeyField", "hashKeyValue" ],
       "hasPayloadMember" : false,
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
@@ -9591,6 +9639,58 @@
         "fluentSetterDocumentation" : "/**<p>The hash key value.</p>\n@param hashKeyValue The hash key value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The hash key value.</p>\n@param hashKeyValue The hash key value.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
+        "documentation" : "<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>",
+        "name" : "HashKeyType",
+        "c2jName" : "hashKeyType",
+        "c2jShape" : "DynamoKeyType",
+        "variable" : {
+          "variableName" : "hashKeyType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "hashKeyType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "hashKeyType",
+          "marshallLocationName" : "hashKeyType",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "DynamoKeyType",
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param hashKeyType The hash key type. Valid values are \"STRING\" or \"NUMBER\"\n@see DynamoKeyType*/",
+        "getterDocumentation" : "/**<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@return The hash key type. Valid values are \"STRING\" or \"NUMBER\"\n@see DynamoKeyType*/",
+        "fluentSetterDocumentation" : "/**<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param hashKeyType The hash key type. Valid values are \"STRING\" or \"NUMBER\"\n@return Returns a reference to this object so that method calls can be chained together.\n@see DynamoKeyType*/",
+        "varargSetterDocumentation" : "/**<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param hashKeyType The hash key type. Valid values are \"STRING\" or \"NUMBER\"\n@return Returns a reference to this object so that method calls can be chained together.\n@see DynamoKeyType*/"
+      }, {
         "documentation" : "<p>The range key name.</p>",
         "name" : "RangeKeyField",
         "c2jName" : "rangeKeyField",
@@ -9694,6 +9794,58 @@
         "getterDocumentation" : "/**<p>The range key value.</p>\n@return The range key value.*/",
         "fluentSetterDocumentation" : "/**<p>The range key value.</p>\n@param rangeKeyValue The range key value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The range key value.</p>\n@param rangeKeyValue The range key value.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>",
+        "name" : "RangeKeyType",
+        "c2jName" : "rangeKeyType",
+        "c2jShape" : "DynamoKeyType",
+        "variable" : {
+          "variableName" : "rangeKeyType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "rangeKeyType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "rangeKeyType",
+          "marshallLocationName" : "rangeKeyType",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "DynamoKeyType",
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param rangeKeyType The range key type. Valid values are \"STRING\" or \"NUMBER\"\n@see DynamoKeyType*/",
+        "getterDocumentation" : "/**<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@return The range key type. Valid values are \"STRING\" or \"NUMBER\"\n@see DynamoKeyType*/",
+        "fluentSetterDocumentation" : "/**<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param rangeKeyType The range key type. Valid values are \"STRING\" or \"NUMBER\"\n@return Returns a reference to this object so that method calls can be chained together.\n@see DynamoKeyType*/",
+        "varargSetterDocumentation" : "/**<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param rangeKeyType The range key type. Valid values are \"STRING\" or \"NUMBER\"\n@return Returns a reference to this object so that method calls can be chained together.\n@see DynamoKeyType*/"
       }, {
         "documentation" : "<p>The action payload. This name can be customized.</p>",
         "name" : "PayloadField",
@@ -9874,6 +10026,59 @@
           "getterDocumentation" : "/**<p>The action payload. This name can be customized.</p>\n@return The action payload. This name can be customized.*/",
           "fluentSetterDocumentation" : "/**<p>The action payload. This name can be customized.</p>\n@param payloadField The action payload. This name can be customized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The action payload. This name can be customized.</p>\n@param payloadField The action payload. This name can be customized.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "HashKeyType" : {
+          "documentation" : "<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>",
+          "name" : "HashKeyType",
+          "c2jName" : "hashKeyType",
+          "c2jShape" : "DynamoKeyType",
+          "variable" : {
+            "variableName" : "hashKeyType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "hashKeyType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "hashKeyType",
+            "marshallLocationName" : "hashKeyType",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "DynamoKeyType",
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param hashKeyType The hash key type. Valid values are \"STRING\" or \"NUMBER\"\n@see DynamoKeyType*/",
+          "getterDocumentation" : "/**<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@return The hash key type. Valid values are \"STRING\" or \"NUMBER\"\n@see DynamoKeyType*/",
+          "fluentSetterDocumentation" : "/**<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param hashKeyType The hash key type. Valid values are \"STRING\" or \"NUMBER\"\n@return Returns a reference to this object so that method calls can be chained together.\n@see DynamoKeyType*/",
+          "varargSetterDocumentation" : "/**<p>The hash key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param hashKeyType The hash key type. Valid values are \"STRING\" or \"NUMBER\"\n@return Returns a reference to this object so that method calls can be chained together.\n@see DynamoKeyType*/"
         },
         "RangeKeyValue" : {
           "documentation" : "<p>The range key value.</p>",
@@ -10086,6 +10291,59 @@
           "getterDocumentation" : "/**<p>The hash key name.</p>\n@return The hash key name.*/",
           "fluentSetterDocumentation" : "/**<p>The hash key name.</p>\n@param hashKeyField The hash key name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The hash key name.</p>\n@param hashKeyField The hash key name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "RangeKeyType" : {
+          "documentation" : "<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>",
+          "name" : "RangeKeyType",
+          "c2jName" : "rangeKeyType",
+          "c2jShape" : "DynamoKeyType",
+          "variable" : {
+            "variableName" : "rangeKeyType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "rangeKeyType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "rangeKeyType",
+            "marshallLocationName" : "rangeKeyType",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "DynamoKeyType",
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param rangeKeyType The range key type. Valid values are \"STRING\" or \"NUMBER\"\n@see DynamoKeyType*/",
+          "getterDocumentation" : "/**<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@return The range key type. Valid values are \"STRING\" or \"NUMBER\"\n@see DynamoKeyType*/",
+          "fluentSetterDocumentation" : "/**<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param rangeKeyType The range key type. Valid values are \"STRING\" or \"NUMBER\"\n@return Returns a reference to this object so that method calls can be chained together.\n@see DynamoKeyType*/",
+          "varargSetterDocumentation" : "/**<p>The range key type. Valid values are \"STRING\" or \"NUMBER\"</p>\n@param rangeKeyType The range key type. Valid values are \"STRING\" or \"NUMBER\"\n@return Returns a reference to this object so that method calls can be chained together.\n@see DynamoKeyType*/"
         },
         "RoleArn" : {
           "documentation" : "<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>",
@@ -11062,7 +11320,7 @@
         "fluentSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The principal.</p>",
+        "documentation" : "<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>",
         "name" : "Principal",
         "c2jName" : "principal",
         "c2jShape" : "Principal",
@@ -11070,7 +11328,7 @@
           "variableName" : "principal",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The principal.</p>",
+          "documentation" : "<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11109,10 +11367,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.*/",
-        "getterDocumentation" : "/**<p>The principal.</p>\n@return The principal.*/",
-        "fluentSetterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>\n@param principal The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.*/",
+        "getterDocumentation" : "/**<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>\n@return The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.*/",
+        "fluentSetterDocumentation" : "/**<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>\n@param principal The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>\n@param principal The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -11141,7 +11399,7 @@
       },
       "membersAsMap" : {
         "Principal" : {
-          "documentation" : "<p>The principal.</p>",
+          "documentation" : "<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>",
           "name" : "Principal",
           "c2jName" : "principal",
           "c2jShape" : "Principal",
@@ -11149,7 +11407,7 @@
             "variableName" : "principal",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The principal.</p>",
+            "documentation" : "<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11188,10 +11446,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.*/",
-          "getterDocumentation" : "/**<p>The principal.</p>\n@return The principal.*/",
-          "fluentSetterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The principal.</p>\n@param principal The principal.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>\n@param principal The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.*/",
+          "getterDocumentation" : "/**<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>\n@return The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.*/",
+          "fluentSetterDocumentation" : "/**<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>\n@param principal The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</p>\n@param principal The principal.</p> <p>If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ThingName" : {
           "documentation" : "<p>The name of the thing.</p>",
@@ -13919,6 +14177,384 @@
           "getterDocumentation" : "/**<p>The logging options payload.</p>\n@return The logging options payload.*/",
           "fluentSetterDocumentation" : "/**<p>The logging options payload.</p>\n@param loggingOptionsPayload The logging options payload.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The logging options payload.</p>\n@param loggingOptionsPayload The logging options payload.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "ListPolicyPrincipalsResult" : {
+      "c2jName" : "ListPolicyPrincipalsResponse",
+      "documentation" : "<p>The output from the ListPolicyPrincipals operation.</p>",
+      "shapeName" : "ListPolicyPrincipalsResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The descriptions of the principals.</p>",
+        "name" : "Principals",
+        "c2jName" : "principals",
+        "c2jShape" : "Principals",
+        "variable" : {
+          "variableName" : "principals",
+          "variableType" : "java.util.List<String>",
+          "variableDeclarationType" : "java.util.List<String>",
+          "documentation" : "<p>The descriptions of the principals.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "setterModel" : {
+          "variableName" : "principals",
+          "variableType" : "java.util.List<String>",
+          "variableDeclarationType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "principals",
+          "marshallLocationName" : "principals",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "String",
+          "memberLocationName" : null,
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "PrincipalArn",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : true,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : false,
+        "list" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The descriptions of the principals.</p>\n@param principals The descriptions of the principals.*/",
+        "getterDocumentation" : "/**<p>The descriptions of the principals.</p>\n@return The descriptions of the principals.*/",
+        "fluentSetterDocumentation" : "/**<p>The descriptions of the principals.</p>\n@param principals The descriptions of the principals.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The descriptions of the principals.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPrincipals(java.util.Collection)} or {@link #withPrincipals(java.util.Collection)} if you want to override the existing values.</p>\n@param principals The descriptions of the principals.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The marker for the next set of results, or null if there are no additional results.</p>",
+        "name" : "NextMarker",
+        "c2jName" : "nextMarker",
+        "c2jShape" : "Marker",
+        "variable" : {
+          "variableName" : "nextMarker",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The marker for the next set of results, or null if there are no additional results.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "nextMarker",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "nextMarker",
+          "marshallLocationName" : "nextMarker",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The marker for the next set of results, or null if there are no additional results.</p>\n@param nextMarker The marker for the next set of results, or null if there are no additional results.*/",
+        "getterDocumentation" : "/**<p>The marker for the next set of results, or null if there are no additional results.</p>\n@return The marker for the next set of results, or null if there are no additional results.*/",
+        "fluentSetterDocumentation" : "/**<p>The marker for the next set of results, or null if there are no additional results.</p>\n@param nextMarker The marker for the next set of results, or null if there are no additional results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The marker for the next set of results, or null if there are no additional results.</p>\n@param nextMarker The marker for the next set of results, or null if there are no additional results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "listPolicyPrincipalsResult",
+        "variableType" : "ListPolicyPrincipalsResult",
+        "variableDeclarationType" : "ListPolicyPrincipalsResult",
+        "documentation" : null,
+        "simpleType" : "ListPolicyPrincipalsResult",
+        "variableSetterType" : "ListPolicyPrincipalsResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Principals" : {
+          "documentation" : "<p>The descriptions of the principals.</p>",
+          "name" : "Principals",
+          "c2jName" : "principals",
+          "c2jShape" : "Principals",
+          "variable" : {
+            "variableName" : "principals",
+            "variableType" : "java.util.List<String>",
+            "variableDeclarationType" : "java.util.List<String>",
+            "documentation" : "<p>The descriptions of the principals.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "setterModel" : {
+            "variableName" : "principals",
+            "variableType" : "java.util.List<String>",
+            "variableDeclarationType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "principals",
+            "marshallLocationName" : "principals",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "String",
+            "memberLocationName" : null,
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "PrincipalArn",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : true,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : false,
+          "list" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The descriptions of the principals.</p>\n@param principals The descriptions of the principals.*/",
+          "getterDocumentation" : "/**<p>The descriptions of the principals.</p>\n@return The descriptions of the principals.*/",
+          "fluentSetterDocumentation" : "/**<p>The descriptions of the principals.</p>\n@param principals The descriptions of the principals.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The descriptions of the principals.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPrincipals(java.util.Collection)} or {@link #withPrincipals(java.util.Collection)} if you want to override the existing values.</p>\n@param principals The descriptions of the principals.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "NextMarker" : {
+          "documentation" : "<p>The marker for the next set of results, or null if there are no additional results.</p>",
+          "name" : "NextMarker",
+          "c2jName" : "nextMarker",
+          "c2jShape" : "Marker",
+          "variable" : {
+            "variableName" : "nextMarker",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The marker for the next set of results, or null if there are no additional results.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "nextMarker",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "nextMarker",
+            "marshallLocationName" : "nextMarker",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The marker for the next set of results, or null if there are no additional results.</p>\n@param nextMarker The marker for the next set of results, or null if there are no additional results.*/",
+          "getterDocumentation" : "/**<p>The marker for the next set of results, or null if there are no additional results.</p>\n@return The marker for the next set of results, or null if there are no additional results.*/",
+          "fluentSetterDocumentation" : "/**<p>The marker for the next set of results, or null if there are no additional results.</p>\n@param nextMarker The marker for the next set of results, or null if there are no additional results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The marker for the next set of results, or null if there are no additional results.</p>\n@param nextMarker The marker for the next set of results, or null if there are no additional results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -17755,190 +18391,6 @@
       },
       "membersAsMap" : { }
     },
-    "DeleteCACertificateRequest" : {
-      "c2jName" : "DeleteCACertificateRequest",
-      "documentation" : "<p>Input for the DeleteCACertificate operation.</p>",
-      "shapeName" : "DeleteCACertificateRequest",
-      "deprecated" : false,
-      "required" : [ "certificateId" ],
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ {
-        "documentation" : "<p>The ID of the certificate to delete.</p>",
-        "name" : "CertificateId",
-        "c2jName" : "certificateId",
-        "c2jShape" : "CertificateId",
-        "variable" : {
-          "variableName" : "certificateId",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The ID of the certificate to delete.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "certificateId",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "certificateId",
-          "marshallLocationName" : "certificateId",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : "uri",
-          "flattened" : false,
-          "header" : false,
-          "uri" : true,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "simple" : true,
-        "list" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.*/",
-        "getterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@return The ID of the certificate to delete.*/",
-        "fluentSetterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "deleteCACertificateRequest",
-        "variableType" : "DeleteCACertificateRequest",
-        "variableDeclarationType" : "DeleteCACertificateRequest",
-        "documentation" : null,
-        "simpleType" : "DeleteCACertificateRequest",
-        "variableSetterType" : "DeleteCACertificateRequest"
-      },
-      "marshaller" : {
-        "action" : "DeleteCACertificate",
-        "verb" : "DELETE",
-        "target" : null,
-        "requestUri" : "/cacertificate/{certificateId}",
-        "locationName" : null,
-        "xmlNameSpaceUri" : null
-      },
-      "unmarshaller" : null,
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "CertificateId" : {
-          "documentation" : "<p>The ID of the certificate to delete.</p>",
-          "name" : "CertificateId",
-          "c2jName" : "certificateId",
-          "c2jShape" : "CertificateId",
-          "variable" : {
-            "variableName" : "certificateId",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The ID of the certificate to delete.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "certificateId",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "certificateId",
-            "marshallLocationName" : "certificateId",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : "uri",
-            "flattened" : false,
-            "header" : false,
-            "uri" : true,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "simple" : true,
-          "list" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.*/",
-          "getterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@return The ID of the certificate to delete.*/",
-          "fluentSetterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
-    "DeleteRegistrationCodeRequest" : {
-      "c2jName" : "DeleteRegistrationCodeRequest",
-      "documentation" : "<p>The input for the DeleteRegistrationCode operation.</p>",
-      "shapeName" : "DeleteRegistrationCodeRequest",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : null,
-      "enums" : null,
-      "variable" : {
-        "variableName" : "deleteRegistrationCodeRequest",
-        "variableType" : "DeleteRegistrationCodeRequest",
-        "variableDeclarationType" : "DeleteRegistrationCodeRequest",
-        "documentation" : null,
-        "simpleType" : "DeleteRegistrationCodeRequest",
-        "variableSetterType" : "DeleteRegistrationCodeRequest"
-      },
-      "marshaller" : {
-        "action" : "DeleteRegistrationCode",
-        "verb" : "DELETE",
-        "target" : null,
-        "requestUri" : "/registrationcode",
-        "locationName" : null,
-        "xmlNameSpaceUri" : null
-      },
-      "unmarshaller" : null,
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
     "GetTopicRuleRequest" : {
       "c2jName" : "GetTopicRuleRequest",
       "documentation" : "<p>The input for the GetTopicRule operation.</p>",
@@ -18083,6 +18535,190 @@
           "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param ruleName The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "DeleteCACertificateRequest" : {
+      "c2jName" : "DeleteCACertificateRequest",
+      "documentation" : "<p>Input for the DeleteCACertificate operation.</p>",
+      "shapeName" : "DeleteCACertificateRequest",
+      "deprecated" : false,
+      "required" : [ "certificateId" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The ID of the certificate to delete.</p>",
+        "name" : "CertificateId",
+        "c2jName" : "certificateId",
+        "c2jShape" : "CertificateId",
+        "variable" : {
+          "variableName" : "certificateId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The ID of the certificate to delete.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "certificateId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "caCertificateId",
+          "marshallLocationName" : "caCertificateId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "flattened" : false,
+          "header" : false,
+          "uri" : true,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.*/",
+        "getterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@return The ID of the certificate to delete.*/",
+        "fluentSetterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteCACertificateRequest",
+        "variableType" : "DeleteCACertificateRequest",
+        "variableDeclarationType" : "DeleteCACertificateRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteCACertificateRequest",
+        "variableSetterType" : "DeleteCACertificateRequest"
+      },
+      "marshaller" : {
+        "action" : "DeleteCACertificate",
+        "verb" : "DELETE",
+        "target" : null,
+        "requestUri" : "/cacertificate/{caCertificateId}",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "CertificateId" : {
+          "documentation" : "<p>The ID of the certificate to delete.</p>",
+          "name" : "CertificateId",
+          "c2jName" : "certificateId",
+          "c2jShape" : "CertificateId",
+          "variable" : {
+            "variableName" : "certificateId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The ID of the certificate to delete.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "certificateId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "caCertificateId",
+            "marshallLocationName" : "caCertificateId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "flattened" : false,
+            "header" : false,
+            "uri" : true,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.*/",
+          "getterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@return The ID of the certificate to delete.*/",
+          "fluentSetterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The ID of the certificate to delete.</p>\n@param certificateId The ID of the certificate to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "DeleteRegistrationCodeRequest" : {
+      "c2jName" : "DeleteRegistrationCodeRequest",
+      "documentation" : "<p>The input for the DeleteRegistrationCode operation.</p>",
+      "shapeName" : "DeleteRegistrationCodeRequest",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteRegistrationCodeRequest",
+        "variableType" : "DeleteRegistrationCodeRequest",
+        "variableDeclarationType" : "DeleteRegistrationCodeRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteRegistrationCodeRequest",
+        "variableSetterType" : "DeleteRegistrationCodeRequest"
+      },
+      "marshaller" : {
+        "action" : "DeleteRegistrationCode",
+        "verb" : "DELETE",
+        "target" : null,
+        "requestUri" : "/registrationcode",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "AttachPrincipalPolicyResult" : {
       "c2jName" : "AttachPrincipalPolicyResult",
@@ -19134,6 +19770,466 @@
           "getterDocumentation" : "/**<p>The policy version ID.</p>\n@return The policy version ID.*/",
           "fluentSetterDocumentation" : "/**<p>The policy version ID.</p>\n@param policyVersionId The policy version ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The policy version ID.</p>\n@param policyVersionId The policy version ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "ListPolicyPrincipalsRequest" : {
+      "c2jName" : "ListPolicyPrincipalsRequest",
+      "documentation" : "<p>The input for the ListPolicyPrincipals operation.</p>",
+      "shapeName" : "ListPolicyPrincipalsRequest",
+      "deprecated" : false,
+      "required" : [ "policyName" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : true,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The policy name.</p>",
+        "name" : "PolicyName",
+        "c2jName" : "policyName",
+        "c2jShape" : "PolicyName",
+        "variable" : {
+          "variableName" : "policyName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The policy name.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "policyName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "x-amzn-iot-policy",
+          "marshallLocationName" : "x-amzn-iot-policy",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "header",
+          "flattened" : false,
+          "header" : true,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The policy name.</p>\n@param policyName The policy name.*/",
+        "getterDocumentation" : "/**<p>The policy name.</p>\n@return The policy name.*/",
+        "fluentSetterDocumentation" : "/**<p>The policy name.</p>\n@param policyName The policy name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The policy name.</p>\n@param policyName The policy name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The marker for the next set of results.</p>",
+        "name" : "Marker",
+        "c2jName" : "marker",
+        "c2jShape" : "Marker",
+        "variable" : {
+          "variableName" : "marker",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The marker for the next set of results.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "marker",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "marker",
+          "marshallLocationName" : "marker",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : true
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The marker for the next set of results.</p>\n@param marker The marker for the next set of results.*/",
+        "getterDocumentation" : "/**<p>The marker for the next set of results.</p>\n@return The marker for the next set of results.*/",
+        "fluentSetterDocumentation" : "/**<p>The marker for the next set of results.</p>\n@param marker The marker for the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The marker for the next set of results.</p>\n@param marker The marker for the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The result page size.</p>",
+        "name" : "PageSize",
+        "c2jName" : "pageSize",
+        "c2jShape" : "PageSize",
+        "variable" : {
+          "variableName" : "pageSize",
+          "variableType" : "Integer",
+          "variableDeclarationType" : "Integer",
+          "documentation" : "<p>The result page size.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "setterModel" : {
+          "variableName" : "pageSize",
+          "variableType" : "Integer",
+          "variableDeclarationType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "pageSize",
+          "marshallLocationName" : "pageSize",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : true
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The result page size.</p>\n@param pageSize The result page size.*/",
+        "getterDocumentation" : "/**<p>The result page size.</p>\n@return The result page size.*/",
+        "fluentSetterDocumentation" : "/**<p>The result page size.</p>\n@param pageSize The result page size.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The result page size.</p>\n@param pageSize The result page size.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>",
+        "name" : "AscendingOrder",
+        "c2jName" : "ascendingOrder",
+        "c2jShape" : "AscendingOrder",
+        "variable" : {
+          "variableName" : "ascendingOrder",
+          "variableType" : "Boolean",
+          "variableDeclarationType" : "Boolean",
+          "documentation" : "<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "setterModel" : {
+          "variableName" : "ascendingOrder",
+          "variableType" : "Boolean",
+          "variableDeclarationType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "isAscendingOrder",
+          "marshallLocationName" : "isAscendingOrder",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : true
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>\n@param ascendingOrder Specifies the order for results. If true, the results are returned in ascending creation order.*/",
+        "getterDocumentation" : "/**<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>\n@return Specifies the order for results. If true, the results are returned in ascending creation order.*/",
+        "fluentSetterDocumentation" : "/**<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>\n@param ascendingOrder Specifies the order for results. If true, the results are returned in ascending creation order.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>\n@param ascendingOrder Specifies the order for results. If true, the results are returned in ascending creation order.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "listPolicyPrincipalsRequest",
+        "variableType" : "ListPolicyPrincipalsRequest",
+        "variableDeclarationType" : "ListPolicyPrincipalsRequest",
+        "documentation" : null,
+        "simpleType" : "ListPolicyPrincipalsRequest",
+        "variableSetterType" : "ListPolicyPrincipalsRequest"
+      },
+      "marshaller" : {
+        "action" : "ListPolicyPrincipals",
+        "verb" : "GET",
+        "target" : null,
+        "requestUri" : "/policy-principals",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "PageSize" : {
+          "documentation" : "<p>The result page size.</p>",
+          "name" : "PageSize",
+          "c2jName" : "pageSize",
+          "c2jShape" : "PageSize",
+          "variable" : {
+            "variableName" : "pageSize",
+            "variableType" : "Integer",
+            "variableDeclarationType" : "Integer",
+            "documentation" : "<p>The result page size.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "setterModel" : {
+            "variableName" : "pageSize",
+            "variableType" : "Integer",
+            "variableDeclarationType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "pageSize",
+            "marshallLocationName" : "pageSize",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : true
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The result page size.</p>\n@param pageSize The result page size.*/",
+          "getterDocumentation" : "/**<p>The result page size.</p>\n@return The result page size.*/",
+          "fluentSetterDocumentation" : "/**<p>The result page size.</p>\n@param pageSize The result page size.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The result page size.</p>\n@param pageSize The result page size.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "PolicyName" : {
+          "documentation" : "<p>The policy name.</p>",
+          "name" : "PolicyName",
+          "c2jName" : "policyName",
+          "c2jShape" : "PolicyName",
+          "variable" : {
+            "variableName" : "policyName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The policy name.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "policyName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "x-amzn-iot-policy",
+            "marshallLocationName" : "x-amzn-iot-policy",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "header",
+            "flattened" : false,
+            "header" : true,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The policy name.</p>\n@param policyName The policy name.*/",
+          "getterDocumentation" : "/**<p>The policy name.</p>\n@return The policy name.*/",
+          "fluentSetterDocumentation" : "/**<p>The policy name.</p>\n@param policyName The policy name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The policy name.</p>\n@param policyName The policy name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "AscendingOrder" : {
+          "documentation" : "<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>",
+          "name" : "AscendingOrder",
+          "c2jName" : "ascendingOrder",
+          "c2jShape" : "AscendingOrder",
+          "variable" : {
+            "variableName" : "ascendingOrder",
+            "variableType" : "Boolean",
+            "variableDeclarationType" : "Boolean",
+            "documentation" : "<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "setterModel" : {
+            "variableName" : "ascendingOrder",
+            "variableType" : "Boolean",
+            "variableDeclarationType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "isAscendingOrder",
+            "marshallLocationName" : "isAscendingOrder",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : true
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>\n@param ascendingOrder Specifies the order for results. If true, the results are returned in ascending creation order.*/",
+          "getterDocumentation" : "/**<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>\n@return Specifies the order for results. If true, the results are returned in ascending creation order.*/",
+          "fluentSetterDocumentation" : "/**<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>\n@param ascendingOrder Specifies the order for results. If true, the results are returned in ascending creation order.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>\n@param ascendingOrder Specifies the order for results. If true, the results are returned in ascending creation order.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Marker" : {
+          "documentation" : "<p>The marker for the next set of results.</p>",
+          "name" : "Marker",
+          "c2jName" : "marker",
+          "c2jShape" : "Marker",
+          "variable" : {
+            "variableName" : "marker",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The marker for the next set of results.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "marker",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "marker",
+            "marshallLocationName" : "marker",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : true
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The marker for the next set of results.</p>\n@param marker The marker for the next set of results.*/",
+          "getterDocumentation" : "/**<p>The marker for the next set of results.</p>\n@return The marker for the next set of results.*/",
+          "fluentSetterDocumentation" : "/**<p>The marker for the next set of results.</p>\n@param marker The marker for the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The marker for the next set of results.</p>\n@param marker The marker for the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -25253,7 +26349,7 @@
         "fluentSetterDocumentation" : "/**<p>The ID of the CA certificate.</p>\n@param certificateId The ID of the CA certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The ID of the CA certificate.</p>\n@param certificateId The ID of the CA certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The status of the CA certificate.</p>",
+        "documentation" : "<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
         "name" : "Status",
         "c2jName" : "status",
         "c2jShape" : "CACertificateStatus",
@@ -25261,7 +26357,7 @@
           "variableName" : "status",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The status of the CA certificate.</p>",
+          "documentation" : "<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -25300,10 +26396,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The status of the CA certificate.</p>\n@param status The status of the CA certificate.\n@see CACertificateStatus*/",
-        "getterDocumentation" : "/**<p>The status of the CA certificate.</p>\n@return The status of the CA certificate.\n@see CACertificateStatus*/",
-        "fluentSetterDocumentation" : "/**<p>The status of the CA certificate.</p>\n@param status The status of the CA certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/",
-        "varargSetterDocumentation" : "/**<p>The status of the CA certificate.</p>\n@param status The status of the CA certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/"
+        "setterDocumentation" : "/**<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CACertificateStatus*/",
+        "getterDocumentation" : "/**<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@return The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CACertificateStatus*/",
+        "fluentSetterDocumentation" : "/**<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/",
+        "varargSetterDocumentation" : "/**<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/"
       }, {
         "documentation" : "<p>The date the CA certificate was created.</p>",
         "name" : "CreationDate",
@@ -25380,7 +26476,7 @@
       },
       "membersAsMap" : {
         "Status" : {
-          "documentation" : "<p>The status of the CA certificate.</p>",
+          "documentation" : "<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
           "name" : "Status",
           "c2jName" : "status",
           "c2jShape" : "CACertificateStatus",
@@ -25388,7 +26484,7 @@
             "variableName" : "status",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The status of the CA certificate.</p>",
+            "documentation" : "<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -25427,10 +26523,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The status of the CA certificate.</p>\n@param status The status of the CA certificate.\n@see CACertificateStatus*/",
-          "getterDocumentation" : "/**<p>The status of the CA certificate.</p>\n@return The status of the CA certificate.\n@see CACertificateStatus*/",
-          "fluentSetterDocumentation" : "/**<p>The status of the CA certificate.</p>\n@param status The status of the CA certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/",
-          "varargSetterDocumentation" : "/**<p>The status of the CA certificate.</p>\n@param status The status of the CA certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/"
+          "setterDocumentation" : "/**<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CACertificateStatus*/",
+          "getterDocumentation" : "/**<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@return The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@see CACertificateStatus*/",
+          "fluentSetterDocumentation" : "/**<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/",
+          "varargSetterDocumentation" : "/**<p>The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>\n@param status The status of the CA certificate. </p> <p>The status value REGISTER_INACTIVE is deprecated and should not be used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CACertificateStatus*/"
         },
         "CertificateId" : {
           "documentation" : "<p>The ID of the CA certificate.</p>",
@@ -29583,8 +30679,8 @@
           "documentation" : null
         },
         "http" : {
-          "unmarshallLocationName" : "certificateId",
-          "marshallLocationName" : "certificateId",
+          "unmarshallLocationName" : "caCertificateId",
+          "marshallLocationName" : "caCertificateId",
           "additionalUnmarshallingPath" : null,
           "additionalMarshallingPath" : null,
           "isPayload" : false,
@@ -29623,7 +30719,7 @@
         "action" : "DescribeCACertificate",
         "verb" : "GET",
         "target" : null,
-        "requestUri" : "/cacertificate/{certificateId}",
+        "requestUri" : "/cacertificate/{caCertificateId}",
         "locationName" : null,
         "xmlNameSpaceUri" : null
       },
@@ -29662,8 +30758,8 @@
             "documentation" : null
           },
           "http" : {
-            "unmarshallLocationName" : "certificateId",
-            "marshallLocationName" : "certificateId",
+            "unmarshallLocationName" : "caCertificateId",
+            "marshallLocationName" : "caCertificateId",
             "additionalUnmarshallingPath" : null,
             "additionalMarshallingPath" : null,
             "isPayload" : false,
@@ -30742,6 +31838,47 @@
           "varargSetterDocumentation" : "/**<p>The CA certificate ARN.</p>\n@param certificateArn The CA certificate ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "DynamoKeyType" : {
+      "c2jName" : "DynamoKeyType",
+      "documentation" : "",
+      "shapeName" : "DynamoKeyType",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "STRING",
+        "value" : "STRING"
+      }, {
+        "name" : "NUMBER",
+        "value" : "NUMBER"
+      } ],
+      "variable" : {
+        "variableName" : "dynamoKeyType",
+        "variableType" : "DynamoKeyType",
+        "variableDeclarationType" : "DynamoKeyType",
+        "documentation" : null,
+        "simpleType" : "DynamoKeyType",
+        "variableSetterType" : "DynamoKeyType"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "DeleteCertificateResult" : {
       "c2jName" : "DeleteCertificateResult",

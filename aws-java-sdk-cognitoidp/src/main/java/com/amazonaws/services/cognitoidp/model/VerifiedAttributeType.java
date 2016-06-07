@@ -45,13 +45,15 @@ public enum VerifiedAttributeType {
     public static VerifiedAttributeType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("phone_number".equals(value)) {
-            return Phone_number;
-        } else if ("email".equals(value)) {
-            return Email;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (VerifiedAttributeType enumEntry : VerifiedAttributeType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

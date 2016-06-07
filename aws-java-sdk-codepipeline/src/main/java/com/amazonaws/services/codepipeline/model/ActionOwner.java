@@ -46,15 +46,15 @@ public enum ActionOwner {
     public static ActionOwner fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("AWS".equals(value)) {
-            return AWS;
-        } else if ("ThirdParty".equals(value)) {
-            return ThirdParty;
-        } else if ("Custom".equals(value)) {
-            return Custom;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ActionOwner enumEntry : ActionOwner.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

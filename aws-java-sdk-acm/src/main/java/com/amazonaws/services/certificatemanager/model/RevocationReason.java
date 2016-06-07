@@ -53,29 +53,15 @@ public enum RevocationReason {
     public static RevocationReason fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("UNSPECIFIED".equals(value)) {
-            return UNSPECIFIED;
-        } else if ("KEY_COMPROMISE".equals(value)) {
-            return KEY_COMPROMISE;
-        } else if ("CA_COMPROMISE".equals(value)) {
-            return CA_COMPROMISE;
-        } else if ("AFFILIATION_CHANGED".equals(value)) {
-            return AFFILIATION_CHANGED;
-        } else if ("SUPERCEDED".equals(value)) {
-            return SUPERCEDED;
-        } else if ("CESSATION_OF_OPERATION".equals(value)) {
-            return CESSATION_OF_OPERATION;
-        } else if ("CERTIFICATE_HOLD".equals(value)) {
-            return CERTIFICATE_HOLD;
-        } else if ("REMOVE_FROM_CRL".equals(value)) {
-            return REMOVE_FROM_CRL;
-        } else if ("PRIVILEGE_WITHDRAWN".equals(value)) {
-            return PRIVILEGE_WITHDRAWN;
-        } else if ("A_A_COMPROMISE".equals(value)) {
-            return A_A_COMPROMISE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RevocationReason enumEntry : RevocationReason.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

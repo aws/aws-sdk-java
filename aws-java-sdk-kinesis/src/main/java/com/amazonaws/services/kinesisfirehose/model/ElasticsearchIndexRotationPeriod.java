@@ -48,19 +48,16 @@ public enum ElasticsearchIndexRotationPeriod {
     public static ElasticsearchIndexRotationPeriod fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("NoRotation".equals(value)) {
-            return NoRotation;
-        } else if ("OneHour".equals(value)) {
-            return OneHour;
-        } else if ("OneDay".equals(value)) {
-            return OneDay;
-        } else if ("OneWeek".equals(value)) {
-            return OneWeek;
-        } else if ("OneMonth".equals(value)) {
-            return OneMonth;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ElasticsearchIndexRotationPeriod enumEntry : ElasticsearchIndexRotationPeriod
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -87,21 +87,15 @@ public enum InterconnectState {
     public static InterconnectState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("requested".equals(value)) {
-            return Requested;
-        } else if ("pending".equals(value)) {
-            return Pending;
-        } else if ("available".equals(value)) {
-            return Available;
-        } else if ("down".equals(value)) {
-            return Down;
-        } else if ("deleting".equals(value)) {
-            return Deleting;
-        } else if ("deleted".equals(value)) {
-            return Deleted;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InterconnectState enumEntry : InterconnectState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -49,21 +49,15 @@ public enum AgentStatus {
     public static AgentStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("HEALTHY".equals(value)) {
-            return HEALTHY;
-        } else if ("UNHEALTHY".equals(value)) {
-            return UNHEALTHY;
-        } else if ("RUNNING".equals(value)) {
-            return RUNNING;
-        } else if ("UNKNOWN".equals(value)) {
-            return UNKNOWN;
-        } else if ("BLACKLISTED".equals(value)) {
-            return BLACKLISTED;
-        } else if ("SHUTDOWN".equals(value)) {
-            return SHUTDOWN;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AgentStatus enumEntry : AgentStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

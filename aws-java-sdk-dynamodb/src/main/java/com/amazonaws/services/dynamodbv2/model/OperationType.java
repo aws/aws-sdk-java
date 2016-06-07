@@ -46,15 +46,15 @@ public enum OperationType {
     public static OperationType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("INSERT".equals(value)) {
-            return INSERT;
-        } else if ("MODIFY".equals(value)) {
-            return MODIFY;
-        } else if ("REMOVE".equals(value)) {
-            return REMOVE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (OperationType enumEntry : OperationType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

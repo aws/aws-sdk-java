@@ -46,15 +46,15 @@ public enum Tenancy {
     public static Tenancy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("default".equals(value)) {
-            return Default;
-        } else if ("dedicated".equals(value)) {
-            return Dedicated;
-        } else if ("host".equals(value)) {
-            return Host;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Tenancy enumEntry : Tenancy.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

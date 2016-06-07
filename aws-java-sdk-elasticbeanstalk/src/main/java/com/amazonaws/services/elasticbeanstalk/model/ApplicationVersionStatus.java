@@ -47,17 +47,16 @@ public enum ApplicationVersionStatus {
     public static ApplicationVersionStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Processed".equals(value)) {
-            return Processed;
-        } else if ("Unprocessed".equals(value)) {
-            return Unprocessed;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else if ("Processing".equals(value)) {
-            return Processing;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ApplicationVersionStatus enumEntry : ApplicationVersionStatus
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

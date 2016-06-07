@@ -47,17 +47,15 @@ public enum BulkPublishStatus {
     public static BulkPublishStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("NOT_STARTED".equals(value)) {
-            return NOT_STARTED;
-        } else if ("IN_PROGRESS".equals(value)) {
-            return IN_PROGRESS;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else if ("SUCCEEDED".equals(value)) {
-            return SUCCEEDED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (BulkPublishStatus enumEntry : BulkPublishStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

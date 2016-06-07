@@ -45,13 +45,15 @@ public enum VirtualizationType {
     public static VirtualizationType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("hvm".equals(value)) {
-            return Hvm;
-        } else if ("paravirtual".equals(value)) {
-            return Paravirtual;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (VirtualizationType enumEntry : VirtualizationType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -102,118 +102,15 @@ public enum EventType {
     public static EventType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("WorkflowExecutionStarted".equals(value)) {
-            return WorkflowExecutionStarted;
-        } else if ("WorkflowExecutionCancelRequested".equals(value)) {
-            return WorkflowExecutionCancelRequested;
-        } else if ("WorkflowExecutionCompleted".equals(value)) {
-            return WorkflowExecutionCompleted;
-        } else if ("CompleteWorkflowExecutionFailed".equals(value)) {
-            return CompleteWorkflowExecutionFailed;
-        } else if ("WorkflowExecutionFailed".equals(value)) {
-            return WorkflowExecutionFailed;
-        } else if ("FailWorkflowExecutionFailed".equals(value)) {
-            return FailWorkflowExecutionFailed;
-        } else if ("WorkflowExecutionTimedOut".equals(value)) {
-            return WorkflowExecutionTimedOut;
-        } else if ("WorkflowExecutionCanceled".equals(value)) {
-            return WorkflowExecutionCanceled;
-        } else if ("CancelWorkflowExecutionFailed".equals(value)) {
-            return CancelWorkflowExecutionFailed;
-        } else if ("WorkflowExecutionContinuedAsNew".equals(value)) {
-            return WorkflowExecutionContinuedAsNew;
-        } else if ("ContinueAsNewWorkflowExecutionFailed".equals(value)) {
-            return ContinueAsNewWorkflowExecutionFailed;
-        } else if ("WorkflowExecutionTerminated".equals(value)) {
-            return WorkflowExecutionTerminated;
-        } else if ("DecisionTaskScheduled".equals(value)) {
-            return DecisionTaskScheduled;
-        } else if ("DecisionTaskStarted".equals(value)) {
-            return DecisionTaskStarted;
-        } else if ("DecisionTaskCompleted".equals(value)) {
-            return DecisionTaskCompleted;
-        } else if ("DecisionTaskTimedOut".equals(value)) {
-            return DecisionTaskTimedOut;
-        } else if ("ActivityTaskScheduled".equals(value)) {
-            return ActivityTaskScheduled;
-        } else if ("ScheduleActivityTaskFailed".equals(value)) {
-            return ScheduleActivityTaskFailed;
-        } else if ("ActivityTaskStarted".equals(value)) {
-            return ActivityTaskStarted;
-        } else if ("ActivityTaskCompleted".equals(value)) {
-            return ActivityTaskCompleted;
-        } else if ("ActivityTaskFailed".equals(value)) {
-            return ActivityTaskFailed;
-        } else if ("ActivityTaskTimedOut".equals(value)) {
-            return ActivityTaskTimedOut;
-        } else if ("ActivityTaskCanceled".equals(value)) {
-            return ActivityTaskCanceled;
-        } else if ("ActivityTaskCancelRequested".equals(value)) {
-            return ActivityTaskCancelRequested;
-        } else if ("RequestCancelActivityTaskFailed".equals(value)) {
-            return RequestCancelActivityTaskFailed;
-        } else if ("WorkflowExecutionSignaled".equals(value)) {
-            return WorkflowExecutionSignaled;
-        } else if ("MarkerRecorded".equals(value)) {
-            return MarkerRecorded;
-        } else if ("RecordMarkerFailed".equals(value)) {
-            return RecordMarkerFailed;
-        } else if ("TimerStarted".equals(value)) {
-            return TimerStarted;
-        } else if ("StartTimerFailed".equals(value)) {
-            return StartTimerFailed;
-        } else if ("TimerFired".equals(value)) {
-            return TimerFired;
-        } else if ("TimerCanceled".equals(value)) {
-            return TimerCanceled;
-        } else if ("CancelTimerFailed".equals(value)) {
-            return CancelTimerFailed;
-        } else if ("StartChildWorkflowExecutionInitiated".equals(value)) {
-            return StartChildWorkflowExecutionInitiated;
-        } else if ("StartChildWorkflowExecutionFailed".equals(value)) {
-            return StartChildWorkflowExecutionFailed;
-        } else if ("ChildWorkflowExecutionStarted".equals(value)) {
-            return ChildWorkflowExecutionStarted;
-        } else if ("ChildWorkflowExecutionCompleted".equals(value)) {
-            return ChildWorkflowExecutionCompleted;
-        } else if ("ChildWorkflowExecutionFailed".equals(value)) {
-            return ChildWorkflowExecutionFailed;
-        } else if ("ChildWorkflowExecutionTimedOut".equals(value)) {
-            return ChildWorkflowExecutionTimedOut;
-        } else if ("ChildWorkflowExecutionCanceled".equals(value)) {
-            return ChildWorkflowExecutionCanceled;
-        } else if ("ChildWorkflowExecutionTerminated".equals(value)) {
-            return ChildWorkflowExecutionTerminated;
-        } else if ("SignalExternalWorkflowExecutionInitiated".equals(value)) {
-            return SignalExternalWorkflowExecutionInitiated;
-        } else if ("SignalExternalWorkflowExecutionFailed".equals(value)) {
-            return SignalExternalWorkflowExecutionFailed;
-        } else if ("ExternalWorkflowExecutionSignaled".equals(value)) {
-            return ExternalWorkflowExecutionSignaled;
-        } else if ("RequestCancelExternalWorkflowExecutionInitiated"
-                .equals(value)) {
-            return RequestCancelExternalWorkflowExecutionInitiated;
-        } else if ("RequestCancelExternalWorkflowExecutionFailed".equals(value)) {
-            return RequestCancelExternalWorkflowExecutionFailed;
-        } else if ("ExternalWorkflowExecutionCancelRequested".equals(value)) {
-            return ExternalWorkflowExecutionCancelRequested;
-        } else if ("LambdaFunctionScheduled".equals(value)) {
-            return LambdaFunctionScheduled;
-        } else if ("LambdaFunctionStarted".equals(value)) {
-            return LambdaFunctionStarted;
-        } else if ("LambdaFunctionCompleted".equals(value)) {
-            return LambdaFunctionCompleted;
-        } else if ("LambdaFunctionFailed".equals(value)) {
-            return LambdaFunctionFailed;
-        } else if ("LambdaFunctionTimedOut".equals(value)) {
-            return LambdaFunctionTimedOut;
-        } else if ("ScheduleLambdaFunctionFailed".equals(value)) {
-            return ScheduleLambdaFunctionFailed;
-        } else if ("StartLambdaFunctionFailed".equals(value)) {
-            return StartLambdaFunctionFailed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EventType enumEntry : EventType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

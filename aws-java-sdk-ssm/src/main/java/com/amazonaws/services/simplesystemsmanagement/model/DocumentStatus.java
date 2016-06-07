@@ -46,15 +46,15 @@ public enum DocumentStatus {
     public static DocumentStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Creating".equals(value)) {
-            return Creating;
-        } else if ("Active".equals(value)) {
-            return Active;
-        } else if ("Deleting".equals(value)) {
-            return Deleting;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DocumentStatus enumEntry : DocumentStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

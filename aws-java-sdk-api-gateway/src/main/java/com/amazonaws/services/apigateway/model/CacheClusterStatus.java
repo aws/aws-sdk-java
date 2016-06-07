@@ -50,19 +50,15 @@ public enum CacheClusterStatus {
     public static CacheClusterStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CREATE_IN_PROGRESS".equals(value)) {
-            return CREATE_IN_PROGRESS;
-        } else if ("AVAILABLE".equals(value)) {
-            return AVAILABLE;
-        } else if ("DELETE_IN_PROGRESS".equals(value)) {
-            return DELETE_IN_PROGRESS;
-        } else if ("NOT_AVAILABLE".equals(value)) {
-            return NOT_AVAILABLE;
-        } else if ("FLUSH_IN_PROGRESS".equals(value)) {
-            return FLUSH_IN_PROGRESS;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (CacheClusterStatus enumEntry : CacheClusterStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

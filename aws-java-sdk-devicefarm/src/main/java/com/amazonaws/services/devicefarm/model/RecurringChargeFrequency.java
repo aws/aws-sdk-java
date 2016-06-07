@@ -44,11 +44,16 @@ public enum RecurringChargeFrequency {
     public static RecurringChargeFrequency fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("MONTHLY".equals(value)) {
-            return MONTHLY;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RecurringChargeFrequency enumEntry : RecurringChargeFrequency
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

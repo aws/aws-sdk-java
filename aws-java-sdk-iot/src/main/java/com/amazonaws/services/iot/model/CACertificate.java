@@ -41,6 +41,9 @@ public class CACertificate implements Serializable, Cloneable {
      * <p>
      * The status of the CA certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      */
     private String status;
     /**
@@ -136,9 +139,15 @@ public class CACertificate implements Serializable, Cloneable {
      * <p>
      * The status of the CA certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      * 
      * @param status
-     *        The status of the CA certificate.
+     *        The status of the CA certificate. </p>
+     *        <p>
+     *        The status value REGISTER_INACTIVE is deprecated and should not be
+     *        used.
      * @see CACertificateStatus
      */
 
@@ -150,8 +159,14 @@ public class CACertificate implements Serializable, Cloneable {
      * <p>
      * The status of the CA certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      * 
-     * @return The status of the CA certificate.
+     * @return The status of the CA certificate. </p>
+     *         <p>
+     *         The status value REGISTER_INACTIVE is deprecated and should not
+     *         be used.
      * @see CACertificateStatus
      */
 
@@ -163,9 +178,15 @@ public class CACertificate implements Serializable, Cloneable {
      * <p>
      * The status of the CA certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      * 
      * @param status
-     *        The status of the CA certificate.
+     *        The status of the CA certificate. </p>
+     *        <p>
+     *        The status value REGISTER_INACTIVE is deprecated and should not be
+     *        used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CACertificateStatus
@@ -180,9 +201,15 @@ public class CACertificate implements Serializable, Cloneable {
      * <p>
      * The status of the CA certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      * 
      * @param status
-     *        The status of the CA certificate.
+     *        The status of the CA certificate. </p>
+     *        <p>
+     *        The status value REGISTER_INACTIVE is deprecated and should not be
+     *        used.
      * @see CACertificateStatus
      */
 
@@ -194,9 +221,15 @@ public class CACertificate implements Serializable, Cloneable {
      * <p>
      * The status of the CA certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      * 
      * @param status
-     *        The status of the CA certificate.
+     *        The status of the CA certificate. </p>
+     *        <p>
+     *        The status value REGISTER_INACTIVE is deprecated and should not be
+     *        used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CACertificateStatus

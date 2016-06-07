@@ -46,15 +46,15 @@ public enum ImageTypeValues {
     public static ImageTypeValues fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("machine".equals(value)) {
-            return Machine;
-        } else if ("kernel".equals(value)) {
-            return Kernel;
-        } else if ("ramdisk".equals(value)) {
-            return Ramdisk;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ImageTypeValues enumEntry : ImageTypeValues.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

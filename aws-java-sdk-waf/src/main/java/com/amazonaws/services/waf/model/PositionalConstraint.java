@@ -48,19 +48,15 @@ public enum PositionalConstraint {
     public static PositionalConstraint fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("EXACTLY".equals(value)) {
-            return EXACTLY;
-        } else if ("STARTS_WITH".equals(value)) {
-            return STARTS_WITH;
-        } else if ("ENDS_WITH".equals(value)) {
-            return ENDS_WITH;
-        } else if ("CONTAINS".equals(value)) {
-            return CONTAINS;
-        } else if ("CONTAINS_WORD".equals(value)) {
-            return CONTAINS_WORD;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PositionalConstraint enumEntry : PositionalConstraint.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

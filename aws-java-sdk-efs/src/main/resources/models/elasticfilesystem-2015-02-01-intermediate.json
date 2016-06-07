@@ -21,9 +21,9 @@
     "endpointPrefix" : "elasticfilesystem",
     "signingName" : "elasticfilesystem",
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "serviceName" : "EFS",
     "cborProtocol" : false,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"

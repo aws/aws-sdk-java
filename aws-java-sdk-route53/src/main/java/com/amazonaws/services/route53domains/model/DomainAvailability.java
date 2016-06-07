@@ -51,25 +51,15 @@ public enum DomainAvailability {
     public static DomainAvailability fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("AVAILABLE".equals(value)) {
-            return AVAILABLE;
-        } else if ("AVAILABLE_RESERVED".equals(value)) {
-            return AVAILABLE_RESERVED;
-        } else if ("AVAILABLE_PREORDER".equals(value)) {
-            return AVAILABLE_PREORDER;
-        } else if ("UNAVAILABLE".equals(value)) {
-            return UNAVAILABLE;
-        } else if ("UNAVAILABLE_PREMIUM".equals(value)) {
-            return UNAVAILABLE_PREMIUM;
-        } else if ("UNAVAILABLE_RESTRICTED".equals(value)) {
-            return UNAVAILABLE_RESTRICTED;
-        } else if ("RESERVED".equals(value)) {
-            return RESERVED;
-        } else if ("DONT_KNOW".equals(value)) {
-            return DONT_KNOW;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DomainAvailability enumEntry : DomainAvailability.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

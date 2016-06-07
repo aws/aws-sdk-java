@@ -48,19 +48,15 @@ public enum Statistic {
     public static Statistic fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SampleCount".equals(value)) {
-            return SampleCount;
-        } else if ("Average".equals(value)) {
-            return Average;
-        } else if ("Sum".equals(value)) {
-            return Sum;
-        } else if ("Minimum".equals(value)) {
-            return Minimum;
-        } else if ("Maximum".equals(value)) {
-            return Maximum;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Statistic enumEntry : Statistic.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

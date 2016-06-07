@@ -50,23 +50,15 @@ public enum FailureType {
     public static FailureType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("UpdateCancelled".equals(value)) {
-            return UpdateCancelled;
-        } else if ("CancellationFailed".equals(value)) {
-            return CancellationFailed;
-        } else if ("RollbackFailed".equals(value)) {
-            return RollbackFailed;
-        } else if ("RollbackSuccessful".equals(value)) {
-            return RollbackSuccessful;
-        } else if ("InternalFailure".equals(value)) {
-            return InternalFailure;
-        } else if ("InvalidEnvironmentState".equals(value)) {
-            return InvalidEnvironmentState;
-        } else if ("PermissionsError".equals(value)) {
-            return PermissionsError;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (FailureType enumEntry : FailureType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

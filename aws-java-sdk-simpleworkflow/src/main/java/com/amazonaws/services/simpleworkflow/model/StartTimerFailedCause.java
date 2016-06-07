@@ -47,17 +47,15 @@ public enum StartTimerFailedCause {
     public static StartTimerFailedCause fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("TIMER_ID_ALREADY_IN_USE".equals(value)) {
-            return TIMER_ID_ALREADY_IN_USE;
-        } else if ("OPEN_TIMERS_LIMIT_EXCEEDED".equals(value)) {
-            return OPEN_TIMERS_LIMIT_EXCEEDED;
-        } else if ("TIMER_CREATION_RATE_EXCEEDED".equals(value)) {
-            return TIMER_CREATION_RATE_EXCEEDED;
-        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
-            return OPERATION_NOT_PERMITTED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (StartTimerFailedCause enumEntry : StartTimerFailedCause.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -49,21 +49,15 @@ public enum BounceType {
     public static BounceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("DoesNotExist".equals(value)) {
-            return DoesNotExist;
-        } else if ("MessageTooLarge".equals(value)) {
-            return MessageTooLarge;
-        } else if ("ExceededQuota".equals(value)) {
-            return ExceededQuota;
-        } else if ("ContentRejected".equals(value)) {
-            return ContentRejected;
-        } else if ("Undefined".equals(value)) {
-            return Undefined;
-        } else if ("TemporaryFailure".equals(value)) {
-            return TemporaryFailure;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (BounceType enumEntry : BounceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

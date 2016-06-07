@@ -45,13 +45,16 @@ public enum MinimumHealthyHostsType {
     public static MinimumHealthyHostsType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("HOST_COUNT".equals(value)) {
-            return HOST_COUNT;
-        } else if ("FLEET_PERCENT".equals(value)) {
-            return FLEET_PERCENT;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MinimumHealthyHostsType enumEntry : MinimumHealthyHostsType
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

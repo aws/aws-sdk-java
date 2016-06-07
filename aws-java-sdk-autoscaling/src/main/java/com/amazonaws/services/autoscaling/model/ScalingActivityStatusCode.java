@@ -55,33 +55,16 @@ public enum ScalingActivityStatusCode {
     public static ScalingActivityStatusCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PendingSpotBidPlacement".equals(value)) {
-            return PendingSpotBidPlacement;
-        } else if ("WaitingForSpotInstanceRequestId".equals(value)) {
-            return WaitingForSpotInstanceRequestId;
-        } else if ("WaitingForSpotInstanceId".equals(value)) {
-            return WaitingForSpotInstanceId;
-        } else if ("WaitingForInstanceId".equals(value)) {
-            return WaitingForInstanceId;
-        } else if ("PreInService".equals(value)) {
-            return PreInService;
-        } else if ("InProgress".equals(value)) {
-            return InProgress;
-        } else if ("WaitingForELBConnectionDraining".equals(value)) {
-            return WaitingForELBConnectionDraining;
-        } else if ("MidLifecycleAction".equals(value)) {
-            return MidLifecycleAction;
-        } else if ("WaitingForInstanceWarmup".equals(value)) {
-            return WaitingForInstanceWarmup;
-        } else if ("Successful".equals(value)) {
-            return Successful;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else if ("Cancelled".equals(value)) {
-            return Cancelled;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ScalingActivityStatusCode enumEntry : ScalingActivityStatusCode
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

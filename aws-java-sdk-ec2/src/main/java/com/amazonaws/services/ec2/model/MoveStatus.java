@@ -45,13 +45,15 @@ public enum MoveStatus {
     public static MoveStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("movingToVpc".equals(value)) {
-            return MovingToVpc;
-        } else if ("restoringToClassic".equals(value)) {
-            return RestoringToClassic;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MoveStatus enumEntry : MoveStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

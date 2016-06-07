@@ -50,23 +50,15 @@ public enum BatchState {
     public static BatchState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("submitted".equals(value)) {
-            return Submitted;
-        } else if ("active".equals(value)) {
-            return Active;
-        } else if ("cancelled".equals(value)) {
-            return Cancelled;
-        } else if ("failed".equals(value)) {
-            return Failed;
-        } else if ("cancelled_running".equals(value)) {
-            return Cancelled_running;
-        } else if ("cancelled_terminating".equals(value)) {
-            return Cancelled_terminating;
-        } else if ("modifying".equals(value)) {
-            return Modifying;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (BatchState enumEntry : BatchState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -47,17 +47,15 @@ public enum SourceType {
     public static SourceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("cluster".equals(value)) {
-            return Cluster;
-        } else if ("cluster-parameter-group".equals(value)) {
-            return ClusterParameterGroup;
-        } else if ("cluster-security-group".equals(value)) {
-            return ClusterSecurityGroup;
-        } else if ("cluster-snapshot".equals(value)) {
-            return ClusterSnapshot;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SourceType enumEntry : SourceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

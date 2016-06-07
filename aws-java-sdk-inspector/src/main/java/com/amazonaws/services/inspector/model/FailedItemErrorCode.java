@@ -49,21 +49,15 @@ public enum FailedItemErrorCode {
     public static FailedItemErrorCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("INVALID_ARN".equals(value)) {
-            return INVALID_ARN;
-        } else if ("DUPLICATE_ARN".equals(value)) {
-            return DUPLICATE_ARN;
-        } else if ("ITEM_DOES_NOT_EXIST".equals(value)) {
-            return ITEM_DOES_NOT_EXIST;
-        } else if ("ACCESS_DENIED".equals(value)) {
-            return ACCESS_DENIED;
-        } else if ("LIMIT_EXCEEDED".equals(value)) {
-            return LIMIT_EXCEEDED;
-        } else if ("INTERNAL_ERROR".equals(value)) {
-            return INTERNAL_ERROR;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (FailedItemErrorCode enumEntry : FailedItemErrorCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

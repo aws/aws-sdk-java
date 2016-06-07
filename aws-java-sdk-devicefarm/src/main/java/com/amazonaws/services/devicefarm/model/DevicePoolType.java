@@ -45,13 +45,15 @@ public enum DevicePoolType {
     public static DevicePoolType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CURATED".equals(value)) {
-            return CURATED;
-        } else if ("PRIVATE".equals(value)) {
-            return PRIVATE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DevicePoolType enumEntry : DevicePoolType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

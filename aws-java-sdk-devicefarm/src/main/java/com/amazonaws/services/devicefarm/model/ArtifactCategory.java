@@ -46,15 +46,15 @@ public enum ArtifactCategory {
     public static ArtifactCategory fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SCREENSHOT".equals(value)) {
-            return SCREENSHOT;
-        } else if ("FILE".equals(value)) {
-            return FILE;
-        } else if ("LOG".equals(value)) {
-            return LOG;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ArtifactCategory enumEntry : ArtifactCategory.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

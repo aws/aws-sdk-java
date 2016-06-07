@@ -50,23 +50,15 @@ public enum HealthCheckType {
     public static HealthCheckType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("HTTP".equals(value)) {
-            return HTTP;
-        } else if ("HTTPS".equals(value)) {
-            return HTTPS;
-        } else if ("HTTP_STR_MATCH".equals(value)) {
-            return HTTP_STR_MATCH;
-        } else if ("HTTPS_STR_MATCH".equals(value)) {
-            return HTTPS_STR_MATCH;
-        } else if ("TCP".equals(value)) {
-            return TCP;
-        } else if ("CALCULATED".equals(value)) {
-            return CALCULATED;
-        } else if ("CLOUDWATCH_METRIC".equals(value)) {
-            return CLOUDWATCH_METRIC;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (HealthCheckType enumEntry : HealthCheckType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

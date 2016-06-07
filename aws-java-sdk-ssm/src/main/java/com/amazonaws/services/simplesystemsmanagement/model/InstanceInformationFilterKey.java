@@ -47,17 +47,16 @@ public enum InstanceInformationFilterKey {
     public static InstanceInformationFilterKey fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("InstanceIds".equals(value)) {
-            return InstanceIds;
-        } else if ("AgentVersion".equals(value)) {
-            return AgentVersion;
-        } else if ("PingStatus".equals(value)) {
-            return PingStatus;
-        } else if ("PlatformTypes".equals(value)) {
-            return PlatformTypes;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InstanceInformationFilterKey enumEntry : InstanceInformationFilterKey
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

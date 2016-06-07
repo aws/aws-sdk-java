@@ -47,17 +47,16 @@ public enum RadiusAuthenticationProtocol {
     public static RadiusAuthenticationProtocol fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PAP".equals(value)) {
-            return PAP;
-        } else if ("CHAP".equals(value)) {
-            return CHAP;
-        } else if ("MS-CHAPv1".equals(value)) {
-            return MSCHAPv1;
-        } else if ("MS-CHAPv2".equals(value)) {
-            return MSCHAPv2;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RadiusAuthenticationProtocol enumEntry : RadiusAuthenticationProtocol
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

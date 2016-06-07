@@ -48,19 +48,15 @@ public enum DsnAction {
     public static DsnAction fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("failed".equals(value)) {
-            return Failed;
-        } else if ("delayed".equals(value)) {
-            return Delayed;
-        } else if ("delivered".equals(value)) {
-            return Delivered;
-        } else if ("relayed".equals(value)) {
-            return Relayed;
-        } else if ("expanded".equals(value)) {
-            return Expanded;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DsnAction enumEntry : DsnAction.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

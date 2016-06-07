@@ -57,30 +57,16 @@ public enum ContinueAsNewWorkflowExecutionFailedCause {
             String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("UNHANDLED_DECISION".equals(value)) {
-            return UNHANDLED_DECISION;
-        } else if ("WORKFLOW_TYPE_DEPRECATED".equals(value)) {
-            return WORKFLOW_TYPE_DEPRECATED;
-        } else if ("WORKFLOW_TYPE_DOES_NOT_EXIST".equals(value)) {
-            return WORKFLOW_TYPE_DOES_NOT_EXIST;
-        } else if ("DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED"
-                .equals(value)) {
-            return DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED;
-        } else if ("DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED"
-                .equals(value)) {
-            return DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED;
-        } else if ("DEFAULT_TASK_LIST_UNDEFINED".equals(value)) {
-            return DEFAULT_TASK_LIST_UNDEFINED;
-        } else if ("DEFAULT_CHILD_POLICY_UNDEFINED".equals(value)) {
-            return DEFAULT_CHILD_POLICY_UNDEFINED;
-        } else if ("CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED"
-                .equals(value)) {
-            return CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED;
-        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
-            return OPERATION_NOT_PERMITTED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ContinueAsNewWorkflowExecutionFailedCause enumEntry : ContinueAsNewWorkflowExecutionFailedCause
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

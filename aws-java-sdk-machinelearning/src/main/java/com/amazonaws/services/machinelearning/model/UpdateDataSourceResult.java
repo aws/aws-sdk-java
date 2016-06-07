@@ -20,10 +20,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of an <a>UpdateDataSource</a> operation.
+ * Represents the output of an <code>UpdateDataSource</code> operation.
  * </p>
  * <p>
- * You can see the updated content by using the <a>GetBatchPrediction</a>
+ * You can see the updated content by using the <code>GetBatchPrediction</code>
  * operation.
  * </p>
  */

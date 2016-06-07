@@ -79,6 +79,10 @@ public class HttpClientSettings {
         return config.getProxyPassword();
     }
 
+    public String getNonProxyHosts() {
+        return config.getNonProxyHosts();
+    }
+
     public boolean useReaper() {
         return config.useReaper();
     }

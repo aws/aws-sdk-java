@@ -49,21 +49,15 @@ public enum InstanceStateName {
     public static InstanceStateName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("pending".equals(value)) {
-            return Pending;
-        } else if ("running".equals(value)) {
-            return Running;
-        } else if ("shutting-down".equals(value)) {
-            return ShuttingDown;
-        } else if ("terminated".equals(value)) {
-            return Terminated;
-        } else if ("stopping".equals(value)) {
-            return Stopping;
-        } else if ("stopped".equals(value)) {
-            return Stopped;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InstanceStateName enumEntry : InstanceStateName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

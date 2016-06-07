@@ -45,13 +45,15 @@ public enum DomainType {
     public static DomainType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("vpc".equals(value)) {
-            return Vpc;
-        } else if ("standard".equals(value)) {
-            return Standard;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DomainType enumEntry : DomainType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

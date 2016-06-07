@@ -48,19 +48,15 @@ public enum LookupAttributeKey {
     public static LookupAttributeKey fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("EventId".equals(value)) {
-            return EventId;
-        } else if ("EventName".equals(value)) {
-            return EventName;
-        } else if ("Username".equals(value)) {
-            return Username;
-        } else if ("ResourceType".equals(value)) {
-            return ResourceType;
-        } else if ("ResourceName".equals(value)) {
-            return ResourceName;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LookupAttributeKey enumEntry : LookupAttributeKey.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

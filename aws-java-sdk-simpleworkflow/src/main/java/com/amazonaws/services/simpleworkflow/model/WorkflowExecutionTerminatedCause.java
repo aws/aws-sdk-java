@@ -46,15 +46,16 @@ public enum WorkflowExecutionTerminatedCause {
     public static WorkflowExecutionTerminatedCause fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CHILD_POLICY_APPLIED".equals(value)) {
-            return CHILD_POLICY_APPLIED;
-        } else if ("EVENT_LIMIT_EXCEEDED".equals(value)) {
-            return EVENT_LIMIT_EXCEEDED;
-        } else if ("OPERATOR_INITIATED".equals(value)) {
-            return OPERATOR_INITIATED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (WorkflowExecutionTerminatedCause enumEntry : WorkflowExecutionTerminatedCause
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -47,17 +47,15 @@ public enum DeviceAttribute {
     public static DeviceAttribute fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ARN".equals(value)) {
-            return ARN;
-        } else if ("PLATFORM".equals(value)) {
-            return PLATFORM;
-        } else if ("FORM_FACTOR".equals(value)) {
-            return FORM_FACTOR;
-        } else if ("MANUFACTURER".equals(value)) {
-            return MANUFACTURER;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DeviceAttribute enumEntry : DeviceAttribute.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -45,13 +45,15 @@ public enum ContentType {
     public static ContentType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("application/json".equals(value)) {
-            return Applicationjson;
-        } else if ("application/xml".equals(value)) {
-            return Applicationxml;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ContentType enumEntry : ContentType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

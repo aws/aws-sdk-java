@@ -45,13 +45,15 @@ public enum RouteState {
     public static RouteState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("active".equals(value)) {
-            return Active;
-        } else if ("blackhole".equals(value)) {
-            return Blackhole;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RouteState enumEntry : RouteState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

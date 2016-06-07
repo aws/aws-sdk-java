@@ -48,19 +48,15 @@ public enum NatGatewayState {
     public static NatGatewayState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("pending".equals(value)) {
-            return Pending;
-        } else if ("failed".equals(value)) {
-            return Failed;
-        } else if ("available".equals(value)) {
-            return Available;
-        } else if ("deleting".equals(value)) {
-            return Deleting;
-        } else if ("deleted".equals(value)) {
-            return Deleted;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (NatGatewayState enumEntry : NatGatewayState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

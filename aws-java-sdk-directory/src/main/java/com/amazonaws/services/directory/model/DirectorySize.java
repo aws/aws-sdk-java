@@ -45,13 +45,15 @@ public enum DirectorySize {
     public static DirectorySize fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Small".equals(value)) {
-            return Small;
-        } else if ("Large".equals(value)) {
-            return Large;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DirectorySize enumEntry : DirectorySize.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

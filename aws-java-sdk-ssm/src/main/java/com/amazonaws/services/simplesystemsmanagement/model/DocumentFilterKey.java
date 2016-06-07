@@ -46,15 +46,15 @@ public enum DocumentFilterKey {
     public static DocumentFilterKey fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Name".equals(value)) {
-            return Name;
-        } else if ("Owner".equals(value)) {
-            return Owner;
-        } else if ("PlatformTypes".equals(value)) {
-            return PlatformTypes;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DocumentFilterKey enumEntry : DocumentFilterKey.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of the <a>GetDataSource</a> operation.
+ * Represents the output of the <code>GetDataSource</code> operation.
  * </p>
  * <p>
  * The content consists of the detailed metadata and data file information and
@@ -44,8 +44,8 @@ public class DataSource implements Serializable, Cloneable {
     private String dataLocationS3;
     /**
      * <p>
-     * A JSON string that represents the splitting requirement of a
-     * <code>Datasource</code>.
+     * A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.
      * </p>
      */
     private String dataRearrangement;
@@ -221,13 +221,13 @@ public class DataSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string that represents the splitting requirement of a
-     * <code>Datasource</code>.
+     * A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.
      * </p>
      * 
      * @param dataRearrangement
-     *        A JSON string that represents the splitting requirement of a
-     *        <code>Datasource</code>.
+     *        A JSON string that represents the splitting and rearrangement
+     *        requirement used when this <code>DataSource</code> was created.
      */
 
     public void setDataRearrangement(String dataRearrangement) {
@@ -236,12 +236,12 @@ public class DataSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string that represents the splitting requirement of a
-     * <code>Datasource</code>.
+     * A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.
      * </p>
      * 
-     * @return A JSON string that represents the splitting requirement of a
-     *         <code>Datasource</code>.
+     * @return A JSON string that represents the splitting and rearrangement
+     *         requirement used when this <code>DataSource</code> was created.
      */
 
     public String getDataRearrangement() {
@@ -250,13 +250,13 @@ public class DataSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string that represents the splitting requirement of a
-     * <code>Datasource</code>.
+     * A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.
      * </p>
      * 
      * @param dataRearrangement
-     *        A JSON string that represents the splitting requirement of a
-     *        <code>Datasource</code>.
+     *        A JSON string that represents the splitting and rearrangement
+     *        requirement used when this <code>DataSource</code> was created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

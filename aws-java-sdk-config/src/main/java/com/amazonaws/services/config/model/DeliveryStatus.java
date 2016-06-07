@@ -46,15 +46,15 @@ public enum DeliveryStatus {
     public static DeliveryStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Success".equals(value)) {
-            return Success;
-        } else if ("Failure".equals(value)) {
-            return Failure;
-        } else if ("Not_Applicable".equals(value)) {
-            return Not_Applicable;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DeliveryStatus enumEntry : DeliveryStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

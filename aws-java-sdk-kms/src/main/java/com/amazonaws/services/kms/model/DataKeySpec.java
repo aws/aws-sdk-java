@@ -45,13 +45,15 @@ public enum DataKeySpec {
     public static DataKeySpec fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("AES_256".equals(value)) {
-            return AES_256;
-        } else if ("AES_128".equals(value)) {
-            return AES_128;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DataKeySpec enumEntry : DataKeySpec.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

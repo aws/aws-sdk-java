@@ -45,13 +45,13 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * DataLocationS3 - Amazon Simple Storage Service (Amazon S3) location of
-     * the observation data.
+     * DataLocationS3 - The Amazon S3 location of the observation data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DataSchemaLocationS3 - Amazon S3 location of the <code>DataSchema</code>.
+     * DataSchemaLocationS3 - The Amazon S3 location of the
+     * <code>DataSchema</code>.
      * </p>
      * </li>
      * <li>
@@ -62,10 +62,9 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * DataRearrangement - A JSON string representing the splitting requirement
-     * of a <code>Datasource</code>.
+     * DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>Datasource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample -
      * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -79,9 +78,9 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a
      * <code>DataSource</code>. Amazon ML uses the statistics internally during
-     * an <code>MLModel</code> training. This parameter must be set to
+     * <code>MLModel</code> training. This parameter must be set to
      * <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training
+     * used for <code>MLModel</code> training.
      * </p>
      */
     private Boolean computeStatistics;
@@ -185,13 +184,13 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * DataLocationS3 - Amazon Simple Storage Service (Amazon S3) location of
-     * the observation data.
+     * DataLocationS3 - The Amazon S3 location of the observation data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DataSchemaLocationS3 - Amazon S3 location of the <code>DataSchema</code>.
+     * DataSchemaLocationS3 - The Amazon S3 location of the
+     * <code>DataSchema</code>.
      * </p>
      * </li>
      * <li>
@@ -202,10 +201,9 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * DataRearrangement - A JSON string representing the splitting requirement
-     * of a <code>Datasource</code>.
+     * DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>Datasource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample -
      * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -218,13 +216,12 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        DataLocationS3 - Amazon Simple Storage Service (Amazon S3)
-     *        location of the observation data.
+     *        DataLocationS3 - The Amazon S3 location of the observation data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DataSchemaLocationS3 - Amazon S3 location of the
+     *        DataSchemaLocationS3 - The Amazon S3 location of the
      *        <code>DataSchema</code>.
      *        </p>
      *        </li>
@@ -236,10 +233,9 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        DataRearrangement - A JSON string representing the splitting
-     *        requirement of a <code>Datasource</code>.
+     *        DataRearrangement - A JSON string that represents the splitting
+     *        and rearrangement requirements for the <code>Datasource</code>.
      *        </p>
-     *        <br>
      *        <p>
      *        Sample -
      *        <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -258,13 +254,13 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * DataLocationS3 - Amazon Simple Storage Service (Amazon S3) location of
-     * the observation data.
+     * DataLocationS3 - The Amazon S3 location of the observation data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DataSchemaLocationS3 - Amazon S3 location of the <code>DataSchema</code>.
+     * DataSchemaLocationS3 - The Amazon S3 location of the
+     * <code>DataSchema</code>.
      * </p>
      * </li>
      * <li>
@@ -275,10 +271,9 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * DataRearrangement - A JSON string representing the splitting requirement
-     * of a <code>Datasource</code>.
+     * DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>Datasource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample -
      * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -290,13 +285,12 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         DataLocationS3 - Amazon Simple Storage Service (Amazon S3)
-     *         location of the observation data.
+     *         DataLocationS3 - The Amazon S3 location of the observation data.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DataSchemaLocationS3 - Amazon S3 location of the
+     *         DataSchemaLocationS3 - The Amazon S3 location of the
      *         <code>DataSchema</code>.
      *         </p>
      *         </li>
@@ -308,10 +302,9 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         DataRearrangement - A JSON string representing the splitting
-     *         requirement of a <code>Datasource</code>.
+     *         DataRearrangement - A JSON string that represents the splitting
+     *         and rearrangement requirements for the <code>Datasource</code>.
      *         </p>
-     *         <br>
      *         <p>
      *         Sample -
      *         <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -330,13 +323,13 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * DataLocationS3 - Amazon Simple Storage Service (Amazon S3) location of
-     * the observation data.
+     * DataLocationS3 - The Amazon S3 location of the observation data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DataSchemaLocationS3 - Amazon S3 location of the <code>DataSchema</code>.
+     * DataSchemaLocationS3 - The Amazon S3 location of the
+     * <code>DataSchema</code>.
      * </p>
      * </li>
      * <li>
@@ -347,10 +340,9 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * DataRearrangement - A JSON string representing the splitting requirement
-     * of a <code>Datasource</code>.
+     * DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>Datasource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample -
      * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -363,13 +355,12 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        DataLocationS3 - Amazon Simple Storage Service (Amazon S3)
-     *        location of the observation data.
+     *        DataLocationS3 - The Amazon S3 location of the observation data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DataSchemaLocationS3 - Amazon S3 location of the
+     *        DataSchemaLocationS3 - The Amazon S3 location of the
      *        <code>DataSchema</code>.
      *        </p>
      *        </li>
@@ -381,10 +372,9 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        DataRearrangement - A JSON string representing the splitting
-     *        requirement of a <code>Datasource</code>.
+     *        DataRearrangement - A JSON string that represents the splitting
+     *        and rearrangement requirements for the <code>Datasource</code>.
      *        </p>
-     *        <br>
      *        <p>
      *        Sample -
      *        <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -404,18 +394,18 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a
      * <code>DataSource</code>. Amazon ML uses the statistics internally during
-     * an <code>MLModel</code> training. This parameter must be set to
+     * <code>MLModel</code> training. This parameter must be set to
      * <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training
+     * used for <code>MLModel</code> training.
      * </p>
      * 
      * @param computeStatistics
      *        The compute statistics for a <code>DataSource</code>. The
      *        statistics are generated from the observation data referenced by a
      *        <code>DataSource</code>. Amazon ML uses the statistics internally
-     *        during an <code>MLModel</code> training. This parameter must be
-     *        set to <code>true</code> if the <code></code>DataSource
-     *        <code></code> needs to be used for <code>MLModel</code> training
+     *        during <code>MLModel</code> training. This parameter must be set
+     *        to <code>true</code> if the <code></code>DataSource<code></code>
+     *        needs to be used for <code>MLModel</code> training.
      */
 
     public void setComputeStatistics(Boolean computeStatistics) {
@@ -427,18 +417,17 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a
      * <code>DataSource</code>. Amazon ML uses the statistics internally during
-     * an <code>MLModel</code> training. This parameter must be set to
+     * <code>MLModel</code> training. This parameter must be set to
      * <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training
+     * used for <code>MLModel</code> training.
      * </p>
      * 
      * @return The compute statistics for a <code>DataSource</code>. The
      *         statistics are generated from the observation data referenced by
      *         a <code>DataSource</code>. Amazon ML uses the statistics
-     *         internally during an <code>MLModel</code> training. This
-     *         parameter must be set to <code>true</code> if the <code></code>
-     *         DataSource<code></code> needs to be used for <code>MLModel</code>
-     *         training
+     *         internally during <code>MLModel</code> training. This parameter
+     *         must be set to <code>true</code> if the <code></code>DataSource
+     *         <code></code> needs to be used for <code>MLModel</code> training.
      */
 
     public Boolean getComputeStatistics() {
@@ -450,18 +439,18 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a
      * <code>DataSource</code>. Amazon ML uses the statistics internally during
-     * an <code>MLModel</code> training. This parameter must be set to
+     * <code>MLModel</code> training. This parameter must be set to
      * <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training
+     * used for <code>MLModel</code> training.
      * </p>
      * 
      * @param computeStatistics
      *        The compute statistics for a <code>DataSource</code>. The
      *        statistics are generated from the observation data referenced by a
      *        <code>DataSource</code>. Amazon ML uses the statistics internally
-     *        during an <code>MLModel</code> training. This parameter must be
-     *        set to <code>true</code> if the <code></code>DataSource
-     *        <code></code> needs to be used for <code>MLModel</code> training
+     *        during <code>MLModel</code> training. This parameter must be set
+     *        to <code>true</code> if the <code></code>DataSource<code></code>
+     *        needs to be used for <code>MLModel</code> training.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -477,18 +466,17 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a
      * <code>DataSource</code>. Amazon ML uses the statistics internally during
-     * an <code>MLModel</code> training. This parameter must be set to
+     * <code>MLModel</code> training. This parameter must be set to
      * <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training
+     * used for <code>MLModel</code> training.
      * </p>
      * 
      * @return The compute statistics for a <code>DataSource</code>. The
      *         statistics are generated from the observation data referenced by
      *         a <code>DataSource</code>. Amazon ML uses the statistics
-     *         internally during an <code>MLModel</code> training. This
-     *         parameter must be set to <code>true</code> if the <code></code>
-     *         DataSource<code></code> needs to be used for <code>MLModel</code>
-     *         training
+     *         internally during <code>MLModel</code> training. This parameter
+     *         must be set to <code>true</code> if the <code></code>DataSource
+     *         <code></code> needs to be used for <code>MLModel</code> training.
      */
 
     public Boolean isComputeStatistics() {

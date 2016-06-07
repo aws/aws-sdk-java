@@ -49,21 +49,15 @@ public enum Op {
     public static Op fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("add".equals(value)) {
-            return Add;
-        } else if ("remove".equals(value)) {
-            return Remove;
-        } else if ("replace".equals(value)) {
-            return Replace;
-        } else if ("move".equals(value)) {
-            return Move;
-        } else if ("copy".equals(value)) {
-            return Copy;
-        } else if ("test".equals(value)) {
-            return Test;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Op enumEntry : Op.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

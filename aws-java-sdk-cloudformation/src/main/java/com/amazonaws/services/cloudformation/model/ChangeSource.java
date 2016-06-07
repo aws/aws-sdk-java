@@ -48,19 +48,15 @@ public enum ChangeSource {
     public static ChangeSource fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ResourceReference".equals(value)) {
-            return ResourceReference;
-        } else if ("ParameterReference".equals(value)) {
-            return ParameterReference;
-        } else if ("ResourceAttribute".equals(value)) {
-            return ResourceAttribute;
-        } else if ("DirectModification".equals(value)) {
-            return DirectModification;
-        } else if ("Automatic".equals(value)) {
-            return Automatic;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ChangeSource enumEntry : ChangeSource.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

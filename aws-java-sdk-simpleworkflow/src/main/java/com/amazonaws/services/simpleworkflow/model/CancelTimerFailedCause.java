@@ -45,13 +45,15 @@ public enum CancelTimerFailedCause {
     public static CancelTimerFailedCause fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("TIMER_ID_UNKNOWN".equals(value)) {
-            return TIMER_ID_UNKNOWN;
-        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
-            return OPERATION_NOT_PERMITTED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (CancelTimerFailedCause enumEntry : CancelTimerFailedCause.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

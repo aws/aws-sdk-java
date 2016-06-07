@@ -20,8 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <a>GetDataSource</a> operation and describes a
- * <code>DataSource</code>.
+ * Represents the output of a <code>GetDataSource</code> operation and describes
+ * a <code>DataSource</code>.
  * </p>
  */
 public class GetDataSourceResult implements Serializable, Cloneable {
@@ -43,8 +43,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
     private String dataLocationS3;
     /**
      * <p>
-     * A JSON string that captures the splitting rearrangement requirement of
-     * the <code>DataSource</code>.
+     * A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.
      * </p>
      */
     private String dataRearrangement;
@@ -94,8 +94,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted
-     * a request to create a <code>DataSource</code>.</li>
+     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a
+     * <code>DataSource</code>.</li>
      * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
      * <li> <code>FAILED</code> - The request to create a <code>DataSource</code>
      * did not run to completion. It is not usable.</li>
@@ -108,15 +108,15 @@ public class GetDataSourceResult implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * A link to the file containining logs of either create
-     * <code>DataSource</code> operation.
+     * A link to the file containing logs of <code>CreateDataSourceFrom*</code>
+     * operations.
      * </p>
      */
     private String logUri;
     /**
      * <p>
-     * The description of the most recent details about creating the
-     * <code>DataSource</code>.
+     * The user-supplied description of the most recent details about creating
+     * the <code>DataSource</code>.
      * </p>
      */
     private String message;
@@ -247,13 +247,13 @@ public class GetDataSourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string that captures the splitting rearrangement requirement of
-     * the <code>DataSource</code>.
+     * A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.
      * </p>
      * 
      * @param dataRearrangement
-     *        A JSON string that captures the splitting rearrangement
-     *        requirement of the <code>DataSource</code>.
+     *        A JSON string that represents the splitting and rearrangement
+     *        requirement used when this <code>DataSource</code> was created.
      */
 
     public void setDataRearrangement(String dataRearrangement) {
@@ -262,12 +262,12 @@ public class GetDataSourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string that captures the splitting rearrangement requirement of
-     * the <code>DataSource</code>.
+     * A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.
      * </p>
      * 
-     * @return A JSON string that captures the splitting rearrangement
-     *         requirement of the <code>DataSource</code>.
+     * @return A JSON string that represents the splitting and rearrangement
+     *         requirement used when this <code>DataSource</code> was created.
      */
 
     public String getDataRearrangement() {
@@ -276,13 +276,13 @@ public class GetDataSourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string that captures the splitting rearrangement requirement of
-     * the <code>DataSource</code>.
+     * A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.
      * </p>
      * 
      * @param dataRearrangement
-     *        A JSON string that captures the splitting rearrangement
-     *        requirement of the <code>DataSource</code>.
+     *        A JSON string that represents the splitting and rearrangement
+     *        requirement used when this <code>DataSource</code> was created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -574,8 +574,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted
-     * a request to create a <code>DataSource</code>.</li>
+     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a
+     * <code>DataSource</code>.</li>
      * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
      * <li> <code>FAILED</code> - The request to create a <code>DataSource</code>
      * did not run to completion. It is not usable.</li>
@@ -589,8 +589,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        The current status of the <code>DataSource</code>. This element
      *        can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML)
-     *        submitted a request to create a <code>DataSource</code>.</li>
+     *        <li> <code>PENDING</code> - Amazon ML submitted a request to create
+     *        a <code>DataSource</code>.</li>
      *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
      *        <li> <code>FAILED</code> - The request to create a
      *        <code>DataSource</code> did not run to completion. It is not
@@ -612,8 +612,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted
-     * a request to create a <code>DataSource</code>.</li>
+     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a
+     * <code>DataSource</code>.</li>
      * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
      * <li> <code>FAILED</code> - The request to create a <code>DataSource</code>
      * did not run to completion. It is not usable.</li>
@@ -626,8 +626,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return The current status of the <code>DataSource</code>. This element
      *         can have one of the following values:</p>
      *         <ul>
-     *         <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML)
-     *         submitted a request to create a <code>DataSource</code>.</li>
+     *         <li> <code>PENDING</code> - Amazon ML submitted a request to
+     *         create a <code>DataSource</code>.</li>
      *         <li> <code>INPROGRESS</code> - The creation process is underway.</li>
      *         <li> <code>FAILED</code> - The request to create a
      *         <code>DataSource</code> did not run to completion. It is not
@@ -649,8 +649,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted
-     * a request to create a <code>DataSource</code>.</li>
+     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a
+     * <code>DataSource</code>.</li>
      * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
      * <li> <code>FAILED</code> - The request to create a <code>DataSource</code>
      * did not run to completion. It is not usable.</li>
@@ -664,8 +664,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        The current status of the <code>DataSource</code>. This element
      *        can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML)
-     *        submitted a request to create a <code>DataSource</code>.</li>
+     *        <li> <code>PENDING</code> - Amazon ML submitted a request to create
+     *        a <code>DataSource</code>.</li>
      *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
      *        <li> <code>FAILED</code> - The request to create a
      *        <code>DataSource</code> did not run to completion. It is not
@@ -690,8 +690,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted
-     * a request to create a <code>DataSource</code>.</li>
+     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a
+     * <code>DataSource</code>.</li>
      * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
      * <li> <code>FAILED</code> - The request to create a <code>DataSource</code>
      * did not run to completion. It is not usable.</li>
@@ -705,8 +705,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        The current status of the <code>DataSource</code>. This element
      *        can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML)
-     *        submitted a request to create a <code>DataSource</code>.</li>
+     *        <li> <code>PENDING</code> - Amazon ML submitted a request to create
+     *        a <code>DataSource</code>.</li>
      *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
      *        <li> <code>FAILED</code> - The request to create a
      *        <code>DataSource</code> did not run to completion. It is not
@@ -728,8 +728,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted
-     * a request to create a <code>DataSource</code>.</li>
+     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a
+     * <code>DataSource</code>.</li>
      * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
      * <li> <code>FAILED</code> - The request to create a <code>DataSource</code>
      * did not run to completion. It is not usable.</li>
@@ -743,8 +743,8 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        The current status of the <code>DataSource</code>. This element
      *        can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML)
-     *        submitted a request to create a <code>DataSource</code>.</li>
+     *        <li> <code>PENDING</code> - Amazon ML submitted a request to create
+     *        a <code>DataSource</code>.</li>
      *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
      *        <li> <code>FAILED</code> - The request to create a
      *        <code>DataSource</code> did not run to completion. It is not
@@ -765,13 +765,13 @@ public class GetDataSourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A link to the file containining logs of either create
-     * <code>DataSource</code> operation.
+     * A link to the file containing logs of <code>CreateDataSourceFrom*</code>
+     * operations.
      * </p>
      * 
      * @param logUri
-     *        A link to the file containining logs of either create
-     *        <code>DataSource</code> operation.
+     *        A link to the file containing logs of
+     *        <code>CreateDataSourceFrom*</code> operations.
      */
 
     public void setLogUri(String logUri) {
@@ -780,12 +780,12 @@ public class GetDataSourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A link to the file containining logs of either create
-     * <code>DataSource</code> operation.
+     * A link to the file containing logs of <code>CreateDataSourceFrom*</code>
+     * operations.
      * </p>
      * 
-     * @return A link to the file containining logs of either create
-     *         <code>DataSource</code> operation.
+     * @return A link to the file containing logs of
+     *         <code>CreateDataSourceFrom*</code> operations.
      */
 
     public String getLogUri() {
@@ -794,13 +794,13 @@ public class GetDataSourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A link to the file containining logs of either create
-     * <code>DataSource</code> operation.
+     * A link to the file containing logs of <code>CreateDataSourceFrom*</code>
+     * operations.
      * </p>
      * 
      * @param logUri
-     *        A link to the file containining logs of either create
-     *        <code>DataSource</code> operation.
+     *        A link to the file containing logs of
+     *        <code>CreateDataSourceFrom*</code> operations.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -812,13 +812,13 @@ public class GetDataSourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the most recent details about creating the
-     * <code>DataSource</code>.
+     * The user-supplied description of the most recent details about creating
+     * the <code>DataSource</code>.
      * </p>
      * 
      * @param message
-     *        The description of the most recent details about creating the
-     *        <code>DataSource</code>.
+     *        The user-supplied description of the most recent details about
+     *        creating the <code>DataSource</code>.
      */
 
     public void setMessage(String message) {
@@ -827,12 +827,12 @@ public class GetDataSourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the most recent details about creating the
-     * <code>DataSource</code>.
+     * The user-supplied description of the most recent details about creating
+     * the <code>DataSource</code>.
      * </p>
      * 
-     * @return The description of the most recent details about creating the
-     *         <code>DataSource</code>.
+     * @return The user-supplied description of the most recent details about
+     *         creating the <code>DataSource</code>.
      */
 
     public String getMessage() {
@@ -841,13 +841,13 @@ public class GetDataSourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the most recent details about creating the
-     * <code>DataSource</code>.
+     * The user-supplied description of the most recent details about creating
+     * the <code>DataSource</code>.
      * </p>
      * 
      * @param message
-     *        The description of the most recent details about creating the
-     *        <code>DataSource</code>.
+     *        The user-supplied description of the most recent details about
+     *        creating the <code>DataSource</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

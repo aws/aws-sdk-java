@@ -46,15 +46,15 @@ public enum FlowLogsResourceType {
     public static FlowLogsResourceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("VPC".equals(value)) {
-            return VPC;
-        } else if ("Subnet".equals(value)) {
-            return Subnet;
-        } else if ("NetworkInterface".equals(value)) {
-            return NetworkInterface;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (FlowLogsResourceType enumEntry : FlowLogsResourceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

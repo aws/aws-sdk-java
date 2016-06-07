@@ -46,15 +46,15 @@ public enum PolicyScopeType {
     public static PolicyScopeType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("All".equals(value)) {
-            return All;
-        } else if ("AWS".equals(value)) {
-            return AWS;
-        } else if ("Local".equals(value)) {
-            return Local;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PolicyScopeType enumEntry : PolicyScopeType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

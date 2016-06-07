@@ -30,6 +30,21 @@ public class AbstractAmazonMachineLearningAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<AddTagsResult> addTagsAsync(
+            AddTagsRequest request) {
+
+        return addTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddTagsResult> addTagsAsync(
+            AddTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBatchPredictionResult> createBatchPredictionAsync(
             CreateBatchPredictionRequest request) {
 
@@ -210,6 +225,21 @@ public class AbstractAmazonMachineLearningAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
+            DeleteTagsRequest request) {
+
+        return deleteTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
+            DeleteTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeBatchPredictionsResult> describeBatchPredictionsAsync(
             DescribeBatchPredictionsRequest request) {
 
@@ -368,6 +398,21 @@ public class AbstractAmazonMachineLearningAsync extends
 
         return describeMLModelsAsync(new DescribeMLModelsRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(
+            DescribeTagsRequest request) {
+
+        return describeTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(
+            DescribeTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

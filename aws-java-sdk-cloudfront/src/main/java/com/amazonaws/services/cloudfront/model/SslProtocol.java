@@ -47,17 +47,15 @@ public enum SslProtocol {
     public static SslProtocol fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SSLv3".equals(value)) {
-            return SSLv3;
-        } else if ("TLSv1".equals(value)) {
-            return TLSv1;
-        } else if ("TLSv1.1".equals(value)) {
-            return TLSv11;
-        } else if ("TLSv1.2".equals(value)) {
-            return TLSv12;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SslProtocol enumEntry : SslProtocol.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

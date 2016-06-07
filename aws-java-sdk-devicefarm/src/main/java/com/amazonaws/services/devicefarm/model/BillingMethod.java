@@ -45,13 +45,15 @@ public enum BillingMethod {
     public static BillingMethod fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("METERED".equals(value)) {
-            return METERED;
-        } else if ("UNMETERED".equals(value)) {
-            return UNMETERED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (BillingMethod enumEntry : BillingMethod.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

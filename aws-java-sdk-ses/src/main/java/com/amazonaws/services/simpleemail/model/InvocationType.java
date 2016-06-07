@@ -45,13 +45,15 @@ public enum InvocationType {
     public static InvocationType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Event".equals(value)) {
-            return Event;
-        } else if ("RequestResponse".equals(value)) {
-            return RequestResponse;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InvocationType enumEntry : InvocationType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -47,17 +47,15 @@ public enum RealtimeEndpointStatus {
     public static RealtimeEndpointStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("NONE".equals(value)) {
-            return NONE;
-        } else if ("READY".equals(value)) {
-            return READY;
-        } else if ("UPDATING".equals(value)) {
-            return UPDATING;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RealtimeEndpointStatus enumEntry : RealtimeEndpointStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

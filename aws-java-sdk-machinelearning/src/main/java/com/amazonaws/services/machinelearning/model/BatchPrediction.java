@@ -20,11 +20,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of <a>GetBatchPrediction</a> operation.
+ * Represents the output of a <code>GetBatchPrediction</code> operation.
  * </p>
  * <p>
  * The content consists of the detailed metadata, the status, and the data file
- * information of a <i>Batch Prediction</i>.
+ * information of a <code>Batch Prediction</code>.
  * </p>
  */
 public class BatchPrediction implements Serializable, Cloneable {
@@ -95,7 +95,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to generate predictions for a batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to peform a batch prediction did
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did
      * not run to completion. It is not usable.</li>
      * <li> <code>COMPLETED</code> - The batch prediction process completed
      * successfully.</li>
@@ -107,8 +107,9 @@ public class BatchPrediction implements Serializable, Cloneable {
     /**
      * <p>
      * The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the s3 key portion
-     * of the "outputURI" field: ':', '//', '/./', '/../'.
+     * results. The following substrings are not allowed in the
+     * <code>s3 key</code> portion of the <code>outputURI</code> field: ':',
+     * '//', '/./', '/../'.
      * </p>
      */
     private String outputUri;
@@ -518,7 +519,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to generate predictions for a batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to peform a batch prediction did
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did
      * not run to completion. It is not usable.</li>
      * <li> <code>COMPLETED</code> - The batch prediction process completed
      * successfully.</li>
@@ -534,8 +535,8 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        submitted a request to generate predictions for a batch of
      *        observations.</li>
      *        <li> <code>INPROGRESS</code> - The process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to peform a batch prediction
-     *        did not run to completion. It is not usable.</li>
+     *        <li> <code>FAILED</code> - The request to perform a batch
+     *        prediction did not run to completion. It is not usable.</li>
      *        <li> <code>COMPLETED</code> - The batch prediction process
      *        completed successfully.</li>
      *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is
@@ -556,7 +557,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to generate predictions for a batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to peform a batch prediction did
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did
      * not run to completion. It is not usable.</li>
      * <li> <code>COMPLETED</code> - The batch prediction process completed
      * successfully.</li>
@@ -571,7 +572,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *         submitted a request to generate predictions for a batch of
      *         observations.</li>
      *         <li> <code>INPROGRESS</code> - The process is underway.</li>
-     *         <li> <code>FAILED</code> - The request to peform a batch
+     *         <li> <code>FAILED</code> - The request to perform a batch
      *         prediction did not run to completion. It is not usable.</li>
      *         <li> <code>COMPLETED</code> - The batch prediction process
      *         completed successfully.</li>
@@ -593,7 +594,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to generate predictions for a batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to peform a batch prediction did
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did
      * not run to completion. It is not usable.</li>
      * <li> <code>COMPLETED</code> - The batch prediction process completed
      * successfully.</li>
@@ -609,8 +610,8 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        submitted a request to generate predictions for a batch of
      *        observations.</li>
      *        <li> <code>INPROGRESS</code> - The process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to peform a batch prediction
-     *        did not run to completion. It is not usable.</li>
+     *        <li> <code>FAILED</code> - The request to perform a batch
+     *        prediction did not run to completion. It is not usable.</li>
      *        <li> <code>COMPLETED</code> - The batch prediction process
      *        completed successfully.</li>
      *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is
@@ -634,7 +635,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to generate predictions for a batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to peform a batch prediction did
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did
      * not run to completion. It is not usable.</li>
      * <li> <code>COMPLETED</code> - The batch prediction process completed
      * successfully.</li>
@@ -650,8 +651,8 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        submitted a request to generate predictions for a batch of
      *        observations.</li>
      *        <li> <code>INPROGRESS</code> - The process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to peform a batch prediction
-     *        did not run to completion. It is not usable.</li>
+     *        <li> <code>FAILED</code> - The request to perform a batch
+     *        prediction did not run to completion. It is not usable.</li>
      *        <li> <code>COMPLETED</code> - The batch prediction process
      *        completed successfully.</li>
      *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is
@@ -672,7 +673,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to generate predictions for a batch of observations.</li>
      * <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to peform a batch prediction did
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did
      * not run to completion. It is not usable.</li>
      * <li> <code>COMPLETED</code> - The batch prediction process completed
      * successfully.</li>
@@ -688,8 +689,8 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        submitted a request to generate predictions for a batch of
      *        observations.</li>
      *        <li> <code>INPROGRESS</code> - The process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to peform a batch prediction
-     *        did not run to completion. It is not usable.</li>
+     *        <li> <code>FAILED</code> - The request to perform a batch
+     *        prediction did not run to completion. It is not usable.</li>
      *        <li> <code>COMPLETED</code> - The batch prediction process
      *        completed successfully.</li>
      *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is
@@ -707,14 +708,16 @@ public class BatchPrediction implements Serializable, Cloneable {
     /**
      * <p>
      * The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the s3 key portion
-     * of the "outputURI" field: ':', '//', '/./', '/../'.
+     * results. The following substrings are not allowed in the
+     * <code>s3 key</code> portion of the <code>outputURI</code> field: ':',
+     * '//', '/./', '/../'.
      * </p>
      * 
      * @param outputUri
      *        The location of an Amazon S3 bucket or directory to receive the
      *        operation results. The following substrings are not allowed in the
-     *        s3 key portion of the "outputURI" field: ':', '//', '/./', '/../'.
+     *        <code>s3 key</code> portion of the <code>outputURI</code> field:
+     *        ':', '//', '/./', '/../'.
      */
 
     public void setOutputUri(String outputUri) {
@@ -724,14 +727,15 @@ public class BatchPrediction implements Serializable, Cloneable {
     /**
      * <p>
      * The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the s3 key portion
-     * of the "outputURI" field: ':', '//', '/./', '/../'.
+     * results. The following substrings are not allowed in the
+     * <code>s3 key</code> portion of the <code>outputURI</code> field: ':',
+     * '//', '/./', '/../'.
      * </p>
      * 
      * @return The location of an Amazon S3 bucket or directory to receive the
      *         operation results. The following substrings are not allowed in
-     *         the s3 key portion of the "outputURI" field: ':', '//', '/./',
-     *         '/../'.
+     *         the <code>s3 key</code> portion of the <code>outputURI</code>
+     *         field: ':', '//', '/./', '/../'.
      */
 
     public String getOutputUri() {
@@ -741,14 +745,16 @@ public class BatchPrediction implements Serializable, Cloneable {
     /**
      * <p>
      * The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the s3 key portion
-     * of the "outputURI" field: ':', '//', '/./', '/../'.
+     * results. The following substrings are not allowed in the
+     * <code>s3 key</code> portion of the <code>outputURI</code> field: ':',
+     * '//', '/./', '/../'.
      * </p>
      * 
      * @param outputUri
      *        The location of an Amazon S3 bucket or directory to receive the
      *        operation results. The following substrings are not allowed in the
-     *        s3 key portion of the "outputURI" field: ':', '//', '/./', '/../'.
+     *        <code>s3 key</code> portion of the <code>outputURI</code> field:
+     *        ':', '//', '/./', '/../'.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

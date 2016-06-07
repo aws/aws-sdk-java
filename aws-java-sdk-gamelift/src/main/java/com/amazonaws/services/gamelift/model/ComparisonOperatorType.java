@@ -47,17 +47,15 @@ public enum ComparisonOperatorType {
     public static ComparisonOperatorType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("GreaterThanOrEqualToThreshold".equals(value)) {
-            return GreaterThanOrEqualToThreshold;
-        } else if ("GreaterThanThreshold".equals(value)) {
-            return GreaterThanThreshold;
-        } else if ("LessThanThreshold".equals(value)) {
-            return LessThanThreshold;
-        } else if ("LessThanOrEqualToThreshold".equals(value)) {
-            return LessThanOrEqualToThreshold;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ComparisonOperatorType enumEntry : ComparisonOperatorType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -46,15 +46,15 @@ public enum ChildPolicy {
     public static ChildPolicy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("TERMINATE".equals(value)) {
-            return TERMINATE;
-        } else if ("REQUEST_CANCEL".equals(value)) {
-            return REQUEST_CANCEL;
-        } else if ("ABANDON".equals(value)) {
-            return ABANDON;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ChildPolicy enumEntry : ChildPolicy.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

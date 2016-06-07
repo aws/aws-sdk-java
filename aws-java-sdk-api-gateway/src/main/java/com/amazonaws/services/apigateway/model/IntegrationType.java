@@ -49,15 +49,15 @@ public enum IntegrationType {
     public static IntegrationType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("HTTP".equals(value)) {
-            return HTTP;
-        } else if ("AWS".equals(value)) {
-            return AWS;
-        } else if ("MOCK".equals(value)) {
-            return MOCK;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (IntegrationType enumEntry : IntegrationType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

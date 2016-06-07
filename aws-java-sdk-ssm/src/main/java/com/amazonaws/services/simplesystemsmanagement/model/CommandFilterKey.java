@@ -46,15 +46,15 @@ public enum CommandFilterKey {
     public static CommandFilterKey fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("InvokedAfter".equals(value)) {
-            return InvokedAfter;
-        } else if ("InvokedBefore".equals(value)) {
-            return InvokedBefore;
-        } else if ("Status".equals(value)) {
-            return Status;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (CommandFilterKey enumEntry : CommandFilterKey.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

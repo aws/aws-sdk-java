@@ -47,17 +47,15 @@ public enum AvailabilityZoneState {
     public static AvailabilityZoneState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("available".equals(value)) {
-            return Available;
-        } else if ("information".equals(value)) {
-            return Information;
-        } else if ("impaired".equals(value)) {
-            return Impaired;
-        } else if ("unavailable".equals(value)) {
-            return Unavailable;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AvailabilityZoneState enumEntry : AvailabilityZoneState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

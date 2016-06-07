@@ -46,15 +46,15 @@ public enum AliasAttributeType {
     public static AliasAttributeType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("phone_number".equals(value)) {
-            return Phone_number;
-        } else if ("email".equals(value)) {
-            return Email;
-        } else if ("preferred_username".equals(value)) {
-            return Preferred_username;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AliasAttributeType enumEntry : AliasAttributeType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

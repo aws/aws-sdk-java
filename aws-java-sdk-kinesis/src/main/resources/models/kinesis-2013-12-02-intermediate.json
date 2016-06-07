@@ -20,8 +20,8 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "kinesis",
     "signingName" : "kinesis",
-    "xmlProtocol" : false,
     "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "serviceName" : "Kinesis",
     "cborProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
@@ -10068,9 +10068,9 @@
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
+          "entryType" : "Map.Entry<String, String>",
           "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10214,9 +10214,9 @@
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
+            "entryType" : "Map.Entry<String, String>",
             "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

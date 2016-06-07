@@ -47,17 +47,15 @@ public enum EnvironmentHealth {
     public static EnvironmentHealth fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Green".equals(value)) {
-            return Green;
-        } else if ("Yellow".equals(value)) {
-            return Yellow;
-        } else if ("Red".equals(value)) {
-            return Red;
-        } else if ("Grey".equals(value)) {
-            return Grey;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EnvironmentHealth enumEntry : EnvironmentHealth.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

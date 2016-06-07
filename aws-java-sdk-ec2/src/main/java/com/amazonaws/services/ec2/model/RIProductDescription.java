@@ -47,17 +47,15 @@ public enum RIProductDescription {
     public static RIProductDescription fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Linux/UNIX".equals(value)) {
-            return LinuxUNIX;
-        } else if ("Linux/UNIX (Amazon VPC)".equals(value)) {
-            return LinuxUNIXAmazonVPC;
-        } else if ("Windows".equals(value)) {
-            return Windows;
-        } else if ("Windows (Amazon VPC)".equals(value)) {
-            return WindowsAmazonVPC;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RIProductDescription enumEntry : RIProductDescription.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

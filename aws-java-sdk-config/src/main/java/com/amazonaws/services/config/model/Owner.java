@@ -45,13 +45,15 @@ public enum Owner {
     public static Owner fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CUSTOM_LAMBDA".equals(value)) {
-            return CUSTOM_LAMBDA;
-        } else if ("AWS".equals(value)) {
-            return AWS;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Owner enumEntry : Owner.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

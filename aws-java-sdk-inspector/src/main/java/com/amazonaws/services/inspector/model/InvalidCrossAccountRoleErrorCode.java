@@ -46,14 +46,16 @@ public enum InvalidCrossAccountRoleErrorCode {
     public static InvalidCrossAccountRoleErrorCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP"
-                .equals(value)) {
-            return ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP;
-        } else if ("ROLE_DOES_NOT_HAVE_CORRECT_POLICY".equals(value)) {
-            return ROLE_DOES_NOT_HAVE_CORRECT_POLICY;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InvalidCrossAccountRoleErrorCode enumEntry : InvalidCrossAccountRoleErrorCode
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

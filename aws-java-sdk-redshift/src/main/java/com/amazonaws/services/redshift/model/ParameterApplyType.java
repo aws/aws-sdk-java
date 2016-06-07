@@ -45,13 +45,15 @@ public enum ParameterApplyType {
     public static ParameterApplyType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("static".equals(value)) {
-            return Static;
-        } else if ("dynamic".equals(value)) {
-            return Dynamic;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ParameterApplyType enumEntry : ParameterApplyType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

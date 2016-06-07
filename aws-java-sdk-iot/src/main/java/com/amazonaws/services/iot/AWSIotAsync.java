@@ -232,7 +232,6 @@ public interface AWSIotAsync extends AWSIot {
      * Assuming a set of CSRs are located inside of the directory
      * my-csr-directory:
      * </p>
-     * &gt;
      * <p>
      * On Linux and OS X, the command is:
      * </p>
@@ -299,7 +298,6 @@ public interface AWSIotAsync extends AWSIot {
      * Assuming a set of CSRs are located inside of the directory
      * my-csr-directory:
      * </p>
-     * &gt;
      * <p>
      * On Linux and OS X, the command is:
      * </p>
@@ -922,8 +920,6 @@ public interface AWSIotAsync extends AWSIot {
     /**
      * <p>
      * Returns a unique endpoint specific to the AWS account making the call.
-     * You specify the following URI when updating state information for your
-     * thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.
      * </p>
      * 
      * @param describeEndpointRequest
@@ -938,8 +934,6 @@ public interface AWSIotAsync extends AWSIot {
     /**
      * <p>
      * Returns a unique endpoint specific to the AWS account making the call.
-     * You specify the following URI when updating state information for your
-     * thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.
      * </p>
      * 
      * @param describeEndpointRequest
@@ -1453,7 +1447,41 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists the versions of the specified policy, and identifies the default
+     * Lists the principals associated with the specified policy.
+     * </p>
+     * 
+     * @param listPolicyPrincipalsRequest
+     *        The input for the ListPolicyPrincipals operation.
+     * @return A Java Future containing the result of the ListPolicyPrincipals
+     *         operation returned by the service.
+     * @sample AWSIotAsync.ListPolicyPrincipals
+     */
+    java.util.concurrent.Future<ListPolicyPrincipalsResult> listPolicyPrincipalsAsync(
+            ListPolicyPrincipalsRequest listPolicyPrincipalsRequest);
+
+    /**
+     * <p>
+     * Lists the principals associated with the specified policy.
+     * </p>
+     * 
+     * @param listPolicyPrincipalsRequest
+     *        The input for the ListPolicyPrincipals operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPolicyPrincipals
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListPolicyPrincipals
+     */
+    java.util.concurrent.Future<ListPolicyPrincipalsResult> listPolicyPrincipalsAsync(
+            ListPolicyPrincipalsRequest listPolicyPrincipalsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPolicyPrincipalsRequest, ListPolicyPrincipalsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the versions of the specified policy and identifies the default
      * version.
      * </p>
      * 
@@ -1468,7 +1496,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists the versions of the specified policy, and identifies the default
+     * Lists the versions of the specified policy and identifies the default
      * version.
      * </p>
      * 

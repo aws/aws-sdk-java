@@ -71,47 +71,15 @@ public enum DataSetType {
     public static DataSetType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("customer_subscriber_hourly_monthly_subscriptions"
-                .equals(value)) {
-            return Customer_subscriber_hourly_monthly_subscriptions;
-        } else if ("customer_subscriber_annual_subscriptions".equals(value)) {
-            return Customer_subscriber_annual_subscriptions;
-        } else if ("daily_business_usage_by_instance_type".equals(value)) {
-            return Daily_business_usage_by_instance_type;
-        } else if ("daily_business_fees".equals(value)) {
-            return Daily_business_fees;
-        } else if ("daily_business_free_trial_conversions".equals(value)) {
-            return Daily_business_free_trial_conversions;
-        } else if ("daily_business_new_instances".equals(value)) {
-            return Daily_business_new_instances;
-        } else if ("daily_business_new_product_subscribers".equals(value)) {
-            return Daily_business_new_product_subscribers;
-        } else if ("daily_business_canceled_product_subscribers".equals(value)) {
-            return Daily_business_canceled_product_subscribers;
-        } else if ("monthly_revenue_billing_and_revenue_data".equals(value)) {
-            return Monthly_revenue_billing_and_revenue_data;
-        } else if ("monthly_revenue_annual_subscriptions".equals(value)) {
-            return Monthly_revenue_annual_subscriptions;
-        } else if ("disbursed_amount_by_product".equals(value)) {
-            return Disbursed_amount_by_product;
-        } else if ("disbursed_amount_by_product_with_uncollected_funds"
-                .equals(value)) {
-            return Disbursed_amount_by_product_with_uncollected_funds;
-        } else if ("disbursed_amount_by_customer_geo".equals(value)) {
-            return Disbursed_amount_by_customer_geo;
-        } else if ("disbursed_amount_by_age_of_uncollected_funds".equals(value)) {
-            return Disbursed_amount_by_age_of_uncollected_funds;
-        } else if ("disbursed_amount_by_age_of_disbursed_funds".equals(value)) {
-            return Disbursed_amount_by_age_of_disbursed_funds;
-        } else if ("customer_profile_by_industry".equals(value)) {
-            return Customer_profile_by_industry;
-        } else if ("customer_profile_by_revenue".equals(value)) {
-            return Customer_profile_by_revenue;
-        } else if ("customer_profile_by_geography".equals(value)) {
-            return Customer_profile_by_geography;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DataSetType enumEntry : DataSetType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

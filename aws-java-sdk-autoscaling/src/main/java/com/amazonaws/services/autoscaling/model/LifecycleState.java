@@ -56,35 +56,15 @@ public enum LifecycleState {
     public static LifecycleState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Pending".equals(value)) {
-            return Pending;
-        } else if ("Pending:Wait".equals(value)) {
-            return PendingWait;
-        } else if ("Pending:Proceed".equals(value)) {
-            return PendingProceed;
-        } else if ("Quarantined".equals(value)) {
-            return Quarantined;
-        } else if ("InService".equals(value)) {
-            return InService;
-        } else if ("Terminating".equals(value)) {
-            return Terminating;
-        } else if ("Terminating:Wait".equals(value)) {
-            return TerminatingWait;
-        } else if ("Terminating:Proceed".equals(value)) {
-            return TerminatingProceed;
-        } else if ("Terminated".equals(value)) {
-            return Terminated;
-        } else if ("Detaching".equals(value)) {
-            return Detaching;
-        } else if ("Detached".equals(value)) {
-            return Detached;
-        } else if ("EnteringStandby".equals(value)) {
-            return EnteringStandby;
-        } else if ("Standby".equals(value)) {
-            return Standby;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LifecycleState enumEntry : LifecycleState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

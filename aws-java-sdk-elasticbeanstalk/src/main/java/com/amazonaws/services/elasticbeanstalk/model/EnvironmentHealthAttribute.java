@@ -51,25 +51,16 @@ public enum EnvironmentHealthAttribute {
     public static EnvironmentHealthAttribute fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Status".equals(value)) {
-            return Status;
-        } else if ("Color".equals(value)) {
-            return Color;
-        } else if ("Causes".equals(value)) {
-            return Causes;
-        } else if ("ApplicationMetrics".equals(value)) {
-            return ApplicationMetrics;
-        } else if ("InstancesHealth".equals(value)) {
-            return InstancesHealth;
-        } else if ("All".equals(value)) {
-            return All;
-        } else if ("HealthStatus".equals(value)) {
-            return HealthStatus;
-        } else if ("RefreshedAt".equals(value)) {
-            return RefreshedAt;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EnvironmentHealthAttribute enumEntry : EnvironmentHealthAttribute
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

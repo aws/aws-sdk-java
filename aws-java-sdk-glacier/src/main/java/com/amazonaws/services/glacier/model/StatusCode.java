@@ -46,15 +46,15 @@ public enum StatusCode {
     public static StatusCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("InProgress".equals(value)) {
-            return InProgress;
-        } else if ("Succeeded".equals(value)) {
-            return Succeeded;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (StatusCode enumEntry : StatusCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

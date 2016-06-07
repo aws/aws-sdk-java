@@ -47,17 +47,15 @@ public enum CancelBatchErrorCode {
     public static CancelBatchErrorCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("fleetRequestIdDoesNotExist".equals(value)) {
-            return FleetRequestIdDoesNotExist;
-        } else if ("fleetRequestIdMalformed".equals(value)) {
-            return FleetRequestIdMalformed;
-        } else if ("fleetRequestNotInCancellableState".equals(value)) {
-            return FleetRequestNotInCancellableState;
-        } else if ("unexpectedError".equals(value)) {
-            return UnexpectedError;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (CancelBatchErrorCode enumEntry : CancelBatchErrorCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

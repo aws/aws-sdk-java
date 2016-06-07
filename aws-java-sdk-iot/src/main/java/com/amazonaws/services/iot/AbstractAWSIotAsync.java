@@ -538,6 +538,21 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListPolicyPrincipalsResult> listPolicyPrincipalsAsync(
+            ListPolicyPrincipalsRequest request) {
+
+        return listPolicyPrincipalsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPolicyPrincipalsResult> listPolicyPrincipalsAsync(
+            ListPolicyPrincipalsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPolicyPrincipalsRequest, ListPolicyPrincipalsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPolicyVersionsResult> listPolicyVersionsAsync(
             ListPolicyVersionsRequest request) {
 

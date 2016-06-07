@@ -45,13 +45,15 @@ public enum SpotInstanceType {
     public static SpotInstanceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("one-time".equals(value)) {
-            return OneTime;
-        } else if ("persistent".equals(value)) {
-            return Persistent;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SpotInstanceType enumEntry : SpotInstanceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

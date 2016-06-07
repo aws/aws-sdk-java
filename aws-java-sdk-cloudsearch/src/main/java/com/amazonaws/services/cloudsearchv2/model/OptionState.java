@@ -59,17 +59,15 @@ public enum OptionState {
     public static OptionState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("RequiresIndexDocuments".equals(value)) {
-            return RequiresIndexDocuments;
-        } else if ("Processing".equals(value)) {
-            return Processing;
-        } else if ("Active".equals(value)) {
-            return Active;
-        } else if ("FailedToValidate".equals(value)) {
-            return FailedToValidate;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (OptionState enumEntry : OptionState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

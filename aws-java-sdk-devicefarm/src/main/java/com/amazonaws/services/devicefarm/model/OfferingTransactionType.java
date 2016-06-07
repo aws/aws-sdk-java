@@ -46,15 +46,16 @@ public enum OfferingTransactionType {
     public static OfferingTransactionType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PURCHASE".equals(value)) {
-            return PURCHASE;
-        } else if ("RENEW".equals(value)) {
-            return RENEW;
-        } else if ("SYSTEM".equals(value)) {
-            return SYSTEM;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (OfferingTransactionType enumEntry : OfferingTransactionType
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

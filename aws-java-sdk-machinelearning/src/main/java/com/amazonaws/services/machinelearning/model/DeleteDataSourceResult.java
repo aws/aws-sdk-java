@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <a>DeleteDataSource</a> operation.
+ * Represents the output of a <code>DeleteDataSource</code> operation.
  * </p>
  */
 public class DeleteDataSourceResult implements Serializable, Cloneable {

@@ -45,13 +45,16 @@ public enum FailWorkflowExecutionFailedCause {
     public static FailWorkflowExecutionFailedCause fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("UNHANDLED_DECISION".equals(value)) {
-            return UNHANDLED_DECISION;
-        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
-            return OPERATION_NOT_PERMITTED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (FailWorkflowExecutionFailedCause enumEntry : FailWorkflowExecutionFailedCause
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

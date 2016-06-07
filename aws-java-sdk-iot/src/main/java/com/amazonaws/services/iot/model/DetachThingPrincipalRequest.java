@@ -37,6 +37,10 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
      * <p>
      * The principal.
      * </p>
+     * <p>
+     * If the principal is a certificate, specify the certificate ARN. If the
+     * principal is an Amazon Cognito identity, specify the identity ID.
+     * </p>
      */
     private String principal;
 
@@ -85,9 +89,17 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
      * <p>
      * The principal.
      * </p>
+     * <p>
+     * If the principal is a certificate, specify the certificate ARN. If the
+     * principal is an Amazon Cognito identity, specify the identity ID.
+     * </p>
      * 
      * @param principal
-     *        The principal.
+     *        The principal.</p>
+     *        <p>
+     *        If the principal is a certificate, specify the certificate ARN. If
+     *        the principal is an Amazon Cognito identity, specify the identity
+     *        ID.
      */
 
     public void setPrincipal(String principal) {
@@ -98,8 +110,16 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
      * <p>
      * The principal.
      * </p>
+     * <p>
+     * If the principal is a certificate, specify the certificate ARN. If the
+     * principal is an Amazon Cognito identity, specify the identity ID.
+     * </p>
      * 
-     * @return The principal.
+     * @return The principal.</p>
+     *         <p>
+     *         If the principal is a certificate, specify the certificate ARN.
+     *         If the principal is an Amazon Cognito identity, specify the
+     *         identity ID.
      */
 
     public String getPrincipal() {
@@ -110,9 +130,17 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
      * <p>
      * The principal.
      * </p>
+     * <p>
+     * If the principal is a certificate, specify the certificate ARN. If the
+     * principal is an Amazon Cognito identity, specify the identity ID.
+     * </p>
      * 
      * @param principal
-     *        The principal.
+     *        The principal.</p>
+     *        <p>
+     *        If the principal is a certificate, specify the certificate ARN. If
+     *        the principal is an Amazon Cognito identity, specify the identity
+     *        ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

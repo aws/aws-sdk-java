@@ -45,13 +45,15 @@ public enum StageTransitionType {
     public static StageTransitionType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Inbound".equals(value)) {
-            return Inbound;
-        } else if ("Outbound".equals(value)) {
-            return Outbound;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (StageTransitionType enumEntry : StageTransitionType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

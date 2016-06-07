@@ -45,13 +45,16 @@ public enum ExcessCapacityTerminationPolicy {
     public static ExcessCapacityTerminationPolicy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("noTermination".equals(value)) {
-            return NoTermination;
-        } else if ("default".equals(value)) {
-            return Default;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ExcessCapacityTerminationPolicy enumEntry : ExcessCapacityTerminationPolicy
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -44,7 +44,8 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of the item's attributes were updated.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.
      * </p>
      * </li>
      * <li>
@@ -57,8 +58,14 @@ public class Record implements Serializable, Cloneable {
     private String eventName;
     /**
      * <p>
-     * The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.
+     * The version number of the stream record format. This number is updated
+     * whenever the structure of <i>Record</i> is modified.
+     * </p>
+     * <p>
+     * Client applications must not assume that <i>eventVersion</i> will remain
+     * at a particular value, as this number is subject to change at any time.
+     * In general, <i>eventVersion</i> will only increase as the low-level
+     * DynamoDB Streams API evolves.
      * </p>
      */
     private String eventVersion;
@@ -142,7 +149,8 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of the item's attributes were updated.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.
      * </p>
      * </li>
      * <li>
@@ -163,8 +171,8 @@ public class Record implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MODIFY</code> - one or more of the item's attributes were
-     *        updated.
+     *        <code>MODIFY</code> - one or more of an existing item's attributes
+     *        were modified.
      *        </p>
      *        </li>
      *        <li>
@@ -191,7 +199,8 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of the item's attributes were updated.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.
      * </p>
      * </li>
      * <li>
@@ -211,8 +220,8 @@ public class Record implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MODIFY</code> - one or more of the item's attributes were
-     *         updated.
+     *         <code>MODIFY</code> - one or more of an existing item's
+     *         attributes were modified.
      *         </p>
      *         </li>
      *         <li>
@@ -239,7 +248,8 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of the item's attributes were updated.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.
      * </p>
      * </li>
      * <li>
@@ -260,8 +270,8 @@ public class Record implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MODIFY</code> - one or more of the item's attributes were
-     *        updated.
+     *        <code>MODIFY</code> - one or more of an existing item's attributes
+     *        were modified.
      *        </p>
      *        </li>
      *        <li>
@@ -291,7 +301,8 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of the item's attributes were updated.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.
      * </p>
      * </li>
      * <li>
@@ -312,8 +323,8 @@ public class Record implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MODIFY</code> - one or more of the item's attributes were
-     *        updated.
+     *        <code>MODIFY</code> - one or more of an existing item's attributes
+     *        were modified.
      *        </p>
      *        </li>
      *        <li>
@@ -340,7 +351,8 @@ public class Record implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>MODIFY</code> - one or more of the item's attributes were updated.
+     * <code>MODIFY</code> - one or more of an existing item's attributes were
+     * modified.
      * </p>
      * </li>
      * <li>
@@ -361,8 +373,8 @@ public class Record implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MODIFY</code> - one or more of the item's attributes were
-     *        updated.
+     *        <code>MODIFY</code> - one or more of an existing item's attributes
+     *        were modified.
      *        </p>
      *        </li>
      *        <li>
@@ -382,13 +394,24 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.
+     * The version number of the stream record format. This number is updated
+     * whenever the structure of <i>Record</i> is modified.
+     * </p>
+     * <p>
+     * Client applications must not assume that <i>eventVersion</i> will remain
+     * at a particular value, as this number is subject to change at any time.
+     * In general, <i>eventVersion</i> will only increase as the low-level
+     * DynamoDB Streams API evolves.
      * </p>
      * 
      * @param eventVersion
-     *        The version number of the stream record format. Currently, this is
-     *        <i>1.0</i>.
+     *        The version number of the stream record format. This number is
+     *        updated whenever the structure of <i>Record</i> is modified.</p>
+     *        <p>
+     *        Client applications must not assume that <i>eventVersion</i> will
+     *        remain at a particular value, as this number is subject to change
+     *        at any time. In general, <i>eventVersion</i> will only increase as
+     *        the low-level DynamoDB Streams API evolves.
      */
 
     public void setEventVersion(String eventVersion) {
@@ -397,12 +420,23 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.
+     * The version number of the stream record format. This number is updated
+     * whenever the structure of <i>Record</i> is modified.
+     * </p>
+     * <p>
+     * Client applications must not assume that <i>eventVersion</i> will remain
+     * at a particular value, as this number is subject to change at any time.
+     * In general, <i>eventVersion</i> will only increase as the low-level
+     * DynamoDB Streams API evolves.
      * </p>
      * 
-     * @return The version number of the stream record format. Currently, this
-     *         is <i>1.0</i>.
+     * @return The version number of the stream record format. This number is
+     *         updated whenever the structure of <i>Record</i> is modified.</p>
+     *         <p>
+     *         Client applications must not assume that <i>eventVersion</i> will
+     *         remain at a particular value, as this number is subject to change
+     *         at any time. In general, <i>eventVersion</i> will only increase
+     *         as the low-level DynamoDB Streams API evolves.
      */
 
     public String getEventVersion() {
@@ -411,13 +445,24 @@ public class Record implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version number of the stream record format. Currently, this is
-     * <i>1.0</i>.
+     * The version number of the stream record format. This number is updated
+     * whenever the structure of <i>Record</i> is modified.
+     * </p>
+     * <p>
+     * Client applications must not assume that <i>eventVersion</i> will remain
+     * at a particular value, as this number is subject to change at any time.
+     * In general, <i>eventVersion</i> will only increase as the low-level
+     * DynamoDB Streams API evolves.
      * </p>
      * 
      * @param eventVersion
-     *        The version number of the stream record format. Currently, this is
-     *        <i>1.0</i>.
+     *        The version number of the stream record format. This number is
+     *        updated whenever the structure of <i>Record</i> is modified.</p>
+     *        <p>
+     *        Client applications must not assume that <i>eventVersion</i> will
+     *        remain at a particular value, as this number is subject to change
+     *        at any time. In general, <i>eventVersion</i> will only increase as
+     *        the low-level DynamoDB Streams API evolves.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

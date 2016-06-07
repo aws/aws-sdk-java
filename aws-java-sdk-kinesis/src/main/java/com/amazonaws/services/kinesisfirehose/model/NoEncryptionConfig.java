@@ -44,11 +44,15 @@ public enum NoEncryptionConfig {
     public static NoEncryptionConfig fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("NoEncryption".equals(value)) {
-            return NoEncryption;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (NoEncryptionConfig enumEntry : NoEncryptionConfig.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

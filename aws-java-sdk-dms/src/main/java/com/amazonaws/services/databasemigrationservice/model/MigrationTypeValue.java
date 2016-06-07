@@ -46,15 +46,15 @@ public enum MigrationTypeValue {
     public static MigrationTypeValue fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("full-load".equals(value)) {
-            return FullLoad;
-        } else if ("cdc".equals(value)) {
-            return Cdc;
-        } else if ("full-load-and-cdc".equals(value)) {
-            return FullLoadAndCdc;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MigrationTypeValue enumEntry : MigrationTypeValue.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

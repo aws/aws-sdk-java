@@ -52,27 +52,16 @@ public enum ReportInstanceReasonCodes {
     public static ReportInstanceReasonCodes fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("instance-stuck-in-state".equals(value)) {
-            return InstanceStuckInState;
-        } else if ("unresponsive".equals(value)) {
-            return Unresponsive;
-        } else if ("not-accepting-credentials".equals(value)) {
-            return NotAcceptingCredentials;
-        } else if ("password-not-available".equals(value)) {
-            return PasswordNotAvailable;
-        } else if ("performance-network".equals(value)) {
-            return PerformanceNetwork;
-        } else if ("performance-instance-store".equals(value)) {
-            return PerformanceInstanceStore;
-        } else if ("performance-ebs-volume".equals(value)) {
-            return PerformanceEbsVolume;
-        } else if ("performance-other".equals(value)) {
-            return PerformanceOther;
-        } else if ("other".equals(value)) {
-            return Other;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ReportInstanceReasonCodes enumEntry : ReportInstanceReasonCodes
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

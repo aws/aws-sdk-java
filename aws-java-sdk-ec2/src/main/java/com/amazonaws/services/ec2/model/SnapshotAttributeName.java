@@ -45,13 +45,15 @@ public enum SnapshotAttributeName {
     public static SnapshotAttributeName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("productCodes".equals(value)) {
-            return ProductCodes;
-        } else if ("createVolumePermission".equals(value)) {
-            return CreateVolumePermission;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SnapshotAttributeName enumEntry : SnapshotAttributeName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -49,21 +49,15 @@ public enum LifecycleEventStatus {
     public static LifecycleEventStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Pending".equals(value)) {
-            return Pending;
-        } else if ("InProgress".equals(value)) {
-            return InProgress;
-        } else if ("Succeeded".equals(value)) {
-            return Succeeded;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else if ("Skipped".equals(value)) {
-            return Skipped;
-        } else if ("Unknown".equals(value)) {
-            return Unknown;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LifecycleEventStatus enumEntry : LifecycleEventStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

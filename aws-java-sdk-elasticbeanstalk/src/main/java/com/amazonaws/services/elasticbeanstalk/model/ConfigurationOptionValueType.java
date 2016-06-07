@@ -45,13 +45,16 @@ public enum ConfigurationOptionValueType {
     public static ConfigurationOptionValueType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Scalar".equals(value)) {
-            return Scalar;
-        } else if ("List".equals(value)) {
-            return List;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ConfigurationOptionValueType enumEntry : ConfigurationOptionValueType
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

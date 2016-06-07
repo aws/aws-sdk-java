@@ -50,23 +50,15 @@ public enum ImageState {
     public static ImageState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("pending".equals(value)) {
-            return Pending;
-        } else if ("available".equals(value)) {
-            return Available;
-        } else if ("invalid".equals(value)) {
-            return Invalid;
-        } else if ("deregistered".equals(value)) {
-            return Deregistered;
-        } else if ("transient".equals(value)) {
-            return Transient;
-        } else if ("failed".equals(value)) {
-            return Failed;
-        } else if ("error".equals(value)) {
-            return Error;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ImageState enumEntry : ImageState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

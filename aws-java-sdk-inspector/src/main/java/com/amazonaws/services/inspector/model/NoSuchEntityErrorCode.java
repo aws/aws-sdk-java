@@ -51,25 +51,15 @@ public enum NoSuchEntityErrorCode {
     public static NoSuchEntityErrorCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ASSESSMENT_TARGET_DOES_NOT_EXIST".equals(value)) {
-            return ASSESSMENT_TARGET_DOES_NOT_EXIST;
-        } else if ("ASSESSMENT_TEMPLATE_DOES_NOT_EXIST".equals(value)) {
-            return ASSESSMENT_TEMPLATE_DOES_NOT_EXIST;
-        } else if ("ASSESSMENT_RUN_DOES_NOT_EXIST".equals(value)) {
-            return ASSESSMENT_RUN_DOES_NOT_EXIST;
-        } else if ("FINDING_DOES_NOT_EXIST".equals(value)) {
-            return FINDING_DOES_NOT_EXIST;
-        } else if ("RESOURCE_GROUP_DOES_NOT_EXIST".equals(value)) {
-            return RESOURCE_GROUP_DOES_NOT_EXIST;
-        } else if ("RULES_PACKAGE_DOES_NOT_EXIST".equals(value)) {
-            return RULES_PACKAGE_DOES_NOT_EXIST;
-        } else if ("SNS_TOPIC_DOES_NOT_EXIST".equals(value)) {
-            return SNS_TOPIC_DOES_NOT_EXIST;
-        } else if ("IAM_ROLE_DOES_NOT_EXIST".equals(value)) {
-            return IAM_ROLE_DOES_NOT_EXIST;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (NoSuchEntityErrorCode enumEntry : NoSuchEntityErrorCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

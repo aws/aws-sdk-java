@@ -46,15 +46,15 @@ public enum RouteOrigin {
     public static RouteOrigin fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CreateRouteTable".equals(value)) {
-            return CreateRouteTable;
-        } else if ("CreateRoute".equals(value)) {
-            return CreateRoute;
-        } else if ("EnableVgwRoutePropagation".equals(value)) {
-            return EnableVgwRoutePropagation;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RouteOrigin enumEntry : RouteOrigin.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

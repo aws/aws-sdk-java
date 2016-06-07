@@ -45,13 +45,16 @@ public enum ReplicationEndpointTypeValue {
     public static ReplicationEndpointTypeValue fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("source".equals(value)) {
-            return Source;
-        } else if ("target".equals(value)) {
-            return Target;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ReplicationEndpointTypeValue enumEntry : ReplicationEndpointTypeValue
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

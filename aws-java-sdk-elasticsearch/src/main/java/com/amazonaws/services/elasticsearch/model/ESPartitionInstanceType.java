@@ -57,37 +57,16 @@ public enum ESPartitionInstanceType {
     public static ESPartitionInstanceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("m3.medium.elasticsearch".equals(value)) {
-            return M3MediumElasticsearch;
-        } else if ("m3.large.elasticsearch".equals(value)) {
-            return M3LargeElasticsearch;
-        } else if ("m3.xlarge.elasticsearch".equals(value)) {
-            return M3XlargeElasticsearch;
-        } else if ("m3.2xlarge.elasticsearch".equals(value)) {
-            return M32xlargeElasticsearch;
-        } else if ("t2.micro.elasticsearch".equals(value)) {
-            return T2MicroElasticsearch;
-        } else if ("t2.small.elasticsearch".equals(value)) {
-            return T2SmallElasticsearch;
-        } else if ("t2.medium.elasticsearch".equals(value)) {
-            return T2MediumElasticsearch;
-        } else if ("r3.large.elasticsearch".equals(value)) {
-            return R3LargeElasticsearch;
-        } else if ("r3.xlarge.elasticsearch".equals(value)) {
-            return R3XlargeElasticsearch;
-        } else if ("r3.2xlarge.elasticsearch".equals(value)) {
-            return R32xlargeElasticsearch;
-        } else if ("r3.4xlarge.elasticsearch".equals(value)) {
-            return R34xlargeElasticsearch;
-        } else if ("r3.8xlarge.elasticsearch".equals(value)) {
-            return R38xlargeElasticsearch;
-        } else if ("i2.xlarge.elasticsearch".equals(value)) {
-            return I2XlargeElasticsearch;
-        } else if ("i2.2xlarge.elasticsearch".equals(value)) {
-            return I22xlargeElasticsearch;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ESPartitionInstanceType enumEntry : ESPartitionInstanceType
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

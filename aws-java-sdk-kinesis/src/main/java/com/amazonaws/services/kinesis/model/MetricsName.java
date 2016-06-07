@@ -51,25 +51,15 @@ public enum MetricsName {
     public static MetricsName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("IncomingBytes".equals(value)) {
-            return IncomingBytes;
-        } else if ("IncomingRecords".equals(value)) {
-            return IncomingRecords;
-        } else if ("OutgoingBytes".equals(value)) {
-            return OutgoingBytes;
-        } else if ("OutgoingRecords".equals(value)) {
-            return OutgoingRecords;
-        } else if ("WriteProvisionedThroughputExceeded".equals(value)) {
-            return WriteProvisionedThroughputExceeded;
-        } else if ("ReadProvisionedThroughputExceeded".equals(value)) {
-            return ReadProvisionedThroughputExceeded;
-        } else if ("IteratorAgeMilliseconds".equals(value)) {
-            return IteratorAgeMilliseconds;
-        } else if ("ALL".equals(value)) {
-            return ALL;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MetricsName enumEntry : MetricsName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

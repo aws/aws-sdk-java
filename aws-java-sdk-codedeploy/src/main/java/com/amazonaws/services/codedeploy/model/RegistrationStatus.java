@@ -45,13 +45,15 @@ public enum RegistrationStatus {
     public static RegistrationStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Registered".equals(value)) {
-            return Registered;
-        } else if ("Deregistered".equals(value)) {
-            return Deregistered;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RegistrationStatus enumEntry : RegistrationStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

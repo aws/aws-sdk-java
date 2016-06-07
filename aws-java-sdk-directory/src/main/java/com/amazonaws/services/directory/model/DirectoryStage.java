@@ -54,31 +54,15 @@ public enum DirectoryStage {
     public static DirectoryStage fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Requested".equals(value)) {
-            return Requested;
-        } else if ("Creating".equals(value)) {
-            return Creating;
-        } else if ("Created".equals(value)) {
-            return Created;
-        } else if ("Active".equals(value)) {
-            return Active;
-        } else if ("Inoperable".equals(value)) {
-            return Inoperable;
-        } else if ("Impaired".equals(value)) {
-            return Impaired;
-        } else if ("Restoring".equals(value)) {
-            return Restoring;
-        } else if ("RestoreFailed".equals(value)) {
-            return RestoreFailed;
-        } else if ("Deleting".equals(value)) {
-            return Deleting;
-        } else if ("Deleted".equals(value)) {
-            return Deleted;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DirectoryStage enumEntry : DirectoryStage.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

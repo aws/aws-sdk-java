@@ -45,13 +45,15 @@ public enum TaskDefinitionStatus {
     public static TaskDefinitionStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ACTIVE".equals(value)) {
-            return ACTIVE;
-        } else if ("INACTIVE".equals(value)) {
-            return INACTIVE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (TaskDefinitionStatus enumEntry : TaskDefinitionStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

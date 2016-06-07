@@ -46,15 +46,15 @@ public enum DeliveryStreamStatus {
     public static DeliveryStreamStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CREATING".equals(value)) {
-            return CREATING;
-        } else if ("DELETING".equals(value)) {
-            return DELETING;
-        } else if ("ACTIVE".equals(value)) {
-            return ACTIVE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DeliveryStreamStatus enumEntry : DeliveryStreamStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

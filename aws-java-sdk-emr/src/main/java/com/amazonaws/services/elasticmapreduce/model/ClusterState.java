@@ -50,23 +50,15 @@ public enum ClusterState {
     public static ClusterState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("STARTING".equals(value)) {
-            return STARTING;
-        } else if ("BOOTSTRAPPING".equals(value)) {
-            return BOOTSTRAPPING;
-        } else if ("RUNNING".equals(value)) {
-            return RUNNING;
-        } else if ("WAITING".equals(value)) {
-            return WAITING;
-        } else if ("TERMINATING".equals(value)) {
-            return TERMINATING;
-        } else if ("TERMINATED".equals(value)) {
-            return TERMINATED;
-        } else if ("TERMINATED_WITH_ERRORS".equals(value)) {
-            return TERMINATED_WITH_ERRORS;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ClusterState enumEntry : ClusterState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -53,29 +53,15 @@ public enum RRType {
     public static RRType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SOA".equals(value)) {
-            return SOA;
-        } else if ("A".equals(value)) {
-            return A;
-        } else if ("TXT".equals(value)) {
-            return TXT;
-        } else if ("NS".equals(value)) {
-            return NS;
-        } else if ("CNAME".equals(value)) {
-            return CNAME;
-        } else if ("MX".equals(value)) {
-            return MX;
-        } else if ("PTR".equals(value)) {
-            return PTR;
-        } else if ("SRV".equals(value)) {
-            return SRV;
-        } else if ("SPF".equals(value)) {
-            return SPF;
-        } else if ("AAAA".equals(value)) {
-            return AAAA;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RRType enumEntry : RRType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

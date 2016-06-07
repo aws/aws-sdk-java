@@ -45,13 +45,15 @@ public enum EvaluationType {
     public static EvaluationType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Static".equals(value)) {
-            return Static;
-        } else if ("Dynamic".equals(value)) {
-            return Dynamic;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EvaluationType enumEntry : EvaluationType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

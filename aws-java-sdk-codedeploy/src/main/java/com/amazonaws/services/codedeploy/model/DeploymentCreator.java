@@ -45,13 +45,15 @@ public enum DeploymentCreator {
     public static DeploymentCreator fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("user".equals(value)) {
-            return User;
-        } else if ("autoscaling".equals(value)) {
-            return Autoscaling;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DeploymentCreator enumEntry : DeploymentCreator.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -45,13 +45,15 @@ public enum CACertificateStatus {
     public static CACertificateStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ACTIVE".equals(value)) {
-            return ACTIVE;
-        } else if ("INACTIVE".equals(value)) {
-            return INACTIVE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (CACertificateStatus enumEntry : CACertificateStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

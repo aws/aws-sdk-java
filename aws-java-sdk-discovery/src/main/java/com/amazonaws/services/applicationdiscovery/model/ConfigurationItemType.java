@@ -46,15 +46,15 @@ public enum ConfigurationItemType {
     public static ConfigurationItemType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SERVER".equals(value)) {
-            return SERVER;
-        } else if ("PROCESS".equals(value)) {
-            return PROCESS;
-        } else if ("CONNECTION".equals(value)) {
-            return CONNECTION;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ConfigurationItemType enumEntry : ConfigurationItemType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

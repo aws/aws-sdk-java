@@ -46,15 +46,15 @@ public enum NotificationType {
     public static NotificationType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Bounce".equals(value)) {
-            return Bounce;
-        } else if ("Complaint".equals(value)) {
-            return Complaint;
-        } else if ("Delivery".equals(value)) {
-            return Delivery;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (NotificationType enumEntry : NotificationType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

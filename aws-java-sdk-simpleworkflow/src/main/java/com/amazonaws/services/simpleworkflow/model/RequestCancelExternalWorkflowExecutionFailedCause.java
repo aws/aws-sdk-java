@@ -49,16 +49,16 @@ public enum RequestCancelExternalWorkflowExecutionFailedCause {
             String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION".equals(value)) {
-            return UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION;
-        } else if ("REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED"
-                .equals(value)) {
-            return REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED;
-        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
-            return OPERATION_NOT_PERMITTED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RequestCancelExternalWorkflowExecutionFailedCause enumEntry : RequestCancelExternalWorkflowExecutionFailedCause
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

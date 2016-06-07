@@ -45,13 +45,15 @@ public enum OrderEnum {
     public static OrderEnum fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ascending".equals(value)) {
-            return Ascending;
-        } else if ("descending".equals(value)) {
-            return Descending;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (OrderEnum enumEntry : OrderEnum.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

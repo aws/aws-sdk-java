@@ -46,15 +46,15 @@ public enum DirectoryType {
     public static DirectoryType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SimpleAD".equals(value)) {
-            return SimpleAD;
-        } else if ("ADConnector".equals(value)) {
-            return ADConnector;
-        } else if ("MicrosoftAD".equals(value)) {
-            return MicrosoftAD;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DirectoryType enumEntry : DirectoryType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

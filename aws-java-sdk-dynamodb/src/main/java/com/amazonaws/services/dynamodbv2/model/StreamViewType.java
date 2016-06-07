@@ -47,17 +47,15 @@ public enum StreamViewType {
     public static StreamViewType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("NEW_IMAGE".equals(value)) {
-            return NEW_IMAGE;
-        } else if ("OLD_IMAGE".equals(value)) {
-            return OLD_IMAGE;
-        } else if ("NEW_AND_OLD_IMAGES".equals(value)) {
-            return NEW_AND_OLD_IMAGES;
-        } else if ("KEYS_ONLY".equals(value)) {
-            return KEYS_ONLY;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (StreamViewType enumEntry : StreamViewType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

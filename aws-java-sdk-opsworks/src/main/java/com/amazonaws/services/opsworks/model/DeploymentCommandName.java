@@ -55,33 +55,15 @@ public enum DeploymentCommandName {
     public static DeploymentCommandName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("install_dependencies".equals(value)) {
-            return Install_dependencies;
-        } else if ("update_dependencies".equals(value)) {
-            return Update_dependencies;
-        } else if ("update_custom_cookbooks".equals(value)) {
-            return Update_custom_cookbooks;
-        } else if ("execute_recipes".equals(value)) {
-            return Execute_recipes;
-        } else if ("configure".equals(value)) {
-            return Configure;
-        } else if ("setup".equals(value)) {
-            return Setup;
-        } else if ("deploy".equals(value)) {
-            return Deploy;
-        } else if ("rollback".equals(value)) {
-            return Rollback;
-        } else if ("start".equals(value)) {
-            return Start;
-        } else if ("stop".equals(value)) {
-            return Stop;
-        } else if ("restart".equals(value)) {
-            return Restart;
-        } else if ("undeploy".equals(value)) {
-            return Undeploy;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DeploymentCommandName enumEntry : DeploymentCommandName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

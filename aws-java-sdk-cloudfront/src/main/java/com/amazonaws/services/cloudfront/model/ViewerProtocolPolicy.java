@@ -46,15 +46,15 @@ public enum ViewerProtocolPolicy {
     public static ViewerProtocolPolicy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("allow-all".equals(value)) {
-            return AllowAll;
-        } else if ("https-only".equals(value)) {
-            return HttpsOnly;
-        } else if ("redirect-to-https".equals(value)) {
-            return RedirectToHttps;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ViewerProtocolPolicy enumEntry : ViewerProtocolPolicy.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

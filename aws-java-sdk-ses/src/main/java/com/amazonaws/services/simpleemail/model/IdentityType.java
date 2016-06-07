@@ -45,13 +45,15 @@ public enum IdentityType {
     public static IdentityType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("EmailAddress".equals(value)) {
-            return EmailAddress;
-        } else if ("Domain".equals(value)) {
-            return Domain;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (IdentityType enumEntry : IdentityType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

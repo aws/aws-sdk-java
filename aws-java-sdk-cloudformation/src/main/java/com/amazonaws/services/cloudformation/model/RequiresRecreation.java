@@ -46,15 +46,15 @@ public enum RequiresRecreation {
     public static RequiresRecreation fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Never".equals(value)) {
-            return Never;
-        } else if ("Conditionally".equals(value)) {
-            return Conditionally;
-        } else if ("Always".equals(value)) {
-            return Always;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RequiresRecreation enumEntry : RequiresRecreation.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

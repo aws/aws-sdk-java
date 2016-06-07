@@ -46,15 +46,15 @@ public enum ChangeTokenStatus {
     public static ChangeTokenStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PROVISIONED".equals(value)) {
-            return PROVISIONED;
-        } else if ("PENDING".equals(value)) {
-            return PENDING;
-        } else if ("INSYNC".equals(value)) {
-            return INSYNC;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ChangeTokenStatus enumEntry : ChangeTokenStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

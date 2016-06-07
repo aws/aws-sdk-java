@@ -47,17 +47,15 @@ public enum ShardIteratorType {
     public static ShardIteratorType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("TRIM_HORIZON".equals(value)) {
-            return TRIM_HORIZON;
-        } else if ("LATEST".equals(value)) {
-            return LATEST;
-        } else if ("AT_SEQUENCE_NUMBER".equals(value)) {
-            return AT_SEQUENCE_NUMBER;
-        } else if ("AFTER_SEQUENCE_NUMBER".equals(value)) {
-            return AFTER_SEQUENCE_NUMBER;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ShardIteratorType enumEntry : ShardIteratorType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

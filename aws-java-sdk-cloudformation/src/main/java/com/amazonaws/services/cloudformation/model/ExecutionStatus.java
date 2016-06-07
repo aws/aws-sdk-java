@@ -49,21 +49,15 @@ public enum ExecutionStatus {
     public static ExecutionStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("UNAVAILABLE".equals(value)) {
-            return UNAVAILABLE;
-        } else if ("AVAILABLE".equals(value)) {
-            return AVAILABLE;
-        } else if ("EXECUTE_IN_PROGRESS".equals(value)) {
-            return EXECUTE_IN_PROGRESS;
-        } else if ("EXECUTE_COMPLETE".equals(value)) {
-            return EXECUTE_COMPLETE;
-        } else if ("EXECUTE_FAILED".equals(value)) {
-            return EXECUTE_FAILED;
-        } else if ("OBSOLETE".equals(value)) {
-            return OBSOLETE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ExecutionStatus enumEntry : ExecutionStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

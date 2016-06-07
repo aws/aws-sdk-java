@@ -44,11 +44,15 @@ public enum IPSetDescriptorType {
     public static IPSetDescriptorType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("IPV4".equals(value)) {
-            return IPV4;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (IPSetDescriptorType enumEntry : IPSetDescriptorType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

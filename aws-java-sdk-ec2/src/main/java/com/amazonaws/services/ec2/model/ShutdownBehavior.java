@@ -45,13 +45,15 @@ public enum ShutdownBehavior {
     public static ShutdownBehavior fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("stop".equals(value)) {
-            return Stop;
-        } else if ("terminate".equals(value)) {
-            return Terminate;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ShutdownBehavior enumEntry : ShutdownBehavior.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

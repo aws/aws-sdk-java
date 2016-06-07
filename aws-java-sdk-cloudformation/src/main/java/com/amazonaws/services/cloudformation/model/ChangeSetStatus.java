@@ -48,19 +48,15 @@ public enum ChangeSetStatus {
     public static ChangeSetStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CREATE_PENDING".equals(value)) {
-            return CREATE_PENDING;
-        } else if ("CREATE_IN_PROGRESS".equals(value)) {
-            return CREATE_IN_PROGRESS;
-        } else if ("CREATE_COMPLETE".equals(value)) {
-            return CREATE_COMPLETE;
-        } else if ("DELETE_COMPLETE".equals(value)) {
-            return DELETE_COMPLETE;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ChangeSetStatus enumEntry : ChangeSetStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

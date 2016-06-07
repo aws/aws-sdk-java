@@ -47,17 +47,16 @@ public enum ActivityTaskTimeoutType {
     public static ActivityTaskTimeoutType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("START_TO_CLOSE".equals(value)) {
-            return START_TO_CLOSE;
-        } else if ("SCHEDULE_TO_START".equals(value)) {
-            return SCHEDULE_TO_START;
-        } else if ("SCHEDULE_TO_CLOSE".equals(value)) {
-            return SCHEDULE_TO_CLOSE;
-        } else if ("HEARTBEAT".equals(value)) {
-            return HEARTBEAT;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ActivityTaskTimeoutType enumEntry : ActivityTaskTimeoutType
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

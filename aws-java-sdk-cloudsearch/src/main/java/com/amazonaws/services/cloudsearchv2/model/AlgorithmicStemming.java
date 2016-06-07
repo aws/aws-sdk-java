@@ -47,17 +47,15 @@ public enum AlgorithmicStemming {
     public static AlgorithmicStemming fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("none".equals(value)) {
-            return None;
-        } else if ("minimal".equals(value)) {
-            return Minimal;
-        } else if ("light".equals(value)) {
-            return Light;
-        } else if ("full".equals(value)) {
-            return Full;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AlgorithmicStemming enumEntry : AlgorithmicStemming.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

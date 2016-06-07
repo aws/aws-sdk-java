@@ -48,19 +48,15 @@ public enum MatchFieldType {
     public static MatchFieldType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("URI".equals(value)) {
-            return URI;
-        } else if ("QUERY_STRING".equals(value)) {
-            return QUERY_STRING;
-        } else if ("HEADER".equals(value)) {
-            return HEADER;
-        } else if ("METHOD".equals(value)) {
-            return METHOD;
-        } else if ("BODY".equals(value)) {
-            return BODY;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MatchFieldType enumEntry : MatchFieldType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

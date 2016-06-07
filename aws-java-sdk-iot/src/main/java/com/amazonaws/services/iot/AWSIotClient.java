@@ -89,15 +89,15 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                                             com.amazonaws.services.iot.model.UnauthorizedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("SqlParseException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.SqlParseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode(
                                             "ResourceAlreadyExistsException")
                                     .withModeledClass(
                                             com.amazonaws.services.iot.model.ResourceAlreadyExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("SqlParseException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iot.model.SqlParseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("LimitExceededException")
@@ -633,7 +633,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * Assuming a set of CSRs are located inside of the directory
      * my-csr-directory:
      * </p>
-     * &gt;
      * <p>
      * On Linux and OS X, the command is:
      * </p>
@@ -1610,8 +1609,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     /**
      * <p>
      * Returns a unique endpoint specific to the AWS account making the call.
-     * You specify the following URI when updating state information for your
-     * thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.
      * </p>
      * 
      * @param describeEndpointRequest
@@ -2138,6 +2135,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
      * @sample AWSIot.GetRegistrationCode
      */
     @Override
@@ -2470,7 +2469,67 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Lists the versions of the specified policy, and identifies the default
+     * Lists the principals associated with the specified policy.
+     * </p>
+     * 
+     * @param listPolicyPrincipalsRequest
+     *        The input for the ListPolicyPrincipals operation.
+     * @return Result of the ListPolicyPrincipals operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListPolicyPrincipals
+     */
+    @Override
+    public ListPolicyPrincipalsResult listPolicyPrincipals(
+            ListPolicyPrincipalsRequest listPolicyPrincipalsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listPolicyPrincipalsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPolicyPrincipalsRequest> request = null;
+        Response<ListPolicyPrincipalsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPolicyPrincipalsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listPolicyPrincipalsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPolicyPrincipalsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListPolicyPrincipalsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the versions of the specified policy and identifies the default
      * version.
      * </p>
      * 

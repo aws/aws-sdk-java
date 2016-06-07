@@ -45,13 +45,15 @@ public enum SNSActionEncoding {
     public static SNSActionEncoding fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("UTF-8".equals(value)) {
-            return UTF8;
-        } else if ("Base64".equals(value)) {
-            return Base64;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SNSActionEncoding enumEntry : SNSActionEncoding.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

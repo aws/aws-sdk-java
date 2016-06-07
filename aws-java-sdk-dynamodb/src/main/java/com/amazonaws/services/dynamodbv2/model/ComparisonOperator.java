@@ -56,35 +56,15 @@ public enum ComparisonOperator {
     public static ComparisonOperator fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("EQ".equals(value)) {
-            return EQ;
-        } else if ("NE".equals(value)) {
-            return NE;
-        } else if ("IN".equals(value)) {
-            return IN;
-        } else if ("LE".equals(value)) {
-            return LE;
-        } else if ("LT".equals(value)) {
-            return LT;
-        } else if ("GE".equals(value)) {
-            return GE;
-        } else if ("GT".equals(value)) {
-            return GT;
-        } else if ("BETWEEN".equals(value)) {
-            return BETWEEN;
-        } else if ("NOT_NULL".equals(value)) {
-            return NOT_NULL;
-        } else if ("NULL".equals(value)) {
-            return NULL;
-        } else if ("CONTAINS".equals(value)) {
-            return CONTAINS;
-        } else if ("NOT_CONTAINS".equals(value)) {
-            return NOT_CONTAINS;
-        } else if ("BEGINS_WITH".equals(value)) {
-            return BEGINS_WITH;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ComparisonOperator enumEntry : ComparisonOperator.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

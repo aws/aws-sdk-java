@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of an <a>DeleteRealtimeEndpoint</a> operation.
+ * Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.
  * </p>
  * <p>
  * The result contains the <code>MLModelId</code> and the endpoint information

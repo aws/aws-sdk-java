@@ -45,13 +45,15 @@ public enum InstanceLifecycleType {
     public static InstanceLifecycleType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("spot".equals(value)) {
-            return Spot;
-        } else if ("scheduled".equals(value)) {
-            return Scheduled;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InstanceLifecycleType enumEntry : InstanceLifecycleType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

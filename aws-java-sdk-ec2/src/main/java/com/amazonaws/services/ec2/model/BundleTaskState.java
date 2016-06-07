@@ -50,23 +50,15 @@ public enum BundleTaskState {
     public static BundleTaskState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("pending".equals(value)) {
-            return Pending;
-        } else if ("waiting-for-shutdown".equals(value)) {
-            return WaitingForShutdown;
-        } else if ("bundling".equals(value)) {
-            return Bundling;
-        } else if ("storing".equals(value)) {
-            return Storing;
-        } else if ("cancelling".equals(value)) {
-            return Cancelling;
-        } else if ("complete".equals(value)) {
-            return Complete;
-        } else if ("failed".equals(value)) {
-            return Failed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (BundleTaskState enumEntry : BundleTaskState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -62,25 +62,15 @@ public enum JobFlowExecutionState {
     public static JobFlowExecutionState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("STARTING".equals(value)) {
-            return STARTING;
-        } else if ("BOOTSTRAPPING".equals(value)) {
-            return BOOTSTRAPPING;
-        } else if ("RUNNING".equals(value)) {
-            return RUNNING;
-        } else if ("WAITING".equals(value)) {
-            return WAITING;
-        } else if ("SHUTTING_DOWN".equals(value)) {
-            return SHUTTING_DOWN;
-        } else if ("TERMINATED".equals(value)) {
-            return TERMINATED;
-        } else if ("COMPLETED".equals(value)) {
-            return COMPLETED;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (JobFlowExecutionState enumEntry : JobFlowExecutionState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

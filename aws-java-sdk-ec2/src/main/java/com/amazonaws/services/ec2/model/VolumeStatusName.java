@@ -45,13 +45,15 @@ public enum VolumeStatusName {
     public static VolumeStatusName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("io-enabled".equals(value)) {
-            return IoEnabled;
-        } else if ("io-performance".equals(value)) {
-            return IoPerformance;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (VolumeStatusName enumEntry : VolumeStatusName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

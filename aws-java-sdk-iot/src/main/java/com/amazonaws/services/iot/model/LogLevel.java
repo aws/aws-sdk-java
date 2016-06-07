@@ -48,19 +48,15 @@ public enum LogLevel {
     public static LogLevel fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("DEBUG".equals(value)) {
-            return DEBUG;
-        } else if ("INFO".equals(value)) {
-            return INFO;
-        } else if ("ERROR".equals(value)) {
-            return ERROR;
-        } else if ("WARN".equals(value)) {
-            return WARN;
-        } else if ("DISABLED".equals(value)) {
-            return DISABLED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LogLevel enumEntry : LogLevel.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

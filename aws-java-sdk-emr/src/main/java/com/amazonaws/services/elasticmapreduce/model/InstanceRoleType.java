@@ -46,15 +46,15 @@ public enum InstanceRoleType {
     public static InstanceRoleType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("MASTER".equals(value)) {
-            return MASTER;
-        } else if ("CORE".equals(value)) {
-            return CORE;
-        } else if ("TASK".equals(value)) {
-            return TASK;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InstanceRoleType enumEntry : InstanceRoleType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

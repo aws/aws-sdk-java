@@ -45,13 +45,15 @@ public enum WorkspaceDirectoryType {
     public static WorkspaceDirectoryType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SIMPLE_AD".equals(value)) {
-            return SIMPLE_AD;
-        } else if ("AD_CONNECTOR".equals(value)) {
-            return AD_CONNECTOR;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (WorkspaceDirectoryType enumEntry : WorkspaceDirectoryType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

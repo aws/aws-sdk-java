@@ -45,13 +45,15 @@ public enum VpcAttributeName {
     public static VpcAttributeName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("enableDnsSupport".equals(value)) {
-            return EnableDnsSupport;
-        } else if ("enableDnsHostnames".equals(value)) {
-            return EnableDnsHostnames;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (VpcAttributeName enumEntry : VpcAttributeName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

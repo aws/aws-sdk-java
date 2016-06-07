@@ -20,37 +20,37 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <a>CreateDataSourceFromS3</a> operation, and is an
- * acknowledgement that Amazon ML received the request.
+ * Represents the output of a <code>CreateDataSourceFromS3</code> operation, and
+ * is an acknowledgement that Amazon ML received the request.
  * </p>
  * <p>
- * The <a>CreateDataSourceFromS3</a> operation is asynchronous. You can poll for
- * updates by using the <a>GetBatchPrediction</a> operation and checking the
- * <code>Status</code> parameter.
+ * The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can
+ * poll for updates by using the <code>GetBatchPrediction</code> operation and
+ * checking the <code>Status</code> parameter.
  * </p>
  */
 public class CreateDataSourceFromS3Result implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A user-supplied ID that uniquely identifies the datasource. This value
-     * should be identical to the value of the <code>DataSourceID</code> in the
-     * request.
+     * A user-supplied ID that uniquely identifies the <code>DataSource</code>.
+     * This value should be identical to the value of the
+     * <code>DataSourceID</code> in the request.
      * </p>
      */
     private String dataSourceId;
 
     /**
      * <p>
-     * A user-supplied ID that uniquely identifies the datasource. This value
-     * should be identical to the value of the <code>DataSourceID</code> in the
-     * request.
+     * A user-supplied ID that uniquely identifies the <code>DataSource</code>.
+     * This value should be identical to the value of the
+     * <code>DataSourceID</code> in the request.
      * </p>
      * 
      * @param dataSourceId
-     *        A user-supplied ID that uniquely identifies the datasource. This
-     *        value should be identical to the value of the
-     *        <code>DataSourceID</code> in the request.
+     *        A user-supplied ID that uniquely identifies the
+     *        <code>DataSource</code>. This value should be identical to the
+     *        value of the <code>DataSourceID</code> in the request.
      */
 
     public void setDataSourceId(String dataSourceId) {
@@ -59,14 +59,14 @@ public class CreateDataSourceFromS3Result implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A user-supplied ID that uniquely identifies the datasource. This value
-     * should be identical to the value of the <code>DataSourceID</code> in the
-     * request.
+     * A user-supplied ID that uniquely identifies the <code>DataSource</code>.
+     * This value should be identical to the value of the
+     * <code>DataSourceID</code> in the request.
      * </p>
      * 
-     * @return A user-supplied ID that uniquely identifies the datasource. This
-     *         value should be identical to the value of the
-     *         <code>DataSourceID</code> in the request.
+     * @return A user-supplied ID that uniquely identifies the
+     *         <code>DataSource</code>. This value should be identical to the
+     *         value of the <code>DataSourceID</code> in the request.
      */
 
     public String getDataSourceId() {
@@ -75,15 +75,15 @@ public class CreateDataSourceFromS3Result implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A user-supplied ID that uniquely identifies the datasource. This value
-     * should be identical to the value of the <code>DataSourceID</code> in the
-     * request.
+     * A user-supplied ID that uniquely identifies the <code>DataSource</code>.
+     * This value should be identical to the value of the
+     * <code>DataSourceID</code> in the request.
      * </p>
      * 
      * @param dataSourceId
-     *        A user-supplied ID that uniquely identifies the datasource. This
-     *        value should be identical to the value of the
-     *        <code>DataSourceID</code> in the request.
+     *        A user-supplied ID that uniquely identifies the
+     *        <code>DataSource</code>. This value should be identical to the
+     *        value of the <code>DataSourceID</code> in the request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

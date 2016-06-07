@@ -20,10 +20,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of an <a>UpdateMLModel</a> operation.
+ * Represents the output of an <code>UpdateMLModel</code> operation.
  * </p>
  * <p>
- * You can see the updated content by using the <a>GetMLModel</a> operation.
+ * You can see the updated content by using the <code>GetMLModel</code>
+ * operation.
  * </p>
  */
 public class UpdateMLModelResult implements Serializable, Cloneable {

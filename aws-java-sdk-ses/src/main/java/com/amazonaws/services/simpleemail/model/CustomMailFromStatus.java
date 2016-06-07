@@ -47,17 +47,15 @@ public enum CustomMailFromStatus {
     public static CustomMailFromStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Pending".equals(value)) {
-            return Pending;
-        } else if ("Success".equals(value)) {
-            return Success;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else if ("TemporaryFailure".equals(value)) {
-            return TemporaryFailure;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (CustomMailFromStatus enumEntry : CustomMailFromStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

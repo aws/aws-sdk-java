@@ -47,17 +47,15 @@ public enum ReservedInstanceState {
     public static ReservedInstanceState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("payment-pending".equals(value)) {
-            return PaymentPending;
-        } else if ("active".equals(value)) {
-            return Active;
-        } else if ("payment-failed".equals(value)) {
-            return PaymentFailed;
-        } else if ("retired".equals(value)) {
-            return Retired;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ReservedInstanceState enumEntry : ReservedInstanceState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

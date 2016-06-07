@@ -52,27 +52,15 @@ public enum FleetStatus {
     public static FleetStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("NEW".equals(value)) {
-            return NEW;
-        } else if ("DOWNLOADING".equals(value)) {
-            return DOWNLOADING;
-        } else if ("VALIDATING".equals(value)) {
-            return VALIDATING;
-        } else if ("BUILDING".equals(value)) {
-            return BUILDING;
-        } else if ("ACTIVATING".equals(value)) {
-            return ACTIVATING;
-        } else if ("ACTIVE".equals(value)) {
-            return ACTIVE;
-        } else if ("DELETING".equals(value)) {
-            return DELETING;
-        } else if ("ERROR".equals(value)) {
-            return ERROR;
-        } else if ("TERMINATED".equals(value)) {
-            return TERMINATED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (FleetStatus enumEntry : FleetStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

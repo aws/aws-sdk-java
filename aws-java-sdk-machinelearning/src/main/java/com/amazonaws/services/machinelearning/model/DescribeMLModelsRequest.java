@@ -156,7 +156,8 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The number of pages of information to include in the result. The range of
-     * acceptable values is 1 through 100. The default value is 100.
+     * acceptable values is <code>1</code> through <code>100</code>. The default
+     * value is <code>100</code>.
      * </p>
      */
     private Integer limit;
@@ -1178,13 +1179,14 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The number of pages of information to include in the result. The range of
-     * acceptable values is 1 through 100. The default value is 100.
+     * acceptable values is <code>1</code> through <code>100</code>. The default
+     * value is <code>100</code>.
      * </p>
      * 
      * @param limit
      *        The number of pages of information to include in the result. The
-     *        range of acceptable values is 1 through 100. The default value is
-     *        100.
+     *        range of acceptable values is <code>1</code> through
+     *        <code>100</code>. The default value is <code>100</code>.
      */
 
     public void setLimit(Integer limit) {
@@ -1194,12 +1196,13 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The number of pages of information to include in the result. The range of
-     * acceptable values is 1 through 100. The default value is 100.
+     * acceptable values is <code>1</code> through <code>100</code>. The default
+     * value is <code>100</code>.
      * </p>
      * 
      * @return The number of pages of information to include in the result. The
-     *         range of acceptable values is 1 through 100. The default value is
-     *         100.
+     *         range of acceptable values is <code>1</code> through
+     *         <code>100</code>. The default value is <code>100</code>.
      */
 
     public Integer getLimit() {
@@ -1209,13 +1212,14 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The number of pages of information to include in the result. The range of
-     * acceptable values is 1 through 100. The default value is 100.
+     * acceptable values is <code>1</code> through <code>100</code>. The default
+     * value is <code>100</code>.
      * </p>
      * 
      * @param limit
      *        The number of pages of information to include in the result. The
-     *        range of acceptable values is 1 through 100. The default value is
-     *        100.
+     *        range of acceptable values is <code>1</code> through
+     *        <code>100</code>. The default value is <code>100</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

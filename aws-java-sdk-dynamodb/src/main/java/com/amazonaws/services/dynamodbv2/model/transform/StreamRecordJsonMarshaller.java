@@ -47,6 +47,12 @@ public class StreamRecordJsonMarshaller {
         try {
             jsonGenerator.writeStartObject();
 
+            if (streamRecord.getApproximateCreationDateTime() != null) {
+                jsonGenerator.writeFieldName("ApproximateCreationDateTime")
+                        .writeValue(
+                                streamRecord.getApproximateCreationDateTime());
+            }
+
             java.util.Map<String, AttributeValue> keysMap = streamRecord
                     .getKeys();
             if (keysMap != null) {

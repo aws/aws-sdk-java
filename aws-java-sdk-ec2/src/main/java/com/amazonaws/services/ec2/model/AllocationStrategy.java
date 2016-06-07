@@ -45,13 +45,15 @@ public enum AllocationStrategy {
     public static AllocationStrategy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("lowestPrice".equals(value)) {
-            return LowestPrice;
-        } else if ("diversified".equals(value)) {
-            return Diversified;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AllocationStrategy enumEntry : AllocationStrategy.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

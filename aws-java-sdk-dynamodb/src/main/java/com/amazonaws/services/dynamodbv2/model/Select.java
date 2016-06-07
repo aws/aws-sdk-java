@@ -47,17 +47,15 @@ public enum Select {
     public static Select fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ALL_ATTRIBUTES".equals(value)) {
-            return ALL_ATTRIBUTES;
-        } else if ("ALL_PROJECTED_ATTRIBUTES".equals(value)) {
-            return ALL_PROJECTED_ATTRIBUTES;
-        } else if ("SPECIFIC_ATTRIBUTES".equals(value)) {
-            return SPECIFIC_ATTRIBUTES;
-        } else if ("COUNT".equals(value)) {
-            return COUNT;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Select enumEntry : Select.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

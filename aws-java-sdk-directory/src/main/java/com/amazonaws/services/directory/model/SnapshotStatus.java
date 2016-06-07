@@ -46,15 +46,15 @@ public enum SnapshotStatus {
     public static SnapshotStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Creating".equals(value)) {
-            return Creating;
-        } else if ("Completed".equals(value)) {
-            return Completed;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SnapshotStatus enumEntry : SnapshotStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

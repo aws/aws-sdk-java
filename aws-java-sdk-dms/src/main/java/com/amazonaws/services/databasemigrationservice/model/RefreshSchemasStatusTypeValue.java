@@ -46,15 +46,16 @@ public enum RefreshSchemasStatusTypeValue {
     public static RefreshSchemasStatusTypeValue fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("successful".equals(value)) {
-            return Successful;
-        } else if ("failed".equals(value)) {
-            return Failed;
-        } else if ("refreshing".equals(value)) {
-            return Refreshing;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RefreshSchemasStatusTypeValue enumEntry : RefreshSchemasStatusTypeValue
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

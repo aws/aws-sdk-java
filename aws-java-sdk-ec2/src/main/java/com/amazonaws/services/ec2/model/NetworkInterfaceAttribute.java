@@ -47,17 +47,16 @@ public enum NetworkInterfaceAttribute {
     public static NetworkInterfaceAttribute fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("description".equals(value)) {
-            return Description;
-        } else if ("groupSet".equals(value)) {
-            return GroupSet;
-        } else if ("sourceDestCheck".equals(value)) {
-            return SourceDestCheck;
-        } else if ("attachment".equals(value)) {
-            return Attachment;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (NetworkInterfaceAttribute enumEntry : NetworkInterfaceAttribute
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

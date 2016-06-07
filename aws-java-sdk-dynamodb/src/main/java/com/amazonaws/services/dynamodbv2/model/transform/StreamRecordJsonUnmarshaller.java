@@ -53,6 +53,13 @@ public class StreamRecordJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ApproximateCreationDateTime",
+                        targetDepth)) {
+                    context.nextToken();
+                    streamRecord.setApproximateCreationDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
+                }
                 if (context.testExpression("Keys", targetDepth)) {
                     context.nextToken();
                     streamRecord

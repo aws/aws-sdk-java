@@ -49,21 +49,15 @@ public enum MetricName {
     public static MetricName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ActivatingGameSessions".equals(value)) {
-            return ActivatingGameSessions;
-        } else if ("ActiveGameSessions".equals(value)) {
-            return ActiveGameSessions;
-        } else if ("ActiveInstances".equals(value)) {
-            return ActiveInstances;
-        } else if ("AvailablePlayerSessions".equals(value)) {
-            return AvailablePlayerSessions;
-        } else if ("CurrentPlayerSessions".equals(value)) {
-            return CurrentPlayerSessions;
-        } else if ("IdleInstances".equals(value)) {
-            return IdleInstances;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MetricName enumEntry : MetricName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

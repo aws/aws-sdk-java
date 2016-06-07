@@ -47,17 +47,15 @@ public enum SourceType {
     public static SourceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("git".equals(value)) {
-            return Git;
-        } else if ("svn".equals(value)) {
-            return Svn;
-        } else if ("archive".equals(value)) {
-            return Archive;
-        } else if ("s3".equals(value)) {
-            return S3;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SourceType enumEntry : SourceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

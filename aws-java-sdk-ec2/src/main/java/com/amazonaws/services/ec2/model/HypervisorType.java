@@ -45,13 +45,15 @@ public enum HypervisorType {
     public static HypervisorType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ovm".equals(value)) {
-            return Ovm;
-        } else if ("xen".equals(value)) {
-            return Xen;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (HypervisorType enumEntry : HypervisorType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

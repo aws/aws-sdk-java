@@ -50,23 +50,15 @@ public enum TriggerEventType {
     public static TriggerEventType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("DeploymentStart".equals(value)) {
-            return DeploymentStart;
-        } else if ("DeploymentSuccess".equals(value)) {
-            return DeploymentSuccess;
-        } else if ("DeploymentFailure".equals(value)) {
-            return DeploymentFailure;
-        } else if ("DeploymentStop".equals(value)) {
-            return DeploymentStop;
-        } else if ("InstanceStart".equals(value)) {
-            return InstanceStart;
-        } else if ("InstanceSuccess".equals(value)) {
-            return InstanceSuccess;
-        } else if ("InstanceFailure".equals(value)) {
-            return InstanceFailure;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (TriggerEventType enumEntry : TriggerEventType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

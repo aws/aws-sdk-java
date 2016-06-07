@@ -47,17 +47,15 @@ public enum SourceType {
     public static SourceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("cache-cluster".equals(value)) {
-            return CacheCluster;
-        } else if ("cache-parameter-group".equals(value)) {
-            return CacheParameterGroup;
-        } else if ("cache-security-group".equals(value)) {
-            return CacheSecurityGroup;
-        } else if ("cache-subnet-group".equals(value)) {
-            return CacheSubnetGroup;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SourceType enumEntry : SourceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

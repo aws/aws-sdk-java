@@ -41,6 +41,9 @@ public class Certificate implements Serializable, Cloneable {
      * <p>
      * The status of the certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      */
     private String status;
     /**
@@ -136,9 +139,15 @@ public class Certificate implements Serializable, Cloneable {
      * <p>
      * The status of the certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      * 
      * @param status
-     *        The status of the certificate.
+     *        The status of the certificate.</p>
+     *        <p>
+     *        The status value REGISTER_INACTIVE is deprecated and should not be
+     *        used.
      * @see CertificateStatus
      */
 
@@ -150,8 +159,14 @@ public class Certificate implements Serializable, Cloneable {
      * <p>
      * The status of the certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      * 
-     * @return The status of the certificate.
+     * @return The status of the certificate.</p>
+     *         <p>
+     *         The status value REGISTER_INACTIVE is deprecated and should not
+     *         be used.
      * @see CertificateStatus
      */
 
@@ -163,9 +178,15 @@ public class Certificate implements Serializable, Cloneable {
      * <p>
      * The status of the certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      * 
      * @param status
-     *        The status of the certificate.
+     *        The status of the certificate.</p>
+     *        <p>
+     *        The status value REGISTER_INACTIVE is deprecated and should not be
+     *        used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus
@@ -180,9 +201,15 @@ public class Certificate implements Serializable, Cloneable {
      * <p>
      * The status of the certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      * 
      * @param status
-     *        The status of the certificate.
+     *        The status of the certificate.</p>
+     *        <p>
+     *        The status value REGISTER_INACTIVE is deprecated and should not be
+     *        used.
      * @see CertificateStatus
      */
 
@@ -194,9 +221,15 @@ public class Certificate implements Serializable, Cloneable {
      * <p>
      * The status of the certificate.
      * </p>
+     * <p>
+     * The status value REGISTER_INACTIVE is deprecated and should not be used.
+     * </p>
      * 
      * @param status
-     *        The status of the certificate.
+     *        The status of the certificate.</p>
+     *        <p>
+     *        The status value REGISTER_INACTIVE is deprecated and should not be
+     *        used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus

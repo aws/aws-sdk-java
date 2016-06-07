@@ -44,11 +44,16 @@ public enum WorkflowExecutionCancelRequestedCause {
     public static WorkflowExecutionCancelRequestedCause fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CHILD_POLICY_APPLIED".equals(value)) {
-            return CHILD_POLICY_APPLIED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (WorkflowExecutionCancelRequestedCause enumEntry : WorkflowExecutionCancelRequestedCause
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -26,14 +26,14 @@ import java.io.Serializable;
  * <li>
  * <p>
  * <code>Details</code> - Contains the following attributes:
- * DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS
- * DetailsAttributes.ALGORITHM - SGD
+ * <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code>
+ * <code>DetailsAttributes.ALGORITHM - SGD</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>PredictedLabel</code> - Present for either a BINARY or MULTICLASS
- * <code>MLModel</code> request.
+ * <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or
+ * <code>MULTICLASS</code> <code>MLModel</code> request.
  * </p>
  * </li>
  * <li>
@@ -44,8 +44,8 @@ import java.io.Serializable;
  * </li>
  * <li>
  * <p>
- * <code>PredictedValue</code> - Present for a REGRESSION <code>MLModel</code>
- * request.
+ * <code>PredictedValue</code> - Present for a <code>REGRESSION</code>
+ * <code>MLModel</code> request.
  * </p>
  * </li>
  * </ul>
@@ -53,11 +53,13 @@ import java.io.Serializable;
 public class Prediction implements Serializable, Cloneable {
 
     /**
-     * The prediction label for either a BINARY or MULTICLASS
-     * <code>MLModel</code>.
+     * <p>
+     * The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.
+     * </p>
      */
     private String predictedLabel;
-    /** The prediction value for REGRESSION <code>MLModel</code>. */
+    /** The prediction value for <code>REGRESSION</code> <code>MLModel</code>. */
     private Float predictedValue;
 
     private com.amazonaws.internal.SdkInternalMap<String, Float> predictedScores;
@@ -65,12 +67,14 @@ public class Prediction implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalMap<String, String> details;
 
     /**
-     * The prediction label for either a BINARY or MULTICLASS
-     * <code>MLModel</code>.
+     * <p>
+     * The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.
+     * </p>
      * 
      * @param predictedLabel
-     *        The prediction label for either a BINARY or MULTICLASS
-     *        <code>MLModel</code>.
+     *        The prediction label for either a <code>BINARY</code> or
+     *        <code>MULTICLASS</code> <code>MLModel</code>.
      */
 
     public void setPredictedLabel(String predictedLabel) {
@@ -78,11 +82,13 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * The prediction label for either a BINARY or MULTICLASS
-     * <code>MLModel</code>.
+     * <p>
+     * The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.
+     * </p>
      * 
-     * @return The prediction label for either a BINARY or MULTICLASS
-     *         <code>MLModel</code>.
+     * @return The prediction label for either a <code>BINARY</code> or
+     *         <code>MULTICLASS</code> <code>MLModel</code>.
      */
 
     public String getPredictedLabel() {
@@ -90,12 +96,14 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * The prediction label for either a BINARY or MULTICLASS
-     * <code>MLModel</code>.
+     * <p>
+     * The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.
+     * </p>
      * 
      * @param predictedLabel
-     *        The prediction label for either a BINARY or MULTICLASS
-     *        <code>MLModel</code>.
+     *        The prediction label for either a <code>BINARY</code> or
+     *        <code>MULTICLASS</code> <code>MLModel</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -106,10 +114,11 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * The prediction value for REGRESSION <code>MLModel</code>.
+     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
      * 
      * @param predictedValue
-     *        The prediction value for REGRESSION <code>MLModel</code>.
+     *        The prediction value for <code>REGRESSION</code>
+     *        <code>MLModel</code>.
      */
 
     public void setPredictedValue(Float predictedValue) {
@@ -117,9 +126,10 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * The prediction value for REGRESSION <code>MLModel</code>.
+     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
      * 
-     * @return The prediction value for REGRESSION <code>MLModel</code>.
+     * @return The prediction value for <code>REGRESSION</code>
+     *         <code>MLModel</code>.
      */
 
     public Float getPredictedValue() {
@@ -127,10 +137,11 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * The prediction value for REGRESSION <code>MLModel</code>.
+     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
      * 
      * @param predictedValue
-     *        The prediction value for REGRESSION <code>MLModel</code>.
+     *        The prediction value for <code>REGRESSION</code>
+     *        <code>MLModel</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -50,23 +50,15 @@ public enum HsmStatus {
     public static HsmStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PENDING".equals(value)) {
-            return PENDING;
-        } else if ("RUNNING".equals(value)) {
-            return RUNNING;
-        } else if ("UPDATING".equals(value)) {
-            return UPDATING;
-        } else if ("SUSPENDED".equals(value)) {
-            return SUSPENDED;
-        } else if ("TERMINATING".equals(value)) {
-            return TERMINATING;
-        } else if ("TERMINATED".equals(value)) {
-            return TERMINATED;
-        } else if ("DEGRADED".equals(value)) {
-            return DEGRADED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (HsmStatus enumEntry : HsmStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

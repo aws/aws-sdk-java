@@ -50,23 +50,15 @@ public enum Method {
     public static Method fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("GET".equals(value)) {
-            return GET;
-        } else if ("HEAD".equals(value)) {
-            return HEAD;
-        } else if ("POST".equals(value)) {
-            return POST;
-        } else if ("PUT".equals(value)) {
-            return PUT;
-        } else if ("PATCH".equals(value)) {
-            return PATCH;
-        } else if ("OPTIONS".equals(value)) {
-            return OPTIONS;
-        } else if ("DELETE".equals(value)) {
-            return DELETE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Method enumEntry : Method.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

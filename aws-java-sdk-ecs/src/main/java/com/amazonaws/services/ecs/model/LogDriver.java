@@ -49,21 +49,15 @@ public enum LogDriver {
     public static LogDriver fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("json-file".equals(value)) {
-            return JsonFile;
-        } else if ("syslog".equals(value)) {
-            return Syslog;
-        } else if ("journald".equals(value)) {
-            return Journald;
-        } else if ("gelf".equals(value)) {
-            return Gelf;
-        } else if ("fluentd".equals(value)) {
-            return Fluentd;
-        } else if ("awslogs".equals(value)) {
-            return Awslogs;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LogDriver enumEntry : LogDriver.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

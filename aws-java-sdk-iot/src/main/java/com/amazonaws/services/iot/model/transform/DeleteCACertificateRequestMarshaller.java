@@ -71,11 +71,11 @@ public class DeleteCACertificateRequestMarshaller
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
-        String uriResourcePath = "/cacertificate/{certificateId}";
+        String uriResourcePath = "/cacertificate/{caCertificateId}";
 
         uriResourcePath = uriResourcePath
                 .replace(
-                        "{certificateId}",
+                        "{caCertificateId}",
                         (deleteCACertificateRequest.getCertificateId() != null) ? SdkHttpUtils
                                 .urlEncode(StringUtils
                                         .fromString(deleteCACertificateRequest

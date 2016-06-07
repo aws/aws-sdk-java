@@ -49,21 +49,15 @@ public enum LifecycleErrorCode {
     public static LifecycleErrorCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Success".equals(value)) {
-            return Success;
-        } else if ("ScriptMissing".equals(value)) {
-            return ScriptMissing;
-        } else if ("ScriptNotExecutable".equals(value)) {
-            return ScriptNotExecutable;
-        } else if ("ScriptTimedOut".equals(value)) {
-            return ScriptTimedOut;
-        } else if ("ScriptFailed".equals(value)) {
-            return ScriptFailed;
-        } else if ("UnknownError".equals(value)) {
-            return UnknownError;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LifecycleErrorCode enumEntry : LifecycleErrorCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

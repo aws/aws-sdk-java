@@ -47,17 +47,15 @@ public enum QueryParser {
     public static QueryParser fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("simple".equals(value)) {
-            return Simple;
-        } else if ("structured".equals(value)) {
-            return Structured;
-        } else if ("lucene".equals(value)) {
-            return Lucene;
-        } else if ("dismax".equals(value)) {
-            return Dismax;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (QueryParser enumEntry : QueryParser.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

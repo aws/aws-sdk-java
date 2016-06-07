@@ -48,19 +48,15 @@ public enum ImageFailureCode {
     public static ImageFailureCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("InvalidImageDigest".equals(value)) {
-            return InvalidImageDigest;
-        } else if ("InvalidImageTag".equals(value)) {
-            return InvalidImageTag;
-        } else if ("ImageTagDoesNotMatchDigest".equals(value)) {
-            return ImageTagDoesNotMatchDigest;
-        } else if ("ImageNotFound".equals(value)) {
-            return ImageNotFound;
-        } else if ("MissingDigestAndTag".equals(value)) {
-            return MissingDigestAndTag;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ImageFailureCode enumEntry : ImageFailureCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

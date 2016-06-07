@@ -45,13 +45,15 @@ public enum ChangeType {
     public static ChangeType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("immediate".equals(value)) {
-            return Immediate;
-        } else if ("requires-reboot".equals(value)) {
-            return RequiresReboot;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ChangeType enumEntry : ChangeType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -47,17 +47,15 @@ public enum GameSessionStatus {
     public static GameSessionStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ACTIVE".equals(value)) {
-            return ACTIVE;
-        } else if ("ACTIVATING".equals(value)) {
-            return ACTIVATING;
-        } else if ("TERMINATED".equals(value)) {
-            return TERMINATED;
-        } else if ("TERMINATING".equals(value)) {
-            return TERMINATING;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (GameSessionStatus enumEntry : GameSessionStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

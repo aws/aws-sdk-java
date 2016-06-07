@@ -48,19 +48,15 @@ public enum EventCode {
     public static EventCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("instance-reboot".equals(value)) {
-            return InstanceReboot;
-        } else if ("system-reboot".equals(value)) {
-            return SystemReboot;
-        } else if ("system-maintenance".equals(value)) {
-            return SystemMaintenance;
-        } else if ("instance-retirement".equals(value)) {
-            return InstanceRetirement;
-        } else if ("instance-stop".equals(value)) {
-            return InstanceStop;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EventCode enumEntry : EventCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

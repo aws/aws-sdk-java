@@ -73,7 +73,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>ENABLING</code> - the stream is enabled.
+     * <code>ENABLED</code> - the stream is enabled.
      * </p>
      * </li>
      * <li>
@@ -103,13 +103,13 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - entire item from the table, as it appeared after
-     * they were modified.
+     * <code>NEW_IMAGE</code> - entire items from the table, as they appeared
+     * after they were modified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OLD_IMAGE</code> - entire item from the table, as it appeared
+     * <code>OLD_IMAGE</code> - entire items from the table, as they appeared
      * before they were modified.
      * </p>
      * </li>
@@ -396,7 +396,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>ENABLING</code> - the stream is enabled.
+     * <code>ENABLED</code> - the stream is enabled.
      * </p>
      * </li>
      * <li>
@@ -423,7 +423,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ENABLING</code> - the stream is enabled.
+     *        <code>ENABLED</code> - the stream is enabled.
      *        </p>
      *        </li>
      *        <li>
@@ -457,7 +457,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>ENABLING</code> - the stream is enabled.
+     * <code>ENABLED</code> - the stream is enabled.
      * </p>
      * </li>
      * <li>
@@ -483,7 +483,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ENABLING</code> - the stream is enabled.
+     *         <code>ENABLED</code> - the stream is enabled.
      *         </p>
      *         </li>
      *         <li>
@@ -517,7 +517,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>ENABLING</code> - the stream is enabled.
+     * <code>ENABLED</code> - the stream is enabled.
      * </p>
      * </li>
      * <li>
@@ -544,7 +544,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ENABLING</code> - the stream is enabled.
+     *        <code>ENABLED</code> - the stream is enabled.
      *        </p>
      *        </li>
      *        <li>
@@ -581,7 +581,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>ENABLING</code> - the stream is enabled.
+     * <code>ENABLED</code> - the stream is enabled.
      * </p>
      * </li>
      * <li>
@@ -608,7 +608,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ENABLING</code> - the stream is enabled.
+     *        <code>ENABLED</code> - the stream is enabled.
      *        </p>
      *        </li>
      *        <li>
@@ -642,7 +642,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>ENABLING</code> - the stream is enabled.
+     * <code>ENABLED</code> - the stream is enabled.
      * </p>
      * </li>
      * <li>
@@ -669,7 +669,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ENABLING</code> - the stream is enabled.
+     *        <code>ENABLED</code> - the stream is enabled.
      *        </p>
      *        </li>
      *        <li>
@@ -706,13 +706,13 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - entire item from the table, as it appeared after
-     * they were modified.
+     * <code>NEW_IMAGE</code> - entire items from the table, as they appeared
+     * after they were modified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OLD_IMAGE</code> - entire item from the table, as it appeared
+     * <code>OLD_IMAGE</code> - entire items from the table, as they appeared
      * before they were modified.
      * </p>
      * </li>
@@ -735,13 +735,13 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_IMAGE</code> - entire item from the table, as it
+     *        <code>NEW_IMAGE</code> - entire items from the table, as they
      *        appeared after they were modified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OLD_IMAGE</code> - entire item from the table, as it
+     *        <code>OLD_IMAGE</code> - entire items from the table, as they
      *        appeared before they were modified.
      *        </p>
      *        </li>
@@ -771,13 +771,13 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - entire item from the table, as it appeared after
-     * they were modified.
+     * <code>NEW_IMAGE</code> - entire items from the table, as they appeared
+     * after they were modified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OLD_IMAGE</code> - entire item from the table, as it appeared
+     * <code>OLD_IMAGE</code> - entire items from the table, as they appeared
      * before they were modified.
      * </p>
      * </li>
@@ -799,13 +799,13 @@ public class StreamDescription implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NEW_IMAGE</code> - entire item from the table, as it
+     *         <code>NEW_IMAGE</code> - entire items from the table, as they
      *         appeared after they were modified.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>OLD_IMAGE</code> - entire item from the table, as it
+     *         <code>OLD_IMAGE</code> - entire items from the table, as they
      *         appeared before they were modified.
      *         </p>
      *         </li>
@@ -835,13 +835,13 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - entire item from the table, as it appeared after
-     * they were modified.
+     * <code>NEW_IMAGE</code> - entire items from the table, as they appeared
+     * after they were modified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OLD_IMAGE</code> - entire item from the table, as it appeared
+     * <code>OLD_IMAGE</code> - entire items from the table, as they appeared
      * before they were modified.
      * </p>
      * </li>
@@ -864,13 +864,13 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_IMAGE</code> - entire item from the table, as it
+     *        <code>NEW_IMAGE</code> - entire items from the table, as they
      *        appeared after they were modified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OLD_IMAGE</code> - entire item from the table, as it
+     *        <code>OLD_IMAGE</code> - entire items from the table, as they
      *        appeared before they were modified.
      *        </p>
      *        </li>
@@ -903,13 +903,13 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - entire item from the table, as it appeared after
-     * they were modified.
+     * <code>NEW_IMAGE</code> - entire items from the table, as they appeared
+     * after they were modified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OLD_IMAGE</code> - entire item from the table, as it appeared
+     * <code>OLD_IMAGE</code> - entire items from the table, as they appeared
      * before they were modified.
      * </p>
      * </li>
@@ -932,13 +932,13 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_IMAGE</code> - entire item from the table, as it
+     *        <code>NEW_IMAGE</code> - entire items from the table, as they
      *        appeared after they were modified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OLD_IMAGE</code> - entire item from the table, as it
+     *        <code>OLD_IMAGE</code> - entire items from the table, as they
      *        appeared before they were modified.
      *        </p>
      *        </li>
@@ -968,13 +968,13 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - entire item from the table, as it appeared after
-     * they were modified.
+     * <code>NEW_IMAGE</code> - entire items from the table, as they appeared
+     * after they were modified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OLD_IMAGE</code> - entire item from the table, as it appeared
+     * <code>OLD_IMAGE</code> - entire items from the table, as they appeared
      * before they were modified.
      * </p>
      * </li>
@@ -997,13 +997,13 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_IMAGE</code> - entire item from the table, as it
+     *        <code>NEW_IMAGE</code> - entire items from the table, as they
      *        appeared after they were modified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OLD_IMAGE</code> - entire item from the table, as it
+     *        <code>OLD_IMAGE</code> - entire items from the table, as they
      *        appeared before they were modified.
      *        </p>
      *        </li>

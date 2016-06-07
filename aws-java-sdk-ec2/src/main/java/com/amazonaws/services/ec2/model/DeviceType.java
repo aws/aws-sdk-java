@@ -45,13 +45,15 @@ public enum DeviceType {
     public static DeviceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ebs".equals(value)) {
-            return Ebs;
-        } else if ("instance-store".equals(value)) {
-            return InstanceStore;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DeviceType enumEntry : DeviceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

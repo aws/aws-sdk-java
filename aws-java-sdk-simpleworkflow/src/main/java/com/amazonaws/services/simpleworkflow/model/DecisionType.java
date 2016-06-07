@@ -57,35 +57,15 @@ public enum DecisionType {
     public static DecisionType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ScheduleActivityTask".equals(value)) {
-            return ScheduleActivityTask;
-        } else if ("RequestCancelActivityTask".equals(value)) {
-            return RequestCancelActivityTask;
-        } else if ("CompleteWorkflowExecution".equals(value)) {
-            return CompleteWorkflowExecution;
-        } else if ("FailWorkflowExecution".equals(value)) {
-            return FailWorkflowExecution;
-        } else if ("CancelWorkflowExecution".equals(value)) {
-            return CancelWorkflowExecution;
-        } else if ("ContinueAsNewWorkflowExecution".equals(value)) {
-            return ContinueAsNewWorkflowExecution;
-        } else if ("RecordMarker".equals(value)) {
-            return RecordMarker;
-        } else if ("StartTimer".equals(value)) {
-            return StartTimer;
-        } else if ("CancelTimer".equals(value)) {
-            return CancelTimer;
-        } else if ("SignalExternalWorkflowExecution".equals(value)) {
-            return SignalExternalWorkflowExecution;
-        } else if ("RequestCancelExternalWorkflowExecution".equals(value)) {
-            return RequestCancelExternalWorkflowExecution;
-        } else if ("StartChildWorkflowExecution".equals(value)) {
-            return StartChildWorkflowExecution;
-        } else if ("ScheduleLambdaFunction".equals(value)) {
-            return ScheduleLambdaFunction;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DecisionType enumEntry : DecisionType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

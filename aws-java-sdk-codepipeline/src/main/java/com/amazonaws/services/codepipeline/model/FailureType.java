@@ -49,21 +49,15 @@ public enum FailureType {
     public static FailureType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("JobFailed".equals(value)) {
-            return JobFailed;
-        } else if ("ConfigurationError".equals(value)) {
-            return ConfigurationError;
-        } else if ("PermissionError".equals(value)) {
-            return PermissionError;
-        } else if ("RevisionOutOfSync".equals(value)) {
-            return RevisionOutOfSync;
-        } else if ("RevisionUnavailable".equals(value)) {
-            return RevisionUnavailable;
-        } else if ("SystemUnavailable".equals(value)) {
-            return SystemUnavailable;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (FailureType enumEntry : FailureType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -54,25 +54,15 @@ public enum PartitionInstanceType {
     public static PartitionInstanceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("search.m1.small".equals(value)) {
-            return SearchM1Small;
-        } else if ("search.m1.large".equals(value)) {
-            return SearchM1Large;
-        } else if ("search.m2.xlarge".equals(value)) {
-            return SearchM2Xlarge;
-        } else if ("search.m2.2xlarge".equals(value)) {
-            return SearchM22xlarge;
-        } else if ("search.m3.medium".equals(value)) {
-            return SearchM3Medium;
-        } else if ("search.m3.large".equals(value)) {
-            return SearchM3Large;
-        } else if ("search.m3.xlarge".equals(value)) {
-            return SearchM3Xlarge;
-        } else if ("search.m3.2xlarge".equals(value)) {
-            return SearchM32xlarge;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PartitionInstanceType enumEntry : PartitionInstanceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

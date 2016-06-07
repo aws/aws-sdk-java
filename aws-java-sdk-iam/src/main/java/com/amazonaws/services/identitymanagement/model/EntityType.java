@@ -48,19 +48,15 @@ public enum EntityType {
     public static EntityType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("User".equals(value)) {
-            return User;
-        } else if ("Role".equals(value)) {
-            return Role;
-        } else if ("Group".equals(value)) {
-            return Group;
-        } else if ("LocalManagedPolicy".equals(value)) {
-            return LocalManagedPolicy;
-        } else if ("AWSManagedPolicy".equals(value)) {
-            return AWSManagedPolicy;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EntityType enumEntry : EntityType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

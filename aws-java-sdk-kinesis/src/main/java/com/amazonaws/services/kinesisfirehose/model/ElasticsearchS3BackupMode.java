@@ -45,13 +45,16 @@ public enum ElasticsearchS3BackupMode {
     public static ElasticsearchS3BackupMode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("FailedDocumentsOnly".equals(value)) {
-            return FailedDocumentsOnly;
-        } else if ("AllDocuments".equals(value)) {
-            return AllDocuments;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ElasticsearchS3BackupMode enumEntry : ElasticsearchS3BackupMode
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

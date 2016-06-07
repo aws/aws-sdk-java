@@ -46,15 +46,15 @@ public enum WafActionType {
     public static WafActionType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("BLOCK".equals(value)) {
-            return BLOCK;
-        } else if ("ALLOW".equals(value)) {
-            return ALLOW;
-        } else if ("COUNT".equals(value)) {
-            return COUNT;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (WafActionType enumEntry : WafActionType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

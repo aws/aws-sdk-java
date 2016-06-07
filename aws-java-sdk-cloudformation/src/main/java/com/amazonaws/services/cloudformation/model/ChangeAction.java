@@ -46,15 +46,15 @@ public enum ChangeAction {
     public static ChangeAction fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Add".equals(value)) {
-            return Add;
-        } else if ("Modify".equals(value)) {
-            return Modify;
-        } else if ("Remove".equals(value)) {
-            return Remove;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ChangeAction enumEntry : ChangeAction.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

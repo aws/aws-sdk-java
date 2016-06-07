@@ -47,17 +47,15 @@ public enum ConversionTaskState {
     public static ConversionTaskState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("active".equals(value)) {
-            return Active;
-        } else if ("cancelling".equals(value)) {
-            return Cancelling;
-        } else if ("cancelled".equals(value)) {
-            return Cancelled;
-        } else if ("completed".equals(value)) {
-            return Completed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ConversionTaskState enumEntry : ConversionTaskState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

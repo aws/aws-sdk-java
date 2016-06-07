@@ -47,17 +47,15 @@ public enum StatusType {
     public static StatusType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("passed".equals(value)) {
-            return Passed;
-        } else if ("failed".equals(value)) {
-            return Failed;
-        } else if ("insufficient-data".equals(value)) {
-            return InsufficientData;
-        } else if ("initializing".equals(value)) {
-            return Initializing;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (StatusType enumEntry : StatusType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

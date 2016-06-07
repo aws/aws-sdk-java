@@ -50,23 +50,15 @@ public enum PolicySourceType {
     public static PolicySourceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("user".equals(value)) {
-            return User;
-        } else if ("group".equals(value)) {
-            return Group;
-        } else if ("role".equals(value)) {
-            return Role;
-        } else if ("aws-managed".equals(value)) {
-            return AwsManaged;
-        } else if ("user-managed".equals(value)) {
-            return UserManaged;
-        } else if ("resource".equals(value)) {
-            return Resource;
-        } else if ("none".equals(value)) {
-            return None;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PolicySourceType enumEntry : PolicySourceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

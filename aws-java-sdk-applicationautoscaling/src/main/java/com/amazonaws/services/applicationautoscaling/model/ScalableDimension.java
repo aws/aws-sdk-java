@@ -44,11 +44,15 @@ public enum ScalableDimension {
     public static ScalableDimension fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ecs:service:DesiredCount".equals(value)) {
-            return EcsServiceDesiredCount;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ScalableDimension enumEntry : ScalableDimension.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

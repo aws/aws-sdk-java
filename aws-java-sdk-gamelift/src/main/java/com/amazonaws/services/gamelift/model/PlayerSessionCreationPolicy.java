@@ -45,13 +45,16 @@ public enum PlayerSessionCreationPolicy {
     public static PlayerSessionCreationPolicy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ACCEPT_ALL".equals(value)) {
-            return ACCEPT_ALL;
-        } else if ("DENY_ALL".equals(value)) {
-            return DENY_ALL;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PlayerSessionCreationPolicy enumEntry : PlayerSessionCreationPolicy
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

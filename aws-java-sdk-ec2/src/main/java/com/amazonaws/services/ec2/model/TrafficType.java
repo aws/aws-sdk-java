@@ -46,15 +46,15 @@ public enum TrafficType {
     public static TrafficType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ACCEPT".equals(value)) {
-            return ACCEPT;
-        } else if ("REJECT".equals(value)) {
-            return REJECT;
-        } else if ("ALL".equals(value)) {
-            return ALL;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (TrafficType enumEntry : TrafficType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

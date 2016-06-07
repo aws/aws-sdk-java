@@ -46,15 +46,15 @@ public enum ExportEnvironment {
     public static ExportEnvironment fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("citrix".equals(value)) {
-            return Citrix;
-        } else if ("vmware".equals(value)) {
-            return Vmware;
-        } else if ("microsoft".equals(value)) {
-            return Microsoft;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ExportEnvironment enumEntry : ExportEnvironment.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

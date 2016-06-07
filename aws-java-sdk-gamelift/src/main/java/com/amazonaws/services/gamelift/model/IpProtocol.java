@@ -45,13 +45,15 @@ public enum IpProtocol {
     public static IpProtocol fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("TCP".equals(value)) {
-            return TCP;
-        } else if ("UDP".equals(value)) {
-            return UDP;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (IpProtocol enumEntry : IpProtocol.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

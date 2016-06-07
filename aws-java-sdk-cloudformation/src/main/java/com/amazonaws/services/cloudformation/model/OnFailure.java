@@ -46,15 +46,15 @@ public enum OnFailure {
     public static OnFailure fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("DO_NOTHING".equals(value)) {
-            return DO_NOTHING;
-        } else if ("ROLLBACK".equals(value)) {
-            return ROLLBACK;
-        } else if ("DELETE".equals(value)) {
-            return DELETE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (OnFailure enumEntry : OnFailure.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

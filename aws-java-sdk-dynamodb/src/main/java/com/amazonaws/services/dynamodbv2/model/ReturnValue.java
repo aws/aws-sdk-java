@@ -48,19 +48,15 @@ public enum ReturnValue {
     public static ReturnValue fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("NONE".equals(value)) {
-            return NONE;
-        } else if ("ALL_OLD".equals(value)) {
-            return ALL_OLD;
-        } else if ("UPDATED_OLD".equals(value)) {
-            return UPDATED_OLD;
-        } else if ("ALL_NEW".equals(value)) {
-            return ALL_NEW;
-        } else if ("UPDATED_NEW".equals(value)) {
-            return UPDATED_NEW;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ReturnValue enumEntry : ReturnValue.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

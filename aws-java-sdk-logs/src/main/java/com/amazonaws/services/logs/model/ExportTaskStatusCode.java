@@ -49,21 +49,15 @@ public enum ExportTaskStatusCode {
     public static ExportTaskStatusCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CANCELLED".equals(value)) {
-            return CANCELLED;
-        } else if ("COMPLETED".equals(value)) {
-            return COMPLETED;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else if ("PENDING".equals(value)) {
-            return PENDING;
-        } else if ("PENDING_CANCEL".equals(value)) {
-            return PENDING_CANCEL;
-        } else if ("RUNNING".equals(value)) {
-            return RUNNING;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ExportTaskStatusCode enumEntry : ExportTaskStatusCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -45,13 +45,15 @@ public enum TelemetryStatus {
     public static TelemetryStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("UP".equals(value)) {
-            return UP;
-        } else if ("DOWN".equals(value)) {
-            return DOWN;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (TelemetryStatus enumEntry : TelemetryStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

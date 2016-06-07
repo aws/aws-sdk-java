@@ -48,19 +48,15 @@ public enum TableRestoreStatusType {
     public static TableRestoreStatusType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PENDING".equals(value)) {
-            return PENDING;
-        } else if ("IN_PROGRESS".equals(value)) {
-            return IN_PROGRESS;
-        } else if ("SUCCEEDED".equals(value)) {
-            return SUCCEEDED;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else if ("CANCELED".equals(value)) {
-            return CANCELED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (TableRestoreStatusType enumEntry : TableRestoreStatusType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

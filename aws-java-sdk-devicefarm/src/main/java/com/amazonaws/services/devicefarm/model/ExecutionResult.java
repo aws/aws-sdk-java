@@ -50,23 +50,15 @@ public enum ExecutionResult {
     public static ExecutionResult fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PENDING".equals(value)) {
-            return PENDING;
-        } else if ("PASSED".equals(value)) {
-            return PASSED;
-        } else if ("WARNED".equals(value)) {
-            return WARNED;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else if ("SKIPPED".equals(value)) {
-            return SKIPPED;
-        } else if ("ERRORED".equals(value)) {
-            return ERRORED;
-        } else if ("STOPPED".equals(value)) {
-            return STOPPED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ExecutionResult enumEntry : ExecutionResult.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

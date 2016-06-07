@@ -45,13 +45,15 @@ public enum KeyType {
     public static KeyType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("HASH".equals(value)) {
-            return HASH;
-        } else if ("RANGE".equals(value)) {
-            return RANGE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (KeyType enumEntry : KeyType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -46,15 +46,15 @@ public enum RecorderStatus {
     public static RecorderStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Pending".equals(value)) {
-            return Pending;
-        } else if ("Success".equals(value)) {
-            return Success;
-        } else if ("Failure".equals(value)) {
-            return Failure;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RecorderStatus enumEntry : RecorderStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

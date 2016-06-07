@@ -46,15 +46,15 @@ public enum MLModelType {
     public static MLModelType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("REGRESSION".equals(value)) {
-            return REGRESSION;
-        } else if ("BINARY".equals(value)) {
-            return BINARY;
-        } else if ("MULTICLASS".equals(value)) {
-            return MULTICLASS;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MLModelType enumEntry : MLModelType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

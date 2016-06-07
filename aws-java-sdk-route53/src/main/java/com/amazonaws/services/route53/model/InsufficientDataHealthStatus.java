@@ -46,15 +46,16 @@ public enum InsufficientDataHealthStatus {
     public static InsufficientDataHealthStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Healthy".equals(value)) {
-            return Healthy;
-        } else if ("Unhealthy".equals(value)) {
-            return Unhealthy;
-        } else if ("LastKnownStatus".equals(value)) {
-            return LastKnownStatus;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InsufficientDataHealthStatus enumEntry : InsufficientDataHealthStatus
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -52,27 +52,15 @@ public enum ExecutionStatus {
     public static ExecutionStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PENDING".equals(value)) {
-            return PENDING;
-        } else if ("PENDING_CONCURRENCY".equals(value)) {
-            return PENDING_CONCURRENCY;
-        } else if ("PENDING_DEVICE".equals(value)) {
-            return PENDING_DEVICE;
-        } else if ("PROCESSING".equals(value)) {
-            return PROCESSING;
-        } else if ("SCHEDULING".equals(value)) {
-            return SCHEDULING;
-        } else if ("PREPARING".equals(value)) {
-            return PREPARING;
-        } else if ("RUNNING".equals(value)) {
-            return RUNNING;
-        } else if ("COMPLETED".equals(value)) {
-            return COMPLETED;
-        } else if ("STOPPING".equals(value)) {
-            return STOPPING;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ExecutionStatus enumEntry : ExecutionStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

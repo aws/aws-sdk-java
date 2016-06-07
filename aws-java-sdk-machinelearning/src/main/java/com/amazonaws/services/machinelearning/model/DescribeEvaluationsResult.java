@@ -20,15 +20,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the query results from a <a>DescribeEvaluations</a> operation. The
- * content is essentially a list of <code>Evaluation</code>.
+ * Represents the query results from a <code>DescribeEvaluations</code>
+ * operation. The content is essentially a list of <code>Evaluation</code>.
  * </p>
  */
 public class DescribeEvaluationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Evaluation</a> that meet the search criteria.
+     * A list of <code>Evaluation</code> that meet the search criteria.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Evaluation> results;
@@ -42,10 +42,10 @@ public class DescribeEvaluationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Evaluation</a> that meet the search criteria.
+     * A list of <code>Evaluation</code> that meet the search criteria.
      * </p>
      * 
-     * @return A list of <a>Evaluation</a> that meet the search criteria.
+     * @return A list of <code>Evaluation</code> that meet the search criteria.
      */
 
     public java.util.List<Evaluation> getResults() {
@@ -57,11 +57,11 @@ public class DescribeEvaluationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Evaluation</a> that meet the search criteria.
+     * A list of <code>Evaluation</code> that meet the search criteria.
      * </p>
      * 
      * @param results
-     *        A list of <a>Evaluation</a> that meet the search criteria.
+     *        A list of <code>Evaluation</code> that meet the search criteria.
      */
 
     public void setResults(java.util.Collection<Evaluation> results) {
@@ -76,7 +76,7 @@ public class DescribeEvaluationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Evaluation</a> that meet the search criteria.
+     * A list of <code>Evaluation</code> that meet the search criteria.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -86,7 +86,7 @@ public class DescribeEvaluationsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param results
-     *        A list of <a>Evaluation</a> that meet the search criteria.
+     *        A list of <code>Evaluation</code> that meet the search criteria.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -104,11 +104,11 @@ public class DescribeEvaluationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Evaluation</a> that meet the search criteria.
+     * A list of <code>Evaluation</code> that meet the search criteria.
      * </p>
      * 
      * @param results
-     *        A list of <a>Evaluation</a> that meet the search criteria.
+     *        A list of <code>Evaluation</code> that meet the search criteria.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

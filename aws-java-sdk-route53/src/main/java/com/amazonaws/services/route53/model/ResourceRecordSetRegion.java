@@ -54,31 +54,16 @@ public enum ResourceRecordSetRegion {
     public static ResourceRecordSetRegion fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("us-east-1".equals(value)) {
-            return UsEast1;
-        } else if ("us-west-1".equals(value)) {
-            return UsWest1;
-        } else if ("us-west-2".equals(value)) {
-            return UsWest2;
-        } else if ("eu-west-1".equals(value)) {
-            return EuWest1;
-        } else if ("eu-central-1".equals(value)) {
-            return EuCentral1;
-        } else if ("ap-southeast-1".equals(value)) {
-            return ApSoutheast1;
-        } else if ("ap-southeast-2".equals(value)) {
-            return ApSoutheast2;
-        } else if ("ap-northeast-1".equals(value)) {
-            return ApNortheast1;
-        } else if ("ap-northeast-2".equals(value)) {
-            return ApNortheast2;
-        } else if ("sa-east-1".equals(value)) {
-            return SaEast1;
-        } else if ("cn-north-1".equals(value)) {
-            return CnNorth1;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ResourceRecordSetRegion enumEntry : ResourceRecordSetRegion
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

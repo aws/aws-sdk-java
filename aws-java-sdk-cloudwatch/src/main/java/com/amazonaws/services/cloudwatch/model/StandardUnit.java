@@ -70,63 +70,15 @@ public enum StandardUnit {
     public static StandardUnit fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Seconds".equals(value)) {
-            return Seconds;
-        } else if ("Microseconds".equals(value)) {
-            return Microseconds;
-        } else if ("Milliseconds".equals(value)) {
-            return Milliseconds;
-        } else if ("Bytes".equals(value)) {
-            return Bytes;
-        } else if ("Kilobytes".equals(value)) {
-            return Kilobytes;
-        } else if ("Megabytes".equals(value)) {
-            return Megabytes;
-        } else if ("Gigabytes".equals(value)) {
-            return Gigabytes;
-        } else if ("Terabytes".equals(value)) {
-            return Terabytes;
-        } else if ("Bits".equals(value)) {
-            return Bits;
-        } else if ("Kilobits".equals(value)) {
-            return Kilobits;
-        } else if ("Megabits".equals(value)) {
-            return Megabits;
-        } else if ("Gigabits".equals(value)) {
-            return Gigabits;
-        } else if ("Terabits".equals(value)) {
-            return Terabits;
-        } else if ("Percent".equals(value)) {
-            return Percent;
-        } else if ("Count".equals(value)) {
-            return Count;
-        } else if ("Bytes/Second".equals(value)) {
-            return BytesSecond;
-        } else if ("Kilobytes/Second".equals(value)) {
-            return KilobytesSecond;
-        } else if ("Megabytes/Second".equals(value)) {
-            return MegabytesSecond;
-        } else if ("Gigabytes/Second".equals(value)) {
-            return GigabytesSecond;
-        } else if ("Terabytes/Second".equals(value)) {
-            return TerabytesSecond;
-        } else if ("Bits/Second".equals(value)) {
-            return BitsSecond;
-        } else if ("Kilobits/Second".equals(value)) {
-            return KilobitsSecond;
-        } else if ("Megabits/Second".equals(value)) {
-            return MegabitsSecond;
-        } else if ("Gigabits/Second".equals(value)) {
-            return GigabitsSecond;
-        } else if ("Terabits/Second".equals(value)) {
-            return TerabitsSecond;
-        } else if ("Count/Second".equals(value)) {
-            return CountSecond;
-        } else if ("None".equals(value)) {
-            return None;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (StandardUnit enumEntry : StandardUnit.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

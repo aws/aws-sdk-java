@@ -46,15 +46,16 @@ public enum UnauthorizedCacheControlHeaderStrategy {
     public static UnauthorizedCacheControlHeaderStrategy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("FAIL_WITH_403".equals(value)) {
-            return FAIL_WITH_403;
-        } else if ("SUCCEED_WITH_RESPONSE_HEADER".equals(value)) {
-            return SUCCEED_WITH_RESPONSE_HEADER;
-        } else if ("SUCCEED_WITHOUT_RESPONSE_HEADER".equals(value)) {
-            return SUCCEED_WITHOUT_RESPONSE_HEADER;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (UnauthorizedCacheControlHeaderStrategy enumEntry : UnauthorizedCacheControlHeaderStrategy
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

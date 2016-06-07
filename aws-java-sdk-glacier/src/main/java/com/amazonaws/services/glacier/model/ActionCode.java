@@ -45,13 +45,15 @@ public enum ActionCode {
     public static ActionCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ArchiveRetrieval".equals(value)) {
-            return ArchiveRetrieval;
-        } else if ("InventoryRetrieval".equals(value)) {
-            return InventoryRetrieval;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ActionCode enumEntry : ActionCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

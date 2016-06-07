@@ -60,43 +60,15 @@ public enum ResourceType {
     public static ResourceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("customer-gateway".equals(value)) {
-            return CustomerGateway;
-        } else if ("dhcp-options".equals(value)) {
-            return DhcpOptions;
-        } else if ("image".equals(value)) {
-            return Image;
-        } else if ("instance".equals(value)) {
-            return Instance;
-        } else if ("internet-gateway".equals(value)) {
-            return InternetGateway;
-        } else if ("network-acl".equals(value)) {
-            return NetworkAcl;
-        } else if ("network-interface".equals(value)) {
-            return NetworkInterface;
-        } else if ("reserved-instances".equals(value)) {
-            return ReservedInstances;
-        } else if ("route-table".equals(value)) {
-            return RouteTable;
-        } else if ("snapshot".equals(value)) {
-            return Snapshot;
-        } else if ("spot-instances-request".equals(value)) {
-            return SpotInstancesRequest;
-        } else if ("subnet".equals(value)) {
-            return Subnet;
-        } else if ("security-group".equals(value)) {
-            return SecurityGroup;
-        } else if ("volume".equals(value)) {
-            return Volume;
-        } else if ("vpc".equals(value)) {
-            return Vpc;
-        } else if ("vpn-connection".equals(value)) {
-            return VpnConnection;
-        } else if ("vpn-gateway".equals(value)) {
-            return VpnGateway;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ResourceType enumEntry : ResourceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -46,15 +46,16 @@ public enum ConfigurationDeploymentStatus {
     public static ConfigurationDeploymentStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("deployed".equals(value)) {
-            return Deployed;
-        } else if ("pending".equals(value)) {
-            return Pending;
-        } else if ("failed".equals(value)) {
-            return Failed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ConfigurationDeploymentStatus enumEntry : ConfigurationDeploymentStatus
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

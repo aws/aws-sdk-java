@@ -14,8 +14,16 @@
  */
 package com.amazonaws.http.apache.client.impl;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.conn.ConnectionKeepAliveStrategy;
+import org.apache.http.conn.HttpClientConnectionManager;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
+
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.IdleConnectionReaper;
+import com.amazonaws.http.apache.SdkProxyRoutePlanner;
 import com.amazonaws.http.apache.utils.ApacheUtils;
 import com.amazonaws.http.client.ConnectionManagerFactory;
 import com.amazonaws.http.client.HttpClientFactory;
@@ -23,13 +31,6 @@ import com.amazonaws.http.conn.ClientConnectionManagerFactory;
 import com.amazonaws.http.conn.SdkConnectionKeepAliveStrategy;
 import com.amazonaws.http.protocol.SdkHttpRequestExecutor;
 import com.amazonaws.http.settings.HttpClientSettings;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.HttpHost;
-import org.apache.http.conn.ConnectionKeepAliveStrategy;
-import org.apache.http.conn.HttpClientConnectionManager;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.HttpClients;
 
 /**
  * Factory class that builds the apache http client from the settings.
@@ -81,7 +82,9 @@ public class ApacheHttpClientFactory implements HttpClientFactory<ConnectionMana
 
             LOG.info("Configuring Proxy. Proxy Host: " + settings.getProxyHost() + " " +
                     "Proxy Port: " + settings.getProxyPort());
-            builder.setProxy(new HttpHost(settings.getProxyHost(), settings.getProxyPort()));
+
+            builder.setRoutePlanner(new SdkProxyRoutePlanner(
+                    settings.getProxyHost(), settings.getProxyPort(), settings.getNonProxyHosts()));
 
             if (isAuthenticatedProxy(settings)) {
                 builder.setDefaultCredentialsProvider(ApacheUtils

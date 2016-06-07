@@ -81,79 +81,15 @@ public enum AnalysisSchemeLanguage {
     public static AnalysisSchemeLanguage fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ar".equals(value)) {
-            return Ar;
-        } else if ("bg".equals(value)) {
-            return Bg;
-        } else if ("ca".equals(value)) {
-            return Ca;
-        } else if ("cs".equals(value)) {
-            return Cs;
-        } else if ("da".equals(value)) {
-            return Da;
-        } else if ("de".equals(value)) {
-            return De;
-        } else if ("el".equals(value)) {
-            return El;
-        } else if ("en".equals(value)) {
-            return En;
-        } else if ("es".equals(value)) {
-            return Es;
-        } else if ("eu".equals(value)) {
-            return Eu;
-        } else if ("fa".equals(value)) {
-            return Fa;
-        } else if ("fi".equals(value)) {
-            return Fi;
-        } else if ("fr".equals(value)) {
-            return Fr;
-        } else if ("ga".equals(value)) {
-            return Ga;
-        } else if ("gl".equals(value)) {
-            return Gl;
-        } else if ("he".equals(value)) {
-            return He;
-        } else if ("hi".equals(value)) {
-            return Hi;
-        } else if ("hu".equals(value)) {
-            return Hu;
-        } else if ("hy".equals(value)) {
-            return Hy;
-        } else if ("id".equals(value)) {
-            return Id;
-        } else if ("it".equals(value)) {
-            return It;
-        } else if ("ja".equals(value)) {
-            return Ja;
-        } else if ("ko".equals(value)) {
-            return Ko;
-        } else if ("lv".equals(value)) {
-            return Lv;
-        } else if ("mul".equals(value)) {
-            return Mul;
-        } else if ("nl".equals(value)) {
-            return Nl;
-        } else if ("no".equals(value)) {
-            return No;
-        } else if ("pt".equals(value)) {
-            return Pt;
-        } else if ("ro".equals(value)) {
-            return Ro;
-        } else if ("ru".equals(value)) {
-            return Ru;
-        } else if ("sv".equals(value)) {
-            return Sv;
-        } else if ("th".equals(value)) {
-            return Th;
-        } else if ("tr".equals(value)) {
-            return Tr;
-        } else if ("zh-Hans".equals(value)) {
-            return ZhHans;
-        } else if ("zh-Hant".equals(value)) {
-            return ZhHant;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AnalysisSchemeLanguage enumEntry : AnalysisSchemeLanguage.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -55,33 +55,15 @@ public enum ContextKeyTypeEnum {
     public static ContextKeyTypeEnum fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("string".equals(value)) {
-            return String;
-        } else if ("stringList".equals(value)) {
-            return StringList;
-        } else if ("numeric".equals(value)) {
-            return Numeric;
-        } else if ("numericList".equals(value)) {
-            return NumericList;
-        } else if ("boolean".equals(value)) {
-            return Boolean;
-        } else if ("booleanList".equals(value)) {
-            return BooleanList;
-        } else if ("ip".equals(value)) {
-            return Ip;
-        } else if ("ipList".equals(value)) {
-            return IpList;
-        } else if ("binary".equals(value)) {
-            return Binary;
-        } else if ("binaryList".equals(value)) {
-            return BinaryList;
-        } else if ("date".equals(value)) {
-            return Date;
-        } else if ("dateList".equals(value)) {
-            return DateList;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ContextKeyTypeEnum enumEntry : ContextKeyTypeEnum.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

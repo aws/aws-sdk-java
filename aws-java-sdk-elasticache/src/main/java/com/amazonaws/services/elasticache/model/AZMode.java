@@ -45,13 +45,15 @@ public enum AZMode {
     public static AZMode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("single-az".equals(value)) {
-            return SingleAz;
-        } else if ("cross-az".equals(value)) {
-            return CrossAz;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AZMode enumEntry : AZMode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -293,18 +293,18 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient
     }
 
     private void init() {
-        exceptionUnmarshallers.add(new ExpiredTokenExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidIdentityTokenExceptionUnmarshaller());
+                .add(new InvalidAuthorizationMessageExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ExpiredTokenExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new PackedPolicyTooLargeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new RegionDisabledExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new IDPCommunicationErrorExceptionUnmarshaller());
-        exceptionUnmarshallers
                 .add(new MalformedPolicyDocumentExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidAuthorizationMessageExceptionUnmarshaller());
+                .add(new IDPCommunicationErrorExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidIdentityTokenExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IDPRejectedClaimExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 

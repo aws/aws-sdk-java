@@ -45,13 +45,15 @@ public enum EnvironmentInfoType {
     public static EnvironmentInfoType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("tail".equals(value)) {
-            return Tail;
-        } else if ("bundle".equals(value)) {
-            return Bundle;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EnvironmentInfoType enumEntry : EnvironmentInfoType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

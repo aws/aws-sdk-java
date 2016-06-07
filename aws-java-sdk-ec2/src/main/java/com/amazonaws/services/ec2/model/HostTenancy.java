@@ -45,13 +45,15 @@ public enum HostTenancy {
     public static HostTenancy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("dedicated".equals(value)) {
-            return Dedicated;
-        } else if ("host".equals(value)) {
-            return Host;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (HostTenancy enumEntry : HostTenancy.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

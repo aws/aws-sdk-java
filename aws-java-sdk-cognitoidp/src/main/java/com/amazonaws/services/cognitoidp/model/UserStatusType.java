@@ -48,19 +48,15 @@ public enum UserStatusType {
     public static UserStatusType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("UNCONFIRMED".equals(value)) {
-            return UNCONFIRMED;
-        } else if ("CONFIRMED".equals(value)) {
-            return CONFIRMED;
-        } else if ("ARCHIVED".equals(value)) {
-            return ARCHIVED;
-        } else if ("COMPROMISED".equals(value)) {
-            return COMPROMISED;
-        } else if ("UNKNOWN".equals(value)) {
-            return UNKNOWN;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (UserStatusType enumEntry : UserStatusType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

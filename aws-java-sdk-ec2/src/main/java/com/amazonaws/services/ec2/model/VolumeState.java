@@ -49,21 +49,15 @@ public enum VolumeState {
     public static VolumeState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("creating".equals(value)) {
-            return Creating;
-        } else if ("available".equals(value)) {
-            return Available;
-        } else if ("in-use".equals(value)) {
-            return InUse;
-        } else if ("deleting".equals(value)) {
-            return Deleting;
-        } else if ("deleted".equals(value)) {
-            return Deleted;
-        } else if ("error".equals(value)) {
-            return Error;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (VolumeState enumEntry : VolumeState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

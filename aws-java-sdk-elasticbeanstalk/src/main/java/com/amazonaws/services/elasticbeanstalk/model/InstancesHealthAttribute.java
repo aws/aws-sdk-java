@@ -54,31 +54,16 @@ public enum InstancesHealthAttribute {
     public static InstancesHealthAttribute fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("HealthStatus".equals(value)) {
-            return HealthStatus;
-        } else if ("Color".equals(value)) {
-            return Color;
-        } else if ("Causes".equals(value)) {
-            return Causes;
-        } else if ("ApplicationMetrics".equals(value)) {
-            return ApplicationMetrics;
-        } else if ("RefreshedAt".equals(value)) {
-            return RefreshedAt;
-        } else if ("LaunchedAt".equals(value)) {
-            return LaunchedAt;
-        } else if ("System".equals(value)) {
-            return System;
-        } else if ("Deployment".equals(value)) {
-            return Deployment;
-        } else if ("AvailabilityZone".equals(value)) {
-            return AvailabilityZone;
-        } else if ("InstanceType".equals(value)) {
-            return InstanceType;
-        } else if ("All".equals(value)) {
-            return All;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InstancesHealthAttribute enumEntry : InstancesHealthAttribute
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

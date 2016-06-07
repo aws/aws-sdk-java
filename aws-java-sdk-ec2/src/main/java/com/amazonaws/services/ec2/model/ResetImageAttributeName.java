@@ -44,11 +44,16 @@ public enum ResetImageAttributeName {
     public static ResetImageAttributeName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("launchPermission".equals(value)) {
-            return LaunchPermission;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ResetImageAttributeName enumEntry : ResetImageAttributeName
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

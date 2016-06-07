@@ -37,6 +37,10 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The updated status of the CA certificate.
      * </p>
+     * <p>
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
+     * not be used.
+     * </p>
      */
     private String newStatus;
 
@@ -85,9 +89,16 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The updated status of the CA certificate.
      * </p>
+     * <p>
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
+     * not be used.
+     * </p>
      * 
      * @param newStatus
-     *        The updated status of the CA certificate.
+     *        The updated status of the CA certificate.</p>
+     *        <p>
+     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
+     *        should not be used.
      * @see CACertificateStatus
      */
 
@@ -99,8 +110,15 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The updated status of the CA certificate.
      * </p>
+     * <p>
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
+     * not be used.
+     * </p>
      * 
-     * @return The updated status of the CA certificate.
+     * @return The updated status of the CA certificate.</p>
+     *         <p>
+     *         <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
+     *         should not be used.
      * @see CACertificateStatus
      */
 
@@ -112,9 +130,16 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The updated status of the CA certificate.
      * </p>
+     * <p>
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
+     * not be used.
+     * </p>
      * 
      * @param newStatus
-     *        The updated status of the CA certificate.
+     *        The updated status of the CA certificate.</p>
+     *        <p>
+     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
+     *        should not be used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CACertificateStatus
@@ -129,9 +154,16 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The updated status of the CA certificate.
      * </p>
+     * <p>
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
+     * not be used.
+     * </p>
      * 
      * @param newStatus
-     *        The updated status of the CA certificate.
+     *        The updated status of the CA certificate.</p>
+     *        <p>
+     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
+     *        should not be used.
      * @see CACertificateStatus
      */
 
@@ -143,9 +175,16 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The updated status of the CA certificate.
      * </p>
+     * <p>
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should
+     * not be used.
+     * </p>
      * 
      * @param newStatus
-     *        The updated status of the CA certificate.
+     *        The updated status of the CA certificate.</p>
+     *        <p>
+     *        <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
+     *        should not be used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CACertificateStatus

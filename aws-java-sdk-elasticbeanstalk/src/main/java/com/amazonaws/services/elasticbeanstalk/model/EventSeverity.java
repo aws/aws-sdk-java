@@ -49,21 +49,15 @@ public enum EventSeverity {
     public static EventSeverity fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("TRACE".equals(value)) {
-            return TRACE;
-        } else if ("DEBUG".equals(value)) {
-            return DEBUG;
-        } else if ("INFO".equals(value)) {
-            return INFO;
-        } else if ("WARN".equals(value)) {
-            return WARN;
-        } else if ("ERROR".equals(value)) {
-            return ERROR;
-        } else if ("FATAL".equals(value)) {
-            return FATAL;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EventSeverity enumEntry : EventSeverity.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

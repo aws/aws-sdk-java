@@ -46,15 +46,15 @@ public enum EventType {
     public static EventType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("instanceChange".equals(value)) {
-            return InstanceChange;
-        } else if ("fleetRequestChange".equals(value)) {
-            return FleetRequestChange;
-        } else if ("error".equals(value)) {
-            return Error;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EventType enumEntry : EventType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

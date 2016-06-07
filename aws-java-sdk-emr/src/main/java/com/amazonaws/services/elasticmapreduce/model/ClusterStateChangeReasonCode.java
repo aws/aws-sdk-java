@@ -50,23 +50,16 @@ public enum ClusterStateChangeReasonCode {
     public static ClusterStateChangeReasonCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("INTERNAL_ERROR".equals(value)) {
-            return INTERNAL_ERROR;
-        } else if ("VALIDATION_ERROR".equals(value)) {
-            return VALIDATION_ERROR;
-        } else if ("INSTANCE_FAILURE".equals(value)) {
-            return INSTANCE_FAILURE;
-        } else if ("BOOTSTRAP_FAILURE".equals(value)) {
-            return BOOTSTRAP_FAILURE;
-        } else if ("USER_REQUEST".equals(value)) {
-            return USER_REQUEST;
-        } else if ("STEP_FAILURE".equals(value)) {
-            return STEP_FAILURE;
-        } else if ("ALL_STEPS_COMPLETED".equals(value)) {
-            return ALL_STEPS_COMPLETED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ClusterStateChangeReasonCode enumEntry : ClusterStateChangeReasonCode
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

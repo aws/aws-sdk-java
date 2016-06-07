@@ -71,11 +71,11 @@ public class UpdateCACertificateRequestMarshaller
 
         request.setHttpMethod(HttpMethodName.PUT);
 
-        String uriResourcePath = "/cacertificate/{certificateId}";
+        String uriResourcePath = "/cacertificate/{caCertificateId}";
 
         uriResourcePath = uriResourcePath
                 .replace(
-                        "{certificateId}",
+                        "{caCertificateId}",
                         (updateCACertificateRequest.getCertificateId() != null) ? SdkHttpUtils
                                 .urlEncode(StringUtils
                                         .fromString(updateCACertificateRequest

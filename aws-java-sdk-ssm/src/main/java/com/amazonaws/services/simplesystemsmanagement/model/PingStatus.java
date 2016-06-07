@@ -46,15 +46,15 @@ public enum PingStatus {
     public static PingStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Online".equals(value)) {
-            return Online;
-        } else if ("ConnectionLost".equals(value)) {
-            return ConnectionLost;
-        } else if ("Inactive".equals(value)) {
-            return Inactive;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PingStatus enumEntry : PingStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

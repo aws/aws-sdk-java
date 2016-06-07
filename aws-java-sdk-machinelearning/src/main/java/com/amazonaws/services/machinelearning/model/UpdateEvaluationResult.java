@@ -20,10 +20,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of an <a>UpdateEvaluation</a> operation.
+ * Represents the output of an <code>UpdateEvaluation</code> operation.
  * </p>
  * <p>
- * You can see the updated content by using the <a>GetEvaluation</a> operation.
+ * You can see the updated content by using the <code>GetEvaluation</code>
+ * operation.
  * </p>
  */
 public class UpdateEvaluationResult implements Serializable, Cloneable {

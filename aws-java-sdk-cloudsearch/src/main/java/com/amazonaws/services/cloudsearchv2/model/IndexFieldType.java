@@ -60,31 +60,15 @@ public enum IndexFieldType {
     public static IndexFieldType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("int".equals(value)) {
-            return Int;
-        } else if ("double".equals(value)) {
-            return Double;
-        } else if ("literal".equals(value)) {
-            return Literal;
-        } else if ("text".equals(value)) {
-            return Text;
-        } else if ("date".equals(value)) {
-            return Date;
-        } else if ("latlon".equals(value)) {
-            return Latlon;
-        } else if ("int-array".equals(value)) {
-            return IntArray;
-        } else if ("double-array".equals(value)) {
-            return DoubleArray;
-        } else if ("literal-array".equals(value)) {
-            return LiteralArray;
-        } else if ("text-array".equals(value)) {
-            return TextArray;
-        } else if ("date-array".equals(value)) {
-            return DateArray;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (IndexFieldType enumEntry : IndexFieldType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

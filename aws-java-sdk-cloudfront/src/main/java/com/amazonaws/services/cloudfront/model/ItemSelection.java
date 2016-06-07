@@ -46,15 +46,15 @@ public enum ItemSelection {
     public static ItemSelection fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("none".equals(value)) {
-            return None;
-        } else if ("whitelist".equals(value)) {
-            return Whitelist;
-        } else if ("all".equals(value)) {
-            return All;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ItemSelection enumEntry : ItemSelection.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

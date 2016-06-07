@@ -73,6 +73,11 @@ public class DynamoDBActionJsonUnmarshaller implements
                     dynamoDBAction.setHashKeyValue(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("hashKeyType", targetDepth)) {
+                    context.nextToken();
+                    dynamoDBAction.setHashKeyType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("rangeKeyField", targetDepth)) {
                     context.nextToken();
                     dynamoDBAction.setRangeKeyField(context.getUnmarshaller(
@@ -81,6 +86,11 @@ public class DynamoDBActionJsonUnmarshaller implements
                 if (context.testExpression("rangeKeyValue", targetDepth)) {
                     context.nextToken();
                     dynamoDBAction.setRangeKeyValue(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("rangeKeyType", targetDepth)) {
+                    context.nextToken();
+                    dynamoDBAction.setRangeKeyType(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
                 if (context.testExpression("payloadField", targetDepth)) {

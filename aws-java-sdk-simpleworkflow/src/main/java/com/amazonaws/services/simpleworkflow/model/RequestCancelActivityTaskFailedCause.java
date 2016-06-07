@@ -45,13 +45,16 @@ public enum RequestCancelActivityTaskFailedCause {
     public static RequestCancelActivityTaskFailedCause fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ACTIVITY_ID_UNKNOWN".equals(value)) {
-            return ACTIVITY_ID_UNKNOWN;
-        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
-            return OPERATION_NOT_PERMITTED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RequestCancelActivityTaskFailedCause enumEntry : RequestCancelActivityTaskFailedCause
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

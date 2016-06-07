@@ -48,19 +48,15 @@ public enum SpotInstanceState {
     public static SpotInstanceState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("open".equals(value)) {
-            return Open;
-        } else if ("active".equals(value)) {
-            return Active;
-        } else if ("closed".equals(value)) {
-            return Closed;
-        } else if ("cancelled".equals(value)) {
-            return Cancelled;
-        } else if ("failed".equals(value)) {
-            return Failed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SpotInstanceState enumEntry : SpotInstanceState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

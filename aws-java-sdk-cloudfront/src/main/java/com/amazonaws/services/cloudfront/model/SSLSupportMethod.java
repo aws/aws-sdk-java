@@ -45,13 +45,15 @@ public enum SSLSupportMethod {
     public static SSLSupportMethod fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("sni-only".equals(value)) {
-            return SniOnly;
-        } else if ("vip".equals(value)) {
-            return Vip;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SSLSupportMethod enumEntry : SSLSupportMethod.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -53,29 +53,15 @@ public enum MLModelFilterVariable {
     public static MLModelFilterVariable fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CreatedAt".equals(value)) {
-            return CreatedAt;
-        } else if ("LastUpdatedAt".equals(value)) {
-            return LastUpdatedAt;
-        } else if ("Status".equals(value)) {
-            return Status;
-        } else if ("Name".equals(value)) {
-            return Name;
-        } else if ("IAMUser".equals(value)) {
-            return IAMUser;
-        } else if ("TrainingDataSourceId".equals(value)) {
-            return TrainingDataSourceId;
-        } else if ("RealtimeEndpointStatus".equals(value)) {
-            return RealtimeEndpointStatus;
-        } else if ("MLModelType".equals(value)) {
-            return MLModelType;
-        } else if ("Algorithm".equals(value)) {
-            return Algorithm;
-        } else if ("TrainingDataURI".equals(value)) {
-            return TrainingDataURI;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MLModelFilterVariable enumEntry : MLModelFilterVariable.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

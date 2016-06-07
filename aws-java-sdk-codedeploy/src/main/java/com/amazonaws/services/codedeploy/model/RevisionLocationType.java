@@ -45,13 +45,15 @@ public enum RevisionLocationType {
     public static RevisionLocationType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("S3".equals(value)) {
-            return S3;
-        } else if ("GitHub".equals(value)) {
-            return GitHub;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RevisionLocationType enumEntry : RevisionLocationType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -49,21 +49,15 @@ public enum CloseStatus {
     public static CloseStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("COMPLETED".equals(value)) {
-            return COMPLETED;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else if ("CANCELED".equals(value)) {
-            return CANCELED;
-        } else if ("TERMINATED".equals(value)) {
-            return TERMINATED;
-        } else if ("CONTINUED_AS_NEW".equals(value)) {
-            return CONTINUED_AS_NEW;
-        } else if ("TIMED_OUT".equals(value)) {
-            return TIMED_OUT;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (CloseStatus enumEntry : CloseStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

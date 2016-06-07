@@ -45,13 +45,15 @@ public enum PlatformType {
     public static PlatformType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Windows".equals(value)) {
-            return Windows;
-        } else if ("Linux".equals(value)) {
-            return Linux;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PlatformType enumEntry : PlatformType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

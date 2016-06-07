@@ -47,17 +47,15 @@ public enum UploadStatus {
     public static UploadStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("INITIALIZED".equals(value)) {
-            return INITIALIZED;
-        } else if ("PROCESSING".equals(value)) {
-            return PROCESSING;
-        } else if ("SUCCEEDED".equals(value)) {
-            return SUCCEEDED;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (UploadStatus enumEntry : UploadStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

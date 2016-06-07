@@ -47,17 +47,15 @@ public enum NetworkInterfaceStatus {
     public static NetworkInterfaceStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("available".equals(value)) {
-            return Available;
-        } else if ("attaching".equals(value)) {
-            return Attaching;
-        } else if ("in-use".equals(value)) {
-            return InUse;
-        } else if ("detaching".equals(value)) {
-            return Detaching;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (NetworkInterfaceStatus enumEntry : NetworkInterfaceStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

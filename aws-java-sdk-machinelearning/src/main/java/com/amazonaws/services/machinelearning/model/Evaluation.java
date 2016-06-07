@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of <a>GetEvaluation</a> operation.
+ * Represents the output of <code>GetEvaluation</code> operation.
  * </p>
  * <p>
  * The content consists of the detailed metadata and data file information and
@@ -105,7 +105,8 @@ public class Evaluation implements Serializable, Cloneable {
      * <p>
      * Measurements of how well the <code>MLModel</code> performed, using
      * observations referenced by the <code>DataSource</code>. One of the
-     * following metrics is returned, based on the type of the MLModel:
+     * following metrics is returned, based on the type of the
+     * <code>MLModel</code>:
      * </p>
      * <ul>
      * <li>
@@ -711,7 +712,8 @@ public class Evaluation implements Serializable, Cloneable {
      * <p>
      * Measurements of how well the <code>MLModel</code> performed, using
      * observations referenced by the <code>DataSource</code>. One of the
-     * following metrics is returned, based on the type of the MLModel:
+     * following metrics is returned, based on the type of the
+     * <code>MLModel</code>:
      * </p>
      * <ul>
      * <li>
@@ -743,8 +745,8 @@ public class Evaluation implements Serializable, Cloneable {
      * @param performanceMetrics
      *        Measurements of how well the <code>MLModel</code> performed, using
      *        observations referenced by the <code>DataSource</code>. One of the
-     *        following metrics is returned, based on the type of the MLModel:
-     *        </p>
+     *        following metrics is returned, based on the type of the
+     *        <code>MLModel</code>: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -782,7 +784,8 @@ public class Evaluation implements Serializable, Cloneable {
      * <p>
      * Measurements of how well the <code>MLModel</code> performed, using
      * observations referenced by the <code>DataSource</code>. One of the
-     * following metrics is returned, based on the type of the MLModel:
+     * following metrics is returned, based on the type of the
+     * <code>MLModel</code>:
      * </p>
      * <ul>
      * <li>
@@ -814,7 +817,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Measurements of how well the <code>MLModel</code> performed,
      *         using observations referenced by the <code>DataSource</code>. One
      *         of the following metrics is returned, based on the type of the
-     *         MLModel: </p>
+     *         <code>MLModel</code>: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -852,7 +855,8 @@ public class Evaluation implements Serializable, Cloneable {
      * <p>
      * Measurements of how well the <code>MLModel</code> performed, using
      * observations referenced by the <code>DataSource</code>. One of the
-     * following metrics is returned, based on the type of the MLModel:
+     * following metrics is returned, based on the type of the
+     * <code>MLModel</code>:
      * </p>
      * <ul>
      * <li>
@@ -884,8 +888,8 @@ public class Evaluation implements Serializable, Cloneable {
      * @param performanceMetrics
      *        Measurements of how well the <code>MLModel</code> performed, using
      *        observations referenced by the <code>DataSource</code>. One of the
-     *        following metrics is returned, based on the type of the MLModel:
-     *        </p>
+     *        following metrics is returned, based on the type of the
+     *        <code>MLModel</code>: </p>
      *        <ul>
      *        <li>
      *        <p>

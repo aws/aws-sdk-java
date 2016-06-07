@@ -20,15 +20,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <a>DescribeMLModels</a> operation. The content is
- * essentially a list of <code>MLModel</code>.
+ * Represents the output of a <code>DescribeMLModels</code> operation. The
+ * content is essentially a list of <code>MLModel</code>.
  * </p>
  */
 public class DescribeMLModelsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>MLModel</a> that meet the search criteria.
+     * A list of <code>MLModel</code> that meet the search criteria.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MLModel> results;
@@ -42,10 +42,10 @@ public class DescribeMLModelsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>MLModel</a> that meet the search criteria.
+     * A list of <code>MLModel</code> that meet the search criteria.
      * </p>
      * 
-     * @return A list of <a>MLModel</a> that meet the search criteria.
+     * @return A list of <code>MLModel</code> that meet the search criteria.
      */
 
     public java.util.List<MLModel> getResults() {
@@ -57,11 +57,11 @@ public class DescribeMLModelsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>MLModel</a> that meet the search criteria.
+     * A list of <code>MLModel</code> that meet the search criteria.
      * </p>
      * 
      * @param results
-     *        A list of <a>MLModel</a> that meet the search criteria.
+     *        A list of <code>MLModel</code> that meet the search criteria.
      */
 
     public void setResults(java.util.Collection<MLModel> results) {
@@ -76,7 +76,7 @@ public class DescribeMLModelsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>MLModel</a> that meet the search criteria.
+     * A list of <code>MLModel</code> that meet the search criteria.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -86,7 +86,7 @@ public class DescribeMLModelsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param results
-     *        A list of <a>MLModel</a> that meet the search criteria.
+     *        A list of <code>MLModel</code> that meet the search criteria.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -104,11 +104,11 @@ public class DescribeMLModelsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>MLModel</a> that meet the search criteria.
+     * A list of <code>MLModel</code> that meet the search criteria.
      * </p>
      * 
      * @param results
-     *        A list of <a>MLModel</a> that meet the search criteria.
+     *        A list of <code>MLModel</code> that meet the search criteria.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

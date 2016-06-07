@@ -46,15 +46,15 @@ public enum BundleType {
     public static BundleType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("tar".equals(value)) {
-            return Tar;
-        } else if ("tgz".equals(value)) {
-            return Tgz;
-        } else if ("zip".equals(value)) {
-            return Zip;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (BundleType enumEntry : BundleType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

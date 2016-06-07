@@ -45,13 +45,15 @@ public enum ResourceSignalStatus {
     public static ResourceSignalStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SUCCESS".equals(value)) {
-            return SUCCESS;
-        } else if ("FAILURE".equals(value)) {
-            return FAILURE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ResourceSignalStatus enumEntry : ResourceSignalStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

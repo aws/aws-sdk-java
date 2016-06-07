@@ -20,16 +20,17 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <a>GetMLModel</a> operation, and provides detailed
- * information about a <code>MLModel</code>.
+ * Represents the output of a <code>GetMLModel</code> operation, and provides
+ * detailed information about a <code>MLModel</code>.
  * </p>
  */
 public class GetMLModelResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The MLModel ID which is same as the <code>MLModelId</code> in the
-     * request.
+     * The MLModel ID<?oxy_insert_start author="annbech"
+     * timestamp="20160328T151251-0700">,<?oxy_insert_end> which is same as the
+     * <code>MLModelId</code> in the request.
      * </p>
      */
     private String mLModelId;
@@ -76,11 +77,11 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to describe a <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The request is processing.</li>
-     * <li> <code>FAILED</code> - The request did not run to completion. It is
-     * not usable.</li>
+     * <li> <code>FAILED</code> - The request did not run to completion. The ML
+     * model isn't usable.</li>
      * <li> <code>COMPLETED</code> - The request completed successfully.</li>
      * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted.
-     * It is not usable.</li>
+     * It isn't usable.</li>
      * </ul>
      */
     private String status;
@@ -95,7 +96,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the training parameters in the <code>MLModel</code>. The list
-     * is implemented as a map of key/value pairs.
+     * is implemented as a map of key-value pairs.
      * </p>
      * <p>
      * The following is the current set of training parameters:
@@ -103,47 +104,60 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>sgd.l1RegularizationAmount</code> - Coefficient regularization L1
-     * norm. It controls overfitting the data by penalizing large coefficients.
-     * This tends to drive coefficients to zero, resulting in a sparse feature
-     * set. If you use this parameter, specify a small value, such as 1.0E-04 or
-     * 1.0E-08.
+     * <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the
+     * model. Depending on the input data, the size of the model might affect
+     * its performance.
      * </p>
      * <p>
-     * The value is a double that ranges from 0 to MAX_DOUBLE. The default is
-     * not to use L1 normalization. The parameter cannot be used when
-     * <code>L2</code> is specified. Use this parameter sparingly.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>sgd.l2RegularizationAmount</code> - Coefficient regularization L2
-     * norm. It controls overfitting the data by penalizing large coefficients.
-     * This tends to drive coefficients to small, nonzero values. If you use
-     * this parameter, specify a small value, such as 1.0E-04 or 1.0E-08.
-     * </p>
-     * <p>
-     * The value is a double that ranges from 0 to MAX_DOUBLE. The default is
-     * not to use L2 normalization. This parameter cannot be used when
-     * <code>L1</code> is specified. Use this parameter sparingly.
+     * The value is an integer that ranges from <code>100000</code> to
+     * <code>2147483648</code>. The default value is <code>33554432</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>sgd.maxPasses</code> - The number of times that the training
      * process traverses the observations to build the <code>MLModel</code>. The
-     * value is an integer that ranges from 1 to 10000. The default value is 10.
+     * value is an integer that ranges from <code>1</code> to <code>10000</code>
+     * . The default value is <code>10</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the
-     * model. Depending on the input data, the model size might affect
-     * performance.
+     * <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training
+     * data. Shuffling data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are
+     * <code>auto</code> and <code>none</code>. The default value is
+     * <code>none</code>. We strongly recommend that you shuffle your data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization
+     * L1 norm. It controls overfitting the data by penalizing large
+     * coefficients. This tends to drive coefficients to zero, resulting in a
+     * sparse feature set. If you use this parameter, start by specifying a
+     * small value, such as <code>1.0E-08</code>.
      * </p>
      * <p>
-     * The value is an integer that ranges from 100000 to 2147483648. The
-     * default value is 33554432.
+     * The value is a double that ranges from <code>0</code> to
+     * <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This
+     * parameter can't be used when <code>L2</code> is specified. Use this
+     * parameter sparingly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization
+     * L2 norm. It controls overfitting the data by penalizing large
+     * coefficients. This tends to drive coefficients to small, nonzero values.
+     * If you use this parameter, start by specifying a small value, such as
+     * <code>1.0E-08</code>.
+     * </p>
+     * <p>
+     * The value is a double that ranges from <code>0</code> to
+     * <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This
+     * parameter can't be used when <code>L1</code> is specified. Use this
+     * parameter sparingly.
      * </p>
      * </li>
      * </ul>
@@ -163,10 +177,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>REGRESSION -- Produces a numeric result. For example,
-     * "What listing price should a house have?"</li>
+     * "What price should a house be listed at?"</li>
      * <li>BINARY -- Produces one of two possible results. For example,
      * "Is this an e-commerce website?"</li>
-     * <li>MULTICLASS -- Produces more than two possible results. For example,
+     * <li>MULTICLASS -- Produces one of several possible results. For example,
      * "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * </ul>
      */
@@ -174,8 +188,9 @@ public class GetMLModelResult implements Serializable, Cloneable {
     /**
      * <p>
      * The scoring threshold is used in binary classification
-     * <code>MLModel</code>s, and marks the boundary between a positive
-     * prediction and a negative prediction.
+     * <code>MLModel</code><?oxy_insert_start author="laurama"
+     * timestamp="20160329T114851-0700"> <?oxy_insert_end>models. It marks the
+     * boundary between a positive prediction and a negative prediction.
      * </p>
      * <p>
      * Output values greater than or equal to the threshold receive a positive
@@ -201,7 +216,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
     private String logUri;
     /**
      * <p>
-     * Description of the most recent details about accessing the
+     * A description of the most recent details about accessing the
      * <code>MLModel</code>.
      * </p>
      */
@@ -210,7 +225,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <p>
      * The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation
-     * data to use during training, as well as manipulations to perform on the
+     * data to use during training, and manipulations to perform on the
      * observation data during training.
      * </p>
      * <note><title>Note</title>
@@ -235,13 +250,15 @@ public class GetMLModelResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The MLModel ID which is same as the <code>MLModelId</code> in the
-     * request.
+     * The MLModel ID<?oxy_insert_start author="annbech"
+     * timestamp="20160328T151251-0700">,<?oxy_insert_end> which is same as the
+     * <code>MLModelId</code> in the request.
      * </p>
      * 
      * @param mLModelId
-     *        The MLModel ID which is same as the <code>MLModelId</code> in the
-     *        request.
+     *        The MLModel ID<?oxy_insert_start author="annbech"
+     *        timestamp="20160328T151251-0700">,<?oxy_insert_end> which is same
+     *        as the <code>MLModelId</code> in the request.
      */
 
     public void setMLModelId(String mLModelId) {
@@ -250,12 +267,14 @@ public class GetMLModelResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The MLModel ID which is same as the <code>MLModelId</code> in the
-     * request.
+     * The MLModel ID<?oxy_insert_start author="annbech"
+     * timestamp="20160328T151251-0700">,<?oxy_insert_end> which is same as the
+     * <code>MLModelId</code> in the request.
      * </p>
      * 
-     * @return The MLModel ID which is same as the <code>MLModelId</code> in the
-     *         request.
+     * @return The MLModel ID<?oxy_insert_start author="annbech"
+     *         timestamp="20160328T151251-0700">,<?oxy_insert_end> which is same
+     *         as the <code>MLModelId</code> in the request.
      */
 
     public String getMLModelId() {
@@ -264,13 +283,15 @@ public class GetMLModelResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The MLModel ID which is same as the <code>MLModelId</code> in the
-     * request.
+     * The MLModel ID<?oxy_insert_start author="annbech"
+     * timestamp="20160328T151251-0700">,<?oxy_insert_end> which is same as the
+     * <code>MLModelId</code> in the request.
      * </p>
      * 
      * @param mLModelId
-     *        The MLModel ID which is same as the <code>MLModelId</code> in the
-     *        request.
+     *        The MLModel ID<?oxy_insert_start author="annbech"
+     *        timestamp="20160328T151251-0700">,<?oxy_insert_end> which is same
+     *        as the <code>MLModelId</code> in the request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -518,11 +539,11 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to describe a <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The request is processing.</li>
-     * <li> <code>FAILED</code> - The request did not run to completion. It is
-     * not usable.</li>
+     * <li> <code>FAILED</code> - The request did not run to completion. The ML
+     * model isn't usable.</li>
      * <li> <code>COMPLETED</code> - The request completed successfully.</li>
      * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted.
-     * It is not usable.</li>
+     * It isn't usable.</li>
      * </ul>
      * 
      * @param status
@@ -533,10 +554,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        submitted a request to describe a <code>MLModel</code>.</li>
      *        <li> <code>INPROGRESS</code> - The request is processing.</li>
      *        <li> <code>FAILED</code> - The request did not run to completion.
-     *        It is not usable.</li>
+     *        The ML model isn't usable.</li>
      *        <li> <code>COMPLETED</code> - The request completed successfully.</li>
      *        <li> <code>DELETED</code> - The <code>MLModel</code> is marked as
-     *        deleted. It is not usable.</li>
+     *        deleted. It isn't usable.</li>
      * @see EntityStatus
      */
 
@@ -553,11 +574,11 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to describe a <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The request is processing.</li>
-     * <li> <code>FAILED</code> - The request did not run to completion. It is
-     * not usable.</li>
+     * <li> <code>FAILED</code> - The request did not run to completion. The ML
+     * model isn't usable.</li>
      * <li> <code>COMPLETED</code> - The request completed successfully.</li>
      * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted.
-     * It is not usable.</li>
+     * It isn't usable.</li>
      * </ul>
      * 
      * @return The current status of the <code>MLModel</code>. This element can
@@ -567,10 +588,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         submitted a request to describe a <code>MLModel</code>.</li>
      *         <li> <code>INPROGRESS</code> - The request is processing.</li>
      *         <li> <code>FAILED</code> - The request did not run to completion.
-     *         It is not usable.</li>
+     *         The ML model isn't usable.</li>
      *         <li> <code>COMPLETED</code> - The request completed successfully.</li>
      *         <li> <code>DELETED</code> - The <code>MLModel</code> is marked as
-     *         deleted. It is not usable.</li>
+     *         deleted. It isn't usable.</li>
      * @see EntityStatus
      */
 
@@ -587,11 +608,11 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to describe a <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The request is processing.</li>
-     * <li> <code>FAILED</code> - The request did not run to completion. It is
-     * not usable.</li>
+     * <li> <code>FAILED</code> - The request did not run to completion. The ML
+     * model isn't usable.</li>
      * <li> <code>COMPLETED</code> - The request completed successfully.</li>
      * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted.
-     * It is not usable.</li>
+     * It isn't usable.</li>
      * </ul>
      * 
      * @param status
@@ -602,10 +623,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        submitted a request to describe a <code>MLModel</code>.</li>
      *        <li> <code>INPROGRESS</code> - The request is processing.</li>
      *        <li> <code>FAILED</code> - The request did not run to completion.
-     *        It is not usable.</li>
+     *        The ML model isn't usable.</li>
      *        <li> <code>COMPLETED</code> - The request completed successfully.</li>
      *        <li> <code>DELETED</code> - The <code>MLModel</code> is marked as
-     *        deleted. It is not usable.</li>
+     *        deleted. It isn't usable.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EntityStatus
@@ -625,11 +646,11 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to describe a <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The request is processing.</li>
-     * <li> <code>FAILED</code> - The request did not run to completion. It is
-     * not usable.</li>
+     * <li> <code>FAILED</code> - The request did not run to completion. The ML
+     * model isn't usable.</li>
      * <li> <code>COMPLETED</code> - The request completed successfully.</li>
      * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted.
-     * It is not usable.</li>
+     * It isn't usable.</li>
      * </ul>
      * 
      * @param status
@@ -640,10 +661,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        submitted a request to describe a <code>MLModel</code>.</li>
      *        <li> <code>INPROGRESS</code> - The request is processing.</li>
      *        <li> <code>FAILED</code> - The request did not run to completion.
-     *        It is not usable.</li>
+     *        The ML model isn't usable.</li>
      *        <li> <code>COMPLETED</code> - The request completed successfully.</li>
      *        <li> <code>DELETED</code> - The <code>MLModel</code> is marked as
-     *        deleted. It is not usable.</li>
+     *        deleted. It isn't usable.</li>
      * @see EntityStatus
      */
 
@@ -660,11 +681,11 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted
      * a request to describe a <code>MLModel</code>.</li>
      * <li> <code>INPROGRESS</code> - The request is processing.</li>
-     * <li> <code>FAILED</code> - The request did not run to completion. It is
-     * not usable.</li>
+     * <li> <code>FAILED</code> - The request did not run to completion. The ML
+     * model isn't usable.</li>
      * <li> <code>COMPLETED</code> - The request completed successfully.</li>
      * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted.
-     * It is not usable.</li>
+     * It isn't usable.</li>
      * </ul>
      * 
      * @param status
@@ -675,10 +696,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        submitted a request to describe a <code>MLModel</code>.</li>
      *        <li> <code>INPROGRESS</code> - The request is processing.</li>
      *        <li> <code>FAILED</code> - The request did not run to completion.
-     *        It is not usable.</li>
+     *        The ML model isn't usable.</li>
      *        <li> <code>COMPLETED</code> - The request completed successfully.</li>
      *        <li> <code>DELETED</code> - The <code>MLModel</code> is marked as
-     *        deleted. It is not usable.</li>
+     *        deleted. It isn't usable.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EntityStatus
@@ -760,7 +781,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the training parameters in the <code>MLModel</code>. The list
-     * is implemented as a map of key/value pairs.
+     * is implemented as a map of key-value pairs.
      * </p>
      * <p>
      * The following is the current set of training parameters:
@@ -768,104 +789,130 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>sgd.l1RegularizationAmount</code> - Coefficient regularization L1
-     * norm. It controls overfitting the data by penalizing large coefficients.
-     * This tends to drive coefficients to zero, resulting in a sparse feature
-     * set. If you use this parameter, specify a small value, such as 1.0E-04 or
-     * 1.0E-08.
+     * <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the
+     * model. Depending on the input data, the size of the model might affect
+     * its performance.
      * </p>
      * <p>
-     * The value is a double that ranges from 0 to MAX_DOUBLE. The default is
-     * not to use L1 normalization. The parameter cannot be used when
-     * <code>L2</code> is specified. Use this parameter sparingly.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>sgd.l2RegularizationAmount</code> - Coefficient regularization L2
-     * norm. It controls overfitting the data by penalizing large coefficients.
-     * This tends to drive coefficients to small, nonzero values. If you use
-     * this parameter, specify a small value, such as 1.0E-04 or 1.0E-08.
-     * </p>
-     * <p>
-     * The value is a double that ranges from 0 to MAX_DOUBLE. The default is
-     * not to use L2 normalization. This parameter cannot be used when
-     * <code>L1</code> is specified. Use this parameter sparingly.
+     * The value is an integer that ranges from <code>100000</code> to
+     * <code>2147483648</code>. The default value is <code>33554432</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>sgd.maxPasses</code> - The number of times that the training
      * process traverses the observations to build the <code>MLModel</code>. The
-     * value is an integer that ranges from 1 to 10000. The default value is 10.
+     * value is an integer that ranges from <code>1</code> to <code>10000</code>
+     * . The default value is <code>10</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the
-     * model. Depending on the input data, the model size might affect
-     * performance.
+     * <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training
+     * data. Shuffling data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are
+     * <code>auto</code> and <code>none</code>. The default value is
+     * <code>none</code>. We strongly recommend that you shuffle your data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization
+     * L1 norm. It controls overfitting the data by penalizing large
+     * coefficients. This tends to drive coefficients to zero, resulting in a
+     * sparse feature set. If you use this parameter, start by specifying a
+     * small value, such as <code>1.0E-08</code>.
      * </p>
      * <p>
-     * The value is an integer that ranges from 100000 to 2147483648. The
-     * default value is 33554432.
+     * The value is a double that ranges from <code>0</code> to
+     * <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This
+     * parameter can't be used when <code>L2</code> is specified. Use this
+     * parameter sparingly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization
+     * L2 norm. It controls overfitting the data by penalizing large
+     * coefficients. This tends to drive coefficients to small, nonzero values.
+     * If you use this parameter, start by specifying a small value, such as
+     * <code>1.0E-08</code>.
+     * </p>
+     * <p>
+     * The value is a double that ranges from <code>0</code> to
+     * <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This
+     * parameter can't be used when <code>L1</code> is specified. Use this
+     * parameter sparingly.
      * </p>
      * </li>
      * </ul>
      * 
      * @return A list of the training parameters in the <code>MLModel</code>.
-     *         The list is implemented as a map of key/value pairs.</p>
+     *         The list is implemented as a map of key-value pairs.</p>
      *         <p>
      *         The following is the current set of training parameters:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>sgd.l1RegularizationAmount</code> - Coefficient
-     *         regularization L1 norm. It controls overfitting the data by
-     *         penalizing large coefficients. This tends to drive coefficients
-     *         to zero, resulting in a sparse feature set. If you use this
-     *         parameter, specify a small value, such as 1.0E-04 or 1.0E-08.
+     *         <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size
+     *         of the model. Depending on the input data, the size of the model
+     *         might affect its performance.
      *         </p>
      *         <p>
-     *         The value is a double that ranges from 0 to MAX_DOUBLE. The
-     *         default is not to use L1 normalization. The parameter cannot be
-     *         used when <code>L2</code> is specified. Use this parameter
-     *         sparingly.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>sgd.l2RegularizationAmount</code> - Coefficient
-     *         regularization L2 norm. It controls overfitting the data by
-     *         penalizing large coefficients. This tends to drive coefficients
-     *         to small, nonzero values. If you use this parameter, specify a
-     *         small value, such as 1.0E-04 or 1.0E-08.
-     *         </p>
-     *         <p>
-     *         The value is a double that ranges from 0 to MAX_DOUBLE. The
-     *         default is not to use L2 normalization. This parameter cannot be
-     *         used when <code>L1</code> is specified. Use this parameter
-     *         sparingly.
+     *         The value is an integer that ranges from <code>100000</code> to
+     *         <code>2147483648</code>. The default value is
+     *         <code>33554432</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>sgd.maxPasses</code> - The number of times that the
      *         training process traverses the observations to build the
-     *         <code>MLModel</code>. The value is an integer that ranges from 1
-     *         to 10000. The default value is 10.
+     *         <code>MLModel</code>. The value is an integer that ranges from
+     *         <code>1</code> to <code>10000</code>. The default value is
+     *         <code>10</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size
-     *         of the model. Depending on the input data, the model size might
-     *         affect performance.
+     *         <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     *         training data. Shuffling data improves a model's ability to find
+     *         the optimal solution for a variety of data types. The valid
+     *         values are <code>auto</code> and <code>none</code>. The default
+     *         value is <code>none</code>. We strongly recommend that you
+     *         shuffle your data.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sgd.l1RegularizationAmount</code> - The coefficient
+     *         regularization L1 norm. It controls overfitting the data by
+     *         penalizing large coefficients. This tends to drive coefficients
+     *         to zero, resulting in a sparse feature set. If you use this
+     *         parameter, start by specifying a small value, such as
+     *         <code>1.0E-08</code>.
      *         </p>
      *         <p>
-     *         The value is an integer that ranges from 100000 to 2147483648.
-     *         The default value is 33554432.
+     *         The value is a double that ranges from <code>0</code> to
+     *         <code>MAX_DOUBLE</code>. The default is to not use L1
+     *         normalization. This parameter can't be used when <code>L2</code>
+     *         is specified. Use this parameter sparingly.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sgd.l2RegularizationAmount</code> - The coefficient
+     *         regularization L2 norm. It controls overfitting the data by
+     *         penalizing large coefficients. This tends to drive coefficients
+     *         to small, nonzero values. If you use this parameter, start by
+     *         specifying a small value, such as <code>1.0E-08</code>.
+     *         </p>
+     *         <p>
+     *         The value is a double that ranges from <code>0</code> to
+     *         <code>MAX_DOUBLE</code>. The default is to not use L2
+     *         normalization. This parameter can't be used when <code>L1</code>
+     *         is specified. Use this parameter sparingly.
      *         </p>
      *         </li>
      */
@@ -880,7 +927,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the training parameters in the <code>MLModel</code>. The list
-     * is implemented as a map of key/value pairs.
+     * is implemented as a map of key-value pairs.
      * </p>
      * <p>
      * The following is the current set of training parameters:
@@ -888,105 +935,131 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>sgd.l1RegularizationAmount</code> - Coefficient regularization L1
-     * norm. It controls overfitting the data by penalizing large coefficients.
-     * This tends to drive coefficients to zero, resulting in a sparse feature
-     * set. If you use this parameter, specify a small value, such as 1.0E-04 or
-     * 1.0E-08.
+     * <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the
+     * model. Depending on the input data, the size of the model might affect
+     * its performance.
      * </p>
      * <p>
-     * The value is a double that ranges from 0 to MAX_DOUBLE. The default is
-     * not to use L1 normalization. The parameter cannot be used when
-     * <code>L2</code> is specified. Use this parameter sparingly.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>sgd.l2RegularizationAmount</code> - Coefficient regularization L2
-     * norm. It controls overfitting the data by penalizing large coefficients.
-     * This tends to drive coefficients to small, nonzero values. If you use
-     * this parameter, specify a small value, such as 1.0E-04 or 1.0E-08.
-     * </p>
-     * <p>
-     * The value is a double that ranges from 0 to MAX_DOUBLE. The default is
-     * not to use L2 normalization. This parameter cannot be used when
-     * <code>L1</code> is specified. Use this parameter sparingly.
+     * The value is an integer that ranges from <code>100000</code> to
+     * <code>2147483648</code>. The default value is <code>33554432</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>sgd.maxPasses</code> - The number of times that the training
      * process traverses the observations to build the <code>MLModel</code>. The
-     * value is an integer that ranges from 1 to 10000. The default value is 10.
+     * value is an integer that ranges from <code>1</code> to <code>10000</code>
+     * . The default value is <code>10</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the
-     * model. Depending on the input data, the model size might affect
-     * performance.
+     * <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training
+     * data. Shuffling data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are
+     * <code>auto</code> and <code>none</code>. The default value is
+     * <code>none</code>. We strongly recommend that you shuffle your data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization
+     * L1 norm. It controls overfitting the data by penalizing large
+     * coefficients. This tends to drive coefficients to zero, resulting in a
+     * sparse feature set. If you use this parameter, start by specifying a
+     * small value, such as <code>1.0E-08</code>.
      * </p>
      * <p>
-     * The value is an integer that ranges from 100000 to 2147483648. The
-     * default value is 33554432.
+     * The value is a double that ranges from <code>0</code> to
+     * <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This
+     * parameter can't be used when <code>L2</code> is specified. Use this
+     * parameter sparingly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization
+     * L2 norm. It controls overfitting the data by penalizing large
+     * coefficients. This tends to drive coefficients to small, nonzero values.
+     * If you use this parameter, start by specifying a small value, such as
+     * <code>1.0E-08</code>.
+     * </p>
+     * <p>
+     * The value is a double that ranges from <code>0</code> to
+     * <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This
+     * parameter can't be used when <code>L1</code> is specified. Use this
+     * parameter sparingly.
      * </p>
      * </li>
      * </ul>
      * 
      * @param trainingParameters
      *        A list of the training parameters in the <code>MLModel</code>. The
-     *        list is implemented as a map of key/value pairs.</p>
+     *        list is implemented as a map of key-value pairs.</p>
      *        <p>
      *        The following is the current set of training parameters:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>sgd.l1RegularizationAmount</code> - Coefficient
-     *        regularization L1 norm. It controls overfitting the data by
-     *        penalizing large coefficients. This tends to drive coefficients to
-     *        zero, resulting in a sparse feature set. If you use this
-     *        parameter, specify a small value, such as 1.0E-04 or 1.0E-08.
+     *        <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size
+     *        of the model. Depending on the input data, the size of the model
+     *        might affect its performance.
      *        </p>
      *        <p>
-     *        The value is a double that ranges from 0 to MAX_DOUBLE. The
-     *        default is not to use L1 normalization. The parameter cannot be
-     *        used when <code>L2</code> is specified. Use this parameter
-     *        sparingly.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>sgd.l2RegularizationAmount</code> - Coefficient
-     *        regularization L2 norm. It controls overfitting the data by
-     *        penalizing large coefficients. This tends to drive coefficients to
-     *        small, nonzero values. If you use this parameter, specify a small
-     *        value, such as 1.0E-04 or 1.0E-08.
-     *        </p>
-     *        <p>
-     *        The value is a double that ranges from 0 to MAX_DOUBLE. The
-     *        default is not to use L2 normalization. This parameter cannot be
-     *        used when <code>L1</code> is specified. Use this parameter
-     *        sparingly.
+     *        The value is an integer that ranges from <code>100000</code> to
+     *        <code>2147483648</code>. The default value is
+     *        <code>33554432</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>sgd.maxPasses</code> - The number of times that the training
      *        process traverses the observations to build the
-     *        <code>MLModel</code>. The value is an integer that ranges from 1
-     *        to 10000. The default value is 10.
+     *        <code>MLModel</code>. The value is an integer that ranges from
+     *        <code>1</code> to <code>10000</code>. The default value is
+     *        <code>10</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size
-     *        of the model. Depending on the input data, the model size might
-     *        affect performance.
+     *        <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     *        training data. Shuffling data improves a model's ability to find
+     *        the optimal solution for a variety of data types. The valid values
+     *        are <code>auto</code> and <code>none</code>. The default value is
+     *        <code>none</code>. We strongly recommend that you shuffle your
+     *        data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sgd.l1RegularizationAmount</code> - The coefficient
+     *        regularization L1 norm. It controls overfitting the data by
+     *        penalizing large coefficients. This tends to drive coefficients to
+     *        zero, resulting in a sparse feature set. If you use this
+     *        parameter, start by specifying a small value, such as
+     *        <code>1.0E-08</code>.
      *        </p>
      *        <p>
-     *        The value is an integer that ranges from 100000 to 2147483648. The
-     *        default value is 33554432.
+     *        The value is a double that ranges from <code>0</code> to
+     *        <code>MAX_DOUBLE</code>. The default is to not use L1
+     *        normalization. This parameter can't be used when <code>L2</code>
+     *        is specified. Use this parameter sparingly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sgd.l2RegularizationAmount</code> - The coefficient
+     *        regularization L2 norm. It controls overfitting the data by
+     *        penalizing large coefficients. This tends to drive coefficients to
+     *        small, nonzero values. If you use this parameter, start by
+     *        specifying a small value, such as <code>1.0E-08</code>.
+     *        </p>
+     *        <p>
+     *        The value is a double that ranges from <code>0</code> to
+     *        <code>MAX_DOUBLE</code>. The default is to not use L2
+     *        normalization. This parameter can't be used when <code>L1</code>
+     *        is specified. Use this parameter sparingly.
      *        </p>
      *        </li>
      */
@@ -1001,7 +1074,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the training parameters in the <code>MLModel</code>. The list
-     * is implemented as a map of key/value pairs.
+     * is implemented as a map of key-value pairs.
      * </p>
      * <p>
      * The following is the current set of training parameters:
@@ -1009,105 +1082,131 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>sgd.l1RegularizationAmount</code> - Coefficient regularization L1
-     * norm. It controls overfitting the data by penalizing large coefficients.
-     * This tends to drive coefficients to zero, resulting in a sparse feature
-     * set. If you use this parameter, specify a small value, such as 1.0E-04 or
-     * 1.0E-08.
+     * <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the
+     * model. Depending on the input data, the size of the model might affect
+     * its performance.
      * </p>
      * <p>
-     * The value is a double that ranges from 0 to MAX_DOUBLE. The default is
-     * not to use L1 normalization. The parameter cannot be used when
-     * <code>L2</code> is specified. Use this parameter sparingly.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>sgd.l2RegularizationAmount</code> - Coefficient regularization L2
-     * norm. It controls overfitting the data by penalizing large coefficients.
-     * This tends to drive coefficients to small, nonzero values. If you use
-     * this parameter, specify a small value, such as 1.0E-04 or 1.0E-08.
-     * </p>
-     * <p>
-     * The value is a double that ranges from 0 to MAX_DOUBLE. The default is
-     * not to use L2 normalization. This parameter cannot be used when
-     * <code>L1</code> is specified. Use this parameter sparingly.
+     * The value is an integer that ranges from <code>100000</code> to
+     * <code>2147483648</code>. The default value is <code>33554432</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>sgd.maxPasses</code> - The number of times that the training
      * process traverses the observations to build the <code>MLModel</code>. The
-     * value is an integer that ranges from 1 to 10000. The default value is 10.
+     * value is an integer that ranges from <code>1</code> to <code>10000</code>
+     * . The default value is <code>10</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the
-     * model. Depending on the input data, the model size might affect
-     * performance.
+     * <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training
+     * data. Shuffling data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are
+     * <code>auto</code> and <code>none</code>. The default value is
+     * <code>none</code>. We strongly recommend that you shuffle your data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization
+     * L1 norm. It controls overfitting the data by penalizing large
+     * coefficients. This tends to drive coefficients to zero, resulting in a
+     * sparse feature set. If you use this parameter, start by specifying a
+     * small value, such as <code>1.0E-08</code>.
      * </p>
      * <p>
-     * The value is an integer that ranges from 100000 to 2147483648. The
-     * default value is 33554432.
+     * The value is a double that ranges from <code>0</code> to
+     * <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This
+     * parameter can't be used when <code>L2</code> is specified. Use this
+     * parameter sparingly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization
+     * L2 norm. It controls overfitting the data by penalizing large
+     * coefficients. This tends to drive coefficients to small, nonzero values.
+     * If you use this parameter, start by specifying a small value, such as
+     * <code>1.0E-08</code>.
+     * </p>
+     * <p>
+     * The value is a double that ranges from <code>0</code> to
+     * <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This
+     * parameter can't be used when <code>L1</code> is specified. Use this
+     * parameter sparingly.
      * </p>
      * </li>
      * </ul>
      * 
      * @param trainingParameters
      *        A list of the training parameters in the <code>MLModel</code>. The
-     *        list is implemented as a map of key/value pairs.</p>
+     *        list is implemented as a map of key-value pairs.</p>
      *        <p>
      *        The following is the current set of training parameters:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>sgd.l1RegularizationAmount</code> - Coefficient
-     *        regularization L1 norm. It controls overfitting the data by
-     *        penalizing large coefficients. This tends to drive coefficients to
-     *        zero, resulting in a sparse feature set. If you use this
-     *        parameter, specify a small value, such as 1.0E-04 or 1.0E-08.
+     *        <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size
+     *        of the model. Depending on the input data, the size of the model
+     *        might affect its performance.
      *        </p>
      *        <p>
-     *        The value is a double that ranges from 0 to MAX_DOUBLE. The
-     *        default is not to use L1 normalization. The parameter cannot be
-     *        used when <code>L2</code> is specified. Use this parameter
-     *        sparingly.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>sgd.l2RegularizationAmount</code> - Coefficient
-     *        regularization L2 norm. It controls overfitting the data by
-     *        penalizing large coefficients. This tends to drive coefficients to
-     *        small, nonzero values. If you use this parameter, specify a small
-     *        value, such as 1.0E-04 or 1.0E-08.
-     *        </p>
-     *        <p>
-     *        The value is a double that ranges from 0 to MAX_DOUBLE. The
-     *        default is not to use L2 normalization. This parameter cannot be
-     *        used when <code>L1</code> is specified. Use this parameter
-     *        sparingly.
+     *        The value is an integer that ranges from <code>100000</code> to
+     *        <code>2147483648</code>. The default value is
+     *        <code>33554432</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>sgd.maxPasses</code> - The number of times that the training
      *        process traverses the observations to build the
-     *        <code>MLModel</code>. The value is an integer that ranges from 1
-     *        to 10000. The default value is 10.
+     *        <code>MLModel</code>. The value is an integer that ranges from
+     *        <code>1</code> to <code>10000</code>. The default value is
+     *        <code>10</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size
-     *        of the model. Depending on the input data, the model size might
-     *        affect performance.
+     *        <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     *        training data. Shuffling data improves a model's ability to find
+     *        the optimal solution for a variety of data types. The valid values
+     *        are <code>auto</code> and <code>none</code>. The default value is
+     *        <code>none</code>. We strongly recommend that you shuffle your
+     *        data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sgd.l1RegularizationAmount</code> - The coefficient
+     *        regularization L1 norm. It controls overfitting the data by
+     *        penalizing large coefficients. This tends to drive coefficients to
+     *        zero, resulting in a sparse feature set. If you use this
+     *        parameter, start by specifying a small value, such as
+     *        <code>1.0E-08</code>.
      *        </p>
      *        <p>
-     *        The value is an integer that ranges from 100000 to 2147483648. The
-     *        default value is 33554432.
+     *        The value is a double that ranges from <code>0</code> to
+     *        <code>MAX_DOUBLE</code>. The default is to not use L1
+     *        normalization. This parameter can't be used when <code>L2</code>
+     *        is specified. Use this parameter sparingly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sgd.l2RegularizationAmount</code> - The coefficient
+     *        regularization L2 norm. It controls overfitting the data by
+     *        penalizing large coefficients. This tends to drive coefficients to
+     *        small, nonzero values. If you use this parameter, start by
+     *        specifying a small value, such as <code>1.0E-08</code>.
+     *        </p>
+     *        <p>
+     *        The value is a double that ranges from <code>0</code> to
+     *        <code>MAX_DOUBLE</code>. The default is to not use L2
+     *        normalization. This parameter can't be used when <code>L1</code>
+     *        is specified. Use this parameter sparingly.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -1195,10 +1294,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>REGRESSION -- Produces a numeric result. For example,
-     * "What listing price should a house have?"</li>
+     * "What price should a house be listed at?"</li>
      * <li>BINARY -- Produces one of two possible results. For example,
      * "Is this an e-commerce website?"</li>
-     * <li>MULTICLASS -- Produces more than two possible results. For example,
+     * <li>MULTICLASS -- Produces one of several possible results. For example,
      * "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * </ul>
      * 
@@ -1207,10 +1306,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        the available types: </p>
      *        <ul>
      *        <li>REGRESSION -- Produces a numeric result. For example,
-     *        "What listing price should a house have?"</li>
+     *        "What price should a house be listed at?"</li>
      *        <li>BINARY -- Produces one of two possible results. For example,
      *        "Is this an e-commerce website?"</li>
-     *        <li>MULTICLASS -- Produces more than two possible results. For
+     *        <li>MULTICLASS -- Produces one of several possible results. For
      *        example, "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * @see MLModelType
      */
@@ -1226,10 +1325,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>REGRESSION -- Produces a numeric result. For example,
-     * "What listing price should a house have?"</li>
+     * "What price should a house be listed at?"</li>
      * <li>BINARY -- Produces one of two possible results. For example,
      * "Is this an e-commerce website?"</li>
-     * <li>MULTICLASS -- Produces more than two possible results. For example,
+     * <li>MULTICLASS -- Produces one of several possible results. For example,
      * "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * </ul>
      * 
@@ -1237,10 +1336,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         the available types: </p>
      *         <ul>
      *         <li>REGRESSION -- Produces a numeric result. For example,
-     *         "What listing price should a house have?"</li>
+     *         "What price should a house be listed at?"</li>
      *         <li>BINARY -- Produces one of two possible results. For example,
      *         "Is this an e-commerce website?"</li>
-     *         <li>MULTICLASS -- Produces more than two possible results. For
+     *         <li>MULTICLASS -- Produces one of several possible results. For
      *         example, "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * @see MLModelType
      */
@@ -1256,10 +1355,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>REGRESSION -- Produces a numeric result. For example,
-     * "What listing price should a house have?"</li>
+     * "What price should a house be listed at?"</li>
      * <li>BINARY -- Produces one of two possible results. For example,
      * "Is this an e-commerce website?"</li>
-     * <li>MULTICLASS -- Produces more than two possible results. For example,
+     * <li>MULTICLASS -- Produces one of several possible results. For example,
      * "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * </ul>
      * 
@@ -1268,10 +1367,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        the available types: </p>
      *        <ul>
      *        <li>REGRESSION -- Produces a numeric result. For example,
-     *        "What listing price should a house have?"</li>
+     *        "What price should a house be listed at?"</li>
      *        <li>BINARY -- Produces one of two possible results. For example,
      *        "Is this an e-commerce website?"</li>
-     *        <li>MULTICLASS -- Produces more than two possible results. For
+     *        <li>MULTICLASS -- Produces one of several possible results. For
      *        example, "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -1290,10 +1389,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>REGRESSION -- Produces a numeric result. For example,
-     * "What listing price should a house have?"</li>
+     * "What price should a house be listed at?"</li>
      * <li>BINARY -- Produces one of two possible results. For example,
      * "Is this an e-commerce website?"</li>
-     * <li>MULTICLASS -- Produces more than two possible results. For example,
+     * <li>MULTICLASS -- Produces one of several possible results. For example,
      * "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * </ul>
      * 
@@ -1302,10 +1401,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        the available types: </p>
      *        <ul>
      *        <li>REGRESSION -- Produces a numeric result. For example,
-     *        "What listing price should a house have?"</li>
+     *        "What price should a house be listed at?"</li>
      *        <li>BINARY -- Produces one of two possible results. For example,
      *        "Is this an e-commerce website?"</li>
-     *        <li>MULTICLASS -- Produces more than two possible results. For
+     *        <li>MULTICLASS -- Produces one of several possible results. For
      *        example, "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * @see MLModelType
      */
@@ -1321,10 +1420,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>REGRESSION -- Produces a numeric result. For example,
-     * "What listing price should a house have?"</li>
+     * "What price should a house be listed at?"</li>
      * <li>BINARY -- Produces one of two possible results. For example,
      * "Is this an e-commerce website?"</li>
-     * <li>MULTICLASS -- Produces more than two possible results. For example,
+     * <li>MULTICLASS -- Produces one of several possible results. For example,
      * "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * </ul>
      * 
@@ -1333,10 +1432,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        the available types: </p>
      *        <ul>
      *        <li>REGRESSION -- Produces a numeric result. For example,
-     *        "What listing price should a house have?"</li>
+     *        "What price should a house be listed at?"</li>
      *        <li>BINARY -- Produces one of two possible results. For example,
      *        "Is this an e-commerce website?"</li>
-     *        <li>MULTICLASS -- Produces more than two possible results. For
+     *        <li>MULTICLASS -- Produces one of several possible results. For
      *        example, "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -1351,8 +1450,9 @@ public class GetMLModelResult implements Serializable, Cloneable {
     /**
      * <p>
      * The scoring threshold is used in binary classification
-     * <code>MLModel</code>s, and marks the boundary between a positive
-     * prediction and a negative prediction.
+     * <code>MLModel</code><?oxy_insert_start author="laurama"
+     * timestamp="20160329T114851-0700"> <?oxy_insert_end>models. It marks the
+     * boundary between a positive prediction and a negative prediction.
      * </p>
      * <p>
      * Output values greater than or equal to the threshold receive a positive
@@ -1363,8 +1463,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * 
      * @param scoreThreshold
      *        The scoring threshold is used in binary classification
-     *        <code>MLModel</code>s, and marks the boundary between a positive
-     *        prediction and a negative prediction.</p>
+     *        <code>MLModel</code><?oxy_insert_start author="laurama"
+     *        timestamp="20160329T114851-0700"> <?oxy_insert_end>models. It
+     *        marks the boundary between a positive prediction and a negative
+     *        prediction.</p>
      *        <p>
      *        Output values greater than or equal to the threshold receive a
      *        positive result from the MLModel, such as <code>true</code>.
@@ -1379,8 +1481,9 @@ public class GetMLModelResult implements Serializable, Cloneable {
     /**
      * <p>
      * The scoring threshold is used in binary classification
-     * <code>MLModel</code>s, and marks the boundary between a positive
-     * prediction and a negative prediction.
+     * <code>MLModel</code><?oxy_insert_start author="laurama"
+     * timestamp="20160329T114851-0700"> <?oxy_insert_end>models. It marks the
+     * boundary between a positive prediction and a negative prediction.
      * </p>
      * <p>
      * Output values greater than or equal to the threshold receive a positive
@@ -1390,8 +1493,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * </p>
      * 
      * @return The scoring threshold is used in binary classification
-     *         <code>MLModel</code>s, and marks the boundary between a positive
-     *         prediction and a negative prediction.</p>
+     *         <code>MLModel</code><?oxy_insert_start author="laurama"
+     *         timestamp="20160329T114851-0700"> <?oxy_insert_end>models. It
+     *         marks the boundary between a positive prediction and a negative
+     *         prediction.</p>
      *         <p>
      *         Output values greater than or equal to the threshold receive a
      *         positive result from the MLModel, such as <code>true</code>.
@@ -1406,8 +1511,9 @@ public class GetMLModelResult implements Serializable, Cloneable {
     /**
      * <p>
      * The scoring threshold is used in binary classification
-     * <code>MLModel</code>s, and marks the boundary between a positive
-     * prediction and a negative prediction.
+     * <code>MLModel</code><?oxy_insert_start author="laurama"
+     * timestamp="20160329T114851-0700"> <?oxy_insert_end>models. It marks the
+     * boundary between a positive prediction and a negative prediction.
      * </p>
      * <p>
      * Output values greater than or equal to the threshold receive a positive
@@ -1418,8 +1524,10 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * 
      * @param scoreThreshold
      *        The scoring threshold is used in binary classification
-     *        <code>MLModel</code>s, and marks the boundary between a positive
-     *        prediction and a negative prediction.</p>
+     *        <code>MLModel</code><?oxy_insert_start author="laurama"
+     *        timestamp="20160329T114851-0700"> <?oxy_insert_end>models. It
+     *        marks the boundary between a positive prediction and a negative
+     *        prediction.</p>
      *        <p>
      *        Output values greater than or equal to the threshold receive a
      *        positive result from the MLModel, such as <code>true</code>.
@@ -1532,12 +1640,12 @@ public class GetMLModelResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Description of the most recent details about accessing the
+     * A description of the most recent details about accessing the
      * <code>MLModel</code>.
      * </p>
      * 
      * @param message
-     *        Description of the most recent details about accessing the
+     *        A description of the most recent details about accessing the
      *        <code>MLModel</code>.
      */
 
@@ -1547,11 +1655,11 @@ public class GetMLModelResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Description of the most recent details about accessing the
+     * A description of the most recent details about accessing the
      * <code>MLModel</code>.
      * </p>
      * 
-     * @return Description of the most recent details about accessing the
+     * @return A description of the most recent details about accessing the
      *         <code>MLModel</code>.
      */
 
@@ -1561,12 +1669,12 @@ public class GetMLModelResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Description of the most recent details about accessing the
+     * A description of the most recent details about accessing the
      * <code>MLModel</code>.
      * </p>
      * 
      * @param message
-     *        Description of the most recent details about accessing the
+     *        A description of the most recent details about accessing the
      *        <code>MLModel</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -1581,7 +1689,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <p>
      * The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation
-     * data to use during training, as well as manipulations to perform on the
+     * data to use during training, and manipulations to perform on the
      * observation data during training.
      * </p>
      * <note><title>Note</title>
@@ -1593,8 +1701,8 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @param recipe
      *        The recipe to use when training the <code>MLModel</code>. The
      *        <code>Recipe</code> provides detailed information about the
-     *        observation data to use during training, as well as manipulations
-     *        to perform on the observation data during training.</p>
+     *        observation data to use during training, and manipulations to
+     *        perform on the observation data during training.</p>
      *        <note><title>Note</title>
      *        <p>
      *        This parameter is provided as part of the verbose format.
@@ -1609,7 +1717,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <p>
      * The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation
-     * data to use during training, as well as manipulations to perform on the
+     * data to use during training, and manipulations to perform on the
      * observation data during training.
      * </p>
      * <note><title>Note</title>
@@ -1620,8 +1728,8 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * 
      * @return The recipe to use when training the <code>MLModel</code>. The
      *         <code>Recipe</code> provides detailed information about the
-     *         observation data to use during training, as well as manipulations
-     *         to perform on the observation data during training.</p>
+     *         observation data to use during training, and manipulations to
+     *         perform on the observation data during training.</p>
      *         <note><title>Note</title>
      *         <p>
      *         This parameter is provided as part of the verbose format.
@@ -1636,7 +1744,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * <p>
      * The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation
-     * data to use during training, as well as manipulations to perform on the
+     * data to use during training, and manipulations to perform on the
      * observation data during training.
      * </p>
      * <note><title>Note</title>
@@ -1648,8 +1756,8 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @param recipe
      *        The recipe to use when training the <code>MLModel</code>. The
      *        <code>Recipe</code> provides detailed information about the
-     *        observation data to use during training, as well as manipulations
-     *        to perform on the observation data during training.</p>
+     *        observation data to use during training, and manipulations to
+     *        perform on the observation data during training.</p>
      *        <note><title>Note</title>
      *        <p>
      *        This parameter is provided as part of the verbose format.

@@ -46,15 +46,16 @@ public enum ActionConfigurationPropertyType {
     public static ActionConfigurationPropertyType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("String".equals(value)) {
-            return String;
-        } else if ("Number".equals(value)) {
-            return Number;
-        } else if ("Boolean".equals(value)) {
-            return Boolean;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ActionConfigurationPropertyType enumEntry : ActionConfigurationPropertyType
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

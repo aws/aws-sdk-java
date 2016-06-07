@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of an <a>CreateRealtimeEndpoint</a> operation.
+ * Represents the output of an <code>CreateRealtimeEndpoint</code> operation.
  * </p>
  * <p>
  * The result contains the <code>MLModelId</code> and the endpoint information

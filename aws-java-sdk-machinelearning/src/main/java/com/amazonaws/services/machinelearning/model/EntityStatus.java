@@ -18,14 +18,14 @@ package com.amazonaws.services.machinelearning.model;
 
 /**
  * <p>
- * Entity status with the following possible values:
+ * Object status with the following possible values:
  * </p>
  * <ul>
- * <li>PENDING</li>
- * <li>INPROGRESS</li>
- * <li>FAILED</li>
- * <li>COMPLETED</li>
- * <li>DELETED</li>
+ * <li><code>PENDING</code></li>
+ * <li><code>INPROGRESS</code></li>
+ * <li><code>FAILED</code></li>
+ * <li><code>COMPLETED</code></li>
+ * <li><code>DELETED</code></li>
  * </ul>
  */
 public enum EntityStatus {
@@ -57,19 +57,15 @@ public enum EntityStatus {
     public static EntityStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PENDING".equals(value)) {
-            return PENDING;
-        } else if ("INPROGRESS".equals(value)) {
-            return INPROGRESS;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else if ("COMPLETED".equals(value)) {
-            return COMPLETED;
-        } else if ("DELETED".equals(value)) {
-            return DELETED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EntityStatus enumEntry : EntityStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

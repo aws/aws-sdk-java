@@ -50,23 +50,15 @@ public enum ImageAttributeName {
     public static ImageAttributeName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("description".equals(value)) {
-            return Description;
-        } else if ("kernel".equals(value)) {
-            return Kernel;
-        } else if ("ramdisk".equals(value)) {
-            return Ramdisk;
-        } else if ("launchPermission".equals(value)) {
-            return LaunchPermission;
-        } else if ("productCodes".equals(value)) {
-            return ProductCodes;
-        } else if ("blockDeviceMapping".equals(value)) {
-            return BlockDeviceMapping;
-        } else if ("sriovNetSupport".equals(value)) {
-            return SriovNetSupport;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ImageAttributeName enumEntry : ImageAttributeName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

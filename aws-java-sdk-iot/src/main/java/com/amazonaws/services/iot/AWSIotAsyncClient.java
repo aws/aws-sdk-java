@@ -1460,6 +1460,41 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListPolicyPrincipalsResult> listPolicyPrincipalsAsync(
+            ListPolicyPrincipalsRequest request) {
+
+        return listPolicyPrincipalsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPolicyPrincipalsResult> listPolicyPrincipalsAsync(
+            final ListPolicyPrincipalsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPolicyPrincipalsRequest, ListPolicyPrincipalsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListPolicyPrincipalsResult>() {
+                    @Override
+                    public ListPolicyPrincipalsResult call() throws Exception {
+                        ListPolicyPrincipalsResult result;
+
+                        try {
+                            result = listPolicyPrincipals(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPolicyVersionsResult> listPolicyVersionsAsync(
             ListPolicyVersionsRequest request) {
 

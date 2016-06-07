@@ -55,33 +55,15 @@ public enum LayerType {
     public static LayerType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("aws-flow-ruby".equals(value)) {
-            return AwsFlowRuby;
-        } else if ("ecs-cluster".equals(value)) {
-            return EcsCluster;
-        } else if ("java-app".equals(value)) {
-            return JavaApp;
-        } else if ("lb".equals(value)) {
-            return Lb;
-        } else if ("web".equals(value)) {
-            return Web;
-        } else if ("php-app".equals(value)) {
-            return PhpApp;
-        } else if ("rails-app".equals(value)) {
-            return RailsApp;
-        } else if ("nodejs-app".equals(value)) {
-            return NodejsApp;
-        } else if ("memcached".equals(value)) {
-            return Memcached;
-        } else if ("db-master".equals(value)) {
-            return DbMaster;
-        } else if ("monitoring-master".equals(value)) {
-            return MonitoringMaster;
-        } else if ("custom".equals(value)) {
-            return Custom;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LayerType enumEntry : LayerType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

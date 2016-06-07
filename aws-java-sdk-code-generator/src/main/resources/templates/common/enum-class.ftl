@@ -37,12 +37,14 @@ public enum ${shape.shapeName} {
     public static ${shape.shapeName} fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        <#list enums as enum>
-        } else if ("${enum.value}".equals(value)) {
-            return ${enum.name};
-        </#list>
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }
+
+        for (${shape.shapeName} enumEntry : ${shape.shapeName}.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
     }
 }

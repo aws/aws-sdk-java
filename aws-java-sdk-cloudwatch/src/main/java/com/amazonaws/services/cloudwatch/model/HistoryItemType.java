@@ -46,15 +46,15 @@ public enum HistoryItemType {
     public static HistoryItemType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ConfigurationUpdate".equals(value)) {
-            return ConfigurationUpdate;
-        } else if ("StateUpdate".equals(value)) {
-            return StateUpdate;
-        } else if ("Action".equals(value)) {
-            return Action;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (HistoryItemType enumEntry : HistoryItemType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -48,19 +48,15 @@ public enum EnvironmentStatus {
     public static EnvironmentStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Launching".equals(value)) {
-            return Launching;
-        } else if ("Updating".equals(value)) {
-            return Updating;
-        } else if ("Ready".equals(value)) {
-            return Ready;
-        } else if ("Terminating".equals(value)) {
-            return Terminating;
-        } else if ("Terminated".equals(value)) {
-            return Terminated;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EnvironmentStatus enumEntry : EnvironmentStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

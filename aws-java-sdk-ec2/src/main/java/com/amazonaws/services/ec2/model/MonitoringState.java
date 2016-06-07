@@ -47,17 +47,15 @@ public enum MonitoringState {
     public static MonitoringState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("disabled".equals(value)) {
-            return Disabled;
-        } else if ("disabling".equals(value)) {
-            return Disabling;
-        } else if ("enabled".equals(value)) {
-            return Enabled;
-        } else if ("pending".equals(value)) {
-            return Pending;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MonitoringState enumEntry : MonitoringState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

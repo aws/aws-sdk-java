@@ -68,59 +68,15 @@ public enum LayerAttributesKeys {
     public static LayerAttributesKeys fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("EcsClusterArn".equals(value)) {
-            return EcsClusterArn;
-        } else if ("EnableHaproxyStats".equals(value)) {
-            return EnableHaproxyStats;
-        } else if ("HaproxyStatsUrl".equals(value)) {
-            return HaproxyStatsUrl;
-        } else if ("HaproxyStatsUser".equals(value)) {
-            return HaproxyStatsUser;
-        } else if ("HaproxyStatsPassword".equals(value)) {
-            return HaproxyStatsPassword;
-        } else if ("HaproxyHealthCheckUrl".equals(value)) {
-            return HaproxyHealthCheckUrl;
-        } else if ("HaproxyHealthCheckMethod".equals(value)) {
-            return HaproxyHealthCheckMethod;
-        } else if ("MysqlRootPassword".equals(value)) {
-            return MysqlRootPassword;
-        } else if ("MysqlRootPasswordUbiquitous".equals(value)) {
-            return MysqlRootPasswordUbiquitous;
-        } else if ("GangliaUrl".equals(value)) {
-            return GangliaUrl;
-        } else if ("GangliaUser".equals(value)) {
-            return GangliaUser;
-        } else if ("GangliaPassword".equals(value)) {
-            return GangliaPassword;
-        } else if ("MemcachedMemory".equals(value)) {
-            return MemcachedMemory;
-        } else if ("NodejsVersion".equals(value)) {
-            return NodejsVersion;
-        } else if ("RubyVersion".equals(value)) {
-            return RubyVersion;
-        } else if ("RubygemsVersion".equals(value)) {
-            return RubygemsVersion;
-        } else if ("ManageBundler".equals(value)) {
-            return ManageBundler;
-        } else if ("BundlerVersion".equals(value)) {
-            return BundlerVersion;
-        } else if ("RailsStack".equals(value)) {
-            return RailsStack;
-        } else if ("PassengerVersion".equals(value)) {
-            return PassengerVersion;
-        } else if ("Jvm".equals(value)) {
-            return Jvm;
-        } else if ("JvmVersion".equals(value)) {
-            return JvmVersion;
-        } else if ("JvmOptions".equals(value)) {
-            return JvmOptions;
-        } else if ("JavaAppServer".equals(value)) {
-            return JavaAppServer;
-        } else if ("JavaAppServerVersion".equals(value)) {
-            return JavaAppServerVersion;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LayerAttributesKeys enumEntry : LayerAttributesKeys.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

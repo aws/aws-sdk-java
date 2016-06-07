@@ -45,13 +45,15 @@ public enum LayerFailureCode {
     public static LayerFailureCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("InvalidLayerDigest".equals(value)) {
-            return InvalidLayerDigest;
-        } else if ("MissingLayerDigest".equals(value)) {
-            return MissingLayerDigest;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LayerFailureCode enumEntry : LayerFailureCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

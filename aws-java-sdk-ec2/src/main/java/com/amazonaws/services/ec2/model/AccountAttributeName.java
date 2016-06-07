@@ -45,13 +45,15 @@ public enum AccountAttributeName {
     public static AccountAttributeName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("supported-platforms".equals(value)) {
-            return SupportedPlatforms;
-        } else if ("default-vpc".equals(value)) {
-            return DefaultVpc;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AccountAttributeName enumEntry : AccountAttributeName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

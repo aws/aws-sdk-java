@@ -257,6 +257,41 @@ public class AmazonMachineLearningAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<AddTagsResult> addTagsAsync(
+            AddTagsRequest request) {
+
+        return addTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddTagsResult> addTagsAsync(
+            final AddTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AddTagsResult>() {
+                    @Override
+                    public AddTagsResult call() throws Exception {
+                        AddTagsResult result;
+
+                        try {
+                            result = addTags(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBatchPredictionResult> createBatchPredictionAsync(
             CreateBatchPredictionRequest request) {
 
@@ -679,6 +714,41 @@ public class AmazonMachineLearningAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
+            DeleteTagsRequest request) {
+
+        return deleteTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
+            final DeleteTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteTagsResult>() {
+                    @Override
+                    public DeleteTagsResult call() throws Exception {
+                        DeleteTagsResult result;
+
+                        try {
+                            result = deleteTags(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeBatchPredictionsResult> describeBatchPredictionsAsync(
             DescribeBatchPredictionsRequest request) {
 
@@ -918,6 +988,41 @@ public class AmazonMachineLearningAsyncClient extends
 
         return describeMLModelsAsync(new DescribeMLModelsRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(
+            DescribeTagsRequest request) {
+
+        return describeTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(
+            final DescribeTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeTagsResult>() {
+                    @Override
+                    public DescribeTagsResult call() throws Exception {
+                        DescribeTagsResult result;
+
+                        try {
+                            result = describeTags(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override

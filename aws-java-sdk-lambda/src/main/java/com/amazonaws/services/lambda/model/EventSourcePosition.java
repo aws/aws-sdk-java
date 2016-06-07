@@ -45,13 +45,15 @@ public enum EventSourcePosition {
     public static EventSourcePosition fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("TRIM_HORIZON".equals(value)) {
-            return TRIM_HORIZON;
-        } else if ("LATEST".equals(value)) {
-            return LATEST;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EventSourcePosition enumEntry : EventSourcePosition.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -28,6 +28,13 @@ public class StreamRecord implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The approximate date and time when the stream record was created, in <a
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
+     * </p>
+     */
+    private java.util.Date approximateCreationDateTime;
+    /**
+     * <p>
      * The primary key attribute(s) for the DynamoDB item that was modified.
      * </p>
      */
@@ -69,7 +76,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - the entire item, as it appears after it was
+     * <code>NEW_IMAGE</code> - the entire item, as it appeared after it was
      * modified.
      * </p>
      * </li>
@@ -81,13 +88,65 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of
      * the item.
      * </p>
      * </li>
      * </ul>
      */
     private String streamViewType;
+
+    /**
+     * <p>
+     * The approximate date and time when the stream record was created, in <a
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
+     * </p>
+     * 
+     * @param approximateCreationDateTime
+     *        The approximate date and time when the stream record was created,
+     *        in <a href="http://www.epochconverter.com/">UNIX epoch time</a>
+     *        format.
+     */
+
+    public void setApproximateCreationDateTime(
+            java.util.Date approximateCreationDateTime) {
+        this.approximateCreationDateTime = approximateCreationDateTime;
+    }
+
+    /**
+     * <p>
+     * The approximate date and time when the stream record was created, in <a
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
+     * </p>
+     * 
+     * @return The approximate date and time when the stream record was created,
+     *         in <a href="http://www.epochconverter.com/">UNIX epoch time</a>
+     *         format.
+     */
+
+    public java.util.Date getApproximateCreationDateTime() {
+        return this.approximateCreationDateTime;
+    }
+
+    /**
+     * <p>
+     * The approximate date and time when the stream record was created, in <a
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
+     * </p>
+     * 
+     * @param approximateCreationDateTime
+     *        The approximate date and time when the stream record was created,
+     *        in <a href="http://www.epochconverter.com/">UNIX epoch time</a>
+     *        format.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public StreamRecord withApproximateCreationDateTime(
+            java.util.Date approximateCreationDateTime) {
+        setApproximateCreationDateTime(approximateCreationDateTime);
+        return this;
+    }
 
     /**
      * <p>
@@ -381,7 +440,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - the entire item, as it appears after it was
+     * <code>NEW_IMAGE</code> - the entire item, as it appeared after it was
      * modified.
      * </p>
      * </li>
@@ -393,7 +452,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of
      * the item.
      * </p>
      * </li>
@@ -411,7 +470,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_IMAGE</code> - the entire item, as it appears after it
+     *        <code>NEW_IMAGE</code> - the entire item, as it appeared after it
      *        was modified.
      *        </p>
      *        </li>
@@ -423,7 +482,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item
+     *        <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item
      *        images of the item.
      *        </p>
      *        </li>
@@ -447,7 +506,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - the entire item, as it appears after it was
+     * <code>NEW_IMAGE</code> - the entire item, as it appeared after it was
      * modified.
      * </p>
      * </li>
@@ -459,7 +518,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of
      * the item.
      * </p>
      * </li>
@@ -476,7 +535,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NEW_IMAGE</code> - the entire item, as it appears after it
+     *         <code>NEW_IMAGE</code> - the entire item, as it appeared after it
      *         was modified.
      *         </p>
      *         </li>
@@ -488,7 +547,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item
+     *         <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item
      *         images of the item.
      *         </p>
      *         </li>
@@ -512,7 +571,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - the entire item, as it appears after it was
+     * <code>NEW_IMAGE</code> - the entire item, as it appeared after it was
      * modified.
      * </p>
      * </li>
@@ -524,7 +583,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of
      * the item.
      * </p>
      * </li>
@@ -542,7 +601,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_IMAGE</code> - the entire item, as it appears after it
+     *        <code>NEW_IMAGE</code> - the entire item, as it appeared after it
      *        was modified.
      *        </p>
      *        </li>
@@ -554,7 +613,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item
+     *        <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item
      *        images of the item.
      *        </p>
      *        </li>
@@ -581,7 +640,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - the entire item, as it appears after it was
+     * <code>NEW_IMAGE</code> - the entire item, as it appeared after it was
      * modified.
      * </p>
      * </li>
@@ -593,7 +652,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of
      * the item.
      * </p>
      * </li>
@@ -611,7 +670,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_IMAGE</code> - the entire item, as it appears after it
+     *        <code>NEW_IMAGE</code> - the entire item, as it appeared after it
      *        was modified.
      *        </p>
      *        </li>
@@ -623,7 +682,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item
+     *        <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item
      *        images of the item.
      *        </p>
      *        </li>
@@ -647,7 +706,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_IMAGE</code> - the entire item, as it appears after it was
+     * <code>NEW_IMAGE</code> - the entire item, as it appeared after it was
      * modified.
      * </p>
      * </li>
@@ -659,7 +718,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
+     * <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of
      * the item.
      * </p>
      * </li>
@@ -677,7 +736,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_IMAGE</code> - the entire item, as it appears after it
+     *        <code>NEW_IMAGE</code> - the entire item, as it appeared after it
      *        was modified.
      *        </p>
      *        </li>
@@ -689,7 +748,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item
+     *        <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item
      *        images of the item.
      *        </p>
      *        </li>
@@ -715,6 +774,9 @@ public class StreamRecord implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApproximateCreationDateTime() != null)
+            sb.append("ApproximateCreationDateTime: "
+                    + getApproximateCreationDateTime() + ",");
         if (getKeys() != null)
             sb.append("Keys: " + getKeys() + ",");
         if (getNewImage() != null)
@@ -741,6 +803,13 @@ public class StreamRecord implements Serializable, Cloneable {
         if (obj instanceof StreamRecord == false)
             return false;
         StreamRecord other = (StreamRecord) obj;
+        if (other.getApproximateCreationDateTime() == null
+                ^ this.getApproximateCreationDateTime() == null)
+            return false;
+        if (other.getApproximateCreationDateTime() != null
+                && other.getApproximateCreationDateTime().equals(
+                        this.getApproximateCreationDateTime()) == false)
+            return false;
         if (other.getKeys() == null ^ this.getKeys() == null)
             return false;
         if (other.getKeys() != null
@@ -781,6 +850,10 @@ public class StreamRecord implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime
+                * hashCode
+                + ((getApproximateCreationDateTime() == null) ? 0
+                        : getApproximateCreationDateTime().hashCode());
         hashCode = prime * hashCode
                 + ((getKeys() == null) ? 0 : getKeys().hashCode());
         hashCode = prime * hashCode

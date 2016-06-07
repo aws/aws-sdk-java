@@ -47,17 +47,15 @@ public enum ActionOnFailure {
     public static ActionOnFailure fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("TERMINATE_JOB_FLOW".equals(value)) {
-            return TERMINATE_JOB_FLOW;
-        } else if ("TERMINATE_CLUSTER".equals(value)) {
-            return TERMINATE_CLUSTER;
-        } else if ("CANCEL_AND_WAIT".equals(value)) {
-            return CANCEL_AND_WAIT;
-        } else if ("CONTINUE".equals(value)) {
-            return CONTINUE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ActionOnFailure enumEntry : ActionOnFailure.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

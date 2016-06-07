@@ -45,13 +45,15 @@ public enum AssociationFilterKey {
     public static AssociationFilterKey fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("InstanceId".equals(value)) {
-            return InstanceId;
-        } else if ("Name".equals(value)) {
-            return Name;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AssociationFilterKey enumEntry : AssociationFilterKey.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

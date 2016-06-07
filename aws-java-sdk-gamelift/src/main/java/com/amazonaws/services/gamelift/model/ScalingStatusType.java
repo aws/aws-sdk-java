@@ -50,23 +50,15 @@ public enum ScalingStatusType {
     public static ScalingStatusType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ACTIVE".equals(value)) {
-            return ACTIVE;
-        } else if ("UPDATE_REQUESTED".equals(value)) {
-            return UPDATE_REQUESTED;
-        } else if ("UPDATING".equals(value)) {
-            return UPDATING;
-        } else if ("DELETE_REQUESTED".equals(value)) {
-            return DELETE_REQUESTED;
-        } else if ("DELETING".equals(value)) {
-            return DELETING;
-        } else if ("DELETED".equals(value)) {
-            return DELETED;
-        } else if ("ERROR".equals(value)) {
-            return ERROR;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ScalingStatusType enumEntry : ScalingStatusType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

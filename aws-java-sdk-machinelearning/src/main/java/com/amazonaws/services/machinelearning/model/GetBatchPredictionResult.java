@@ -20,8 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <a>GetBatchPrediction</a> operation and describes
- * a <code>BatchPrediction</code>.
+ * Represents the output of a <code>GetBatchPrediction</code> operation and
+ * describes a <code>BatchPrediction</code>.
  * </p>
  */
 public class GetBatchPredictionResult implements Serializable, Cloneable {
@@ -110,8 +110,8 @@ public class GetBatchPredictionResult implements Serializable, Cloneable {
     private String outputUri;
     /**
      * <p>
-     * A link to the file that contains logs of the <a>CreateBatchPrediction</a>
-     * operation.
+     * A link to the file that contains logs of the
+     * <code>CreateBatchPrediction</code> operation.
      * </p>
      */
     private String logUri;
@@ -758,13 +758,13 @@ public class GetBatchPredictionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A link to the file that contains logs of the <a>CreateBatchPrediction</a>
-     * operation.
+     * A link to the file that contains logs of the
+     * <code>CreateBatchPrediction</code> operation.
      * </p>
      * 
      * @param logUri
      *        A link to the file that contains logs of the
-     *        <a>CreateBatchPrediction</a> operation.
+     *        <code>CreateBatchPrediction</code> operation.
      */
 
     public void setLogUri(String logUri) {
@@ -773,12 +773,12 @@ public class GetBatchPredictionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A link to the file that contains logs of the <a>CreateBatchPrediction</a>
-     * operation.
+     * A link to the file that contains logs of the
+     * <code>CreateBatchPrediction</code> operation.
      * </p>
      * 
      * @return A link to the file that contains logs of the
-     *         <a>CreateBatchPrediction</a> operation.
+     *         <code>CreateBatchPrediction</code> operation.
      */
 
     public String getLogUri() {
@@ -787,13 +787,13 @@ public class GetBatchPredictionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A link to the file that contains logs of the <a>CreateBatchPrediction</a>
-     * operation.
+     * A link to the file that contains logs of the
+     * <code>CreateBatchPrediction</code> operation.
      * </p>
      * 
      * @param logUri
      *        A link to the file that contains logs of the
-     *        <a>CreateBatchPrediction</a> operation.
+     *        <code>CreateBatchPrediction</code> operation.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

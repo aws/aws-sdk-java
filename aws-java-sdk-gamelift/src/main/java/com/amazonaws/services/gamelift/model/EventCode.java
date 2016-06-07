@@ -64,46 +64,15 @@ public enum EventCode {
     public static EventCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("GENERIC_EVENT".equals(value)) {
-            return GENERIC_EVENT;
-        } else if ("FLEET_CREATED".equals(value)) {
-            return FLEET_CREATED;
-        } else if ("FLEET_DELETED".equals(value)) {
-            return FLEET_DELETED;
-        } else if ("FLEET_SCALING_EVENT".equals(value)) {
-            return FLEET_SCALING_EVENT;
-        } else if ("FLEET_STATE_DOWNLOADING".equals(value)) {
-            return FLEET_STATE_DOWNLOADING;
-        } else if ("FLEET_STATE_VALIDATING".equals(value)) {
-            return FLEET_STATE_VALIDATING;
-        } else if ("FLEET_STATE_BUILDING".equals(value)) {
-            return FLEET_STATE_BUILDING;
-        } else if ("FLEET_STATE_ACTIVATING".equals(value)) {
-            return FLEET_STATE_ACTIVATING;
-        } else if ("FLEET_STATE_ACTIVE".equals(value)) {
-            return FLEET_STATE_ACTIVE;
-        } else if ("FLEET_STATE_ERROR".equals(value)) {
-            return FLEET_STATE_ERROR;
-        } else if ("FLEET_INITIALIZATION_FAILED".equals(value)) {
-            return FLEET_INITIALIZATION_FAILED;
-        } else if ("FLEET_BINARY_DOWNLOAD_FAILED".equals(value)) {
-            return FLEET_BINARY_DOWNLOAD_FAILED;
-        } else if ("FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND".equals(value)) {
-            return FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND;
-        } else if ("FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE".equals(value)) {
-            return FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE;
-        } else if ("FLEET_VALIDATION_TIMED_OUT".equals(value)) {
-            return FLEET_VALIDATION_TIMED_OUT;
-        } else if ("FLEET_ACTIVATION_FAILED".equals(value)) {
-            return FLEET_ACTIVATION_FAILED;
-        } else if ("FLEET_ACTIVATION_FAILED_NO_INSTANCES".equals(value)) {
-            return FLEET_ACTIVATION_FAILED_NO_INSTANCES;
-        } else if ("FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED"
-                .equals(value)) {
-            return FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EventCode enumEntry : EventCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

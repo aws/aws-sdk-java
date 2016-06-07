@@ -45,13 +45,15 @@ public enum ConditionalOperator {
     public static ConditionalOperator fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("AND".equals(value)) {
-            return AND;
-        } else if ("OR".equals(value)) {
-            return OR;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ConditionalOperator enumEntry : ConditionalOperator.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

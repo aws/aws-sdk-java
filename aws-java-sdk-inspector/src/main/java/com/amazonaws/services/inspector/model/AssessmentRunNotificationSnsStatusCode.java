@@ -47,17 +47,16 @@ public enum AssessmentRunNotificationSnsStatusCode {
     public static AssessmentRunNotificationSnsStatusCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SUCCESS".equals(value)) {
-            return SUCCESS;
-        } else if ("TOPIC_DOES_NOT_EXIST".equals(value)) {
-            return TOPIC_DOES_NOT_EXIST;
-        } else if ("ACCESS_DENIED".equals(value)) {
-            return ACCESS_DENIED;
-        } else if ("INTERNAL_ERROR".equals(value)) {
-            return INTERNAL_ERROR;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AssessmentRunNotificationSnsStatusCode enumEntry : AssessmentRunNotificationSnsStatusCode
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

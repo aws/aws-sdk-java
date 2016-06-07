@@ -49,21 +49,15 @@ public enum OfferingTypeValues {
     public static OfferingTypeValues fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Heavy Utilization".equals(value)) {
-            return HeavyUtilization;
-        } else if ("Medium Utilization".equals(value)) {
-            return MediumUtilization;
-        } else if ("Light Utilization".equals(value)) {
-            return LightUtilization;
-        } else if ("No Upfront".equals(value)) {
-            return NoUpfront;
-        } else if ("Partial Upfront".equals(value)) {
-            return PartialUpfront;
-        } else if ("All Upfront".equals(value)) {
-            return AllUpfront;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (OfferingTypeValues enumEntry : OfferingTypeValues.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

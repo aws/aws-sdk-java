@@ -53,29 +53,15 @@ public enum ResourceStatus {
     public static ResourceStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CREATE_IN_PROGRESS".equals(value)) {
-            return CREATE_IN_PROGRESS;
-        } else if ("CREATE_FAILED".equals(value)) {
-            return CREATE_FAILED;
-        } else if ("CREATE_COMPLETE".equals(value)) {
-            return CREATE_COMPLETE;
-        } else if ("DELETE_IN_PROGRESS".equals(value)) {
-            return DELETE_IN_PROGRESS;
-        } else if ("DELETE_FAILED".equals(value)) {
-            return DELETE_FAILED;
-        } else if ("DELETE_COMPLETE".equals(value)) {
-            return DELETE_COMPLETE;
-        } else if ("DELETE_SKIPPED".equals(value)) {
-            return DELETE_SKIPPED;
-        } else if ("UPDATE_IN_PROGRESS".equals(value)) {
-            return UPDATE_IN_PROGRESS;
-        } else if ("UPDATE_FAILED".equals(value)) {
-            return UPDATE_FAILED;
-        } else if ("UPDATE_COMPLETE".equals(value)) {
-            return UPDATE_COMPLETE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ResourceStatus enumEntry : ResourceStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -57,37 +57,15 @@ public enum TestType {
     public static TestType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("BUILTIN_FUZZ".equals(value)) {
-            return BUILTIN_FUZZ;
-        } else if ("BUILTIN_EXPLORER".equals(value)) {
-            return BUILTIN_EXPLORER;
-        } else if ("APPIUM_JAVA_JUNIT".equals(value)) {
-            return APPIUM_JAVA_JUNIT;
-        } else if ("APPIUM_JAVA_TESTNG".equals(value)) {
-            return APPIUM_JAVA_TESTNG;
-        } else if ("APPIUM_PYTHON".equals(value)) {
-            return APPIUM_PYTHON;
-        } else if ("APPIUM_WEB_JAVA_JUNIT".equals(value)) {
-            return APPIUM_WEB_JAVA_JUNIT;
-        } else if ("APPIUM_WEB_JAVA_TESTNG".equals(value)) {
-            return APPIUM_WEB_JAVA_TESTNG;
-        } else if ("APPIUM_WEB_PYTHON".equals(value)) {
-            return APPIUM_WEB_PYTHON;
-        } else if ("CALABASH".equals(value)) {
-            return CALABASH;
-        } else if ("INSTRUMENTATION".equals(value)) {
-            return INSTRUMENTATION;
-        } else if ("UIAUTOMATION".equals(value)) {
-            return UIAUTOMATION;
-        } else if ("UIAUTOMATOR".equals(value)) {
-            return UIAUTOMATOR;
-        } else if ("XCTEST".equals(value)) {
-            return XCTEST;
-        } else if ("XCTEST_UI".equals(value)) {
-            return XCTEST_UI;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (TestType enumEntry : TestType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

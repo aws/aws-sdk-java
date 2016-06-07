@@ -46,15 +46,15 @@ public enum RadiusStatus {
     public static RadiusStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Creating".equals(value)) {
-            return Creating;
-        } else if ("Completed".equals(value)) {
-            return Completed;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RadiusStatus enumEntry : RadiusStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

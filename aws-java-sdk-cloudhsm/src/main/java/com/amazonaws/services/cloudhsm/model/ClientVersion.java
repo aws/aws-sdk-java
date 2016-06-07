@@ -45,13 +45,15 @@ public enum ClientVersion {
     public static ClientVersion fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("5.1".equals(value)) {
-            return FIVE_ONE;
-        } else if ("5.3".equals(value)) {
-            return FIVE_THREE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ClientVersion enumEntry : ClientVersion.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

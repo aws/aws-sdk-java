@@ -45,13 +45,15 @@ public enum ConfigRuleState {
     public static ConfigRuleState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ACTIVE".equals(value)) {
-            return ACTIVE;
-        } else if ("DELETING".equals(value)) {
-            return DELETING;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ConfigRuleState enumEntry : ConfigRuleState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

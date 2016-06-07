@@ -1168,12 +1168,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>"
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -1363,12 +1363,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>"
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -1498,8 +1498,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Subscription",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>",
-          "templateType" : "java.util.List<Subscription>"
+          "templateType" : "java.util.List<Subscription>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1744,8 +1744,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Subscription",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>",
-            "templateType" : "java.util.List<Subscription>"
+            "templateType" : "java.util.List<Subscription>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2126,8 +2126,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Subscription",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>",
-          "templateType" : "java.util.List<Subscription>"
+          "templateType" : "java.util.List<Subscription>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2372,8 +2372,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Subscription",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>",
-            "templateType" : "java.util.List<Subscription>"
+            "templateType" : "java.util.List<Subscription>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subscription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3160,12 +3160,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>"
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -3306,12 +3306,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>"
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -3494,8 +3494,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "PlatformApplication",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PlatformApplication>",
-          "templateType" : "java.util.List<PlatformApplication>"
+          "templateType" : "java.util.List<PlatformApplication>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PlatformApplication>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3687,8 +3687,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "PlatformApplication",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PlatformApplication>",
-            "templateType" : "java.util.List<PlatformApplication>"
+            "templateType" : "java.util.List<PlatformApplication>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PlatformApplication>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4264,8 +4264,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Endpoint",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Endpoint>",
-          "templateType" : "java.util.List<Endpoint>"
+          "templateType" : "java.util.List<Endpoint>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Endpoint>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4510,8 +4510,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Endpoint",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Endpoint>",
-            "templateType" : "java.util.List<Endpoint>"
+            "templateType" : "java.util.List<Endpoint>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Endpoint>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4819,8 +4819,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Topic",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Topic>",
-          "templateType" : "java.util.List<Topic>"
+          "templateType" : "java.util.List<Topic>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Topic>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5065,8 +5065,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Topic",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Topic>",
-            "templateType" : "java.util.List<Topic>"
+            "templateType" : "java.util.List<Topic>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Topic>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5375,12 +5375,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>"
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5517,12 +5517,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>"
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6528,12 +6528,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>"
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -6670,12 +6670,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>"
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6855,12 +6855,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>"
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -6997,12 +6997,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>"
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7235,12 +7235,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>"
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7434,12 +7434,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>"
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8397,12 +8397,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>"
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -8596,12 +8596,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>"
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -9686,8 +9686,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9804,8 +9804,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10002,8 +10002,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10121,8 +10121,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10882,12 +10882,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
           "entryType" : "Map.Entry<String, MessageAttributeValue>",
-          "templateType" : "java.util.Map<String,MessageAttributeValue>"
+          "templateType" : "java.util.Map<String,MessageAttributeValue>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -11028,12 +11028,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
             "entryType" : "Map.Entry<String, MessageAttributeValue>",
-            "templateType" : "java.util.Map<String,MessageAttributeValue>"
+            "templateType" : "java.util.Map<String,MessageAttributeValue>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,MessageAttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -12095,12 +12095,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>"
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12237,12 +12237,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>"
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -12756,12 +12756,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>"
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12955,12 +12955,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>"
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -13286,12 +13286,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>"
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -13428,12 +13428,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>"
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

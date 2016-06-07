@@ -49,21 +49,15 @@ public enum ResourceAttribute {
     public static ResourceAttribute fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Properties".equals(value)) {
-            return Properties;
-        } else if ("Metadata".equals(value)) {
-            return Metadata;
-        } else if ("CreationPolicy".equals(value)) {
-            return CreationPolicy;
-        } else if ("UpdatePolicy".equals(value)) {
-            return UpdatePolicy;
-        } else if ("DeletionPolicy".equals(value)) {
-            return DeletionPolicy;
-        } else if ("Tags".equals(value)) {
-            return Tags;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ResourceAttribute enumEntry : ResourceAttribute.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

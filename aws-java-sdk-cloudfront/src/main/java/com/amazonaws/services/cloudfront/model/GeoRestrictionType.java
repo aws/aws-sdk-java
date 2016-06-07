@@ -46,15 +46,15 @@ public enum GeoRestrictionType {
     public static GeoRestrictionType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("blacklist".equals(value)) {
-            return Blacklist;
-        } else if ("whitelist".equals(value)) {
-            return Whitelist;
-        } else if ("none".equals(value)) {
-            return None;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (GeoRestrictionType enumEntry : GeoRestrictionType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -44,11 +44,16 @@ public enum StepStateChangeReasonCode {
     public static StepStateChangeReasonCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("NONE".equals(value)) {
-            return NONE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (StepStateChangeReasonCode enumEntry : StepStateChangeReasonCode
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

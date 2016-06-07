@@ -67,57 +67,15 @@ public enum ArtifactType {
     public static ArtifactType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("UNKNOWN".equals(value)) {
-            return UNKNOWN;
-        } else if ("SCREENSHOT".equals(value)) {
-            return SCREENSHOT;
-        } else if ("DEVICE_LOG".equals(value)) {
-            return DEVICE_LOG;
-        } else if ("MESSAGE_LOG".equals(value)) {
-            return MESSAGE_LOG;
-        } else if ("RESULT_LOG".equals(value)) {
-            return RESULT_LOG;
-        } else if ("SERVICE_LOG".equals(value)) {
-            return SERVICE_LOG;
-        } else if ("WEBKIT_LOG".equals(value)) {
-            return WEBKIT_LOG;
-        } else if ("INSTRUMENTATION_OUTPUT".equals(value)) {
-            return INSTRUMENTATION_OUTPUT;
-        } else if ("EXERCISER_MONKEY_OUTPUT".equals(value)) {
-            return EXERCISER_MONKEY_OUTPUT;
-        } else if ("CALABASH_JSON_OUTPUT".equals(value)) {
-            return CALABASH_JSON_OUTPUT;
-        } else if ("CALABASH_PRETTY_OUTPUT".equals(value)) {
-            return CALABASH_PRETTY_OUTPUT;
-        } else if ("CALABASH_STANDARD_OUTPUT".equals(value)) {
-            return CALABASH_STANDARD_OUTPUT;
-        } else if ("CALABASH_JAVA_XML_OUTPUT".equals(value)) {
-            return CALABASH_JAVA_XML_OUTPUT;
-        } else if ("AUTOMATION_OUTPUT".equals(value)) {
-            return AUTOMATION_OUTPUT;
-        } else if ("APPIUM_SERVER_OUTPUT".equals(value)) {
-            return APPIUM_SERVER_OUTPUT;
-        } else if ("APPIUM_JAVA_OUTPUT".equals(value)) {
-            return APPIUM_JAVA_OUTPUT;
-        } else if ("APPIUM_JAVA_XML_OUTPUT".equals(value)) {
-            return APPIUM_JAVA_XML_OUTPUT;
-        } else if ("APPIUM_PYTHON_OUTPUT".equals(value)) {
-            return APPIUM_PYTHON_OUTPUT;
-        } else if ("APPIUM_PYTHON_XML_OUTPUT".equals(value)) {
-            return APPIUM_PYTHON_XML_OUTPUT;
-        } else if ("EXPLORER_EVENT_LOG".equals(value)) {
-            return EXPLORER_EVENT_LOG;
-        } else if ("EXPLORER_SUMMARY_LOG".equals(value)) {
-            return EXPLORER_SUMMARY_LOG;
-        } else if ("APPLICATION_CRASH_REPORT".equals(value)) {
-            return APPLICATION_CRASH_REPORT;
-        } else if ("XCTEST_LOG".equals(value)) {
-            return XCTEST_LOG;
-        } else if ("VIDEO".equals(value)) {
-            return VIDEO;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ArtifactType enumEntry : ArtifactType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

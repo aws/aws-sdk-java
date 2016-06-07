@@ -102,127 +102,15 @@ public enum InstanceType {
     public static InstanceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("t1.micro".equals(value)) {
-            return T1Micro;
-        } else if ("m1.small".equals(value)) {
-            return M1Small;
-        } else if ("m1.medium".equals(value)) {
-            return M1Medium;
-        } else if ("m1.large".equals(value)) {
-            return M1Large;
-        } else if ("m1.xlarge".equals(value)) {
-            return M1Xlarge;
-        } else if ("m3.medium".equals(value)) {
-            return M3Medium;
-        } else if ("m3.large".equals(value)) {
-            return M3Large;
-        } else if ("m3.xlarge".equals(value)) {
-            return M3Xlarge;
-        } else if ("m3.2xlarge".equals(value)) {
-            return M32xlarge;
-        } else if ("m4.large".equals(value)) {
-            return M4Large;
-        } else if ("m4.xlarge".equals(value)) {
-            return M4Xlarge;
-        } else if ("m4.2xlarge".equals(value)) {
-            return M42xlarge;
-        } else if ("m4.4xlarge".equals(value)) {
-            return M44xlarge;
-        } else if ("m4.10xlarge".equals(value)) {
-            return M410xlarge;
-        } else if ("t2.nano".equals(value)) {
-            return T2Nano;
-        } else if ("t2.micro".equals(value)) {
-            return T2Micro;
-        } else if ("t2.small".equals(value)) {
-            return T2Small;
-        } else if ("t2.medium".equals(value)) {
-            return T2Medium;
-        } else if ("t2.large".equals(value)) {
-            return T2Large;
-        } else if ("m2.xlarge".equals(value)) {
-            return M2Xlarge;
-        } else if ("m2.2xlarge".equals(value)) {
-            return M22xlarge;
-        } else if ("m2.4xlarge".equals(value)) {
-            return M24xlarge;
-        } else if ("cr1.8xlarge".equals(value)) {
-            return Cr18xlarge;
-        } else if ("x1.4xlarge".equals(value)) {
-            return X14xlarge;
-        } else if ("x1.8xlarge".equals(value)) {
-            return X18xlarge;
-        } else if ("x1.16xlarge".equals(value)) {
-            return X116xlarge;
-        } else if ("x1.32xlarge".equals(value)) {
-            return X132xlarge;
-        } else if ("i2.xlarge".equals(value)) {
-            return I2Xlarge;
-        } else if ("i2.2xlarge".equals(value)) {
-            return I22xlarge;
-        } else if ("i2.4xlarge".equals(value)) {
-            return I24xlarge;
-        } else if ("i2.8xlarge".equals(value)) {
-            return I28xlarge;
-        } else if ("hi1.4xlarge".equals(value)) {
-            return Hi14xlarge;
-        } else if ("hs1.8xlarge".equals(value)) {
-            return Hs18xlarge;
-        } else if ("c1.medium".equals(value)) {
-            return C1Medium;
-        } else if ("c1.xlarge".equals(value)) {
-            return C1Xlarge;
-        } else if ("c3.large".equals(value)) {
-            return C3Large;
-        } else if ("c3.xlarge".equals(value)) {
-            return C3Xlarge;
-        } else if ("c3.2xlarge".equals(value)) {
-            return C32xlarge;
-        } else if ("c3.4xlarge".equals(value)) {
-            return C34xlarge;
-        } else if ("c3.8xlarge".equals(value)) {
-            return C38xlarge;
-        } else if ("c4.large".equals(value)) {
-            return C4Large;
-        } else if ("c4.xlarge".equals(value)) {
-            return C4Xlarge;
-        } else if ("c4.2xlarge".equals(value)) {
-            return C42xlarge;
-        } else if ("c4.4xlarge".equals(value)) {
-            return C44xlarge;
-        } else if ("c4.8xlarge".equals(value)) {
-            return C48xlarge;
-        } else if ("cc1.4xlarge".equals(value)) {
-            return Cc14xlarge;
-        } else if ("cc2.8xlarge".equals(value)) {
-            return Cc28xlarge;
-        } else if ("g2.2xlarge".equals(value)) {
-            return G22xlarge;
-        } else if ("g2.8xlarge".equals(value)) {
-            return G28xlarge;
-        } else if ("cg1.4xlarge".equals(value)) {
-            return Cg14xlarge;
-        } else if ("r3.large".equals(value)) {
-            return R3Large;
-        } else if ("r3.xlarge".equals(value)) {
-            return R3Xlarge;
-        } else if ("r3.2xlarge".equals(value)) {
-            return R32xlarge;
-        } else if ("r3.4xlarge".equals(value)) {
-            return R34xlarge;
-        } else if ("r3.8xlarge".equals(value)) {
-            return R38xlarge;
-        } else if ("d2.xlarge".equals(value)) {
-            return D2Xlarge;
-        } else if ("d2.2xlarge".equals(value)) {
-            return D22xlarge;
-        } else if ("d2.4xlarge".equals(value)) {
-            return D24xlarge;
-        } else if ("d2.8xlarge".equals(value)) {
-            return D28xlarge;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InstanceType enumEntry : InstanceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

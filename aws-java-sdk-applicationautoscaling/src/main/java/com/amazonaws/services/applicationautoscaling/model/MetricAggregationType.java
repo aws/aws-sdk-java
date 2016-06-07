@@ -46,15 +46,15 @@ public enum MetricAggregationType {
     public static MetricAggregationType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Average".equals(value)) {
-            return Average;
-        } else if ("Minimum".equals(value)) {
-            return Minimum;
-        } else if ("Maximum".equals(value)) {
-            return Maximum;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MetricAggregationType enumEntry : MetricAggregationType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

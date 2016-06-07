@@ -45,13 +45,15 @@ public enum ValidationSeverity {
     public static ValidationSeverity fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("error".equals(value)) {
-            return Error;
-        } else if ("warning".equals(value)) {
-            return Warning;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ValidationSeverity enumEntry : ValidationSeverity.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

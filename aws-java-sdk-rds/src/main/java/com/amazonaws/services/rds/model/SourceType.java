@@ -49,21 +49,15 @@ public enum SourceType {
     public static SourceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("db-instance".equals(value)) {
-            return DbInstance;
-        } else if ("db-parameter-group".equals(value)) {
-            return DbParameterGroup;
-        } else if ("db-security-group".equals(value)) {
-            return DbSecurityGroup;
-        } else if ("db-snapshot".equals(value)) {
-            return DbSnapshot;
-        } else if ("db-cluster".equals(value)) {
-            return DbCluster;
-        } else if ("db-cluster-snapshot".equals(value)) {
-            return DbClusterSnapshot;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SourceType enumEntry : SourceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

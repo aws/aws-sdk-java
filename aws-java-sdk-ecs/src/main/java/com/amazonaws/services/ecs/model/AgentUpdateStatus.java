@@ -49,21 +49,15 @@ public enum AgentUpdateStatus {
     public static AgentUpdateStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PENDING".equals(value)) {
-            return PENDING;
-        } else if ("STAGING".equals(value)) {
-            return STAGING;
-        } else if ("STAGED".equals(value)) {
-            return STAGED;
-        } else if ("UPDATING".equals(value)) {
-            return UPDATING;
-        } else if ("UPDATED".equals(value)) {
-            return UPDATED;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AgentUpdateStatus enumEntry : AgentUpdateStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

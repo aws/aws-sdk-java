@@ -28,12 +28,20 @@ import com.amazonaws.AmazonServiceException;
  * the stream. You might receive a TrimmedDataAccessException if:
  * </p>
  * <ul>
- * <li>You request a shard iterator with a sequence number older than the trim
- * point (24 hours).</li>
- * <li>You obtain a shard iterator, but before you use the iterator in a
+ * <li>
+ * <p>
+ * You request a shard iterator with a sequence number older than the trim point
+ * (24 hours).
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You obtain a shard iterator, but before you use the iterator in a
  * <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour
  * period and is trimmed. This causes the iterator to access a record that no
- * longer exists.</li>
+ * longer exists.
+ * </p>
+ * </li>
  * </ul>
  */
 public class TrimmedDataAccessException extends AmazonServiceException {

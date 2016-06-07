@@ -46,15 +46,16 @@ public enum StartReplicationTaskTypeValue {
     public static StartReplicationTaskTypeValue fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("start-replication".equals(value)) {
-            return StartReplication;
-        } else if ("resume-processing".equals(value)) {
-            return ResumeProcessing;
-        } else if ("reload-target".equals(value)) {
-            return ReloadTarget;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (StartReplicationTaskTypeValue enumEntry : StartReplicationTaskTypeValue
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

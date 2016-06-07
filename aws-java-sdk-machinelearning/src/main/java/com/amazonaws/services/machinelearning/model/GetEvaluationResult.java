@@ -20,8 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <a>GetEvaluation</a> operation and describes an
- * <code>Evaluation</code>.
+ * Represents the output of a <code>GetEvaluation</code> operation and describes
+ * an <code>Evaluation</code>.
  * </p>
  */
 public class GetEvaluationResult implements Serializable, Cloneable {
@@ -135,8 +135,8 @@ public class GetEvaluationResult implements Serializable, Cloneable {
     private PerformanceMetrics performanceMetrics;
     /**
      * <p>
-     * A link to the file that contains logs of the <a>CreateEvaluation</a>
-     * operation.
+     * A link to the file that contains logs of the
+     * <code>CreateEvaluation</code> operation.
      * </p>
      */
     private String logUri;
@@ -933,13 +933,13 @@ public class GetEvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A link to the file that contains logs of the <a>CreateEvaluation</a>
-     * operation.
+     * A link to the file that contains logs of the
+     * <code>CreateEvaluation</code> operation.
      * </p>
      * 
      * @param logUri
      *        A link to the file that contains logs of the
-     *        <a>CreateEvaluation</a> operation.
+     *        <code>CreateEvaluation</code> operation.
      */
 
     public void setLogUri(String logUri) {
@@ -948,12 +948,12 @@ public class GetEvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A link to the file that contains logs of the <a>CreateEvaluation</a>
-     * operation.
+     * A link to the file that contains logs of the
+     * <code>CreateEvaluation</code> operation.
      * </p>
      * 
      * @return A link to the file that contains logs of the
-     *         <a>CreateEvaluation</a> operation.
+     *         <code>CreateEvaluation</code> operation.
      */
 
     public String getLogUri() {
@@ -962,13 +962,13 @@ public class GetEvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A link to the file that contains logs of the <a>CreateEvaluation</a>
-     * operation.
+     * A link to the file that contains logs of the
+     * <code>CreateEvaluation</code> operation.
      * </p>
      * 
      * @param logUri
      *        A link to the file that contains logs of the
-     *        <a>CreateEvaluation</a> operation.
+     *        <code>CreateEvaluation</code> operation.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

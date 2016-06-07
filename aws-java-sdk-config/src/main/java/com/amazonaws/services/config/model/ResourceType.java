@@ -62,47 +62,15 @@ public enum ResourceType {
     public static ResourceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("AWS::EC2::CustomerGateway".equals(value)) {
-            return AWSEC2CustomerGateway;
-        } else if ("AWS::EC2::EIP".equals(value)) {
-            return AWSEC2EIP;
-        } else if ("AWS::EC2::Host".equals(value)) {
-            return AWSEC2Host;
-        } else if ("AWS::EC2::Instance".equals(value)) {
-            return AWSEC2Instance;
-        } else if ("AWS::EC2::InternetGateway".equals(value)) {
-            return AWSEC2InternetGateway;
-        } else if ("AWS::EC2::NetworkAcl".equals(value)) {
-            return AWSEC2NetworkAcl;
-        } else if ("AWS::EC2::NetworkInterface".equals(value)) {
-            return AWSEC2NetworkInterface;
-        } else if ("AWS::EC2::RouteTable".equals(value)) {
-            return AWSEC2RouteTable;
-        } else if ("AWS::EC2::SecurityGroup".equals(value)) {
-            return AWSEC2SecurityGroup;
-        } else if ("AWS::EC2::Subnet".equals(value)) {
-            return AWSEC2Subnet;
-        } else if ("AWS::CloudTrail::Trail".equals(value)) {
-            return AWSCloudTrailTrail;
-        } else if ("AWS::EC2::Volume".equals(value)) {
-            return AWSEC2Volume;
-        } else if ("AWS::EC2::VPC".equals(value)) {
-            return AWSEC2VPC;
-        } else if ("AWS::EC2::VPNConnection".equals(value)) {
-            return AWSEC2VPNConnection;
-        } else if ("AWS::EC2::VPNGateway".equals(value)) {
-            return AWSEC2VPNGateway;
-        } else if ("AWS::IAM::Group".equals(value)) {
-            return AWSIAMGroup;
-        } else if ("AWS::IAM::Policy".equals(value)) {
-            return AWSIAMPolicy;
-        } else if ("AWS::IAM::Role".equals(value)) {
-            return AWSIAMRole;
-        } else if ("AWS::IAM::User".equals(value)) {
-            return AWSIAMUser;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ResourceType enumEntry : ResourceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

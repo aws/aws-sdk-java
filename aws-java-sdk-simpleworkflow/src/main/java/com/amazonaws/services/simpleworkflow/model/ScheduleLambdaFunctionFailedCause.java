@@ -49,17 +49,16 @@ public enum ScheduleLambdaFunctionFailedCause {
     public static ScheduleLambdaFunctionFailedCause fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ID_ALREADY_IN_USE".equals(value)) {
-            return ID_ALREADY_IN_USE;
-        } else if ("OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED".equals(value)) {
-            return OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED;
-        } else if ("LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED".equals(value)) {
-            return LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED;
-        } else if ("LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION".equals(value)) {
-            return LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ScheduleLambdaFunctionFailedCause enumEntry : ScheduleLambdaFunctionFailedCause
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -18,12 +18,12 @@ package com.amazonaws.services.machinelearning.model;
 
 /**
  * <p>
- * The function used to train a <code>MLModel</code>. Training choices supported
- * by Amazon ML include the following:
+ * The function used to train an <code>MLModel</code>. Training choices
+ * supported by Amazon ML include the following:
  * </p>
  * <ul>
- * <li>SGD - Stochastic Gradient Descent.</li>
- * <li>RandomForest - Random forest of decision trees.</li>
+ * <li> <code>SGD</code> - Stochastic Gradient Descent.</li>
+ * <li> <code>RandomForest</code> - Random forest of decision trees.</li>
  * </ul>
  */
 public enum Algorithm {
@@ -51,11 +51,15 @@ public enum Algorithm {
     public static Algorithm fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("sgd".equals(value)) {
-            return Sgd;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Algorithm enumEntry : Algorithm.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

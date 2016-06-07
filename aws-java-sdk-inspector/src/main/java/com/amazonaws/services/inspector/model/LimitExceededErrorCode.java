@@ -48,19 +48,15 @@ public enum LimitExceededErrorCode {
     public static LimitExceededErrorCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ASSESSMENT_TARGET_LIMIT_EXCEEDED".equals(value)) {
-            return ASSESSMENT_TARGET_LIMIT_EXCEEDED;
-        } else if ("ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED".equals(value)) {
-            return ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED;
-        } else if ("ASSESSMENT_RUN_LIMIT_EXCEEDED".equals(value)) {
-            return ASSESSMENT_RUN_LIMIT_EXCEEDED;
-        } else if ("RESOURCE_GROUP_LIMIT_EXCEEDED".equals(value)) {
-            return RESOURCE_GROUP_LIMIT_EXCEEDED;
-        } else if ("EVENT_SUBSCRIPTION_LIMIT_EXCEEDED".equals(value)) {
-            return EVENT_SUBSCRIPTION_LIMIT_EXCEEDED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (LimitExceededErrorCode enumEntry : LimitExceededErrorCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

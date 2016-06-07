@@ -48,19 +48,15 @@ public enum ActionCategory {
     public static ActionCategory fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Source".equals(value)) {
-            return Source;
-        } else if ("Build".equals(value)) {
-            return Build;
-        } else if ("Deploy".equals(value)) {
-            return Deploy;
-        } else if ("Test".equals(value)) {
-            return Test;
-        } else if ("Invoke".equals(value)) {
-            return Invoke;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ActionCategory enumEntry : ActionCategory.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

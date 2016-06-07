@@ -23,36 +23,18 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * asynchronous operation; overloads which accept an {@code AsyncHandler} can be
  * used to receive notification when an asynchronous operation completes.
  * <p>
- * <fullname>Amazon DynamoDB Streams</fullname>
+ * <fullname>Amazon DynamoDB</fullname>
  * <p>
- * This is the Amazon DynamoDB Streams API Reference. This guide describes the
- * low-level API actions for accessing streams and processing stream records.
- * For information about application development with DynamoDB Streams, see the
- * <a href=
- * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide//Streams.html"
- * >Amazon DynamoDB Developer Guide</a>.
+ * Amazon DynamoDB Streams provides API actions for accessing streams and
+ * processing stream records. To learn more about application development with
+ * Streams, see <a href=
+ * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html"
+ * >Capturing Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB
+ * Developer Guide.
  * </p>
  * <p>
- * Note that this document is intended for use with the following DynamoDB
- * documentation:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/">
- * Amazon DynamoDB Developer Guide</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/">
- * Amazon DynamoDB API Reference</a>
- * </p>
- * </li>
- * </ul>
- * <p>
- * The following are short descriptions of each low-level DynamoDB Streams API
- * action, organized by function.
+ * The following are short descriptions of each low-level DynamoDB Streams
+ * action:
  * </p>
  * <ul>
  * <li>
@@ -100,7 +82,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * <code>StartingSequenceNumber</code> but no
      * <code>EndingSequenceNumber</code>, then the shard is still open (able to
      * receive more stream records). If both <code>StartingSequenceNumber</code>
-     * and <code>EndingSequenceNumber</code> are present, the that shared is
+     * and <code>EndingSequenceNumber</code> are present, then that shard is
      * closed and can no longer receive more data.
      * </p>
      * 
@@ -131,7 +113,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * <code>StartingSequenceNumber</code> but no
      * <code>EndingSequenceNumber</code>, then the shard is still open (able to
      * receive more stream records). If both <code>StartingSequenceNumber</code>
-     * and <code>EndingSequenceNumber</code> are present, the that shared is
+     * and <code>EndingSequenceNumber</code> are present, then that shard is
      * closed and can no longer receive more data.
      * </p>
      * 
@@ -165,8 +147,8 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * </p>
      * <note>
      * <p>
-     * <function>GetRecords</function> can retrieve a maximum of 1 MB of data or
-     * 2000 stream records, whichever comes first.
+     * <code>GetRecords</code> can retrieve a maximum of 1 MB of data or 1000
+     * stream records, whichever comes first.
      * </p>
      * </note>
      * 
@@ -194,8 +176,8 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * </p>
      * <note>
      * <p>
-     * <function>GetRecords</function> can retrieve a maximum of 1 MB of data or
-     * 2000 stream records, whichever comes first.
+     * <code>GetRecords</code> can retrieve a maximum of 1 MB of data or 1000
+     * stream records, whichever comes first.
      * </p>
      * </note>
      * 

@@ -47,17 +47,15 @@ public enum IndexStatus {
     public static IndexStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CREATING".equals(value)) {
-            return CREATING;
-        } else if ("UPDATING".equals(value)) {
-            return UPDATING;
-        } else if ("DELETING".equals(value)) {
-            return DELETING;
-        } else if ("ACTIVE".equals(value)) {
-            return ACTIVE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (IndexStatus enumEntry : IndexStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

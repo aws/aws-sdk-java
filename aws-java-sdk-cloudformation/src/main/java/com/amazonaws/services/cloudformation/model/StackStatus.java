@@ -60,41 +60,15 @@ public enum StackStatus {
     public static StackStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CREATE_IN_PROGRESS".equals(value)) {
-            return CREATE_IN_PROGRESS;
-        } else if ("CREATE_FAILED".equals(value)) {
-            return CREATE_FAILED;
-        } else if ("CREATE_COMPLETE".equals(value)) {
-            return CREATE_COMPLETE;
-        } else if ("ROLLBACK_IN_PROGRESS".equals(value)) {
-            return ROLLBACK_IN_PROGRESS;
-        } else if ("ROLLBACK_FAILED".equals(value)) {
-            return ROLLBACK_FAILED;
-        } else if ("ROLLBACK_COMPLETE".equals(value)) {
-            return ROLLBACK_COMPLETE;
-        } else if ("DELETE_IN_PROGRESS".equals(value)) {
-            return DELETE_IN_PROGRESS;
-        } else if ("DELETE_FAILED".equals(value)) {
-            return DELETE_FAILED;
-        } else if ("DELETE_COMPLETE".equals(value)) {
-            return DELETE_COMPLETE;
-        } else if ("UPDATE_IN_PROGRESS".equals(value)) {
-            return UPDATE_IN_PROGRESS;
-        } else if ("UPDATE_COMPLETE_CLEANUP_IN_PROGRESS".equals(value)) {
-            return UPDATE_COMPLETE_CLEANUP_IN_PROGRESS;
-        } else if ("UPDATE_COMPLETE".equals(value)) {
-            return UPDATE_COMPLETE;
-        } else if ("UPDATE_ROLLBACK_IN_PROGRESS".equals(value)) {
-            return UPDATE_ROLLBACK_IN_PROGRESS;
-        } else if ("UPDATE_ROLLBACK_FAILED".equals(value)) {
-            return UPDATE_ROLLBACK_FAILED;
-        } else if ("UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS".equals(value)) {
-            return UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS;
-        } else if ("UPDATE_ROLLBACK_COMPLETE".equals(value)) {
-            return UPDATE_ROLLBACK_COMPLETE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (StackStatus enumEntry : StackStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

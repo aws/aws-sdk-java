@@ -45,13 +45,15 @@ public enum KeyAlgorithm {
     public static KeyAlgorithm fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("RSA_2048".equals(value)) {
-            return RSA_2048;
-        } else if ("EC_prime256v1".equals(value)) {
-            return EC_prime256v1;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (KeyAlgorithm enumEntry : KeyAlgorithm.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

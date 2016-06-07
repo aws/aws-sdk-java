@@ -58,9 +58,11 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      * . This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>NONE - Endpoint does not exist or was previously deleted.</li>
-     * <li>READY - Endpoint is ready to be used for real-time predictions.</li>
-     * <li>UPDATING - Updating/creating the endpoint.</li>
+     * <li> <code>NONE</code> - Endpoint does not exist or was previously
+     * deleted.</li>
+     * <li> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</li>
+     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
      * </ul>
      */
     private String endpointStatus;
@@ -247,9 +249,11 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      * . This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>NONE - Endpoint does not exist or was previously deleted.</li>
-     * <li>READY - Endpoint is ready to be used for real-time predictions.</li>
-     * <li>UPDATING - Updating/creating the endpoint.</li>
+     * <li> <code>NONE</code> - Endpoint does not exist or was previously
+     * deleted.</li>
+     * <li> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</li>
+     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
      * </ul>
      * 
      * @param endpointStatus
@@ -257,10 +261,11 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *        <code>MLModel</code>. This element can have one of the following
      *        values: </p>
      *        <ul>
-     *        <li>NONE - Endpoint does not exist or was previously deleted.</li>
-     *        <li>READY - Endpoint is ready to be used for real-time
-     *        predictions.</li>
-     *        <li>UPDATING - Updating/creating the endpoint.</li>
+     *        <li> <code>NONE</code> - Endpoint does not exist or was previously
+     *        deleted.</li>
+     *        <li> <code>READY</code> - Endpoint is ready to be used for
+     *        real-time predictions.</li>
+     *        <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
      * @see RealtimeEndpointStatus
      */
 
@@ -274,19 +279,22 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      * . This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>NONE - Endpoint does not exist or was previously deleted.</li>
-     * <li>READY - Endpoint is ready to be used for real-time predictions.</li>
-     * <li>UPDATING - Updating/creating the endpoint.</li>
+     * <li> <code>NONE</code> - Endpoint does not exist or was previously
+     * deleted.</li>
+     * <li> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</li>
+     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
      * </ul>
      * 
      * @return The current status of the real-time endpoint for the
      *         <code>MLModel</code>. This element can have one of the following
      *         values: </p>
      *         <ul>
-     *         <li>NONE - Endpoint does not exist or was previously deleted.</li>
-     *         <li>READY - Endpoint is ready to be used for real-time
-     *         predictions.</li>
-     *         <li>UPDATING - Updating/creating the endpoint.</li>
+     *         <li> <code>NONE</code> - Endpoint does not exist or was previously
+     *         deleted.</li>
+     *         <li> <code>READY</code> - Endpoint is ready to be used for
+     *         real-time predictions.</li>
+     *         <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
      * @see RealtimeEndpointStatus
      */
 
@@ -300,9 +308,11 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      * . This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>NONE - Endpoint does not exist or was previously deleted.</li>
-     * <li>READY - Endpoint is ready to be used for real-time predictions.</li>
-     * <li>UPDATING - Updating/creating the endpoint.</li>
+     * <li> <code>NONE</code> - Endpoint does not exist or was previously
+     * deleted.</li>
+     * <li> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</li>
+     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
      * </ul>
      * 
      * @param endpointStatus
@@ -310,10 +320,11 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *        <code>MLModel</code>. This element can have one of the following
      *        values: </p>
      *        <ul>
-     *        <li>NONE - Endpoint does not exist or was previously deleted.</li>
-     *        <li>READY - Endpoint is ready to be used for real-time
-     *        predictions.</li>
-     *        <li>UPDATING - Updating/creating the endpoint.</li>
+     *        <li> <code>NONE</code> - Endpoint does not exist or was previously
+     *        deleted.</li>
+     *        <li> <code>READY</code> - Endpoint is ready to be used for
+     *        real-time predictions.</li>
+     *        <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RealtimeEndpointStatus
@@ -330,9 +341,11 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      * . This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>NONE - Endpoint does not exist or was previously deleted.</li>
-     * <li>READY - Endpoint is ready to be used for real-time predictions.</li>
-     * <li>UPDATING - Updating/creating the endpoint.</li>
+     * <li> <code>NONE</code> - Endpoint does not exist or was previously
+     * deleted.</li>
+     * <li> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</li>
+     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
      * </ul>
      * 
      * @param endpointStatus
@@ -340,10 +353,11 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *        <code>MLModel</code>. This element can have one of the following
      *        values: </p>
      *        <ul>
-     *        <li>NONE - Endpoint does not exist or was previously deleted.</li>
-     *        <li>READY - Endpoint is ready to be used for real-time
-     *        predictions.</li>
-     *        <li>UPDATING - Updating/creating the endpoint.</li>
+     *        <li> <code>NONE</code> - Endpoint does not exist or was previously
+     *        deleted.</li>
+     *        <li> <code>READY</code> - Endpoint is ready to be used for
+     *        real-time predictions.</li>
+     *        <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
      * @see RealtimeEndpointStatus
      */
 
@@ -357,9 +371,11 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      * . This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>NONE - Endpoint does not exist or was previously deleted.</li>
-     * <li>READY - Endpoint is ready to be used for real-time predictions.</li>
-     * <li>UPDATING - Updating/creating the endpoint.</li>
+     * <li> <code>NONE</code> - Endpoint does not exist or was previously
+     * deleted.</li>
+     * <li> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</li>
+     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
      * </ul>
      * 
      * @param endpointStatus
@@ -367,10 +383,11 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *        <code>MLModel</code>. This element can have one of the following
      *        values: </p>
      *        <ul>
-     *        <li>NONE - Endpoint does not exist or was previously deleted.</li>
-     *        <li>READY - Endpoint is ready to be used for real-time
-     *        predictions.</li>
-     *        <li>UPDATING - Updating/creating the endpoint.</li>
+     *        <li> <code>NONE</code> - Endpoint does not exist or was previously
+     *        deleted.</li>
+     *        <li> <code>READY</code> - Endpoint is ready to be used for
+     *        real-time predictions.</li>
+     *        <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RealtimeEndpointStatus

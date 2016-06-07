@@ -52,27 +52,16 @@ public enum VpcPeeringConnectionStateReasonCode {
     public static VpcPeeringConnectionStateReasonCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("initiating-request".equals(value)) {
-            return InitiatingRequest;
-        } else if ("pending-acceptance".equals(value)) {
-            return PendingAcceptance;
-        } else if ("active".equals(value)) {
-            return Active;
-        } else if ("deleted".equals(value)) {
-            return Deleted;
-        } else if ("rejected".equals(value)) {
-            return Rejected;
-        } else if ("failed".equals(value)) {
-            return Failed;
-        } else if ("expired".equals(value)) {
-            return Expired;
-        } else if ("provisioning".equals(value)) {
-            return Provisioning;
-        } else if ("deleting".equals(value)) {
-            return Deleting;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (VpcPeeringConnectionStateReasonCode enumEntry : VpcPeeringConnectionStateReasonCode
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

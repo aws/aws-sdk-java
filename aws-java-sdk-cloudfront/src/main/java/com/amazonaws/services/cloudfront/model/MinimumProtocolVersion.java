@@ -45,13 +45,15 @@ public enum MinimumProtocolVersion {
     public static MinimumProtocolVersion fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SSLv3".equals(value)) {
-            return SSLv3;
-        } else if ("TLSv1".equals(value)) {
-            return TLSv1;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MinimumProtocolVersion enumEntry : MinimumProtocolVersion.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

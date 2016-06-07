@@ -46,15 +46,15 @@ public enum ReportStateType {
     public static ReportStateType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("STARTED".equals(value)) {
-            return STARTED;
-        } else if ("INPROGRESS".equals(value)) {
-            return INPROGRESS;
-        } else if ("COMPLETE".equals(value)) {
-            return COMPLETE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ReportStateType enumEntry : ReportStateType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

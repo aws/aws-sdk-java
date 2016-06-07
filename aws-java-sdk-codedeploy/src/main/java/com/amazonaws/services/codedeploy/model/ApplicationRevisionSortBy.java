@@ -46,15 +46,16 @@ public enum ApplicationRevisionSortBy {
     public static ApplicationRevisionSortBy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("registerTime".equals(value)) {
-            return RegisterTime;
-        } else if ("firstUsedTime".equals(value)) {
-            return FirstUsedTime;
-        } else if ("lastUsedTime".equals(value)) {
-            return LastUsedTime;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ApplicationRevisionSortBy enumEntry : ApplicationRevisionSortBy
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

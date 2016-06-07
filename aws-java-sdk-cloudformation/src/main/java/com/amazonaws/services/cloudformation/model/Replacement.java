@@ -46,15 +46,15 @@ public enum Replacement {
     public static Replacement fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("True".equals(value)) {
-            return True;
-        } else if ("False".equals(value)) {
-            return False;
-        } else if ("Conditional".equals(value)) {
-            return Conditional;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Replacement enumEntry : Replacement.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

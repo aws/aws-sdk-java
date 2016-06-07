@@ -48,19 +48,15 @@ public enum OperationStatus {
     public static OperationStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SUBMITTED".equals(value)) {
-            return SUBMITTED;
-        } else if ("IN_PROGRESS".equals(value)) {
-            return IN_PROGRESS;
-        } else if ("ERROR".equals(value)) {
-            return ERROR;
-        } else if ("SUCCESSFUL".equals(value)) {
-            return SUCCESSFUL;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (OperationStatus enumEntry : OperationStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

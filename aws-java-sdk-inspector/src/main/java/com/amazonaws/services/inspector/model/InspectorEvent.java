@@ -48,19 +48,15 @@ public enum InspectorEvent {
     public static InspectorEvent fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ASSESSMENT_RUN_STARTED".equals(value)) {
-            return ASSESSMENT_RUN_STARTED;
-        } else if ("ASSESSMENT_RUN_COMPLETED".equals(value)) {
-            return ASSESSMENT_RUN_COMPLETED;
-        } else if ("ASSESSMENT_RUN_STATE_CHANGED".equals(value)) {
-            return ASSESSMENT_RUN_STATE_CHANGED;
-        } else if ("FINDING_REPORTED".equals(value)) {
-            return FINDING_REPORTED;
-        } else if ("OTHER".equals(value)) {
-            return OTHER;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InspectorEvent enumEntry : InspectorEvent.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

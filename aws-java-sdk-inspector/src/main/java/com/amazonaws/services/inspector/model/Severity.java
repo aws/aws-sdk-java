@@ -48,19 +48,15 @@ public enum Severity {
     public static Severity fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Low".equals(value)) {
-            return Low;
-        } else if ("Medium".equals(value)) {
-            return Medium;
-        } else if ("High".equals(value)) {
-            return High;
-        } else if ("Informational".equals(value)) {
-            return Informational;
-        } else if ("Undefined".equals(value)) {
-            return Undefined;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Severity enumEntry : Severity.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

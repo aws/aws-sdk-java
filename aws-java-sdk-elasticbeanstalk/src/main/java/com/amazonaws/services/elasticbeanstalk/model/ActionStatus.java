@@ -47,17 +47,15 @@ public enum ActionStatus {
     public static ActionStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Scheduled".equals(value)) {
-            return Scheduled;
-        } else if ("Pending".equals(value)) {
-            return Pending;
-        } else if ("Running".equals(value)) {
-            return Running;
-        } else if ("Unknown".equals(value)) {
-            return Unknown;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ActionStatus enumEntry : ActionStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

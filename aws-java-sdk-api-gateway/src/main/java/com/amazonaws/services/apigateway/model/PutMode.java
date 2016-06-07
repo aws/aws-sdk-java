@@ -45,13 +45,15 @@ public enum PutMode {
     public static PutMode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("merge".equals(value)) {
-            return Merge;
-        } else if ("overwrite".equals(value)) {
-            return Overwrite;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PutMode enumEntry : PutMode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

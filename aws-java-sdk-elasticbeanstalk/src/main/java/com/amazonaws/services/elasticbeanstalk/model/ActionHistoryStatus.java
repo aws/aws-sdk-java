@@ -46,15 +46,15 @@ public enum ActionHistoryStatus {
     public static ActionHistoryStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Completed".equals(value)) {
-            return Completed;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else if ("Unknown".equals(value)) {
-            return Unknown;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ActionHistoryStatus enumEntry : ActionHistoryStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

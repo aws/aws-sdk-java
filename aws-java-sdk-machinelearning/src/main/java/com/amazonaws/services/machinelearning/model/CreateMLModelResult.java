@@ -20,13 +20,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <a>CreateMLModel</a> operation, and is an
+ * Represents the output of a <code>CreateMLModel</code> operation, and is an
  * acknowledgement that Amazon ML received the request.
  * </p>
  * <p>
- * The <a>CreateMLModel</a> operation is asynchronous. You can poll for status
- * updates by using the <a>GetMLModel</a> operation and checking the
- * <code>Status</code> parameter.
+ * The <code>CreateMLModel</code> operation is asynchronous. You can poll for
+ * status updates by using the <code>GetMLModel</code> operation and checking
+ * the <code>Status</code> parameter.
  * </p>
  */
 public class CreateMLModelResult implements Serializable, Cloneable {

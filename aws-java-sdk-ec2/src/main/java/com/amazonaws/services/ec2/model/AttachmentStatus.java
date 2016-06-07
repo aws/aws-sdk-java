@@ -47,17 +47,15 @@ public enum AttachmentStatus {
     public static AttachmentStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("attaching".equals(value)) {
-            return Attaching;
-        } else if ("attached".equals(value)) {
-            return Attached;
-        } else if ("detaching".equals(value)) {
-            return Detaching;
-        } else if ("detached".equals(value)) {
-            return Detached;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AttachmentStatus enumEntry : AttachmentStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

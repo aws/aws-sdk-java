@@ -71,65 +71,15 @@ public enum EC2InstanceType {
     public static EC2InstanceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("t2.micro".equals(value)) {
-            return T2Micro;
-        } else if ("t2.small".equals(value)) {
-            return T2Small;
-        } else if ("t2.medium".equals(value)) {
-            return T2Medium;
-        } else if ("t2.large".equals(value)) {
-            return T2Large;
-        } else if ("c3.large".equals(value)) {
-            return C3Large;
-        } else if ("c3.xlarge".equals(value)) {
-            return C3Xlarge;
-        } else if ("c3.2xlarge".equals(value)) {
-            return C32xlarge;
-        } else if ("c3.4xlarge".equals(value)) {
-            return C34xlarge;
-        } else if ("c3.8xlarge".equals(value)) {
-            return C38xlarge;
-        } else if ("c4.large".equals(value)) {
-            return C4Large;
-        } else if ("c4.xlarge".equals(value)) {
-            return C4Xlarge;
-        } else if ("c4.2xlarge".equals(value)) {
-            return C42xlarge;
-        } else if ("c4.4xlarge".equals(value)) {
-            return C44xlarge;
-        } else if ("c4.8xlarge".equals(value)) {
-            return C48xlarge;
-        } else if ("r3.large".equals(value)) {
-            return R3Large;
-        } else if ("r3.xlarge".equals(value)) {
-            return R3Xlarge;
-        } else if ("r3.2xlarge".equals(value)) {
-            return R32xlarge;
-        } else if ("r3.4xlarge".equals(value)) {
-            return R34xlarge;
-        } else if ("r3.8xlarge".equals(value)) {
-            return R38xlarge;
-        } else if ("m3.medium".equals(value)) {
-            return M3Medium;
-        } else if ("m3.large".equals(value)) {
-            return M3Large;
-        } else if ("m3.xlarge".equals(value)) {
-            return M3Xlarge;
-        } else if ("m3.2xlarge".equals(value)) {
-            return M32xlarge;
-        } else if ("m4.large".equals(value)) {
-            return M4Large;
-        } else if ("m4.xlarge".equals(value)) {
-            return M4Xlarge;
-        } else if ("m4.2xlarge".equals(value)) {
-            return M42xlarge;
-        } else if ("m4.4xlarge".equals(value)) {
-            return M44xlarge;
-        } else if ("m4.10xlarge".equals(value)) {
-            return M410xlarge;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EC2InstanceType enumEntry : EC2InstanceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

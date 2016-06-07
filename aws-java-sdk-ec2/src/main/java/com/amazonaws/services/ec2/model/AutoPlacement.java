@@ -45,13 +45,15 @@ public enum AutoPlacement {
     public static AutoPlacement fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("on".equals(value)) {
-            return On;
-        } else if ("off".equals(value)) {
-            return Off;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AutoPlacement enumEntry : AutoPlacement.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

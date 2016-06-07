@@ -44,11 +44,15 @@ public enum VpnStaticRouteSource {
     public static VpnStaticRouteSource fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Static".equals(value)) {
-            return Static;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (VpnStaticRouteSource enumEntry : VpnStaticRouteSource.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

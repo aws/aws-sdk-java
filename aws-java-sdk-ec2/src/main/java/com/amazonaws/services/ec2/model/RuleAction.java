@@ -45,13 +45,15 @@ public enum RuleAction {
     public static RuleAction fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("allow".equals(value)) {
-            return Allow;
-        } else if ("deny".equals(value)) {
-            return Deny;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RuleAction enumEntry : RuleAction.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

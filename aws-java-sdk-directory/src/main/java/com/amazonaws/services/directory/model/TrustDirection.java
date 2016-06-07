@@ -46,15 +46,15 @@ public enum TrustDirection {
     public static TrustDirection fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("One-Way: Outgoing".equals(value)) {
-            return OneWayOutgoing;
-        } else if ("One-Way: Incoming".equals(value)) {
-            return OneWayIncoming;
-        } else if ("Two-Way".equals(value)) {
-            return TwoWay;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (TrustDirection enumEntry : TrustDirection.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

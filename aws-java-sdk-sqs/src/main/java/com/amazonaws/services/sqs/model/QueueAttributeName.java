@@ -57,35 +57,15 @@ public enum QueueAttributeName {
     public static QueueAttributeName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Policy".equals(value)) {
-            return Policy;
-        } else if ("VisibilityTimeout".equals(value)) {
-            return VisibilityTimeout;
-        } else if ("MaximumMessageSize".equals(value)) {
-            return MaximumMessageSize;
-        } else if ("MessageRetentionPeriod".equals(value)) {
-            return MessageRetentionPeriod;
-        } else if ("ApproximateNumberOfMessages".equals(value)) {
-            return ApproximateNumberOfMessages;
-        } else if ("ApproximateNumberOfMessagesNotVisible".equals(value)) {
-            return ApproximateNumberOfMessagesNotVisible;
-        } else if ("CreatedTimestamp".equals(value)) {
-            return CreatedTimestamp;
-        } else if ("LastModifiedTimestamp".equals(value)) {
-            return LastModifiedTimestamp;
-        } else if ("QueueArn".equals(value)) {
-            return QueueArn;
-        } else if ("ApproximateNumberOfMessagesDelayed".equals(value)) {
-            return ApproximateNumberOfMessagesDelayed;
-        } else if ("DelaySeconds".equals(value)) {
-            return DelaySeconds;
-        } else if ("ReceiveMessageWaitTimeSeconds".equals(value)) {
-            return ReceiveMessageWaitTimeSeconds;
-        } else if ("RedrivePolicy".equals(value)) {
-            return RedrivePolicy;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (QueueAttributeName enumEntry : QueueAttributeName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

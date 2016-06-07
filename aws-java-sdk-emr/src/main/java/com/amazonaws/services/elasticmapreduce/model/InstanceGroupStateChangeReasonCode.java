@@ -47,17 +47,16 @@ public enum InstanceGroupStateChangeReasonCode {
     public static InstanceGroupStateChangeReasonCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("INTERNAL_ERROR".equals(value)) {
-            return INTERNAL_ERROR;
-        } else if ("VALIDATION_ERROR".equals(value)) {
-            return VALIDATION_ERROR;
-        } else if ("INSTANCE_FAILURE".equals(value)) {
-            return INSTANCE_FAILURE;
-        } else if ("CLUSTER_TERMINATED".equals(value)) {
-            return CLUSTER_TERMINATED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InstanceGroupStateChangeReasonCode enumEntry : InstanceGroupStateChangeReasonCode
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

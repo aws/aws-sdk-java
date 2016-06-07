@@ -47,17 +47,15 @@ public enum CompressionFormat {
     public static CompressionFormat fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("UNCOMPRESSED".equals(value)) {
-            return UNCOMPRESSED;
-        } else if ("GZIP".equals(value)) {
-            return GZIP;
-        } else if ("ZIP".equals(value)) {
-            return ZIP;
-        } else if ("Snappy".equals(value)) {
-            return Snappy;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (CompressionFormat enumEntry : CompressionFormat.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

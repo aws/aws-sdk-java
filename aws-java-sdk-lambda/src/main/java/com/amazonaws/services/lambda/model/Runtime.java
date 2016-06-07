@@ -47,17 +47,15 @@ public enum Runtime {
     public static Runtime fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("nodejs".equals(value)) {
-            return Nodejs;
-        } else if ("nodejs4.3".equals(value)) {
-            return Nodejs43;
-        } else if ("java8".equals(value)) {
-            return Java8;
-        } else if ("python2.7".equals(value)) {
-            return Python27;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Runtime enumEntry : Runtime.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

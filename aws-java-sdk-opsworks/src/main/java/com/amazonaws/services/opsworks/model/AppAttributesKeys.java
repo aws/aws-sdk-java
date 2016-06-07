@@ -47,17 +47,15 @@ public enum AppAttributesKeys {
     public static AppAttributesKeys fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("DocumentRoot".equals(value)) {
-            return DocumentRoot;
-        } else if ("RailsEnv".equals(value)) {
-            return RailsEnv;
-        } else if ("AutoBundleOnDeploy".equals(value)) {
-            return AutoBundleOnDeploy;
-        } else if ("AwsFlowRubySettings".equals(value)) {
-            return AwsFlowRubySettings;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AppAttributesKeys enumEntry : AppAttributesKeys.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

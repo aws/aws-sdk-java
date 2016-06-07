@@ -47,17 +47,16 @@ public enum RepositoryTriggerEventEnum {
     public static RepositoryTriggerEventEnum fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("all".equals(value)) {
-            return All;
-        } else if ("updateReference".equals(value)) {
-            return UpdateReference;
-        } else if ("createReference".equals(value)) {
-            return CreateReference;
-        } else if ("deleteReference".equals(value)) {
-            return DeleteReference;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RepositoryTriggerEventEnum enumEntry : RepositoryTriggerEventEnum
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

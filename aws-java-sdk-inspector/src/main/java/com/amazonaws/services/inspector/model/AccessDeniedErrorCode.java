@@ -51,25 +51,15 @@ public enum AccessDeniedErrorCode {
     public static AccessDeniedErrorCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ACCESS_DENIED_TO_ASSESSMENT_TARGET".equals(value)) {
-            return ACCESS_DENIED_TO_ASSESSMENT_TARGET;
-        } else if ("ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE".equals(value)) {
-            return ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE;
-        } else if ("ACCESS_DENIED_TO_ASSESSMENT_RUN".equals(value)) {
-            return ACCESS_DENIED_TO_ASSESSMENT_RUN;
-        } else if ("ACCESS_DENIED_TO_FINDING".equals(value)) {
-            return ACCESS_DENIED_TO_FINDING;
-        } else if ("ACCESS_DENIED_TO_RESOURCE_GROUP".equals(value)) {
-            return ACCESS_DENIED_TO_RESOURCE_GROUP;
-        } else if ("ACCESS_DENIED_TO_RULES_PACKAGE".equals(value)) {
-            return ACCESS_DENIED_TO_RULES_PACKAGE;
-        } else if ("ACCESS_DENIED_TO_SNS_TOPIC".equals(value)) {
-            return ACCESS_DENIED_TO_SNS_TOPIC;
-        } else if ("ACCESS_DENIED_TO_IAM_ROLE".equals(value)) {
-            return ACCESS_DENIED_TO_IAM_ROLE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AccessDeniedErrorCode enumEntry : AccessDeniedErrorCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

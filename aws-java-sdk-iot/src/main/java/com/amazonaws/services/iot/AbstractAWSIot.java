@@ -232,6 +232,12 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ListPolicyPrincipalsResult listPolicyPrincipals(
+            ListPolicyPrincipalsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPolicyVersionsResult listPolicyVersions(
             ListPolicyVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();

@@ -46,15 +46,15 @@ public enum DiskImageFormat {
     public static DiskImageFormat fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("VMDK".equals(value)) {
-            return VMDK;
-        } else if ("RAW".equals(value)) {
-            return RAW;
-        } else if ("VHD".equals(value)) {
-            return VHD;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DiskImageFormat enumEntry : DiskImageFormat.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

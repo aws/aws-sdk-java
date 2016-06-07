@@ -46,15 +46,15 @@ public enum ProjectionType {
     public static ProjectionType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ALL".equals(value)) {
-            return ALL;
-        } else if ("KEYS_ONLY".equals(value)) {
-            return KEYS_ONLY;
-        } else if ("INCLUDE".equals(value)) {
-            return INCLUDE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ProjectionType enumEntry : ProjectionType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -53,29 +53,15 @@ public enum AssessmentRunState {
     public static AssessmentRunState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CREATED".equals(value)) {
-            return CREATED;
-        } else if ("START_DATA_COLLECTION_PENDING".equals(value)) {
-            return START_DATA_COLLECTION_PENDING;
-        } else if ("START_DATA_COLLECTION_IN_PROGRESS".equals(value)) {
-            return START_DATA_COLLECTION_IN_PROGRESS;
-        } else if ("COLLECTING_DATA".equals(value)) {
-            return COLLECTING_DATA;
-        } else if ("STOP_DATA_COLLECTION_PENDING".equals(value)) {
-            return STOP_DATA_COLLECTION_PENDING;
-        } else if ("DATA_COLLECTED".equals(value)) {
-            return DATA_COLLECTED;
-        } else if ("EVALUATING_RULES".equals(value)) {
-            return EVALUATING_RULES;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else if ("COMPLETED".equals(value)) {
-            return COMPLETED;
-        } else if ("COMPLETED_WITH_ERRORS".equals(value)) {
-            return COMPLETED_WITH_ERRORS;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AssessmentRunState enumEntry : AssessmentRunState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

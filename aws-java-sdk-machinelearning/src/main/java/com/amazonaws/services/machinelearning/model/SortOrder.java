@@ -54,13 +54,15 @@ public enum SortOrder {
     public static SortOrder fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("asc".equals(value)) {
-            return Asc;
-        } else if ("dsc".equals(value)) {
-            return Dsc;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SortOrder enumEntry : SortOrder.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

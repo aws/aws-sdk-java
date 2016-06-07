@@ -45,13 +45,15 @@ public enum EncodingType {
     public static EncodingType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SSH".equals(value)) {
-            return SSH;
-        } else if ("PEM".equals(value)) {
-            return PEM;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EncodingType enumEntry : EncodingType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

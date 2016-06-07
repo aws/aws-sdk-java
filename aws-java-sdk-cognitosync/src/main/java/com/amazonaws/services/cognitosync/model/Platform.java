@@ -47,17 +47,15 @@ public enum Platform {
     public static Platform fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("APNS".equals(value)) {
-            return APNS;
-        } else if ("APNS_SANDBOX".equals(value)) {
-            return APNS_SANDBOX;
-        } else if ("GCM".equals(value)) {
-            return GCM;
-        } else if ("ADM".equals(value)) {
-            return ADM;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Platform enumEntry : Platform.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -50,23 +50,15 @@ public enum OperationType {
     public static OperationType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("REGISTER_DOMAIN".equals(value)) {
-            return REGISTER_DOMAIN;
-        } else if ("DELETE_DOMAIN".equals(value)) {
-            return DELETE_DOMAIN;
-        } else if ("TRANSFER_IN_DOMAIN".equals(value)) {
-            return TRANSFER_IN_DOMAIN;
-        } else if ("UPDATE_DOMAIN_CONTACT".equals(value)) {
-            return UPDATE_DOMAIN_CONTACT;
-        } else if ("UPDATE_NAMESERVER".equals(value)) {
-            return UPDATE_NAMESERVER;
-        } else if ("CHANGE_PRIVACY_PROTECTION".equals(value)) {
-            return CHANGE_PRIVACY_PROTECTION;
-        } else if ("DOMAIN_LOCK".equals(value)) {
-            return DOMAIN_LOCK;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (OperationType enumEntry : OperationType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -53,29 +53,15 @@ public enum WorkspaceState {
     public static WorkspaceState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PENDING".equals(value)) {
-            return PENDING;
-        } else if ("AVAILABLE".equals(value)) {
-            return AVAILABLE;
-        } else if ("IMPAIRED".equals(value)) {
-            return IMPAIRED;
-        } else if ("UNHEALTHY".equals(value)) {
-            return UNHEALTHY;
-        } else if ("REBOOTING".equals(value)) {
-            return REBOOTING;
-        } else if ("REBUILDING".equals(value)) {
-            return REBUILDING;
-        } else if ("TERMINATING".equals(value)) {
-            return TERMINATING;
-        } else if ("TERMINATED".equals(value)) {
-            return TERMINATED;
-        } else if ("SUSPENDED".equals(value)) {
-            return SUSPENDED;
-        } else if ("ERROR".equals(value)) {
-            return ERROR;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (WorkspaceState enumEntry : WorkspaceState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

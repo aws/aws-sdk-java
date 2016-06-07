@@ -39,6 +39,11 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
+    public AddTagsResult addTags(AddTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateBatchPredictionResult createBatchPrediction(
             CreateBatchPredictionRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -109,6 +114,11 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     }
 
     @Override
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeBatchPredictionsResult describeBatchPredictions(
             DescribeBatchPredictionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -150,6 +160,11 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     @Override
     public DescribeMLModelsResult describeMLModels() {
         return describeMLModels(new DescribeMLModelsRequest());
+    }
+
+    @Override
+    public DescribeTagsResult describeTags(DescribeTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

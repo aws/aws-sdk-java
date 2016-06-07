@@ -49,21 +49,15 @@ public enum DeploymentStatus {
     public static DeploymentStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Created".equals(value)) {
-            return Created;
-        } else if ("Queued".equals(value)) {
-            return Queued;
-        } else if ("InProgress".equals(value)) {
-            return InProgress;
-        } else if ("Succeeded".equals(value)) {
-            return Succeeded;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else if ("Stopped".equals(value)) {
-            return Stopped;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DeploymentStatus enumEntry : DeploymentStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

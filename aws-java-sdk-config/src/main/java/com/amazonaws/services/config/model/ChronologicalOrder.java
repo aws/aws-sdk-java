@@ -45,13 +45,15 @@ public enum ChronologicalOrder {
     public static ChronologicalOrder fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Reverse".equals(value)) {
-            return Reverse;
-        } else if ("Forward".equals(value)) {
-            return Forward;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ChronologicalOrder enumEntry : ChronologicalOrder.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

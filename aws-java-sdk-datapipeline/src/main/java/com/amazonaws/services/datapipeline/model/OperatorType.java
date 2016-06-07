@@ -48,19 +48,15 @@ public enum OperatorType {
     public static OperatorType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("EQ".equals(value)) {
-            return EQ;
-        } else if ("REF_EQ".equals(value)) {
-            return REF_EQ;
-        } else if ("LE".equals(value)) {
-            return LE;
-        } else if ("GE".equals(value)) {
-            return GE;
-        } else if ("BETWEEN".equals(value)) {
-            return BETWEEN;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (OperatorType enumEntry : OperatorType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

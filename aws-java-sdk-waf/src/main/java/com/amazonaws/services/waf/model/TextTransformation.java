@@ -49,21 +49,15 @@ public enum TextTransformation {
     public static TextTransformation fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("NONE".equals(value)) {
-            return NONE;
-        } else if ("COMPRESS_WHITE_SPACE".equals(value)) {
-            return COMPRESS_WHITE_SPACE;
-        } else if ("HTML_ENTITY_DECODE".equals(value)) {
-            return HTML_ENTITY_DECODE;
-        } else if ("LOWERCASE".equals(value)) {
-            return LOWERCASE;
-        } else if ("CMD_LINE".equals(value)) {
-            return CMD_LINE;
-        } else if ("URL_DECODE".equals(value)) {
-            return URL_DECODE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (TextTransformation enumEntry : TextTransformation.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -46,15 +46,15 @@ public enum Fault {
     public static Fault fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Client".equals(value)) {
-            return Client;
-        } else if ("Server".equals(value)) {
-            return Server;
-        } else if ("Unknown".equals(value)) {
-            return Unknown;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Fault enumEntry : Fault.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

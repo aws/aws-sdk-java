@@ -48,19 +48,15 @@ public enum ContactType {
     public static ContactType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PERSON".equals(value)) {
-            return PERSON;
-        } else if ("COMPANY".equals(value)) {
-            return COMPANY;
-        } else if ("ASSOCIATION".equals(value)) {
-            return ASSOCIATION;
-        } else if ("PUBLIC_BODY".equals(value)) {
-            return PUBLIC_BODY;
-        } else if ("RESELLER".equals(value)) {
-            return RESELLER;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ContactType enumEntry : ContactType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

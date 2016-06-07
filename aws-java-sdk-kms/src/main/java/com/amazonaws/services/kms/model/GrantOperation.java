@@ -52,27 +52,15 @@ public enum GrantOperation {
     public static GrantOperation fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Decrypt".equals(value)) {
-            return Decrypt;
-        } else if ("Encrypt".equals(value)) {
-            return Encrypt;
-        } else if ("GenerateDataKey".equals(value)) {
-            return GenerateDataKey;
-        } else if ("GenerateDataKeyWithoutPlaintext".equals(value)) {
-            return GenerateDataKeyWithoutPlaintext;
-        } else if ("ReEncryptFrom".equals(value)) {
-            return ReEncryptFrom;
-        } else if ("ReEncryptTo".equals(value)) {
-            return ReEncryptTo;
-        } else if ("CreateGrant".equals(value)) {
-            return CreateGrant;
-        } else if ("RetireGrant".equals(value)) {
-            return RetireGrant;
-        } else if ("DescribeKey".equals(value)) {
-            return DescribeKey;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (GrantOperation enumEntry : GrantOperation.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

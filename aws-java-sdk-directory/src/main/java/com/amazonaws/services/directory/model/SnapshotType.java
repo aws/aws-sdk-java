@@ -45,13 +45,15 @@ public enum SnapshotType {
     public static SnapshotType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Auto".equals(value)) {
-            return Auto;
-        } else if ("Manual".equals(value)) {
-            return Manual;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SnapshotType enumEntry : SnapshotType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

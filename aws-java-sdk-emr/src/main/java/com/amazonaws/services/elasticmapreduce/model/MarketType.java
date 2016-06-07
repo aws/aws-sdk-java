@@ -45,13 +45,15 @@ public enum MarketType {
     public static MarketType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ON_DEMAND".equals(value)) {
-            return ON_DEMAND;
-        } else if ("SPOT".equals(value)) {
-            return SPOT;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MarketType enumEntry : MarketType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

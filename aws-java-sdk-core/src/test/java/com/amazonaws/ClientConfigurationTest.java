@@ -87,8 +87,55 @@ public class ClientConfigurationTest {
                 config.getDnsResolver());
     }
 
+    private void clearProxyProperties() {
+        System.clearProperty("http.proxyHost");
+        System.clearProperty("http.proxyPort");
+        System.clearProperty("https.proxyHost");
+        System.clearProperty("https.proxyPort");
+        System.clearProperty("http.nonProxyHosts");
+    }
+
+    @Test
+    public void testNonProxyHostsSetting() throws Exception {
+        clearProxyProperties();
+
+        // test ClientConfiguration setting
+        ClientConfiguration config;
+        config = new ClientConfiguration().withNonProxyHosts("foo.com");
+        assertEquals("foo.com", config.getNonProxyHosts());
+
+        config.setProtocol(Protocol.HTTP);
+        assertEquals("foo.com", config.getNonProxyHosts());
+
+        // test system property
+        System.setProperty("http.nonProxyHosts", "foo.com");
+        config = new ClientConfiguration();
+        assertEquals("foo.com", config.getNonProxyHosts());
+
+        config.setProtocol(Protocol.HTTP);
+        assertEquals("foo.com", config.getNonProxyHosts());
+        System.clearProperty("http.nonProxyHosts");
+
+        // ClientConfiguration setting has a precedence over system property
+        System.setProperty("http.nonProxyHosts", "bar.com");
+        config = new ClientConfiguration().withNonProxyHosts("foo.com");
+        assertEquals("foo.com", config.getNonProxyHosts());
+
+        config.setProtocol(Protocol.HTTP);
+        assertEquals("foo.com", config.getNonProxyHosts());
+        System.clearProperty("http.nonProxyHosts");
+
+        // ClientConfiguration setting has a precedence over system property
+        config = new ClientConfiguration();
+        assertNull(config.getNonProxyHosts());
+
+        config.setProtocol(Protocol.HTTP);
+        assertNull(config.getNonProxyHosts());
+    }
+
     @Test
     public void testProxySystemProperties() throws Exception {
+        clearProxyProperties();
         ClientConfiguration config;
         config = new ClientConfiguration();
         assertNull(config.getProxyHost());

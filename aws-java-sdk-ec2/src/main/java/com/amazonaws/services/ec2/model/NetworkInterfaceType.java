@@ -45,13 +45,15 @@ public enum NetworkInterfaceType {
     public static NetworkInterfaceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("interface".equals(value)) {
-            return Interface;
-        } else if ("natGateway".equals(value)) {
-            return NatGateway;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (NetworkInterfaceType enumEntry : NetworkInterfaceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

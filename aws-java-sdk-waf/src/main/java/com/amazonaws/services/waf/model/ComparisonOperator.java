@@ -49,21 +49,15 @@ public enum ComparisonOperator {
     public static ComparisonOperator fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("EQ".equals(value)) {
-            return EQ;
-        } else if ("NE".equals(value)) {
-            return NE;
-        } else if ("LE".equals(value)) {
-            return LE;
-        } else if ("LT".equals(value)) {
-            return LT;
-        } else if ("GE".equals(value)) {
-            return GE;
-        } else if ("GT".equals(value)) {
-            return GT;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ComparisonOperator enumEntry : ComparisonOperator.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

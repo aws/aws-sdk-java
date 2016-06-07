@@ -44,11 +44,15 @@ public enum KeyUsageType {
     public static KeyUsageType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ENCRYPT_DECRYPT".equals(value)) {
-            return ENCRYPT_DECRYPT;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (KeyUsageType enumEntry : KeyUsageType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

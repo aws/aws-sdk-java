@@ -58,39 +58,15 @@ public enum UlimitName {
     public static UlimitName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("core".equals(value)) {
-            return Core;
-        } else if ("cpu".equals(value)) {
-            return Cpu;
-        } else if ("data".equals(value)) {
-            return Data;
-        } else if ("fsize".equals(value)) {
-            return Fsize;
-        } else if ("locks".equals(value)) {
-            return Locks;
-        } else if ("memlock".equals(value)) {
-            return Memlock;
-        } else if ("msgqueue".equals(value)) {
-            return Msgqueue;
-        } else if ("nice".equals(value)) {
-            return Nice;
-        } else if ("nofile".equals(value)) {
-            return Nofile;
-        } else if ("nproc".equals(value)) {
-            return Nproc;
-        } else if ("rss".equals(value)) {
-            return Rss;
-        } else if ("rtprio".equals(value)) {
-            return Rtprio;
-        } else if ("rttime".equals(value)) {
-            return Rttime;
-        } else if ("sigpending".equals(value)) {
-            return Sigpending;
-        } else if ("stack".equals(value)) {
-            return Stack;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (UlimitName enumEntry : UlimitName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

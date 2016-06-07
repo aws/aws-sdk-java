@@ -45,13 +45,15 @@ public enum DevicePlatform {
     public static DevicePlatform fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ANDROID".equals(value)) {
-            return ANDROID;
-        } else if ("IOS".equals(value)) {
-            return IOS;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DevicePlatform enumEntry : DevicePlatform.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

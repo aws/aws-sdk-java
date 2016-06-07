@@ -45,13 +45,15 @@ public enum TransportProtocol {
     public static TransportProtocol fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("tcp".equals(value)) {
-            return Tcp;
-        } else if ("udp".equals(value)) {
-            return Udp;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (TransportProtocol enumEntry : TransportProtocol.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

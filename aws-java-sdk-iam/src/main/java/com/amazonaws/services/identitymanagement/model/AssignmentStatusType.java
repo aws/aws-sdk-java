@@ -46,15 +46,15 @@ public enum AssignmentStatusType {
     public static AssignmentStatusType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Assigned".equals(value)) {
-            return Assigned;
-        } else if ("Unassigned".equals(value)) {
-            return Unassigned;
-        } else if ("Any".equals(value)) {
-            return Any;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AssignmentStatusType enumEntry : AssignmentStatusType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

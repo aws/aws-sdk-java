@@ -45,13 +45,16 @@ public enum ParameterExceptionReason {
     public static ParameterExceptionReason fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("INVALID_OPTION".equals(value)) {
-            return INVALID_OPTION;
-        } else if ("ILLEGAL_COMBINATION".equals(value)) {
-            return ILLEGAL_COMBINATION;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ParameterExceptionReason enumEntry : ParameterExceptionReason
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

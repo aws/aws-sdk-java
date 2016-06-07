@@ -44,11 +44,16 @@ public enum DecisionTaskTimeoutType {
     public static DecisionTaskTimeoutType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("START_TO_CLOSE".equals(value)) {
-            return START_TO_CLOSE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DecisionTaskTimeoutType enumEntry : DecisionTaskTimeoutType
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -112,118 +112,15 @@ public enum InvalidInputErrorCode {
     public static InvalidInputErrorCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("INVALID_ASSESSMENT_TARGET_ARN".equals(value)) {
-            return INVALID_ASSESSMENT_TARGET_ARN;
-        } else if ("INVALID_ASSESSMENT_TEMPLATE_ARN".equals(value)) {
-            return INVALID_ASSESSMENT_TEMPLATE_ARN;
-        } else if ("INVALID_ASSESSMENT_RUN_ARN".equals(value)) {
-            return INVALID_ASSESSMENT_RUN_ARN;
-        } else if ("INVALID_FINDING_ARN".equals(value)) {
-            return INVALID_FINDING_ARN;
-        } else if ("INVALID_RESOURCE_GROUP_ARN".equals(value)) {
-            return INVALID_RESOURCE_GROUP_ARN;
-        } else if ("INVALID_RULES_PACKAGE_ARN".equals(value)) {
-            return INVALID_RULES_PACKAGE_ARN;
-        } else if ("INVALID_RESOURCE_ARN".equals(value)) {
-            return INVALID_RESOURCE_ARN;
-        } else if ("INVALID_SNS_TOPIC_ARN".equals(value)) {
-            return INVALID_SNS_TOPIC_ARN;
-        } else if ("INVALID_IAM_ROLE_ARN".equals(value)) {
-            return INVALID_IAM_ROLE_ARN;
-        } else if ("INVALID_ASSESSMENT_TARGET_NAME".equals(value)) {
-            return INVALID_ASSESSMENT_TARGET_NAME;
-        } else if ("INVALID_ASSESSMENT_TARGET_NAME_PATTERN".equals(value)) {
-            return INVALID_ASSESSMENT_TARGET_NAME_PATTERN;
-        } else if ("INVALID_ASSESSMENT_TEMPLATE_NAME".equals(value)) {
-            return INVALID_ASSESSMENT_TEMPLATE_NAME;
-        } else if ("INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN".equals(value)) {
-            return INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN;
-        } else if ("INVALID_ASSESSMENT_TEMPLATE_DURATION".equals(value)) {
-            return INVALID_ASSESSMENT_TEMPLATE_DURATION;
-        } else if ("INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE".equals(value)) {
-            return INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE;
-        } else if ("INVALID_ASSESSMENT_RUN_DURATION_RANGE".equals(value)) {
-            return INVALID_ASSESSMENT_RUN_DURATION_RANGE;
-        } else if ("INVALID_ASSESSMENT_RUN_START_TIME_RANGE".equals(value)) {
-            return INVALID_ASSESSMENT_RUN_START_TIME_RANGE;
-        } else if ("INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE".equals(value)) {
-            return INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE;
-        } else if ("INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE"
-                .equals(value)) {
-            return INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE;
-        } else if ("INVALID_ASSESSMENT_RUN_STATE".equals(value)) {
-            return INVALID_ASSESSMENT_RUN_STATE;
-        } else if ("INVALID_TAG".equals(value)) {
-            return INVALID_TAG;
-        } else if ("INVALID_TAG_KEY".equals(value)) {
-            return INVALID_TAG_KEY;
-        } else if ("INVALID_TAG_VALUE".equals(value)) {
-            return INVALID_TAG_VALUE;
-        } else if ("INVALID_RESOURCE_GROUP_TAG_KEY".equals(value)) {
-            return INVALID_RESOURCE_GROUP_TAG_KEY;
-        } else if ("INVALID_RESOURCE_GROUP_TAG_VALUE".equals(value)) {
-            return INVALID_RESOURCE_GROUP_TAG_VALUE;
-        } else if ("INVALID_ATTRIBUTE".equals(value)) {
-            return INVALID_ATTRIBUTE;
-        } else if ("INVALID_USER_ATTRIBUTE".equals(value)) {
-            return INVALID_USER_ATTRIBUTE;
-        } else if ("INVALID_USER_ATTRIBUTE_KEY".equals(value)) {
-            return INVALID_USER_ATTRIBUTE_KEY;
-        } else if ("INVALID_USER_ATTRIBUTE_VALUE".equals(value)) {
-            return INVALID_USER_ATTRIBUTE_VALUE;
-        } else if ("INVALID_PAGINATION_TOKEN".equals(value)) {
-            return INVALID_PAGINATION_TOKEN;
-        } else if ("INVALID_MAX_RESULTS".equals(value)) {
-            return INVALID_MAX_RESULTS;
-        } else if ("INVALID_AGENT_ID".equals(value)) {
-            return INVALID_AGENT_ID;
-        } else if ("INVALID_AUTO_SCALING_GROUP".equals(value)) {
-            return INVALID_AUTO_SCALING_GROUP;
-        } else if ("INVALID_RULE_NAME".equals(value)) {
-            return INVALID_RULE_NAME;
-        } else if ("INVALID_SEVERITY".equals(value)) {
-            return INVALID_SEVERITY;
-        } else if ("INVALID_LOCALE".equals(value)) {
-            return INVALID_LOCALE;
-        } else if ("INVALID_EVENT".equals(value)) {
-            return INVALID_EVENT;
-        } else if ("ASSESSMENT_TARGET_NAME_ALREADY_TAKEN".equals(value)) {
-            return ASSESSMENT_TARGET_NAME_ALREADY_TAKEN;
-        } else if ("ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN".equals(value)) {
-            return ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN;
-        } else if ("INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS".equals(value)) {
-            return INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS;
-        } else if ("INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS".equals(value)) {
-            return INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS;
-        } else if ("INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS".equals(value)) {
-            return INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS;
-        } else if ("INVALID_NUMBER_OF_FINDING_ARNS".equals(value)) {
-            return INVALID_NUMBER_OF_FINDING_ARNS;
-        } else if ("INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS".equals(value)) {
-            return INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS;
-        } else if ("INVALID_NUMBER_OF_RULES_PACKAGE_ARNS".equals(value)) {
-            return INVALID_NUMBER_OF_RULES_PACKAGE_ARNS;
-        } else if ("INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES".equals(value)) {
-            return INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES;
-        } else if ("INVALID_NUMBER_OF_TAGS".equals(value)) {
-            return INVALID_NUMBER_OF_TAGS;
-        } else if ("INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS".equals(value)) {
-            return INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS;
-        } else if ("INVALID_NUMBER_OF_ATTRIBUTES".equals(value)) {
-            return INVALID_NUMBER_OF_ATTRIBUTES;
-        } else if ("INVALID_NUMBER_OF_USER_ATTRIBUTES".equals(value)) {
-            return INVALID_NUMBER_OF_USER_ATTRIBUTES;
-        } else if ("INVALID_NUMBER_OF_AGENT_IDS".equals(value)) {
-            return INVALID_NUMBER_OF_AGENT_IDS;
-        } else if ("INVALID_NUMBER_OF_AUTO_SCALING_GROUPS".equals(value)) {
-            return INVALID_NUMBER_OF_AUTO_SCALING_GROUPS;
-        } else if ("INVALID_NUMBER_OF_RULE_NAMES".equals(value)) {
-            return INVALID_NUMBER_OF_RULE_NAMES;
-        } else if ("INVALID_NUMBER_OF_SEVERITIES".equals(value)) {
-            return INVALID_NUMBER_OF_SEVERITIES;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (InvalidInputErrorCode enumEntry : InvalidInputErrorCode.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

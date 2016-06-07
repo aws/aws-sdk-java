@@ -46,15 +46,15 @@ public enum OriginProtocolPolicy {
     public static OriginProtocolPolicy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("http-only".equals(value)) {
-            return HttpOnly;
-        } else if ("match-viewer".equals(value)) {
-            return MatchViewer;
-        } else if ("https-only".equals(value)) {
-            return HttpsOnly;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (OriginProtocolPolicy enumEntry : OriginProtocolPolicy.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -17,9 +17,10 @@
 package com.amazonaws.services.machinelearning.model;
 
 /**
- * Contains the key values of <code>DetailsMap</code>: PredictiveModelType -
- * Indicates the type of the <code>MLModel</code>. Algorithm - Indicates the
- * algorithm was used for the <code>MLModel</code>.
+ * Contains the key values of <code>DetailsMap</code>:
+ * <code>PredictiveModelType</code> - Indicates the type of the
+ * <code>MLModel</code>. <code>Algorithm</code> - Indicates the algorithm that
+ * was used for the <code>MLModel</code>.
  */
 public enum DetailsAttributes {
 
@@ -47,13 +48,15 @@ public enum DetailsAttributes {
     public static DetailsAttributes fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PredictiveModelType".equals(value)) {
-            return PredictiveModelType;
-        } else if ("Algorithm".equals(value)) {
-            return Algorithm;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DetailsAttributes enumEntry : DetailsAttributes.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

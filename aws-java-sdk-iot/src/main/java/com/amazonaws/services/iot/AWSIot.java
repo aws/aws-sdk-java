@@ -248,7 +248,6 @@ public interface AWSIot {
      * Assuming a set of CSRs are located inside of the directory
      * my-csr-directory:
      * </p>
-     * &gt;
      * <p>
      * On Linux and OS X, the command is:
      * </p>
@@ -717,8 +716,6 @@ public interface AWSIot {
     /**
      * <p>
      * Returns a unique endpoint specific to the AWS account making the call.
-     * You specify the following URI when updating state information for your
-     * thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.
      * </p>
      * 
      * @param describeEndpointRequest
@@ -940,6 +937,8 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
      * @sample AWSIot.GetRegistrationCode
      */
     GetRegistrationCodeResult getRegistrationCode(
@@ -1068,7 +1067,33 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Lists the versions of the specified policy, and identifies the default
+     * Lists the principals associated with the specified policy.
+     * </p>
+     * 
+     * @param listPolicyPrincipalsRequest
+     *        The input for the ListPolicyPrincipals operation.
+     * @return Result of the ListPolicyPrincipals operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListPolicyPrincipals
+     */
+    ListPolicyPrincipalsResult listPolicyPrincipals(
+            ListPolicyPrincipalsRequest listPolicyPrincipalsRequest);
+
+    /**
+     * <p>
+     * Lists the versions of the specified policy and identifies the default
      * version.
      * </p>
      * 

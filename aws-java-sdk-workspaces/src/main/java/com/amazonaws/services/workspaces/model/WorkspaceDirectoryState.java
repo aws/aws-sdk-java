@@ -48,19 +48,16 @@ public enum WorkspaceDirectoryState {
     public static WorkspaceDirectoryState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("REGISTERING".equals(value)) {
-            return REGISTERING;
-        } else if ("REGISTERED".equals(value)) {
-            return REGISTERED;
-        } else if ("DEREGISTERING".equals(value)) {
-            return DEREGISTERING;
-        } else if ("DEREGISTERED".equals(value)) {
-            return DEREGISTERED;
-        } else if ("ERROR".equals(value)) {
-            return ERROR;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (WorkspaceDirectoryState enumEntry : WorkspaceDirectoryState
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

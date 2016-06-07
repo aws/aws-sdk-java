@@ -46,15 +46,15 @@ public enum ScalarAttributeType {
     public static ScalarAttributeType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("S".equals(value)) {
-            return S;
-        } else if ("N".equals(value)) {
-            return N;
-        } else if ("B".equals(value)) {
-            return B;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ScalarAttributeType enumEntry : ScalarAttributeType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

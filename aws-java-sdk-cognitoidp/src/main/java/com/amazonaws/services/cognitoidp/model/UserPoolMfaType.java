@@ -46,15 +46,15 @@ public enum UserPoolMfaType {
     public static UserPoolMfaType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("OFF".equals(value)) {
-            return OFF;
-        } else if ("ON".equals(value)) {
-            return ON;
-        } else if ("OPTIONAL".equals(value)) {
-            return OPTIONAL;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (UserPoolMfaType enumEntry : UserPoolMfaType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

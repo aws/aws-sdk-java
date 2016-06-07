@@ -50,23 +50,15 @@ public enum AppType {
     public static AppType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("aws-flow-ruby".equals(value)) {
-            return AwsFlowRuby;
-        } else if ("java".equals(value)) {
-            return Java;
-        } else if ("rails".equals(value)) {
-            return Rails;
-        } else if ("php".equals(value)) {
-            return Php;
-        } else if ("nodejs".equals(value)) {
-            return Nodejs;
-        } else if ("static".equals(value)) {
-            return Static;
-        } else if ("other".equals(value)) {
-            return Other;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AppType enumEntry : AppType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

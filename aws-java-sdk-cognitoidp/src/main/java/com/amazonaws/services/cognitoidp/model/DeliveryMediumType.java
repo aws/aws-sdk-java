@@ -45,13 +45,15 @@ public enum DeliveryMediumType {
     public static DeliveryMediumType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("SMS".equals(value)) {
-            return SMS;
-        } else if ("EMAIL".equals(value)) {
-            return EMAIL;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DeliveryMediumType enumEntry : DeliveryMediumType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

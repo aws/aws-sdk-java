@@ -46,15 +46,15 @@ public enum PriceClass {
     public static PriceClass fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PriceClass_100".equals(value)) {
-            return PriceClass_100;
-        } else if ("PriceClass_200".equals(value)) {
-            return PriceClass_200;
-        } else if ("PriceClass_All".equals(value)) {
-            return PriceClass_All;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PriceClass enumEntry : PriceClass.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

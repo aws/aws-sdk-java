@@ -50,23 +50,15 @@ public enum JobStatus {
     public static JobStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Created".equals(value)) {
-            return Created;
-        } else if ("Queued".equals(value)) {
-            return Queued;
-        } else if ("Dispatched".equals(value)) {
-            return Dispatched;
-        } else if ("InProgress".equals(value)) {
-            return InProgress;
-        } else if ("TimedOut".equals(value)) {
-            return TimedOut;
-        } else if ("Succeeded".equals(value)) {
-            return Succeeded;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (JobStatus enumEntry : JobStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

@@ -45,13 +45,15 @@ public enum ArchitectureValues {
     public static ArchitectureValues fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("i386".equals(value)) {
-            return I386;
-        } else if ("x86_64".equals(value)) {
-            return X86_64;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ArchitectureValues enumEntry : ArchitectureValues.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

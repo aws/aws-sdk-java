@@ -49,21 +49,16 @@ public enum ScalingActivityStatusCode {
     public static ScalingActivityStatusCode fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Pending".equals(value)) {
-            return Pending;
-        } else if ("InProgress".equals(value)) {
-            return InProgress;
-        } else if ("Successful".equals(value)) {
-            return Successful;
-        } else if ("Overridden".equals(value)) {
-            return Overridden;
-        } else if ("Unfulfilled".equals(value)) {
-            return Unfulfilled;
-        } else if ("Failed".equals(value)) {
-            return Failed;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ScalingActivityStatusCode enumEntry : ScalingActivityStatusCode
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

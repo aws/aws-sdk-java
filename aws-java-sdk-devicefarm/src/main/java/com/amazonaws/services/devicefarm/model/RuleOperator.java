@@ -48,19 +48,15 @@ public enum RuleOperator {
     public static RuleOperator fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("EQUALS".equals(value)) {
-            return EQUALS;
-        } else if ("LESS_THAN".equals(value)) {
-            return LESS_THAN;
-        } else if ("GREATER_THAN".equals(value)) {
-            return GREATER_THAN;
-        } else if ("IN".equals(value)) {
-            return IN;
-        } else if ("NOT_IN".equals(value)) {
-            return NOT_IN;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (RuleOperator enumEntry : RuleOperator.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

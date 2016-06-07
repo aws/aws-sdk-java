@@ -44,11 +44,16 @@ public enum StartLambdaFunctionFailedCause {
     public static StartLambdaFunctionFailedCause fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ASSUME_ROLE_FAILED".equals(value)) {
-            return ASSUME_ROLE_FAILED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (StartLambdaFunctionFailedCause enumEntry : StartLambdaFunctionFailedCause
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

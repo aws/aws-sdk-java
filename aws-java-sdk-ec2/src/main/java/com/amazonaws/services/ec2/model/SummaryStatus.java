@@ -48,19 +48,15 @@ public enum SummaryStatus {
     public static SummaryStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ok".equals(value)) {
-            return Ok;
-        } else if ("impaired".equals(value)) {
-            return Impaired;
-        } else if ("insufficient-data".equals(value)) {
-            return InsufficientData;
-        } else if ("not-applicable".equals(value)) {
-            return NotApplicable;
-        } else if ("initializing".equals(value)) {
-            return Initializing;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SummaryStatus enumEntry : SummaryStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

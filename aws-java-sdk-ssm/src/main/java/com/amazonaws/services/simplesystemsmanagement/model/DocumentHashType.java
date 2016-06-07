@@ -45,13 +45,15 @@ public enum DocumentHashType {
     public static DocumentHashType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Sha256".equals(value)) {
-            return Sha256;
-        } else if ("Sha1".equals(value)) {
-            return Sha1;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DocumentHashType enumEntry : DocumentHashType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

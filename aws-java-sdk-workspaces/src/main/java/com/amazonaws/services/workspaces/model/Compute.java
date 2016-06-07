@@ -46,15 +46,15 @@ public enum Compute {
     public static Compute fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("VALUE".equals(value)) {
-            return VALUE;
-        } else if ("STANDARD".equals(value)) {
-            return STANDARD;
-        } else if ("PERFORMANCE".equals(value)) {
-            return PERFORMANCE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (Compute enumEntry : Compute.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

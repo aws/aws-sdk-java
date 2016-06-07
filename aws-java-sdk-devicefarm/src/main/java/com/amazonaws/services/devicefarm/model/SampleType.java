@@ -60,43 +60,15 @@ public enum SampleType {
     public static SampleType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CPU".equals(value)) {
-            return CPU;
-        } else if ("MEMORY".equals(value)) {
-            return MEMORY;
-        } else if ("THREADS".equals(value)) {
-            return THREADS;
-        } else if ("RX_RATE".equals(value)) {
-            return RX_RATE;
-        } else if ("TX_RATE".equals(value)) {
-            return TX_RATE;
-        } else if ("RX".equals(value)) {
-            return RX;
-        } else if ("TX".equals(value)) {
-            return TX;
-        } else if ("NATIVE_FRAMES".equals(value)) {
-            return NATIVE_FRAMES;
-        } else if ("NATIVE_FPS".equals(value)) {
-            return NATIVE_FPS;
-        } else if ("NATIVE_MIN_DRAWTIME".equals(value)) {
-            return NATIVE_MIN_DRAWTIME;
-        } else if ("NATIVE_AVG_DRAWTIME".equals(value)) {
-            return NATIVE_AVG_DRAWTIME;
-        } else if ("NATIVE_MAX_DRAWTIME".equals(value)) {
-            return NATIVE_MAX_DRAWTIME;
-        } else if ("OPENGL_FRAMES".equals(value)) {
-            return OPENGL_FRAMES;
-        } else if ("OPENGL_FPS".equals(value)) {
-            return OPENGL_FPS;
-        } else if ("OPENGL_MIN_DRAWTIME".equals(value)) {
-            return OPENGL_MIN_DRAWTIME;
-        } else if ("OPENGL_AVG_DRAWTIME".equals(value)) {
-            return OPENGL_AVG_DRAWTIME;
-        } else if ("OPENGL_MAX_DRAWTIME".equals(value)) {
-            return OPENGL_MAX_DRAWTIME;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SampleType enumEntry : SampleType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

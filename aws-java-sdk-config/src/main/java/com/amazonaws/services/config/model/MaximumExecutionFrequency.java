@@ -48,19 +48,16 @@ public enum MaximumExecutionFrequency {
     public static MaximumExecutionFrequency fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("One_Hour".equals(value)) {
-            return One_Hour;
-        } else if ("Three_Hours".equals(value)) {
-            return Three_Hours;
-        } else if ("Six_Hours".equals(value)) {
-            return Six_Hours;
-        } else if ("Twelve_Hours".equals(value)) {
-            return Twelve_Hours;
-        } else if ("TwentyFour_Hours".equals(value)) {
-            return TwentyFour_Hours;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (MaximumExecutionFrequency enumEntry : MaximumExecutionFrequency
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

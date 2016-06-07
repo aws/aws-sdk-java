@@ -56,33 +56,16 @@ public enum StartChildWorkflowExecutionFailedCause {
     public static StartChildWorkflowExecutionFailedCause fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("WORKFLOW_TYPE_DOES_NOT_EXIST".equals(value)) {
-            return WORKFLOW_TYPE_DOES_NOT_EXIST;
-        } else if ("WORKFLOW_TYPE_DEPRECATED".equals(value)) {
-            return WORKFLOW_TYPE_DEPRECATED;
-        } else if ("OPEN_CHILDREN_LIMIT_EXCEEDED".equals(value)) {
-            return OPEN_CHILDREN_LIMIT_EXCEEDED;
-        } else if ("OPEN_WORKFLOWS_LIMIT_EXCEEDED".equals(value)) {
-            return OPEN_WORKFLOWS_LIMIT_EXCEEDED;
-        } else if ("CHILD_CREATION_RATE_EXCEEDED".equals(value)) {
-            return CHILD_CREATION_RATE_EXCEEDED;
-        } else if ("WORKFLOW_ALREADY_RUNNING".equals(value)) {
-            return WORKFLOW_ALREADY_RUNNING;
-        } else if ("DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED"
-                .equals(value)) {
-            return DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED;
-        } else if ("DEFAULT_TASK_LIST_UNDEFINED".equals(value)) {
-            return DEFAULT_TASK_LIST_UNDEFINED;
-        } else if ("DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED"
-                .equals(value)) {
-            return DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED;
-        } else if ("DEFAULT_CHILD_POLICY_UNDEFINED".equals(value)) {
-            return DEFAULT_CHILD_POLICY_UNDEFINED;
-        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
-            return OPERATION_NOT_PERMITTED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (StartChildWorkflowExecutionFailedCause enumEntry : StartChildWorkflowExecutionFailedCause
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

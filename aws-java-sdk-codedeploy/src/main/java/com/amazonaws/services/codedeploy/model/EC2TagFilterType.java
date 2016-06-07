@@ -46,15 +46,15 @@ public enum EC2TagFilterType {
     public static EC2TagFilterType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("KEY_ONLY".equals(value)) {
-            return KEY_ONLY;
-        } else if ("VALUE_ONLY".equals(value)) {
-            return VALUE_ONLY;
-        } else if ("KEY_AND_VALUE".equals(value)) {
-            return KEY_AND_VALUE;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (EC2TagFilterType enumEntry : EC2TagFilterType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

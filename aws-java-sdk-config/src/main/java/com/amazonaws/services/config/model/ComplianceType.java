@@ -47,17 +47,15 @@ public enum ComplianceType {
     public static ComplianceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("COMPLIANT".equals(value)) {
-            return COMPLIANT;
-        } else if ("NON_COMPLIANT".equals(value)) {
-            return NON_COMPLIANT;
-        } else if ("NOT_APPLICABLE".equals(value)) {
-            return NOT_APPLICABLE;
-        } else if ("INSUFFICIENT_DATA".equals(value)) {
-            return INSUFFICIENT_DATA;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ComplianceType enumEntry : ComplianceType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

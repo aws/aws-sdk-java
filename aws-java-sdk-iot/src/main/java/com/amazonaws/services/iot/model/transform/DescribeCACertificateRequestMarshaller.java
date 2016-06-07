@@ -71,11 +71,11 @@ public class DescribeCACertificateRequestMarshaller
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/cacertificate/{certificateId}";
+        String uriResourcePath = "/cacertificate/{caCertificateId}";
 
         uriResourcePath = uriResourcePath
                 .replace(
-                        "{certificateId}",
+                        "{caCertificateId}",
                         (describeCACertificateRequest.getCertificateId() != null) ? SdkHttpUtils.urlEncode(
                                 StringUtils
                                         .fromString(describeCACertificateRequest

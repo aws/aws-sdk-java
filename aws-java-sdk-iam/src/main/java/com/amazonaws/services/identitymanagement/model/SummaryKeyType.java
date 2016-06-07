@@ -68,59 +68,15 @@ public enum SummaryKeyType {
     public static SummaryKeyType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Users".equals(value)) {
-            return Users;
-        } else if ("UsersQuota".equals(value)) {
-            return UsersQuota;
-        } else if ("Groups".equals(value)) {
-            return Groups;
-        } else if ("GroupsQuota".equals(value)) {
-            return GroupsQuota;
-        } else if ("ServerCertificates".equals(value)) {
-            return ServerCertificates;
-        } else if ("ServerCertificatesQuota".equals(value)) {
-            return ServerCertificatesQuota;
-        } else if ("UserPolicySizeQuota".equals(value)) {
-            return UserPolicySizeQuota;
-        } else if ("GroupPolicySizeQuota".equals(value)) {
-            return GroupPolicySizeQuota;
-        } else if ("GroupsPerUserQuota".equals(value)) {
-            return GroupsPerUserQuota;
-        } else if ("SigningCertificatesPerUserQuota".equals(value)) {
-            return SigningCertificatesPerUserQuota;
-        } else if ("AccessKeysPerUserQuota".equals(value)) {
-            return AccessKeysPerUserQuota;
-        } else if ("MFADevices".equals(value)) {
-            return MFADevices;
-        } else if ("MFADevicesInUse".equals(value)) {
-            return MFADevicesInUse;
-        } else if ("AccountMFAEnabled".equals(value)) {
-            return AccountMFAEnabled;
-        } else if ("AccountAccessKeysPresent".equals(value)) {
-            return AccountAccessKeysPresent;
-        } else if ("AccountSigningCertificatesPresent".equals(value)) {
-            return AccountSigningCertificatesPresent;
-        } else if ("AttachedPoliciesPerGroupQuota".equals(value)) {
-            return AttachedPoliciesPerGroupQuota;
-        } else if ("AttachedPoliciesPerRoleQuota".equals(value)) {
-            return AttachedPoliciesPerRoleQuota;
-        } else if ("AttachedPoliciesPerUserQuota".equals(value)) {
-            return AttachedPoliciesPerUserQuota;
-        } else if ("Policies".equals(value)) {
-            return Policies;
-        } else if ("PoliciesQuota".equals(value)) {
-            return PoliciesQuota;
-        } else if ("PolicySizeQuota".equals(value)) {
-            return PolicySizeQuota;
-        } else if ("PolicyVersionsInUse".equals(value)) {
-            return PolicyVersionsInUse;
-        } else if ("PolicyVersionsInUseQuota".equals(value)) {
-            return PolicyVersionsInUseQuota;
-        } else if ("VersionsPerPolicyQuota".equals(value)) {
-            return VersionsPerPolicyQuota;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SummaryKeyType enumEntry : SummaryKeyType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

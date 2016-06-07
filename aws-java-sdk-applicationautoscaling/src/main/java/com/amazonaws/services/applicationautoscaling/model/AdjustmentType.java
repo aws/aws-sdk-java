@@ -46,15 +46,15 @@ public enum AdjustmentType {
     public static AdjustmentType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ChangeInCapacity".equals(value)) {
-            return ChangeInCapacity;
-        } else if ("PercentChangeInCapacity".equals(value)) {
-            return PercentChangeInCapacity;
-        } else if ("ExactCapacity".equals(value)) {
-            return ExactCapacity;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AdjustmentType enumEntry : AdjustmentType.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

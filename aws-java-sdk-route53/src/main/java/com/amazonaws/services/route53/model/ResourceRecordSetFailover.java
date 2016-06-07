@@ -45,13 +45,16 @@ public enum ResourceRecordSetFailover {
     public static ResourceRecordSetFailover fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PRIMARY".equals(value)) {
-            return PRIMARY;
-        } else if ("SECONDARY".equals(value)) {
-            return SECONDARY;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (ResourceRecordSetFailover enumEntry : ResourceRecordSetFailover
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

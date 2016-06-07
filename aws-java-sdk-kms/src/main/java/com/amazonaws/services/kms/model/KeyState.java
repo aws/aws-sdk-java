@@ -46,15 +46,15 @@ public enum KeyState {
     public static KeyState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Enabled".equals(value)) {
-            return Enabled;
-        } else if ("Disabled".equals(value)) {
-            return Disabled;
-        } else if ("PendingDeletion".equals(value)) {
-            return PendingDeletion;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (KeyState enumEntry : KeyState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

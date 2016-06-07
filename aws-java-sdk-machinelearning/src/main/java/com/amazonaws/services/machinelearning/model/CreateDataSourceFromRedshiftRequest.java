@@ -46,35 +46,36 @@ public class CreateDataSourceFromRedshiftRequest extends
      * <p>
      * DatabaseInformation -
      * <ul>
-     * <li> <code>DatabaseName </code> - Name of the Amazon Redshift database.</li>
-     * <li> <code> ClusterIdentifier </code> - Unique ID for the Amazon Redshift
-     * cluster.</li>
+     * <li> <code>DatabaseName</code> - The name of the Amazon Redshift database.
+     * </li>
+     * <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon
+     * Redshift cluster.</li>
      * </ul>
      * </p>
      * </li>
      * <li>
      * <p>
-     * DatabaseCredentials - AWS Identity abd Access Management (IAM)
+     * DatabaseCredentials - The AWS Identity and Access Management (IAM)
      * credentials that are used to connect to the Amazon Redshift database.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SelectSqlQuery - Query that is used to retrieve the observation data for
-     * the <code>Datasource</code>.
+     * SelectSqlQuery - The query that is used to retrieve the observation data
+     * for the <code>Datasource</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * S3StagingLocation - Amazon Simple Storage Service (Amazon S3) location
-     * for staging Amazon Redshift data. The data retrieved from Amazon
-     * Relational Database Service (Amazon RDS) using
-     * <code>SelectSqlQuery</code> is stored in this location.
+     * S3StagingLocation - The Amazon Simple Storage Service (Amazon S3)
+     * location for staging Amazon Redshift data. The data retrieved from Amazon
+     * Redshift using the <code>SelectSqlQuery</code> query is stored in this
+     * location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DataSchemaUri - Amazon S3 location of the <code>DataSchema</code>.
+     * DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.
      * </p>
      * </li>
      * <li>
@@ -85,10 +86,9 @@ public class CreateDataSourceFromRedshiftRequest extends
      * </li>
      * <li>
      * <p>
-     * DataRearrangement - A JSON string representing the splitting requirement
-     * of a <code>Datasource</code>.
+     * DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>DataSource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample -
      * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -126,8 +126,8 @@ public class CreateDataSourceFromRedshiftRequest extends
      * generated from the observation data referenced by a
      * <code>DataSource</code>. Amazon ML uses the statistics internally during
      * <code>MLModel</code> training. This parameter must be set to
-     * <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training
+     * <code>true</code> if the <code>DataSource</code> needs to be used for
+     * <code>MLModel</code> training.
      * </p>
      */
     private Boolean computeStatistics;
@@ -231,35 +231,36 @@ public class CreateDataSourceFromRedshiftRequest extends
      * <p>
      * DatabaseInformation -
      * <ul>
-     * <li> <code>DatabaseName </code> - Name of the Amazon Redshift database.</li>
-     * <li> <code> ClusterIdentifier </code> - Unique ID for the Amazon Redshift
-     * cluster.</li>
+     * <li> <code>DatabaseName</code> - The name of the Amazon Redshift database.
+     * </li>
+     * <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon
+     * Redshift cluster.</li>
      * </ul>
      * </p>
      * </li>
      * <li>
      * <p>
-     * DatabaseCredentials - AWS Identity abd Access Management (IAM)
+     * DatabaseCredentials - The AWS Identity and Access Management (IAM)
      * credentials that are used to connect to the Amazon Redshift database.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SelectSqlQuery - Query that is used to retrieve the observation data for
-     * the <code>Datasource</code>.
+     * SelectSqlQuery - The query that is used to retrieve the observation data
+     * for the <code>Datasource</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * S3StagingLocation - Amazon Simple Storage Service (Amazon S3) location
-     * for staging Amazon Redshift data. The data retrieved from Amazon
-     * Relational Database Service (Amazon RDS) using
-     * <code>SelectSqlQuery</code> is stored in this location.
+     * S3StagingLocation - The Amazon Simple Storage Service (Amazon S3)
+     * location for staging Amazon Redshift data. The data retrieved from Amazon
+     * Redshift using the <code>SelectSqlQuery</code> query is stored in this
+     * location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DataSchemaUri - Amazon S3 location of the <code>DataSchema</code>.
+     * DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.
      * </p>
      * </li>
      * <li>
@@ -270,10 +271,9 @@ public class CreateDataSourceFromRedshiftRequest extends
      * </li>
      * <li>
      * <p>
-     * DataRearrangement - A JSON string representing the splitting requirement
-     * of a <code>Datasource</code>.
+     * DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>DataSource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample -
      * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -289,37 +289,38 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        <p>
      *        DatabaseInformation -
      *        <ul>
-     *        <li> <code>DatabaseName </code> - Name of the Amazon Redshift
+     *        <li> <code>DatabaseName</code> - The name of the Amazon Redshift
      *        database.</li>
-     *        <li> <code> ClusterIdentifier </code> - Unique ID for the Amazon
+     *        <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon
      *        Redshift cluster.</li>
      *        </ul>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DatabaseCredentials - AWS Identity abd Access Management (IAM)
+     *        DatabaseCredentials - The AWS Identity and Access Management (IAM)
      *        credentials that are used to connect to the Amazon Redshift
      *        database.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SelectSqlQuery - Query that is used to retrieve the observation
-     *        data for the <code>Datasource</code>.
+     *        SelectSqlQuery - The query that is used to retrieve the
+     *        observation data for the <code>Datasource</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        S3StagingLocation - Amazon Simple Storage Service (Amazon S3)
+     *        S3StagingLocation - The Amazon Simple Storage Service (Amazon S3)
      *        location for staging Amazon Redshift data. The data retrieved from
-     *        Amazon Relational Database Service (Amazon RDS) using
-     *        <code>SelectSqlQuery</code> is stored in this location.
+     *        Amazon Redshift using the <code>SelectSqlQuery</code> query is
+     *        stored in this location.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DataSchemaUri - Amazon S3 location of the <code>DataSchema</code>.
+     *        DataSchemaUri - The Amazon S3 location of the
+     *        <code>DataSchema</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -330,10 +331,9 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        DataRearrangement - A JSON string representing the splitting
-     *        requirement of a <code>Datasource</code>.
+     *        DataRearrangement - A JSON string that represents the splitting
+     *        and rearrangement requirements for the <code>DataSource</code>.
      *        </p>
-     *        <br>
      *        <p>
      *        Sample -
      *        <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -354,35 +354,36 @@ public class CreateDataSourceFromRedshiftRequest extends
      * <p>
      * DatabaseInformation -
      * <ul>
-     * <li> <code>DatabaseName </code> - Name of the Amazon Redshift database.</li>
-     * <li> <code> ClusterIdentifier </code> - Unique ID for the Amazon Redshift
-     * cluster.</li>
+     * <li> <code>DatabaseName</code> - The name of the Amazon Redshift database.
+     * </li>
+     * <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon
+     * Redshift cluster.</li>
      * </ul>
      * </p>
      * </li>
      * <li>
      * <p>
-     * DatabaseCredentials - AWS Identity abd Access Management (IAM)
+     * DatabaseCredentials - The AWS Identity and Access Management (IAM)
      * credentials that are used to connect to the Amazon Redshift database.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SelectSqlQuery - Query that is used to retrieve the observation data for
-     * the <code>Datasource</code>.
+     * SelectSqlQuery - The query that is used to retrieve the observation data
+     * for the <code>Datasource</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * S3StagingLocation - Amazon Simple Storage Service (Amazon S3) location
-     * for staging Amazon Redshift data. The data retrieved from Amazon
-     * Relational Database Service (Amazon RDS) using
-     * <code>SelectSqlQuery</code> is stored in this location.
+     * S3StagingLocation - The Amazon Simple Storage Service (Amazon S3)
+     * location for staging Amazon Redshift data. The data retrieved from Amazon
+     * Redshift using the <code>SelectSqlQuery</code> query is stored in this
+     * location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DataSchemaUri - Amazon S3 location of the <code>DataSchema</code>.
+     * DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.
      * </p>
      * </li>
      * <li>
@@ -393,10 +394,9 @@ public class CreateDataSourceFromRedshiftRequest extends
      * </li>
      * <li>
      * <p>
-     * DataRearrangement - A JSON string representing the splitting requirement
-     * of a <code>Datasource</code>.
+     * DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>DataSource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample -
      * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -411,38 +411,38 @@ public class CreateDataSourceFromRedshiftRequest extends
      *         <p>
      *         DatabaseInformation -
      *         <ul>
-     *         <li> <code>DatabaseName </code> - Name of the Amazon Redshift
+     *         <li> <code>DatabaseName</code> - The name of the Amazon Redshift
      *         database.</li>
-     *         <li> <code> ClusterIdentifier </code> - Unique ID for the Amazon
-     *         Redshift cluster.</li>
+     *         <li> <code> ClusterIdentifier</code> - The unique ID for the
+     *         Amazon Redshift cluster.</li>
      *         </ul>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DatabaseCredentials - AWS Identity abd Access Management (IAM)
-     *         credentials that are used to connect to the Amazon Redshift
+     *         DatabaseCredentials - The AWS Identity and Access Management
+     *         (IAM) credentials that are used to connect to the Amazon Redshift
      *         database.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SelectSqlQuery - Query that is used to retrieve the observation
-     *         data for the <code>Datasource</code>.
+     *         SelectSqlQuery - The query that is used to retrieve the
+     *         observation data for the <code>Datasource</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         S3StagingLocation - Amazon Simple Storage Service (Amazon S3)
+     *         S3StagingLocation - The Amazon Simple Storage Service (Amazon S3)
      *         location for staging Amazon Redshift data. The data retrieved
-     *         from Amazon Relational Database Service (Amazon RDS) using
-     *         <code>SelectSqlQuery</code> is stored in this location.
+     *         from Amazon Redshift using the <code>SelectSqlQuery</code> query
+     *         is stored in this location.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DataSchemaUri - Amazon S3 location of the <code>DataSchema</code>
-     *         .
+     *         DataSchemaUri - The Amazon S3 location of the
+     *         <code>DataSchema</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -453,10 +453,9 @@ public class CreateDataSourceFromRedshiftRequest extends
      *         </li>
      *         <li>
      *         <p>
-     *         DataRearrangement - A JSON string representing the splitting
-     *         requirement of a <code>Datasource</code>.
+     *         DataRearrangement - A JSON string that represents the splitting
+     *         and rearrangement requirements for the <code>DataSource</code>.
      *         </p>
-     *         <br>
      *         <p>
      *         Sample -
      *         <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -477,35 +476,36 @@ public class CreateDataSourceFromRedshiftRequest extends
      * <p>
      * DatabaseInformation -
      * <ul>
-     * <li> <code>DatabaseName </code> - Name of the Amazon Redshift database.</li>
-     * <li> <code> ClusterIdentifier </code> - Unique ID for the Amazon Redshift
-     * cluster.</li>
+     * <li> <code>DatabaseName</code> - The name of the Amazon Redshift database.
+     * </li>
+     * <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon
+     * Redshift cluster.</li>
      * </ul>
      * </p>
      * </li>
      * <li>
      * <p>
-     * DatabaseCredentials - AWS Identity abd Access Management (IAM)
+     * DatabaseCredentials - The AWS Identity and Access Management (IAM)
      * credentials that are used to connect to the Amazon Redshift database.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SelectSqlQuery - Query that is used to retrieve the observation data for
-     * the <code>Datasource</code>.
+     * SelectSqlQuery - The query that is used to retrieve the observation data
+     * for the <code>Datasource</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * S3StagingLocation - Amazon Simple Storage Service (Amazon S3) location
-     * for staging Amazon Redshift data. The data retrieved from Amazon
-     * Relational Database Service (Amazon RDS) using
-     * <code>SelectSqlQuery</code> is stored in this location.
+     * S3StagingLocation - The Amazon Simple Storage Service (Amazon S3)
+     * location for staging Amazon Redshift data. The data retrieved from Amazon
+     * Redshift using the <code>SelectSqlQuery</code> query is stored in this
+     * location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DataSchemaUri - Amazon S3 location of the <code>DataSchema</code>.
+     * DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.
      * </p>
      * </li>
      * <li>
@@ -516,10 +516,9 @@ public class CreateDataSourceFromRedshiftRequest extends
      * </li>
      * <li>
      * <p>
-     * DataRearrangement - A JSON string representing the splitting requirement
-     * of a <code>Datasource</code>.
+     * DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>DataSource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample -
      * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -535,37 +534,38 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        <p>
      *        DatabaseInformation -
      *        <ul>
-     *        <li> <code>DatabaseName </code> - Name of the Amazon Redshift
+     *        <li> <code>DatabaseName</code> - The name of the Amazon Redshift
      *        database.</li>
-     *        <li> <code> ClusterIdentifier </code> - Unique ID for the Amazon
+     *        <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon
      *        Redshift cluster.</li>
      *        </ul>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DatabaseCredentials - AWS Identity abd Access Management (IAM)
+     *        DatabaseCredentials - The AWS Identity and Access Management (IAM)
      *        credentials that are used to connect to the Amazon Redshift
      *        database.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SelectSqlQuery - Query that is used to retrieve the observation
-     *        data for the <code>Datasource</code>.
+     *        SelectSqlQuery - The query that is used to retrieve the
+     *        observation data for the <code>Datasource</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        S3StagingLocation - Amazon Simple Storage Service (Amazon S3)
+     *        S3StagingLocation - The Amazon Simple Storage Service (Amazon S3)
      *        location for staging Amazon Redshift data. The data retrieved from
-     *        Amazon Relational Database Service (Amazon RDS) using
-     *        <code>SelectSqlQuery</code> is stored in this location.
+     *        Amazon Redshift using the <code>SelectSqlQuery</code> query is
+     *        stored in this location.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DataSchemaUri - Amazon S3 location of the <code>DataSchema</code>.
+     *        DataSchemaUri - The Amazon S3 location of the
+     *        <code>DataSchema</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -576,10 +576,9 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        </li>
      *        <li>
      *        <p>
-     *        DataRearrangement - A JSON string representing the splitting
-     *        requirement of a <code>Datasource</code>.
+     *        DataRearrangement - A JSON string that represents the splitting
+     *        and rearrangement requirements for the <code>DataSource</code>.
      *        </p>
-     *        <br>
      *        <p>
      *        Sample -
      *        <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
@@ -744,8 +743,8 @@ public class CreateDataSourceFromRedshiftRequest extends
      * generated from the observation data referenced by a
      * <code>DataSource</code>. Amazon ML uses the statistics internally during
      * <code>MLModel</code> training. This parameter must be set to
-     * <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training
+     * <code>true</code> if the <code>DataSource</code> needs to be used for
+     * <code>MLModel</code> training.
      * </p>
      * 
      * @param computeStatistics
@@ -753,8 +752,8 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        statistics are generated from the observation data referenced by a
      *        <code>DataSource</code>. Amazon ML uses the statistics internally
      *        during <code>MLModel</code> training. This parameter must be set
-     *        to <code>true</code> if the <code></code>DataSource<code></code>
-     *        needs to be used for <code>MLModel</code> training
+     *        to <code>true</code> if the <code>DataSource</code> needs to be
+     *        used for <code>MLModel</code> training.
      */
 
     public void setComputeStatistics(Boolean computeStatistics) {
@@ -767,16 +766,16 @@ public class CreateDataSourceFromRedshiftRequest extends
      * generated from the observation data referenced by a
      * <code>DataSource</code>. Amazon ML uses the statistics internally during
      * <code>MLModel</code> training. This parameter must be set to
-     * <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training
+     * <code>true</code> if the <code>DataSource</code> needs to be used for
+     * <code>MLModel</code> training.
      * </p>
      * 
      * @return The compute statistics for a <code>DataSource</code>. The
      *         statistics are generated from the observation data referenced by
      *         a <code>DataSource</code>. Amazon ML uses the statistics
      *         internally during <code>MLModel</code> training. This parameter
-     *         must be set to <code>true</code> if the <code></code>DataSource
-     *         <code></code> needs to be used for <code>MLModel</code> training
+     *         must be set to <code>true</code> if the <code>DataSource</code>
+     *         needs to be used for <code>MLModel</code> training.
      */
 
     public Boolean getComputeStatistics() {
@@ -789,8 +788,8 @@ public class CreateDataSourceFromRedshiftRequest extends
      * generated from the observation data referenced by a
      * <code>DataSource</code>. Amazon ML uses the statistics internally during
      * <code>MLModel</code> training. This parameter must be set to
-     * <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training
+     * <code>true</code> if the <code>DataSource</code> needs to be used for
+     * <code>MLModel</code> training.
      * </p>
      * 
      * @param computeStatistics
@@ -798,8 +797,8 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        statistics are generated from the observation data referenced by a
      *        <code>DataSource</code>. Amazon ML uses the statistics internally
      *        during <code>MLModel</code> training. This parameter must be set
-     *        to <code>true</code> if the <code></code>DataSource<code></code>
-     *        needs to be used for <code>MLModel</code> training
+     *        to <code>true</code> if the <code>DataSource</code> needs to be
+     *        used for <code>MLModel</code> training.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -816,16 +815,16 @@ public class CreateDataSourceFromRedshiftRequest extends
      * generated from the observation data referenced by a
      * <code>DataSource</code>. Amazon ML uses the statistics internally during
      * <code>MLModel</code> training. This parameter must be set to
-     * <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training
+     * <code>true</code> if the <code>DataSource</code> needs to be used for
+     * <code>MLModel</code> training.
      * </p>
      * 
      * @return The compute statistics for a <code>DataSource</code>. The
      *         statistics are generated from the observation data referenced by
      *         a <code>DataSource</code>. Amazon ML uses the statistics
      *         internally during <code>MLModel</code> training. This parameter
-     *         must be set to <code>true</code> if the <code></code>DataSource
-     *         <code></code> needs to be used for <code>MLModel</code> training
+     *         must be set to <code>true</code> if the <code>DataSource</code>
+     *         needs to be used for <code>MLModel</code> training.
      */
 
     public Boolean isComputeStatistics() {

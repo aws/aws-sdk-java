@@ -48,19 +48,15 @@ public enum AllocationState {
     public static AllocationState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("available".equals(value)) {
-            return Available;
-        } else if ("under-assessment".equals(value)) {
-            return UnderAssessment;
-        } else if ("permanent-failure".equals(value)) {
-            return PermanentFailure;
-        } else if ("released".equals(value)) {
-            return Released;
-        } else if ("released-permanent-failure".equals(value)) {
-            return ReleasedPermanentFailure;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AllocationState enumEntry : AllocationState.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

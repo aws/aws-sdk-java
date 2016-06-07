@@ -46,15 +46,16 @@ public enum PolicyEvaluationDecisionType {
     public static PolicyEvaluationDecisionType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("allowed".equals(value)) {
-            return Allowed;
-        } else if ("explicitDeny".equals(value)) {
-            return ExplicitDeny;
-        } else if ("implicitDeny".equals(value)) {
-            return ImplicitDeny;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (PolicyEvaluationDecisionType enumEntry : PolicyEvaluationDecisionType
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

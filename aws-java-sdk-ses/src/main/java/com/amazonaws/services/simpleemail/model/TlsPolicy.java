@@ -45,13 +45,15 @@ public enum TlsPolicy {
     public static TlsPolicy fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Require".equals(value)) {
-            return Require;
-        } else if ("Optional".equals(value)) {
-            return Optional;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (TlsPolicy enumEntry : TlsPolicy.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

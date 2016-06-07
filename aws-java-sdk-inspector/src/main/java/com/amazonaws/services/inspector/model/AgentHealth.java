@@ -45,13 +45,15 @@ public enum AgentHealth {
     public static AgentHealth fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("HEALTHY".equals(value)) {
-            return HEALTHY;
-        } else if ("UNHEALTHY".equals(value)) {
-            return UNHEALTHY;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (AgentHealth enumEntry : AgentHealth.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

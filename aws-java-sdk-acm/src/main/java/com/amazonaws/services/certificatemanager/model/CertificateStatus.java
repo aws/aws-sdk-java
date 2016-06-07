@@ -50,23 +50,15 @@ public enum CertificateStatus {
     public static CertificateStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("PENDING_VALIDATION".equals(value)) {
-            return PENDING_VALIDATION;
-        } else if ("ISSUED".equals(value)) {
-            return ISSUED;
-        } else if ("INACTIVE".equals(value)) {
-            return INACTIVE;
-        } else if ("EXPIRED".equals(value)) {
-            return EXPIRED;
-        } else if ("VALIDATION_TIMED_OUT".equals(value)) {
-            return VALIDATION_TIMED_OUT;
-        } else if ("REVOKED".equals(value)) {
-            return REVOKED;
-        } else if ("FAILED".equals(value)) {
-            return FAILED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (CertificateStatus enumEntry : CertificateStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

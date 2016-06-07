@@ -46,15 +46,15 @@ public enum SuggesterFuzzyMatching {
     public static SuggesterFuzzyMatching fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("none".equals(value)) {
-            return None;
-        } else if ("low".equals(value)) {
-            return Low;
-        } else if ("high".equals(value)) {
-            return High;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (SuggesterFuzzyMatching enumEntry : SuggesterFuzzyMatching.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

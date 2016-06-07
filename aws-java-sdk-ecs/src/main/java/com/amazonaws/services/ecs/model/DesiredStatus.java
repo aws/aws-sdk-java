@@ -46,15 +46,15 @@ public enum DesiredStatus {
     public static DesiredStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("RUNNING".equals(value)) {
-            return RUNNING;
-        } else if ("PENDING".equals(value)) {
-            return PENDING;
-        } else if ("STOPPED".equals(value)) {
-            return STOPPED;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (DesiredStatus enumEntry : DesiredStatus.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }

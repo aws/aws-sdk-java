@@ -71,25 +71,16 @@ public enum BatchPredictionFilterVariable {
     public static BatchPredictionFilterVariable fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("CreatedAt".equals(value)) {
-            return CreatedAt;
-        } else if ("LastUpdatedAt".equals(value)) {
-            return LastUpdatedAt;
-        } else if ("Status".equals(value)) {
-            return Status;
-        } else if ("Name".equals(value)) {
-            return Name;
-        } else if ("IAMUser".equals(value)) {
-            return IAMUser;
-        } else if ("MLModelId".equals(value)) {
-            return MLModelId;
-        } else if ("DataSourceId".equals(value)) {
-            return DataSourceId;
-        } else if ("DataURI".equals(value)) {
-            return DataURI;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
         }
+
+        for (BatchPredictionFilterVariable enumEntry : BatchPredictionFilterVariable
+                .values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value
+                + " value!");
     }
 }
