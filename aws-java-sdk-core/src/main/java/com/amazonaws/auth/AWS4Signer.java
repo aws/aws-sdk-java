@@ -235,7 +235,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
         addPreSignInformationToRequest(request, sanitizedCredentials,
                 signerRequestParams, timeStamp, expirationInSeconds);
 
-        final String contentSha256 = calculateContentHashPresign(request);
+        final String contentSha256 = "UNSIGNED-PAYLOAD";
 
         final String canonicalRequest = createCanonicalRequest(request,
                 contentSha256);
