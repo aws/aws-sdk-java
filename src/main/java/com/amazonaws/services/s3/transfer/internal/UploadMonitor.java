@@ -53,7 +53,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
     private final AmazonS3 s3;
     private final ExecutorService threadPool;
     private final PutObjectRequest putObjectRequest;
-    private ScheduledExecutorService timedThreadPool;
+    private final ScheduledExecutorService timedThreadPool;
 
     private static final Log log = LogFactory.getLog(UploadMonitor.class);
     private final TransferManagerConfiguration configuration;
@@ -111,10 +111,12 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
      * @param progressListenerChain
      *            A chain of listeners that wish to be notified of upload
      *            progress
+     * @param timedThreadPool
+     *            Executor used to schedule subsequent polling tasks
      */
     public UploadMonitor(TransferManager manager, UploadImpl transfer, ExecutorService threadPool,
             UploadCallable multipartUploadCallable, PutObjectRequest putObjectRequest,
-            ProgressListenerChain progressListenerChain) {
+            ProgressListenerChain progressListenerChain, ScheduledExecutorService timedThreadPool) {
 
         this.s3 = manager.getAmazonS3Client();
         this.configuration = manager.getConfiguration();
@@ -125,21 +127,6 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         this.progressListenerChainCallbackExecutor = ProgressListenerCallbackExecutor
                 .wrapListener(progressListenerChain);
         this.transfer = transfer;
-
-        setNextFuture(threadPool.submit(this));
-    }
-    
-    /**
-     * @deprecated Replaced by {@link #UploadMonitor(TransferManager, UploadImpl, ExecutorService, UploadCallable, PutObjectRequest, ProgressListenerChain)}
-     */
-    @Deprecated
-    public UploadMonitor(TransferManager manager, UploadImpl transfer, ExecutorService threadPool,
-            UploadCallable multipartUploadCallable, PutObjectRequest putObjectRequest,
-            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain) {
-        this(manager, transfer, threadPool, multipartUploadCallable, putObjectRequest, progressListenerChain.transformToGeneralProgressListenerChain());
-    }
-
-    public void setTimedThreadPool(ScheduledExecutorService timedThreadPool) {
         this.timedThreadPool = timedThreadPool;
     }
 
@@ -160,6 +147,10 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
             fireProgressEvent(ProgressEvent.FAILED_EVENT_CODE);
             throw e;
         }
+    }
+
+    public void start() {
+        setNextFuture(threadPool.submit(this));
     }
 
     /**

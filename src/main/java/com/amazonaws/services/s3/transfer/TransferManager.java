@@ -446,8 +446,9 @@ public class TransferManager {
             UploadImpl upload = new UploadImpl(description, transferProgress, listenerChain, stateListener);
 
             UploadCallable uploadCallable = new UploadCallable(this, threadPool, upload, putObjectRequest, listenerChain);
-            UploadMonitor watcher = new UploadMonitor(this, upload, threadPool, uploadCallable, putObjectRequest, listenerChain);
-            watcher.setTimedThreadPool(timedThreadPool);
+            UploadMonitor watcher = new UploadMonitor(this, upload, threadPool,
+                    uploadCallable, putObjectRequest, listenerChain, timedThreadPool);
+            watcher.start();
             upload.setMonitor(watcher);
 
             return upload;
@@ -1297,8 +1298,8 @@ public class TransferManager {
         CopyCallable copyCallable = new CopyCallable(this, threadPool, copy,
                 copyObjectRequest, metadata.getContentLength(), listenerChain);
         CopyMonitor watcher = new CopyMonitor(this, copy, threadPool,
-                copyCallable, copyObjectRequest, listenerChain);
-        watcher.setTimedThreadPool(timedThreadPool);
+                copyCallable, copyObjectRequest, listenerChain, timedThreadPool);
+        watcher.start();
         copy.setMonitor(watcher);
         return copy;
     }

@@ -58,7 +58,7 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
      * Thread pool used for scheduling the monitor to check if the copy
      * operation is completed.
      */
-    private ScheduledExecutorService timedThreadPool;
+    private final ScheduledExecutorService timedThreadPool;
     /** Reference to the CopyCallable that is used for initiating copy requests. */
     private final CopyCallable multipartCopyCallable;
     private final CopyImpl transfer;
@@ -110,11 +110,15 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
      *            asynchronously
      * @param copyObjectRequest
      *            The original CopyObject request
+     * @param timedThreadPool
+     *            Executor used to schedule subsequent polling tasks
+     *
      */
     public CopyMonitor(TransferManager manager, CopyImpl transfer,
             ExecutorService threadPool, CopyCallable multipartCopyCallable,
             CopyObjectRequest copyObjectRequest,
-            ProgressListenerChain progressListenerChain) {
+            ProgressListenerChain progressListenerChain,
+            ScheduledExecutorService timedThreadPool) {
 
         this.s3 = manager.getAmazonS3Client();
         this.multipartCopyCallable = multipartCopyCallable;
@@ -123,6 +127,7 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
         this.transfer = transfer;
         this.progressListenerChainCallbackExecutor = ProgressListenerCallbackExecutor
                 .wrapListener(progressListenerChain);
+        this.timedThreadPool = timedThreadPool;
 
         setNextFuture(threadPool.submit(this));
     }
@@ -146,8 +151,8 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
         }
     }
 
-    public void setTimedThreadPool(ScheduledExecutorService timedThreadPool) {
-        this.timedThreadPool = timedThreadPool;
+    public void start() {
+        setNextFuture(threadPool.submit(this));
     }
 
     /**
