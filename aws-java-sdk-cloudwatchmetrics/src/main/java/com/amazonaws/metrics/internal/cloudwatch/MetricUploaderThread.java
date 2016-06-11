@@ -20,7 +20,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.services.cloudwatch.AmazonCloudWatchClient;
-import com.amazonaws.services.cloudwatch.AmazonCloudWatchClientBuilder;
 import com.amazonaws.services.cloudwatch.model.MetricDatum;
 import com.amazonaws.services.cloudwatch.model.PutMetricDataRequest;
 import com.amazonaws.util.VersionInfoUtils;
@@ -44,10 +43,18 @@ class MetricUploaderThread extends Thread {
     }
 
 	private static AmazonCloudWatchClient createCloudWatchClient(CloudWatchMetricConfig config) {
-		return AmazonCloudWatchClientBuilder.create()//
-				.withAWSCredentialsProvider(config.getCredentialsProvider())//
-				.withClientConfiguration(config.getClientConfiguration())//
-				.build();
+		AmazonCloudWatchClient amazonCloudWatchClient = null;
+		if (config.getCredentialsProvider() == null && config.getClientConfiguration() == null) {
+			amazonCloudWatchClient = new AmazonCloudWatchClient();
+		} else if (config.getCredentialsProvider() != null && config.getClientConfiguration() == null) {
+			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider());
+		} else if (config.getClientConfiguration() != null && config.getCredentialsProvider() == null) {
+			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getClientConfiguration());
+		} else if (config.getClientConfiguration() != null && config.getCredentialsProvider() != null) {
+			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider(),
+					config.getClientConfiguration());
+		}
+		return amazonCloudWatchClient;
 	}
 
     MetricUploaderThread(CloudWatchMetricConfig config,
